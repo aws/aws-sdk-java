@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,80 +12,78 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateMaintenanceWindowRequest Marshaller
+ * CreateMaintenanceWindowRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateMaintenanceWindowRequestMarshaller implements Marshaller<Request<CreateMaintenanceWindowRequest>, CreateMaintenanceWindowRequest> {
+@SdkInternalApi
+public class CreateMaintenanceWindowRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StartDate").build();
+    private static final MarshallingInfo<String> ENDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EndDate").build();
+    private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Schedule").build();
+    private static final MarshallingInfo<String> SCHEDULETIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleTimezone").build();
+    private static final MarshallingInfo<Integer> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Duration").build();
+    private static final MarshallingInfo<Integer> CUTOFF_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Cutoff").build();
+    private static final MarshallingInfo<Boolean> ALLOWUNASSOCIATEDTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowUnassociatedTargets").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateMaintenanceWindowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateMaintenanceWindowRequestMarshaller instance = new CreateMaintenanceWindowRequestMarshaller();
+
+    public static CreateMaintenanceWindowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateMaintenanceWindowRequest> marshall(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateMaintenanceWindowRequest createMaintenanceWindowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createMaintenanceWindowRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateMaintenanceWindowRequest> request = new DefaultRequest<CreateMaintenanceWindowRequest>(createMaintenanceWindowRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.CreateMaintenanceWindow");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createMaintenanceWindowRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createMaintenanceWindowRequest.getName());
-            }
-            if (createMaintenanceWindowRequest.getSchedule() != null) {
-                jsonGenerator.writeFieldName("Schedule").writeValue(createMaintenanceWindowRequest.getSchedule());
-            }
-            if (createMaintenanceWindowRequest.getDuration() != null) {
-                jsonGenerator.writeFieldName("Duration").writeValue(createMaintenanceWindowRequest.getDuration());
-            }
-            if (createMaintenanceWindowRequest.getCutoff() != null) {
-                jsonGenerator.writeFieldName("Cutoff").writeValue(createMaintenanceWindowRequest.getCutoff());
-            }
-            if (createMaintenanceWindowRequest.getAllowUnassociatedTargets() != null) {
-                jsonGenerator.writeFieldName("AllowUnassociatedTargets").writeValue(createMaintenanceWindowRequest.getAllowUnassociatedTargets());
-            }
-            jsonGenerator.writeFieldName("ClientToken").writeValue(IdempotentUtils.resolveString(createMaintenanceWindowRequest.getClientToken()));
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getStartDate(), STARTDATE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getEndDate(), ENDDATE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getScheduleTimezone(), SCHEDULETIMEZONE_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getDuration(), DURATION_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getCutoff(), CUTOFF_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getAllowUnassociatedTargets(), ALLOWUNASSOCIATEDTARGETS_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createMaintenanceWindowRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

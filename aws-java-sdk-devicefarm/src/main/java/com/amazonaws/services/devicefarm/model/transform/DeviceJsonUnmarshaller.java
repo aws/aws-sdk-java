@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("modelId", targetDepth)) {
+                    context.nextToken();
+                    device.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("formFactor", targetDepth)) {
                     context.nextToken();
                     device.setFormFactor(context.getUnmarshaller(String.class).unmarshall(context));
@@ -108,6 +112,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setRemoteAccessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("remoteDebugEnabled", targetDepth)) {
+                    context.nextToken();
+                    device.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("fleetType", targetDepth)) {
                     context.nextToken();
                     device.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -115,6 +123,14 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 if (context.testExpression("fleetName", targetDepth)) {
                     context.nextToken();
                     device.setFleetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("instances", targetDepth)) {
+                    context.nextToken();
+                    device.setInstances(new ListUnmarshaller<DeviceInstance>(DeviceInstanceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("availability", targetDepth)) {
+                    context.nextToken();
+                    device.setAvailability(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

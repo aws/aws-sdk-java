@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,30 +14,97 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about the status and settings of the GCM channel for an application. The GCM channel enables
+ * Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud
+ * Messaging (GCM), service.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMChannelResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GCMChannelResponse implements Serializable, Cloneable {
+public class GCMChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The unique identifier for the application that the GCM channel applies to.
+     * </p>
+     */
     private String applicationId;
-    /** When was this segment created */
+    /**
+     * <p>
+     * The date and time when the GCM channel was enabled.
+     * </p>
+     */
     private String creationDate;
-    /** The GCM API key from Google. */
+    /**
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
+     */
     private String credential;
-
+    /**
+     * <p>
+     * Specifies whether the GCM channel is enabled for the application.
+     * </p>
+     */
+    private Boolean enabled;
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     */
+    private Boolean hasCredential;
+    /**
+     * <p>
+     * (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
+     * </p>
+     */
     private String id;
-    /** Is this channel archived */
+    /**
+     * <p>
+     * Specifies whether the GCM channel is archived.
+     * </p>
+     */
     private Boolean isArchived;
-    /** Who last updated this entry */
+    /**
+     * <p>
+     * The user who last modified the GCM channel.
+     * </p>
+     */
     private String lastModifiedBy;
-    /** Last date this was updated */
+    /**
+     * <p>
+     * The date and time when the GCM channel was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** The platform type. Will be GCM */
+    /**
+     * <p>
+     * The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
+     * </p>
+     */
     private String platform;
-    /** Version of channel */
+    /**
+     * <p>
+     * The current version of the GCM channel.
+     * </p>
+     */
     private Integer version;
 
     /**
+     * <p>
+     * The unique identifier for the application that the GCM channel applies to.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application that the GCM channel applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -45,7 +112,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier for the application that the GCM channel applies to.
+     * </p>
+     * 
+     * @return The unique identifier for the application that the GCM channel applies to.
      */
 
     public String getApplicationId() {
@@ -53,7 +124,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier for the application that the GCM channel applies to.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application that the GCM channel applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,10 +139,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the GCM channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time when the GCM channel was enabled.
      */
 
     public void setCreationDate(String creationDate) {
@@ -74,9 +152,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the GCM channel was enabled.
+     * </p>
      * 
-     * @return When was this segment created
+     * @return The date and time when the GCM channel was enabled.
      */
 
     public String getCreationDate() {
@@ -84,10 +164,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * When was this segment created
+     * <p>
+     * The date and time when the GCM channel was enabled.
+     * </p>
      * 
      * @param creationDate
-     *        When was this segment created
+     *        The date and time when the GCM channel was enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,10 +179,14 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The GCM API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
      * @param credential
-     *        The GCM API key from Google.
+     *        The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *        Google services.
      */
 
     public void setCredential(String credential) {
@@ -108,9 +194,13 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The GCM API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
-     * @return The GCM API key from Google.
+     * @return The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *         Google services.
      */
 
     public String getCredential() {
@@ -118,10 +208,14 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The GCM API key from Google.
+     * <p>
+     * The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with Google
+     * services.
+     * </p>
      * 
      * @param credential
-     *        The GCM API key from Google.
+     *        The API key, also referred to as a <i>server key</i>, that you received from Google to communicate with
+     *        Google services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +225,116 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether the GCM channel is enabled for the application.
+     * </p>
+     * 
+     * @param enabled
+     *        Specifies whether the GCM channel is enabled for the application.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the GCM channel is enabled for the application.
+     * </p>
+     * 
+     * @return Specifies whether the GCM channel is enabled for the application.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the GCM channel is enabled for the application.
+     * </p>
+     * 
+     * @param enabled
+     *        Specifies whether the GCM channel is enabled for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelResponse withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the GCM channel is enabled for the application.
+     * </p>
+     * 
+     * @return Specifies whether the GCM channel is enabled for the application.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @param hasCredential
+     *        (Not used) This property is retained only for backward compatibility.
+     */
+
+    public void setHasCredential(Boolean hasCredential) {
+        this.hasCredential = hasCredential;
+    }
+
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @return (Not used) This property is retained only for backward compatibility.
+     */
+
+    public Boolean getHasCredential() {
+        return this.hasCredential;
+    }
+
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @param hasCredential
+     *        (Not used) This property is retained only for backward compatibility.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelResponse withHasCredential(Boolean hasCredential) {
+        setHasCredential(hasCredential);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Not used) This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @return (Not used) This property is retained only for backward compatibility.
+     */
+
+    public Boolean isHasCredential() {
+        return this.hasCredential;
+    }
+
+    /**
+     * <p>
+     * (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
+     * </p>
+     * 
      * @param id
+     *        (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
      */
 
     public void setId(String id) {
@@ -139,7 +342,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
+     * </p>
+     * 
+     * @return (Deprecated) An identifier for the GCM channel. This property is retained only for backward
+     *         compatibility.
      */
 
     public String getId() {
@@ -147,7 +355,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
+     * </p>
+     * 
      * @param id
+     *        (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,10 +370,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the GCM channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the GCM channel is archived.
      */
 
     public void setIsArchived(Boolean isArchived) {
@@ -168,9 +383,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the GCM channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the GCM channel is archived.
      */
 
     public Boolean getIsArchived() {
@@ -178,10 +395,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the GCM channel is archived.
+     * </p>
      * 
      * @param isArchived
-     *        Is this channel archived
+     *        Specifies whether the GCM channel is archived.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,9 +410,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Is this channel archived
+     * <p>
+     * Specifies whether the GCM channel is archived.
+     * </p>
      * 
-     * @return Is this channel archived
+     * @return Specifies whether the GCM channel is archived.
      */
 
     public Boolean isArchived() {
@@ -201,10 +422,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the GCM channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the GCM channel.
      */
 
     public void setLastModifiedBy(String lastModifiedBy) {
@@ -212,9 +435,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the GCM channel.
+     * </p>
      * 
-     * @return Who last updated this entry
+     * @return The user who last modified the GCM channel.
      */
 
     public String getLastModifiedBy() {
@@ -222,10 +447,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Who last updated this entry
+     * <p>
+     * The user who last modified the GCM channel.
+     * </p>
      * 
      * @param lastModifiedBy
-     *        Who last updated this entry
+     *        The user who last modified the GCM channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,10 +462,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the GCM channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time when the GCM channel was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -246,9 +475,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the GCM channel was last modified.
+     * </p>
      * 
-     * @return Last date this was updated
+     * @return The date and time when the GCM channel was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -256,10 +487,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Last date this was updated
+     * <p>
+     * The date and time when the GCM channel was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        Last date this was updated
+     *        The date and time when the GCM channel was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,10 +502,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The platform type. Will be GCM
+     * <p>
+     * The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
+     * </p>
      * 
      * @param platform
-     *        The platform type. Will be GCM
+     *        The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
      */
 
     public void setPlatform(String platform) {
@@ -280,9 +515,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The platform type. Will be GCM
+     * <p>
+     * The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
+     * </p>
      * 
-     * @return The platform type. Will be GCM
+     * @return The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
      */
 
     public String getPlatform() {
@@ -290,10 +527,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The platform type. Will be GCM
+     * <p>
+     * The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
+     * </p>
      * 
      * @param platform
-     *        The platform type. Will be GCM
+     *        The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,10 +542,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the GCM channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the GCM channel.
      */
 
     public void setVersion(Integer version) {
@@ -314,9 +555,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the GCM channel.
+     * </p>
      * 
-     * @return Version of channel
+     * @return The current version of the GCM channel.
      */
 
     public Integer getVersion() {
@@ -324,10 +567,12 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Version of channel
+     * <p>
+     * The current version of the GCM channel.
+     * </p>
      * 
      * @param version
-     *        Version of channel
+     *        The current version of the GCM channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,7 +582,8 @@ public class GCMChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -353,6 +599,10 @@ public class GCMChannelResponse implements Serializable, Cloneable {
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCredential() != null)
             sb.append("Credential: ").append(getCredential()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getHasCredential() != null)
+            sb.append("HasCredential: ").append(getHasCredential()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsArchived() != null)
@@ -391,6 +641,14 @@ public class GCMChannelResponse implements Serializable, Cloneable {
             return false;
         if (other.getCredential() != null && other.getCredential().equals(this.getCredential()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getHasCredential() == null ^ this.getHasCredential() == null)
+            return false;
+        if (other.getHasCredential() != null && other.getHasCredential().equals(this.getHasCredential()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -426,6 +684,8 @@ public class GCMChannelResponse implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getCredential() == null) ? 0 : getCredential().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getHasCredential() == null) ? 0 : getHasCredential().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
@@ -442,5 +702,11 @@ public class GCMChannelResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.GCMChannelResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

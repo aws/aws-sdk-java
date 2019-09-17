@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -44,11 +44,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      */
 
     public void setProvisioningArtifactDetail(ProvisioningArtifactDetail provisioningArtifactDetail) {
@@ -57,10 +57,10 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
-     * @return The resulting detailed provisioning artifact information.
+     * @return Information about the provisioning artifact.
      */
 
     public ProvisioningArtifactDetail getProvisioningArtifactDetail() {
@@ -69,11 +69,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
-     * @return Additional information about the provisioning artifact update request.
+     * @return The URL of the CloudFormation template in Amazon S3.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -96,11 +96,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact update request.
+     *        The URL of the CloudFormation template in Amazon S3.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -109,11 +109,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact update request.
+     *        The URL of the CloudFormation template in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +197,7 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -212,12 +212,13 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      */
 
     public UpdateProvisioningArtifactResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -281,4 +282,5 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

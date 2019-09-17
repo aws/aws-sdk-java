@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContainerDetail implements Serializable, Cloneable {
+public class ContainerDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -66,6 +68,12 @@ public class ContainerDetail implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      */
     private java.util.List<KeyValuePair> environment;
     /**
@@ -118,6 +126,46 @@ public class ContainerDetail implements Serializable, Cloneable {
      * </p>
      */
     private String containerInstanceArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     * </p>
+     */
+    private String taskArn;
+    /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     */
+    private String logStreamName;
+    /**
+     * <p>
+     * The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * The network interfaces associated with the job.
+     * </p>
+     */
+    private java.util.List<NetworkInterface> networkInterfaces;
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     */
+    private java.util.List<ResourceRequirement> resourceRequirements;
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
+     * </p>
+     */
+    private LinuxParameters linuxParameters;
 
     /**
      * <p>
@@ -423,8 +471,18 @@ public class ContainerDetail implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
-     * @return The environment variables to pass to a container.
+     * @return The environment variables to pass to a container.</p> <note>
+     *         <p>
+     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *         variables that are set by the AWS Batch service.
+     *         </p>
      */
 
     public java.util.List<KeyValuePair> getEnvironment() {
@@ -435,9 +493,19 @@ public class ContainerDetail implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      */
 
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
@@ -453,6 +521,12 @@ public class ContainerDetail implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
@@ -460,7 +534,11 @@ public class ContainerDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,9 +556,19 @@ public class ContainerDetail implements Serializable, Cloneable {
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -908,7 +996,334 @@ public class ContainerDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     * </p>
+     * 
+     * @param taskArn
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     */
+
+    public void setTaskArn(String taskArn) {
+        this.taskArn = taskArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *         container attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     */
+
+    public String getTaskArn() {
+        return this.taskArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     * </p>
+     * 
+     * @param taskArn
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withTaskArn(String taskArn) {
+        setTaskArn(taskArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
+     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        <code>RUNNING</code> status.
+     */
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch
+     *         jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach
+     *         the <code>RUNNING</code> status.
+     */
+
+    public String getLogStreamName() {
+        return this.logStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @param logStreamName
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
+     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        <code>RUNNING</code> status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withLogStreamName(String logStreamName) {
+        setLogStreamName(logStreamName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type of the underlying host infrastructure of a multi-node parallel job.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * </p>
+     * 
+     * @return The instance type of the underlying host infrastructure of a multi-node parallel job.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type of the underlying host infrastructure of a multi-node parallel job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job.
+     * </p>
+     * 
+     * @return The network interfaces associated with the job.
+     */
+
+    public java.util.List<NetworkInterface> getNetworkInterfaces() {
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new java.util.ArrayList<NetworkInterface>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withNetworkInterfaces(NetworkInterface... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new java.util.ArrayList<NetworkInterface>(networkInterfaces.length));
+        }
+        for (NetworkInterface ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the job.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @return The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *         <code>GPU</code>.
+     */
+
+    public java.util.List<ResourceRequirement> getResourceRequirements() {
+        return resourceRequirements;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     */
+
+    public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        if (resourceRequirements == null) {
+            this.resourceRequirements = null;
+            return;
+        }
+
+        this.resourceRequirements = new java.util.ArrayList<ResourceRequirement>(resourceRequirements);
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRequirements(java.util.Collection)} or {@link #withResourceRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withResourceRequirements(ResourceRequirement... resourceRequirements) {
+        if (this.resourceRequirements == null) {
+            setResourceRequirements(new java.util.ArrayList<ResourceRequirement>(resourceRequirements.length));
+        }
+        for (ResourceRequirement ele : resourceRequirements) {
+            this.resourceRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     * <code>GPU</code>.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. Currently, the only supported resource is
+     *        <code>GPU</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        setResourceRequirements(resourceRequirements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as details for device mappings.
+     */
+
+    public void setLinuxParameters(LinuxParameters linuxParameters) {
+        this.linuxParameters = linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
+     * </p>
+     * 
+     * @return Linux-specific modifications that are applied to the container, such as details for device mappings.
+     */
+
+    public LinuxParameters getLinuxParameters() {
+        return this.linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as details for device mappings.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as details for device mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withLinuxParameters(LinuxParameters linuxParameters) {
+        setLinuxParameters(linuxParameters);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -947,7 +1362,19 @@ public class ContainerDetail implements Serializable, Cloneable {
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn());
+            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
+        if (getTaskArn() != null)
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
+        if (getLogStreamName() != null)
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getResourceRequirements() != null)
+            sb.append("ResourceRequirements: ").append(getResourceRequirements()).append(",");
+        if (getLinuxParameters() != null)
+            sb.append("LinuxParameters: ").append(getLinuxParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1022,6 +1449,30 @@ public class ContainerDetail implements Serializable, Cloneable {
             return false;
         if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false)
             return false;
+        if (other.getTaskArn() == null ^ this.getTaskArn() == null)
+            return false;
+        if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
+            return false;
+        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
+            return false;
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
+        if (other.getResourceRequirements() == null ^ this.getResourceRequirements() == null)
+            return false;
+        if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
+            return false;
+        if (other.getLinuxParameters() == null ^ this.getLinuxParameters() == null)
+            return false;
+        if (other.getLinuxParameters() != null && other.getLinuxParameters().equals(this.getLinuxParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1045,6 +1496,12 @@ public class ContainerDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
+        hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         return hashCode;
     }
 
@@ -1055,5 +1512,11 @@ public class ContainerDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.ContainerDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

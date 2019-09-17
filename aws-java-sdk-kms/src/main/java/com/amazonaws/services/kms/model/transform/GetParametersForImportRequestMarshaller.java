@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetParametersForImportRequest Marshaller
+ * GetParametersForImportRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetParametersForImportRequestMarshaller implements Marshaller<Request<GetParametersForImportRequest>, GetParametersForImportRequest> {
+@SdkInternalApi
+public class GetParametersForImportRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<String> WRAPPINGALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WrappingAlgorithm").build();
+    private static final MarshallingInfo<String> WRAPPINGKEYSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WrappingKeySpec").build();
 
-    public GetParametersForImportRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetParametersForImportRequestMarshaller instance = new GetParametersForImportRequestMarshaller();
+
+    public static GetParametersForImportRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetParametersForImportRequest> marshall(GetParametersForImportRequest getParametersForImportRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetParametersForImportRequest getParametersForImportRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getParametersForImportRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetParametersForImportRequest> request = new DefaultRequest<GetParametersForImportRequest>(getParametersForImportRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.GetParametersForImport");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getParametersForImportRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(getParametersForImportRequest.getKeyId());
-            }
-            if (getParametersForImportRequest.getWrappingAlgorithm() != null) {
-                jsonGenerator.writeFieldName("WrappingAlgorithm").writeValue(getParametersForImportRequest.getWrappingAlgorithm());
-            }
-            if (getParametersForImportRequest.getWrappingKeySpec() != null) {
-                jsonGenerator.writeFieldName("WrappingKeySpec").writeValue(getParametersForImportRequest.getWrappingKeySpec());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getParametersForImportRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(getParametersForImportRequest.getWrappingAlgorithm(), WRAPPINGALGORITHM_BINDING);
+            protocolMarshaller.marshall(getParametersForImportRequest.getWrappingKeySpec(), WRAPPINGKEYSPEC_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

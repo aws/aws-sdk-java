@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             request.addParameter("Source", StringUtils.fromString(sendRawEmailRequest.getSource()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> destinationsList = (com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest
-                .getDestinations();
-        if (!destinationsList.isEmpty() || !destinationsList.isAutoConstruct()) {
+        if (!sendRawEmailRequest.getDestinations().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest.getDestinations()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> destinationsList = (com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest
+                    .getDestinations();
             int destinationsListIndex = 1;
 
             for (String destinationsListValue : destinationsList) {
@@ -57,11 +58,13 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             }
         }
 
-        RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
-        if (rawMessage != null) {
+        {
+            RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
+            if (rawMessage != null) {
 
-            if (rawMessage.getData() != null) {
-                request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                if (rawMessage.getData() != null) {
+                    request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                }
             }
         }
 
@@ -77,8 +80,8 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             request.addParameter("ReturnPathArn", StringUtils.fromString(sendRawEmailRequest.getReturnPathArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!sendRawEmailRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags();
             int tagsListIndex = 1;
 
             for (MessageTag tagsListValue : tagsList) {

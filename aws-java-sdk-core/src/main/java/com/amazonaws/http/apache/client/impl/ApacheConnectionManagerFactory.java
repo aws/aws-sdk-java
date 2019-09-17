@@ -17,10 +17,14 @@ package com.amazonaws.http.apache.client.impl;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.DelegatingDnsResolver;
+import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.http.client.ConnectionManagerFactory;
+import com.amazonaws.http.conn.SdkPlainSocketFactory;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.internal.SdkSSLContext;
+import javax.net.ssl.KeyManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpHost;
@@ -31,7 +35,6 @@ import org.apache.http.config.SocketConfig;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
-import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.conn.DefaultSchemePortResolver;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -49,8 +52,6 @@ import java.net.UnknownHostException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
-
-import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 
 /**
  * Factory class to create connection manager used by the apache client.
@@ -73,6 +74,7 @@ public class ApacheConnectionManagerFactory implements
                 settings.getConnectionPoolTTL(),
                 TimeUnit.MILLISECONDS);
 
+        cm.setValidateAfterInactivity(settings.getValidateAfterInactivityMillis());
         cm.setDefaultMaxPerRoute(settings.getMaxConnections());
         cm.setMaxTotal(settings.getMaxConnections());
         cm.setDefaultSocketConfig(buildSocketConfig(settings));
@@ -87,10 +89,9 @@ public class ApacheConnectionManagerFactory implements
         return sslsf != null
                 ? sslsf
                 : new SdkTLSSocketFactory(
-                SdkSSLContext.getPreferredSSLContext(settings.getSecureRandom()),
+                SdkSSLContext.getPreferredSSLContext(getKeyManagers(settings), settings.getSecureRandom()),
                 getHostNameVerifier(settings));
     }
-
 
     private SocketConfig buildSocketConfig(HttpClientSettings settings) {
         return SocketConfig.custom()
@@ -110,6 +111,14 @@ public class ApacheConnectionManagerFactory implements
                 : ConnectionConfig.custom()
                 .setBufferSize(socketBufferSize)
                 .build();
+    }
+
+    private KeyManager[] getKeyManagers(HttpClientSettings settings) {
+        TlsKeyManagersProvider provider = settings.getTlsKeyMangersProvider();
+        if (provider == null) {
+            provider = new SystemPropertyTlsKeyManagersProvider();
+        }
+        return provider.getKeyManagers();
     }
 
     private HostnameVerifier getHostNameVerifier
@@ -136,7 +145,7 @@ public class ApacheConnectionManagerFactory implements
         }
 
         return RegistryBuilder.<ConnectionSocketFactory>create()
-                .register("http", PlainConnectionSocketFactory.getSocketFactory())
+                .register("http", new SdkPlainSocketFactory())
                 .register("https", sslSocketFactory)
                 .build();
     }

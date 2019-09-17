@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodbv2.document.internal;
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.toAttributeValueMap;
 import static com.amazonaws.services.dynamodbv2.document.internal.InternalUtils.toAttributeValues;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -69,11 +70,12 @@ public class BatchWriteItemImpl implements BatchWriteItemApi {
         final Collection<TableWriteItems> tableWriteItemsCol =
                 spec.getTableWriteItems();
         // Unprocessed items take precedence
-        Map<String, List<WriteRequest>> requestItems =
-                spec.getUnprocessedItems();
+        Map<String, List<WriteRequest>> requestItems = spec.getUnprocessedItems();
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed items
             requestItems = new LinkedHashMap<String, List<WriteRequest>>();
+        } else {
+            requestItems = new LinkedHashMap<String, List<WriteRequest>>(requestItems);
         }
         if (tableWriteItemsCol != null) {
             for (TableWriteItems tableWriteItems: tableWriteItemsCol) {

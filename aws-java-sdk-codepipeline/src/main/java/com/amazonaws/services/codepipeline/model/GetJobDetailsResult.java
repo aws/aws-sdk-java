@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a get job details action.
+ * Represents the output of a <code>GetJobDetails</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails" target="_top">AWS API
@@ -32,7 +32,8 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      */
@@ -44,15 +45,16 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @param jobDetails
      *        The details of the job.</p> <note>
      *        <p>
-     *        If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *        credentials.
+     *        If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *        new credentials.
      *        </p>
      */
 
@@ -66,14 +68,15 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @return The details of the job.</p> <note>
      *         <p>
-     *         If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *         credentials.
+     *         If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *         new credentials.
      *         </p>
      */
 
@@ -87,15 +90,16 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * <note>
      * <p>
-     * If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new credentials.
+     * If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new
+     * credentials.
      * </p>
      * </note>
      * 
      * @param jobDetails
      *        The details of the job.</p> <note>
      *        <p>
-     *        If AWSSessionCredentials is used, a long-running job can call GetJobDetails again to obtain new
-     *        credentials.
+     *        If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain
+     *        new credentials.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -106,7 +110,8 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -156,4 +161,5 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

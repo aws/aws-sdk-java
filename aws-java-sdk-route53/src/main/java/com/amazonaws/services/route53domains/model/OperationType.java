@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,16 @@ public enum OperationType {
     UPDATE_DOMAIN_CONTACT("UPDATE_DOMAIN_CONTACT"),
     UPDATE_NAMESERVER("UPDATE_NAMESERVER"),
     CHANGE_PRIVACY_PROTECTION("CHANGE_PRIVACY_PROTECTION"),
-    DOMAIN_LOCK("DOMAIN_LOCK");
+    DOMAIN_LOCK("DOMAIN_LOCK"),
+    ENABLE_AUTORENEW("ENABLE_AUTORENEW"),
+    DISABLE_AUTORENEW("DISABLE_AUTORENEW"),
+    ADD_DNSSEC("ADD_DNSSEC"),
+    REMOVE_DNSSEC("REMOVE_DNSSEC"),
+    EXPIRE_DOMAIN("EXPIRE_DOMAIN"),
+    TRANSFER_OUT_DOMAIN("TRANSFER_OUT_DOMAIN"),
+    CHANGE_DOMAIN_OWNER("CHANGE_DOMAIN_OWNER"),
+    RENEW_DOMAIN("RENEW_DOMAIN"),
+    PUSH_DOMAIN("PUSH_DOMAIN");
 
     private String value;
 
@@ -45,6 +54,9 @@ public enum OperationType {
      * @param value
      *        real value
      * @return OperationType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static OperationType fromValue(String value) {
         if (value == null || "".equals(value)) {

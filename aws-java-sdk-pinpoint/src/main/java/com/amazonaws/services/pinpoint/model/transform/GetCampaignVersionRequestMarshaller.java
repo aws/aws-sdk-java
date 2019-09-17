@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,56 +12,50 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetCampaignVersionRequest Marshaller
+ * GetCampaignVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetCampaignVersionRequestMarshaller implements Marshaller<Request<GetCampaignVersionRequest>, GetCampaignVersionRequest> {
+@SdkInternalApi
+public class GetCampaignVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> CAMPAIGNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("campaign-id").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("version").build();
 
-    public GetCampaignVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetCampaignVersionRequestMarshaller instance = new GetCampaignVersionRequestMarshaller();
+
+    public static GetCampaignVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetCampaignVersionRequest> marshall(GetCampaignVersionRequest getCampaignVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetCampaignVersionRequest getCampaignVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getCampaignVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetCampaignVersionRequest> request = new DefaultRequest<GetCampaignVersionRequest>(getCampaignVersionRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/{version}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getCampaignVersionRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "campaign-id", getCampaignVersionRequest.getCampaignId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "version", getCampaignVersionRequest.getVersion());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getCampaignVersionRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getCampaignVersionRequest.getCampaignId(), CAMPAIGNID_BINDING);
+            protocolMarshaller.marshall(getCampaignVersionRequest.getVersion(), VERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

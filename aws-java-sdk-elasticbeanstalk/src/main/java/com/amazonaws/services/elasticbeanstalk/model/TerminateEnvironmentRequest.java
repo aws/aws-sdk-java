@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -226,7 +226,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -253,7 +253,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -286,7 +286,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -312,7 +312,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>
@@ -345,7 +345,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -372,7 +372,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *        For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *        Elastic Beanstalk User Guide. </a>
      *        </p>
      *        <p>
@@ -407,7 +407,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
+     * For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic
      * Beanstalk User Guide. </a>
      * </p>
      * <p>
@@ -433,7 +433,7 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     *         For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      *         Elastic Beanstalk User Guide. </a>
      *         </p>
      *         <p>
@@ -500,7 +500,8 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,111 +12,78 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TransferDomainRequest Marshaller
+ * TransferDomainRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransferDomainRequestMarshaller implements Marshaller<Request<TransferDomainRequest>, TransferDomainRequest> {
+@SdkInternalApi
+public class TransferDomainRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> IDNLANGCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdnLangCode").build();
+    private static final MarshallingInfo<Integer> DURATIONINYEARS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DurationInYears").build();
+    private static final MarshallingInfo<List> NAMESERVERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Nameservers").build();
+    private static final MarshallingInfo<String> AUTHCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AuthCode").build();
+    private static final MarshallingInfo<Boolean> AUTORENEW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoRenew").build();
+    private static final MarshallingInfo<StructuredPojo> ADMINCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminContact").build();
+    private static final MarshallingInfo<StructuredPojo> REGISTRANTCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrantContact").build();
+    private static final MarshallingInfo<StructuredPojo> TECHCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TechContact").build();
+    private static final MarshallingInfo<Boolean> PRIVACYPROTECTADMINCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectAdminContact").build();
+    private static final MarshallingInfo<Boolean> PRIVACYPROTECTREGISTRANTCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectRegistrantContact").build();
+    private static final MarshallingInfo<Boolean> PRIVACYPROTECTTECHCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectTechContact").build();
 
-    public TransferDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TransferDomainRequestMarshaller instance = new TransferDomainRequestMarshaller();
+
+    public static TransferDomainRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TransferDomainRequest> marshall(TransferDomainRequest transferDomainRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TransferDomainRequest transferDomainRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (transferDomainRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TransferDomainRequest> request = new DefaultRequest<TransferDomainRequest>(transferDomainRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.TransferDomain");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (transferDomainRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(transferDomainRequest.getDomainName());
-            }
-            if (transferDomainRequest.getIdnLangCode() != null) {
-                jsonGenerator.writeFieldName("IdnLangCode").writeValue(transferDomainRequest.getIdnLangCode());
-            }
-            if (transferDomainRequest.getDurationInYears() != null) {
-                jsonGenerator.writeFieldName("DurationInYears").writeValue(transferDomainRequest.getDurationInYears());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Nameserver> nameserversList = (com.amazonaws.internal.SdkInternalList<Nameserver>) transferDomainRequest
-                    .getNameservers();
-            if (!nameserversList.isEmpty() || !nameserversList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Nameservers");
-                jsonGenerator.writeStartArray();
-                for (Nameserver nameserversListValue : nameserversList) {
-                    if (nameserversListValue != null) {
-
-                        NameserverJsonMarshaller.getInstance().marshall(nameserversListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (transferDomainRequest.getAuthCode() != null) {
-                jsonGenerator.writeFieldName("AuthCode").writeValue(transferDomainRequest.getAuthCode());
-            }
-            if (transferDomainRequest.getAutoRenew() != null) {
-                jsonGenerator.writeFieldName("AutoRenew").writeValue(transferDomainRequest.getAutoRenew());
-            }
-            if (transferDomainRequest.getAdminContact() != null) {
-                jsonGenerator.writeFieldName("AdminContact");
-                ContactDetailJsonMarshaller.getInstance().marshall(transferDomainRequest.getAdminContact(), jsonGenerator);
-            }
-            if (transferDomainRequest.getRegistrantContact() != null) {
-                jsonGenerator.writeFieldName("RegistrantContact");
-                ContactDetailJsonMarshaller.getInstance().marshall(transferDomainRequest.getRegistrantContact(), jsonGenerator);
-            }
-            if (transferDomainRequest.getTechContact() != null) {
-                jsonGenerator.writeFieldName("TechContact");
-                ContactDetailJsonMarshaller.getInstance().marshall(transferDomainRequest.getTechContact(), jsonGenerator);
-            }
-            if (transferDomainRequest.getPrivacyProtectAdminContact() != null) {
-                jsonGenerator.writeFieldName("PrivacyProtectAdminContact").writeValue(transferDomainRequest.getPrivacyProtectAdminContact());
-            }
-            if (transferDomainRequest.getPrivacyProtectRegistrantContact() != null) {
-                jsonGenerator.writeFieldName("PrivacyProtectRegistrantContact").writeValue(transferDomainRequest.getPrivacyProtectRegistrantContact());
-            }
-            if (transferDomainRequest.getPrivacyProtectTechContact() != null) {
-                jsonGenerator.writeFieldName("PrivacyProtectTechContact").writeValue(transferDomainRequest.getPrivacyProtectTechContact());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(transferDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getIdnLangCode(), IDNLANGCODE_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getDurationInYears(), DURATIONINYEARS_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getNameservers(), NAMESERVERS_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getAuthCode(), AUTHCODE_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getAutoRenew(), AUTORENEW_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getAdminContact(), ADMINCONTACT_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getRegistrantContact(), REGISTRANTCONTACT_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getTechContact(), TECHCONTACT_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getPrivacyProtectAdminContact(), PRIVACYPROTECTADMINCONTACT_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getPrivacyProtectRegistrantContact(), PRIVACYPROTECTREGISTRANTCONTACT_BINDING);
+            protocolMarshaller.marshall(transferDomainRequest.getPrivacyProtectTechContact(), PRIVACYPROTECTTECHCONTACT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

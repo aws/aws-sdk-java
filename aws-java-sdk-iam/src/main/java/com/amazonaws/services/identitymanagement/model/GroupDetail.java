@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an IAM group, including all of the group's policies.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.
+ * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GroupDetail" target="_top">AWS API
@@ -32,8 +32,8 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      */
     private String path;
@@ -46,8 +46,8 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      */
     private String groupId;
@@ -76,13 +76,13 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      */
 
@@ -93,12 +93,12 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @return The path to the group. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>Using IAM</i> guide.
      */
 
@@ -109,13 +109,13 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,13 +168,13 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param groupId
      *        The stable and unique string identifying the group. For more information about IDs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      */
 
@@ -185,12 +185,12 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @return The stable and unique string identifying the group. For more information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>Using IAM</i> guide.
      */
 
@@ -201,13 +201,13 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param groupId
      *        The stable and unique string identifying the group. For more information about IDs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -436,7 +436,8 @@ public class GroupDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -528,4 +529,5 @@ public class GroupDetail implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

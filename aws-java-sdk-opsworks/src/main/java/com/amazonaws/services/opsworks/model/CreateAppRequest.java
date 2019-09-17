@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,8 +58,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      */
@@ -100,19 +100,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instance. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
-     * message, "Environment: is too large (maximum is 10KB)."
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message,
+     * "Environment: is too large (maximum is 20KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
-     * you cannot modify the stack's Chef version.
+     * If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      * </p>
      * </note>
      */
@@ -354,16 +353,16 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      * 
      * @param type
      *        The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     *        associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of
-     *        the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own
-     *        Deploy recipes, specify <code>other</code>.
+     *        associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are
+     *        members of the corresponding layer. If your app isn't one of the standard types, or you prefer to
+     *        implement your own Deploy recipes, specify <code>other</code>.
      * @see AppType
      */
 
@@ -374,15 +373,15 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      * 
      * @return The app type. Each supported type is associated with a particular layer. For example, PHP applications
-     *         are associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members
-     *         of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your
-     *         own Deploy recipes, specify <code>other</code>.
+     *         are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are
+     *         members of the corresponding layer. If your app isn't one of the standard types, or you prefer to
+     *         implement your own Deploy recipes, specify <code>other</code>.
      * @see AppType
      */
 
@@ -393,16 +392,16 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      * 
      * @param type
      *        The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     *        associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of
-     *        the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own
-     *        Deploy recipes, specify <code>other</code>.
+     *        associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are
+     *        members of the corresponding layer. If your app isn't one of the standard types, or you prefer to
+     *        implement your own Deploy recipes, specify <code>other</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
@@ -415,42 +414,42 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      * 
      * @param type
      *        The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     *        associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of
-     *        the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own
-     *        Deploy recipes, specify <code>other</code>.
+     *        associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are
+     *        members of the corresponding layer. If your app isn't one of the standard types, or you prefer to
+     *        implement your own Deploy recipes, specify <code>other</code>.
      * @see AppType
      */
 
     public void setType(AppType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
      * The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     * associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of the
-     * corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
+     * associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of
+     * the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy
      * recipes, specify <code>other</code>.
      * </p>
      * 
      * @param type
      *        The app type. Each supported type is associated with a particular layer. For example, PHP applications are
-     *        associated with a PHP layer. AWS OpsWorks deploys an application to those instances that are members of
-     *        the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own
-     *        Deploy recipes, specify <code>other</code>.
+     *        associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are
+     *        members of the corresponding layer. If your app isn't one of the standard types, or you prefer to
+     *        implement your own Deploy recipes, specify <code>other</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
 
     public CreateAppRequest withType(AppType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -736,37 +735,35 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instance. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
-     * message, "Environment: is too large (maximum is 10KB)."
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message,
+     * "Environment: is too large (maximum is 20KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
-     * you cannot modify the stack's Chef version.
+     * If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
      * @return An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *         with the app. After you deploy the app, these variables are defined on the associated app server
      *         instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *         "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *         > Environment Variables</a>.</p>
      *         <p>
      *         There is no specific limit on the number of environment variables. However, the size of the associated
      *         data structure - which includes the variables' names, values, and protected flag values - cannot exceed
-     *         10 KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
-     *         exception with the message, "Environment: is too large (maximum is 10KB)."
+     *         20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with
+     *         the message, "Environment: is too large (maximum is 20KB)."
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
-     *         variables, you cannot modify the stack's Chef version.
+     *         If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      *         </p>
      */
 
@@ -782,19 +779,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instance. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
-     * message, "Environment: is too large (maximum is 10KB)."
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message,
+     * "Environment: is too large (maximum is 20KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
-     * you cannot modify the stack's Chef version.
+     * If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
@@ -802,18 +798,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server instance.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
-     *        exception with the message, "Environment: is too large (maximum is 10KB)."
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     *        message, "Environment: is too large (maximum is 20KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
-     *        variables, you cannot modify the stack's Chef version.
+     *        If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      *        </p>
      */
 
@@ -831,19 +826,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instance. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
-     * message, "Environment: is too large (maximum is 10KB)."
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message,
+     * "Environment: is too large (maximum is 20KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
-     * you cannot modify the stack's Chef version.
+     * If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * <p>
@@ -856,18 +850,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server instance.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
-     *        exception with the message, "Environment: is too large (maximum is 10KB)."
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     *        message, "Environment: is too large (maximum is 20KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
-     *        variables, you cannot modify the stack's Chef version.
+     *        If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -887,19 +880,18 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instance. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
-     * message, "Environment: is too large (maximum is 10KB)."
+     * structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message,
+     * "Environment: is too large (maximum is 20KB)."
      * </p>
      * <note>
      * <p>
-     * This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment variables,
-     * you cannot modify the stack's Chef version.
+     * If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      * </p>
      * </note>
      * 
@@ -907,18 +899,17 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server instance.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>.</p>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases. Exceeding it will cause an
-     *        exception with the message, "Environment: is too large (maximum is 10KB)."
+     *        data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the
+     *        message, "Environment: is too large (maximum is 20KB)."
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is supported only by Chef 11.10 stacks. If you have specified one or more environment
-     *        variables, you cannot modify the stack's Chef version.
+     *        If you have specified one or more environment variables, you cannot modify the stack's Chef version.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -929,7 +920,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

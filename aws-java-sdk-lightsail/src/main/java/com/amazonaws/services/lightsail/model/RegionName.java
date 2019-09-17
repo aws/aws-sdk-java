@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,10 +21,14 @@ import javax.annotation.Generated;
 public enum RegionName {
 
     UsEast1("us-east-1"),
+    UsEast2("us-east-2"),
     UsWest1("us-west-1"),
     UsWest2("us-west-2"),
     EuWest1("eu-west-1"),
+    EuWest2("eu-west-2"),
+    EuWest3("eu-west-3"),
     EuCentral1("eu-central-1"),
+    CaCentral1("ca-central-1"),
     ApSouth1("ap-south-1"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
@@ -48,6 +52,9 @@ public enum RegionName {
      * @param value
      *        real value
      * @return RegionName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static RegionName fromValue(String value) {
         if (value == null || "".equals(value)) {

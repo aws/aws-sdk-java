@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,84 +14,61 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ScheduleLambdaFunction</code> decision.
+ * Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code> within the list of decisions
+ * <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.
  * </p>
- * <p>
- * <b>Access Control</b>
- * </p>
- * <p>
- * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
- * </p>
- * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
- * <ul>
- * <li><code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.</li>
- * <li><code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.</li>
- * <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li>
- * </ul>
- * </li>
- * </ul>
- * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the
- * specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
- * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ScheduleLambdaFunctionDecisionAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, Cloneable {
+public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The SWF <code>id</code> of the AWS Lambda task.
-     * </p>
-     * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * A string that identifies the Lambda function execution in the event history.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * <b>Required.</b> The name of the AWS Lambda function to invoke.
+     * The name, or ARN, of the Lambda function to schedule.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The input provided to the AWS Lambda function.
+     * The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     */
+    private String control;
+    /**
+     * <p>
+     * The optional input data to be supplied to the Lambda function.
      * </p>
      */
     private String input;
     /**
      * <p>
-     * If set, specifies the maximum duration the function may take to execute.
+     * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
+     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
      * </p>
      */
     private String startToCloseTimeout;
 
     /**
      * <p>
-     * <b>Required.</b> The SWF <code>id</code> of the AWS Lambda task.
-     * </p>
-     * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * A string that identifies the Lambda function execution in the event history.
      * </p>
      * 
      * @param id
-     *        Required.</b> The SWF <code>id</code> of the AWS Lambda task.</p>
-     *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|
+     *        A string that identifies the Lambda function execution in the event history.
      */
 
     public void setId(String id) {
@@ -100,18 +77,10 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * <b>Required.</b> The SWF <code>id</code> of the AWS Lambda task.
-     * </p>
-     * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * A string that identifies the Lambda function execution in the event history.
      * </p>
      * 
-     * @return Required.</b> The SWF <code>id</code> of the AWS Lambda task.</p>
-     *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|
+     * @return A string that identifies the Lambda function execution in the event history.
      */
 
     public String getId() {
@@ -120,19 +89,11 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * <b>Required.</b> The SWF <code>id</code> of the AWS Lambda task.
-     * </p>
-     * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * A string that identifies the Lambda function execution in the event history.
      * </p>
      * 
      * @param id
-     *        Required.</b> The SWF <code>id</code> of the AWS Lambda task.</p>
-     *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|
+     *        A string that identifies the Lambda function execution in the event history.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +104,11 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * <b>Required.</b> The name of the AWS Lambda function to invoke.
+     * The name, or ARN, of the Lambda function to schedule.
      * </p>
      * 
      * @param name
-     *        Required.
+     *        The name, or ARN, of the Lambda function to schedule.
      */
 
     public void setName(String name) {
@@ -156,10 +117,10 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * <b>Required.</b> The name of the AWS Lambda function to invoke.
+     * The name, or ARN, of the Lambda function to schedule.
      * </p>
      * 
-     * @return Required.
+     * @return The name, or ARN, of the Lambda function to schedule.
      */
 
     public String getName() {
@@ -168,11 +129,11 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * <b>Required.</b> The name of the AWS Lambda function to invoke.
+     * The name, or ARN, of the Lambda function to schedule.
      * </p>
      * 
      * @param name
-     *        Required.
+     *        The name, or ARN, of the Lambda function to schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +144,57 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * The input provided to the AWS Lambda function.
+     * The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @param control
+     *        The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent
+     *        to the Lambda task.
+     */
+
+    public void setControl(String control) {
+        this.control = control;
+    }
+
+    /**
+     * <p>
+     * The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @return The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't
+     *         sent to the Lambda task.
+     */
+
+    public String getControl() {
+        return this.control;
+    }
+
+    /**
+     * <p>
+     * The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @param control
+     *        The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent
+     *        to the Lambda task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleLambdaFunctionDecisionAttributes withControl(String control) {
+        setControl(control);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional input data to be supplied to the Lambda function.
      * </p>
      * 
      * @param input
-     *        The input provided to the AWS Lambda function.
+     *        The optional input data to be supplied to the Lambda function.
      */
 
     public void setInput(String input) {
@@ -196,10 +203,10 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * The input provided to the AWS Lambda function.
+     * The optional input data to be supplied to the Lambda function.
      * </p>
      * 
-     * @return The input provided to the AWS Lambda function.
+     * @return The optional input data to be supplied to the Lambda function.
      */
 
     public String getInput() {
@@ -208,11 +215,11 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * The input provided to the AWS Lambda function.
+     * The optional input data to be supplied to the Lambda function.
      * </p>
      * 
      * @param input
-     *        The input provided to the AWS Lambda function.
+     *        The optional input data to be supplied to the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +230,14 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * If set, specifies the maximum duration the function may take to execute.
+     * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
+     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        If set, specifies the maximum duration the function may take to execute.
+     *        The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
+     *        started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s
+     *        is assumed.
      */
 
     public void setStartToCloseTimeout(String startToCloseTimeout) {
@@ -236,10 +246,13 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * If set, specifies the maximum duration the function may take to execute.
+     * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
+     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
      * </p>
      * 
-     * @return If set, specifies the maximum duration the function may take to execute.
+     * @return The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
+     *         started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of
+     *         300s is assumed.
      */
 
     public String getStartToCloseTimeout() {
@@ -248,11 +261,14 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
     /**
      * <p>
-     * If set, specifies the maximum duration the function may take to execute.
+     * The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started.
+     * This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        If set, specifies the maximum duration the function may take to execute.
+     *        The timeout value, in seconds, after which the Lambda function is considered to be failed once it has
+     *        started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s
+     *        is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +278,8 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -276,6 +293,8 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getControl() != null)
+            sb.append("Control: ").append(getControl()).append(",");
         if (getInput() != null)
             sb.append("Input: ").append(getInput()).append(",");
         if (getStartToCloseTimeout() != null)
@@ -302,6 +321,10 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getControl() == null ^ this.getControl() == null)
+            return false;
+        if (other.getControl() != null && other.getControl().equals(this.getControl()) == false)
+            return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
@@ -320,6 +343,7 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getControl() == null) ? 0 : getControl().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode());
         return hashCode;
@@ -332,5 +356,12 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ScheduleLambdaFunctionDecisionAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

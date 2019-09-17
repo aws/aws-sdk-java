@@ -19,7 +19,7 @@ public class ${className}{
       */
     private final ${metadata.syncInterface} client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("${className}");
 
     /**
       * Constructs a new ${className} with the
@@ -66,4 +66,8 @@ public class ${className}{
     }
 
     </#list>
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

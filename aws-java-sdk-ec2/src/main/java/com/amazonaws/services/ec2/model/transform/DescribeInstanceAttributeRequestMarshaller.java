@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,12 +40,12 @@ public class DescribeInstanceAttributeRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeInstanceAttributeRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(describeInstanceAttributeRequest.getInstanceId()));
-        }
-
         if (describeInstanceAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeInstanceAttributeRequest.getAttribute()));
+        }
+
+        if (describeInstanceAttributeRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(describeInstanceAttributeRequest.getInstanceId()));
         }
 
         return request;

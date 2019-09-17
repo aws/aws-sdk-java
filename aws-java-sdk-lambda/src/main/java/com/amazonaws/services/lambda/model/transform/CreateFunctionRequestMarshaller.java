@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,106 +12,91 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.Map;
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateFunctionRequest Marshaller
+ * CreateFunctionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateFunctionRequestMarshaller implements Marshaller<Request<CreateFunctionRequest>, CreateFunctionRequest> {
+@SdkInternalApi
+public class CreateFunctionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> RUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Runtime").build();
+    private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> HANDLER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Handler").build();
+    private static final MarshallingInfo<StructuredPojo> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Code").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<Integer> MEMORYSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemorySize").build();
+    private static final MarshallingInfo<Boolean> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Publish").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> DEADLETTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeadLetterConfig").build();
+    private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Environment").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKeyArn").build();
+    private static final MarshallingInfo<StructuredPojo> TRACINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TracingConfig").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> LAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Layers").build();
 
-    public CreateFunctionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateFunctionRequestMarshaller instance = new CreateFunctionRequestMarshaller();
+
+    public static CreateFunctionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateFunctionRequest> marshall(CreateFunctionRequest createFunctionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateFunctionRequest createFunctionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createFunctionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateFunctionRequest> request = new DefaultRequest<CreateFunctionRequest>(createFunctionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-03-31/functions";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createFunctionRequest.getFunctionName() != null) {
-                jsonGenerator.writeFieldName("FunctionName").writeValue(createFunctionRequest.getFunctionName());
-            }
-            if (createFunctionRequest.getRuntime() != null) {
-                jsonGenerator.writeFieldName("Runtime").writeValue(createFunctionRequest.getRuntime());
-            }
-            if (createFunctionRequest.getRole() != null) {
-                jsonGenerator.writeFieldName("Role").writeValue(createFunctionRequest.getRole());
-            }
-            if (createFunctionRequest.getHandler() != null) {
-                jsonGenerator.writeFieldName("Handler").writeValue(createFunctionRequest.getHandler());
-            }
-            if (createFunctionRequest.getCode() != null) {
-                jsonGenerator.writeFieldName("Code");
-                FunctionCodeJsonMarshaller.getInstance().marshall(createFunctionRequest.getCode(), jsonGenerator);
-            }
-            if (createFunctionRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createFunctionRequest.getDescription());
-            }
-            if (createFunctionRequest.getTimeout() != null) {
-                jsonGenerator.writeFieldName("Timeout").writeValue(createFunctionRequest.getTimeout());
-            }
-            if (createFunctionRequest.getMemorySize() != null) {
-                jsonGenerator.writeFieldName("MemorySize").writeValue(createFunctionRequest.getMemorySize());
-            }
-            if (createFunctionRequest.getPublish() != null) {
-                jsonGenerator.writeFieldName("Publish").writeValue(createFunctionRequest.getPublish());
-            }
-            if (createFunctionRequest.getVpcConfig() != null) {
-                jsonGenerator.writeFieldName("VpcConfig");
-                VpcConfigJsonMarshaller.getInstance().marshall(createFunctionRequest.getVpcConfig(), jsonGenerator);
-            }
-            if (createFunctionRequest.getDeadLetterConfig() != null) {
-                jsonGenerator.writeFieldName("DeadLetterConfig");
-                DeadLetterConfigJsonMarshaller.getInstance().marshall(createFunctionRequest.getDeadLetterConfig(), jsonGenerator);
-            }
-            if (createFunctionRequest.getEnvironment() != null) {
-                jsonGenerator.writeFieldName("Environment");
-                EnvironmentJsonMarshaller.getInstance().marshall(createFunctionRequest.getEnvironment(), jsonGenerator);
-            }
-            if (createFunctionRequest.getKMSKeyArn() != null) {
-                jsonGenerator.writeFieldName("KMSKeyArn").writeValue(createFunctionRequest.getKMSKeyArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createFunctionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getRuntime(), RUNTIME_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getHandler(), HANDLER_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getCode(), CODE_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getMemorySize(), MEMORYSIZE_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getPublish(), PUBLISH_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getDeadLetterConfig(), DEADLETTERCONFIG_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getKMSKeyArn(), KMSKEYARN_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getTracingConfig(), TRACINGCONFIG_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getLayers(), LAYERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

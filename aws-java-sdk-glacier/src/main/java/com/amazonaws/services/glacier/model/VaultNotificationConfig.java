@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.glacier.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VaultNotificationConfig implements Serializable, Cloneable {
+public class VaultNotificationConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -31,7 +33,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
     private String sNSTopic;
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      */
     private java.util.List<String> events;
@@ -50,8 +53,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
      * @param sNSTopic
      *        The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      */
     public VaultNotificationConfig(String sNSTopic, java.util.List<String> events) {
         setSNSTopic(sNSTopic);
@@ -100,10 +103,11 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
-     * @return A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon
+     * @return A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
      *         SNS topic.
      */
 
@@ -113,12 +117,13 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      */
 
     public void setEvents(java.util.Collection<String> events) {
@@ -132,7 +137,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -141,8 +147,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +164,13 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS topic.
+     * A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS
+     * topic.
      * </p>
      * 
      * @param events
-     *        A list of one or more events for which Amazon Glacier will send a notification to the specified Amazon SNS
-     *        topic.
+     *        A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon
+     *        SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,7 +180,8 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,5 +237,11 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.glacier.model.transform.VaultNotificationConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

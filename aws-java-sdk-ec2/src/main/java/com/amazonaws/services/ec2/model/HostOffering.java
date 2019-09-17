@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,34 @@ public class HostOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the offering.
+     * The currency of the offering.
      * </p>
      */
-    private String offeringId;
+    private String currencyCode;
+    /**
+     * <p>
+     * The duration of the offering (in seconds).
+     * </p>
+     */
+    private Integer duration;
+    /**
+     * <p>
+     * The hourly price of the offering.
+     * </p>
+     */
+    private String hourlyPrice;
     /**
      * <p>
      * The instance family of the offering.
      * </p>
      */
     private String instanceFamily;
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     */
+    private String offeringId;
     /**
      * <p>
      * The available payment option.
@@ -50,62 +68,157 @@ public class HostOffering implements Serializable, Cloneable {
      * </p>
      */
     private String upfrontPrice;
-    /**
-     * <p>
-     * The hourly price of the offering.
-     * </p>
-     */
-    private String hourlyPrice;
+
     /**
      * <p>
      * The currency of the offering.
      * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the offering.
+     * @see CurrencyCodeValues
      */
-    private String currencyCode;
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency of the offering.
+     * </p>
+     * 
+     * @return The currency of the offering.
+     * @see CurrencyCodeValues
+     */
+
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency of the offering.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CurrencyCodeValues
+     */
+
+    public HostOffering withCurrencyCode(String currencyCode) {
+        setCurrencyCode(currencyCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The currency of the offering.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the offering.
+     * @see CurrencyCodeValues
+     */
+
+    public void setCurrencyCode(CurrencyCodeValues currencyCode) {
+        withCurrencyCode(currencyCode);
+    }
+
+    /**
+     * <p>
+     * The currency of the offering.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CurrencyCodeValues
+     */
+
+    public HostOffering withCurrencyCode(CurrencyCodeValues currencyCode) {
+        this.currencyCode = currencyCode.toString();
+        return this;
+    }
+
     /**
      * <p>
      * The duration of the offering (in seconds).
      * </p>
-     */
-    private Integer duration;
-
-    /**
-     * <p>
-     * The ID of the offering.
-     * </p>
      * 
-     * @param offeringId
-     *        The ID of the offering.
+     * @param duration
+     *        The duration of the offering (in seconds).
      */
 
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
     /**
      * <p>
-     * The ID of the offering.
+     * The duration of the offering (in seconds).
      * </p>
      * 
-     * @return The ID of the offering.
+     * @return The duration of the offering (in seconds).
      */
 
-    public String getOfferingId() {
-        return this.offeringId;
+    public Integer getDuration() {
+        return this.duration;
     }
 
     /**
      * <p>
-     * The ID of the offering.
+     * The duration of the offering (in seconds).
      * </p>
      * 
-     * @param offeringId
-     *        The ID of the offering.
+     * @param duration
+     *        The duration of the offering (in seconds).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HostOffering withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
+    public HostOffering withDuration(Integer duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The hourly price of the offering.
+     * </p>
+     * 
+     * @param hourlyPrice
+     *        The hourly price of the offering.
+     */
+
+    public void setHourlyPrice(String hourlyPrice) {
+        this.hourlyPrice = hourlyPrice;
+    }
+
+    /**
+     * <p>
+     * The hourly price of the offering.
+     * </p>
+     * 
+     * @return The hourly price of the offering.
+     */
+
+    public String getHourlyPrice() {
+        return this.hourlyPrice;
+    }
+
+    /**
+     * <p>
+     * The hourly price of the offering.
+     * </p>
+     * 
+     * @param hourlyPrice
+     *        The hourly price of the offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostOffering withHourlyPrice(String hourlyPrice) {
+        setHourlyPrice(hourlyPrice);
         return this;
     }
 
@@ -146,6 +259,46 @@ public class HostOffering implements Serializable, Cloneable {
 
     public HostOffering withInstanceFamily(String instanceFamily) {
         setInstanceFamily(instanceFamily);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the offering.
+     */
+
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @return The ID of the offering.
+     */
+
+    public String getOfferingId() {
+        return this.offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostOffering withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
         return this;
     }
 
@@ -203,7 +356,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public void setPaymentOption(PaymentOption paymentOption) {
-        this.paymentOption = paymentOption.toString();
+        withPaymentOption(paymentOption);
     }
 
     /**
@@ -218,7 +371,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public HostOffering withPaymentOption(PaymentOption paymentOption) {
-        setPaymentOption(paymentOption);
+        this.paymentOption = paymentOption.toString();
         return this;
     }
 
@@ -263,160 +416,8 @@ public class HostOffering implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The hourly price of the offering.
-     * </p>
-     * 
-     * @param hourlyPrice
-     *        The hourly price of the offering.
-     */
-
-    public void setHourlyPrice(String hourlyPrice) {
-        this.hourlyPrice = hourlyPrice;
-    }
-
-    /**
-     * <p>
-     * The hourly price of the offering.
-     * </p>
-     * 
-     * @return The hourly price of the offering.
-     */
-
-    public String getHourlyPrice() {
-        return this.hourlyPrice;
-    }
-
-    /**
-     * <p>
-     * The hourly price of the offering.
-     * </p>
-     * 
-     * @param hourlyPrice
-     *        The hourly price of the offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HostOffering withHourlyPrice(String hourlyPrice) {
-        setHourlyPrice(hourlyPrice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The currency of the offering.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the offering.
-     * @see CurrencyCodeValues
-     */
-
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
-    }
-
-    /**
-     * <p>
-     * The currency of the offering.
-     * </p>
-     * 
-     * @return The currency of the offering.
-     * @see CurrencyCodeValues
-     */
-
-    public String getCurrencyCode() {
-        return this.currencyCode;
-    }
-
-    /**
-     * <p>
-     * The currency of the offering.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see CurrencyCodeValues
-     */
-
-    public HostOffering withCurrencyCode(String currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The currency of the offering.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the offering.
-     * @see CurrencyCodeValues
-     */
-
-    public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
-    }
-
-    /**
-     * <p>
-     * The currency of the offering.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see CurrencyCodeValues
-     */
-
-    public HostOffering withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The duration of the offering (in seconds).
-     * </p>
-     * 
-     * @param duration
-     *        The duration of the offering (in seconds).
-     */
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
-    /**
-     * <p>
-     * The duration of the offering (in seconds).
-     * </p>
-     * 
-     * @return The duration of the offering (in seconds).
-     */
-
-    public Integer getDuration() {
-        return this.duration;
-    }
-
-    /**
-     * <p>
-     * The duration of the offering (in seconds).
-     * </p>
-     * 
-     * @param duration
-     *        The duration of the offering (in seconds).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HostOffering withDuration(Integer duration) {
-        setDuration(duration);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -426,20 +427,20 @@ public class HostOffering implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
-        if (getInstanceFamily() != null)
-            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
-        if (getPaymentOption() != null)
-            sb.append("PaymentOption: ").append(getPaymentOption()).append(",");
-        if (getUpfrontPrice() != null)
-            sb.append("UpfrontPrice: ").append(getUpfrontPrice()).append(",");
-        if (getHourlyPrice() != null)
-            sb.append("HourlyPrice: ").append(getHourlyPrice()).append(",");
         if (getCurrencyCode() != null)
             sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: ").append(getDuration());
+            sb.append("Duration: ").append(getDuration()).append(",");
+        if (getHourlyPrice() != null)
+            sb.append("HourlyPrice: ").append(getHourlyPrice()).append(",");
+        if (getInstanceFamily() != null)
+            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
+        if (getPaymentOption() != null)
+            sb.append("PaymentOption: ").append(getPaymentOption()).append(",");
+        if (getUpfrontPrice() != null)
+            sb.append("UpfrontPrice: ").append(getUpfrontPrice());
         sb.append("}");
         return sb.toString();
     }
@@ -454,13 +455,25 @@ public class HostOffering implements Serializable, Cloneable {
         if (obj instanceof HostOffering == false)
             return false;
         HostOffering other = (HostOffering) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+            return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
+        if (other.getHourlyPrice() == null ^ this.getHourlyPrice() == null)
+            return false;
+        if (other.getHourlyPrice() != null && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
             return false;
         if (other.getInstanceFamily() == null ^ this.getInstanceFamily() == null)
             return false;
         if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
+            return false;
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+            return false;
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         if (other.getPaymentOption() == null ^ this.getPaymentOption() == null)
             return false;
@@ -470,18 +483,6 @@ public class HostOffering implements Serializable, Cloneable {
             return false;
         if (other.getUpfrontPrice() != null && other.getUpfrontPrice().equals(this.getUpfrontPrice()) == false)
             return false;
-        if (other.getHourlyPrice() == null ^ this.getHourlyPrice() == null)
-            return false;
-        if (other.getHourlyPrice() != null && other.getHourlyPrice().equals(this.getHourlyPrice()) == false)
-            return false;
-        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
-            return false;
-        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
-            return false;
-        if (other.getDuration() == null ^ this.getDuration() == null)
-            return false;
-        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
-            return false;
         return true;
     }
 
@@ -490,13 +491,13 @@ public class HostOffering implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
-        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
-        hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());
-        hashCode = prime * hashCode + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice().hashCode());
-        hashCode = prime * hashCode + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getHourlyPrice() == null) ? 0 : getHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());
+        hashCode = prime * hashCode + ((getUpfrontPrice() == null) ? 0 : getUpfrontPrice().hashCode());
         return hashCode;
     }
 
@@ -508,4 +509,5 @@ public class HostOffering implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

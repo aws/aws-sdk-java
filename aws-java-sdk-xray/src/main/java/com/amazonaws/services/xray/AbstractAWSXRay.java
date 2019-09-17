@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,62 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSamplingRuleResult deleteSamplingRule(DeleteSamplingRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupsResult getGroups(GetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingStatisticSummariesResult getSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSamplingTargetsResult getSamplingTargets(GetSamplingTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTimeSeriesServiceStatisticsResult getTimeSeriesServiceStatistics(GetTimeSeriesServiceStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,12 +113,27 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public PutEncryptionConfigResult putEncryptionConfig(PutEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSamplingRuleResult updateSamplingRule(UpdateSamplingRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

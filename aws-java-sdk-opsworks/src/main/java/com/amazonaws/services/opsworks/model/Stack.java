@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Stack implements Serializable, Cloneable {
+public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,7 +49,7 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String region;
@@ -72,7 +74,7 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      */
@@ -92,7 +94,7 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack's default Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String defaultAvailabilityZone;
@@ -113,8 +115,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>.
      * </p>
      */
     private String customJson;
@@ -128,7 +130,7 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      */
     private ChefConfiguration chefConfiguration;
@@ -140,11 +142,18 @@ public class Stack implements Serializable, Cloneable {
     private Boolean useCustomCookbooks;
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      */
     private Boolean useOpsworksSecurityGroups;
-
+    /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     */
     private Source customCookbooksSource;
     /**
      * <p>
@@ -163,8 +172,8 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      */
     private String defaultRootDeviceType;
@@ -299,12 +308,12 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setRegion(String region) {
@@ -314,11 +323,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getRegion() {
@@ -328,12 +337,12 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param region
      *        The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,14 +498,14 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param defaultInstanceProfileArn
      *        The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more
      *        information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -506,13 +515,13 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @return The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more
      *         information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getDefaultInstanceProfileArn() {
@@ -522,14 +531,14 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information
-     * about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param defaultInstanceProfileArn
      *        The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more
      *        information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -621,12 +630,12 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack's default Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param defaultAvailabilityZone
      *        The stack's default Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
@@ -636,11 +645,11 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack's default Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The stack's default Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getDefaultAvailabilityZone() {
@@ -650,12 +659,12 @@ public class Stack implements Serializable, Cloneable {
     /**
      * <p>
      * The stack's default Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param defaultAvailabilityZone
      *        The stack's default Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -715,8 +724,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>.
      * </p>
      * 
      * @param customJson
@@ -728,7 +737,7 @@ public class Stack implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information on custom JSON, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      */
 
@@ -747,8 +756,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>.
      * </p>
      * 
      * @return A JSON object that contains user-defined attributes to be added to the stack configuration and deployment
@@ -759,7 +768,7 @@ public class Stack implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information on custom JSON, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *         Modify the Stack Configuration Attributes</a>.
      */
 
@@ -778,8 +787,8 @@ public class Stack implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information on custom JSON, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
-     * Stack Configuration Attributes</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify
+     * the Stack Configuration Attributes</a>.
      * </p>
      * 
      * @param customJson
@@ -791,7 +800,7 @@ public class Stack implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information on custom JSON, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -845,13 +854,13 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param chefConfiguration
      *        A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *        version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      */
 
@@ -863,12 +872,12 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @return A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *         version. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *         Stack</a>.
      */
 
@@ -880,13 +889,13 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
      * </p>
      * 
      * @param chefConfiguration
      *        A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf
      *        version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
      *        Stack</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -950,12 +959,13 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      */
 
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -964,11 +974,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean getUseOpsworksSecurityGroups() {
@@ -977,12 +988,13 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -993,11 +1005,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean isUseOpsworksSecurityGroups() {
@@ -1005,7 +1018,17 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
      * @param customCookbooksSource
+     *        Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *        see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *        Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+     *        and Recipes</a>.
      */
 
     public void setCustomCookbooksSource(Source customCookbooksSource) {
@@ -1013,7 +1036,17 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
+     * @return Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *         Apps</a> or <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and
+     *         Recipes</a>.
      */
 
     public Source getCustomCookbooksSource() {
@@ -1021,7 +1054,17 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.
+     * </p>
+     * 
      * @param customCookbooksSource
+     *        Contains the information required to retrieve an app or cookbook from a repository. For more information,
+     *        see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding
+     *        Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks
+     *        and Recipes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1120,14 +1163,14 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the stack, but you can
      *        override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1140,13 +1183,13 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @return The default root device type. This value is used by default for all instances in the stack, but you can
      *         override it when you create an instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1159,14 +1202,14 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the stack, but you can
      *        override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
@@ -1181,41 +1224,41 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the stack, but you can
      *        override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
 
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        withDefaultRootDeviceType(defaultRootDeviceType);
     }
 
     /**
      * <p>
      * The default root device type. This value is used by default for all instances in the stack, but you can override
      * it when you create an instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param defaultRootDeviceType
      *        The default root device type. This value is used by default for all instances in the stack, but you can
      *        override it when you create an instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
     public Stack withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        setDefaultRootDeviceType(defaultRootDeviceType);
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
 
@@ -1266,7 +1309,8 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1462,5 +1506,11 @@ public class Stack implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.StackMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

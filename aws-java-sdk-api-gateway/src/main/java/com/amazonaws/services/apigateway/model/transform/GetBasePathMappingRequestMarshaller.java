@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetBasePathMappingRequest Marshaller
+ * GetBasePathMappingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetBasePathMappingRequestMarshaller implements Marshaller<Request<GetBasePathMappingRequest>, GetBasePathMappingRequest> {
+@SdkInternalApi
+public class GetBasePathMappingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("domain_name").build();
+    private static final MarshallingInfo<String> BASEPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("base_path").build();
 
-    public GetBasePathMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetBasePathMappingRequestMarshaller instance = new GetBasePathMappingRequestMarshaller();
+
+    public static GetBasePathMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetBasePathMappingRequest> marshall(GetBasePathMappingRequest getBasePathMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetBasePathMappingRequest getBasePathMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getBasePathMappingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetBasePathMappingRequest> request = new DefaultRequest<GetBasePathMappingRequest>(getBasePathMappingRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "domain_name", getBasePathMappingRequest.getDomainName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "base_path", getBasePathMappingRequest.getBasePath());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getBasePathMappingRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(getBasePathMappingRequest.getBasePath(), BASEPATH_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

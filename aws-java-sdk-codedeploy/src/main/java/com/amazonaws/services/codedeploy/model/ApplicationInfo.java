@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationInfo implements Serializable, Cloneable {
+public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,10 +48,22 @@ public class ApplicationInfo implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * </p>
      */
     private Boolean linkedToGitHub;
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     */
+    private String gitHubAccountName;
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     */
+    private String computePlatform;
 
     /**
      * <p>
@@ -173,11 +187,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * </p>
      * 
      * @param linkedToGitHub
-     *        True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     *        True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      */
 
     public void setLinkedToGitHub(Boolean linkedToGitHub) {
@@ -186,10 +200,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * </p>
      * 
-     * @return True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * @return True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      */
 
     public Boolean getLinkedToGitHub() {
@@ -198,11 +212,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * </p>
      * 
      * @param linkedToGitHub
-     *        True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     *        True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +227,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      * </p>
      * 
-     * @return True if the user has authenticated with GitHub for the specified application; otherwise, false.
+     * @return True if the user has authenticated with GitHub for the specified application. Otherwise, false.
      */
 
     public Boolean isLinkedToGitHub() {
@@ -224,7 +238,111 @@ public class ApplicationInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @param gitHubAccountName
+     *        The name for a connection to a GitHub account.
+     */
+
+    public void setGitHubAccountName(String gitHubAccountName) {
+        this.gitHubAccountName = gitHubAccountName;
+    }
+
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @return The name for a connection to a GitHub account.
+     */
+
+    public String getGitHubAccountName() {
+        return this.gitHubAccountName;
+    }
+
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @param gitHubAccountName
+     *        The name for a connection to a GitHub account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withGitHubAccountName(String gitHubAccountName) {
+        setGitHubAccountName(gitHubAccountName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @return The destination platform type for deployment of the application (<code>Lambda</code> or
+     *         <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ApplicationInfo withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ApplicationInfo withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -241,7 +359,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getLinkedToGitHub() != null)
-            sb.append("LinkedToGitHub: ").append(getLinkedToGitHub());
+            sb.append("LinkedToGitHub: ").append(getLinkedToGitHub()).append(",");
+        if (getGitHubAccountName() != null)
+            sb.append("GitHubAccountName: ").append(getGitHubAccountName()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +394,14 @@ public class ApplicationInfo implements Serializable, Cloneable {
             return false;
         if (other.getLinkedToGitHub() != null && other.getLinkedToGitHub().equals(this.getLinkedToGitHub()) == false)
             return false;
+        if (other.getGitHubAccountName() == null ^ this.getGitHubAccountName() == null)
+            return false;
+        if (other.getGitHubAccountName() != null && other.getGitHubAccountName().equals(this.getGitHubAccountName()) == false)
+            return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -284,6 +414,8 @@ public class ApplicationInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getLinkedToGitHub() == null) ? 0 : getLinkedToGitHub().hashCode());
+        hashCode = prime * hashCode + ((getGitHubAccountName() == null) ? 0 : getGitHubAccountName().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         return hashCode;
     }
 
@@ -294,5 +426,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.ApplicationInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,58 @@ public class GetDomainNameResultJsonUnmarshaller implements Unmarshaller<GetDoma
                     context.nextToken();
                     getDomainNameResult.setCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("certificateArn", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("certificateUploadDate", targetDepth)) {
                     context.nextToken();
-                    getDomainNameResult.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainNameResult.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("regionalDomainName", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setRegionalHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateName", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setRegionalCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("distributionDomainName", targetDepth)) {
                     context.nextToken();
                     getDomainNameResult.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("distributionHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setDistributionHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("domainNameStatus", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("securityPolicy", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    getDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

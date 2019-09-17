@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,48 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UntagLogGroupRequest Marshaller
+ * UntagLogGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UntagLogGroupRequestMarshaller implements Marshaller<Request<UntagLogGroupRequest>, UntagLogGroupRequest> {
+@SdkInternalApi
+public class UntagLogGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public UntagLogGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UntagLogGroupRequestMarshaller instance = new UntagLogGroupRequestMarshaller();
+
+    public static UntagLogGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UntagLogGroupRequest> marshall(UntagLogGroupRequest untagLogGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UntagLogGroupRequest untagLogGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (untagLogGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UntagLogGroupRequest> request = new DefaultRequest<UntagLogGroupRequest>(untagLogGroupRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.UntagLogGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (untagLogGroupRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(untagLogGroupRequest.getLogGroupName());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> tagsList = (com.amazonaws.internal.SdkInternalList<String>) untagLogGroupRequest.getTags();
-            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("tags");
-                jsonGenerator.writeStartArray();
-                for (String tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-                        jsonGenerator.writeValue(tagsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(untagLogGroupRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(untagLogGroupRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

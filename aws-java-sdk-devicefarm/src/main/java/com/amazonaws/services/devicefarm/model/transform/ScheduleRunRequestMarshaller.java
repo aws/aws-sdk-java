@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,81 +12,65 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ScheduleRunRequest Marshaller
+ * ScheduleRunRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScheduleRunRequestMarshaller implements Marshaller<Request<ScheduleRunRequest>, ScheduleRunRequest> {
+@SdkInternalApi
+public class ScheduleRunRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROJECTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectArn").build();
+    private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("appArn").build();
+    private static final MarshallingInfo<String> DEVICEPOOLARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("devicePoolArn").build();
+    private static final MarshallingInfo<StructuredPojo> DEVICESELECTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceSelectionConfiguration").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> TEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("test").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionConfiguration").build();
 
-    public ScheduleRunRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ScheduleRunRequestMarshaller instance = new ScheduleRunRequestMarshaller();
+
+    public static ScheduleRunRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ScheduleRunRequest> marshall(ScheduleRunRequest scheduleRunRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ScheduleRunRequest scheduleRunRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (scheduleRunRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ScheduleRunRequest> request = new DefaultRequest<ScheduleRunRequest>(scheduleRunRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.ScheduleRun");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (scheduleRunRequest.getProjectArn() != null) {
-                jsonGenerator.writeFieldName("projectArn").writeValue(scheduleRunRequest.getProjectArn());
-            }
-            if (scheduleRunRequest.getAppArn() != null) {
-                jsonGenerator.writeFieldName("appArn").writeValue(scheduleRunRequest.getAppArn());
-            }
-            if (scheduleRunRequest.getDevicePoolArn() != null) {
-                jsonGenerator.writeFieldName("devicePoolArn").writeValue(scheduleRunRequest.getDevicePoolArn());
-            }
-            if (scheduleRunRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(scheduleRunRequest.getName());
-            }
-            if (scheduleRunRequest.getTest() != null) {
-                jsonGenerator.writeFieldName("test");
-                ScheduleRunTestJsonMarshaller.getInstance().marshall(scheduleRunRequest.getTest(), jsonGenerator);
-            }
-            if (scheduleRunRequest.getConfiguration() != null) {
-                jsonGenerator.writeFieldName("configuration");
-                ScheduleRunConfigurationJsonMarshaller.getInstance().marshall(scheduleRunRequest.getConfiguration(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(scheduleRunRequest.getProjectArn(), PROJECTARN_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getDevicePoolArn(), DEVICEPOOLARN_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getDeviceSelectionConfiguration(), DEVICESELECTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getTest(), TEST_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(scheduleRunRequest.getExecutionConfiguration(), EXECUTIONCONFIGURATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

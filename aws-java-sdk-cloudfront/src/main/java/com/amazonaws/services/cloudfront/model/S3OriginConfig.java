@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * <code>CustomOriginConfig</code> element instead.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/S3OriginConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3OriginConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -54,7 +54,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -67,7 +67,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -87,7 +87,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -96,7 +96,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *        CloudFront. The format of the value is:</p>
      *        <p>
-     *        origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *        origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *        </p>
      *        <p>
      *        where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -116,7 +116,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about the origin access identity, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -131,7 +131,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -151,7 +151,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -159,7 +159,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *         configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *         CloudFront. The format of the value is:</p>
      *         <p>
-     *         origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *         origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *         </p>
      *         <p>
      *         where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -179,7 +179,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about the origin access identity, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *         Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -194,7 +194,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -214,7 +214,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about the origin access identity, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -223,7 +223,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *        CloudFront. The format of the value is:</p>
      *        <p>
-     *        origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *        origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *        </p>
      *        <p>
      *        where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -243,7 +243,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information about the origin access identity, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -254,7 +254,8 @@ public class S3OriginConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,4 +305,5 @@ public class S3OriginConfig implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

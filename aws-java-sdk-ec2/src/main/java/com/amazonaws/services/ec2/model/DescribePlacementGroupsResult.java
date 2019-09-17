@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,26 +18,24 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribePlacementGroups.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementGroup> placementGroups;
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
-     * @return One or more placement groups.
+     * @return Information about the placement groups.
      */
 
     public java.util.List<PlacementGroup> getPlacementGroups() {
@@ -49,11 +47,11 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      */
 
     public void setPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {
@@ -67,7 +65,7 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +74,7 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +90,11 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more placement groups.
+     * Information about the placement groups.
      * </p>
      * 
      * @param placementGroups
-     *        One or more placement groups.
+     *        Information about the placement groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +104,8 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

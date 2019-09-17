@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.amazonaws.event.ProgressListener;
 import java.io.File;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Abstract base class for a put object or put object like request.
@@ -99,6 +100,12 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
 
     private ObjectTagging tagging;
+
+    private String objectLockMode;
+
+    private Date objectLockRetainUntilDate;
+
+    private String objectLockLegalHoldStatus;
 
     /**
      * Constructs a new
@@ -773,6 +780,100 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
         setTagging(tagSet);
         T t = (T)this;
         return t;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to this object.
+     */
+    public String getObjectLockMode() {
+        return objectLockMode;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to this object.
+     */
+    public <T extends PutObjectRequest> T withObjectLockMode(String objectLockMode) {
+        this.objectLockMode = objectLockMode;
+        return (T) this;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to this object.
+     */
+    public <T extends PutObjectRequest> T withObjectLockMode(ObjectLockMode objectLockMode) {
+        return withObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to this object.
+     */
+    public void setObjectLockMode(String objectLockMode) {
+        withObjectLockMode(objectLockMode);
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to this object.
+     */
+    public void setObjectLockMode(ObjectLockMode objectLockMode) {
+        setObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public Date getObjectLockRetainUntilDate() {
+        return objectLockRetainUntilDate;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public <T extends PutObjectRequest> T withObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        this.objectLockRetainUntilDate = objectLockRetainUntilDate;
+        return (T) this;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public void setObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        withObjectLockRetainUntilDate(objectLockRetainUntilDate);
+    }
+
+    /**
+     * The Legal Hold status that you want to apply to the specified object.
+     */
+    public String getObjectLockLegalHoldStatus() {
+        return objectLockLegalHoldStatus;
+    }
+
+    /**
+     * The Legal Hold status that you want to apply to the specified object.
+     */
+    public <T extends PutObjectRequest> T withObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        this.objectLockLegalHoldStatus = objectLockLegalHoldStatus;
+        return (T) this;
+    }
+
+    /**
+     * The Legal Hold status that you want to apply to the specified object.
+     */
+    public <T extends PutObjectRequest> T withObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        return withObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * The Legal Hold status that you want to apply to the specified object.
+     */
+    public void setObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        withObjectLockLegalHoldStatus(objectLockLegalHoldStatus);
+    }
+
+    /**
+     * The Legal Hold status that you want to apply to the specified object.
+     */
+    public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
     }
 
     /**

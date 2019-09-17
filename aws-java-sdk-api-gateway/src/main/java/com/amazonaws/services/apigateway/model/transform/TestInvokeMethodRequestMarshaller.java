@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,107 +12,70 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TestInvokeMethodRequest Marshaller
+ * TestInvokeMethodRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TestInvokeMethodRequestMarshaller implements Marshaller<Request<TestInvokeMethodRequest>, TestInvokeMethodRequest> {
+@SdkInternalApi
+public class TestInvokeMethodRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> PATHWITHQUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pathWithQueryString").build();
+    private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("body").build();
+    private static final MarshallingInfo<Map> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("headers").build();
+    private static final MarshallingInfo<Map> MULTIVALUEHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiValueHeaders").build();
+    private static final MarshallingInfo<String> CLIENTCERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientCertificateId").build();
+    private static final MarshallingInfo<Map> STAGEVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageVariables").build();
 
-    public TestInvokeMethodRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TestInvokeMethodRequestMarshaller instance = new TestInvokeMethodRequestMarshaller();
+
+    public static TestInvokeMethodRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TestInvokeMethodRequest> marshall(TestInvokeMethodRequest testInvokeMethodRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TestInvokeMethodRequest testInvokeMethodRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (testInvokeMethodRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestInvokeMethodRequest> request = new DefaultRequest<TestInvokeMethodRequest>(testInvokeMethodRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", testInvokeMethodRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", testInvokeMethodRequest.getResourceId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", testInvokeMethodRequest.getHttpMethod());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (testInvokeMethodRequest.getPathWithQueryString() != null) {
-                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(testInvokeMethodRequest.getPathWithQueryString());
-            }
-            if (testInvokeMethodRequest.getBody() != null) {
-                jsonGenerator.writeFieldName("body").writeValue(testInvokeMethodRequest.getBody());
-            }
-
-            java.util.Map<String, String> headersMap = testInvokeMethodRequest.getHeaders();
-            if (headersMap != null) {
-                jsonGenerator.writeFieldName("headers");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> headersMapValue : headersMap.entrySet()) {
-                    if (headersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(headersMapValue.getKey());
-
-                        jsonGenerator.writeValue(headersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (testInvokeMethodRequest.getClientCertificateId() != null) {
-                jsonGenerator.writeFieldName("clientCertificateId").writeValue(testInvokeMethodRequest.getClientCertificateId());
-            }
-
-            java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest.getStageVariables();
-            if (stageVariablesMap != null) {
-                jsonGenerator.writeFieldName("stageVariables");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap.entrySet()) {
-                    if (stageVariablesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(stageVariablesMapValue.getKey());
-
-                        jsonGenerator.writeValue(stageVariablesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getPathWithQueryString(), PATHWITHQUERYSTRING_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getBody(), BODY_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getMultiValueHeaders(), MULTIVALUEHEADERS_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getClientCertificateId(), CLIENTCERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getStageVariables(), STAGEVARIABLES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

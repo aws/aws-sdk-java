@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -339,7 +339,8 @@ public class UpdateChapCredentialsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -352,11 +353,11 @@ public class UpdateChapCredentialsRequest extends com.amazonaws.AmazonWebService
         if (getTargetARN() != null)
             sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getSecretToAuthenticateInitiator() != null)
-            sb.append("SecretToAuthenticateInitiator: ").append(getSecretToAuthenticateInitiator()).append(",");
+            sb.append("SecretToAuthenticateInitiator: ").append("***Sensitive Data Redacted***").append(",");
         if (getInitiatorName() != null)
             sb.append("InitiatorName: ").append(getInitiatorName()).append(",");
         if (getSecretToAuthenticateTarget() != null)
-            sb.append("SecretToAuthenticateTarget: ").append(getSecretToAuthenticateTarget());
+            sb.append("SecretToAuthenticateTarget: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

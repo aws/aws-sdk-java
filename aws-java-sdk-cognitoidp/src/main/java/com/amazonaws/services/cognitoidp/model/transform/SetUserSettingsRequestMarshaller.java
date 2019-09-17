@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetUserSettingsRequest Marshaller
+ * SetUserSettingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetUserSettingsRequestMarshaller implements Marshaller<Request<SetUserSettingsRequest>, SetUserSettingsRequest> {
+@SdkInternalApi
+public class SetUserSettingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCESSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
+    private static final MarshallingInfo<List> MFAOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MFAOptions").build();
 
-    public SetUserSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetUserSettingsRequestMarshaller instance = new SetUserSettingsRequestMarshaller();
+
+    public static SetUserSettingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetUserSettingsRequest> marshall(SetUserSettingsRequest setUserSettingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetUserSettingsRequest setUserSettingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setUserSettingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetUserSettingsRequest> request = new DefaultRequest<SetUserSettingsRequest>(setUserSettingsRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.SetUserSettings");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setUserSettingsRequest.getAccessToken() != null) {
-                jsonGenerator.writeFieldName("AccessToken").writeValue(setUserSettingsRequest.getAccessToken());
-            }
-
-            java.util.List<MFAOptionType> mFAOptionsList = setUserSettingsRequest.getMFAOptions();
-            if (mFAOptionsList != null) {
-                jsonGenerator.writeFieldName("MFAOptions");
-                jsonGenerator.writeStartArray();
-                for (MFAOptionType mFAOptionsListValue : mFAOptionsList) {
-                    if (mFAOptionsListValue != null) {
-
-                        MFAOptionTypeJsonMarshaller.getInstance().marshall(mFAOptionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setUserSettingsRequest.getAccessToken(), ACCESSTOKEN_BINDING);
+            protocolMarshaller.marshall(setUserSettingsRequest.getMFAOptions(), MFAOPTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

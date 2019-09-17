@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,71 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
 
                 if (context.testExpression("SupportsEnhancedMonitoring", targetDepth)) {
                     orderableDBInstanceOption.setSupportsEnhancedMonitoring(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsIAMDatabaseAuthentication", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsIAMDatabaseAuthentication(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsPerformanceInsights", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsPerformanceInsights(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinStorageSize", targetDepth)) {
+                    orderableDBInstanceOption.setMinStorageSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxStorageSize", targetDepth)) {
+                    orderableDBInstanceOption.setMaxStorageSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinIopsPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMinIopsPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxIopsPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMaxIopsPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinIopsPerGib", targetDepth)) {
+                    orderableDBInstanceOption.setMinIopsPerGib(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxIopsPerGib", targetDepth)) {
+                    orderableDBInstanceOption.setMaxIopsPerGib(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AvailableProcessorFeatures", targetDepth)) {
+                    orderableDBInstanceOption.withAvailableProcessorFeatures(new ArrayList<AvailableProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("AvailableProcessorFeatures/AvailableProcessorFeature", targetDepth)) {
+                    orderableDBInstanceOption.withAvailableProcessorFeatures(AvailableProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedEngineModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes/member", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedEngineModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsStorageAutoscaling", targetDepth)) {
+                    orderableDBInstanceOption.setSupportsStorageAutoscaling(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

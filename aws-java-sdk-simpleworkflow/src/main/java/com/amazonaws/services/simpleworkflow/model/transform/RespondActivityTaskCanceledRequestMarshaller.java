@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RespondActivityTaskCanceledRequest Marshaller
+ * RespondActivityTaskCanceledRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RespondActivityTaskCanceledRequestMarshaller implements
-        Marshaller<Request<RespondActivityTaskCanceledRequest>, RespondActivityTaskCanceledRequest> {
+@SdkInternalApi
+public class RespondActivityTaskCanceledRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskToken").build();
+    private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("details").build();
 
-    public RespondActivityTaskCanceledRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RespondActivityTaskCanceledRequestMarshaller instance = new RespondActivityTaskCanceledRequestMarshaller();
+
+    public static RespondActivityTaskCanceledRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RespondActivityTaskCanceledRequest> marshall(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (respondActivityTaskCanceledRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RespondActivityTaskCanceledRequest> request = new DefaultRequest<RespondActivityTaskCanceledRequest>(respondActivityTaskCanceledRequest,
-                "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RespondActivityTaskCanceled");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (respondActivityTaskCanceledRequest.getTaskToken() != null) {
-                jsonGenerator.writeFieldName("taskToken").writeValue(respondActivityTaskCanceledRequest.getTaskToken());
-            }
-            if (respondActivityTaskCanceledRequest.getDetails() != null) {
-                jsonGenerator.writeFieldName("details").writeValue(respondActivityTaskCanceledRequest.getDetails());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(respondActivityTaskCanceledRequest.getTaskToken(), TASKTOKEN_BINDING);
+            protocolMarshaller.marshall(respondActivityTaskCanceledRequest.getDetails(), DETAILS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

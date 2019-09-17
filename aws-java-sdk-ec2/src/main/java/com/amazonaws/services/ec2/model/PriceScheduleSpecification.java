@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,11 +28,11 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
-     * capacity reservation expires.
+     * The currency for transacting the Reserved Instance resale. At this time, the only supported currency is
+     * <code>USD</code>.
      * </p>
      */
-    private Long term;
+    private String currencyCode;
     /**
      * <p>
      * The fixed price for the term.
@@ -41,97 +41,11 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     private Double price;
     /**
      * <p>
-     * The currency for transacting the Reserved Instance resale. At this time, the only supported currency is
-     * <code>USD</code>.
-     * </p>
-     */
-    private String currencyCode;
-
-    /**
-     * <p>
      * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
      * capacity reservation expires.
      * </p>
-     * 
-     * @param term
-     *        The number of months remaining in the reservation. For example, 2 is the second to the last month before
-     *        the capacity reservation expires.
      */
-
-    public void setTerm(Long term) {
-        this.term = term;
-    }
-
-    /**
-     * <p>
-     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
-     * capacity reservation expires.
-     * </p>
-     * 
-     * @return The number of months remaining in the reservation. For example, 2 is the second to the last month before
-     *         the capacity reservation expires.
-     */
-
-    public Long getTerm() {
-        return this.term;
-    }
-
-    /**
-     * <p>
-     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
-     * capacity reservation expires.
-     * </p>
-     * 
-     * @param term
-     *        The number of months remaining in the reservation. For example, 2 is the second to the last month before
-     *        the capacity reservation expires.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PriceScheduleSpecification withTerm(Long term) {
-        setTerm(term);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The fixed price for the term.
-     * </p>
-     * 
-     * @param price
-     *        The fixed price for the term.
-     */
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    /**
-     * <p>
-     * The fixed price for the term.
-     * </p>
-     * 
-     * @return The fixed price for the term.
-     */
-
-    public Double getPrice() {
-        return this.price;
-    }
-
-    /**
-     * <p>
-     * The fixed price for the term.
-     * </p>
-     * 
-     * @param price
-     *        The fixed price for the term.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PriceScheduleSpecification withPrice(Double price) {
-        setPrice(price);
-        return this;
-    }
+    private Long term;
 
     /**
      * <p>
@@ -195,7 +109,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -212,12 +126,99 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      */
 
     public PriceScheduleSpecification withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The fixed price for the term.
+     * </p>
+     * 
+     * @param price
+     *        The fixed price for the term.
+     */
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    /**
+     * <p>
+     * The fixed price for the term.
+     * </p>
+     * 
+     * @return The fixed price for the term.
+     */
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    /**
+     * <p>
+     * The fixed price for the term.
+     * </p>
+     * 
+     * @param price
+     *        The fixed price for the term.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PriceScheduleSpecification withPrice(Double price) {
+        setPrice(price);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
+     * capacity reservation expires.
+     * </p>
+     * 
+     * @param term
+     *        The number of months remaining in the reservation. For example, 2 is the second to the last month before
+     *        the capacity reservation expires.
+     */
+
+    public void setTerm(Long term) {
+        this.term = term;
+    }
+
+    /**
+     * <p>
+     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
+     * capacity reservation expires.
+     * </p>
+     * 
+     * @return The number of months remaining in the reservation. For example, 2 is the second to the last month before
+     *         the capacity reservation expires.
+     */
+
+    public Long getTerm() {
+        return this.term;
+    }
+
+    /**
+     * <p>
+     * The number of months remaining in the reservation. For example, 2 is the second to the last month before the
+     * capacity reservation expires.
+     * </p>
+     * 
+     * @param term
+     *        The number of months remaining in the reservation. For example, 2 is the second to the last month before
+     *        the capacity reservation expires.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PriceScheduleSpecification withTerm(Long term) {
+        setTerm(term);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -227,12 +228,12 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTerm() != null)
-            sb.append("Term: ").append(getTerm()).append(",");
+        if (getCurrencyCode() != null)
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getPrice() != null)
             sb.append("Price: ").append(getPrice()).append(",");
-        if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: ").append(getCurrencyCode());
+        if (getTerm() != null)
+            sb.append("Term: ").append(getTerm());
         sb.append("}");
         return sb.toString();
     }
@@ -247,17 +248,17 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
         if (obj instanceof PriceScheduleSpecification == false)
             return false;
         PriceScheduleSpecification other = (PriceScheduleSpecification) obj;
-        if (other.getTerm() == null ^ this.getTerm() == null)
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
-        if (other.getTerm() != null && other.getTerm().equals(this.getTerm()) == false)
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getPrice() == null ^ this.getPrice() == null)
             return false;
         if (other.getPrice() != null && other.getPrice().equals(this.getPrice()) == false)
             return false;
-        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
+        if (other.getTerm() == null ^ this.getTerm() == null)
             return false;
-        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+        if (other.getTerm() != null && other.getTerm().equals(this.getTerm()) == false)
             return false;
         return true;
     }
@@ -267,9 +268,9 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTerm() == null) ? 0 : getTerm().hashCode());
-        hashCode = prime * hashCode + ((getPrice() == null) ? 0 : getPrice().hashCode());
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getPrice() == null) ? 0 : getPrice().hashCode());
+        hashCode = prime * hashCode + ((getTerm() == null) ? 0 : getTerm().hashCode());
         return hashCode;
     }
 
@@ -281,4 +282,5 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

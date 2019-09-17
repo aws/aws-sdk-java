@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,54 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ImportCertificateRequest Marshaller
+ * ImportCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportCertificateRequestMarshaller implements Marshaller<Request<ImportCertificateRequest>, ImportCertificateRequest> {
+@SdkInternalApi
+public class ImportCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateIdentifier").build();
+    private static final MarshallingInfo<String> CERTIFICATEPEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificatePem").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> CERTIFICATEWALLET_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateWallet").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public ImportCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ImportCertificateRequestMarshaller instance = new ImportCertificateRequestMarshaller();
+
+    public static ImportCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ImportCertificateRequest> marshall(ImportCertificateRequest importCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ImportCertificateRequest importCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (importCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportCertificateRequest> request = new DefaultRequest<ImportCertificateRequest>(importCertificateRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.ImportCertificate");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (importCertificateRequest.getCertificateIdentifier() != null) {
-                jsonGenerator.writeFieldName("CertificateIdentifier").writeValue(importCertificateRequest.getCertificateIdentifier());
-            }
-            if (importCertificateRequest.getCertificatePem() != null) {
-                jsonGenerator.writeFieldName("CertificatePem").writeValue(importCertificateRequest.getCertificatePem());
-            }
-            if (importCertificateRequest.getCertificateWallet() != null) {
-                jsonGenerator.writeFieldName("CertificateWallet").writeValue(importCertificateRequest.getCertificateWallet());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(importCertificateRequest.getCertificateIdentifier(), CERTIFICATEIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(importCertificateRequest.getCertificatePem(), CERTIFICATEPEM_BINDING);
+            protocolMarshaller.marshall(importCertificateRequest.getCertificateWallet(), CERTIFICATEWALLET_BINDING);
+            protocolMarshaller.marshall(importCertificateRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

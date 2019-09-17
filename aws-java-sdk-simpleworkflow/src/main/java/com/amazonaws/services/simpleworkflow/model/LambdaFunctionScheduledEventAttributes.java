@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,44 +14,55 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details for the <code>LambdaFunctionScheduled</code> event.
+ * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionScheduledEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LambdaFunctionScheduledEventAttributes implements Serializable, Cloneable {
+public class LambdaFunctionScheduledEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon SWF ID for the AWS Lambda task.
+     * The unique ID of the Lambda task.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the scheduled AWS Lambda function.
+     * The name of the Lambda function.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Input provided to the AWS Lambda function.
+     * Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     */
+    private String control;
+    /**
+     * <p>
+     * The input provided to the Lambda task.
      * </p>
      */
     private String input;
     /**
      * <p>
-     * The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before it is
-     * marked as failed.
+     * The maximum amount of time a worker can take to process the Lambda task.
      * </p>
      */
     private String startToCloseTimeout;
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of this
-     * AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events
+     * The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     * scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events
      * leading up to this event.
      * </p>
      */
@@ -59,11 +70,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The unique Amazon SWF ID for the AWS Lambda task.
+     * The unique ID of the Lambda task.
      * </p>
      * 
      * @param id
-     *        The unique Amazon SWF ID for the AWS Lambda task.
+     *        The unique ID of the Lambda task.
      */
 
     public void setId(String id) {
@@ -72,10 +83,10 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The unique Amazon SWF ID for the AWS Lambda task.
+     * The unique ID of the Lambda task.
      * </p>
      * 
-     * @return The unique Amazon SWF ID for the AWS Lambda task.
+     * @return The unique ID of the Lambda task.
      */
 
     public String getId() {
@@ -84,11 +95,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The unique Amazon SWF ID for the AWS Lambda task.
+     * The unique ID of the Lambda task.
      * </p>
      * 
      * @param id
-     *        The unique Amazon SWF ID for the AWS Lambda task.
+     *        The unique ID of the Lambda task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +110,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the scheduled AWS Lambda function.
+     * The name of the Lambda function.
      * </p>
      * 
      * @param name
-     *        The name of the scheduled AWS Lambda function.
+     *        The name of the Lambda function.
      */
 
     public void setName(String name) {
@@ -112,10 +123,10 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the scheduled AWS Lambda function.
+     * The name of the Lambda function.
      * </p>
      * 
-     * @return The name of the scheduled AWS Lambda function.
+     * @return The name of the Lambda function.
      */
 
     public String getName() {
@@ -124,11 +135,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the scheduled AWS Lambda function.
+     * The name of the Lambda function.
      * </p>
      * 
      * @param name
-     *        The name of the scheduled AWS Lambda function.
+     *        The name of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +150,57 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * Input provided to the AWS Lambda function.
+     * Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @param control
+     *        Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to
+     *        the Lambda task.
+     */
+
+    public void setControl(String control) {
+        this.control = control;
+    }
+
+    /**
+     * <p>
+     * Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @return Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to
+     *         the Lambda task.
+     */
+
+    public String getControl() {
+        return this.control;
+    }
+
+    /**
+     * <p>
+     * Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the
+     * Lambda task.
+     * </p>
+     * 
+     * @param control
+     *        Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to
+     *        the Lambda task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaFunctionScheduledEventAttributes withControl(String control) {
+        setControl(control);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input provided to the Lambda task.
      * </p>
      * 
      * @param input
-     *        Input provided to the AWS Lambda function.
+     *        The input provided to the Lambda task.
      */
 
     public void setInput(String input) {
@@ -152,10 +209,10 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * Input provided to the AWS Lambda function.
+     * The input provided to the Lambda task.
      * </p>
      * 
-     * @return Input provided to the AWS Lambda function.
+     * @return The input provided to the Lambda task.
      */
 
     public String getInput() {
@@ -164,11 +221,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * Input provided to the AWS Lambda function.
+     * The input provided to the Lambda task.
      * </p>
      * 
      * @param input
-     *        Input provided to the AWS Lambda function.
+     *        The input provided to the Lambda task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,13 +236,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before it is
-     * marked as failed.
+     * The maximum amount of time a worker can take to process the Lambda task.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before
-     *        it is marked as failed.
+     *        The maximum amount of time a worker can take to process the Lambda task.
      */
 
     public void setStartToCloseTimeout(String startToCloseTimeout) {
@@ -194,12 +249,10 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before it is
-     * marked as failed.
+     * The maximum amount of time a worker can take to process the Lambda task.
      * </p>
      * 
-     * @return The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before
-     *         it is marked as failed.
+     * @return The maximum amount of time a worker can take to process the Lambda task.
      */
 
     public String getStartToCloseTimeout() {
@@ -208,13 +261,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before it is
-     * marked as failed.
+     * The maximum amount of time a worker can take to process the Lambda task.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        The maximum time, in seconds, that the AWS Lambda function can take to execute from start to close before
-     *        it is marked as failed.
+     *        The maximum amount of time a worker can take to process the Lambda task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,15 +276,15 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of this
-     * AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events
+     * The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     * scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events
      * leading up to this event.
      * </p>
      * 
      * @param decisionTaskCompletedEventId
-     *        The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of
-     *        this AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain
-     *        of events leading up to this event.
+     *        The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     *        scheduling this activity task. To help diagnose issues, use this information to trace back the chain of
+     *        events leading up to this event.
      */
 
     public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
@@ -242,14 +293,14 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of this
-     * AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events
+     * The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     * scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events
      * leading up to this event.
      * </p>
      * 
-     * @return The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling
-     *         of this AWS Lambda function. This information can be useful for diagnosing problems by tracing back the
-     *         chain of events leading up to this event.
+     * @return The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     *         scheduling this activity task. To help diagnose issues, use this information to trace back the chain of
+     *         events leading up to this event.
      */
 
     public Long getDecisionTaskCompletedEventId() {
@@ -258,15 +309,15 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of this
-     * AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain of events
+     * The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     * scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events
      * leading up to this event.
      * </p>
      * 
      * @param decisionTaskCompletedEventId
-     *        The ID of the <code>DecisionTaskCompleted</code> event for the decision that resulted in the scheduling of
-     *        this AWS Lambda function. This information can be useful for diagnosing problems by tracing back the chain
-     *        of events leading up to this event.
+     *        The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in
+     *        scheduling this activity task. To help diagnose issues, use this information to trace back the chain of
+     *        events leading up to this event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,7 +327,8 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -290,6 +342,8 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getControl() != null)
+            sb.append("Control: ").append(getControl()).append(",");
         if (getInput() != null)
             sb.append("Input: ").append(getInput()).append(",");
         if (getStartToCloseTimeout() != null)
@@ -318,6 +372,10 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getControl() == null ^ this.getControl() == null)
+            return false;
+        if (other.getControl() != null && other.getControl().equals(this.getControl()) == false)
+            return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
@@ -340,6 +398,7 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getControl() == null) ? 0 : getControl().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode());
         hashCode = prime * hashCode + ((getDecisionTaskCompletedEventId() == null) ? 0 : getDecisionTaskCompletedEventId().hashCode());
@@ -353,5 +412,11 @@ public class LambdaFunctionScheduledEventAttributes implements Serializable, Clo
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.LambdaFunctionScheduledEventAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

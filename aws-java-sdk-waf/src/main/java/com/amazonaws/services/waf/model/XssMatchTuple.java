@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class XssMatchTuple implements Serializable, Cloneable {
+public class XssMatchTuple implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,10 +42,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -223,10 +228,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -362,10 +370,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -509,10 +520,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -647,10 +661,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *         effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *         <code>FieldToMatch</code> before inspecting a request for a match.</p>
      *         <p>
+     *         You can only specify a single type of TextTransformation.
+     *         </p>
+     *         <p>
      *         <b>CMD_LINE</b>
      *         </p>
      *         <p>
-     *         When you're concerned that attackers are injecting an operating system commandline command and using
+     *         When you're concerned that attackers are injecting an operating system command line command and using
      *         unusual formatting to disguise some or all of the command, use this option to perform the following
      *         transformations:
      *         </p>
@@ -794,10 +811,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -933,10 +953,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1082,10 +1105,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -1221,10 +1247,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1358,7 +1387,7 @@ public class XssMatchTuple implements Serializable, Cloneable {
      */
 
     public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation.toString();
+        withTextTransformation(textTransformation);
     }
 
     /**
@@ -1368,10 +1397,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      * before inspecting a request for a match.
      * </p>
      * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
+     * <p>
      * <b>CMD_LINE</b>
      * </p>
      * <p>
-     * When you're concerned that attackers are injecting an operating system commandline command and using unusual
+     * When you're concerned that attackers are injecting an operating system command line command and using unusual
      * formatting to disguise some or all of the command, use this option to perform the following transformations:
      * </p>
      * <ul>
@@ -1507,10 +1539,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      *        effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on
      *        <code>FieldToMatch</code> before inspecting a request for a match.</p>
      *        <p>
+     *        You can only specify a single type of TextTransformation.
+     *        </p>
+     *        <p>
      *        <b>CMD_LINE</b>
      *        </p>
      *        <p>
-     *        When you're concerned that attackers are injecting an operating system commandline command and using
+     *        When you're concerned that attackers are injecting an operating system command line command and using
      *        unusual formatting to disguise some or all of the command, use this option to perform the following
      *        transformations:
      *        </p>
@@ -1645,12 +1680,13 @@ public class XssMatchTuple implements Serializable, Cloneable {
      */
 
     public XssMatchTuple withTextTransformation(TextTransformation textTransformation) {
-        setTextTransformation(textTransformation);
+        this.textTransformation = textTransformation.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1706,5 +1742,11 @@ public class XssMatchTuple implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.XssMatchTupleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

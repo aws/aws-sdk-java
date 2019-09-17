@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,10 @@ public class EnableSnapshotCopyRequestMarshaller implements Marshaller<Request<E
 
         if (enableSnapshotCopyRequest.getSnapshotCopyGrantName() != null) {
             request.addParameter("SnapshotCopyGrantName", StringUtils.fromString(enableSnapshotCopyRequest.getSnapshotCopyGrantName()));
+        }
+
+        if (enableSnapshotCopyRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(enableSnapshotCopyRequest.getManualSnapshotRetentionPeriod()));
         }
 
         return request;

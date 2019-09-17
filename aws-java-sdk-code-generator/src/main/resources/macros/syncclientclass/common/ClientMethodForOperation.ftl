@@ -1,4 +1,4 @@
-<#macro content metadata operationModel>
+<#macro content metadata operationModel customConfig>
 
     ${operationModel.getSyncDocumentation(metadata)!""}
     @Override
@@ -6,7 +6,17 @@
     <#if operationModel.deprecated>
         @Deprecated
     </#if>
-    public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} ${operationModel.input.variableName}) {
+    public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} request) {
+        request = beforeClientExecution(request);
+        <#if operationModel.returnType??>
+            return execute${operationModel.methodName?cap_first}(request);
+        <#else>
+            execute${operationModel.methodName?cap_first}(request);
+        </#if>
+    }
+
+    @SdkInternalApi
+    final ${operationModel.syncReturnType} execute${operationModel.methodName?cap_first}(${operationModel.input.variableType} ${operationModel.input.variableName}) {
 
         ExecutionContext executionContext = createExecutionContext(${operationModel.input.variableName});
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -24,24 +34,72 @@
                     super.beforeMarshalling(${operationModel.input.variableName}));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "${metadata.serviceId}");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "${operationModel.operationName}");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                <#if operationModel.hasRequiresLengthInInput() >
+                    request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+                </#if>
+                <#if operationModel.inputShape?? && operationModel.inputShape.hasStreamingMember >
+                    request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+                </#if>
+
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            <#if operationModel.endpointDiscovery?has_content>
+                URI cachedEndpoint = null;
+                if (endpointDiscoveryEnabled) {
+                    cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+                }
+            </#if>
+
+
+           <#if operationModel.endpointTrait?has_content>
+               URI endpointTraitHost = null;
+               if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                   <#local inputShape = operationModel.inputShape />
+                   <#local hostPrefixProcessor = operationModel.getHostPrefixProcessor() />
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                       <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                       ValidationUtils.assertStringNotEmpty(${operationModel.input.variableName}.${memberShape.getterMethodName}(), "${memberName}");
+                   </#list>
+
+                   String hostPrefix = "${operationModel.endpointTrait.hostPrefix}";
+                   String resolvedHostPrefix = String.format("${hostPrefixProcessor.hostWithStringSpecifier}"
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                        <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                        , ${operationModel.input.variableName}.${memberShape.getterMethodName}()
+                   </#list>
+                        );
+
+                   endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+               }
+           </#if>
+
             <#if operationModel.returnType??>
-                <@ResponseHandlerCreation.content operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
                 response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
-                <#-- This macro is used in glacier for wrapping the response streams -->
+                <#if customConfig.serviceClientHoldInputStream
+                     && operationModel.outputShape??
+                     && operationModel.outputShape.hasStreamingMember>
+                    response.getAwsResponse().${operationModel.outputShape.payloadMember.setterMethodName}(
+                    new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().${operationModel.outputShape.payloadMember.getterMethodName}(),
+                                                     this));
 
+                </#if>
+                <#-- This macro is used in glacier for wrapping the response streams -->
                 <#if WrapResponseStreamMacro?has_content>
                     <@WrapResponseStreamMacro.content operationModel/>
                 </#if>
 
                 return response.getAwsResponse();
             <#else>
-                <@ResponseHandlerCreation.content operationModel, metadata, "null", "Void" />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "null", "Void" />
                 <@ClientInvokeMethodInvocation.content operationModel />
             </#if>
 

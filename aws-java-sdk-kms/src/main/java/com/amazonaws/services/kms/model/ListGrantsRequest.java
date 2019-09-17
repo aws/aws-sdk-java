@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -38,35 +38,44 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer limit;
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
+     * must use the key ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -74,9 +83,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *        include a value, it defaults to 50.
@@ -88,17 +96,16 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
      * value, it defaults to 50.
      * </p>
      * 
-     * @return When paginating results, specify the maximum number of items to return in the response. If additional
-     *         items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *         true.</p>
+     * @return Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *         does not return more than the specified number of items, but it might return fewer.</p>
      *         <p>
      *         This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *         include a value, it defaults to 50.
@@ -110,8 +117,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -119,9 +126,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *        include a value, it defaults to 50.
@@ -135,14 +141,13 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public void setMarker(String marker) {
@@ -151,13 +156,12 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *         response with truncated results. Set it to the value of <code>NextMarker</code> from the response you
-     *         just received.
+     * @return Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *         the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public String getMarker() {
@@ -166,14 +170,13 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,36 +187,54 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
+     * must use the key ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
+     *        account, you must use the key ARN.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -222,35 +243,53 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
+     * must use the key ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
-     * @return A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *         fully specified ARN to a key.</p>
+     * @return A unique identifier for the customer master key (CMK).</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
+     *         account, you must use the key ARN.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -259,36 +298,54 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
+     * must use the key ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
+     *        account, you must use the key ARN.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,7 +355,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

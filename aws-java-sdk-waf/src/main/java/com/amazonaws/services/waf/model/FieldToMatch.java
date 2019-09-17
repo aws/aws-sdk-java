@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FieldToMatch implements Serializable, Cloneable {
+public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -67,17 +69,35 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
     /**
      * <p>
      * When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to
-     * search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of <code>Type</code> is any
-     * other value, omit <code>Data</code>.
+     * search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case
+     * sensitive.
      * </p>
      * <p>
-     * The name of the header is not case sensitive.
+     * When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you
+     * want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.
+     * </p>
+     * <p>
+     * If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      * </p>
      */
     private String data;
@@ -123,6 +143,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -161,6 +194,20 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS
      *        WAF for inspection. To allow or block requests based on the length of the body, you can create a size
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     *        parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
      *        </p>
      *        </li>
      * @see MatchFieldType
@@ -211,6 +258,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The part of the web request that you want AWS WAF to search for a specified string. Parts of a request
@@ -250,6 +310,20 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to
      *         AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size
      *         constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *         <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *         characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a
+     *         single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern
+     *         that you specify in <code>TargetString</code>.
      *         </p>
      *         </li>
      * @see MatchFieldType
@@ -300,6 +374,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -338,6 +425,20 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS
      *        WAF for inspection. To allow or block requests based on the length of the body, you can create a size
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     *        parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,6 +491,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -430,11 +544,25 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     *        parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
+     *        </p>
+     *        </li>
      * @see MatchFieldType
      */
 
     public void setType(MatchFieldType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -478,6 +606,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      * more information, see <a>CreateSizeConstraintSet</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i>
+     * or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     * parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify
+     * in <code>TargetString</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -518,31 +659,55 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as
+     *        <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30
+     *        characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single
+     *        parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you
+     *        specify in <code>TargetString</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchFieldType
      */
 
     public FieldToMatch withType(MatchFieldType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
      * When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to
-     * search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of <code>Type</code> is any
-     * other value, omit <code>Data</code>.
+     * search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case
+     * sensitive.
      * </p>
      * <p>
-     * The name of the header is not case sensitive.
+     * When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you
+     * want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.
+     * </p>
+     * <p>
+     * If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      * </p>
      * 
      * @param data
      *        When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS
-     *        WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of
-     *        <code>Type</code> is any other value, omit <code>Data</code>.</p>
+     *        WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not
+     *        case sensitive.</p>
      *        <p>
-     *        The name of the header is not case sensitive.
+     *        When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that
+     *        you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter
+     *        name is not case sensitive.
+     *        </p>
+     *        <p>
+     *        If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      */
 
     public void setData(String data) {
@@ -552,18 +717,28 @@ public class FieldToMatch implements Serializable, Cloneable {
     /**
      * <p>
      * When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to
-     * search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of <code>Type</code> is any
-     * other value, omit <code>Data</code>.
+     * search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case
+     * sensitive.
      * </p>
      * <p>
-     * The name of the header is not case sensitive.
+     * When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you
+     * want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.
+     * </p>
+     * <p>
+     * If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      * </p>
      * 
      * @return When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want
-     *         AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of
-     *         <code>Type</code> is any other value, omit <code>Data</code>.</p>
+     *         AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header
+     *         is not case sensitive.</p>
      *         <p>
-     *         The name of the header is not case sensitive.
+     *         When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter
+     *         that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The
+     *         parameter name is not case sensitive.
+     *         </p>
+     *         <p>
+     *         If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      */
 
     public String getData() {
@@ -573,19 +748,29 @@ public class FieldToMatch implements Serializable, Cloneable {
     /**
      * <p>
      * When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to
-     * search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of <code>Type</code> is any
-     * other value, omit <code>Data</code>.
+     * search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case
+     * sensitive.
      * </p>
      * <p>
-     * The name of the header is not case sensitive.
+     * When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you
+     * want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.
+     * </p>
+     * <p>
+     * If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      * </p>
      * 
      * @param data
      *        When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS
-     *        WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. If the value of
-     *        <code>Type</code> is any other value, omit <code>Data</code>.</p>
+     *        WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not
+     *        case sensitive.</p>
      *        <p>
-     *        The name of the header is not case sensitive.
+     *        When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that
+     *        you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter
+     *        name is not case sensitive.
+     *        </p>
+     *        <p>
+     *        If the value of <code>Type</code> is any other value, omit <code>Data</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,7 +780,8 @@ public class FieldToMatch implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -651,5 +837,11 @@ public class FieldToMatch implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.FieldToMatchMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

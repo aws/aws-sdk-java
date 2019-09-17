@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,62 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a
- * set of resources by various criteria, such as tags, attributes, or IDs.
+ * A filter name and value pair that is used to return a more specific list of results from a describe operation.
+ * Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters
+ * supported by a describe operation are documented with the describe operation. For example:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeAvailabilityZones</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeImages</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeKeyPairs</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSecurityGroups</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSnapshots</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSubnets</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeTags</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVolumes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVpcs</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Filter" target="_top">AWS API Documentation</a>
  */
@@ -34,7 +87,7 @@ public class Filter implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * The filter values. Filter values are case-sensitive.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -64,7 +117,7 @@ public class Filter implements Serializable, Cloneable {
      * @param name
      *        The name of the filter. Filter names are case-sensitive.
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        The filter values. Filter values are case-sensitive.
      */
     public Filter(String name, java.util.List<String> values) {
         setName(name);
@@ -113,10 +166,10 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * The filter values. Filter values are case-sensitive.
      * </p>
      * 
-     * @return One or more filter values. Filter values are case-sensitive.
+     * @return The filter values. Filter values are case-sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -128,11 +181,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * The filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        The filter values. Filter values are case-sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -146,7 +199,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * The filter values. Filter values are case-sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -155,7 +208,7 @@ public class Filter implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        The filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +224,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more filter values. Filter values are case-sensitive.
+     * The filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        One or more filter values. Filter values are case-sensitive.
+     *        The filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +238,8 @@ public class Filter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -242,4 +296,5 @@ public class Filter implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

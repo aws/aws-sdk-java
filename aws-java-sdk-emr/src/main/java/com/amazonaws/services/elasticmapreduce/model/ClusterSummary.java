@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterSummary implements Serializable, Cloneable {
+public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,7 +48,7 @@ public class ClusterSummary implements Serializable, Cloneable {
     private ClusterStatus status;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
@@ -176,14 +178,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -195,14 +197,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
      *         that is roughly four times more expensive would result in the normalized instance hours being incremented
      *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
@@ -213,14 +215,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -233,7 +235,8 @@ public class ClusterSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -303,5 +306,11 @@ public class ClusterSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.ClusterSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

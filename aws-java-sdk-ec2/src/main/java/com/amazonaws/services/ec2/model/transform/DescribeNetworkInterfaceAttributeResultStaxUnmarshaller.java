@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,18 +45,13 @@ public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("attachment", targetDepth)) {
+                    describeNetworkInterfaceAttributeResult.setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("description/value", targetDepth)) {
                     describeNetworkInterfaceAttributeResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("sourceDestCheck/value", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,8 +65,13 @@ public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller implements 
                     continue;
                 }
 
-                if (context.testExpression("attachment", targetDepth)) {
-                    describeNetworkInterfaceAttributeResult.setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    describeNetworkInterfaceAttributeResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("sourceDestCheck/value", targetDepth)) {
+                    describeNetworkInterfaceAttributeResult.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

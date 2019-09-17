@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,19 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      */
     private String targetSnapshotIdentifier;
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
 
     /**
      * <p>
@@ -517,7 +530,87 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @return The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is
+     *         retained indefinitely. </p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     *         </p>
+     *         <p>
+     *         The default value is -1.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyClusterSnapshotRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -532,7 +625,9 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         if (getSourceSnapshotClusterIdentifier() != null)
             sb.append("SourceSnapshotClusterIdentifier: ").append(getSourceSnapshotClusterIdentifier()).append(",");
         if (getTargetSnapshotIdentifier() != null)
-            sb.append("TargetSnapshotIdentifier: ").append(getTargetSnapshotIdentifier());
+            sb.append("TargetSnapshotIdentifier: ").append(getTargetSnapshotIdentifier()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +655,11 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTargetSnapshotIdentifier() != null && other.getTargetSnapshotIdentifier().equals(this.getTargetSnapshotIdentifier()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +671,7 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getSourceSnapshotIdentifier() == null) ? 0 : getSourceSnapshotIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSourceSnapshotClusterIdentifier() == null) ? 0 : getSourceSnapshotClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getTargetSnapshotIdentifier() == null) ? 0 : getTargetSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,16 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (deleteNetworkAclEntryRequest.getEgress() != null) {
+            request.addParameter("Egress", StringUtils.fromBoolean(deleteNetworkAclEntryRequest.getEgress()));
+        }
+
         if (deleteNetworkAclEntryRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclEntryRequest.getNetworkAclId()));
         }
 
         if (deleteNetworkAclEntryRequest.getRuleNumber() != null) {
             request.addParameter("RuleNumber", StringUtils.fromInteger(deleteNetworkAclEntryRequest.getRuleNumber()));
-        }
-
-        if (deleteNetworkAclEntryRequest.getEgress() != null) {
-            request.addParameter("Egress", StringUtils.fromBoolean(deleteNetworkAclEntryRequest.getEgress()));
         }
 
         return request;

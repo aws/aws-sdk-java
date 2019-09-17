@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Import documentation parts from an external (e.g., Swagger) definition file.
+ * Import documentation parts from an external (e.g., OpenAPI) definition file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-imported documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -48,7 +48,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     private Boolean failOnWarnings;
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
      * this is a JSON object.
      * </p>
      */
@@ -56,11 +56,11 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-imported documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of an API of the to-be-imported documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -69,10 +69,10 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-imported documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return [Required] The identifier of an API of the to-be-imported documentation parts.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -81,11 +81,11 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-imported documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of an API of the to-be-imported documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +164,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setMode(PutMode mode) {
-        this.mode = mode.toString();
+        withMode(mode);
     }
 
     /**
@@ -183,7 +183,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ImportDocumentationPartsRequest withMode(PutMode mode) {
-        setMode(mode);
+        this.mode = mode.toString();
         return this;
     }
 
@@ -249,11 +249,11 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
      * this is a JSON object.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -264,7 +264,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
+     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
      *        file, this is a JSON object.
      */
 
@@ -274,7 +274,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
      * this is a JSON object.
      * </p>
      * <p>
@@ -285,7 +285,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * {@code position}.
      * </p>
      * 
-     * @return [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
+     * @return [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
      *         file, this is a JSON object.
      */
 
@@ -295,12 +295,22 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger file,
+     * [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file,
      * this is a JSON object.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param body
-     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from a Swagger
+     *        [Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI
      *        file, this is a JSON object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -311,7 +321,8 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

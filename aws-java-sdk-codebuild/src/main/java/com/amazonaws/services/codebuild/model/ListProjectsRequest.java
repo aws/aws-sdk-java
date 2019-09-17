@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,18 +32,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -60,12 +59,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -91,18 +90,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -116,18 +114,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     *        <code>CREATED_TIME</code>: List based on when each build project was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build
-     *        project was last changed.
+     *        <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NAME</code>: List the build project names based on each build project's name.
+     *        <code>NAME</code>: List based on each build project's name.
      *        </p>
      *        </li>
      *        </ul>
@@ -148,18 +145,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -172,18 +168,18 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     *         <code>CREATED_TIME</code>: List based on when each build project was created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build
-     *         project was last changed.
+     *         <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last
+     *         changed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NAME</code>: List the build project names based on each build project's name.
+     *         <code>NAME</code>: List based on each build project's name.
      *         </p>
      *         </li>
      *         </ul>
@@ -204,18 +200,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -229,18 +224,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     *        <code>CREATED_TIME</code>: List based on when each build project was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build
-     *        project was last changed.
+     *        <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NAME</code>: List the build project names based on each build project's name.
+     *        <code>NAME</code>: List based on each build project's name.
      *        </p>
      *        </li>
      *        </ul>
@@ -263,18 +257,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -288,18 +281,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     *        <code>CREATED_TIME</code>: List based on when each build project was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build
-     *        project was last changed.
+     *        <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NAME</code>: List the build project names based on each build project's name.
+     *        <code>NAME</code>: List based on each build project's name.
      *        </p>
      *        </li>
      *        </ul>
@@ -310,7 +302,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setSortBy(ProjectSortByType sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -320,18 +312,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     * <code>CREATED_TIME</code>: List based on when each build project was created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build project
-     * was last changed.
+     * <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NAME</code>: List the build project names based on each build project's name.
+     * <code>NAME</code>: List based on each build project's name.
      * </p>
      * </li>
      * </ul>
@@ -345,18 +336,17 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED_TIME</code>: List the build project names based on when each build project was created.
+     *        <code>CREATED_TIME</code>: List based on when each build project was created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LAST_MODIFIED_TIME</code>: List the build project names based on when information about each build
-     *        project was last changed.
+     *        <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NAME</code>: List the build project names based on each build project's name.
+     *        <code>NAME</code>: List based on each build project's name.
      *        </p>
      *        </li>
      *        </ul>
@@ -368,7 +358,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListProjectsRequest withSortBy(ProjectSortByType sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -379,12 +369,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -397,12 +387,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ASCENDING</code>: List the build project names in ascending order.
+     *        <code>ASCENDING</code>: List in ascending order.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DESCENDING</code>: List the build project names in descending order.
+     *        <code>DESCENDING</code>: List in descending order.
      *        </p>
      *        </li>
      *        </ul>
@@ -422,12 +412,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -439,12 +429,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ASCENDING</code>: List the build project names in ascending order.
+     *         <code>ASCENDING</code>: List in ascending order.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DESCENDING</code>: List the build project names in descending order.
+     *         <code>DESCENDING</code>: List in descending order.
      *         </p>
      *         </li>
      *         </ul>
@@ -464,12 +454,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -482,12 +472,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ASCENDING</code>: List the build project names in ascending order.
+     *        <code>ASCENDING</code>: List in ascending order.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DESCENDING</code>: List the build project names in descending order.
+     *        <code>DESCENDING</code>: List in descending order.
      *        </p>
      *        </li>
      *        </ul>
@@ -509,12 +499,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -527,12 +517,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ASCENDING</code>: List the build project names in ascending order.
+     *        <code>ASCENDING</code>: List in ascending order.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DESCENDING</code>: List the build project names in descending order.
+     *        <code>DESCENDING</code>: List in descending order.
      *        </p>
      *        </li>
      *        </ul>
@@ -542,7 +532,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setSortOrder(SortOrderType sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -552,12 +542,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>ASCENDING</code>: List the build project names in ascending order.
+     * <code>ASCENDING</code>: List in ascending order.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DESCENDING</code>: List the build project names in descending order.
+     * <code>DESCENDING</code>: List in descending order.
      * </p>
      * </li>
      * </ul>
@@ -570,12 +560,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ASCENDING</code>: List the build project names in ascending order.
+     *        <code>ASCENDING</code>: List in ascending order.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DESCENDING</code>: List the build project names in descending order.
+     *        <code>DESCENDING</code>: List in descending order.
      *        </p>
      *        </li>
      *        </ul>
@@ -586,7 +576,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListProjectsRequest withSortOrder(SortOrderType sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 
@@ -652,7 +642,8 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

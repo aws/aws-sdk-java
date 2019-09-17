@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,6 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyReservedInstancesRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(modifyReservedInstancesRequest.getClientToken()));
-        }
-
         com.amazonaws.internal.SdkInternalList<String> modifyReservedInstancesRequestReservedInstancesIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyReservedInstancesRequest
                 .getReservedInstancesIds();
         if (!modifyReservedInstancesRequestReservedInstancesIdsList.isEmpty() || !modifyReservedInstancesRequestReservedInstancesIdsList.isAutoConstruct()) {
@@ -58,6 +54,10 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
             }
         }
 
+        if (modifyReservedInstancesRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(modifyReservedInstancesRequest.getClientToken()));
+        }
+
         com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration> modifyReservedInstancesRequestTargetConfigurationsList = (com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>) modifyReservedInstancesRequest
                 .getTargetConfigurations();
         if (!modifyReservedInstancesRequestTargetConfigurationsList.isEmpty() || !modifyReservedInstancesRequestTargetConfigurationsList.isAutoConstruct()) {
@@ -70,11 +70,6 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
                             StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getAvailabilityZone()));
                 }
 
-                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform() != null) {
-                    request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Platform",
-                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform()));
-                }
-
                 if (modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceCount() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceCount",
                             StringUtils.fromInteger(modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceCount()));
@@ -83,6 +78,11 @@ public class ModifyReservedInstancesRequestMarshaller implements Marshaller<Requ
                 if (modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceType() != null) {
                     request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".InstanceType",
                             StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getInstanceType()));
+                }
+
+                if (modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform() != null) {
+                    request.addParameter("ReservedInstancesConfigurationSetItemType." + targetConfigurationsListIndex + ".Platform",
+                            StringUtils.fromString(modifyReservedInstancesRequestTargetConfigurationsListValue.getPlatform()));
                 }
 
                 if (modifyReservedInstancesRequestTargetConfigurationsListValue.getScope() != null) {

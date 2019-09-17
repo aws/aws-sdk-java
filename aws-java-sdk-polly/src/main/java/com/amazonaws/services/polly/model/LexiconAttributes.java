@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,20 @@ package com.amazonaws.services.polly.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more
- * information, see <a href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
+ * information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconAttributes" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LexiconAttributes implements Serializable, Cloneable {
+public class LexiconAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -167,7 +169,7 @@ public class LexiconAttributes implements Serializable, Cloneable {
      */
 
     public void setLanguageCode(LanguageCode languageCode) {
-        this.languageCode = languageCode.toString();
+        withLanguageCode(languageCode);
     }
 
     /**
@@ -184,7 +186,7 @@ public class LexiconAttributes implements Serializable, Cloneable {
      */
 
     public LexiconAttributes withLanguageCode(LanguageCode languageCode) {
-        setLanguageCode(languageCode);
+        this.languageCode = languageCode.toString();
         return this;
     }
 
@@ -349,7 +351,8 @@ public class LexiconAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -433,5 +436,11 @@ public class LexiconAttributes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.polly.model.transform.LexiconAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

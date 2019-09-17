@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -76,8 +76,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -103,7 +103,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -113,10 +113,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -135,7 +135,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -143,7 +143,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -151,7 +151,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -163,8 +163,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -180,7 +180,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <code>LastEvaluatedKey</code> in the previous operation.
      * </p>
      * <p>
-     * The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.
+     * The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
+     * allowed.
      * </p>
      */
     private java.util.Map<String, AttributeValue> exclusiveStartKey;
@@ -196,8 +197,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -219,20 +220,22 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String filterExpression;
     /**
      * <p>
-     * The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code> action.
+     * The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single partition key value. The condition can also perform one
-     * of several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key value, or
-     * several items that have the same partition key value but different sort key values.
+     * The condition must perform an equality test on a single partition key value.
+     * </p>
+     * <p>
+     * The condition can optionally perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items
+     * that have the same partition key value but different sort key values.
      * </p>
      * <p>
      * The partition key equality test is required, and must be specified in the following format:
@@ -327,12 +330,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -373,7 +376,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -401,9 +404,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
@@ -432,7 +435,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -554,7 +557,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -580,8 +583,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -611,9 +614,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -637,7 +640,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
      *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
+     *        not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
      *        table. This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
@@ -674,7 +677,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -700,8 +703,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -730,9 +733,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If
-     *         you query a local secondary index, then for each matching item in the index DynamoDB will fetch the
-     *         entire item from the parent table. If the index is configured to project all item attributes, then all of
-     *         the data can be obtained from the local secondary index, and no fetching is required.
+     *         you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire
+     *         item from the parent table. If the index is configured to project all item attributes, then all of the
+     *         data can be obtained from the local secondary index, and no fetching is required.
      *         </p>
      *         </li>
      *         <li>
@@ -756,8 +759,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         If you query or scan a local secondary index and request only attributes that are projected into that
      *         index, the operation will read only the index and not the table. If any of the requested attributes are
-     *         not projected into the local secondary index, DynamoDB will fetch each of these attributes from the
-     *         parent table. This extra fetching incurs additional throughput cost and latency.
+     *         not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
+     *         table. This extra fetching incurs additional throughput cost and latency.
      *         </p>
      *         <p>
      *         If you query or scan a global secondary index, you can only request attributes that are projected into
@@ -794,7 +797,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -820,8 +823,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -851,9 +854,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -877,7 +880,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
      *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
+     *        not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
      *        table. This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
@@ -916,7 +919,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -942,8 +945,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -973,9 +976,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -999,7 +1002,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
      *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
+     *        not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
      *        table. This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
@@ -1024,7 +1027,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public void setSelect(Select select) {
-        this.select = select.toString();
+        withSelect(select);
     }
 
     /**
@@ -1036,7 +1039,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -1062,8 +1065,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
      * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * the local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -1093,9 +1096,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -1119,7 +1122,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
      *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
+     *        not projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
      *        table. This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
@@ -1145,20 +1148,20 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public QueryRequest withSelect(Select select) {
-        setSelect(select);
+        this.select = select.toString();
         return this;
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *         >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1169,14 +1172,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1192,7 +1195,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -1204,7 +1207,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1222,14 +1225,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1244,10 +1247,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1255,11 +1258,11 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *        processes the number of items up to the limit while processing the results, it stops the operation and
      *        returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *        subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *        subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1272,21 +1275,21 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *         processes the number of items up to the limit while processing the results, it stops the operation and
      *         returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *         subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *         subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *         exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values
      *         up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to
      *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *         Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1299,10 +1302,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1310,11 +1313,11 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *        processes the number of items up to the limit while processing the results, it stops the operation and
      *        returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *        subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *        subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
      *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1419,13 +1422,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *         >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1436,14 +1439,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditions
      *        This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *        >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1454,14 +1457,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      * >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditions
      *        This is a legacy parameter. Use <code>KeyConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.KeyConditions.html"
      *        >KeyConditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1495,12 +1498,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *         >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1511,13 +1514,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param queryFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *        >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1528,13 +1531,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      * >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param queryFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.QueryFilter.html"
      *        >QueryFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1568,13 +1571,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1586,12 +1589,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1603,13 +1606,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1623,38 +1626,38 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
      */
 
     public QueryRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -1665,8 +1668,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1681,7 +1684,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *        is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *        ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *        UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1701,8 +1704,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1716,7 +1719,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *         is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *         ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *         UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1736,8 +1739,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1752,7 +1755,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *        is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *        ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *        UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1774,8 +1777,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1789,7 +1792,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *         is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *         ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *         UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1808,13 +1811,14 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <code>LastEvaluatedKey</code> in the previous operation.
      * </p>
      * <p>
-     * The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.
+     * The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
+     * allowed.
      * </p>
      * 
      * @return The primary key of the first item that this operation will evaluate. Use the value that was returned for
      *         <code>LastEvaluatedKey</code> in the previous operation.</p>
      *         <p>
-     *         The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are
+     *         The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
      *         allowed.
      */
 
@@ -1828,14 +1832,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <code>LastEvaluatedKey</code> in the previous operation.
      * </p>
      * <p>
-     * The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.
+     * The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
+     * allowed.
      * </p>
      * 
      * @param exclusiveStartKey
      *        The primary key of the first item that this operation will evaluate. Use the value that was returned for
      *        <code>LastEvaluatedKey</code> in the previous operation.</p>
      *        <p>
-     *        The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are
+     *        The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
      *        allowed.
      */
 
@@ -1849,14 +1854,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <code>LastEvaluatedKey</code> in the previous operation.
      * </p>
      * <p>
-     * The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are allowed.
+     * The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
+     * allowed.
      * </p>
      * 
      * @param exclusiveStartKey
      *        The primary key of the first item that this operation will evaluate. Use the value that was returned for
      *        <code>LastEvaluatedKey</code> in the previous operation.</p>
      *        <p>
-     *        The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary. No set data types are
+     *        The data type for <code>ExclusiveStartKey</code> must be String, Number, or Binary. No set data types are
      *        allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1922,7 +1928,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1932,7 +1938,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public QueryRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -1946,8 +1952,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1961,7 +1967,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1979,8 +1985,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1993,7 +1999,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2011,8 +2017,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2026,7 +2032,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2053,7 +2059,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2073,7 +2079,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2098,7 +2104,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2117,7 +2123,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </note>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2142,7 +2148,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2162,7 +2168,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2174,13 +2180,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code> action.
+     * The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single partition key value. The condition can also perform one
-     * of several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key value, or
-     * several items that have the same partition key value but different sort key values.
+     * The condition must perform an equality test on a single partition key value.
+     * </p>
+     * <p>
+     * The condition can optionally perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items
+     * that have the same partition key value but different sort key values.
      * </p>
      * <p>
      * The partition key equality test is required, and must be specified in the following format:
@@ -2275,23 +2283,25 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditionExpression
-     *        The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code>
+     *        The condition that specifies the key values for items to be retrieved by the <code>Query</code>
      *        action.</p>
      *        <p>
-     *        The condition must perform an equality test on a single partition key value. The condition can also
-     *        perform one of several comparison tests on a single sort key value. <code>Query</code> can use
-     *        <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key
-     *        value, or several items that have the same partition key value but different sort key values.
+     *        The condition must perform an equality test on a single partition key value.
+     *        </p>
+     *        <p>
+     *        The condition can optionally perform one of several comparison tests on a single sort key value. This
+     *        allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or
+     *        several items that have the same partition key value but different sort key values.
      *        </p>
      *        <p>
      *        The partition key equality test is required, and must be specified in the following format:
@@ -2387,13 +2397,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *        see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *        Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2403,13 +2413,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code> action.
+     * The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single partition key value. The condition can also perform one
-     * of several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key value, or
-     * several items that have the same partition key value but different sort key values.
+     * The condition must perform an equality test on a single partition key value.
+     * </p>
+     * <p>
+     * The condition can optionally perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items
+     * that have the same partition key value but different sort key values.
      * </p>
      * <p>
      * The partition key equality test is required, and must be specified in the following format:
@@ -2504,22 +2516,24 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code>
+     * @return The condition that specifies the key values for items to be retrieved by the <code>Query</code>
      *         action.</p>
      *         <p>
-     *         The condition must perform an equality test on a single partition key value. The condition can also
-     *         perform one of several comparison tests on a single sort key value. <code>Query</code> can use
-     *         <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key
-     *         value, or several items that have the same partition key value but different sort key values.
+     *         The condition must perform an equality test on a single partition key value.
+     *         </p>
+     *         <p>
+     *         The condition can optionally perform one of several comparison tests on a single sort key value. This
+     *         allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or
+     *         several items that have the same partition key value but different sort key values.
      *         </p>
      *         <p>
      *         The partition key equality test is required, and must be specified in the following format:
@@ -2615,13 +2629,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </ul>
      *         <p>
      *         For a list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         <p>
      *         For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *         see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *         Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2631,13 +2645,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code> action.
+     * The condition that specifies the key values for items to be retrieved by the <code>Query</code> action.
      * </p>
      * <p>
-     * The condition must perform an equality test on a single partition key value. The condition can also perform one
-     * of several comparison tests on a single sort key value. <code>Query</code> can use
-     * <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key value, or
-     * several items that have the same partition key value but different sort key values.
+     * The condition must perform an equality test on a single partition key value.
+     * </p>
+     * <p>
+     * The condition can optionally perform one of several comparison tests on a single sort key value. This allows
+     * <code>Query</code> to retrieve one item with a given partition key value and sort key value, or several items
+     * that have the same partition key value but different sort key values.
      * </p>
      * <p>
      * The partition key equality test is required, and must be specified in the following format:
@@ -2732,23 +2748,25 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </ul>
      * <p>
      * For a list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keyConditionExpression
-     *        The condition that specifies the key value(s) for items to be retrieved by the <code>Query</code>
+     *        The condition that specifies the key values for items to be retrieved by the <code>Query</code>
      *        action.</p>
      *        <p>
-     *        The condition must perform an equality test on a single partition key value. The condition can also
-     *        perform one of several comparison tests on a single sort key value. <code>Query</code> can use
-     *        <code>KeyConditionExpression</code> to retrieve one item with a given partition key value and sort key
-     *        value, or several items that have the same partition key value but different sort key values.
+     *        The condition must perform an equality test on a single partition key value.
+     *        </p>
+     *        <p>
+     *        The condition can optionally perform one of several comparison tests on a single sort key value. This
+     *        allows <code>Query</code> to retrieve one item with a given partition key value and sort key value, or
+     *        several items that have the same partition key value but different sort key values.
      *        </p>
      *        <p>
      *        The partition key equality test is required, and must be specified in the following format:
@@ -2844,13 +2862,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </ul>
      *        <p>
      *        For a list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
      *        For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
      *        see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      *        Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2896,7 +2914,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2924,9 +2942,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
@@ -2962,7 +2980,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -2991,8 +3009,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -3035,7 +3053,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -3063,9 +3081,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -3102,7 +3120,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -3131,8 +3149,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -3175,7 +3193,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -3203,9 +3221,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -3242,7 +3260,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -3271,8 +3289,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3327,7 +3345,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3354,7 +3372,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3387,7 +3405,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3415,7 +3433,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3448,7 +3466,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3476,7 +3494,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3552,7 +3570,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

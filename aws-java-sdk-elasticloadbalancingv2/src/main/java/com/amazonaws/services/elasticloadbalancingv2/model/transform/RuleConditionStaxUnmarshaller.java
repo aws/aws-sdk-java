@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,35 @@ public class RuleConditionStaxUnmarshaller implements Unmarshaller<RuleCondition
                     continue;
                 }
 
+                if (context.testExpression("HostHeaderConfig", targetDepth)) {
+                    ruleCondition.setHostHeaderConfig(HostHeaderConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PathPatternConfig", targetDepth)) {
+                    ruleCondition.setPathPatternConfig(PathPatternConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("HttpHeaderConfig", targetDepth)) {
+                    ruleCondition.setHttpHeaderConfig(HttpHeaderConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("QueryStringConfig", targetDepth)) {
+                    ruleCondition.setQueryStringConfig(QueryStringConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("HttpRequestMethodConfig", targetDepth)) {
+                    ruleCondition.setHttpRequestMethodConfig(HttpRequestMethodConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceIpConfig", targetDepth)) {
+                    ruleCondition.setSourceIpConfig(SourceIpConditionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ruleCondition;

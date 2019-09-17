@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,23 +43,23 @@ public class HostPropertiesStaxUnmarshaller implements Unmarshaller<HostProperti
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("sockets", targetDepth)) {
-                    hostProperties.setSockets(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("cores", targetDepth)) {
                     hostProperties.setCores(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("totalVCpus", targetDepth)) {
-                    hostProperties.setTotalVCpus(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    hostProperties.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    hostProperties.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("sockets", targetDepth)) {
+                    hostProperties.setSockets(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalVCpus", targetDepth)) {
+                    hostProperties.setTotalVCpus(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

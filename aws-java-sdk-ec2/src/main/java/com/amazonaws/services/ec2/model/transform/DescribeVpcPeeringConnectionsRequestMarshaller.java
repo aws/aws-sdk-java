@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,21 +42,6 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequest
-                .getVpcPeeringConnectionIds();
-        if (!describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isEmpty()
-                || !describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isAutoConstruct()) {
-            int vpcPeeringConnectionIdsListIndex = 1;
-
-            for (String describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue : describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList) {
-                if (describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue != null) {
-                    request.addParameter("VpcPeeringConnectionId." + vpcPeeringConnectionIdsListIndex,
-                            StringUtils.fromString(describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue));
-                }
-                vpcPeeringConnectionIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpcPeeringConnectionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcPeeringConnectionsRequest
                 .getFilters();
         if (!describeVpcPeeringConnectionsRequestFiltersList.isEmpty() || !describeVpcPeeringConnectionsRequestFiltersList.isAutoConstruct()) {
@@ -83,6 +68,29 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcPeeringConnectionsRequest
+                .getVpcPeeringConnectionIds();
+        if (!describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isEmpty()
+                || !describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList.isAutoConstruct()) {
+            int vpcPeeringConnectionIdsListIndex = 1;
+
+            for (String describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue : describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsList) {
+                if (describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue != null) {
+                    request.addParameter("VpcPeeringConnectionId." + vpcPeeringConnectionIdsListIndex,
+                            StringUtils.fromString(describeVpcPeeringConnectionsRequestVpcPeeringConnectionIdsListValue));
+                }
+                vpcPeeringConnectionIdsListIndex++;
+            }
+        }
+
+        if (describeVpcPeeringConnectionsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcPeeringConnectionsRequest.getNextToken()));
+        }
+
+        if (describeVpcPeeringConnectionsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcPeeringConnectionsRequest.getMaxResults()));
         }
 
         return request;

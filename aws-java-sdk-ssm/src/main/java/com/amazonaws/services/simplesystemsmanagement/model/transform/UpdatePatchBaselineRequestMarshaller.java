@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,104 +12,78 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdatePatchBaselineRequest Marshaller
+ * UpdatePatchBaselineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdatePatchBaselineRequestMarshaller implements Marshaller<Request<UpdatePatchBaselineRequest>, UpdatePatchBaselineRequest> {
+@SdkInternalApi
+public class UpdatePatchBaselineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BASELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<StructuredPojo> GLOBALFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalFilters").build();
+    private static final MarshallingInfo<StructuredPojo> APPROVALRULES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalRules").build();
+    private static final MarshallingInfo<List> APPROVEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatches").build();
+    private static final MarshallingInfo<String> APPROVEDPATCHESCOMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesComplianceLevel").build();
+    private static final MarshallingInfo<Boolean> APPROVEDPATCHESENABLENONSECURITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesEnableNonSecurity").build();
+    private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
+    private static final MarshallingInfo<String> REJECTEDPATCHESACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatchesAction").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Sources").build();
+    private static final MarshallingInfo<Boolean> REPLACE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Replace").build();
 
-    public UpdatePatchBaselineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdatePatchBaselineRequestMarshaller instance = new UpdatePatchBaselineRequestMarshaller();
+
+    public static UpdatePatchBaselineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdatePatchBaselineRequest> marshall(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdatePatchBaselineRequest updatePatchBaselineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updatePatchBaselineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdatePatchBaselineRequest> request = new DefaultRequest<UpdatePatchBaselineRequest>(updatePatchBaselineRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.UpdatePatchBaseline");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updatePatchBaselineRequest.getBaselineId() != null) {
-                jsonGenerator.writeFieldName("BaselineId").writeValue(updatePatchBaselineRequest.getBaselineId());
-            }
-            if (updatePatchBaselineRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updatePatchBaselineRequest.getName());
-            }
-            if (updatePatchBaselineRequest.getGlobalFilters() != null) {
-                jsonGenerator.writeFieldName("GlobalFilters");
-                PatchFilterGroupJsonMarshaller.getInstance().marshall(updatePatchBaselineRequest.getGlobalFilters(), jsonGenerator);
-            }
-            if (updatePatchBaselineRequest.getApprovalRules() != null) {
-                jsonGenerator.writeFieldName("ApprovalRules");
-                PatchRuleGroupJsonMarshaller.getInstance().marshall(updatePatchBaselineRequest.getApprovalRules(), jsonGenerator);
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> approvedPatchesList = (com.amazonaws.internal.SdkInternalList<String>) updatePatchBaselineRequest
-                    .getApprovedPatches();
-            if (!approvedPatchesList.isEmpty() || !approvedPatchesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ApprovedPatches");
-                jsonGenerator.writeStartArray();
-                for (String approvedPatchesListValue : approvedPatchesList) {
-                    if (approvedPatchesListValue != null) {
-                        jsonGenerator.writeValue(approvedPatchesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> rejectedPatchesList = (com.amazonaws.internal.SdkInternalList<String>) updatePatchBaselineRequest
-                    .getRejectedPatches();
-            if (!rejectedPatchesList.isEmpty() || !rejectedPatchesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("RejectedPatches");
-                jsonGenerator.writeStartArray();
-                for (String rejectedPatchesListValue : rejectedPatchesList) {
-                    if (rejectedPatchesListValue != null) {
-                        jsonGenerator.writeValue(rejectedPatchesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updatePatchBaselineRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updatePatchBaselineRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getBaselineId(), BASELINEID_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getGlobalFilters(), GLOBALFILTERS_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovalRules(), APPROVALRULES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatches(), APPROVEDPATCHES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesEnableNonSecurity(), APPROVEDPATCHESENABLENONSECURITY_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatchesAction(), REJECTEDPATCHESACTION_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getSources(), SOURCES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getReplace(), REPLACE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

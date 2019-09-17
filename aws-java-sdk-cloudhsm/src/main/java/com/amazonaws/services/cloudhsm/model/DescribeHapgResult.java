@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,11 +38,11 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String hapgSerial;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsLastActionFailed;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsPendingDeletion;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsPendingRegistration;
     /**
      * <p>
@@ -150,6 +150,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -161,6 +163,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsLastActionFailed
      */
 
@@ -174,6 +178,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)}
@@ -195,6 +200,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsLastActionFailed
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -205,6 +212,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -216,6 +225,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingDeletion
      */
 
@@ -229,6 +240,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)}
@@ -250,6 +262,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingDeletion
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -260,6 +274,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -271,6 +287,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingRegistration
      */
 
@@ -284,6 +302,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsPendingRegistration(java.util.Collection)} or
@@ -305,6 +324,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingRegistration
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -521,7 +542,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setState(CloudHsmObjectState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -536,12 +557,13 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public DescribeHapgResult withState(CloudHsmObjectState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -647,4 +669,5 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

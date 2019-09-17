@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,15 @@
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
  * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
+ * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
  * Guide</a>.
  * </p>
  * <p>
- * You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described
- * below.
+ * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions, as described below.
  * </p>
  * <p>
- * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions,
- * gates, and stages.
+ * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of stages,
+ * actions, and transitions.
  * </p>
  * <p>
  * You can work with pipelines by calling:
@@ -46,7 +45,8 @@
  * </li>
  * <li>
  * <p>
- * <a>GetPipeline</a>, which returns information about a pipeline structure.
+ * <a>GetPipeline</a>, which returns information about the pipeline structure and pipeline metadata, including the
+ * pipeline Amazon Resource Name (ARN).
  * </p>
  * </li>
  * <li>
@@ -61,7 +61,19 @@
  * </li>
  * <li>
  * <p>
+ * <a>ListActionExecutions</a>, which returns action-level details for past executions. The details include full stage
+ * and action-level details, including individual action duration, status, any errors which occurred during the
+ * execution, and input and output artifact location details.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPipelineExecutions</a>, which gets a summary of the most recent executions for a pipeline.
  * </p>
  * </li>
  * <li>
@@ -76,14 +88,14 @@
  * </li>
  * </ul>
  * <p>
- * Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more
- * actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails,
- * then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in
- * the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call
- * <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or
- * <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For
- * more information about the structure of stages and actions, also refer to the <a
- * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * Pipelines include <i>stages</i>. Each stage contains one or more actions that must complete before the next stage
+ * begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will
+ * remain stopped until either a new version of an artifact appears in the source location, or a user takes action to
+ * re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
+ * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
+ * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
+ * and actions, also refer to the <a
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
@@ -91,8 +103,40 @@
  * performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline
  * from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define
  * and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and
- * <a>GetPipelineState</a>.
+ * <a>GetPipelineState</a>. Valid action categories are:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Source
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Build
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Test
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Deploy
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Approval
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Invoke
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a
  * pipeline after the actions in one stage complete.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AWSAccessKeyId", targetDepth)) {
+                    s3Storage.setAWSAccessKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("bucket", targetDepth)) {
                     s3Storage.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
 
                 if (context.testExpression("prefix", targetDepth)) {
                     s3Storage.setPrefix(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("AWSAccessKeyId", targetDepth)) {
-                    s3Storage.setAWSAccessKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

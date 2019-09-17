@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.86-SNAPSHOT</version>
+    <version>1.11.633-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>jmespath-java</artifactId>
@@ -37,7 +37,7 @@
       <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-databind</artifactId>
-          <version>${jackson.version}</version>
+          <version>${jackson.databind.version}</version>
       </dependency>
       <dependency>
           <groupId>junit</groupId>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ import com.amazonaws.transform.Unmarshaller;
 class LambdaConfigurationStaxUnmarshaller implements
         Unmarshaller<Entry<String, NotificationConfiguration>, StaxUnmarshallerContext> {
 
-    private static LambdaConfigurationStaxUnmarshaller instance = new LambdaConfigurationStaxUnmarshaller();
+    private static final LambdaConfigurationStaxUnmarshaller instance = new LambdaConfigurationStaxUnmarshaller();
 
     public static LambdaConfigurationStaxUnmarshaller getInstance() {
         return instance;

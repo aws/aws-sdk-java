@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -30,7 +32,7 @@ import javax.annotation.Generated;
  * </note>
  * <p>
  * For more information about developing and using AWS Config rules, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource
  * Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
  * </p>
  * 
@@ -38,7 +40,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfigRule implements Serializable, Cloneable {
+public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -82,7 +84,7 @@ public class ConfigRule implements Serializable, Cloneable {
     private Source source;
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      */
     private String inputParameters;
@@ -99,35 +101,51 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      */
     private String maximumExecutionFrequency;
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      */
     private String configRuleState;
+    /**
+     * <p>
+     * Service principal name of the service that created the rule.
+     * </p>
+     * <note>
+     * <p>
+     * The field is populated only if the service linked rule is created by a service. The field is empty if you create
+     * your own rule.
+     * </p>
+     * </note>
+     */
+    private String createdBy;
 
     /**
      * <p>
@@ -395,11 +413,11 @@ public class ConfigRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
      * @param inputParameters
-     *        A string in JSON format that is passed to the AWS Config rule Lambda function.
+     *        A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      */
 
     public void setInputParameters(String inputParameters) {
@@ -408,10 +426,10 @@ public class ConfigRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
-     * @return A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * @return A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      */
 
     public String getInputParameters() {
@@ -420,11 +438,11 @@ public class ConfigRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
      * @param inputParameters
-     *        A string in JSON format that is passed to the AWS Config rule Lambda function.
+     *        A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,13 +464,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -465,12 +487,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -491,13 +517,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @return The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
      *         <code>MaximumExecutionFrequency</code> when:</p>
@@ -509,12 +539,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *         Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *         see <a>ConfigSnapshotDeliveryProperties</a>.
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
      *         <p>
-     *         For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
+     *         a valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *         </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -535,13 +569,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -554,12 +592,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -582,13 +624,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -601,17 +647,21 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
+        withMaximumExecutionFrequency(maximumExecutionFrequency);
     }
 
     /**
@@ -627,13 +677,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -646,53 +700,58 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
 
     public ConfigRule withMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        setMaximumExecutionFrequency(maximumExecutionFrequency);
+        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
         return this;
     }
 
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
@@ -705,35 +764,35 @@ public class ConfigRule implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @return Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *         indicate the evaluation status for the Config rule.</p>
+     *         indicate the evaluation status for the AWS Config rule.</p>
      *         <p>
      *         AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *         <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *         <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *         </p>
      *         <p>
      *         AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *         <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config
+     *         <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
      *         rule.
      *         </p>
      *         <p>
-     *         AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *         AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *         <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *         all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
@@ -746,35 +805,36 @@ public class ConfigRule implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -789,76 +849,78 @@ public class ConfigRule implements Serializable, Cloneable {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
      */
 
     public void setConfigRuleState(ConfigRuleState configRuleState) {
-        this.configRuleState = configRuleState.toString();
+        withConfigRuleState(configRuleState);
     }
 
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -866,12 +928,83 @@ public class ConfigRule implements Serializable, Cloneable {
      */
 
     public ConfigRule withConfigRuleState(ConfigRuleState configRuleState) {
-        setConfigRuleState(configRuleState);
+        this.configRuleState = configRuleState.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Service principal name of the service that created the rule.
+     * </p>
+     * <note>
+     * <p>
+     * The field is populated only if the service linked rule is created by a service. The field is empty if you create
+     * your own rule.
+     * </p>
+     * </note>
+     * 
+     * @param createdBy
+     *        Service principal name of the service that created the rule.</p> <note>
+     *        <p>
+     *        The field is populated only if the service linked rule is created by a service. The field is empty if you
+     *        create your own rule.
+     *        </p>
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * Service principal name of the service that created the rule.
+     * </p>
+     * <note>
+     * <p>
+     * The field is populated only if the service linked rule is created by a service. The field is empty if you create
+     * your own rule.
+     * </p>
+     * </note>
+     * 
+     * @return Service principal name of the service that created the rule.</p> <note>
+     *         <p>
+     *         The field is populated only if the service linked rule is created by a service. The field is empty if you
+     *         create your own rule.
+     *         </p>
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * Service principal name of the service that created the rule.
+     * </p>
+     * <note>
+     * <p>
+     * The field is populated only if the service linked rule is created by a service. The field is empty if you create
+     * your own rule.
+     * </p>
+     * </note>
+     * 
+     * @param createdBy
+     *        Service principal name of the service that created the rule.</p> <note>
+     *        <p>
+     *        The field is populated only if the service linked rule is created by a service. The field is empty if you
+     *        create your own rule.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRule withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -898,7 +1031,9 @@ public class ConfigRule implements Serializable, Cloneable {
         if (getMaximumExecutionFrequency() != null)
             sb.append("MaximumExecutionFrequency: ").append(getMaximumExecutionFrequency()).append(",");
         if (getConfigRuleState() != null)
-            sb.append("ConfigRuleState: ").append(getConfigRuleState());
+            sb.append("ConfigRuleState: ").append(getConfigRuleState()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -949,6 +1084,10 @@ public class ConfigRule implements Serializable, Cloneable {
             return false;
         if (other.getConfigRuleState() != null && other.getConfigRuleState().equals(this.getConfigRuleState()) == false)
             return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -966,6 +1105,7 @@ public class ConfigRule implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInputParameters() == null) ? 0 : getInputParameters().hashCode());
         hashCode = prime * hashCode + ((getMaximumExecutionFrequency() == null) ? 0 : getMaximumExecutionFrequency().hashCode());
         hashCode = prime * hashCode + ((getConfigRuleState() == null) ? 0 : getConfigRuleState().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         return hashCode;
     }
 
@@ -976,5 +1116,11 @@ public class ConfigRule implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.ConfigRuleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

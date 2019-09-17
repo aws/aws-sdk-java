@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateVpcRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateVpc.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateVpcRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateVpcRequest> {
@@ -33,6 +31,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * </p>
      */
     private String cidrBlock;
+    /**
+     * <p>
+     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
+     * IP addresses, or the size of the CIDR block.
+     * </p>
+     */
+    private Boolean amazonProvidedIpv6CidrBlock;
     /**
      * <p>
      * The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with
@@ -49,13 +54,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * </p>
      */
     private String instanceTenancy;
-    /**
-     * <p>
-     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IP addresses, or the size of the CIDR block.
-     * </p>
-     */
-    private Boolean amazonProvidedIpv6CidrBlock;
 
     /**
      * Default constructor for CreateVpcRequest object. Callers should use the setter or fluent setter (with...) methods
@@ -113,6 +111,66 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     public CreateVpcRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
+    }
+
+    /**
+     * <p>
+     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
+     * IP addresses, or the size of the CIDR block.
+     * </p>
+     * 
+     * @param amazonProvidedIpv6CidrBlock
+     *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
+     *        range of IP addresses, or the size of the CIDR block.
+     */
+
+    public void setAmazonProvidedIpv6CidrBlock(Boolean amazonProvidedIpv6CidrBlock) {
+        this.amazonProvidedIpv6CidrBlock = amazonProvidedIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
+     * IP addresses, or the size of the CIDR block.
+     * </p>
+     * 
+     * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
+     *         range of IP addresses, or the size of the CIDR block.
+     */
+
+    public Boolean getAmazonProvidedIpv6CidrBlock() {
+        return this.amazonProvidedIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
+     * IP addresses, or the size of the CIDR block.
+     * </p>
+     * 
+     * @param amazonProvidedIpv6CidrBlock
+     *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
+     *        range of IP addresses, or the size of the CIDR block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcRequest withAmazonProvidedIpv6CidrBlock(Boolean amazonProvidedIpv6CidrBlock) {
+        setAmazonProvidedIpv6CidrBlock(amazonProvidedIpv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
+     * IP addresses, or the size of the CIDR block.
+     * </p>
+     * 
+     * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
+     *         range of IP addresses, or the size of the CIDR block.
+     */
+
+    public Boolean isAmazonProvidedIpv6CidrBlock() {
+        return this.amazonProvidedIpv6CidrBlock;
     }
 
     /**
@@ -249,7 +307,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -284,68 +342,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
 
     public CreateVpcRequest withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
-    }
-
-    /**
-     * <p>
-     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IP addresses, or the size of the CIDR block.
-     * </p>
-     * 
-     * @param amazonProvidedIpv6CidrBlock
-     *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *        range of IP addresses, or the size of the CIDR block.
-     */
-
-    public void setAmazonProvidedIpv6CidrBlock(Boolean amazonProvidedIpv6CidrBlock) {
-        this.amazonProvidedIpv6CidrBlock = amazonProvidedIpv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IP addresses, or the size of the CIDR block.
-     * </p>
-     * 
-     * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *         range of IP addresses, or the size of the CIDR block.
-     */
-
-    public Boolean getAmazonProvidedIpv6CidrBlock() {
-        return this.amazonProvidedIpv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IP addresses, or the size of the CIDR block.
-     * </p>
-     * 
-     * @param amazonProvidedIpv6CidrBlock
-     *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *        range of IP addresses, or the size of the CIDR block.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpcRequest withAmazonProvidedIpv6CidrBlock(Boolean amazonProvidedIpv6CidrBlock) {
-        setAmazonProvidedIpv6CidrBlock(amazonProvidedIpv6CidrBlock);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IP addresses, or the size of the CIDR block.
-     * </p>
-     * 
-     * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *         range of IP addresses, or the size of the CIDR block.
-     */
-
-    public Boolean isAmazonProvidedIpv6CidrBlock() {
-        return this.amazonProvidedIpv6CidrBlock;
     }
 
     /**
@@ -360,7 +358,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -372,10 +371,10 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         sb.append("{");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
-        if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getAmazonProvidedIpv6CidrBlock() != null)
-            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock());
+            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock()).append(",");
+        if (getInstanceTenancy() != null)
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -394,13 +393,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
-        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
-            return false;
-        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
-            return false;
         if (other.getAmazonProvidedIpv6CidrBlock() == null ^ this.getAmazonProvidedIpv6CidrBlock() == null)
             return false;
         if (other.getAmazonProvidedIpv6CidrBlock() != null && other.getAmazonProvidedIpv6CidrBlock().equals(this.getAmazonProvidedIpv6CidrBlock()) == false)
+            return false;
+        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
+            return false;
+        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
             return false;
         return true;
     }
@@ -411,8 +410,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
         hashCode = prime * hashCode + ((getAmazonProvidedIpv6CidrBlock() == null) ? 0 : getAmazonProvidedIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
         return hashCode;
     }
 

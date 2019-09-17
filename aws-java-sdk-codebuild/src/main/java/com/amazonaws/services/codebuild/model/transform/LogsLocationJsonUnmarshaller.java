@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,18 @@ public class LogsLocationJsonUnmarshaller implements Unmarshaller<LogsLocation, 
                 if (context.testExpression("deepLink", targetDepth)) {
                     context.nextToken();
                     logsLocation.setDeepLink(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("s3DeepLink", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setS3DeepLink(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cloudWatchLogs", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setCloudWatchLogs(CloudWatchLogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("s3Logs", targetDepth)) {
+                    context.nextToken();
+                    logsLocation.setS3Logs(S3LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

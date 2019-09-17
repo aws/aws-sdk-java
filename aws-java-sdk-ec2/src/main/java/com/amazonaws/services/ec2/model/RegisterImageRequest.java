@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,26 +29,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The full path to your AMI manifest in Amazon S3 storage.
+     * The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     * <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     * <i>Amazon S3 Service Developer Guide</i>.
      * </p>
      */
     private String imageLocation;
-    /**
-     * <p>
-     * A name for your AMI.
-     * </p>
-     * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
-     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * A description for your AMI.
-     * </p>
-     */
-    private String description;
     /**
      * <p>
      * The architecture of the AMI.
@@ -61,10 +49,50 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String architecture;
     /**
      * <p>
+     * The block device mapping entries.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
+    /**
+     * <p>
+     * A description for your AMI.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch
+     * from the AMI.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
+     * the AMI unreachable.
+     * </p>
+     */
+    private Boolean enaSupport;
+    /**
+     * <p>
      * The ID of the kernel.
      * </p>
      */
     private String kernelId;
+    /**
+     * <p>
+     * A name for your AMI.
+     * </p>
+     * <p>
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> billingProducts;
     /**
      * <p>
      * The ID of the RAM disk.
@@ -73,25 +101,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String ramdiskId;
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      */
     private String rootDeviceName;
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
-    /**
-     * <p>
-     * The type of virtualization.
-     * </p>
-     * <p>
-     * Default: <code>paravirtual</code>
-     * </p>
-     */
-    private String virtualizationType;
     /**
      * <p>
      * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
@@ -108,15 +121,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String sriovNetSupport;
     /**
      * <p>
-     * Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch
-     * from the AMI.
+     * The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
      * </p>
      * <p>
-     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
-     * the AMI unreachable.
+     * Default: <code>paravirtual</code>
      * </p>
      */
-    private Boolean enaSupport;
+    private String virtualizationType;
 
     /**
      * Default constructor for RegisterImageRequest object. Callers should use the setter or fluent setter (with...)
@@ -130,7 +141,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * initialize any additional object members.
      * 
      * @param imageLocation
-     *        The full path to your AMI manifest in Amazon S3 storage.
+     *        The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     *        <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon
+     *        EC2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     *        <i>Amazon S3 Service Developer Guide</i>.
      */
     public RegisterImageRequest(String imageLocation) {
         setImageLocation(imageLocation);
@@ -138,11 +153,19 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The full path to your AMI manifest in Amazon S3 storage.
+     * The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     * <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     * <i>Amazon S3 Service Developer Guide</i>.
      * </p>
      * 
      * @param imageLocation
-     *        The full path to your AMI manifest in Amazon S3 storage.
+     *        The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     *        <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon
+     *        EC2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     *        <i>Amazon S3 Service Developer Guide</i>.
      */
 
     public void setImageLocation(String imageLocation) {
@@ -151,10 +174,18 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The full path to your AMI manifest in Amazon S3 storage.
+     * The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     * <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     * <i>Amazon S3 Service Developer Guide</i>.
      * </p>
      * 
-     * @return The full path to your AMI manifest in Amazon S3 storage.
+     * @return The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     *         <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon
+     *         EC2. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in
+     *         the <i>Amazon S3 Service Developer Guide</i>.
      */
 
     public String getImageLocation() {
@@ -163,117 +194,24 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The full path to your AMI manifest in Amazon S3 storage.
+     * The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     * <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     * <i>Amazon S3 Service Developer Guide</i>.
      * </p>
      * 
      * @param imageLocation
-     *        The full path to your AMI manifest in Amazon S3 storage.
+     *        The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the
+     *        <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon
+     *        EC2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the
+     *        <i>Amazon S3 Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterImageRequest withImageLocation(String imageLocation) {
         setImageLocation(imageLocation);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A name for your AMI.
-     * </p>
-     * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
-     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     * </p>
-     * 
-     * @param name
-     *        A name for your AMI.</p>
-     *        <p>
-     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
-     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * A name for your AMI.
-     * </p>
-     * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
-     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     * </p>
-     * 
-     * @return A name for your AMI.</p>
-     *         <p>
-     *         Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
-     *         (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * A name for your AMI.
-     * </p>
-     * <p>
-     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
-     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     * </p>
-     * 
-     * @param name
-     *        A name for your AMI.</p>
-     *        <p>
-     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
-     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for your AMI.
-     * </p>
-     * 
-     * @param description
-     *        A description for your AMI.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for your AMI.
-     * </p>
-     * 
-     * @return A description for your AMI.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for your AMI.
-     * </p>
-     * 
-     * @param description
-     *        A description for your AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withDescription(String description) {
-        setDescription(description);
         return this;
     }
 
@@ -359,7 +297,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public void setArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -381,136 +319,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public RegisterImageRequest withArchitecture(ArchitectureValues architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
     /**
      * <p>
-     * The ID of the kernel.
+     * The block device mapping entries.
      * </p>
      * 
-     * @param kernelId
-     *        The ID of the kernel.
-     */
-
-    public void setKernelId(String kernelId) {
-        this.kernelId = kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @return The ID of the kernel.
-     */
-
-    public String getKernelId() {
-        return this.kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @param kernelId
-     *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withKernelId(String kernelId) {
-        setKernelId(kernelId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     */
-
-    public void setRamdiskId(String ramdiskId) {
-        this.ramdiskId = ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @return The ID of the RAM disk.
-     */
-
-    public String getRamdiskId() {
-        return this.ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withRamdiskId(String ramdiskId) {
-        setRamdiskId(ramdiskId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     * </p>
-     * 
-     * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     */
-
-    public void setRootDeviceName(String rootDeviceName) {
-        this.rootDeviceName = rootDeviceName;
-    }
-
-    /**
-     * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     * </p>
-     * 
-     * @return The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     */
-
-    public String getRootDeviceName() {
-        return this.rootDeviceName;
-    }
-
-    /**
-     * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     * </p>
-     * 
-     * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withRootDeviceName(String rootDeviceName) {
-        setRootDeviceName(rootDeviceName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * 
-     * @return One or more block device mapping entries.
+     * @return The block device mapping entries.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -522,11 +340,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -540,7 +358,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -549,7 +367,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,11 +383,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        The block device mapping entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,141 +398,41 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The type of virtualization.
-     * </p>
-     * <p>
-     * Default: <code>paravirtual</code>
+     * A description for your AMI.
      * </p>
      * 
-     * @param virtualizationType
-     *        The type of virtualization.</p>
-     *        <p>
-     *        Default: <code>paravirtual</code>
+     * @param description
+     *        A description for your AMI.
      */
 
-    public void setVirtualizationType(String virtualizationType) {
-        this.virtualizationType = virtualizationType;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The type of virtualization.
-     * </p>
-     * <p>
-     * Default: <code>paravirtual</code>
+     * A description for your AMI.
      * </p>
      * 
-     * @return The type of virtualization.</p>
-     *         <p>
-     *         Default: <code>paravirtual</code>
+     * @return A description for your AMI.
      */
 
-    public String getVirtualizationType() {
-        return this.virtualizationType;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The type of virtualization.
-     * </p>
-     * <p>
-     * Default: <code>paravirtual</code>
+     * A description for your AMI.
      * </p>
      * 
-     * @param virtualizationType
-     *        The type of virtualization.</p>
-     *        <p>
-     *        Default: <code>paravirtual</code>
+     * @param description
+     *        A description for your AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RegisterImageRequest withVirtualizationType(String virtualizationType) {
-        setVirtualizationType(virtualizationType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
-     * AMI and any instances that you launch from the AMI.
-     * </p>
-     * <p>
-     * There is no way to disable <code>sriovNetSupport</code> at this time.
-     * </p>
-     * <p>
-     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
-     * the AMI unreachable.
-     * </p>
-     * 
-     * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
-     *        for the AMI and any instances that you launch from the AMI.</p>
-     *        <p>
-     *        There is no way to disable <code>sriovNetSupport</code> at this time.
-     *        </p>
-     *        <p>
-     *        This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
-     *        launched from the AMI unreachable.
-     */
-
-    public void setSriovNetSupport(String sriovNetSupport) {
-        this.sriovNetSupport = sriovNetSupport;
-    }
-
-    /**
-     * <p>
-     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
-     * AMI and any instances that you launch from the AMI.
-     * </p>
-     * <p>
-     * There is no way to disable <code>sriovNetSupport</code> at this time.
-     * </p>
-     * <p>
-     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
-     * the AMI unreachable.
-     * </p>
-     * 
-     * @return Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
-     *         for the AMI and any instances that you launch from the AMI.</p>
-     *         <p>
-     *         There is no way to disable <code>sriovNetSupport</code> at this time.
-     *         </p>
-     *         <p>
-     *         This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
-     *         launched from the AMI unreachable.
-     */
-
-    public String getSriovNetSupport() {
-        return this.sriovNetSupport;
-    }
-
-    /**
-     * <p>
-     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
-     * AMI and any instances that you launch from the AMI.
-     * </p>
-     * <p>
-     * There is no way to disable <code>sriovNetSupport</code> at this time.
-     * </p>
-     * <p>
-     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
-     * the AMI unreachable.
-     * </p>
-     * 
-     * @param sriovNetSupport
-     *        Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
-     *        for the AMI and any instances that you launch from the AMI.</p>
-     *        <p>
-     *        There is no way to disable <code>sriovNetSupport</code> at this time.
-     *        </p>
-     *        <p>
-     *        This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
-     *        launched from the AMI unreachable.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {
-        setSriovNetSupport(sriovNetSupport);
+    public RegisterImageRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -807,6 +525,408 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     */
+
+    public void setKernelId(String kernelId) {
+        this.kernelId = kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @return The ID of the kernel.
+     */
+
+    public String getKernelId() {
+        return this.kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withKernelId(String kernelId) {
+        setKernelId(kernelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A name for your AMI.
+     * </p>
+     * <p>
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * </p>
+     * 
+     * @param name
+     *        A name for your AMI.</p>
+     *        <p>
+     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name for your AMI.
+     * </p>
+     * <p>
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * </p>
+     * 
+     * @return A name for your AMI.</p>
+     *         <p>
+     *         Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *         (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name for your AMI.
+     * </p>
+     * <p>
+     * Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.),
+     * slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * </p>
+     * 
+     * @param name
+     *        A name for your AMI.</p>
+     *        <p>
+     *        Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods
+     *        (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @return The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *         you can use the AWS Marketplace to bill for the use of an AMI.
+     */
+
+    public java.util.List<String> getBillingProducts() {
+        if (billingProducts == null) {
+            billingProducts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return billingProducts;
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     */
+
+    public void setBillingProducts(java.util.Collection<String> billingProducts) {
+        if (billingProducts == null) {
+            this.billingProducts = null;
+            return;
+        }
+
+        this.billingProducts = new com.amazonaws.internal.SdkInternalList<String>(billingProducts);
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBillingProducts(java.util.Collection)} or {@link #withBillingProducts(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withBillingProducts(String... billingProducts) {
+        if (this.billingProducts == null) {
+            setBillingProducts(new com.amazonaws.internal.SdkInternalList<String>(billingProducts.length));
+        }
+        for (String ele : billingProducts) {
+            this.billingProducts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withBillingProducts(java.util.Collection<String> billingProducts) {
+        setBillingProducts(billingProducts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
+     */
+
+    public void setRamdiskId(String ramdiskId) {
+        this.ramdiskId = ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @return The ID of the RAM disk.
+     */
+
+    public String getRamdiskId() {
+        return this.ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withRamdiskId(String ramdiskId) {
+        setRamdiskId(ramdiskId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     * </p>
+     * 
+     * @param rootDeviceName
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     */
+
+    public void setRootDeviceName(String rootDeviceName) {
+        this.rootDeviceName = rootDeviceName;
+    }
+
+    /**
+     * <p>
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     * </p>
+     * 
+     * @return The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     */
+
+    public String getRootDeviceName() {
+        return this.rootDeviceName;
+    }
+
+    /**
+     * <p>
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     * </p>
+     * 
+     * @param rootDeviceName
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withRootDeviceName(String rootDeviceName) {
+        setRootDeviceName(rootDeviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
+     * the AMI unreachable.
+     * </p>
+     * 
+     * @param sriovNetSupport
+     *        Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
+     *        for the AMI and any instances that you launch from the AMI.</p>
+     *        <p>
+     *        There is no way to disable <code>sriovNetSupport</code> at this time.
+     *        </p>
+     *        <p>
+     *        This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     *        launched from the AMI unreachable.
+     */
+
+    public void setSriovNetSupport(String sriovNetSupport) {
+        this.sriovNetSupport = sriovNetSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
+     * the AMI unreachable.
+     * </p>
+     * 
+     * @return Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
+     *         for the AMI and any instances that you launch from the AMI.</p>
+     *         <p>
+     *         There is no way to disable <code>sriovNetSupport</code> at this time.
+     *         </p>
+     *         <p>
+     *         This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     *         launched from the AMI unreachable.
+     */
+
+    public String getSriovNetSupport() {
+        return this.sriovNetSupport;
+    }
+
+    /**
+     * <p>
+     * Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the
+     * AMI and any instances that you launch from the AMI.
+     * </p>
+     * <p>
+     * There is no way to disable <code>sriovNetSupport</code> at this time.
+     * </p>
+     * <p>
+     * This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from
+     * the AMI unreachable.
+     * </p>
+     * 
+     * @param sriovNetSupport
+     *        Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface
+     *        for the AMI and any instances that you launch from the AMI.</p>
+     *        <p>
+     *        There is no way to disable <code>sriovNetSupport</code> at this time.
+     *        </p>
+     *        <p>
+     *        This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances
+     *        launched from the AMI unreachable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {
+        setSriovNetSupport(sriovNetSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
+     * </p>
+     * <p>
+     * Default: <code>paravirtual</code>
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     *        <p>
+     *        Default: <code>paravirtual</code>
+     */
+
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+
+    /**
+     * <p>
+     * The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
+     * </p>
+     * <p>
+     * Default: <code>paravirtual</code>
+     * </p>
+     * 
+     * @return The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     *         <p>
+     *         Default: <code>paravirtual</code>
+     */
+
+    public String getVirtualizationType() {
+        return this.virtualizationType;
+    }
+
+    /**
+     * <p>
+     * The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
+     * </p>
+     * <p>
+     * Default: <code>paravirtual</code>
+     * </p>
+     * 
+     * @param virtualizationType
+     *        The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
+     *        <p>
+     *        Default: <code>paravirtual</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withVirtualizationType(String virtualizationType) {
+        setVirtualizationType(virtualizationType);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -818,7 +938,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -830,26 +951,28 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         sb.append("{");
         if (getImageLocation() != null)
             sb.append("ImageLocation: ").append(getImageLocation()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getBlockDeviceMappings() != null)
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEnaSupport() != null)
+            sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
         if (getKernelId() != null)
             sb.append("KernelId: ").append(getKernelId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getBillingProducts() != null)
+            sb.append("BillingProducts: ").append(getBillingProducts()).append(",");
         if (getRamdiskId() != null)
             sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getRootDeviceName() != null)
             sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
-        if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
-        if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getSriovNetSupport() != null)
             sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
-        if (getEnaSupport() != null)
-            sb.append("EnaSupport: ").append(getEnaSupport());
+        if (getVirtualizationType() != null)
+            sb.append("VirtualizationType: ").append(getVirtualizationType());
         sb.append("}");
         return sb.toString();
     }
@@ -868,21 +991,33 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getImageLocation() != null && other.getImageLocation().equals(this.getImageLocation()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
             return false;
-        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+        if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
             return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
         if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getBillingProducts() == null ^ this.getBillingProducts() == null)
+            return false;
+        if (other.getBillingProducts() != null && other.getBillingProducts().equals(this.getBillingProducts()) == false)
             return false;
         if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
             return false;
@@ -892,21 +1027,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
             return false;
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
-            return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
-            return false;
-        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null)
-            return false;
-        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
-            return false;
         if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null)
             return false;
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
-        if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null)
             return false;
-        if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
             return false;
         return true;
     }
@@ -917,16 +1044,17 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImageLocation() == null) ? 0 : getImageLocation().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getBillingProducts() == null) ? 0 : getBillingProducts().hashCode());
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
-        hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
         return hashCode;
     }
 

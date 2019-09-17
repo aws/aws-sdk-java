@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
- * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon
- * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon EC2 instances, AWS
+ * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch
+ * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -41,24 +41,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch Logs to monitor applications and
- * systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application
- * logs and send you a notification whenever the rate of errors exceeds a threshold you specify. CloudWatch Logs uses
- * your log data for monitoring; so, no code changes are required. For example, you can monitor application logs for
- * specific literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a
- * particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching
- * for is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that you specify.
+ * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
+ * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
+ * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
+ * log data for monitoring; so, no code changes are required. For example, you can monitor application logs for specific
+ * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
+ * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
+ * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch and receive notifications
- * of particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
+ * <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of
+ * particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
+ * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
  * the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch
  * Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log
  * service. You can then access the raw log data when you need it.
@@ -251,6 +251,10 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
         this.executorService = executorService;
     }
 
+    public static AWSLogsAsyncClientBuilder asyncBuilder() {
+        return AWSLogsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Logs using the specified
      * parameters.
@@ -273,22 +277,23 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest request) {
+    public java.util.concurrent.Future<AssociateKmsKeyResult> associateKmsKeyAsync(AssociateKmsKeyRequest request) {
 
-        return cancelExportTaskAsync(request, null);
+        return associateKmsKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(final CancelExportTaskRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
+    public java.util.concurrent.Future<AssociateKmsKeyResult> associateKmsKeyAsync(final AssociateKmsKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateKmsKeyRequest, AssociateKmsKeyResult> asyncHandler) {
+        final AssociateKmsKeyRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CancelExportTaskResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<AssociateKmsKeyResult>() {
             @Override
-            public CancelExportTaskResult call() throws Exception {
-                CancelExportTaskResult result;
+            public AssociateKmsKeyResult call() throws Exception {
+                AssociateKmsKeyResult result = null;
 
                 try {
-                    result = cancelExportTask(request);
+                    result = executeAssociateKmsKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -297,7 +302,40 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest request) {
+
+        return cancelExportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(final CancelExportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
+        final CancelExportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelExportTaskResult>() {
+            @Override
+            public CancelExportTaskResult call() throws Exception {
+                CancelExportTaskResult result = null;
+
+                try {
+                    result = executeCancelExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -313,14 +351,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<CreateExportTaskResult> createExportTaskAsync(final CreateExportTaskRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateExportTaskRequest, CreateExportTaskResult> asyncHandler) {
+        final CreateExportTaskRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateExportTaskResult>() {
             @Override
             public CreateExportTaskResult call() throws Exception {
-                CreateExportTaskResult result;
+                CreateExportTaskResult result = null;
 
                 try {
-                    result = createExportTask(request);
+                    result = executeCreateExportTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -329,7 +368,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -345,14 +384,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(final CreateLogGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult> asyncHandler) {
+        final CreateLogGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateLogGroupResult>() {
             @Override
             public CreateLogGroupResult call() throws Exception {
-                CreateLogGroupResult result;
+                CreateLogGroupResult result = null;
 
                 try {
-                    result = createLogGroup(request);
+                    result = executeCreateLogGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -361,7 +401,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -377,14 +417,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(final CreateLogStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler) {
+        final CreateLogStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateLogStreamResult>() {
             @Override
             public CreateLogStreamResult call() throws Exception {
-                CreateLogStreamResult result;
+                CreateLogStreamResult result = null;
 
                 try {
-                    result = createLogStream(request);
+                    result = executeCreateLogStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -393,7 +434,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -409,14 +450,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(final DeleteDestinationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler) {
+        final DeleteDestinationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDestinationResult>() {
             @Override
             public DeleteDestinationResult call() throws Exception {
-                DeleteDestinationResult result;
+                DeleteDestinationResult result = null;
 
                 try {
-                    result = deleteDestination(request);
+                    result = executeDeleteDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -425,7 +467,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -441,14 +483,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(final DeleteLogGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult> asyncHandler) {
+        final DeleteLogGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteLogGroupResult>() {
             @Override
             public DeleteLogGroupResult call() throws Exception {
-                DeleteLogGroupResult result;
+                DeleteLogGroupResult result = null;
 
                 try {
-                    result = deleteLogGroup(request);
+                    result = executeDeleteLogGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -457,7 +500,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -473,14 +516,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(final DeleteLogStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult> asyncHandler) {
+        final DeleteLogStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteLogStreamResult>() {
             @Override
             public DeleteLogStreamResult call() throws Exception {
-                DeleteLogStreamResult result;
+                DeleteLogStreamResult result = null;
 
                 try {
-                    result = deleteLogStream(request);
+                    result = executeDeleteLogStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -489,7 +533,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -505,14 +549,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(final DeleteMetricFilterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler) {
+        final DeleteMetricFilterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteMetricFilterResult>() {
             @Override
             public DeleteMetricFilterResult call() throws Exception {
-                DeleteMetricFilterResult result;
+                DeleteMetricFilterResult result = null;
 
                 try {
-                    result = deleteMetricFilter(request);
+                    result = executeDeleteMetricFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -521,7 +566,40 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -537,14 +615,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(final DeleteRetentionPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler) {
+        final DeleteRetentionPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRetentionPolicyResult>() {
             @Override
             public DeleteRetentionPolicyResult call() throws Exception {
-                DeleteRetentionPolicyResult result;
+                DeleteRetentionPolicyResult result = null;
 
                 try {
-                    result = deleteRetentionPolicy(request);
+                    result = executeDeleteRetentionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -553,7 +632,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -569,14 +648,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(final DeleteSubscriptionFilterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler) {
+        final DeleteSubscriptionFilterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSubscriptionFilterResult>() {
             @Override
             public DeleteSubscriptionFilterResult call() throws Exception {
-                DeleteSubscriptionFilterResult result;
+                DeleteSubscriptionFilterResult result = null;
 
                 try {
-                    result = deleteSubscriptionFilter(request);
+                    result = executeDeleteSubscriptionFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -585,7 +665,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -601,14 +681,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(final DescribeDestinationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler) {
+        final DescribeDestinationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDestinationsResult>() {
             @Override
             public DescribeDestinationsResult call() throws Exception {
-                DescribeDestinationsResult result;
+                DescribeDestinationsResult result = null;
 
                 try {
-                    result = describeDestinations(request);
+                    result = executeDescribeDestinations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -617,7 +698,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -640,6 +721,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
      *
      * @see #describeDestinationsAsync(DescribeDestinationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDestinationsResult> describeDestinationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDestinationsRequest, DescribeDestinationsResult> asyncHandler) {
 
@@ -655,14 +737,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(final DescribeExportTasksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler) {
+        final DescribeExportTasksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeExportTasksResult>() {
             @Override
             public DescribeExportTasksResult call() throws Exception {
-                DescribeExportTasksResult result;
+                DescribeExportTasksResult result = null;
 
                 try {
-                    result = describeExportTasks(request);
+                    result = executeDescribeExportTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -671,7 +754,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -687,14 +770,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(final DescribeLogGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler) {
+        final DescribeLogGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeLogGroupsResult>() {
             @Override
             public DescribeLogGroupsResult call() throws Exception {
-                DescribeLogGroupsResult result;
+                DescribeLogGroupsResult result = null;
 
                 try {
-                    result = describeLogGroups(request);
+                    result = executeDescribeLogGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -703,7 +787,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -726,6 +810,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
      *
      * @see #describeLogGroupsAsync(DescribeLogGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLogGroupsResult> describeLogGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLogGroupsRequest, DescribeLogGroupsResult> asyncHandler) {
 
@@ -741,14 +826,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeLogStreamsResult> describeLogStreamsAsync(final DescribeLogStreamsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeLogStreamsRequest, DescribeLogStreamsResult> asyncHandler) {
+        final DescribeLogStreamsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeLogStreamsResult>() {
             @Override
             public DescribeLogStreamsResult call() throws Exception {
-                DescribeLogStreamsResult result;
+                DescribeLogStreamsResult result = null;
 
                 try {
-                    result = describeLogStreams(request);
+                    result = executeDescribeLogStreams(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -757,7 +843,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -773,14 +859,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeMetricFiltersResult> describeMetricFiltersAsync(final DescribeMetricFiltersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMetricFiltersRequest, DescribeMetricFiltersResult> asyncHandler) {
+        final DescribeMetricFiltersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMetricFiltersResult>() {
             @Override
             public DescribeMetricFiltersResult call() throws Exception {
-                DescribeMetricFiltersResult result;
+                DescribeMetricFiltersResult result = null;
 
                 try {
-                    result = describeMetricFilters(request);
+                    result = executeDescribeMetricFilters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -789,7 +876,73 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueriesResult> describeQueriesAsync(DescribeQueriesRequest request) {
+
+        return describeQueriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueriesResult> describeQueriesAsync(final DescribeQueriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQueriesRequest, DescribeQueriesResult> asyncHandler) {
+        final DescribeQueriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQueriesResult>() {
+            @Override
+            public DescribeQueriesResult call() throws Exception {
+                DescribeQueriesResult result = null;
+
+                try {
+                    result = executeDescribeQueries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePoliciesResult> describeResourcePoliciesAsync(DescribeResourcePoliciesRequest request) {
+
+        return describeResourcePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePoliciesResult> describeResourcePoliciesAsync(final DescribeResourcePoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourcePoliciesRequest, DescribeResourcePoliciesResult> asyncHandler) {
+        final DescribeResourcePoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeResourcePoliciesResult>() {
+            @Override
+            public DescribeResourcePoliciesResult call() throws Exception {
+                DescribeResourcePoliciesResult result = null;
+
+                try {
+                    result = executeDescribeResourcePolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -805,14 +958,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(final DescribeSubscriptionFiltersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionFiltersRequest, DescribeSubscriptionFiltersResult> asyncHandler) {
+        final DescribeSubscriptionFiltersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSubscriptionFiltersResult>() {
             @Override
             public DescribeSubscriptionFiltersResult call() throws Exception {
-                DescribeSubscriptionFiltersResult result;
+                DescribeSubscriptionFiltersResult result = null;
 
                 try {
-                    result = describeSubscriptionFilters(request);
+                    result = executeDescribeSubscriptionFilters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -821,7 +975,40 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateKmsKeyResult> disassociateKmsKeyAsync(DisassociateKmsKeyRequest request) {
+
+        return disassociateKmsKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateKmsKeyResult> disassociateKmsKeyAsync(final DisassociateKmsKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateKmsKeyRequest, DisassociateKmsKeyResult> asyncHandler) {
+        final DisassociateKmsKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateKmsKeyResult>() {
+            @Override
+            public DisassociateKmsKeyResult call() throws Exception {
+                DisassociateKmsKeyResult result = null;
+
+                try {
+                    result = executeDisassociateKmsKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -837,14 +1024,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<FilterLogEventsResult> filterLogEventsAsync(final FilterLogEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<FilterLogEventsRequest, FilterLogEventsResult> asyncHandler) {
+        final FilterLogEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<FilterLogEventsResult>() {
             @Override
             public FilterLogEventsResult call() throws Exception {
-                FilterLogEventsResult result;
+                FilterLogEventsResult result = null;
 
                 try {
-                    result = filterLogEvents(request);
+                    result = executeFilterLogEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -853,7 +1041,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -869,14 +1057,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<GetLogEventsResult> getLogEventsAsync(final GetLogEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetLogEventsRequest, GetLogEventsResult> asyncHandler) {
+        final GetLogEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetLogEventsResult>() {
             @Override
             public GetLogEventsResult call() throws Exception {
-                GetLogEventsResult result;
+                GetLogEventsResult result = null;
 
                 try {
-                    result = getLogEvents(request);
+                    result = executeGetLogEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -885,7 +1074,106 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogGroupFieldsResult> getLogGroupFieldsAsync(GetLogGroupFieldsRequest request) {
+
+        return getLogGroupFieldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogGroupFieldsResult> getLogGroupFieldsAsync(final GetLogGroupFieldsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogGroupFieldsRequest, GetLogGroupFieldsResult> asyncHandler) {
+        final GetLogGroupFieldsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogGroupFieldsResult>() {
+            @Override
+            public GetLogGroupFieldsResult call() throws Exception {
+                GetLogGroupFieldsResult result = null;
+
+                try {
+                    result = executeGetLogGroupFields(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogRecordResult> getLogRecordAsync(GetLogRecordRequest request) {
+
+        return getLogRecordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogRecordResult> getLogRecordAsync(final GetLogRecordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogRecordRequest, GetLogRecordResult> asyncHandler) {
+        final GetLogRecordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogRecordResult>() {
+            @Override
+            public GetLogRecordResult call() throws Exception {
+                GetLogRecordResult result = null;
+
+                try {
+                    result = executeGetLogRecord(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(GetQueryResultsRequest request) {
+
+        return getQueryResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(final GetQueryResultsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetQueryResultsRequest, GetQueryResultsResult> asyncHandler) {
+        final GetQueryResultsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetQueryResultsResult>() {
+            @Override
+            public GetQueryResultsResult call() throws Exception {
+                GetQueryResultsResult result = null;
+
+                try {
+                    result = executeGetQueryResults(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -901,14 +1189,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(final ListTagsLogGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler) {
+        final ListTagsLogGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsLogGroupResult>() {
             @Override
             public ListTagsLogGroupResult call() throws Exception {
-                ListTagsLogGroupResult result;
+                ListTagsLogGroupResult result = null;
 
                 try {
-                    result = listTagsLogGroup(request);
+                    result = executeListTagsLogGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -917,7 +1206,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -933,14 +1222,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(final PutDestinationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutDestinationRequest, PutDestinationResult> asyncHandler) {
+        final PutDestinationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutDestinationResult>() {
             @Override
             public PutDestinationResult call() throws Exception {
-                PutDestinationResult result;
+                PutDestinationResult result = null;
 
                 try {
-                    result = putDestination(request);
+                    result = executePutDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -949,7 +1239,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -965,14 +1255,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(final PutDestinationPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult> asyncHandler) {
+        final PutDestinationPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutDestinationPolicyResult>() {
             @Override
             public PutDestinationPolicyResult call() throws Exception {
-                PutDestinationPolicyResult result;
+                PutDestinationPolicyResult result = null;
 
                 try {
-                    result = putDestinationPolicy(request);
+                    result = executePutDestinationPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -981,7 +1272,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -997,14 +1288,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutLogEventsResult> putLogEventsAsync(final PutLogEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutLogEventsRequest, PutLogEventsResult> asyncHandler) {
+        final PutLogEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutLogEventsResult>() {
             @Override
             public PutLogEventsResult call() throws Exception {
-                PutLogEventsResult result;
+                PutLogEventsResult result = null;
 
                 try {
-                    result = putLogEvents(request);
+                    result = executePutLogEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1013,7 +1305,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1029,14 +1321,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(final PutMetricFilterRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler) {
+        final PutMetricFilterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutMetricFilterResult>() {
             @Override
             public PutMetricFilterResult call() throws Exception {
-                PutMetricFilterResult result;
+                PutMetricFilterResult result = null;
 
                 try {
-                    result = putMetricFilter(request);
+                    result = executePutMetricFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1045,7 +1338,40 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1061,14 +1387,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(final PutRetentionPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler) {
+        final PutRetentionPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRetentionPolicyResult>() {
             @Override
             public PutRetentionPolicyResult call() throws Exception {
-                PutRetentionPolicyResult result;
+                PutRetentionPolicyResult result = null;
 
                 try {
-                    result = putRetentionPolicy(request);
+                    result = executePutRetentionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1077,7 +1404,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1093,14 +1420,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(final PutSubscriptionFilterRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult> asyncHandler) {
+        final PutSubscriptionFilterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutSubscriptionFilterResult>() {
             @Override
             public PutSubscriptionFilterResult call() throws Exception {
-                PutSubscriptionFilterResult result;
+                PutSubscriptionFilterResult result = null;
 
                 try {
-                    result = putSubscriptionFilter(request);
+                    result = executePutSubscriptionFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1109,7 +1437,73 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartQueryResult> startQueryAsync(StartQueryRequest request) {
+
+        return startQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartQueryResult> startQueryAsync(final StartQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartQueryRequest, StartQueryResult> asyncHandler) {
+        final StartQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartQueryResult>() {
+            @Override
+            public StartQueryResult call() throws Exception {
+                StartQueryResult result = null;
+
+                try {
+                    result = executeStartQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopQueryResult> stopQueryAsync(StopQueryRequest request) {
+
+        return stopQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopQueryResult> stopQueryAsync(final StopQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopQueryRequest, StopQueryResult> asyncHandler) {
+        final StopQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopQueryResult>() {
+            @Override
+            public StopQueryResult call() throws Exception {
+                StopQueryResult result = null;
+
+                try {
+                    result = executeStopQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1125,14 +1519,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(final TagLogGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler) {
+        final TagLogGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TagLogGroupResult>() {
             @Override
             public TagLogGroupResult call() throws Exception {
-                TagLogGroupResult result;
+                TagLogGroupResult result = null;
 
                 try {
-                    result = tagLogGroup(request);
+                    result = executeTagLogGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1141,7 +1536,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1157,14 +1552,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(final TestMetricFilterRequest request,
             final com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler) {
+        final TestMetricFilterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TestMetricFilterResult>() {
             @Override
             public TestMetricFilterResult call() throws Exception {
-                TestMetricFilterResult result;
+                TestMetricFilterResult result = null;
 
                 try {
-                    result = testMetricFilter(request);
+                    result = executeTestMetricFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1173,7 +1569,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1189,14 +1585,15 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     @Override
     public java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(final UntagLogGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler) {
+        final UntagLogGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UntagLogGroupResult>() {
             @Override
             public UntagLogGroupResult call() throws Exception {
-                UntagLogGroupResult result;
+                UntagLogGroupResult result = null;
 
                 try {
-                    result = untagLogGroup(request);
+                    result = executeUntagLogGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1205,7 +1602,7 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

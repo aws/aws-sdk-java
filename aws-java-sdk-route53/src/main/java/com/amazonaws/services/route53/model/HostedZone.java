@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
-     * (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     * (hyphen) and how to specify internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
      * </p>
      */
     private String name;
@@ -63,6 +64,13 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      */
     private Long resourceRecordSetCount;
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Route 53.
+     * </p>
+     */
+    private LinkedService linkedService;
 
     /**
      * Default constructor for HostedZone object. Callers should use the setter or fluent setter (with...) methods to
@@ -82,7 +90,9 @@ public class HostedZone implements Serializable, Cloneable {
      *        registrar.</p>
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
-     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html"
+     *        >CreateHostedZone</a>.
      * @param callerReference
      *        The value that you specified for <code>CallerReference</code> when you created the hosted zone.
      */
@@ -139,7 +149,8 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
-     * (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     * (hyphen) and how to specify internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
      * </p>
      * 
      * @param name
@@ -147,7 +158,9 @@ public class HostedZone implements Serializable, Cloneable {
      *        registrar.</p>
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
-     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html"
+     *        >CreateHostedZone</a>.
      */
 
     public void setName(String name) {
@@ -161,14 +174,17 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
-     * (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     * (hyphen) and how to specify internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
      * </p>
      * 
      * @return The name of the domain. For public hosted zones, this is the name that you have registered with your DNS
      *         registrar.</p>
      *         <p>
      *         For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
-     *         <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     *         <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html"
+     *         >CreateHostedZone</a>.
      */
 
     public String getName() {
@@ -182,7 +198,8 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
-     * (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     * (hyphen) and how to specify internationalized domain names, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
      * </p>
      * 
      * @param name
@@ -190,7 +207,9 @@ public class HostedZone implements Serializable, Cloneable {
      *        registrar.</p>
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
-     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.
+     *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html"
+     *        >CreateHostedZone</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,7 +351,54 @@ public class HostedZone implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
+     *        zone is created by another service, you can't edit or delete it using Route 53.
+     */
+
+    public void setLinkedService(LinkedService linkedService) {
+        this.linkedService = linkedService;
+    }
+
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Route 53.
+     * </p>
+     * 
+     * @return If the hosted zone was created by another service, the service that created the hosted zone. When a
+     *         hosted zone is created by another service, you can't edit or delete it using Route 53.
+     */
+
+    public LinkedService getLinkedService() {
+        return this.linkedService;
+    }
+
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
+     *        zone is created by another service, you can't edit or delete it using Route 53.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostedZone withLinkedService(LinkedService linkedService) {
+        setLinkedService(linkedService);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -351,7 +417,9 @@ public class HostedZone implements Serializable, Cloneable {
         if (getConfig() != null)
             sb.append("Config: ").append(getConfig()).append(",");
         if (getResourceRecordSetCount() != null)
-            sb.append("ResourceRecordSetCount: ").append(getResourceRecordSetCount());
+            sb.append("ResourceRecordSetCount: ").append(getResourceRecordSetCount()).append(",");
+        if (getLinkedService() != null)
+            sb.append("LinkedService: ").append(getLinkedService());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +454,10 @@ public class HostedZone implements Serializable, Cloneable {
             return false;
         if (other.getResourceRecordSetCount() != null && other.getResourceRecordSetCount().equals(this.getResourceRecordSetCount()) == false)
             return false;
+        if (other.getLinkedService() == null ^ this.getLinkedService() == null)
+            return false;
+        if (other.getLinkedService() != null && other.getLinkedService().equals(this.getLinkedService()) == false)
+            return false;
         return true;
     }
 
@@ -399,6 +471,7 @@ public class HostedZone implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
         hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceRecordSetCount() == null) ? 0 : getResourceRecordSetCount().hashCode());
+        hashCode = prime * hashCode + ((getLinkedService() == null) ? 0 : getLinkedService().hashCode());
         return hashCode;
     }
 
@@ -410,4 +483,5 @@ public class HostedZone implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

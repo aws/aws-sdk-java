@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,12 +27,12 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class XssMatchSetUpdate implements Serializable, Cloneable {
+public class XssMatchSetUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      */
     private String action;
@@ -44,13 +46,13 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      * 
      * @param action
-     *        Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
-     *        <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     *        Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
+     *        <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * @see ChangeAction
      */
 
@@ -60,12 +62,12 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      * 
-     * @return Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
-     *         <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * @return Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
+     *         <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * @see ChangeAction
      */
 
@@ -75,13 +77,13 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      * 
      * @param action
-     *        Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
-     *        <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     *        Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
+     *        <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
@@ -93,35 +95,35 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      * 
      * @param action
-     *        Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
-     *        <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     *        Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
+     *        <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * @see ChangeAction
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
      * <p>
-     * Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
-     * to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     * Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use <code>DELETE</code>
+     * to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * </p>
      * 
      * @param action
-     *        Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
-     *        <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+     *        Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>. Use
+     *        <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
 
     public XssMatchSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
@@ -172,7 +174,8 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -228,5 +231,11 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.XssMatchSetUpdateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

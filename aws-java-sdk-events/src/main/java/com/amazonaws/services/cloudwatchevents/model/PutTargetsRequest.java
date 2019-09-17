@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>PutTargets</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
  *      Documentation</a>
@@ -30,24 +27,30 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      */
     private String rule;
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     */
+    private String eventBusName;
+    /**
+     * <p>
+     * The targets to update or add to the rule.
      * </p>
      */
     private java.util.List<Target> targets;
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
      * @param rule
-     *        The name of the rule you want to add targets to.
+     *        The name of the rule.
      */
 
     public void setRule(String rule) {
@@ -56,10 +59,10 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
-     * @return The name of the rule you want to add targets to.
+     * @return The name of the rule.
      */
 
     public String getRule() {
@@ -68,11 +71,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
      * @param rule
-     *        The name of the rule you want to add targets to.
+     *        The name of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +86,50 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return List of targets you want to update or add to the rule.
+     * @param eventBusName
+     *        The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     */
+
+    public void setEventBusName(String eventBusName) {
+        this.eventBusName = eventBusName;
+    }
+
+    /**
+     * <p>
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     * 
+     * @return The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     */
+
+    public String getEventBusName() {
+        return this.eventBusName;
+    }
+
+    /**
+     * <p>
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     * </p>
+     * 
+     * @param eventBusName
+     *        The name of the event bus associated with the rule. If you omit this, the default event bus is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutTargetsRequest withEventBusName(String eventBusName) {
+        setEventBusName(eventBusName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The targets to update or add to the rule.
+     * </p>
+     * 
+     * @return The targets to update or add to the rule.
      */
 
     public java.util.List<Target> getTargets() {
@@ -95,11 +138,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -113,7 +156,7 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +165,7 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +181,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,7 +195,8 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -164,6 +208,8 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getRule() != null)
             sb.append("Rule: ").append(getRule()).append(",");
+        if (getEventBusName() != null)
+            sb.append("EventBusName: ").append(getEventBusName()).append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets());
         sb.append("}");
@@ -184,6 +230,10 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getRule() != null && other.getRule().equals(this.getRule()) == false)
             return false;
+        if (other.getEventBusName() == null ^ this.getEventBusName() == null)
+            return false;
+        if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
+            return false;
         if (other.getTargets() == null ^ this.getTargets() == null)
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
@@ -197,6 +247,7 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRule() == null) ? 0 : getRule().hashCode());
+        hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         return hashCode;
     }

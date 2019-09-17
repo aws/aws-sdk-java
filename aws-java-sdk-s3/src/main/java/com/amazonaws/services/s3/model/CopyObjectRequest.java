@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
  */
 package com.amazonaws.services.s3.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.Constants;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -151,6 +150,14 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     private boolean isRequesterPays;
 
     private ObjectTagging newObjectTagging;
+
+    private String metadataDirective;
+
+    private String objectLockMode;
+
+    private Date objectLockRetainUntilDate;
+
+    private String objectLockLegalHoldStatus;
 
     /**
      * <p>
@@ -1204,5 +1211,136 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     public CopyObjectRequest withNewObjectTagging(ObjectTagging newObjectTagging) {
         setNewObjectTagging(newObjectTagging);
         return this;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     */
+    public String getMetadataDirective() {
+        return metadataDirective;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     */
+    public void setMetadataDirective(String metadataDirective) {
+        this.metadataDirective = metadataDirective;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public CopyObjectRequest withMetadataDirective(String metadataDirective) {
+        setMetadataDirective(metadataDirective);
+        return this;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public CopyObjectRequest withMetadataDirective(MetadataDirective metadataDirective) {
+        return withMetadataDirective(metadataDirective == null ? null : metadataDirective.toString());
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public String getObjectLockMode() {
+        return objectLockMode;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public CopyObjectRequest withObjectLockMode(String objectLockMode) {
+        this.objectLockMode = objectLockMode;
+        return this;
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public CopyObjectRequest withObjectLockMode(ObjectLockMode objectLockMode) {
+        return withObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public void setObjectLockMode(String objectLockMode) {
+        withObjectLockMode(objectLockMode);
+    }
+
+    /**
+     * The Object Lock mode that you want to apply to the copied object.
+     */
+    public void setObjectLockMode(ObjectLockMode objectLockMode) {
+        setObjectLockMode(objectLockMode.toString());
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public Date getObjectLockRetainUntilDate() {
+        return objectLockRetainUntilDate;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public CopyObjectRequest withObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        this.objectLockRetainUntilDate = objectLockRetainUntilDate;
+        return this;
+    }
+
+    /**
+     * The date and time when you want this object's Object Lock to expire.
+     */
+    public void setObjectLockRetainUntilDate(Date objectLockRetainUntilDate) {
+        withObjectLockRetainUntilDate(objectLockRetainUntilDate);
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public String getObjectLockLegalHoldStatus() {
+        return objectLockLegalHoldStatus;
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public CopyObjectRequest withObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        this.objectLockLegalHoldStatus = objectLockLegalHoldStatus;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public CopyObjectRequest withObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        return withObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public void setObjectLockLegalHoldStatus(String objectLockLegalHoldStatus) {
+        withObjectLockLegalHoldStatus(objectLockLegalHoldStatus);
+    }
+
+    /**
+     * Specifies whether you want to apply a Legal Hold to the copied object.
+     */
+    public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
+        setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
     }
 }

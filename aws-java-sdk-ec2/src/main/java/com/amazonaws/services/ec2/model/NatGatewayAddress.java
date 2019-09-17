@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ public class NatGatewayAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elastic IP address associated with the NAT gateway.
-     * </p>
-     */
-    private String publicIp;
-    /**
-     * <p>
      * The allocation ID of the Elastic IP address that's associated with the NAT gateway.
      * </p>
      */
     private String allocationId;
+    /**
+     * <p>
+     * The ID of the network interface associated with the NAT gateway.
+     * </p>
+     */
+    private String networkInterfaceId;
     /**
      * <p>
      * The private IP address associated with the Elastic IP address.
@@ -46,50 +46,10 @@ public class NatGatewayAddress implements Serializable, Cloneable {
     private String privateIp;
     /**
      * <p>
-     * The ID of the network interface associated with the NAT gateway.
-     * </p>
-     */
-    private String networkInterfaceId;
-
-    /**
-     * <p>
      * The Elastic IP address associated with the NAT gateway.
      * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address associated with the NAT gateway.
      */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address associated with the NAT gateway.
-     * </p>
-     * 
-     * @return The Elastic IP address associated with the NAT gateway.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address associated with the NAT gateway.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address associated with the NAT gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NatGatewayAddress withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
-    }
+    private String publicIp;
 
     /**
      * <p>
@@ -128,6 +88,46 @@ public class NatGatewayAddress implements Serializable, Cloneable {
 
     public NatGatewayAddress withAllocationId(String allocationId) {
         setAllocationId(allocationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface associated with the NAT gateway.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface associated with the NAT gateway.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface associated with the NAT gateway.
+     * </p>
+     * 
+     * @return The ID of the network interface associated with the NAT gateway.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface associated with the NAT gateway.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface associated with the NAT gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGatewayAddress withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
@@ -173,46 +173,47 @@ public class NatGatewayAddress implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface associated with the NAT gateway.
+     * The Elastic IP address associated with the NAT gateway.
      * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface associated with the NAT gateway.
+     * @param publicIp
+     *        The Elastic IP address associated with the NAT gateway.
      */
 
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     /**
      * <p>
-     * The ID of the network interface associated with the NAT gateway.
+     * The Elastic IP address associated with the NAT gateway.
      * </p>
      * 
-     * @return The ID of the network interface associated with the NAT gateway.
+     * @return The Elastic IP address associated with the NAT gateway.
      */
 
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
+    public String getPublicIp() {
+        return this.publicIp;
     }
 
     /**
      * <p>
-     * The ID of the network interface associated with the NAT gateway.
+     * The Elastic IP address associated with the NAT gateway.
      * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface associated with the NAT gateway.
+     * @param publicIp
+     *        The Elastic IP address associated with the NAT gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NatGatewayAddress withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
+    public NatGatewayAddress withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -222,14 +223,14 @@ public class NatGatewayAddress implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
             sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIp() != null)
             sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -244,21 +245,21 @@ public class NatGatewayAddress implements Serializable, Cloneable {
         if (obj instanceof NatGatewayAddress == false)
             return false;
         NatGatewayAddress other = (NatGatewayAddress) obj;
-        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
-            return false;
-        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
-            return false;
         if (other.getAllocationId() == null ^ this.getAllocationId() == null)
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getPrivateIp() == null ^ this.getPrivateIp() == null)
             return false;
         if (other.getPrivateIp() != null && other.getPrivateIp().equals(this.getPrivateIp()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         return true;
     }
@@ -268,10 +269,10 @@ public class NatGatewayAddress implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
-        hashCode = prime * hashCode + ((getPrivateIp() == null) ? 0 : getPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIp() == null) ? 0 : getPrivateIp().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 
@@ -283,4 +284,5 @@ public class NatGatewayAddress implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

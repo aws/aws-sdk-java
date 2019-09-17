@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,21 +42,6 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
-                .getSpotInstanceRequestIds();
-        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
-                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
-            int spotInstanceRequestIdsListIndex = 1;
-
-            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
-                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
-                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
-                }
-                spotInstanceRequestIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSpotInstanceRequestsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
                 .getFilters();
         if (!describeSpotInstanceRequestsRequestFiltersList.isEmpty() || !describeSpotInstanceRequestsRequestFiltersList.isAutoConstruct()) {
@@ -83,6 +68,29 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
+                .getSpotInstanceRequestIds();
+        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
+                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
+            int spotInstanceRequestIdsListIndex = 1;
+
+            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
+                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
+                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
+                }
+                spotInstanceRequestIdsListIndex++;
+            }
+        }
+
+        if (describeSpotInstanceRequestsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotInstanceRequestsRequest.getNextToken()));
+        }
+
+        if (describeSpotInstanceRequestsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotInstanceRequestsRequest.getMaxResults()));
         }
 
         return request;

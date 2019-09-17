@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeKeyPairsRequestKeyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest
-                .getKeyNames();
-        if (!describeKeyPairsRequestKeyNamesList.isEmpty() || !describeKeyPairsRequestKeyNamesList.isAutoConstruct()) {
-            int keyNamesListIndex = 1;
-
-            for (String describeKeyPairsRequestKeyNamesListValue : describeKeyPairsRequestKeyNamesList) {
-                if (describeKeyPairsRequestKeyNamesListValue != null) {
-                    request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(describeKeyPairsRequestKeyNamesListValue));
-                }
-                keyNamesListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeKeyPairsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeKeyPairsRequest
                 .getFilters();
         if (!describeKeyPairsRequestFiltersList.isEmpty() || !describeKeyPairsRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeKeyPairsRequestKeyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest
+                .getKeyNames();
+        if (!describeKeyPairsRequestKeyNamesList.isEmpty() || !describeKeyPairsRequestKeyNamesList.isAutoConstruct()) {
+            int keyNamesListIndex = 1;
+
+            for (String describeKeyPairsRequestKeyNamesListValue : describeKeyPairsRequestKeyNamesList) {
+                if (describeKeyPairsRequestKeyNamesListValue != null) {
+                    request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(describeKeyPairsRequestKeyNamesListValue));
+                }
+                keyNamesListIndex++;
             }
         }
 

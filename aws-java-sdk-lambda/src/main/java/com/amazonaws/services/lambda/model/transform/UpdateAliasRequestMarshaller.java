@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,71 +12,59 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateAliasRequest Marshaller
+ * UpdateAliasRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateAliasRequestMarshaller implements Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
+@SdkInternalApi
+public class UpdateAliasRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> FUNCTIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionVersion").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<StructuredPojo> ROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingConfig").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
-    public UpdateAliasRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateAliasRequestMarshaller instance = new UpdateAliasRequestMarshaller();
+
+    public static UpdateAliasRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateAliasRequest> marshall(UpdateAliasRequest updateAliasRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateAliasRequest updateAliasRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateAliasRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateAliasRequest> request = new DefaultRequest<UpdateAliasRequest>(updateAliasRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", updateAliasRequest.getFunctionName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Name", updateAliasRequest.getName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateAliasRequest.getFunctionVersion() != null) {
-                jsonGenerator.writeFieldName("FunctionVersion").writeValue(updateAliasRequest.getFunctionVersion());
-            }
-            if (updateAliasRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updateAliasRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateAliasRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getFunctionVersion(), FUNCTIONVERSION_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getRoutingConfig(), ROUTINGCONFIG_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getRevisionId(), REVISIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

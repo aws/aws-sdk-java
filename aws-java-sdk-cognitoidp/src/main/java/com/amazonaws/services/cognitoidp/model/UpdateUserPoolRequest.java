@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,10 +67,16 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String emailVerificationMessage;
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      */
     private String emailVerificationSubject;
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     */
+    private VerificationMessageTemplateType verificationMessageTemplate;
     /**
      * <p>
      * The contents of the SMS authentication message.
@@ -121,18 +127,24 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage
+     * user pools in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      */
     private java.util.Map<String, String> userPoolTags;
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     */
+    private UserPoolAddOnsType userPoolAddOns;
 
     /**
      * <p>
@@ -444,11 +456,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message.
+     *        The subject of the email verification message.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -457,10 +469,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
-     * @return The subject of the email verfication message.
+     * @return The subject of the email verification message.
      */
 
     public String getEmailVerificationSubject() {
@@ -469,16 +481,56 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message.
+     *        The subject of the email verification message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateUserPoolRequest withEmailVerificationSubject(String emailVerificationSubject) {
         setEmailVerificationSubject(emailVerificationSubject);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     */
+
+    public void setVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        this.verificationMessageTemplate = verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @return The template for verification messages.
+     */
+
+    public VerificationMessageTemplateType getVerificationMessageTemplate() {
+        return this.verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        setVerificationMessageTemplate(verificationMessageTemplate);
         return this;
     }
 
@@ -716,7 +768,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        this.mfaConfiguration = mfaConfiguration.toString();
+        withMfaConfiguration(mfaConfiguration);
     }
 
     /**
@@ -766,7 +818,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public UpdateUserPoolRequest withMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        setMfaConfiguration(mfaConfiguration);
+        this.mfaConfiguration = mfaConfiguration.toString();
         return this;
     }
 
@@ -892,14 +944,12 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage
+     * user pools in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
-     * @return The cost allocation tags for the user pool. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and
+     *         manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public java.util.Map<String, String> getUserPoolTags() {
@@ -908,15 +958,13 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage
+     * user pools in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and
+     *        manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
@@ -925,15 +973,13 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage
+     * user pools in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and
+     *        manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,11 +1011,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
@@ -978,10 +1024,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
-     * @return The configuration for AdminCreateUser requests.
+     * @return The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public AdminCreateUserConfigType getAdminCreateUserConfig() {
@@ -990,11 +1036,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1004,7 +1050,54 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     */
+
+    public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        this.userPoolAddOns = userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @return Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *         value "AUDIT".
+     */
+
+    public UserPoolAddOnsType getUserPoolAddOns() {
+        return this.userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        setUserPoolAddOns(userPoolAddOns);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1028,6 +1121,8 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
             sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
+        if (getVerificationMessageTemplate() != null)
+            sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
@@ -1041,7 +1136,9 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getUserPoolTags() != null)
             sb.append("UserPoolTags: ").append(getUserPoolTags()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
+        if (getUserPoolAddOns() != null)
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -1084,6 +1181,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
             return false;
+        if (other.getVerificationMessageTemplate() == null ^ this.getVerificationMessageTemplate() == null)
+            return false;
+        if (other.getVerificationMessageTemplate() != null && other.getVerificationMessageTemplate().equals(this.getVerificationMessageTemplate()) == false)
+            return false;
         if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
         if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
@@ -1112,6 +1213,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
             return false;
+        if (other.getUserPoolAddOns() == null ^ this.getUserPoolAddOns() == null)
+            return false;
+        if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -1127,6 +1232,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
@@ -1134,6 +1240,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         return hashCode;
     }
 

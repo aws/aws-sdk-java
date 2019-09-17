@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an app on a set of devices with a specific test and configuration.
+ * Represents a test run on a set of devices with a given app package, test parameters, etc.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Run implements Serializable, Cloneable {
+public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -74,17 +76,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -109,12 +131,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -298,6 +320,110 @@ public class Run implements Serializable, Cloneable {
      * </p>
      */
     private DeviceMinutes deviceMinutes;
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     */
+    private NetworkProfile networkProfile;
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     */
+    private String parsingResultUrl;
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     */
+    private String resultCode;
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     */
+    private Integer seed;
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     */
+    private String appUpload;
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     */
+    private Integer eventCount;
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     */
+    private Integer jobTimeoutMinutes;
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     */
+    private String devicePoolArn;
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     */
+    private String locale;
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     */
+    private Radios radios;
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     */
+    private Location location;
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     */
+    private CustomerArtifactPaths customerArtifactPaths;
+    /**
+     * <p>
+     * The Device Farm console URL for the recording of the run.
+     * </p>
+     */
+    private String webUrl;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     */
+    private String testSpecArn;
+    /**
+     * <p>
+     * The results of a device filter used to select the devices for a test run.
+     * </p>
+     */
+    private DeviceSelectionResult deviceSelectionResult;
 
     /**
      * <p>
@@ -415,17 +541,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -450,12 +596,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -494,17 +640,37 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -529,12 +695,12 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -580,17 +746,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -615,12 +801,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -658,17 +844,37 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         APPIUM_NODE: The Appium Node.js type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         APPIUM_RUBY: The Appium Ruby type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *         </p>
      *         </li>
      *         <li>
@@ -693,12 +899,12 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The XCode test type.
+     *         XCTEST: The Xcode test type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI: The XCode UI test type.
+     *         XCTEST_UI: The Xcode UI test type.
      *         </p>
      *         </li>
      * @see TestType
@@ -744,17 +950,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -779,12 +1005,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -823,17 +1049,37 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -858,12 +1104,12 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -911,17 +1157,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -946,12 +1212,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -990,17 +1256,37 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -1025,19 +1311,19 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
      */
 
     public void setType(TestType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1076,17 +1362,37 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -1111,12 +1417,12 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -1155,17 +1461,37 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -1190,12 +1516,12 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1203,7 +1529,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public Run withType(TestType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1377,7 +1703,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -1421,7 +1747,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public Run withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -1915,7 +2241,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -2029,7 +2355,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public Run withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -2403,7 +2729,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public void setResult(ExecutionResult result) {
-        this.result = result.toString();
+        withResult(result);
     }
 
     /**
@@ -2497,7 +2823,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public Run withResult(ExecutionResult result) {
-        setResult(result);
+        this.result = result.toString();
         return this;
     }
 
@@ -2803,7 +3129,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -2820,7 +3146,7 @@ public class Run implements Serializable, Cloneable {
      */
 
     public Run withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 
@@ -2865,7 +3191,756 @@ public class Run implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @param networkProfile
+     *        The network profile being used for a test run.
+     */
+
+    public void setNetworkProfile(NetworkProfile networkProfile) {
+        this.networkProfile = networkProfile;
+    }
+
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @return The network profile being used for a test run.
+     */
+
+    public NetworkProfile getNetworkProfile() {
+        return this.networkProfile;
+    }
+
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @param networkProfile
+     *        The network profile being used for a test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withNetworkProfile(NetworkProfile networkProfile) {
+        setNetworkProfile(networkProfile);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @param parsingResultUrl
+     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
+     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     */
+
+    public void setParsingResultUrl(String parsingResultUrl) {
+        this.parsingResultUrl = parsingResultUrl;
+    }
+
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @return Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If
+     *         the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
+     *         to.
+     */
+
+    public String getParsingResultUrl() {
+        return this.parsingResultUrl;
+    }
+
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @param parsingResultUrl
+     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
+     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withParsingResultUrl(String parsingResultUrl) {
+        setParsingResultUrl(parsingResultUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    public void setResultCode(String resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @return Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *         <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    public String getResultCode() {
+        return this.resultCode;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionResultCode
+     */
+
+    public Run withResultCode(String resultCode) {
+        setResultCode(resultCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    public void setResultCode(ExecutionResultCode resultCode) {
+        withResultCode(resultCode);
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionResultCode
+     */
+
+    public Run withResultCode(ExecutionResultCode resultCode) {
+        this.resultCode = resultCode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @param seed
+     *        For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *        tests ensures identical event sequences.
+     */
+
+    public void setSeed(Integer seed) {
+        this.seed = seed;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @return For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *         tests ensures identical event sequences.
+     */
+
+    public Integer getSeed() {
+        return this.seed;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @param seed
+     *        For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *        tests ensures identical event sequences.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withSeed(Integer seed) {
+        setSeed(seed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @param appUpload
+     *        An app to upload or that has been uploaded.
+     */
+
+    public void setAppUpload(String appUpload) {
+        this.appUpload = appUpload;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @return An app to upload or that has been uploaded.
+     */
+
+    public String getAppUpload() {
+        return this.appUpload;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @param appUpload
+     *        An app to upload or that has been uploaded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withAppUpload(String appUpload) {
+        setAppUpload(appUpload);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @param eventCount
+     *        For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     */
+
+    public void setEventCount(Integer eventCount) {
+        this.eventCount = eventCount;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @return For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     */
+
+    public Integer getEventCount() {
+        return this.eventCount;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @param eventCount
+     *        For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withEventCount(Integer eventCount) {
+        setEventCount(eventCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @param jobTimeoutMinutes
+     *        The number of minutes the job will execute before it times out.
+     */
+
+    public void setJobTimeoutMinutes(Integer jobTimeoutMinutes) {
+        this.jobTimeoutMinutes = jobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @return The number of minutes the job will execute before it times out.
+     */
+
+    public Integer getJobTimeoutMinutes() {
+        return this.jobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @param jobTimeoutMinutes
+     *        The number of minutes the job will execute before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withJobTimeoutMinutes(Integer jobTimeoutMinutes) {
+        setJobTimeoutMinutes(jobTimeoutMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @param devicePoolArn
+     *        The ARN of the device pool for the run.
+     */
+
+    public void setDevicePoolArn(String devicePoolArn) {
+        this.devicePoolArn = devicePoolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @return The ARN of the device pool for the run.
+     */
+
+    public String getDevicePoolArn() {
+        return this.devicePoolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @param devicePoolArn
+     *        The ARN of the device pool for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withDevicePoolArn(String devicePoolArn) {
+        setDevicePoolArn(devicePoolArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @param locale
+     *        Information about the locale that is used for the run.
+     */
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @return Information about the locale that is used for the run.
+     */
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @param locale
+     *        Information about the locale that is used for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withLocale(String locale) {
+        setLocale(locale);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @param radios
+     *        Information about the radio states for the run.
+     */
+
+    public void setRadios(Radios radios) {
+        this.radios = radios;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @return Information about the radio states for the run.
+     */
+
+    public Radios getRadios() {
+        return this.radios;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @param radios
+     *        Information about the radio states for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withRadios(Radios radios) {
+        setRadios(radios);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @param location
+     *        Information about the location that is used for the run.
+     */
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @return Information about the location that is used for the run.
+     */
+
+    public Location getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @param location
+     *        Information about the location that is used for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withLocation(Location location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Output <code>CustomerArtifactPaths</code> object for the test run.
+     */
+
+    public void setCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        this.customerArtifactPaths = customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @return Output <code>CustomerArtifactPaths</code> object for the test run.
+     */
+
+    public CustomerArtifactPaths getCustomerArtifactPaths() {
+        return this.customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Output <code>CustomerArtifactPaths</code> object for the test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        setCustomerArtifactPaths(customerArtifactPaths);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Device Farm console URL for the recording of the run.
+     * </p>
+     * 
+     * @param webUrl
+     *        The Device Farm console URL for the recording of the run.
+     */
+
+    public void setWebUrl(String webUrl) {
+        this.webUrl = webUrl;
+    }
+
+    /**
+     * <p>
+     * The Device Farm console URL for the recording of the run.
+     * </p>
+     * 
+     * @return The Device Farm console URL for the recording of the run.
+     */
+
+    public String getWebUrl() {
+        return this.webUrl;
+    }
+
+    /**
+     * <p>
+     * The Device Farm console URL for the recording of the run.
+     * </p>
+     * 
+     * @param webUrl
+     *        The Device Farm console URL for the recording of the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withWebUrl(String webUrl) {
+        setWebUrl(webUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification for the run.
+     */
+
+    public void setTestSpecArn(String testSpecArn) {
+        this.testSpecArn = testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @return The ARN of the YAML-formatted test specification for the run.
+     */
+
+    public String getTestSpecArn() {
+        return this.testSpecArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the YAML-formatted test specification for the run.
+     * </p>
+     * 
+     * @param testSpecArn
+     *        The ARN of the YAML-formatted test specification for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withTestSpecArn(String testSpecArn) {
+        setTestSpecArn(testSpecArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The results of a device filter used to select the devices for a test run.
+     * </p>
+     * 
+     * @param deviceSelectionResult
+     *        The results of a device filter used to select the devices for a test run.
+     */
+
+    public void setDeviceSelectionResult(DeviceSelectionResult deviceSelectionResult) {
+        this.deviceSelectionResult = deviceSelectionResult;
+    }
+
+    /**
+     * <p>
+     * The results of a device filter used to select the devices for a test run.
+     * </p>
+     * 
+     * @return The results of a device filter used to select the devices for a test run.
+     */
+
+    public DeviceSelectionResult getDeviceSelectionResult() {
+        return this.deviceSelectionResult;
+    }
+
+    /**
+     * <p>
+     * The results of a device filter used to select the devices for a test run.
+     * </p>
+     * 
+     * @param deviceSelectionResult
+     *        The results of a device filter used to select the devices for a test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withDeviceSelectionResult(DeviceSelectionResult deviceSelectionResult) {
+        setDeviceSelectionResult(deviceSelectionResult);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2904,7 +3979,39 @@ public class Run implements Serializable, Cloneable {
         if (getBillingMethod() != null)
             sb.append("BillingMethod: ").append(getBillingMethod()).append(",");
         if (getDeviceMinutes() != null)
-            sb.append("DeviceMinutes: ").append(getDeviceMinutes());
+            sb.append("DeviceMinutes: ").append(getDeviceMinutes()).append(",");
+        if (getNetworkProfile() != null)
+            sb.append("NetworkProfile: ").append(getNetworkProfile()).append(",");
+        if (getParsingResultUrl() != null)
+            sb.append("ParsingResultUrl: ").append(getParsingResultUrl()).append(",");
+        if (getResultCode() != null)
+            sb.append("ResultCode: ").append(getResultCode()).append(",");
+        if (getSeed() != null)
+            sb.append("Seed: ").append(getSeed()).append(",");
+        if (getAppUpload() != null)
+            sb.append("AppUpload: ").append(getAppUpload()).append(",");
+        if (getEventCount() != null)
+            sb.append("EventCount: ").append(getEventCount()).append(",");
+        if (getJobTimeoutMinutes() != null)
+            sb.append("JobTimeoutMinutes: ").append(getJobTimeoutMinutes()).append(",");
+        if (getDevicePoolArn() != null)
+            sb.append("DevicePoolArn: ").append(getDevicePoolArn()).append(",");
+        if (getLocale() != null)
+            sb.append("Locale: ").append(getLocale()).append(",");
+        if (getRadios() != null)
+            sb.append("Radios: ").append(getRadios()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getCustomerArtifactPaths() != null)
+            sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths()).append(",");
+        if (getWebUrl() != null)
+            sb.append("WebUrl: ").append(getWebUrl()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign()).append(",");
+        if (getTestSpecArn() != null)
+            sb.append("TestSpecArn: ").append(getTestSpecArn()).append(",");
+        if (getDeviceSelectionResult() != null)
+            sb.append("DeviceSelectionResult: ").append(getDeviceSelectionResult());
         sb.append("}");
         return sb.toString();
     }
@@ -2979,6 +4086,70 @@ public class Run implements Serializable, Cloneable {
             return false;
         if (other.getDeviceMinutes() != null && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
             return false;
+        if (other.getNetworkProfile() == null ^ this.getNetworkProfile() == null)
+            return false;
+        if (other.getNetworkProfile() != null && other.getNetworkProfile().equals(this.getNetworkProfile()) == false)
+            return false;
+        if (other.getParsingResultUrl() == null ^ this.getParsingResultUrl() == null)
+            return false;
+        if (other.getParsingResultUrl() != null && other.getParsingResultUrl().equals(this.getParsingResultUrl()) == false)
+            return false;
+        if (other.getResultCode() == null ^ this.getResultCode() == null)
+            return false;
+        if (other.getResultCode() != null && other.getResultCode().equals(this.getResultCode()) == false)
+            return false;
+        if (other.getSeed() == null ^ this.getSeed() == null)
+            return false;
+        if (other.getSeed() != null && other.getSeed().equals(this.getSeed()) == false)
+            return false;
+        if (other.getAppUpload() == null ^ this.getAppUpload() == null)
+            return false;
+        if (other.getAppUpload() != null && other.getAppUpload().equals(this.getAppUpload()) == false)
+            return false;
+        if (other.getEventCount() == null ^ this.getEventCount() == null)
+            return false;
+        if (other.getEventCount() != null && other.getEventCount().equals(this.getEventCount()) == false)
+            return false;
+        if (other.getJobTimeoutMinutes() == null ^ this.getJobTimeoutMinutes() == null)
+            return false;
+        if (other.getJobTimeoutMinutes() != null && other.getJobTimeoutMinutes().equals(this.getJobTimeoutMinutes()) == false)
+            return false;
+        if (other.getDevicePoolArn() == null ^ this.getDevicePoolArn() == null)
+            return false;
+        if (other.getDevicePoolArn() != null && other.getDevicePoolArn().equals(this.getDevicePoolArn()) == false)
+            return false;
+        if (other.getLocale() == null ^ this.getLocale() == null)
+            return false;
+        if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
+            return false;
+        if (other.getRadios() == null ^ this.getRadios() == null)
+            return false;
+        if (other.getRadios() != null && other.getRadios().equals(this.getRadios()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
+        if (other.getCustomerArtifactPaths() == null ^ this.getCustomerArtifactPaths() == null)
+            return false;
+        if (other.getCustomerArtifactPaths() != null && other.getCustomerArtifactPaths().equals(this.getCustomerArtifactPaths()) == false)
+            return false;
+        if (other.getWebUrl() == null ^ this.getWebUrl() == null)
+            return false;
+        if (other.getWebUrl() != null && other.getWebUrl().equals(this.getWebUrl()) == false)
+            return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
+            return false;
+        if (other.getTestSpecArn() == null ^ this.getTestSpecArn() == null)
+            return false;
+        if (other.getTestSpecArn() != null && other.getTestSpecArn().equals(this.getTestSpecArn()) == false)
+            return false;
+        if (other.getDeviceSelectionResult() == null ^ this.getDeviceSelectionResult() == null)
+            return false;
+        if (other.getDeviceSelectionResult() != null && other.getDeviceSelectionResult().equals(this.getDeviceSelectionResult()) == false)
+            return false;
         return true;
     }
 
@@ -3002,6 +4173,22 @@ public class Run implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCompletedJobs() == null) ? 0 : getCompletedJobs().hashCode());
         hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
         hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
+        hashCode = prime * hashCode + ((getNetworkProfile() == null) ? 0 : getNetworkProfile().hashCode());
+        hashCode = prime * hashCode + ((getParsingResultUrl() == null) ? 0 : getParsingResultUrl().hashCode());
+        hashCode = prime * hashCode + ((getResultCode() == null) ? 0 : getResultCode().hashCode());
+        hashCode = prime * hashCode + ((getSeed() == null) ? 0 : getSeed().hashCode());
+        hashCode = prime * hashCode + ((getAppUpload() == null) ? 0 : getAppUpload().hashCode());
+        hashCode = prime * hashCode + ((getEventCount() == null) ? 0 : getEventCount().hashCode());
+        hashCode = prime * hashCode + ((getJobTimeoutMinutes() == null) ? 0 : getJobTimeoutMinutes().hashCode());
+        hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
+        hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
+        hashCode = prime * hashCode + ((getRadios() == null) ? 0 : getRadios().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
+        hashCode = prime * hashCode + ((getWebUrl() == null) ? 0 : getWebUrl().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
+        hashCode = prime * hashCode + ((getTestSpecArn() == null) ? 0 : getTestSpecArn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceSelectionResult() == null) ? 0 : getDeviceSelectionResult().hashCode());
         return hashCode;
     }
 
@@ -3012,5 +4199,11 @@ public class Run implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.RunMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

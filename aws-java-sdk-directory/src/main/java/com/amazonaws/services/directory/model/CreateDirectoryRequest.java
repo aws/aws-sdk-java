@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      */
     private String password;
@@ -65,6 +65,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private DirectoryVpcSettings vpcSettings;
+    /**
+     * <p>
+     * The tags to be assigned to the Simple AD directory.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -149,12 +155,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the username <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.
      */
 
     public void setPassword(String password) {
@@ -164,11 +170,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @return The password for the directory administrator. The directory creation process creates a directory
-     *         administrator account with the username <code>Administrator</code> and this password.
+     *         administrator account with the user name <code>Administrator</code> and this password.
      */
 
     public String getPassword() {
@@ -178,12 +184,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The password for the directory administrator. The directory creation process creates a directory administrator
-     * account with the username <code>Administrator</code> and this password.
+     * account with the user name <code>Administrator</code> and this password.
      * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
-     *        administrator account with the username <code>Administrator</code> and this password.
+     *        administrator account with the user name <code>Administrator</code> and this password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,7 +292,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setSize(DirectorySize size) {
-        this.size = size.toString();
+        withSize(size);
     }
 
     /**
@@ -301,7 +307,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public CreateDirectoryRequest withSize(DirectorySize size) {
-        setSize(size);
+        this.size = size.toString();
         return this;
     }
 
@@ -346,7 +352,81 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags to be assigned to the Simple AD directory.
+     * </p>
+     * 
+     * @return The tags to be assigned to the Simple AD directory.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the Simple AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the Simple AD directory.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the Simple AD directory.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the Simple AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectoryRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the Simple AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the Simple AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDirectoryRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -361,13 +441,15 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
         if (getShortName() != null)
             sb.append("ShortName: ").append(getShortName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSize() != null)
             sb.append("Size: ").append(getSize()).append(",");
         if (getVpcSettings() != null)
-            sb.append("VpcSettings: ").append(getVpcSettings());
+            sb.append("VpcSettings: ").append(getVpcSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -406,6 +488,10 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getVpcSettings() != null && other.getVpcSettings().equals(this.getVpcSettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -420,6 +506,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

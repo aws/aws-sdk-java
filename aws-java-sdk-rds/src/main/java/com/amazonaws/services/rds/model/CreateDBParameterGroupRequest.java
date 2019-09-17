@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -46,7 +46,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -63,6 +63,17 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      */
     private String dBParameterGroupFamily;
     /**
@@ -71,7 +82,11 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -93,7 +108,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -103,7 +118,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -114,7 +129,17 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      * @param description
      *        The description for the DB parameter group.
      */
@@ -134,7 +159,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -144,7 +169,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -162,7 +187,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -172,7 +197,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -196,7 +221,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -206,7 +231,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -223,7 +248,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -233,7 +258,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -257,7 +282,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -267,7 +292,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -285,7 +310,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -295,7 +320,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -317,11 +342,32 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -334,10 +380,31 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @return The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *         parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *         version compatible with that DB parameter group family.
+     *         version compatible with that DB parameter group family.</p>
+     *         <p>
+     *         To list all of the available parameter group families, use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The output contains duplicates.
+     *         </p>
      */
 
     public String getDBParameterGroupFamily() {
@@ -350,11 +417,32 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,7 +492,11 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
+     * @return Tags to assign to the DB parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -415,7 +507,12 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -429,12 +526,16 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,7 +550,12 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,7 +565,8 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

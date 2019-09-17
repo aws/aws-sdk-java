@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,8 @@ public class InstanceNetworkInterfaceAssociationStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("publicIp", targetDepth)) {
-                    instanceNetworkInterfaceAssociation.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipOwnerId", targetDepth)) {
+                    instanceNetworkInterfaceAssociation.setIpOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -53,8 +53,8 @@ public class InstanceNetworkInterfaceAssociationStaxUnmarshaller implements Unma
                     continue;
                 }
 
-                if (context.testExpression("ipOwnerId", targetDepth)) {
-                    instanceNetworkInterfaceAssociation.setIpOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicIp", targetDepth)) {
+                    instanceNetworkInterfaceAssociation.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

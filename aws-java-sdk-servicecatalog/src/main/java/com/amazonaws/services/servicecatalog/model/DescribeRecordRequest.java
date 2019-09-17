@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,73 +27,86 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -102,33 +115,43 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -137,34 +160,44 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,13 +208,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
      * @param id
-     *        The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *        the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     *        The record identifier of the provisioned product. This identifier is returned by the request operation.
      */
 
     public void setId(String id) {
@@ -190,12 +221,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
-     * @return The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *         the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * @return The record identifier of the provisioned product. This identifier is returned by the request operation.
      */
 
     public String getId() {
@@ -204,13 +233,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
      * @param id
-     *        The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *        the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     *        The record identifier of the provisioned product. This identifier is returned by the request operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,12 +248,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -235,11 +261,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -248,12 +273,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,13 +288,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -279,12 +301,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -293,13 +313,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,7 +327,8 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

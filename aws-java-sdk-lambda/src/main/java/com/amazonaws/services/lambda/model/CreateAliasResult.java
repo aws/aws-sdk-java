@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides configuration information about a Lambda function version alias.
+ * Provides configuration information about a Lambda function <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
@@ -28,42 +29,49 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
-     * called <code>BETA</code> that points to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      */
     private String aliasArn;
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     */
+    private AliasRoutingConfiguration routingConfig;
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
-     * called <code>BETA</code> that points to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
-     *        alias called <code>BETA</code> that points to a helloworld function version, the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     *        The Amazon Resource Name (ARN) of the alias.
      */
 
     public void setAliasArn(String aliasArn) {
@@ -72,14 +80,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
-     * called <code>BETA</code> that points to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
-     * @return Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
-     *         alias called <code>BETA</code> that points to a helloworld function version, the ARN is
-     *         <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * @return The Amazon Resource Name (ARN) of the alias.
      */
 
     public String getAliasArn() {
@@ -88,15 +92,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an alias
-     * called <code>BETA</code> that points to a helloworld function version, the ARN is
-     * <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     * The Amazon Resource Name (ARN) of the alias.
      * </p>
      * 
      * @param aliasArn
-     *        Lambda function ARN that is qualified using the alias name as the suffix. For example, if you create an
-     *        alias called <code>BETA</code> that points to a helloworld function version, the ARN is
-     *        <code>arn:aws:lambda:aws-regions:acct-id:function:helloworld:BETA</code>.
+     *        The Amazon Resource Name (ARN) of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Alias name.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -120,10 +120,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
-     * @return Alias name.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -132,11 +132,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Alias name.
+     *        The name of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Function version to which the alias points.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -160,10 +160,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Function version to which the alias points.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -172,11 +172,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Function version to which the alias points.
+     *        The function version that the alias invokes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Alias description.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -200,10 +200,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
-     * @return Alias description.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -212,11 +212,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Alias description.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Alias description.
+     *        A description of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,7 +226,97 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     */
+
+    public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
+     */
+
+    public AliasRoutingConfiguration getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
+     * </p>
+     * 
+     * @param routingConfig
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAliasResult withRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        A unique identifier that changes when you update the alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @return A unique identifier that changes when you update the alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that changes when you update the alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        A unique identifier that changes when you update the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAliasResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -243,7 +333,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getFunctionVersion() != null)
             sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +368,14 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +388,8 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 
@@ -297,4 +401,5 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

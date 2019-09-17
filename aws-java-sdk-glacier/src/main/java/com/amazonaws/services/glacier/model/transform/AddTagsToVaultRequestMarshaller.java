@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,84 +12,52 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddTagsToVaultRequest Marshaller
+ * AddTagsToVaultRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddTagsToVaultRequestMarshaller implements Marshaller<Request<AddTagsToVaultRequest>, AddTagsToVaultRequest> {
+@SdkInternalApi
+public class AddTagsToVaultRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public AddTagsToVaultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddTagsToVaultRequestMarshaller instance = new AddTagsToVaultRequestMarshaller();
+
+    public static AddTagsToVaultRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddTagsToVaultRequest> marshall(AddTagsToVaultRequest addTagsToVaultRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddTagsToVaultRequest addTagsToVaultRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addTagsToVaultRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddTagsToVaultRequest> request = new DefaultRequest<AddTagsToVaultRequest>(addTagsToVaultRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/tags?operation=add";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                addTagsToVaultRequest.getAccountId() == null ? "-" : addTagsToVaultRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", addTagsToVaultRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.Map<String, String> tagsMap = addTagsToVaultRequest.getTags();
-            if (tagsMap != null) {
-                jsonGenerator.writeFieldName("Tags");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> tagsMapValue : tagsMap.entrySet()) {
-                    if (tagsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(tagsMapValue.getKey());
-
-                        jsonGenerator.writeValue(tagsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addTagsToVaultRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(addTagsToVaultRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(addTagsToVaultRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

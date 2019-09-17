@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class JobResourceJsonUnmarshaller implements Unmarshaller<JobResource, Js
                 if (context.testExpression("LambdaResources", targetDepth)) {
                     context.nextToken();
                     jobResource.setLambdaResources(new ListUnmarshaller<LambdaResource>(LambdaResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("Ec2AmiResources", targetDepth)) {
+                    context.nextToken();
+                    jobResource.setEc2AmiResources(new ListUnmarshaller<Ec2AmiResource>(Ec2AmiResourceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

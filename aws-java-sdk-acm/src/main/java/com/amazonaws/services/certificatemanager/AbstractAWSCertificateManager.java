@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWaiters;
 
 /**
  * Abstract implementation of {@code AWSCertificateManager}. Convenient method forms pass through to the corresponding
@@ -53,6 +54,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public ExportCertificateResult exportCertificate(ExportCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCertificateResult getCertificate(GetCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,6 +84,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public RenewCertificateResult renewCertificate(RenewCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RequestCertificateResult requestCertificate(RequestCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,12 +99,22 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public UpdateCertificateOptionsResult updateCertificateOptions(UpdateCertificateOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSCertificateManagerWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

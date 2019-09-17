@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the user or group to be added or removed from the permissions for a volume.
+ * Describes the user or group to be added or removed from the list of create volume permissions for a volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermission" target="_top">AWS API
@@ -28,67 +28,24 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The specific AWS account ID that is to be added or removed from a volume's list of create volume permissions.
-     * </p>
-     */
-    private String userId;
-    /**
-     * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      */
     private String group;
-
     /**
      * <p>
-     * The specific AWS account ID that is to be added or removed from a volume's list of create volume permissions.
+     * The AWS account ID to be added or removed.
      * </p>
-     * 
-     * @param userId
-     *        The specific AWS account ID that is to be added or removed from a volume's list of create volume
-     *        permissions.
      */
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    private String userId;
 
     /**
      * <p>
-     * The specific AWS account ID that is to be added or removed from a volume's list of create volume permissions.
-     * </p>
-     * 
-     * @return The specific AWS account ID that is to be added or removed from a volume's list of create volume
-     *         permissions.
-     */
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    /**
-     * <p>
-     * The specific AWS account ID that is to be added or removed from a volume's list of create volume permissions.
-     * </p>
-     * 
-     * @param userId
-     *        The specific AWS account ID that is to be added or removed from a volume's list of create volume
-     *        permissions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVolumePermission withUserId(String userId) {
-        setUserId(userId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      * 
      * @param group
-     *        The specific group that is to be added or removed from a volume's list of create volume permissions.
+     *        The group to be added or removed. The possible value is <code>all</code>.
      * @see PermissionGroup
      */
 
@@ -98,10 +55,10 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      * 
-     * @return The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * @return The group to be added or removed. The possible value is <code>all</code>.
      * @see PermissionGroup
      */
 
@@ -111,11 +68,11 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      * 
      * @param group
-     *        The specific group that is to be added or removed from a volume's list of create volume permissions.
+     *        The group to be added or removed. The possible value is <code>all</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionGroup
      */
@@ -127,36 +84,77 @@ public class CreateVolumePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      * 
      * @param group
-     *        The specific group that is to be added or removed from a volume's list of create volume permissions.
+     *        The group to be added or removed. The possible value is <code>all</code>.
      * @see PermissionGroup
      */
 
     public void setGroup(PermissionGroup group) {
-        this.group = group.toString();
+        withGroup(group);
     }
 
     /**
      * <p>
-     * The specific group that is to be added or removed from a volume's list of create volume permissions.
+     * The group to be added or removed. The possible value is <code>all</code>.
      * </p>
      * 
      * @param group
-     *        The specific group that is to be added or removed from a volume's list of create volume permissions.
+     *        The group to be added or removed. The possible value is <code>all</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionGroup
      */
 
     public CreateVolumePermission withGroup(PermissionGroup group) {
-        setGroup(group);
+        this.group = group.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The AWS account ID to be added or removed.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID to be added or removed.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID to be added or removed.
+     * </p>
+     * 
+     * @return The AWS account ID to be added or removed.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID to be added or removed.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID to be added or removed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVolumePermission withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -166,10 +164,10 @@ public class CreateVolumePermission implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId()).append(",");
         if (getGroup() != null)
-            sb.append("Group: ").append(getGroup());
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -184,13 +182,13 @@ public class CreateVolumePermission implements Serializable, Cloneable {
         if (obj instanceof CreateVolumePermission == false)
             return false;
         CreateVolumePermission other = (CreateVolumePermission) obj;
-        if (other.getUserId() == null ^ this.getUserId() == null)
-            return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
-            return false;
         if (other.getGroup() == null ^ this.getGroup() == null)
             return false;
         if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         return true;
     }
@@ -200,8 +198,8 @@ public class CreateVolumePermission implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 
@@ -213,4 +211,5 @@ public class CreateVolumePermission implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,10 +37,23 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithInstalledPatches;
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      */
     private Integer instancesWithInstalledOtherPatches;
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * </p>
+     * </note>
+     */
+    private Integer instancesWithInstalledRejectedPatches;
     /**
      * <p>
      * The number of instances with missing patches from the patch baseline.
@@ -55,10 +68,17 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithFailedPatches;
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      */
     private Integer instancesWithNotApplicablePatches;
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     */
+    private Integer instancesWithUnreportedNotApplicablePatches;
 
     /**
      * <p>
@@ -142,11 +162,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
      * @param instancesWithInstalledOtherPatches
-     *        The number of instances with patches installed that aren’t defined in the patch baseline.
+     *        The number of instances with patches installed that aren't defined in the patch baseline.
      */
 
     public void setInstancesWithInstalledOtherPatches(Integer instancesWithInstalledOtherPatches) {
@@ -155,10 +175,10 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
-     * @return The number of instances with patches installed that aren’t defined in the patch baseline.
+     * @return The number of instances with patches installed that aren't defined in the patch baseline.
      */
 
     public Integer getInstancesWithInstalledOtherPatches() {
@@ -167,16 +187,95 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
      * @param instancesWithInstalledOtherPatches
-     *        The number of instances with patches installed that aren’t defined in the patch baseline.
+     *        The number of instances with patches installed that aren't defined in the patch baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribePatchGroupStateResult withInstancesWithInstalledOtherPatches(Integer instancesWithInstalledOtherPatches) {
         setInstancesWithInstalledOtherPatches(instancesWithInstalledOtherPatches);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @param instancesWithInstalledRejectedPatches
+     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
+     *        list.</p> <note>
+     *        <p>
+     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *        InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *        </p>
+     */
+
+    public void setInstancesWithInstalledRejectedPatches(Integer instancesWithInstalledRejectedPatches) {
+        this.instancesWithInstalledRejectedPatches = instancesWithInstalledRejectedPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *         a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a
+     *         RejectedPatches list.</p> <note>
+     *         <p>
+     *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *         InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *         </p>
+     */
+
+    public Integer getInstancesWithInstalledRejectedPatches() {
+        return this.instancesWithInstalledRejectedPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     * InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @param instancesWithInstalledRejectedPatches
+     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *        a status of <i>INSTALLED_REJECTED</i> were typically installed before they were added to a RejectedPatches
+     *        list.</p> <note>
+     *        <p>
+     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *        InstancesWithInstalledRejectedPatches will always be 0 (zero).
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithInstalledRejectedPatches(Integer instancesWithInstalledRejectedPatches) {
+        setInstancesWithInstalledRejectedPatches(instancesWithInstalledRejectedPatches);
         return this;
     }
 
@@ -262,11 +361,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
      * @param instancesWithNotApplicablePatches
-     *        The number of instances with patches that aren’t applicable.
+     *        The number of instances with patches that aren't applicable.
      */
 
     public void setInstancesWithNotApplicablePatches(Integer instancesWithNotApplicablePatches) {
@@ -275,10 +374,10 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
-     * @return The number of instances with patches that aren’t applicable.
+     * @return The number of instances with patches that aren't applicable.
      */
 
     public Integer getInstancesWithNotApplicablePatches() {
@@ -287,11 +386,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
      * @param instancesWithNotApplicablePatches
-     *        The number of instances with patches that aren’t applicable.
+     *        The number of instances with patches that aren't applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,7 +400,54 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param instancesWithUnreportedNotApplicablePatches
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *        reported by name to Systems Manager Inventory.
+     */
+
+    public void setInstancesWithUnreportedNotApplicablePatches(Integer instancesWithUnreportedNotApplicablePatches) {
+        this.instancesWithUnreportedNotApplicablePatches = instancesWithUnreportedNotApplicablePatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @return The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *         reported by name to Systems Manager Inventory.
+     */
+
+    public Integer getInstancesWithUnreportedNotApplicablePatches() {
+        return this.instancesWithUnreportedNotApplicablePatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     * reported by name to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param instancesWithUnreportedNotApplicablePatches
+     *        The number of instances with <code>NotApplicable</code> patches beyond the supported limit, which are not
+     *        reported by name to Systems Manager Inventory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithUnreportedNotApplicablePatches(Integer instancesWithUnreportedNotApplicablePatches) {
+        setInstancesWithUnreportedNotApplicablePatches(instancesWithUnreportedNotApplicablePatches);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -317,12 +463,16 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
             sb.append("InstancesWithInstalledPatches: ").append(getInstancesWithInstalledPatches()).append(",");
         if (getInstancesWithInstalledOtherPatches() != null)
             sb.append("InstancesWithInstalledOtherPatches: ").append(getInstancesWithInstalledOtherPatches()).append(",");
+        if (getInstancesWithInstalledRejectedPatches() != null)
+            sb.append("InstancesWithInstalledRejectedPatches: ").append(getInstancesWithInstalledRejectedPatches()).append(",");
         if (getInstancesWithMissingPatches() != null)
             sb.append("InstancesWithMissingPatches: ").append(getInstancesWithMissingPatches()).append(",");
         if (getInstancesWithFailedPatches() != null)
             sb.append("InstancesWithFailedPatches: ").append(getInstancesWithFailedPatches()).append(",");
         if (getInstancesWithNotApplicablePatches() != null)
-            sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches());
+            sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches()).append(",");
+        if (getInstancesWithUnreportedNotApplicablePatches() != null)
+            sb.append("InstancesWithUnreportedNotApplicablePatches: ").append(getInstancesWithUnreportedNotApplicablePatches());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +501,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (other.getInstancesWithInstalledOtherPatches() != null
                 && other.getInstancesWithInstalledOtherPatches().equals(this.getInstancesWithInstalledOtherPatches()) == false)
             return false;
+        if (other.getInstancesWithInstalledRejectedPatches() == null ^ this.getInstancesWithInstalledRejectedPatches() == null)
+            return false;
+        if (other.getInstancesWithInstalledRejectedPatches() != null
+                && other.getInstancesWithInstalledRejectedPatches().equals(this.getInstancesWithInstalledRejectedPatches()) == false)
+            return false;
         if (other.getInstancesWithMissingPatches() == null ^ this.getInstancesWithMissingPatches() == null)
             return false;
         if (other.getInstancesWithMissingPatches() != null && other.getInstancesWithMissingPatches().equals(this.getInstancesWithMissingPatches()) == false)
@@ -364,6 +519,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (other.getInstancesWithNotApplicablePatches() != null
                 && other.getInstancesWithNotApplicablePatches().equals(this.getInstancesWithNotApplicablePatches()) == false)
             return false;
+        if (other.getInstancesWithUnreportedNotApplicablePatches() == null ^ this.getInstancesWithUnreportedNotApplicablePatches() == null)
+            return false;
+        if (other.getInstancesWithUnreportedNotApplicablePatches() != null
+                && other.getInstancesWithUnreportedNotApplicablePatches().equals(this.getInstancesWithUnreportedNotApplicablePatches()) == false)
+            return false;
         return true;
     }
 
@@ -375,9 +535,12 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithInstalledPatches() == null) ? 0 : getInstancesWithInstalledPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithInstalledOtherPatches() == null) ? 0 : getInstancesWithInstalledOtherPatches().hashCode());
+        hashCode = prime * hashCode + ((getInstancesWithInstalledRejectedPatches() == null) ? 0 : getInstancesWithInstalledRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithMissingPatches() == null) ? 0 : getInstancesWithMissingPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithFailedPatches() == null) ? 0 : getInstancesWithFailedPatches().hashCode());
         hashCode = prime * hashCode + ((getInstancesWithNotApplicablePatches() == null) ? 0 : getInstancesWithNotApplicablePatches().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstancesWithUnreportedNotApplicablePatches() == null) ? 0 : getInstancesWithUnreportedNotApplicablePatches().hashCode());
         return hashCode;
     }
 
@@ -389,4 +552,5 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

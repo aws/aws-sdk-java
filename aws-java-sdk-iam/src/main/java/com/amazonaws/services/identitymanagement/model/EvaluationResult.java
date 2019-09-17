@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,13 +32,13 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the API action tested on the indicated resource.
+     * The name of the API operation tested on the indicated resource.
      * </p>
      */
     private String evalActionName;
     /**
      * <p>
-     * The ARN of the resource that the indicated API action was tested on.
+     * The ARN of the resource that the indicated API operation was tested on.
      * </p>
      */
     private String evalResourceName;
@@ -51,8 +51,8 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
-     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in the result.
+     * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Statement> matchedStatements;
@@ -68,29 +68,36 @@ public class EvaluationResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
      * <p>
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
+     * </p>
+     */
+    private OrganizationsDecisionDetail organizationsDecisionDetail;
+    /**
+     * <p>
      * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> evalDecisionDetails;
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * The individual results of the simulation of the API operation specified in EvalActionName on each resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceSpecificResult> resourceSpecificResults;
 
     /**
      * <p>
-     * The name of the API action tested on the indicated resource.
+     * The name of the API operation tested on the indicated resource.
      * </p>
      * 
      * @param evalActionName
-     *        The name of the API action tested on the indicated resource.
+     *        The name of the API operation tested on the indicated resource.
      */
 
     public void setEvalActionName(String evalActionName) {
@@ -99,10 +106,10 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the API action tested on the indicated resource.
+     * The name of the API operation tested on the indicated resource.
      * </p>
      * 
-     * @return The name of the API action tested on the indicated resource.
+     * @return The name of the API operation tested on the indicated resource.
      */
 
     public String getEvalActionName() {
@@ -111,11 +118,11 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the API action tested on the indicated resource.
+     * The name of the API operation tested on the indicated resource.
      * </p>
      * 
      * @param evalActionName
-     *        The name of the API action tested on the indicated resource.
+     *        The name of the API operation tested on the indicated resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +133,11 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that the indicated API action was tested on.
+     * The ARN of the resource that the indicated API operation was tested on.
      * </p>
      * 
      * @param evalResourceName
-     *        The ARN of the resource that the indicated API action was tested on.
+     *        The ARN of the resource that the indicated API operation was tested on.
      */
 
     public void setEvalResourceName(String evalResourceName) {
@@ -139,10 +146,10 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that the indicated API action was tested on.
+     * The ARN of the resource that the indicated API operation was tested on.
      * </p>
      * 
-     * @return The ARN of the resource that the indicated API action was tested on.
+     * @return The ARN of the resource that the indicated API operation was tested on.
      */
 
     public String getEvalResourceName() {
@@ -151,11 +158,11 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the resource that the indicated API action was tested on.
+     * The ARN of the resource that the indicated API operation was tested on.
      * </p>
      * 
      * @param evalResourceName
-     *        The ARN of the resource that the indicated API action was tested on.
+     *        The ARN of the resource that the indicated API operation was tested on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,7 +225,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      */
 
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
-        this.evalDecision = evalDecision.toString();
+        withEvalDecision(evalDecision);
     }
 
     /**
@@ -233,21 +240,21 @@ public class EvaluationResult implements Serializable, Cloneable {
      */
 
     public EvaluationResult withEvalDecision(PolicyEvaluationDecisionType evalDecision) {
-        setEvalDecision(evalDecision);
+        this.evalDecision = evalDecision.toString();
         return this;
     }
 
     /**
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
-     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in the result.
+     * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @return A list of the statements in the input policies that determine the result for this scenario. Remember that
-     *         even if multiple statements allow the action on the resource, if only one statement denies that action,
-     *         then the explicit deny overrides any allow, and the deny statement is the only entry included in the
-     *         result.
+     *         even if multiple statements allow the operation on the resource, if only one statement denies that
+     *         operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     *         included in the result.
      */
 
     public java.util.List<Statement> getMatchedStatements() {
@@ -260,15 +267,15 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
-     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in the result.
+     * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
-     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
-     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
-     *        result.
+     *        even if multiple statements allow the operation on the resource, if only one statement denies that
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     *        included in the result.
      */
 
     public void setMatchedStatements(java.util.Collection<Statement> matchedStatements) {
@@ -283,8 +290,8 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
-     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in the result.
+     * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -294,9 +301,9 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
-     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
-     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
-     *        result.
+     *        even if multiple statements allow the operation on the resource, if only one statement denies that
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,15 +320,15 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
-     * multiple statements allow the action on the resource, if only one statement denies that action, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in the result.
+     * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
+     * explicit deny overrides any allow. In addition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
-     *        even if multiple statements allow the action on the resource, if only one statement denies that action,
-     *        then the explicit deny overrides any allow, and the deny statement is the only entry included in the
-     *        result.
+     *        even if multiple statements allow the operation on the resource, if only one statement denies that
+     *        operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,11 +448,57 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @param organizationsDecisionDetail
+     *        A structure that details how Organizations and its service control policies affect the results of the
+     *        simulation. Only applies if the simulated user's account is part of an organization.
+     */
+
+    public void setOrganizationsDecisionDetail(OrganizationsDecisionDetail organizationsDecisionDetail) {
+        this.organizationsDecisionDetail = organizationsDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @return A structure that details how Organizations and its service control policies affect the results of the
+     *         simulation. Only applies if the simulated user's account is part of an organization.
+     */
+
+    public OrganizationsDecisionDetail getOrganizationsDecisionDetail() {
+        return this.organizationsDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * A structure that details how Organizations and its service control policies affect the results of the simulation.
+     * Only applies if the simulated user's account is part of an organization.
+     * </p>
+     * 
+     * @param organizationsDecisionDetail
+     *        A structure that details how Organizations and its service control policies affect the results of the
+     *        simulation. Only applies if the simulated user's account is part of an organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EvaluationResult withOrganizationsDecisionDetail(OrganizationsDecisionDetail organizationsDecisionDetail) {
+        setOrganizationsDecisionDetail(organizationsDecisionDetail);
+        return this;
+    }
+
+    /**
+     * <p>
      * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -453,7 +506,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *         caller's IAM policy must grant access. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *         Roles Differ from Resource-based Policies</a>
      */
 
@@ -470,7 +523,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -479,7 +532,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      */
 
@@ -493,7 +546,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -502,7 +555,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -535,10 +588,11 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * The individual results of the simulation of the API operation specified in EvalActionName on each resource.
      * </p>
      * 
-     * @return The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * @return The individual results of the simulation of the API operation specified in EvalActionName on each
+     *         resource.
      */
 
     public java.util.List<ResourceSpecificResult> getResourceSpecificResults() {
@@ -550,11 +604,12 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * The individual results of the simulation of the API operation specified in EvalActionName on each resource.
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     *        The individual results of the simulation of the API operation specified in EvalActionName on each
+     *        resource.
      */
 
     public void setResourceSpecificResults(java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
@@ -568,7 +623,7 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * The individual results of the simulation of the API operation specified in EvalActionName on each resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -577,7 +632,8 @@ public class EvaluationResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     *        The individual results of the simulation of the API operation specified in EvalActionName on each
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,11 +649,12 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     * The individual results of the simulation of the API operation specified in EvalActionName on each resource.
      * </p>
      * 
      * @param resourceSpecificResults
-     *        The individual results of the simulation of the API action specified in EvalActionName on each resource.
+     *        The individual results of the simulation of the API operation specified in EvalActionName on each
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,7 +664,8 @@ public class EvaluationResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -627,6 +685,8 @@ public class EvaluationResult implements Serializable, Cloneable {
             sb.append("MatchedStatements: ").append(getMatchedStatements()).append(",");
         if (getMissingContextValues() != null)
             sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
+        if (getOrganizationsDecisionDetail() != null)
+            sb.append("OrganizationsDecisionDetail: ").append(getOrganizationsDecisionDetail()).append(",");
         if (getEvalDecisionDetails() != null)
             sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails()).append(",");
         if (getResourceSpecificResults() != null)
@@ -665,6 +725,10 @@ public class EvaluationResult implements Serializable, Cloneable {
             return false;
         if (other.getMissingContextValues() != null && other.getMissingContextValues().equals(this.getMissingContextValues()) == false)
             return false;
+        if (other.getOrganizationsDecisionDetail() == null ^ this.getOrganizationsDecisionDetail() == null)
+            return false;
+        if (other.getOrganizationsDecisionDetail() != null && other.getOrganizationsDecisionDetail().equals(this.getOrganizationsDecisionDetail()) == false)
+            return false;
         if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null)
             return false;
         if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false)
@@ -686,6 +750,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEvalDecision() == null) ? 0 : getEvalDecision().hashCode());
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode());
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationsDecisionDetail() == null) ? 0 : getOrganizationsDecisionDetail().hashCode());
         hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceSpecificResults() == null) ? 0 : getResourceSpecificResults().hashCode());
         return hashCode;
@@ -699,4 +764,5 @@ public class EvaluationResult implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

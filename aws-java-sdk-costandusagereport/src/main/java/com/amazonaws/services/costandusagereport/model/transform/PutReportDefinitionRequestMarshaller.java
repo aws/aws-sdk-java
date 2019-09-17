@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.costandusagereport.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.costandusagereport.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutReportDefinitionRequest Marshaller
+ * PutReportDefinitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutReportDefinitionRequestMarshaller implements Marshaller<Request<PutReportDefinitionRequest>, PutReportDefinitionRequest> {
+@SdkInternalApi
+public class PutReportDefinitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<StructuredPojo> REPORTDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportDefinition").build();
 
-    public PutReportDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutReportDefinitionRequestMarshaller instance = new PutReportDefinitionRequestMarshaller();
+
+    public static PutReportDefinitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutReportDefinitionRequest> marshall(PutReportDefinitionRequest putReportDefinitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutReportDefinitionRequest putReportDefinitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putReportDefinitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutReportDefinitionRequest> request = new DefaultRequest<PutReportDefinitionRequest>(putReportDefinitionRequest, "AWSCostAndUsageReport");
-        request.addHeader("X-Amz-Target", "AWSOrigamiServiceGatewayService.PutReportDefinition");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putReportDefinitionRequest.getReportDefinition() != null) {
-                jsonGenerator.writeFieldName("ReportDefinition");
-                ReportDefinitionJsonMarshaller.getInstance().marshall(putReportDefinitionRequest.getReportDefinition(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putReportDefinitionRequest.getReportDefinition(), REPORTDEFINITION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

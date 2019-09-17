@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>ModifyDBInstance</a> action.
+ * This data type is used as a response element in the <code>ModifyDBInstance</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingModifiedValues" target="_top">AWS API
@@ -28,19 +28,21 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      */
     private String dBInstanceClass;
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
+     * being applied.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
-     * Contains the pending or in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      * </p>
      */
     private String masterUserPassword;
@@ -80,13 +82,14 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String licenseModel;
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      */
     private String dBInstanceIdentifier;
@@ -109,13 +112,23 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      */
     private String dBSubnetGroupName;
 
+    private PendingCloudwatchLogsExports pendingCloudwatchLogsExports;
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
+
+    /**
+     * <p>
+     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
+     *        being applied.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -124,10 +137,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
-     * @return Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     * @return Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
+     *         being applied.
      */
 
     public String getDBInstanceClass() {
@@ -136,11 +151,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is in progress.
+     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
+     *        being applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,12 +168,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
+     * being applied.
      * </p>
      * 
      * @param allocatedStorage
-     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in
-     *        progress.
+     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
+     *        currently being applied.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -165,11 +183,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
+     * being applied.
      * </p>
      * 
-     * @return Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in
-     *         progress.
+     * @return Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
+     *         currently being applied.
      */
 
     public Integer getAllocatedStorage() {
@@ -178,12 +197,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
+     * being applied.
      * </p>
      * 
      * @param allocatedStorage
-     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is in
-     *        progress.
+     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
+     *        currently being applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +214,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or in-progress change of the master credentials for the DB instance.
+     *        Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -207,10 +227,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      * </p>
      * 
-     * @return Contains the pending or in-progress change of the master credentials for the DB instance.
+     * @return Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      */
 
     public String getMasterUserPassword() {
@@ -219,11 +239,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or in-progress change of the master credentials for the DB instance.
+     *        Contains the pending or currently-in-progress change of the master credentials for the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +487,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
      * </p>
      * 
      * @param iops
-     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     *        applied.
      */
 
     public void setIops(Integer iops) {
@@ -480,10 +501,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
      * </p>
      * 
-     * @return Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     * @return Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     *         applied.
      */
 
     public Integer getIops() {
@@ -492,11 +514,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
      * </p>
      * 
      * @param iops
-     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
+     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     *        applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,12 +530,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in
-     *        progress.
+     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
+     *        currently being applied.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -521,11 +545,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
-     * @return Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in
-     *         progress.
+     * @return Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
+     *         currently being applied.
      */
 
     public String getDBInstanceIdentifier() {
@@ -534,12 +559,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in progress.
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is in
-     *        progress.
+     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
+     *        currently being applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,7 +695,107 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * @param pendingCloudwatchLogsExports
+     */
+
+    public void setPendingCloudwatchLogsExports(PendingCloudwatchLogsExports pendingCloudwatchLogsExports) {
+        this.pendingCloudwatchLogsExports = pendingCloudwatchLogsExports;
+    }
+
+    /**
+     * @return
+     */
+
+    public PendingCloudwatchLogsExports getPendingCloudwatchLogsExports() {
+        return this.pendingCloudwatchLogsExports;
+    }
+
+    /**
+     * @param pendingCloudwatchLogsExports
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withPendingCloudwatchLogsExports(PendingCloudwatchLogsExports pendingCloudwatchLogsExports) {
+        setPendingCloudwatchLogsExports(pendingCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingModifiedValues withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -704,7 +830,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getCACertificateIdentifier() != null)
             sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName());
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
+        if (getPendingCloudwatchLogsExports() != null)
+            sb.append("PendingCloudwatchLogsExports: ").append(getPendingCloudwatchLogsExports()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -771,6 +901,14 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false)
             return false;
+        if (other.getPendingCloudwatchLogsExports() == null ^ this.getPendingCloudwatchLogsExports() == null)
+            return false;
+        if (other.getPendingCloudwatchLogsExports() != null && other.getPendingCloudwatchLogsExports().equals(this.getPendingCloudwatchLogsExports()) == false)
+            return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -792,6 +930,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getCACertificateIdentifier() == null) ? 0 : getCACertificateIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode());
+        hashCode = prime * hashCode + ((getPendingCloudwatchLogsExports() == null) ? 0 : getPendingCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         return hashCode;
     }
 
@@ -803,4 +943,5 @@ public class PendingModifiedValues implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

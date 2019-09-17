@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified service could not be found. You can view your available services with <a>ListServices</a>. Amazon ECS
- * services are cluster-specific and region-specific.
+ * services are cluster-specific and Region-specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

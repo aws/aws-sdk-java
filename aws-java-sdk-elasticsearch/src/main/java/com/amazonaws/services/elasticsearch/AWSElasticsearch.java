@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,9 +57,10 @@ public interface AWSElasticsearch {
      * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -127,6 +128,32 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
+     * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+     * state.
+     * </p>
+     * 
+     * @param cancelElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code>
+     *        operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software
+     *        update on.
+     * @return Result of the CancelElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.CancelElasticsearchServiceSoftwareUpdate
+     */
+    CancelElasticsearchServiceSoftwareUpdateResult cancelElasticsearchServiceSoftwareUpdate(
+            CancelElasticsearchServiceSoftwareUpdateRequest cancelElasticsearchServiceSoftwareUpdateRequest);
+
+    /**
+     * <p>
      * Creates a new Elasticsearch domain. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
      * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.
@@ -178,6 +205,29 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.DeleteElasticsearchDomain
      */
     DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest);
+
+    /**
+     * <p>
+     * Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion
+     * will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before
+     * deleting the role. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+     * target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service
+     * Domains</i>.
+     * </p>
+     * 
+     * @param deleteElasticsearchServiceRoleRequest
+     * @return Result of the DeleteElasticsearchServiceRole operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DeleteElasticsearchServiceRole
+     */
+    DeleteElasticsearchServiceRoleResult deleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest);
 
     /**
      * <p>
@@ -247,6 +297,155 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @return Result of the DescribeElasticsearchInstanceTypeLimits operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchInstanceTypeLimits
+     */
+    DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest);
+
+    /**
+     * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @return Result of the DescribeReservedElasticsearchInstanceOfferings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstanceOfferings
+     */
+    DescribeReservedElasticsearchInstanceOfferingsResult describeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @return Result of the DescribeReservedElasticsearchInstances operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstances
+     */
+    DescribeReservedElasticsearchInstancesResult describeReservedElasticsearchInstances(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest);
+
+    /**
+     * <p>
+     * Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a
+     * <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
+     * </p>
+     * 
+     * @param getCompatibleElasticsearchVersionsRequest
+     *        Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
+     * @return Result of the GetCompatibleElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetCompatibleElasticsearchVersions
+     */
+    GetCompatibleElasticsearchVersionsResult getCompatibleElasticsearchVersions(
+            GetCompatibleElasticsearchVersionsRequest getCompatibleElasticsearchVersionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeHistoryRequest
+     *        Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
+     * @return Result of the GetUpgradeHistory operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetUpgradeHistory
+     */
+    GetUpgradeHistoryResult getUpgradeHistory(GetUpgradeHistoryRequest getUpgradeHistoryRequest);
+
+    /**
+     * <p>
+     * Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeStatusRequest
+     *        Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.
+     * @return Result of the GetUpgradeStatus operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetUpgradeStatus
+     */
+    GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest getUpgradeStatusRequest);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -259,6 +458,56 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.ListDomainNames
      */
     ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest);
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @return Result of the ListElasticsearchInstanceTypes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchInstanceTypes
+     */
+    ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest);
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @return Result of the ListElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchVersions
+     */
+    ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest);
 
     /**
      * <p>
@@ -284,6 +533,34 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @return Result of the PurchaseReservedElasticsearchInstanceOffering operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.PurchaseReservedElasticsearchInstanceOffering
+     */
+    PurchaseReservedElasticsearchInstanceOfferingResult purchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest);
+
+    /**
+     * <p>
      * Removes the specified set of tags from the specified Elasticsearch domain.
      * </p>
      * 
@@ -301,6 +578,29 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.RemoveTags
      */
     RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
+
+    /**
+     * <p>
+     * Schedules a service software update for an Amazon ES domain.
+     * </p>
+     * 
+     * @param startElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation.
+     *        Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+     * @return Result of the StartElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.StartElasticsearchServiceSoftwareUpdate
+     */
+    StartElasticsearchServiceSoftwareUpdateResult startElasticsearchServiceSoftwareUpdate(
+            StartElasticsearchServiceSoftwareUpdateRequest startElasticsearchServiceSoftwareUpdateRequest);
 
     /**
      * <p>
@@ -330,6 +630,33 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest);
+
+    /**
+     * <p>
+     * Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch
+     * version.
+     * </p>
+     * 
+     * @param upgradeElasticsearchDomainRequest
+     *        Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
+     * @return Result of the UpgradeElasticsearchDomain operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.UpgradeElasticsearchDomain
+     */
+    UpgradeElasticsearchDomainResult upgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest upgradeElasticsearchDomainRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

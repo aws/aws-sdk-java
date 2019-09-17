@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
     private String elasticLoadBalancerName;
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      */
     private String layerId;
@@ -80,11 +80,11 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     *        The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      */
 
     public void setLayerId(String layerId) {
@@ -93,10 +93,10 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
-     * @return The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * @return The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      */
 
     public String getLayerId() {
@@ -105,11 +105,11 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     *        The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +119,8 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

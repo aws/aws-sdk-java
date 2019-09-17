@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
     private String filterPattern;
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricTransformation> metricTransformations;
@@ -68,7 +68,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param filterPattern
      *        A filter pattern for extracting metric data out of ingested log events.
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      */
     public PutMetricFilterRequest(String logGroupName, String filterName, String filterPattern, java.util.List<MetricTransformation> metricTransformations) {
         setLogGroupName(logGroupName);
@@ -199,10 +199,10 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
-     * @return A collection of information needed to define how metric data gets emitted.
+     * @return A collection of information that defines how metric data gets emitted.
      */
 
     public java.util.List<MetricTransformation> getMetricTransformations() {
@@ -214,11 +214,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      */
 
     public void setMetricTransformations(java.util.Collection<MetricTransformation> metricTransformations) {
@@ -232,7 +232,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +241,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,7 +271,8 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,47 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteFileShareRequest Marshaller
+ * DeleteFileShareRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteFileShareRequestMarshaller implements Marshaller<Request<DeleteFileShareRequest>, DeleteFileShareRequest> {
+@SdkInternalApi
+public class DeleteFileShareRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceDelete").build();
 
-    public DeleteFileShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteFileShareRequestMarshaller instance = new DeleteFileShareRequestMarshaller();
+
+    public static DeleteFileShareRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteFileShareRequest> marshall(DeleteFileShareRequest deleteFileShareRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteFileShareRequest deleteFileShareRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteFileShareRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteFileShareRequest> request = new DefaultRequest<DeleteFileShareRequest>(deleteFileShareRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DeleteFileShare");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteFileShareRequest.getFileShareARN() != null) {
-                jsonGenerator.writeFieldName("FileShareARN").writeValue(deleteFileShareRequest.getFileShareARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteFileShareRequest.getFileShareARN(), FILESHAREARN_BINDING);
+            protocolMarshaller.marshall(deleteFileShareRequest.getForceDelete(), FORCEDELETE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

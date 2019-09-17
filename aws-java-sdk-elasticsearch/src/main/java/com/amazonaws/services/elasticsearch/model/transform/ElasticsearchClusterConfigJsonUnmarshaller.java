@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class ElasticsearchClusterConfigJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("ZoneAwarenessEnabled", targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig.setZoneAwarenessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ZoneAwarenessConfig", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setZoneAwarenessConfig(ZoneAwarenessConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,13 +43,8 @@ public class InstancePrivateIpAddressStaxUnmarshaller implements Unmarshaller<In
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    instancePrivateIpAddress.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("privateDnsName", targetDepth)) {
-                    instancePrivateIpAddress.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("association", targetDepth)) {
+                    instancePrivateIpAddress.setAssociation(InstanceNetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +53,13 @@ public class InstancePrivateIpAddressStaxUnmarshaller implements Unmarshaller<In
                     continue;
                 }
 
-                if (context.testExpression("association", targetDepth)) {
-                    instancePrivateIpAddress.setAssociation(InstanceNetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("privateDnsName", targetDepth)) {
+                    instancePrivateIpAddress.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    instancePrivateIpAddress.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

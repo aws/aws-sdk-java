@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,25 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it
- * must meet the requirements for AWS CodePipeline. For more information, see the <a
- * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket">Concepts</a>.
+ * The Amazon S3 bucket where artifacts are stored for the pipeline.
  * </p>
+ * <note>
+ * <p>
+ * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot
+ * use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ArtifactStore implements Serializable, Cloneable {
+public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,7 +42,10 @@ public class ArtifactStore implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
+     * not a folder within the bucket. A folder to contain the pipeline artifacts is created for you based on the name
+     * of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      */
     private String location;
@@ -102,7 +111,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      */
 
     public void setType(ArtifactStoreType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -117,17 +126,23 @@ public class ArtifactStore implements Serializable, Cloneable {
      */
 
     public ArtifactStore withType(ArtifactStoreType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
+     * not a folder within the bucket. A folder to contain the pipeline artifacts is created for you based on the name
+     * of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
      * @param location
-     *        The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     *        The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3
+     *        bucket but not a folder within the bucket. A folder to contain the pipeline artifacts is created for you
+     *        based on the name of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline
+     *        to store your pipeline artifacts.
      */
 
     public void setLocation(String location) {
@@ -136,10 +151,16 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
+     * not a folder within the bucket. A folder to contain the pipeline artifacts is created for you based on the name
+     * of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
-     * @return The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * @return The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3
+     *         bucket but not a folder within the bucket. A folder to contain the pipeline artifacts is created for you
+     *         based on the name of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the
+     *         pipeline to store your pipeline artifacts.
      */
 
     public String getLocation() {
@@ -148,11 +169,17 @@ public class ArtifactStore implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     * The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
+     * not a folder within the bucket. A folder to contain the pipeline artifacts is created for you based on the name
+     * of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
      * @param location
-     *        The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.
+     *        The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3
+     *        bucket but not a folder within the bucket. A folder to contain the pipeline artifacts is created for you
+     *        based on the name of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline
+     *        to store your pipeline artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,7 +235,8 @@ public class ArtifactStore implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -271,5 +299,11 @@ public class ArtifactStore implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.ArtifactStoreMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

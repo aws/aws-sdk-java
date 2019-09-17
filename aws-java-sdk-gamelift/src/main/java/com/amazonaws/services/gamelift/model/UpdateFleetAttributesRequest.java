@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
@@ -54,13 +54,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -72,14 +72,22 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
+    /**
+     * <p>
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
+     * </p>
+     */
+    private java.util.List<String> metricGroups;
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute metadata for.
+     *        Unique identifier for a fleet to update attribute metadata for.
      */
 
     public void setFleetId(String fleetId) {
@@ -88,10 +96,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to update attribute metadata for.
+     * @return Unique identifier for a fleet to update attribute metadata for.
      */
 
     public String getFleetId() {
@@ -100,11 +108,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to update attribute metadata for.
+     * Unique identifier for a fleet to update attribute metadata for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to update attribute metadata for.
+     *        Unique identifier for a fleet to update attribute metadata for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +123,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -128,10 +136,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -140,11 +148,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,13 +209,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -219,12 +227,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -243,13 +251,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -260,12 +268,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *         during a scale-down event.
      *         </p>
      *         </li>
@@ -284,13 +292,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -302,12 +310,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -328,13 +336,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -346,12 +354,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -359,7 +367,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
+        withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }
 
     /**
@@ -370,13 +378,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -388,12 +396,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -402,7 +410,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      */
 
     public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
         return this;
     }
 
@@ -447,7 +455,98 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @return Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *         aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *         Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *         time.
+     */
+
+    public java.util.List<String> getMetricGroups() {
+        return metricGroups;
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
+     */
+
+    public void setMetricGroups(java.util.Collection<String> metricGroups) {
+        if (metricGroups == null) {
+            this.metricGroups = null;
+            return;
+        }
+
+        this.metricGroups = new java.util.ArrayList<String>(metricGroups);
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetricGroups(java.util.Collection)} or {@link #withMetricGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetAttributesRequest withMetricGroups(String... metricGroups) {
+        if (this.metricGroups == null) {
+            setMetricGroups(new java.util.ArrayList<String>(metricGroups.length));
+        }
+        for (String ele : metricGroups) {
+            this.metricGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetAttributesRequest withMetricGroups(java.util.Collection<String> metricGroups) {
+        setMetricGroups(metricGroups);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -466,7 +565,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         if (getNewGameSessionProtectionPolicy() != null)
             sb.append("NewGameSessionProtectionPolicy: ").append(getNewGameSessionProtectionPolicy()).append(",");
         if (getResourceCreationLimitPolicy() != null)
-            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy());
+            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy()).append(",");
+        if (getMetricGroups() != null)
+            sb.append("MetricGroups: ").append(getMetricGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +603,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getResourceCreationLimitPolicy() != null && other.getResourceCreationLimitPolicy().equals(this.getResourceCreationLimitPolicy()) == false)
             return false;
+        if (other.getMetricGroups() == null ^ this.getMetricGroups() == null)
+            return false;
+        if (other.getMetricGroups() != null && other.getMetricGroups().equals(this.getMetricGroups()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +620,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
+        hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
         return hashCode;
     }
 

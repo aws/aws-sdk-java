@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,6 +19,9 @@ import javax.annotation.Generated;
  * <p>
  * Detailed information about an activity type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeDetail" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -31,9 +34,17 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      * The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be running.</li>
-     * <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
-     * should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
+     * should keep workers supporting this type running. You cannot create new tasks of this type.
+     * </p>
+     * </li>
      * </ul>
      */
     private ActivityTypeInfo typeInfo;
@@ -52,9 +63,17 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      * The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be running.</li>
-     * <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
-     * should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
+     * should keep workers supporting this type running. You cannot create new tasks of this type.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param typeInfo
@@ -63,10 +82,18 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      *        The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      *        </p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be
-     *        running.</li>
-     *        <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use.
-     *        You should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be
+     *        running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use.
+     *        You should keep workers supporting this type running. You cannot create new tasks of this type.
+     *        </p>
+     *        </li>
      */
 
     public void setTypeInfo(ActivityTypeInfo typeInfo) {
@@ -81,9 +108,17 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      * The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be running.</li>
-     * <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
-     * should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
+     * should keep workers supporting this type running. You cannot create new tasks of this type.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return General information about the activity type.</p>
@@ -91,10 +126,18 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      *         The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      *         </p>
      *         <ul>
-     *         <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be
-     *         running.</li>
-     *         <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use.
-     *         You should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     *         <li>
+     *         <p>
+     *         <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be
+     *         running.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in
+     *         use. You should keep workers supporting this type running. You cannot create new tasks of this type.
+     *         </p>
+     *         </li>
      */
 
     public ActivityTypeInfo getTypeInfo() {
@@ -109,9 +152,17 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      * The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be running.</li>
-     * <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
-     * should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use. You
+     * should keep workers supporting this type running. You cannot create new tasks of this type.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param typeInfo
@@ -120,10 +171,18 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
      *        The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.
      *        </p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The type is registered and available. Workers supporting this type should be
-     *        running.</li>
-     *        <li><b>DEPRECATED</b>: The type was deprecated using <a>DeprecateActivityType</a>, but is still in use.
-     *        You should keep workers supporting this type running. You cannot create new tasks of this type.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be
+     *        running.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateActivityType</a>, but is still in use.
+     *        You should keep workers supporting this type running. You cannot create new tasks of this type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,7 +232,8 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -230,4 +290,5 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

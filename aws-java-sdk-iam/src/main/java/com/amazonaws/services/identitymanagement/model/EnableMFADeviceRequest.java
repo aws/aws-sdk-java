@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the IAM user for whom you want to enable the MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -42,9 +42,9 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * device ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =/:,.@-
+     * the following characters: =,.@:/-
      * </p>
      */
     private String serialNumber;
@@ -53,8 +53,17 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      */
     private String authenticationCode1;
     /**
@@ -62,8 +71,17 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      */
     private String authenticationCode2;
 
@@ -81,27 +99,46 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param userName
      *        The name of the IAM user for whom you want to enable the MFA device.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the device ARN.
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =/:,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@:/-
      * @param authenticationCode1
      *        An authentication code emitted by the device.
      *        </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
-     * @param authenticationCode2
-     *        A subsequent authentication code emitted by the device.
+     *        The format for this parameter is a string of six digits.
      *        </p>
+     *        <important>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
+     * @param authenticationCode2
+     *        A subsequent authentication code emitted by the device.</p>
+     *        <p>
+     *        The format for this parameter is a string of six digits.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
      */
     public EnableMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
         setUserName(userName);
@@ -115,17 +152,17 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the IAM user for whom you want to enable the MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user for whom you want to enable the MFA device.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -137,16 +174,16 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the IAM user for whom you want to enable the MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the IAM user for whom you want to enable the MFA device.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -158,17 +195,17 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the IAM user for whom you want to enable the MFA device.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user for whom you want to enable the MFA device.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,18 +220,18 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * device ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =/:,.@-
+     * the following characters: =,.@:/-
      * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the device ARN.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =/:,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@:/-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -207,17 +244,17 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * device ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =/:,.@-
+     * the following characters: =,.@:/-
      * </p>
      * 
      * @return The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *         the device ARN.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =/:,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: =,.@:/-
      */
 
     public String getSerialNumber() {
@@ -230,18 +267,18 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * device ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =/:,.@-
+     * the following characters: =,.@:/-
      * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the device ARN.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =/:,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@:/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +292,32 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
      * @param authenticationCode1
-     *        An authentication code emitted by the device.</p>
+     *        An authentication code emitted by the device. </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
      */
 
     public void setAuthenticationCode1(String authenticationCode1) {
@@ -273,12 +329,31 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
-     * @return An authentication code emitted by the device.</p>
+     * @return An authentication code emitted by the device. </p>
      *         <p>
-     *         The format for this parameter is a string of 6 digits.
+     *         The format for this parameter is a string of six digits.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *         then wait too long to submit the request, the MFA device successfully associates with the user but the
+     *         MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a
+     *         short period of time. If this happens, you can <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *         device</a>.
+     *         </p>
      */
 
     public String getAuthenticationCode1() {
@@ -290,13 +365,32 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
      * @param authenticationCode1
-     *        An authentication code emitted by the device.</p>
+     *        An authentication code emitted by the device. </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,13 +404,32 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
      */
 
     public void setAuthenticationCode2(String authenticationCode2) {
@@ -328,12 +441,31 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
      * @return A subsequent authentication code emitted by the device.</p>
      *         <p>
-     *         The format for this parameter is a string of 6 digits.
+     *         The format for this parameter is a string of six digits.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *         then wait too long to submit the request, the MFA device successfully associates with the user but the
+     *         MFA device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a
+     *         short period of time. If this happens, you can <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *         device</a>.
+     *         </p>
      */
 
     public String getAuthenticationCode2() {
@@ -345,13 +477,32 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
+     * <important>
+     * <p>
+     * Submit your request immediately after generating the authentication codes. If you generate the codes and then
+     * wait too long to submit the request, the MFA device successfully associates with the user but the MFA device
+     * becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the device</a>.
+     * </p>
+     * </important>
      * 
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Submit your request immediately after generating the authentication codes. If you generate the codes and
+     *        then wait too long to submit the request, the MFA device successfully associates with the user but the MFA
+     *        device becomes out of sync. This happens because time-based one-time passwords (TOTP) expire after a short
+     *        period of time. If this happens, you can <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
+     *        device</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,7 +512,8 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

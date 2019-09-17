@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,11 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
+    private Integer maxResults;
     /**
      * <p>
      * The token for the next set of results.
@@ -42,124 +43,10 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The IDs of the Spot Fleet requests.
      * </p>
      */
-    private Integer maxResults;
-
-    /**
-     * <p>
-     * The IDs of the Spot fleet requests.
-     * </p>
-     * 
-     * @return The IDs of the Spot fleet requests.
-     */
-
-    public java.util.List<String> getSpotFleetRequestIds() {
-        if (spotFleetRequestIds == null) {
-            spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return spotFleetRequestIds;
-    }
-
-    /**
-     * <p>
-     * The IDs of the Spot fleet requests.
-     * </p>
-     * 
-     * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
-     */
-
-    public void setSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
-        if (spotFleetRequestIds == null) {
-            this.spotFleetRequestIds = null;
-            return;
-        }
-
-        this.spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>(spotFleetRequestIds);
-    }
-
-    /**
-     * <p>
-     * The IDs of the Spot fleet requests.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSpotFleetRequestIds(java.util.Collection)} or {@link #withSpotFleetRequestIds(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(String... spotFleetRequestIds) {
-        if (this.spotFleetRequestIds == null) {
-            setSpotFleetRequestIds(new com.amazonaws.internal.SdkInternalList<String>(spotFleetRequestIds.length));
-        }
-        for (String ele : spotFleetRequestIds) {
-            this.spotFleetRequestIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IDs of the Spot fleet requests.
-     * </p>
-     * 
-     * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
-        setSpotFleetRequestIds(spotFleetRequestIds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @return The token for the next set of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
 
     /**
      * <p>
@@ -211,6 +98,119 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Spot Fleet requests.
+     * </p>
+     * 
+     * @return The IDs of the Spot Fleet requests.
+     */
+
+    public java.util.List<String> getSpotFleetRequestIds() {
+        if (spotFleetRequestIds == null) {
+            spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return spotFleetRequestIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Spot Fleet requests.
+     * </p>
+     * 
+     * @param spotFleetRequestIds
+     *        The IDs of the Spot Fleet requests.
+     */
+
+    public void setSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
+        if (spotFleetRequestIds == null) {
+            this.spotFleetRequestIds = null;
+            return;
+        }
+
+        this.spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>(spotFleetRequestIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the Spot Fleet requests.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSpotFleetRequestIds(java.util.Collection)} or {@link #withSpotFleetRequestIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param spotFleetRequestIds
+     *        The IDs of the Spot Fleet requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(String... spotFleetRequestIds) {
+        if (this.spotFleetRequestIds == null) {
+            setSpotFleetRequestIds(new com.amazonaws.internal.SdkInternalList<String>(spotFleetRequestIds.length));
+        }
+        for (String ele : spotFleetRequestIds) {
+            this.spotFleetRequestIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Spot Fleet requests.
+     * </p>
+     * 
+     * @param spotFleetRequestIds
+     *        The IDs of the Spot Fleet requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
+        setSpotFleetRequestIds(spotFleetRequestIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -222,7 +222,8 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -232,12 +233,12 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestIds() != null)
-            sb.append("SpotFleetRequestIds: ").append(getSpotFleetRequestIds()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+        if (getSpotFleetRequestIds() != null)
+            sb.append("SpotFleetRequestIds: ").append(getSpotFleetRequestIds());
         sb.append("}");
         return sb.toString();
     }
@@ -252,17 +253,17 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeSpotFleetRequestsRequest == false)
             return false;
         DescribeSpotFleetRequestsRequest other = (DescribeSpotFleetRequestsRequest) obj;
-        if (other.getSpotFleetRequestIds() == null ^ this.getSpotFleetRequestIds() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getSpotFleetRequestIds() != null && other.getSpotFleetRequestIds().equals(this.getSpotFleetRequestIds()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getSpotFleetRequestIds() == null ^ this.getSpotFleetRequestIds() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getSpotFleetRequestIds() != null && other.getSpotFleetRequestIds().equals(this.getSpotFleetRequestIds()) == false)
             return false;
         return true;
     }
@@ -272,9 +273,9 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotFleetRequestIds() == null) ? 0 : getSpotFleetRequestIds().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestIds() == null) ? 0 : getSpotFleetRequestIds().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class S3Location implements Serializable, Cloneable {
+public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -66,7 +68,7 @@ public class S3Location implements Serializable, Cloneable {
      * A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the version is not specified, the system will use the most recent version by default.
+     * If the version is not specified, the system uses the most recent version by default.
      * </p>
      */
     private String version;
@@ -75,7 +77,7 @@ public class S3Location implements Serializable, Cloneable {
      * The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     * If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      * </p>
      */
     private String eTag;
@@ -346,7 +348,7 @@ public class S3Location implements Serializable, Cloneable {
      */
 
     public void setBundleType(BundleType bundleType) {
-        this.bundleType = bundleType.toString();
+        withBundleType(bundleType);
     }
 
     /**
@@ -394,7 +396,7 @@ public class S3Location implements Serializable, Cloneable {
      */
 
     public S3Location withBundleType(BundleType bundleType) {
-        setBundleType(bundleType);
+        this.bundleType = bundleType.toString();
         return this;
     }
 
@@ -403,14 +405,14 @@ public class S3Location implements Serializable, Cloneable {
      * A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the version is not specified, the system will use the most recent version by default.
+     * If the version is not specified, the system uses the most recent version by default.
      * </p>
      * 
      * @param version
      *        A specific version of the Amazon S3 object that represents the bundled artifacts for the application
      *        revision.</p>
      *        <p>
-     *        If the version is not specified, the system will use the most recent version by default.
+     *        If the version is not specified, the system uses the most recent version by default.
      */
 
     public void setVersion(String version) {
@@ -422,13 +424,13 @@ public class S3Location implements Serializable, Cloneable {
      * A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the version is not specified, the system will use the most recent version by default.
+     * If the version is not specified, the system uses the most recent version by default.
      * </p>
      * 
      * @return A specific version of the Amazon S3 object that represents the bundled artifacts for the application
      *         revision.</p>
      *         <p>
-     *         If the version is not specified, the system will use the most recent version by default.
+     *         If the version is not specified, the system uses the most recent version by default.
      */
 
     public String getVersion() {
@@ -440,14 +442,14 @@ public class S3Location implements Serializable, Cloneable {
      * A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the version is not specified, the system will use the most recent version by default.
+     * If the version is not specified, the system uses the most recent version by default.
      * </p>
      * 
      * @param version
      *        A specific version of the Amazon S3 object that represents the bundled artifacts for the application
      *        revision.</p>
      *        <p>
-     *        If the version is not specified, the system will use the most recent version by default.
+     *        If the version is not specified, the system uses the most recent version by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,13 +463,13 @@ public class S3Location implements Serializable, Cloneable {
      * The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     * If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      * </p>
      * 
      * @param eTag
      *        The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
      *        <p>
-     *        If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     *        If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      */
 
     public void setETag(String eTag) {
@@ -479,12 +481,12 @@ public class S3Location implements Serializable, Cloneable {
      * The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     * If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      * </p>
      * 
      * @return The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
      *         <p>
-     *         If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     *         If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      */
 
     public String getETag() {
@@ -496,13 +498,13 @@ public class S3Location implements Serializable, Cloneable {
      * The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.
      * </p>
      * <p>
-     * If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     * If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      * </p>
      * 
      * @param eTag
      *        The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
      *        <p>
-     *        If the ETag is not specified as an input parameter, ETag validation of the object will be skipped.
+     *        If the ETag is not specified as an input parameter, ETag validation of the object is skipped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,7 +514,8 @@ public class S3Location implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -589,5 +592,11 @@ public class S3Location implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.S3LocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

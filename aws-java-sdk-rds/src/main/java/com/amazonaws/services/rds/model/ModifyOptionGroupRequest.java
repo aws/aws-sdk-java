@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the option group to be modified.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      */
     private String optionGroupName;
@@ -51,7 +51,7 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private com.amazonaws.internal.SdkInternalList<String> optionsToRemove;
     /**
      * <p>
-     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
+     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      */
@@ -62,15 +62,15 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the option group to be modified.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        The name of the option group to be modified.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      */
 
@@ -83,14 +83,14 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the option group to be modified.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @return The name of the option group to be modified.</p>
      *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *         option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *         instance
      */
 
@@ -103,15 +103,15 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the option group to be modified.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        The name of the option group to be modified.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -277,12 +277,12 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
+     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
      * @param applyImmediately
-     *        Indicates whether the changes should be applied immediately, or during the next maintenance window for
+     *        A value that indicates whether to apply the change immediately or during the next maintenance window for
      *        each instance associated with the option group.
      */
 
@@ -292,11 +292,11 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
+     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
-     * @return Indicates whether the changes should be applied immediately, or during the next maintenance window for
+     * @return A value that indicates whether to apply the change immediately or during the next maintenance window for
      *         each instance associated with the option group.
      */
 
@@ -306,12 +306,12 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
+     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
      * @param applyImmediately
-     *        Indicates whether the changes should be applied immediately, or during the next maintenance window for
+     *        A value that indicates whether to apply the change immediately or during the next maintenance window for
      *        each instance associated with the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -323,11 +323,11 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether the changes should be applied immediately, or during the next maintenance window for each
+     * A value that indicates whether to apply the change immediately or during the next maintenance window for each
      * instance associated with the option group.
      * </p>
      * 
-     * @return Indicates whether the changes should be applied immediately, or during the next maintenance window for
+     * @return A value that indicates whether to apply the change immediately or during the next maintenance window for
      *         each instance associated with the option group.
      */
 
@@ -336,7 +336,8 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

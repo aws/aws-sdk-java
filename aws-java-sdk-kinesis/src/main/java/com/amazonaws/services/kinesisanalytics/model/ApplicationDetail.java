@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,8 +14,17 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <note>
+ * <p>
+ * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications.
+ * Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a
+ * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+ * </p>
+ * </note>
  * <p>
  * Provides a description of the application, including the application Amazon Resource Name (ARN), status, latest
  * version, and input and output configuration.
@@ -25,7 +34,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationDetail implements Serializable, Cloneable {
+public class ApplicationDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -53,20 +62,20 @@ public class ApplicationDetail implements Serializable, Cloneable {
     private String applicationStatus;
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      */
     private java.util.Date createTimestamp;
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      */
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      */
@@ -74,7 +83,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      */
@@ -82,11 +91,20 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      */
     private java.util.List<ReferenceDataSourceDescription> referenceDataSourceDescriptions;
+    /**
+     * <p>
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     */
+    private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
     /**
      * <p>
      * Returns the application code that you provided to perform data analysis on any of the in-application streams in
@@ -275,7 +293,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
      */
 
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
-        this.applicationStatus = applicationStatus.toString();
+        withApplicationStatus(applicationStatus);
     }
 
     /**
@@ -290,17 +308,17 @@ public class ApplicationDetail implements Serializable, Cloneable {
      */
 
     public ApplicationDetail withApplicationStatus(ApplicationStatus applicationStatus) {
-        setApplicationStatus(applicationStatus);
+        this.applicationStatus = applicationStatus.toString();
         return this;
     }
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
      * @param createTimestamp
-     *        Timestamp when the application version was created.
+     *        Time stamp when the application version was created.
      */
 
     public void setCreateTimestamp(java.util.Date createTimestamp) {
@@ -309,10 +327,10 @@ public class ApplicationDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
-     * @return Timestamp when the application version was created.
+     * @return Time stamp when the application version was created.
      */
 
     public java.util.Date getCreateTimestamp() {
@@ -321,11 +339,11 @@ public class ApplicationDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
      * @param createTimestamp
-     *        Timestamp when the application version was created.
+     *        Time stamp when the application version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,11 +354,11 @@ public class ApplicationDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
      * @param lastUpdateTimestamp
-     *        Timestamp when the application was last updated.
+     *        Time stamp when the application was last updated.
      */
 
     public void setLastUpdateTimestamp(java.util.Date lastUpdateTimestamp) {
@@ -349,10 +367,10 @@ public class ApplicationDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
-     * @return Timestamp when the application was last updated.
+     * @return Time stamp when the application was last updated.
      */
 
     public java.util.Date getLastUpdateTimestamp() {
@@ -361,11 +379,11 @@ public class ApplicationDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
      * @param lastUpdateTimestamp
-     *        Timestamp when the application was last updated.
+     *        Time stamp when the application was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,12 +395,12 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @return Describes the application input configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *         Application Input</a>.
      */
 
@@ -393,13 +411,13 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      */
 
@@ -415,7 +433,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * <p>
@@ -426,7 +444,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -444,13 +462,13 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application input configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param inputDescriptions
      *        Describes the application input configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -463,12 +481,12 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @return Describes the application output configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *         Application Output</a>.
      */
 
@@ -479,13 +497,13 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      */
 
@@ -501,7 +519,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * <p>
@@ -512,7 +530,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -530,13 +548,13 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes the application output configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application
      * Output</a>.
      * </p>
      * 
      * @param outputDescriptions
      *        Describes the application output configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      *        Application Output</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -549,12 +567,12 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @return Describes reference data sources configured for the application. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *         Application Input</a>.
      */
 
@@ -565,13 +583,13 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      */
 
@@ -587,7 +605,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * <p>
@@ -598,7 +616,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -616,19 +634,115 @@ public class ApplicationDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Describes reference data sources configured for the application. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * 
      * @param referenceDataSourceDescriptions
      *        Describes reference data sources configured for the application. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      *        Application Input</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ApplicationDetail withReferenceDataSourceDescriptions(java.util.Collection<ReferenceDataSourceDescription> referenceDataSourceDescriptions) {
         setReferenceDataSourceDescriptions(referenceDataSourceDescriptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * 
+     * @return Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *         information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *         CloudWatch Logs</a>.
+     */
+
+    public java.util.List<CloudWatchLoggingOptionDescription> getCloudWatchLoggingOptionDescriptions() {
+        return cloudWatchLoggingOptionDescriptions;
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
+     */
+
+    public void setCloudWatchLoggingOptionDescriptions(java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
+        if (cloudWatchLoggingOptionDescriptions == null) {
+            this.cloudWatchLoggingOptionDescriptions = null;
+            return;
+        }
+
+        this.cloudWatchLoggingOptionDescriptions = new java.util.ArrayList<CloudWatchLoggingOptionDescription>(cloudWatchLoggingOptionDescriptions);
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCloudWatchLoggingOptionDescriptions(java.util.Collection)} or
+     * {@link #withCloudWatchLoggingOptionDescriptions(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription... cloudWatchLoggingOptionDescriptions) {
+        if (this.cloudWatchLoggingOptionDescriptions == null) {
+            setCloudWatchLoggingOptionDescriptions(new java.util.ArrayList<CloudWatchLoggingOptionDescription>(cloudWatchLoggingOptionDescriptions.length));
+        }
+        for (CloudWatchLoggingOptionDescription ele : cloudWatchLoggingOptionDescriptions) {
+            this.cloudWatchLoggingOptionDescriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withCloudWatchLoggingOptionDescriptions(
+            java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
+        setCloudWatchLoggingOptionDescriptions(cloudWatchLoggingOptionDescriptions);
         return this;
     }
 
@@ -719,7 +833,8 @@ public class ApplicationDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -747,6 +862,8 @@ public class ApplicationDetail implements Serializable, Cloneable {
             sb.append("OutputDescriptions: ").append(getOutputDescriptions()).append(",");
         if (getReferenceDataSourceDescriptions() != null)
             sb.append("ReferenceDataSourceDescriptions: ").append(getReferenceDataSourceDescriptions()).append(",");
+        if (getCloudWatchLoggingOptionDescriptions() != null)
+            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions()).append(",");
         if (getApplicationCode() != null)
             sb.append("ApplicationCode: ").append(getApplicationCode()).append(",");
         if (getApplicationVersionId() != null)
@@ -802,6 +919,11 @@ public class ApplicationDetail implements Serializable, Cloneable {
         if (other.getReferenceDataSourceDescriptions() != null
                 && other.getReferenceDataSourceDescriptions().equals(this.getReferenceDataSourceDescriptions()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptionDescriptions() == null ^ this.getCloudWatchLoggingOptionDescriptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptionDescriptions() != null
+                && other.getCloudWatchLoggingOptionDescriptions().equals(this.getCloudWatchLoggingOptionDescriptions()) == false)
+            return false;
         if (other.getApplicationCode() == null ^ this.getApplicationCode() == null)
             return false;
         if (other.getApplicationCode() != null && other.getApplicationCode().equals(this.getApplicationCode()) == false)
@@ -827,6 +949,7 @@ public class ApplicationDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInputDescriptions() == null) ? 0 : getInputDescriptions().hashCode());
         hashCode = prime * hashCode + ((getOutputDescriptions() == null) ? 0 : getOutputDescriptions().hashCode());
         hashCode = prime * hashCode + ((getReferenceDataSourceDescriptions() == null) ? 0 : getReferenceDataSourceDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingOptionDescriptions() == null) ? 0 : getCloudWatchLoggingOptionDescriptions().hashCode());
         hashCode = prime * hashCode + ((getApplicationCode() == null) ? 0 : getApplicationCode().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionId() == null) ? 0 : getApplicationVersionId().hashCode());
         return hashCode;
@@ -839,5 +962,11 @@ public class ApplicationDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.ApplicationDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

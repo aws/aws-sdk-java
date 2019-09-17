@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,15 @@
  */
 package com.amazonaws.services.sns.util;
 
+import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
+import com.amazonaws.services.sns.message.SnsMessageManager;
+import com.amazonaws.util.Base64;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -28,18 +37,25 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import com.amazonaws.util.Base64;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
-
 /**
  * Utility for validating signatures on a Simple Notification Service JSON message.
+ *
+ * @deprecated Use {@link SnsMessageManager} instead for both message unmarshalling and verification.
  */
+@Deprecated
+@ThreadSafe
 public class SignatureChecker {
 
-    private Signature sigChecker;
+    private static final ThreadLocal<Signature> SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
+        @Override
+        protected Signature initialValue() {
+            try {
+                return Signature.getInstance("SHA1withRSA");
+            } catch (NoSuchAlgorithmException e) {
+                throw new SdkClientException("Could not create RSA Signature", e);
+            }
+        }
+    });
 
     private final String NOTIFICATION_TYPE = "Notification";
     private final String SUBSCRIBE_TYPE = "SubscriptionConfirmation";
@@ -99,7 +115,7 @@ public class SignatureChecker {
             // construct the canonical signed string
             String type = parsedMessage.get(TYPE);
             String signature = parsedMessage.get(SIGNATURE);
-            String signed = "";
+            String signed;
             if (type.equals(NOTIFICATION_TYPE)) {
                 signed = stringToSign(publishMessageValues(parsedMessage));
             } else if (type.equals(SUBSCRIBE_TYPE)) {
@@ -130,15 +146,12 @@ public class SignatureChecker {
      */
     public boolean verifySignature(String message, String signature, PublicKey publicKey){
         boolean result = false;
-        byte[] sigbytes = null;
         try {
-            sigbytes = Base64.decode(signature.getBytes());
-            sigChecker = Signature.getInstance("SHA1withRSA"); //check the signature
+            byte[] sigbytes = Base64.decode(signature.getBytes());
+            Signature sigChecker = SIG_CHECKER.get();
             sigChecker.initVerify(publicKey);
             sigChecker.update(message.getBytes());
             result = sigChecker.verify(sigbytes);
-        } catch (NoSuchAlgorithmException e) {
-            // Rare exception: JVM does not support SHA1 with RSA
         } catch (InvalidKeyException e) {
             // Rare exception: The private key was incorrectly formatted
         } catch (SignatureException e) {

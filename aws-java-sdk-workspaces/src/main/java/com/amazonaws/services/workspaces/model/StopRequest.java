@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,32 +14,34 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the stop request.
+ * Describes the information used to stop a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopRequest" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopRequest implements Serializable, Cloneable {
+public class StopRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -48,10 +50,10 @@ public class StopRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The ID of the WorkSpace.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -60,11 +62,11 @@ public class StopRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +76,8 @@ public class StopRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -123,5 +126,11 @@ public class StopRequest implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.workspaces.model.transform.StopRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

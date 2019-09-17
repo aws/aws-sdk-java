@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.cognitoidentity.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IdentityDescription implements Serializable, Cloneable {
+public class IdentityDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class IdentityDescription implements Serializable, Cloneable {
     private String identityId;
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      */
     private java.util.List<String> logins;
@@ -93,10 +95,10 @@ public class IdentityDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
-     * @return A set of optional name-value pairs that map provider names to provider tokens.
+     * @return The provider names.
      */
 
     public java.util.List<String> getLogins() {
@@ -105,11 +107,11 @@ public class IdentityDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      */
 
     public void setLogins(java.util.Collection<String> logins) {
@@ -123,7 +125,7 @@ public class IdentityDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +134,7 @@ public class IdentityDescription implements Serializable, Cloneable {
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +150,11 @@ public class IdentityDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * The provider names.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        The provider names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,7 +244,8 @@ public class IdentityDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,5 +315,11 @@ public class IdentityDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidentity.model.transform.IdentityDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

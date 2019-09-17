@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
@@ -58,7 +59,7 @@ public class AmazonDynamoDBSample {
      *      the credentials file in your source directory.
      */
 
-    static AmazonDynamoDBClient dynamoDB;
+    static AmazonDynamoDB dynamoDB;
 
     /**
      * The only information needed to create a client are security credentials
@@ -77,9 +78,9 @@ public class AmazonDynamoDBSample {
          * credential profile by reading from the credentials file located at
          * (~/.aws/credentials).
          */
-        AWSCredentials credentials = null;
+        ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -87,9 +88,10 @@ public class AmazonDynamoDBSample {
                     "location (~/.aws/credentials), and is in valid format.",
                     e);
         }
-        dynamoDB = new AmazonDynamoDBClient(credentials);
-        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-        dynamoDB.setRegion(usWest2);
+        dynamoDB = AmazonDynamoDBClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
     }
 
     public static void main(String[] args) throws Exception {

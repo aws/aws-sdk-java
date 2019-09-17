@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -203,6 +203,19 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
+
+        return describeAccountLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInstanceHealthResult> describeInstanceHealthAsync(DescribeInstanceHealthRequest request) {
 
         return describeInstanceHealthAsync(request, null);
@@ -257,6 +270,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      *
      * @see #describeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancerPoliciesResult> describeLoadBalancerPoliciesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResult> asyncHandler) {
 
@@ -295,6 +309,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      * @see #describeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancerPolicyTypesResult> describeLoadBalancerPolicyTypesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResult> asyncHandler) {
 
@@ -330,6 +345,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      *
      * @see #describeLoadBalancersAsync(DescribeLoadBalancersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult> asyncHandler) {
 

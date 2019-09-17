@@ -104,10 +104,7 @@
         }, {
           "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
           "importAsNamespace" : "IdempotencyTokenMacro"
-        }, {
-         "location" : "/macros/marshaller/common/DefaultRequestCreation.ftl",
-         "importAsNamespace" : "DefaultRequestCreation"
-       }
+        }
     ]
   },
   "modelUnmarshaller": {
@@ -128,7 +125,9 @@
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },
-  "exceptionUnmarshaller": {},
+  "exceptionUnmarshaller": {
+    "mainTemplate" : "/templates/query/exception-unmarshaller.ftl"
+  },
   "policyActionClass" : {
     "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
   },

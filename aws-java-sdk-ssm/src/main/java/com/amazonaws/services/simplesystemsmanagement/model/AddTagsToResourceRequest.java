@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,39 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      */
     private String resourceType;
     /**
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      */
     private String resourceId;
     /**
@@ -42,6 +69,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
@@ -49,9 +81,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @see ResourceTypeForTagging
      */
 
@@ -63,8 +105,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the type of resource you are tagging.
+     * @return Specifies the type of resource you are tagging.</p> <note>
+     *         <p>
+     *         The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *         name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *         </p>
      * @see ResourceTypeForTagging
      */
 
@@ -76,9 +128,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeForTagging
      */
@@ -92,29 +154,49 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @see ResourceTypeForTagging
      */
 
     public void setResourceType(ResourceTypeForTagging resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the name of
+     * the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeForTagging
      */
 
     public AddTagsToResourceRequest withResourceType(ResourceTypeForTagging resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -122,9 +204,50 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceId
-     *        The resource ID you want to tag.
+     *        The resource ID you want to tag.</p>
+     *        <p>
+     *        Use the ID of the resource. Here are some examples:
+     *        </p>
+     *        <p>
+     *        ManagedInstance: mi-012345abcde
+     *        </p>
+     *        <p>
+     *        MaintenanceWindow: mw-012345abcde
+     *        </p>
+     *        <p>
+     *        PatchBaseline: pb-012345abcde
+     *        </p>
+     *        <p>
+     *        For the Document and Parameter values, use the name of the resource.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      */
 
     public void setResourceId(String resourceId) {
@@ -135,8 +258,49 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
-     * @return The resource ID you want to tag.
+     * @return The resource ID you want to tag.</p>
+     *         <p>
+     *         Use the ID of the resource. Here are some examples:
+     *         </p>
+     *         <p>
+     *         ManagedInstance: mi-012345abcde
+     *         </p>
+     *         <p>
+     *         MaintenanceWindow: mw-012345abcde
+     *         </p>
+     *         <p>
+     *         PatchBaseline: pb-012345abcde
+     *         </p>
+     *         <p>
+     *         For the Document and Parameter values, use the name of the resource.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *         the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *         </p>
      */
 
     public String getResourceId() {
@@ -147,9 +311,50 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceId
-     *        The resource ID you want to tag.
+     *        The resource ID you want to tag.</p>
+     *        <p>
+     *        Use the ID of the resource. Here are some examples:
+     *        </p>
+     *        <p>
+     *        ManagedInstance: mi-012345abcde
+     *        </p>
+     *        <p>
+     *        MaintenanceWindow: mw-012345abcde
+     *        </p>
+     *        <p>
+     *        PatchBaseline: pb-012345abcde
+     *        </p>
+     *        <p>
+     *        For the Document and Parameter values, use the name of the resource.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,9 +368,17 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @return One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *         the parameter with no value, and we set the value to an empty string.
+     *         the parameter with no value, and we set the value to an empty string. </p> <important>
+     *         <p>
+     *         Do not enter personally identifiable information in this field.
+     *         </p>
      */
 
     public java.util.List<Tag> getTags() {
@@ -180,10 +393,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -200,6 +421,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -208,7 +434,10 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,10 +456,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +477,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

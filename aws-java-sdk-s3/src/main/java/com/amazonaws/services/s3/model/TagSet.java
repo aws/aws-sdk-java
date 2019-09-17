@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -16,14 +16,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+
 import java.io.Serializable;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-
-import com.amazonaws.services.s3.AmazonS3;
 
 public class TagSet implements Serializable {
 	private Map<String, String> tags;
@@ -36,7 +32,7 @@ public class TagSet implements Serializable {
      * @see TagSet#TagSet(Map)
      */
 	public TagSet() {
-        this.tags = new HashMap<String, String>( 1 );
+        this.tags = new LinkedHashMap<String, String>( 1 );
     }
     
 	/**
@@ -47,7 +43,7 @@ public class TagSet implements Serializable {
 	 * 			A key/value mapping of tags to store in this <code>TagSet</code>
 	 */
     public TagSet( Map<String, String> tags ) {
-        this.tags = new HashMap<String, String>( 1 );
+        this.tags = new LinkedHashMap<String, String>( 1 );
         this.tags.putAll( tags );
     }
     

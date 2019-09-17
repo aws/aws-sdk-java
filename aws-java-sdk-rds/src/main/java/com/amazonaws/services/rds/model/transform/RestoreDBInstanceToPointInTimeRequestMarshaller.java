@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,8 +110,10 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getCopyTagsToSnapshot()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceToPointInTimeRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!restoreDBInstanceToPointInTimeRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceToPointInTimeRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceToPointInTimeRequest
+                    .getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -139,12 +141,84 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getTdeCredentialPassword()));
         }
 
+        if (!restoreDBInstanceToPointInTimeRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (restoreDBInstanceToPointInTimeRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomain()));
         }
 
         if (restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName() != null) {
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (!restoreDBInstanceToPointInTimeRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (!restoreDBInstanceToPointInTimeRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceToPointInTimeRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceToPointInTimeRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getUseDefaultProcessorFeatures()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDBParameterGroupName()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getDeletionProtection()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getSourceDbiResourceId() != null) {
+            request.addParameter("SourceDbiResourceId", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDbiResourceId()));
         }
 
         return request;

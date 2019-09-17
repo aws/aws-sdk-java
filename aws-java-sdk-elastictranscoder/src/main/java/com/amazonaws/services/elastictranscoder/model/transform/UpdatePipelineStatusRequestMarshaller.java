@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdatePipelineStatusRequest Marshaller
+ * UpdatePipelineStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdatePipelineStatusRequestMarshaller implements Marshaller<Request<UpdatePipelineStatusRequest>, UpdatePipelineStatusRequest> {
+@SdkInternalApi
+public class UpdatePipelineStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
-    public UpdatePipelineStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdatePipelineStatusRequestMarshaller instance = new UpdatePipelineStatusRequestMarshaller();
+
+    public static UpdatePipelineStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdatePipelineStatusRequest> marshall(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdatePipelineStatusRequest updatePipelineStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updatePipelineStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdatePipelineStatusRequest> request = new DefaultRequest<UpdatePipelineStatusRequest>(updatePipelineStatusRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2012-09-25/pipelines/{Id}/status";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updatePipelineStatusRequest.getId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updatePipelineStatusRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(updatePipelineStatusRequest.getStatus());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updatePipelineStatusRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(updatePipelineStatusRequest.getStatus(), STATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

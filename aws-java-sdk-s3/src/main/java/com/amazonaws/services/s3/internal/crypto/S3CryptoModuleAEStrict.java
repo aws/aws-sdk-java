@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.internal.crypto;
 import static com.amazonaws.services.s3.model.CryptoMode.StrictAuthenticatedEncryption;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.services.kms.AWSKMSClient;
+import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
@@ -30,10 +30,10 @@ class S3CryptoModuleAEStrict extends S3CryptoModuleAE {
     /**
      * @param cryptoConfig a read-only copy of the crypto configuration.
      */
-    S3CryptoModuleAEStrict(AWSKMSClient kms, S3Direct s3,
-            AWSCredentialsProvider credentialsProvider,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    S3CryptoModuleAEStrict(AWSKMS kms, S3Direct s3,
+                           AWSCredentialsProvider credentialsProvider,
+                           EncryptionMaterialsProvider encryptionMaterialsProvider,
+                           CryptoConfiguration cryptoConfig) {
         super(kms, s3, credentialsProvider, encryptionMaterialsProvider,
                 cryptoConfig);
         if (cryptoConfig.getCryptoMode() != StrictAuthenticatedEncryption)

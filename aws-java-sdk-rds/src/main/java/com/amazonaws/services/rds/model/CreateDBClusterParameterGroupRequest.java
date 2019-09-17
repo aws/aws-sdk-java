@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -63,6 +53,18 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      */
     private String dBParameterGroupFamily;
     /**
@@ -71,7 +73,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Tags to assign to the DB cluster parameter group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -84,17 +90,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -112,17 +108,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing DB cluster parameter group.
      *        </p>
      *        </li>
      *        </ul>
@@ -146,17 +132,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -173,17 +149,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the name of an existing DB cluster parameter group.
      *         </p>
      *         </li>
      *         </ul>
@@ -207,17 +173,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DB cluster parameter group.
      * </p>
      * </li>
      * </ul>
@@ -235,17 +191,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing DB cluster parameter group.
      *        </p>
      *        </li>
      *        </ul>
@@ -267,11 +213,34 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @param dBParameterGroupFamily
      *        The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *        only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *        engine and engine version compatible with that DB cluster parameter group family.
+     *        engine and engine version compatible with that DB cluster parameter group family.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora-postgresql9.6</code>
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -284,10 +253,33 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @return The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *         only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *         engine and engine version compatible with that DB cluster parameter group family.
+     *         engine and engine version compatible with that DB cluster parameter group family.</p>
+     *         <p>
+     *         <b>Aurora MySQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>aurora-postgresql9.6</code>
      */
 
     public String getDBParameterGroupFamily() {
@@ -300,11 +292,34 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @param dBParameterGroupFamily
      *        The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *        only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *        engine and engine version compatible with that DB cluster parameter group family.
+     *        engine and engine version compatible with that DB cluster parameter group family.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora-postgresql9.6</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,7 +369,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the DB cluster parameter group.
+     * </p>
+     * 
+     * @return Tags to assign to the DB cluster parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -365,7 +384,12 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB cluster parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -379,12 +403,16 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * Tags to assign to the DB cluster parameter group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,7 +427,12 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Tags to assign to the DB cluster parameter group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,7 +442,8 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,60 +14,170 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies the content and settings for a push notification that's sent to recipients of a campaign.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Message" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Message implements Serializable, Cloneable {
+public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String action;
-    /** The message body. Can include up to 140 characters. */
+    /**
+     * <p>
+     * The body of the notification message. The maximum number of characters is 200.
+     * </p>
+     */
     private String body;
-    /** The URL that points to the icon image for the push notification icon, for example, the app icon. */
+    /**
+     * <p>
+     * The URL of the image to display as the push-notification icon, such as the icon for the app.
+     * </p>
+     */
     private String imageIconUrl;
-    /** The URL that points to an image used in the push notification. */
+    /**
+     * <p>
+     * The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the
+     * app.
+     * </p>
+     */
+    private String imageSmallIconUrl;
+    /**
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
+     */
     private String imageUrl;
-    /** The JSON payload used for a silent push. */
+    /**
+     * <p>
+     * The JSON payload to use for a silent push notification.
+     * </p>
+     */
     private String jsonBody;
-    /** The URL that points to the media resource, for example a .mp4 or .gif file. */
+    /**
+     * <p>
+     * The URL of the image or video to display in the push notification.
+     * </p>
+     */
     private String mediaUrl;
     /**
-     * Indicates if the message should display on the users device.
-     * 
-     * Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides other
+     * values for the message.
+     * </p>
+     */
+    private String rawContent;
+    /**
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      */
     private Boolean silentPush;
-    /** The message title that displays above the message on the user's device. */
+    /**
+     * <p>
+     * The number of seconds that the push-notification service should keep the message, if the service is unable to
+     * deliver the notification the first time. This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the notification as if it expires immediately
+     * and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     * </p>
+     */
+    private Integer timeToLive;
+    /**
+     * <p>
+     * The title to display above the notification message on a recipient's device.
+     * </p>
+     */
     private String title;
-    /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
+    /**
+     * <p>
+     * The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value
+     * of the Action property is URL.
+     * </p>
+     */
     private String url;
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action.
-     * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     *        interface within the app.
-     * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        The action to occur if a recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of iOS and Android.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
      *        specify.
+     *        </p>
+     *        </li>
      * @see Action
      */
 
@@ -76,23 +186,50 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
-     * 
-     * @return The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your
-     *         app launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *         action.
-     * 
-     *         DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     *         interface within the app.
-     * 
-     *         URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     * @return The action to occur if a recipient taps the push notification. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *         default action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *         deep-linking features of iOS and Android.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
      *         specify.
+     *         </p>
+     *         </li>
      * @see Action
      */
 
@@ -101,24 +238,51 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action.
-     * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     *        interface within the app.
-     * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        The action to occur if a recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of iOS and Android.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
      *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
@@ -129,64 +293,120 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action.
-     * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     *        interface within the app.
-     * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        The action to occur if a recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of iOS and Android.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
      *        specify.
+     *        </p>
+     *        </li>
      * @see Action
      */
 
     public void setAction(Action action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
-     * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     * interface within the app.
-     * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * <p>
+     * The action to occur if a recipient taps the push notification. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default
+     * action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     * deep-linking features of iOS and Android.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
+     * specify.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
-     *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
-     *        action.
-     * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
-     *        interface within the app.
-     * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        The action to occur if a recipient taps the push notification. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the
+     *        default action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the
+     *        deep-linking features of iOS and Android.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you
      *        specify.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
      */
 
     public Message withAction(Action action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>
+     * The body of the notification message. The maximum number of characters is 200.
+     * </p>
      * 
      * @param body
-     *        The message body. Can include up to 140 characters.
+     *        The body of the notification message. The maximum number of characters is 200.
      */
 
     public void setBody(String body) {
@@ -194,9 +414,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>
+     * The body of the notification message. The maximum number of characters is 200.
+     * </p>
      * 
-     * @return The message body. Can include up to 140 characters.
+     * @return The body of the notification message. The maximum number of characters is 200.
      */
 
     public String getBody() {
@@ -204,10 +426,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The message body. Can include up to 140 characters.
+     * <p>
+     * The body of the notification message. The maximum number of characters is 200.
+     * </p>
      * 
      * @param body
-     *        The message body. Can include up to 140 characters.
+     *        The body of the notification message. The maximum number of characters is 200.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,10 +441,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for example, the app icon.
+     * <p>
+     * The URL of the image to display as the push-notification icon, such as the icon for the app.
+     * </p>
      * 
      * @param imageIconUrl
-     *        The URL that points to the icon image for the push notification icon, for example, the app icon.
+     *        The URL of the image to display as the push-notification icon, such as the icon for the app.
      */
 
     public void setImageIconUrl(String imageIconUrl) {
@@ -228,9 +454,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for example, the app icon.
+     * <p>
+     * The URL of the image to display as the push-notification icon, such as the icon for the app.
+     * </p>
      * 
-     * @return The URL that points to the icon image for the push notification icon, for example, the app icon.
+     * @return The URL of the image to display as the push-notification icon, such as the icon for the app.
      */
 
     public String getImageIconUrl() {
@@ -238,10 +466,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the icon image for the push notification icon, for example, the app icon.
+     * <p>
+     * The URL of the image to display as the push-notification icon, such as the icon for the app.
+     * </p>
      * 
      * @param imageIconUrl
-     *        The URL that points to the icon image for the push notification icon, for example, the app icon.
+     *        The URL of the image to display as the push-notification icon, such as the icon for the app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +481,58 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the
+     * app.
+     * </p>
+     * 
+     * @param imageSmallIconUrl
+     *        The URL of the image to display as the small, push-notification icon, such as a small version of the icon
+     *        for the app.
+     */
+
+    public void setImageSmallIconUrl(String imageSmallIconUrl) {
+        this.imageSmallIconUrl = imageSmallIconUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the
+     * app.
+     * </p>
+     * 
+     * @return The URL of the image to display as the small, push-notification icon, such as a small version of the icon
+     *         for the app.
+     */
+
+    public String getImageSmallIconUrl() {
+        return this.imageSmallIconUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the
+     * app.
+     * </p>
+     * 
+     * @param imageSmallIconUrl
+     *        The URL of the image to display as the small, push-notification icon, such as a small version of the icon
+     *        for the app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withImageSmallIconUrl(String imageSmallIconUrl) {
+        setImageSmallIconUrl(imageSmallIconUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
      * @param imageUrl
-     *        The URL that points to an image used in the push notification.
+     *        The URL of an image to display in the push notification.
      */
 
     public void setImageUrl(String imageUrl) {
@@ -262,9 +540,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
-     * @return The URL that points to an image used in the push notification.
+     * @return The URL of an image to display in the push notification.
      */
 
     public String getImageUrl() {
@@ -272,10 +552,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to an image used in the push notification.
+     * <p>
+     * The URL of an image to display in the push notification.
+     * </p>
      * 
      * @param imageUrl
-     *        The URL that points to an image used in the push notification.
+     *        The URL of an image to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,10 +567,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>
+     * The JSON payload to use for a silent push notification.
+     * </p>
      * 
      * @param jsonBody
-     *        The JSON payload used for a silent push.
+     *        The JSON payload to use for a silent push notification.
      */
 
     public void setJsonBody(String jsonBody) {
@@ -296,9 +580,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>
+     * The JSON payload to use for a silent push notification.
+     * </p>
      * 
-     * @return The JSON payload used for a silent push.
+     * @return The JSON payload to use for a silent push notification.
      */
 
     public String getJsonBody() {
@@ -306,10 +592,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The JSON payload used for a silent push.
+     * <p>
+     * The JSON payload to use for a silent push notification.
+     * </p>
      * 
      * @param jsonBody
-     *        The JSON payload used for a silent push.
+     *        The JSON payload to use for a silent push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,10 +607,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * <p>
+     * The URL of the image or video to display in the push notification.
+     * </p>
      * 
      * @param mediaUrl
-     *        The URL that points to the media resource, for example a .mp4 or .gif file.
+     *        The URL of the image or video to display in the push notification.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -330,9 +620,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * <p>
+     * The URL of the image or video to display in the push notification.
+     * </p>
      * 
-     * @return The URL that points to the media resource, for example a .mp4 or .gif file.
+     * @return The URL of the image or video to display in the push notification.
      */
 
     public String getMediaUrl() {
@@ -340,10 +632,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL that points to the media resource, for example a .mp4 or .gif file.
+     * <p>
+     * The URL of the image or video to display in the push notification.
+     * </p>
      * 
      * @param mediaUrl
-     *        The URL that points to the media resource, for example a .mp4 or .gif file.
+     *        The URL of the image or video to display in the push notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,14 +647,63 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates if the message should display on the users device.
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides other
+     * values for the message.
+     * </p>
      * 
-     * Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        other values for the message.
+     */
+
+    public void setRawContent(String rawContent) {
+        this.rawContent = rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides other
+     * values for the message.
+     * </p>
+     * 
+     * @return The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *         other values for the message.
+     */
+
+    public String getRawContent() {
+        return this.rawContent;
+    }
+
+    /**
+     * <p>
+     * The raw, JSON-formatted string to use as the payload for the notification message. This value overrides other
+     * values for the message.
+     * </p>
+     * 
+     * @param rawContent
+     *        The raw, JSON-formatted string to use as the payload for the notification message. This value overrides
+     *        other values for the message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withRawContent(String rawContent) {
+        setRawContent(rawContent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device.
-     * 
-     *        Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *        functionality.
      */
 
     public void setSilentPush(Boolean silentPush) {
@@ -368,13 +711,16 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates if the message should display on the users device.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
-     * Silent pushes can be used for Remote Configuration and Phone Home use cases.
-     * 
-     * @return Indicates if the message should display on the users device.
-     * 
-     *         Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *         functionality.
      */
 
     public Boolean getSilentPush() {
@@ -382,14 +728,17 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates if the message should display on the users device.
-     * 
-     * Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
      * @param silentPush
-     *        Indicates if the message should display on the users device.
-     * 
-     *        Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     *        Specifies whether the notification is a silent push notification, which is a push notification that
+     *        doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *        an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *        functionality.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,13 +748,16 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates if the message should display on the users device.
+     * <p>
+     * Specifies whether the notification is a silent push notification, which is a push notification that doesn't
+     * display on a recipient's device. Silent push notifications can be used for cases such as updating an app's
+     * configuration, displaying messages in an in-app message center, or supporting phone home functionality.
+     * </p>
      * 
-     * Silent pushes can be used for Remote Configuration and Phone Home use cases.
-     * 
-     * @return Indicates if the message should display on the users device.
-     * 
-     *         Silent pushes can be used for Remote Configuration and Phone Home use cases.
+     * @return Specifies whether the notification is a silent push notification, which is a push notification that
+     *         doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating
+     *         an app's configuration, displaying messages in an in-app message center, or supporting phone home
+     *         functionality.
      */
 
     public Boolean isSilentPush() {
@@ -413,10 +765,85 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The number of seconds that the push-notification service should keep the message, if the service is unable to
+     * deliver the notification the first time. This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the notification as if it expires immediately
+     * and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     * </p>
+     * 
+     * @param timeToLive
+     *        The number of seconds that the push-notification service should keep the message, if the service is unable
+     *        to deliver the notification the first time. This value is converted to an expiration value when it's sent
+     *        to a push-notification service. If this value is 0, the service treats the notification as if it expires
+     *        immediately and the service doesn't store or try to deliver the notification again.</p>
+     *        <p>
+     *        This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     */
+
+    public void setTimeToLive(Integer timeToLive) {
+        this.timeToLive = timeToLive;
+    }
+
+    /**
+     * <p>
+     * The number of seconds that the push-notification service should keep the message, if the service is unable to
+     * deliver the notification the first time. This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the notification as if it expires immediately
+     * and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     * </p>
+     * 
+     * @return The number of seconds that the push-notification service should keep the message, if the service is
+     *         unable to deliver the notification the first time. This value is converted to an expiration value when
+     *         it's sent to a push-notification service. If this value is 0, the service treats the notification as if
+     *         it expires immediately and the service doesn't store or try to deliver the notification again.</p>
+     *         <p>
+     *         This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     */
+
+    public Integer getTimeToLive() {
+        return this.timeToLive;
+    }
+
+    /**
+     * <p>
+     * The number of seconds that the push-notification service should keep the message, if the service is unable to
+     * deliver the notification the first time. This value is converted to an expiration value when it's sent to a
+     * push-notification service. If this value is 0, the service treats the notification as if it expires immediately
+     * and the service doesn't store or try to deliver the notification again.
+     * </p>
+     * <p>
+     * This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     * </p>
+     * 
+     * @param timeToLive
+     *        The number of seconds that the push-notification service should keep the message, if the service is unable
+     *        to deliver the notification the first time. This value is converted to an expiration value when it's sent
+     *        to a push-notification service. If this value is 0, the service treats the notification as if it expires
+     *        immediately and the service doesn't store or try to deliver the notification again.</p>
+     *        <p>
+     *        This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withTimeToLive(Integer timeToLive) {
+        setTimeToLive(timeToLive);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The title to display above the notification message on a recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on a recipient's device.
      */
 
     public void setTitle(String title) {
@@ -424,9 +851,11 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on a recipient's device.
+     * </p>
      * 
-     * @return The message title that displays above the message on the user's device.
+     * @return The title to display above the notification message on a recipient's device.
      */
 
     public String getTitle() {
@@ -434,10 +863,12 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The message title that displays above the message on the user's device.
+     * <p>
+     * The title to display above the notification message on a recipient's device.
+     * </p>
      * 
      * @param title
-     *        The message title that displays above the message on the user's device.
+     *        The title to display above the notification message on a recipient's device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,10 +878,14 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value
+     * of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the
+     *        value of the Action property is URL.
      */
 
     public void setUrl(String url) {
@@ -458,9 +893,13 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value
+     * of the Action property is URL.
+     * </p>
      * 
-     * @return The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * @return The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and
+     *         the value of the Action property is URL.
      */
 
     public String getUrl() {
@@ -468,10 +907,14 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     * <p>
+     * The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value
+     * of the Action property is URL.
+     * </p>
      * 
      * @param url
-     *        The URL to open in the user's mobile browser. Used if the value for Action is URL.
+     *        The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the
+     *        value of the Action property is URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,7 +924,8 @@ public class Message implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -497,14 +941,20 @@ public class Message implements Serializable, Cloneable {
             sb.append("Body: ").append(getBody()).append(",");
         if (getImageIconUrl() != null)
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
+        if (getImageSmallIconUrl() != null)
+            sb.append("ImageSmallIconUrl: ").append(getImageSmallIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
         if (getJsonBody() != null)
             sb.append("JsonBody: ").append(getJsonBody()).append(",");
         if (getMediaUrl() != null)
             sb.append("MediaUrl: ").append(getMediaUrl()).append(",");
+        if (getRawContent() != null)
+            sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getSilentPush() != null)
             sb.append("SilentPush: ").append(getSilentPush()).append(",");
+        if (getTimeToLive() != null)
+            sb.append("TimeToLive: ").append(getTimeToLive()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
         if (getUrl() != null)
@@ -535,6 +985,10 @@ public class Message implements Serializable, Cloneable {
             return false;
         if (other.getImageIconUrl() != null && other.getImageIconUrl().equals(this.getImageIconUrl()) == false)
             return false;
+        if (other.getImageSmallIconUrl() == null ^ this.getImageSmallIconUrl() == null)
+            return false;
+        if (other.getImageSmallIconUrl() != null && other.getImageSmallIconUrl().equals(this.getImageSmallIconUrl()) == false)
+            return false;
         if (other.getImageUrl() == null ^ this.getImageUrl() == null)
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
@@ -547,9 +1001,17 @@ public class Message implements Serializable, Cloneable {
             return false;
         if (other.getMediaUrl() != null && other.getMediaUrl().equals(this.getMediaUrl()) == false)
             return false;
+        if (other.getRawContent() == null ^ this.getRawContent() == null)
+            return false;
+        if (other.getRawContent() != null && other.getRawContent().equals(this.getRawContent()) == false)
+            return false;
         if (other.getSilentPush() == null ^ this.getSilentPush() == null)
             return false;
         if (other.getSilentPush() != null && other.getSilentPush().equals(this.getSilentPush()) == false)
+            return false;
+        if (other.getTimeToLive() == null ^ this.getTimeToLive() == null)
+            return false;
+        if (other.getTimeToLive() != null && other.getTimeToLive().equals(this.getTimeToLive()) == false)
             return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
@@ -570,10 +1032,13 @@ public class Message implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
+        hashCode = prime * hashCode + ((getImageSmallIconUrl() == null) ? 0 : getImageSmallIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
         hashCode = prime * hashCode + ((getJsonBody() == null) ? 0 : getJsonBody().hashCode());
         hashCode = prime * hashCode + ((getMediaUrl() == null) ? 0 : getMediaUrl().hashCode());
+        hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());
+        hashCode = prime * hashCode + ((getTimeToLive() == null) ? 0 : getTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;
@@ -586,5 +1051,11 @@ public class Message implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.MessageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

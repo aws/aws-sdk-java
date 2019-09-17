@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,29 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentVersionInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    documentVersionInfo.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionInfo.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IsDefaultVersion", targetDepth)) {
                     context.nextToken();
                     documentVersionInfo.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusInformation", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

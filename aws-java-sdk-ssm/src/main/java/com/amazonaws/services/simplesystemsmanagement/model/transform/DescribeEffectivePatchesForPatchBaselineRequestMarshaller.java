@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,73 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEffectivePatchesForPatchBaselineRequest Marshaller
+ * DescribeEffectivePatchesForPatchBaselineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEffectivePatchesForPatchBaselineRequestMarshaller implements
-        Marshaller<Request<DescribeEffectivePatchesForPatchBaselineRequest>, DescribeEffectivePatchesForPatchBaselineRequest> {
+@SdkInternalApi
+public class DescribeEffectivePatchesForPatchBaselineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BASELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeEffectivePatchesForPatchBaselineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEffectivePatchesForPatchBaselineRequestMarshaller instance = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+
+    public static DescribeEffectivePatchesForPatchBaselineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEffectivePatchesForPatchBaselineRequest> marshall(
-            DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEffectivePatchesForPatchBaselineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEffectivePatchesForPatchBaselineRequest> request = new DefaultRequest<DescribeEffectivePatchesForPatchBaselineRequest>(
-                describeEffectivePatchesForPatchBaselineRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DescribeEffectivePatchesForPatchBaseline");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeEffectivePatchesForPatchBaselineRequest.getBaselineId() != null) {
-                jsonGenerator.writeFieldName("BaselineId").writeValue(describeEffectivePatchesForPatchBaselineRequest.getBaselineId());
-            }
-            if (describeEffectivePatchesForPatchBaselineRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(describeEffectivePatchesForPatchBaselineRequest.getMaxResults());
-            }
-            if (describeEffectivePatchesForPatchBaselineRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeEffectivePatchesForPatchBaselineRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEffectivePatchesForPatchBaselineRequest.getBaselineId(), BASELINEID_BINDING);
+            protocolMarshaller.marshall(describeEffectivePatchesForPatchBaselineRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeEffectivePatchesForPatchBaselineRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

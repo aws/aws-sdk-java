@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class InstanceInformationJsonUnmarshaller implements Unmarshaller<Instanc
                 }
                 if (context.testExpression("LastPingDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setLastPingDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInformation.setLastPingDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AgentVersion", targetDepth)) {
                     context.nextToken();
@@ -90,7 +90,7 @@ public class InstanceInformationJsonUnmarshaller implements Unmarshaller<Instanc
                 }
                 if (context.testExpression("RegistrationDate", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setRegistrationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInformation.setRegistrationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
@@ -114,11 +114,11 @@ public class InstanceInformationJsonUnmarshaller implements Unmarshaller<Instanc
                 }
                 if (context.testExpression("LastAssociationExecutionDate", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setLastAssociationExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInformation.setLastAssociationExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulAssociationExecutionDate", targetDepth)) {
                     context.nextToken();
-                    instanceInformation.setLastSuccessfulAssociationExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInformation.setLastSuccessfulAssociationExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssociationOverview", targetDepth)) {
                     context.nextToken();

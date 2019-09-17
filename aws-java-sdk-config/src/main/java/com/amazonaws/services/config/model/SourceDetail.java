@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -26,7 +28,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SourceDetail implements Serializable, Cloneable {
+public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -67,17 +69,29 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      */
     private String messageType;
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      */
     private String maximumExecutionFrequency;
 
@@ -135,7 +149,7 @@ public class SourceDetail implements Serializable, Cloneable {
      */
 
     public void setEventSource(EventSource eventSource) {
-        this.eventSource = eventSource.toString();
+        withEventSource(eventSource);
     }
 
     /**
@@ -150,7 +164,7 @@ public class SourceDetail implements Serializable, Cloneable {
      */
 
     public SourceDetail withEventSource(EventSource eventSource) {
-        setEventSource(eventSource);
+        this.eventSource = eventSource.toString();
         return this;
     }
 
@@ -187,8 +201,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -222,8 +237,8 @@ public class SourceDetail implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -265,8 +280,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @return The type of notification that triggers AWS Config to run an evaluation for a rule. You can specify the
@@ -299,8 +315,8 @@ public class SourceDetail implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you want your custom rule to be triggered by configuration changes, specify both
-     *         <code>ConfigurationItemChangeNotification</code> and
+     *         If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *         one for <code>ConfigurationItemChangeNotification</code> and one for
      *         <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -342,8 +358,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -377,8 +394,8 @@ public class SourceDetail implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
@@ -422,8 +439,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -457,14 +475,14 @@ public class SourceDetail implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
 
     public void setMessageType(MessageType messageType) {
-        this.messageType = messageType.toString();
+        withMessageType(messageType);
     }
 
     /**
@@ -500,8 +518,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -535,29 +554,49 @@ public class SourceDetail implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
 
     public SourceDetail withMessageType(MessageType messageType) {
-        setMessageType(messageType);
+        this.messageType = messageType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
-     *        <code>ScheduledNotification</code> value.
+     *        The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger.
+     *        If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
+     *        the <code>ScheduledNotification</code> value.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -567,14 +606,34 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      * 
-     * @return The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If
-     *         you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
-     *         the <code>ScheduledNotification</code> value.
+     * @return The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger.
+     *         If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
+     *         the <code>ScheduledNotification</code> value.</p> <note>
+     *         <p>
+     *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
+     *         a valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *         </p>
+     *         <p>
+     *         Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *         if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *         <code>Three_Hours</code> is the frequency of this rule.
+     *         </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -584,15 +643,35 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
-     *        <code>ScheduledNotification</code> value.
+     *        The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger.
+     *        If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
+     *        the <code>ScheduledNotification</code> value.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -604,44 +683,85 @@ public class SourceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
-     *        <code>ScheduledNotification</code> value.
+     *        The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger.
+     *        If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
+     *        the <code>ScheduledNotification</code> value.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
+        withMaximumExecutionFrequency(maximumExecutionFrequency);
     }
 
     /**
      * <p>
-     * The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If you
+     * The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger. If you
      * specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
      * <code>ScheduledNotification</code> value.
      * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
-     *        The frequency that you want AWS Config to run evaluations for a rule that is triggered periodically. If
-     *        you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use the
-     *        <code>ScheduledNotification</code> value.
+     *        The frequency at which you want AWS Config to run evaluations for a custom rule with a periodic trigger.
+     *        If you specify a value for <code>MaximumExecutionFrequency</code>, then <code>MessageType</code> must use
+     *        the <code>ScheduledNotification</code> value.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
 
     public SourceDetail withMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        setMaximumExecutionFrequency(maximumExecutionFrequency);
+        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -704,5 +824,11 @@ public class SourceDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.SourceDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

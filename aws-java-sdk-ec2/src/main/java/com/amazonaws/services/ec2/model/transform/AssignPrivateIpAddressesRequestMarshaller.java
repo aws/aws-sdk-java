@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (assignPrivateIpAddressesRequest.getAllowReassignment() != null) {
+            request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.getAllowReassignment()));
+        }
+
         if (assignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignPrivateIpAddressesRequest.getNetworkInterfaceId()));
         }
@@ -60,10 +64,6 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
 
         if (assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount() != null) {
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount()));
-        }
-
-        if (assignPrivateIpAddressesRequest.getAllowReassignment() != null) {
-            request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.getAllowReassignment()));
         }
 
         return request;

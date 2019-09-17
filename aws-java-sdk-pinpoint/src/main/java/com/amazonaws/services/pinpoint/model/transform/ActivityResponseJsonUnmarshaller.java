@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,14 @@ public class ActivityResponseJsonUnmarshaller implements Unmarshaller<ActivityRe
                 if (context.testExpression("SuccessfulEndpointCount", targetDepth)) {
                     context.nextToken();
                     activityResponse.setSuccessfulEndpointCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TimezonesCompletedCount", targetDepth)) {
+                    context.nextToken();
+                    activityResponse.setTimezonesCompletedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TimezonesTotalCount", targetDepth)) {
+                    context.nextToken();
+                    activityResponse.setTimezonesTotalCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalEndpointCount", targetDepth)) {
                     context.nextToken();

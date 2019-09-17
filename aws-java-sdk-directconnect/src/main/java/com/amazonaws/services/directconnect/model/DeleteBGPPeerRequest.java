@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DeleteBGPPeer operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeer" target="_top">AWS API
  *      Documentation</a>
@@ -30,39 +27,36 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      */
     private String virtualInterfaceId;
-
+    /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     */
     private Integer asn;
-
+    /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     */
     private String customerAddress;
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     */
+    private String bgpPeerId;
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      */
 
     public void setVirtualInterfaceId(String virtualInterfaceId) {
@@ -71,21 +65,10 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
-     * @return The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *         <p>
-     *         Example: dxvif-456abc78
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual interface.
      */
 
     public String getVirtualInterfaceId() {
@@ -94,22 +77,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the virtual interface from which the BGP peer will be deleted.
-     * </p>
-     * <p>
-     * Example: dxvif-456abc78
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the virtual interface.
      * </p>
      * 
      * @param virtualInterfaceId
-     *        The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     *        <p>
-     *        Example: dxvif-456abc78
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +91,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public void setAsn(Integer asn) {
@@ -127,7 +104,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
+     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public Integer getAsn() {
@@ -135,7 +116,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +131,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      */
 
     public void setCustomerAddress(String customerAddress) {
@@ -153,7 +144,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the customer interface.
      */
 
     public String getCustomerAddress() {
@@ -161,7 +156,12 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,7 +171,48 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     */
+
+    public void setBgpPeerId(String bgpPeerId) {
+        this.bgpPeerId = bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @return The ID of the BGP peer.
+     */
+
+    public String getBgpPeerId() {
+        return this.bgpPeerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the BGP peer.
+     * </p>
+     * 
+     * @param bgpPeerId
+     *        The ID of the BGP peer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteBGPPeerRequest withBgpPeerId(String bgpPeerId) {
+        setBgpPeerId(bgpPeerId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -186,7 +227,9 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAsn() != null)
             sb.append("Asn: ").append(getAsn()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: ").append(getCustomerAddress());
+            sb.append("CustomerAddress: ").append(getCustomerAddress()).append(",");
+        if (getBgpPeerId() != null)
+            sb.append("BgpPeerId: ").append(getBgpPeerId());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +256,10 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getCustomerAddress() != null && other.getCustomerAddress().equals(this.getCustomerAddress()) == false)
             return false;
+        if (other.getBgpPeerId() == null ^ this.getBgpPeerId() == null)
+            return false;
+        if (other.getBgpPeerId() != null && other.getBgpPeerId().equals(this.getBgpPeerId()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +271,7 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getVirtualInterfaceId() == null) ? 0 : getVirtualInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
+        hashCode = prime * hashCode + ((getBgpPeerId() == null) ? 0 : getBgpPeerId().hashCode());
         return hashCode;
     }
 

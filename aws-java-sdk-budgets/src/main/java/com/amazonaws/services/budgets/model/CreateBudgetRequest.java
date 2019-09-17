@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,19 +18,41 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of CreateBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The budget object that you want to create.
+     * </p>
+     */
     private Budget budget;
-
+    /**
+     * <p>
+     * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
+     * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
+     * </p>
+     */
     private java.util.List<NotificationWithSubscribers> notificationsWithSubscribers;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget.
      */
 
     public void setAccountId(String accountId) {
@@ -38,7 +60,11 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget.
      */
 
     public String getAccountId() {
@@ -46,7 +72,12 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +87,12 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The budget object that you want to create.
+     * </p>
+     * 
      * @param budget
+     *        The budget object that you want to create.
      */
 
     public void setBudget(Budget budget) {
@@ -64,7 +100,11 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The budget object that you want to create.
+     * </p>
+     * 
+     * @return The budget object that you want to create.
      */
 
     public Budget getBudget() {
@@ -72,7 +112,12 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The budget object that you want to create.
+     * </p>
+     * 
      * @param budget
+     *        The budget object that you want to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +127,16 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
+     * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
+     * </p>
+     * 
+     * @return A notification that you want to associate with a budget. A budget can have up to five notifications, and
+     *         each notification can have one SNS subscriber and up to 10 email subscribers. If you include
+     *         notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and
+     *         subscribers for you.
      */
 
     public java.util.List<NotificationWithSubscribers> getNotificationsWithSubscribers() {
@@ -90,7 +144,17 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
+     * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
+     * </p>
+     * 
      * @param notificationsWithSubscribers
+     *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      */
 
     public void setNotificationsWithSubscribers(java.util.Collection<NotificationWithSubscribers> notificationsWithSubscribers) {
@@ -104,12 +168,21 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
+     * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNotificationsWithSubscribers(java.util.Collection)} or
      * {@link #withNotificationsWithSubscribers(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param notificationsWithSubscribers
+     *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +197,17 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
+     * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
+     * </p>
+     * 
      * @param notificationsWithSubscribers
+     *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,7 +217,8 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

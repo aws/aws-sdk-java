@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,12 +34,17 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationName;
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     * operation to find the current application version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      */
     private Long currentApplicationVersionId;
-
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
+     * </p>
+     */
     private Input input;
 
     /**
@@ -84,13 +89,15 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     * operation to find the current application version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     *        operation to find the current application version.
+     *        Current version of your Amazon Kinesis Analytics application. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to find the current application version.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -99,12 +106,14 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     * operation to find the current application version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      * 
-     * @return Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     *         operation to find the current application version.
+     * @return Current version of your Amazon Kinesis Analytics application. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to find the current application version.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -113,13 +122,15 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     * operation to find the current application version.
+     * Current version of your Amazon Kinesis Analytics application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Current version of your Amazon Kinesis Analytics application. You can use the <a>DescribeApplication</a>
-     *        operation to find the current application version.
+     *        Current version of your Amazon Kinesis Analytics application. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to find the current application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,7 +140,12 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
+     * </p>
+     * 
      * @param input
+     *        The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
      */
 
     public void setInput(Input input) {
@@ -137,7 +153,11 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
+     * </p>
+     * 
+     * @return The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
      */
 
     public Input getInput() {
@@ -145,7 +165,12 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
+     * </p>
+     * 
      * @param input
+     *        The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,7 +180,8 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

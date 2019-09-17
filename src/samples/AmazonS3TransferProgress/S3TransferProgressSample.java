@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,16 +26,16 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.event.ProgressEvent;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
+import com.amazonaws.services.s3.transfer.TransferManagerBuilder;
 import com.amazonaws.services.s3.transfer.Upload;
 import com.amazonaws.util.StringUtils;
 
@@ -58,7 +58,7 @@ import com.amazonaws.util.StringUtils;
  */
 public class S3TransferProgressSample {
 
-    private static AWSCredentials credentials = null;
+    private static ProfileCredentialsProvider credentialsProvider = null;
     private static TransferManager tx;
     private static String bucketName;
 
@@ -76,8 +76,9 @@ public class S3TransferProgressSample {
          * TransferManager manages a pool of threads, so we create a
          * single instance and share it throughout our application.
          */
+        credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -86,12 +87,17 @@ public class S3TransferProgressSample {
                     e);
         }
 
-        AmazonS3 s3 = new AmazonS3Client(credentials);
-        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-        s3.setRegion(usWest2);
-        tx = new TransferManager(s3);
+        AmazonS3 s3 = AmazonS3ClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
 
-        bucketName = "s3-upload-sdk-sample-" + StringUtils.lowerCase(credentials.getAWSAccessKeyId());
+        tx = TransferManagerBuilder.standard()
+            .withS3Client(s3)
+            .build();
+
+        final String accessKeyId = credentialsProvider.getCredentials().getAWSAccessKeyId();
+        bucketName = "s3-upload-sdk-sample-" + StringUtils.lowerCase(accessKeyId);
 
         new S3TransferProgressSample();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,29 +27,29 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
+public class KinesisFirehoseInputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     * Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      * </p>
      */
     private String resourceARNUpdate;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your
-     * behalf. You need to grant necessary permissions to this role.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
+     * grant the necessary permissions to this role.
      * </p>
      */
     private String roleARNUpdate;
 
     /**
      * <p>
-     * ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     * Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      * </p>
      * 
      * @param resourceARNUpdate
-     *        ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     *        Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      */
 
     public void setResourceARNUpdate(String resourceARNUpdate) {
@@ -56,10 +58,10 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     * Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      * </p>
      * 
-     * @return ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     * @return Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      */
 
     public String getResourceARNUpdate() {
@@ -68,11 +70,11 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     * Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      * </p>
      * 
      * @param resourceARNUpdate
-     *        ARN of the input Amazon Kinesis Firehose delivery stream to read.
+     *        Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery stream to read.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,13 +85,13 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your
-     * behalf. You need to grant necessary permissions to this role.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
+     * grant the necessary permissions to this role.
      * </p>
      * 
      * @param roleARNUpdate
-     *        Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream
-     *        on your behalf. You need to grant necessary permissions to this role.
+     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
+     *        to grant the necessary permissions to this role.
      */
 
     public void setRoleARNUpdate(String roleARNUpdate) {
@@ -98,12 +100,12 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your
-     * behalf. You need to grant necessary permissions to this role.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
+     * grant the necessary permissions to this role.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream
-     *         on your behalf. You need to grant necessary permissions to this role.
+     * @return ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You
+     *         need to grant the necessary permissions to this role.
      */
 
     public String getRoleARNUpdate() {
@@ -112,13 +114,13 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your
-     * behalf. You need to grant necessary permissions to this role.
+     * ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to
+     * grant the necessary permissions to this role.
      * </p>
      * 
      * @param roleARNUpdate
-     *        Amazon Resource Name (ARN) of the IAM role that Amazon Kinesis Analytics can assume to access the stream
-     *        on your behalf. You need to grant necessary permissions to this role.
+     *        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need
+     *        to grant the necessary permissions to this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +130,8 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -184,5 +187,11 @@ public class KinesisFirehoseInputUpdate implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.KinesisFirehoseInputUpdateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

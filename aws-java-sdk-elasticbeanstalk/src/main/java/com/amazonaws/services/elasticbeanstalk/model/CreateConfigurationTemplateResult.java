@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String solutionStackName;
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     */
+    private String platformArn;
     /**
      * <p>
      * The name of the application associated with this configuration set.
@@ -143,6 +149,46 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
 
     public CreateConfigurationTemplateResult withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @return The ARN of the platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationTemplateResult withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
         return this;
     }
 
@@ -556,7 +602,7 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      */
 
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        this.deploymentStatus = deploymentStatus.toString();
+        withDeploymentStatus(deploymentStatus);
     }
 
     /**
@@ -620,7 +666,7 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      */
 
     public CreateConfigurationTemplateResult withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        setDeploymentStatus(deploymentStatus);
+        this.deploymentStatus = deploymentStatus.toString();
         return this;
     }
 
@@ -778,7 +824,8 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -790,6 +837,8 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
         sb.append("{");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getApplicationName() != null)
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
@@ -823,6 +872,10 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
         if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
+            return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
             return false;
         if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
@@ -865,6 +918,7 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
@@ -884,4 +938,5 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

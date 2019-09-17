@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,12 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Exception that indicates that the operation would exceed a limit.
+ * </p>
+ * <p>
+ * <code>Type</code> is the type of limit that would be exceeded.
+ * </p>
+ * <p>
+ * <code>Limit</code> is the threshold that would be exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

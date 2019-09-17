@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ElasticsearchDomainStatus implements Serializable, Cloneable {
+public class ElasticsearchDomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -69,11 +71,26 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
     private String endpoint;
     /**
      * <p>
+     * Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     * <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * </p>
+     */
+    private java.util.Map<String, String> endpoints;
+    /**
+     * <p>
      * The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is
      * processing configuration changes. <code>False</code> if the configuration is active.
      * </p>
      */
     private Boolean processing;
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     */
+    private Boolean upgradeProcessing;
 
     private String elasticsearchVersion;
     /**
@@ -104,10 +121,50 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
     private SnapshotOptions snapshotOptions;
     /**
      * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     */
+    private VPCDerivedInfo vPCOptions;
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     */
+    private CognitoOptions cognitoOptions;
+    /**
+     * <p>
+     * Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     * </p>
+     */
+    private EncryptionAtRestOptions encryptionAtRestOptions;
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      */
     private java.util.Map<String, String> advancedOptions;
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     */
+    private java.util.Map<String, LogPublishingOption> logPublishingOptions;
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     */
+    private ServiceSoftwareOptions serviceSoftwareOptions;
 
     /**
      * <p>
@@ -429,6 +486,79 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     * <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * </p>
+     * 
+     * @return Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     *         <code>key, value</code>:
+     *         <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     */
+
+    public java.util.Map<String, String> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * <p>
+     * Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     * <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * </p>
+     * 
+     * @param endpoints
+     *        Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     *        <code>key, value</code>:
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     */
+
+    public void setEndpoints(java.util.Map<String, String> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    /**
+     * <p>
+     * Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     * <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * </p>
+     * 
+     * @param endpoints
+     *        Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example
+     *        <code>key, value</code>:
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withEndpoints(java.util.Map<String, String> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
+    public ElasticsearchDomainStatus addEndpointsEntry(String key, String value) {
+        if (null == this.endpoints) {
+            this.endpoints = new java.util.HashMap<String, String>();
+        }
+        if (this.endpoints.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.endpoints.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Endpoints.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus clearEndpointsEntries() {
+        this.endpoints = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is
      * processing configuration changes. <code>False</code> if the configuration is active.
      * </p>
@@ -485,6 +615,66 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
 
     public Boolean isProcessing() {
         return this.processing;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @param upgradeProcessing
+     *        The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *        is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public void setUpgradeProcessing(Boolean upgradeProcessing) {
+        this.upgradeProcessing = upgradeProcessing;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @return The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *         is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public Boolean getUpgradeProcessing() {
+        return this.upgradeProcessing;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @param upgradeProcessing
+     *        The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *        is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withUpgradeProcessing(Boolean upgradeProcessing) {
+        setUpgradeProcessing(upgradeProcessing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @return The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *         is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public Boolean isUpgradeProcessing() {
+        return this.upgradeProcessing;
     }
 
     /**
@@ -687,6 +877,190 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @param vPCOptions
+     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *        target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     */
+
+    public void setVPCOptions(VPCDerivedInfo vPCOptions) {
+        this.vPCOptions = vPCOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @return The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *         target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     */
+
+    public VPCDerivedInfo getVPCOptions() {
+        return this.vPCOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @param vPCOptions
+     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *        target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withVPCOptions(VPCDerivedInfo vPCOptions) {
+        setVPCOptions(vPCOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @param cognitoOptions
+     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *        target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     */
+
+    public void setCognitoOptions(CognitoOptions cognitoOptions) {
+        this.cognitoOptions = cognitoOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @return The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *         target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     */
+
+    public CognitoOptions getCognitoOptions() {
+        return this.cognitoOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @param cognitoOptions
+     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *        target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withCognitoOptions(CognitoOptions cognitoOptions) {
+        setCognitoOptions(cognitoOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     */
+
+    public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        this.encryptionAtRestOptions = encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     * </p>
+     * 
+     * @return Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     */
+
+    public EncryptionAtRestOptions getEncryptionAtRestOptions() {
+        return this.encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the status of the <code>EncryptionAtRestOptions</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        setEncryptionAtRestOptions(encryptionAtRestOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @return Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      * 
@@ -747,7 +1121,109 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @return Log publishing options for the given domain.
+     */
+
+    public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
+        return logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Log publishing options for the given domain.
+     */
+
+    public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
+        this.logPublishingOptions = logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Log publishing options for the given domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
+        setLogPublishingOptions(logPublishingOptions);
+        return this;
+    }
+
+    public ElasticsearchDomainStatus addLogPublishingOptionsEntry(String key, LogPublishingOption value) {
+        if (null == this.logPublishingOptions) {
+            this.logPublishingOptions = new java.util.HashMap<String, LogPublishingOption>();
+        }
+        if (this.logPublishingOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.logPublishingOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into LogPublishingOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus clearLogPublishingOptionsEntries() {
+        this.logPublishingOptions = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     */
+
+    public void setServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        this.serviceSoftwareOptions = serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @return The current status of the Elasticsearch domain's service software.
+     */
+
+    public ServiceSoftwareOptions getServiceSoftwareOptions() {
+        return this.serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        setServiceSoftwareOptions(serviceSoftwareOptions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -769,8 +1245,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
             sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getProcessing() != null)
             sb.append("Processing: ").append(getProcessing()).append(",");
+        if (getUpgradeProcessing() != null)
+            sb.append("UpgradeProcessing: ").append(getUpgradeProcessing()).append(",");
         if (getElasticsearchVersion() != null)
             sb.append("ElasticsearchVersion: ").append(getElasticsearchVersion()).append(",");
         if (getElasticsearchClusterConfig() != null)
@@ -781,8 +1261,20 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
+        if (getVPCOptions() != null)
+            sb.append("VPCOptions: ").append(getVPCOptions()).append(",");
+        if (getCognitoOptions() != null)
+            sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
+        if (getEncryptionAtRestOptions() != null)
+            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: ").append(getAdvancedOptions());
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
+        if (getLogPublishingOptions() != null)
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
+        if (getServiceSoftwareOptions() != null)
+            sb.append("ServiceSoftwareOptions: ").append(getServiceSoftwareOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -821,9 +1313,17 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         if (other.getProcessing() == null ^ this.getProcessing() == null)
             return false;
         if (other.getProcessing() != null && other.getProcessing().equals(this.getProcessing()) == false)
+            return false;
+        if (other.getUpgradeProcessing() == null ^ this.getUpgradeProcessing() == null)
+            return false;
+        if (other.getUpgradeProcessing() != null && other.getUpgradeProcessing().equals(this.getUpgradeProcessing()) == false)
             return false;
         if (other.getElasticsearchVersion() == null ^ this.getElasticsearchVersion() == null)
             return false;
@@ -845,9 +1345,33 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotOptions() != null && other.getSnapshotOptions().equals(this.getSnapshotOptions()) == false)
             return false;
+        if (other.getVPCOptions() == null ^ this.getVPCOptions() == null)
+            return false;
+        if (other.getVPCOptions() != null && other.getVPCOptions().equals(this.getVPCOptions()) == false)
+            return false;
+        if (other.getCognitoOptions() == null ^ this.getCognitoOptions() == null)
+            return false;
+        if (other.getCognitoOptions() != null && other.getCognitoOptions().equals(this.getCognitoOptions()) == false)
+            return false;
+        if (other.getEncryptionAtRestOptions() == null ^ this.getEncryptionAtRestOptions() == null)
+            return false;
+        if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
+            return false;
+        if (other.getLogPublishingOptions() == null ^ this.getLogPublishingOptions() == null)
+            return false;
+        if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
+            return false;
+        if (other.getServiceSoftwareOptions() == null ^ this.getServiceSoftwareOptions() == null)
+            return false;
+        if (other.getServiceSoftwareOptions() != null && other.getServiceSoftwareOptions().equals(this.getServiceSoftwareOptions()) == false)
             return false;
         return true;
     }
@@ -863,13 +1387,21 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
+        hashCode = prime * hashCode + ((getUpgradeProcessing() == null) ? 0 : getUpgradeProcessing().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchVersion() == null) ? 0 : getElasticsearchVersion().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchClusterConfig() == null) ? 0 : getElasticsearchClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
+        hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
+        hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
+        hashCode = prime * hashCode + ((getServiceSoftwareOptions() == null) ? 0 : getServiceSoftwareOptions().hashCode());
         return hashCode;
     }
 
@@ -880,5 +1412,11 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticsearch.model.transform.ElasticsearchDomainStatusMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

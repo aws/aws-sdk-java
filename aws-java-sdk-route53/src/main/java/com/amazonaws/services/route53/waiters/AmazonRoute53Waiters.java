@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,6 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRoute53Waiters {
@@ -30,7 +29,7 @@ public class AmazonRoute53Waiters {
      */
     private final AmazonRoute53 client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonRoute53Waiters");
 
     /**
      * Constructs a new AmazonRoute53Waiters with the given client
@@ -56,4 +55,7 @@ public class AmazonRoute53Waiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

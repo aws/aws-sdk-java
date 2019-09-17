@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,24 +32,6 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The domain for which you want to add or update tags.
      * </p>
-     * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
-     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
-     * convert the name to Punycode.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String domainName;
     /**
@@ -57,67 +39,6 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the
      * corresponding value will be replaced.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * '>
-     * <p>
-     * Each tag includes the following elements:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tagsToUpdate;
 
@@ -125,44 +46,9 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The domain for which you want to add or update tags.
      * </p>
-     * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
-     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
-     * convert the name to Punycode.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The domain for which you want to add or update tags.</p>
-     *        <p>
-     *        The name of a domain.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You
-     *        can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain
-     *        Name, you must convert the name to Punycode.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The domain for which you want to add or update tags.
      */
 
     public void setDomainName(String domainName) {
@@ -173,43 +59,8 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The domain for which you want to add or update tags.
      * </p>
-     * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
-     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
-     * convert the name to Punycode.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return The domain for which you want to add or update tags.</p>
-     *         <p>
-     *         The name of a domain.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
-     *         hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens.
-     *         You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized
-     *         Domain Name, you must convert the name to Punycode.
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The domain for which you want to add or update tags.
      */
 
     public String getDomainName() {
@@ -220,44 +71,9 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The domain for which you want to add or update tags.
      * </p>
-     * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t
-     * specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must
-     * convert the name to Punycode.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The domain for which you want to add or update tags.</p>
-     *        <p>
-     *        The name of a domain.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You
-     *        can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain
-     *        Name, you must convert the name to Punycode.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The domain for which you want to add or update tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,130 +87,9 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the
      * corresponding value will be replaced.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * '>
-     * <p>
-     * Each tag includes the following elements:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A list of the tag keys and values that you want to add or update. If you specify a key that already
-     *         exists, the corresponding value will be replaced.</p>
-     *         <p>
-     *         Type: A complex type containing a list of tags
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: No
-     *         </p>
-     *         '>
-     *         <p>
-     *         Each tag includes the following elements:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Key
-     *         </p>
-     *         <p>
-     *         The key (name) of a tag.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *         </p>
-     *         <p>
-     *         Constraints: Each key can be 1-128 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Value
-     *         </p>
-     *         <p>
-     *         The value of a tag.
-     *         </p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *         </p>
-     *         <p>
-     *         Constraints: Each value can be 0-256 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
-     *         </p>
-     *         </li>
+     *         exists, the corresponding value will be replaced.
      */
 
     public java.util.List<Tag> getTagsToUpdate() {
@@ -409,131 +104,10 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the
      * corresponding value will be replaced.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * '>
-     * <p>
-     * Each tag includes the following elements:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tagsToUpdate
      *        A list of the tag keys and values that you want to add or update. If you specify a key that already
-     *        exists, the corresponding value will be replaced.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
-     *        </p>
-     *        '>
-     *        <p>
-     *        Each tag includes the following elements:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
+     *        exists, the corresponding value will be replaced.
      */
 
     public void setTagsToUpdate(java.util.Collection<Tag> tagsToUpdate) {
@@ -551,67 +125,6 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * corresponding value will be replaced.
      * </p>
      * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * '>
-     * <p>
-     * Each tag includes the following elements:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagsToUpdate(java.util.Collection)} or {@link #withTagsToUpdate(java.util.Collection)} if you want to
      * override the existing values.
@@ -619,67 +132,7 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param tagsToUpdate
      *        A list of the tag keys and values that you want to add or update. If you specify a key that already
-     *        exists, the corresponding value will be replaced.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
-     *        </p>
-     *        '>
-     *        <p>
-     *        Each tag includes the following elements:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
+     *        exists, the corresponding value will be replaced.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,131 +151,10 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
      * A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the
      * corresponding value will be replaced.
      * </p>
-     * <p>
-     * Type: A complex type containing a list of tags
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
-     * '>
-     * <p>
-     * Each tag includes the following elements:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key
-     * </p>
-     * <p>
-     * The key (name) of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Value
-     * </p>
-     * <p>
-     * The value of a tag.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     * </p>
-     * <p>
-     * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param tagsToUpdate
      *        A list of the tag keys and values that you want to add or update. If you specify a key that already
-     *        exists, the corresponding value will be replaced.</p>
-     *        <p>
-     *        Type: A complex type containing a list of tags
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
-     *        </p>
-     *        '>
-     *        <p>
-     *        Each tag includes the following elements:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key
-     *        </p>
-     *        <p>
-     *        The key (name) of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Value
-     *        </p>
-     *        <p>
-     *        The value of a tag.
-     *        </p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-     *        </p>
-     *        <p>
-     *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
-     *        </p>
-     *        </li>
+     *        exists, the corresponding value will be replaced.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -832,7 +164,8 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

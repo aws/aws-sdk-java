@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeRecordRequest Marshaller
+ * DescribeRecordRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeRecordRequestMarshaller implements Marshaller<Request<DescribeRecordRequest>, DescribeRecordRequest> {
+@SdkInternalApi
+public class DescribeRecordRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PageToken").build();
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
 
-    public DescribeRecordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeRecordRequestMarshaller instance = new DescribeRecordRequestMarshaller();
+
+    public static DescribeRecordRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeRecordRequest> marshall(DescribeRecordRequest describeRecordRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeRecordRequest describeRecordRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeRecordRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeRecordRequest> request = new DefaultRequest<DescribeRecordRequest>(describeRecordRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.DescribeRecord");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeRecordRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(describeRecordRequest.getAcceptLanguage());
-            }
-            if (describeRecordRequest.getId() != null) {
-                jsonGenerator.writeFieldName("Id").writeValue(describeRecordRequest.getId());
-            }
-            if (describeRecordRequest.getPageToken() != null) {
-                jsonGenerator.writeFieldName("PageToken").writeValue(describeRecordRequest.getPageToken());
-            }
-            if (describeRecordRequest.getPageSize() != null) {
-                jsonGenerator.writeFieldName("PageSize").writeValue(describeRecordRequest.getPageSize());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeRecordRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(describeRecordRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(describeRecordRequest.getPageToken(), PAGETOKEN_BINDING);
+            protocolMarshaller.marshall(describeRecordRequest.getPageSize(), PAGESIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

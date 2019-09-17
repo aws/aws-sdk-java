@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,11 +45,6 @@ public class EgressOnlyInternetGatewayStaxUnmarshaller implements Unmarshaller<E
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
-                    egressOnlyInternetGateway.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("attachmentSet", targetDepth)) {
                     egressOnlyInternetGateway.withAttachments(new ArrayList<InternetGatewayAttachment>());
                     continue;
@@ -60,6 +55,10 @@ public class EgressOnlyInternetGatewayStaxUnmarshaller implements Unmarshaller<E
                     continue;
                 }
 
+                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
+                    egressOnlyInternetGateway.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return egressOnlyInternetGateway;

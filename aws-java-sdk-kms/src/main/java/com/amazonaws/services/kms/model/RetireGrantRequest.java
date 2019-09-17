@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,11 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String grantToken;
     /**
      * <p>
-     * The Amazon Resource Name of the CMK associated with the grant. Example:
+     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
-     * </li>
-     * </ul>
      */
     private String keyId;
     /**
@@ -101,24 +97,16 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name of the CMK associated with the grant. Example:
+     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
-     * </li>
-     * </ul>
      * 
      * @param keyId
-     *        The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     *        <ul>
-     *        <li>
+     *        The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
      *        <p>
-     *        arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
-     *        </p>
-     *        </li>
+     *        For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      */
 
     public void setKeyId(String keyId) {
@@ -127,23 +115,15 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name of the CMK associated with the grant. Example:
+     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     *         <ul>
-     *         <li>
+     * @return The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
      *         <p>
-     *         arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
-     *         </p>
-     *         </li>
+     *         For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      */
 
     public String getKeyId() {
@@ -152,24 +132,16 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name of the CMK associated with the grant. Example:
+     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
-     * </li>
-     * </ul>
      * 
      * @param keyId
-     *        The Amazon Resource Name of the CMK associated with the grant. Example:</p>
-     *        <ul>
-     *        <li>
+     *        The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
      *        <p>
-     *        arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
-     *        </p>
-     *        </li>
+     *        For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +236,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

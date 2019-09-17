@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,11 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String loadBalancerName;
-
+    /**
+     * <p>
+     * Information about the load balancer attributes.
+     * </p>
+     */
     private LoadBalancerAttributes loadBalancerAttributes;
 
     /**
@@ -76,7 +80,12 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Information about the load balancer attributes.
+     * </p>
+     * 
      * @param loadBalancerAttributes
+     *        Information about the load balancer attributes.
      */
 
     public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
@@ -84,7 +93,11 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the load balancer attributes.
+     * </p>
+     * 
+     * @return Information about the load balancer attributes.
      */
 
     public LoadBalancerAttributes getLoadBalancerAttributes() {
@@ -92,7 +105,12 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Information about the load balancer attributes.
+     * </p>
+     * 
      * @param loadBalancerAttributes
+     *        Information about the load balancer attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,7 +120,8 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -159,4 +178,5 @@ public class ModifyLoadBalancerAttributesResult extends com.amazonaws.AmazonWebS
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

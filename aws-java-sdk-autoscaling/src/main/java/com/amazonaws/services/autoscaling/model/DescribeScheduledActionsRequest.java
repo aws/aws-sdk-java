@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for DescribeScheduledActions.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"
  *      target="_top">AWS API Documentation</a>
@@ -30,18 +27,14 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you
-     * specify an unknown scheduled action, it is ignored with no error.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call
-     * returns a token. To get the next set of items, repeat the call with the returned token.
+     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scheduledActionNames;
@@ -65,18 +58,19 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      */
     private Integer maxRecords;
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -85,10 +79,10 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -97,11 +91,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,19 +106,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you
-     * specify an unknown scheduled action, it is ignored with no error.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call
-     * returns a token. To get the next set of items, repeat the call with the returned token.
+     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * 
-     * @return Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described.
-     *         If you specify an unknown scheduled action, it is ignored with no error.</p>
-     *         <p>
-     *         You can describe up to a maximum of 50 instances with a single call. If there are more items to return,
-     *         the call returns a token. To get the next set of items, repeat the call with the returned token.
+     * @return The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
+     *         all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
+     *         error.
      */
 
     public java.util.List<String> getScheduledActionNames() {
@@ -136,20 +124,14 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you
-     * specify an unknown scheduled action, it is ignored with no error.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call
-     * returns a token. To get the next set of items, repeat the call with the returned token.
+     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described.
-     *        If you specify an unknown scheduled action, it is ignored with no error.</p>
-     *        <p>
-     *        You can describe up to a maximum of 50 instances with a single call. If there are more items to return,
-     *        the call returns a token. To get the next set of items, repeat the call with the returned token.
+     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
+     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
+     *        error.
      */
 
     public void setScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
@@ -163,12 +145,8 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you
-     * specify an unknown scheduled action, it is ignored with no error.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call
-     * returns a token. To get the next set of items, repeat the call with the returned token.
+     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -177,11 +155,9 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described.
-     *        If you specify an unknown scheduled action, it is ignored with no error.</p>
-     *        <p>
-     *        You can describe up to a maximum of 50 instances with a single call. If there are more items to return,
-     *        the call returns a token. To get the next set of items, repeat the call with the returned token.
+     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
+     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
+     *        error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,20 +173,14 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you
-     * specify an unknown scheduled action, it is ignored with no error.
-     * </p>
-     * <p>
-     * You can describe up to a maximum of 50 instances with a single call. If there are more items to return, the call
-     * returns a token. To get the next set of items, repeat the call with the returned token.
+     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
      * </p>
      * 
      * @param scheduledActionNames
-     *        Describes one or more scheduled actions. If you omit this parameter, all scheduled actions are described.
-     *        If you specify an unknown scheduled action, it is ignored with no error.</p>
-     *        <p>
-     *        You can describe up to a maximum of 50 instances with a single call. If there are more items to return,
-     *        the call returns a token. To get the next set of items, repeat the call with the returned token.
+     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
+     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
+     *        error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,11 +317,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -360,10 +332,12 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
-     * @return The maximum number of items to return with this call.
+     * @return The maximum number of items to return with this call. The default value is <code>50</code> and the
+     *         maximum value is <code>100</code>.
      */
 
     public Integer getMaxRecords() {
@@ -372,11 +346,13 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,7 +362,8 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

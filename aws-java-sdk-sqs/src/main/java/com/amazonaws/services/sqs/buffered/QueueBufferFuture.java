@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         // if we have a callback to call, schedule
         // it on a different thread. Who knows what this
         // thread is doing.
-        if (callback != null && issuingBuffer != null) {
+        if (callback != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onSuccess(result);
@@ -90,7 +90,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         // if we have a callback to call, schedule
         // it on a different thread. Who knows what this
         // thread is doing.
-        if (callback != null && issuingBuffer != null) {
+        if (callback != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onError(e);
@@ -108,7 +108,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         return false;
     }
 
-    public void setBuffer(QueueBuffer paramBuffer) {
+    public synchronized void setBuffer(QueueBuffer paramBuffer) {
         issuingBuffer = paramBuffer;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,10 @@ public class GetSMSAttributesRequestMarshaller implements Marshaller<Request<Get
         request.addParameter("Version", "2010-03-31");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> attributesList = (com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest
-                .getAttributes();
-        if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+        if (!getSMSAttributesRequest.getAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest.getAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributesList = (com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest
+                    .getAttributes();
             int attributesListIndex = 1;
 
             for (String attributesListValue : attributesList) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,18 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyInstancePlacementRequest.getAffinity() != null) {
+            request.addParameter("Affinity", StringUtils.fromString(modifyInstancePlacementRequest.getAffinity()));
+        }
+
+        if (modifyInstancePlacementRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(modifyInstancePlacementRequest.getGroupName()));
+        }
+
+        if (modifyInstancePlacementRequest.getHostId() != null) {
+            request.addParameter("HostId", StringUtils.fromString(modifyInstancePlacementRequest.getHostId()));
+        }
+
         if (modifyInstancePlacementRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(modifyInstancePlacementRequest.getInstanceId()));
         }
@@ -48,12 +60,8 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
             request.addParameter("Tenancy", StringUtils.fromString(modifyInstancePlacementRequest.getTenancy()));
         }
 
-        if (modifyInstancePlacementRequest.getAffinity() != null) {
-            request.addParameter("Affinity", StringUtils.fromString(modifyInstancePlacementRequest.getAffinity()));
-        }
-
-        if (modifyInstancePlacementRequest.getHostId() != null) {
-            request.addParameter("HostId", StringUtils.fromString(modifyInstancePlacementRequest.getHostId()));
+        if (modifyInstancePlacementRequest.getPartitionNumber() != null) {
+            request.addParameter("PartitionNumber", StringUtils.fromInteger(modifyInstancePlacementRequest.getPartitionNumber()));
         }
 
         return request;

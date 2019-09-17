@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -88,17 +88,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -123,12 +143,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -263,7 +343,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -288,17 +368,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -323,12 +423,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -355,7 +515,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -380,17 +540,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      *        </p>
      *        </li>
      *        <li>
@@ -415,12 +595,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -454,7 +694,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -479,17 +719,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -514,12 +774,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -545,7 +865,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         WEB_APP: A web appliction upload.
+     *         WEB_APP: A web application upload.
      *         </p>
      *         </li>
      *         <li>
@@ -570,17 +890,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *         APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *         APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      *         </p>
      *         </li>
      *         <li>
@@ -605,12 +945,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *         </p>
      *         </li>
      *         </ul>
@@ -644,7 +1044,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -669,17 +1069,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -704,12 +1124,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -736,7 +1216,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -761,17 +1241,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      *        </p>
      *        </li>
      *        <li>
@@ -796,12 +1296,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -837,7 +1397,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -862,17 +1422,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -897,12 +1477,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -929,7 +1569,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -954,17 +1594,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      *        </p>
      *        </li>
      *        <li>
@@ -989,12 +1649,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -1005,7 +1725,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setType(UploadType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1028,7 +1748,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web appliction upload.
+     * WEB_APP: A web application upload.
      * </p>
      * </li>
      * <li>
@@ -1053,17 +1773,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      * </p>
      * </li>
      * <li>
@@ -1088,12 +1828,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      * </p>
      * </li>
      * </ul>
@@ -1120,7 +1920,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web appliction upload.
+     *        WEB_APP: A web application upload.
      *        </p>
      *        </li>
      *        <li>
@@ -1145,17 +1945,37 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for a web app.
      *        </p>
      *        </li>
      *        <li>
@@ -1180,12 +2000,72 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
      *        </p>
      *        </li>
      *        </ul>
@@ -1197,7 +2077,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public CreateUploadRequest withType(UploadType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1242,7 +2122,8 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

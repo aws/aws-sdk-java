@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Domain implements Serializable, Cloneable {
+public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -64,6 +66,13 @@ public class Domain implements Serializable, Cloneable {
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
     /**
      * <p>
      * An array of key-value pairs containing information about the domain entries.
@@ -340,7 +349,7 @@ public class Domain implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -355,7 +364,89 @@ public class Domain implements Serializable, Cloneable {
      */
 
     public Domain withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *         Guide</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Domain withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Domain withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -430,7 +521,8 @@ public class Domain implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -452,6 +544,8 @@ public class Domain implements Serializable, Cloneable {
             sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getDomainEntries() != null)
             sb.append("DomainEntries: ").append(getDomainEntries());
         sb.append("}");
@@ -492,6 +586,10 @@ public class Domain implements Serializable, Cloneable {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getDomainEntries() == null ^ this.getDomainEntries() == null)
             return false;
         if (other.getDomainEntries() != null && other.getDomainEntries().equals(this.getDomainEntries()) == false)
@@ -510,6 +608,7 @@ public class Domain implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDomainEntries() == null) ? 0 : getDomainEntries().hashCode());
         return hashCode;
     }
@@ -521,5 +620,11 @@ public class Domain implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.DomainMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

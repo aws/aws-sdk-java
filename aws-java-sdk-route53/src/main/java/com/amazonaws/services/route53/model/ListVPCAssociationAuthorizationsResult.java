@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,10 +38,7 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
      * When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the
      * specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code>
      * request, and include the value of the <code>NextToken</code> element from the response in the
-     * <code>NextToken</code> request parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     * <code>nexttoken</code> request parameter.
      * </p>
      */
     private String nextToken;
@@ -97,19 +94,14 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
      * When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the
      * specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code>
      * request, and include the value of the <code>NextToken</code> element from the response in the
-     * <code>NextToken</code> request parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     * <code>nexttoken</code> request parameter.
      * </p>
      * 
      * @param nextToken
      *        When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
      *        with the specified hosted zone. To get the next page of VPCs, submit another
      *        <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code>
-     *        element from the response in the <code>NextToken</code> request parameter:</p>
-     *        <p>
-     *        <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     *        element from the response in the <code>nexttoken</code> request parameter.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,18 +113,13 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
      * When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the
      * specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code>
      * request, and include the value of the <code>NextToken</code> element from the response in the
-     * <code>NextToken</code> request parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     * <code>nexttoken</code> request parameter.
      * </p>
      * 
      * @return When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
      *         with the specified hosted zone. To get the next page of VPCs, submit another
      *         <code>ListVPCAssociationAuthorizations</code> request, and include the value of the
-     *         <code>NextToken</code> element from the response in the <code>NextToken</code> request parameter:</p>
-     *         <p>
-     *         <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     *         <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.
      */
 
     public String getNextToken() {
@@ -144,19 +131,14 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
      * When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the
      * specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code>
      * request, and include the value of the <code>NextToken</code> element from the response in the
-     * <code>NextToken</code> request parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     * <code>nexttoken</code> request parameter.
      * </p>
      * 
      * @param nextToken
      *        When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
      *        with the specified hosted zone. To get the next page of VPCs, submit another
      *        <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code>
-     *        element from the response in the <code>NextToken</code> request parameter:</p>
-     *        <p>
-     *        <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
+     *        element from the response in the <code>nexttoken</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,7 +221,8 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -303,4 +286,5 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

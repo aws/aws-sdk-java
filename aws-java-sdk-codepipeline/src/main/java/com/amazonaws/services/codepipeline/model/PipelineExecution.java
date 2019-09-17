@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineExecution implements Serializable, Cloneable {
+public class PipelineExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -56,18 +58,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -75,7 +77,7 @@ public class PipelineExecution implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * A list of ArtifactRevision objects included in a pipeline execution.
+     * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * </p>
      */
     private java.util.List<ArtifactRevision> artifactRevisions;
@@ -212,18 +214,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -238,18 +240,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The pipeline execution completed successfully.
+     *        Succeeded: The pipeline execution was completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     *        execution caught up and continued through the pipeline instead.
+     *        execution advanced and continued through the pipeline instead.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution was not completed successfully.
      *        </p>
      *        </li>
      * @see PipelineExecutionStatus
@@ -271,18 +273,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -296,18 +298,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Succeeded: The pipeline execution completed successfully.
+     *         Succeeded: The pipeline execution was completed successfully.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer
-     *         pipeline execution caught up and continued through the pipeline instead.
+     *         pipeline execution advanced and continued through the pipeline instead.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: The pipeline did not complete successfully.
+     *         Failed: The pipeline execution was not completed successfully.
      *         </p>
      *         </li>
      * @see PipelineExecutionStatus
@@ -329,18 +331,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -355,18 +357,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The pipeline execution completed successfully.
+     *        Succeeded: The pipeline execution was completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     *        execution caught up and continued through the pipeline instead.
+     *        execution advanced and continued through the pipeline instead.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution was not completed successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,18 +392,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -416,25 +418,25 @@ public class PipelineExecution implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The pipeline execution completed successfully.
+     *        Succeeded: The pipeline execution was completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     *        execution caught up and continued through the pipeline instead.
+     *        execution advanced and continued through the pipeline instead.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution was not completed successfully.
      *        </p>
      *        </li>
      * @see PipelineExecutionStatus
      */
 
     public void setStatus(PipelineExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -449,18 +451,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Succeeded: The pipeline execution completed successfully.
+     * Succeeded: The pipeline execution was completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
      * Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     * execution caught up and continued through the pipeline instead.
+     * execution advanced and continued through the pipeline instead.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution was not completed successfully.
      * </p>
      * </li>
      * </ul>
@@ -475,18 +477,18 @@ public class PipelineExecution implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The pipeline execution completed successfully.
+     *        Succeeded: The pipeline execution was completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline
-     *        execution caught up and continued through the pipeline instead.
+     *        execution advanced and continued through the pipeline instead.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution was not completed successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -494,16 +496,16 @@ public class PipelineExecution implements Serializable, Cloneable {
      */
 
     public PipelineExecution withStatus(PipelineExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * A list of ArtifactRevision objects included in a pipeline execution.
+     * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * </p>
      * 
-     * @return A list of ArtifactRevision objects included in a pipeline execution.
+     * @return A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      */
 
     public java.util.List<ArtifactRevision> getArtifactRevisions() {
@@ -512,11 +514,11 @@ public class PipelineExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ArtifactRevision objects included in a pipeline execution.
+     * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * </p>
      * 
      * @param artifactRevisions
-     *        A list of ArtifactRevision objects included in a pipeline execution.
+     *        A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      */
 
     public void setArtifactRevisions(java.util.Collection<ArtifactRevision> artifactRevisions) {
@@ -530,7 +532,7 @@ public class PipelineExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ArtifactRevision objects included in a pipeline execution.
+     * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -539,7 +541,7 @@ public class PipelineExecution implements Serializable, Cloneable {
      * </p>
      * 
      * @param artifactRevisions
-     *        A list of ArtifactRevision objects included in a pipeline execution.
+     *        A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -555,11 +557,11 @@ public class PipelineExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ArtifactRevision objects included in a pipeline execution.
+     * A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * </p>
      * 
      * @param artifactRevisions
-     *        A list of ArtifactRevision objects included in a pipeline execution.
+     *        A list of <code>ArtifactRevision</code> objects included in a pipeline execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -569,7 +571,8 @@ public class PipelineExecution implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -646,5 +649,11 @@ public class PipelineExecution implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.PipelineExecutionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

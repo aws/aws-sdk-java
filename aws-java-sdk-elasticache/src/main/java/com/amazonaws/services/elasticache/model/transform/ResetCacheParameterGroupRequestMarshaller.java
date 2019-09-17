@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,9 +49,10 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
             request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetCacheParameterGroupRequest.getResetAllParameters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest
-                .getParameterNameValues();
-        if (!parameterNameValuesList.isEmpty() || !parameterNameValuesList.isAutoConstruct()) {
+        if (!resetCacheParameterGroupRequest.getParameterNameValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest.getParameterNameValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest
+                    .getParameterNameValues();
             int parameterNameValuesListIndex = 1;
 
             for (ParameterNameValue parameterNameValuesListValue : parameterNameValuesList) {

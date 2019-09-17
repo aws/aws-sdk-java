@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     private String serialNumber;
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded.
+     * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer base32StringSeed;
@@ -43,15 +43,15 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     * <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the user name
-     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded.
+     * <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name
+     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer qRCodePNG;
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      */
     private User user;
@@ -104,11 +104,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded.
+     * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -119,8 +119,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param base32StringSeed
-     *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     *        <code>Base32StringSeed</code> is Base64-encoded.
+     *        The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     *        <code>Base32StringSeed</code> is base64-encoded.
      */
 
     public void setBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
@@ -129,8 +129,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded.
+     * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -140,8 +140,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * {@code position}.
      * </p>
      * 
-     * @return The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
-     *         The <code>Base32StringSeed</code> is Base64-encoded.
+     * @return The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
+     *         The <code>Base32StringSeed</code> is base64-encoded.
      */
 
     public java.nio.ByteBuffer getBase32StringSeed() {
@@ -150,13 +150,23 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded.
+     * The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param base32StringSeed
-     *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     *        <code>Base32StringSeed</code> is Base64-encoded.
+     *        The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     *        <code>Base32StringSeed</code> is base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,12 +179,12 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     * <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the user name
-     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded.
+     * <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name
+     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -187,9 +197,9 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @param qRCodePNG
      *        A QR code PNG image that encodes
      *        <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     *        <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the
+     *        <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the
      *        user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in
-     *        Base32 format. The <code>Base32String</code> value is Base64-encoded.
+     *        base32 format. The <code>Base32String</code> value is base64-encoded.
      */
 
     public void setQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
@@ -200,9 +210,9 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     * <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the user name
-     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded.
+     * <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name
+     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -214,9 +224,9 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * 
      * @return A QR code PNG image that encodes
      *         <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     *         <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the
+     *         <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the
      *         user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in
-     *         Base32 format. The <code>Base32String</code> value is Base64-encoded.
+     *         base32 format. The <code>Base32String</code> value is base64-encoded.
      */
 
     public java.nio.ByteBuffer getQRCodePNG() {
@@ -227,17 +237,27 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <p>
      * A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     * <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the user name
-     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded.
+     * <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name
+     * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param qRCodePNG
      *        A QR code PNG image that encodes
      *        <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where
-     *        <code>$virtualMFADeviceName</code> is one of the create call arguments, <code>AccountName</code> is the
+     *        <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the
      *        user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in
-     *        Base32 format. The <code>Base32String</code> value is Base64-encoded.
+     *        base32 format. The <code>Base32String</code> value is base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +268,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      */
 
     public void setUser(User user) {
@@ -261,10 +281,10 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
-     * @return The user to whom the MFA device is assigned.
+     * @return The IAM user associated with this virtual MFA device.
      */
 
     public User getUser() {
@@ -273,11 +293,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,7 +347,8 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -340,9 +361,9 @@ public class VirtualMFADevice implements Serializable, Cloneable {
         if (getSerialNumber() != null)
             sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getBase32StringSeed() != null)
-            sb.append("Base32StringSeed: ").append(getBase32StringSeed()).append(",");
+            sb.append("Base32StringSeed: ").append("***Sensitive Data Redacted***").append(",");
         if (getQRCodePNG() != null)
-            sb.append("QRCodePNG: ").append(getQRCodePNG()).append(",");
+            sb.append("QRCodePNG: ").append("***Sensitive Data Redacted***").append(",");
         if (getUser() != null)
             sb.append("User: ").append(getUser()).append(",");
         if (getEnableDate() != null)
@@ -405,4 +426,5 @@ public class VirtualMFADevice implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

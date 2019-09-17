@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about an Amazon VPC that is associated with a private hosted zone.
+ * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/VPC" target="_top">AWS API Documentation</a>
@@ -27,8 +27,7 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      */
     private String vPCRegion;
@@ -37,13 +36,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
@@ -53,12 +50,10 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
-     * @return The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *         hosted zone.
+     * @return (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
@@ -68,13 +63,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
@@ -86,35 +79,31 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @see VPCRegion
      */
 
     public void setVPCRegion(VPCRegion vPCRegion) {
-        this.vPCRegion = vPCRegion.toString();
+        withVPCRegion(vPCRegion);
     }
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region that an Amazon VPC was created in.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region that an Amazon VPC was created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
 
     public VPC withVPCRegion(VPCRegion vPCRegion) {
-        setVPCRegion(vPCRegion);
+        this.vPCRegion = vPCRegion.toString();
         return this;
     }
 
@@ -145,7 +134,8 @@ public class VPC implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -202,4 +192,5 @@ public class VPC implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

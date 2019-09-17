@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,20 +14,58 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies limits on the messages that a campaign can send.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CampaignLimits implements Serializable, Cloneable {
+public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
 
-    /** The maximum number of messages that the campaign can send daily. */
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The maximum
+     * value is 100.
+     * </p>
+     */
     private Integer daily;
-    /** The maximum total number of messages that the campaign can send. */
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled
+     * start time for the campaign. The minimum value is 60 seconds.
+     * </p>
+     */
+    private Integer maximumDuration;
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum value
+     * is 20,000.
+     * </p>
+     */
+    private Integer messagesPerSecond;
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign.
+     * The maximum value is 100.
+     * </p>
+     */
     private Integer total;
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The maximum
+     * value is 100.
+     * </p>
      * 
      * @param daily
-     *        The maximum number of messages that the campaign can send daily.
+     *        The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The
+     *        maximum value is 100.
      */
 
     public void setDaily(Integer daily) {
@@ -35,9 +73,13 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The maximum
+     * value is 100.
+     * </p>
      * 
-     * @return The maximum number of messages that the campaign can send daily.
+     * @return The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The
+     *         maximum value is 100.
      */
 
     public Integer getDaily() {
@@ -45,10 +87,14 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The maximum
+     * value is 100.
+     * </p>
      * 
      * @param daily
-     *        The maximum number of messages that the campaign can send daily.
+     *        The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. The
+     *        maximum value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,10 +104,106 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * <p>
+     * The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled
+     * start time for the campaign. The minimum value is 60 seconds.
+     * </p>
+     * 
+     * @param maximumDuration
+     *        The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the
+     *        scheduled start time for the campaign. The minimum value is 60 seconds.
+     */
+
+    public void setMaximumDuration(Integer maximumDuration) {
+        this.maximumDuration = maximumDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled
+     * start time for the campaign. The minimum value is 60 seconds.
+     * </p>
+     * 
+     * @return The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the
+     *         scheduled start time for the campaign. The minimum value is 60 seconds.
+     */
+
+    public Integer getMaximumDuration() {
+        return this.maximumDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled
+     * start time for the campaign. The minimum value is 60 seconds.
+     * </p>
+     * 
+     * @param maximumDuration
+     *        The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the
+     *        scheduled start time for the campaign. The minimum value is 60 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignLimits withMaximumDuration(Integer maximumDuration) {
+        setMaximumDuration(maximumDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum value
+     * is 20,000.
+     * </p>
+     * 
+     * @param messagesPerSecond
+     *        The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum
+     *        value is 20,000.
+     */
+
+    public void setMessagesPerSecond(Integer messagesPerSecond) {
+        this.messagesPerSecond = messagesPerSecond;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum value
+     * is 20,000.
+     * </p>
+     * 
+     * @return The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum
+     *         value is 20,000.
+     */
+
+    public Integer getMessagesPerSecond() {
+        return this.messagesPerSecond;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum value
+     * is 20,000.
+     * </p>
+     * 
+     * @param messagesPerSecond
+     *        The maximum number of messages that a campaign can send each second. The minimum value is 50. The maximum
+     *        value is 20,000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignLimits withMessagesPerSecond(Integer messagesPerSecond) {
+        setMessagesPerSecond(messagesPerSecond);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign.
+     * The maximum value is 100.
+     * </p>
      * 
      * @param total
-     *        The maximum total number of messages that the campaign can send.
+     *        The maximum number of messages that a campaign can send to a single endpoint during the course of the
+     *        campaign. The maximum value is 100.
      */
 
     public void setTotal(Integer total) {
@@ -69,9 +211,13 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign.
+     * The maximum value is 100.
+     * </p>
      * 
-     * @return The maximum total number of messages that the campaign can send.
+     * @return The maximum number of messages that a campaign can send to a single endpoint during the course of the
+     *         campaign. The maximum value is 100.
      */
 
     public Integer getTotal() {
@@ -79,10 +225,14 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * <p>
+     * The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign.
+     * The maximum value is 100.
+     * </p>
      * 
      * @param total
-     *        The maximum total number of messages that the campaign can send.
+     *        The maximum number of messages that a campaign can send to a single endpoint during the course of the
+     *        campaign. The maximum value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,7 +242,8 @@ public class CampaignLimits implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -104,6 +255,10 @@ public class CampaignLimits implements Serializable, Cloneable {
         sb.append("{");
         if (getDaily() != null)
             sb.append("Daily: ").append(getDaily()).append(",");
+        if (getMaximumDuration() != null)
+            sb.append("MaximumDuration: ").append(getMaximumDuration()).append(",");
+        if (getMessagesPerSecond() != null)
+            sb.append("MessagesPerSecond: ").append(getMessagesPerSecond()).append(",");
         if (getTotal() != null)
             sb.append("Total: ").append(getTotal());
         sb.append("}");
@@ -124,6 +279,14 @@ public class CampaignLimits implements Serializable, Cloneable {
             return false;
         if (other.getDaily() != null && other.getDaily().equals(this.getDaily()) == false)
             return false;
+        if (other.getMaximumDuration() == null ^ this.getMaximumDuration() == null)
+            return false;
+        if (other.getMaximumDuration() != null && other.getMaximumDuration().equals(this.getMaximumDuration()) == false)
+            return false;
+        if (other.getMessagesPerSecond() == null ^ this.getMessagesPerSecond() == null)
+            return false;
+        if (other.getMessagesPerSecond() != null && other.getMessagesPerSecond().equals(this.getMessagesPerSecond()) == false)
+            return false;
         if (other.getTotal() == null ^ this.getTotal() == null)
             return false;
         if (other.getTotal() != null && other.getTotal().equals(this.getTotal()) == false)
@@ -137,6 +300,8 @@ public class CampaignLimits implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDaily() == null) ? 0 : getDaily().hashCode());
+        hashCode = prime * hashCode + ((getMaximumDuration() == null) ? 0 : getMaximumDuration().hashCode());
+        hashCode = prime * hashCode + ((getMessagesPerSecond() == null) ? 0 : getMessagesPerSecond().hashCode());
         hashCode = prime * hashCode + ((getTotal() == null) ? 0 : getTotal().hashCode());
         return hashCode;
     }
@@ -148,5 +313,11 @@ public class CampaignLimits implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.CampaignLimitsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

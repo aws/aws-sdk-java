@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,18 +28,16 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.regions.Region;
-import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagement;
-import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClient;
+import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClientBuilder;
 import com.amazonaws.services.identitymanagement.model.CreateRoleRequest;
 import com.amazonaws.services.identitymanagement.model.EntityAlreadyExistsException;
 import com.amazonaws.services.identitymanagement.model.GetRoleRequest;
 import com.amazonaws.services.identitymanagement.model.MalformedPolicyDocumentException;
 import com.amazonaws.services.identitymanagement.model.PutRolePolicyRequest;
-import com.amazonaws.services.kinesisfirehose.AmazonKinesisFirehoseClient;
+import com.amazonaws.services.kinesisfirehose.AmazonKinesisFirehose;
+import com.amazonaws.services.kinesisfirehose.AmazonKinesisFirehoseClientBuilder;
 import com.amazonaws.services.kinesisfirehose.model.DeliveryStreamDescription;
 import com.amazonaws.services.kinesisfirehose.model.DescribeDeliveryStreamRequest;
 import com.amazonaws.services.kinesisfirehose.model.DescribeDeliveryStreamResult;
@@ -49,7 +47,8 @@ import com.amazonaws.services.kinesisfirehose.model.PutRecordBatchRequest;
 import com.amazonaws.services.kinesisfirehose.model.PutRecordBatchResult;
 import com.amazonaws.services.kinesisfirehose.model.PutRecordRequest;
 import com.amazonaws.services.kinesisfirehose.model.Record;
-import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.StringUtils;
 
@@ -59,7 +58,7 @@ import com.amazonaws.util.StringUtils;
  */
 public abstract class AbstractAmazonKinesisFirehoseDelivery {
     // S3 properties
-    protected static AmazonS3Client s3Client;
+    protected static AmazonS3 s3Client;
     protected static boolean createS3Bucket;
     protected static String s3BucketARN;
     protected static String s3BucketName;
@@ -67,7 +66,7 @@ public abstract class AbstractAmazonKinesisFirehoseDelivery {
     protected static String s3RegionName;
 
     // DeliveryStream properties
-    protected static AmazonKinesisFirehoseClient firehoseClient;
+    protected static AmazonKinesisFirehose firehoseClient;
     protected static String accountId;
     protected static String deliveryStreamName;
     protected static String firehoseRegion;
@@ -123,9 +122,9 @@ public abstract class AbstractAmazonKinesisFirehoseDelivery {
          * profile by reading from the credentials file located at
          * (~/.aws/credentials).
          */
-        AWSCredentials credentials = null;
+        ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException("Cannot load the credentials from the credential profiles file. "
                     + "Please make sure that your credentials file is at the correct "
@@ -133,17 +132,23 @@ public abstract class AbstractAmazonKinesisFirehoseDelivery {
         }
 
         // S3 client
-        s3Client = new AmazonS3Client(credentials);
-        Region s3Region = RegionUtils.getRegion(s3RegionName);
-        s3Client.setRegion(s3Region);
+        s3Client = AmazonS3ClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion(s3RegionName)
+            .build();
+
 
         // Firehose client
-        firehoseClient = new AmazonKinesisFirehoseClient(credentials);
-        firehoseClient.setRegion(RegionUtils.getRegion(firehoseRegion));
+        firehoseClient = AmazonKinesisFirehoseClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion(firehoseRegion)
+            .build();
 
         // IAM client
-        iamClient = new AmazonIdentityManagementClient(credentials);
-        iamClient.setRegion(RegionUtils.getRegion(iamRegion));
+        iamClient = AmazonIdentityManagementClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion(iamRegion)
+            .build();
     }
 
     /**

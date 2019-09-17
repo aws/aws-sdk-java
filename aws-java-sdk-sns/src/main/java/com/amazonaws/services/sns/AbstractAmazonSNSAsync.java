@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #addPermissionAsync(AddPermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(String topicArn, String label, java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames, com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
@@ -107,6 +108,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(String topicArn, String token, String authenticateOnUnsubscribe,
             com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
 
@@ -130,6 +132,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #confirmSubscriptionAsync(ConfirmSubscriptionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(String topicArn, String token,
             com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
 
@@ -191,6 +194,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #createTopicAsync(CreateTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(String name,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
 
@@ -252,6 +256,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #deleteTopicAsync(DeleteTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
 
@@ -328,6 +333,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #getSubscriptionAttributesAsync(GetSubscriptionAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(String subscriptionArn,
             com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
 
@@ -363,6 +369,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #getTopicAttributesAsync(GetTopicAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
 
@@ -426,6 +433,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listPlatformApplicationsAsync(ListPlatformApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
 
@@ -461,6 +469,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listSubscriptionsAsync(ListSubscriptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
 
@@ -483,6 +492,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listSubscriptionsAsync(ListSubscriptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
 
@@ -518,6 +528,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(String topicArn,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
 
@@ -540,10 +551,24 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(String topicArn, String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
 
         return listSubscriptionsByTopicAsync(new ListSubscriptionsByTopicRequest().withTopicArn(topicArn).withNextToken(nextToken), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -575,6 +600,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listTopicsAsync(ListTopicsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
 
         return listTopicsAsync(new ListTopicsRequest(), asyncHandler);
@@ -596,6 +622,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #listTopicsAsync(ListTopicsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(String nextToken,
             com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
 
@@ -644,6 +671,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(String topicArn, String message,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
@@ -666,6 +694,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #publishAsync(PublishRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(String topicArn, String message, String subject,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
@@ -701,6 +730,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #removePermissionAsync(RemovePermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(String topicArn, String label,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
@@ -779,6 +809,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(String subscriptionArn, String attributeName,
             String attributeValue, com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
 
@@ -816,6 +847,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(String topicArn, String attributeName, String attributeValue,
             com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
 
@@ -852,10 +884,24 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #subscribeAsync(SubscribeRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SubscribeResult> subscribeAsync(String topicArn, String protocol, String endpoint,
             com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
 
         return subscribeAsync(new SubscribeRequest().withTopicArn(topicArn).withProtocol(protocol).withEndpoint(endpoint), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -887,10 +933,24 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
      *
      * @see #unsubscribeAsync(UnsubscribeRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(String subscriptionArn,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 
         return unsubscribeAsync(new UnsubscribeRequest().withSubscriptionArn(subscriptionArn), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,63 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateFileSystemRequest Marshaller
+ * CreateFileSystemRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateFileSystemRequestMarshaller implements Marshaller<Request<CreateFileSystemRequest>, CreateFileSystemRequest> {
+@SdkInternalApi
+public class CreateFileSystemRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CREATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationToken").build();
+    private static final MarshallingInfo<String> PERFORMANCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformanceMode").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> THROUGHPUTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputMode").build();
+    private static final MarshallingInfo<Double> PROVISIONEDTHROUGHPUTINMIBPS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputInMibps").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateFileSystemRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateFileSystemRequestMarshaller instance = new CreateFileSystemRequestMarshaller();
+
+    public static CreateFileSystemRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateFileSystemRequest> marshall(CreateFileSystemRequest createFileSystemRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateFileSystemRequest createFileSystemRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createFileSystemRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateFileSystemRequest> request = new DefaultRequest<CreateFileSystemRequest>(createFileSystemRequest, "AmazonElasticFileSystem");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-02-01/file-systems";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createFileSystemRequest.getCreationToken() != null) {
-                jsonGenerator.writeFieldName("CreationToken").writeValue(createFileSystemRequest.getCreationToken());
-            }
-            if (createFileSystemRequest.getPerformanceMode() != null) {
-                jsonGenerator.writeFieldName("PerformanceMode").writeValue(createFileSystemRequest.getPerformanceMode());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createFileSystemRequest.getCreationToken(), CREATIONTOKEN_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getPerformanceMode(), PERFORMANCEMODE_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getThroughputMode(), THROUGHPUTMODE_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getProvisionedThroughputInMibps(), PROVISIONEDTHROUGHPUTINMIBPS_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

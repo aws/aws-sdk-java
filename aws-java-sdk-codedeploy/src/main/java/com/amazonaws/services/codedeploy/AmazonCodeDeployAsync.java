@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,74 +27,95 @@ import com.amazonaws.services.codedeploy.model.*;
  * <p>
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
- * <b>Overview</b>
+ * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
+ * instances running in your own facility, serverless AWS Lambda functions, or applications in an Amazon ECS service.
  * </p>
  * <p>
- * This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information about AWS CodeDeploy, see
- * the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated
+ * applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia
+ * files, and so on. AWS CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or
+ * Bitbucket repositories. You do not need to make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
- * <b>Using the APIs</b>
+ * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
+ * deployment, and handles the complexity of updating your applications, without many of the risks associated with
+ * error-prone manual deployments.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to work with the following:
+ * <b>AWS CodeDeploy Components</b>
+ * </p>
+ * <p>
+ * Use the information in this guide to help you work with the following AWS CodeDeploy components:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations of revisions,
- * deployment configurations, and deployment groups are being referenced during deployments.
- * </p>
- * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.
+ * <b>Application</b>: A name that uniquely identifies the application you want to deploy. AWS CodeDeploy uses this
+ * name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and
+ * deployment group are referenced during a deployment.
  * </p>
  * </li>
  * <li>
  * <p>
- * Deployment configurations are sets of deployment rules and success and failure conditions used by AWS CodeDeploy
- * during deployments.
- * </p>
- * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.
- * </p>
- * </li>
- * <li>
- * <p>
- * Deployment groups are groups of instances to which application revisions can be deployed.
- * </p>
- * <p>
- * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment groups.
+ * <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an
+ * Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of
+ * a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load
+ * balancer, and a listener to reroute production traffic to an updated containerized application. An EC2/On-premises
+ * deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or
+ * both. All deployment groups can specify optional trigger, alarm, and rollback settings.
  * </p>
  * </li>
  * <li>
  * <p>
- * Instances represent Amazon EC2 instances to which application revisions are deployed. Instances are identified by
- * their Amazon EC2 tags or Auto Scaling group names. Instances belong to deployment groups.
- * </p>
- * <p>
- * You can use the AWS CodeDeploy APIs to get and list instance.
+ * <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by AWS
+ * CodeDeploy during a deployment.
  * </p>
  * </li>
  * <li>
  * <p>
- * Deployments represent the process of deploying revisions to instances.
- * </p>
- * <p>
- * You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.
+ * <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application
+ * in an Amazon ECS service, or of installing content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories. These revisions contain
- * source content (such as source code, web pages, executable files, and deployment scripts) along with an application
- * specification (AppSpec) file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
- * want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets, an application revision is
- * uniquely identified by its Amazon S3 object key and its ETag, version, or both. For application revisions stored in
- * GitHub repositories, an application revision is uniquely identified by its repository name and commit ID. Application
- * revisions are deployed through deployment groups.
+ * <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that specifies the Lambda
+ * function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS
+ * deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where
+ * production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source
+ * content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are
+ * stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3
+ * object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * This guide also contains information to help you get details about the instances in your deployments, to make
+ * on-premises instances available for AWS CodeDeploy deployments, to get details about a Lambda function deployment,
+ * and to get details about Amazon ECS service deployments.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get, list, and register application revisions.
+ * <b>AWS CodeDeploy Information Resources</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">AWS CodeDeploy Developer Forum</a>
  * </p>
  * </li>
  * </ul>
@@ -141,11 +162,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more application revisions.
+     * Gets information about one or more application revisions. The maximum number of application revisions that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
-     *        Represents the input of a batch get application revisions operation.
+     *        Represents the input of a BatchGetApplicationRevisions operation.
      * @return A Java Future containing the result of the BatchGetApplicationRevisions operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.BatchGetApplicationRevisions
@@ -157,11 +179,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more application revisions.
+     * Gets information about one or more application revisions. The maximum number of application revisions that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
-     *        Represents the input of a batch get application revisions operation.
+     *        Represents the input of a BatchGetApplicationRevisions operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -178,11 +201,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Gets information about one or more applications. The maximum number of applications that can be returned is 25.
      * </p>
      * 
      * @param batchGetApplicationsRequest
-     *        Represents the input of a batch get applications operation.
+     *        Represents the input of a BatchGetApplications operation.
      * @return A Java Future containing the result of the BatchGetApplications operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetApplications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications"
@@ -192,11 +215,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more applications.
+     * Gets information about one or more applications. The maximum number of applications that can be returned is 25.
      * </p>
      * 
      * @param batchGetApplicationsRequest
-     *        Represents the input of a batch get applications operation.
+     *        Represents the input of a BatchGetApplications operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -230,7 +253,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
-     *        Represents the input of a batch get deployment groups operation.
+     *        Represents the input of a BatchGetDeploymentGroups operation.
      * @return A Java Future containing the result of the BatchGetDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeploymentGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
@@ -244,7 +267,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
-     *        Represents the input of a batch get deployment groups operation.
+     *        Represents the input of a BatchGetDeploymentGroups operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -258,27 +281,42 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Gets information about one or more instance that are part of a deployment group.
+     * This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises
+     * and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute
+     * platforms. The maximum number of instances that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
-     *        Represents the input of a batch get deployment instances operation.
+     *        Represents the input of a BatchGetDeploymentInstances operation.
      * @return A Java Future containing the result of the BatchGetDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeploymentInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest);
 
     /**
+     * <note>
      * <p>
-     * Gets information about one or more instance that are part of a deployment group.
+     * This method works, but is deprecated. Use <code>BatchGetDeploymentTargets</code> instead.
+     * </p>
+     * </note>
+     * <p>
+     * Returns an array of one or more instances associated with a deployment. This method works with EC2/On-premises
+     * and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code> works with all compute
+     * platforms. The maximum number of instances that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
-     *        Represents the input of a batch get deployment instances operation.
+     *        Represents the input of a BatchGetDeploymentInstances operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -288,17 +326,95 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest batchGetDeploymentInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler);
 
     /**
      * <p>
-     * Gets information about one or more deployments.
+     * Returns an array of one or more targets associated with a deployment. This method works with all compute types
+     * and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of
+     * targets that can be returned is 25.
+     * </p>
+     * <p>
+     * The type of targets returned depends on the deployment's compute platform:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>EC2/On-premises</b>: Information about EC2 instance targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS Lambda</b>: Information about Lambda functions targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon ECS</b>: Information about Amazon ECS service targets.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchGetDeploymentTargetsRequest
+     * @return A Java Future containing the result of the BatchGetDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(
+            BatchGetDeploymentTargetsRequest batchGetDeploymentTargetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of one or more targets associated with a deployment. This method works with all compute types
+     * and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of
+     * targets that can be returned is 25.
+     * </p>
+     * <p>
+     * The type of targets returned depends on the deployment's compute platform:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>EC2/On-premises</b>: Information about EC2 instance targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS Lambda</b>: Information about Lambda functions targets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon ECS</b>: Information about Amazon ECS service targets.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param batchGetDeploymentTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(
+            BatchGetDeploymentTargetsRequest batchGetDeploymentTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentTargetsRequest, BatchGetDeploymentTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentsRequest
-     *        Represents the input of a batch get deployments operation.
+     *        Represents the input of a BatchGetDeployments operation.
      * @return A Java Future containing the result of the BatchGetDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetDeployments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments" target="_top">AWS
@@ -308,11 +424,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more deployments.
+     * Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.
      * </p>
      * 
      * @param batchGetDeploymentsRequest
-     *        Represents the input of a batch get deployments operation.
+     *        Represents the input of a BatchGetDeployments operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -342,11 +458,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more on-premises instances.
+     * Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
-     *        Represents the input of a batch get on-premises instances operation.
+     *        Represents the input of a BatchGetOnPremisesInstances operation.
      * @return A Java Future containing the result of the BatchGetOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.BatchGetOnPremisesInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances"
@@ -357,11 +474,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more on-premises instances.
+     * Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be
+     * returned is 25.
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
-     *        Represents the input of a batch get on-premises instances operation.
+     *        Represents the input of a BatchGetOnPremisesInstances operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -392,11 +510,48 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment
+     * to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic
+     * rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can
+     * start as soon as all instances have a status of Ready.)
+     * </p>
+     * 
+     * @param continueDeploymentRequest
+     * @return A Java Future containing the result of the ContinueDeployment operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ContinueDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest continueDeploymentRequest);
+
+    /**
+     * <p>
+     * For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment
+     * to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic
+     * rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can
+     * start as soon as all instances have a status of Ready.)
+     * </p>
+     * 
+     * @param continueDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ContinueDeployment operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ContinueDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest continueDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<ContinueDeploymentRequest, ContinueDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an application.
      * </p>
      * 
      * @param createApplicationRequest
-     *        Represents the input of a create application operation.
+     *        Represents the input of a CreateApplication operation.
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
@@ -410,7 +565,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param createApplicationRequest
-     *        Represents the input of a create application operation.
+     *        Represents the input of a CreateApplication operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -429,7 +584,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Represents the input of a create deployment operation.
+     *        Represents the input of a CreateDeployment operation.
      * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
@@ -443,7 +598,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Represents the input of a create deployment operation.
+     *        Represents the input of a CreateDeployment operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -462,7 +617,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param createDeploymentConfigRequest
-     *        Represents the input of a create deployment configuration operation.
+     *        Represents the input of a CreateDeploymentConfig operation.
      * @return A Java Future containing the result of the CreateDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
@@ -476,7 +631,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param createDeploymentConfigRequest
-     *        Represents the input of a create deployment configuration operation.
+     *        Represents the input of a CreateDeploymentConfig operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -491,11 +646,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a deployment group to which application revisions will be deployed.
+     * Creates a deployment group to which application revisions are deployed.
      * </p>
      * 
      * @param createDeploymentGroupRequest
-     *        Represents the input of a create deployment group operation.
+     *        Represents the input of a CreateDeploymentGroup operation.
      * @return A Java Future containing the result of the CreateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
@@ -505,11 +660,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a deployment group to which application revisions will be deployed.
+     * Creates a deployment group to which application revisions are deployed.
      * </p>
      * 
      * @param createDeploymentGroupRequest
-     *        Represents the input of a create deployment group operation.
+     *        Represents the input of a CreateDeploymentGroup operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -528,7 +683,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param deleteApplicationRequest
-     *        Represents the input of a delete application operation.
+     *        Represents the input of a DeleteApplication operation.
      * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication" target="_top">AWS
@@ -542,7 +697,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param deleteApplicationRequest
-     *        Represents the input of a delete application operation.
+     *        Represents the input of a DeleteApplication operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -567,7 +722,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </note>
      * 
      * @param deleteDeploymentConfigRequest
-     *        Represents the input of a delete deployment configuration operation.
+     *        Represents the input of a DeleteDeploymentConfig operation.
      * @return A Java Future containing the result of the DeleteDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig"
@@ -587,7 +742,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </note>
      * 
      * @param deleteDeploymentConfigRequest
-     *        Represents the input of a delete deployment configuration operation.
+     *        Represents the input of a DeleteDeploymentConfig operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -606,7 +761,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param deleteDeploymentGroupRequest
-     *        Represents the input of a delete deployment group operation.
+     *        Represents the input of a DeleteDeploymentGroup operation.
      * @return A Java Future containing the result of the DeleteDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.DeleteDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup"
@@ -620,7 +775,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param deleteDeploymentGroupRequest
-     *        Represents the input of a delete deployment group operation.
+     *        Represents the input of a DeleteDeploymentGroup operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -635,11 +790,44 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @return A Java Future containing the result of the DeleteGitHubAccountToken operation returned by the service.
+     * @sample AmazonCodeDeployAsync.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest);
+
+    /**
+     * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGitHubAccountToken operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult> asyncHandler);
+
+    /**
+     * <p>
      * Deregisters an on-premises instance.
      * </p>
      * 
      * @param deregisterOnPremisesInstanceRequest
-     *        Represents the input of a deregister on-premises instance operation.
+     *        Represents the input of a DeregisterOnPremisesInstance operation.
      * @return A Java Future containing the result of the DeregisterOnPremisesInstance operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.DeregisterOnPremisesInstance
@@ -655,7 +843,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param deregisterOnPremisesInstanceRequest
-     *        Represents the input of a deregister on-premises instance operation.
+     *        Represents the input of a DeregisterOnPremisesInstance operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -676,7 +864,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getApplicationRequest
-     *        Represents the input of a get application operation.
+     *        Represents the input of a GetApplication operation.
      * @return A Java Future containing the result of the GetApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication" target="_top">AWS API
@@ -690,7 +878,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getApplicationRequest
-     *        Represents the input of a get application operation.
+     *        Represents the input of a GetApplication operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -709,7 +897,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getApplicationRevisionRequest
-     *        Represents the input of a get application revision operation.
+     *        Represents the input of a GetApplicationRevision operation.
      * @return A Java Future containing the result of the GetApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetApplicationRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision"
@@ -723,7 +911,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getApplicationRevisionRequest
-     *        Represents the input of a get application revision operation.
+     *        Represents the input of a GetApplicationRevision operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -740,9 +928,16 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Gets information about a deployment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always
+     * null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned
+     * <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file.
+     * </p>
+     * </note>
      * 
      * @param getDeploymentRequest
-     *        Represents the input of a get deployment operation.
+     *        Represents the input of a GetDeployment operation.
      * @return A Java Future containing the result of the GetDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment" target="_top">AWS API
@@ -754,9 +949,16 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * <p>
      * Gets information about a deployment.
      * </p>
+     * <note>
+     * <p>
+     * The <code>content</code> property of the <code>appSpecContent</code> object in the returned revision is always
+     * null. Use <code>GetApplicationRevision</code> and the <code>sha256</code> property of the returned
+     * <code>appSpecContent</code> object to get the content of the deployment’s AppSpec file.
+     * </p>
+     * </note>
      * 
      * @param getDeploymentRequest
-     *        Represents the input of a get deployment operation.
+     *        Represents the input of a GetDeployment operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -775,7 +977,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentConfigRequest
-     *        Represents the input of a get deployment configuration operation.
+     *        Represents the input of a GetDeploymentConfig operation.
      * @return A Java Future containing the result of the GetDeploymentConfig operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig" target="_top">AWS
@@ -789,7 +991,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentConfigRequest
-     *        Represents the input of a get deployment configuration operation.
+     *        Represents the input of a GetDeploymentConfig operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -808,7 +1010,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentGroupRequest
-     *        Represents the input of a get deployment group operation.
+     *        Represents the input of a GetDeploymentGroup operation.
      * @return A Java Future containing the result of the GetDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup" target="_top">AWS
@@ -822,7 +1024,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentGroupRequest
-     *        Represents the input of a get deployment group operation.
+     *        Represents the input of a GetDeploymentGroup operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -841,12 +1043,13 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentInstanceRequest
-     *        Represents the input of a get deployment instance operation.
+     *        Represents the input of a GetDeploymentInstance operation.
      * @return A Java Future containing the result of the GetDeploymentInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetDeploymentInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest);
 
     /**
@@ -855,7 +1058,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getDeploymentInstanceRequest
-     *        Represents the input of a get deployment instance operation.
+     *        Represents the input of a GetDeploymentInstance operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -865,8 +1068,40 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest getDeploymentInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a deployment target.
+     * </p>
+     * 
+     * @param getDeploymentTargetRequest
+     * @return A Java Future containing the result of the GetDeploymentTarget operation returned by the service.
+     * @sample AmazonCodeDeployAsync.GetDeploymentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest getDeploymentTargetRequest);
+
+    /**
+     * <p>
+     * Returns information about a deployment target.
+     * </p>
+     * 
+     * @param getDeploymentTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeploymentTarget operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.GetDeploymentTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest getDeploymentTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentTargetRequest, GetDeploymentTargetResult> asyncHandler);
 
     /**
      * <p>
@@ -874,7 +1109,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getOnPremisesInstanceRequest
-     *        Represents the input of a get on-premises instance operation.
+     *        Represents the input of a GetOnPremisesInstance operation.
      * @return A Java Future containing the result of the GetOnPremisesInstance operation returned by the service.
      * @sample AmazonCodeDeployAsync.GetOnPremisesInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance"
@@ -888,7 +1123,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param getOnPremisesInstanceRequest
-     *        Represents the input of a get on-premises instance operation.
+     *        Represents the input of a GetOnPremisesInstance operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -907,7 +1142,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param listApplicationRevisionsRequest
-     *        Represents the input of a list application revisions operation.
+     *        Represents the input of a ListApplicationRevisions operation.
      * @return A Java Future containing the result of the ListApplicationRevisions operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListApplicationRevisions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"
@@ -921,7 +1156,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param listApplicationRevisionsRequest
-     *        Represents the input of a list application revisions operation.
+     *        Represents the input of a ListApplicationRevisions operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -936,11 +1171,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the applications registered with the applicable IAM user or AWS account.
+     * Lists the applications registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listApplicationsRequest
-     *        Represents the input of a list applications operation.
+     *        Represents the input of a ListApplications operation.
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListApplications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications" target="_top">AWS
@@ -950,11 +1185,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the applications registered with the applicable IAM user or AWS account.
+     * Lists the applications registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listApplicationsRequest
-     *        Represents the input of a list applications operation.
+     *        Represents the input of a ListApplications operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -984,11 +1219,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment configurations with the applicable IAM user or AWS account.
+     * Lists the deployment configurations with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentConfigsRequest
-     *        Represents the input of a list deployment configurations operation.
+     *        Represents the input of a ListDeploymentConfigs operation.
      * @return A Java Future containing the result of the ListDeploymentConfigs operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs"
@@ -998,11 +1233,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment configurations with the applicable IAM user or AWS account.
+     * Lists the deployment configurations with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentConfigsRequest
-     *        Represents the input of a list deployment configurations operation.
+     *        Represents the input of a ListDeploymentConfigs operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1032,11 +1267,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment groups for an application registered with the applicable IAM user or AWS account.
+     * Lists the deployment groups for an application registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentGroupsRequest
-     *        Represents the input of a list deployment groups operation.
+     *        Represents the input of a ListDeploymentGroups operation.
      * @return A Java Future containing the result of the ListDeploymentGroups operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups"
@@ -1046,11 +1281,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment groups for an application registered with the applicable IAM user or AWS account.
+     * Lists the deployment groups for an application registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentGroupsRequest
-     *        Represents the input of a list deployment groups operation.
+     *        Represents the input of a ListDeploymentGroups operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1064,26 +1299,41 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
             com.amazonaws.handlers.AsyncHandler<ListDeploymentGroupsRequest, ListDeploymentGroupsResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Lists the instance for a deployment associated with the applicable IAM user or AWS account.
+     * The newer BatchGetDeploymentTargets should be used instead because it works with all compute types.
+     * <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
+     * EC2/On-premises or AWS Lambda.
+     * </p>
+     * </note>
+     * <p>
+     * Lists the instance for a deployment associated with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentInstancesRequest
-     *        Represents the input of a list deployment instances operation.
+     *        Represents the input of a ListDeploymentInstances operation.
      * @return A Java Future containing the result of the ListDeploymentInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeploymentInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest);
 
     /**
+     * <note>
      * <p>
-     * Lists the instance for a deployment associated with the applicable IAM user or AWS account.
+     * The newer BatchGetDeploymentTargets should be used instead because it works with all compute types.
+     * <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
+     * EC2/On-premises or AWS Lambda.
+     * </p>
+     * </note>
+     * <p>
+     * Lists the instance for a deployment associated with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentInstancesRequest
-     *        Represents the input of a list deployment instances operation.
+     *        Represents the input of a ListDeploymentInstances operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1093,17 +1343,48 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest listDeploymentInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler);
 
     /**
      * <p>
-     * Lists the deployments in a deployment group for an application registered with the applicable IAM user or AWS
-     * account.
+     * Returns an array of target IDs that are associated a deployment.
+     * </p>
+     * 
+     * @param listDeploymentTargetsRequest
+     * @return A Java Future containing the result of the ListDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest listDeploymentTargetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of target IDs that are associated a deployment.
+     * </p>
+     * 
+     * @param listDeploymentTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeploymentTargets operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest listDeploymentTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentTargetsRequest, ListDeploymentTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the deployments in a deployment group for an application registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentsRequest
-     *        Represents the input of a list deployments operation.
+     *        Represents the input of a ListDeployments operation.
      * @return A Java Future containing the result of the ListDeployments operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListDeployments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
@@ -1113,12 +1394,11 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments in a deployment group for an application registered with the applicable IAM user or AWS
-     * account.
+     * Lists the deployments in a deployment group for an application registered with the IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentsRequest
-     *        Represents the input of a list deployments operation.
+     *        Represents the input of a ListDeployments operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1148,15 +1428,50 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Lists the names of stored connections to GitHub accounts.
+     * </p>
+     * 
+     * @param listGitHubAccountTokenNamesRequest
+     *        Represents the input of a ListGitHubAccountTokenNames operation.
+     * @return A Java Future containing the result of the ListGitHubAccountTokenNames operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListGitHubAccountTokenNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(
+            ListGitHubAccountTokenNamesRequest listGitHubAccountTokenNamesRequest);
+
+    /**
+     * <p>
+     * Lists the names of stored connections to GitHub accounts.
+     * </p>
+     * 
+     * @param listGitHubAccountTokenNamesRequest
+     *        Represents the input of a ListGitHubAccountTokenNames operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGitHubAccountTokenNames operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListGitHubAccountTokenNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(
+            ListGitHubAccountTokenNamesRequest listGitHubAccountTokenNamesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGitHubAccountTokenNamesRequest, ListGitHubAccountTokenNamesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
-     * Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list
-     * only registered or deregistered on-premises instance names, use the registration status parameter.
+     * Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only
+     * registered or deregistered on-premises instance names, use the registration status parameter.
      * </p>
      * 
      * @param listOnPremisesInstancesRequest
-     *        Represents the input of a list on-premises instances operation.
+     *        Represents the input of a ListOnPremisesInstances operation.
      * @return A Java Future containing the result of the ListOnPremisesInstances operation returned by the service.
      * @sample AmazonCodeDeployAsync.ListOnPremisesInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances"
@@ -1169,12 +1484,12 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
-     * Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list
-     * only registered or deregistered on-premises instance names, use the registration status parameter.
+     * Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only
+     * registered or deregistered on-premises instance names, use the registration status parameter.
      * </p>
      * 
      * @param listOnPremisesInstancesRequest
-     *        Represents the input of a list on-premises instances operation.
+     *        Represents the input of a ListOnPremisesInstances operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1204,11 +1519,83 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize
+     * your CodeDeploy resources.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags for the resource identified by a specified ARN. Tags are used to organize and categorize
+     * your CodeDeploy resources.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @return A Java Future containing the result of the PutLifecycleEventHookExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsync.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest);
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLifecycleEventHookExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsyncHandler.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLifecycleEventHookExecutionStatusRequest, PutLifecycleEventHookExecutionStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers with AWS CodeDeploy a revision for the specified application.
      * </p>
      * 
      * @param registerApplicationRevisionRequest
-     *        Represents the input of a register application revision operation.
+     *        Represents the input of a RegisterApplicationRevision operation.
      * @return A Java Future containing the result of the RegisterApplicationRevision operation returned by the service.
      * @sample AmazonCodeDeployAsync.RegisterApplicationRevision
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision"
@@ -1223,7 +1610,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param registerApplicationRevisionRequest
-     *        Represents the input of a register application revision operation.
+     *        Represents the input of a RegisterApplicationRevision operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1288,7 +1675,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param removeTagsFromOnPremisesInstancesRequest
-     *        Represents the input of a remove tags from on-premises instances operation.
+     *        Represents the input of a RemoveTagsFromOnPremisesInstances operation.
      * @return A Java Future containing the result of the RemoveTagsFromOnPremisesInstances operation returned by the
      *         service.
      * @sample AmazonCodeDeployAsync.RemoveTagsFromOnPremisesInstances
@@ -1304,7 +1691,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param removeTagsFromOnPremisesInstancesRequest
-     *        Represents the input of a remove tags from on-premises instances operation.
+     *        Represents the input of a RemoveTagsFromOnPremisesInstances operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1321,11 +1708,50 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after
+     * the traffic routing is complete.
+     * </p>
+     * 
+     * @param skipWaitTimeForInstanceTerminationRequest
+     * @return A Java Future containing the result of the SkipWaitTimeForInstanceTermination operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsync.SkipWaitTimeForInstanceTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Deprecated
+    java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest);
+
+    /**
+     * <p>
+     * In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after
+     * the traffic routing is complete.
+     * </p>
+     * 
+     * @param skipWaitTimeForInstanceTerminationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SkipWaitTimeForInstanceTermination operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsyncHandler.SkipWaitTimeForInstanceTermination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Deprecated
+    java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest skipWaitTimeForInstanceTerminationRequest,
+            com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler);
+
+    /**
+     * <p>
      * Attempts to stop an ongoing deployment.
      * </p>
      * 
      * @param stopDeploymentRequest
-     *        Represents the input of a stop deployment operation.
+     *        Represents the input of a StopDeployment operation.
      * @return A Java Future containing the result of the StopDeployment operation returned by the service.
      * @sample AmazonCodeDeployAsync.StopDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment" target="_top">AWS API
@@ -1339,7 +1765,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param stopDeploymentRequest
-     *        Represents the input of a stop deployment operation.
+     *        Represents the input of a StopDeployment operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1354,11 +1780,77 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
+     * Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the
+     * <code>ResourceArn</code> input parameter.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the list of tags in the input <code>Tags</code> parameter with the resource identified by the
+     * <code>ResourceArn</code> input parameter.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input
+     * parameter. The tags are identfied by the list of keys in the <code>TagKeys</code> input parameter.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input
+     * parameter. The tags are identfied by the list of keys in the <code>TagKeys</code> input parameter.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the name of an application.
      * </p>
      * 
      * @param updateApplicationRequest
-     *        Represents the input of an update application operation.
+     *        Represents the input of an UpdateApplication operation.
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
      * @sample AmazonCodeDeployAsync.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication" target="_top">AWS
@@ -1372,7 +1864,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param updateApplicationRequest
-     *        Represents the input of an update application operation.
+     *        Represents the input of an UpdateApplication operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1406,7 +1898,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param updateDeploymentGroupRequest
-     *        Represents the input of an update deployment group operation.
+     *        Represents the input of an UpdateDeploymentGroup operation.
      * @return A Java Future containing the result of the UpdateDeploymentGroup operation returned by the service.
      * @sample AmazonCodeDeployAsync.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
@@ -1420,7 +1912,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param updateDeploymentGroupRequest
-     *        Represents the input of an update deployment group operation.
+     *        Represents the input of an UpdateDeploymentGroup operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

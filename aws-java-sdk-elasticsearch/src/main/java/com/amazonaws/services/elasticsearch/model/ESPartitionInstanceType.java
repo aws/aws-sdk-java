@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,22 @@ public enum ESPartitionInstanceType {
     M42xlargeElasticsearch("m4.2xlarge.elasticsearch"),
     M44xlargeElasticsearch("m4.4xlarge.elasticsearch"),
     M410xlargeElasticsearch("m4.10xlarge.elasticsearch"),
+    M5LargeElasticsearch("m5.large.elasticsearch"),
+    M5XlargeElasticsearch("m5.xlarge.elasticsearch"),
+    M52xlargeElasticsearch("m5.2xlarge.elasticsearch"),
+    M54xlargeElasticsearch("m5.4xlarge.elasticsearch"),
+    M512xlargeElasticsearch("m5.12xlarge.elasticsearch"),
+    R5LargeElasticsearch("r5.large.elasticsearch"),
+    R5XlargeElasticsearch("r5.xlarge.elasticsearch"),
+    R52xlargeElasticsearch("r5.2xlarge.elasticsearch"),
+    R54xlargeElasticsearch("r5.4xlarge.elasticsearch"),
+    R512xlargeElasticsearch("r5.12xlarge.elasticsearch"),
+    C5LargeElasticsearch("c5.large.elasticsearch"),
+    C5XlargeElasticsearch("c5.xlarge.elasticsearch"),
+    C52xlargeElasticsearch("c5.2xlarge.elasticsearch"),
+    C54xlargeElasticsearch("c5.4xlarge.elasticsearch"),
+    C59xlargeElasticsearch("c5.9xlarge.elasticsearch"),
+    C518xlargeElasticsearch("c5.18xlarge.elasticsearch"),
     T2MicroElasticsearch("t2.micro.elasticsearch"),
     T2SmallElasticsearch("t2.small.elasticsearch"),
     T2MediumElasticsearch("t2.medium.elasticsearch"),
@@ -38,7 +54,28 @@ public enum ESPartitionInstanceType {
     R34xlargeElasticsearch("r3.4xlarge.elasticsearch"),
     R38xlargeElasticsearch("r3.8xlarge.elasticsearch"),
     I2XlargeElasticsearch("i2.xlarge.elasticsearch"),
-    I22xlargeElasticsearch("i2.2xlarge.elasticsearch");
+    I22xlargeElasticsearch("i2.2xlarge.elasticsearch"),
+    D2XlargeElasticsearch("d2.xlarge.elasticsearch"),
+    D22xlargeElasticsearch("d2.2xlarge.elasticsearch"),
+    D24xlargeElasticsearch("d2.4xlarge.elasticsearch"),
+    D28xlargeElasticsearch("d2.8xlarge.elasticsearch"),
+    C4LargeElasticsearch("c4.large.elasticsearch"),
+    C4XlargeElasticsearch("c4.xlarge.elasticsearch"),
+    C42xlargeElasticsearch("c4.2xlarge.elasticsearch"),
+    C44xlargeElasticsearch("c4.4xlarge.elasticsearch"),
+    C48xlargeElasticsearch("c4.8xlarge.elasticsearch"),
+    R4LargeElasticsearch("r4.large.elasticsearch"),
+    R4XlargeElasticsearch("r4.xlarge.elasticsearch"),
+    R42xlargeElasticsearch("r4.2xlarge.elasticsearch"),
+    R44xlargeElasticsearch("r4.4xlarge.elasticsearch"),
+    R48xlargeElasticsearch("r4.8xlarge.elasticsearch"),
+    R416xlargeElasticsearch("r4.16xlarge.elasticsearch"),
+    I3LargeElasticsearch("i3.large.elasticsearch"),
+    I3XlargeElasticsearch("i3.xlarge.elasticsearch"),
+    I32xlargeElasticsearch("i3.2xlarge.elasticsearch"),
+    I34xlargeElasticsearch("i3.4xlarge.elasticsearch"),
+    I38xlargeElasticsearch("i3.8xlarge.elasticsearch"),
+    I316xlargeElasticsearch("i3.16xlarge.elasticsearch");
 
     private String value;
 
@@ -57,6 +94,9 @@ public enum ESPartitionInstanceType {
      * @param value
      *        real value
      * @return ESPartitionInstanceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ESPartitionInstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {

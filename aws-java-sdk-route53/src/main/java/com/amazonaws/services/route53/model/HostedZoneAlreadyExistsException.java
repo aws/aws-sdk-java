@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The hosted zone you are trying to create already exists. Amazon Route 53 returns this error when a hosted zone has
+ * The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted zone has
  * already been created with the specified <code>CallerReference</code>.
  * </p>
  */

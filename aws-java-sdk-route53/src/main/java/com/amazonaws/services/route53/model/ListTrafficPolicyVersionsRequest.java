@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,28 +36,25 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
     private String id;
     /**
      * <p>
-     * For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     * For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      * <code>TrafficPolicyVersionMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policy versions than the value of <code>MaxItems</code>,
-     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get the
-     * next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     * <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify the
-     * value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous response.
-     * </p>
-     * <p>
-     * Traffic policy versions are listed in sequential order.
+     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get
+     * more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of
+     * <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the
+     * previous response.
      * </p>
      */
     private String trafficPolicyVersionMarker;
     /**
      * <p>
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
-     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of the
-     * <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     * <code>MaxItems</code> traffic policy versions.
+     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
+     * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      */
     private String maxItems;
@@ -104,33 +101,26 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     * For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      * <code>TrafficPolicyVersionMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policy versions than the value of <code>MaxItems</code>,
-     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get the
-     * next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     * <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify the
-     * value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous response.
-     * </p>
-     * <p>
-     * Traffic policy versions are listed in sequential order.
+     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get
+     * more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of
+     * <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the
+     * previous response.
      * </p>
      * 
      * @param trafficPolicyVersionMarker
-     *        For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     *        For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      *        <code>TrafficPolicyVersionMarker</code> parameter.</p>
      *        <p>
      *        If you have more traffic policy versions than the value of <code>MaxItems</code>,
      *        <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To
-     *        get the next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     *        <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify
-     *        the value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous
-     *        response.
-     *        </p>
-     *        <p>
-     *        Traffic policy versions are listed in sequential order.
+     *        get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the
+     *        value of <code>TrafficPolicyVersionMarker</code>, specify the value of
+     *        <code>TrafficPolicyVersionMarker</code> in the previous response.
      */
 
     public void setTrafficPolicyVersionMarker(String trafficPolicyVersionMarker) {
@@ -139,32 +129,25 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     * For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      * <code>TrafficPolicyVersionMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policy versions than the value of <code>MaxItems</code>,
-     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get the
-     * next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     * <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify the
-     * value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous response.
-     * </p>
-     * <p>
-     * Traffic policy versions are listed in sequential order.
+     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get
+     * more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of
+     * <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the
+     * previous response.
      * </p>
      * 
-     * @return For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     * @return For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      *         <code>TrafficPolicyVersionMarker</code> parameter.</p>
      *         <p>
      *         If you have more traffic policy versions than the value of <code>MaxItems</code>,
      *         <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To
-     *         get the next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     *         <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify
-     *         the value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous
-     *         response.
-     *         </p>
-     *         <p>
-     *         Traffic policy versions are listed in sequential order.
+     *         get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the
+     *         value of <code>TrafficPolicyVersionMarker</code>, specify the value of
+     *         <code>TrafficPolicyVersionMarker</code> in the previous response.
      */
 
     public String getTrafficPolicyVersionMarker() {
@@ -173,33 +156,26 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     * For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      * <code>TrafficPolicyVersionMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policy versions than the value of <code>MaxItems</code>,
-     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get the
-     * next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     * <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify the
-     * value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous response.
-     * </p>
-     * <p>
-     * Traffic policy versions are listed in sequential order.
+     * <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get
+     * more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of
+     * <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the
+     * previous response.
      * </p>
      * 
      * @param trafficPolicyVersionMarker
-     *        For your first request to <code>ListTrafficPolicyVersions</code>, do not include the
+     *        For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
      *        <code>TrafficPolicyVersionMarker</code> parameter.</p>
      *        <p>
      *        If you have more traffic policy versions than the value of <code>MaxItems</code>,
      *        <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To
-     *        get the next group of <code>MaxItems</code> traffic policy versions, submit another request to
-     *        <code>ListTrafficPolicyVersions</code>. For the value of <code>TrafficPolicyVersionMarker</code>, specify
-     *        the value of the <code>TrafficPolicyVersionMarker</code> element that was returned in the previous
-     *        response.
-     *        </p>
-     *        <p>
-     *        Traffic policy versions are listed in sequential order.
+     *        get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the
+     *        value of <code>TrafficPolicyVersionMarker</code>, specify the value of
+     *        <code>TrafficPolicyVersionMarker</code> in the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,18 +187,18 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
-     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of the
-     * <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     * <code>MaxItems</code> traffic policy versions.
+     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
+     * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *        body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
-     *        value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     *        <code>MaxItems</code> traffic policy versions.
+     *        value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *        if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -232,17 +208,17 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
-     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of the
-     * <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     * <code>MaxItems</code> traffic policy versions.
+     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
+     * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @return The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *         body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
-     *         value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     *         <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     *         <code>MaxItems</code> traffic policy versions.
+     *         value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     *         <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *         if you submit another request.
      */
 
     public String getMaxItems() {
@@ -252,18 +228,18 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for
-     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of the
-     * <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     * <code>MaxItems</code> traffic policy versions.
+     * this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the value of
+     * <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     * <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you
+     * submit another request.
      * </p>
      * 
      * @param maxItems
      *        The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response
      *        body for this request. If the specified traffic policy has more than <code>MaxItems</code> versions, the
-     *        value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the value of the
-     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version in the next group of
-     *        <code>MaxItems</code> traffic policy versions.
+     *        value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of the
+     *        <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return
+     *        if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +249,8 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

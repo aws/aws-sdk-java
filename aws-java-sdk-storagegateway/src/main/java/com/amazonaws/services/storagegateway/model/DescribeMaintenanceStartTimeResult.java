@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,11 @@ import javax.annotation.Generated;
  * A JSON object containing the following fields:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a>
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a>
@@ -70,7 +75,24 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer dayOfWeek;
-
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     */
+    private Integer dayOfMonth;
+    /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     */
     private String timezone;
 
     /**
@@ -238,7 +260,84 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @param dayOfMonth
+     *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *        <p>
+     *        This value is only available for tape and volume gateways.
+     *        </p>
+     */
+
+    public void setDayOfMonth(Integer dayOfMonth) {
+        this.dayOfMonth = dayOfMonth;
+    }
+
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @return The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *         28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *         <p>
+     *         This value is only available for tape and volume gateways.
+     *         </p>
+     */
+
+    public Integer getDayOfMonth() {
+        return this.dayOfMonth;
+    }
+
+    /**
+     * <p>
+     * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
+     * 1 represents the first day of the month and 28 represents the last day of the month.
+     * </p>
+     * <note>
+     * <p>
+     * This value is only available for tape and volume gateways.
+     * </p>
+     * </note>
+     * 
+     * @param dayOfMonth
+     *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
+     *        <p>
+     *        This value is only available for tape and volume gateways.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMaintenanceStartTimeResult withDayOfMonth(Integer dayOfMonth) {
+        setDayOfMonth(dayOfMonth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone that is set for the gateway. The start time and day of week specified
+     *        should be in the time zone of the gateway.
      */
 
     public void setTimezone(String timezone) {
@@ -246,7 +345,13 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
+     * @return A value that indicates the time zone that is set for the gateway. The start time and day of week
+     *         specified should be in the time zone of the gateway.
      */
 
     public String getTimezone() {
@@ -254,7 +359,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone that is set for the gateway. The start time and day of week specified
+     *        should be in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +376,8 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -282,6 +395,8 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
             sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
             sb.append("DayOfWeek: ").append(getDayOfWeek()).append(",");
+        if (getDayOfMonth() != null)
+            sb.append("DayOfMonth: ").append(getDayOfMonth()).append(",");
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
@@ -314,6 +429,10 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDayOfWeek() != null && other.getDayOfWeek().equals(this.getDayOfWeek()) == false)
             return false;
+        if (other.getDayOfMonth() == null ^ this.getDayOfMonth() == null)
+            return false;
+        if (other.getDayOfMonth() != null && other.getDayOfMonth().equals(this.getDayOfMonth()) == false)
+            return false;
         if (other.getTimezone() == null ^ this.getTimezone() == null)
             return false;
         if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
@@ -330,6 +449,7 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getHourOfDay() == null) ? 0 : getHourOfDay().hashCode());
         hashCode = prime * hashCode + ((getMinuteOfHour() == null) ? 0 : getMinuteOfHour().hashCode());
         hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
+        hashCode = prime * hashCode + ((getDayOfMonth() == null) ? 0 : getDayOfMonth().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
@@ -342,4 +462,5 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

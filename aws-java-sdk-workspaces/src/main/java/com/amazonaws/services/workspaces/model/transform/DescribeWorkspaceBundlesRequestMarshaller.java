@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,80 +12,51 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkspaceBundlesRequest Marshaller
+ * DescribeWorkspaceBundlesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkspaceBundlesRequestMarshaller implements Marshaller<Request<DescribeWorkspaceBundlesRequest>, DescribeWorkspaceBundlesRequest> {
+@SdkInternalApi
+public class DescribeWorkspaceBundlesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> BUNDLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BundleIds").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeWorkspaceBundlesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeWorkspaceBundlesRequestMarshaller instance = new DescribeWorkspaceBundlesRequestMarshaller();
+
+    public static DescribeWorkspaceBundlesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeWorkspaceBundlesRequest> marshall(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeWorkspaceBundlesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkspaceBundlesRequest> request = new DefaultRequest<DescribeWorkspaceBundlesRequest>(describeWorkspaceBundlesRequest,
-                "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.DescribeWorkspaceBundles");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> bundleIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeWorkspaceBundlesRequest
-                    .getBundleIds();
-            if (!bundleIdsList.isEmpty() || !bundleIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("BundleIds");
-                jsonGenerator.writeStartArray();
-                for (String bundleIdsListValue : bundleIdsList) {
-                    if (bundleIdsListValue != null) {
-                        jsonGenerator.writeValue(bundleIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeWorkspaceBundlesRequest.getOwner() != null) {
-                jsonGenerator.writeFieldName("Owner").writeValue(describeWorkspaceBundlesRequest.getOwner());
-            }
-            if (describeWorkspaceBundlesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeWorkspaceBundlesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeWorkspaceBundlesRequest.getBundleIds(), BUNDLEIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceBundlesRequest.getOwner(), OWNER_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceBundlesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

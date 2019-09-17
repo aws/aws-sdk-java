@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,15 +49,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, AttributeValueUpdate> attributeUpdates;
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -65,15 +65,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String conditionalOperator;
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -84,32 +84,32 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      */
     private String returnValues;
@@ -126,7 +126,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An expression that defines one or more attributes to be updated, the action to be performed on them, and new
-     * value(s) for them.
+     * values for them.
      * </p>
      * <p>
      * The following action values are available for <code>UpdateExpression</code>.
@@ -134,7 +134,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already exist,
+     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist,
      * they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that
      * is of type Number. For example: <code>SET myNum = myNum + :val</code>
      * </p>
@@ -185,10 +185,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that
      * doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the
-     * item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the
-     * number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its
-     * initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i>
-     * attribute in the item, with a value of <code>3</code>.
+     * item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to
+     * <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
+     * The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.
      * </p>
      * </note></li>
      * <li>
@@ -233,8 +233,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String updateExpression;
@@ -256,7 +256,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -266,8 +266,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -308,8 +308,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
-     * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
@@ -336,9 +336,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
@@ -348,7 +348,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -367,8 +367,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
@@ -395,7 +395,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
@@ -419,11 +419,11 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -434,32 +434,35 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates,
             String returnValues) {
@@ -484,11 +487,11 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -499,32 +502,35 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates,
             ReturnValue returnValues) {
@@ -671,12 +677,12 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *         >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -687,13 +693,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -704,13 +710,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -743,14 +749,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *         >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -760,15 +766,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -778,15 +784,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -820,14 +826,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -839,13 +845,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -857,14 +863,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -878,47 +884,47 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
      */
 
     public UpdateItemRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -929,37 +935,37 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -969,32 +975,35 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @see ReturnValue
      */
 
@@ -1004,8 +1013,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1016,36 +1025,36 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
-     * @return Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *         after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     * @return Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *         are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1055,32 +1064,35 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the
-     *         content of the old item is returned.
+     *         <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *         <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *         <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *         <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         There is no additional cost associated with requesting a return value aside from the small network and
-     *         processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
      *         </p>
      *         <p>
-     *         Values returned are strongly consistent
+     *         The values returned are strongly consistent.
      * @see ReturnValue
      */
 
@@ -1090,8 +1102,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1102,37 +1114,37 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1142,32 +1154,35 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValue
      */
@@ -1179,8 +1194,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1191,37 +1206,37 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1231,43 +1246,46 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @see ReturnValue
      */
 
     public void setReturnValues(ReturnValue returnValues) {
-        this.returnValues = returnValues.toString();
+        withReturnValues(returnValues);
     }
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1278,37 +1296,37 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1318,38 +1336,41 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValue
      */
 
     public UpdateItemRequest withReturnValues(ReturnValue returnValues) {
-        setReturnValues(returnValues);
+        this.returnValues = returnValues.toString();
         return this;
     }
 
@@ -1388,7 +1409,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1398,7 +1419,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public UpdateItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -1472,7 +1493,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
+        withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }
 
     /**
@@ -1491,14 +1512,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public UpdateItemRequest withReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        setReturnItemCollectionMetrics(returnItemCollectionMetrics);
+        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
 
     /**
      * <p>
      * An expression that defines one or more attributes to be updated, the action to be performed on them, and new
-     * value(s) for them.
+     * values for them.
      * </p>
      * <p>
      * The following action values are available for <code>UpdateExpression</code>.
@@ -1506,7 +1527,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already exist,
+     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist,
      * they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that
      * is of type Number. For example: <code>SET myNum = myNum + :val</code>
      * </p>
@@ -1557,10 +1578,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that
      * doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the
-     * item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the
-     * number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its
-     * initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i>
-     * attribute in the item, with a value of <code>3</code>.
+     * item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to
+     * <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
+     * The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.
      * </p>
      * </note></li>
      * <li>
@@ -1605,20 +1626,20 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param updateExpression
      *        An expression that defines one or more attributes to be updated, the action to be performed on them, and
-     *        new value(s) for them.</p>
+     *        new values for them.</p>
      *        <p>
      *        The following action values are available for <code>UpdateExpression</code>.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already
+     *        <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already
      *        exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an
      *        attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code>
      *        </p>
@@ -1669,10 +1690,11 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value
      *        that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example,
-     *        suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide
-     *        to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
-     *        <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     *        The result will be a new <i>itemcount</i> attribute in the item, with a value of <code>3</code>.
+     *        suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you
+     *        decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     *        <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code>
+     *        to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of
+     *        <code>3</code>.
      *        </p>
      *        </note></li>
      *        <li>
@@ -1718,7 +1740,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on update expressions, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *        >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1729,7 +1751,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An expression that defines one or more attributes to be updated, the action to be performed on them, and new
-     * value(s) for them.
+     * values for them.
      * </p>
      * <p>
      * The following action values are available for <code>UpdateExpression</code>.
@@ -1737,7 +1759,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already exist,
+     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist,
      * they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that
      * is of type Number. For example: <code>SET myNum = myNum + :val</code>
      * </p>
@@ -1788,10 +1810,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that
      * doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the
-     * item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the
-     * number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its
-     * initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i>
-     * attribute in the item, with a value of <code>3</code>.
+     * item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to
+     * <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
+     * The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.
      * </p>
      * </note></li>
      * <li>
@@ -1836,19 +1858,19 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return An expression that defines one or more attributes to be updated, the action to be performed on them, and
-     *         new value(s) for them.</p>
+     *         new values for them.</p>
      *         <p>
      *         The following action values are available for <code>UpdateExpression</code>.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already
+     *         <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already
      *         exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an
      *         attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code>
      *         </p>
@@ -1899,10 +1921,11 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value
      *         that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example,
-     *         suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide
-     *         to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
-     *         <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to
-     *         it. The result will be a new <i>itemcount</i> attribute in the item, with a value of <code>3</code>.
+     *         suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you
+     *         decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     *         <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code>
+     *         to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of
+     *         <code>3</code>.
      *         </p>
      *         </note></li>
      *         <li>
@@ -1948,7 +1971,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         For more information on update expressions, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *         >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1959,7 +1982,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An expression that defines one or more attributes to be updated, the action to be performed on them, and new
-     * value(s) for them.
+     * values for them.
      * </p>
      * <p>
      * The following action values are available for <code>UpdateExpression</code>.
@@ -1967,7 +1990,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already exist,
+     * <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already exist,
      * they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an attribute that
      * is of type Number. For example: <code>SET myNum = myNum + :val</code>
      * </p>
@@ -2018,10 +2041,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that
      * doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the
-     * item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the
-     * number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its
-     * initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i>
-     * attribute in the item, with a value of <code>3</code>.
+     * item you want to update doesn't have an attribute named <code>itemcount</code>, but you decide to
+     * <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     * <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
+     * The result will be a new <code>itemcount</code> attribute in the item, with a value of <code>3</code>.
      * </p>
      * </note></li>
      * <li>
@@ -2066,20 +2089,20 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param updateExpression
      *        An expression that defines one or more attributes to be updated, the action to be performed on them, and
-     *        new value(s) for them.</p>
+     *        new values for them.</p>
      *        <p>
      *        The following action values are available for <code>UpdateExpression</code>.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SET</code> - Adds one or more attributes and values to an item. If any of these attribute already
+     *        <code>SET</code> - Adds one or more attributes and values to an item. If any of these attributes already
      *        exist, they are replaced by the new values. You can also use <code>SET</code> to add or subtract from an
      *        attribute that is of type Number. For example: <code>SET myNum = myNum + :val</code>
      *        </p>
@@ -2130,10 +2153,11 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value
      *        that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example,
-     *        suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide
-     *        to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
-     *        <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it.
-     *        The result will be a new <i>itemcount</i> attribute in the item, with a value of <code>3</code>.
+     *        suppose that the item you want to update doesn't have an attribute named <code>itemcount</code>, but you
+     *        decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the
+     *        <code>itemcount</code> attribute, set its initial value to <code>0</code>, and finally add <code>3</code>
+     *        to it. The result will be a new <code>itemcount</code> attribute in the item, with a value of
+     *        <code>3</code>.
      *        </p>
      *        </note></li>
      *        <li>
@@ -2179,7 +2203,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on update expressions, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *        >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2207,7 +2231,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2217,8 +2241,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2239,7 +2263,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -2249,8 +2273,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        For more information about condition expressions, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2276,7 +2300,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2286,8 +2310,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2307,7 +2331,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *         Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *         </p>
      *         </li>
      *         <li>
@@ -2317,8 +2341,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on condition expressions, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         For more information about condition expressions, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2344,7 +2368,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2354,8 +2378,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * For more information about condition expressions, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2376,7 +2400,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -2386,8 +2410,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        For more information about condition expressions, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2433,8 +2457,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
-     * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
@@ -2461,9 +2485,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
@@ -2499,8 +2523,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
      *         <ul>
@@ -2527,9 +2551,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         </note>
      *         <p>
-     *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         For more information about expression attribute names, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -2572,8 +2596,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
-     * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
@@ -2600,9 +2624,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -2639,8 +2663,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
      *        <ul>
@@ -2667,9 +2691,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -2712,8 +2736,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
-     * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
      * <ul>
@@ -2740,9 +2764,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -2779,8 +2803,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
-     *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.) To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
      *        <ul>
@@ -2807,9 +2831,9 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2845,7 +2869,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2864,15 +2888,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more values that can be substituted in an expression.</p>
      *         <p>
      *         Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *         suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *         following:
+     *         suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *         the following:
      *         </p>
      *         <p>
      *         <code>Available | Backordered | Discontinued</code>
@@ -2891,8 +2915,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
@@ -2905,7 +2929,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2924,16 +2948,16 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
      *        One or more values that can be substituted in an expression.</p>
      *        <p>
      *        Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *        suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *        following:
+     *        suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *        the following:
      *        </p>
      *        <p>
      *        <code>Available | Backordered | Discontinued</code>
@@ -2952,8 +2976,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeValues(java.util.Map<String, AttributeValue> expressionAttributeValues) {
@@ -2966,7 +2990,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2985,16 +3009,16 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
      *        One or more values that can be substituted in an expression.</p>
      *        <p>
      *        Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *        suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *        following:
+     *        suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *        the following:
      *        </p>
      *        <p>
      *        <code>Available | Backordered | Discontinued</code>
@@ -3013,8 +3037,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3089,7 +3113,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

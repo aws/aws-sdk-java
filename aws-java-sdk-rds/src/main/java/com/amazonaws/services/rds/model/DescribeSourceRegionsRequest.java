@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -58,8 +58,8 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
     private Integer maxRecords;
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      */
@@ -73,7 +73,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -87,7 +87,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param regionName
-     *        The source region name. For example, <code>us-east-1</code>.</p>
+     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -105,7 +105,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -118,7 +118,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return The source region name. For example, <code>us-east-1</code>.</p>
+     * @return The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -136,7 +136,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -150,7 +150,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param regionName
-     *        The source region name. For example, <code>us-east-1</code>.</p>
+     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -255,13 +255,13 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     *        An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this
      *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
      */
@@ -272,12 +272,12 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
-     * @return An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     * @return An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this
      *         parameter is specified, the response includes only records beyond the marker, up to the value specified
      *         by <code>MaxRecords</code>.
      */
@@ -288,13 +288,13 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value specified by
+     * An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * </p>
      * 
      * @param marker
-     *        An optional pagination token provided by a previous <a>DescribeSourceRegions</a> request. If this
+     *        An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this
      *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
      *        <code>MaxRecords</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -379,7 +379,8 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

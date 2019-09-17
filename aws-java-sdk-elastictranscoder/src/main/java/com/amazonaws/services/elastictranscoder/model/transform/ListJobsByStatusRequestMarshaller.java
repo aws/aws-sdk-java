@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,62 +12,50 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListJobsByStatusRequest Marshaller
+ * ListJobsByStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListJobsByStatusRequestMarshaller implements Marshaller<Request<ListJobsByStatusRequest>, ListJobsByStatusRequest> {
+@SdkInternalApi
+public class ListJobsByStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> ASCENDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Ascending").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("PageToken").build();
 
-    public ListJobsByStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListJobsByStatusRequestMarshaller instance = new ListJobsByStatusRequestMarshaller();
+
+    public static ListJobsByStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListJobsByStatusRequest> marshall(ListJobsByStatusRequest listJobsByStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListJobsByStatusRequest listJobsByStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listJobsByStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListJobsByStatusRequest> request = new DefaultRequest<ListJobsByStatusRequest>(listJobsByStatusRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2012-09-25/jobsByStatus/{Status}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Status", listJobsByStatusRequest.getStatus());
-        request.setResourcePath(uriResourcePath);
-
-        if (listJobsByStatusRequest.getAscending() != null) {
-            request.addParameter("Ascending", StringUtils.fromString(listJobsByStatusRequest.getAscending()));
+        try {
+            protocolMarshaller.marshall(listJobsByStatusRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listJobsByStatusRequest.getAscending(), ASCENDING_BINDING);
+            protocolMarshaller.marshall(listJobsByStatusRequest.getPageToken(), PAGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listJobsByStatusRequest.getPageToken() != null) {
-            request.addParameter("PageToken", StringUtils.fromString(listJobsByStatusRequest.getPageToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

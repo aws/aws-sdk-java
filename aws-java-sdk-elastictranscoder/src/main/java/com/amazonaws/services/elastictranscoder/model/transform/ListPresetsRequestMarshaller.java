@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,61 +12,47 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPresetsRequest Marshaller
+ * ListPresetsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPresetsRequestMarshaller implements Marshaller<Request<ListPresetsRequest>, ListPresetsRequest> {
+@SdkInternalApi
+public class ListPresetsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASCENDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Ascending").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("PageToken").build();
 
-    public ListPresetsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPresetsRequestMarshaller instance = new ListPresetsRequestMarshaller();
+
+    public static ListPresetsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPresetsRequest> marshall(ListPresetsRequest listPresetsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPresetsRequest listPresetsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPresetsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPresetsRequest> request = new DefaultRequest<ListPresetsRequest>(listPresetsRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2012-09-25/presets";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listPresetsRequest.getAscending() != null) {
-            request.addParameter("Ascending", StringUtils.fromString(listPresetsRequest.getAscending()));
+        try {
+            protocolMarshaller.marshall(listPresetsRequest.getAscending(), ASCENDING_BINDING);
+            protocolMarshaller.marshall(listPresetsRequest.getPageToken(), PAGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listPresetsRequest.getPageToken() != null) {
-            request.addParameter("PageToken", StringUtils.fromString(listPresetsRequest.getPageToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.marketplacemetering.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.marketplacemetering.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ResolveCustomerRequest Marshaller
+ * ResolveCustomerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResolveCustomerRequestMarshaller implements Marshaller<Request<ResolveCustomerRequest>, ResolveCustomerRequest> {
+@SdkInternalApi
+public class ResolveCustomerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationToken").build();
 
-    public ResolveCustomerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ResolveCustomerRequestMarshaller instance = new ResolveCustomerRequestMarshaller();
+
+    public static ResolveCustomerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ResolveCustomerRequest> marshall(ResolveCustomerRequest resolveCustomerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ResolveCustomerRequest resolveCustomerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (resolveCustomerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ResolveCustomerRequest> request = new DefaultRequest<ResolveCustomerRequest>(resolveCustomerRequest, "AWSMarketplaceMetering");
-        request.addHeader("X-Amz-Target", "AWSMPMeteringService.ResolveCustomer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (resolveCustomerRequest.getRegistrationToken() != null) {
-                jsonGenerator.writeFieldName("RegistrationToken").writeValue(resolveCustomerRequest.getRegistrationToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(resolveCustomerRequest.getRegistrationToken(), REGISTRATIONTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

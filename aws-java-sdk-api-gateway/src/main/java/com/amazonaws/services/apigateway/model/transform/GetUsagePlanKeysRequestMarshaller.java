@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,66 +12,53 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetUsagePlanKeysRequest Marshaller
+ * GetUsagePlanKeysRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetUsagePlanKeysRequestMarshaller implements Marshaller<Request<GetUsagePlanKeysRequest>, GetUsagePlanKeysRequest> {
+@SdkInternalApi
+public class GetUsagePlanKeysRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USAGEPLANID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("usageplanId").build();
+    private static final MarshallingInfo<String> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> NAMEQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
 
-    public GetUsagePlanKeysRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetUsagePlanKeysRequestMarshaller instance = new GetUsagePlanKeysRequestMarshaller();
+
+    public static GetUsagePlanKeysRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetUsagePlanKeysRequest> marshall(GetUsagePlanKeysRequest getUsagePlanKeysRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetUsagePlanKeysRequest getUsagePlanKeysRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getUsagePlanKeysRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetUsagePlanKeysRequest> request = new DefaultRequest<GetUsagePlanKeysRequest>(getUsagePlanKeysRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/usageplans/{usageplanId}/keys";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId", getUsagePlanKeysRequest.getUsagePlanId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getUsagePlanKeysRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils.fromString(getUsagePlanKeysRequest.getPosition()));
+        try {
+            protocolMarshaller.marshall(getUsagePlanKeysRequest.getUsagePlanId(), USAGEPLANID_BINDING);
+            protocolMarshaller.marshall(getUsagePlanKeysRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(getUsagePlanKeysRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getUsagePlanKeysRequest.getNameQuery(), NAMEQUERY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getUsagePlanKeysRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromInteger(getUsagePlanKeysRequest.getLimit()));
-        }
-
-        if (getUsagePlanKeysRequest.getNameQuery() != null) {
-            request.addParameter("name", StringUtils.fromString(getUsagePlanKeysRequest.getNameQuery()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

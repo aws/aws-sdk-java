@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ChangePasswordRequest Marshaller
+ * ChangePasswordRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChangePasswordRequestMarshaller implements Marshaller<Request<ChangePasswordRequest>, ChangePasswordRequest> {
+@SdkInternalApi
+public class ChangePasswordRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PREVIOUSPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousPassword").build();
+    private static final MarshallingInfo<String> PROPOSEDPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProposedPassword").build();
+    private static final MarshallingInfo<String> ACCESSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
 
-    public ChangePasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ChangePasswordRequestMarshaller instance = new ChangePasswordRequestMarshaller();
+
+    public static ChangePasswordRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ChangePasswordRequest> marshall(ChangePasswordRequest changePasswordRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ChangePasswordRequest changePasswordRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (changePasswordRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ChangePasswordRequest> request = new DefaultRequest<ChangePasswordRequest>(changePasswordRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ChangePassword");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (changePasswordRequest.getPreviousPassword() != null) {
-                jsonGenerator.writeFieldName("PreviousPassword").writeValue(changePasswordRequest.getPreviousPassword());
-            }
-            if (changePasswordRequest.getProposedPassword() != null) {
-                jsonGenerator.writeFieldName("ProposedPassword").writeValue(changePasswordRequest.getProposedPassword());
-            }
-            if (changePasswordRequest.getAccessToken() != null) {
-                jsonGenerator.writeFieldName("AccessToken").writeValue(changePasswordRequest.getAccessToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(changePasswordRequest.getPreviousPassword(), PREVIOUSPASSWORD_BINDING);
+            protocolMarshaller.marshall(changePasswordRequest.getProposedPassword(), PROPOSEDPASSWORD_BINDING);
+            protocolMarshaller.marshall(changePasswordRequest.getAccessToken(), ACCESSTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

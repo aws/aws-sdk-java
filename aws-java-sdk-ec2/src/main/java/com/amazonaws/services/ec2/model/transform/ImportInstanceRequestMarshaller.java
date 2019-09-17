@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,25 +44,55 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
             request.addParameter("Description", StringUtils.fromString(importInstanceRequest.getDescription()));
         }
 
+        com.amazonaws.internal.SdkInternalList<DiskImage> importInstanceRequestDiskImagesList = (com.amazonaws.internal.SdkInternalList<DiskImage>) importInstanceRequest
+                .getDiskImages();
+        if (!importInstanceRequestDiskImagesList.isEmpty() || !importInstanceRequestDiskImagesList.isAutoConstruct()) {
+            int diskImagesListIndex = 1;
+
+            for (DiskImage importInstanceRequestDiskImagesListValue : importInstanceRequestDiskImagesList) {
+
+                if (importInstanceRequestDiskImagesListValue.getDescription() != null) {
+                    request.addParameter("DiskImage." + diskImagesListIndex + ".Description",
+                            StringUtils.fromString(importInstanceRequestDiskImagesListValue.getDescription()));
+                }
+
+                DiskImageDetail image = importInstanceRequestDiskImagesListValue.getImage();
+                if (image != null) {
+
+                    if (image.getBytes() != null) {
+                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.Bytes", StringUtils.fromLong(image.getBytes()));
+                    }
+
+                    if (image.getFormat() != null) {
+                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.Format", StringUtils.fromString(image.getFormat()));
+                    }
+
+                    if (image.getImportManifestUrl() != null) {
+                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.ImportManifestUrl",
+                                StringUtils.fromString(image.getImportManifestUrl()));
+                    }
+                }
+
+                VolumeDetail volume = importInstanceRequestDiskImagesListValue.getVolume();
+                if (volume != null) {
+
+                    if (volume.getSize() != null) {
+                        request.addParameter("DiskImage." + diskImagesListIndex + ".Volume.Size", StringUtils.fromLong(volume.getSize()));
+                    }
+                }
+                diskImagesListIndex++;
+            }
+        }
+
         ImportInstanceLaunchSpecification launchSpecification = importInstanceRequest.getLaunchSpecification();
         if (launchSpecification != null) {
 
-            if (launchSpecification.getArchitecture() != null) {
-                request.addParameter("LaunchSpecification.Architecture", StringUtils.fromString(launchSpecification.getArchitecture()));
+            if (launchSpecification.getAdditionalInfo() != null) {
+                request.addParameter("LaunchSpecification.AdditionalInfo", StringUtils.fromString(launchSpecification.getAdditionalInfo()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> importInstanceLaunchSpecificationGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
-                    .getGroupNames();
-            if (!importInstanceLaunchSpecificationGroupNamesList.isEmpty() || !importInstanceLaunchSpecificationGroupNamesList.isAutoConstruct()) {
-                int groupNamesListIndex = 1;
-
-                for (String importInstanceLaunchSpecificationGroupNamesListValue : importInstanceLaunchSpecificationGroupNamesList) {
-                    if (importInstanceLaunchSpecificationGroupNamesListValue != null) {
-                        request.addParameter("LaunchSpecification.GroupName." + groupNamesListIndex,
-                                StringUtils.fromString(importInstanceLaunchSpecificationGroupNamesListValue));
-                    }
-                    groupNamesListIndex++;
-                }
+            if (launchSpecification.getArchitecture() != null) {
+                request.addParameter("LaunchSpecification.Architecture", StringUtils.fromString(launchSpecification.getArchitecture()));
             }
 
             com.amazonaws.internal.SdkInternalList<String> importInstanceLaunchSpecificationGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
@@ -79,20 +109,31 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                 }
             }
 
-            if (launchSpecification.getAdditionalInfo() != null) {
-                request.addParameter("LaunchSpecification.AdditionalInfo", StringUtils.fromString(launchSpecification.getAdditionalInfo()));
+            com.amazonaws.internal.SdkInternalList<String> importInstanceLaunchSpecificationGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
+                    .getGroupNames();
+            if (!importInstanceLaunchSpecificationGroupNamesList.isEmpty() || !importInstanceLaunchSpecificationGroupNamesList.isAutoConstruct()) {
+                int groupNamesListIndex = 1;
+
+                for (String importInstanceLaunchSpecificationGroupNamesListValue : importInstanceLaunchSpecificationGroupNamesList) {
+                    if (importInstanceLaunchSpecificationGroupNamesListValue != null) {
+                        request.addParameter("LaunchSpecification.GroupName." + groupNamesListIndex,
+                                StringUtils.fromString(importInstanceLaunchSpecificationGroupNamesListValue));
+                    }
+                    groupNamesListIndex++;
+                }
             }
 
-            UserData userData = launchSpecification.getUserData();
-            if (userData != null) {
-
-                if (userData.getData() != null) {
-                    request.addParameter("LaunchSpecification.UserData.Data", StringUtils.fromString(userData.getData()));
-                }
+            if (launchSpecification.getInstanceInitiatedShutdownBehavior() != null) {
+                request.addParameter("LaunchSpecification.InstanceInitiatedShutdownBehavior",
+                        StringUtils.fromString(launchSpecification.getInstanceInitiatedShutdownBehavior()));
             }
 
             if (launchSpecification.getInstanceType() != null) {
                 request.addParameter("LaunchSpecification.InstanceType", StringUtils.fromString(launchSpecification.getInstanceType()));
+            }
+
+            if (launchSpecification.getMonitoring() != null) {
+                request.addParameter("LaunchSpecification.Monitoring.Enabled", StringUtils.fromBoolean(launchSpecification.getMonitoring()));
             }
 
             Placement placement = launchSpecification.getPlacement();
@@ -102,78 +143,45 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                     request.addParameter("LaunchSpecification.Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
                 }
 
+                if (placement.getAffinity() != null) {
+                    request.addParameter("LaunchSpecification.Placement.Affinity", StringUtils.fromString(placement.getAffinity()));
+                }
+
                 if (placement.getGroupName() != null) {
                     request.addParameter("LaunchSpecification.Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                 }
 
-                if (placement.getTenancy() != null) {
-                    request.addParameter("LaunchSpecification.Placement.Tenancy", StringUtils.fromString(placement.getTenancy()));
+                if (placement.getPartitionNumber() != null) {
+                    request.addParameter("LaunchSpecification.Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
                 }
 
                 if (placement.getHostId() != null) {
                     request.addParameter("LaunchSpecification.Placement.HostId", StringUtils.fromString(placement.getHostId()));
                 }
 
-                if (placement.getAffinity() != null) {
-                    request.addParameter("LaunchSpecification.Placement.Affinity", StringUtils.fromString(placement.getAffinity()));
+                if (placement.getTenancy() != null) {
+                    request.addParameter("LaunchSpecification.Placement.Tenancy", StringUtils.fromString(placement.getTenancy()));
+                }
+
+                if (placement.getSpreadDomain() != null) {
+                    request.addParameter("LaunchSpecification.Placement.SpreadDomain", StringUtils.fromString(placement.getSpreadDomain()));
                 }
             }
 
-            if (launchSpecification.getMonitoring() != null) {
-                request.addParameter("LaunchSpecification.Monitoring.Enabled", StringUtils.fromBoolean(launchSpecification.getMonitoring()));
+            if (launchSpecification.getPrivateIpAddress() != null) {
+                request.addParameter("LaunchSpecification.PrivateIpAddress", StringUtils.fromString(launchSpecification.getPrivateIpAddress()));
             }
 
             if (launchSpecification.getSubnetId() != null) {
                 request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(launchSpecification.getSubnetId()));
             }
 
-            if (launchSpecification.getInstanceInitiatedShutdownBehavior() != null) {
-                request.addParameter("LaunchSpecification.InstanceInitiatedShutdownBehavior",
-                        StringUtils.fromString(launchSpecification.getInstanceInitiatedShutdownBehavior()));
-            }
+            UserData userData = launchSpecification.getUserData();
+            if (userData != null) {
 
-            if (launchSpecification.getPrivateIpAddress() != null) {
-                request.addParameter("LaunchSpecification.PrivateIpAddress", StringUtils.fromString(launchSpecification.getPrivateIpAddress()));
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<DiskImage> importInstanceRequestDiskImagesList = (com.amazonaws.internal.SdkInternalList<DiskImage>) importInstanceRequest
-                .getDiskImages();
-        if (!importInstanceRequestDiskImagesList.isEmpty() || !importInstanceRequestDiskImagesList.isAutoConstruct()) {
-            int diskImagesListIndex = 1;
-
-            for (DiskImage importInstanceRequestDiskImagesListValue : importInstanceRequestDiskImagesList) {
-
-                DiskImageDetail image = importInstanceRequestDiskImagesListValue.getImage();
-                if (image != null) {
-
-                    if (image.getFormat() != null) {
-                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.Format", StringUtils.fromString(image.getFormat()));
-                    }
-
-                    if (image.getBytes() != null) {
-                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.Bytes", StringUtils.fromLong(image.getBytes()));
-                    }
-
-                    if (image.getImportManifestUrl() != null) {
-                        request.addParameter("DiskImage." + diskImagesListIndex + ".Image.ImportManifestUrl",
-                                StringUtils.fromString(image.getImportManifestUrl()));
-                    }
+                if (userData.getData() != null) {
+                    request.addParameter("LaunchSpecification.UserData.Data", StringUtils.fromString(userData.getData()));
                 }
-
-                if (importInstanceRequestDiskImagesListValue.getDescription() != null) {
-                    request.addParameter("DiskImage." + diskImagesListIndex + ".Description",
-                            StringUtils.fromString(importInstanceRequestDiskImagesListValue.getDescription()));
-                }
-
-                VolumeDetail volume = importInstanceRequestDiskImagesListValue.getVolume();
-                if (volume != null) {
-
-                    if (volume.getSize() != null) {
-                        request.addParameter("DiskImage." + diskImagesListIndex + ".Volume.Size", StringUtils.fromLong(volume.getSize()));
-                    }
-                }
-                diskImagesListIndex++;
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class WorkspaceConnectionStatusJsonUnmarshaller implements Unmarshaller<W
                 }
                 if (context.testExpression("ConnectionStateCheckTimestamp", targetDepth)) {
                     context.nextToken();
-                    workspaceConnectionStatus.setConnectionStateCheckTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workspaceConnectionStatus.setConnectionStateCheckTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastKnownUserConnectionTimestamp", targetDepth)) {
                     context.nextToken();
-                    workspaceConnectionStatus.setLastKnownUserConnectionTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workspaceConnectionStatus.setLastKnownUserConnectionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

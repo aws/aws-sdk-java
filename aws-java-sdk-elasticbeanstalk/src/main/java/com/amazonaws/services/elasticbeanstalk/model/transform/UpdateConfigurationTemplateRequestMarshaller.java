@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,9 +54,11 @@ public class UpdateConfigurationTemplateRequestMarshaller implements
             request.addParameter("Description", StringUtils.fromString(updateConfigurationTemplateRequest.getDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateConfigurationTemplateRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!updateConfigurationTemplateRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateConfigurationTemplateRequest.getOptionSettings())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateConfigurationTemplateRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
@@ -84,9 +86,10 @@ public class UpdateConfigurationTemplateRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateConfigurationTemplateRequest
-                .getOptionsToRemove();
-        if (!optionsToRemoveList.isEmpty() || !optionsToRemoveList.isAutoConstruct()) {
+        if (!updateConfigurationTemplateRequest.getOptionsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateConfigurationTemplateRequest.getOptionsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateConfigurationTemplateRequest
+                    .getOptionsToRemove();
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {

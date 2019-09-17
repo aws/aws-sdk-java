@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      */
     private String certificateId;
@@ -40,11 +40,11 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public void setCertificateId(String certificateId) {
@@ -53,10 +53,10 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
-     * @return The ID of the certificate.
+     * @return The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public String getCertificateId() {
@@ -65,11 +65,11 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +131,8 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

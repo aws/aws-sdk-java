@@ -2,7 +2,6 @@ ${fileHeader}
 package ${transformPackage};
 
 import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
 import java.nio.ByteBuffer;
 import javax.annotation.Generated;
@@ -29,8 +28,9 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
         <#if memberModel.http.isHeader() >
             if (context.getHeader("${memberModel.http.unmarshallLocationName}") != null) {
                 context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
-                <#if memberModel.variable.simpleType == "Date">
-                    ${shape.variable.variableName}.${memberModel.setterMethodName}(com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+                 <#-- TODO: verify date marshalling/unmarshalling behavior with ion service, if we ever support one -->
+                <#if memberModel.variable.variableType == "java.util.Date" && !metadata.ionProtocol && !metadata.cborProtocol>
+                    ${shape.variable.variableName}.${memberModel.setterMethodName}(DateJsonUnmarshallerFactory.getInstance("${memberModel.variable.timestampFormat}").unmarshall(context));
                 <#else>
                     ${shape.variable.variableName}.${memberModel.setterMethodName}(<@MemberUnmarshallerDeclarationMacro.content memberModel />.unmarshall(context));
                 </#if>
@@ -64,7 +64,7 @@ public class ${shape.shapeName}JsonUnmarshaller implements Unmarshaller<${shape.
     <#else>
         <@PayloadUnmarshallerMacro.content shape />
      </#if>
-<#elseif shape.unboundMembers?has_content>
+<#elseif shape.unboundMembers?has_content || (shape.hasNoMembers() && shape.shapeType != "Response") >
     <@PayloadUnmarshallerMacro.content shape />
 </#if>
 

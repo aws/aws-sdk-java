@@ -57,22 +57,22 @@
     </#if>
 
     <#if customConfig.useAutoConstructList>
-        ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
         <#if listModel.sendEmptyQueryString>
-            if (${listVariable}.isEmpty()) {
+            if (${getMember}().isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
         <#if listModel.marshallNonAutoConstructedEmptyLists>
-            if (${listVariable}.isEmpty() && !${listVariable}.isAutoConstruct()) {
+            if (${getMember}().isEmpty() && !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
-        if (!${listVariable}.isEmpty() || !${listVariable}.isAutoConstruct()) {
+        if (!${getMember}().isEmpty() || !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
+            ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
     <#else>
-        ${listModel.templateType} ${listVariable} = ${getMember}();
 
-        if (${listVariable} != null) {
+        if (${getMember}() != null) {
+            ${listModel.templateType} ${listVariable} = ${getMember}();
             <#-- For query protocol, an empty list is serialized differently. -->
             if (${listVariable}.isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");
@@ -139,9 +139,11 @@
         <#local parameterPath = contextPath + "." + parameterPath/>
     </#if>
     <#local memberVariableName = variable.variableName/>
-    ${variable.variableType} ${memberVariableName} = ${getMember}();
-    if (${memberVariableName} != null) {
-        <@MemberMarshallerMacro.content customConfig variable.variableType memberVariableName shapes parameterPath/>
+    {
+        ${variable.variableType} ${memberVariableName} = ${getMember}();
+        if (${memberVariableName} != null) {
+            <@MemberMarshallerMacro.content customConfig variable.variableType memberVariableName shapes parameterPath/>
+        }
     }
 </#if>
 </#list>

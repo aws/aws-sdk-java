@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,10 @@ public class DescribeDBClustersRequestMarshaller implements Marshaller<Request<D
             request.addParameter("DBClusterIdentifier", StringUtils.fromString(describeDBClustersRequest.getDBClusterIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDBClustersRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeDBClustersRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Filter>) describeDBClustersRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDBClustersRequest
+                    .getFilters();
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
@@ -54,8 +56,9 @@ public class DescribeDBClustersRequestMarshaller implements Marshaller<Request<D
                     request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {
@@ -76,6 +79,10 @@ public class DescribeDBClustersRequestMarshaller implements Marshaller<Request<D
 
         if (describeDBClustersRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeDBClustersRequest.getMarker()));
+        }
+
+        if (describeDBClustersRequest.getIncludeShared() != null) {
+            request.addParameter("IncludeShared", StringUtils.fromBoolean(describeDBClustersRequest.getIncludeShared()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,11 +45,6 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    instanceStatus.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     instanceStatus.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,18 +60,23 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
                     continue;
                 }
 
+                if (context.testExpression("instanceId", targetDepth)) {
+                    instanceStatus.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceState", targetDepth)) {
                     instanceStatus.setInstanceState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("systemStatus", targetDepth)) {
-                    instanceStatus.setSystemStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceStatus", targetDepth)) {
+                    instanceStatus.setInstanceStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceStatus", targetDepth)) {
-                    instanceStatus.setInstanceStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("systemStatus", targetDepth)) {
+                    instanceStatus.setSystemStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

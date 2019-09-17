@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,38 +45,13 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("subnetId", targetDepth)) {
-                    subnet.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    subnet.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    subnet.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    subnet.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("cidrBlock", targetDepth)) {
-                    subnet.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
-                    subnet.withIpv6CidrBlockAssociationSet(new ArrayList<SubnetIpv6CidrBlockAssociation>());
-                    continue;
-                }
-
-                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
-                    subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
-                    subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZoneId", targetDepth)) {
+                    subnet.setAvailabilityZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,8 +60,8 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    subnet.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("cidrBlock", targetDepth)) {
+                    subnet.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -100,6 +75,41 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("state", targetDepth)) {
+                    subnet.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    subnet.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    subnet.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    subnet.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
+                    subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(new ArrayList<SubnetIpv6CidrBlockAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     subnet.withTags(new ArrayList<Tag>());
                     continue;
@@ -110,6 +120,10 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("subnetArn", targetDepth)) {
+                    subnet.setSubnetArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnet;

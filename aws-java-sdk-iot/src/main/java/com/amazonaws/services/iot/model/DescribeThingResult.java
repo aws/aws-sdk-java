@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,18 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
     private String thingName;
     /**
      * <p>
+     * The ID of the thing to describe.
+     * </p>
+     */
+    private String thingId;
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     */
+    private String thingArn;
+    /**
+     * <p>
      * The thing type name.
      * </p>
      */
@@ -59,6 +71,12 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
      * </note>
      */
     private Long version;
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     */
+    private String billingGroupName;
 
     /**
      * <p>
@@ -137,6 +155,86 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeThingResult withThingName(String thingName) {
         setThingName(thingName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @param thingId
+     *        The ID of the thing to describe.
+     */
+
+    public void setThingId(String thingId) {
+        this.thingId = thingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @return The ID of the thing to describe.
+     */
+
+    public String getThingId() {
+        return this.thingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @param thingId
+     *        The ID of the thing to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withThingId(String thingId) {
+        setThingId(thingId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @param thingArn
+     *        The ARN of the thing to describe.
+     */
+
+    public void setThingArn(String thingArn) {
+        this.thingArn = thingArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @return The ARN of the thing to describe.
+     */
+
+    public String getThingArn() {
+        return this.thingArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @param thingArn
+     *        The ARN of the thing to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withThingArn(String thingArn) {
+        setThingArn(thingArn);
         return this;
     }
 
@@ -315,7 +413,48 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing belongs to.
+     */
+
+    public void setBillingGroupName(String billingGroupName) {
+        this.billingGroupName = billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @return The name of the billing group the thing belongs to.
+     */
+
+    public String getBillingGroupName() {
+        return this.billingGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the billing group the thing belongs to.
+     * </p>
+     * 
+     * @param billingGroupName
+     *        The name of the billing group the thing belongs to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withBillingGroupName(String billingGroupName) {
+        setBillingGroupName(billingGroupName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -329,12 +468,18 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("DefaultClientId: ").append(getDefaultClientId()).append(",");
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName()).append(",");
+        if (getThingId() != null)
+            sb.append("ThingId: ").append(getThingId()).append(",");
+        if (getThingArn() != null)
+            sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getBillingGroupName() != null)
+            sb.append("BillingGroupName: ").append(getBillingGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +502,14 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getThingId() == null ^ this.getThingId() == null)
+            return false;
+        if (other.getThingId() != null && other.getThingId().equals(this.getThingId()) == false)
+            return false;
+        if (other.getThingArn() == null ^ this.getThingArn() == null)
+            return false;
+        if (other.getThingArn() != null && other.getThingArn().equals(this.getThingArn()) == false)
+            return false;
         if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
@@ -369,6 +522,10 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getBillingGroupName() == null ^ this.getBillingGroupName() == null)
+            return false;
+        if (other.getBillingGroupName() != null && other.getBillingGroupName().equals(this.getBillingGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -379,9 +536,12 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getDefaultClientId() == null) ? 0 : getDefaultClientId().hashCode());
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getThingId() == null) ? 0 : getThingId().hashCode());
+        hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getBillingGroupName() == null) ? 0 : getBillingGroupName().hashCode());
         return hashCode;
     }
 
@@ -393,4 +553,5 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

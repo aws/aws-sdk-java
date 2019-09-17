@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentityConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CloudFrontOriginAccessIdentityConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,10 +29,10 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
      * </p>
      * <p>
-     * If the <code>CallerReference</code> is new (no matter the content of the
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      * </p>
      * <p>
@@ -66,9 +66,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
      * (with...) methods to initialize any additional object members.
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed.</p>
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
      *        <p>
-     *        If the <code>CallerReference</code> is new (no matter the content of the
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
      *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      *        </p>
      *        <p>
@@ -87,10 +87,10 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
      * </p>
      * <p>
-     * If the <code>CallerReference</code> is new (no matter the content of the
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      * </p>
      * <p>
@@ -105,9 +105,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed.</p>
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
      *        <p>
-     *        If the <code>CallerReference</code> is new (no matter the content of the
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
      *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      *        </p>
      *        <p>
@@ -127,10 +127,10 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
      * </p>
      * <p>
-     * If the <code>CallerReference</code> is new (no matter the content of the
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      * </p>
      * <p>
@@ -144,9 +144,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
      * CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      * </p>
      * 
-     * @return A unique number that ensures the request can't be replayed.</p>
+     * @return A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
      *         <p>
-     *         If the <code>CallerReference</code> is new (no matter the content of the
+     *         If the value of <code>CallerReference</code> is new (regardless of the content of the
      *         <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      *         </p>
      *         <p>
@@ -166,10 +166,10 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * A unique number that ensures the request can't be replayed.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
      * </p>
      * <p>
-     * If the <code>CallerReference</code> is new (no matter the content of the
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      * </p>
      * <p>
@@ -184,9 +184,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures the request can't be replayed.</p>
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
      *        <p>
-     *        If the <code>CallerReference</code> is new (no matter the content of the
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
      *        <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created.
      *        </p>
      *        <p>
@@ -247,7 +247,8 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,4 +305,5 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

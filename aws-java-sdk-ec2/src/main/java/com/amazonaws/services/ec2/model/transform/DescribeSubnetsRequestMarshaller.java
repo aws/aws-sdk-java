@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSubnetsRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest
-                .getSubnetIds();
-        if (!describeSubnetsRequestSubnetIdsList.isEmpty() || !describeSubnetsRequestSubnetIdsList.isAutoConstruct()) {
-            int subnetIdsListIndex = 1;
-
-            for (String describeSubnetsRequestSubnetIdsListValue : describeSubnetsRequestSubnetIdsList) {
-                if (describeSubnetsRequestSubnetIdsListValue != null) {
-                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(describeSubnetsRequestSubnetIdsListValue));
-                }
-                subnetIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSubnetsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSubnetsRequest
                 .getFilters();
         if (!describeSubnetsRequestFiltersList.isEmpty() || !describeSubnetsRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,27 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSubnetsRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest
+                .getSubnetIds();
+        if (!describeSubnetsRequestSubnetIdsList.isEmpty() || !describeSubnetsRequestSubnetIdsList.isAutoConstruct()) {
+            int subnetIdsListIndex = 1;
+
+            for (String describeSubnetsRequestSubnetIdsListValue : describeSubnetsRequestSubnetIdsList) {
+                if (describeSubnetsRequestSubnetIdsListValue != null) {
+                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(describeSubnetsRequestSubnetIdsListValue));
+                }
+                subnetIdsListIndex++;
+            }
+        }
+
+        if (describeSubnetsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSubnetsRequest.getNextToken()));
+        }
+
+        if (describeSubnetsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSubnetsRequest.getMaxResults()));
         }
 
         return request;

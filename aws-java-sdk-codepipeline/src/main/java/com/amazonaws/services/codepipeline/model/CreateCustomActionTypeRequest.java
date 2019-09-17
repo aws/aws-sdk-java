@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a create custom action operation.
+ * Represents the input of a CreateCustomActionType operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"
@@ -34,8 +34,8 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      */
@@ -52,7 +52,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String version;
-
+    /**
+     * <p>
+     * URLs that provide users information about this custom action.
+     * </p>
+     */
     private ActionTypeSettings settings;
     /**
      * <p>
@@ -63,16 +67,30 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
      */
     private java.util.List<ActionConfigurationProperty> configurationProperties;
-
+    /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     */
     private ArtifactDetails inputArtifactDetails;
-
+    /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     */
     private ArtifactDetails outputArtifactDetails;
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -80,16 +98,16 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
      *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
-     *        are reserved for future use.
+     *        Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     *        functional. These values are reserved for future use.
      *        </p>
      * @see ActionCategory
      */
@@ -104,15 +122,15 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      * 
      * @return The category of the custom action, such as a build action or a test action.</p> <note>
      *         <p>
-     *         Although Source and Approval are listed as valid values, they are not currently functional. These values
-     *         are reserved for future use.
+     *         Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     *         functional. These values are reserved for future use.
      *         </p>
      * @see ActionCategory
      */
@@ -127,16 +145,16 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
      *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
-     *        are reserved for future use.
+     *        Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     *        functional. These values are reserved for future use.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
@@ -153,22 +171,22 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
      *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
-     *        are reserved for future use.
+     *        Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     *        functional. These values are reserved for future use.
      *        </p>
      * @see ActionCategory
      */
 
     public void setCategory(ActionCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -177,23 +195,23 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Although Source and Approval are listed as valid values, they are not currently functional. These values are
-     * reserved for future use.
+     * Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     * functional. These values are reserved for future use.
      * </p>
      * </note>
      * 
      * @param category
      *        The category of the custom action, such as a build action or a test action.</p> <note>
      *        <p>
-     *        Although Source and Approval are listed as valid values, they are not currently functional. These values
-     *        are reserved for future use.
+     *        Although <code>Source</code> and <code>Approval</code> are listed as valid values, they are not currently
+     *        functional. These values are reserved for future use.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionCategory
      */
 
     public CreateCustomActionTypeRequest withCategory(ActionCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 
@@ -278,7 +296,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * URLs that provide users information about this custom action.
+     * </p>
+     * 
      * @param settings
+     *        URLs that provide users information about this custom action.
      */
 
     public void setSettings(ActionTypeSettings settings) {
@@ -286,7 +309,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * URLs that provide users information about this custom action.
+     * </p>
+     * 
+     * @return URLs that provide users information about this custom action.
      */
 
     public ActionTypeSettings getSettings() {
@@ -294,7 +321,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * URLs that provide users information about this custom action.
+     * </p>
+     * 
      * @param settings
+     *        URLs that provide users information about this custom action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,7 +344,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -322,8 +354,8 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *         You can refer to a name in the configuration properties of the custom action within the URL templates by
      *         following the format of {Config:name}, as long as the configuration property is both required and not
      *         secret. For more information, see <a
-     *         href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-     *         Custom Action for a Pipeline</a>.
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     *         a Custom Action for a Pipeline</a>.
      *         </p>
      */
 
@@ -340,7 +372,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -351,7 +383,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      */
@@ -374,7 +406,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -390,7 +422,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -415,7 +447,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -426,7 +458,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -438,7 +470,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
      * @param inputArtifactDetails
+     *        The details of the input artifact for the action, such as its commit ID.
      */
 
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
@@ -446,7 +483,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
+     * @return The details of the input artifact for the action, such as its commit ID.
      */
 
     public ArtifactDetails getInputArtifactDetails() {
@@ -454,7 +495,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
      * @param inputArtifactDetails
+     *        The details of the input artifact for the action, such as its commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,7 +510,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
      * @param outputArtifactDetails
+     *        The details of the output artifact of the action, such as its commit ID.
      */
 
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
@@ -472,7 +523,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
+     * @return The details of the output artifact of the action, such as its commit ID.
      */
 
     public ArtifactDetails getOutputArtifactDetails() {
@@ -480,7 +535,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
      * @param outputArtifactDetails
+     *        The details of the output artifact of the action, such as its commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,7 +550,78 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @return The tags for the custom action.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags for the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -513,7 +644,9 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         if (getInputArtifactDetails() != null)
             sb.append("InputArtifactDetails: ").append(getInputArtifactDetails()).append(",");
         if (getOutputArtifactDetails() != null)
-            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails());
+            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -556,6 +689,10 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getOutputArtifactDetails() != null && other.getOutputArtifactDetails().equals(this.getOutputArtifactDetails()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +708,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getConfigurationProperties() == null) ? 0 : getConfigurationProperties().hashCode());
         hashCode = prime * hashCode + ((getInputArtifactDetails() == null) ? 0 : getInputArtifactDetails().hashCode());
         hashCode = prime * hashCode + ((getOutputArtifactDetails() == null) ? 0 : getOutputArtifactDetails().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

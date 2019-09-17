@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,10 @@ public class EnableMetricsCollectionRequestMarshaller implements Marshaller<Requ
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(enableMetricsCollectionRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> metricsList = (com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest
-                .getMetrics();
-        if (!metricsList.isEmpty() || !metricsList.isAutoConstruct()) {
+        if (!enableMetricsCollectionRequest.getMetrics().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest.getMetrics()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> metricsList = (com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest
+                    .getMetrics();
             int metricsListIndex = 1;
 
             for (String metricsListValue : metricsList) {

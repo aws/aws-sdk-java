@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ public class SdkProxyRoutePlannerIntegrationTest extends MockServerTestBase {
     private void mockSuccessfulRequest(String nonProxyHosts, String fakeHost) throws IOException {
         HttpClient client = createHttpClient(nonProxyHosts);
         HttpUriRequest uriRequest = new HttpGet("http://" + fakeHost);
-        HttpResponse response = client.execute(uriRequest);
+        HttpResponse response = executeWithRetries(client, uriRequest);
         Assert.assertEquals(200, response.getStatusLine().getStatusCode());
     }
 
@@ -131,7 +131,24 @@ public class SdkProxyRoutePlannerIntegrationTest extends MockServerTestBase {
             throws Exception {
         HttpClient client = createHttpClient(nonProxyHosts);
         HttpUriRequest uriRequest = new HttpGet("http://" + fakeHost);
-        client.execute(uriRequest);
+        executeWithRetries(client, uriRequest);
         fail("UnknownHostException is expected!");
     }
+
+    /**
+     * Executes the http request retrying the failed requests upto 3 times.
+     */
+    private HttpResponse executeWithRetries(HttpClient client, HttpUriRequest request) throws IOException {
+
+        for (int attempt = 0; ; attempt++) {
+            try {
+                return client.execute(request);
+            } catch (IOException exception) {
+                if (attempt > 2) {
+                    throw exception;
+                }
+            }
+        }
+    }
+
 }

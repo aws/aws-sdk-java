@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,11 +130,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      */
     private String snowballType;
+    /**
+     * <p>
+     * The forwarding address ID for a job. This field is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -190,7 +196,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -205,7 +211,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -555,7 +561,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -572,7 +578,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 
@@ -842,7 +848,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -910,7 +916,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -1002,13 +1008,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -1018,12 +1024,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *         cluster jobs is <code>EDGE</code>.
+     * @return The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *         <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -1033,13 +1039,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1051,40 +1057,81 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
 
     public CreateJobRequest withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The forwarding address ID for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The forwarding address ID for a job. This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The forwarding address ID for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @return The forwarding address ID for a job. This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The forwarding address ID for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The forwarding address ID for a job. This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1115,7 +1162,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getClusterId() != null)
             sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getSnowballType() != null)
-            sb.append("SnowballType: ").append(getSnowballType());
+            sb.append("SnowballType: ").append(getSnowballType()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -1174,6 +1223,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSnowballType() != null && other.getSnowballType().equals(this.getSnowballType()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -1193,6 +1246,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnowballType() == null) ? 0 : getSnowballType().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 

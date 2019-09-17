@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIdList;
@@ -51,13 +51,13 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of
      *         a trail ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public java.util.List<String> getResourceIdList() {
@@ -73,14 +73,14 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
      *        trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setResourceIdList(java.util.Collection<String> resourceIdList) {
@@ -98,7 +98,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -110,7 +110,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
      *        trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,14 +130,14 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail ARNs whose tags will be listed. The list has a limit of 20 ARNs. The format of a
      *        trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +187,8 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

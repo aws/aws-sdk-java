@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,16 @@ public class ListAllowedNodeTypeModificationsResultStaxUnmarshaller implements U
 
                 if (context.testExpression("ScaleUpModifications/member", targetDepth)) {
                     listAllowedNodeTypeModificationsResult.withScaleUpModifications(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ScaleDownModifications", targetDepth)) {
+                    listAllowedNodeTypeModificationsResult.withScaleDownModifications(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ScaleDownModifications/member", targetDepth)) {
+                    listAllowedNodeTypeModificationsResult.withScaleDownModifications(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

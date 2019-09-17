@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM Certificate represented by the ARN specified at input.
+     * String that contains the ACM certificate represented by the ARN specified at input.
      * </p>
      */
     private String certificate;
@@ -38,11 +38,11 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM Certificate represented by the ARN specified at input.
+     * String that contains the ACM certificate represented by the ARN specified at input.
      * </p>
      * 
      * @param certificate
-     *        String that contains the ACM Certificate represented by the ARN specified at input.
+     *        String that contains the ACM certificate represented by the ARN specified at input.
      */
 
     public void setCertificate(String certificate) {
@@ -51,10 +51,10 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM Certificate represented by the ARN specified at input.
+     * String that contains the ACM certificate represented by the ARN specified at input.
      * </p>
      * 
-     * @return String that contains the ACM Certificate represented by the ARN specified at input.
+     * @return String that contains the ACM certificate represented by the ARN specified at input.
      */
 
     public String getCertificate() {
@@ -63,11 +63,11 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM Certificate represented by the ARN specified at input.
+     * String that contains the ACM certificate represented by the ARN specified at input.
      * </p>
      * 
      * @param certificate
-     *        String that contains the ACM Certificate represented by the ARN specified at input.
+     *        String that contains the ACM certificate represented by the ARN specified at input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +117,8 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,4 +175,5 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

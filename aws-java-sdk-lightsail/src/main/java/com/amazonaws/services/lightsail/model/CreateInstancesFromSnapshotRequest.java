@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,16 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     private java.util.List<String> instanceNames;
     /**
      * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping;
+    /**
+     * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive).
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      */
     private String availabilityZone;
@@ -55,14 +63,15 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      */
@@ -73,6 +82,15 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String keyPairName;
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -146,13 +164,78 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @return An object containing information about one or more disk mappings.
+     */
+
+    public java.util.Map<String, java.util.List<DiskMap>> getAttachedDiskMapping() {
+        return attachedDiskMapping;
+    }
+
+    /**
+     * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @param attachedDiskMapping
+     *        An object containing information about one or more disk mappings.
+     */
+
+    public void setAttachedDiskMapping(java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping) {
+        this.attachedDiskMapping = attachedDiskMapping;
+    }
+
+    /**
+     * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @param attachedDiskMapping
+     *        An object containing information about one or more disk mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest withAttachedDiskMapping(java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping) {
+        setAttachedDiskMapping(attachedDiskMapping);
+        return this;
+    }
+
+    public CreateInstancesFromSnapshotRequest addAttachedDiskMappingEntry(String key, java.util.List<DiskMap> value) {
+        if (null == this.attachedDiskMapping) {
+            this.attachedDiskMapping = new java.util.HashMap<String, java.util.List<DiskMap>>();
+        }
+        if (this.attachedDiskMapping.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attachedDiskMapping.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AttachedDiskMapping.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest clearAttachedDiskMappingEntries() {
+        this.attachedDiskMapping = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive).
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-1a</code> (case sensitive).
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -162,11 +245,15 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive).
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @return The Availability Zone where you want to create your instances. Use the following formatting:
-     *         <code>us-east-1a</code> (case sensitive).
+     *         <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     *         href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     *         operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public String getAvailabilityZone() {
@@ -176,12 +263,16 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive).
+     * <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-1a</code> (case sensitive).
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of Availability Zones by using the <a
+     *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,25 +376,27 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
      * @param userData
      *        You can create a launch script that configures a server with additional user data. For example,
-     *        <code>apt-get –y update</code>.</p> <note>
+     *        <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a
-     *        href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *        >Dev Guide</a>.
      *        </p>
      */
 
@@ -314,24 +407,26 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
      * @return You can create a launch script that configures a server with additional user data. For example,
-     *         <code>apt-get –y update</code>.</p> <note>
+     *         <code>apt-get -y update</code>.</p> <note>
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *         <code>pkg</code>. For a complete list, see the <a
-     *         href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *         <code>pkg</code>. For a complete list, see the <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *         >Dev Guide</a>.
      *         </p>
      */
 
@@ -342,25 +437,27 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
      * Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and
      * CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
-     * complete list, see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     * complete list, see the <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     * >Dev Guide</a>.
      * </p>
      * </note>
      * 
      * @param userData
      *        You can create a launch script that configures a server with additional user data. For example,
-     *        <code>apt-get –y update</code>.</p> <note>
+     *        <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
-     *        <code>pkg</code>. For a complete list, see the <a
-     *        href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev Guide</a>.
+     *        <code>pkg</code>. For a complete list, see the <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image"
+     *        >Dev Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -411,7 +508,98 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @return The tag keys and optional values to add to the resource during create.</p>
+     *         <p>
+     *         To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -423,6 +611,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         sb.append("{");
         if (getInstanceNames() != null)
             sb.append("InstanceNames: ").append(getInstanceNames()).append(",");
+        if (getAttachedDiskMapping() != null)
+            sb.append("AttachedDiskMapping: ").append(getAttachedDiskMapping()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstanceSnapshotName() != null)
@@ -432,7 +622,9 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         if (getUserData() != null)
             sb.append("UserData: ").append(getUserData()).append(",");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: ").append(getKeyPairName());
+            sb.append("KeyPairName: ").append(getKeyPairName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +642,10 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         if (other.getInstanceNames() == null ^ this.getInstanceNames() == null)
             return false;
         if (other.getInstanceNames() != null && other.getInstanceNames().equals(this.getInstanceNames()) == false)
+            return false;
+        if (other.getAttachedDiskMapping() == null ^ this.getAttachedDiskMapping() == null)
+            return false;
+        if (other.getAttachedDiskMapping() != null && other.getAttachedDiskMapping().equals(this.getAttachedDiskMapping()) == false)
             return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
@@ -471,6 +667,10 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getKeyPairName() != null && other.getKeyPairName().equals(this.getKeyPairName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -480,11 +680,13 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceNames() == null) ? 0 : getInstanceNames().hashCode());
+        hashCode = prime * hashCode + ((getAttachedDiskMapping() == null) ? 0 : getAttachedDiskMapping().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getInstanceSnapshotName() == null) ? 0 : getInstanceSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getKeyPairName() == null) ? 0 : getKeyPairName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

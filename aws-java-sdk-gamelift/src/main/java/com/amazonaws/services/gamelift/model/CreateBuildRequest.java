@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,37 +30,46 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. A build name can be changed
-     * later using<code> <a>UpdateBuild</a> </code>.
+     * Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. A build version can be
-     * changed later using<code> <a>UpdateBuild</a> </code>.
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      */
     private String version;
-
+    /**
+     * <p>
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
+     * </p>
+     */
     private S3Location storageLocation;
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      */
     private String operatingSystem;
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. A build name can be changed
-     * later using<code> <a>UpdateBuild</a> </code>.
+     * Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique. A build name can be
-     *        changed later using<code> <a>UpdateBuild</a> </code>.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     *        <a>UpdateBuild</a> to change this value later.
      */
 
     public void setName(String name) {
@@ -69,12 +78,12 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. A build name can be changed
-     * later using<code> <a>UpdateBuild</a> </code>.
+     * Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
-     * @return Descriptive label associated with a build. Build names do not need to be unique. A build name can be
-     *         changed later using<code> <a>UpdateBuild</a> </code>.
+     * @return Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     *         <a>UpdateBuild</a> to change this value later.
      */
 
     public String getName() {
@@ -83,13 +92,13 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique. A build name can be changed
-     * later using<code> <a>UpdateBuild</a> </code>.
+     * Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique. A build name can be
-     *        changed later using<code> <a>UpdateBuild</a> </code>.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique. You can use
+     *        <a>UpdateBuild</a> to change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +109,13 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. A build version can be
-     * changed later using<code> <a>UpdateBuild</a> </code>.
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build. A build version
-     *        can be changed later using<code> <a>UpdateBuild</a> </code>.
+     *        Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     *        <a>UpdateBuild</a> to change this value later.
      */
 
     public void setVersion(String version) {
@@ -115,12 +124,12 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. A build version can be
-     * changed later using<code> <a>UpdateBuild</a> </code>.
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
-     * @return Version associated with this build. Version strings do not need to be unique to a build. A build version
-     *         can be changed later using<code> <a>UpdateBuild</a> </code>.
+     * @return Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     *         <a>UpdateBuild</a> to change this value later.
      */
 
     public String getVersion() {
@@ -129,13 +138,13 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build. A build version can be
-     * changed later using<code> <a>UpdateBuild</a> </code>.
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build. A build version
-     *        can be changed later using<code> <a>UpdateBuild</a> </code>.
+     *        Version that is associated with a build or script. Version strings do not need to be unique. You can use
+     *        <a>UpdateBuild</a> to change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +154,18 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
+     * </p>
+     * 
      * @param storageLocation
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access
+     *        your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -153,7 +173,18 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
+     * </p>
+     * 
+     * @return Information indicating where your game build files are stored. Use this parameter only when creating a
+     *         build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *         S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
+     *         access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new
+     *         build in.
      */
 
     public S3Location getStorageLocation() {
@@ -161,7 +192,18 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
+     * </p>
+     * 
      * @param storageLocation
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access
+     *        your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +215,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
-     *        fleet resources that you can use for this build.
+     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
@@ -189,11 +235,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @return Operating system that the game server binaries are built to run on. This value determines the type of
-     *         fleet resources that you can use for this build.
+     *         fleet resources that you can use for this build. If your game build contains multiple executables, they
+     *         all must run on the same operating system. If an operating system is not specified when creating a build,
+     *         Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
@@ -204,12 +254,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
-     *        fleet resources that you can use for this build.
+     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -222,39 +276,48 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
-     *        fleet resources that you can use for this build.
+     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @see OperatingSystem
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
      * <p>
      * Operating system that the game server binaries are built to run on. This value determines the type of fleet
-     * resources that you can use for this build.
+     * resources that you can use for this build. If your game build contains multiple executables, they all must run on
+     * the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses
+     * the default value (WINDOWS_2012). This value cannot be changed later.
      * </p>
      * 
      * @param operatingSystem
      *        Operating system that the game server binaries are built to run on. This value determines the type of
-     *        fleet resources that you can use for this build.
+     *        fleet resources that you can use for this build. If your game build contains multiple executables, they
+     *        all must run on the same operating system. If an operating system is not specified when creating a build,
+     *        Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
 
     public CreateBuildRequest withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

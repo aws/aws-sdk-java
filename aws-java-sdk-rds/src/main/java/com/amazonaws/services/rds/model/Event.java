@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is used as a response element in the <a>DescribeEvents</a> action.
+ * This data type is used as a response element in the <code>DescribeEvents</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Event" target="_top">AWS API Documentation</a>
@@ -54,7 +54,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the event.
@@ -156,7 +156,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public void setSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        withSourceType(sourceType);
     }
 
     /**
@@ -171,7 +171,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public Event withSourceType(SourceType sourceType) {
-        setSourceType(sourceType);
+        this.sourceType = sourceType.toString();
         return this;
     }
 
@@ -293,12 +293,12 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        Specifies the date and time of the event.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -310,7 +310,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -318,13 +318,13 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        Specifies the date and time of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Event withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public Event withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 
@@ -369,7 +369,8 @@ public class Event implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -454,4 +455,5 @@ public class Event implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

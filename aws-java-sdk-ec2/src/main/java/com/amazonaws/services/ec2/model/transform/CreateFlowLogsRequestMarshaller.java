@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,18 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createFlowLogsRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createFlowLogsRequest.getClientToken()));
+        }
+
+        if (createFlowLogsRequest.getDeliverLogsPermissionArn() != null) {
+            request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
+        }
+
+        if (createFlowLogsRequest.getLogGroupName() != null) {
+            request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> createFlowLogsRequestResourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createFlowLogsRequest
                 .getResourceIds();
         if (!createFlowLogsRequestResourceIdsList.isEmpty() || !createFlowLogsRequestResourceIdsList.isAutoConstruct()) {
@@ -61,16 +73,16 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("TrafficType", StringUtils.fromString(createFlowLogsRequest.getTrafficType()));
         }
 
-        if (createFlowLogsRequest.getLogGroupName() != null) {
-            request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
+        if (createFlowLogsRequest.getLogDestinationType() != null) {
+            request.addParameter("LogDestinationType", StringUtils.fromString(createFlowLogsRequest.getLogDestinationType()));
         }
 
-        if (createFlowLogsRequest.getDeliverLogsPermissionArn() != null) {
-            request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
+        if (createFlowLogsRequest.getLogDestination() != null) {
+            request.addParameter("LogDestination", StringUtils.fromString(createFlowLogsRequest.getLogDestination()));
         }
 
-        if (createFlowLogsRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createFlowLogsRequest.getClientToken()));
+        if (createFlowLogsRequest.getLogFormat() != null) {
+            request.addParameter("LogFormat", StringUtils.fromString(createFlowLogsRequest.getLogFormat()));
         }
 
         return request;

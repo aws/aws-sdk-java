@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    roleDetail.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    roleDetail.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -102,6 +102,21 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
 
                 if (context.testExpression("AttachedManagedPolicies/member", targetDepth)) {
                     roleDetail.withAttachedManagedPolicies(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    roleDetail.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    roleDetail.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    roleDetail.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

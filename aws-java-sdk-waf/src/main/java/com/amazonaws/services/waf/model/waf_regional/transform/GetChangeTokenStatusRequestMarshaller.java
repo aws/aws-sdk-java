@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetChangeTokenStatusRequest Marshaller
+ * GetChangeTokenStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetChangeTokenStatusRequestMarshaller implements Marshaller<Request<GetChangeTokenStatusRequest>, GetChangeTokenStatusRequest> {
+@SdkInternalApi
+public class GetChangeTokenStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
 
-    public GetChangeTokenStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetChangeTokenStatusRequestMarshaller instance = new GetChangeTokenStatusRequestMarshaller();
+
+    public static GetChangeTokenStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetChangeTokenStatusRequest> marshall(GetChangeTokenStatusRequest getChangeTokenStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetChangeTokenStatusRequest getChangeTokenStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getChangeTokenStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetChangeTokenStatusRequest> request = new DefaultRequest<GetChangeTokenStatusRequest>(getChangeTokenStatusRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.GetChangeTokenStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getChangeTokenStatusRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(getChangeTokenStatusRequest.getChangeToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getChangeTokenStatusRequest.getChangeToken(), CHANGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

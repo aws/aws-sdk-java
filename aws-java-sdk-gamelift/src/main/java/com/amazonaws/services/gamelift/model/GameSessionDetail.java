@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,25 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A game session's properties and the protection policy currently in force.
+ * A game session's properties plus the protection policy currently in force.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionDetail" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GameSessionDetail implements Serializable, Cloneable {
+public class GameSessionDetail implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     */
     private GameSession gameSession;
     /**
      * <p>
@@ -34,13 +41,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -48,7 +55,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
     private String protectionPolicy;
 
     /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
      * @param gameSession
+     *        Object that describes a game session.
      */
 
     public void setGameSession(GameSession gameSession) {
@@ -56,7 +68,11 @@ public class GameSessionDetail implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
+     * @return Object that describes a game session.
      */
 
     public GameSession getGameSession() {
@@ -64,7 +80,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Object that describes a game session.
+     * </p>
+     * 
      * @param gameSession
+     *        Object that describes a game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,13 +101,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -96,12 +117,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -119,13 +140,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -134,12 +155,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *         during a scale-down event.
      *         </p>
      *         </li>
@@ -157,13 +178,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -173,12 +194,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -198,13 +219,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -214,12 +235,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -227,7 +248,7 @@ public class GameSessionDetail implements Serializable, Cloneable {
      */
 
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        this.protectionPolicy = protectionPolicy.toString();
+        withProtectionPolicy(protectionPolicy);
     }
 
     /**
@@ -237,13 +258,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -253,12 +274,12 @@ public class GameSessionDetail implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -267,12 +288,13 @@ public class GameSessionDetail implements Serializable, Cloneable {
      */
 
     public GameSessionDetail withProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        setProtectionPolicy(protectionPolicy);
+        this.protectionPolicy = protectionPolicy.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -328,5 +350,11 @@ public class GameSessionDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.GameSessionDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

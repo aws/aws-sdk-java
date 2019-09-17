@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results of the <a>TerminateWorkspaces</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces" target="_top">AWS API
  *      Documentation</a>
@@ -28,17 +25,17 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be terminated.
+     * Information about the WorkSpaces that could not be terminated.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be terminated.
+     * Information about the WorkSpaces that could not be terminated.
      * </p>
      * 
-     * @return An array of structures representing any WorkSpaces that could not be terminated.
+     * @return Information about the WorkSpaces that could not be terminated.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -50,11 +47,11 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be terminated.
+     * Information about the WorkSpaces that could not be terminated.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be terminated.
+     *        Information about the WorkSpaces that could not be terminated.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -68,7 +65,7 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be terminated.
+     * Information about the WorkSpaces that could not be terminated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +74,7 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be terminated.
+     *        Information about the WorkSpaces that could not be terminated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +90,11 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of structures representing any WorkSpaces that could not be terminated.
+     * Information about the WorkSpaces that could not be terminated.
      * </p>
      * 
      * @param failedRequests
-     *        An array of structures representing any WorkSpaces that could not be terminated.
+     *        Information about the WorkSpaces that could not be terminated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +104,8 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -157,4 +155,5 @@ public class TerminateWorkspacesResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

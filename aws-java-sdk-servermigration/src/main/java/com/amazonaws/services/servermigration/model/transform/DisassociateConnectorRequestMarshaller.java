@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servermigration.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisassociateConnectorRequest Marshaller
+ * DisassociateConnectorRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisassociateConnectorRequestMarshaller implements Marshaller<Request<DisassociateConnectorRequest>, DisassociateConnectorRequest> {
+@SdkInternalApi
+public class DisassociateConnectorRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONNECTORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorId").build();
 
-    public DisassociateConnectorRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisassociateConnectorRequestMarshaller instance = new DisassociateConnectorRequestMarshaller();
+
+    public static DisassociateConnectorRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisassociateConnectorRequest> marshall(DisassociateConnectorRequest disassociateConnectorRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisassociateConnectorRequest disassociateConnectorRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disassociateConnectorRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisassociateConnectorRequest> request = new DefaultRequest<DisassociateConnectorRequest>(disassociateConnectorRequest, "AWSServerMigration");
-        request.addHeader("X-Amz-Target", "AWSServerMigrationService_V2016_10_24.DisassociateConnector");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disassociateConnectorRequest.getConnectorId() != null) {
-                jsonGenerator.writeFieldName("connectorId").writeValue(disassociateConnectorRequest.getConnectorId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disassociateConnectorRequest.getConnectorId(), CONNECTORID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

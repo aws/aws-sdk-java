@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,43 +14,45 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * VPC configuration associated with your Lambda function.
+ * The VPC security groups and subnets that are attached to a Lambda function.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfigResponse" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VpcConfigResponse implements Serializable, Cloneable {
+public class VpcConfigResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of subnet IDs associated with the Lambda function.
+     * A list of VPC subnet IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of security group IDs associated with the Lambda function.
+     * A list of VPC security groups IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * The VPC ID associated with you Lambda function.
+     * The ID of the VPC.
      * </p>
      */
     private String vpcId;
 
     /**
      * <p>
-     * A list of subnet IDs associated with the Lambda function.
+     * A list of VPC subnet IDs.
      * </p>
      * 
-     * @return A list of subnet IDs associated with the Lambda function.
+     * @return A list of VPC subnet IDs.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -62,11 +64,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet IDs associated with the Lambda function.
+     * A list of VPC subnet IDs.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs associated with the Lambda function.
+     *        A list of VPC subnet IDs.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -80,7 +82,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet IDs associated with the Lambda function.
+     * A list of VPC subnet IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +91,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs associated with the Lambda function.
+     *        A list of VPC subnet IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +107,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of subnet IDs associated with the Lambda function.
+     * A list of VPC subnet IDs.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs associated with the Lambda function.
+     *        A list of VPC subnet IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +122,10 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security group IDs associated with the Lambda function.
+     * A list of VPC security groups IDs.
      * </p>
      * 
-     * @return A list of security group IDs associated with the Lambda function.
+     * @return A list of VPC security groups IDs.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -135,11 +137,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security group IDs associated with the Lambda function.
+     * A list of VPC security groups IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs associated with the Lambda function.
+     *        A list of VPC security groups IDs.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -153,7 +155,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security group IDs associated with the Lambda function.
+     * A list of VPC security groups IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -162,7 +164,7 @@ public class VpcConfigResponse implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs associated with the Lambda function.
+     *        A list of VPC security groups IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +180,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of security group IDs associated with the Lambda function.
+     * A list of VPC security groups IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs associated with the Lambda function.
+     *        A list of VPC security groups IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +195,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC ID associated with you Lambda function.
+     * The ID of the VPC.
      * </p>
      * 
      * @param vpcId
-     *        The VPC ID associated with you Lambda function.
+     *        The ID of the VPC.
      */
 
     public void setVpcId(String vpcId) {
@@ -206,10 +208,10 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC ID associated with you Lambda function.
+     * The ID of the VPC.
      * </p>
      * 
-     * @return The VPC ID associated with you Lambda function.
+     * @return The ID of the VPC.
      */
 
     public String getVpcId() {
@@ -218,11 +220,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC ID associated with you Lambda function.
+     * The ID of the VPC.
      * </p>
      * 
      * @param vpcId
-     *        The VPC ID associated with you Lambda function.
+     *        The ID of the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +234,8 @@ public class VpcConfigResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -295,5 +298,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.VpcConfigResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

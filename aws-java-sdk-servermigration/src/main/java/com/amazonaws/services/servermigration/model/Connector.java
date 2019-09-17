@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,88 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Object representing a Connector
+ * <p>
+ * Represents a connector.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Connector" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Connector implements Serializable, Cloneable {
+public class Connector implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     */
     private String connectorId;
-
+    /**
+     * <p>
+     * The connector version.
+     * </p>
+     */
     private String version;
-
+    /**
+     * <p>
+     * The status of the connector.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The capabilities of the connector.
+     * </p>
+     */
     private java.util.List<String> capabilityList;
-
+    /**
+     * <p>
+     * The name of the VM manager.
+     * </p>
+     */
     private String vmManagerName;
-
+    /**
+     * <p>
+     * The VM management product.
+     * </p>
+     */
     private String vmManagerType;
-
+    /**
+     * <p>
+     * The identifier of the VM manager.
+     * </p>
+     */
     private String vmManagerId;
-
+    /**
+     * <p>
+     * The IP address of the connector.
+     * </p>
+     */
     private String ipAddress;
-
+    /**
+     * <p>
+     * The MAC address of the connector.
+     * </p>
+     */
     private String macAddress;
-
+    /**
+     * <p>
+     * The time the connector was associated.
+     * </p>
+     */
     private java.util.Date associatedOn;
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      */
 
     public void setConnectorId(String connectorId) {
@@ -53,7 +103,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
+     * @return The identifier of the connector.
      */
 
     public String getConnectorId() {
@@ -61,7 +115,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +130,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The connector version.
+     * </p>
+     * 
      * @param version
+     *        The connector version.
      */
 
     public void setVersion(String version) {
@@ -79,7 +143,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The connector version.
+     * </p>
+     * 
+     * @return The connector version.
      */
 
     public String getVersion() {
@@ -87,7 +155,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The connector version.
+     * </p>
+     * 
      * @param version
+     *        The connector version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +170,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the connector.
+     * </p>
+     * 
      * @param status
+     *        The status of the connector.
      * @see ConnectorStatus
      */
 
@@ -106,7 +184,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the connector.
+     * </p>
+     * 
+     * @return The status of the connector.
      * @see ConnectorStatus
      */
 
@@ -115,7 +197,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the connector.
+     * </p>
+     * 
      * @param status
+     *        The status of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorStatus
      */
@@ -126,27 +213,41 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the connector.
+     * </p>
+     * 
      * @param status
+     *        The status of the connector.
      * @see ConnectorStatus
      */
 
     public void setStatus(ConnectorStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
+     * <p>
+     * The status of the connector.
+     * </p>
+     * 
      * @param status
+     *        The status of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorStatus
      */
 
     public Connector withStatus(ConnectorStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * @return
+     * <p>
+     * The capabilities of the connector.
+     * </p>
+     * 
+     * @return The capabilities of the connector.
      * @see ConnectorCapability
      */
 
@@ -155,7 +256,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The capabilities of the connector.
+     * </p>
+     * 
      * @param capabilityList
+     *        The capabilities of the connector.
      * @see ConnectorCapability
      */
 
@@ -170,12 +276,16 @@ public class Connector implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The capabilities of the connector.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilityList(java.util.Collection)} or {@link #withCapabilityList(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param capabilityList
+     *        The capabilities of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorCapability
      */
@@ -191,7 +301,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The capabilities of the connector.
+     * </p>
+     * 
      * @param capabilityList
+     *        The capabilities of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorCapability
      */
@@ -202,7 +317,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The capabilities of the connector.
+     * </p>
+     * 
      * @param capabilityList
+     *        The capabilities of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectorCapability
      */
@@ -221,7 +341,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the VM manager.
+     * </p>
+     * 
      * @param vmManagerName
+     *        The name of the VM manager.
      */
 
     public void setVmManagerName(String vmManagerName) {
@@ -229,7 +354,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the VM manager.
+     * </p>
+     * 
+     * @return The name of the VM manager.
      */
 
     public String getVmManagerName() {
@@ -237,7 +366,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the VM manager.
+     * </p>
+     * 
      * @param vmManagerName
+     *        The name of the VM manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +381,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The VM management product.
+     * </p>
+     * 
      * @param vmManagerType
+     *        The VM management product.
      * @see VmManagerType
      */
 
@@ -256,7 +395,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The VM management product.
+     * </p>
+     * 
+     * @return The VM management product.
      * @see VmManagerType
      */
 
@@ -265,7 +408,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The VM management product.
+     * </p>
+     * 
      * @param vmManagerType
+     *        The VM management product.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VmManagerType
      */
@@ -276,27 +424,42 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The VM management product.
+     * </p>
+     * 
      * @param vmManagerType
+     *        The VM management product.
      * @see VmManagerType
      */
 
     public void setVmManagerType(VmManagerType vmManagerType) {
-        this.vmManagerType = vmManagerType.toString();
+        withVmManagerType(vmManagerType);
     }
 
     /**
+     * <p>
+     * The VM management product.
+     * </p>
+     * 
      * @param vmManagerType
+     *        The VM management product.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VmManagerType
      */
 
     public Connector withVmManagerType(VmManagerType vmManagerType) {
-        setVmManagerType(vmManagerType);
+        this.vmManagerType = vmManagerType.toString();
         return this;
     }
 
     /**
+     * <p>
+     * The identifier of the VM manager.
+     * </p>
+     * 
      * @param vmManagerId
+     *        The identifier of the VM manager.
      */
 
     public void setVmManagerId(String vmManagerId) {
@@ -304,7 +467,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the VM manager.
+     * </p>
+     * 
+     * @return The identifier of the VM manager.
      */
 
     public String getVmManagerId() {
@@ -312,7 +479,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the VM manager.
+     * </p>
+     * 
      * @param vmManagerId
+     *        The identifier of the VM manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +494,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address of the connector.
+     * </p>
+     * 
      * @param ipAddress
+     *        The IP address of the connector.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -330,7 +507,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address of the connector.
+     * </p>
+     * 
+     * @return The IP address of the connector.
      */
 
     public String getIpAddress() {
@@ -338,7 +519,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address of the connector.
+     * </p>
+     * 
      * @param ipAddress
+     *        The IP address of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,7 +534,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The MAC address of the connector.
+     * </p>
+     * 
      * @param macAddress
+     *        The MAC address of the connector.
      */
 
     public void setMacAddress(String macAddress) {
@@ -356,7 +547,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The MAC address of the connector.
+     * </p>
+     * 
+     * @return The MAC address of the connector.
      */
 
     public String getMacAddress() {
@@ -364,7 +559,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The MAC address of the connector.
+     * </p>
+     * 
      * @param macAddress
+     *        The MAC address of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,7 +574,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the connector was associated.
+     * </p>
+     * 
      * @param associatedOn
+     *        The time the connector was associated.
      */
 
     public void setAssociatedOn(java.util.Date associatedOn) {
@@ -382,7 +587,11 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the connector was associated.
+     * </p>
+     * 
+     * @return The time the connector was associated.
      */
 
     public java.util.Date getAssociatedOn() {
@@ -390,7 +599,12 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time the connector was associated.
+     * </p>
+     * 
      * @param associatedOn
+     *        The time the connector was associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,7 +614,8 @@ public class Connector implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -512,5 +727,11 @@ public class Connector implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servermigration.model.transform.ConnectorMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

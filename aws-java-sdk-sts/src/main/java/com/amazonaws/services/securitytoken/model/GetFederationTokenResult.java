@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,12 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
      * The temporary security credentials, which include an access key ID, a secret access key, and a security (or
      * session) token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      */
     private Credentials credentials;
     /**
@@ -60,19 +61,20 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
      * The temporary security credentials, which include an access key ID, a secret access key, and a security (or
      * session) token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @param credentials
      *        The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *        (or session) token.</p>
+     *        (or session) token.</p> <note>
      *        <p>
-     *        <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *        you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *        bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
+     *        make no assumptions about the maximum size.
+     *        </p>
      */
 
     public void setCredentials(Credentials credentials) {
@@ -84,18 +86,19 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
      * The temporary security credentials, which include an access key ID, a secret access key, and a security (or
      * session) token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @return The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *         (or session) token.</p>
+     *         (or session) token.</p> <note>
      *         <p>
-     *         <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *         you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *         bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *         The size of the security token that STS API operations return is not fixed. We strongly recommend that
+     *         you make no assumptions about the maximum size.
+     *         </p>
      */
 
     public Credentials getCredentials() {
@@ -107,19 +110,20 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
      * The temporary security credentials, which include an access key ID, a secret access key, and a security (or
      * session) token.
      * </p>
+     * <note>
      * <p>
-     * <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that you
-     * make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but
-     * that can vary. Also, future updates to AWS might require larger sizes.
+     * The size of the security token that STS API operations return is not fixed. We strongly recommend that you make
+     * no assumptions about the maximum size.
      * </p>
+     * </note>
      * 
      * @param credentials
      *        The temporary security credentials, which include an access key ID, a secret access key, and a security
-     *        (or session) token.</p>
+     *        (or session) token.</p> <note>
      *        <p>
-     *        <b>Note:</b> The size of the security token that STS APIs return is not fixed. We strongly recommend that
-     *        you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096
-     *        bytes, but that can vary. Also, future updates to AWS might require larger sizes.
+     *        The size of the security token that STS API operations return is not fixed. We strongly recommend that you
+     *        make no assumptions about the maximum size.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,7 +231,8 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -291,4 +296,5 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,9 +46,10 @@ public class DescribeApplicationVersionsRequestMarshaller implements
             request.addParameter("ApplicationName", StringUtils.fromString(describeApplicationVersionsRequest.getApplicationName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) describeApplicationVersionsRequest
-                .getVersionLabels();
-        if (!versionLabelsList.isEmpty() || !versionLabelsList.isAutoConstruct()) {
+        if (!describeApplicationVersionsRequest.getVersionLabels().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeApplicationVersionsRequest.getVersionLabels()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) describeApplicationVersionsRequest
+                    .getVersionLabels();
             int versionLabelsListIndex = 1;
 
             for (String versionLabelsListValue : versionLabelsList) {

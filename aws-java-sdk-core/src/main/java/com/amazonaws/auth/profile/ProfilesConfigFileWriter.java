@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -174,7 +174,7 @@ public class ProfilesConfigFileWriter {
 
                 if (LOG.isDebugEnabled()) {
                     LOG.debug(String
-                            .format("The original credentials file is stashed to loaction (%s).",
+                            .format("The original credentials file is stashed to location (%s).",
                                     stashLocation.getAbsolutePath()));
                 }
 

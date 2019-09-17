@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,13 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string 1 ≤ length ≤ 200)
+     * Key (string between 1 and 200 characters)
      * </p>
      * <p>
      * Values (array containing a single string)
      * </p>
      * <p>
-     * Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstancePatchStateFilter> filters;
@@ -104,24 +104,24 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string 1 ≤ length ≤ 200)
+     * Key (string between 1 and 200 characters)
      * </p>
      * <p>
      * Values (array containing a single string)
      * </p>
      * <p>
-     * Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
      * 
      * @return Each entry in the array is a structure containing:</p>
      *         <p>
-     *         Key (string 1 ≤ length ≤ 200)
+     *         Key (string between 1 and 200 characters)
      *         </p>
      *         <p>
      *         Values (array containing a single string)
      *         </p>
      *         <p>
-     *         Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     *         Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      */
 
     public java.util.List<InstancePatchStateFilter> getFilters() {
@@ -136,25 +136,25 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string 1 ≤ length ≤ 200)
+     * Key (string between 1 and 200 characters)
      * </p>
      * <p>
      * Values (array containing a single string)
      * </p>
      * <p>
-     * Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string 1 ≤ length ≤ 200)
+     *        Key (string between 1 and 200 characters)
      *        </p>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
      *        <p>
-     *        Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      */
 
     public void setFilters(java.util.Collection<InstancePatchStateFilter> filters) {
@@ -171,13 +171,13 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string 1 ≤ length ≤ 200)
+     * Key (string between 1 and 200 characters)
      * </p>
      * <p>
      * Values (array containing a single string)
      * </p>
      * <p>
-     * Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,13 +188,13 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string 1 ≤ length ≤ 200)
+     *        Key (string between 1 and 200 characters)
      *        </p>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
      *        <p>
-     *        Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,25 +213,25 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string 1 ≤ length ≤ 200)
+     * Key (string between 1 and 200 characters)
      * </p>
      * <p>
      * Values (array containing a single string)
      * </p>
      * <p>
-     * Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string 1 ≤ length ≤ 200)
+     *        Key (string between 1 and 200 characters)
      *        </p>
      *        <p>
      *        Values (array containing a single string)
      *        </p>
      *        <p>
-     *        Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)
+     *        Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +321,8 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkingStorageRequest Marshaller
+ * DescribeWorkingStorageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkingStorageRequestMarshaller implements Marshaller<Request<DescribeWorkingStorageRequest>, DescribeWorkingStorageRequest> {
+@SdkInternalApi
+public class DescribeWorkingStorageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
 
-    public DescribeWorkingStorageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeWorkingStorageRequestMarshaller instance = new DescribeWorkingStorageRequestMarshaller();
+
+    public static DescribeWorkingStorageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeWorkingStorageRequest> marshall(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeWorkingStorageRequest describeWorkingStorageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeWorkingStorageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkingStorageRequest> request = new DefaultRequest<DescribeWorkingStorageRequest>(describeWorkingStorageRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DescribeWorkingStorage");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeWorkingStorageRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(describeWorkingStorageRequest.getGatewayARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeWorkingStorageRequest.getGatewayARN(), GATEWAYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

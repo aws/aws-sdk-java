@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,7 +86,7 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                 }
 
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
-                    dBInstance.setInstanceCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBInstance.setInstanceCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -151,7 +151,7 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBInstance.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBInstance.setLatestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -322,6 +322,71 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("Timezone", targetDepth)) {
                     dBInstance.setTimezone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
+                    dBInstance.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PerformanceInsightsEnabled", targetDepth)) {
+                    dBInstance.setPerformanceInsightsEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PerformanceInsightsKMSKeyId", targetDepth)) {
+                    dBInstance.setPerformanceInsightsKMSKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PerformanceInsightsRetentionPeriod", targetDepth)) {
+                    dBInstance.setPerformanceInsightsRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports", targetDepth)) {
+                    dBInstance.withEnabledCloudwatchLogsExports(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports/member", targetDepth)) {
+                    dBInstance.withEnabledCloudwatchLogsExports(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    dBInstance.withProcessorFeatures(new ArrayList<ProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures/ProcessorFeature", targetDepth)) {
+                    dBInstance.withProcessorFeatures(ProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeletionProtection", targetDepth)) {
+                    dBInstance.setDeletionProtection(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedRoles", targetDepth)) {
+                    dBInstance.withAssociatedRoles(new ArrayList<DBInstanceRole>());
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedRoles/DBInstanceRole", targetDepth)) {
+                    dBInstance.withAssociatedRoles(DBInstanceRoleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ListenerEndpoint", targetDepth)) {
+                    dBInstance.setListenerEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxAllocatedStorage", targetDepth)) {
+                    dBInstance.setMaxAllocatedStorage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

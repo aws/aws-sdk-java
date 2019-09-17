@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -27,7 +29,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssessmentRun implements Serializable, Cloneable {
+public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -115,6 +117,12 @@ public class AssessmentRun implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<AssessmentRunNotification> notifications;
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     */
+    private java.util.Map<String, Integer> findingCounts;
 
     /**
      * <p>
@@ -290,7 +298,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      */
 
     public void setState(AssessmentRunState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -305,7 +313,7 @@ public class AssessmentRun implements Serializable, Cloneable {
      */
 
     public AssessmentRun withState(AssessmentRunState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -861,7 +869,69 @@ public class AssessmentRun implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @return Provides a total count of generated findings per severity.
+     */
+
+    public java.util.Map<String, Integer> getFindingCounts() {
+        return findingCounts;
+    }
+
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @param findingCounts
+     *        Provides a total count of generated findings per severity.
+     */
+
+    public void setFindingCounts(java.util.Map<String, Integer> findingCounts) {
+        this.findingCounts = findingCounts;
+    }
+
+    /**
+     * <p>
+     * Provides a total count of generated findings per severity.
+     * </p>
+     * 
+     * @param findingCounts
+     *        Provides a total count of generated findings per severity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentRun withFindingCounts(java.util.Map<String, Integer> findingCounts) {
+        setFindingCounts(findingCounts);
+        return this;
+    }
+
+    public AssessmentRun addFindingCountsEntry(String key, Integer value) {
+        if (null == this.findingCounts) {
+            this.findingCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.findingCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.findingCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into FindingCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentRun clearFindingCountsEntries() {
+        this.findingCounts = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -898,7 +968,9 @@ public class AssessmentRun implements Serializable, Cloneable {
         if (getStateChanges() != null)
             sb.append("StateChanges: ").append(getStateChanges()).append(",");
         if (getNotifications() != null)
-            sb.append("Notifications: ").append(getNotifications());
+            sb.append("Notifications: ").append(getNotifications()).append(",");
+        if (getFindingCounts() != null)
+            sb.append("FindingCounts: ").append(getFindingCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -969,6 +1041,10 @@ public class AssessmentRun implements Serializable, Cloneable {
             return false;
         if (other.getNotifications() != null && other.getNotifications().equals(this.getNotifications()) == false)
             return false;
+        if (other.getFindingCounts() == null ^ this.getFindingCounts() == null)
+            return false;
+        if (other.getFindingCounts() != null && other.getFindingCounts().equals(this.getFindingCounts()) == false)
+            return false;
         return true;
     }
 
@@ -991,6 +1067,7 @@ public class AssessmentRun implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDataCollected() == null) ? 0 : getDataCollected().hashCode());
         hashCode = prime * hashCode + ((getStateChanges() == null) ? 0 : getStateChanges().hashCode());
         hashCode = prime * hashCode + ((getNotifications() == null) ? 0 : getNotifications().hashCode());
+        hashCode = prime * hashCode + ((getFindingCounts() == null) ? 0 : getFindingCounts().hashCode());
         return hashCode;
     }
 
@@ -1001,5 +1078,11 @@ public class AssessmentRun implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.AssessmentRunMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

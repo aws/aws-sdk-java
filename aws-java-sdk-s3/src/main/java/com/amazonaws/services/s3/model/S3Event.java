@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,13 @@ public enum S3Event {
 
     ObjectRemovedDelete("s3:ObjectRemoved:Delete"),
 
-    ObjectRemovedDeleteMarkerCreated("s3:ObjectRemoved:DeleteMarkerCreated");
+    ObjectRemovedDeleteMarkerCreated("s3:ObjectRemoved:DeleteMarkerCreated"),
+
+    ObjectRestorePost("s3:ObjectRestore:Post"),
+
+    ObjectRestoreCompleted("s3:ObjectRestore:Completed")
+
+    ;
 
     private final String event;
 

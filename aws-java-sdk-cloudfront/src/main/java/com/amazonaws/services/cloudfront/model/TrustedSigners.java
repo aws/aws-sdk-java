@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * If you want to require signed URLs in requests for objects in the target origin that match the
  * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the
  * applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
- * through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
+ * through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
  * </p>
  * <p>
  * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
@@ -37,10 +37,12 @@ import javax.annotation.Generated;
  * that you want to include in the updated distribution.
  * </p>
  * <p>
- * For more information about updating the distribution configuration, see <a>DistributionConfig</a> .
+ * For more information about updating the distribution configuration, see <a
+ * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in
+ * the <i>Amazon CloudFront API Reference</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TrustedSigners" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TrustedSigners" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -268,7 +270,8 @@ public class TrustedSigners implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -332,4 +335,5 @@ public class TrustedSigners implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetApplicationsAsync(BatchGetApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetApplicationsResult> batchGetApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetApplicationsRequest, BatchGetApplicationsResult> asyncHandler) {
 
@@ -102,14 +103,29 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request) {
 
         return batchGetDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request) {
+
+        return batchGetDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentTargetsRequest, BatchGetDeploymentTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +159,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetDeploymentsAsync(BatchGetDeploymentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetDeploymentsResult> batchGetDeploymentsAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentsRequest, BatchGetDeploymentsResult> asyncHandler) {
 
@@ -178,10 +195,24 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #batchGetOnPremisesInstancesAsync(BatchGetOnPremisesInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetOnPremisesInstancesResult> batchGetOnPremisesInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<BatchGetOnPremisesInstancesRequest, BatchGetOnPremisesInstancesResult> asyncHandler) {
 
         return batchGetOnPremisesInstancesAsync(new BatchGetOnPremisesInstancesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest request) {
+
+        return continueDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContinueDeploymentResult> continueDeploymentAsync(ContinueDeploymentRequest request,
+            com.amazonaws.handlers.AsyncHandler<ContinueDeploymentRequest, ContinueDeploymentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -276,6 +307,19 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request) {
+
+        return deleteGitHubAccountTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request) {
 
         return deregisterOnPremisesInstanceAsync(request, null);
@@ -354,14 +398,29 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest request) {
 
         return getDeploymentInstanceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest request) {
+
+        return getDeploymentTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeploymentTargetRequest, GetDeploymentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -421,6 +480,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listApplicationsAsync(ListApplicationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
@@ -456,6 +516,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listDeploymentConfigsAsync(ListDeploymentConfigsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDeploymentConfigsResult> listDeploymentConfigsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDeploymentConfigsRequest, ListDeploymentConfigsResult> asyncHandler) {
 
@@ -476,14 +537,29 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest request) {
 
         return listDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest request) {
+
+        return listDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDeploymentTargetsRequest, ListDeploymentTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -517,10 +593,24 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listDeploymentsAsync(ListDeploymentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
 
         return listDeploymentsAsync(new ListDeploymentsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request) {
+
+        return listGitHubAccountTokenNamesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGitHubAccountTokenNamesRequest, ListGitHubAccountTokenNamesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -552,10 +642,39 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler) {
 
         return listOnPremisesInstancesAsync(new ListOnPremisesInstancesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest request) {
+
+        return putLifecycleEventHookExecutionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutLifecycleEventHookExecutionStatusRequest, PutLifecycleEventHookExecutionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -600,6 +719,23 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    @Deprecated
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest request) {
+
+        return skipWaitTimeForInstanceTerminationAsync(request, null);
+    }
+
+    @Override
+    @Deprecated
+    public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
+            SkipWaitTimeForInstanceTerminationRequest request,
+            com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest request) {
 
         return stopDeploymentAsync(request, null);
@@ -608,6 +744,32 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     @Override
     public java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -641,6 +803,7 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
      *
      * @see #updateApplicationAsync(UpdateApplicationRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 

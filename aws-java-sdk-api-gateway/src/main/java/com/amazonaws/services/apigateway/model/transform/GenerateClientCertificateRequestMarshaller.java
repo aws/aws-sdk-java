@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,49 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
+import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GenerateClientCertificateRequest Marshaller
+ * GenerateClientCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GenerateClientCertificateRequestMarshaller implements Marshaller<Request<GenerateClientCertificateRequest>, GenerateClientCertificateRequest> {
+@SdkInternalApi
+public class GenerateClientCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public GenerateClientCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GenerateClientCertificateRequestMarshaller instance = new GenerateClientCertificateRequestMarshaller();
+
+    public static GenerateClientCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GenerateClientCertificateRequest> marshall(GenerateClientCertificateRequest generateClientCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GenerateClientCertificateRequest generateClientCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (generateClientCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GenerateClientCertificateRequest> request = new DefaultRequest<GenerateClientCertificateRequest>(generateClientCertificateRequest,
-                "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/clientcertificates";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (generateClientCertificateRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(generateClientCertificateRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(generateClientCertificateRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(generateClientCertificateRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

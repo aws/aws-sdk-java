@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.health.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,13 +26,14 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/Event" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Event implements Serializable, Cloneable {
+public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     private String arn;
@@ -49,7 +52,8 @@ public class Event implements Serializable, Cloneable {
     private String eventTypeCode;
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      */
     private String eventTypeCategory;
@@ -94,14 +98,16 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param arn
      *        The unique identifier for the event. Format:
-     *        <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *        <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *        . Example:
+     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public void setArn(String arn) {
@@ -111,13 +117,15 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @return The unique identifier for the event. Format:
-     *         <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *         <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *         <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *         . Example:
+     *         <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public String getArn() {
@@ -127,14 +135,16 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param arn
      *        The unique identifier for the event. Format:
-     *        <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *        <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *        . Example:
+     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +244,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      * 
      * @param eventTypeCategory
-     *        The
+     *        The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     *        <code>accountNotification</code>.
      * @see EventTypeCategory
      */
 
@@ -248,10 +260,12 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      * 
-     * @return The
+     * @return The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     *         <code>accountNotification</code>.
      * @see EventTypeCategory
      */
 
@@ -261,11 +275,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      * 
      * @param eventTypeCategory
-     *        The
+     *        The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     *        <code>accountNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventTypeCategory
      */
@@ -277,31 +293,35 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      * 
      * @param eventTypeCategory
-     *        The
+     *        The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     *        <code>accountNotification</code>.
      * @see EventTypeCategory
      */
 
     public void setEventTypeCategory(EventTypeCategory eventTypeCategory) {
-        this.eventTypeCategory = eventTypeCategory.toString();
+        withEventTypeCategory(eventTypeCategory);
     }
 
     /**
      * <p>
-     * The
+     * The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     * <code>accountNotification</code>.
      * </p>
      * 
      * @param eventTypeCategory
-     *        The
+     *        The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and
+     *        <code>accountNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventTypeCategory
      */
 
     public Event withEventTypeCategory(EventTypeCategory eventTypeCategory) {
-        setEventTypeCategory(eventTypeCategory);
+        this.eventTypeCategory = eventTypeCategory.toString();
         return this;
     }
 
@@ -567,7 +587,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public void setStatusCode(EventStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -584,12 +604,13 @@ public class Event implements Serializable, Cloneable {
      */
 
     public Event withStatusCode(EventStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -701,5 +722,11 @@ public class Event implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.health.model.transform.EventMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -32,7 +32,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Unit tests for the
+ * Unit tests for AWS4Signer class
  */
 public class AWS4SignerTest {
 
@@ -140,6 +140,75 @@ public class AWS4SignerTest {
         assertEquals(EXPECTED_AMZ_EXPIRES, request.getParameters().get("X-Amz-Expires").get(0));
     }
 
+    /*
+     * This test verifies that SDK correctly signs the request for services which
+     * have non-matching service name and endpoint prefix.
+     */
+    @Test
+    public void testSigning_ForRequestToBjsRegion() throws Exception {
+
+        final String EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER =
+                "AWS4-HMAC-SHA256 Credential=access/19810216/cn-north-1/application-autoscaling/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=a6e694a96dfa9243b8a8ca6139a046de96dc7fcd2896c2cd7ff36daab48e78d0";
+
+        final String EXPECTED_AUTHORIZATION_HEADER_WITH_SHA256_HEADER =
+                "AWS4-HMAC-SHA256 Credential=access/19810216/cn-north-1/application-autoscaling/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date;x-amz-sha256, Signature=504f0cc7e4afdc30d985a6ba607917744539621c138a75f185dbfed652c8ebeb";
+
+
+        AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
+        // Test request without 'x-amz-sha256' header
+        SignableRequest<?> request = generateBasicRequestToBjs();
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        AWS4Signer signer = new AWS4Signer();
+        signer.setOverrideDate(c.getTime());
+        signer.setServiceName("application-autoscaling");
+        signer.setEndpointPrefix("autoscaling");
+
+        signer.sign(request, credentials);
+        assertEquals(EXPECTED_AUTHORIZATION_HEADER_WITHOUT_SHA256_HEADER,
+                request.getHeaders().get("Authorization"));
+
+
+        // Test request with 'x-amz-sha256' header
+        request = generateBasicRequestToBjs();
+        request.addHeader("x-amz-sha256", "required");
+
+        signer.sign(request, credentials);
+        assertEquals(EXPECTED_AUTHORIZATION_HEADER_WITH_SHA256_HEADER,
+                request.getHeaders().get("Authorization"));
+    }
+
+    @Test
+    public void testPresigning_ForRequestToBjsRegion() throws Exception {
+        final String EXPECTED_AMZ_CREDENTIALS = "access/19810216/cn-north-1/application-autoscaling/aws4_request";
+        final String EXPECTED_AMZ_HEADER = "19810216T063000Z";
+        final String EXPECTED_AMZ_EXPIRES = "604800";
+
+        AWSCredentials credentials = new BasicAWSCredentials("access", "secret");
+
+        // Test request without 'x-amz-sha256' header
+        SignableRequest<?> request = generateBasicRequestToBjs();
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        AWS4Signer signer = new AWS4Signer();
+        signer.setOverrideDate(c.getTime());
+        signer.setServiceName("application-autoscaling");
+        signer.setEndpointPrefix("autoscaling");
+
+        signer.presignRequest(request, credentials, null);
+
+        assertEquals(EXPECTED_AMZ_CREDENTIALS,
+                request.getParameters().get("X-Amz-Credential").get(0));
+        assertEquals(EXPECTED_AMZ_HEADER, request.getParameters().get("X-Amz-Date").get(0));
+        assertEquals(EXPECTED_AMZ_EXPIRES, request.getParameters().get("X-Amz-Expires").get(0));
+    }
+
     /**
      * Tests that if passed anonymous credentials, signer will not generate a signature
      */
@@ -188,6 +257,16 @@ public class AWS4SignerTest {
                 .withHeader("x-amz-archive-description", "test  test")
                 .withPath("/")
                 .withEndpoint("http://demo.us-east-1.amazonaws.com").build();
+    }
+
+    private SignableRequest<?> generateBasicRequestToBjs() {
+        return MockRequestBuilder.create()
+                .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                .withHeader("Host", "autoscaling.cn-north-1.amazonaws.com.cn")
+                .withHeader("x-amz-archive-description", "test  test")
+                .withPath("/")
+                .withEndpoint("http://autoscaling.cn-north-1.amazonaws.com.cn")
+                .build();
     }
 
     private String getOldTimeStamp(Date date) {

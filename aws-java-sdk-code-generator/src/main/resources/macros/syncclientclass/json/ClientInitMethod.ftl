@@ -1,5 +1,10 @@
 <#macro content serviceModelRoot>
     private void init() {
+        <#if serviceModelRoot.endpointOperation?has_content>
+        if (endpointDiscoveryEnabled) {
+            cache = new ${serviceModelRoot.metadata.syncInterface}EndpointCache(this);
+        }
+        </#if>
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
 <#if serviceModelRoot.metadata.defaultEndpoint?has_content>

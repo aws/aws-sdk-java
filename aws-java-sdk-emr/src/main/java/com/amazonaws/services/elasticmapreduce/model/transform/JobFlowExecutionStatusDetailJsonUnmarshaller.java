@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,19 +54,19 @@ public class JobFlowExecutionStatusDetailJsonUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobFlowExecutionStatusDetail.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail.setStartDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobFlowExecutionStatusDetail.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail.setReadyDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobFlowExecutionStatusDetail.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail.setEndDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobFlowExecutionStatusDetail.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastStateChangeReason", targetDepth)) {
                     context.nextToken();

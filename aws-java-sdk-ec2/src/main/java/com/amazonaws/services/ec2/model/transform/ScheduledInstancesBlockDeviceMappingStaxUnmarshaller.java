@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class ScheduledInstancesBlockDeviceMappingStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("Ebs", targetDepth)) {
+                    scheduledInstancesBlockDeviceMapping.setEbs(ScheduledInstancesEbsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("NoDevice", targetDepth)) {
                     scheduledInstancesBlockDeviceMapping.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,11 +60,6 @@ public class ScheduledInstancesBlockDeviceMappingStaxUnmarshaller implements Unm
 
                 if (context.testExpression("VirtualName", targetDepth)) {
                     scheduledInstancesBlockDeviceMapping.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Ebs", targetDepth)) {
-                    scheduledInstancesBlockDeviceMapping.setEbs(ScheduledInstancesEbsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

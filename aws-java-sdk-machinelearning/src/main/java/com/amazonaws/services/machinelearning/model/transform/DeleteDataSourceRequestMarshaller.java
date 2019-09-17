@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteDataSourceRequest Marshaller
+ * DeleteDataSourceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteDataSourceRequestMarshaller implements Marshaller<Request<DeleteDataSourceRequest>, DeleteDataSourceRequest> {
+@SdkInternalApi
+public class DeleteDataSourceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceId").build();
 
-    public DeleteDataSourceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteDataSourceRequestMarshaller instance = new DeleteDataSourceRequestMarshaller();
+
+    public static DeleteDataSourceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteDataSourceRequest> marshall(DeleteDataSourceRequest deleteDataSourceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteDataSourceRequest deleteDataSourceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteDataSourceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDataSourceRequest> request = new DefaultRequest<DeleteDataSourceRequest>(deleteDataSourceRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.DeleteDataSource");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteDataSourceRequest.getDataSourceId() != null) {
-                jsonGenerator.writeFieldName("DataSourceId").writeValue(deleteDataSourceRequest.getDataSourceId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteDataSourceRequest.getDataSourceId(), DATASOURCEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

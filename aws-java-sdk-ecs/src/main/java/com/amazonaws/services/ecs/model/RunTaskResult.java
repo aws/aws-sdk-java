@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
      */
@@ -38,12 +38,12 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
      * 
-     * @return A full description of the tasks that were run. Each task that was successfully placed on your cluster are
-     *         described here.
+     * @return A full description of the tasks that were run. The tasks that were successfully placed on your cluster
+     *         are described here.
      */
 
     public java.util.List<Task> getTasks() {
@@ -55,12 +55,12 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
      * 
      * @param tasks
-     *        A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      *        described here.
      */
 
@@ -75,7 +75,7 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
      * <p>
@@ -85,7 +85,7 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param tasks
-     *        A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      *        described here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -102,12 +102,12 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
      * 
      * @param tasks
-     *        A full description of the tasks that were run. Each task that was successfully placed on your cluster are
+     *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      *        described here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -191,7 +191,8 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -248,4 +249,5 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

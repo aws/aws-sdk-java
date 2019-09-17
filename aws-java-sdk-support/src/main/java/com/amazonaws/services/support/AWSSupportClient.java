@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.support.AWSSupportClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -127,6 +130,7 @@ import com.amazonaws.services.support.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSSupportClient extends AmazonWebServiceClient implements AWSSupport {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -138,38 +142,40 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetIdNotFound").withModeledClass(
-                                    com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetIdNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.AttachmentSetIdNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CaseCreationLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CaseCreationLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.CaseCreationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttachmentIdNotFound").withModeledClass(
-                                    com.amazonaws.services.support.model.AttachmentIdNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentIdNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.AttachmentIdNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetExpired").withModeledClass(
-                                    com.amazonaws.services.support.model.AttachmentSetExpiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetExpired").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.AttachmentSetExpiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttachmentLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.support.model.AttachmentLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.AttachmentLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CaseIdNotFound").withModeledClass(
-                                    com.amazonaws.services.support.model.CaseIdNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CaseIdNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.CaseIdNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DescribeAttachmentLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DescribeAttachmentLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.DescribeAttachmentLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.support.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetSizeLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetSizeLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.support.model.transform.AttachmentSetSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.support.model.AWSSupportException.class));
 
     /**
@@ -255,6 +261,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     public AWSSupportClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -320,7 +327,12 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AWSSupportClientBuilder builder() {
+        return AWSSupportClientBuilder.standard();
     }
 
     /**
@@ -334,8 +346,23 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *        Object providing client parameters.
      */
     AWSSupportClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Support using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSSupportClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -381,7 +408,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
+    public AddAttachmentsToSetResult addAttachmentsToSet(AddAttachmentsToSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddAttachmentsToSet(request);
+    }
+
+    @SdkInternalApi
+    final AddAttachmentsToSetResult executeAddAttachmentsToSet(AddAttachmentsToSetRequest addAttachmentsToSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addAttachmentsToSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -392,9 +425,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttachmentsToSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addAttachmentsToSetRequest));
+                request = new AddAttachmentsToSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addAttachmentsToSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddAttachmentsToSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -441,7 +479,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
+    public AddCommunicationToCaseResult addCommunicationToCase(AddCommunicationToCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddCommunicationToCase(request);
+    }
+
+    @SdkInternalApi
+    final AddCommunicationToCaseResult executeAddCommunicationToCase(AddCommunicationToCaseRequest addCommunicationToCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addCommunicationToCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,9 +496,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCommunicationToCaseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCommunicationToCaseRequest));
+                request = new AddCommunicationToCaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCommunicationToCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCommunicationToCase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,7 +612,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public CreateCaseResult createCase(CreateCaseRequest createCaseRequest) {
+    public CreateCaseResult createCase(CreateCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCase(request);
+    }
+
+    @SdkInternalApi
+    final CreateCaseResult executeCreateCase(CreateCaseRequest createCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -574,9 +629,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCaseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCaseRequest));
+                request = new CreateCaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -614,7 +674,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
+    public DescribeAttachmentResult describeAttachment(DescribeAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAttachment(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAttachmentResult executeDescribeAttachment(DescribeAttachmentRequest describeAttachmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAttachmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -625,9 +691,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAttachmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttachmentRequest));
+                request = new DescribeAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -683,7 +754,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeCasesResult describeCases(DescribeCasesRequest describeCasesRequest) {
+    public DescribeCasesResult describeCases(DescribeCasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCases(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCasesResult executeDescribeCases(DescribeCasesRequest describeCasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -694,9 +771,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCasesRequest));
+                request = new DescribeCasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -745,7 +827,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
+    public DescribeCommunicationsResult describeCommunications(DescribeCommunicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCommunications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCommunicationsResult executeDescribeCommunications(DescribeCommunicationsRequest describeCommunicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCommunicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -756,9 +844,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommunicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommunicationsRequest));
+                request = new DescribeCommunicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommunicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCommunications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -799,7 +892,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+    public DescribeServicesResult describeServices(DescribeServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServicesResult executeDescribeServices(DescribeServicesRequest describeServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -810,9 +909,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
+                request = new DescribeServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -849,7 +953,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      API Documentation</a>
      */
     @Override
-    public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
+    public DescribeSeverityLevelsResult describeSeverityLevels(DescribeSeverityLevelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSeverityLevels(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSeverityLevelsResult executeDescribeSeverityLevels(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSeverityLevelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -860,9 +970,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSeverityLevelsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSeverityLevelsRequest));
+                request = new DescribeSeverityLevelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSeverityLevelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSeverityLevels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -908,7 +1023,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(
+    public DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckRefreshStatuses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckRefreshStatusesResult executeDescribeTrustedAdvisorCheckRefreshStatuses(
             DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckRefreshStatusesRequest);
@@ -920,10 +1041,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeTrustedAdvisorCheckRefreshStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckRefreshStatuses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,7 +1123,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(
+    public DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckResult(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckResultResult executeDescribeTrustedAdvisorCheckResult(
             DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckResultRequest);
@@ -1009,10 +1141,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckResultRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeTrustedAdvisorCheckResultRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeTrustedAdvisorCheckResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1048,7 +1185,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(
+    public DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorCheckSummaries(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorCheckSummariesResult executeDescribeTrustedAdvisorCheckSummaries(
             DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorCheckSummariesRequest);
@@ -1060,10 +1203,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeTrustedAdvisorCheckSummariesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeTrustedAdvisorCheckSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorCheckSummaries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,7 +1245,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
+    public DescribeTrustedAdvisorChecksResult describeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedAdvisorChecks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedAdvisorChecksResult executeDescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustedAdvisorChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1108,10 +1262,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorChecksRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeTrustedAdvisorChecksRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeTrustedAdvisorChecksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedAdvisorChecks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1171,7 +1330,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
+    public RefreshTrustedAdvisorCheckResult refreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeRefreshTrustedAdvisorCheck(request);
+    }
+
+    @SdkInternalApi
+    final RefreshTrustedAdvisorCheckResult executeRefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(refreshTrustedAdvisorCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1182,9 +1347,15 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RefreshTrustedAdvisorCheckRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(refreshTrustedAdvisorCheckRequest));
+                request = new RefreshTrustedAdvisorCheckRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(refreshTrustedAdvisorCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RefreshTrustedAdvisorCheck");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1219,7 +1390,13 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      *      Documentation</a>
      */
     @Override
-    public ResolveCaseResult resolveCase(ResolveCaseRequest resolveCaseRequest) {
+    public ResolveCaseResult resolveCase(ResolveCaseRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveCase(request);
+    }
+
+    @SdkInternalApi
+    final ResolveCaseResult executeResolveCase(ResolveCaseRequest resolveCaseRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveCaseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1230,9 +1407,14 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveCaseRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCaseRequest));
+                request = new ResolveCaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Support");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCase");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1278,9 +1460,18 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1290,7 +1481,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1298,13 +1489,27 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

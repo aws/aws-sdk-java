@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,11 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesConfig.setInstanceGroups(new ListUnmarshaller<InstanceGroupConfig>(InstanceGroupConfigJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("InstanceFleets", targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig.setInstanceFleets(new ListUnmarshaller<InstanceFleetConfig>(InstanceFleetConfigJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setEc2KeyName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -88,6 +93,10 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setEc2SubnetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2SubnetIds", targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig.setEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup", targetDepth)) {
                     context.nextToken();

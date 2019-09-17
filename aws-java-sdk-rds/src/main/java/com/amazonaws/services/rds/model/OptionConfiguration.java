@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,13 +46,13 @@ public class OptionConfiguration implements Serializable, Cloneable {
     private String optionVersion;
     /**
      * <p>
-     * A list of DBSecurityGroupMemebrship name strings used for this option.
+     * A list of DBSecurityGroupMembership name strings used for this option.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMemberships;
     /**
      * <p>
-     * A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * A list of VpcSecurityGroupMembership name strings used for this option.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupMemberships;
@@ -185,10 +185,10 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of DBSecurityGroupMemebrship name strings used for this option.
+     * A list of DBSecurityGroupMembership name strings used for this option.
      * </p>
      * 
-     * @return A list of DBSecurityGroupMemebrship name strings used for this option.
+     * @return A list of DBSecurityGroupMembership name strings used for this option.
      */
 
     public java.util.List<String> getDBSecurityGroupMemberships() {
@@ -200,11 +200,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of DBSecurityGroupMemebrship name strings used for this option.
+     * A list of DBSecurityGroupMembership name strings used for this option.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this option.
+     *        A list of DBSecurityGroupMembership name strings used for this option.
      */
 
     public void setDBSecurityGroupMemberships(java.util.Collection<String> dBSecurityGroupMemberships) {
@@ -218,7 +218,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of DBSecurityGroupMemebrship name strings used for this option.
+     * A list of DBSecurityGroupMembership name strings used for this option.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -227,7 +227,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this option.
+     *        A list of DBSecurityGroupMembership name strings used for this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of DBSecurityGroupMemebrship name strings used for this option.
+     * A list of DBSecurityGroupMembership name strings used for this option.
      * </p>
      * 
      * @param dBSecurityGroupMemberships
-     *        A list of DBSecurityGroupMemebrship name strings used for this option.
+     *        A list of DBSecurityGroupMembership name strings used for this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +258,10 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * A list of VpcSecurityGroupMembership name strings used for this option.
      * </p>
      * 
-     * @return A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * @return A list of VpcSecurityGroupMembership name strings used for this option.
      */
 
     public java.util.List<String> getVpcSecurityGroupMemberships() {
@@ -273,11 +273,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * A list of VpcSecurityGroupMembership name strings used for this option.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
+     *        A list of VpcSecurityGroupMembership name strings used for this option.
      */
 
     public void setVpcSecurityGroupMemberships(java.util.Collection<String> vpcSecurityGroupMemberships) {
@@ -291,7 +291,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * A list of VpcSecurityGroupMembership name strings used for this option.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -300,7 +300,7 @@ public class OptionConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
+     *        A list of VpcSecurityGroupMembership name strings used for this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,11 +316,11 @@ public class OptionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VpcSecurityGroupMemebrship name strings used for this option.
+     * A list of VpcSecurityGroupMembership name strings used for this option.
      * </p>
      * 
      * @param vpcSecurityGroupMemberships
-     *        A list of VpcSecurityGroupMemebrship name strings used for this option.
+     *        A list of VpcSecurityGroupMembership name strings used for this option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,7 +403,8 @@ public class OptionConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -488,4 +489,5 @@ public class OptionConfiguration implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

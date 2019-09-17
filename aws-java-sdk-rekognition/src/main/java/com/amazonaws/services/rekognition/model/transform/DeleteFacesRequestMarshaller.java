@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,78 +12,48 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteFacesRequest Marshaller
+ * DeleteFacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteFacesRequestMarshaller implements Marshaller<Request<DeleteFacesRequest>, DeleteFacesRequest> {
+@SdkInternalApi
+public class DeleteFacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
+    private static final MarshallingInfo<List> FACEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FaceIds").build();
 
-    public DeleteFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteFacesRequestMarshaller instance = new DeleteFacesRequestMarshaller();
+
+    public static DeleteFacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteFacesRequest> marshall(DeleteFacesRequest deleteFacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteFacesRequest deleteFacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteFacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteFacesRequest> request = new DefaultRequest<DeleteFacesRequest>(deleteFacesRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.DeleteFaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteFacesRequest.getCollectionId() != null) {
-                jsonGenerator.writeFieldName("CollectionId").writeValue(deleteFacesRequest.getCollectionId());
-            }
-
-            java.util.List<String> faceIdsList = deleteFacesRequest.getFaceIds();
-            if (faceIdsList != null) {
-                jsonGenerator.writeFieldName("FaceIds");
-                jsonGenerator.writeStartArray();
-                for (String faceIdsListValue : faceIdsList) {
-                    if (faceIdsListValue != null) {
-                        jsonGenerator.writeValue(faceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteFacesRequest.getCollectionId(), COLLECTIONID_BINDING);
+            protocolMarshaller.marshall(deleteFacesRequest.getFaceIds(), FACEIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

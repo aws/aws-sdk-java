@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateInstanceExportTaskRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateInstanceExportTask.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -36,6 +34,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     private String description;
     /**
      * <p>
+     * The format and location for an instance export task.
+     * </p>
+     */
+    private ExportToS3TaskSpecification exportToS3Task;
+    /**
+     * <p>
      * The ID of the instance.
      * </p>
      */
@@ -46,12 +50,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private String targetEnvironment;
-    /**
-     * <p>
-     * The format and location for an instance export task.
-     * </p>
-     */
-    private ExportToS3TaskSpecification exportToS3Task;
 
     /**
      * <p>
@@ -90,6 +88,46 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     public CreateInstanceExportTaskRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The format and location for an instance export task.
+     * </p>
+     * 
+     * @param exportToS3Task
+     *        The format and location for an instance export task.
+     */
+
+    public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
+        this.exportToS3Task = exportToS3Task;
+    }
+
+    /**
+     * <p>
+     * The format and location for an instance export task.
+     * </p>
+     * 
+     * @return The format and location for an instance export task.
+     */
+
+    public ExportToS3TaskSpecification getExportToS3Task() {
+        return this.exportToS3Task;
+    }
+
+    /**
+     * <p>
+     * The format and location for an instance export task.
+     * </p>
+     * 
+     * @param exportToS3Task
+     *        The format and location for an instance export task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceExportTaskRequest withExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
+        setExportToS3Task(exportToS3Task);
         return this;
     }
 
@@ -187,7 +225,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      */
 
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
-        this.targetEnvironment = targetEnvironment.toString();
+        withTargetEnvironment(targetEnvironment);
     }
 
     /**
@@ -202,47 +240,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      */
 
     public CreateInstanceExportTaskRequest withTargetEnvironment(ExportEnvironment targetEnvironment) {
-        setTargetEnvironment(targetEnvironment);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The format and location for an instance export task.
-     * </p>
-     * 
-     * @param exportToS3Task
-     *        The format and location for an instance export task.
-     */
-
-    public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
-        this.exportToS3Task = exportToS3Task;
-    }
-
-    /**
-     * <p>
-     * The format and location for an instance export task.
-     * </p>
-     * 
-     * @return The format and location for an instance export task.
-     */
-
-    public ExportToS3TaskSpecification getExportToS3Task() {
-        return this.exportToS3Task;
-    }
-
-    /**
-     * <p>
-     * The format and location for an instance export task.
-     * </p>
-     * 
-     * @param exportToS3Task
-     *        The format and location for an instance export task.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateInstanceExportTaskRequest withExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
-        setExportToS3Task(exportToS3Task);
+        this.targetEnvironment = targetEnvironment.toString();
         return this;
     }
 
@@ -258,7 +256,8 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -270,12 +269,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getExportToS3Task() != null)
+            sb.append("ExportToS3Task: ").append(getExportToS3Task()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTargetEnvironment() != null)
-            sb.append("TargetEnvironment: ").append(getTargetEnvironment()).append(",");
-        if (getExportToS3Task() != null)
-            sb.append("ExportToS3Task: ").append(getExportToS3Task());
+            sb.append("TargetEnvironment: ").append(getTargetEnvironment());
         sb.append("}");
         return sb.toString();
     }
@@ -294,6 +293,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getExportToS3Task() == null ^ this.getExportToS3Task() == null)
+            return false;
+        if (other.getExportToS3Task() != null && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -301,10 +304,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         if (other.getTargetEnvironment() == null ^ this.getTargetEnvironment() == null)
             return false;
         if (other.getTargetEnvironment() != null && other.getTargetEnvironment().equals(this.getTargetEnvironment()) == false)
-            return false;
-        if (other.getExportToS3Task() == null ^ this.getExportToS3Task() == null)
-            return false;
-        if (other.getExportToS3Task() != null && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
             return false;
         return true;
     }
@@ -315,9 +314,9 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getTargetEnvironment() == null) ? 0 : getTargetEnvironment().hashCode());
-        hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
         return hashCode;
     }
 

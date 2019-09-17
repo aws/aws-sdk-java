@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,9 +46,8 @@ public class DescribeRulesRequestMarshaller implements Marshaller<Request<Descri
             request.addParameter("ListenerArn", StringUtils.fromString(describeRulesRequest.getListenerArn()));
         }
 
-        java.util.List<String> ruleArnsList = describeRulesRequest.getRuleArns();
-
-        if (ruleArnsList != null) {
+        if (describeRulesRequest.getRuleArns() != null) {
+            java.util.List<String> ruleArnsList = describeRulesRequest.getRuleArns();
             if (ruleArnsList.isEmpty()) {
                 request.addParameter("RuleArns", "");
             } else {
@@ -61,6 +60,14 @@ public class DescribeRulesRequestMarshaller implements Marshaller<Request<Descri
                     ruleArnsListIndex++;
                 }
             }
+        }
+
+        if (describeRulesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeRulesRequest.getMarker()));
+        }
+
+        if (describeRulesRequest.getPageSize() != null) {
+            request.addParameter("PageSize", StringUtils.fromInteger(describeRulesRequest.getPageSize()));
         }
 
         return request;

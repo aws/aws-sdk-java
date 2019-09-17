@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartAssessmentRunRequest Marshaller
+ * StartAssessmentRunRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartAssessmentRunRequestMarshaller implements Marshaller<Request<StartAssessmentRunRequest>, StartAssessmentRunRequest> {
+@SdkInternalApi
+public class StartAssessmentRunRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTTEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTemplateArn").build();
+    private static final MarshallingInfo<String> ASSESSMENTRUNNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunName").build();
 
-    public StartAssessmentRunRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartAssessmentRunRequestMarshaller instance = new StartAssessmentRunRequestMarshaller();
+
+    public static StartAssessmentRunRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartAssessmentRunRequest> marshall(StartAssessmentRunRequest startAssessmentRunRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartAssessmentRunRequest startAssessmentRunRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startAssessmentRunRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartAssessmentRunRequest> request = new DefaultRequest<StartAssessmentRunRequest>(startAssessmentRunRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.StartAssessmentRun");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startAssessmentRunRequest.getAssessmentTemplateArn() != null) {
-                jsonGenerator.writeFieldName("assessmentTemplateArn").writeValue(startAssessmentRunRequest.getAssessmentTemplateArn());
-            }
-            if (startAssessmentRunRequest.getAssessmentRunName() != null) {
-                jsonGenerator.writeFieldName("assessmentRunName").writeValue(startAssessmentRunRequest.getAssessmentRunName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startAssessmentRunRequest.getAssessmentTemplateArn(), ASSESSMENTTEMPLATEARN_BINDING);
+            protocolMarshaller.marshall(startAssessmentRunRequest.getAssessmentRunName(), ASSESSMENTRUNNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of
  * a specified type. For information about notifications, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -157,7 +157,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -172,7 +172,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      */
 
     public SetIdentityHeadersInNotificationsEnabledRequest withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 
@@ -277,7 +277,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

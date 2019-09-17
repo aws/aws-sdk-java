@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> under which the model exists.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the model for which to generate a template.
+     * [Required] The name of the model for which to generate a template.
      * </p>
      */
     private String modelName;
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> under which the model exists.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The ID of the <a>RestApi</a> under which the model exists.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> under which the model exists.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The ID of the <a>RestApi</a> under which the model exists.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> under which the model exists.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The ID of the <a>RestApi</a> under which the model exists.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the model for which to generate a template.
+     * [Required] The name of the model for which to generate a template.
      * </p>
      * 
      * @param modelName
-     *        The name of the model for which to generate a template.
+     *        [Required] The name of the model for which to generate a template.
      */
 
     public void setModelName(String modelName) {
@@ -93,10 +93,10 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the model for which to generate a template.
+     * [Required] The name of the model for which to generate a template.
      * </p>
      * 
-     * @return The name of the model for which to generate a template.
+     * @return [Required] The name of the model for which to generate a template.
      */
 
     public String getModelName() {
@@ -105,11 +105,11 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the model for which to generate a template.
+     * [Required] The name of the model for which to generate a template.
      * </p>
      * 
      * @param modelName
-     *        The name of the model for which to generate a template.
+     *        [Required] The name of the model for which to generate a template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +119,8 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

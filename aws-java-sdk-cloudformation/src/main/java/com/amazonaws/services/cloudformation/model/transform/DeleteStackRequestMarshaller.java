@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,12 +44,14 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
             request.addParameter("StackName", StringUtils.fromString(deleteStackRequest.getStackName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
-                .getRetainResources();
-        if (retainResourcesList.isEmpty() && !retainResourcesList.isAutoConstruct()) {
+        if (deleteStackRequest.getRetainResources().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest.getRetainResources()).isAutoConstruct()) {
             request.addParameter("RetainResources", "");
         }
-        if (!retainResourcesList.isEmpty() || !retainResourcesList.isAutoConstruct()) {
+        if (!deleteStackRequest.getRetainResources().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest.getRetainResources()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
+                    .getRetainResources();
             int retainResourcesListIndex = 1;
 
             for (String retainResourcesListValue : retainResourcesList) {
@@ -62,6 +64,10 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
 
         if (deleteStackRequest.getRoleARN() != null) {
             request.addParameter("RoleARN", StringUtils.fromString(deleteStackRequest.getRoleARN()));
+        }
+
+        if (deleteStackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(deleteStackRequest.getClientRequestToken()));
         }
 
         return request;

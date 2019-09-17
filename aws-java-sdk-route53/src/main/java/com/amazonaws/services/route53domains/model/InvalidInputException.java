@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an operation that is
- * already completed. For a domain name, it may not be a valid domain name or belong to the requester account.
+ * The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an operation that
+ * is already completed. For a domain name, it might not be a valid domain name or belong to the requester account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

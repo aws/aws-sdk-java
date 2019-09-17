@@ -41,7 +41,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
 
         <#assign serviceNameForRequest = customConfig.customServiceNameForRequest!metadata.syncInterface />
 
-        <@DefaultRequestCreation.content shape serviceNameForRequest/>
+        Request<${shape.shapeName}> request = new DefaultRequest<${shape.shapeName}>(${shape.variable.variableName}, "${serviceNameForRequest}");
 
         <#assign httpVerb = (shape.marshaller.verb)!POST/>
         request.setHttpMethod(HttpMethodName.${httpVerb});
@@ -71,7 +71,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                     ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.${member.getterMethodName}();
                     if (${member.variable.variableName} != null) {
                         xmlWriter.startElement("${member.http.marshallLocationName}");
-                        <@MemberMarshallerMacro.content customConfig member.name member.variable.variableName shapes/>
+                        <@MemberMarshallerMacro.content customConfig member.c2jShape member.variable.variableName shapes/>
                         xmlWriter.endElement();
                     }
 

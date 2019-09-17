@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribePrefixListsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describePrefixListsRequestPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequest
-                .getPrefixListIds();
-        if (!describePrefixListsRequestPrefixListIdsList.isEmpty() || !describePrefixListsRequestPrefixListIdsList.isAutoConstruct()) {
-            int prefixListIdsListIndex = 1;
-
-            for (String describePrefixListsRequestPrefixListIdsListValue : describePrefixListsRequestPrefixListIdsList) {
-                if (describePrefixListsRequestPrefixListIdsListValue != null) {
-                    request.addParameter("PrefixListId." + prefixListIdsListIndex, StringUtils.fromString(describePrefixListsRequestPrefixListIdsListValue));
-                }
-                prefixListIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describePrefixListsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePrefixListsRequest
                 .getFilters();
         if (!describePrefixListsRequestFiltersList.isEmpty() || !describePrefixListsRequestFiltersList.isAutoConstruct()) {
@@ -86,6 +73,19 @@ public class DescribePrefixListsRequestMarshaller implements Marshaller<Request<
 
         if (describePrefixListsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describePrefixListsRequest.getNextToken()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describePrefixListsRequestPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePrefixListsRequest
+                .getPrefixListIds();
+        if (!describePrefixListsRequestPrefixListIdsList.isEmpty() || !describePrefixListsRequestPrefixListIdsList.isAutoConstruct()) {
+            int prefixListIdsListIndex = 1;
+
+            for (String describePrefixListsRequestPrefixListIdsListValue : describePrefixListsRequestPrefixListIdsList) {
+                if (describePrefixListsRequestPrefixListIdsListValue != null) {
+                    request.addParameter("PrefixListId." + prefixListIdsListIndex, StringUtils.fromString(describePrefixListsRequestPrefixListIdsListValue));
+                }
+                prefixListIdsListIndex++;
+            }
         }
 
         return request;

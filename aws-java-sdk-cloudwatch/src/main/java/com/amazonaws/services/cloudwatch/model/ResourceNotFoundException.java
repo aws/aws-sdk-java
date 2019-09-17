@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,10 @@ import javax.annotation.Generated;
 public class ResourceNotFoundException extends com.amazonaws.services.cloudwatch.model.AmazonCloudWatchException {
     private static final long serialVersionUID = 1L;
 
+    private String resourceType;
+
+    private String resourceId;
+
     /**
      * Constructs a new ResourceNotFoundException with the specified error message.
      *
@@ -31,6 +35,58 @@ public class ResourceNotFoundException extends com.amazonaws.services.cloudwatch
      */
     public ResourceNotFoundException(String message) {
         super(message);
+    }
+
+    /**
+     * @param resourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * @param resourceType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceNotFoundException withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * @param resourceId
+     */
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * @param resourceId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceNotFoundException withResourceId(String resourceId) {
+        setResourceId(resourceId);
+        return this;
     }
 
 }

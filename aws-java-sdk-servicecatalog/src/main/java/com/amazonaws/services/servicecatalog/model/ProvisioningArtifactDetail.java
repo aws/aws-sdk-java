@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed provisioning artifact information.
+ * Information about a provisioning artifact (also known as a version) for a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactDetail"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisioningArtifactDetail implements Serializable, Cloneable {
+public class ProvisioningArtifactDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,28 +36,57 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
     private String id;
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     */
+    private Boolean active;
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     */
+    private String guidance;
 
     /**
      * <p>
@@ -99,11 +130,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact.
+     *        The name of the provisioning artifact.
      */
 
     public void setName(String name) {
@@ -112,10 +143,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
-     * @return The name assigned to the provisioning artifact.
+     * @return The name of the provisioning artifact.
      */
 
     public String getName() {
@@ -124,11 +155,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact.
+     *        The name of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +170,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact.
+     *        The description of the provisioning artifact.
      */
 
     public void setDescription(String description) {
@@ -152,10 +183,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
-     * @return The text description of the provisioning artifact.
+     * @return The description of the provisioning artifact.
      */
 
     public String getDescription() {
@@ -164,11 +195,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact.
+     *        The description of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +210,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -193,10 +257,43 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the provisioning artifact.
+     * @return The type of provisioning artifact.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *         </p>
+     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -206,11 +303,44 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -222,41 +352,107 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
     public void setType(ProvisioningArtifactType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
 
     public ProvisioningArtifactDetail withType(ProvisioningArtifactType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -265,10 +461,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -277,11 +473,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,7 +487,138 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @param active
+     *        Indicates whether the product version is active.
+     */
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @return Indicates whether the product version is active.
+     */
+
+    public Boolean getActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @param active
+     *        Indicates whether the product version is active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisioningArtifactDetail withActive(Boolean active) {
+        setActive(active);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the product version is active.
+     * </p>
+     * 
+     * @return Indicates whether the product version is active.
+     */
+
+    public Boolean isActive() {
+        return this.active;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(String guidance) {
+        this.guidance = guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @return Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *         to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public String getGuidance() {
+        return this.guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifactDetail withGuidance(String guidance) {
+        setGuidance(guidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(ProvisioningArtifactGuidance guidance) {
+        withGuidance(guidance);
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifactDetail withGuidance(ProvisioningArtifactGuidance guidance) {
+        this.guidance = guidance.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -310,7 +637,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getActive() != null)
+            sb.append("Active: ").append(getActive()).append(",");
+        if (getGuidance() != null)
+            sb.append("Guidance: ").append(getGuidance());
         sb.append("}");
         return sb.toString();
     }
@@ -345,6 +676,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getActive() == null ^ this.getActive() == null)
+            return false;
+        if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
+            return false;
+        if (other.getGuidance() == null ^ this.getGuidance() == null)
+            return false;
+        if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
+            return false;
         return true;
     }
 
@@ -358,6 +697,8 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
         return hashCode;
     }
 
@@ -368,5 +709,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ProvisioningArtifactDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

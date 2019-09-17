@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,13 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      */
     private String topicARN;
@@ -74,11 +74,11 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -87,10 +87,10 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -99,11 +99,11 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public void setTopicARN(String topicARN) {
@@ -127,10 +127,10 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      */
 
     public String getTopicARN() {
@@ -139,11 +139,11 @@ public class NotificationConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * </p>
      * 
      * @param topicARN
-     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,7 +352,8 @@ public class NotificationConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -416,4 +417,5 @@ public class NotificationConfiguration implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

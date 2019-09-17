@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      */
     private Latency latency;
@@ -189,12 +189,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @param latency
      *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *        are in seconds with one milisecond resolution.
+     *        are in seconds with one millisecond resolution.
      */
 
     public void setLatency(Latency latency) {
@@ -204,11 +204,11 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @return Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *         are in seconds with one milisecond resolution.
+     *         are in seconds with one millisecond resolution.
      */
 
     public Latency getLatency() {
@@ -218,12 +218,12 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     /**
      * <p>
      * Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in
-     * seconds with one milisecond resolution.
+     * seconds with one millisecond resolution.
      * </p>
      * 
      * @param latency
      *        Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies
-     *        are in seconds with one milisecond resolution.
+     *        are in seconds with one millisecond resolution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,7 +233,8 @@ public class ApplicationMetrics implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,4 +305,5 @@ public class ApplicationMetrics implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

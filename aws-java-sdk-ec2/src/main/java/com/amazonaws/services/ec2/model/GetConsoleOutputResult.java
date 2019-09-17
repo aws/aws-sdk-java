@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of GetConsoleOutput.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -33,16 +31,16 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
     private String instanceId;
     /**
      * <p>
-     * The time the output was last updated.
-     * </p>
-     */
-    private java.util.Date timestamp;
-    /**
-     * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      */
     private String output;
+    /**
+     * <p>
+     * The time at which the output was last updated.
+     * </p>
+     */
+    private java.util.Date timestamp;
 
     /**
      * <p>
@@ -86,51 +84,12 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @param timestamp
-     *        The time the output was last updated.
-     */
-
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    /**
-     * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @return The time the output was last updated.
-     */
-
-    public java.util.Date getTimestamp() {
-        return this.timestamp;
-    }
-
-    /**
-     * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @param timestamp
-     *        The time the output was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
-        setTimestamp(timestamp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     *        The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *        you.
      */
 
     public void setOutput(String output) {
@@ -139,10 +98,11 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
-     * @return The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * @return The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *         you.
      */
 
     public String getOutput() {
@@ -151,16 +111,57 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     *        The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetConsoleOutputResult withOutput(String output) {
         setOutput(output);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the output was last updated.
+     * </p>
+     * 
+     * @param timestamp
+     *        The time at which the output was last updated.
+     */
+
+    public void setTimestamp(java.util.Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * <p>
+     * The time at which the output was last updated.
+     * </p>
+     * 
+     * @return The time at which the output was last updated.
+     */
+
+    public java.util.Date getTimestamp() {
+        return this.timestamp;
+    }
+
+    /**
+     * <p>
+     * The time at which the output was last updated.
+     * </p>
+     * 
+     * @param timestamp
+     *        The time at which the output was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
+        setTimestamp(timestamp);
         return this;
     }
 
@@ -175,7 +176,8 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -187,10 +189,10 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
         sb.append("{");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
-        if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append(getOutput()).append(",");
+        if (getTimestamp() != null)
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -209,13 +211,13 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
-            return false;
-        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
-            return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
+            return false;
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
+            return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         return true;
     }
@@ -226,8 +228,8 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 

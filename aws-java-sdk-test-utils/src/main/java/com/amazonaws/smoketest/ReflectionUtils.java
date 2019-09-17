@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -618,9 +618,9 @@ public final class ReflectionUtils {
         return null;
     }
 
-    interface RandomSupplier<T> {
+    public interface RandomSupplier<T> {
         T getNext();
-        Class<T> targetClass();
+        Class<? super T> targetClass();
     }
 
     private ReflectionUtils() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -254,7 +254,7 @@ public class DateUtilsTest {
     public void testNumericNoQuote() {
         StructuredJsonGenerator jw = new SdkJsonGenerator(new JsonFactory(), null);
         jw.writeStartObject();
-        jw.writeFieldName("foo").writeValue(new Date());
+        jw.writeFieldName("foo").writeValue(new Date(), TimestampFormat.UNIX_TIMESTAMP);
         jw.writeEndObject();
         String s = new String(jw.getBytes(), Charset.forName("UTF-8"));
         // Something like: {"foo":1408378076.135}.

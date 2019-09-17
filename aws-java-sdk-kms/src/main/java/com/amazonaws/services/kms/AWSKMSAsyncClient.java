@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,15 +34,16 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS
  * KMS operations that you can call programmatically. For general information about AWS KMS, see the <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management Service Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/kms/latest/developerguide/"> <i>AWS Key Management Service Developer Guide</i>
+ * </a>.
  * </p>
  * <note>
  * <p>
  * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and other
- * AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and
- * retrying requests automatically. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and
+ * other AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors,
+ * and retrying requests automatically. For more information about the AWS SDKs, including how to download and install
+ * them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * </note>
  * <p>
@@ -59,12 +60,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
  * not</i> use your AWS account (root) access key ID and secret key for everyday work with AWS KMS. Instead, use the
- * access key ID and secret access key for an IAM user, or you can use the AWS Security Token Service to generate
+ * access key ID and secret access key for an IAM user. You can also use the AWS Security Token Service to generate
  * temporary security credentials that you can use to sign requests.
  * </p>
  * <p>
  * All AWS KMS operations require <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
  * </p>
  * <p>
  * <b>Logging API Requests</b>
@@ -74,7 +75,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * delivers them to an Amazon S3 bucket that you specify. By using the information collected by CloudTrail, you can
  * determine what requests were made to AWS KMS, who made the request, when it was made, and so on. To learn more about
  * CloudTrail, including how to turn it on and find your log files, see the <a
- * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User Guide</a>.
+ * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS CloudTrail User Guide</a>.
  * </p>
  * <p>
  * <b>Additional Resources</b>
@@ -85,30 +86,31 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> -
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> -
  * This topic provides general information about the types of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security Credentials</a>
- * - This section of the <i>IAM User Guide</i> describes how to create and use temporary security credentials.
+ * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security
+ * Credentials</a> - This section of the <i>IAM User Guide</i> describes how to create and use temporary security
+ * credentials.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
  * Process</a> - This set of topics walks you through the process of signing a request using an access key ID and a
  * secret access key.
  * </p>
  * </li>
  * </ul>
  * <p>
- * <b>Commonly Used APIs</b>
+ * <b>Commonly Used API Operations</b>
  * </p>
  * <p>
- * Of the APIs discussed in this guide, the following will prove the most useful for most applications. You will likely
- * perform actions other than these, such as creating keys and assigning policies, by using the console.
+ * Of the API operations discussed in this guide, the following will prove the most useful for most applications. You
+ * will likely perform operations other than these, such as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
  * <li>
@@ -318,6 +320,10 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
         this.executorService = executorService;
     }
 
+    public static AWSKMSAsyncClientBuilder asyncBuilder() {
+        return AWSKMSAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on KMS using the specified parameters.
      *
@@ -347,14 +353,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<CancelKeyDeletionResult> cancelKeyDeletionAsync(final CancelKeyDeletionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelKeyDeletionRequest, CancelKeyDeletionResult> asyncHandler) {
+        final CancelKeyDeletionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelKeyDeletionResult>() {
             @Override
             public CancelKeyDeletionResult call() throws Exception {
-                CancelKeyDeletionResult result;
+                CancelKeyDeletionResult result = null;
 
                 try {
-                    result = cancelKeyDeletion(request);
+                    result = executeCancelKeyDeletion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +370,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request) {
+
+        return connectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(final ConnectCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConnectCustomKeyStoreRequest, ConnectCustomKeyStoreResult> asyncHandler) {
+        final ConnectCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConnectCustomKeyStoreResult>() {
+            @Override
+            public ConnectCustomKeyStoreResult call() throws Exception {
+                ConnectCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeConnectCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -379,14 +419,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(final CreateAliasRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler) {
+        final CreateAliasRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAliasResult>() {
             @Override
             public CreateAliasResult call() throws Exception {
-                CreateAliasResult result;
+                CreateAliasResult result = null;
 
                 try {
-                    result = createAlias(request);
+                    result = executeCreateAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,7 +436,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(CreateCustomKeyStoreRequest request) {
+
+        return createCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(final CreateCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomKeyStoreRequest, CreateCustomKeyStoreResult> asyncHandler) {
+        final CreateCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomKeyStoreResult>() {
+            @Override
+            public CreateCustomKeyStoreResult call() throws Exception {
+                CreateCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeCreateCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -411,14 +485,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<CreateGrantResult> createGrantAsync(final CreateGrantRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateGrantRequest, CreateGrantResult> asyncHandler) {
+        final CreateGrantRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateGrantResult>() {
             @Override
             public CreateGrantResult call() throws Exception {
-                CreateGrantResult result;
+                CreateGrantResult result = null;
 
                 try {
-                    result = createGrant(request);
+                    result = executeCreateGrant(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -427,7 +502,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -443,14 +518,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(final CreateKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
+        final CreateKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateKeyResult>() {
             @Override
             public CreateKeyResult call() throws Exception {
-                CreateKeyResult result;
+                CreateKeyResult result = null;
 
                 try {
-                    result = createKey(request);
+                    result = executeCreateKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -459,7 +535,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -482,6 +558,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      *
      * @see #createKeyAsync(CreateKeyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
 
         return createKeyAsync(new CreateKeyRequest(), asyncHandler);
@@ -496,14 +573,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DecryptResult> decryptAsync(final DecryptRequest request,
             final com.amazonaws.handlers.AsyncHandler<DecryptRequest, DecryptResult> asyncHandler) {
+        final DecryptRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DecryptResult>() {
             @Override
             public DecryptResult call() throws Exception {
-                DecryptResult result;
+                DecryptResult result = null;
 
                 try {
-                    result = decrypt(request);
+                    result = executeDecrypt(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -512,7 +590,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -528,14 +606,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(final DeleteAliasRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
+        final DeleteAliasRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAliasResult>() {
             @Override
             public DeleteAliasResult call() throws Exception {
-                DeleteAliasResult result;
+                DeleteAliasResult result = null;
 
                 try {
-                    result = deleteAlias(request);
+                    result = executeDeleteAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -544,7 +623,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request) {
+
+        return deleteCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(final DeleteCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomKeyStoreRequest, DeleteCustomKeyStoreResult> asyncHandler) {
+        final DeleteCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomKeyStoreResult>() {
+            @Override
+            public DeleteCustomKeyStoreResult call() throws Exception {
+                DeleteCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeDeleteCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -560,14 +672,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(final DeleteImportedKeyMaterialRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResult> asyncHandler) {
+        final DeleteImportedKeyMaterialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteImportedKeyMaterialResult>() {
             @Override
             public DeleteImportedKeyMaterialResult call() throws Exception {
-                DeleteImportedKeyMaterialResult result;
+                DeleteImportedKeyMaterialResult result = null;
 
                 try {
-                    result = deleteImportedKeyMaterial(request);
+                    result = executeDeleteImportedKeyMaterial(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -576,7 +689,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request) {
+
+        return describeCustomKeyStoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(final DescribeCustomKeyStoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCustomKeyStoresRequest, DescribeCustomKeyStoresResult> asyncHandler) {
+        final DescribeCustomKeyStoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCustomKeyStoresResult>() {
+            @Override
+            public DescribeCustomKeyStoresResult call() throws Exception {
+                DescribeCustomKeyStoresResult result = null;
+
+                try {
+                    result = executeDescribeCustomKeyStores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -592,14 +738,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(final DescribeKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeKeyRequest, DescribeKeyResult> asyncHandler) {
+        final DescribeKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeKeyResult>() {
             @Override
             public DescribeKeyResult call() throws Exception {
-                DescribeKeyResult result;
+                DescribeKeyResult result = null;
 
                 try {
-                    result = describeKey(request);
+                    result = executeDescribeKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -608,7 +755,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -624,14 +771,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DisableKeyResult> disableKeyAsync(final DisableKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableKeyRequest, DisableKeyResult> asyncHandler) {
+        final DisableKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableKeyResult>() {
             @Override
             public DisableKeyResult call() throws Exception {
-                DisableKeyResult result;
+                DisableKeyResult result = null;
 
                 try {
-                    result = disableKey(request);
+                    result = executeDisableKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -640,7 +788,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -656,14 +804,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DisableKeyRotationResult> disableKeyRotationAsync(final DisableKeyRotationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableKeyRotationRequest, DisableKeyRotationResult> asyncHandler) {
+        final DisableKeyRotationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableKeyRotationResult>() {
             @Override
             public DisableKeyRotationResult call() throws Exception {
-                DisableKeyRotationResult result;
+                DisableKeyRotationResult result = null;
 
                 try {
-                    result = disableKeyRotation(request);
+                    result = executeDisableKeyRotation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -672,7 +821,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request) {
+
+        return disconnectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(final DisconnectCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisconnectCustomKeyStoreRequest, DisconnectCustomKeyStoreResult> asyncHandler) {
+        final DisconnectCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisconnectCustomKeyStoreResult>() {
+            @Override
+            public DisconnectCustomKeyStoreResult call() throws Exception {
+                DisconnectCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeDisconnectCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -688,14 +870,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<EnableKeyResult> enableKeyAsync(final EnableKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableKeyRequest, EnableKeyResult> asyncHandler) {
+        final EnableKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableKeyResult>() {
             @Override
             public EnableKeyResult call() throws Exception {
-                EnableKeyResult result;
+                EnableKeyResult result = null;
 
                 try {
-                    result = enableKey(request);
+                    result = executeEnableKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -704,7 +887,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -720,14 +903,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<EnableKeyRotationResult> enableKeyRotationAsync(final EnableKeyRotationRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableKeyRotationRequest, EnableKeyRotationResult> asyncHandler) {
+        final EnableKeyRotationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableKeyRotationResult>() {
             @Override
             public EnableKeyRotationResult call() throws Exception {
-                EnableKeyRotationResult result;
+                EnableKeyRotationResult result = null;
 
                 try {
-                    result = enableKeyRotation(request);
+                    result = executeEnableKeyRotation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -736,7 +920,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -752,14 +936,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<EncryptResult> encryptAsync(final EncryptRequest request,
             final com.amazonaws.handlers.AsyncHandler<EncryptRequest, EncryptResult> asyncHandler) {
+        final EncryptRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EncryptResult>() {
             @Override
             public EncryptResult call() throws Exception {
-                EncryptResult result;
+                EncryptResult result = null;
 
                 try {
-                    result = encrypt(request);
+                    result = executeEncrypt(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -768,7 +953,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -784,14 +969,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GenerateDataKeyResult> generateDataKeyAsync(final GenerateDataKeyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GenerateDataKeyRequest, GenerateDataKeyResult> asyncHandler) {
+        final GenerateDataKeyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GenerateDataKeyResult>() {
             @Override
             public GenerateDataKeyResult call() throws Exception {
-                GenerateDataKeyResult result;
+                GenerateDataKeyResult result = null;
 
                 try {
-                    result = generateDataKey(request);
+                    result = executeGenerateDataKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -800,7 +986,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -818,14 +1004,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     public java.util.concurrent.Future<GenerateDataKeyWithoutPlaintextResult> generateDataKeyWithoutPlaintextAsync(
             final GenerateDataKeyWithoutPlaintextRequest request,
             final com.amazonaws.handlers.AsyncHandler<GenerateDataKeyWithoutPlaintextRequest, GenerateDataKeyWithoutPlaintextResult> asyncHandler) {
+        final GenerateDataKeyWithoutPlaintextRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GenerateDataKeyWithoutPlaintextResult>() {
             @Override
             public GenerateDataKeyWithoutPlaintextResult call() throws Exception {
-                GenerateDataKeyWithoutPlaintextResult result;
+                GenerateDataKeyWithoutPlaintextResult result = null;
 
                 try {
-                    result = generateDataKeyWithoutPlaintext(request);
+                    result = executeGenerateDataKeyWithoutPlaintext(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -834,7 +1021,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -850,14 +1037,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(final GenerateRandomRequest request,
             final com.amazonaws.handlers.AsyncHandler<GenerateRandomRequest, GenerateRandomResult> asyncHandler) {
+        final GenerateRandomRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GenerateRandomResult>() {
             @Override
             public GenerateRandomResult call() throws Exception {
-                GenerateRandomResult result;
+                GenerateRandomResult result = null;
 
                 try {
-                    result = generateRandom(request);
+                    result = executeGenerateRandom(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -866,7 +1054,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -889,6 +1077,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      *
      * @see #generateRandomAsync(GenerateRandomRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(
             com.amazonaws.handlers.AsyncHandler<GenerateRandomRequest, GenerateRandomResult> asyncHandler) {
 
@@ -904,14 +1093,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GetKeyPolicyResult> getKeyPolicyAsync(final GetKeyPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetKeyPolicyRequest, GetKeyPolicyResult> asyncHandler) {
+        final GetKeyPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetKeyPolicyResult>() {
             @Override
             public GetKeyPolicyResult call() throws Exception {
-                GetKeyPolicyResult result;
+                GetKeyPolicyResult result = null;
 
                 try {
-                    result = getKeyPolicy(request);
+                    result = executeGetKeyPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -920,7 +1110,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -936,14 +1126,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GetKeyRotationStatusResult> getKeyRotationStatusAsync(final GetKeyRotationStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetKeyRotationStatusRequest, GetKeyRotationStatusResult> asyncHandler) {
+        final GetKeyRotationStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetKeyRotationStatusResult>() {
             @Override
             public GetKeyRotationStatusResult call() throws Exception {
-                GetKeyRotationStatusResult result;
+                GetKeyRotationStatusResult result = null;
 
                 try {
-                    result = getKeyRotationStatus(request);
+                    result = executeGetKeyRotationStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -952,7 +1143,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -968,14 +1159,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<GetParametersForImportResult> getParametersForImportAsync(final GetParametersForImportRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetParametersForImportRequest, GetParametersForImportResult> asyncHandler) {
+        final GetParametersForImportRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetParametersForImportResult>() {
             @Override
             public GetParametersForImportResult call() throws Exception {
-                GetParametersForImportResult result;
+                GetParametersForImportResult result = null;
 
                 try {
-                    result = getParametersForImport(request);
+                    result = executeGetParametersForImport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -984,7 +1176,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1000,14 +1192,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ImportKeyMaterialResult> importKeyMaterialAsync(final ImportKeyMaterialRequest request,
             final com.amazonaws.handlers.AsyncHandler<ImportKeyMaterialRequest, ImportKeyMaterialResult> asyncHandler) {
+        final ImportKeyMaterialRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ImportKeyMaterialResult>() {
             @Override
             public ImportKeyMaterialResult call() throws Exception {
-                ImportKeyMaterialResult result;
+                ImportKeyMaterialResult result = null;
 
                 try {
-                    result = importKeyMaterial(request);
+                    result = executeImportKeyMaterial(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1016,7 +1209,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1032,14 +1225,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(final ListAliasesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler) {
+        final ListAliasesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAliasesResult>() {
             @Override
             public ListAliasesResult call() throws Exception {
-                ListAliasesResult result;
+                ListAliasesResult result = null;
 
                 try {
-                    result = listAliases(request);
+                    result = executeListAliases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1048,7 +1242,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1071,6 +1265,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      *
      * @see #listAliasesAsync(ListAliasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler) {
 
@@ -1086,14 +1281,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ListGrantsResult> listGrantsAsync(final ListGrantsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGrantsRequest, ListGrantsResult> asyncHandler) {
+        final ListGrantsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListGrantsResult>() {
             @Override
             public ListGrantsResult call() throws Exception {
-                ListGrantsResult result;
+                ListGrantsResult result = null;
 
                 try {
-                    result = listGrants(request);
+                    result = executeListGrants(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1102,7 +1298,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1118,14 +1314,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ListKeyPoliciesResult> listKeyPoliciesAsync(final ListKeyPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListKeyPoliciesRequest, ListKeyPoliciesResult> asyncHandler) {
+        final ListKeyPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListKeyPoliciesResult>() {
             @Override
             public ListKeyPoliciesResult call() throws Exception {
-                ListKeyPoliciesResult result;
+                ListKeyPoliciesResult result = null;
 
                 try {
-                    result = listKeyPolicies(request);
+                    result = executeListKeyPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1134,7 +1331,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1150,14 +1347,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ListKeysResult> listKeysAsync(final ListKeysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
+        final ListKeysRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListKeysResult>() {
             @Override
             public ListKeysResult call() throws Exception {
-                ListKeysResult result;
+                ListKeysResult result = null;
 
                 try {
-                    result = listKeys(request);
+                    result = executeListKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1166,7 +1364,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1189,9 +1387,43 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      *
      * @see #listKeysAsync(ListKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListKeysResult> listKeysAsync(com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
 
         return listKeysAsync(new ListKeysRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(ListResourceTagsRequest request) {
+
+        return listResourceTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(final ListResourceTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceTagsRequest, ListResourceTagsResult> asyncHandler) {
+        final ListResourceTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceTagsResult>() {
+            @Override
+            public ListResourceTagsResult call() throws Exception {
+                ListResourceTagsResult result = null;
+
+                try {
+                    result = executeListResourceTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1203,14 +1435,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ListRetirableGrantsResult> listRetirableGrantsAsync(final ListRetirableGrantsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRetirableGrantsRequest, ListRetirableGrantsResult> asyncHandler) {
+        final ListRetirableGrantsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRetirableGrantsResult>() {
             @Override
             public ListRetirableGrantsResult call() throws Exception {
-                ListRetirableGrantsResult result;
+                ListRetirableGrantsResult result = null;
 
                 try {
-                    result = listRetirableGrants(request);
+                    result = executeListRetirableGrants(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1219,7 +1452,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1235,14 +1468,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<PutKeyPolicyResult> putKeyPolicyAsync(final PutKeyPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutKeyPolicyRequest, PutKeyPolicyResult> asyncHandler) {
+        final PutKeyPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutKeyPolicyResult>() {
             @Override
             public PutKeyPolicyResult call() throws Exception {
-                PutKeyPolicyResult result;
+                PutKeyPolicyResult result = null;
 
                 try {
-                    result = putKeyPolicy(request);
+                    result = executePutKeyPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1251,7 +1485,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1267,14 +1501,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ReEncryptResult> reEncryptAsync(final ReEncryptRequest request,
             final com.amazonaws.handlers.AsyncHandler<ReEncryptRequest, ReEncryptResult> asyncHandler) {
+        final ReEncryptRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReEncryptResult>() {
             @Override
             public ReEncryptResult call() throws Exception {
-                ReEncryptResult result;
+                ReEncryptResult result = null;
 
                 try {
-                    result = reEncrypt(request);
+                    result = executeReEncrypt(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1283,7 +1518,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1299,14 +1534,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(final RetireGrantRequest request,
             final com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
+        final RetireGrantRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RetireGrantResult>() {
             @Override
             public RetireGrantResult call() throws Exception {
-                RetireGrantResult result;
+                RetireGrantResult result = null;
 
                 try {
-                    result = retireGrant(request);
+                    result = executeRetireGrant(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1315,7 +1551,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1338,6 +1574,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      *
      * @see #retireGrantAsync(RetireGrantRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
             com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
 
@@ -1353,14 +1590,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<RevokeGrantResult> revokeGrantAsync(final RevokeGrantRequest request,
             final com.amazonaws.handlers.AsyncHandler<RevokeGrantRequest, RevokeGrantResult> asyncHandler) {
+        final RevokeGrantRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RevokeGrantResult>() {
             @Override
             public RevokeGrantResult call() throws Exception {
-                RevokeGrantResult result;
+                RevokeGrantResult result = null;
 
                 try {
-                    result = revokeGrant(request);
+                    result = executeRevokeGrant(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1369,7 +1607,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1385,14 +1623,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<ScheduleKeyDeletionResult> scheduleKeyDeletionAsync(final ScheduleKeyDeletionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ScheduleKeyDeletionRequest, ScheduleKeyDeletionResult> asyncHandler) {
+        final ScheduleKeyDeletionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ScheduleKeyDeletionResult>() {
             @Override
             public ScheduleKeyDeletionResult call() throws Exception {
-                ScheduleKeyDeletionResult result;
+                ScheduleKeyDeletionResult result = null;
 
                 try {
-                    result = scheduleKeyDeletion(request);
+                    result = executeScheduleKeyDeletion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1401,7 +1640,73 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1417,14 +1722,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(final UpdateAliasRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler) {
+        final UpdateAliasRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAliasResult>() {
             @Override
             public UpdateAliasResult call() throws Exception {
-                UpdateAliasResult result;
+                UpdateAliasResult result = null;
 
                 try {
-                    result = updateAlias(request);
+                    result = executeUpdateAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1433,7 +1739,40 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request) {
+
+        return updateCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(final UpdateCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCustomKeyStoreRequest, UpdateCustomKeyStoreResult> asyncHandler) {
+        final UpdateCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCustomKeyStoreResult>() {
+            @Override
+            public UpdateCustomKeyStoreResult call() throws Exception {
+                UpdateCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeUpdateCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1449,14 +1788,15 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<UpdateKeyDescriptionResult> updateKeyDescriptionAsync(final UpdateKeyDescriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResult> asyncHandler) {
+        final UpdateKeyDescriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateKeyDescriptionResult>() {
             @Override
             public UpdateKeyDescriptionResult call() throws Exception {
-                UpdateKeyDescriptionResult result;
+                UpdateKeyDescriptionResult result = null;
 
                 try {
-                    result = updateKeyDescription(request);
+                    result = executeUpdateKeyDescription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1465,7 +1805,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

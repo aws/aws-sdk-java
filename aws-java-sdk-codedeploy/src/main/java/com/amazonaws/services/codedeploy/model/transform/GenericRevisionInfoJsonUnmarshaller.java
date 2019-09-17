@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,15 +58,15 @@ public class GenericRevisionInfoJsonUnmarshaller implements Unmarshaller<Generic
                 }
                 if (context.testExpression("firstUsedTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setFirstUsedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    genericRevisionInfo.setFirstUsedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUsedTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setLastUsedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    genericRevisionInfo.setLastUsedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
                     context.nextToken();
-                    genericRevisionInfo.setRegisterTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    genericRevisionInfo.setRegisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

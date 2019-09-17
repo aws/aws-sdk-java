@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,112 +12,108 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateEndpointRequest Marshaller
+ * CreateEndpointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateEndpointRequestMarshaller implements Marshaller<Request<CreateEndpointRequest>, CreateEndpointRequest> {
+@SdkInternalApi
+public class CreateEndpointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ENDPOINTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointIdentifier").build();
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
+    private static final MarshallingInfo<String> ENGINENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineName").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Password").build();
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Port").build();
+    private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
+    private static final MarshallingInfo<String> EXTRACONNECTIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtraConnectionAttributes").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
+    private static final MarshallingInfo<String> SSLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SslMode").build();
+    private static final MarshallingInfo<String> SERVICEACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccessRoleArn").build();
+    private static final MarshallingInfo<String> EXTERNALTABLEDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalTableDefinition").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDbSettings").build();
+    private static final MarshallingInfo<StructuredPojo> S3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Settings").build();
+    private static final MarshallingInfo<StructuredPojo> DMSTRANSFERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DmsTransferSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MONGODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDbSettings").build();
+    private static final MarshallingInfo<StructuredPojo> KINESISSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisSettings").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchSettings").build();
+    private static final MarshallingInfo<StructuredPojo> REDSHIFTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftSettings").build();
 
-    public CreateEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateEndpointRequestMarshaller instance = new CreateEndpointRequestMarshaller();
+
+    public static CreateEndpointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateEndpointRequest> marshall(CreateEndpointRequest createEndpointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateEndpointRequest createEndpointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createEndpointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateEndpointRequest> request = new DefaultRequest<CreateEndpointRequest>(createEndpointRequest, "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.CreateEndpoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createEndpointRequest.getEndpointIdentifier() != null) {
-                jsonGenerator.writeFieldName("EndpointIdentifier").writeValue(createEndpointRequest.getEndpointIdentifier());
-            }
-            if (createEndpointRequest.getEndpointType() != null) {
-                jsonGenerator.writeFieldName("EndpointType").writeValue(createEndpointRequest.getEndpointType());
-            }
-            if (createEndpointRequest.getEngineName() != null) {
-                jsonGenerator.writeFieldName("EngineName").writeValue(createEndpointRequest.getEngineName());
-            }
-            if (createEndpointRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(createEndpointRequest.getUsername());
-            }
-            if (createEndpointRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(createEndpointRequest.getPassword());
-            }
-            if (createEndpointRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(createEndpointRequest.getServerName());
-            }
-            if (createEndpointRequest.getPort() != null) {
-                jsonGenerator.writeFieldName("Port").writeValue(createEndpointRequest.getPort());
-            }
-            if (createEndpointRequest.getDatabaseName() != null) {
-                jsonGenerator.writeFieldName("DatabaseName").writeValue(createEndpointRequest.getDatabaseName());
-            }
-            if (createEndpointRequest.getExtraConnectionAttributes() != null) {
-                jsonGenerator.writeFieldName("ExtraConnectionAttributes").writeValue(createEndpointRequest.getExtraConnectionAttributes());
-            }
-            if (createEndpointRequest.getKmsKeyId() != null) {
-                jsonGenerator.writeFieldName("KmsKeyId").writeValue(createEndpointRequest.getKmsKeyId());
-            }
-
-            java.util.List<Tag> tagsList = createEndpointRequest.getTags();
-            if (tagsList != null) {
-                jsonGenerator.writeFieldName("Tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createEndpointRequest.getCertificateArn() != null) {
-                jsonGenerator.writeFieldName("CertificateArn").writeValue(createEndpointRequest.getCertificateArn());
-            }
-            if (createEndpointRequest.getSslMode() != null) {
-                jsonGenerator.writeFieldName("SslMode").writeValue(createEndpointRequest.getSslMode());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createEndpointRequest.getEndpointIdentifier(), ENDPOINTIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getEngineName(), ENGINENAME_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDatabaseName(), DATABASENAME_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getExtraConnectionAttributes(), EXTRACONNECTIONATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getSslMode(), SSLMODE_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getServiceAccessRoleArn(), SERVICEACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getExternalTableDefinition(), EXTERNALTABLEDEFINITION_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDynamoDbSettings(), DYNAMODBSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getS3Settings(), S3SETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDmsTransferSettings(), DMSTRANSFERSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getMongoDbSettings(), MONGODBSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getKinesisSettings(), KINESISSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getElasticsearchSettings(), ELASTICSEARCHSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getRedshiftSettings(), REDSHIFTSETTINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

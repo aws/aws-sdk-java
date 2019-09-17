@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,41 +14,91 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Specifies a decision made by the decider. A decision can be one of these types:
  * </p>
  * <ul>
- * <li><b>CancelTimer</b>: cancels a previously started timer and records a <code>TimerCanceled</code> event in the
- * history.</li>
- * <li><b>CancelWorkflowExecution</b>: closes the workflow execution and records a
- * <code>WorkflowExecutionCanceled</code> event in the history.</li>
- * <li><b>CompleteWorkflowExecution</b>: closes the workflow execution and records a
- * <code>WorkflowExecutionCompleted</code> event in the history .</li>
- * <li><b>ContinueAsNewWorkflowExecution</b>: closes the workflow execution and starts a new workflow execution of the
- * same type using the same workflow ID and a unique run ID. A <code>WorkflowExecutionContinuedAsNew</code> event is
- * recorded in the history.</li>
- * <li><b>FailWorkflowExecution</b>: closes the workflow execution and records a <code>WorkflowExecutionFailed</code>
- * event in the history.</li>
- * <li><b>RecordMarker</b>: records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding
- * custom information in the history for instance to let deciders know that they do not need to look at the history
- * beyond the marker event.</li>
- * <li><b>RequestCancelActivityTask</b>: attempts to cancel a previously scheduled activity task. If the activity task
- * was scheduled but has not been assigned to a worker, then it will be canceled. If the activity task was already
- * assigned to a worker, then the worker will be informed that cancellation has been requested in the response to
- * <a>RecordActivityTaskHeartbeat</a>.</li>
- * <li><b>RequestCancelExternalWorkflowExecution</b>: requests that a request be made to cancel the specified external
- * workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li>
- * <li><b>ScheduleActivityTask</b>: schedules an activity task.</li>
- * <li><b>ScheduleLambdaFunction</b>: schedules a AWS Lambda function.</li>
- * <li><b>SignalExternalWorkflowExecution</b>: requests a signal to be delivered to the specified external workflow
- * execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li>
- * <li><b>StartChildWorkflowExecution</b>: requests that a child workflow execution be started and records a
+ * <li>
+ * <p>
+ * <code>CancelTimer</code> – Cancels a previously started timer and records a <code>TimerCanceled</code> event in the
+ * history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CancelWorkflowExecution</code> – Closes the workflow execution and records a
+ * <code>WorkflowExecutionCanceled</code> event in the history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CompleteWorkflowExecution</code> – Closes the workflow execution and records a
+ * <code>WorkflowExecutionCompleted</code> event in the history .
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ContinueAsNewWorkflowExecution</code> – Closes the workflow execution and starts a new workflow execution of
+ * the same type using the same workflow ID and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is
+ * recorded in the history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FailWorkflowExecution</code> – Closes the workflow execution and records a <code>WorkflowExecutionFailed</code>
+ * event in the history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RecordMarker</code> – Records a <code>MarkerRecorded</code> event in the history. Markers can be used for
+ * adding custom information in the history for instance to let deciders know that they don't need to look at the
+ * history beyond the marker event.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelActivityTask</code> – Attempts to cancel a previously scheduled activity task. If the activity
+ * task was scheduled but has not been assigned to a worker, then it is canceled. If the activity task was already
+ * assigned to a worker, then the worker is informed that cancellation has been requested in the response to
+ * <a>RecordActivityTaskHeartbeat</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelExternalWorkflowExecution</code> – Requests that a request be made to cancel the specified
+ * external workflow execution and records a <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the
+ * history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ScheduleActivityTask</code> – Schedules an activity task.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>SignalExternalWorkflowExecution</code> – Requests a signal to be delivered to the specified external workflow
+ * execution and records a <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartChildWorkflowExecution</code> – Requests that a child workflow execution be started and records a
  * <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate
- * workflow execution with its own history.</li>
- * <li><b>StartTimer</b>: starts a timer for this workflow execution and records a <code>TimerStarted</code> event in
- * the history. This timer will fire after the specified delay and record a <code>TimerFired</code> event.</li>
+ * workflow execution with its own history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartTimer</code> – Starts a timer for this workflow execution and records a <code>TimerStarted</code> event in
+ * the history. This timer fires after the specified delay and record a <code>TimerFired</code> event.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Access Control</b>
@@ -57,8 +107,8 @@ import javax.annotation.Generated;
  * If you grant permission to use <code>RespondDecisionTaskCompleted</code>, you can use IAM policies to express
  * permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions
  * as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and example IAM
- * policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to
- * Manage Access to Amazon SWF Workflows</a>.
+ * policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to
+ * Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * <p>
  * <b>Decision Failure</b>
@@ -67,83 +117,193 @@ import javax.annotation.Generated;
  * Decisions can fail for several reasons
  * </p>
  * <ul>
- * <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current
- * context of the workflow execution and will therefore fail.</li>
- * <li>A limit on your account was reached.</li>
- * <li>The decision lacks sufficient permissions.</li>
+ * <li>
+ * <p>
+ * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of
+ * the workflow execution and therefore fails.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A limit on your account was reached.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The decision lacks sufficient permissions.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b>
- * parameter indicates the cause. If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it
- * lacked sufficient permissions. For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
+ * One of the following events might be added to the history to indicate an error. The event attribute's
+ * <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to
+ * <code>OPERATION_NOT_PERMITTED</code>, the decision failed because it lacked sufficient permissions. For details and
+ * example IAM policies, see <a
+ * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * <ul>
- * <li><b>ScheduleActivityTaskFailed</b>: a ScheduleActivityTask decision failed. This could happen if the activity type
- * specified in the decision is not registered, is in a deprecated state, or the decision is not properly configured.</li>
- * <li><b>ScheduleLambdaFunctionFailed</b>: a ScheduleLambdaFunctionFailed decision failed. This could happen if the AWS
- * Lambda function specified in the decision does not exist, or the AWS Lambda service's limits are exceeded.</li>
- * <li><b>RequestCancelActivityTaskFailed</b>: a RequestCancelActivityTask decision failed. This could happen if there
- * is no open activity task with the specified activityId.</li>
- * <li><b>StartTimerFailed</b>: a StartTimer decision failed. This could happen if there is another open timer with the
- * same timerId.</li>
- * <li><b>CancelTimerFailed</b>: a CancelTimer decision failed. This could happen if there is no open timer with the
- * specified timerId.</li>
- * <li><b>StartChildWorkflowExecutionFailed</b>: a StartChildWorkflowExecution decision failed. This could happen if the
- * workflow type specified is not registered, is deprecated, or the decision is not properly configured.</li>
- * <li><b>SignalExternalWorkflowExecutionFailed</b>: a SignalExternalWorkflowExecution decision failed. This could
- * happen if the <code>workflowID</code> specified in the decision was incorrect.</li>
- * <li><b>RequestCancelExternalWorkflowExecutionFailed</b>: a RequestCancelExternalWorkflowExecution decision failed.
- * This could happen if the <code>workflowID</code> specified in the decision was incorrect.</li>
- * <li><b>CancelWorkflowExecutionFailed</b>: a CancelWorkflowExecution decision failed. This could happen if there is an
- * unhandled decision task pending in the workflow execution.</li>
- * <li><b>CompleteWorkflowExecutionFailed</b>: a CompleteWorkflowExecution decision failed. This could happen if there
- * is an unhandled decision task pending in the workflow execution.</li>
- * <li><b>ContinueAsNewWorkflowExecutionFailed</b>: a ContinueAsNewWorkflowExecution decision failed. This could happen
- * if there is an unhandled decision task pending in the workflow execution or the ContinueAsNewWorkflowExecution
- * decision was not configured correctly.</li>
- * <li><b>FailWorkflowExecutionFailed</b>: a FailWorkflowExecution decision failed. This could happen if there is an
- * unhandled decision task pending in the workflow execution.</li>
+ * <li>
+ * <p>
+ * <code>ScheduleActivityTaskFailed</code> – A <code>ScheduleActivityTask</code> decision failed. This could happen if
+ * the activity type specified in the decision isn't registered, is in a deprecated state, or the decision isn't
+ * properly configured.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelActivityTaskFailed</code> – A <code>RequestCancelActivityTask</code> decision failed. This could
+ * happen if there is no open activity task with the specified activityId.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartTimerFailed</code> – A <code>StartTimer</code> decision failed. This could happen if there is another open
+ * timer with the same timerId.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CancelTimerFailed</code> – A <code>CancelTimer</code> decision failed. This could happen if there is no open
+ * timer with the specified timerId.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartChildWorkflowExecutionFailed</code> – A <code>StartChildWorkflowExecution</code> decision failed. This
+ * could happen if the workflow type specified isn't registered, is deprecated, or the decision isn't properly
+ * configured.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>SignalExternalWorkflowExecutionFailed</code> – A <code>SignalExternalWorkflowExecution</code> decision failed.
+ * This could happen if the <code>workflowID</code> specified in the decision was incorrect.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelExternalWorkflowExecutionFailed</code> – A <code>RequestCancelExternalWorkflowExecution</code>
+ * decision failed. This could happen if the <code>workflowID</code> specified in the decision was incorrect.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CancelWorkflowExecutionFailed</code> – A <code>CancelWorkflowExecution</code> decision failed. This could
+ * happen if there is an unhandled decision task pending in the workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CompleteWorkflowExecutionFailed</code> – A <code>CompleteWorkflowExecution</code> decision failed. This could
+ * happen if there is an unhandled decision task pending in the workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ContinueAsNewWorkflowExecutionFailed</code> – A <code>ContinueAsNewWorkflowExecution</code> decision failed.
+ * This could happen if there is an unhandled decision task pending in the workflow execution or the
+ * ContinueAsNewWorkflowExecution decision was not configured correctly.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FailWorkflowExecutionFailed</code> – A <code>FailWorkflowExecution</code> decision failed. This could happen if
+ * there is an unhandled decision task pending in the workflow execution.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * The preceding error events might occur due to an error in the decider logic, which might put the workflow execution
  * in an unstable state The cause field in the event structure for the error event indicates the cause of the error.
  * </p>
- * <note>A workflow execution may be closed by the decider by returning one of the following decisions when completing a
- * decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>,
- * <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An UnhandledDecision fault will
- * be returned if a workflow closing decision is specified and a signal or activity event had been added to the history
- * while the decision task was being performed by the decider. Unlike the above situations which are logic issues, this
- * fault is always possible because of race conditions in a distributed system. The right action here is to call
- * <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in another decision task with these new
- * events included in the history. The decider should handle the new events and may decide to close the workflow
- * execution.</note>
+ * <note>
  * <p>
- * <b>How to code a decision</b>
+ * A workflow execution may be closed by the decider by returning one of the following decisions when completing a
+ * decision task: <code>CompleteWorkflowExecution</code>, <code>FailWorkflowExecution</code>,
+ * <code>CancelWorkflowExecution</code> and <code>ContinueAsNewWorkflowExecution</code>. An
+ * <code>UnhandledDecision</code> fault is returned if a workflow closing decision is specified and a signal or activity
+ * event had been added to the history while the decision task was being performed by the decider. Unlike the above
+ * situations which are logic issues, this fault is always possible because of race conditions in a distributed system.
+ * The right action here is to call <a>RespondDecisionTaskCompleted</a> without any decisions. This would result in
+ * another decision task with these new events included in the history. The decider should handle the new events and may
+ * decide to close the workflow execution.
+ * </p>
+ * </note>
+ * <p>
+ * <b>How to Code a Decision</b>
  * </p>
  * <p>
  * You code a decision by first setting the decision type field to one of the above decision values, and then set the
  * corresponding attributes field shown below:
  * </p>
  * <ul>
- * <li><a>ScheduleActivityTaskDecisionAttributes</a></li>
- * <li><a>ScheduleLambdaFunctionDecisionAttributes</a></li>
- * <li><a>RequestCancelActivityTaskDecisionAttributes</a></li>
- * <li><a>CompleteWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>FailWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>CancelWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>ContinueAsNewWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>RecordMarkerDecisionAttributes</a></li>
- * <li><a>StartTimerDecisionAttributes</a></li>
- * <li><a>CancelTimerDecisionAttributes</a></li>
- * <li><a>SignalExternalWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a></li>
- * <li><a>StartChildWorkflowExecutionDecisionAttributes</a></li>
+ * <li>
+ * <p>
+ * <code> <a>ScheduleActivityTaskDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>RequestCancelActivityTaskDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>CompleteWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>FailWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>CancelWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>ContinueAsNewWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>RecordMarkerDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>StartTimerDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>CancelTimerDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>SignalExternalWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>StartChildWorkflowExecutionDecisionAttributes</a> </code>
+ * </p>
+ * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/Decision" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Decision implements Serializable, Cloneable {
+public class Decision implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -153,81 +313,87 @@ public class Decision implements Serializable, Cloneable {
     private String decisionType;
     /**
      * <p>
-     * Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.
      * </p>
      */
     private ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision
+     * types.
      * </p>
      */
     private RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision
+     * types.
      * </p>
      */
     private CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      */
     private FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      */
     private CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      */
     private ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      * </p>
      */
     private RecordMarkerDecisionAttributes recordMarkerDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      * </p>
      */
     private StartTimerDecisionAttributes startTimerDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      * </p>
      */
     private CancelTimerDecisionAttributes cancelTimerDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other decision
-     * types.
+     * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
+     * decision types.
      * </p>
      */
     private SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for other
+     * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other
      * decision types.
      * </p>
      */
     private RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes;
     /**
      * <p>
-     * Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      */
     private StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.
+     * </p>
+     */
     private ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes;
 
     /**
@@ -284,7 +450,7 @@ public class Decision implements Serializable, Cloneable {
      */
 
     public void setDecisionType(DecisionType decisionType) {
-        this.decisionType = decisionType.toString();
+        withDecisionType(decisionType);
     }
 
     /**
@@ -299,17 +465,17 @@ public class Decision implements Serializable, Cloneable {
      */
 
     public Decision withDecisionType(DecisionType decisionType) {
-        setDecisionType(decisionType);
+        this.decisionType = decisionType.toString();
         return this;
     }
 
     /**
      * <p>
-     * Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param scheduleActivityTaskDecisionAttributes
-     *        Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision
+     *        Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision
      *        types.
      */
 
@@ -319,10 +485,10 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision
+     * @return Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision
      *         types.
      */
 
@@ -332,11 +498,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param scheduleActivityTaskDecisionAttributes
-     *        Provides details of the <code>ScheduleActivityTask</code> decision. It is not set for other decision
+     *        Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision
      *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -348,12 +514,13 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
      * @param requestCancelActivityTaskDecisionAttributes
-     *        Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision
-     *        types.
+     *        Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other
+     *        decision types.
      */
 
     public void setRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes) {
@@ -362,11 +529,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
-     * @return Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision
-     *         types.
+     * @return Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other
+     *         decision types.
      */
 
     public RequestCancelActivityTaskDecisionAttributes getRequestCancelActivityTaskDecisionAttributes() {
@@ -375,12 +543,13 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
      * @param requestCancelActivityTaskDecisionAttributes
-     *        Provides details of the <code>RequestCancelActivityTask</code> decision. It is not set for other decision
-     *        types.
+     *        Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other
+     *        decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,12 +560,13 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
      * @param completeWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision
-     *        types.
+     *        Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other
+     *        decision types.
      */
 
     public void setCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes) {
@@ -405,11 +575,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
-     * @return Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision
-     *         types.
+     * @return Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other
+     *         decision types.
      */
 
     public CompleteWorkflowExecutionDecisionAttributes getCompleteWorkflowExecutionDecisionAttributes() {
@@ -418,12 +589,13 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision
+     * types.
      * </p>
      * 
      * @param completeWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>CompleteWorkflowExecution</code> decision. It is not set for other decision
-     *        types.
+     *        Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other
+     *        decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,11 +606,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param failWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision
+     *        Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision
      *        types.
      */
 
@@ -448,10 +620,10 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision
+     * @return Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision
      *         types.
      */
 
@@ -461,11 +633,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param failWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>FailWorkflowExecution</code> decision. It is not set for other decision
+     *        Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision
      *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -477,11 +649,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param cancelWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision
+     *        Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision
      *        types.
      */
 
@@ -491,11 +663,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision
-     *         types.
+     * @return Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other
+     *         decision types.
      */
 
     public CancelWorkflowExecutionDecisionAttributes getCancelWorkflowExecutionDecisionAttributes() {
@@ -504,11 +676,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param cancelWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>CancelWorkflowExecution</code> decision. It is not set for other decision
+     *        Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision
      *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -520,12 +692,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
      * @param continueAsNewWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      */
 
@@ -536,11 +708,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
-     * @return Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other
+     * @return Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other
      *         decision types.
      */
 
@@ -550,12 +722,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
      * @param continueAsNewWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -568,11 +740,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param recordMarkerDecisionAttributes
-     *        Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      */
 
     public void setRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes recordMarkerDecisionAttributes) {
@@ -581,10 +753,10 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     * @return Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      */
 
     public RecordMarkerDecisionAttributes getRecordMarkerDecisionAttributes() {
@@ -593,11 +765,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param recordMarkerDecisionAttributes
-     *        Provides details of the <code>RecordMarker</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,11 +780,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param startTimerDecisionAttributes
-     *        Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      */
 
     public void setStartTimerDecisionAttributes(StartTimerDecisionAttributes startTimerDecisionAttributes) {
@@ -621,10 +793,10 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     * @return Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      */
 
     public StartTimerDecisionAttributes getStartTimerDecisionAttributes() {
@@ -633,11 +805,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param startTimerDecisionAttributes
-     *        Provides details of the <code>StartTimer</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -648,11 +820,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param cancelTimerDecisionAttributes
-     *        Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      */
 
     public void setCancelTimerDecisionAttributes(CancelTimerDecisionAttributes cancelTimerDecisionAttributes) {
@@ -661,10 +833,10 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
-     * @return Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     * @return Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      */
 
     public CancelTimerDecisionAttributes getCancelTimerDecisionAttributes() {
@@ -673,11 +845,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     * Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      * </p>
      * 
      * @param cancelTimerDecisionAttributes
-     *        Provides details of the <code>CancelTimer</code> decision. It is not set for other decision types.
+     *        Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -688,12 +860,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other decision
-     * types.
+     * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
+     * decision types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      */
 
@@ -704,11 +876,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other decision
-     * types.
+     * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
+     * decision types.
      * </p>
      * 
-     * @return Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other
+     * @return Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
      *         decision types.
      */
 
@@ -718,12 +890,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other decision
-     * types.
+     * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
+     * decision types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>SignalExternalWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -736,12 +908,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for other
+     * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other
      * decision types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for
+     *        Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for
      *        other decision types.
      */
 
@@ -752,12 +924,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for other
+     * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other
      * decision types.
      * </p>
      * 
-     * @return Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for
-     *         other decision types.
+     * @return Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set
+     *         for other decision types.
      */
 
     public RequestCancelExternalWorkflowExecutionDecisionAttributes getRequestCancelExternalWorkflowExecutionDecisionAttributes() {
@@ -766,12 +938,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for other
+     * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other
      * decision types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It is not set for
+     *        Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for
      *        other decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -784,12 +956,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
      * @param startChildWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      */
 
@@ -799,11 +971,11 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
-     * @return Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other
+     * @return Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other
      *         decision types.
      */
 
@@ -813,12 +985,12 @@ public class Decision implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other decision
+     * Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision
      * types.
      * </p>
      * 
      * @param startChildWorkflowExecutionDecisionAttributes
-     *        Provides details of the <code>StartChildWorkflowExecution</code> decision. It is not set for other
+     *        Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other
      *        decision types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -830,7 +1002,13 @@ public class Decision implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.
+     * </p>
+     * 
      * @param scheduleLambdaFunctionDecisionAttributes
+     *        Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision
+     *        types.
      */
 
     public void setScheduleLambdaFunctionDecisionAttributes(ScheduleLambdaFunctionDecisionAttributes scheduleLambdaFunctionDecisionAttributes) {
@@ -838,7 +1016,12 @@ public class Decision implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision
+     *         types.
      */
 
     public ScheduleLambdaFunctionDecisionAttributes getScheduleLambdaFunctionDecisionAttributes() {
@@ -846,7 +1029,13 @@ public class Decision implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.
+     * </p>
+     * 
      * @param scheduleLambdaFunctionDecisionAttributes
+     *        Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,7 +1045,8 @@ public class Decision implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1020,5 +1210,11 @@ public class Decision implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.DecisionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

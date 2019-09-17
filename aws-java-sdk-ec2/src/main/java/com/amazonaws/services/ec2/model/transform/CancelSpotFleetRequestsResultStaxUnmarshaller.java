@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,17 +45,6 @@ public class CancelSpotFleetRequestsResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("unsuccessfulFleetRequestSet", targetDepth)) {
-                    cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(new ArrayList<CancelSpotFleetRequestsErrorItem>());
-                    continue;
-                }
-
-                if (context.testExpression("unsuccessfulFleetRequestSet/item", targetDepth)) {
-                    cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItemStaxUnmarshaller.getInstance().unmarshall(
-                            context));
-                    continue;
-                }
-
                 if (context.testExpression("successfulFleetRequestSet", targetDepth)) {
                     cancelSpotFleetRequestsResult.withSuccessfulFleetRequests(new ArrayList<CancelSpotFleetRequestsSuccessItem>());
                     continue;
@@ -63,6 +52,17 @@ public class CancelSpotFleetRequestsResultStaxUnmarshaller implements Unmarshall
 
                 if (context.testExpression("successfulFleetRequestSet/item", targetDepth)) {
                     cancelSpotFleetRequestsResult.withSuccessfulFleetRequests(CancelSpotFleetRequestsSuccessItemStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
+
+                if (context.testExpression("unsuccessfulFleetRequestSet", targetDepth)) {
+                    cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(new ArrayList<CancelSpotFleetRequestsErrorItem>());
+                    continue;
+                }
+
+                if (context.testExpression("unsuccessfulFleetRequestSet/item", targetDepth)) {
+                    cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItemStaxUnmarshaller.getInstance().unmarshall(
                             context));
                     continue;
                 }

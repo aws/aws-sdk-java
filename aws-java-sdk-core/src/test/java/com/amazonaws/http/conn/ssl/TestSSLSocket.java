@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,12 +15,40 @@
 package com.amazonaws.http.conn.ssl;
 
 import java.io.IOException;
-
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
 class TestSSLSocket extends SSLSocket {
+
+    private String[] capturedProtocols;
+
+    private boolean protocolsEnabled = false;
+
+    @Override
+    public void setEnabledProtocols(String[] protocols) {
+        capturedProtocols = protocols;
+        protocolsEnabled = true;
+    }
+
+    /**
+     * Indicates if setEnabledProtocols was invoked
+     */
+    public boolean wereProtocolsEnabled() {
+        return protocolsEnabled;
+    }
+
+    /**
+     * Returns the protocol array given to setEnabledProtocols
+     */
+    public String[] getCapturedProtocols() {
+        return capturedProtocols;
+    }
+
+    @Override
+    public String[] getEnabledProtocols() {
+        return null;
+    }
 
     @Override
     public String[] getSupportedCipherSuites() {
@@ -42,27 +70,18 @@ class TestSSLSocket extends SSLSocket {
     }
 
     @Override
-    public String[] getEnabledProtocols() {
-        return null;
-    }
-
-    @Override
-    public void setEnabledProtocols(String[] protocols) {
-    }
-
-    @Override
     public SSLSession getSession() {
         return null;
     }
 
     @Override
     public void addHandshakeCompletedListener(
-            HandshakeCompletedListener listener) {
+        HandshakeCompletedListener listener) {
     }
 
     @Override
     public void removeHandshakeCompletedListener(
-            HandshakeCompletedListener listener) {
+        HandshakeCompletedListener listener) {
     }
 
     @Override

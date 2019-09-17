@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a stack.
+ * Describes a stack.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Stack" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Stack implements Serializable, Cloneable {
+public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,28 +36,73 @@ public class Stack implements Serializable, Cloneable {
     private String arn;
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time the stack was created.
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     */
+    private java.util.List<StorageConnector> storageConnectors;
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     */
+    private String feedbackURL;
+    /**
+     * <p>
+     * The errors for the stack.
+     * </p>
+     */
+    private java.util.List<StackError> stackErrors;
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     */
+    private java.util.List<UserSetting> userSettings;
+    /**
+     * <p>
+     * The persistent application settings for users of the stack.
+     * </p>
+     */
+    private ApplicationSettingsResponse applicationSettings;
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     */
+    private java.util.List<AccessEndpoint> accessEndpoints;
 
     /**
      * <p>
@@ -99,11 +146,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the stack.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -112,10 +159,10 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
-     * @return The unique identifier of the stack.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -124,11 +171,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the stack.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +186,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        A meaningful description for the stack.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -152,10 +199,10 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description to display.
      * </p>
      * 
-     * @return A meaningful description for the stack.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -164,11 +211,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        A meaningful description for the stack.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +226,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        A display name for the stack.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -192,10 +239,10 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name to display.
      * </p>
      * 
-     * @return A display name for the stack.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -204,11 +251,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        A display name for the stack.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +266,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the stack was created.
+     *        The time the stack was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -232,10 +279,10 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
-     * @return The timestamp when the stack was created.
+     * @return The time the stack was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -244,11 +291,11 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the stack was created.
+     *        The time the stack was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +305,430 @@ public class Stack implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @return The storage connectors to enable.
+     */
+
+    public java.util.List<StorageConnector> getStorageConnectors() {
+        return storageConnectors;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     */
+
+    public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        if (storageConnectors == null) {
+            this.storageConnectors = null;
+            return;
+        }
+
+        this.storageConnectors = new java.util.ArrayList<StorageConnector>(storageConnectors);
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorageConnectors(java.util.Collection)} or {@link #withStorageConnectors(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStorageConnectors(StorageConnector... storageConnectors) {
+        if (this.storageConnectors == null) {
+            setStorageConnectors(new java.util.ArrayList<StorageConnector>(storageConnectors.length));
+        }
+        for (StorageConnector ele : storageConnectors) {
+            this.storageConnectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        setStorageConnectors(storageConnectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL that users are redirected to after their streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @return The URL that users are redirected to after their streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL that users are redirected to after their streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @param feedbackURL
+     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        Send Feedback link is displayed.
+     */
+
+    public void setFeedbackURL(String feedbackURL) {
+        this.feedbackURL = feedbackURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *         Send Feedback link is displayed.
+     */
+
+    public String getFeedbackURL() {
+        return this.feedbackURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @param feedbackURL
+     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        Send Feedback link is displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withFeedbackURL(String feedbackURL) {
+        setFeedbackURL(feedbackURL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The errors for the stack.
+     * </p>
+     * 
+     * @return The errors for the stack.
+     */
+
+    public java.util.List<StackError> getStackErrors() {
+        return stackErrors;
+    }
+
+    /**
+     * <p>
+     * The errors for the stack.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The errors for the stack.
+     */
+
+    public void setStackErrors(java.util.Collection<StackError> stackErrors) {
+        if (stackErrors == null) {
+            this.stackErrors = null;
+            return;
+        }
+
+        this.stackErrors = new java.util.ArrayList<StackError>(stackErrors);
+    }
+
+    /**
+     * <p>
+     * The errors for the stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStackErrors(java.util.Collection)} or {@link #withStackErrors(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The errors for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStackErrors(StackError... stackErrors) {
+        if (this.stackErrors == null) {
+            setStackErrors(new java.util.ArrayList<StackError>(stackErrors.length));
+        }
+        for (StackError ele : stackErrors) {
+            this.stackErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The errors for the stack.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The errors for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStackErrors(java.util.Collection<StackError> stackErrors) {
+        setStackErrors(stackErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @return The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *         actions are enabled.
+     */
+
+    public java.util.List<UserSetting> getUserSettings() {
+        return userSettings;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     */
+
+    public void setUserSettings(java.util.Collection<UserSetting> userSettings) {
+        if (userSettings == null) {
+            this.userSettings = null;
+            return;
+        }
+
+        this.userSettings = new java.util.ArrayList<UserSetting>(userSettings);
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserSettings(java.util.Collection)} or {@link #withUserSettings(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withUserSettings(UserSetting... userSettings) {
+        if (this.userSettings == null) {
+            setUserSettings(new java.util.ArrayList<UserSetting>(userSettings.length));
+        }
+        for (UserSetting ele : userSettings) {
+            this.userSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withUserSettings(java.util.Collection<UserSetting> userSettings) {
+        setUserSettings(userSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of the stack.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of the stack.
+     */
+
+    public void setApplicationSettings(ApplicationSettingsResponse applicationSettings) {
+        this.applicationSettings = applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of the stack.
+     * </p>
+     * 
+     * @return The persistent application settings for users of the stack.
+     */
+
+    public ApplicationSettingsResponse getApplicationSettings() {
+        return this.applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of the stack.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withApplicationSettings(ApplicationSettingsResponse applicationSettings) {
+        setApplicationSettings(applicationSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @return The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *         AppStream 2.0 only through the specified endpoints.
+     */
+
+    public java.util.List<AccessEndpoint> getAccessEndpoints() {
+        return accessEndpoints;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     */
+
+    public void setAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        if (accessEndpoints == null) {
+            this.accessEndpoints = null;
+            return;
+        }
+
+        this.accessEndpoints = new java.util.ArrayList<AccessEndpoint>(accessEndpoints);
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccessEndpoints(java.util.Collection)} or {@link #withAccessEndpoints(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withAccessEndpoints(AccessEndpoint... accessEndpoints) {
+        if (this.accessEndpoints == null) {
+            setAccessEndpoints(new java.util.ArrayList<AccessEndpoint>(accessEndpoints.length));
+        }
+        for (AccessEndpoint ele : accessEndpoints) {
+            this.accessEndpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        setAccessEndpoints(accessEndpoints);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,7 +747,21 @@ public class Stack implements Serializable, Cloneable {
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getStorageConnectors() != null)
+            sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
+        if (getFeedbackURL() != null)
+            sb.append("FeedbackURL: ").append(getFeedbackURL()).append(",");
+        if (getStackErrors() != null)
+            sb.append("StackErrors: ").append(getStackErrors()).append(",");
+        if (getUserSettings() != null)
+            sb.append("UserSettings: ").append(getUserSettings()).append(",");
+        if (getApplicationSettings() != null)
+            sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
+        if (getAccessEndpoints() != null)
+            sb.append("AccessEndpoints: ").append(getAccessEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +796,34 @@ public class Stack implements Serializable, Cloneable {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getStorageConnectors() == null ^ this.getStorageConnectors() == null)
+            return false;
+        if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
+            return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
+        if (other.getFeedbackURL() == null ^ this.getFeedbackURL() == null)
+            return false;
+        if (other.getFeedbackURL() != null && other.getFeedbackURL().equals(this.getFeedbackURL()) == false)
+            return false;
+        if (other.getStackErrors() == null ^ this.getStackErrors() == null)
+            return false;
+        if (other.getStackErrors() != null && other.getStackErrors().equals(this.getStackErrors()) == false)
+            return false;
+        if (other.getUserSettings() == null ^ this.getUserSettings() == null)
+            return false;
+        if (other.getUserSettings() != null && other.getUserSettings().equals(this.getUserSettings()) == false)
+            return false;
+        if (other.getApplicationSettings() == null ^ this.getApplicationSettings() == null)
+            return false;
+        if (other.getApplicationSettings() != null && other.getApplicationSettings().equals(this.getApplicationSettings()) == false)
+            return false;
+        if (other.getAccessEndpoints() == null ^ this.getAccessEndpoints() == null)
+            return false;
+        if (other.getAccessEndpoints() != null && other.getAccessEndpoints().equals(this.getAccessEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -325,6 +837,13 @@ public class Stack implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
+        hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
+        hashCode = prime * hashCode + ((getStackErrors() == null) ? 0 : getStackErrors().hashCode());
+        hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
+        hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
         return hashCode;
     }
 
@@ -335,5 +854,11 @@ public class Stack implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appstream.model.transform.StackMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

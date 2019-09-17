@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,14 @@ public class PutIntegrationResultJsonUnmarshaller implements Unmarshaller<PutInt
                     context.nextToken();
                     putIntegrationResult.setUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectionType", targetDepth)) {
+                    context.nextToken();
+                    putIntegrationResult.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectionId", targetDepth)) {
+                    context.nextToken();
+                    putIntegrationResult.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("credentials", targetDepth)) {
                     context.nextToken();
                     putIntegrationResult.setCredentials(context.getUnmarshaller(String.class).unmarshall(context));
@@ -81,6 +89,10 @@ public class PutIntegrationResultJsonUnmarshaller implements Unmarshaller<PutInt
                 if (context.testExpression("contentHandling", targetDepth)) {
                     context.nextToken();
                     putIntegrationResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timeoutInMillis", targetDepth)) {
+                    context.nextToken();
+                    putIntegrationResult.setTimeoutInMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();

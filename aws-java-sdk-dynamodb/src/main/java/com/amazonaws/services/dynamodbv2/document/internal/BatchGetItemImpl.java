@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,13 +14,6 @@
  */
 package com.amazonaws.services.dynamodbv2.document.internal;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.BatchGetItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
@@ -32,6 +25,12 @@ import com.amazonaws.services.dynamodbv2.model.BatchGetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.BatchGetItemResult;
 import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
 import com.amazonaws.services.dynamodbv2.model.ReturnConsumedCapacity;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * The implementation for <code>BatchGetItemApi</code>.
@@ -72,6 +71,8 @@ public class BatchGetItemImpl implements BatchGetItemApi {
         if (requestItems == null || requestItems.size() == 0) {
             // handle new requests only if there is no unprocessed keys
             requestItems = new LinkedHashMap<String, KeysAndAttributes>();
+        } else {
+            requestItems = new LinkedHashMap<String, KeysAndAttributes>(requestItems);
         }
         if (tableKeysAndAttributesCol != null) {
             for (TableKeysAndAttributes tableKeysAndAttributes: tableKeysAndAttributesCol) {

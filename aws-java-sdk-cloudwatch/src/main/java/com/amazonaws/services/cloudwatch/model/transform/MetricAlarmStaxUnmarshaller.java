@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                 }
 
                 if (context.testExpression("AlarmConfigurationUpdatedTimestamp", targetDepth)) {
-                    metricAlarm.setAlarmConfigurationUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricAlarm.setAlarmConfigurationUpdatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -116,7 +116,7 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                 }
 
                 if (context.testExpression("StateUpdatedTimestamp", targetDepth)) {
-                    metricAlarm.setStateUpdatedTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricAlarm.setStateUpdatedTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -165,6 +165,11 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     continue;
                 }
 
+                if (context.testExpression("DatapointsToAlarm", targetDepth)) {
+                    metricAlarm.setDatapointsToAlarm(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Threshold", targetDepth)) {
                     metricAlarm.setThreshold(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -172,6 +177,31 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
 
                 if (context.testExpression("ComparisonOperator", targetDepth)) {
                     metricAlarm.setComparisonOperator(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TreatMissingData", targetDepth)) {
+                    metricAlarm.setTreatMissingData(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EvaluateLowSampleCountPercentile", targetDepth)) {
+                    metricAlarm.setEvaluateLowSampleCountPercentile(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Metrics", targetDepth)) {
+                    metricAlarm.withMetrics(new ArrayList<MetricDataQuery>());
+                    continue;
+                }
+
+                if (context.testExpression("Metrics/member", targetDepth)) {
+                    metricAlarm.withMetrics(MetricDataQueryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ThresholdMetricId", targetDepth)) {
+                    metricAlarm.setThresholdMetricId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

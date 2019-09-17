@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,11 +36,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
      * The new password. The new password must conform to the AWS account's password policy, if one exists.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of almost any printable ASCII character from the space ( ) through the end of the ASCII
-     * character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return ( ) characters.
-     * Although any of these characters are valid in a password, note that many tools, such as the AWS Management
-     * Console, might restrict the ability to enter certain characters because they have special meaning within that
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
+     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
+     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
+     * Console, might restrict the ability to type certain characters because they have special meaning within that
      * tool.
      * </p>
      */
@@ -91,22 +91,22 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
      * The new password. The new password must conform to the AWS account's password policy, if one exists.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of almost any printable ASCII character from the space ( ) through the end of the ASCII
-     * character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return ( ) characters.
-     * Although any of these characters are valid in a password, note that many tools, such as the AWS Management
-     * Console, might restrict the ability to enter certain characters because they have special meaning within that
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
+     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
+     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
+     * Console, might restrict the ability to type certain characters because they have special meaning within that
      * tool.
      * </p>
      * 
      * @param newPassword
      *        The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of almost any printable ASCII character from the space ( ) through the end
-     *        of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage
-     *        return ( ) characters. Although any of these characters are valid in a password, note that many tools,
-     *        such as the AWS Management Console, might restrict the ability to enter certain characters because they
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
+     *        a string of characters. That string can include almost any printable ASCII character from the space ( )
+     *        through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
+     *        and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
+     *        such as the AWS Management Console, might restrict the ability to type certain characters because they
      *        have special meaning within that tool.
      */
 
@@ -119,21 +119,21 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
      * The new password. The new password must conform to the AWS account's password policy, if one exists.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of almost any printable ASCII character from the space ( ) through the end of the ASCII
-     * character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return ( ) characters.
-     * Although any of these characters are valid in a password, note that many tools, such as the AWS Management
-     * Console, might restrict the ability to enter certain characters because they have special meaning within that
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
+     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
+     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
+     * Console, might restrict the ability to type certain characters because they have special meaning within that
      * tool.
      * </p>
      * 
      * @return The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of almost any printable ASCII character from the space ( ) through the
-     *         end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage
-     *         return ( ) characters. Although any of these characters are valid in a password, note that many tools,
-     *         such as the AWS Management Console, might restrict the ability to enter certain characters because they
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter
+     *         is a string of characters. That string can include almost any printable ASCII character from the space (
+     *         ) through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
+     *         and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
+     *         such as the AWS Management Console, might restrict the ability to type certain characters because they
      *         have special meaning within that tool.
      */
 
@@ -146,22 +146,22 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
      * The new password. The new password must conform to the AWS account's password policy, if one exists.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of almost any printable ASCII character from the space ( ) through the end of the ASCII
-     * character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return ( ) characters.
-     * Although any of these characters are valid in a password, note that many tools, such as the AWS Management
-     * Console, might restrict the ability to enter certain characters because they have special meaning within that
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
+     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
+     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
+     * Console, might restrict the ability to type certain characters because they have special meaning within that
      * tool.
      * </p>
      * 
      * @param newPassword
      *        The new password. The new password must conform to the AWS account's password policy, if one exists.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of almost any printable ASCII character from the space ( ) through the end
-     *        of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage
-     *        return ( ) characters. Although any of these characters are valid in a password, note that many tools,
-     *        such as the AWS Management Console, might restrict the ability to enter certain characters because they
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
+     *        a string of characters. That string can include almost any printable ASCII character from the space ( )
+     *        through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
+     *        and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
+     *        such as the AWS Management Console, might restrict the ability to type certain characters because they
      *        have special meaning within that tool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -172,7 +172,8 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -183,9 +184,9 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOldPassword() != null)
-            sb.append("OldPassword: ").append(getOldPassword()).append(",");
+            sb.append("OldPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getNewPassword() != null)
-            sb.append("NewPassword: ").append(getNewPassword());
+            sb.append("NewPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

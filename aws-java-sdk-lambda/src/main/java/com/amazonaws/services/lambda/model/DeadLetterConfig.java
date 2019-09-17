@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,35 +14,35 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+ * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a> for failed asynchronous
+ * invocations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeadLetterConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeadLetterConfig implements Serializable, Cloneable {
+public class DeadLetterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ).
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private String targetArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ).
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *        Queue (DLQ).
+     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public void setTargetArn(String targetArn) {
@@ -51,12 +51,10 @@ public class DeadLetterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ).
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *         Queue (DLQ).
+     * @return The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      */
 
     public String getTargetArn() {
@@ -65,13 +63,11 @@ public class DeadLetterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter Queue
-     * (DLQ).
+     * The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify as your Dead Letter
-     *        Queue (DLQ).
+     *        The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +77,8 @@ public class DeadLetterConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,5 +127,11 @@ public class DeadLetterConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.DeadLetterConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

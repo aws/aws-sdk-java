@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The old password in the change password request.
+     * The old password.
      * </p>
      */
     private String previousPassword;
     /**
      * <p>
-     * The new password in the change password request.
+     * The new password.
      * </p>
      */
     private String proposedPassword;
     /**
      * <p>
-     * The access token in the change password request.
+     * The access token.
      * </p>
      */
     private String accessToken;
 
     /**
      * <p>
-     * The old password in the change password request.
+     * The old password.
      * </p>
      * 
      * @param previousPassword
-     *        The old password in the change password request.
+     *        The old password.
      */
 
     public void setPreviousPassword(String previousPassword) {
@@ -62,10 +62,10 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The old password in the change password request.
+     * The old password.
      * </p>
      * 
-     * @return The old password in the change password request.
+     * @return The old password.
      */
 
     public String getPreviousPassword() {
@@ -74,11 +74,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The old password in the change password request.
+     * The old password.
      * </p>
      * 
      * @param previousPassword
-     *        The old password in the change password request.
+     *        The old password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password in the change password request.
+     * The new password.
      * </p>
      * 
      * @param proposedPassword
-     *        The new password in the change password request.
+     *        The new password.
      */
 
     public void setProposedPassword(String proposedPassword) {
@@ -102,10 +102,10 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password in the change password request.
+     * The new password.
      * </p>
      * 
-     * @return The new password in the change password request.
+     * @return The new password.
      */
 
     public String getProposedPassword() {
@@ -114,11 +114,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new password in the change password request.
+     * The new password.
      * </p>
      * 
      * @param proposedPassword
-     *        The new password in the change password request.
+     *        The new password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The access token in the change password request.
+     * The access token.
      * </p>
      * 
      * @param accessToken
-     *        The access token in the change password request.
+     *        The access token.
      */
 
     public void setAccessToken(String accessToken) {
@@ -142,10 +142,10 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The access token in the change password request.
+     * The access token.
      * </p>
      * 
-     * @return The access token in the change password request.
+     * @return The access token.
      */
 
     public String getAccessToken() {
@@ -154,11 +154,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The access token in the change password request.
+     * The access token.
      * </p>
      * 
      * @param accessToken
-     *        The access token in the change password request.
+     *        The access token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +168,8 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,11 +180,11 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPreviousPassword() != null)
-            sb.append("PreviousPassword: ").append(getPreviousPassword()).append(",");
+            sb.append("PreviousPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getProposedPassword() != null)
-            sb.append("ProposedPassword: ").append(getProposedPassword()).append(",");
+            sb.append("ProposedPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getAccessToken() != null)
-            sb.append("AccessToken: ").append(getAccessToken());
+            sb.append("AccessToken: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

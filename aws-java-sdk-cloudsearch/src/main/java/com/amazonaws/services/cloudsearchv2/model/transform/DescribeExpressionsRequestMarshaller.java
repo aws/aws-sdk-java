@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class DescribeExpressionsRequestMarshaller implements Marshaller<Request<
             request.addParameter("DomainName", StringUtils.fromString(describeExpressionsRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> expressionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest
-                .getExpressionNames();
-        if (!expressionNamesList.isEmpty() || !expressionNamesList.isAutoConstruct()) {
+        if (!describeExpressionsRequest.getExpressionNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest.getExpressionNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> expressionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest
+                    .getExpressionNames();
             int expressionNamesListIndex = 1;
 
             for (String expressionNamesListValue : expressionNamesList) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,40 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of constraints associated with an attribute of the string type.
+ * The constraints associated with a string attribute.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StringAttributeConstraintsType implements Serializable, Cloneable {
+public class StringAttributeConstraintsType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      */
     private String minLength;
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      */
     private String maxLength;
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
      * @param minLength
-     *        The minimum length of an attribute value of the string type.
+     *        The minimum length.
      */
 
     public void setMinLength(String minLength) {
@@ -54,10 +56,10 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
-     * @return The minimum length of an attribute value of the string type.
+     * @return The minimum length.
      */
 
     public String getMinLength() {
@@ -66,11 +68,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum length of an attribute value of the string type.
+     * The minimum length.
      * </p>
      * 
      * @param minLength
-     *        The minimum length of an attribute value of the string type.
+     *        The minimum length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +83,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length of an attribute value of the string type.
+     *        The maximum length.
      */
 
     public void setMaxLength(String maxLength) {
@@ -94,10 +96,10 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
-     * @return The maximum length of an attribute value of the string type.
+     * @return The maximum length.
      */
 
     public String getMaxLength() {
@@ -106,11 +108,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum length of an attribute value of the string type.
+     * The maximum length.
      * </p>
      * 
      * @param maxLength
-     *        The maximum length of an attribute value of the string type.
+     *        The maximum length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +122,8 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,5 +179,11 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.StringAttributeConstraintsTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

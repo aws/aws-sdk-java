@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,20 +30,11 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the domain that you want to get availability for.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String domainName;
@@ -56,36 +47,18 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the domain that you want to get availability for.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
+     *        The name of the domain that you want to get availability for.</p>
      *        <p>
      *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
      *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setDomainName(String domainName) {
@@ -94,35 +67,17 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the domain that you want to get availability for.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
+     * @return The name of the domain that you want to get availability for.</p>
      *         <p>
      *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
      *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getDomainName() {
@@ -131,36 +86,18 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the domain that you want to get availability for.
      * </p>
      * <p>
      * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
      * Internationalized Domain Names are not supported.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
+     *        The name of the domain that you want to get availability for.</p>
      *        <p>
      *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
      *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +147,8 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

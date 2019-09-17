@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p/>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Endpoint" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Endpoint implements Serializable, Cloneable {
+public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -32,17 +34,24 @@ public class Endpoint implements Serializable, Cloneable {
     private String endpointIdentifier;
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     */
+    private String engineDisplayName;
     /**
      * <p>
      * The user name used to connect to the endpoint.
@@ -81,9 +90,15 @@ public class Endpoint implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -101,16 +116,104 @@ public class Endpoint implements Serializable, Cloneable {
     private String certificateArn;
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      */
     private String sslMode;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     */
+    private String serviceAccessRoleArn;
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     */
+    private String externalTableDefinition;
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     */
+    private String externalId;
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     */
+    private DynamoDbSettings dynamoDbSettings;
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     */
+    private S3Settings s3Settings;
+    /**
+     * <p>
+     * The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p>
+     * <p>
+     * Possible attributes include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bucketName</code> - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p>
+     * <p>
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * </p>
+     */
+    private DmsTransferSettings dmsTransferSettings;
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     */
+    private MongoDbSettings mongoDbSettings;
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     */
+    private KinesisSettings kinesisSettings;
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     */
+    private ElasticsearchSettings elasticsearchSettings;
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint.
+     * </p>
+     */
+    private RedshiftSettings redshiftSettings;
 
     /**
      * <p>
@@ -160,11 +263,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -174,10 +277,10 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
-     * @return The type of endpoint.
+     * @return The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -187,11 +290,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -203,43 +306,43 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
-        this.endpointType = endpointType.toString();
+        withEndpointType(endpointType);
     }
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
     public Endpoint withEndpointType(ReplicationEndpointTypeValue endpointType) {
-        setEndpointType(endpointType);
+        this.endpointType = endpointType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -248,12 +351,12 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     *         SYBASE, and SQLSERVER.
+     * @return The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -262,18 +365,64 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withEngineName(String engineName) {
         setEngineName(engineName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     */
+
+    public void setEngineDisplayName(String engineDisplayName) {
+        this.engineDisplayName = engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *         this value would be "Amazon Aurora MySQL."
+     */
+
+    public String getEngineDisplayName() {
+        return this.engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withEngineDisplayName(String engineDisplayName) {
+        setEngineDisplayName(engineDisplayName);
         return this;
     }
 
@@ -519,16 +668,26 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -537,15 +696,25 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
-     * @return The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *         value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *         each AWS region.
+     * @return An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *         <p>
+     *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *         encryption key.
+     *         </p>
+     *         <p>
+     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *         encryption key for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -554,16 +723,26 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
-     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.
+     * </p>
+     * <p>
+     * If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default encryption
+     * key.
+     * </p>
+     * <p>
+     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
-     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
-     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+     *        <p>
+     *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then AWS DMS uses your default
+     *        encryption key.
+     *        </p>
+     *        <p>
+     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
+     *        encryption key for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -654,22 +833,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode used to connect to the endpoint.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -679,21 +847,10 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
-     * @return The SSL mode used to connect to the endpoint.</p>
-     *         <p>
-     *         SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *         </p>
-     *         <p>
-     *         The default value is none.
+     * @return The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
@@ -703,22 +860,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode used to connect to the endpoint.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
@@ -730,58 +876,641 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode used to connect to the endpoint.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @see DmsSslModeValue
      */
 
     public void setSslMode(DmsSslModeValue sslMode) {
-        this.sslMode = sslMode.toString();
+        withSslMode(sslMode);
     }
 
     /**
      * <p>
-     * The SSL mode used to connect to the endpoint.
-     * </p>
-     * <p>
-     * SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     * </p>
-     * <p>
-     * The default value is none.
+     * The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * </p>
      * 
      * @param sslMode
-     *        The SSL mode used to connect to the endpoint.</p>
-     *        <p>
-     *        SSL mode can be one of four values: none, require, verify-ca, verify-full.
-     *        </p>
-     *        <p>
-     *        The default value is none.
+     *        The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DmsSslModeValue
      */
 
     public Endpoint withSslMode(DmsSslModeValue sslMode) {
-        setSslMode(sslMode);
+        this.sslMode = sslMode.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     */
+
+    public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
+        this.serviceAccessRoleArn = serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     */
+
+    public String getServiceAccessRoleArn() {
+        return this.serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withServiceAccessRoleArn(String serviceAccessRoleArn) {
+        setServiceAccessRoleArn(serviceAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     */
+
+    public void setExternalTableDefinition(String externalTableDefinition) {
+        this.externalTableDefinition = externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @return The external table definition.
+     */
+
+    public String getExternalTableDefinition() {
+        return this.externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withExternalTableDefinition(String externalTableDefinition) {
+        setExternalTableDefinition(externalTableDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @param externalId
+     *        Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *        subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @return Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *         subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @param externalId
+     *        Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *        subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        structure.
+     */
+
+    public void setDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        this.dynamoDbSettings = dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the target DynamoDB database. For more information, see the
+     *         <code>DynamoDBSettings</code> structure.
+     */
+
+    public DynamoDbSettings getDynamoDbSettings() {
+        return this.dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        setDynamoDbSettings(dynamoDbSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @param s3Settings
+     *        The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     */
+
+    public void setS3Settings(S3Settings s3Settings) {
+        this.s3Settings = s3Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     */
+
+    public S3Settings getS3Settings() {
+        return this.s3Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @param s3Settings
+     *        The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withS3Settings(S3Settings s3Settings) {
+        setS3Settings(s3Settings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p>
+     * <p>
+     * Possible attributes include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bucketName</code> - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p>
+     * <p>
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * </p>
+     * 
+     * @param dmsTransferSettings
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
+     *        <p>
+     *        Possible attributes include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *        </p>
+     *        <p>
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     */
+
+    public void setDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
+        this.dmsTransferSettings = dmsTransferSettings;
+    }
+
+    /**
+     * <p>
+     * The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p>
+     * <p>
+     * Possible attributes include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bucketName</code> - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p>
+     * <p>
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * </p>
+     * 
+     * @return The settings in JSON format for the DMS transfer type of source endpoint. </p>
+     *         <p>
+     *         Possible attributes include the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bucketName</code> - The name of the S3 bucket to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *         GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *         value.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Shorthand syntax for these attributes is as follows:
+     *         <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *         </p>
+     *         <p>
+     *         JSON syntax for these attributes is as follows:
+     *         <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     */
+
+    public DmsTransferSettings getDmsTransferSettings() {
+        return this.dmsTransferSettings;
+    }
+
+    /**
+     * <p>
+     * The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p>
+     * <p>
+     * Possible attributes include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bucketName</code> - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax for these attributes is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p>
+     * <p>
+     * JSON syntax for these attributes is as follows:
+     * <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * </p>
+     * 
+     * @param dmsTransferSettings
+     *        The settings in JSON format for the DMS transfer type of source endpoint. </p>
+     *        <p>
+     *        Possible attributes include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the Amazon S3 bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bucketName</code> - The name of the S3 bucket to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>compressionType</code> - An optional parameter to use GZIP to compress the target files. To use
+     *        GZIP, set this value to <code>NONE</code> (the default). To keep the files uncompressed, don't use this
+     *        value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Shorthand syntax for these attributes is as follows:
+     *        <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     *        </p>
+     *        <p>
+     *        JSON syntax for these attributes is as follows:
+     *        <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
+        setDmsTransferSettings(dmsTransferSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *        structure.
+     */
+
+    public void setMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        this.mongoDbSettings = mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *         structure.
+     */
+
+    public MongoDbSettings getMongoDbSettings() {
+        return this.mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *        structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        setMongoDbSettings(mongoDbSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        <code>KinesisSettings</code> structure.
+     */
+
+    public void setKinesisSettings(KinesisSettings kinesisSettings) {
+        this.kinesisSettings = kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *         <code>KinesisSettings</code> structure.
+     */
+
+    public KinesisSettings getKinesisSettings() {
+        return this.kinesisSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kinesisSettings
+     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        <code>KinesisSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withKinesisSettings(KinesisSettings kinesisSettings) {
+        setKinesisSettings(kinesisSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        The settings for the Elasticsearch source endpoint. For more information, see the
+     *        <code>ElasticsearchSettings</code> structure.
+     */
+
+    public void setElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        this.elasticsearchSettings = elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the Elasticsearch source endpoint. For more information, see the
+     *         <code>ElasticsearchSettings</code> structure.
+     */
+
+    public ElasticsearchSettings getElasticsearchSettings() {
+        return this.elasticsearchSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Elasticsearch source endpoint. For more information, see the
+     * <code>ElasticsearchSettings</code> structure.
+     * </p>
+     * 
+     * @param elasticsearchSettings
+     *        The settings for the Elasticsearch source endpoint. For more information, see the
+     *        <code>ElasticsearchSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withElasticsearchSettings(ElasticsearchSettings elasticsearchSettings) {
+        setElasticsearchSettings(elasticsearchSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint.
+     * </p>
+     * 
+     * @param redshiftSettings
+     *        Settings for the Amazon Redshift endpoint.
+     */
+
+    public void setRedshiftSettings(RedshiftSettings redshiftSettings) {
+        this.redshiftSettings = redshiftSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint.
+     * </p>
+     * 
+     * @return Settings for the Amazon Redshift endpoint.
+     */
+
+    public RedshiftSettings getRedshiftSettings() {
+        return this.redshiftSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the Amazon Redshift endpoint.
+     * </p>
+     * 
+     * @param redshiftSettings
+     *        Settings for the Amazon Redshift endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withRedshiftSettings(RedshiftSettings redshiftSettings) {
+        setRedshiftSettings(redshiftSettings);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -797,6 +1526,8 @@ public class Endpoint implements Serializable, Cloneable {
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getEngineName() != null)
             sb.append("EngineName: ").append(getEngineName()).append(",");
+        if (getEngineDisplayName() != null)
+            sb.append("EngineDisplayName: ").append(getEngineDisplayName()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getServerName() != null)
@@ -816,7 +1547,27 @@ public class Endpoint implements Serializable, Cloneable {
         if (getCertificateArn() != null)
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
-            sb.append("SslMode: ").append(getSslMode());
+            sb.append("SslMode: ").append(getSslMode()).append(",");
+        if (getServiceAccessRoleArn() != null)
+            sb.append("ServiceAccessRoleArn: ").append(getServiceAccessRoleArn()).append(",");
+        if (getExternalTableDefinition() != null)
+            sb.append("ExternalTableDefinition: ").append(getExternalTableDefinition()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
+        if (getDynamoDbSettings() != null)
+            sb.append("DynamoDbSettings: ").append(getDynamoDbSettings()).append(",");
+        if (getS3Settings() != null)
+            sb.append("S3Settings: ").append(getS3Settings()).append(",");
+        if (getDmsTransferSettings() != null)
+            sb.append("DmsTransferSettings: ").append(getDmsTransferSettings()).append(",");
+        if (getMongoDbSettings() != null)
+            sb.append("MongoDbSettings: ").append(getMongoDbSettings()).append(",");
+        if (getKinesisSettings() != null)
+            sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
+        if (getElasticsearchSettings() != null)
+            sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings()).append(",");
+        if (getRedshiftSettings() != null)
+            sb.append("RedshiftSettings: ").append(getRedshiftSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -842,6 +1593,10 @@ public class Endpoint implements Serializable, Cloneable {
         if (other.getEngineName() == null ^ this.getEngineName() == null)
             return false;
         if (other.getEngineName() != null && other.getEngineName().equals(this.getEngineName()) == false)
+            return false;
+        if (other.getEngineDisplayName() == null ^ this.getEngineDisplayName() == null)
+            return false;
+        if (other.getEngineDisplayName() != null && other.getEngineDisplayName().equals(this.getEngineDisplayName()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
@@ -883,6 +1638,46 @@ public class Endpoint implements Serializable, Cloneable {
             return false;
         if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
+        if (other.getServiceAccessRoleArn() == null ^ this.getServiceAccessRoleArn() == null)
+            return false;
+        if (other.getServiceAccessRoleArn() != null && other.getServiceAccessRoleArn().equals(this.getServiceAccessRoleArn()) == false)
+            return false;
+        if (other.getExternalTableDefinition() == null ^ this.getExternalTableDefinition() == null)
+            return false;
+        if (other.getExternalTableDefinition() != null && other.getExternalTableDefinition().equals(this.getExternalTableDefinition()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
+        if (other.getDynamoDbSettings() == null ^ this.getDynamoDbSettings() == null)
+            return false;
+        if (other.getDynamoDbSettings() != null && other.getDynamoDbSettings().equals(this.getDynamoDbSettings()) == false)
+            return false;
+        if (other.getS3Settings() == null ^ this.getS3Settings() == null)
+            return false;
+        if (other.getS3Settings() != null && other.getS3Settings().equals(this.getS3Settings()) == false)
+            return false;
+        if (other.getDmsTransferSettings() == null ^ this.getDmsTransferSettings() == null)
+            return false;
+        if (other.getDmsTransferSettings() != null && other.getDmsTransferSettings().equals(this.getDmsTransferSettings()) == false)
+            return false;
+        if (other.getMongoDbSettings() == null ^ this.getMongoDbSettings() == null)
+            return false;
+        if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
+            return false;
+        if (other.getKinesisSettings() == null ^ this.getKinesisSettings() == null)
+            return false;
+        if (other.getKinesisSettings() != null && other.getKinesisSettings().equals(this.getKinesisSettings()) == false)
+            return false;
+        if (other.getElasticsearchSettings() == null ^ this.getElasticsearchSettings() == null)
+            return false;
+        if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
+            return false;
+        if (other.getRedshiftSettings() == null ^ this.getRedshiftSettings() == null)
+            return false;
+        if (other.getRedshiftSettings() != null && other.getRedshiftSettings().equals(this.getRedshiftSettings()) == false)
+            return false;
         return true;
     }
 
@@ -894,6 +1689,7 @@ public class Endpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEndpointIdentifier() == null) ? 0 : getEndpointIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
+        hashCode = prime * hashCode + ((getEngineDisplayName() == null) ? 0 : getEngineDisplayName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
@@ -904,6 +1700,16 @@ public class Endpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getServiceAccessRoleArn() == null) ? 0 : getServiceAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExternalTableDefinition() == null) ? 0 : getExternalTableDefinition().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
+        hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
+        hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
+        hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
         return hashCode;
     }
 
@@ -914,5 +1720,11 @@ public class Endpoint implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.databasemigrationservice.model.transform.EndpointMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

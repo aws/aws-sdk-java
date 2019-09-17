@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobDetail implements Serializable, Cloneable {
+public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -48,8 +50,21 @@ public class JobDetail implements Serializable, Cloneable {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      */
     private String status;
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     */
+    private java.util.List<AttemptDetail> attempts;
     /**
      * <p>
      * A short, human-readable string to provide additional details about the current status of the job.
@@ -58,21 +73,30 @@ public class JobDetail implements Serializable, Cloneable {
     private String statusReason;
     /**
      * <p>
-     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      */
     private Long createdAt;
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
-     * to the <code>RUNNING</code> state).
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
-     * to the <code>STOPPED</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      */
     private Long stoppedAt;
@@ -101,6 +125,30 @@ public class JobDetail implements Serializable, Cloneable {
      * </p>
      */
     private ContainerDetail container;
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     */
+    private NodeDetails nodeDetails;
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
+    /**
+     * <p>
+     * The array properties of the job, if it is an array job.
+     * </p>
+     */
+    private ArrayPropertiesDetail arrayProperties;
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
@@ -226,9 +274,21 @@ public class JobDetail implements Serializable, Cloneable {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
@@ -240,8 +300,20 @@ public class JobDetail implements Serializable, Cloneable {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The current status for the job.
+     * @return The current status for the job. </p> <note>
+     *         <p>
+     *         If your jobs do not progress to <code>STARTING</code>, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *         Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *         </p>
      * @see JobStatus
      */
 
@@ -253,9 +325,21 @@ public class JobDetail implements Serializable, Cloneable {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -269,29 +353,123 @@ public class JobDetail implements Serializable, Cloneable {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
     public void setStatus(JobStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in RUNNABLE Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
 
     public JobDetail withStatus(JobStatus status) {
-        setStatus(status);
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @return A list of job attempts associated with this job.
+     */
+
+    public java.util.List<AttemptDetail> getAttempts() {
+        return attempts;
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     */
+
+    public void setAttempts(java.util.Collection<AttemptDetail> attempts) {
+        if (attempts == null) {
+            this.attempts = null;
+            return;
+        }
+
+        this.attempts = new java.util.ArrayList<AttemptDetail>(attempts);
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttempts(java.util.Collection)} or {@link #withAttempts(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withAttempts(AttemptDetail... attempts) {
+        if (this.attempts == null) {
+            setAttempts(new java.util.ArrayList<AttemptDetail>(attempts.length));
+        }
+        for (AttemptDetail ele : attempts) {
+            this.attempts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withAttempts(java.util.Collection<AttemptDetail> attempts) {
+        setAttempts(attempts);
         return this;
     }
 
@@ -337,11 +515,17 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *        and entered the <code>PENDING</code> state.
      */
 
     public void setCreatedAt(Long createdAt) {
@@ -350,10 +534,16 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
-     * @return The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *         parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *         <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *         and entered the <code>PENDING</code> state.
      */
 
     public Long getCreatedAt() {
@@ -362,11 +552,17 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *        and entered the <code>PENDING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,13 +573,53 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
-     * to the <code>RUNNING</code> state).
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for this job if an attempt fails.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @return The retry strategy to use for this job if an attempt fails.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for this job if an attempt fails.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public void setStartedAt(Long startedAt) {
@@ -392,12 +628,12 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
-     *         state to the <code>RUNNING</code> state).
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *         from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public Long getStartedAt() {
@@ -406,13 +642,13 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,13 +659,14 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
-     * to the <code>STOPPED</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
-     *        state to the <code>STOPPED</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *        <code>FAILED</code>).
      */
 
     public void setStoppedAt(Long stoppedAt) {
@@ -438,12 +675,13 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
-     * to the <code>STOPPED</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
-     * @return The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
-     *         state to the <code>STOPPED</code> state).
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *         from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *         <code>FAILED</code>).
      */
 
     public Long getStoppedAt() {
@@ -452,13 +690,14 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
-     * to the <code>STOPPED</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
-     *        state to the <code>STOPPED</code> state).
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *        <code>FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,7 +924,168 @@ public class JobDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeDetails
+     *        An object representing the details of a node that is associated with a multi-node parallel job.
+     */
+
+    public void setNodeDetails(NodeDetails nodeDetails) {
+        this.nodeDetails = nodeDetails;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @return An object representing the details of a node that is associated with a multi-node parallel job.
+     */
+
+    public NodeDetails getNodeDetails() {
+        return this.nodeDetails;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeDetails
+     *        An object representing the details of a node that is associated with a multi-node parallel job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withNodeDetails(NodeDetails nodeDetails) {
+        setNodeDetails(nodeDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object representing the node properties of a multi-node parallel job.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @return An object representing the node properties of a multi-node parallel job.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object representing the node properties of a multi-node parallel job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The array properties of the job, if it is an array job.
+     * </p>
+     * 
+     * @param arrayProperties
+     *        The array properties of the job, if it is an array job.
+     */
+
+    public void setArrayProperties(ArrayPropertiesDetail arrayProperties) {
+        this.arrayProperties = arrayProperties;
+    }
+
+    /**
+     * <p>
+     * The array properties of the job, if it is an array job.
+     * </p>
+     * 
+     * @return The array properties of the job, if it is an array job.
+     */
+
+    public ArrayPropertiesDetail getArrayProperties() {
+        return this.arrayProperties;
+    }
+
+    /**
+     * <p>
+     * The array properties of the job, if it is an array job.
+     * </p>
+     * 
+     * @param arrayProperties
+     *        The array properties of the job, if it is an array job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withArrayProperties(ArrayPropertiesDetail arrayProperties) {
+        setArrayProperties(arrayProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for the job.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @return The timeout configuration for the job.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -703,10 +1103,14 @@ public class JobDetail implements Serializable, Cloneable {
             sb.append("JobQueue: ").append(getJobQueue()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getAttempts() != null)
+            sb.append("Attempts: ").append(getAttempts()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStoppedAt() != null)
@@ -718,7 +1122,15 @@ public class JobDetail implements Serializable, Cloneable {
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainer() != null)
-            sb.append("Container: ").append(getContainer());
+            sb.append("Container: ").append(getContainer()).append(",");
+        if (getNodeDetails() != null)
+            sb.append("NodeDetails: ").append(getNodeDetails()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
+        if (getArrayProperties() != null)
+            sb.append("ArrayProperties: ").append(getArrayProperties()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +1161,10 @@ public class JobDetail implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getAttempts() == null ^ this.getAttempts() == null)
+            return false;
+        if (other.getAttempts() != null && other.getAttempts().equals(this.getAttempts()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -756,6 +1172,10 @@ public class JobDetail implements Serializable, Cloneable {
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
@@ -781,6 +1201,22 @@ public class JobDetail implements Serializable, Cloneable {
             return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
             return false;
+        if (other.getNodeDetails() == null ^ this.getNodeDetails() == null)
+            return false;
+        if (other.getNodeDetails() != null && other.getNodeDetails().equals(this.getNodeDetails()) == false)
+            return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
+        if (other.getArrayProperties() == null ^ this.getArrayProperties() == null)
+            return false;
+        if (other.getArrayProperties() != null && other.getArrayProperties().equals(this.getArrayProperties()) == false)
+            return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -793,14 +1229,20 @@ public class JobDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobQueue() == null) ? 0 : getJobQueue().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getAttempts() == null) ? 0 : getAttempts().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getDependsOn() == null) ? 0 : getDependsOn().hashCode());
         hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
+        hashCode = prime * hashCode + ((getNodeDetails() == null) ? 0 : getNodeDetails().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
+        hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 
@@ -811,5 +1253,11 @@ public class JobDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.JobDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

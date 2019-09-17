@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,89 +12,60 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDiscoveredResourcesRequest Marshaller
+ * ListDiscoveredResourcesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDiscoveredResourcesRequestMarshaller implements Marshaller<Request<ListDiscoveredResourcesRequest>, ListDiscoveredResourcesRequest> {
+@SdkInternalApi
+public class ListDiscoveredResourcesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> RESOURCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("resourceIds").build();
+    private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceName").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
+    private static final MarshallingInfo<Boolean> INCLUDEDELETEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeDeletedResources").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListDiscoveredResourcesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDiscoveredResourcesRequestMarshaller instance = new ListDiscoveredResourcesRequestMarshaller();
+
+    public static ListDiscoveredResourcesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDiscoveredResourcesRequest> marshall(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDiscoveredResourcesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDiscoveredResourcesRequest> request = new DefaultRequest<ListDiscoveredResourcesRequest>(listDiscoveredResourcesRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.ListDiscoveredResources");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listDiscoveredResourcesRequest.getResourceType() != null) {
-                jsonGenerator.writeFieldName("resourceType").writeValue(listDiscoveredResourcesRequest.getResourceType());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> resourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) listDiscoveredResourcesRequest
-                    .getResourceIds();
-            if (!resourceIdsList.isEmpty() || !resourceIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("resourceIds");
-                jsonGenerator.writeStartArray();
-                for (String resourceIdsListValue : resourceIdsList) {
-                    if (resourceIdsListValue != null) {
-                        jsonGenerator.writeValue(resourceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listDiscoveredResourcesRequest.getResourceName() != null) {
-                jsonGenerator.writeFieldName("resourceName").writeValue(listDiscoveredResourcesRequest.getResourceName());
-            }
-            if (listDiscoveredResourcesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(listDiscoveredResourcesRequest.getLimit());
-            }
-            if (listDiscoveredResourcesRequest.getIncludeDeletedResources() != null) {
-                jsonGenerator.writeFieldName("includeDeletedResources").writeValue(listDiscoveredResourcesRequest.getIncludeDeletedResources());
-            }
-            if (listDiscoveredResourcesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listDiscoveredResourcesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getResourceIds(), RESOURCEIDS_BINDING);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getResourceName(), RESOURCENAME_BINDING);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getIncludeDeletedResources(), INCLUDEDELETEDRESOURCES_BINDING);
+            protocolMarshaller.marshall(listDiscoveredResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

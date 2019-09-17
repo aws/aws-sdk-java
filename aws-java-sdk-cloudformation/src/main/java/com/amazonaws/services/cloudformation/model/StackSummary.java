@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,40 @@ public class StackSummary implements Serializable, Cloneable {
      * </p>
      */
     private String stackStatusReason;
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String parentId;
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String rootId;
+    /**
+     * <p>
+     * Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     */
+    private StackDriftInformationSummary driftInformation;
 
     /**
      * <p>
@@ -376,7 +410,7 @@ public class StackSummary implements Serializable, Cloneable {
      */
 
     public void setStackStatus(StackStatus stackStatus) {
-        this.stackStatus = stackStatus.toString();
+        withStackStatus(stackStatus);
     }
 
     /**
@@ -391,7 +425,7 @@ public class StackSummary implements Serializable, Cloneable {
      */
 
     public StackSummary withStackStatus(StackStatus stackStatus) {
-        setStackStatus(stackStatus);
+        this.stackStatus = stackStatus.toString();
         return this;
     }
 
@@ -436,7 +470,218 @@ public class StackSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param parentId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *        this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *         this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *         with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getParentId() {
+        return this.parentId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param parentId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *        this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSummary withParentId(String parentId) {
+        setParentId(parentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param rootId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *        to which the nested stack ultimately belongs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setRootId(String rootId) {
+        this.rootId = rootId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *         to which the nested stack ultimately belongs.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *         with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getRootId() {
+        return this.rootId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param rootId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *        to which the nested stack ultimately belongs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSummary withRootId(String rootId) {
+        setRootId(rootId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @param driftInformation
+     *        Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     *        expected configuration, as defined in the stack template and any values specified as template parameters.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
+     */
+
+    public void setDriftInformation(StackDriftInformationSummary driftInformation) {
+        this.driftInformation = driftInformation;
+    }
+
+    /**
+     * <p>
+     * Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @return Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from
+     *         it's expected configuration, as defined in the stack template and any values specified as template
+     *         parameters. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *         Unregulated Configuration Changes to Stacks and Resources</a>.
+     */
+
+    public StackDriftInformationSummary getDriftInformation() {
+        return this.driftInformation;
+    }
+
+    /**
+     * <p>
+     * Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * 
+     * @param driftInformation
+     *        Summarizes information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's
+     *        expected configuration, as defined in the stack template and any values specified as template parameters.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSummary withDriftInformation(StackDriftInformationSummary driftInformation) {
+        setDriftInformation(driftInformation);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -461,7 +706,13 @@ public class StackSummary implements Serializable, Cloneable {
         if (getStackStatus() != null)
             sb.append("StackStatus: ").append(getStackStatus()).append(",");
         if (getStackStatusReason() != null)
-            sb.append("StackStatusReason: ").append(getStackStatusReason());
+            sb.append("StackStatusReason: ").append(getStackStatusReason()).append(",");
+        if (getParentId() != null)
+            sb.append("ParentId: ").append(getParentId()).append(",");
+        if (getRootId() != null)
+            sb.append("RootId: ").append(getRootId()).append(",");
+        if (getDriftInformation() != null)
+            sb.append("DriftInformation: ").append(getDriftInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +759,18 @@ public class StackSummary implements Serializable, Cloneable {
             return false;
         if (other.getStackStatusReason() != null && other.getStackStatusReason().equals(this.getStackStatusReason()) == false)
             return false;
+        if (other.getParentId() == null ^ this.getParentId() == null)
+            return false;
+        if (other.getParentId() != null && other.getParentId().equals(this.getParentId()) == false)
+            return false;
+        if (other.getRootId() == null ^ this.getRootId() == null)
+            return false;
+        if (other.getRootId() != null && other.getRootId().equals(this.getRootId()) == false)
+            return false;
+        if (other.getDriftInformation() == null ^ this.getDriftInformation() == null)
+            return false;
+        if (other.getDriftInformation() != null && other.getDriftInformation().equals(this.getDriftInformation()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +787,9 @@ public class StackSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeletionTime() == null) ? 0 : getDeletionTime().hashCode());
         hashCode = prime * hashCode + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode());
         hashCode = prime * hashCode + ((getStackStatusReason() == null) ? 0 : getStackStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getParentId() == null) ? 0 : getParentId().hashCode());
+        hashCode = prime * hashCode + ((getRootId() == null) ? 0 : getRootId().hashCode());
+        hashCode = prime * hashCode + ((getDriftInformation() == null) ? 0 : getDriftInformation().hashCode());
         return hashCode;
     }
 
@@ -535,4 +801,5 @@ public class StackSummary implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

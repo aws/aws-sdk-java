@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteUsagePlanKeyRequest Marshaller
+ * DeleteUsagePlanKeyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteUsagePlanKeyRequestMarshaller implements Marshaller<Request<DeleteUsagePlanKeyRequest>, DeleteUsagePlanKeyRequest> {
+@SdkInternalApi
+public class DeleteUsagePlanKeyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USAGEPLANID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("usageplanId").build();
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("keyId").build();
 
-    public DeleteUsagePlanKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteUsagePlanKeyRequestMarshaller instance = new DeleteUsagePlanKeyRequestMarshaller();
+
+    public static DeleteUsagePlanKeyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteUsagePlanKeyRequest> marshall(DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteUsagePlanKeyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteUsagePlanKeyRequest> request = new DefaultRequest<DeleteUsagePlanKeyRequest>(deleteUsagePlanKeyRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId",
-                deleteUsagePlanKeyRequest.getUsagePlanId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "keyId", deleteUsagePlanKeyRequest.getKeyId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteUsagePlanKeyRequest.getUsagePlanId(), USAGEPLANID_BINDING);
+            protocolMarshaller.marshall(deleteUsagePlanKeyRequest.getKeyId(), KEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
             request.addParameter("OptionGroupName", StringUtils.fromString(modifyOptionGroupRequest.getOptionGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<OptionConfiguration> optionsToIncludeList = (com.amazonaws.internal.SdkInternalList<OptionConfiguration>) modifyOptionGroupRequest
-                .getOptionsToInclude();
-        if (!optionsToIncludeList.isEmpty() || !optionsToIncludeList.isAutoConstruct()) {
+        if (!modifyOptionGroupRequest.getOptionsToInclude().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OptionConfiguration>) modifyOptionGroupRequest.getOptionsToInclude()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OptionConfiguration> optionsToIncludeList = (com.amazonaws.internal.SdkInternalList<OptionConfiguration>) modifyOptionGroupRequest
+                    .getOptionsToInclude();
             int optionsToIncludeListIndex = 1;
 
             for (OptionConfiguration optionsToIncludeListValue : optionsToIncludeList) {
@@ -66,9 +67,10 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
                             StringUtils.fromString(optionsToIncludeListValue.getOptionVersion()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
-                        .getDBSecurityGroupMemberships();
-                if (!dBSecurityGroupMembershipsList.isEmpty() || !dBSecurityGroupMembershipsList.isAutoConstruct()) {
+                if (!optionsToIncludeListValue.getDBSecurityGroupMemberships().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getDBSecurityGroupMemberships()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
+                            .getDBSecurityGroupMemberships();
                     int dBSecurityGroupMembershipsListIndex = 1;
 
                     for (String dBSecurityGroupMembershipsListValue : dBSecurityGroupMembershipsList) {
@@ -81,9 +83,10 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
-                        .getVpcSecurityGroupMemberships();
-                if (!vpcSecurityGroupMembershipsList.isEmpty() || !vpcSecurityGroupMembershipsList.isAutoConstruct()) {
+                if (!optionsToIncludeListValue.getVpcSecurityGroupMemberships().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getVpcSecurityGroupMemberships()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
+                            .getVpcSecurityGroupMemberships();
                     int vpcSecurityGroupMembershipsListIndex = 1;
 
                     for (String vpcSecurityGroupMembershipsListValue : vpcSecurityGroupMembershipsList) {
@@ -96,9 +99,10 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<OptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue
-                        .getOptionSettings();
-                if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+                if (!optionsToIncludeListValue.getOptionSettings().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue.getOptionSettings()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<OptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue
+                            .getOptionSettings();
                     int optionSettingsListIndex = 1;
 
                     for (OptionSetting optionSettingsListValue : optionSettingsList) {
@@ -154,9 +158,10 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyOptionGroupRequest
-                .getOptionsToRemove();
-        if (!optionsToRemoveList.isEmpty() || !optionsToRemoveList.isAutoConstruct()) {
+        if (!modifyOptionGroupRequest.getOptionsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyOptionGroupRequest.getOptionsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyOptionGroupRequest
+                    .getOptionsToRemove();
             int optionsToRemoveListIndex = 1;
 
             for (String optionsToRemoveListValue : optionsToRemoveList) {

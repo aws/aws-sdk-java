@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,9 +75,12 @@ public final class PersistableDownload extends PersistableTransfer {
     @JsonProperty
     private final long lastModifiedTime;
 
+    @JsonProperty
+    private final Long lastFullyDownloadedFilePosition;
+
 
     public PersistableDownload() {
-        this(null, null, null, null, null, false, null, null, 0L);
+        this(null, null, null, null, null, false, null, null, 0L, null);
     }
 
     public PersistableDownload(
@@ -89,7 +92,8 @@ public final class PersistableDownload extends PersistableTransfer {
             @JsonProperty(value = "isRequesterPays") boolean isRequesterPays,
             @JsonProperty(value = "file") String file,
             @JsonProperty(value = "lastFullyDownloadedPartNumber") Integer lastFullyDownloadedPartNumber,
-            @JsonProperty(value = "lastModifiedTime") long lastModifiedTime) {
+            @JsonProperty(value = "lastModifiedTime") long lastModifiedTime,
+            @JsonProperty(value = "lastFullyDownloadedFilePosition") Long lastFullyDownloadedFilePosition) {
         this.bucketName = bucketName;
         this.key = key;
         this.versionId = versionId;
@@ -99,6 +103,11 @@ public final class PersistableDownload extends PersistableTransfer {
         this.file = file;
         this.lastFullyDownloadedPartNumber = lastFullyDownloadedPartNumber;
         this.lastModifiedTime = lastModifiedTime;
+        this.lastFullyDownloadedFilePosition = lastFullyDownloadedFilePosition;
+    }
+
+    public PersistableDownload(String bucketName, String key, String versionId, long[] range, ResponseHeaderOverrides responseHeaders, boolean requesterPays, String absolutePath, Integer lastFullyDownloadedPartNumber, long time) {
+        this(bucketName,key,versionId,range, responseHeaders, requesterPays, absolutePath, lastFullyDownloadedPartNumber, time, 0L);
     }
 
     /**
@@ -168,5 +177,9 @@ public final class PersistableDownload extends PersistableTransfer {
      */
     Long getlastModifiedTime() {
         return lastModifiedTime;
+    }
+
+    Long getLastFullyDownloadedFilePosition() {
+        return lastFullyDownloadedFilePosition;
     }
 }

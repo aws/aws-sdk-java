@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
                 }
                 if (context.testExpression("startTimestamp", targetDepth)) {
                     context.nextToken();
-                    workflowExecutionInfo.setStartTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workflowExecutionInfo.setStartTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("closeTimestamp", targetDepth)) {
                     context.nextToken();
-                    workflowExecutionInfo.setCloseTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    workflowExecutionInfo.setCloseTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionStatus", targetDepth)) {
                     context.nextToken();

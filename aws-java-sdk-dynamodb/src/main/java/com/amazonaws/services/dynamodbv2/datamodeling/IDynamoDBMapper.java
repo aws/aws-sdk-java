@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ import com.amazonaws.services.dynamodbv2.model.BatchWriteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
+import com.amazonaws.services.dynamodbv2.model.TransactGetItemsRequest;
+import com.amazonaws.services.dynamodbv2.model.TransactWriteItemsRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.s3.model.Region;
 
@@ -220,6 +222,92 @@ public interface IDynamoDBMapper {
      *            fields will not be considered when deleting the object.
      */
     <T> void delete(T object, DynamoDBDeleteExpression deleteExpression, DynamoDBMapperConfig config);
+
+    /**
+     * Transactionally writes objects specified by transactionWriteRequest by calling {@link AmazonDynamoDB#transactWriteItems(TransactWriteItemsRequest)} API.
+     * Changes to objects which are put or updated are applied in-memory. <b>Such in-memory updates are NOT thread safe.</b>
+     * <p>
+     * <b>This method ignores any SaveBehavior set on the mapper. Whether an object is put or updated is solely determined by the
+     * {@link TransactionWriteRequest} method called by user while constructing request object. Furthermore, put and update work
+     * as if SaveBehavior is set as CLOBBER.</b>
+     * </p>
+     * <p>
+     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
+     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * </p>
+     * <p>
+     * Any exceptions from underlying API are thrown as is. For more information, please refer
+     * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html
+     * </p>
+     *
+     * @param transactionWriteRequest
+     *              Specifies objects to write along with appropriate condition expressions.
+     *
+     * @see DynamoDBMapper#transactionWrite(TransactionWriteRequest, DynamoDBMapperConfig)
+     */
+    void transactionWrite(TransactionWriteRequest transactionWriteRequest);
+
+    /**
+     * Transactionally writes objects specified by transactionWriteRequest by calling {@link AmazonDynamoDB#transactWriteItems(TransactWriteItemsRequest)} API.
+     * Changes to objects which are put or updated are applied in-memory. <b>Such in-memory updates are NOT thread safe.</b>
+     * <p>
+     * <b>This method ignores any SaveBehavior set on the mapper. Whether an object is put or updated is solely determined by the
+     * {@link TransactionWriteRequest} method called by user while constructing request object. Furthermore, put and update work
+     * as if SaveBehavior is set as CLOBBER.</b>
+     * </p>
+     * <p>
+     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
+     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * </p>
+     * <p>
+     * Any exceptions from underlying API are thrown as is. For more information, please refer
+     * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html
+     * </p>
+     *
+     * @param transactionWriteRequest
+     *              Specifies objects to write along with appropriate condition expressions.
+     * @param config
+     *              Only {@link DynamoDBMapperConfig#getTableNameOverride()}, {@link DynamoDBMapperConfig#getTableNameResolver()},
+     *              {@link DynamoDBMapperConfig#getObjectTableNameResolver()} and {@link DynamoDBMapperConfig#getTypeConverterFactory()}
+     *              are considered.
+     *              If {@link DynamoDBMapperConfig.TableNameOverride} is specified then, given table override will be used as table name for all input objects.
+     *
+     * @see DynamoDBMapper#transactionWrite(TransactionWriteRequest, DynamoDBMapperConfig)
+     */
+    void transactionWrite(TransactionWriteRequest transactionWriteRequest, DynamoDBMapperConfig config);
+
+    /**
+     * Transactionally loads objects specified by transactionLoadRequest by calling {@link AmazonDynamoDB#transactGetItems(TransactGetItemsRequest)} API.
+     * <p>
+     * Any exceptions from underlying API are thrown as is. For more information, please refer
+     * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html
+     * </p>
+     *
+     * @param transactionLoadRequest
+     *              Specifies objects to load along with appropriate projection expressions.
+     *
+     * @see DynamoDBMapper#transactionLoad(TransactionLoadRequest, DynamoDBMapperConfig)
+     */
+    List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest);
+
+    /**
+     * Transactionally loads objects specified by transactionLoadRequest by calling {@link AmazonDynamoDB#transactGetItems(TransactGetItemsRequest)} API.
+     * <p>
+     * Any exceptions from underlying API are thrown as is. For more information, please refer
+     * https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html
+     * </p>
+     *
+     * @param transactionLoadRequest
+     *              Specifies objects to load along with appropriate projection expressions.
+     * @param config
+     *              Only {@link DynamoDBMapperConfig#getTableNameOverride()}, {@link DynamoDBMapperConfig#getTableNameResolver()},
+     *              {@link DynamoDBMapperConfig#getObjectTableNameResolver()} and {@link DynamoDBMapperConfig#getTypeConverterFactory()}
+     *              are supported.
+     *              If {@link DynamoDBMapperConfig.TableNameOverride} is specified then, given table override will be used as table name for all input objects.
+     *
+     * @see DynamoDBMapper#transactionLoad(TransactionLoadRequest, DynamoDBMapperConfig)
+     */
+    List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest, DynamoDBMapperConfig config);
 
     /**
      * Deletes the objects given using one or more calls to the

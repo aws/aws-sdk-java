@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The GetOperationDetail request includes the following element.
+ * The <a>GetOperationDetail</a> request includes the following element.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail" target="_top">AWS
@@ -33,15 +33,6 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
      * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
      * the response to the original request.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String operationId;
 
@@ -50,27 +41,10 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
      * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
      * the response to the original request.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param operationId
      *        The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
-     *        identifier in the response to the original request.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        identifier in the response to the original request.
      */
 
     public void setOperationId(String operationId) {
@@ -82,26 +56,9 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
      * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
      * the response to the original request.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
-     *         identifier in the response to the original request.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         identifier in the response to the original request.
      */
 
     public String getOperationId() {
@@ -113,27 +70,10 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
      * The identifier for the operation for which you want to get the status. Amazon Route 53 returned the identifier in
      * the response to the original request.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param operationId
      *        The identifier for the operation for which you want to get the status. Amazon Route 53 returned the
-     *        identifier in the response to the original request.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        identifier in the response to the original request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,7 +83,8 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

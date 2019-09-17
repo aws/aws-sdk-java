@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,19 +45,21 @@ public class UpdateScalingParametersRequestMarshaller implements Marshaller<Requ
             request.addParameter("DomainName", StringUtils.fromString(updateScalingParametersRequest.getDomainName()));
         }
 
-        ScalingParameters scalingParameters = updateScalingParametersRequest.getScalingParameters();
-        if (scalingParameters != null) {
+        {
+            ScalingParameters scalingParameters = updateScalingParametersRequest.getScalingParameters();
+            if (scalingParameters != null) {
 
-            if (scalingParameters.getDesiredInstanceType() != null) {
-                request.addParameter("ScalingParameters.DesiredInstanceType", StringUtils.fromString(scalingParameters.getDesiredInstanceType()));
-            }
+                if (scalingParameters.getDesiredInstanceType() != null) {
+                    request.addParameter("ScalingParameters.DesiredInstanceType", StringUtils.fromString(scalingParameters.getDesiredInstanceType()));
+                }
 
-            if (scalingParameters.getDesiredReplicationCount() != null) {
-                request.addParameter("ScalingParameters.DesiredReplicationCount", StringUtils.fromInteger(scalingParameters.getDesiredReplicationCount()));
-            }
+                if (scalingParameters.getDesiredReplicationCount() != null) {
+                    request.addParameter("ScalingParameters.DesiredReplicationCount", StringUtils.fromInteger(scalingParameters.getDesiredReplicationCount()));
+                }
 
-            if (scalingParameters.getDesiredPartitionCount() != null) {
-                request.addParameter("ScalingParameters.DesiredPartitionCount", StringUtils.fromInteger(scalingParameters.getDesiredPartitionCount()));
+                if (scalingParameters.getDesiredPartitionCount() != null) {
+                    request.addParameter("ScalingParameters.DesiredPartitionCount", StringUtils.fromInteger(scalingParameters.getDesiredPartitionCount()));
+                }
             }
         }
 

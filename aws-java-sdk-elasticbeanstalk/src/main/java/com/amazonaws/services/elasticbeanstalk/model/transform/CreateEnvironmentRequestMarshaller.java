@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,24 +60,27 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("CNAMEPrefix", StringUtils.fromString(createEnvironmentRequest.getCNAMEPrefix()));
         }
 
-        EnvironmentTier tier = createEnvironmentRequest.getTier();
-        if (tier != null) {
+        {
+            EnvironmentTier tier = createEnvironmentRequest.getTier();
+            if (tier != null) {
 
-            if (tier.getName() != null) {
-                request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
-            }
+                if (tier.getName() != null) {
+                    request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
+                }
 
-            if (tier.getType() != null) {
-                request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
-            }
+                if (tier.getType() != null) {
+                    request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
+                }
 
-            if (tier.getVersion() != null) {
-                request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                if (tier.getVersion() != null) {
+                    request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                }
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createEnvironmentRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createEnvironmentRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createEnvironmentRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createEnvironmentRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -105,9 +108,14 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("SolutionStackName", StringUtils.fromString(createEnvironmentRequest.getSolutionStackName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createEnvironmentRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (createEnvironmentRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(createEnvironmentRequest.getPlatformArn()));
+        }
+
+        if (!createEnvironmentRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createEnvironmentRequest.getOptionSettings()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createEnvironmentRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
@@ -135,9 +143,10 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) createEnvironmentRequest
-                .getOptionsToRemove();
-        if (!optionsToRemoveList.isEmpty() || !optionsToRemoveList.isAutoConstruct()) {
+        if (!createEnvironmentRequest.getOptionsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OptionSpecification>) createEnvironmentRequest.getOptionsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) createEnvironmentRequest
+                    .getOptionsToRemove();
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {

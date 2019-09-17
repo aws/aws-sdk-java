@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActionConfigurationProperty implements Serializable, Cloneable {
+public class ActionConfigurationProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,8 +48,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
     private Boolean key;
     /**
      * <p>
-     * Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     * GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+     * Whether the configuration property is secret. Secrets are hidden from all calls except for
+     * <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.
      * </p>
      * <p>
      * When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the
@@ -57,8 +60,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
     private Boolean secret;
     /**
      * <p>
-     * Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an
-     * action can have up to one queryable property. If it has one, that property must be both required and not secret.
+     * Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a custom
+     * action, an action can have up to one queryable property. If it has one, that property must be both required and
+     * not secret.
      * </p>
      * <p>
      * If you create a pipeline with a custom action type, and that custom action contains a queryable property, the
@@ -226,8 +230,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     * GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+     * Whether the configuration property is secret. Secrets are hidden from all calls except for
+     * <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.
      * </p>
      * <p>
      * When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the
@@ -235,8 +240,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * </p>
      * 
      * @param secret
-     *        Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     *        GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.</p>
+     *        Whether the configuration property is secret. Secrets are hidden from all calls except for
+     *        <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     *        <code>PollForThirdPartyJobs</code>.</p>
      *        <p>
      *        When updating a pipeline, passing * * * * * without changing any other values of the action will preserve
      *        the prior value of the secret.
@@ -248,16 +254,18 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     * GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+     * Whether the configuration property is secret. Secrets are hidden from all calls except for
+     * <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.
      * </p>
      * <p>
      * When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the
      * prior value of the secret.
      * </p>
      * 
-     * @return Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     *         GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.</p>
+     * @return Whether the configuration property is secret. Secrets are hidden from all calls except for
+     *         <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     *         <code>PollForThirdPartyJobs</code>.</p>
      *         <p>
      *         When updating a pipeline, passing * * * * * without changing any other values of the action will preserve
      *         the prior value of the secret.
@@ -269,8 +277,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     * GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+     * Whether the configuration property is secret. Secrets are hidden from all calls except for
+     * <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.
      * </p>
      * <p>
      * When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the
@@ -278,8 +287,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * </p>
      * 
      * @param secret
-     *        Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     *        GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.</p>
+     *        Whether the configuration property is secret. Secrets are hidden from all calls except for
+     *        <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     *        <code>PollForThirdPartyJobs</code>.</p>
      *        <p>
      *        When updating a pipeline, passing * * * * * without changing any other values of the action will preserve
      *        the prior value of the secret.
@@ -293,16 +303,18 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     * GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.
+     * Whether the configuration property is secret. Secrets are hidden from all calls except for
+     * <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     * <code>PollForThirdPartyJobs</code>.
      * </p>
      * <p>
      * When updating a pipeline, passing * * * * * without changing any other values of the action will preserve the
      * prior value of the secret.
      * </p>
      * 
-     * @return Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails,
-     *         GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.</p>
+     * @return Whether the configuration property is secret. Secrets are hidden from all calls except for
+     *         <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and
+     *         <code>PollForThirdPartyJobs</code>.</p>
      *         <p>
      *         When updating a pipeline, passing * * * * * without changing any other values of the action will preserve
      *         the prior value of the secret.
@@ -314,8 +326,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an
-     * action can have up to one queryable property. If it has one, that property must be both required and not secret.
+     * Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a custom
+     * action, an action can have up to one queryable property. If it has one, that property must be both required and
+     * not secret.
      * </p>
      * <p>
      * If you create a pipeline with a custom action type, and that custom action contains a queryable property, the
@@ -324,9 +337,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * </p>
      * 
      * @param queryable
-     *        Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action,
-     *        an action can have up to one queryable property. If it has one, that property must be both required and
-     *        not secret.</p>
+     *        Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a
+     *        custom action, an action can have up to one queryable property. If it has one, that property must be both
+     *        required and not secret.</p>
      *        <p>
      *        If you create a pipeline with a custom action type, and that custom action contains a queryable property,
      *        the value for that configuration property is subject to additional restrictions. The value must be less
@@ -340,8 +353,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an
-     * action can have up to one queryable property. If it has one, that property must be both required and not secret.
+     * Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a custom
+     * action, an action can have up to one queryable property. If it has one, that property must be both required and
+     * not secret.
      * </p>
      * <p>
      * If you create a pipeline with a custom action type, and that custom action contains a queryable property, the
@@ -349,9 +363,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.
      * </p>
      * 
-     * @return Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action,
-     *         an action can have up to one queryable property. If it has one, that property must be both required and
-     *         not secret.</p>
+     * @return Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a
+     *         custom action, an action can have up to one queryable property. If it has one, that property must be both
+     *         required and not secret.</p>
      *         <p>
      *         If you create a pipeline with a custom action type, and that custom action contains a queryable property,
      *         the value for that configuration property is subject to additional restrictions. The value must be less
@@ -365,8 +379,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an
-     * action can have up to one queryable property. If it has one, that property must be both required and not secret.
+     * Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a custom
+     * action, an action can have up to one queryable property. If it has one, that property must be both required and
+     * not secret.
      * </p>
      * <p>
      * If you create a pipeline with a custom action type, and that custom action contains a queryable property, the
@@ -375,9 +390,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * </p>
      * 
      * @param queryable
-     *        Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action,
-     *        an action can have up to one queryable property. If it has one, that property must be both required and
-     *        not secret.</p>
+     *        Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a
+     *        custom action, an action can have up to one queryable property. If it has one, that property must be both
+     *        required and not secret.</p>
      *        <p>
      *        If you create a pipeline with a custom action type, and that custom action contains a queryable property,
      *        the value for that configuration property is subject to additional restrictions. The value must be less
@@ -393,8 +408,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an
-     * action can have up to one queryable property. If it has one, that property must be both required and not secret.
+     * Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a custom
+     * action, an action can have up to one queryable property. If it has one, that property must be both required and
+     * not secret.
      * </p>
      * <p>
      * If you create a pipeline with a custom action type, and that custom action contains a queryable property, the
@@ -402,9 +418,9 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.
      * </p>
      * 
-     * @return Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action,
-     *         an action can have up to one queryable property. If it has one, that property must be both required and
-     *         not secret.</p>
+     * @return Indicates that the property will be used in conjunction with <code>PollForJobs</code>. When creating a
+     *         custom action, an action can have up to one queryable property. If it has one, that property must be both
+     *         required and not secret.</p>
      *         <p>
      *         If you create a pipeline with a custom action type, and that custom action contains a queryable property,
      *         the value for that configuration property is subject to additional restrictions. The value must be less
@@ -510,7 +526,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      */
 
     public void setType(ActionConfigurationPropertyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -525,12 +541,13 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      */
 
     public ActionConfigurationProperty withType(ActionConfigurationPropertyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -621,5 +638,11 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.ActionConfigurationPropertyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

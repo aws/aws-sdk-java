@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,85 +27,99 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the calling user has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the caller has
+     * access.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> filters;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      */
     private String sortBy;
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -114,33 +128,43 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -149,34 +173,44 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,12 +221,12 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the calling user has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the caller has
+     * access.
      * </p>
      * 
-     * @return The list of filters with which to limit search results. If no search filters are specified, the output is
-     *         all the products to which the calling user has access.
+     * @return The search filters. If no search filters are specified, the output includes all products to which the
+     *         caller has access.
      */
 
     public java.util.Map<String, java.util.List<String>> getFilters() {
@@ -201,13 +235,13 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the calling user has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the caller has
+     * access.
      * </p>
      * 
      * @param filters
-     *        The list of filters with which to limit search results. If no search filters are specified, the output is
-     *        all the products to which the calling user has access.
+     *        The search filters. If no search filters are specified, the output includes all products to which the
+     *        caller has access.
      */
 
     public void setFilters(java.util.Map<String, java.util.List<String>> filters) {
@@ -216,13 +250,13 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the calling user has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the caller has
+     * access.
      * </p>
      * 
      * @param filters
-     *        The list of filters with which to limit search results. If no search filters are specified, the output is
-     *        all the products to which the calling user has access.
+     *        The search filters. If no search filters are specified, the output includes all products to which the
+     *        caller has access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,13 +288,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -269,12 +301,10 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -283,13 +313,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +328,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
@@ -314,10 +342,10 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
-     * @return The sort field specifier. If no value is specified, results are not sorted.
+     * @return The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
@@ -327,11 +355,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductViewSortBy
      */
@@ -343,41 +371,41 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
     public void setSortBy(ProductViewSortBy sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductViewSortBy
      */
 
     public SearchProductsRequest withSortBy(ProductViewSortBy sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
@@ -387,10 +415,10 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
-     * @return The sort order specifier. If no value is specified, results are not sorted.
+     * @return The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
@@ -400,11 +428,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -416,42 +444,41 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
 
     public SearchProductsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -460,11 +487,10 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -473,12 +499,11 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,7 +513,8 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

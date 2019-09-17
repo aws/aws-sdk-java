@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,73 +12,45 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.datapipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribePipelinesRequest Marshaller
+ * DescribePipelinesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribePipelinesRequestMarshaller implements Marshaller<Request<DescribePipelinesRequest>, DescribePipelinesRequest> {
+@SdkInternalApi
+public class DescribePipelinesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> PIPELINEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("pipelineIds").build();
 
-    public DescribePipelinesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribePipelinesRequestMarshaller instance = new DescribePipelinesRequestMarshaller();
+
+    public static DescribePipelinesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribePipelinesRequest> marshall(DescribePipelinesRequest describePipelinesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribePipelinesRequest describePipelinesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describePipelinesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribePipelinesRequest> request = new DefaultRequest<DescribePipelinesRequest>(describePipelinesRequest, "DataPipeline");
-        request.addHeader("X-Amz-Target", "DataPipeline.DescribePipelines");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> pipelineIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePipelinesRequest
-                    .getPipelineIds();
-            if (!pipelineIdsList.isEmpty() || !pipelineIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("pipelineIds");
-                jsonGenerator.writeStartArray();
-                for (String pipelineIdsListValue : pipelineIdsList) {
-                    if (pipelineIdsListValue != null) {
-                        jsonGenerator.writeValue(pipelineIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describePipelinesRequest.getPipelineIds(), PIPELINEIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

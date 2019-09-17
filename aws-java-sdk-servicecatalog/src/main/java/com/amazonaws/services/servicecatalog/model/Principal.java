@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,40 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A principal's ARN and type.
+ * Information about a principal.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Principal" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Principal implements Serializable, Cloneable {
+public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      */
     private String principalARN;
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      */
     private String principalType;
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -54,10 +56,10 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
-     * @return The ARN representing the principal (IAM user, role, or group).
+     * @return The ARN of the principal (IAM user, role, or group).
      */
 
     public String getPrincipalARN() {
@@ -66,11 +68,11 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +83,11 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
@@ -95,10 +97,10 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
-     * @return The principal type. Must be <code>IAM</code>
+     * @return The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
@@ -108,11 +110,11 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -124,36 +126,37 @@ public class Principal implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
     public void setPrincipalType(PrincipalType principalType) {
-        this.principalType = principalType.toString();
+        withPrincipalType(principalType);
     }
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
 
     public Principal withPrincipalType(PrincipalType principalType) {
-        setPrincipalType(principalType);
+        this.principalType = principalType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,5 +212,11 @@ public class Principal implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.PrincipalMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

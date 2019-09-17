@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,133 +12,91 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateUserPoolRequest Marshaller
+ * UpdateUserPoolRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateUserPoolRequestMarshaller implements Marshaller<Request<UpdateUserPoolRequest>, UpdateUserPoolRequest> {
+@SdkInternalApi
+public class UpdateUserPoolRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<StructuredPojo> POLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Policies").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LambdaConfig").build();
+    private static final MarshallingInfo<List> AUTOVERIFIEDATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoVerifiedAttributes").build();
+    private static final MarshallingInfo<String> SMSVERIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsVerificationMessage").build();
+    private static final MarshallingInfo<String> EMAILVERIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailVerificationMessage").build();
+    private static final MarshallingInfo<String> EMAILVERIFICATIONSUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailVerificationSubject").build();
+    private static final MarshallingInfo<StructuredPojo> VERIFICATIONMESSAGETEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerificationMessageTemplate").build();
+    private static final MarshallingInfo<String> SMSAUTHENTICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsAuthenticationMessage").build();
+    private static final MarshallingInfo<String> MFACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MfaConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DEVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EMAILCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SMSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsConfiguration").build();
+    private static final MarshallingInfo<Map> USERPOOLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserPoolTags").build();
+    private static final MarshallingInfo<StructuredPojo> ADMINCREATEUSERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminCreateUserConfig").build();
+    private static final MarshallingInfo<StructuredPojo> USERPOOLADDONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolAddOns").build();
 
-    public UpdateUserPoolRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateUserPoolRequestMarshaller instance = new UpdateUserPoolRequestMarshaller();
+
+    public static UpdateUserPoolRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateUserPoolRequest> marshall(UpdateUserPoolRequest updateUserPoolRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateUserPoolRequest updateUserPoolRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateUserPoolRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateUserPoolRequest> request = new DefaultRequest<UpdateUserPoolRequest>(updateUserPoolRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.UpdateUserPool");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateUserPoolRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(updateUserPoolRequest.getUserPoolId());
-            }
-            if (updateUserPoolRequest.getPolicies() != null) {
-                jsonGenerator.writeFieldName("Policies");
-                UserPoolPolicyTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getPolicies(), jsonGenerator);
-            }
-            if (updateUserPoolRequest.getLambdaConfig() != null) {
-                jsonGenerator.writeFieldName("LambdaConfig");
-                LambdaConfigTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getLambdaConfig(), jsonGenerator);
-            }
-
-            java.util.List<String> autoVerifiedAttributesList = updateUserPoolRequest.getAutoVerifiedAttributes();
-            if (autoVerifiedAttributesList != null) {
-                jsonGenerator.writeFieldName("AutoVerifiedAttributes");
-                jsonGenerator.writeStartArray();
-                for (String autoVerifiedAttributesListValue : autoVerifiedAttributesList) {
-                    if (autoVerifiedAttributesListValue != null) {
-                        jsonGenerator.writeValue(autoVerifiedAttributesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateUserPoolRequest.getSmsVerificationMessage() != null) {
-                jsonGenerator.writeFieldName("SmsVerificationMessage").writeValue(updateUserPoolRequest.getSmsVerificationMessage());
-            }
-            if (updateUserPoolRequest.getEmailVerificationMessage() != null) {
-                jsonGenerator.writeFieldName("EmailVerificationMessage").writeValue(updateUserPoolRequest.getEmailVerificationMessage());
-            }
-            if (updateUserPoolRequest.getEmailVerificationSubject() != null) {
-                jsonGenerator.writeFieldName("EmailVerificationSubject").writeValue(updateUserPoolRequest.getEmailVerificationSubject());
-            }
-            if (updateUserPoolRequest.getSmsAuthenticationMessage() != null) {
-                jsonGenerator.writeFieldName("SmsAuthenticationMessage").writeValue(updateUserPoolRequest.getSmsAuthenticationMessage());
-            }
-            if (updateUserPoolRequest.getMfaConfiguration() != null) {
-                jsonGenerator.writeFieldName("MfaConfiguration").writeValue(updateUserPoolRequest.getMfaConfiguration());
-            }
-            if (updateUserPoolRequest.getDeviceConfiguration() != null) {
-                jsonGenerator.writeFieldName("DeviceConfiguration");
-                DeviceConfigurationTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getDeviceConfiguration(), jsonGenerator);
-            }
-            if (updateUserPoolRequest.getEmailConfiguration() != null) {
-                jsonGenerator.writeFieldName("EmailConfiguration");
-                EmailConfigurationTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getEmailConfiguration(), jsonGenerator);
-            }
-            if (updateUserPoolRequest.getSmsConfiguration() != null) {
-                jsonGenerator.writeFieldName("SmsConfiguration");
-                SmsConfigurationTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getSmsConfiguration(), jsonGenerator);
-            }
-
-            java.util.Map<String, String> userPoolTagsMap = updateUserPoolRequest.getUserPoolTags();
-            if (userPoolTagsMap != null) {
-                jsonGenerator.writeFieldName("UserPoolTags");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> userPoolTagsMapValue : userPoolTagsMap.entrySet()) {
-                    if (userPoolTagsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(userPoolTagsMapValue.getKey());
-
-                        jsonGenerator.writeValue(userPoolTagsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (updateUserPoolRequest.getAdminCreateUserConfig() != null) {
-                jsonGenerator.writeFieldName("AdminCreateUserConfig");
-                AdminCreateUserConfigTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getAdminCreateUserConfig(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateUserPoolRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getPolicies(), POLICIES_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getLambdaConfig(), LAMBDACONFIG_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getAutoVerifiedAttributes(), AUTOVERIFIEDATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getSmsVerificationMessage(), SMSVERIFICATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getEmailVerificationMessage(), EMAILVERIFICATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getEmailVerificationSubject(), EMAILVERIFICATIONSUBJECT_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getVerificationMessageTemplate(), VERIFICATIONMESSAGETEMPLATE_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getSmsAuthenticationMessage(), SMSAUTHENTICATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getMfaConfiguration(), MFACONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getDeviceConfiguration(), DEVICECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getEmailConfiguration(), EMAILCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getSmsConfiguration(), SMSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getUserPoolTags(), USERPOOLTAGS_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
+            protocolMarshaller.marshall(updateUserPoolRequest.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

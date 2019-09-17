@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DevicePool implements Serializable, Cloneable {
+public class DevicePool implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -71,6 +73,17 @@ public class DevicePool implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<Rule> rules;
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     */
+    private Integer maxDevices;
 
     /**
      * <p>
@@ -362,7 +375,7 @@ public class DevicePool implements Serializable, Cloneable {
      */
 
     public void setType(DevicePoolType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -406,7 +419,7 @@ public class DevicePool implements Serializable, Cloneable {
      */
 
     public DevicePool withType(DevicePoolType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -481,7 +494,78 @@ public class DevicePool implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @param maxDevices
+     *        The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *        available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *        how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *        this parameter.</p>
+     *        <p>
+     *        By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     */
+
+    public void setMaxDevices(Integer maxDevices) {
+        this.maxDevices = maxDevices;
+    }
+
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @return The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *         available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *         how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *         this parameter.</p>
+     *         <p>
+     *         By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     */
+
+    public Integer getMaxDevices() {
+        return this.maxDevices;
+    }
+
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @param maxDevices
+     *        The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *        available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *        how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *        this parameter.</p>
+     *        <p>
+     *        By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevicePool withMaxDevices(Integer maxDevices) {
+        setMaxDevices(maxDevices);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -500,7 +584,9 @@ public class DevicePool implements Serializable, Cloneable {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getMaxDevices() != null)
+            sb.append("MaxDevices: ").append(getMaxDevices());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +621,10 @@ public class DevicePool implements Serializable, Cloneable {
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getMaxDevices() == null ^ this.getMaxDevices() == null)
+            return false;
+        if (other.getMaxDevices() != null && other.getMaxDevices().equals(this.getMaxDevices()) == false)
+            return false;
         return true;
     }
 
@@ -548,6 +638,7 @@ public class DevicePool implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getMaxDevices() == null) ? 0 : getMaxDevices().hashCode());
         return hashCode;
     }
 
@@ -558,5 +649,11 @@ public class DevicePool implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.DevicePoolMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

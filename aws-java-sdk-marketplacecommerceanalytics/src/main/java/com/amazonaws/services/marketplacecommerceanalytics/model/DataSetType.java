@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public enum DataSetType {
     Daily_business_canceled_product_subscribers("daily_business_canceled_product_subscribers"),
     Monthly_revenue_billing_and_revenue_data("monthly_revenue_billing_and_revenue_data"),
     Monthly_revenue_annual_subscriptions("monthly_revenue_annual_subscriptions"),
+    Monthly_revenue_field_demonstration_usage("monthly_revenue_field_demonstration_usage"),
+    Monthly_revenue_flexible_payment_schedule("monthly_revenue_flexible_payment_schedule"),
     Disbursed_amount_by_product("disbursed_amount_by_product"),
     Disbursed_amount_by_product_with_uncollected_funds("disbursed_amount_by_product_with_uncollected_funds"),
     Disbursed_amount_by_instance_hours("disbursed_amount_by_instance_hours"),
@@ -39,7 +41,8 @@ public enum DataSetType {
     Customer_profile_by_industry("customer_profile_by_industry"),
     Customer_profile_by_revenue("customer_profile_by_revenue"),
     Customer_profile_by_geography("customer_profile_by_geography"),
-    Sales_compensation_billed_revenue("sales_compensation_billed_revenue");
+    Sales_compensation_billed_revenue("sales_compensation_billed_revenue"),
+    Us_sales_and_use_tax_records("us_sales_and_use_tax_records");
 
     private String value;
 
@@ -58,6 +61,9 @@ public enum DataSetType {
      * @param value
      *        real value
      * @return DataSetType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DataSetType fromValue(String value) {
         if (value == null || "".equals(value)) {

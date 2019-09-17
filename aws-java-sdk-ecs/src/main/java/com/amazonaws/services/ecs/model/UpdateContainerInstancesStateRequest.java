@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,17 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
     private String cluster;
     /**
      * <p>
-     * A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> containerInstances;
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      */
     private String status;
@@ -93,10 +97,10 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
-     * @return A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * @return A list of container instance IDs or full ARN entries.
      */
 
     public java.util.List<String> getContainerInstances() {
@@ -108,11 +112,11 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
      * @param containerInstances
-     *        A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      */
 
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -126,7 +130,7 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,7 +139,7 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param containerInstances
-     *        A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +155,11 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
      * @param containerInstances
-     *        A space-separated list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +170,19 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      * 
      * @param status
-     *        The container instance state with which to update the container instance.
+     *        The container instance state with which to update the container instance. The only valid values for this
+     *        action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     *        <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is
+     *        in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+     *        describe the container instance but will be unable to update the container instance state.
      * @see ContainerInstanceStatus
      */
 
@@ -180,10 +192,18 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      * 
-     * @return The container instance state with which to update the container instance.
+     * @return The container instance state with which to update the container instance. The only valid values for this
+     *         action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     *         <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is
+     *         in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you
+     *         can describe the container instance but will be unable to update the container instance state.
      * @see ContainerInstanceStatus
      */
 
@@ -193,11 +213,19 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      * 
      * @param status
-     *        The container instance state with which to update the container instance.
+     *        The container instance state with which to update the container instance. The only valid values for this
+     *        action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     *        <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is
+     *        in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+     *        describe the container instance but will be unable to update the container instance state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */
@@ -209,36 +237,53 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      * 
      * @param status
-     *        The container instance state with which to update the container instance.
+     *        The container instance state with which to update the container instance. The only valid values for this
+     *        action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     *        <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is
+     *        in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+     *        describe the container instance but will be unable to update the container instance state.
      * @see ContainerInstanceStatus
      */
 
     public void setStatus(ContainerInstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The container instance state with which to update the container instance.
+     * The container instance state with which to update the container instance. The only valid values for this action
+     * are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     * <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in
+     * <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe
+     * the container instance but will be unable to update the container instance state.
      * </p>
      * 
      * @param status
-     *        The container instance state with which to update the container instance.
+     *        The container instance state with which to update the container instance. The only valid values for this
+     *        action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to
+     *        <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is
+     *        in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can
+     *        describe the container instance but will be unable to update the container instance state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */
 
     public UpdateContainerInstancesStateRequest withStatus(ContainerInstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

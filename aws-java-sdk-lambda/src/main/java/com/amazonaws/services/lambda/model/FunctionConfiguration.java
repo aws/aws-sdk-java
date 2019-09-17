@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that describes function metadata.
+ * Details about a function's configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionConfiguration" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FunctionConfiguration implements Serializable, Cloneable {
+public class FunctionConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class FunctionConfiguration implements Serializable, Cloneable {
     private String functionName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) assigned to the function.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      */
     private String functionArn;
@@ -42,59 +44,54 @@ public class FunctionConfiguration implements Serializable, Cloneable {
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      */
     private String runtime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
-     * other Amazon Web Services (AWS) resources.
+     * The function's execution role.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      */
     private String handler;
     /**
      * <p>
-     * The size, in bytes, of the function .zip file you uploaded.
+     * The size of the function's deployment package, in bytes.
      * </p>
      */
     private Long codeSize;
     /**
      * <p>
-     * The user-provided description.
+     * The function's description.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
-     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * The memory that's allocated to the function.
      * </p>
      */
     private Integer memorySize;
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      */
     private String lastModified;
     /**
      * <p>
-     * It is the SHA256 hash of your function deployment package.
+     * The SHA256 hash of the function's deployment package.
      * </p>
      */
     private String codeSha256;
@@ -106,29 +103,53 @@ public class FunctionConfiguration implements Serializable, Cloneable {
     private String version;
     /**
      * <p>
-     * VPC configuration associated with your Lambda function.
+     * The function's networking configuration.
      * </p>
      */
     private VpcConfigResponse vpcConfig;
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The function's dead letter queue.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
     /**
      * <p>
-     * The parent object that contains your environment's configuration settings.
+     * The function's environment variables.
      * </p>
      */
     private EnvironmentResponse environment;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
-     * means you are using the AWS Lambda default service key.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      */
     private String kMSKeyArn;
+    /**
+     * <p>
+     * The function's AWS X-Ray tracing configuration.
+     * </p>
+     */
+    private TracingConfigResponse tracingConfig;
+    /**
+     * <p>
+     * For Lambda@Edge functions, the ARN of the master function.
+     * </p>
+     */
+    private String masterArn;
+    /**
+     * <p>
+     * The latest updated revision of the function or alias.
+     * </p>
+     */
+    private String revisionId;
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Layer> layers;
 
     /**
      * <p>
@@ -172,11 +193,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) assigned to the function.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) assigned to the function.
+     *        The function's Amazon Resource Name (ARN).
      */
 
     public void setFunctionArn(String functionArn) {
@@ -185,10 +206,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) assigned to the function.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) assigned to the function.
+     * @return The function's Amazon Resource Name (ARN).
      */
 
     public String getFunctionArn() {
@@ -197,11 +218,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) assigned to the function.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param functionArn
-     *        The Amazon Resource Name (ARN) assigned to the function.
+     *        The function's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,16 +235,9 @@ public class FunctionConfiguration implements Serializable, Cloneable {
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -235,15 +249,8 @@ public class FunctionConfiguration implements Serializable, Cloneable {
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
-     * @return The runtime environment for the Lambda function.</p>
-     *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
+     * @return The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -255,16 +262,9 @@ public class FunctionConfiguration implements Serializable, Cloneable {
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -278,55 +278,39 @@ public class FunctionConfiguration implements Serializable, Cloneable {
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
 
     public FunctionConfiguration withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
-     * other Amazon Web Services (AWS) resources.
+     * The function's execution role.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
-     *        access any other Amazon Web Services (AWS) resources.
+     *        The function's execution role.
      */
 
     public void setRole(String role) {
@@ -335,12 +319,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
-     * other Amazon Web Services (AWS) resources.
+     * The function's execution role.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
-     *         access any other Amazon Web Services (AWS) resources.
+     * @return The function's execution role.
      */
 
     public String getRole() {
@@ -349,13 +331,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any
-     * other Amazon Web Services (AWS) resources.
+     * The function's execution role.
      * </p>
      * 
      * @param role
-     *        The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to
-     *        access any other Amazon Web Services (AWS) resources.
+     *        The function's execution role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,11 +346,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
      * @param handler
-     *        The function Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin executing your function.
      */
 
     public void setHandler(String handler) {
@@ -379,10 +359,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
-     * @return The function Lambda calls to begin executing your function.
+     * @return The function that Lambda calls to begin executing your function.
      */
 
     public String getHandler() {
@@ -391,11 +371,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
      * @param handler
-     *        The function Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin executing your function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,11 +386,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the function .zip file you uploaded.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
      * @param codeSize
-     *        The size, in bytes, of the function .zip file you uploaded.
+     *        The size of the function's deployment package, in bytes.
      */
 
     public void setCodeSize(Long codeSize) {
@@ -419,10 +399,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the function .zip file you uploaded.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
-     * @return The size, in bytes, of the function .zip file you uploaded.
+     * @return The size of the function's deployment package, in bytes.
      */
 
     public Long getCodeSize() {
@@ -431,11 +411,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the function .zip file you uploaded.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
      * @param codeSize
-     *        The size, in bytes, of the function .zip file you uploaded.
+     *        The size of the function's deployment package, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,11 +426,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-provided description.
+     * The function's description.
      * </p>
      * 
      * @param description
-     *        The user-provided description.
+     *        The function's description.
      */
 
     public void setDescription(String description) {
@@ -459,10 +439,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-provided description.
+     * The function's description.
      * </p>
      * 
-     * @return The user-provided description.
+     * @return The function's description.
      */
 
     public String getDescription() {
@@ -471,11 +451,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-provided description.
+     * The function's description.
      * </p>
      * 
      * @param description
-     *        The user-provided description.
+     *        The function's description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,14 +466,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
-     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the function. Because the execution time has
-     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     *        seconds.
+     *        The amount of time that Lambda allows a function to run before stopping it.
      */
 
     public void setTimeout(Integer timeout) {
@@ -502,13 +479,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
-     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
-     * @return The function execution time at which Lambda should terminate the function. Because the execution time has
-     *         cost implications, we recommend you set this value based on your expected execution time. The default is
-     *         3 seconds.
+     * @return The amount of time that Lambda allows a function to run before stopping it.
      */
 
     public Integer getTimeout() {
@@ -517,14 +491,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The function execution time at which Lambda should terminate the function. Because the execution time has cost
-     * implications, we recommend you set this value based on your expected execution time. The default is 3 seconds.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the function. Because the execution time has
-     *        cost implications, we recommend you set this value based on your expected execution time. The default is 3
-     *        seconds.
+     *        The amount of time that Lambda allows a function to run before stopping it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,11 +506,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * The memory that's allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     *        The memory that's allocated to the function.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -548,10 +519,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * The memory that's allocated to the function.
      * </p>
      * 
-     * @return The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * @return The memory that's allocated to the function.
      */
 
     public Integer getMemorySize() {
@@ -560,11 +531,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     * The memory that's allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory size, in MB, you configured for the function. Must be a multiple of 64 MB.
+     *        The memory that's allocated to the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,11 +546,13 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
      * @param lastModified
-     *        The time stamp of the last time you updated the function.
+     *        The date and time that the function was last updated, in <a
+     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      */
 
     public void setLastModified(String lastModified) {
@@ -588,10 +561,12 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
-     * @return The time stamp of the last time you updated the function.
+     * @return The date and time that the function was last updated, in <a
+     *         href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      */
 
     public String getLastModified() {
@@ -600,11 +575,13 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
+     * format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * </p>
      * 
      * @param lastModified
-     *        The time stamp of the last time you updated the function.
+     *        The date and time that the function was last updated, in <a
+     *        href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,11 +592,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * It is the SHA256 hash of your function deployment package.
+     * The SHA256 hash of the function's deployment package.
      * </p>
      * 
      * @param codeSha256
-     *        It is the SHA256 hash of your function deployment package.
+     *        The SHA256 hash of the function's deployment package.
      */
 
     public void setCodeSha256(String codeSha256) {
@@ -628,10 +605,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * It is the SHA256 hash of your function deployment package.
+     * The SHA256 hash of the function's deployment package.
      * </p>
      * 
-     * @return It is the SHA256 hash of your function deployment package.
+     * @return The SHA256 hash of the function's deployment package.
      */
 
     public String getCodeSha256() {
@@ -640,11 +617,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * It is the SHA256 hash of your function deployment package.
+     * The SHA256 hash of the function's deployment package.
      * </p>
      * 
      * @param codeSha256
-     *        It is the SHA256 hash of your function deployment package.
+     *        The SHA256 hash of the function's deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -695,11 +672,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * VPC configuration associated with your Lambda function.
+     * The function's networking configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration associated with your Lambda function.
+     *        The function's networking configuration.
      */
 
     public void setVpcConfig(VpcConfigResponse vpcConfig) {
@@ -708,10 +685,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * VPC configuration associated with your Lambda function.
+     * The function's networking configuration.
      * </p>
      * 
-     * @return VPC configuration associated with your Lambda function.
+     * @return The function's networking configuration.
      */
 
     public VpcConfigResponse getVpcConfig() {
@@ -720,11 +697,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * VPC configuration associated with your Lambda function.
+     * The function's networking configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration associated with your Lambda function.
+     *        The function's networking configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -735,12 +712,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The function's dead letter queue.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        The function's dead letter queue.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -749,11 +725,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The function's dead letter queue.
      * </p>
      * 
-     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
-     *         SNS topic.
+     * @return The function's dead letter queue.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -762,12 +737,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The function's dead letter queue.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        The function's dead letter queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -778,11 +752,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains your environment's configuration settings.
+     * The function's environment variables.
      * </p>
      * 
      * @param environment
-     *        The parent object that contains your environment's configuration settings.
+     *        The function's environment variables.
      */
 
     public void setEnvironment(EnvironmentResponse environment) {
@@ -791,10 +765,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains your environment's configuration settings.
+     * The function's environment variables.
      * </p>
      * 
-     * @return The parent object that contains your environment's configuration settings.
+     * @return The function's environment variables.
      */
 
     public EnvironmentResponse getEnvironment() {
@@ -803,11 +777,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parent object that contains your environment's configuration settings.
+     * The function's environment variables.
      * </p>
      * 
      * @param environment
-     *        The parent object that contains your environment's configuration settings.
+     *        The function's environment variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -818,13 +792,13 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
-     * means you are using the AWS Lambda default service key.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
-     *        empty, it means you are using the AWS Lambda default service key.
+     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *        you've configured a customer-managed CMK.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -833,12 +807,12 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
-     * means you are using the AWS Lambda default service key.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
-     *         empty, it means you are using the AWS Lambda default service key.
+     * @return The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *         you've configured a customer-managed CMK.
      */
 
     public String getKMSKeyArn() {
@@ -847,13 +821,13 @@ public class FunctionConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If empty, it
-     * means you are using the AWS Lambda default service key.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If
-     *        empty, it means you are using the AWS Lambda default service key.
+     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *        you've configured a customer-managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -863,7 +837,205 @@ public class FunctionConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The function's AWS X-Ray tracing configuration.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The function's AWS X-Ray tracing configuration.
+     */
+
+    public void setTracingConfig(TracingConfigResponse tracingConfig) {
+        this.tracingConfig = tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's AWS X-Ray tracing configuration.
+     * </p>
+     * 
+     * @return The function's AWS X-Ray tracing configuration.
+     */
+
+    public TracingConfigResponse getTracingConfig() {
+        return this.tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's AWS X-Ray tracing configuration.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The function's AWS X-Ray tracing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withTracingConfig(TracingConfigResponse tracingConfig) {
+        setTracingConfig(tracingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For Lambda@Edge functions, the ARN of the master function.
+     * </p>
+     * 
+     * @param masterArn
+     *        For Lambda@Edge functions, the ARN of the master function.
+     */
+
+    public void setMasterArn(String masterArn) {
+        this.masterArn = masterArn;
+    }
+
+    /**
+     * <p>
+     * For Lambda@Edge functions, the ARN of the master function.
+     * </p>
+     * 
+     * @return For Lambda@Edge functions, the ARN of the master function.
+     */
+
+    public String getMasterArn() {
+        return this.masterArn;
+    }
+
+    /**
+     * <p>
+     * For Lambda@Edge functions, the ARN of the master function.
+     * </p>
+     * 
+     * @param masterArn
+     *        For Lambda@Edge functions, the ARN of the master function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withMasterArn(String masterArn) {
+        setMasterArn(masterArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        The latest updated revision of the function or alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @return The latest updated revision of the function or alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        The latest updated revision of the function or alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * </p>
+     * 
+     * @return The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *         layers</a>.
+     */
+
+    public java.util.List<Layer> getLayers() {
+        if (layers == null) {
+            layers = new com.amazonaws.internal.SdkInternalList<Layer>();
+        }
+        return layers;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * </p>
+     * 
+     * @param layers
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
+     */
+
+    public void setLayers(java.util.Collection<Layer> layers) {
+        if (layers == null) {
+            this.layers = null;
+            return;
+        }
+
+        this.layers = new com.amazonaws.internal.SdkInternalList<Layer>(layers);
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLayers(java.util.Collection)} or {@link #withLayers(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param layers
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withLayers(Layer... layers) {
+        if (this.layers == null) {
+            setLayers(new com.amazonaws.internal.SdkInternalList<Layer>(layers.length));
+        }
+        for (Layer ele : layers) {
+            this.layers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * </p>
+     * 
+     * @param layers
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withLayers(java.util.Collection<Layer> layers) {
+        setLayers(layers);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -904,7 +1076,15 @@ public class FunctionConfiguration implements Serializable, Cloneable {
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
+        if (getTracingConfig() != null)
+            sb.append("TracingConfig: ").append(getTracingConfig()).append(",");
+        if (getMasterArn() != null)
+            sb.append("MasterArn: ").append(getMasterArn()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getLayers() != null)
+            sb.append("Layers: ").append(getLayers());
         sb.append("}");
         return sb.toString();
     }
@@ -983,6 +1163,22 @@ public class FunctionConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
+        if (other.getTracingConfig() == null ^ this.getTracingConfig() == null)
+            return false;
+        if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
+            return false;
+        if (other.getMasterArn() == null ^ this.getMasterArn() == null)
+            return false;
+        if (other.getMasterArn() != null && other.getMasterArn().equals(this.getMasterArn()) == false)
+            return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
+        if (other.getLayers() == null ^ this.getLayers() == null)
+            return false;
+        if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
+            return false;
         return true;
     }
 
@@ -1007,6 +1203,10 @@ public class FunctionConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
+        hashCode = prime * hashCode + ((getMasterArn() == null) ? 0 : getMasterArn().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
         return hashCode;
     }
 
@@ -1017,5 +1217,11 @@ public class FunctionConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.FunctionConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,10 +45,11 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
-     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
-     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
-     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
-     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
+     * maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash
+     * function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As
+     * a result of this hashing mechanism, all data records with the same partition key map to the same shard within the
+     * stream.
      * </p>
      */
     private String partitionKey;
@@ -63,8 +64,8 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      */
     private String sequenceNumberForOrdering;
@@ -116,7 +117,7 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * maximum record size (1 MB).
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -165,6 +166,16 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
      * maximum record size (1 MB).
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param data
      *        The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
@@ -181,19 +192,20 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
-     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
-     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
-     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
-     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
+     * maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash
+     * function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As
+     * a result of this hashing mechanism, all data records with the same partition key map to the same shard within the
+     * stream.
      * </p>
      * 
      * @param partitionKey
      *        Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
-     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input
-     *        to a hash function that maps the partition key and associated data to a specific shard. Specifically, an
-     *        MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data
-     *        records to shards. As a result of this hashing mechanism, all data records with the same partition key map
-     *        to the same shard within the stream.
+     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition
+     *        key as input to a hash function that maps the partition key and associated data to a specific shard.
+     *        Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map
+     *        associated data records to shards. As a result of this hashing mechanism, all data records with the same
+     *        partition key map to the same shard within the stream.
      */
 
     public void setPartitionKey(String partitionKey) {
@@ -203,18 +215,19 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
-     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
-     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
-     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
-     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
+     * maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash
+     * function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As
+     * a result of this hashing mechanism, all data records with the same partition key map to the same shard within the
+     * stream.
      * </p>
      * 
      * @return Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
-     *         with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as
-     *         input to a hash function that maps the partition key and associated data to a specific shard.
-     *         Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map
-     *         associated data records to shards. As a result of this hashing mechanism, all data records with the same
-     *         partition key map to the same shard within the stream.
+     *         with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the
+     *         partition key as input to a hash function that maps the partition key and associated data to a specific
+     *         shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to
+     *         map associated data records to shards. As a result of this hashing mechanism, all data records with the
+     *         same partition key map to the same shard within the stream.
      */
 
     public String getPartitionKey() {
@@ -224,19 +237,20 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a
-     * maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash
-     * function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function
-     * is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result
-     * of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.
+     * maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input
+     * to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash
+     * function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As
+     * a result of this hashing mechanism, all data records with the same partition key map to the same shard within the
+     * stream.
      * </p>
      * 
      * @param partitionKey
      *        Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings
-     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input
-     *        to a hash function that maps the partition key and associated data to a specific shard. Specifically, an
-     *        MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data
-     *        records to shards. As a result of this hashing mechanism, all data records with the same partition key map
-     *        to the same shard within the stream.
+     *        with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition
+     *        key as input to a hash function that maps the partition key and associated data to a specific shard.
+     *        Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map
+     *        associated data records to shards. As a result of this hashing mechanism, all data records with the same
+     *        partition key map to the same shard within the stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,15 +309,15 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @param sequenceNumberForOrdering
      *        Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *        key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *        record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *        set, records will be coarsely ordered based on arrival time.
+     *        set, records are coarsely ordered based on arrival time.
      */
 
     public void setSequenceNumberForOrdering(String sequenceNumberForOrdering) {
@@ -314,14 +328,14 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @return Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *         key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *         record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *         set, records will be coarsely ordered based on arrival time.
+     *         set, records are coarsely ordered based on arrival time.
      */
 
     public String getSequenceNumberForOrdering() {
@@ -332,15 +346,15 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @param sequenceNumberForOrdering
      *        Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *        key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *        record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *        set, records will be coarsely ordered based on arrival time.
+     *        set, records are coarsely ordered based on arrival time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,7 +364,8 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

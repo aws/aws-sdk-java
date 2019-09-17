@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,51 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTapeArchivesRequest Marshaller
+ * DescribeTapeArchivesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTapeArchivesRequestMarshaller implements Marshaller<Request<DescribeTapeArchivesRequest>, DescribeTapeArchivesRequest> {
+@SdkInternalApi
+public class DescribeTapeArchivesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> TAPEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TapeARNs").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeTapeArchivesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTapeArchivesRequestMarshaller instance = new DescribeTapeArchivesRequestMarshaller();
+
+    public static DescribeTapeArchivesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTapeArchivesRequest> marshall(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTapeArchivesRequest describeTapeArchivesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTapeArchivesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTapeArchivesRequest> request = new DefaultRequest<DescribeTapeArchivesRequest>(describeTapeArchivesRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DescribeTapeArchives");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> tapeARNsList = (com.amazonaws.internal.SdkInternalList<String>) describeTapeArchivesRequest
-                    .getTapeARNs();
-            if (!tapeARNsList.isEmpty() || !tapeARNsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("TapeARNs");
-                jsonGenerator.writeStartArray();
-                for (String tapeARNsListValue : tapeARNsList) {
-                    if (tapeARNsListValue != null) {
-                        jsonGenerator.writeValue(tapeARNsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeTapeArchivesRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(describeTapeArchivesRequest.getMarker());
-            }
-            if (describeTapeArchivesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeTapeArchivesRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTapeArchivesRequest.getTapeARNs(), TAPEARNS_BINDING);
+            protocolMarshaller.marshall(describeTapeArchivesRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeTapeArchivesRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

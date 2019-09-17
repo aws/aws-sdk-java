@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,29 +29,32 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The ID of the customer gateway.
      * </p>
      */
     private String customerGatewayId;
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit
+     * gateway.
      * </p>
      */
     private String vpnGatewayId;
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.
      * </p>
+     */
+    private String transitGatewayId;
+    /**
      * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      */
     private VpnConnectionOptionsSpecification options;
@@ -72,52 +75,13 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      * @param customerGatewayId
      *        The ID of the customer gateway.
      * @param vpnGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a
+     *        transit gateway.
      */
     public CreateVpnConnectionRequest(String type, String customerGatewayId, String vpnGatewayId) {
         setType(type);
         setCustomerGatewayId(customerGatewayId);
         setVpnGatewayId(vpnGatewayId);
-    }
-
-    /**
-     * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @param type
-     *        The type of VPN connection (<code>ipsec.1</code>).
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @return The type of VPN connection (<code>ipsec.1</code>).
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @param type
-     *        The type of VPN connection (<code>ipsec.1</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpnConnectionRequest withType(String type) {
-        setType(type);
-        return this;
     }
 
     /**
@@ -162,11 +126,53 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @param type
+     *        The type of VPN connection (<code>ipsec.1</code>).
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @return The type of VPN connection (<code>ipsec.1</code>).
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @param type
+     *        The type of VPN connection (<code>ipsec.1</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnConnectionRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit
+     * gateway.
      * </p>
      * 
      * @param vpnGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a
+     *        transit gateway.
      */
 
     public void setVpnGatewayId(String vpnGatewayId) {
@@ -175,10 +181,12 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit
+     * gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a
+     *         transit gateway.
      */
 
     public String getVpnGatewayId() {
@@ -187,11 +195,13 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit
+     * gateway.
      * </p>
      * 
      * @param vpnGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a
+     *        transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,18 +212,54 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
+     * The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.
      * </p>
+     * 
+     * @param transitGatewayId
+     *        The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private
+     *        gateway.
+     */
+
+    public void setTransitGatewayId(String transitGatewayId) {
+        this.transitGatewayId = transitGatewayId;
+    }
+
+    /**
      * <p>
-     * Default: <code>false</code>
+     * The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private
+     *         gateway.
+     */
+
+    public String getTransitGatewayId() {
+        return this.transitGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private gateway.
+     * </p>
+     * 
+     * @param transitGatewayId
+     *        The ID of the transit gateway. If you specify a transit gateway, you cannot specify a virtual private
+     *        gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnConnectionRequest withTransitGatewayId(String transitGatewayId) {
+        setTransitGatewayId(transitGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for the VPN connection.
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        The options for the VPN connection.
      */
 
     public void setOptions(VpnConnectionOptionsSpecification options) {
@@ -222,17 +268,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      * 
-     * @return Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *         device that does not support BGP, you must specify <code>true</code>.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return The options for the VPN connection.
      */
 
     public VpnConnectionOptionsSpecification getOptions() {
@@ -241,18 +280,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        The options for the VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +305,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -283,12 +316,14 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getCustomerGatewayId() != null)
             sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getVpnGatewayId() != null)
             sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
+        if (getTransitGatewayId() != null)
+            sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getOptions() != null)
             sb.append("Options: ").append(getOptions());
         sb.append("}");
@@ -305,17 +340,21 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof CreateVpnConnectionRequest == false)
             return false;
         CreateVpnConnectionRequest other = (CreateVpnConnectionRequest) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
             return false;
         if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
         if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
+            return false;
+        if (other.getTransitGatewayId() == null ^ this.getTransitGatewayId() == null)
+            return false;
+        if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
         if (other.getOptions() == null ^ this.getOptions() == null)
             return false;
@@ -329,9 +368,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }

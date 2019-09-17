@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,9 +46,10 @@ public class CreateOpenIDConnectProviderRequestMarshaller implements
             request.addParameter("Url", StringUtils.fromString(createOpenIDConnectProviderRequest.getUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> clientIDListList = (com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest
-                .getClientIDList();
-        if (!clientIDListList.isEmpty() || !clientIDListList.isAutoConstruct()) {
+        if (!createOpenIDConnectProviderRequest.getClientIDList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest.getClientIDList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> clientIDListList = (com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest
+                    .getClientIDList();
             int clientIDListListIndex = 1;
 
             for (String clientIDListListValue : clientIDListList) {
@@ -59,9 +60,10 @@ public class CreateOpenIDConnectProviderRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> thumbprintListList = (com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest
-                .getThumbprintList();
-        if (!thumbprintListList.isEmpty() || !thumbprintListList.isAutoConstruct()) {
+        if (!createOpenIDConnectProviderRequest.getThumbprintList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest.getThumbprintList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> thumbprintListList = (com.amazonaws.internal.SdkInternalList<String>) createOpenIDConnectProviderRequest
+                    .getThumbprintList();
             int thumbprintListListIndex = 1;
 
             for (String thumbprintListListValue : thumbprintListList) {

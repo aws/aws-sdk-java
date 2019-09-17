@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("Port", StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getPort()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getMultiAZ()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getAutoMinorVersionUpgrade()));
         }
@@ -74,12 +78,17 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("OptionGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getOptionGroupName()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBParameterGroupName()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getPubliclyAccessible() != null) {
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getPubliclyAccessible()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBInstanceReadReplicaRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -97,6 +106,21 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
 
         if (createDBInstanceReadReplicaRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
         }
 
         if (createDBInstanceReadReplicaRequest.getStorageType() != null) {
@@ -121,6 +145,68 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
 
         if (createDBInstanceReadReplicaRequest.getPreSignedUrl() != null) {
             request.addParameter("PreSignedUrl", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPreSignedUrl()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getEnablePerformanceInsights() != null) {
+            request.addParameter("EnablePerformanceInsights", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnablePerformanceInsights()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId() != null) {
+            request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod() != null) {
+            request.addParameter("PerformanceInsightsRetentionPeriod",
+                    StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod()));
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceReadReplicaRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceReadReplicaRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (createDBInstanceReadReplicaRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getUseDefaultProcessorFeatures()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDeletionProtection()));
         }
 
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {

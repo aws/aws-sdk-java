@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -154,7 +154,13 @@ public class VersionInfoUtils {
             .replace("{java.vm.name}", replaceSpaces(System.getProperty("java.vm.name")))
             .replace("{java.vm.version}", replaceSpaces(System.getProperty("java.vm.version")))
             .replace("{java.version}", replaceSpaces(System.getProperty("java.version")))
-            .replace("{additional.languages}", getAdditionalJvmLanguages());
+            .replace("{java.vendor}", replaceSpaces(System.getProperty("java.vendor")))
+	    ;
+
+        if (ua.contains("{additional.languages}")) {
+            ua = ua.replace("{additional.languages}", getAdditionalJvmLanguages());
+        }
+
 
         String language = System.getProperty("user.language");
         String region = System.getProperty("user.region");
@@ -180,62 +186,115 @@ public class VersionInfoUtils {
     }
 
     private static String getAdditionalJvmLanguages() {
-        return concat(concat("", scalaVersion(), " "), kotlinVersion(), " ");
+        StringBuilder versions = new StringBuilder();
+        concat(versions, scalaVersion(), " ");
+        concat(versions, clojureVersion(), " ");
+        concat(versions, groovyVersion(), " ");
+        concat(versions, jythonVersion(), " ");
+        concat(versions, jrubyVersion(), " ");
+        concat(versions, kotlinVersion(), " ");
+        return versions.toString();
     }
 
-    /**
-     * Attempt to determine if Scala is on the classpath and if so what version is in use.
-     * Does this by looking for a known Scala class (scala.util.Properties) and then calling
-     * a static method on that class via reflection to determine the versionNumberString.
-     *
-     * @return Scala version if any, else empty string
-     */
     private static String scalaVersion() {
-        String scalaVersion = "";
-        try {
-            Class<?> scalaProperties = Class.forName("scala.util.Properties");
-            scalaVersion = "scala";
-            String version = (String)scalaProperties.getMethod("versionNumberString").invoke(null);
-            scalaVersion = concat(scalaVersion, version, "/");
-        } catch (ClassNotFoundException e) {
-            //Ignore
-        } catch (Exception e) {
-            if (log.isTraceEnabled()){
-                log.trace("Exception attempting to get Scala version.", e);
-            }
-        }
-        return scalaVersion;
+        return languageVersion("scala", "scala.util.Properties", "versionNumberString", true);
+    }
+
+    private static String clojureVersion() {
+        return languageVersion("clojure", "clojure.core$clojure_version", "invokeStatic", true);
+    }
+
+    private static String groovyVersion() {
+        return languageVersion("groovy", "groovy.lang.GroovySystem", "getVersion", true);
+    }
+
+    private static String jythonVersion() {
+        return languageVersion("jython", "org.python.Version", "PY_VERSION", false);
+    }
+
+    private static String jrubyVersion() {
+        return languageVersion("jruby", "org.jruby.runtime.Constants", "VERSION", false);
     }
 
     /**
      * Attempt to determine if Kotlin is on the classpath and if so what version is in use.
-     * Does this by looking for a known Kotlin class (kotlin.Unit) and then loading the Manifest
-     * from that class' JAR to determine the Kotlin version.
+     * Can do this by either using the KotlinVersion class that was introduced in 1.1 or
+     * via looking at the JAR's manifest versions for earlier versions.
      *
      * @return Kotlin version if any, else empty string
      */
     private static String kotlinVersion() {
-        String kotlinVersion = "";
+        String version = kotlinVersionByClass();
+        return version.equals("") ? kotlinVersionByJar() : version;
+    }
+
+    private static String kotlinVersionByClass() {
+        StringBuilder kotlinVersion = new StringBuilder("");
+        try {
+            Class<?> versionClass = Class.forName("kotlin.KotlinVersion");
+            kotlinVersion.append("kotlin");
+            String version = versionClass.getField("CURRENT").get(null).toString();
+            concat(kotlinVersion, version, "/");
+        } catch (ClassNotFoundException e) {
+            //ignore
+        } catch (Exception e) {
+            if (log.isTraceEnabled()){
+                log.trace("Exception attempting to get Kotlin version.", e);
+            }
+
+        }
+        return kotlinVersion.toString();
+    }
+
+    private static String kotlinVersionByJar() {
+        StringBuilder kotlinVersion = new StringBuilder("");
         JarInputStream kotlinJar = null;
         try {
             Class<?> kotlinUnit = Class.forName("kotlin.Unit");
-            kotlinVersion = "kotlin";
+            kotlinVersion.append("kotlin");
             kotlinJar = new JarInputStream(kotlinUnit.getProtectionDomain().getCodeSource().getLocation().openStream());
             String version = kotlinJar.getManifest().getMainAttributes().getValue("Implementation-Version");
-            kotlinVersion = concat(kotlinVersion, version, "/");
+            concat(kotlinVersion, version, "/");
         } catch (ClassNotFoundException e) {
             //Ignore
         } catch (Exception e) {
-            if (log.isTraceEnabled()){
+            if (log.isTraceEnabled()) {
                 log.trace("Exception attempting to get Kotlin version.", e);
             }
         } finally {
             closeQuietly(kotlinJar, log);
         }
-        return kotlinVersion;
+        return kotlinVersion.toString();
     }
 
-    private static String concat(String prefix, String suffix, String separator) {
-        return suffix != null && !suffix.isEmpty() ? prefix + separator + suffix : prefix;
+    /**
+     * Attempt to determine if this language exists on the classpath and what it's version is
+     * @param language the name of the language
+     * @param className a class of that lanauge that exposes runtime version information
+     * @param methodOrFieldName the static field or method name that holds the version number
+     * @param isMethod whether the above is a field or method
+     * @return the version number or empty string if the language does not exist on the classpath
+     */
+    private static String languageVersion(String language, String className, String methodOrFieldName, boolean isMethod) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            Class<?> clz = Class.forName(className);
+            sb.append(language);
+            String version = isMethod ? (String) clz.getMethod(methodOrFieldName).invoke(null) : (String) clz.getField(methodOrFieldName).get(null);
+            concat(sb, version, "/");
+        } catch (ClassNotFoundException e) {
+            //Ignore
+        } catch (Exception e) {
+            if (log.isTraceEnabled()){
+                log.trace("Exception attempting to get " + language + " version.", e);
+            }
+        }
+        return sb.toString();
+    }
+
+    private static void concat(StringBuilder prefix, String suffix, String separator) {
+        if (suffix != null && !suffix.isEmpty()) {
+            prefix.append(separator).append(suffix);
+        }
     }
 }

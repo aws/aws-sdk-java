@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,19 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionContinuedAsNew</code> event.
+ * Provides the details of the <code>WorkflowExecutionContinuedAsNew</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionContinuedAsNewEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializable, Cloneable {
+public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -48,22 +53,30 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The total duration allowed for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String executionStartToCloseTimeout;
-
+    /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     */
     private TaskList taskList;
-
+    /**
+     * <p>
+     * The priority of the task to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     */
     private String taskPriority;
     /**
      * <p>
      * The maximum duration of decision tasks for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String taskStartToCloseTimeout;
@@ -76,11 +89,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      */
     private String childPolicy;
@@ -90,11 +115,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * </p>
      */
     private java.util.List<String> tagList;
-
+    /**
+     * <p>
+     * The workflow type of this execution.
+     * </p>
+     */
     private WorkflowType workflowType;
     /**
      * <p>
-     * The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     * The IAM role to attach to the new (continued) workflow execution.
      * </p>
      */
     private String lambdaRole;
@@ -236,15 +265,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The total duration allowed for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param executionStartToCloseTimeout
      *        The total duration allowed for the new workflow execution.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -256,14 +285,14 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The total duration allowed for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return The total duration allowed for the new workflow execution.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getExecutionStartToCloseTimeout() {
@@ -275,15 +304,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The total duration allowed for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param executionStartToCloseTimeout
      *        The total duration allowed for the new workflow execution.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,7 +322,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskList
+     *        The task list to use for the decisions of the new (continued) workflow execution.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -301,7 +335,11 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
-     * @return
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
+     * @return The task list to use for the decisions of the new (continued) workflow execution.
      */
 
     public TaskList getTaskList() {
@@ -309,7 +347,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskList
+     *        The task list to use for the decisions of the new (continued) workflow execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,7 +362,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The priority of the task to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskPriority
+     *        The priority of the task to use for the decisions of the new (continued) workflow execution.
      */
 
     public void setTaskPriority(String taskPriority) {
@@ -327,7 +375,11 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
-     * @return
+     * <p>
+     * The priority of the task to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
+     * @return The priority of the task to use for the decisions of the new (continued) workflow execution.
      */
 
     public String getTaskPriority() {
@@ -335,7 +387,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The priority of the task to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskPriority
+     *        The priority of the task to use for the decisions of the new (continued) workflow execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,15 +406,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The maximum duration of decision tasks for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param taskStartToCloseTimeout
      *        The maximum duration of decision tasks for the new workflow execution.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -369,14 +426,14 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The maximum duration of decision tasks for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return The maximum duration of decision tasks for the new workflow execution.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getTaskStartToCloseTimeout() {
@@ -388,15 +445,15 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The maximum duration of decision tasks for the new workflow execution.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param taskStartToCloseTimeout
      *        The maximum duration of decision tasks for the new workflow execution.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,11 +471,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -428,11 +497,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @see ChildPolicy
      */
 
@@ -449,11 +530,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The policy to use for the child workflow executions of the new execution if it is terminated by calling
@@ -462,11 +555,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *         The supported child policies are:
      *         </p>
      *         <ul>
-     *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *         <li>
+     *         <p>
+     *         <code>TERMINATE</code> – The child executions are terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *         appropriate actions when it receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *         appropriate actions when it receives an execution history with this event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *         </p>
+     *         </li>
      * @see ChildPolicy
      */
 
@@ -483,11 +588,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -497,11 +614,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
@@ -520,11 +649,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -534,16 +675,28 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @see ChildPolicy
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -555,11 +708,23 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -569,17 +734,29 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
 
     public WorkflowExecutionContinuedAsNewEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 
@@ -654,7 +831,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The workflow type of this execution.
+     * </p>
+     * 
      * @param workflowType
+     *        The workflow type of this execution.
      */
 
     public void setWorkflowType(WorkflowType workflowType) {
@@ -662,7 +844,11 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
-     * @return
+     * <p>
+     * The workflow type of this execution.
+     * </p>
+     * 
+     * @return The workflow type of this execution.
      */
 
     public WorkflowType getWorkflowType() {
@@ -670,7 +856,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
+     * <p>
+     * The workflow type of this execution.
+     * </p>
+     * 
      * @param workflowType
+     *        The workflow type of this execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,11 +872,11 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
 
     /**
      * <p>
-     * The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     * The IAM role to attach to the new (continued) workflow execution.
      * </p>
      * 
      * @param lambdaRole
-     *        The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     *        The IAM role to attach to the new (continued) workflow execution.
      */
 
     public void setLambdaRole(String lambdaRole) {
@@ -694,10 +885,10 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
 
     /**
      * <p>
-     * The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     * The IAM role to attach to the new (continued) workflow execution.
      * </p>
      * 
-     * @return The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     * @return The IAM role to attach to the new (continued) workflow execution.
      */
 
     public String getLambdaRole() {
@@ -706,11 +897,11 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
 
     /**
      * <p>
-     * The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     * The IAM role to attach to the new (continued) workflow execution.
      * </p>
      * 
      * @param lambdaRole
-     *        The IAM role attached to this workflow execution to use when invoking AWS Lambda functions.
+     *        The IAM role to attach to the new (continued) workflow execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,7 +911,8 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -839,5 +1031,12 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.WorkflowExecutionContinuedAsNewEventAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

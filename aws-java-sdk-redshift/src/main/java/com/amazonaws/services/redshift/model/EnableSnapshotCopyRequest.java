@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,11 +38,11 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
     private String clusterIdentifier;
     /**
      * <p>
-     * The destination region that you want to copy snapshots to.
+     * The destination AWS Region that you want to copy snapshots to.
      * </p>
      * <p>
-     * Constraints: Must be the name of a valid region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      */
@@ -67,6 +67,16 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String snapshotCopyGrantName;
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
 
     /**
      * <p>
@@ -131,19 +141,19 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The destination region that you want to copy snapshots to.
+     * The destination AWS Region that you want to copy snapshots to.
      * </p>
      * <p>
-     * Constraints: Must be the name of a valid region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region that you want to copy snapshots to.</p>
+     *        The destination AWS Region that you want to copy snapshots to.</p>
      *        <p>
-     *        Constraints: Must be the name of a valid region. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *        Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *        in the Amazon Web Services General Reference.
      */
 
@@ -153,18 +163,18 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The destination region that you want to copy snapshots to.
+     * The destination AWS Region that you want to copy snapshots to.
      * </p>
      * <p>
-     * Constraints: Must be the name of a valid region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
-     * @return The destination region that you want to copy snapshots to.</p>
+     * @return The destination AWS Region that you want to copy snapshots to.</p>
      *         <p>
-     *         Constraints: Must be the name of a valid region. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *         Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *         in the Amazon Web Services General Reference.
      */
 
@@ -174,19 +184,19 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The destination region that you want to copy snapshots to.
+     * The destination AWS Region that you want to copy snapshots to.
      * </p>
      * <p>
-     * Constraints: Must be the name of a valid region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
      * @param destinationRegion
-     *        The destination region that you want to copy snapshots to.</p>
+     *        The destination AWS Region that you want to copy snapshots to.</p>
      *        <p>
-     *        Constraints: Must be the name of a valid region. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *        Constraints: Must be the name of a valid AWS Region. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *        in the Amazon Web Services General Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -322,7 +332,69 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days to retain newly copied snapshots in the destination AWS Region after they are copied
+     *        from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @return The number of days to retain newly copied snapshots in the destination AWS Region after they are copied
+     *         from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days to retain newly copied snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. If the value is -1, the manual snapshot is retained indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The number of days to retain newly copied snapshots in the destination AWS Region after they are copied
+     *        from the source AWS Region. If the value is -1, the manual snapshot is retained indefinitely. </p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableSnapshotCopyRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -339,7 +411,9 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName());
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +444,11 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSnapshotCopyGrantName() != null && other.getSnapshotCopyGrantName().equals(this.getSnapshotCopyGrantName()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +461,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCopyGrantName() == null) ? 0 : getSnapshotCopyGrantName().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         return hashCode;
     }
 

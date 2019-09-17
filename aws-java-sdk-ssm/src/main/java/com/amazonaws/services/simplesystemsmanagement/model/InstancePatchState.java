@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -26,7 +28,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstancePatchState implements Serializable, Cloneable {
+public class InstancePatchState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -54,7 +56,20 @@ public class InstancePatchState implements Serializable, Cloneable {
     private String snapshotId;
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
+     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
+     * </p>
+     * <p>
+     * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     */
+    private String installOverrideList;
+    /**
+     * <p>
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      */
     private String ownerInformation;
@@ -72,7 +87,20 @@ public class InstancePatchState implements Serializable, Cloneable {
     private Integer installedOtherCount;
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
+     * will always be 0 (zero).
+     * </p>
+     * </note>
+     */
+    private Integer installedRejectedCount;
+    /**
+     * <p>
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      */
@@ -86,8 +114,16 @@ public class InstancePatchState implements Serializable, Cloneable {
     private Integer failedCount;
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
-     * on the instance.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     */
+    private Integer unreportedNotApplicableCount;
+    /**
+     * <p>
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      */
     private Integer notApplicableCount;
@@ -276,11 +312,90 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
+     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
+     * </p>
+     * <p>
+     * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param installOverrideList
+     *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
+     *        list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     *        <p>
+     *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *        >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public void setInstallOverrideList(String installOverrideList) {
+        this.installOverrideList = installOverrideList;
+    }
+
+    /**
+     * <p>
+     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
+     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
+     * </p>
+     * <p>
+     * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @return An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
+     *         list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *         <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     *         <p>
+     *         For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *         >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public String getInstallOverrideList() {
+        return this.installOverrideList;
+    }
+
+    /**
+     * <p>
+     * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
+     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
+     * </p>
+     * <p>
+     * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param installOverrideList
+     *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
+     *        list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
+     *        <p>
+     *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *        >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withInstallOverrideList(String installOverrideList) {
+        setInstallOverrideList(installOverrideList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
      * @param ownerInformation
-     *        Placeholder information, this field will always be empty in the current release of the service.
+     *        Placeholder information. This field will always be empty in the current release of the service.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -289,10 +404,10 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
-     * @return Placeholder information, this field will always be empty in the current release of the service.
+     * @return Placeholder information. This field will always be empty in the current release of the service.
      */
 
     public String getOwnerInformation() {
@@ -301,11 +416,11 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
      * @param ownerInformation
-     *        Placeholder information, this field will always be empty in the current release of the service.
+     *        Placeholder information. This field will always be empty in the current release of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,12 +511,91 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
+     * will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @param installedRejectedCount
+     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
+     *        list.</p> <note>
+     *        <p>
+     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *        InstalledRejectedCount will always be 0 (zero).
+     *        </p>
+     */
+
+    public void setInstalledRejectedCount(Integer installedRejectedCount) {
+        this.installedRejectedCount = installedRejectedCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
+     * will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *         a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
+     *         list.</p> <note>
+     *         <p>
+     *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *         InstalledRejectedCount will always be 0 (zero).
+     *         </p>
+     */
+
+    public Integer getInstalledRejectedCount() {
+        return this.installedRejectedCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
+     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * </p>
+     * <note>
+     * <p>
+     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
+     * will always be 0 (zero).
+     * </p>
+     * </note>
+     * 
+     * @param installedRejectedCount
+     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
+     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
+     *        list.</p> <note>
+     *        <p>
+     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
+     *        InstalledRejectedCount will always be 0 (zero).
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withInstalledRejectedCount(Integer installedRejectedCount) {
+        setInstalledRejectedCount(installedRejectedCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
      * @param missingCount
-     *        The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     *        The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *        installed.
      */
 
@@ -411,11 +605,11 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
-     * @return The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * @return The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *         installed.
      */
 
@@ -425,12 +619,12 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
      * @param missingCount
-     *        The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     *        The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *        installed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -488,13 +682,61 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
-     * on the instance.
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param unreportedNotApplicableCount
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *        by name to Systems Manager Inventory.
+     */
+
+    public void setUnreportedNotApplicableCount(Integer unreportedNotApplicableCount) {
+        this.unreportedNotApplicableCount = unreportedNotApplicableCount;
+    }
+
+    /**
+     * <p>
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @return The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *         by name to Systems Manager Inventory.
+     */
+
+    public Integer getUnreportedNotApplicableCount() {
+        return this.unreportedNotApplicableCount;
+    }
+
+    /**
+     * <p>
+     * The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported by name
+     * to Systems Manager Inventory.
+     * </p>
+     * 
+     * @param unreportedNotApplicableCount
+     *        The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are not reported
+     *        by name to Systems Manager Inventory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withUnreportedNotApplicableCount(Integer unreportedNotApplicableCount) {
+        setUnreportedNotApplicableCount(unreportedNotApplicableCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
-     *        installed on the instance.
+     *        The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     *        installed on the instance. This number may be truncated if the list of patch names is very large. The
+     *        number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      */
 
     public void setNotApplicableCount(Integer notApplicableCount) {
@@ -503,12 +745,14 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
-     * on the instance.
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
-     * @return The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
-     *         installed on the instance.
+     * @return The number of patches from the patch baseline that aren't applicable for the instance and therefore
+     *         aren't installed on the instance. This number may be truncated if the list of patch names is very large.
+     *         The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      */
 
     public Integer getNotApplicableCount() {
@@ -517,13 +761,15 @@ public class InstancePatchState implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
-     * on the instance.
+     * The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     * installed on the instance. This number may be truncated if the list of patch names is very large. The number of
+     * patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
-     *        installed on the instance.
+     *        The number of patches from the patch baseline that aren't applicable for the instance and therefore aren't
+     *        installed on the instance. This number may be truncated if the list of patch names is very large. The
+     *        number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,7 +920,7 @@ public class InstancePatchState implements Serializable, Cloneable {
      */
 
     public void setOperation(PatchOperationType operation) {
-        this.operation = operation.toString();
+        withOperation(operation);
     }
 
     /**
@@ -691,12 +937,13 @@ public class InstancePatchState implements Serializable, Cloneable {
      */
 
     public InstancePatchState withOperation(PatchOperationType operation) {
-        setOperation(operation);
+        this.operation = operation.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -714,16 +961,22 @@ public class InstancePatchState implements Serializable, Cloneable {
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
+        if (getInstallOverrideList() != null)
+            sb.append("InstallOverrideList: ").append(getInstallOverrideList()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getInstalledCount() != null)
             sb.append("InstalledCount: ").append(getInstalledCount()).append(",");
         if (getInstalledOtherCount() != null)
             sb.append("InstalledOtherCount: ").append(getInstalledOtherCount()).append(",");
+        if (getInstalledRejectedCount() != null)
+            sb.append("InstalledRejectedCount: ").append(getInstalledRejectedCount()).append(",");
         if (getMissingCount() != null)
             sb.append("MissingCount: ").append(getMissingCount()).append(",");
         if (getFailedCount() != null)
             sb.append("FailedCount: ").append(getFailedCount()).append(",");
+        if (getUnreportedNotApplicableCount() != null)
+            sb.append("UnreportedNotApplicableCount: ").append(getUnreportedNotApplicableCount()).append(",");
         if (getNotApplicableCount() != null)
             sb.append("NotApplicableCount: ").append(getNotApplicableCount()).append(",");
         if (getOperationStartTime() != null)
@@ -762,6 +1015,10 @@ public class InstancePatchState implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
+        if (other.getInstallOverrideList() == null ^ this.getInstallOverrideList() == null)
+            return false;
+        if (other.getInstallOverrideList() != null && other.getInstallOverrideList().equals(this.getInstallOverrideList()) == false)
+            return false;
         if (other.getOwnerInformation() == null ^ this.getOwnerInformation() == null)
             return false;
         if (other.getOwnerInformation() != null && other.getOwnerInformation().equals(this.getOwnerInformation()) == false)
@@ -774,6 +1031,10 @@ public class InstancePatchState implements Serializable, Cloneable {
             return false;
         if (other.getInstalledOtherCount() != null && other.getInstalledOtherCount().equals(this.getInstalledOtherCount()) == false)
             return false;
+        if (other.getInstalledRejectedCount() == null ^ this.getInstalledRejectedCount() == null)
+            return false;
+        if (other.getInstalledRejectedCount() != null && other.getInstalledRejectedCount().equals(this.getInstalledRejectedCount()) == false)
+            return false;
         if (other.getMissingCount() == null ^ this.getMissingCount() == null)
             return false;
         if (other.getMissingCount() != null && other.getMissingCount().equals(this.getMissingCount()) == false)
@@ -781,6 +1042,10 @@ public class InstancePatchState implements Serializable, Cloneable {
         if (other.getFailedCount() == null ^ this.getFailedCount() == null)
             return false;
         if (other.getFailedCount() != null && other.getFailedCount().equals(this.getFailedCount()) == false)
+            return false;
+        if (other.getUnreportedNotApplicableCount() == null ^ this.getUnreportedNotApplicableCount() == null)
+            return false;
+        if (other.getUnreportedNotApplicableCount() != null && other.getUnreportedNotApplicableCount().equals(this.getUnreportedNotApplicableCount()) == false)
             return false;
         if (other.getNotApplicableCount() == null ^ this.getNotApplicableCount() == null)
             return false;
@@ -810,11 +1075,14 @@ public class InstancePatchState implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPatchGroup() == null) ? 0 : getPatchGroup().hashCode());
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
+        hashCode = prime * hashCode + ((getInstallOverrideList() == null) ? 0 : getInstallOverrideList().hashCode());
         hashCode = prime * hashCode + ((getOwnerInformation() == null) ? 0 : getOwnerInformation().hashCode());
         hashCode = prime * hashCode + ((getInstalledCount() == null) ? 0 : getInstalledCount().hashCode());
         hashCode = prime * hashCode + ((getInstalledOtherCount() == null) ? 0 : getInstalledOtherCount().hashCode());
+        hashCode = prime * hashCode + ((getInstalledRejectedCount() == null) ? 0 : getInstalledRejectedCount().hashCode());
         hashCode = prime * hashCode + ((getMissingCount() == null) ? 0 : getMissingCount().hashCode());
         hashCode = prime * hashCode + ((getFailedCount() == null) ? 0 : getFailedCount().hashCode());
+        hashCode = prime * hashCode + ((getUnreportedNotApplicableCount() == null) ? 0 : getUnreportedNotApplicableCount().hashCode());
         hashCode = prime * hashCode + ((getNotApplicableCount() == null) ? 0 : getNotApplicableCount().hashCode());
         hashCode = prime * hashCode + ((getOperationStartTime() == null) ? 0 : getOperationStartTime().hashCode());
         hashCode = prime * hashCode + ((getOperationEndTime() == null) ? 0 : getOperationEndTime().hashCode());
@@ -829,5 +1097,11 @@ public class InstancePatchState implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.InstancePatchStateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

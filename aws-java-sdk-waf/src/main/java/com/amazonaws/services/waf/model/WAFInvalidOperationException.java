@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,6 @@ import javax.annotation.Generated;
  * <p>
  * You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists in the
  * specified <code>WebACL</code>.
- * </p>
- * </li>
- * <li>
- * <p>
- * You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the specified
- * <code>IPSet</code>.
  * </p>
  * </li>
  * <li>

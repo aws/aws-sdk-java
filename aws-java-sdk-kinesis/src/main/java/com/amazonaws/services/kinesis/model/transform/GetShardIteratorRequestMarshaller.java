@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetShardIteratorRequest Marshaller
+ * GetShardIteratorRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetShardIteratorRequestMarshaller implements Marshaller<Request<GetShardIteratorRequest>, GetShardIteratorRequest> {
+@SdkInternalApi
+public class GetShardIteratorRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> SHARDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ShardId").build();
+    private static final MarshallingInfo<String> SHARDITERATORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardIteratorType").build();
+    private static final MarshallingInfo<String> STARTINGSEQUENCENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingSequenceNumber").build();
+    private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestampInMillis").build();
 
-    public GetShardIteratorRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetShardIteratorRequestMarshaller instance = new GetShardIteratorRequestMarshaller();
+
+    public static GetShardIteratorRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetShardIteratorRequest> marshall(GetShardIteratorRequest getShardIteratorRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetShardIteratorRequest getShardIteratorRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getShardIteratorRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetShardIteratorRequest> request = new DefaultRequest<GetShardIteratorRequest>(getShardIteratorRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.GetShardIterator");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getShardIteratorRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(getShardIteratorRequest.getStreamName());
-            }
-            if (getShardIteratorRequest.getShardId() != null) {
-                jsonGenerator.writeFieldName("ShardId").writeValue(getShardIteratorRequest.getShardId());
-            }
-            if (getShardIteratorRequest.getShardIteratorType() != null) {
-                jsonGenerator.writeFieldName("ShardIteratorType").writeValue(getShardIteratorRequest.getShardIteratorType());
-            }
-            if (getShardIteratorRequest.getStartingSequenceNumber() != null) {
-                jsonGenerator.writeFieldName("StartingSequenceNumber").writeValue(getShardIteratorRequest.getStartingSequenceNumber());
-            }
-            if (getShardIteratorRequest.getTimestamp() != null) {
-                jsonGenerator.writeFieldName("Timestamp").writeValue(getShardIteratorRequest.getTimestamp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getShardIteratorRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getShardId(), SHARDID_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getShardIteratorType(), SHARDITERATORTYPE_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getStartingSequenceNumber(), STARTINGSEQUENCENUMBER_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getTimestamp(), TIMESTAMP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

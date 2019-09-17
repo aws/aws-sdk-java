@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      */
@@ -331,7 +331,7 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -339,7 +339,7 @@ public class Parameter implements Serializable, Cloneable {
      *        Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while
      *        other properties require that any associated clusters be rebooted for the configuration changes to be
      *        applied. For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @see ParameterApplyType
      */
@@ -353,15 +353,15 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @return Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while
      *         other properties require that any associated clusters be rebooted for the configuration changes to be
      *         applied. For more information about parameters and parameter groups, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
-     *         Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @see ParameterApplyType
      */
 
@@ -374,7 +374,7 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -382,7 +382,7 @@ public class Parameter implements Serializable, Cloneable {
      *        Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while
      *        other properties require that any associated clusters be rebooted for the configuration changes to be
      *        applied. For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterApplyType
@@ -398,7 +398,7 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -406,13 +406,13 @@ public class Parameter implements Serializable, Cloneable {
      *        Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while
      *        other properties require that any associated clusters be rebooted for the configuration changes to be
      *        applied. For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @see ParameterApplyType
      */
 
     public void setApplyType(ParameterApplyType applyType) {
-        this.applyType = applyType.toString();
+        withApplyType(applyType);
     }
 
     /**
@@ -420,7 +420,7 @@ public class Parameter implements Serializable, Cloneable {
      * Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other
      * properties require that any associated clusters be rebooted for the configuration changes to be applied. For more
      * information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -428,14 +428,14 @@ public class Parameter implements Serializable, Cloneable {
      *        Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while
      *        other properties require that any associated clusters be rebooted for the configuration changes to be
      *        applied. For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterApplyType
      */
 
     public Parameter withApplyType(ParameterApplyType applyType) {
-        setApplyType(applyType);
+        this.applyType = applyType.toString();
         return this;
     }
 
@@ -540,7 +540,8 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -646,4 +647,5 @@ public class Parameter implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

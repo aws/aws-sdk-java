@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,10 +60,10 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      */
     private String awsKmsKeyArn;
@@ -87,7 +87,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -516,20 +516,20 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @param awsKmsKeyArn
      *        The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *        <p>
-     *        If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *        If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *        don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *        you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *        or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *        <code>AES-GCM</code>.
+     *        or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *        or <code>aes-gcm</code>.
      */
 
     public void setAwsKmsKeyArn(String awsKmsKeyArn) {
@@ -541,19 +541,19 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *         <p>
-     *         If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *         If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *         don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *         you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *         or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *         <code>AES-GCM</code>.
+     *         or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *         or <code>aes-gcm</code>.
      */
 
     public String getAwsKmsKeyArn() {
@@ -565,20 +565,20 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @param awsKmsKeyArn
      *        The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *        <p>
-     *        If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *        If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *        don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *        you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *        or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *        <code>AES-GCM</code>.
+     *        or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *        or <code>aes-gcm</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,7 +607,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -642,7 +642,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>
@@ -684,7 +684,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -718,7 +718,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *         <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *         has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *         </p>
      *         </li>
@@ -760,7 +760,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -795,7 +795,7 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>
@@ -2113,7 +2113,8 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

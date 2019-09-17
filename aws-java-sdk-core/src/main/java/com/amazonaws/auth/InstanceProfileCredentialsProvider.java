@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,27 +14,30 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
+import com.amazonaws.internal.CredentialsEndpointProvider;
+import com.amazonaws.internal.EC2CredentialsUtils;
+import com.amazonaws.util.EC2MetadataUtils;
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
-import com.amazonaws.AmazonClientException;
+import java.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.SdkClientException;
-import com.amazonaws.internal.CredentialsEndpointProvider;
-import com.amazonaws.internal.EC2CredentialsUtils;
-import com.amazonaws.util.EC2MetadataUtils;
-
 /**
- * Credentials provider implementation that loads credentials from the Amazon
- * EC2 Instance Metadata Service.
+ * Credentials provider implementation that loads credentials from the Amazon EC2 Instance Metadata Service.
+ *
+ * <p>When using {@link InstanceProfileCredentialsProvider} with asynchronous refreshing it is
+ * <b>strongly</b> recommended to explicitly call {@link #close()} to release the async thread.</p>
  */
-public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider {
+public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider, Closeable {
 
     private static final Log LOG = LogFactory.getLog(InstanceProfileCredentialsProvider.class);
 
@@ -49,8 +52,7 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      * multiple CredentialsProvider instance threads to shrink the amount of
      * requests to EC2 metadata service.
      */
-    private static final InstanceProfileCredentialsProvider INSTANCE
-        = new InstanceProfileCredentialsProvider();
+    private static final InstanceProfileCredentialsProvider INSTANCE = new InstanceProfileCredentialsProvider();
 
     private final EC2CredentialsFetcher credentialsFetcher;
 
@@ -75,14 +77,23 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
      * refreshCredentialsAsync is set to true, otherwise the credentials will be
      * refreshed from the instance metadata service synchronously,
      *
+     * <p>It is <b>strongly</b> recommended to reuse instances of this credentials provider, especially
+     * when async refreshing is used since a background thread is created.</p>
+     *
      * @param refreshCredentialsAsync
      *            true if credentials needs to be refreshed asynchronously else
      *            false.
      */
-    public InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync) { this(refreshCredentialsAsync, true); }
+    public InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync) {
+        this(refreshCredentialsAsync, true);
+    }
 
     /**
      * Spins up a new thread to refresh the credentials asynchronously.
+     *
+     * <p>It is <b>strongly</b> recommended to reuse instances of this credentials provider, especially
+     * when async refreshing is used since a background thread is created.</p>
+     *
      * @param eagerlyRefreshCredentialsAsync
      *            when set to false will not attempt to refresh credentials asynchronously
      *            until after a call has been made to {@link #getCredentials()} - ensures that
@@ -92,32 +103,43 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         return new InstanceProfileCredentialsProvider(true, eagerlyRefreshCredentialsAsync);
     }
 
-
     private InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync, final boolean eagerlyRefreshCredentialsAsync) {
+
         credentialsFetcher = new EC2CredentialsFetcher(new InstanceMetadataCredentialsEndpointProvider());
-        shouldRefresh = eagerlyRefreshCredentialsAsync;
-        if (refreshCredentialsAsync) {
-            executor = Executors.newScheduledThreadPool(1);
-            executor.scheduleWithFixedDelay(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        if (shouldRefresh) credentialsFetcher.getCredentials();
-                    } catch (AmazonClientException ace) {
-                        handleError(ace);
-                    } catch (RuntimeException re) {
-                        handleError(re);
-                    } catch (Error e) {
-                        handleError(e);
+
+        if (!SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            if (refreshCredentialsAsync) {
+                executor = Executors.newScheduledThreadPool(1, new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        Thread t = Executors.defaultThreadFactory().newThread(r);
+                        t.setName("instance-profile-credentials-refresh");
+                        t.setDaemon(true);
+                        return t;
                     }
-                }
-            }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+                });
+                executor.scheduleWithFixedDelay(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (shouldRefresh) credentialsFetcher.getCredentials();
+                        } catch (AmazonClientException ace) {
+                            handleError(ace);
+                        } catch (RuntimeException re) {
+                            handleError(re);
+                        }
+                    }
+                }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+            }
         }
     }
 
     /**
-     * Returns a singleton {@link InstanceProfileCredentialsProvider} that does not refresh credentials
-     * asynchronously. Use {@link #InstanceProfileCredentialsProvider(boolean)} for the feature.
+     * Returns a singleton {@link InstanceProfileCredentialsProvider} that does not refresh credentials asynchronously.
+     *
+     * <p>
+     * See {@link #InstanceProfileCredentialsProvider(boolean)} or {@link #createAsyncRefreshingProvider(boolean)} for
+     * asynchronous credentials refreshing.
+     * </p>
      */
     public static InstanceProfileCredentialsProvider getInstance() {
         return INSTANCE;
@@ -136,8 +158,17 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
     }
 
 
+    /**
+     * {@inheritDoc}
+     *
+     * @throws AmazonClientException if {@link SDKGlobalConfiguration#isEc2MetadataDisabled()} is true
+     */
     @Override
     public AWSCredentials getCredentials() {
+        if (SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            throw new AmazonClientException("AWS_EC2_METADATA_DISABLED is set to true, not loading credentials from EC2 Instance "
+                                         + "Metadata service");
+        }
         AWSCredentials creds = credentialsFetcher.getCredentials();
         shouldRefresh = true;
         return creds;
@@ -145,7 +176,17 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
     @Override
     public void refresh() {
-        credentialsFetcher.refresh();
+        if (credentialsFetcher != null) {
+            credentialsFetcher.refresh();
+        }
+    }
+
+    @Override
+    public void close() throws IOException {
+        if (executor != null) {
+            executor.shutdownNow();
+            executor = null;
+        }
     }
 
     private static class InstanceMetadataCredentialsEndpointProvider extends CredentialsEndpointProvider {
@@ -162,5 +203,4 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
             return new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE + securityCredentials[0]);
         }
     }
-
 }

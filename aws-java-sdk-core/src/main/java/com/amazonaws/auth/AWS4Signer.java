@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNED_HEADER;
  * Signer implementation that signs requests with the AWS4 signing protocol.
  */
 public class AWS4Signer extends AbstractAWSSigner implements
-        ServiceAwareSigner, RegionAwareSigner, Presigner {
+        ServiceAwareSigner, RegionAwareSigner, Presigner, EndpointPrefixAwareSigner {
 
     protected static final InternalLogApi log = InternalLogFactory.getLog(AWS4Signer.class);
     private static final int SIGNER_CACHE_MAX_SIZE = 300;
@@ -74,6 +74,12 @@ public class AWS4Signer extends AbstractAWSSigner implements
      * determine the service name.
      */
     protected String serviceName;
+
+    /**
+     * Endpoint prefix to compute the region name for signing
+     * when the {@link #regionName} is null.
+     */
+    private String endpointPrefix;
 
     /**
      * Region name override for use when the endpoint can't be used to determine
@@ -110,7 +116,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
      *            the canonical request.
      */
     public AWS4Signer(boolean doubleUrlEncoding) {
-        this(doubleUrlEncoding, SdkClock.STANDARD);
+        this(doubleUrlEncoding, SdkClock.Instance.get());
     }
 
     @SdkTestInternalApi
@@ -151,6 +157,20 @@ public class AWS4Signer extends AbstractAWSSigner implements
     @Override
     public void setRegionName(String regionName) {
         this.regionName = regionName;
+    }
+
+    /**
+     * Sets the endpoint prefix which is used to compute the region that is
+     * used for signing the request.
+     *
+     * This value is passed to {@link AWS4SignerRequestParams} class which
+     * has the logic to compute region.
+     *
+     * @param endpointPrefix The endpoint prefix of the service
+     */
+    @Override
+    public void setEndpointPrefix(String endpointPrefix) {
+        this.endpointPrefix = endpointPrefix;
     }
 
     /**
@@ -204,7 +224,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final AWS4SignerRequestParams signerParams = new AWS4SignerRequestParams(
                 request, overriddenDate, regionName, serviceName,
-                AWS4_SIGNING_ALGORITHM);
+                AWS4_SIGNING_ALGORITHM, endpointPrefix);
 
         addHostHeader(request);
         request.addHeader(X_AMZ_DATE,
@@ -262,7 +282,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         final AWS4SignerRequestParams signerRequestParams = new AWS4SignerRequestParams(
                 request, overriddenDate, regionName, serviceName,
-                AWS4_SIGNING_ALGORITHM);
+                AWS4_SIGNING_ALGORITHM, endpointPrefix);
 
         // Add the important parameters for v4 signing
         final String timeStamp = signerRequestParams.getFormattedSigningDateTime();

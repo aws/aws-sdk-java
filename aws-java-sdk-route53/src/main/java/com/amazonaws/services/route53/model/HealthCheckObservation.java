@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      */
     private String region;
@@ -49,11 +49,11 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * @see HealthCheckRegion
      */
 
@@ -63,10 +63,10 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      * 
-     * @return The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * @return The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * @see HealthCheckRegion
      */
 
@@ -76,11 +76,11 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
@@ -92,31 +92,31 @@ public class HealthCheckObservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * @see HealthCheckRegion
      */
 
     public void setRegion(HealthCheckRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
      * <p>
-     * The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     * The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * </p>
      * 
      * @param region
-     *        The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+     *        The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckRegion
      */
 
     public HealthCheckObservation withRegion(HealthCheckRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 
@@ -213,7 +213,8 @@ public class HealthCheckObservation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,4 +278,5 @@ public class HealthCheckObservation implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

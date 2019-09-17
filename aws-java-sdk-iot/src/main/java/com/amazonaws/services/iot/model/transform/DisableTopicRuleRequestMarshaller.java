@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisableTopicRuleRequest Marshaller
+ * DisableTopicRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisableTopicRuleRequestMarshaller implements Marshaller<Request<DisableTopicRuleRequest>, DisableTopicRuleRequest> {
+@SdkInternalApi
+public class DisableTopicRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("ruleName").build();
 
-    public DisableTopicRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisableTopicRuleRequestMarshaller instance = new DisableTopicRuleRequestMarshaller();
+
+    public static DisableTopicRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisableTopicRuleRequest> marshall(DisableTopicRuleRequest disableTopicRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisableTopicRuleRequest disableTopicRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disableTopicRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisableTopicRuleRequest> request = new DefaultRequest<DisableTopicRuleRequest>(disableTopicRuleRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/rules/{ruleName}/disable";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", disableTopicRuleRequest.getRuleName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(disableTopicRuleRequest.getRuleName(), RULENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

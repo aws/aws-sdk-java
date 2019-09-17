@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,14 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setDesiredStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    task.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    task.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("containers", targetDepth)) {
                     context.nextToken();
                     task.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -92,21 +100,74 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setStoppedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stopCode", targetDepth)) {
+                    context.nextToken();
+                    task.setStopCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectivity", targetDepth)) {
+                    context.nextToken();
+                    task.setConnectivity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectivityAt", targetDepth)) {
+                    context.nextToken();
+                    task.setConnectivityAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("pullStartedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setPullStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("pullStoppedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setPullStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("executionStoppedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setExecutionStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    task.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("stoppingAt", targetDepth)) {
+                    context.nextToken();
+                    task.setStoppingAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stoppedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    task.setStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("group", targetDepth)) {
                     context.nextToken();
                     task.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("launchType", targetDepth)) {
+                    context.nextToken();
+                    task.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformVersion", targetDepth)) {
+                    context.nextToken();
+                    task.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("attachments", targetDepth)) {
+                    context.nextToken();
+                    task.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("healthStatus", targetDepth)) {
+                    context.nextToken();
+                    task.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    task.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("inferenceAccelerators", targetDepth)) {
+                    context.nextToken();
+                    task.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

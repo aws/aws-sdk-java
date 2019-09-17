@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,19 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionCanceledEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChildWorkflowExecutionCanceledEventAttributes implements Serializable, Cloneable {
+public class ChildWorkflowExecutionCanceledEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -44,8 +49,8 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
     /**
      * <p>
      * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     * <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be
-     * useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information
+     * can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      */
     private Long initiatedEventId;
@@ -181,14 +186,15 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
     /**
      * <p>
      * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     * <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be
-     * useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information
+     * can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
      * @param initiatedEventId
      *        The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     *        <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information
-     *        can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     *        <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This
+     *        information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+     *        event.
      */
 
     public void setInitiatedEventId(Long initiatedEventId) {
@@ -198,12 +204,12 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
     /**
      * <p>
      * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     * <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be
-     * useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information
+     * can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
      * @return The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     *         <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This
+     *         <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This
      *         information can be useful for diagnosing problems by tracing back the chain of events leading up to this
      *         event.
      */
@@ -215,14 +221,15 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
     /**
      * <p>
      * The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     * <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information can be
-     * useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     * <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This information
+     * can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
      * </p>
      * 
      * @param initiatedEventId
      *        The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
-     *        <code>StartChildWorkflowExecution</code> decision to start this child workflow execution. This information
-     *        can be useful for diagnosing problems by tracing back the chain of events leading up to this event.
+     *        <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this child workflow execution. This
+     *        information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+     *        event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,7 +291,8 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -361,5 +369,12 @@ public class ChildWorkflowExecutionCanceledEventAttributes implements Serializab
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ChildWorkflowExecutionCanceledEventAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

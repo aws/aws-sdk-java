@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserImportJobType implements Serializable, Cloneable {
+public class UserImportJobType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,13 +48,13 @@ public class UserImportJobType implements Serializable, Cloneable {
     private String userPoolId;
     /**
      * <p>
-     * The pre-signed URL to be used to upload the .csv file.
+     * The pre-signed URL to be used to upload the <code>.csv</code> file.
      * </p>
      */
     private String preSignedUrl;
     /**
      * <p>
-     * The date when the user import job was created.
+     * The date the user import job was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -64,7 +66,7 @@ public class UserImportJobType implements Serializable, Cloneable {
     private java.util.Date startDate;
     /**
      * <p>
-     * The date when the user imoprt job was completed.
+     * The date when the user import job was completed.
      * </p>
      */
     private java.util.Date completionDate;
@@ -75,43 +77,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -271,11 +273,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed URL to be used to upload the .csv file.
+     * The pre-signed URL to be used to upload the <code>.csv</code> file.
      * </p>
      * 
      * @param preSignedUrl
-     *        The pre-signed URL to be used to upload the .csv file.
+     *        The pre-signed URL to be used to upload the <code>.csv</code> file.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -284,10 +286,10 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed URL to be used to upload the .csv file.
+     * The pre-signed URL to be used to upload the <code>.csv</code> file.
      * </p>
      * 
-     * @return The pre-signed URL to be used to upload the .csv file.
+     * @return The pre-signed URL to be used to upload the <code>.csv</code> file.
      */
 
     public String getPreSignedUrl() {
@@ -296,11 +298,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The pre-signed URL to be used to upload the .csv file.
+     * The pre-signed URL to be used to upload the <code>.csv</code> file.
      * </p>
      * 
      * @param preSignedUrl
-     *        The pre-signed URL to be used to upload the .csv file.
+     *        The pre-signed URL to be used to upload the <code>.csv</code> file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +313,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user import job was created.
+     * The date the user import job was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the user import job was created.
+     *        The date the user import job was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -324,10 +326,10 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user import job was created.
+     * The date the user import job was created.
      * </p>
      * 
-     * @return The date when the user import job was created.
+     * @return The date the user import job was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -336,11 +338,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user import job was created.
+     * The date the user import job was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the user import job was created.
+     *        The date the user import job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +393,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user imoprt job was completed.
+     * The date when the user import job was completed.
      * </p>
      * 
      * @param completionDate
-     *        The date when the user imoprt job was completed.
+     *        The date when the user import job was completed.
      */
 
     public void setCompletionDate(java.util.Date completionDate) {
@@ -404,10 +406,10 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user imoprt job was completed.
+     * The date when the user import job was completed.
      * </p>
      * 
-     * @return The date when the user imoprt job was completed.
+     * @return The date when the user import job was completed.
      */
 
     public java.util.Date getCompletionDate() {
@@ -416,11 +418,11 @@ public class UserImportJobType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the user imoprt job was completed.
+     * The date when the user import job was completed.
      * </p>
      * 
      * @param completionDate
-     *        The date when the user imoprt job was completed.
+     *        The date when the user import job was completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,43 +438,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -482,43 +484,44 @@ public class UserImportJobType implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Created - The job was created but not started.
+     *        <code>Created</code> - The job was created but not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     *        <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users
+     *        yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress - The job has started, and users are being imported.
+     *        <code>InProgress</code> - The job has started, and users are being imported.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     *        <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped - You have stopped the job, and the job has stopped importing users.
+     *        <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded - The job has completed successfully.
+     *        <code>Succeeded</code> - The job has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed - The job has stopped due to an error.
+     *        <code>Failed</code> - The job has stopped due to an error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the
-     *        job was deleted, and the job cannot be started.
+     *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
+     *        associated with the job was deleted, and the job cannot be started.
      *        </p>
      *        </li>
      * @see UserImportJobStatusType
@@ -535,43 +538,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -580,43 +583,44 @@ public class UserImportJobType implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Created - The job was created but not started.
+     *         <code>Created</code> - The job was created but not started.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     *         <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users
+     *         yet.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         InProgress - The job has started, and users are being imported.
+     *         <code>InProgress</code> - The job has started, and users are being imported.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     *         <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Stopped - You have stopped the job, and the job has stopped importing users.
+     *         <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Succeeded - The job has completed successfully.
+     *         <code>Succeeded</code> - The job has completed successfully.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed - The job has stopped due to an error.
+     *         <code>Failed</code> - The job has stopped due to an error.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the
-     *         job was deleted, and the job cannot be started.
+     *         <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
+     *         associated with the job was deleted, and the job cannot be started.
      *         </p>
      *         </li>
      * @see UserImportJobStatusType
@@ -633,43 +637,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -679,43 +683,44 @@ public class UserImportJobType implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Created - The job was created but not started.
+     *        <code>Created</code> - The job was created but not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     *        <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users
+     *        yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress - The job has started, and users are being imported.
+     *        <code>InProgress</code> - The job has started, and users are being imported.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     *        <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped - You have stopped the job, and the job has stopped importing users.
+     *        <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded - The job has completed successfully.
+     *        <code>Succeeded</code> - The job has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed - The job has stopped due to an error.
+     *        <code>Failed</code> - The job has stopped due to an error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the
-     *        job was deleted, and the job cannot be started.
+     *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
+     *        associated with the job was deleted, and the job cannot be started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -734,43 +739,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -780,50 +785,51 @@ public class UserImportJobType implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Created - The job was created but not started.
+     *        <code>Created</code> - The job was created but not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     *        <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users
+     *        yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress - The job has started, and users are being imported.
+     *        <code>InProgress</code> - The job has started, and users are being imported.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     *        <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped - You have stopped the job, and the job has stopped importing users.
+     *        <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded - The job has completed successfully.
+     *        <code>Succeeded</code> - The job has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed - The job has stopped due to an error.
+     *        <code>Failed</code> - The job has stopped due to an error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the
-     *        job was deleted, and the job cannot be started.
+     *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
+     *        associated with the job was deleted, and the job cannot be started.
      *        </p>
      *        </li>
      * @see UserImportJobStatusType
      */
 
     public void setStatus(UserImportJobStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -833,43 +839,43 @@ public class UserImportJobType implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Created - The job was created but not started.
+     * <code>Created</code> - The job was created but not started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     * <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress - The job has started, and users are being imported.
+     * <code>InProgress</code> - The job has started, and users are being imported.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped - You have stopped the job, and the job has stopped importing users.
+     * <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded - The job has completed successfully.
+     * <code>Succeeded</code> - The job has completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed - The job has stopped due to an error.
+     * <code>Failed</code> - The job has stopped due to an error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was
-     * deleted, and the job cannot be started.
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with
+     * the job was deleted, and the job cannot be started.
      * </p>
      * </li>
      * </ul>
@@ -879,43 +885,44 @@ public class UserImportJobType implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Created - The job was created but not started.
+     *        <code>Created</code> - The job was created but not started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending - A transition state. You have started the job, but it has not begun importing users yet.
+     *        <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users
+     *        yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress - The job has started, and users are being imported.
+     *        <code>InProgress</code> - The job has started, and users are being imported.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopping - You have stopped the job, but the job has not stopped importing users yet.
+     *        <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped - You have stopped the job, and the job has stopped importing users.
+     *        <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded - The job has completed successfully.
+     *        <code>Succeeded</code> - The job has completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed - The job has stopped due to an error.
+     *        <code>Failed</code> - The job has stopped due to an error.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the
-     *        job was deleted, and the job cannot be started.
+     *        <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data
+     *        associated with the job was deleted, and the job cannot be started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -923,7 +930,7 @@ public class UserImportJobType implements Serializable, Cloneable {
      */
 
     public UserImportJobType withStatus(UserImportJobStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1134,7 +1141,8 @@ public class UserImportJobType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1267,5 +1275,11 @@ public class UserImportJobType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.UserImportJobTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

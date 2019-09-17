@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,24 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     private String gatewayARN;
 
     private String gatewayName;
-
+    /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     */
     private String gatewayTimezone;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events
+     * in the gateway.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     * CloudWatch Logs?</a>.
+     * </p>
+     */
+    private String cloudWatchLogGroupARN;
 
     /**
      * @param gatewayARN
@@ -84,7 +100,12 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
      * @param gatewayTimezone
+     *        A value that indicates the time zone of the gateway.
      */
 
     public void setGatewayTimezone(String gatewayTimezone) {
@@ -92,7 +113,11 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
+     * @return A value that indicates the time zone of the gateway.
      */
 
     public String getGatewayTimezone() {
@@ -100,7 +125,12 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
      * @param gatewayTimezone
+     *        A value that indicates the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +140,81 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events
+     * in the gateway.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     * CloudWatch Logs?</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupARN
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
+     *        events in the gateway. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     *        CloudWatch Logs?</a>.
+     */
+
+    public void setCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
+        this.cloudWatchLogGroupARN = cloudWatchLogGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events
+     * in the gateway.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     * CloudWatch Logs?</a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
+     *         events in the gateway. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     *         CloudWatch Logs?</a>.
+     */
+
+    public String getCloudWatchLogGroupARN() {
+        return this.cloudWatchLogGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events
+     * in the gateway.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     * CloudWatch Logs?</a>.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupARN
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
+     *        events in the gateway. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
+     *        CloudWatch Logs?</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGatewayInformationRequest withCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
+        setCloudWatchLogGroupARN(cloudWatchLogGroupARN);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -125,7 +229,9 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
         if (getGatewayName() != null)
             sb.append("GatewayName: ").append(getGatewayName()).append(",");
         if (getGatewayTimezone() != null)
-            sb.append("GatewayTimezone: ").append(getGatewayTimezone());
+            sb.append("GatewayTimezone: ").append(getGatewayTimezone()).append(",");
+        if (getCloudWatchLogGroupARN() != null)
+            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN());
         sb.append("}");
         return sb.toString();
     }
@@ -152,6 +258,10 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getGatewayTimezone() != null && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false)
             return false;
+        if (other.getCloudWatchLogGroupARN() == null ^ this.getCloudWatchLogGroupARN() == null)
+            return false;
+        if (other.getCloudWatchLogGroupARN() != null && other.getCloudWatchLogGroupARN().equals(this.getCloudWatchLogGroupARN()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +273,7 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
         hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
         return hashCode;
     }
 

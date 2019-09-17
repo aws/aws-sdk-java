@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,18 +17,19 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about the event destination to which the specified email sending events are published.
+ * Contains information about the event destination that the specified email sending events will be published to.
  * </p>
  * <note>
  * <p>
  * When you create or update an event destination, you must provide one, and only one, destination. The destination can
- * be either Amazon CloudWatch or Amazon Kinesis Firehose.
+ * be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).
  * </p>
  * </note>
  * <p>
  * Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon
- * CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+ * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using
+ * configuration sets, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -45,7 +46,7 @@ public class EventDestination implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -84,6 +85,13 @@ public class EventDestination implements Serializable, Cloneable {
      * </p>
      */
     private CloudWatchDestination cloudWatchDestination;
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     */
+    private SNSDestination sNSDestination;
 
     /**
      * <p>
@@ -92,7 +100,7 @@ public class EventDestination implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -107,7 +115,7 @@ public class EventDestination implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -128,7 +136,7 @@ public class EventDestination implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -142,7 +150,7 @@ public class EventDestination implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -163,7 +171,7 @@ public class EventDestination implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -178,7 +186,7 @@ public class EventDestination implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -456,7 +464,54 @@ public class EventDestination implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @param sNSDestination
+     *        An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *        event destination.
+     */
+
+    public void setSNSDestination(SNSDestination sNSDestination) {
+        this.sNSDestination = sNSDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @return An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *         event destination.
+     */
+
+    public SNSDestination getSNSDestination() {
+        return this.sNSDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @param sNSDestination
+     *        An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *        event destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventDestination withSNSDestination(SNSDestination sNSDestination) {
+        setSNSDestination(sNSDestination);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -475,7 +530,9 @@ public class EventDestination implements Serializable, Cloneable {
         if (getKinesisFirehoseDestination() != null)
             sb.append("KinesisFirehoseDestination: ").append(getKinesisFirehoseDestination()).append(",");
         if (getCloudWatchDestination() != null)
-            sb.append("CloudWatchDestination: ").append(getCloudWatchDestination());
+            sb.append("CloudWatchDestination: ").append(getCloudWatchDestination()).append(",");
+        if (getSNSDestination() != null)
+            sb.append("SNSDestination: ").append(getSNSDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +567,10 @@ public class EventDestination implements Serializable, Cloneable {
             return false;
         if (other.getCloudWatchDestination() != null && other.getCloudWatchDestination().equals(this.getCloudWatchDestination()) == false)
             return false;
+        if (other.getSNSDestination() == null ^ this.getSNSDestination() == null)
+            return false;
+        if (other.getSNSDestination() != null && other.getSNSDestination().equals(this.getSNSDestination()) == false)
+            return false;
         return true;
     }
 
@@ -523,6 +584,7 @@ public class EventDestination implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatchingEventTypes() == null) ? 0 : getMatchingEventTypes().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseDestination() == null) ? 0 : getKinesisFirehoseDestination().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchDestination() == null) ? 0 : getCloudWatchDestination().hashCode());
+        hashCode = prime * hashCode + ((getSNSDestination() == null) ? 0 : getSNSDestination().hashCode());
         return hashCode;
     }
 
@@ -534,4 +596,5 @@ public class EventDestination implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

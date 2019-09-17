@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,58 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAssociateUserStackResult> batchAssociateUserStackAsync(BatchAssociateUserStackRequest request) {
+
+        return batchAssociateUserStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateUserStackResult> batchAssociateUserStackAsync(BatchAssociateUserStackRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateUserStackRequest, BatchAssociateUserStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateUserStackResult> batchDisassociateUserStackAsync(BatchDisassociateUserStackRequest request) {
+
+        return batchDisassociateUserStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateUserStackResult> batchDisassociateUserStackAsync(BatchDisassociateUserStackRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateUserStackRequest, BatchDisassociateUserStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request) {
+
+        return copyImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest request) {
+
+        return createDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDirectoryConfigRequest, CreateDirectoryConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest request) {
 
         return createFleetAsync(request, null);
@@ -49,6 +101,32 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageBuilderResult> createImageBuilderAsync(CreateImageBuilderRequest request) {
+
+        return createImageBuilderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageBuilderResult> createImageBuilderAsync(CreateImageBuilderRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateImageBuilderRequest, CreateImageBuilderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageBuilderStreamingURLResult> createImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request) {
+
+        return createImageBuilderStreamingURLAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImageBuilderStreamingURLResult> createImageBuilderStreamingURLAsync(CreateImageBuilderStreamingURLRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateImageBuilderStreamingURLRequest, CreateImageBuilderStreamingURLResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +158,45 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request) {
+
+        return createUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUsageReportSubscriptionRequest, CreateUsageReportSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
+
+        return createUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request) {
+
+        return deleteDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDirectoryConfigRequest, DeleteDirectoryConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request) {
 
         return deleteFleetAsync(request, null);
@@ -88,6 +205,45 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest request) {
+
+        return deleteImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImageRequest, DeleteImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageBuilderResult> deleteImageBuilderAsync(DeleteImageBuilderRequest request) {
+
+        return deleteImageBuilderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImageBuilderResult> deleteImageBuilderAsync(DeleteImageBuilderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImageBuilderRequest, DeleteImageBuilderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImagePermissionsResult> deleteImagePermissionsAsync(DeleteImagePermissionsRequest request) {
+
+        return deleteImagePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImagePermissionsResult> deleteImagePermissionsAsync(DeleteImagePermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImagePermissionsRequest, DeleteImagePermissionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +262,45 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request) {
+
+        return deleteUsageReportSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageReportSubscriptionResult> deleteUsageReportSubscriptionAsync(DeleteUsageReportSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsageReportSubscriptionRequest, DeleteUsageReportSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
+
+        return deleteUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request) {
+
+        return describeDirectoryConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectoryConfigsRequest, DescribeDirectoryConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFleetsResult> describeFleetsAsync(DescribeFleetsRequest request) {
 
         return describeFleetsAsync(request, null);
@@ -114,6 +309,32 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DescribeFleetsResult> describeFleetsAsync(DescribeFleetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetsRequest, DescribeFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageBuildersResult> describeImageBuildersAsync(DescribeImageBuildersRequest request) {
+
+        return describeImageBuildersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImageBuildersResult> describeImageBuildersAsync(DescribeImageBuildersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeImageBuildersRequest, DescribeImageBuildersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImagePermissionsResult> describeImagePermissionsAsync(DescribeImagePermissionsRequest request) {
+
+        return describeImagePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImagePermissionsResult> describeImagePermissionsAsync(DescribeImagePermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeImagePermissionsRequest, DescribeImagePermissionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +379,60 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            DescribeUsageReportSubscriptionsRequest request) {
+
+        return describeUsageReportSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageReportSubscriptionsResult> describeUsageReportSubscriptionsAsync(
+            DescribeUsageReportSubscriptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsageReportSubscriptionsRequest, DescribeUsageReportSubscriptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserStackAssociationsResult> describeUserStackAssociationsAsync(DescribeUserStackAssociationsRequest request) {
+
+        return describeUserStackAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserStackAssociationsResult> describeUserStackAssociationsAsync(DescribeUserStackAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUserStackAssociationsRequest, DescribeUserStackAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest request) {
+
+        return describeUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsersRequest, DescribeUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest request) {
+
+        return disableUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableUserRequest, DisableUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(DisassociateFleetRequest request) {
 
         return disassociateFleetAsync(request, null);
@@ -166,6 +441,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(DisassociateFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateFleetRequest, DisassociateFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest request) {
+
+        return enableUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableUserRequest, EnableUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -210,6 +498,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFleetResult> startFleetAsync(StartFleetRequest request) {
 
         return startFleetAsync(request, null);
@@ -218,6 +519,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<StartFleetResult> startFleetAsync(StartFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<StartFleetRequest, StartFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImageBuilderResult> startImageBuilderAsync(StartImageBuilderRequest request) {
+
+        return startImageBuilderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImageBuilderResult> startImageBuilderAsync(StartImageBuilderRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImageBuilderRequest, StartImageBuilderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -236,6 +550,58 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<StopImageBuilderResult> stopImageBuilderAsync(StopImageBuilderRequest request) {
+
+        return stopImageBuilderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopImageBuilderResult> stopImageBuilderAsync(StopImageBuilderRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopImageBuilderRequest, StopImageBuilderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(UpdateDirectoryConfigRequest request) {
+
+        return updateDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(UpdateDirectoryConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDirectoryConfigRequest, UpdateDirectoryConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateFleetResult> updateFleetAsync(UpdateFleetRequest request) {
 
         return updateFleetAsync(request, null);
@@ -244,6 +610,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     @Override
     public java.util.concurrent.Future<UpdateFleetResult> updateFleetAsync(UpdateFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFleetRequest, UpdateFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImagePermissionsResult> updateImagePermissionsAsync(UpdateImagePermissionsRequest request) {
+
+        return updateImagePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImagePermissionsResult> updateImagePermissionsAsync(UpdateImagePermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateImagePermissionsRequest, UpdateImagePermissionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

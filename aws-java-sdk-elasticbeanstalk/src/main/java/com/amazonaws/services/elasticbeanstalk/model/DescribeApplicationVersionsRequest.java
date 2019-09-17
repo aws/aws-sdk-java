@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,13 +42,21 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<String> versionLabels;
     /**
      * <p>
-     * Specify a maximum number of application versions to paginate in the request.
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
      * </p>
      */
     private Integer maxRecords;
     /**
      * <p>
-     * Specify a next token to retrieve the next page in a paginated request.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      */
     private String nextToken;
@@ -168,11 +176,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a maximum number of application versions to paginate in the request.
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
      * </p>
      * 
      * @param maxRecords
-     *        Specify a maximum number of application versions to paginate in the request.
+     *        For a paginated request. Specify a maximum number of application versions to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *        response.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -181,10 +196,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a maximum number of application versions to paginate in the request.
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
      * </p>
      * 
-     * @return Specify a maximum number of application versions to paginate in the request.
+     * @return For a paginated request. Specify a maximum number of application versions to include in each
+     *         response.</p>
+     *         <p>
+     *         If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *         response.
      */
 
     public Integer getMaxRecords() {
@@ -193,11 +216,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a maximum number of application versions to paginate in the request.
+     * For a paginated request. Specify a maximum number of application versions to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     * response.
      * </p>
      * 
      * @param maxRecords
-     *        Specify a maximum number of application versions to paginate in the request.
+     *        For a paginated request. Specify a maximum number of application versions to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +238,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a next token to retrieve the next page in a paginated request.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
      * @param nextToken
-     *        Specify a next token to retrieve the next page in a paginated request.
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
      */
 
     public void setNextToken(String nextToken) {
@@ -221,10 +258,17 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a next token to retrieve the next page in a paginated request.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
-     * @return Specify a next token to retrieve the next page in a paginated request.
+     * @return For a paginated request. Specify a token from a previous response page to retrieve the next response
+     *         page. All other parameter values must be identical to the ones specified in the initial request.</p>
+     *         <p>
+     *         If no <code>NextToken</code> is specified, the first page is retrieved.
      */
 
     public String getNextToken() {
@@ -233,11 +277,18 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specify a next token to retrieve the next page in a paginated request.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
      * @param nextToken
-     *        Specify a next token to retrieve the next page in a paginated request.
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +298,8 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

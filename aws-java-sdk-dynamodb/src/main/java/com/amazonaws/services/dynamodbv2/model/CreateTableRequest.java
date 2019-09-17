@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -77,7 +77,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -97,14 +97,14 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.List<KeySchemaElement> keySchema;
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -143,7 +143,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -157,7 +157,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -168,8 +168,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<LocalSecondaryIndex> localSecondaryIndexes;
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -202,7 +202,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -216,7 +216,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -233,12 +233,37 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<GlobalSecondaryIndex> globalSecondaryIndexes;
     /**
      * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String billingMode;
+    /**
+     * <p>
      * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -250,7 +275,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -284,6 +309,19 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private StreamSpecification streamSpecification;
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     */
+    private SSESpecification sSESpecification;
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * Default constructor for CreateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -302,7 +340,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -334,8 +372,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -354,8 +392,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
         setTableName(tableName);
@@ -374,7 +412,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -406,8 +444,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -426,15 +464,19 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.
      *        </p>
      *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *        </p>
+     *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(java.util.List<AttributeDefinition> attributeDefinitions, String tableName, java.util.List<KeySchemaElement> keySchema,
@@ -559,7 +601,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -592,7 +634,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -612,14 +654,14 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *         <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *         the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
      *         Each <code>KeySchemaElement</code> in the array is composed of:
@@ -651,7 +693,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <note>
      *         <p>
      *         The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute"
-     *         derives from DynamoDB' usage of an internal hash function to evenly distribute data items across
+     *         derives from the DynamoDB usage of an internal hash function to evenly distribute data items across
      *         partitions, based on their partition key values.
      *         </p>
      *         <p>
@@ -671,8 +713,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *         >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *         >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.List<KeySchemaElement> getKeySchema() {
@@ -683,7 +725,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -716,7 +758,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -736,15 +778,15 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -776,8 +818,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -796,8 +838,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
@@ -813,7 +855,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -846,7 +888,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -866,8 +908,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -879,7 +921,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -911,8 +953,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -931,8 +973,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -950,7 +992,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -983,7 +1025,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <note>
      * <p>
      * The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from
-     * DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their
+     * the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their
      * partition key values.
      * </p>
      * <p>
@@ -1003,15 +1045,15 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -1043,8 +1085,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <note>
      *        <p>
      *        The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives
-     *        from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based
-     *        on their partition key values.
+     *        from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions,
+     *        based on their partition key values.
      *        </p>
      *        <p>
      *        The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives
@@ -1063,8 +1105,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
-     *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        >Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1075,7 +1117,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1114,7 +1156,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1128,7 +1170,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1136,9 +1178,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return One or more local secondary indexes (the maximum is five) to be created on the table. Each index is
-     *         scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise,
-     *         the size of a local secondary index is unconstrained.</p>
+     * @return One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped
+     *         to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
+     *         of a local secondary index is unconstrained.</p>
      *         <p>
      *         Each local secondary index in the array includes the following:
      *         </p>
@@ -1174,7 +1216,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1188,7 +1230,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *         secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *         all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *         indexes, this counts as two distinct attributes when determining the total.
      *         </p>
      *         </li>
@@ -1202,7 +1244,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1241,7 +1283,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1255,7 +1297,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1264,9 +1306,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1302,7 +1344,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1316,7 +1358,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1335,7 +1377,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1374,7 +1416,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1388,7 +1430,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1402,9 +1444,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1440,7 +1482,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1454,7 +1496,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1475,7 +1517,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1514,7 +1556,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1528,7 +1570,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1537,9 +1579,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1575,7 +1617,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1589,7 +1631,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1605,8 +1647,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1639,7 +1681,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1653,7 +1695,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1667,7 +1709,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return One or more global secondary indexes (the maximum is five) to be created on the table. Each global
+     * @return One or more global secondary indexes (the maximum is 20) to be created on the table. Each global
      *         secondary index in the array includes the following:</p>
      *         <ul>
      *         <li>
@@ -1700,7 +1742,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes are in <code>NonKeyAttributes</code>.
+     *         projected attributes is in <code>NonKeyAttributes</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1714,7 +1756,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *         secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *         all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *         indexes, this counts as two distinct attributes when determining the total.
      *         </p>
      *         </li>
@@ -1734,8 +1776,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1768,7 +1810,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1782,7 +1824,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1797,8 +1839,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1830,7 +1872,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1844,7 +1886,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1869,8 +1911,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1903,7 +1945,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -1917,7 +1959,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1937,8 +1979,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1970,7 +2012,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1984,7 +2026,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -2011,8 +2053,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -2045,7 +2087,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes are in <code>NonKeyAttributes</code>.
+     * attributes is in <code>NonKeyAttributes</code>.
      * </p>
      * </li>
      * <li>
@@ -2059,7 +2101,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -2074,8 +2116,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2107,7 +2149,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes are in <code>NonKeyAttributes</code>.
+     *        projected attributes is in <code>NonKeyAttributes</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2121,7 +2163,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -2143,12 +2185,191 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @see BillingMode
+     */
+
+    public void setBillingMode(String billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *         be changed later.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *         <code>PROVISIONED</code> for predictable workloads.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *         <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *         </p>
+     *         </li>
+     * @see BillingMode
+     */
+
+    public String getBillingMode() {
+        return this.billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public CreateTableRequest withBillingMode(String billingMode) {
+        setBillingMode(billingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We recommend using
+     *        <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     *        <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public CreateTableRequest withBillingMode(BillingMode billingMode) {
+        this.billingMode = billingMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Represents the provisioned throughput settings for a specified table or index. The settings can be modified using
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2156,8 +2377,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.</p>
      *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *        </p>
+     *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2171,16 +2396,24 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Represents the provisioned throughput settings for a specified table or index. The settings can be
      *         modified using the <code>UpdateTable</code> operation.</p>
      *         <p>
+     *         If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set
+     *         BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *         </p>
+     *         <p>
      *         For current minimum and maximum provisioned throughput values, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2194,8 +2427,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * the <code>UpdateTable</code> operation.
      * </p>
      * <p>
+     * If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as
+     * <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     * </p>
+     * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2203,8 +2440,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
      *        modified using the <code>UpdateTable</code> operation.</p>
      *        <p>
+     *        If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode
+     *        as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+     *        </p>
+     *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2221,7 +2462,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2259,7 +2500,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *        <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *        (false).
      *        </p>
      *        </li>
      *        <li>
@@ -2305,7 +2547,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2342,7 +2584,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *         <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *         (false).
      *         </p>
      *         </li>
      *         <li>
@@ -2389,7 +2632,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     * <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
      * </p>
      * </li>
      * <li>
@@ -2427,7 +2670,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>StreamEnabled</code> - Indicates whether Streams is to be enabled (true) or disabled (false).
+     *        <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled
+     *        (false).
      *        </p>
      *        </li>
      *        <li>
@@ -2469,7 +2713,130 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption.
+     */
+
+    public void setSSESpecification(SSESpecification sSESpecification) {
+        this.sSESpecification = sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @return Represents the settings used to enable server-side encryption.
+     */
+
+    public SSESpecification getSSESpecification() {
+        return this.sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withSSESpecification(SSESpecification sSESpecification) {
+        setSSESpecification(sSESpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @return A list of key-value pairs to label the table. For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *         DynamoDB</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2489,10 +2856,16 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
             sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
+        if (getBillingMode() != null)
+            sb.append("BillingMode: ").append(getBillingMode()).append(",");
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: ").append(getStreamSpecification());
+            sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
+        if (getSSESpecification() != null)
+            sb.append("SSESpecification: ").append(getSSESpecification()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -2527,6 +2900,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getGlobalSecondaryIndexes() != null && other.getGlobalSecondaryIndexes().equals(this.getGlobalSecondaryIndexes()) == false)
             return false;
+        if (other.getBillingMode() == null ^ this.getBillingMode() == null)
+            return false;
+        if (other.getBillingMode() != null && other.getBillingMode().equals(this.getBillingMode()) == false)
+            return false;
         if (other.getProvisionedThroughput() == null ^ this.getProvisionedThroughput() == null)
             return false;
         if (other.getProvisionedThroughput() != null && other.getProvisionedThroughput().equals(this.getProvisionedThroughput()) == false)
@@ -2534,6 +2911,14 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getStreamSpecification() == null ^ this.getStreamSpecification() == null)
             return false;
         if (other.getStreamSpecification() != null && other.getStreamSpecification().equals(this.getStreamSpecification()) == false)
+            return false;
+        if (other.getSSESpecification() == null ^ this.getSSESpecification() == null)
+            return false;
+        if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -2548,8 +2933,11 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getKeySchema() == null) ? 0 : getKeySchema().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
+        hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specify the type of Amazon EC2 instances to run the job flow on.
+ * Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowInstancesDetail"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobFlowInstancesDetail implements Serializable, Cloneable {
+public class JobFlowInstancesDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,8 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     private String masterInstanceType;
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      */
     private String masterPublicDnsName;
@@ -46,26 +49,27 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     private String masterInstanceId;
     /**
      * <p>
-     * The Amazon EC2 slave node instance type.
+     * The Amazon EC2 core and task node instance type.
      * </p>
      */
     private String slaveInstanceType;
     /**
      * <p>
      * The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master
-     * and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.
+     * and core and task node. If the value is greater than 1, one instance is the master node and all others are core
+     * and task nodes.
      * </p>
      */
     private Integer instanceCount;
     /**
      * <p>
-     * Details about the job flow's instance groups.
+     * Details about the instance groups in a cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceGroupDetail> instanceGroups;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
      * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
      * result is only an approximation and does not reflect the actual billing rate.
@@ -74,39 +78,39 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     private Integer normalizedInstanceHours;
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      * </p>
      */
     private String ec2KeyName;
     /**
      * <p>
-     * For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the subnet
-     * where the job flow was launched.
+     * For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster
+     * was launched.
      * </p>
      */
     private String ec2SubnetId;
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster.
      * </p>
      */
     private PlacementType placement;
     /**
      * <p>
-     * Specifies whether the job flow should terminate after completing all steps.
+     * Specifies whether the cluster should remain available after completing all steps.
      * </p>
      */
     private Boolean keepJobFlowAliveWhenNoSteps;
     /**
      * <p>
      * Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user
-     * intervention, or in the event of a job flow error.
+     * intervention, or in the event of a job-flow error.
      * </p>
      */
     private Boolean terminationProtected;
     /**
      * <p>
-     * The Hadoop version for the job flow.
+     * The Hadoop version for the cluster.
      * </p>
      */
     private String hadoopVersion;
@@ -125,11 +129,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
      * @param masterInstanceType
      *        The Amazon EC2 master node instance type.
      * @param slaveInstanceType
-     *        The Amazon EC2 slave node instance type.
+     *        The Amazon EC2 core and task node instance type.
      * @param instanceCount
      *        The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the
-     *        master and slave node. If the value is greater than 1, one instance is the master node and all others are
-     *        slave nodes.
+     *        master and core and task node. If the value is greater than 1, one instance is the master node and all
+     *        others are core and task nodes.
      */
     public JobFlowInstancesDetail(String masterInstanceType, String slaveInstanceType, Integer instanceCount) {
         setMasterInstanceType(masterInstanceType);
@@ -179,11 +183,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      */
 
     public void setMasterPublicDnsName(String masterPublicDnsName) {
@@ -192,10 +198,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
-     * @return The DNS name of the master node.
+     * @return The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On
+     *         a public subnet, this is the public DNS name.
      */
 
     public String getMasterPublicDnsName() {
@@ -204,11 +212,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +269,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 slave node instance type.
+     * The Amazon EC2 core and task node instance type.
      * </p>
      * 
      * @param slaveInstanceType
-     *        The Amazon EC2 slave node instance type.
+     *        The Amazon EC2 core and task node instance type.
      */
 
     public void setSlaveInstanceType(String slaveInstanceType) {
@@ -272,10 +282,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 slave node instance type.
+     * The Amazon EC2 core and task node instance type.
      * </p>
      * 
-     * @return The Amazon EC2 slave node instance type.
+     * @return The Amazon EC2 core and task node instance type.
      */
 
     public String getSlaveInstanceType() {
@@ -284,11 +294,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 slave node instance type.
+     * The Amazon EC2 core and task node instance type.
      * </p>
      * 
      * @param slaveInstanceType
-     *        The Amazon EC2 slave node instance type.
+     *        The Amazon EC2 core and task node instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,13 +310,14 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master
-     * and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.
+     * and core and task node. If the value is greater than 1, one instance is the master node and all others are core
+     * and task nodes.
      * </p>
      * 
      * @param instanceCount
      *        The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the
-     *        master and slave node. If the value is greater than 1, one instance is the master node and all others are
-     *        slave nodes.
+     *        master and core and task node. If the value is greater than 1, one instance is the master node and all
+     *        others are core and task nodes.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -316,12 +327,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master
-     * and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.
+     * and core and task node. If the value is greater than 1, one instance is the master node and all others are core
+     * and task nodes.
      * </p>
      * 
      * @return The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both
-     *         the master and slave node. If the value is greater than 1, one instance is the master node and all others
-     *         are slave nodes.
+     *         the master and core and task node. If the value is greater than 1, one instance is the master node and
+     *         all others are core and task nodes.
      */
 
     public Integer getInstanceCount() {
@@ -331,13 +343,14 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master
-     * and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.
+     * and core and task node. If the value is greater than 1, one instance is the master node and all others are core
+     * and task nodes.
      * </p>
      * 
      * @param instanceCount
      *        The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the
-     *        master and slave node. If the value is greater than 1, one instance is the master node and all others are
-     *        slave nodes.
+     *        master and core and task node. If the value is greater than 1, one instance is the master node and all
+     *        others are core and task nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,10 +361,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details about the job flow's instance groups.
+     * Details about the instance groups in a cluster.
      * </p>
      * 
-     * @return Details about the job flow's instance groups.
+     * @return Details about the instance groups in a cluster.
      */
 
     public java.util.List<InstanceGroupDetail> getInstanceGroups() {
@@ -363,11 +376,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details about the job flow's instance groups.
+     * Details about the instance groups in a cluster.
      * </p>
      * 
      * @param instanceGroups
-     *        Details about the job flow's instance groups.
+     *        Details about the instance groups in a cluster.
      */
 
     public void setInstanceGroups(java.util.Collection<InstanceGroupDetail> instanceGroups) {
@@ -381,7 +394,7 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details about the job flow's instance groups.
+     * Details about the instance groups in a cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -390,7 +403,7 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceGroups
-     *        Details about the job flow's instance groups.
+     *        Details about the instance groups in a cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,11 +419,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Details about the job flow's instance groups.
+     * Details about the instance groups in a cluster.
      * </p>
      * 
      * @param instanceGroups
-     *        Details about the job flow's instance groups.
+     *        Details about the instance groups in a cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,14 +434,14 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
      * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
      * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
      *        that is roughly four times more expensive would result in the normalized instance hours being incremented
      *        by four. This result is only an approximation and does not reflect the actual billing rate.
@@ -440,16 +453,16 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
      * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
      * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         one time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2
-     *         instance that is roughly four times more expensive would result in the normalized instance hours being
-     *         incremented by four. This result is only an approximation and does not reflect the actual billing rate.
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
+     *         time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
+     *         that is roughly four times more expensive would result in the normalized instance hours being incremented
+     *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -458,14 +471,14 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
      * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
      * result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
      *        that is roughly four times more expensive would result in the normalized instance hours being incremented
      *        by four. This result is only an approximation and does not reflect the actual billing rate.
@@ -479,11 +492,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -492,10 +505,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      * </p>
      * 
-     * @return The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     * @return The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      */
 
     public String getEc2KeyName() {
@@ -504,11 +517,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node of job flow.
+     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,13 +532,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the subnet
-     * where the job flow was launched.
+     * For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster
+     * was launched.
      * </p>
      * 
      * @param ec2SubnetId
-     *        For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the
-     *        subnet where the job flow was launched.
+     *        For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the
+     *        cluster was launched.
      */
 
     public void setEc2SubnetId(String ec2SubnetId) {
@@ -534,12 +547,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the subnet
-     * where the job flow was launched.
+     * For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster
+     * was launched.
      * </p>
      * 
-     * @return For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the
-     *         subnet where the job flow was launched.
+     * @return For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the
+     *         cluster was launched.
      */
 
     public String getEc2SubnetId() {
@@ -548,13 +561,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the subnet
-     * where the job flow was launched.
+     * For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the cluster
+     * was launched.
      * </p>
      * 
      * @param ec2SubnetId
-     *        For job flows launched within Amazon Virtual Private Cloud, this value specifies the identifier of the
-     *        subnet where the job flow was launched.
+     *        For clusters launched within Amazon Virtual Private Cloud, this is the identifier of the subnet where the
+     *        cluster was launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,11 +578,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster.
      * </p>
      * 
      * @param placement
-     *        The Amazon EC2 Availability Zone for the job flow.
+     *        The Amazon EC2 Availability Zone for the cluster.
      */
 
     public void setPlacement(PlacementType placement) {
@@ -578,10 +591,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster.
      * </p>
      * 
-     * @return The Amazon EC2 Availability Zone for the job flow.
+     * @return The Amazon EC2 Availability Zone for the cluster.
      */
 
     public PlacementType getPlacement() {
@@ -590,11 +603,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone for the job flow.
+     * The Amazon EC2 Availability Zone for the cluster.
      * </p>
      * 
      * @param placement
-     *        The Amazon EC2 Availability Zone for the job flow.
+     *        The Amazon EC2 Availability Zone for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,11 +618,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow should terminate after completing all steps.
+     * Specifies whether the cluster should remain available after completing all steps.
      * </p>
      * 
      * @param keepJobFlowAliveWhenNoSteps
-     *        Specifies whether the job flow should terminate after completing all steps.
+     *        Specifies whether the cluster should remain available after completing all steps.
      */
 
     public void setKeepJobFlowAliveWhenNoSteps(Boolean keepJobFlowAliveWhenNoSteps) {
@@ -618,10 +631,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow should terminate after completing all steps.
+     * Specifies whether the cluster should remain available after completing all steps.
      * </p>
      * 
-     * @return Specifies whether the job flow should terminate after completing all steps.
+     * @return Specifies whether the cluster should remain available after completing all steps.
      */
 
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
@@ -630,11 +643,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow should terminate after completing all steps.
+     * Specifies whether the cluster should remain available after completing all steps.
      * </p>
      * 
      * @param keepJobFlowAliveWhenNoSteps
-     *        Specifies whether the job flow should terminate after completing all steps.
+     *        Specifies whether the cluster should remain available after completing all steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,10 +658,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow should terminate after completing all steps.
+     * Specifies whether the cluster should remain available after completing all steps.
      * </p>
      * 
-     * @return Specifies whether the job flow should terminate after completing all steps.
+     * @return Specifies whether the cluster should remain available after completing all steps.
      */
 
     public Boolean isKeepJobFlowAliveWhenNoSteps() {
@@ -658,12 +671,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user
-     * intervention, or in the event of a job flow error.
+     * intervention, or in the event of a job-flow error.
      * </p>
      * 
      * @param terminationProtected
      *        Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls,
-     *        user intervention, or in the event of a job flow error.
+     *        user intervention, or in the event of a job-flow error.
      */
 
     public void setTerminationProtected(Boolean terminationProtected) {
@@ -673,11 +686,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user
-     * intervention, or in the event of a job flow error.
+     * intervention, or in the event of a job-flow error.
      * </p>
      * 
      * @return Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls,
-     *         user intervention, or in the event of a job flow error.
+     *         user intervention, or in the event of a job-flow error.
      */
 
     public Boolean getTerminationProtected() {
@@ -687,12 +700,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user
-     * intervention, or in the event of a job flow error.
+     * intervention, or in the event of a job-flow error.
      * </p>
      * 
      * @param terminationProtected
      *        Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls,
-     *        user intervention, or in the event of a job flow error.
+     *        user intervention, or in the event of a job-flow error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,11 +717,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user
-     * intervention, or in the event of a job flow error.
+     * intervention, or in the event of a job-flow error.
      * </p>
      * 
      * @return Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls,
-     *         user intervention, or in the event of a job flow error.
+     *         user intervention, or in the event of a job-flow error.
      */
 
     public Boolean isTerminationProtected() {
@@ -717,11 +730,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Hadoop version for the job flow.
+     * The Hadoop version for the cluster.
      * </p>
      * 
      * @param hadoopVersion
-     *        The Hadoop version for the job flow.
+     *        The Hadoop version for the cluster.
      */
 
     public void setHadoopVersion(String hadoopVersion) {
@@ -730,10 +743,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Hadoop version for the job flow.
+     * The Hadoop version for the cluster.
      * </p>
      * 
-     * @return The Hadoop version for the job flow.
+     * @return The Hadoop version for the cluster.
      */
 
     public String getHadoopVersion() {
@@ -742,11 +755,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Hadoop version for the job flow.
+     * The Hadoop version for the cluster.
      * </p>
      * 
      * @param hadoopVersion
-     *        The Hadoop version for the job flow.
+     *        The Hadoop version for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,7 +769,8 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -889,5 +903,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.JobFlowInstancesDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

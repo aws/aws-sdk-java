@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,9 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater
-     * than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      */
     private Integer maxItems;
@@ -57,13 +58,15 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater
-     * than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value
-     *        greater than zero.
+     *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *        have more than 10 mount targets.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -72,12 +75,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater
-     * than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
-     * @return (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value
-     *         greater than zero.
+     * @return (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *         automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *         have more than 10 mount targets.
      */
 
     public Integer getMaxItems() {
@@ -86,13 +91,15 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater
-     * than zero.
+     * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
+     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * targets.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value
-     *        greater than zero.
+     *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
+     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
+     *        have more than 10 mount targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +247,8 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

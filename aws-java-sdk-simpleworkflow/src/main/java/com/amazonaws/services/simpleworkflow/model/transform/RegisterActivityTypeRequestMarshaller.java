@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,94 +12,71 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterActivityTypeRequest Marshaller
+ * RegisterActivityTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterActivityTypeRequestMarshaller implements Marshaller<Request<RegisterActivityTypeRequest>, RegisterActivityTypeRequest> {
+@SdkInternalApi
+public class RegisterActivityTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DEFAULTTASKSTARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskStartToCloseTimeout").build();
+    private static final MarshallingInfo<String> DEFAULTTASKHEARTBEATTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskHeartbeatTimeout").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTTASKLIST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskList").build();
+    private static final MarshallingInfo<String> DEFAULTTASKPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskPriority").build();
+    private static final MarshallingInfo<String> DEFAULTTASKSCHEDULETOSTARTTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskScheduleToStartTimeout").build();
+    private static final MarshallingInfo<String> DEFAULTTASKSCHEDULETOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskScheduleToCloseTimeout").build();
 
-    public RegisterActivityTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterActivityTypeRequestMarshaller instance = new RegisterActivityTypeRequestMarshaller();
+
+    public static RegisterActivityTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterActivityTypeRequest> marshall(RegisterActivityTypeRequest registerActivityTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterActivityTypeRequest registerActivityTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerActivityTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterActivityTypeRequest> request = new DefaultRequest<RegisterActivityTypeRequest>(registerActivityTypeRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RegisterActivityType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerActivityTypeRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(registerActivityTypeRequest.getDomain());
-            }
-            if (registerActivityTypeRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(registerActivityTypeRequest.getName());
-            }
-            if (registerActivityTypeRequest.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(registerActivityTypeRequest.getVersion());
-            }
-            if (registerActivityTypeRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(registerActivityTypeRequest.getDescription());
-            }
-            if (registerActivityTypeRequest.getDefaultTaskStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultTaskStartToCloseTimeout").writeValue(registerActivityTypeRequest.getDefaultTaskStartToCloseTimeout());
-            }
-            if (registerActivityTypeRequest.getDefaultTaskHeartbeatTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultTaskHeartbeatTimeout").writeValue(registerActivityTypeRequest.getDefaultTaskHeartbeatTimeout());
-            }
-            if (registerActivityTypeRequest.getDefaultTaskList() != null) {
-                jsonGenerator.writeFieldName("defaultTaskList");
-                TaskListJsonMarshaller.getInstance().marshall(registerActivityTypeRequest.getDefaultTaskList(), jsonGenerator);
-            }
-            if (registerActivityTypeRequest.getDefaultTaskPriority() != null) {
-                jsonGenerator.writeFieldName("defaultTaskPriority").writeValue(registerActivityTypeRequest.getDefaultTaskPriority());
-            }
-            if (registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultTaskScheduleToStartTimeout")
-                        .writeValue(registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout());
-            }
-            if (registerActivityTypeRequest.getDefaultTaskScheduleToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultTaskScheduleToCloseTimeout")
-                        .writeValue(registerActivityTypeRequest.getDefaultTaskScheduleToCloseTimeout());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskStartToCloseTimeout(), DEFAULTTASKSTARTTOCLOSETIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskHeartbeatTimeout(), DEFAULTTASKHEARTBEATTIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskList(), DEFAULTTASKLIST_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskPriority(), DEFAULTTASKPRIORITY_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout(), DEFAULTTASKSCHEDULETOSTARTTIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerActivityTypeRequest.getDefaultTaskScheduleToCloseTimeout(), DEFAULTTASKSCHEDULETOCLOSETIMEOUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

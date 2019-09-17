@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,9 +46,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("Name", StringUtils.fromString(createLoadBalancerRequest.getName()));
         }
 
-        java.util.List<String> subnetsList = createLoadBalancerRequest.getSubnets();
-
-        if (subnetsList != null) {
+        if (createLoadBalancerRequest.getSubnets() != null) {
+            java.util.List<String> subnetsList = createLoadBalancerRequest.getSubnets();
             if (subnetsList.isEmpty()) {
                 request.addParameter("Subnets", "");
             } else {
@@ -63,9 +62,31 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        java.util.List<String> securityGroupsList = createLoadBalancerRequest.getSecurityGroups();
+        if (createLoadBalancerRequest.getSubnetMappings() != null) {
+            java.util.List<SubnetMapping> subnetMappingsList = createLoadBalancerRequest.getSubnetMappings();
+            if (subnetMappingsList.isEmpty()) {
+                request.addParameter("SubnetMappings", "");
+            } else {
+                int subnetMappingsListIndex = 1;
 
-        if (securityGroupsList != null) {
+                for (SubnetMapping subnetMappingsListValue : subnetMappingsList) {
+
+                    if (subnetMappingsListValue.getSubnetId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
+                                StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
+                    }
+
+                    if (subnetMappingsListValue.getAllocationId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
+                                StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
+                    }
+                    subnetMappingsListIndex++;
+                }
+            }
+        }
+
+        if (createLoadBalancerRequest.getSecurityGroups() != null) {
+            java.util.List<String> securityGroupsList = createLoadBalancerRequest.getSecurityGroups();
             if (securityGroupsList.isEmpty()) {
                 request.addParameter("SecurityGroups", "");
             } else {
@@ -84,9 +105,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("Scheme", StringUtils.fromString(createLoadBalancerRequest.getScheme()));
         }
 
-        java.util.List<Tag> tagsList = createLoadBalancerRequest.getTags();
-
-        if (tagsList != null) {
+        if (createLoadBalancerRequest.getTags() != null) {
+            java.util.List<Tag> tagsList = createLoadBalancerRequest.getTags();
             if (tagsList.isEmpty()) {
                 request.addParameter("Tags", "");
             } else {
@@ -104,6 +124,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
                     tagsListIndex++;
                 }
             }
+        }
+
+        if (createLoadBalancerRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createLoadBalancerRequest.getType()));
         }
 
         if (createLoadBalancerRequest.getIpAddressType() != null) {

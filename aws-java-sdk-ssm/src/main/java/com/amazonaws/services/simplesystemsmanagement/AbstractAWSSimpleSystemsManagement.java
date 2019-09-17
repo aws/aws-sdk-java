@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CancelMaintenanceWindowExecutionResult cancelMaintenanceWindowExecution(CancelMaintenanceWindowExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateActivationResult createActivation(CreateActivationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,7 +78,17 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CreateOpsItemResult createOpsItem(CreateOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateResourceDataSyncResult createResourceDataSync(CreateResourceDataSyncRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +108,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DeleteInventoryResult deleteInventory(DeleteInventoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,7 +123,17 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DeleteParametersResult deleteParameters(DeleteParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourceDataSyncResult deleteResourceDataSync(DeleteResourceDataSyncRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,7 +168,22 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeAssociationExecutionTargetsResult describeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAssociationExecutionsResult describeAssociationExecutions(DescribeAssociationExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAutomationStepExecutionsResult describeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +238,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeInventoryDeletionsResult describeInventoryDeletions(DescribeInventoryDeletionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -209,6 +259,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeMaintenanceWindowScheduleResult describeMaintenanceWindowSchedule(DescribeMaintenanceWindowScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -220,6 +275,16 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMaintenanceWindowsForTargetResult describeMaintenanceWindowsForTarget(DescribeMaintenanceWindowsForTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeOpsItemsResult describeOpsItems(DescribeOpsItemsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -244,12 +309,27 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribePatchPropertiesResult describePatchProperties(DescribePatchPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectionStatusResult getConnectionStatus(GetConnectionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -294,6 +374,32 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public GetMaintenanceWindowExecutionTaskInvocationResult getMaintenanceWindowExecutionTaskInvocation(
+            GetMaintenanceWindowExecutionTaskInvocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMaintenanceWindowTaskResult getMaintenanceWindowTask(GetMaintenanceWindowTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOpsItemResult getOpsItem(GetOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOpsSummaryResult getOpsSummary(GetOpsSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetParameterResult getParameter(GetParameterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -304,12 +410,32 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public GetParametersByPathResult getParametersByPath(GetParametersByPathRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetServiceSettingResult getServiceSetting(GetServiceSettingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public LabelParameterVersionResult labelParameterVersion(LabelParameterVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociationVersionsResult listAssociationVersions(ListAssociationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -325,6 +451,16 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public ListCommandsResult listCommands(ListCommandsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListComplianceItemsResult listComplianceItems(ListComplianceItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListComplianceSummariesResult listComplianceSummaries(ListComplianceSummariesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,12 +485,27 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public ListResourceComplianceSummariesResult listResourceComplianceSummaries(ListResourceComplianceSummariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceDataSyncResult listResourceDataSync(ListResourceDataSyncRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutComplianceItemsResult putComplianceItems(PutComplianceItemsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -394,7 +545,27 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public ResetServiceSettingResult resetServiceSetting(ResetServiceSettingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResumeSessionResult resumeSession(ResumeSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendAutomationSignalResult sendAutomationSignal(SendAutomationSignalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendCommandResult sendCommand(SendCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAssociationsOnceResult startAssociationsOnce(StartAssociationsOnceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -404,7 +575,17 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public StartSessionResult startSession(StartSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TerminateSessionResult terminateSession(TerminateSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -434,12 +615,32 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public UpdateMaintenanceWindowTargetResult updateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMaintenanceWindowTaskResult updateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateServiceSettingResult updateServiceSetting(UpdateServiceSettingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

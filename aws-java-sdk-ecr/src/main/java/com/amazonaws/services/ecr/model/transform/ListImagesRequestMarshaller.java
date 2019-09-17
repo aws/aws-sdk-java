@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,77 +12,56 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListImagesRequest Marshaller
+ * ListImagesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListImagesRequestMarshaller implements Marshaller<Request<ListImagesRequest>, ListImagesRequest> {
+@SdkInternalApi
+public class ListImagesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
 
-    public ListImagesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListImagesRequestMarshaller instance = new ListImagesRequestMarshaller();
+
+    public static ListImagesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListImagesRequest> marshall(ListImagesRequest listImagesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListImagesRequest listImagesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listImagesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListImagesRequest> request = new DefaultRequest<ListImagesRequest>(listImagesRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.ListImages");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listImagesRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(listImagesRequest.getRegistryId());
-            }
-            if (listImagesRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(listImagesRequest.getRepositoryName());
-            }
-            if (listImagesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listImagesRequest.getNextToken());
-            }
-            if (listImagesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listImagesRequest.getMaxResults());
-            }
-            if (listImagesRequest.getFilter() != null) {
-                jsonGenerator.writeFieldName("filter");
-                ListImagesFilterJsonMarshaller.getInstance().marshall(listImagesRequest.getFilter(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listImagesRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(listImagesRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(listImagesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listImagesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listImagesRequest.getFilter(), FILTER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

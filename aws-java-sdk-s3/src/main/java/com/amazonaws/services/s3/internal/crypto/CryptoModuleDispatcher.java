@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.io.OutputStream;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.services.kms.AWSKMSClient;
+import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.internal.S3Direct;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
@@ -57,10 +57,10 @@ public class CryptoModuleDispatcher extends S3CryptoModule<MultipartUploadContex
     /** Authenticated encryption (AE) cryptographic module. */
     private final S3CryptoModuleAE ae;
 
-    public CryptoModuleDispatcher(AWSKMSClient kms, S3Direct s3,
-            AWSCredentialsProvider credentialsProvider,
-            EncryptionMaterialsProvider encryptionMaterialsProvider,
-            CryptoConfiguration cryptoConfig) {
+    public CryptoModuleDispatcher(AWSKMS kms, S3Direct s3,
+                                  AWSCredentialsProvider credentialsProvider,
+                                  EncryptionMaterialsProvider encryptionMaterialsProvider,
+                                  CryptoConfiguration cryptoConfig) {
         cryptoConfig = cryptoConfig.clone();    // make a clone
         CryptoMode cryptoMode = cryptoConfig.getCryptoMode();
         if (cryptoMode == null) {

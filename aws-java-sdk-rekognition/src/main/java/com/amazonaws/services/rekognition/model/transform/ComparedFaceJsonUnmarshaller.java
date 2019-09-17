@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,18 @@ public class ComparedFaceJsonUnmarshaller implements Unmarshaller<ComparedFace, 
                 if (context.testExpression("Confidence", targetDepth)) {
                     context.nextToken();
                     comparedFace.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("Landmarks", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("Pose", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setPose(PoseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Quality", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setQuality(ImageQualityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

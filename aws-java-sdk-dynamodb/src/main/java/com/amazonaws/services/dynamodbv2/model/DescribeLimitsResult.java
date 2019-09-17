@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,28 +29,28 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total read capacity units that your account allows you to provision across all of your tables in this
-     * region.
+     * Region.
      * </p>
      */
     private Long accountMaxReadCapacityUnits;
     /**
      * <p>
      * The maximum total write capacity units that your account allows you to provision across all of your tables in
-     * this region.
+     * this Region.
      * </p>
      */
     private Long accountMaxWriteCapacityUnits;
     /**
      * <p>
      * The maximum read capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the read capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      */
     private Long tableMaxReadCapacityUnits;
     /**
      * <p>
      * The maximum write capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the write capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      */
     private Long tableMaxWriteCapacityUnits;
@@ -58,12 +58,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total read capacity units that your account allows you to provision across all of your tables in this
-     * region.
+     * Region.
      * </p>
      * 
      * @param accountMaxReadCapacityUnits
      *        The maximum total read capacity units that your account allows you to provision across all of your tables
-     *        in this region.
+     *        in this Region.
      */
 
     public void setAccountMaxReadCapacityUnits(Long accountMaxReadCapacityUnits) {
@@ -73,11 +73,11 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total read capacity units that your account allows you to provision across all of your tables in this
-     * region.
+     * Region.
      * </p>
      * 
      * @return The maximum total read capacity units that your account allows you to provision across all of your tables
-     *         in this region.
+     *         in this Region.
      */
 
     public Long getAccountMaxReadCapacityUnits() {
@@ -87,12 +87,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total read capacity units that your account allows you to provision across all of your tables in this
-     * region.
+     * Region.
      * </p>
      * 
      * @param accountMaxReadCapacityUnits
      *        The maximum total read capacity units that your account allows you to provision across all of your tables
-     *        in this region.
+     *        in this Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +104,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total write capacity units that your account allows you to provision across all of your tables in
-     * this region.
+     * this Region.
      * </p>
      * 
      * @param accountMaxWriteCapacityUnits
      *        The maximum total write capacity units that your account allows you to provision across all of your tables
-     *        in this region.
+     *        in this Region.
      */
 
     public void setAccountMaxWriteCapacityUnits(Long accountMaxWriteCapacityUnits) {
@@ -119,11 +119,11 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total write capacity units that your account allows you to provision across all of your tables in
-     * this region.
+     * this Region.
      * </p>
      * 
      * @return The maximum total write capacity units that your account allows you to provision across all of your
-     *         tables in this region.
+     *         tables in this Region.
      */
 
     public Long getAccountMaxWriteCapacityUnits() {
@@ -133,12 +133,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum total write capacity units that your account allows you to provision across all of your tables in
-     * this region.
+     * this Region.
      * </p>
      * 
      * @param accountMaxWriteCapacityUnits
      *        The maximum total write capacity units that your account allows you to provision across all of your tables
-     *        in this region.
+     *        in this Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +150,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum read capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the read capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxReadCapacityUnits
      *        The maximum read capacity units that your account allows you to provision for a new table that you are
-     *        creating in this region, including the read capacity units provisioned for its global secondary indexes
+     *        creating in this Region, including the read capacity units provisioned for its global secondary indexes
      *        (GSIs).
      */
 
@@ -166,11 +166,11 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum read capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the read capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @return The maximum read capacity units that your account allows you to provision for a new table that you are
-     *         creating in this region, including the read capacity units provisioned for its global secondary indexes
+     *         creating in this Region, including the read capacity units provisioned for its global secondary indexes
      *         (GSIs).
      */
 
@@ -181,12 +181,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum read capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the read capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the read capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxReadCapacityUnits
      *        The maximum read capacity units that your account allows you to provision for a new table that you are
-     *        creating in this region, including the read capacity units provisioned for its global secondary indexes
+     *        creating in this Region, including the read capacity units provisioned for its global secondary indexes
      *        (GSIs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -199,12 +199,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum write capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the write capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxWriteCapacityUnits
      *        The maximum write capacity units that your account allows you to provision for a new table that you are
-     *        creating in this region, including the write capacity units provisioned for its global secondary indexes
+     *        creating in this Region, including the write capacity units provisioned for its global secondary indexes
      *        (GSIs).
      */
 
@@ -215,11 +215,11 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum write capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the write capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @return The maximum write capacity units that your account allows you to provision for a new table that you are
-     *         creating in this region, including the write capacity units provisioned for its global secondary indexes
+     *         creating in this Region, including the write capacity units provisioned for its global secondary indexes
      *         (GSIs).
      */
 
@@ -230,12 +230,12 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The maximum write capacity units that your account allows you to provision for a new table that you are creating
-     * in this region, including the write capacity units provisioned for its global secondary indexes (GSIs).
+     * in this Region, including the write capacity units provisioned for its global secondary indexes (GSIs).
      * </p>
      * 
      * @param tableMaxWriteCapacityUnits
      *        The maximum write capacity units that your account allows you to provision for a new table that you are
-     *        creating in this region, including the write capacity units provisioned for its global secondary indexes
+     *        creating in this Region, including the write capacity units provisioned for its global secondary indexes
      *        (GSIs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -246,7 +246,8 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -317,4 +318,5 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

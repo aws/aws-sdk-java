@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,14 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Version numbers of the face detection models associated with the collections in the array
+     * <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for
+     * the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * </p>
+     */
+    private java.util.List<String> faceModelVersions;
 
     /**
      * <p>
@@ -149,7 +157,94 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Version numbers of the face detection models associated with the collections in the array
+     * <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for
+     * the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * </p>
+     * 
+     * @return Version numbers of the face detection models associated with the collections in the array
+     *         <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version
+     *         number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+     */
+
+    public java.util.List<String> getFaceModelVersions() {
+        return faceModelVersions;
+    }
+
+    /**
+     * <p>
+     * Version numbers of the face detection models associated with the collections in the array
+     * <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for
+     * the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * </p>
+     * 
+     * @param faceModelVersions
+     *        Version numbers of the face detection models associated with the collections in the array
+     *        <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version
+     *        number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+     */
+
+    public void setFaceModelVersions(java.util.Collection<String> faceModelVersions) {
+        if (faceModelVersions == null) {
+            this.faceModelVersions = null;
+            return;
+        }
+
+        this.faceModelVersions = new java.util.ArrayList<String>(faceModelVersions);
+    }
+
+    /**
+     * <p>
+     * Version numbers of the face detection models associated with the collections in the array
+     * <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for
+     * the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFaceModelVersions(java.util.Collection)} or {@link #withFaceModelVersions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param faceModelVersions
+     *        Version numbers of the face detection models associated with the collections in the array
+     *        <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version
+     *        number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCollectionsResult withFaceModelVersions(String... faceModelVersions) {
+        if (this.faceModelVersions == null) {
+            setFaceModelVersions(new java.util.ArrayList<String>(faceModelVersions.length));
+        }
+        for (String ele : faceModelVersions) {
+            this.faceModelVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Version numbers of the face detection models associated with the collections in the array
+     * <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for
+     * the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * </p>
+     * 
+     * @param faceModelVersions
+     *        Version numbers of the face detection models associated with the collections in the array
+     *        <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code> is the version
+     *        number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCollectionsResult withFaceModelVersions(java.util.Collection<String> faceModelVersions) {
+        setFaceModelVersions(faceModelVersions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -162,7 +257,9 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
         if (getCollectionIds() != null)
             sb.append("CollectionIds: ").append(getCollectionIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFaceModelVersions() != null)
+            sb.append("FaceModelVersions: ").append(getFaceModelVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +282,10 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getFaceModelVersions() == null ^ this.getFaceModelVersions() == null)
+            return false;
+        if (other.getFaceModelVersions() != null && other.getFaceModelVersions().equals(this.getFaceModelVersions()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +296,7 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getCollectionIds() == null) ? 0 : getCollectionIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFaceModelVersions() == null) ? 0 : getFaceModelVersions().hashCode());
         return hashCode;
     }
 
@@ -206,4 +308,5 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

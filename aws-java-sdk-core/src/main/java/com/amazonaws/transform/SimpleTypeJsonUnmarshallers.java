@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,14 +13,17 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.transform;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.util.Date;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.TimestampFormat;
+import com.fasterxml.jackson.core.JsonToken;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.util.Date;
 
 public class SimpleTypeJsonUnmarshallers {
     /**
@@ -35,6 +38,24 @@ public class SimpleTypeJsonUnmarshallers {
 
         public static StringJsonUnmarshaller getInstance() {
             return instance;
+        }
+    }
+
+    /**
+     * Unmarshaller for fields with JSON values. For headers, JSON values are base-64 encoded and are decoded here. For payloads,
+     * JSON values are treated like normal strings.
+     */
+    public static class JsonValueStringUnmarshaller extends StringJsonUnmarshaller {
+        public String unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
+            String stringValue = super.unmarshall(unmarshallerContext);
+            return !unmarshallerContext.isInsideResponseHeader()
+                   ? stringValue
+                   : new String(Base64.decode(stringValue), Charset.forName("utf-8"));
+        }
+
+        private static final JsonValueStringUnmarshaller INSTANCE = new JsonValueStringUnmarshaller();
+        public static JsonValueStringUnmarshaller getInstance() {
+            return INSTANCE;
         }
     }
 
@@ -161,13 +182,18 @@ public class SimpleTypeJsonUnmarshallers {
     }
 
     /**
-     * Unmarshaller for Date values - JSON dates come in as epoch seconds.
+     * Unmarshaller for Date values - JSON dates come in as epoch seconds for AWS services and ISO8601 string
+     * for API Gateway fronted services..
      */
     public static class DateJsonUnmarshaller implements Unmarshaller<Date, JsonUnmarshallerContext> {
         public Date unmarshall(JsonUnmarshallerContext unmarshallerContext)
                 throws Exception {
-            return DateUtils.parseServiceSpecificDate(unmarshallerContext
-                    .readText());
+            // If value is string, assume ISO8601. Otherwise parse as epoch seconds.
+            if (unmarshallerContext.getCurrentToken() == JsonToken.VALUE_STRING) {
+                return DateUtils.parseISO8601Date(unmarshallerContext.readText());
+            } else {
+                return DateUtils.parseServiceSpecificDate(unmarshallerContext.readText());
+            }
         }
 
         private static final DateJsonUnmarshaller instance = new DateJsonUnmarshaller();
@@ -176,6 +202,47 @@ public class SimpleTypeJsonUnmarshallers {
             return instance;
         }
     }
+
+    public static class DateJsonUnmarshallerFactory implements Unmarshaller<Date, JsonUnmarshallerContext> {
+
+        private final String dateFormatType;
+
+        private DateJsonUnmarshallerFactory(String dateFormatType) {
+            this.dateFormatType = dateFormatType;
+        }
+
+        @Override
+        public Date unmarshall(JsonUnmarshallerContext unmarshallerContext) throws Exception {
+            String dateString = unmarshallerContext.readText();
+            if (dateString == null) {
+                return null;
+            }
+
+            try {
+                if (TimestampFormat.RFC_822.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseRFC822Date(dateString);
+                }
+
+                if (TimestampFormat.UNIX_TIMESTAMP.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseServiceSpecificDate(dateString);
+                }
+
+                if (TimestampFormat.UNIX_TIMESTAMP_IN_MILLIS.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseUnixTimestampInMillis(dateString);
+                }
+
+                return DateUtils.parseISO8601Date(dateString);
+            } catch (Exception exception) {
+                // fallback to the original behavior.
+                return DateJsonUnmarshaller.getInstance().unmarshall(unmarshallerContext);
+            }
+        }
+
+        public static DateJsonUnmarshallerFactory getInstance(String dateFormatType) {
+            return new DateJsonUnmarshallerFactory(dateFormatType);
+        }
+    }
+
 
     /**
      * Unmarshaller for ByteBuffer values.

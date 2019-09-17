@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,80 +12,54 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDocumentsRequest Marshaller
+ * ListDocumentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDocumentsRequestMarshaller implements Marshaller<Request<ListDocumentsRequest>, ListDocumentsRequest> {
+@SdkInternalApi
+public class ListDocumentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> DOCUMENTFILTERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFilterList").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public ListDocumentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDocumentsRequestMarshaller instance = new ListDocumentsRequestMarshaller();
+
+    public static ListDocumentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDocumentsRequest> marshall(ListDocumentsRequest listDocumentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDocumentsRequest listDocumentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDocumentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDocumentsRequest> request = new DefaultRequest<ListDocumentsRequest>(listDocumentsRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.ListDocuments");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<DocumentFilter> documentFilterListList = (com.amazonaws.internal.SdkInternalList<DocumentFilter>) listDocumentsRequest
-                    .getDocumentFilterList();
-            if (!documentFilterListList.isEmpty() || !documentFilterListList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("DocumentFilterList");
-                jsonGenerator.writeStartArray();
-                for (DocumentFilter documentFilterListListValue : documentFilterListList) {
-                    if (documentFilterListListValue != null) {
-
-                        DocumentFilterJsonMarshaller.getInstance().marshall(documentFilterListListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listDocumentsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listDocumentsRequest.getMaxResults());
-            }
-            if (listDocumentsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listDocumentsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDocumentsRequest.getDocumentFilterList(), DOCUMENTFILTERLIST_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

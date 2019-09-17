@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,6 +13,7 @@
 
 package com.amazonaws.services.elasticloadbalancing.waiters;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;
@@ -67,6 +68,31 @@ class InstanceInService {
         @Override
         public WaiterState getState() {
             return WaiterState.SUCCESS;
+        }
+    }
+
+    static class IsInvalidInstanceMatcher extends WaiterAcceptor<DescribeInstanceHealthResult> {
+        /**
+         * Takes the response exception and determines whether this exception matches the expected exception, by
+         * comparing the respective error codes.
+         * 
+         * @param e
+         *        Response Exception
+         * @return True if it matches, False otherwise
+         */
+        @Override
+        public boolean matches(AmazonServiceException e) {
+            return "InvalidInstance".equals(e.getErrorCode());
+        }
+
+        /**
+         * Represents the current waiter state in the case where resource state matches the expected state
+         * 
+         * @return Corresponding state of the waiter
+         */
+        @Override
+        public WaiterState getState() {
+            return WaiterState.RETRY;
         }
     }
 }

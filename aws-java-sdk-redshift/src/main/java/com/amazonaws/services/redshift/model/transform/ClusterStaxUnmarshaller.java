@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("ClusterAvailabilityStatus", targetDepth)) {
+                    cluster.setClusterAvailabilityStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ModifyStatus", targetDepth)) {
                     cluster.setModifyStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -81,12 +86,17 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    cluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    cluster.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AutomatedSnapshotRetentionPeriod", targetDepth)) {
                     cluster.setAutomatedSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ManualSnapshotRetentionPeriod", targetDepth)) {
+                    cluster.setManualSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -175,6 +185,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("DataTransferProgress", targetDepth)) {
+                    cluster.setDataTransferProgress(DataTransferProgressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HsmStatus", targetDepth)) {
                     cluster.setHsmStatus(HsmStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -240,6 +255,60 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("PendingActions", targetDepth)) {
+                    cluster.withPendingActions(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("PendingActions/member", targetDepth)) {
+                    cluster.withPendingActions(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaintenanceTrackName", targetDepth)) {
+                    cluster.setMaintenanceTrackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ElasticResizeNumberOfNodeOptions", targetDepth)) {
+                    cluster.setElasticResizeNumberOfNodeOptions(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeferredMaintenanceWindows", targetDepth)) {
+                    cluster.withDeferredMaintenanceWindows(new ArrayList<DeferredMaintenanceWindow>());
+                    continue;
+                }
+
+                if (context.testExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth)) {
+                    cluster.withDeferredMaintenanceWindows(DeferredMaintenanceWindowStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotScheduleIdentifier", targetDepth)) {
+                    cluster.setSnapshotScheduleIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotScheduleState", targetDepth)) {
+                    cluster.setSnapshotScheduleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ExpectedNextSnapshotScheduleTime", targetDepth)) {
+                    cluster.setExpectedNextSnapshotScheduleTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ExpectedNextSnapshotScheduleTimeStatus", targetDepth)) {
+                    cluster.setExpectedNextSnapshotScheduleTimeStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ResizeInfo", targetDepth)) {
+                    cluster.setResizeInfo(ResizeInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cluster;

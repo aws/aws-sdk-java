@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,93 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * InitiateJobRequest Marshaller
+ * InitiateJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InitiateJobRequestMarshaller implements Marshaller<Request<InitiateJobRequest>, InitiateJobRequest> {
+@SdkInternalApi
+public class InitiateJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<StructuredPojo> JOBPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public InitiateJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final InitiateJobRequestMarshaller instance = new InitiateJobRequestMarshaller();
+
+    public static InitiateJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<InitiateJobRequest> marshall(InitiateJobRequest initiateJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(InitiateJobRequest initiateJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (initiateJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<InitiateJobRequest> request = new DefaultRequest<InitiateJobRequest>(initiateJobRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                initiateJobRequest.getAccountId() == null ? "-" : initiateJobRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", initiateJobRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            JobParameters jobParameters = initiateJobRequest.getJobParameters();
-            if (jobParameters != null) {
-                jsonGenerator.writeStartObject();
-                if (jobParameters.getFormat() != null) {
-                    jsonGenerator.writeFieldName("Format").writeValue(jobParameters.getFormat());
-                }
-                if (jobParameters.getType() != null) {
-                    jsonGenerator.writeFieldName("Type").writeValue(jobParameters.getType());
-                }
-                if (jobParameters.getArchiveId() != null) {
-                    jsonGenerator.writeFieldName("ArchiveId").writeValue(jobParameters.getArchiveId());
-                }
-                if (jobParameters.getDescription() != null) {
-                    jsonGenerator.writeFieldName("Description").writeValue(jobParameters.getDescription());
-                }
-                if (jobParameters.getSNSTopic() != null) {
-                    jsonGenerator.writeFieldName("SNSTopic").writeValue(jobParameters.getSNSTopic());
-                }
-                if (jobParameters.getRetrievalByteRange() != null) {
-                    jsonGenerator.writeFieldName("RetrievalByteRange").writeValue(jobParameters.getRetrievalByteRange());
-                }
-                if (jobParameters.getTier() != null) {
-                    jsonGenerator.writeFieldName("Tier").writeValue(jobParameters.getTier());
-                }
-                if (jobParameters.getInventoryRetrievalParameters() != null) {
-                    jsonGenerator.writeFieldName("InventoryRetrievalParameters");
-                    InventoryRetrievalJobInputJsonMarshaller.getInstance().marshall(jobParameters.getInventoryRetrievalParameters(), jsonGenerator);
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(initiateJobRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(initiateJobRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(initiateJobRequest.getJobParameters(), JOBPARAMETERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

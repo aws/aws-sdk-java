@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Amazon Glacier response to your request.
+ * The Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,7 +25,7 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      */
     private String location;
@@ -38,11 +38,11 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier created.
+     *        The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      */
 
     public void setLocation(String location) {
@@ -51,10 +51,10 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
-     * @return The relative URI path of the multipart upload ID Amazon Glacier created.
+     * @return The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      */
 
     public String getLocation() {
@@ -63,11 +63,11 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The relative URI path of the multipart upload ID Amazon Glacier created.
+     * The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * </p>
      * 
      * @param location
-     *        The relative URI path of the multipart upload ID Amazon Glacier created.
+     *        The relative URI path of the multipart upload ID Amazon S3 Glacier created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +117,8 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,4 +175,5 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

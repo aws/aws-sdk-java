@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                     context.nextToken();
                     campaignResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,6 +76,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                 if (context.testExpression("HoldoutPercent", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setHoldoutPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Hook", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
@@ -112,6 +120,11 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setState(CampaignStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();

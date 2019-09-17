@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,82 +12,49 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetCognitoEventsRequest Marshaller
+ * SetCognitoEventsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetCognitoEventsRequestMarshaller implements Marshaller<Request<SetCognitoEventsRequest>, SetCognitoEventsRequest> {
+@SdkInternalApi
+public class SetCognitoEventsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<Map> EVENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Events").build();
 
-    public SetCognitoEventsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetCognitoEventsRequestMarshaller instance = new SetCognitoEventsRequestMarshaller();
+
+    public static SetCognitoEventsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetCognitoEventsRequest> marshall(SetCognitoEventsRequest setCognitoEventsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetCognitoEventsRequest setCognitoEventsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setCognitoEventsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetCognitoEventsRequest> request = new DefaultRequest<SetCognitoEventsRequest>(setCognitoEventsRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/events";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
-                setCognitoEventsRequest.getIdentityPoolId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalMap<String, String> eventsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) setCognitoEventsRequest
-                    .getEvents();
-            if (!eventsMap.isEmpty() || !eventsMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Events");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> eventsMapValue : eventsMap.entrySet()) {
-                    if (eventsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(eventsMapValue.getKey());
-
-                        jsonGenerator.writeValue(eventsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setCognitoEventsRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(setCognitoEventsRequest.getEvents(), EVENTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

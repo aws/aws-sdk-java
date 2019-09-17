@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * </p>
  * <p>
  * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in
  * the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
@@ -176,7 +176,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * of version labels that specify application source bundles for each of the environments to create or update. The
      * name of each environment and other required information must be included in the source bundles in an environment
      * manifest named <code>env.yaml</code>. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
      * Environments</a> for details.
      * </p>
      * 
@@ -195,7 +195,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * of version labels that specify application source bundles for each of the environments to create or update. The
      * name of each environment and other required information must be included in the source bundles in an environment
      * manifest named <code>env.yaml</code>. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
      * Environments</a> for details.
      * </p>
      * 
@@ -327,6 +327,10 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * different versions of the application with the same configuration settings.
      * </p>
      * <p>
+     * Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always
+     * <code>null</code>.
+     * </p>
+     * <p>
      * Related Topics
      * </p>
      * <ul>
@@ -361,6 +365,10 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * <p>
      * Creates a configuration template. Templates are associated with a specific application and are used to deploy
      * different versions of the application with the same configuration settings.
+     * </p>
+     * <p>
+     * Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always
+     * <code>null</code>.
      * </p>
      * <p>
      * Related Topics
@@ -431,10 +439,43 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Creates the Amazon S3 storage location for the account.
+     * Create a new version of your custom platform.
      * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @return A Java Future containing the result of the CreatePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest createPlatformVersionRequest);
+
+    /**
      * <p>
-     * This location is used to store user log files.
+     * Create a new version of your custom platform.
+     * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest createPlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePlatformVersionRequest, CreatePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic Beanstalk
+     * environments. The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in
+     * a region. If the storage location already exists, <code>CreateStorageLocation</code> still returns the bucket
+     * name but does not create a new bucket.
      * </p>
      * 
      * @param createStorageLocationRequest
@@ -447,10 +488,10 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Creates the Amazon S3 storage location for the account.
-     * </p>
-     * <p>
-     * This location is used to store user log files.
+     * Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic Beanstalk
+     * environments. The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in
+     * a region. If the storage location already exists, <code>CreateStorageLocation</code> still returns the bucket
+     * name but does not create a new bucket.
      * </p>
      * 
      * @param createStorageLocationRequest
@@ -667,6 +708,76 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @return A Java Future containing the result of the DeletePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest deletePlatformVersionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest deletePlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.
+     * </p>
+     * <p>
+     * The result currently has one set of attributes—resource quotas.
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
+     * <p>
+     * Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.
+     * </p>
+     * <p>
+     * The result currently has one set of attributes—resource quotas.
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieve a list of application versions.
      * </p>
      * 
@@ -771,7 +882,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeConfigurationOptions
@@ -789,7 +900,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1135,8 +1246,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
-     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
      * reporting</a>.
      * </p>
      * 
@@ -1151,8 +1262,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
-     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
      * reporting</a>.
      * </p>
      * 
@@ -1172,7 +1283,39 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @return A Java Future containing the result of the DescribePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest describePlatformVersionRequest);
+
+    /**
+     * <p>
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest describePlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1186,7 +1329,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1217,6 +1361,82 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @return A Java Future containing the result of the ListPlatformVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest listPlatformVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPlatformVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest listPlatformVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPlatformVersionsRequest, ListPlatformVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1735,6 +1955,101 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * <p>
+     * If you create a custom IAM user policy to control permission to this operation, specify one of the following two
+     * virtual actions (or both) instead of the API operation name:
+     * </p>
+     * <dl>
+     * <dt>elasticbeanstalk:AddTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+     * <code>TagsToAdd</code> parameter.
+     * </p>
+     * </dd>
+     * <dt>elasticbeanstalk:RemoveTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the
+     * <code>TagsToRemove</code> parameter.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For details about creating a custom user policy, see <a href=
+     * "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies"
+     * >Creating a Custom User Policy</a>.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @return A Java Future containing the result of the UpdateTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest updateTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * <p>
+     * If you create a custom IAM user policy to control permission to this operation, specify one of the following two
+     * virtual actions (or both) instead of the API operation name:
+     * </p>
+     * <dl>
+     * <dt>elasticbeanstalk:AddTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+     * <code>TagsToAdd</code> parameter.
+     * </p>
+     * </dd>
+     * <dt>elasticbeanstalk:RemoveTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the
+     * <code>TagsToRemove</code> parameter.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For details about creating a custom user policy, see <a href=
+     * "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies"
+     * >Creating a Custom User Policy</a>.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest updateTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTagsForResourceRequest, UpdateTagsForResourceResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to create a receipt rule. You use receipt rules to receive email with Amazon SES. For more
  * information, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -33,7 +33,7 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      */
     private String ruleSetName;
@@ -54,11 +54,11 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the rule set to which to add the rule.
+     *        The name of the rule set that the receipt rule will be added to.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -67,10 +67,10 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
-     * @return The name of the rule set to which to add the rule.
+     * @return The name of the rule set that the receipt rule will be added to.
      */
 
     public String getRuleSetName() {
@@ -79,11 +79,11 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the rule set to which to add the rule.
+     *        The name of the rule set that the receipt rule will be added to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +185,8 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

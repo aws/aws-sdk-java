@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the file system you want to delete.
+     * The ID of the file system you want to delete.
      * </p>
      */
     private String fileSystemId;
 
     /**
      * <p>
-     * ID of the file system you want to delete.
+     * The ID of the file system you want to delete.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system you want to delete.
+     *        The ID of the file system you want to delete.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -48,10 +48,10 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the file system you want to delete.
+     * The ID of the file system you want to delete.
      * </p>
      * 
-     * @return ID of the file system you want to delete.
+     * @return The ID of the file system you want to delete.
      */
 
     public String getFileSystemId() {
@@ -60,11 +60,11 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the file system you want to delete.
+     * The ID of the file system you want to delete.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system you want to delete.
+     *        The ID of the file system you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

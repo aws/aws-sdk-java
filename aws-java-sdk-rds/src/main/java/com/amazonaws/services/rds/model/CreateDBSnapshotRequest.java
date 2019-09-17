@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,12 +36,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -51,7 +51,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -62,7 +62,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBSnapshotIdentifier;
     /**
      * <p>
-     * The DB instance identifier. This is the unique key that identifies a DB instance.
+     * The identifier of the DB instance that you want to create the snapshot of.
      * </p>
      * <p>
      * Constraints:
@@ -70,17 +70,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -108,12 +98,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -123,14 +113,14 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This is the unique key that identifies a DB instance.
+     *        The identifier of the DB instance that you want to create the snapshot of.
      *        </p>
      *        <p>
      *        Constraints:
@@ -138,17 +128,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -167,12 +147,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -182,7 +162,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -198,12 +178,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -213,7 +193,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -235,12 +215,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -250,7 +230,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -265,12 +245,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Cannot be null, empty, or blank
+     *         Can't be null, empty, or blank
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -280,7 +260,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -302,12 +282,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -317,7 +297,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -333,12 +313,12 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -348,7 +328,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -364,7 +344,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This is the unique key that identifies a DB instance.
+     * The identifier of the DB instance that you want to create the snapshot of.
      * </p>
      * <p>
      * Constraints:
@@ -372,40 +352,20 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This is the unique key that identifies a DB instance.</p>
+     *        The identifier of the DB instance that you want to create the snapshot of.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -416,7 +376,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This is the unique key that identifies a DB instance.
+     * The identifier of the DB instance that you want to create the snapshot of.
      * </p>
      * <p>
      * Constraints:
@@ -424,39 +384,19 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The DB instance identifier. This is the unique key that identifies a DB instance.</p>
+     * @return The identifier of the DB instance that you want to create the snapshot of.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing DBInstance.
      *         </p>
      *         </li>
      */
@@ -467,7 +407,7 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This is the unique key that identifies a DB instance.
+     * The identifier of the DB instance that you want to create the snapshot of.
      * </p>
      * <p>
      * Constraints:
@@ -475,40 +415,20 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This is the unique key that identifies a DB instance.</p>
+     *        The identifier of the DB instance that you want to create the snapshot of.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -575,7 +495,8 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

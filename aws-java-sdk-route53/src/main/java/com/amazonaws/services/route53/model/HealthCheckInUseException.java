@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The health check ID for this health check is referenced in the <code>HealthCheckId</code> element in one of the
- * resource record sets in one of the hosted zones that are owned by the current AWS account.
+ * This error code is not in use.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

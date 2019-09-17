@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import com.amazonaws.services.s3.model.ObjectTagging;
-import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -209,11 +207,14 @@ public class UploadCallable implements Callable<UploadResult> {
      * operation for the given multi-part upload.
      */
     void performAbortMultipartUpload() {
+        if (multipartUploadId == null) {
+            return;
+        }
         try {
-            if (multipartUploadId != null)
-                s3.abortMultipartUpload(new AbortMultipartUploadRequest(
-                        origReq.getBucketName(), origReq
-                                .getKey(), multipartUploadId));
+            AbortMultipartUploadRequest abortRequest = new AbortMultipartUploadRequest(origReq.getBucketName(), origReq.getKey(),
+                    multipartUploadId)
+                    .withRequesterPays(origReq.isRequesterPays());
+            s3.abortMultipartUpload(abortRequest);
         } catch (Exception e2) {
             log.info(
                     "Unable to abort multipart upload, you may need to manually remove uploaded parts: "
@@ -261,6 +262,7 @@ public class UploadCallable implements Callable<UploadResult> {
             new CompleteMultipartUploadRequest(
                 origReq.getBucketName(), origReq.getKey(), multipartUploadId,
                     partETags)
+                    .withRequesterPays(origReq.isRequesterPays())
             .withGeneralProgressListener(origReq.getGeneralProgressListener())
             .withRequestMetricCollector(origReq.getRequestMetricCollector())
             ;
@@ -292,7 +294,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 transferProgress.updateProgress(summary.getSize());
                 continue;
             }
-            futures.add(threadPool.submit(new UploadPartCallable(s3, request)));
+            futures.add(threadPool.submit(new UploadPartCallable(s3, request, shouldCalculatePartMd5())));
         }
     }
 
@@ -308,7 +310,8 @@ public class UploadCallable implements Callable<UploadResult> {
             PartListing parts = s3.listParts(new ListPartsRequest(
                     origReq.getBucketName(),
                     origReq.getKey(), uploadId)
-                    .withPartNumberMarker(partNumber));
+                    .withPartNumberMarker(partNumber)
+                    .withRequesterPays(origReq.isRequesterPays()));
             for (PartSummary partSummary : parts.getParts()) {
                 partNumbers.put(partSummary.getPartNumber(), partSummary);
             }
@@ -338,9 +341,12 @@ public class UploadCallable implements Callable<UploadResult> {
                 .withObjectMetadata(origReq.getMetadata());
         }
 
+        req.withTagging(origReq.getTagging());
+
         TransferManager.appendMultipartUserAgent(req);
 
         req.withAccessControlList(origReq.getAccessControlList())
+           .withRequesterPays(origReq.isRequesterPays())
            .withStorageClass(origReq.getStorageClass())
            .withRedirectLocation(origReq.getRedirectLocation())
            .withSSECustomerKey(origReq.getSSECustomerKey())
@@ -349,9 +355,19 @@ public class UploadCallable implements Callable<UploadResult> {
            .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
 
+        req.withObjectLockMode(origReq.getObjectLockMode())
+           .withObjectLockRetainUntilDate(origReq.getObjectLockRetainUntilDate())
+           .withObjectLockLegalHoldStatus(origReq.getObjectLockLegalHoldStatus());
+
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
+    }
+
+    private boolean shouldCalculatePartMd5() {
+        return origReq.getObjectLockMode() != null
+                || origReq.getObjectLockRetainUntilDate() != null
+                || origReq.getObjectLockLegalHoldStatus() != null;
     }
 }

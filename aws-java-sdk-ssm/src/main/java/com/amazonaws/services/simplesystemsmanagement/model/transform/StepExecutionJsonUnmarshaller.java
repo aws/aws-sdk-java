@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,25 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     context.nextToken();
                     stepExecution.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeoutSeconds", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTimeoutSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("OnFailure", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setOnFailure(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxAttempts", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setMaxAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
                     context.nextToken();
-                    stepExecution.setExecutionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecution.setExecutionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEndTime", targetDepth)) {
                     context.nextToken();
-                    stepExecution.setExecutionEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    stepExecution.setExecutionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StepStatus", targetDepth)) {
                     context.nextToken();
@@ -89,6 +101,43 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                 if (context.testExpression("FailureMessage", targetDepth)) {
                     context.nextToken();
                     stepExecution.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureDetails", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StepExecutionId", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setStepExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OverriddenParameters", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setOverriddenParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                }
+                if (context.testExpression("IsEnd", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setIsEnd(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("NextStep", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setNextStep(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsCritical", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setIsCritical(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidNextSteps", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setValidNextSteps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("TargetLocation", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTargetLocation(TargetLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

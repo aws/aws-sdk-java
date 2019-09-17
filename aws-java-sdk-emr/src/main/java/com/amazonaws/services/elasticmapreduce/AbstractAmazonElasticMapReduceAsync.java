@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMapReduce implements AmazonElasticMapReduceAsync {
 
     protected AbstractAmazonElasticMapReduceAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(AddInstanceFleetRequest request) {
+
+        return addInstanceFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(AddInstanceFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddInstanceFleetRequest, AddInstanceFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -150,6 +163,8 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #describeJobFlowsAsync(DescribeJobFlowsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler) {
 
@@ -178,6 +193,21 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<DescribeStepResult> describeStepAsync(DescribeStepRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBlockPublicAccessConfigurationResult> getBlockPublicAccessConfigurationAsync(
+            GetBlockPublicAccessConfigurationRequest request) {
+
+        return getBlockPublicAccessConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBlockPublicAccessConfigurationResult> getBlockPublicAccessConfigurationAsync(
+            GetBlockPublicAccessConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBlockPublicAccessConfigurationRequest, GetBlockPublicAccessConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,10 +254,24 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #listClustersAsync(ListClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
 
         return listClustersAsync(new ListClustersRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(ListInstanceFleetsRequest request) {
+
+        return listInstanceFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(ListInstanceFleetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInstanceFleetsRequest, ListInstanceFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -283,6 +327,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(ModifyInstanceFleetRequest request) {
+
+        return modifyInstanceFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(ModifyInstanceFleetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceFleetRequest, ModifyInstanceFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request) {
 
         return modifyInstanceGroupsAsync(request, null);
@@ -311,6 +368,7 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
      *
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
@@ -326,6 +384,21 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     @Override
     public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAutoScalingPolicyRequest, PutAutoScalingPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBlockPublicAccessConfigurationResult> putBlockPublicAccessConfigurationAsync(
+            PutBlockPublicAccessConfigurationRequest request) {
+
+        return putBlockPublicAccessConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBlockPublicAccessConfigurationResult> putBlockPublicAccessConfigurationAsync(
+            PutBlockPublicAccessConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutBlockPublicAccessConfigurationRequest, PutBlockPublicAccessConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

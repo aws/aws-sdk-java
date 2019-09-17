@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,74 +12,57 @@
  */
 package com.amazonaws.services.waf.model.waf.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateWebACLRequest Marshaller
+ * CreateWebACLRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateWebACLRequestMarshaller implements Marshaller<Request<CreateWebACLRequest>, CreateWebACLRequest> {
+@SdkInternalApi
+public class CreateWebACLRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAction").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateWebACLRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateWebACLRequestMarshaller instance = new CreateWebACLRequestMarshaller();
+
+    public static CreateWebACLRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateWebACLRequest> marshall(CreateWebACLRequest createWebACLRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateWebACLRequest createWebACLRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createWebACLRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateWebACLRequest> request = new DefaultRequest<CreateWebACLRequest>(createWebACLRequest, "AWSWAF");
-        request.addHeader("X-Amz-Target", "AWSWAF_20150824.CreateWebACL");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createWebACLRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createWebACLRequest.getName());
-            }
-            if (createWebACLRequest.getMetricName() != null) {
-                jsonGenerator.writeFieldName("MetricName").writeValue(createWebACLRequest.getMetricName());
-            }
-            if (createWebACLRequest.getDefaultAction() != null) {
-                jsonGenerator.writeFieldName("DefaultAction");
-                WafActionJsonMarshaller.getInstance().marshall(createWebACLRequest.getDefaultAction(), jsonGenerator);
-            }
-            if (createWebACLRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(createWebACLRequest.getChangeToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createWebACLRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getMetricName(), METRICNAME_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getDefaultAction(), DEFAULTACTION_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getChangeToken(), CHANGETOKEN_BINDING);
+            protocolMarshaller.marshall(createWebACLRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

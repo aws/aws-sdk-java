@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,12 +49,32 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeEventSubscriptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS returns a value
+     * in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing
+     * the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * A tag key or keys for which you want to return all matching event notification subscriptions that are associated
+     * with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subscriptions that have either or both of these tag keys associated with
+     * them.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> tagKeys;
+    /**
+     * <p>
+     * A tag value or values for which you want to return all matching event notification subscriptions that are
+     * associated with the specified tag value or values. For example, suppose that you have subscriptions that are
+     * tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     * the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag
+     * values associated with them.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> tagValues;
 
     /**
      * <p>
@@ -187,17 +207,17 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeEventSubscriptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS returns a value
+     * in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing
+     * the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
-     *        results of a <a>DescribeEventSubscriptions</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
-     *        <code>Marker</code> parameter and retrying the request.
+     *        results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS
+     *        returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *        the request.
      */
 
     public void setMarker(String marker) {
@@ -207,16 +227,16 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeEventSubscriptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS returns a value
+     * in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing
+     * the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @return An optional parameter that specifies the starting point to return a set of response records. When the
-     *         results of a <a>DescribeEventSubscriptions</a> request exceed the value specified in
-     *         <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *         retrieve the next set of response records by providing the returned marker value in the
-     *         <code>Marker</code> parameter and retrying the request.
+     *         results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>,
+     *         AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *         response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *         the request.
      */
 
     public String getMarker() {
@@ -226,17 +246,17 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * An optional parameter that specifies the starting point to return a set of response records. When the results of
-     * a <a>DescribeEventSubscriptions</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by
-     * providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+     * a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS returns a value
+     * in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing
+     * the returned marker value in the <code>Marker</code> parameter and retrying the request.
      * </p>
      * 
      * @param marker
      *        An optional parameter that specifies the starting point to return a set of response records. When the
-     *        results of a <a>DescribeEventSubscriptions</a> request exceed the value specified in
-     *        <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can
-     *        retrieve the next set of response records by providing the returned marker value in the
-     *        <code>Marker</code> parameter and retrying the request.
+     *        results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, AWS
+     *        returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of
+     *        response records by providing the returned marker value in the <code>Marker</code> parameter and retrying
+     *        the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +266,218 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A tag key or keys for which you want to return all matching event notification subscriptions that are associated
+     * with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subscriptions that have either or both of these tag keys associated with
+     * them.
+     * </p>
+     * 
+     * @return A tag key or keys for which you want to return all matching event notification subscriptions that are
+     *         associated with the specified key or keys. For example, suppose that you have subscriptions that are
+     *         tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag
+     *         keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both
+     *         of these tag keys associated with them.
+     */
+
+    public java.util.List<String> getTagKeys() {
+        if (tagKeys == null) {
+            tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return tagKeys;
+    }
+
+    /**
+     * <p>
+     * A tag key or keys for which you want to return all matching event notification subscriptions that are associated
+     * with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subscriptions that have either or both of these tag keys associated with
+     * them.
+     * </p>
+     * 
+     * @param tagKeys
+     *        A tag key or keys for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified key or keys. For example, suppose that you have subscriptions that are
+     *        tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag
+     *        keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of
+     *        these tag keys associated with them.
+     */
+
+    public void setTagKeys(java.util.Collection<String> tagKeys) {
+        if (tagKeys == null) {
+            this.tagKeys = null;
+            return;
+        }
+
+        this.tagKeys = new com.amazonaws.internal.SdkInternalList<String>(tagKeys);
+    }
+
+    /**
+     * <p>
+     * A tag key or keys for which you want to return all matching event notification subscriptions that are associated
+     * with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subscriptions that have either or both of these tag keys associated with
+     * them.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagKeys
+     *        A tag key or keys for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified key or keys. For example, suppose that you have subscriptions that are
+     *        tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag
+     *        keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of
+     *        these tag keys associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventSubscriptionsRequest withTagKeys(String... tagKeys) {
+        if (this.tagKeys == null) {
+            setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(tagKeys.length));
+        }
+        for (String ele : tagKeys) {
+            this.tagKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A tag key or keys for which you want to return all matching event notification subscriptions that are associated
+     * with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called
+     * <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon
+     * Redshift returns a response with the subscriptions that have either or both of these tag keys associated with
+     * them.
+     * </p>
+     * 
+     * @param tagKeys
+     *        A tag key or keys for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified key or keys. For example, suppose that you have subscriptions that are
+     *        tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag
+     *        keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of
+     *        these tag keys associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventSubscriptionsRequest withTagKeys(java.util.Collection<String> tagKeys) {
+        setTagKeys(tagKeys);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A tag value or values for which you want to return all matching event notification subscriptions that are
+     * associated with the specified tag value or values. For example, suppose that you have subscriptions that are
+     * tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     * the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag
+     * values associated with them.
+     * </p>
+     * 
+     * @return A tag value or values for which you want to return all matching event notification subscriptions that are
+     *         associated with the specified tag value or values. For example, suppose that you have subscriptions that
+     *         are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag
+     *         values in the request, Amazon Redshift returns a response with the subscriptions that have either or both
+     *         of these tag values associated with them.
+     */
+
+    public java.util.List<String> getTagValues() {
+        if (tagValues == null) {
+            tagValues = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return tagValues;
+    }
+
+    /**
+     * <p>
+     * A tag value or values for which you want to return all matching event notification subscriptions that are
+     * associated with the specified tag value or values. For example, suppose that you have subscriptions that are
+     * tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     * the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag
+     * values associated with them.
+     * </p>
+     * 
+     * @param tagValues
+     *        A tag value or values for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified tag value or values. For example, suppose that you have subscriptions that
+     *        are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag
+     *        values in the request, Amazon Redshift returns a response with the subscriptions that have either or both
+     *        of these tag values associated with them.
+     */
+
+    public void setTagValues(java.util.Collection<String> tagValues) {
+        if (tagValues == null) {
+            this.tagValues = null;
+            return;
+        }
+
+        this.tagValues = new com.amazonaws.internal.SdkInternalList<String>(tagValues);
+    }
+
+    /**
+     * <p>
+     * A tag value or values for which you want to return all matching event notification subscriptions that are
+     * associated with the specified tag value or values. For example, suppose that you have subscriptions that are
+     * tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     * the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag
+     * values associated with them.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagValues(java.util.Collection)} or {@link #withTagValues(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tagValues
+     *        A tag value or values for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified tag value or values. For example, suppose that you have subscriptions that
+     *        are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag
+     *        values in the request, Amazon Redshift returns a response with the subscriptions that have either or both
+     *        of these tag values associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventSubscriptionsRequest withTagValues(String... tagValues) {
+        if (this.tagValues == null) {
+            setTagValues(new com.amazonaws.internal.SdkInternalList<String>(tagValues.length));
+        }
+        for (String ele : tagValues) {
+            this.tagValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A tag value or values for which you want to return all matching event notification subscriptions that are
+     * associated with the specified tag value or values. For example, suppose that you have subscriptions that are
+     * tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in
+     * the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag
+     * values associated with them.
+     * </p>
+     * 
+     * @param tagValues
+     *        A tag value or values for which you want to return all matching event notification subscriptions that are
+     *        associated with the specified tag value or values. For example, suppose that you have subscriptions that
+     *        are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag
+     *        values in the request, Amazon Redshift returns a response with the subscriptions that have either or both
+     *        of these tag values associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEventSubscriptionsRequest withTagValues(java.util.Collection<String> tagValues) {
+        setTagValues(tagValues);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -261,7 +492,11 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getTagKeys() != null)
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
+        if (getTagValues() != null)
+            sb.append("TagValues: ").append(getTagValues());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +523,14 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getTagKeys() == null ^ this.getTagKeys() == null)
+            return false;
+        if (other.getTagKeys() != null && other.getTagKeys().equals(this.getTagKeys()) == false)
+            return false;
+        if (other.getTagValues() == null ^ this.getTagValues() == null)
+            return false;
+        if (other.getTagValues() != null && other.getTagValues().equals(this.getTagValues()) == false)
+            return false;
         return true;
     }
 
@@ -299,6 +542,8 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getSubscriptionName() == null) ? 0 : getSubscriptionName().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
+        hashCode = prime * hashCode + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
         return hashCode;
     }
 

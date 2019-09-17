@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -46,7 +46,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -73,7 +73,11 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String optionGroupDescription;
-
+    /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -86,7 +90,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -96,7 +100,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -112,7 +116,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        Must be 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -122,7 +126,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -144,7 +148,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -154,7 +158,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -169,7 +173,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters or hyphens
+     *         Must be 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -179,7 +183,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -201,7 +205,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -211,7 +215,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -227,7 +231,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        Must be 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -237,7 +241,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -372,7 +376,11 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
+     * @return Tags to assign to the option group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -383,7 +391,12 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the option group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -397,12 +410,16 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to assign to the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,7 +434,12 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to assign to the option group.
+     * </p>
+     * 
      * @param tags
+     *        Tags to assign to the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,7 +449,8 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

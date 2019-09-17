@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,41 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The name of the activity.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -86,9 +116,68 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The name of the activity.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the activity.
+     *        The name of the activity.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -99,8 +188,67 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The name of the activity.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the activity.
+     * @return The name of the activity.</p>
+     *         <p>
+     *         A name must <i>not</i> contain:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         white space
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         brackets <code>&lt; &gt; { } [ ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         wildcard characters <code>? *</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -111,9 +259,68 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The name of the activity.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the activity.
+     *        The name of the activity.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +331,11 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the activity was created.
+     *        The date the activity is created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -137,10 +344,10 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
-     * @return The date the activity was created.
+     * @return The date the activity is created.
      */
 
     public java.util.Date getCreationDate() {
@@ -149,11 +356,11 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the activity was created.
+     *        The date the activity is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +370,8 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -227,4 +435,5 @@ public class DescribeActivityResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,11 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    environmentDescription.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TemplateName", targetDepth)) {
                     environmentDescription.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -91,12 +96,12 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    environmentDescription.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentDescription.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    environmentDescription.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    environmentDescription.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -140,6 +145,10 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    environmentDescription.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return environmentDescription;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,15 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     private Integer limit;
     /**
      * <p>
-     * The name of the CloudWatch metric.
+     * Filters results to include only those with the specified metric name. If you include this parameter in your
+     * request, you must also include the <code>metricNamespace</code> parameter.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * Filters results to include only those in the specified namespace. If you include this parameter in your request,
+     * you must also include the <code>metricName</code> parameter.
      * </p>
      */
     private String metricNamespace;
@@ -242,11 +244,13 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the CloudWatch metric.
+     * Filters results to include only those with the specified metric name. If you include this parameter in your
+     * request, you must also include the <code>metricNamespace</code> parameter.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric.
+     *        Filters results to include only those with the specified metric name. If you include this parameter in
+     *        your request, you must also include the <code>metricNamespace</code> parameter.
      */
 
     public void setMetricName(String metricName) {
@@ -255,10 +259,12 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the CloudWatch metric.
+     * Filters results to include only those with the specified metric name. If you include this parameter in your
+     * request, you must also include the <code>metricNamespace</code> parameter.
      * </p>
      * 
-     * @return The name of the CloudWatch metric.
+     * @return Filters results to include only those with the specified metric name. If you include this parameter in
+     *         your request, you must also include the <code>metricNamespace</code> parameter.
      */
 
     public String getMetricName() {
@@ -267,11 +273,13 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the CloudWatch metric.
+     * Filters results to include only those with the specified metric name. If you include this parameter in your
+     * request, you must also include the <code>metricNamespace</code> parameter.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric.
+     *        Filters results to include only those with the specified metric name. If you include this parameter in
+     *        your request, you must also include the <code>metricNamespace</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +290,13 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * Filters results to include only those in the specified namespace. If you include this parameter in your request,
+     * you must also include the <code>metricName</code> parameter.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the CloudWatch metric.
+     *        Filters results to include only those in the specified namespace. If you include this parameter in your
+     *        request, you must also include the <code>metricName</code> parameter.
      */
 
     public void setMetricNamespace(String metricNamespace) {
@@ -295,10 +305,12 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * Filters results to include only those in the specified namespace. If you include this parameter in your request,
+     * you must also include the <code>metricName</code> parameter.
      * </p>
      * 
-     * @return The namespace of the CloudWatch metric.
+     * @return Filters results to include only those in the specified namespace. If you include this parameter in your
+     *         request, you must also include the <code>metricName</code> parameter.
      */
 
     public String getMetricNamespace() {
@@ -307,11 +319,13 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * Filters results to include only those in the specified namespace. If you include this parameter in your request,
+     * you must also include the <code>metricName</code> parameter.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the CloudWatch metric.
+     *        Filters results to include only those in the specified namespace. If you include this parameter in your
+     *        request, you must also include the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +335,8 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

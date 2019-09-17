@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,8 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (replaceRouteRequest.getRouteTableId() != null) {
-            request.addParameter("RouteTableId", StringUtils.fromString(replaceRouteRequest.getRouteTableId()));
-        }
-
         if (replaceRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(replaceRouteRequest.getDestinationCidrBlock()));
-        }
-
-        if (replaceRouteRequest.getGatewayId() != null) {
-            request.addParameter("GatewayId", StringUtils.fromString(replaceRouteRequest.getGatewayId()));
         }
 
         if (replaceRouteRequest.getDestinationIpv6CidrBlock() != null) {
@@ -60,20 +52,32 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(replaceRouteRequest.getEgressOnlyInternetGatewayId()));
         }
 
+        if (replaceRouteRequest.getGatewayId() != null) {
+            request.addParameter("GatewayId", StringUtils.fromString(replaceRouteRequest.getGatewayId()));
+        }
+
         if (replaceRouteRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(replaceRouteRequest.getInstanceId()));
+        }
+
+        if (replaceRouteRequest.getNatGatewayId() != null) {
+            request.addParameter("NatGatewayId", StringUtils.fromString(replaceRouteRequest.getNatGatewayId()));
+        }
+
+        if (replaceRouteRequest.getTransitGatewayId() != null) {
+            request.addParameter("TransitGatewayId", StringUtils.fromString(replaceRouteRequest.getTransitGatewayId()));
         }
 
         if (replaceRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(replaceRouteRequest.getNetworkInterfaceId()));
         }
 
-        if (replaceRouteRequest.getVpcPeeringConnectionId() != null) {
-            request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(replaceRouteRequest.getVpcPeeringConnectionId()));
+        if (replaceRouteRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(replaceRouteRequest.getRouteTableId()));
         }
 
-        if (replaceRouteRequest.getNatGatewayId() != null) {
-            request.addParameter("NatGatewayId", StringUtils.fromString(replaceRouteRequest.getNatGatewayId()));
+        if (replaceRouteRequest.getVpcPeeringConnectionId() != null) {
+            request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(replaceRouteRequest.getVpcPeeringConnectionId()));
         }
 
         return request;

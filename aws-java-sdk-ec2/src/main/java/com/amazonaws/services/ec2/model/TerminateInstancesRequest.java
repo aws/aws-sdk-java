@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,16 +20,14 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.TerminateInstancesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for TerminateInstances.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TerminateInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<TerminateInstancesRequest> {
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
@@ -49,7 +47,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * methods to initialize any additional object members.
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The IDs of the instances.</p>
      *        <p>
      *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
@@ -59,13 +57,13 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * </p>
      * 
-     * @return One or more instance IDs.</p>
+     * @return The IDs of the instances.</p>
      *         <p>
      *         Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
@@ -79,14 +77,14 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The IDs of the instances.</p>
      *        <p>
      *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      */
@@ -102,7 +100,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
@@ -114,7 +112,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The IDs of the instances.</p>
      *        <p>
      *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -132,14 +130,14 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The IDs of the instances.</p>
      *        <p>
      *        Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -162,7 +160,8 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest implement
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

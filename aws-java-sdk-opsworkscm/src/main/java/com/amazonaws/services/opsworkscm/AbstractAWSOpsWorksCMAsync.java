@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -166,6 +166,19 @@ public class AbstractAWSOpsWorksCMAsync extends AbstractAWSOpsWorksCM implements
     @Override
     public java.util.concurrent.Future<DisassociateNodeResult> disassociateNodeAsync(DisassociateNodeRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateNodeRequest, DisassociateNodeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request) {
+
+        return exportServerEngineAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportServerEngineAttributeRequest, ExportServerEngineAttributeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

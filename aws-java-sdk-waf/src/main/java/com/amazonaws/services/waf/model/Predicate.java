@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,39 +14,42 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, and
- * <a>SizeConstraintSet</a> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether
- * you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
+ * Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
+ * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that you want to add to a
+ * <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that
+ * do NOT originate from the IP address 192.0.2.44.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Predicate implements Serializable, Cloneable {
+public class Predicate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on
      * the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
-     * or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
+     * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code>
+     * includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
      * </p>
      * <p>
      * Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      * negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * </p>
      */
     private Boolean negated;
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      */
     private String type;
@@ -62,28 +65,29 @@ public class Predicate implements Serializable, Cloneable {
      * <p>
      * Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on
      * the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
-     * or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
+     * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code>
+     * includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
      * </p>
      * <p>
      * Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      * negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * </p>
      * 
      * @param negated
      *        Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests
      *        based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *        <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *        address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+     *        <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if
+     *        an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block
+     *        requests based on that IP address.</p>
      *        <p>
      *        Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      *        negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *        <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *        address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses
-     *        <i>except</i> <code>192.0.2.44</code>.
+     *        <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if
+     *        an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count
+     *        requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      */
 
     public void setNegated(Boolean negated) {
@@ -94,27 +98,28 @@ public class Predicate implements Serializable, Cloneable {
      * <p>
      * Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on
      * the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
-     * or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
+     * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code>
+     * includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
      * </p>
      * <p>
      * Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      * negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * </p>
      * 
      * @return Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests
      *         based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *         <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *         address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+     *         <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example,
+     *         if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block
+     *         requests based on that IP address.</p>
      *         <p>
      *         Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on
      *         the negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *         <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *         address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses
-     *         <i>except</i> <code>192.0.2.44</code>.
+     *         <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example,
+     *         if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or
+     *         count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      */
 
     public Boolean getNegated() {
@@ -125,28 +130,29 @@ public class Predicate implements Serializable, Cloneable {
      * <p>
      * Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on
      * the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
-     * or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
+     * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code>
+     * includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
      * </p>
      * <p>
      * Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      * negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * </p>
      * 
      * @param negated
      *        Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests
      *        based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *        <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *        address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+     *        <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if
+     *        an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block
+     *        requests based on that IP address.</p>
      *        <p>
      *        Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      *        negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *        <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *        address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses
-     *        <i>except</i> <code>192.0.2.44</code>.
+     *        <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if
+     *        an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count
+     *        requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,27 +165,28 @@ public class Predicate implements Serializable, Cloneable {
      * <p>
      * Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on
      * the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
-     * or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
+     * <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code>
+     * includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.
      * </p>
      * <p>
      * Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the
      * negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     * <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP address
-     * <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i>
-     * <code>192.0.2.44</code>.
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an
+     * <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      * </p>
      * 
      * @return Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests
      *         based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *         <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *         address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+     *         <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example,
+     *         if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block
+     *         requests based on that IP address.</p>
      *         <p>
      *         Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on
      *         the negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
-     *         <a>XssMatchSet</a>, or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-     *         address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses
-     *         <i>except</i> <code>192.0.2.44</code>.
+     *         <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>. For example,
+     *         if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or
+     *         count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.
      */
 
     public Boolean isNegated() {
@@ -188,11 +195,11 @@ public class Predicate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      * 
      * @param type
-     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * @see PredicateType
      */
 
@@ -202,10 +209,10 @@ public class Predicate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      * 
-     * @return The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * @return The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * @see PredicateType
      */
 
@@ -215,11 +222,11 @@ public class Predicate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      * 
      * @param type
-     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PredicateType
      */
@@ -231,31 +238,31 @@ public class Predicate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      * 
      * @param type
-     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * @see PredicateType
      */
 
     public void setType(PredicateType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     * The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * </p>
      * 
      * @param type
-     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatchSet</code> or <code>IPSet</code>.
+     *        The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PredicateType
      */
 
     public Predicate withType(PredicateType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -309,7 +316,8 @@ public class Predicate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -372,5 +380,11 @@ public class Predicate implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.PredicateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

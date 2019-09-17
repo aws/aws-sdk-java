@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeIdentityRequest Marshaller
+ * DescribeIdentityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeIdentityRequestMarshaller implements Marshaller<Request<DescribeIdentityRequest>, DescribeIdentityRequest> {
+@SdkInternalApi
+public class DescribeIdentityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
 
-    public DescribeIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeIdentityRequestMarshaller instance = new DescribeIdentityRequestMarshaller();
+
+    public static DescribeIdentityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeIdentityRequest> marshall(DescribeIdentityRequest describeIdentityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeIdentityRequest describeIdentityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeIdentityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeIdentityRequest> request = new DefaultRequest<DescribeIdentityRequest>(describeIdentityRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.DescribeIdentity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeIdentityRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(describeIdentityRequest.getIdentityId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeIdentityRequest.getIdentityId(), IDENTITYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

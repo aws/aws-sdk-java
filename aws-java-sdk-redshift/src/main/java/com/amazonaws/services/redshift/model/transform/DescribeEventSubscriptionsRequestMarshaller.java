@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,34 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
 
         if (describeEventSubscriptionsRequest.getMarker() != null) {
             request.addParameter("Marker", StringUtils.fromString(describeEventSubscriptionsRequest.getMarker()));
+        }
+
+        if (!describeEventSubscriptionsRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest
+                    .getTagKeys();
+            int tagKeysListIndex = 1;
+
+            for (String tagKeysListValue : tagKeysList) {
+                if (tagKeysListValue != null) {
+                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
+                }
+                tagKeysListIndex++;
+            }
+        }
+
+        if (!describeEventSubscriptionsRequest.getTagValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest.getTagValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest
+                    .getTagValues();
+            int tagValuesListIndex = 1;
+
+            for (String tagValuesListValue : tagValuesList) {
+                if (tagValuesListValue != null) {
+                    request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
+                }
+                tagValuesListIndex++;
+            }
         }
 
         return request;

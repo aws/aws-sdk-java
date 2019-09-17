@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBStreamsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -54,36 +57,11 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
- * <p>
- * The following are short descriptions of each low-level DynamoDB Streams action:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>DescribeStream</i> - Returns detailed information about a particular stream.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetRecords</i> - Retrieves the stream records from within a shard.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard
- * ID.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implements AmazonDynamoDBStreams {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -95,26 +73,28 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.0")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TrimmedDataAccessException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TrimmedDataAccessException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TrimmedDataAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ExpiredIteratorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExpiredIteratorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
 
     /**
@@ -201,6 +181,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
     public AmazonDynamoDBStreamsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -266,7 +247,12 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AmazonDynamoDBStreamsClientBuilder builder() {
+        return AmazonDynamoDBStreamsClientBuilder.standard();
     }
 
     /**
@@ -280,8 +266,23 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        Object providing client parameters.
      */
     AmazonDynamoDBStreamsClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon DynamoDB Streams using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonDynamoDBStreamsClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -303,7 +304,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * </p>
      * <note>
      * <p>
-     * You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+     * You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
      * </p>
      * </note>
      * <p>
@@ -315,7 +316,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * </p>
      * 
      * @param describeStreamRequest
-     *        Represents the input of a <i>DescribeStream</i> operation.
+     *        Represents the input of a <code>DescribeStream</code> operation.
      * @return Result of the DescribeStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -326,7 +327,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest) {
+    public DescribeStreamResult describeStream(DescribeStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStream(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStreamResult executeDescribeStream(DescribeStreamRequest describeStreamRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -337,9 +344,14 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStreamRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
+                request = new DescribeStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -373,7 +385,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * </note>
      * 
      * @param getRecordsRequest
-     *        Represents the input of a <i>GetRecords</i> operation.
+     *        Represents the input of a <code>GetRecords</code> operation.
      * @return Result of the GetRecords operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -387,7 +399,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *         An error occurred on the server side.
      * @throws ExpiredIteratorException
      *         The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator
-     *         expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.
+     *         expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.
      * @throws TrimmedDataAccessException
      *         The operation attempted to read past the oldest stream record in a shard.</p>
      *         <p>
@@ -403,9 +415,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *         </li>
      *         <li>
      *         <p>
-     *         You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream
-     *         record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a
-     *         record that no longer exists.
+     *         You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a
+     *         stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access
+     *         a record that no longer exists.
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetRecords
@@ -413,7 +425,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public GetRecordsResult getRecords(GetRecordsRequest getRecordsRequest) {
+    public GetRecordsResult getRecords(GetRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRecords(request);
+    }
+
+    @SdkInternalApi
+    final GetRecordsResult executeGetRecords(GetRecordsRequest getRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -424,9 +442,14 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordsRequest));
+                request = new GetRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecords");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -456,7 +479,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * </note>
      * 
      * @param getShardIteratorRequest
-     *        Represents the input of a <i>GetShardIterator</i> operation.
+     *        Represents the input of a <code>GetShardIterator</code> operation.
      * @return Result of the GetShardIterator operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -477,9 +500,9 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *         </li>
      *         <li>
      *         <p>
-     *         You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream
-     *         record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a
-     *         record that no longer exists.
+     *         You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a
+     *         stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access
+     *         a record that no longer exists.
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetShardIterator
@@ -487,7 +510,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
+    public GetShardIteratorResult getShardIterator(GetShardIteratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShardIterator(request);
+    }
+
+    @SdkInternalApi
+    final GetShardIteratorResult executeGetShardIterator(GetShardIteratorRequest getShardIteratorRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getShardIteratorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -498,9 +527,14 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetShardIteratorRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShardIteratorRequest));
+                request = new GetShardIteratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShardIterator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -520,16 +554,16 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code>
-     * parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.
+     * parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.
      * </p>
      * <note>
      * <p>
-     * You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+     * You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
      * </p>
      * </note>
      * 
      * @param listStreamsRequest
-     *        Represents the input of a <i>ListStreams</i> operation.
+     *        Represents the input of a <code>ListStreams</code> operation.
      * @return Result of the ListStreams operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -540,7 +574,13 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest) {
+    public ListStreamsResult listStreams(ListStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListStreamsResult executeListStreams(ListStreamsRequest listStreamsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStreamsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -551,9 +591,14 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStreamsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
+                request = new ListStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB Streams");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -594,9 +639,18 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -606,7 +660,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -614,13 +668,27 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

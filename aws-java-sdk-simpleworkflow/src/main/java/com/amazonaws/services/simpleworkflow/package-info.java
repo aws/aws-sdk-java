@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,8 @@
  * complexities such as tracking their progress and maintaining their state.
  * </p>
  * <p>
- * This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a>.
+ * This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the <i>
+ * <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </i>.
  * </p>
  */
 package com.amazonaws.services.simpleworkflow;

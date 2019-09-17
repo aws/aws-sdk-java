@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     */
     private String connectorId;
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      */
 
     public void setConnectorId(String connectorId) {
@@ -36,7 +46,11 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
+     * @return The identifier of the connector.
      */
 
     public String getConnectorId() {
@@ -44,7 +58,12 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The identifier of the connector.
+     * </p>
+     * 
      * @param connectorId
+     *        The identifier of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +73,8 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

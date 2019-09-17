@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the active Standard Reserved Instance.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      */
-    private String reservedInstancesId;
+    private String clientToken;
     /**
      * <p>
      * The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance
@@ -51,51 +54,66 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification> priceSchedules;
     /**
      * <p>
+     * The ID of the active Standard Reserved Instance.
+     * </p>
+     */
+    private String reservedInstancesId;
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
      * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
-     */
-    private String clientToken;
-
-    /**
-     * <p>
-     * The ID of the active Standard Reserved Instance.
-     * </p>
      * 
-     * @param reservedInstancesId
-     *        The ID of the active Standard Reserved Instance.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *        duplicate listings. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      */
 
-    public void setReservedInstancesId(String reservedInstancesId) {
-        this.reservedInstancesId = reservedInstancesId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The ID of the active Standard Reserved Instance.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @return The ID of the active Standard Reserved Instance.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *         duplicate listings. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
      */
 
-    public String getReservedInstancesId() {
-        return this.reservedInstancesId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The ID of the active Standard Reserved Instance.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
+     * listings. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
      * </p>
      * 
-     * @param reservedInstancesId
-     *        The ID of the active Standard Reserved Instance.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
+     *        duplicate listings. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withReservedInstancesId(String reservedInstancesId) {
-        setReservedInstancesId(reservedInstancesId);
+    public CreateReservedInstancesListingRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -234,59 +252,41 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
-     * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
-     *        duplicate listings. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
+     * @param reservedInstancesId
+     *        The ID of the active Standard Reserved Instance.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setReservedInstancesId(String reservedInstancesId) {
+        this.reservedInstancesId = reservedInstancesId;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
-     * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
-     *         duplicate listings. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a>.
+     * @return The ID of the active Standard Reserved Instance.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getReservedInstancesId() {
+        return this.reservedInstancesId;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
-     * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
+     * The ID of the active Standard Reserved Instance.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
-     *        duplicate listings. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
+     * @param reservedInstancesId
+     *        The ID of the active Standard Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateReservedInstancesListingRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateReservedInstancesListingRequest withReservedInstancesId(String reservedInstancesId) {
+        setReservedInstancesId(reservedInstancesId);
         return this;
     }
 
@@ -302,7 +302,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,14 +313,14 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceCount() != null)
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getPriceSchedules() != null)
             sb.append("PriceSchedules: ").append(getPriceSchedules()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+        if (getReservedInstancesId() != null)
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId());
         sb.append("}");
         return sb.toString();
     }
@@ -334,9 +335,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
         if (obj instanceof CreateReservedInstancesListingRequest == false)
             return false;
         CreateReservedInstancesListingRequest other = (CreateReservedInstancesListingRequest) obj;
-        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
@@ -346,9 +347,9 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
             return false;
         if (other.getPriceSchedules() != null && other.getPriceSchedules().equals(this.getPriceSchedules()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
             return false;
         return true;
     }
@@ -358,10 +359,10 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getPriceSchedules() == null) ? 0 : getPriceSchedules().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
         return hashCode;
     }
 

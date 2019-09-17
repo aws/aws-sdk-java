@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,20 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes an Amazon EBS volume. This data type maps directly to the Amazon EC2 <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a> data type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EbsBlockDevice" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EbsBlockDevice implements Serializable, Cloneable {
+public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,21 +38,27 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      */
     private String volumeType;
@@ -104,12 +112,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setIops(Integer iops) {
@@ -119,11 +127,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getIops() {
@@ -133,12 +141,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) that the volume supports. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +158,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
      *        The volume size, in GiB. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -165,11 +173,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @return The volume size, in GiB. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      */
 
     public Integer getVolumeSize() {
@@ -179,12 +187,12 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume size, in GiB. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * </p>
      * 
      * @param volumeSize
      *        The volume size, in GiB. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html">EbsBlockDevice</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,12 +204,23 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      * 
      * @param volumeType
      *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
-     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     *        (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold
+     *        HDD,and <code>standard</code> for Magnetic volumes.</p>
+     *        <p>
+     *        If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     *        attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the
+     *        default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * @see VolumeType
      */
 
@@ -212,11 +231,22 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      * 
      * @return The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned
-     *         IOPS (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     *         IOPS (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code>
+     *         for Cold HDD,and <code>standard</code> for Magnetic volumes.</p>
+     *         <p>
+     *         If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     *         attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the
+     *         default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * @see VolumeType
      */
 
@@ -227,12 +257,23 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      * 
      * @param volumeType
      *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
-     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     *        (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold
+     *        HDD,and <code>standard</code> for Magnetic volumes.</p>
+     *        <p>
+     *        If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     *        attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the
+     *        default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -245,34 +286,56 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      * 
      * @param volumeType
      *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
-     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     *        (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold
+     *        HDD,and <code>standard</code> for Magnetic volumes.</p>
+     *        <p>
+     *        If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     *        attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the
+     *        default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * @see VolumeType
      */
 
     public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
+        withVolumeType(volumeType);
     }
 
     /**
      * <p>
      * The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS (SSD)
-     * volumes, and <code>standard</code> for Magnetic volumes.
+     * volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.
+     * </p>
+     * <p>
+     * If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     * attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the default
+     * volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * </p>
      * 
      * @param volumeType
      *        The volume type. <code>gp2</code> for General Purpose (SSD) volumes, <code>io1</code> for Provisioned IOPS
-     *        (SSD) volumes, and <code>standard</code> for Magnetic volumes.
+     *        (SSD) volumes, <code>st1</code> for Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold
+     *        HDD,and <code>standard</code> for Magnetic volumes.</p>
+     *        <p>
+     *        If you specify the <code>io1</code> volume type, you must also specify a value for the <code>Iops</code>
+     *        attribute. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1. AWS uses the
+     *        default volume size (in GiB) specified in the AMI attributes to set IOPS to 50 x (volume size).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
 
     public EbsBlockDevice withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
+        this.volumeType = volumeType.toString();
         return this;
     }
 
@@ -329,7 +392,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -406,5 +470,11 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.EbsBlockDeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

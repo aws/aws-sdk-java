@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     private Integer clientStatus;
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      */
     private String log;
@@ -57,7 +57,7 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Map<String, java.util.List<String>> authorization;
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      */
@@ -105,11 +105,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test authorizer request.
+     *        The API Gateway execution log for the test authorizer request.
      */
 
     public void setLog(String log) {
@@ -118,10 +118,10 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
-     * @return The Amazon API Gateway execution log for the test authorizer request.
+     * @return The API Gateway execution log for the test authorizer request.
      */
 
     public String getLog() {
@@ -130,11 +130,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test authorizer request.
+     *        The API Gateway execution log for the test authorizer request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +312,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
-     * @return The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     * @return The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *         claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *         the API.
      */
@@ -327,12 +327,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *        the API.
      */
@@ -343,12 +343,12 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
+     * The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with
      * any supported custom attributes, returned from the Cognito Your User Pool configured for the API.
      * </p>
      * 
      * @param claims
-     *        The <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
+     *        The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity
      *        claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for
      *        the API.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -381,7 +381,8 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -473,4 +474,5 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

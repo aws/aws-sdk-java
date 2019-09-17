@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,43 +26,54 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      */
     private String taskExecutionId;
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The parameters passed to the task when it was executed. The map has the following format:
+     * The parameters passed to the task when it was run.
+     * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters;
@@ -112,11 +123,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -125,10 +136,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that includes the task.
+     * @return The ID of the maintenance window execution that includes the task.
      */
 
     public String getWindowExecutionId() {
@@ -137,11 +148,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that includes the task.
+     * The ID of the maintenance window execution that includes the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that includes the task.
+     *        The ID of the maintenance window execution that includes the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +163,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     *        The ID of the specific task execution in the maintenance window task that was retrieved.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -165,10 +176,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * @return The ID of the specific task execution in the maintenance window task that was retrieved.
      */
 
     public String getTaskExecutionId() {
@@ -177,11 +188,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     * The ID of the specific task execution in the maintenance window task that was retrieved.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window task that was retrieved.
+     *        The ID of the specific task execution in the maintenance window task that was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +203,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -205,10 +216,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
-     * @return The ARN of the executed task.
+     * @return The ARN of the task that ran.
      */
 
     public String getTaskArn() {
@@ -217,11 +228,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +243,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -245,10 +256,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
-     * @return The role that was assumed when executing the task.
+     * @return The role that was assumed when running the task.
      */
 
     public String getServiceRole() {
@@ -257,11 +268,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +283,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -286,10 +297,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
-     * @return The type of task executed.
+     * @return The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -299,11 +310,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -315,51 +326,72 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
     public void setType(MaintenanceWindowTaskType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
 
     public GetMaintenanceWindowExecutionTaskResult withType(MaintenanceWindowTaskType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed. The map has the following format:
+     * The parameters passed to the task when it was run.
+     * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
-     * @return The parameters passed to the task when it was executed. The map has the following format:</p>
+     * @return The parameters passed to the task when it was run.</p> <note>
      *         <p>
-     *         Key: string, 1 ≤ length ≤ 255
+     *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
+     *         For information about how Systems Manager handles these options for the supported maintenance window task
+     *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The map has the following format:
      *         </p>
      *         <p>
-     *         Value: an array of strings where each string 1 ≤ length ≤ 255
+     *         Key: string, between 1 and 255 characters
+     *         </p>
+     *         <p>
+     *         Value: an array of strings, each string is between 1 and 255 characters
      */
 
     public java.util.List<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> getTaskParameters() {
@@ -371,22 +403,43 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed. The map has the following format:
+     * The parameters passed to the task when it was run.
+     * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
+     *        information about how Systems Manager handles these options for the supported maintenance window task
+     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The map has the following format:
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
+     *        </p>
+     *        <p>
+     *        Value: an array of strings, each string is between 1 and 255 characters
      */
 
     public void setTaskParameters(java.util.Collection<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters) {
@@ -400,13 +453,24 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed. The map has the following format:
+     * The parameters passed to the task when it was run.
+     * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -415,12 +479,22 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
+     *        information about how Systems Manager handles these options for the supported maintenance window task
+     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The map has the following format:
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
+     *        </p>
+     *        <p>
+     *        Value: an array of strings, each string is between 1 and 255 characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,22 +511,43 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed. The map has the following format:
+     * The parameters passed to the task when it was run.
+     * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed. The map has the following format:</p>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
+     *        information about how Systems Manager handles these options for the supported maintenance window task
+     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The map has the following format:
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
+     *        </p>
+     *        <p>
+     *        Value: an array of strings, each string is between 1 and 255 characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -642,7 +737,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -657,7 +752,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public GetMaintenanceWindowExecutionTaskResult withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -782,7 +877,8 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -803,7 +899,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+            sb.append("TaskParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getMaxConcurrency() != null)
@@ -916,4 +1012,5 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

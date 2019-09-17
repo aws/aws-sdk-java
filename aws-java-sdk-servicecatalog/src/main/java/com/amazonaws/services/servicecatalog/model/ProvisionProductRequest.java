@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,25 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
@@ -51,21 +56,21 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String provisioningArtifactId;
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      */
     private String pathId;
     /**
      * <p>
-     * A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS account and
-     * cannot be updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
+     * updated after the product is provisioned.
      * </p>
      */
     private String provisionedProductName;
@@ -77,7 +82,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<ProvisioningParameter> provisioningParameters;
     /**
      * <p>
-     * A list of tags to use as provisioning options.
+     * An object that contains information about the provisioning preferences for a stack set.
+     * </p>
+     */
+    private ProvisioningPreferences provisioningPreferences;
+    /**
+     * <p>
+     * One or more tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -96,34 +107,44 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -132,33 +153,43 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -167,34 +198,44 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +286,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -258,10 +299,10 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getProvisioningArtifactId() {
@@ -270,11 +311,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,13 +326,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *        default path, and is required if there is more than one path for the specified product.
+     *        The path identifier of the product. This value is optional if the product has a default path, and required
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      */
 
     public void setPathId(String pathId) {
@@ -300,12 +341,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
-     * @return The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *         default path, and is required if there is more than one path for the specified product.
+     * @return The path identifier of the product. This value is optional if the product has a default path, and
+     *         required if the product has more than one path. To list the paths for a product, use
+     *         <a>ListLaunchPaths</a>.
      */
 
     public String getPathId() {
@@ -314,13 +356,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *        default path, and is required if there is more than one path for the specified product.
+     *        The path identifier of the product. This value is optional if the product has a default path, and required
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,13 +373,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS account and
-     * cannot be updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
+     * updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS
-     *        account and cannot be updated after the product is provisioned.
+     *        A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot
+     *        be updated after the product is provisioned.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -346,12 +388,12 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS account and
-     * cannot be updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
+     * updated after the product is provisioned.
      * </p>
      * 
-     * @return A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS
-     *         account and cannot be updated after the product is provisioned.
+     * @return A user-friendly name for the provisioned product. This value must be unique for the AWS account and
+     *         cannot be updated after the product is provisioned.
      */
 
     public String getProvisionedProductName() {
@@ -360,13 +402,13 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS account and
-     * cannot be updated after the product is provisioned.
+     * A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot be
+     * updated after the product is provisioned.
      * </p>
      * 
      * @param provisionedProductName
-     *        A user-friendly name to identify the ProvisionedProduct object. This value must be unique for the AWS
-     *        account and cannot be updated after the product is provisioned.
+     *        A user-friendly name for the provisioned product. This value must be unique for the AWS account and cannot
+     *        be updated after the product is provisioned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,10 +489,50 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of tags to use as provisioning options.
+     * An object that contains information about the provisioning preferences for a stack set.
      * </p>
      * 
-     * @return A list of tags to use as provisioning options.
+     * @param provisioningPreferences
+     *        An object that contains information about the provisioning preferences for a stack set.
+     */
+
+    public void setProvisioningPreferences(ProvisioningPreferences provisioningPreferences) {
+        this.provisioningPreferences = provisioningPreferences;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about the provisioning preferences for a stack set.
+     * </p>
+     * 
+     * @return An object that contains information about the provisioning preferences for a stack set.
+     */
+
+    public ProvisioningPreferences getProvisioningPreferences() {
+        return this.provisioningPreferences;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about the provisioning preferences for a stack set.
+     * </p>
+     * 
+     * @param provisioningPreferences
+     *        An object that contains information about the provisioning preferences for a stack set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionProductRequest withProvisioningPreferences(ProvisioningPreferences provisioningPreferences) {
+        setProvisioningPreferences(provisioningPreferences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tags.
+     * </p>
+     * 
+     * @return One or more tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -459,11 +541,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags to use as provisioning options.
+     *        One or more tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -477,7 +559,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -486,7 +568,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        A list of tags to use as provisioning options.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,11 +584,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags to use as provisioning options.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,7 +708,8 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -648,6 +731,8 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("ProvisionedProductName: ").append(getProvisionedProductName()).append(",");
         if (getProvisioningParameters() != null)
             sb.append("ProvisioningParameters: ").append(getProvisioningParameters()).append(",");
+        if (getProvisioningPreferences() != null)
+            sb.append("ProvisioningPreferences: ").append(getProvisioningPreferences()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getNotificationArns() != null)
@@ -692,6 +777,10 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getProvisioningParameters() != null && other.getProvisioningParameters().equals(this.getProvisioningParameters()) == false)
             return false;
+        if (other.getProvisioningPreferences() == null ^ this.getProvisioningPreferences() == null)
+            return false;
+        if (other.getProvisioningPreferences() != null && other.getProvisioningPreferences().equals(this.getProvisioningPreferences()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -718,6 +807,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
         hashCode = prime * hashCode + ((getProvisionedProductName() == null) ? 0 : getProvisionedProductName().hashCode());
         hashCode = prime * hashCode + ((getProvisioningParameters() == null) ? 0 : getProvisioningParameters().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningPreferences() == null) ? 0 : getProvisioningPreferences().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNotificationArns() == null) ? 0 : getNotificationArns().hashCode());
         hashCode = prime * hashCode + ((getProvisionToken() == null) ? 0 : getProvisionToken().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under
  * your AWS account. This guide provides descriptions of IAM actions that you can call programmatically. For general
  * information about IAM, see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>. For the
- * user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
+ * user guide for IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
  * <note>
  * <p>
@@ -31,7 +31,7 @@
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However, you can also use the IAM Query
  * API to make direct calls to the IAM web service. To learn more about the IAM Query API, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
  * <i>Using IAM</i> guide. IAM supports GET and POST requests for all actions. That is, the API does not require you to
  * use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL.
  * Therefore, for operations that require larger sizes, use a POST request.
@@ -47,7 +47,7 @@
  * </p>
  * <p>
  * To sign requests, we recommend that you use <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
  * existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However,
  * some operations now require Signature Version 4. The documentation for operations that require version 4 indicate
  * this requirement.
@@ -61,19 +61,19 @@
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
  * This topic provides general information about the types of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
+ * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
  * presents a list of suggestions for using the IAM service to help secure your AWS resources.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
  * This set of topics walk you through the process of signing a request using an access key ID and secret access key.
  * </p>
  * </li>

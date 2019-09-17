@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,94 +42,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -167,95 +90,18 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @param resourceRecordSet
@@ -284,95 +130,18 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @param resourceRecordSet
@@ -399,94 +168,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -505,95 +197,18 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @see ChangeAction
@@ -619,94 +234,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -724,95 +262,18 @@ public class Change implements Serializable, Cloneable {
      *         </p>
      *         <important>
      *         <p>
-     *         To delete the resource record set that is associated with a traffic policy instance, use
-     *         <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *         automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *         Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *         charged for it even though it's no longer in use.
+     *         To delete the resource record set that is associated with a traffic policy instance, use <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *         >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *         you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *         automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *         it's no longer in use.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *         resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         The values that you need to include in the request depend on the type of resource record set that you're
-     *         creating, deleting, or updating:
-     *         </p>
-     *         <p>
-     *         <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *         record sets)</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Name</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Type</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>TTL</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *         sets)</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Name</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Type</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>TTL</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>SetIdentifier</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *         alias resource record sets)</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Name</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Type</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *         <code>HostedZoneId</code>)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *         <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *         record set does exist, Route 53 updates it with the values in the request.
      *         </p>
      *         </li>
      * @see ChangeAction
@@ -838,94 +299,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -944,95 +328,18 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1060,94 +367,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -1166,102 +396,25 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @see ChangeAction
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -1280,94 +433,17 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route
-     * 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a resource
-     * record set does exist, Amazon Route 53 updates it with the values in the request.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
-     * </p>
-     * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     * <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record
+     * set does exist, Route 53 updates it with the values in the request.
      * </p>
      * </li>
      * </ul>
@@ -1386,95 +462,18 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
      *        <p>
-     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Amazon Route 53 creates it. If a
-     *        resource record set does exist, Amazon Route 53 updates it with the values in the request.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The values that you need to include in the request depend on the type of resource record set that you're
-     *        creating, deleting, or updating:
-     *        </p>
-     *        <p>
-     *        <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource
-     *        record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record
-     *        sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>TTL</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted
-     *        alias resource record sets)</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Name</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Type</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     *        <code>HostedZoneId</code>)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
+     *        <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource
+     *        record set does exist, Route 53 updates it with the values in the request.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1482,7 +481,7 @@ public class Change implements Serializable, Cloneable {
      */
 
     public Change withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
@@ -1527,7 +526,8 @@ public class Change implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1584,4 +584,5 @@ public class Change implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

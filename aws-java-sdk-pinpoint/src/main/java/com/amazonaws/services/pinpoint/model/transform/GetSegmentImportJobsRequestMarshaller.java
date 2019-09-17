@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,65 +12,53 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSegmentImportJobsRequest Marshaller
+ * GetSegmentImportJobsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSegmentImportJobsRequestMarshaller implements Marshaller<Request<GetSegmentImportJobsRequest>, GetSegmentImportJobsRequest> {
+@SdkInternalApi
+public class GetSegmentImportJobsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("page-size").build();
+    private static final MarshallingInfo<String> SEGMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("segment-id").build();
+    private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("token").build();
 
-    public GetSegmentImportJobsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSegmentImportJobsRequestMarshaller instance = new GetSegmentImportJobsRequestMarshaller();
+
+    public static GetSegmentImportJobsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSegmentImportJobsRequest> marshall(GetSegmentImportJobsRequest getSegmentImportJobsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSegmentImportJobsRequest getSegmentImportJobsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSegmentImportJobsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSegmentImportJobsRequest> request = new DefaultRequest<GetSegmentImportJobsRequest>(getSegmentImportJobsRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/jobs/import";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getSegmentImportJobsRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "segment-id", getSegmentImportJobsRequest.getSegmentId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getSegmentImportJobsRequest.getPageSize() != null) {
-            request.addParameter("page-size", StringUtils.fromString(getSegmentImportJobsRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(getSegmentImportJobsRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getSegmentImportJobsRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(getSegmentImportJobsRequest.getSegmentId(), SEGMENTID_BINDING);
+            protocolMarshaller.marshall(getSegmentImportJobsRequest.getToken(), TOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getSegmentImportJobsRequest.getToken() != null) {
-            request.addParameter("token", StringUtils.fromString(getSegmentImportJobsRequest.getToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

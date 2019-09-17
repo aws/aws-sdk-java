@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListContainerInstancesRequest Marshaller
+ * ListContainerInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListContainerInstancesRequestMarshaller implements Marshaller<Request<ListContainerInstancesRequest>, ListContainerInstancesRequest> {
+@SdkInternalApi
+public class ListContainerInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<String> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filter").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
-    public ListContainerInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListContainerInstancesRequestMarshaller instance = new ListContainerInstancesRequestMarshaller();
+
+    public static ListContainerInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListContainerInstancesRequest> marshall(ListContainerInstancesRequest listContainerInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListContainerInstancesRequest listContainerInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listContainerInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListContainerInstancesRequest> request = new DefaultRequest<ListContainerInstancesRequest>(listContainerInstancesRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.ListContainerInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listContainerInstancesRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(listContainerInstancesRequest.getCluster());
-            }
-            if (listContainerInstancesRequest.getFilter() != null) {
-                jsonGenerator.writeFieldName("filter").writeValue(listContainerInstancesRequest.getFilter());
-            }
-            if (listContainerInstancesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listContainerInstancesRequest.getNextToken());
-            }
-            if (listContainerInstancesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listContainerInstancesRequest.getMaxResults());
-            }
-            if (listContainerInstancesRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(listContainerInstancesRequest.getStatus());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listContainerInstancesRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(listContainerInstancesRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(listContainerInstancesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listContainerInstancesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listContainerInstancesRequest.getStatus(), STATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

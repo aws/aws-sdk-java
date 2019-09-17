@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListStreamsRequest Marshaller
+ * ListStreamsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListStreamsRequestMarshaller implements Marshaller<Request<ListStreamsRequest>, ListStreamsRequest> {
+@SdkInternalApi
+public class ListStreamsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> EXCLUSIVESTARTSTREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartStreamArn").build();
 
-    public ListStreamsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListStreamsRequestMarshaller instance = new ListStreamsRequestMarshaller();
+
+    public static ListStreamsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListStreamsRequest> marshall(ListStreamsRequest listStreamsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListStreamsRequest listStreamsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listStreamsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListStreamsRequest> request = new DefaultRequest<ListStreamsRequest>(listStreamsRequest, "AmazonDynamoDBStreams");
-        request.addHeader("X-Amz-Target", "DynamoDBStreams_20120810.ListStreams");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listStreamsRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(listStreamsRequest.getTableName());
-            }
-            if (listStreamsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listStreamsRequest.getLimit());
-            }
-            if (listStreamsRequest.getExclusiveStartStreamArn() != null) {
-                jsonGenerator.writeFieldName("ExclusiveStartStreamArn").writeValue(listStreamsRequest.getExclusiveStartStreamArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listStreamsRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(listStreamsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listStreamsRequest.getExclusiveStartStreamArn(), EXCLUSIVESTARTSTREAMARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

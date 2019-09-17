@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,10 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
 
     /**
      * <p>
-     * The public IP address or Elastic IP address bound to the network interface.
+     * The ID of the owner of the Elastic IP address.
      * </p>
      */
-    private String publicIp;
+    private String ipOwnerId;
     /**
      * <p>
      * The public DNS name.
@@ -40,48 +40,48 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
     private String publicDnsName;
     /**
      * <p>
+     * The public IP address or Elastic IP address bound to the network interface.
+     * </p>
+     */
+    private String publicIp;
+
+    /**
+     * <p>
      * The ID of the owner of the Elastic IP address.
      * </p>
-     */
-    private String ipOwnerId;
-
-    /**
-     * <p>
-     * The public IP address or Elastic IP address bound to the network interface.
-     * </p>
      * 
-     * @param publicIp
-     *        The public IP address or Elastic IP address bound to the network interface.
+     * @param ipOwnerId
+     *        The ID of the owner of the Elastic IP address.
      */
 
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
+    public void setIpOwnerId(String ipOwnerId) {
+        this.ipOwnerId = ipOwnerId;
     }
 
     /**
      * <p>
-     * The public IP address or Elastic IP address bound to the network interface.
+     * The ID of the owner of the Elastic IP address.
      * </p>
      * 
-     * @return The public IP address or Elastic IP address bound to the network interface.
+     * @return The ID of the owner of the Elastic IP address.
      */
 
-    public String getPublicIp() {
-        return this.publicIp;
+    public String getIpOwnerId() {
+        return this.ipOwnerId;
     }
 
     /**
      * <p>
-     * The public IP address or Elastic IP address bound to the network interface.
+     * The ID of the owner of the Elastic IP address.
      * </p>
      * 
-     * @param publicIp
-     *        The public IP address or Elastic IP address bound to the network interface.
+     * @param ipOwnerId
+     *        The ID of the owner of the Elastic IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
+    public InstanceNetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
+        setIpOwnerId(ipOwnerId);
         return this;
     }
 
@@ -127,46 +127,47 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the owner of the Elastic IP address.
+     * The public IP address or Elastic IP address bound to the network interface.
      * </p>
      * 
-     * @param ipOwnerId
-     *        The ID of the owner of the Elastic IP address.
+     * @param publicIp
+     *        The public IP address or Elastic IP address bound to the network interface.
      */
 
-    public void setIpOwnerId(String ipOwnerId) {
-        this.ipOwnerId = ipOwnerId;
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
     }
 
     /**
      * <p>
-     * The ID of the owner of the Elastic IP address.
+     * The public IP address or Elastic IP address bound to the network interface.
      * </p>
      * 
-     * @return The ID of the owner of the Elastic IP address.
+     * @return The public IP address or Elastic IP address bound to the network interface.
      */
 
-    public String getIpOwnerId() {
-        return this.ipOwnerId;
+    public String getPublicIp() {
+        return this.publicIp;
     }
 
     /**
      * <p>
-     * The ID of the owner of the Elastic IP address.
+     * The public IP address or Elastic IP address bound to the network interface.
      * </p>
      * 
-     * @param ipOwnerId
-     *        The ID of the owner of the Elastic IP address.
+     * @param publicIp
+     *        The public IP address or Elastic IP address bound to the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InstanceNetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
-        setIpOwnerId(ipOwnerId);
+    public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,12 +177,12 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getIpOwnerId() != null)
+            sb.append("IpOwnerId: ").append(getIpOwnerId()).append(",");
         if (getPublicDnsName() != null)
             sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
-        if (getIpOwnerId() != null)
-            sb.append("IpOwnerId: ").append(getIpOwnerId());
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -196,17 +197,17 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
         if (obj instanceof InstanceNetworkInterfaceAssociation == false)
             return false;
         InstanceNetworkInterfaceAssociation other = (InstanceNetworkInterfaceAssociation) obj;
-        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
+        if (other.getIpOwnerId() == null ^ this.getIpOwnerId() == null)
             return false;
-        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
+        if (other.getIpOwnerId() != null && other.getIpOwnerId().equals(this.getIpOwnerId()) == false)
             return false;
         if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null)
             return false;
         if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false)
             return false;
-        if (other.getIpOwnerId() == null ^ this.getIpOwnerId() == null)
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
-        if (other.getIpOwnerId() != null && other.getIpOwnerId().equals(this.getIpOwnerId()) == false)
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         return true;
     }
@@ -216,9 +217,9 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 
@@ -230,4 +231,5 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

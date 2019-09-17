@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,32 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStackInstancesResult> createStackInstancesAsync(CreateStackInstancesRequest request) {
+
+        return createStackInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStackInstancesResult> createStackInstancesAsync(CreateStackInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStackInstancesRequest, CreateStackInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStackSetResult> createStackSetAsync(CreateStackSetRequest request) {
+
+        return createStackSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStackSetResult> createStackSetAsync(CreateStackSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStackSetRequest, CreateStackSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(DeleteChangeSetRequest request) {
 
         return deleteChangeSetAsync(request, null);
@@ -101,6 +127,32 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStackInstancesResult> deleteStackInstancesAsync(DeleteStackInstancesRequest request) {
+
+        return deleteStackInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStackInstancesResult> deleteStackInstancesAsync(DeleteStackInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStackInstancesRequest, DeleteStackInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStackSetResult> deleteStackSetAsync(DeleteStackSetRequest request) {
+
+        return deleteStackSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStackSetResult> deleteStackSetAsync(DeleteStackSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStackSetRequest, DeleteStackSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +184,21 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStackDriftDetectionStatusResult> describeStackDriftDetectionStatusAsync(
+            DescribeStackDriftDetectionStatusRequest request) {
+
+        return describeStackDriftDetectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackDriftDetectionStatusResult> describeStackDriftDetectionStatusAsync(
+            DescribeStackDriftDetectionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStackDriftDetectionStatusRequest, DescribeStackDriftDetectionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(DescribeStackEventsRequest request) {
 
         return describeStackEventsAsync(request, null);
@@ -140,6 +207,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(DescribeStackEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStackEventsRequest, DescribeStackEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackInstanceResult> describeStackInstanceAsync(DescribeStackInstanceRequest request) {
+
+        return describeStackInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackInstanceResult> describeStackInstanceAsync(DescribeStackInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStackInstanceRequest, DescribeStackInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +238,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStackResourceDriftsResult> describeStackResourceDriftsAsync(DescribeStackResourceDriftsRequest request) {
+
+        return describeStackResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackResourceDriftsResult> describeStackResourceDriftsAsync(DescribeStackResourceDriftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStackResourceDriftsRequest, DescribeStackResourceDriftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStackResourcesResult> describeStackResourcesAsync(DescribeStackResourcesRequest request) {
 
         return describeStackResourcesAsync(request, null);
@@ -166,6 +259,32 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<DescribeStackResourcesResult> describeStackResourcesAsync(DescribeStackResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStackResourcesRequest, DescribeStackResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackSetResult> describeStackSetAsync(DescribeStackSetRequest request) {
+
+        return describeStackSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackSetResult> describeStackSetAsync(DescribeStackSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStackSetRequest, DescribeStackSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackSetOperationResult> describeStackSetOperationAsync(DescribeStackSetOperationRequest request) {
+
+        return describeStackSetOperationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackSetOperationResult> describeStackSetOperationAsync(DescribeStackSetOperationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStackSetOperationRequest, DescribeStackSetOperationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,10 +318,37 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #describeStacksAsync(DescribeStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
         return describeStacksAsync(new DescribeStacksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackDriftResult> detectStackDriftAsync(DetectStackDriftRequest request) {
+
+        return detectStackDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackDriftResult> detectStackDriftAsync(DetectStackDriftRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackResourceDriftResult> detectStackResourceDriftAsync(DetectStackResourceDriftRequest request) {
+
+        return detectStackResourceDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackResourceDriftResult> detectStackResourceDriftAsync(DetectStackResourceDriftRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectStackResourceDriftRequest, DetectStackResourceDriftResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -234,6 +380,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #estimateTemplateCostAsync(EstimateTemplateCostRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler) {
 
@@ -308,6 +455,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #getTemplateSummaryAsync(GetTemplateSummaryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler) {
 
@@ -354,6 +502,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackInstancesResult> listStackInstancesAsync(ListStackInstancesRequest request) {
+
+        return listStackInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackInstancesResult> listStackInstancesAsync(ListStackInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackInstancesRequest, ListStackInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(ListStackResourcesRequest request) {
 
         return listStackResourcesAsync(request, null);
@@ -362,6 +523,45 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(ListStackResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStackResourcesRequest, ListStackResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetOperationResultsResult> listStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request) {
+
+        return listStackSetOperationResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetOperationResultsResult> listStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackSetOperationResultsRequest, ListStackSetOperationResultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetOperationsResult> listStackSetOperationsAsync(ListStackSetOperationsRequest request) {
+
+        return listStackSetOperationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetOperationsResult> listStackSetOperationsAsync(ListStackSetOperationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackSetOperationsRequest, ListStackSetOperationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetsResult> listStackSetsAsync(ListStackSetsRequest request) {
+
+        return listStackSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetsResult> listStackSetsAsync(ListStackSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackSetsRequest, ListStackSetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -395,6 +595,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #listStacksAsync(ListStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStacksResult> listStacksAsync(com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult> asyncHandler) {
 
         return listStacksAsync(new ListStacksRequest(), asyncHandler);
@@ -427,6 +628,19 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<StopStackSetOperationResult> stopStackSetOperationAsync(StopStackSetOperationRequest request) {
+
+        return stopStackSetOperationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStackSetOperationResult> stopStackSetOperationAsync(StopStackSetOperationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopStackSetOperationRequest, StopStackSetOperationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(UpdateStackRequest request) {
 
         return updateStackAsync(request, null);
@@ -435,6 +649,45 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     @Override
     public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(UpdateStackRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStackInstancesResult> updateStackInstancesAsync(UpdateStackInstancesRequest request) {
+
+        return updateStackInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStackInstancesResult> updateStackInstancesAsync(UpdateStackInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStackInstancesRequest, UpdateStackInstancesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStackSetResult> updateStackSetAsync(UpdateStackSetRequest request) {
+
+        return updateStackSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStackSetResult> updateStackSetAsync(UpdateStackSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStackSetRequest, UpdateStackSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTerminationProtectionResult> updateTerminationProtectionAsync(UpdateTerminationProtectionRequest request) {
+
+        return updateTerminationProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTerminationProtectionResult> updateTerminationProtectionAsync(UpdateTerminationProtectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTerminationProtectionRequest, UpdateTerminationProtectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

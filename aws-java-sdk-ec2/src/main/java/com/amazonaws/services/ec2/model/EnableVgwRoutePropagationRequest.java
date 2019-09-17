@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,64 +30,28 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the route table.
-     * </p>
-     */
-    private String routeTableId;
-    /**
-     * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to
+     * the same VPC that the routing tables are associated with.
      * </p>
      */
     private String gatewayId;
-
     /**
      * <p>
-     * The ID of the route table.
+     * The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     * gateway is attached to.
      * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
      */
-
-    public void setRouteTableId(String routeTableId) {
-        this.routeTableId = routeTableId;
-    }
+    private String routeTableId;
 
     /**
      * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @return The ID of the route table.
-     */
-
-    public String getRouteTableId() {
-        return this.routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EnableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
-        setRouteTableId(routeTableId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to
+     * the same VPC that the routing tables are associated with.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be
+     *        attached to the same VPC that the routing tables are associated with.
      */
 
     public void setGatewayId(String gatewayId) {
@@ -96,10 +60,12 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to
+     * the same VPC that the routing tables are associated with.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be
+     *         attached to the same VPC that the routing tables are associated with.
      */
 
     public String getGatewayId() {
@@ -108,16 +74,64 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be attached to
+     * the same VPC that the routing tables are associated with.
      * </p>
      * 
      * @param gatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway that is attached to a VPC. The virtual private gateway must be
+     *        attached to the same VPC that the routing tables are associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EnableVgwRoutePropagationRequest withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     * gateway is attached to.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     *        gateway is attached to.
+     */
+
+    public void setRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     * gateway is attached to.
+     * </p>
+     * 
+     * @return The ID of the route table. The routing table must be associated with the same VPC that the virtual
+     *         private gateway is attached to.
+     */
+
+    public String getRouteTableId() {
+        return this.routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     * gateway is attached to.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table. The routing table must be associated with the same VPC that the virtual private
+     *        gateway is attached to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
+        setRouteTableId(routeTableId);
         return this;
     }
 
@@ -133,7 +147,8 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,10 +158,10 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRouteTableId() != null)
-            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: ").append(getGatewayId());
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
+        if (getRouteTableId() != null)
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +176,13 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
         if (obj instanceof EnableVgwRoutePropagationRequest == false)
             return false;
         EnableVgwRoutePropagationRequest other = (EnableVgwRoutePropagationRequest) obj;
-        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
-            return false;
-        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
-            return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
+            return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         return true;
     }
@@ -177,8 +192,8 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         return hashCode;
     }
 

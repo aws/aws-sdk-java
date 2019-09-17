@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,12 +26,12 @@ import com.amazonaws.services.ecr.model.*;
  * {@link com.amazonaws.services.ecr.AbstractAmazonECR} instead.
  * </p>
  * <p>
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
- * Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar
+ * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or
- * Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage
- * images.
+ * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
+ * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,28 +43,29 @@ public interface AmazonECR {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "ecr";
+    String ENDPOINT_PREFIX = "api.ecr";
 
     /**
-     * Overrides the default endpoint for this client ("ecr.us-east-1.amazonaws.com"). Callers can use this method to
-     * control which AWS region they want to work with.
+     * Overrides the default endpoint for this client ("api.ecr.us-east-1.amazonaws.com"). Callers can use this method
+     * to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol
-     * (ex: "ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol from this
-     * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the
+     * protocol (ex: "api.ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol
+     * from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
      *
      * @param endpoint
-     *        The endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
-     *        "ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
+     *        The endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
+     *        "api.ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
      * @deprecated use {@link AwsClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} for
      *             example:
      *             {@code builder.setEndpointConfiguration(new EndpointConfiguration(endpoint, signingRegion));}
@@ -174,8 +175,8 @@ public interface AmazonECR {
 
     /**
      * <p>
-     * Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has
-     * completed. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <note>
@@ -222,18 +223,46 @@ public interface AmazonECR {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
      * @throws RepositoryAlreadyExistsException
      *         The specified repository already exists in the specified registry.
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
      *      Documentation</a>
      */
     CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest);
+
+    /**
+     * <p>
+     * Deletes the specified lifecycle policy.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -388,6 +417,50 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * Retrieves the specified lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the results of the specified lifecycle policy preview request.
+     * </p>
+     * 
+     * @param getLifecyclePolicyPreviewRequest
+     * @return Result of the GetLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyPreviewNotFoundException
+     *         There is no dry run for this repository.
+     * @sample AmazonECR.GetLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetLifecyclePolicyPreviewResult getLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest getLifecyclePolicyPreviewRequest);
+
+    /**
+     * <p>
      * Retrieves the repository policy for a specified repository.
      * </p>
      * 
@@ -462,6 +535,26 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * List the tags for an Amazon ECR resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates or updates the image manifest and tags associated with an image.
      * </p>
      * <note>
@@ -481,15 +574,18 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @throws ImageAlreadyExistsException
-     *         The specified image has already been pushed, and there are no changes to the manifest or image tag since
+     *         The specified image has already been pushed, and there were no changes to the manifest or image tag after
      *         the last push.
      * @throws LayersNotFoundException
      *         The specified layers could not be found, or the specified layer is not valid for this repository.
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws ImageTagAlreadyExistsException
+     *         The specified image is tagged with a tag that already exists. The repository is configured for tag
+     *         immutability.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>
@@ -498,7 +594,51 @@ public interface AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions.
+     * Updates the image tag mutability settings for a repository.
+     * </p>
+     * 
+     * @param putImageTagMutabilityRequest
+     * @return Result of the PutImageTagMutability operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutImageTagMutability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageTagMutability" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutImageTagMutabilityResult putImageTagMutability(PutImageTagMutabilityRequest putImageTagMutabilityRequest);
+
+    /**
+     * <p>
+     * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
+     * Template</a>.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return Result of the PutLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param setRepositoryPolicyRequest
@@ -515,6 +655,84 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest);
+
+    /**
+     * <p>
+     * Starts a preview of the specified lifecycle policy. This allows you to see the results before creating the
+     * lifecycle policy.
+     * </p>
+     * 
+     * @param startLifecyclePolicyPreviewRequest
+     * @return Result of the StartLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws LifecyclePolicyPreviewInProgressException
+     *         The previous lifecycle policy preview request has not completed. Please try again later.
+     * @sample AmazonECR.StartLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest startLifecyclePolicyPreviewRequest);
+
+    /**
+     * <p>
+     * Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are
+     * not specified in the request parameters.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -544,8 +762,8 @@ public interface AmazonECR {
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon EC2 Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API
      *      Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpcsRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest
-                .getVpcIds();
-        if (!describeVpcsRequestVpcIdsList.isEmpty() || !describeVpcsRequestVpcIdsList.isAutoConstruct()) {
-            int vpcIdsListIndex = 1;
-
-            for (String describeVpcsRequestVpcIdsListValue : describeVpcsRequestVpcIdsList) {
-                if (describeVpcsRequestVpcIdsListValue != null) {
-                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcsRequestVpcIdsListValue));
-                }
-                vpcIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpcsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcsRequest
                 .getFilters();
         if (!describeVpcsRequestFiltersList.isEmpty() || !describeVpcsRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,27 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpcsRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest
+                .getVpcIds();
+        if (!describeVpcsRequestVpcIdsList.isEmpty() || !describeVpcsRequestVpcIdsList.isAutoConstruct()) {
+            int vpcIdsListIndex = 1;
+
+            for (String describeVpcsRequestVpcIdsListValue : describeVpcsRequestVpcIdsList) {
+                if (describeVpcsRequestVpcIdsListValue != null) {
+                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcsRequestVpcIdsListValue));
+                }
+                vpcIdsListIndex++;
+            }
+        }
+
+        if (describeVpcsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcsRequest.getNextToken()));
+        }
+
+        if (describeVpcsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcsRequest.getMaxResults()));
         }
 
         return request;

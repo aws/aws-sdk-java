@@ -1,0 +1,30 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.var",
+          "StringEquals": "value",
+          "Next": "NextState"
+        },
+        {
+          "Variable": "$.number",
+          "NumericGreaterThan": 10,
+          "Next": "OtherNextState"
+        }
+      ],
+      "Default": "DefaultState"
+    },
+    "NextState": {
+      "Type": "Succeed"
+    },
+    "OtherNextState": {
+      "Type": "Succeed"
+    },
+    "DefaultState": {
+      "Type": "Succeed"
+    }
+  }
+}

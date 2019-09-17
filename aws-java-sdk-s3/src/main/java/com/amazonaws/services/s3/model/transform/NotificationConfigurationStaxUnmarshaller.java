@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,11 +14,6 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
-import java.util.AbstractMap.SimpleEntry;
-import java.util.Map.Entry;
-
-import javax.xml.stream.events.XMLEvent;
-
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
@@ -26,6 +21,9 @@ import com.amazonaws.services.s3.model.TopicConfiguration;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.StringStaxUnmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Map.Entry;
+import javax.xml.stream.events.XMLEvent;
 
 /**
  * Base class for unmarshalling into subclasses of {@link NotificationConfiguration}. Current only

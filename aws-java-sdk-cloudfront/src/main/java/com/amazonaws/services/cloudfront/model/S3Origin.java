@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * files for distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/S3Origin" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3Origin" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,7 +35,7 @@ public class S3Origin implements Serializable, Cloneable {
     private String domainName;
     /**
      * <p>
-     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
      * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
      * </p>
      * <p>
@@ -52,9 +52,9 @@ public class S3Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
-     * CloudFront Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront
+     * Developer Guide</i>.
      * </p>
      */
     private String originAccessIdentity;
@@ -84,9 +84,9 @@ public class S3Origin implements Serializable, Cloneable {
      * @param domainName
      *        The DNS name of the Amazon S3 origin.
      * @param originAccessIdentity
-     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
-     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
-     *        through CloudFront.</p>
+     *        The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
+     *        configure the distribution so that end users can only access objects in an Amazon S3 bucket through
+     *        CloudFront.</p>
      *        <p>
      *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
      *        specify an empty <code>OriginAccessIdentity</code> element.
@@ -101,8 +101,8 @@ public class S3Origin implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon
      *        CloudFront Developer Guide</i>.
      */
     public S3Origin(String domainName, String originAccessIdentity) {
@@ -152,7 +152,7 @@ public class S3Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
      * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
      * </p>
      * <p>
@@ -169,15 +169,15 @@ public class S3Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
-     * CloudFront Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront
+     * Developer Guide</i>.
      * </p>
      * 
      * @param originAccessIdentity
-     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
-     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
-     *        through CloudFront.</p>
+     *        The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
+     *        configure the distribution so that end users can only access objects in an Amazon S3 bucket through
+     *        CloudFront.</p>
      *        <p>
      *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
      *        specify an empty <code>OriginAccessIdentity</code> element.
@@ -192,8 +192,8 @@ public class S3Origin implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon
      *        CloudFront Developer Guide</i>.
      */
 
@@ -203,7 +203,7 @@ public class S3Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
      * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
      * </p>
      * <p>
@@ -220,14 +220,14 @@ public class S3Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
-     * CloudFront Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront
+     * Developer Guide</i>.
      * </p>
      * 
-     * @return The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
-     *         identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
-     *         through CloudFront.</p>
+     * @return The CloudFront origin access identity to associate with the distribution. Use an origin access identity
+     *         to configure the distribution so that end users can only access objects in an Amazon S3 bucket through
+     *         CloudFront.</p>
      *         <p>
      *         If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
      *         specify an empty <code>OriginAccessIdentity</code> element.
@@ -242,8 +242,8 @@ public class S3Origin implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     *         >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *         >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon
      *         CloudFront Developer Guide</i>.
      */
 
@@ -253,7 +253,7 @@ public class S3Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access identity to
+     * The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
      * configure the distribution so that end users can only access objects in an Amazon S3 bucket through CloudFront.
      * </p>
      * <p>
@@ -270,15 +270,15 @@ public class S3Origin implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
-     * CloudFront Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     * >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon CloudFront
+     * Developer Guide</i>.
      * </p>
      * 
      * @param originAccessIdentity
-     *        The CloudFront origin access identity to associate with the RTMP distribution. Use an origin access
-     *        identity to configure the distribution so that end users can only access objects in an Amazon S3 bucket
-     *        through CloudFront.</p>
+     *        The CloudFront origin access identity to associate with the distribution. Use an origin access identity to
+     *        configure the distribution so that end users can only access objects in an Amazon S3 bucket through
+     *        CloudFront.</p>
      *        <p>
      *        If you want end users to be able to access objects using either the CloudFront URL or the Amazon S3 URL,
      *        specify an empty <code>OriginAccessIdentity</code> element.
@@ -293,8 +293,8 @@ public class S3Origin implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>Amazon Amazon
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+     *        >Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in the <i> Amazon
      *        CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -305,7 +305,8 @@ public class S3Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -362,4 +363,5 @@ public class S3Origin implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

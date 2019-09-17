@@ -1,0 +1,52 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "BranchOneInitial",
+          "Comment": "Branch one",
+          "States": {
+            "BranchOneInitial": {
+              "Type": "Succeed"
+            }
+          }
+        },
+        {
+          "StartAt": "BranchTwoInitial",
+          "Comment": "Branch two",
+          "States": {
+            "BranchTwoInitial": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "Foo",
+            "Bar"
+          ],
+          "Next": "RecoveryState",
+          "ResultPath": "$.result"
+        },
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "OtherRecoveryState",
+          "ResultPath": "$.result"
+        }
+      ]
+    },
+    "RecoveryState": {
+      "Type": "Succeed"
+    },
+    "OtherRecoveryState": {
+      "Type": "Succeed"
+    }
+  }
+}

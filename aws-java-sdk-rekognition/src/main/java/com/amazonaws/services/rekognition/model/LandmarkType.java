@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,31 +20,36 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LandmarkType {
 
-    EYE_LEFT("EYE_LEFT"),
-    EYE_RIGHT("EYE_RIGHT"),
-    NOSE("NOSE"),
-    MOUTH_LEFT("MOUTH_LEFT"),
-    MOUTH_RIGHT("MOUTH_RIGHT"),
-    LEFT_EYEBROW_LEFT("LEFT_EYEBROW_LEFT"),
-    LEFT_EYEBROW_RIGHT("LEFT_EYEBROW_RIGHT"),
-    LEFT_EYEBROW_UP("LEFT_EYEBROW_UP"),
-    RIGHT_EYEBROW_LEFT("RIGHT_EYEBROW_LEFT"),
-    RIGHT_EYEBROW_RIGHT("RIGHT_EYEBROW_RIGHT"),
-    RIGHT_EYEBROW_UP("RIGHT_EYEBROW_UP"),
-    LEFT_EYE_LEFT("LEFT_EYE_LEFT"),
-    LEFT_EYE_RIGHT("LEFT_EYE_RIGHT"),
-    LEFT_EYE_UP("LEFT_EYE_UP"),
-    LEFT_EYE_DOWN("LEFT_EYE_DOWN"),
-    RIGHT_EYE_LEFT("RIGHT_EYE_LEFT"),
-    RIGHT_EYE_RIGHT("RIGHT_EYE_RIGHT"),
-    RIGHT_EYE_UP("RIGHT_EYE_UP"),
-    RIGHT_EYE_DOWN("RIGHT_EYE_DOWN"),
-    NOSE_LEFT("NOSE_LEFT"),
-    NOSE_RIGHT("NOSE_RIGHT"),
-    MOUTH_UP("MOUTH_UP"),
-    MOUTH_DOWN("MOUTH_DOWN"),
-    LEFT_PUPIL("LEFT_PUPIL"),
-    RIGHT_PUPIL("RIGHT_PUPIL");
+    EyeLeft("eyeLeft"),
+    EyeRight("eyeRight"),
+    Nose("nose"),
+    MouthLeft("mouthLeft"),
+    MouthRight("mouthRight"),
+    LeftEyeBrowLeft("leftEyeBrowLeft"),
+    LeftEyeBrowRight("leftEyeBrowRight"),
+    LeftEyeBrowUp("leftEyeBrowUp"),
+    RightEyeBrowLeft("rightEyeBrowLeft"),
+    RightEyeBrowRight("rightEyeBrowRight"),
+    RightEyeBrowUp("rightEyeBrowUp"),
+    LeftEyeLeft("leftEyeLeft"),
+    LeftEyeRight("leftEyeRight"),
+    LeftEyeUp("leftEyeUp"),
+    LeftEyeDown("leftEyeDown"),
+    RightEyeLeft("rightEyeLeft"),
+    RightEyeRight("rightEyeRight"),
+    RightEyeUp("rightEyeUp"),
+    RightEyeDown("rightEyeDown"),
+    NoseLeft("noseLeft"),
+    NoseRight("noseRight"),
+    MouthUp("mouthUp"),
+    MouthDown("mouthDown"),
+    LeftPupil("leftPupil"),
+    RightPupil("rightPupil"),
+    UpperJawlineLeft("upperJawlineLeft"),
+    MidJawlineLeft("midJawlineLeft"),
+    ChinBottom("chinBottom"),
+    MidJawlineRight("midJawlineRight"),
+    UpperJawlineRight("upperJawlineRight");
 
     private String value;
 
@@ -63,6 +68,9 @@ public enum LandmarkType {
      * @param value
      *        real value
      * @return LandmarkType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static LandmarkType fromValue(String value) {
         if (value == null || "".equals(value)) {

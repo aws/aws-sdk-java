@@ -1,0 +1,23 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Parallel",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "Parameters": [42, "foo", {}],
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "BranchState",
+          "States": {
+            "BranchState": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

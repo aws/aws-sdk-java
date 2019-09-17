@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      */
     private PlayerSession playerSession;
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
+     *        Object that describes the newly created player session record.
      */
 
     public void setPlayerSession(PlayerSession playerSession) {
@@ -48,10 +48,10 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
-     * @return Object containing the newly created player session record.
+     * @return Object that describes the newly created player session record.
      */
 
     public PlayerSession getPlayerSession() {
@@ -60,11 +60,11 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
+     *        Object that describes the newly created player session record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,4 +125,5 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

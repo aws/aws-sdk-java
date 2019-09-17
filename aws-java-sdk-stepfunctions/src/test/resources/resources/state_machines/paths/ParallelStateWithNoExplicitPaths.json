@@ -1,0 +1,19 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "BranchState",
+          "States": {
+            "BranchState": {
+              "Type": "Succeed"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

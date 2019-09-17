@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class ComposeEnvironmentsRequestMarshaller implements Marshaller<Request<
             request.addParameter("GroupName", StringUtils.fromString(composeEnvironmentsRequest.getGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest
-                .getVersionLabels();
-        if (!versionLabelsList.isEmpty() || !versionLabelsList.isAutoConstruct()) {
+        if (!composeEnvironmentsRequest.getVersionLabels().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest.getVersionLabels()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest
+                    .getVersionLabels();
             int versionLabelsListIndex = 1;
 
             for (String versionLabelsListValue : versionLabelsList) {

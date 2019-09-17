@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobListEntry implements Serializable, Cloneable {
+public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -56,7 +58,7 @@ public class JobListEntry implements Serializable, Cloneable {
     private String jobType;
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      */
     private String snowballType;
@@ -170,7 +172,7 @@ public class JobListEntry implements Serializable, Cloneable {
      */
 
     public void setJobState(JobState jobState) {
-        this.jobState = jobState.toString();
+        withJobState(jobState);
     }
 
     /**
@@ -185,7 +187,7 @@ public class JobListEntry implements Serializable, Cloneable {
      */
 
     public JobListEntry withJobState(JobState jobState) {
-        setJobState(jobState);
+        this.jobState = jobState.toString();
         return this;
     }
 
@@ -323,7 +325,7 @@ public class JobListEntry implements Serializable, Cloneable {
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -338,17 +340,17 @@ public class JobListEntry implements Serializable, Cloneable {
      */
 
     public JobListEntry withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -358,10 +360,10 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
-     * @return The type of appliance used with this job.
+     * @return The type of device used with this job.
      * @see SnowballType
      */
 
@@ -371,11 +373,11 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -387,31 +389,31 @@ public class JobListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
 
     public JobListEntry withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -496,7 +498,8 @@ public class JobListEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -587,5 +590,11 @@ public class JobListEntry implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.JobListEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,26 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
     private String webACLId;
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource to be protected.
+     * The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API
+     * Gateway stage.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceArn;
 
@@ -80,11 +98,46 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource to be protected.
+     * The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API
+     * Gateway stage.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource to be protected.
+     *        The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or
+     *        Amazon API Gateway stage. </p>
+     *        <p>
+     *        The ARN should be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon API Gateway stage:
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -93,10 +146,45 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource to be protected.
+     * The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API
+     * Gateway stage.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ARN (Amazon Resource Name) of the resource to be protected.
+     * @return The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or
+     *         Amazon API Gateway stage. </p>
+     *         <p>
+     *         The ARN should be in one of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For an Application Load Balancer:
+     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon API Gateway stage:
+     *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceArn() {
@@ -105,11 +193,46 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the resource to be protected.
+     * The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API
+     * Gateway stage.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource to be protected.
+     *        The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or
+     *        Amazon API Gateway stage. </p>
+     *        <p>
+     *        The ARN should be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon API Gateway stage:
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +242,8 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

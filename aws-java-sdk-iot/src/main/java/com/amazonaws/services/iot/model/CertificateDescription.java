@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CertificateDescription implements Serializable, Cloneable {
+public class CertificateDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -79,10 +81,28 @@ public class CertificateDescription implements Serializable, Cloneable {
     private java.util.Date lastModifiedDate;
     /**
      * <p>
+     * The customer version of the certificate.
+     * </p>
+     */
+    private Integer customerVersion;
+    /**
+     * <p>
      * The transfer data.
      * </p>
      */
     private TransferData transferData;
+    /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     */
+    private String generationId;
+    /**
+     * <p>
+     * When the certificate is valid.
+     * </p>
+     */
+    private CertificateValidity validity;
 
     /**
      * <p>
@@ -258,7 +278,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      */
 
     public void setStatus(CertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -273,7 +293,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      */
 
     public CertificateDescription withStatus(CertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -479,6 +499,46 @@ public class CertificateDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
+     * @param customerVersion
+     *        The customer version of the certificate.
+     */
+
+    public void setCustomerVersion(Integer customerVersion) {
+        this.customerVersion = customerVersion;
+    }
+
+    /**
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
+     * @return The customer version of the certificate.
+     */
+
+    public Integer getCustomerVersion() {
+        return this.customerVersion;
+    }
+
+    /**
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
+     * @param customerVersion
+     *        The customer version of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDescription withCustomerVersion(Integer customerVersion) {
+        setCustomerVersion(customerVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The transfer data.
      * </p>
      * 
@@ -518,7 +578,88 @@ public class CertificateDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
+     * @param generationId
+     *        The generation ID of the certificate.
+     */
+
+    public void setGenerationId(String generationId) {
+        this.generationId = generationId;
+    }
+
+    /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
+     * @return The generation ID of the certificate.
+     */
+
+    public String getGenerationId() {
+        return this.generationId;
+    }
+
+    /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
+     * @param generationId
+     *        The generation ID of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDescription withGenerationId(String generationId) {
+        setGenerationId(generationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When the certificate is valid.
+     * </p>
+     * 
+     * @param validity
+     *        When the certificate is valid.
+     */
+
+    public void setValidity(CertificateValidity validity) {
+        this.validity = validity;
+    }
+
+    /**
+     * <p>
+     * When the certificate is valid.
+     * </p>
+     * 
+     * @return When the certificate is valid.
+     */
+
+    public CertificateValidity getValidity() {
+        return this.validity;
+    }
+
+    /**
+     * <p>
+     * When the certificate is valid.
+     * </p>
+     * 
+     * @param validity
+     *        When the certificate is valid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDescription withValidity(CertificateValidity validity) {
+        setValidity(validity);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -546,8 +687,14 @@ public class CertificateDescription implements Serializable, Cloneable {
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getCustomerVersion() != null)
+            sb.append("CustomerVersion: ").append(getCustomerVersion()).append(",");
         if (getTransferData() != null)
-            sb.append("TransferData: ").append(getTransferData());
+            sb.append("TransferData: ").append(getTransferData()).append(",");
+        if (getGenerationId() != null)
+            sb.append("GenerationId: ").append(getGenerationId()).append(",");
+        if (getValidity() != null)
+            sb.append("Validity: ").append(getValidity());
         sb.append("}");
         return sb.toString();
     }
@@ -598,9 +745,21 @@ public class CertificateDescription implements Serializable, Cloneable {
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getCustomerVersion() == null ^ this.getCustomerVersion() == null)
+            return false;
+        if (other.getCustomerVersion() != null && other.getCustomerVersion().equals(this.getCustomerVersion()) == false)
+            return false;
         if (other.getTransferData() == null ^ this.getTransferData() == null)
             return false;
         if (other.getTransferData() != null && other.getTransferData().equals(this.getTransferData()) == false)
+            return false;
+        if (other.getGenerationId() == null ^ this.getGenerationId() == null)
+            return false;
+        if (other.getGenerationId() != null && other.getGenerationId().equals(this.getGenerationId()) == false)
+            return false;
+        if (other.getValidity() == null ^ this.getValidity() == null)
+            return false;
+        if (other.getValidity() != null && other.getValidity().equals(this.getValidity()) == false)
             return false;
         return true;
     }
@@ -619,7 +778,10 @@ public class CertificateDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPreviousOwnedBy() == null) ? 0 : getPreviousOwnedBy().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomerVersion() == null) ? 0 : getCustomerVersion().hashCode());
         hashCode = prime * hashCode + ((getTransferData() == null) ? 0 : getTransferData().hashCode());
+        hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
+        hashCode = prime * hashCode + ((getValidity() == null) ? 0 : getValidity().hashCode());
         return hashCode;
     }
 
@@ -630,5 +792,11 @@ public class CertificateDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.CertificateDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

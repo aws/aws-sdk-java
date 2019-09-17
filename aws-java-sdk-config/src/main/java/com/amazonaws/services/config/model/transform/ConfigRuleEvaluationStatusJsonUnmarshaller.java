@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,23 +62,23 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("LastSuccessfulInvocationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastSuccessfulInvocationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastSuccessfulInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedInvocationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastFailedInvocationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastFailedInvocationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulEvaluationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastSuccessfulEvaluationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastSuccessfulEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastFailedEvaluationTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setLastFailedEvaluationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setLastFailedEvaluationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FirstActivatedTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus.setFirstActivatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configRuleEvaluationStatus.setFirstActivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
                     context.nextToken();

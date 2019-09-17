@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The returned result of the corresponding request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,7 +29,7 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The invalidation's information. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
      * Complex Type</a>.
      * </p>
      */
@@ -38,13 +38,13 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The invalidation's information. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
      * Complex Type</a>.
      * </p>
      * 
      * @param invalidation
      *        The invalidation's information. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
      *        >Invalidation Complex Type</a>.
      */
 
@@ -55,12 +55,12 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The invalidation's information. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
      * Complex Type</a>.
      * </p>
      * 
      * @return The invalidation's information. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
      *         >Invalidation Complex Type</a>.
      */
 
@@ -71,13 +71,13 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * The invalidation's information. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
      * Complex Type</a>.
      * </p>
      * 
      * @param invalidation
      *        The invalidation's information. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html"
      *        >Invalidation Complex Type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -88,7 +88,8 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -138,4 +139,5 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

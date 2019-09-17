@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      */
@@ -136,15 +136,15 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @return The list of parameter statuses.</p>
      *         <p>
      *         For more information about parameters and parameter groups, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
-     *         Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
     public java.util.List<ClusterParameterStatus> getClusterParameterStatusList() {
@@ -160,7 +160,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -168,7 +168,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      *        The list of parameter statuses.</p>
      *        <p>
      *        For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      */
 
@@ -187,7 +187,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -200,7 +200,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      *        The list of parameter statuses.</p>
      *        <p>
      *        For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -221,7 +221,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -229,7 +229,7 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
      *        The list of parameter statuses.</p>
      *        <p>
      *        For more information about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -240,7 +240,8 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,4 +305,5 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

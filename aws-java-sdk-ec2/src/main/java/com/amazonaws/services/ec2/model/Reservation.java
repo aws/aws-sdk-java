@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,16 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the reservation.
+     * [EC2-Classic only] The security groups.
      * </p>
      */
-    private String reservationId;
+    private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
+    /**
+     * <p>
+     * The instances.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Instance> instances;
     /**
      * <p>
      * The ID of the AWS account that owns the reservation.
@@ -47,16 +53,10 @@ public class Reservation implements Serializable, Cloneable {
     private String requesterId;
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * The ID of the reservation.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<Instance> instances;
+    private String reservationId;
     /**
      * <p>
      * One or more security group names.
@@ -66,41 +66,147 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the reservation.
+     * [EC2-Classic only] The security groups.
      * </p>
      * 
-     * @param reservationId
-     *        The ID of the reservation.
+     * @return [EC2-Classic only] The security groups.
      */
 
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
+    public java.util.List<GroupIdentifier> getGroups() {
+        if (groups == null) {
+            groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
+        }
+        return groups;
     }
 
     /**
      * <p>
-     * The ID of the reservation.
+     * [EC2-Classic only] The security groups.
      * </p>
      * 
-     * @return The ID of the reservation.
+     * @param groups
+     *        [EC2-Classic only] The security groups.
      */
 
-    public String getReservationId() {
-        return this.reservationId;
+    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+
+        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
     }
 
     /**
      * <p>
-     * The ID of the reservation.
+     * [EC2-Classic only] The security groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param reservationId
-     *        The ID of the reservation.
+     * @param groups
+     *        [EC2-Classic only] The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Reservation withReservationId(String reservationId) {
-        setReservationId(reservationId);
+    public Reservation withGroups(GroupIdentifier... groups) {
+        if (this.groups == null) {
+            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
+        }
+        for (GroupIdentifier ele : groups) {
+            this.groups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic only] The security groups.
+     * </p>
+     * 
+     * @param groups
+     *        [EC2-Classic only] The security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
+        setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances.
+     * </p>
+     * 
+     * @return The instances.
+     */
+
+    public java.util.List<Instance> getInstances() {
+        if (instances == null) {
+            instances = new com.amazonaws.internal.SdkInternalList<Instance>();
+        }
+        return instances;
+    }
+
+    /**
+     * <p>
+     * The instances.
+     * </p>
+     * 
+     * @param instances
+     *        The instances.
+     */
+
+    public void setInstances(java.util.Collection<Instance> instances) {
+        if (instances == null) {
+            this.instances = null;
+            return;
+        }
+
+        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(instances);
+    }
+
+    /**
+     * <p>
+     * The instances.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param instances
+     *        The instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withInstances(Instance... instances) {
+        if (this.instances == null) {
+            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(instances.length));
+        }
+        for (Instance ele : instances) {
+            this.instances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances.
+     * </p>
+     * 
+     * @param instances
+     *        The instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withInstances(java.util.Collection<Instance> instances) {
+        setInstances(instances);
         return this;
     }
 
@@ -192,147 +298,41 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * The ID of the reservation.
      * </p>
      * 
-     * @return [EC2-Classic only] One or more security groups.
+     * @param reservationId
+     *        The ID of the reservation.
      */
 
-    public java.util.List<GroupIdentifier> getGroups() {
-        if (groups == null) {
-            groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
-        }
-        return groups;
+    public void setReservationId(String reservationId) {
+        this.reservationId = reservationId;
     }
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * The ID of the reservation.
      * </p>
      * 
-     * @param groups
-     *        [EC2-Classic only] One or more security groups.
+     * @return The ID of the reservation.
      */
 
-    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
-        if (groups == null) {
-            this.groups = null;
-            return;
-        }
-
-        this.groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups);
+    public String getReservationId() {
+        return this.reservationId;
     }
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
-     * existing values.
+     * The ID of the reservation.
      * </p>
      * 
-     * @param groups
-     *        [EC2-Classic only] One or more security groups.
+     * @param reservationId
+     *        The ID of the reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Reservation withGroups(GroupIdentifier... groups) {
-        if (this.groups == null) {
-            setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(groups.length));
-        }
-        for (GroupIdentifier ele : groups) {
-            this.groups.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic only] One or more security groups.
-     * </p>
-     * 
-     * @param groups
-     *        [EC2-Classic only] One or more security groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
-        setGroups(groups);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     * 
-     * @return One or more instances.
-     */
-
-    public java.util.List<Instance> getInstances() {
-        if (instances == null) {
-            instances = new com.amazonaws.internal.SdkInternalList<Instance>();
-        }
-        return instances;
-    }
-
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     * 
-     * @param instances
-     *        One or more instances.
-     */
-
-    public void setInstances(java.util.Collection<Instance> instances) {
-        if (instances == null) {
-            this.instances = null;
-            return;
-        }
-
-        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(instances);
-    }
-
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param instances
-     *        One or more instances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withInstances(Instance... instances) {
-        if (this.instances == null) {
-            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(instances.length));
-        }
-        for (Instance ele : instances) {
-            this.instances.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     * 
-     * @param instances
-     *        One or more instances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withInstances(java.util.Collection<Instance> instances) {
-        setInstances(instances);
+    public Reservation withReservationId(String reservationId) {
+        setReservationId(reservationId);
         return this;
     }
 
@@ -410,7 +410,8 @@ public class Reservation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -420,16 +421,16 @@ public class Reservation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservationId() != null)
-            sb.append("ReservationId: ").append(getReservationId()).append(",");
-        if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId()).append(",");
-        if (getRequesterId() != null)
-            sb.append("RequesterId: ").append(getRequesterId()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
         if (getInstances() != null)
             sb.append("Instances: ").append(getInstances()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getRequesterId() != null)
+            sb.append("RequesterId: ").append(getRequesterId()).append(",");
+        if (getReservationId() != null)
+            sb.append("ReservationId: ").append(getReservationId()).append(",");
         if (getGroupNames() != null)
             sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
@@ -446,9 +447,13 @@ public class Reservation implements Serializable, Cloneable {
         if (obj instanceof Reservation == false)
             return false;
         Reservation other = (Reservation) obj;
-        if (other.getReservationId() == null ^ this.getReservationId() == null)
+        if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
@@ -458,13 +463,9 @@ public class Reservation implements Serializable, Cloneable {
             return false;
         if (other.getRequesterId() != null && other.getRequesterId().equals(this.getRequesterId()) == false)
             return false;
-        if (other.getGroups() == null ^ this.getGroups() == null)
+        if (other.getReservationId() == null ^ this.getReservationId() == null)
             return false;
-        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
-            return false;
-        if (other.getInstances() == null ^ this.getInstances() == null)
-            return false;
-        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
             return false;
         if (other.getGroupNames() == null ^ this.getGroupNames() == null)
             return false;
@@ -478,11 +479,11 @@ public class Reservation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
-        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode());
+        hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
         hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         return hashCode;
     }
@@ -495,4 +496,5 @@ public class Reservation implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

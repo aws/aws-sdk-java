@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes mapping between an Amazon Kinesis stream and a Lambda function.
+ * A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping" target="_top">AWS
@@ -28,32 +28,33 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS Lambda assigned opaque identifier for the mapping.
+     * The identifier of the event source mapping.
      * </p>
      */
     private String uUID;
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
      */
     private Integer batchSize;
+
+    private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
      */
     private String eventSourceArn;
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The ARN of the Lambda function.
      * </p>
      */
     private String functionArn;
     /**
      * <p>
-     * The UTC time string indicating the last time the event mapping was updated.
+     * The date that the event source mapping was last updated.
      * </p>
      */
     private java.util.Date lastModified;
@@ -65,27 +66,26 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private String lastProcessingResult;
     /**
      * <p>
-     * The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     * <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     * <code>Deleting</code>.
+     * The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     * <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>
+     * , or <code>Deleting</code>.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     * Lambda-initiated state transition.
+     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      * </p>
      */
     private String stateTransitionReason;
 
     /**
      * <p>
-     * The AWS Lambda assigned opaque identifier for the mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The AWS Lambda assigned opaque identifier for the mapping.
+     *        The identifier of the event source mapping.
      */
 
     public void setUUID(String uUID) {
@@ -94,10 +94,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS Lambda assigned opaque identifier for the mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
-     * @return The AWS Lambda assigned opaque identifier for the mapping.
+     * @return The identifier of the event source mapping.
      */
 
     public String getUUID() {
@@ -106,11 +106,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS Lambda assigned opaque identifier for the mapping.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The AWS Lambda assigned opaque identifier for the mapping.
+     *        The identifier of the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,13 +121,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records.
+     *        The maximum number of items to retrieve in a single batch.
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -136,12 +134,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
      * 
-     * @return The largest number of records that AWS Lambda will retrieve from your event source at the time of
-     *         invoking your function. Your function receives an event with all the retrieved records.
+     * @return The maximum number of items to retrieve in a single batch.
      */
 
     public Integer getBatchSize() {
@@ -150,13 +146,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
      * 
      * @param batchSize
-     *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records.
+     *        The maximum number of items to retrieve in a single batch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,12 +160,38 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * @param maximumBatchingWindowInSeconds
+     */
+
+    public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        this.maximumBatchingWindowInSeconds = maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getMaximumBatchingWindowInSeconds() {
+        return this.maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @param maximumBatchingWindowInSeconds
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingResult withMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        setMaximumBatchingWindowInSeconds(maximumBatchingWindowInSeconds);
+        return this;
+    }
+
+    /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     *        The Amazon Resource Name (ARN) of the event source.
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -180,10 +200,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * @return The Amazon Resource Name (ARN) of the event source.
      */
 
     public String getEventSourceArn() {
@@ -192,11 +212,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the event source.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     *        The Amazon Resource Name (ARN) of the event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +227,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The ARN of the Lambda function.
      * </p>
      * 
      * @param functionArn
-     *        The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     *        The ARN of the Lambda function.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -220,10 +240,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The ARN of the Lambda function.
      * </p>
      * 
-     * @return The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * @return The ARN of the Lambda function.
      */
 
     public String getFunctionArn() {
@@ -232,11 +252,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The ARN of the Lambda function.
      * </p>
      * 
      * @param functionArn
-     *        The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     *        The ARN of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +267,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The UTC time string indicating the last time the event mapping was updated.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
      * @param lastModified
-     *        The UTC time string indicating the last time the event mapping was updated.
+     *        The date that the event source mapping was last updated.
      */
 
     public void setLastModified(java.util.Date lastModified) {
@@ -260,10 +280,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The UTC time string indicating the last time the event mapping was updated.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
-     * @return The UTC time string indicating the last time the event mapping was updated.
+     * @return The date that the event source mapping was last updated.
      */
 
     public java.util.Date getLastModified() {
@@ -272,11 +292,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The UTC time string indicating the last time the event mapping was updated.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
      * @param lastModified
-     *        The UTC time string indicating the last time the event mapping was updated.
+     *        The date that the event source mapping was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,15 +347,15 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     * <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     * <code>Deleting</code>.
+     * The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     * <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>
+     * , or <code>Deleting</code>.
      * </p>
      * 
      * @param state
-     *        The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     *        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     *        <code>Deleting</code>.
+     *        The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     *        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+     *        <code>Updating</code>, or <code>Deleting</code>.
      */
 
     public void setState(String state) {
@@ -344,14 +364,14 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     * <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     * <code>Deleting</code>.
+     * The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     * <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>
+     * , or <code>Deleting</code>.
      * </p>
      * 
-     * @return The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     *         <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     *         <code>Deleting</code>.
+     * @return The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     *         <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+     *         <code>Updating</code>, or <code>Deleting</code>.
      */
 
     public String getState() {
@@ -360,15 +380,15 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     * <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     * <code>Deleting</code>.
+     * The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     * <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>
+     * , or <code>Deleting</code>.
      * </p>
      * 
      * @param state
-     *        The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-     *        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or
-     *        <code>Deleting</code>.
+     *        The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+     *        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+     *        <code>Updating</code>, or <code>Deleting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,13 +399,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     * Lambda-initiated state transition.
+     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     *        Lambda-initiated state transition.
+     *        The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      */
 
     public void setStateTransitionReason(String stateTransitionReason) {
@@ -394,12 +412,10 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     * Lambda-initiated state transition.
+     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      * </p>
      * 
-     * @return The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     *         Lambda-initiated state transition.
+     * @return The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      */
 
     public String getStateTransitionReason() {
@@ -408,13 +424,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     * Lambda-initiated state transition.
+     * The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason the event source mapping is in its current state. It is either user-requested or an AWS
-     *        Lambda-initiated state transition.
+     *        The cause of the last state change, either <code>User initiated</code> or <code>Lambda initiated</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,7 +438,8 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -438,6 +453,8 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             sb.append("UUID: ").append(getUUID()).append(",");
         if (getBatchSize() != null)
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
+        if (getMaximumBatchingWindowInSeconds() != null)
+            sb.append("MaximumBatchingWindowInSeconds: ").append(getMaximumBatchingWindowInSeconds()).append(",");
         if (getEventSourceArn() != null)
             sb.append("EventSourceArn: ").append(getEventSourceArn()).append(",");
         if (getFunctionArn() != null)
@@ -471,6 +488,11 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         if (other.getBatchSize() == null ^ this.getBatchSize() == null)
             return false;
         if (other.getBatchSize() != null && other.getBatchSize().equals(this.getBatchSize()) == false)
+            return false;
+        if (other.getMaximumBatchingWindowInSeconds() == null ^ this.getMaximumBatchingWindowInSeconds() == null)
+            return false;
+        if (other.getMaximumBatchingWindowInSeconds() != null
+                && other.getMaximumBatchingWindowInSeconds().equals(this.getMaximumBatchingWindowInSeconds()) == false)
             return false;
         if (other.getEventSourceArn() == null ^ this.getEventSourceArn() == null)
             return false;
@@ -506,6 +528,7 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
+        hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getEventSourceArn() == null) ? 0 : getEventSourceArn().hashCode());
         hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
@@ -523,4 +546,5 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

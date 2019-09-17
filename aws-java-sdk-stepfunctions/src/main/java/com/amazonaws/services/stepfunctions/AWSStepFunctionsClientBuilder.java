@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,6 +15,7 @@ package com.amazonaws.services.stepfunctions;
 import javax.annotation.Generated;
 
 import com.amazonaws.ClientConfigurationFactory;
+
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsSyncClientBuilder;
 import com.amazonaws.client.AwsSyncClientParams;
@@ -27,7 +28,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSStepFunctionsClientBuilder extends AwsSyncClientBuilder<AWSStepFunctionsClientBuilder, AWSStepFunctions> {
 
-    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();
+    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory();
 
     /**
      * @return Create new instance of builder with all defaults set.

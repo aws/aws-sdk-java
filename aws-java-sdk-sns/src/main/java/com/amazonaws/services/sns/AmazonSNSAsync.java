@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ import com.amazonaws.services.sns.model.*;
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled
  * applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
  * subscribers over multiple delivery protocols. For more information about this product see <a
- * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
- * and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+ * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
+ * and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
  * Guide</a>.
  * </p>
  * <p>
@@ -209,7 +209,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Creates a platform application object for one of the supported push notification services, such as APNS and GCM,
+     * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
      * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
      * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
      * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
@@ -223,17 +223,17 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
      * using <code>CreatePlatformApplication</code> is then used as an attribute for the
      * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>. For more information about obtaining the PlatformPrincipal and PlatformCredential for each of
      * the supported push notification services, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
-     * Notification Service</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting Started
-     * with Amazon Device Messaging</a>, <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud Push</a>,
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google Cloud
-     * Messaging for Android</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
-     * Started with MPNS</a>, or <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started
-     * with WNS</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
+     * Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+     * Started with Amazon Device Messaging</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud
+     * Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google
+     * Cloud Messaging for Android</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting Started with MPNS</a>, or <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started with WNS</a>.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -248,7 +248,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Creates a platform application object for one of the supported push notification services, such as APNS and GCM,
+     * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
      * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
      * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
      * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
@@ -262,17 +262,17 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
      * using <code>CreatePlatformApplication</code> is then used as an attribute for the
      * <code>CreatePlatformEndpoint</code> action. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>. For more information about obtaining the PlatformPrincipal and PlatformCredential for each of
      * the supported push notification services, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
-     * Notification Service</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting Started
-     * with Amazon Device Messaging</a>, <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud Push</a>,
-     * <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google Cloud
-     * Messaging for Android</a>, <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
-     * Started with MPNS</a>, or <a href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started
-     * with WNS</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting Started with Apple Push
+     * Notification Service</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+     * Started with Amazon Device Messaging</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting Started with Baidu Cloud
+     * Push</a>, <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting Started with Google
+     * Cloud Messaging for Android</a>, <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting Started with MPNS</a>, or <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting Started with WNS</a>.
      * </p>
      * 
      * @param createPlatformApplicationRequest
@@ -299,13 +299,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * mobile app or by the <code>Subscribe</code> action for subscription to a topic. The
      * <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the
      * same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
      * When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId.
      * The token field must also contain the ChannelId. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
      * for Baidu</a>.
      * </p>
      * 
@@ -327,13 +327,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * mobile app or by the <code>Subscribe</code> action for subscription to a topic. The
      * <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the
      * same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
      * When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId.
      * The token field must also contain the ChannelId. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint
      * for Baidu</a>.
      * </p>
      * 
@@ -354,7 +354,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Creates a topic to which notifications can be published. Users can create at most 100,000 topics. For more
-     * information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is idempotent,
+     * information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
      * so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a
      * new topic.
      * </p>
@@ -371,7 +371,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Creates a topic to which notifications can be published. Users can create at most 100,000 topics. For more
-     * information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is idempotent,
+     * information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
      * so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a
      * new topic.
      * </p>
@@ -408,7 +408,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
@@ -428,7 +428,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Deletes the endpoint for a device and mobile app from Amazon SNS. This action is idempotent. For more
-     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
+     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
      * Push Notifications</a>.
      * </p>
      * <p>
@@ -453,7 +453,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM.
-     * For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+     * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
      * Mobile Push Notifications</a>.
      * </p>
      * 
@@ -470,7 +470,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM.
-     * For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+     * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
      * Mobile Push Notifications</a>.
      * </p>
      * 
@@ -542,7 +542,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -558,7 +558,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -580,7 +580,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
      * APNS and GCM. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
      * 
@@ -599,7 +599,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
      * APNS and GCM. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
      * 
@@ -765,8 +765,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
      * the NextToken string received from the previous call. When there are no more records to return, NextToken will be
-     * null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
@@ -787,8 +790,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
      * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
      * the NextToken string received from the previous call. When there are no more records to return, NextToken will be
-     * null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
@@ -861,8 +867,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 100. If additional records are available after the first page results, then a NextToken string will be returned.
      * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
      * the previous call. When there are no more records to return, NextToken will be null. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
+     * </p>
+     * <p>
+     * This action is throttled at 15 transactions per second (TPS).
      * </p>
      * 
      * @param listPlatformApplicationsRequest
@@ -881,8 +890,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 100. If additional records are available after the first page results, then a NextToken string will be returned.
      * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
      * the previous call. When there are no more records to return, NextToken will be null. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
+     * </p>
+     * <p>
+     * This action is throttled at 15 transactions per second (TPS).
      * </p>
      * 
      * @param listPlatformApplicationsRequest
@@ -920,6 +932,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter
      * in a new <code>ListSubscriptions</code> call to get further results.
      * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
+     * </p>
      * 
      * @param listSubscriptionsRequest
      *        Input for ListSubscriptions action.
@@ -935,6 +950,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If
      * there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter
      * in a new <code>ListSubscriptions</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listSubscriptionsRequest
@@ -987,6 +1005,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code>
      * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.
      * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
+     * </p>
      * 
      * @param listSubscriptionsByTopicRequest
      *        Input for ListSubscriptionsByTopic action.
@@ -1002,6 +1023,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to
      * 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code>
      * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listSubscriptionsByTopicRequest
@@ -1050,9 +1074,47 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * List all tags added to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonSNSAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List all tags added to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are
      * more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new
      * <code>ListTopics</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listTopicsRequest
@@ -1068,6 +1130,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are
      * more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new
      * <code>ListTopics</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listTopicsRequest
@@ -1155,9 +1220,15 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message
-     * has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the
-     * outgoing message to each subscribed endpoint depends on the notification protocol.
+     * Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly to a phone number.
+     * </p>
+     * <p>
+     * If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the
+     * topic. The format of the message depends on the notification protocol for each subscribed endpoint.
+     * </p>
+     * <p>
+     * When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it
+     * shortly.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle
@@ -1166,8 +1237,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * <p>
      * For more information about formatting messages, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific
-     * Payloads in Messages to Mobile Devices</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
+     * Platform-Specific Payloads in Messages to Mobile Devices</a>.
      * </p>
      * 
      * @param publishRequest
@@ -1181,9 +1252,15 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message
-     * has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the
-     * outgoing message to each subscribed endpoint depends on the notification protocol.
+     * Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly to a phone number.
+     * </p>
+     * <p>
+     * If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the
+     * topic. The format of the message depends on the notification protocol for each subscribed endpoint.
+     * </p>
+     * <p>
+     * When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it
+     * shortly.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle
@@ -1192,8 +1269,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * <p>
      * For more information about formatting messages, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific
-     * Payloads in Messages to Mobile Devices</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
+     * Platform-Specific Payloads in Messages to Mobile Devices</a>.
      * </p>
      * 
      * @param publishRequest
@@ -1291,7 +1368,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -1307,7 +1384,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
-     * and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
      * </p>
      * 
@@ -1328,9 +1405,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
-     * see <a href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
      * Attributes for Message Delivery Status</a>.
      * </p>
      * 
@@ -1348,9 +1425,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+     * and GCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
-     * see <a href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
+     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
      * Attributes for Message Delivery Status</a>.
      * </p>
      * 
@@ -1377,7 +1454,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <p>
      * You can override some of these settings for a single message when you use the <code>Publish</code> action with
      * the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
      * <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
@@ -1397,7 +1474,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <p>
      * You can override some of these settings for a single message when you use the <code>Publish</code> action with
      * the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
      * <i>Amazon SNS Developer Guide</i>.
      * </p>
      * 
@@ -1417,7 +1494,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new value.
+     * Allows a subscription owner to set an attribute of the subscription to a new value.
      * </p>
      * 
      * @param setSubscriptionAttributesRequest
@@ -1432,7 +1509,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new value.
+     * Allows a subscription owner to set an attribute of the subscription to a new value.
      * </p>
      * 
      * @param setSubscriptionAttributesRequest
@@ -1520,6 +1597,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the
      * confirmation message. Confirmation tokens are valid for three days.
      * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
+     * </p>
      * 
      * @param subscribeRequest
      *        Input for Subscribe action.
@@ -1535,6 +1615,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * Prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
      * subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the
      * confirmation message. Confirmation tokens are valid for three days.
+     * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
      * </p>
      * 
      * @param subscribeRequest
@@ -1568,11 +1651,123 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Add tags to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * When you use topic tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a topic isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging actions are limited to 10 TPS per AWS account. If your application requires a higher throughput, file a
+     * <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits Related to Topics</a> in
+     * the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonSNSAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Add tags to the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * When you use topic tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a topic isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SNS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging actions are limited to 10 TPS per AWS account. If your application requires a higher throughput, file a
+     * <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-limits.html#limits-topics">Limits Related to Topics</a> in
+     * the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the
      * subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the
      * <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a
      * final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the
      * topic if the <code>Unsubscribe</code> request was unintended.
+     * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
      * </p>
      * 
      * @param unsubscribeRequest
@@ -1591,6 +1786,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a
      * final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the
      * topic if the <code>Unsubscribe</code> request was unintended.
+     * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
      * </p>
      * 
      * @param unsubscribeRequest
@@ -1621,5 +1819,40 @@ public interface AmazonSNSAsync extends AmazonSNS {
      */
     java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(String subscriptionArn,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove tags from the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonSNSAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Remove tags from the specified Amazon SNS topic. For an overview, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <i>Amazon SNS Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

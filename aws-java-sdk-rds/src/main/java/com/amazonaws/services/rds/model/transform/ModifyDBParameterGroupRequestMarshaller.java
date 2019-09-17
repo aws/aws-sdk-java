@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("DBParameterGroupName", StringUtils.fromString(modifyDBParameterGroupRequest.getDBParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!modifyDBParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -97,6 +98,21 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
                 if (parametersListValue.getApplyMethod() != null) {
                     request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod",
                             StringUtils.fromString(parametersListValue.getApplyMethod()));
+                }
+
+                if (!parametersListValue.getSupportedEngineModes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) parametersListValue.getSupportedEngineModes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> supportedEngineModesList = (com.amazonaws.internal.SdkInternalList<String>) parametersListValue
+                            .getSupportedEngineModes();
+                    int supportedEngineModesListIndex = 1;
+
+                    for (String supportedEngineModesListValue : supportedEngineModesList) {
+                        if (supportedEngineModesListValue != null) {
+                            request.addParameter("Parameters.Parameter." + parametersListIndex + ".SupportedEngineModes.member."
+                                    + supportedEngineModesListIndex, StringUtils.fromString(supportedEngineModesListValue));
+                        }
+                        supportedEngineModesListIndex++;
+                    }
                 }
                 parametersListIndex++;
             }

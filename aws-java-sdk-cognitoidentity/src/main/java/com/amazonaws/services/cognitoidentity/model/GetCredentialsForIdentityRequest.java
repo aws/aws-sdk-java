@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,17 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
     private String identityId;
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow
+     * the syntax "provider_name": "provider_user_identifier".
+     * </p>
+     * <p>
+     * Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     * </p>
+     * <p>
+     * The Logins parameter is required when using identities associated with external identity providers such as
+     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      */
     private java.util.Map<String, String> logins;
@@ -91,10 +101,29 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow
+     * the syntax "provider_name": "provider_user_identifier".
+     * </p>
+     * <p>
+     * Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     * </p>
+     * <p>
+     * The Logins parameter is required when using identities associated with external identity providers such as
+     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
-     * @return A set of optional name-value pairs that map provider names to provider tokens.
+     * @return A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will
+     *         follow the syntax "provider_name": "provider_user_identifier".</p>
+     *         <p>
+     *         Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     *         </p>
+     *         <p>
+     *         The Logins parameter is required when using identities associated with external identity providers such
+     *         as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     *         Identity Providers</a> section of the Amazon Cognito Developer Guide.
      */
 
     public java.util.Map<String, String> getLogins() {
@@ -103,11 +132,30 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow
+     * the syntax "provider_name": "provider_user_identifier".
+     * </p>
+     * <p>
+     * Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     * </p>
+     * <p>
+     * The Logins parameter is required when using identities associated with external identity providers such as
+     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will
+     *        follow the syntax "provider_name": "provider_user_identifier".</p>
+     *        <p>
+     *        Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     *        </p>
+     *        <p>
+     *        The Logins parameter is required when using identities associated with external identity providers such as
+     *        FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     *        Identity Providers</a> section of the Amazon Cognito Developer Guide.
      */
 
     public void setLogins(java.util.Map<String, String> logins) {
@@ -116,11 +164,30 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A set of optional name-value pairs that map provider names to provider tokens.
+     * A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow
+     * the syntax "provider_name": "provider_user_identifier".
+     * </p>
+     * <p>
+     * Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     * </p>
+     * <p>
+     * The Logins parameter is required when using identities associated with external identity providers such as
+     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
      * @param logins
-     *        A set of optional name-value pairs that map provider names to provider tokens.
+     *        A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will
+     *        follow the syntax "provider_name": "provider_user_identifier".</p>
+     *        <p>
+     *        Logins should not be specified when trying to get credentials for an unauthenticated identity.
+     *        </p>
+     *        <p>
+     *        The Logins parameter is required when using identities associated with external identity providers such as
+     *        FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     *        Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,7 +270,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

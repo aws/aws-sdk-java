@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,48 +14,52 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * An object representing a constraint on task placement in the task definition. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
- * Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
+ * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * If you are using the Fargate launch type, task placement constraints are not supported.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskDefinitionPlacementConstraint implements Serializable, Cloneable {
+public class TaskDefinitionPlacementConstraint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      */
     private String type;
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String expression;
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
@@ -65,14 +69,12 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
-     * @return The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *         particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *         restricts selection to be from a group of valid candidates.
+     * @return The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *         valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
@@ -82,15 +84,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskDefinitionPlacementConstraintType
      */
@@ -102,53 +102,49 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
     public void setType(TaskDefinitionPlacementConstraintType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskDefinitionPlacementConstraintType
      */
 
     public TaskDefinitionPlacementConstraint withType(TaskDefinitionPlacementConstraintType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExpression(String expression) {
@@ -158,13 +154,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A cluster query language expression to apply to the constraint. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExpression() {
@@ -174,14 +170,14 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,7 +187,8 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -247,5 +244,11 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.TaskDefinitionPlacementConstraintMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

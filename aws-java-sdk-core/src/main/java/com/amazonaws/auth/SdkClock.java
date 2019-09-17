@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 package com.amazonaws.auth;
 
 import com.amazonaws.annotation.SdkProtectedApi;
-
+import com.amazonaws.annotation.SdkTestInternalApi;
 import java.util.Date;
 
 /**
@@ -54,5 +54,36 @@ public interface SdkClock {
         public long currentTimeMillis() {
             return mockedTime;
         }
+    }
+
+    /**
+     * Container for Singleton instance of the {@link SdkClock}.
+     */
+    final class Instance {
+
+        private static SdkClock clock = STANDARD;
+
+        public static SdkClock get() {
+            return clock;
+        }
+
+        /**
+         * Should only be used by tests to mock the clock.
+         *
+         * @param newClock New clock to use.
+         */
+        @SdkTestInternalApi
+        public static void set(SdkClock newClock) {
+            clock = newClock;
+        }
+
+        /**
+         * Reset the clock to {@link #STANDARD}. Should only be used by SDK tests.
+         */
+        @SdkTestInternalApi
+        public static void reset() {
+            clock = STANDARD;
+        }
+
     }
 }

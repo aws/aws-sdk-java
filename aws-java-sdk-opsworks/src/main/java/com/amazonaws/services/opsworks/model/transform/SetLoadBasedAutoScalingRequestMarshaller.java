@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetLoadBasedAutoScalingRequest Marshaller
+ * SetLoadBasedAutoScalingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetLoadBasedAutoScalingRequestMarshaller implements Marshaller<Request<SetLoadBasedAutoScalingRequest>, SetLoadBasedAutoScalingRequest> {
+@SdkInternalApi
+public class SetLoadBasedAutoScalingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerId").build();
+    private static final MarshallingInfo<Boolean> ENABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enable").build();
+    private static final MarshallingInfo<StructuredPojo> UPSCALING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpScaling").build();
+    private static final MarshallingInfo<StructuredPojo> DOWNSCALING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DownScaling").build();
 
-    public SetLoadBasedAutoScalingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetLoadBasedAutoScalingRequestMarshaller instance = new SetLoadBasedAutoScalingRequestMarshaller();
+
+    public static SetLoadBasedAutoScalingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetLoadBasedAutoScalingRequest> marshall(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setLoadBasedAutoScalingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetLoadBasedAutoScalingRequest> request = new DefaultRequest<SetLoadBasedAutoScalingRequest>(setLoadBasedAutoScalingRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.SetLoadBasedAutoScaling");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setLoadBasedAutoScalingRequest.getLayerId() != null) {
-                jsonGenerator.writeFieldName("LayerId").writeValue(setLoadBasedAutoScalingRequest.getLayerId());
-            }
-            if (setLoadBasedAutoScalingRequest.getEnable() != null) {
-                jsonGenerator.writeFieldName("Enable").writeValue(setLoadBasedAutoScalingRequest.getEnable());
-            }
-            if (setLoadBasedAutoScalingRequest.getUpScaling() != null) {
-                jsonGenerator.writeFieldName("UpScaling");
-                AutoScalingThresholdsJsonMarshaller.getInstance().marshall(setLoadBasedAutoScalingRequest.getUpScaling(), jsonGenerator);
-            }
-            if (setLoadBasedAutoScalingRequest.getDownScaling() != null) {
-                jsonGenerator.writeFieldName("DownScaling");
-                AutoScalingThresholdsJsonMarshaller.getInstance().marshall(setLoadBasedAutoScalingRequest.getDownScaling(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setLoadBasedAutoScalingRequest.getLayerId(), LAYERID_BINDING);
+            protocolMarshaller.marshall(setLoadBasedAutoScalingRequest.getEnable(), ENABLE_BINDING);
+            protocolMarshaller.marshall(setLoadBasedAutoScalingRequest.getUpScaling(), UPSCALING_BINDING);
+            protocolMarshaller.marshall(setLoadBasedAutoScalingRequest.getDownScaling(), DOWNSCALING_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

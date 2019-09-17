@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,17 +26,63 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the offerings.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<HostOffering> offeringSet;
-    /**
-     * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
      * results to return.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Information about the offerings.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<HostOffering> offeringSet;
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationOfferingsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -112,53 +158,8 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
     }
 
     /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationOfferingsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -168,10 +169,10 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingSet() != null)
-            sb.append("OfferingSet: ").append(getOfferingSet()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOfferingSet() != null)
+            sb.append("OfferingSet: ").append(getOfferingSet());
         sb.append("}");
         return sb.toString();
     }
@@ -186,13 +187,13 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
         if (obj instanceof DescribeHostReservationOfferingsResult == false)
             return false;
         DescribeHostReservationOfferingsResult other = (DescribeHostReservationOfferingsResult) obj;
-        if (other.getOfferingSet() == null ^ this.getOfferingSet() == null)
-            return false;
-        if (other.getOfferingSet() != null && other.getOfferingSet().equals(this.getOfferingSet()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getOfferingSet() == null ^ this.getOfferingSet() == null)
+            return false;
+        if (other.getOfferingSet() != null && other.getOfferingSet().equals(this.getOfferingSet()) == false)
             return false;
         return true;
     }
@@ -202,8 +203,8 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingSet() == null) ? 0 : getOfferingSet().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferingSet() == null) ? 0 : getOfferingSet().hashCode());
         return hashCode;
     }
 

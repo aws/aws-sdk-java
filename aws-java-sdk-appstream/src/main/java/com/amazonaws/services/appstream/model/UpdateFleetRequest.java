@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,133 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image name from which a fleet is created.
+     * The name of the image used to create the fleet.
      * </p>
      */
     private String imageName;
     /**
      * <p>
-     * The name of the fleet.
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     */
+    private String imageArn;
+    /**
+     * <p>
+     * A unique name for the fleet.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      */
     private String instanceType;
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      */
     private ComputeCapacity computeCapacity;
@@ -57,43 +165,105 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
     /**
      * <p>
-     * Delete the VPC association for the specified fleet.
+     * Deletes the VPC association for the specified fleet.
      * </p>
      */
+    @Deprecated
     private Boolean deleteVpcConfig;
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The fleet name to display.
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * Enables or disables default internet access for the fleet.
+     * </p>
+     */
+    private Boolean enableDefaultInternetAccess;
+    /**
+     * <p>
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
+     * </p>
+     */
+    private DomainJoinInfo domainJoinInfo;
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 0.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     */
+    private Integer idleDisconnectTimeoutInSeconds;
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     */
+    private java.util.List<String> attributesToDelete;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
 
     /**
      * <p>
-     * The image name from which a fleet is created.
+     * The name of the image used to create the fleet.
      * </p>
      * 
      * @param imageName
-     *        The image name from which a fleet is created.
+     *        The name of the image used to create the fleet.
      */
 
     public void setImageName(String imageName) {
@@ -102,10 +272,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image name from which a fleet is created.
+     * The name of the image used to create the fleet.
      * </p>
      * 
-     * @return The image name from which a fleet is created.
+     * @return The name of the image used to create the fleet.
      */
 
     public String getImageName() {
@@ -114,11 +284,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The image name from which a fleet is created.
+     * The name of the image used to create the fleet.
      * </p>
      * 
      * @param imageName
-     *        The image name from which a fleet is created.
+     *        The name of the image used to create the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +299,51 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the fleet.
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     */
+
+    public void setImageArn(String imageArn) {
+        this.imageArn = imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @return The ARN of the public, private, or shared image to use.
+     */
+
+    public String getImageArn() {
+        return this.imageArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the public, private, or shared image to use.
+     * </p>
+     * 
+     * @param imageArn
+     *        The ARN of the public, private, or shared image to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withImageArn(String imageArn) {
+        setImageArn(imageArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique name for the fleet.
      * </p>
      * 
      * @param name
-     *        The name of the fleet.
+     *        A unique name for the fleet.
      */
 
     public void setName(String name) {
@@ -142,10 +352,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the fleet.
+     * A unique name for the fleet.
      * </p>
      * 
-     * @return The name of the fleet.
+     * @return A unique name for the fleet.
      */
 
     public String getName() {
@@ -154,11 +364,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the fleet.
+     * A unique name for the fleet.
      * </p>
      * 
      * @param name
-     *        The name of the fleet.
+     *        A unique name for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,12 +379,214 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type.
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
      */
 
     public void setInstanceType(String instanceType) {
@@ -183,11 +595,213 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *         type.
+     * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.medium
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.standard.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.compute.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.16xlarge
+     *         </p>
+     *         </li>
      */
 
     public String getInstanceType() {
@@ -196,12 +810,214 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * stream.standard.medium
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.standard.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.compute.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type.
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.medium
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.standard.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.compute.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +1028,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
      * @param computeCapacity
-     *        The parameters for the capacity allocated to the fleet.
+     *        The desired capacity for the fleet.
      */
 
     public void setComputeCapacity(ComputeCapacity computeCapacity) {
@@ -225,10 +1041,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
-     * @return The parameters for the capacity allocated to the fleet.
+     * @return The desired capacity for the fleet.
      */
 
     public ComputeCapacity getComputeCapacity() {
@@ -237,11 +1053,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
      * @param computeCapacity
-     *        The parameters for the capacity allocated to the fleet.
+     *        The desired capacity for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +1108,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time during which a streaming session can run.
+     *        The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *        connected to a streaming instance five minutes before this limit is reached, they are prompted to save any
+     *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
+     *        by a new instance.</p>
+     *        <p>
+     *        Specify a value between 600 and 360000.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -305,10 +1131,20 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
-     * @return The maximum time during which a streaming session can run.
+     * @return The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *         connected to a streaming instance five minutes before this limit is reached, they are prompted to save
+     *         any open documents before being disconnected. After this time elapses, the instance is terminated and
+     *         replaced by a new instance.</p>
+     *         <p>
+     *         Specify a value between 600 and 360000.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -317,11 +1153,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected
+     * to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents
+     * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
+     * </p>
+     * <p>
+     * Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time during which a streaming session can run.
+     *        The maximum amount of time that a streaming session can remain active, in seconds. If users are still
+     *        connected to a streaming instance five minutes before this limit is reached, they are prompted to save any
+     *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
+     *        by a new instance.</p>
+     *        <p>
+     *        Specify a value between 600 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,13 +1178,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *        disconnection, the user is connected to the same instance within this time interval.
+     *        The amount of time that a streaming session remains active after users disconnect. If users try to
+     *        reconnect to the streaming session after a disconnection or network interruption within this time
+     *        interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *        with a new streaming instance. </p>
+     *        <p>
+     *        Specify a value between 60 and 360000.
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -347,12 +1201,20 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
-     * @return The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *         disconnection, the user is connected to the same instance within this time interval.
+     * @return The amount of time that a streaming session remains active after users disconnect. If users try to
+     *         reconnect to the streaming session after a disconnection or network interruption within this time
+     *         interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *         with a new streaming instance. </p>
+     *         <p>
+     *         Specify a value between 60 and 360000.
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -361,13 +1223,21 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to
+     * the streaming session after a disconnection or network interruption within this time interval, they are connected
+     * to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
+     * </p>
+     * <p>
+     * Specify a value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *        disconnection, the user is connected to the same instance within this time interval.
+     *        The amount of time that a streaming session remains active after users disconnect. If users try to
+     *        reconnect to the streaming session after a disconnection or network interruption within this time
+     *        interval, they are connected to their previous session. Otherwise, they are connected to a new session
+     *        with a new streaming instance. </p>
+     *        <p>
+     *        Specify a value between 60 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,39 +1248,39 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Delete the VPC association for the specified fleet.
+     * Deletes the VPC association for the specified fleet.
      * </p>
      * 
      * @param deleteVpcConfig
-     *        Delete the VPC association for the specified fleet.
+     *        Deletes the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public void setDeleteVpcConfig(Boolean deleteVpcConfig) {
         this.deleteVpcConfig = deleteVpcConfig;
     }
 
     /**
      * <p>
-     * Delete the VPC association for the specified fleet.
+     * Deletes the VPC association for the specified fleet.
      * </p>
      * 
-     * @return Delete the VPC association for the specified fleet.
+     * @return Deletes the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public Boolean getDeleteVpcConfig() {
         return this.deleteVpcConfig;
     }
 
     /**
      * <p>
-     * Delete the VPC association for the specified fleet.
+     * Deletes the VPC association for the specified fleet.
      * </p>
      * 
      * @param deleteVpcConfig
-     *        Delete the VPC association for the specified fleet.
+     *        Deletes the VPC association for the specified fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateFleetRequest withDeleteVpcConfig(Boolean deleteVpcConfig) {
         setDeleteVpcConfig(deleteVpcConfig);
         return this;
@@ -418,23 +1288,23 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Delete the VPC association for the specified fleet.
+     * Deletes the VPC association for the specified fleet.
      * </p>
      * 
-     * @return Delete the VPC association for the specified fleet.
+     * @return Deletes the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public Boolean isDeleteVpcConfig() {
         return this.deleteVpcConfig;
     }
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -443,10 +1313,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
-     * @return The description displayed to end users on the AppStream 2.0 portal.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -455,11 +1325,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +1340,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The fleet name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -483,10 +1353,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The fleet name to display.
      * </p>
      * 
-     * @return The name displayed to end users on the AppStream 2.0 portal.
+     * @return The fleet name to display.
      */
 
     public String getDisplayName() {
@@ -495,11 +1365,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The fleet name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,7 +1379,413 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Enables or disables default internet access for the fleet.
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the fleet.
+     */
+
+    public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        this.enableDefaultInternetAccess = enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Enables or disables default internet access for the fleet.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the fleet.
+     */
+
+    public Boolean getEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Enables or disables default internet access for the fleet.
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        setEnableDefaultInternetAccess(enableDefaultInternetAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables or disables default internet access for the fleet.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the fleet.
+     */
+
+    public Boolean isEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
+     * </p>
+     * 
+     * @param domainJoinInfo
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
+     */
+
+    public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
+        this.domainJoinInfo = domainJoinInfo;
+    }
+
+    /**
+     * <p>
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
+     * </p>
+     * 
+     * @return The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *         Directory domain.
+     */
+
+    public DomainJoinInfo getDomainJoinInfo() {
+        return this.domainJoinInfo;
+    }
+
+    /**
+     * <p>
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
+     * </p>
+     * 
+     * @param domainJoinInfo
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
+        setDomainJoinInfo(domainJoinInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 0.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @param idleDisconnectTimeoutInSeconds
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *        they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *        time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *        previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *        streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *        user activity. If users continue to be idle after the time interval in
+     *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *        <p>
+     *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *        value between 60 and 3600. The default value is 0.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *        number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *        nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *        inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *        rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *        inactivity.
+     *        </p>
+     */
+
+    public void setIdleDisconnectTimeoutInSeconds(Integer idleDisconnectTimeoutInSeconds) {
+        this.idleDisconnectTimeoutInSeconds = idleDisconnectTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 0.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @return The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *         session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *         they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *         time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *         previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *         streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *         user activity. If users continue to be idle after the time interval in
+     *         <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *         <p>
+     *         To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *         value between 60 and 3600. The default value is 0.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *         number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *         nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *         inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *         rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *         inactivity.
+     *         </p>
+     */
+
+    public Integer getIdleDisconnectTimeoutInSeconds() {
+        return this.idleDisconnectTimeoutInSeconds;
+    }
+
+    /**
+     * <p>
+     * The amount of time that users can be idle (inactive) before they are disconnected from their streaming session
+     * and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are
+     * disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval
+     * specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users
+     * are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads
+     * and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be
+     * idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.
+     * </p>
+     * <p>
+     * To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value
+     * between 60 and 3600. The default value is 0.
+     * </p>
+     * <note>
+     * <p>
+     * If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of
+     * minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For
+     * example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a
+     * value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify
+     * a value of 90, users are disconnected after 2 minutes of inactivity.
+     * </p>
+     * </note>
+     * 
+     * @param idleDisconnectTimeoutInSeconds
+     *        The amount of time that users can be idle (inactive) before they are disconnected from their streaming
+     *        session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before
+     *        they are disconnected due to inactivity. If users try to reconnect to the streaming session before the
+     *        time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
+     *        previous session. Users are considered idle when they stop providing keyboard or mouse input during their
+     *        streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as
+     *        user activity. If users continue to be idle after the time interval in
+     *        <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+     *        <p>
+     *        To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a
+     *        value between 60 and 3600. The default value is 0.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole
+     *        number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the
+     *        nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of
+     *        inactivity. If you specify a value that is at the midpoint between two different minutes, the value is
+     *        rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of
+     *        inactivity.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withIdleDisconnectTimeoutInSeconds(Integer idleDisconnectTimeoutInSeconds) {
+        setIdleDisconnectTimeoutInSeconds(idleDisconnectTimeoutInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     * 
+     * @return The fleet attributes to delete.
+     * @see FleetAttribute
+     */
+
+    public java.util.List<String> getAttributesToDelete() {
+        return attributesToDelete;
+    }
+
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The fleet attributes to delete.
+     * @see FleetAttribute
+     */
+
+    public void setAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        if (attributesToDelete == null) {
+            this.attributesToDelete = null;
+            return;
+        }
+
+        this.attributesToDelete = new java.util.ArrayList<String>(attributesToDelete);
+    }
+
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributesToDelete(java.util.Collection)} or {@link #withAttributesToDelete(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The fleet attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(String... attributesToDelete) {
+        if (this.attributesToDelete == null) {
+            setAttributesToDelete(new java.util.ArrayList<String>(attributesToDelete.length));
+        }
+        for (String ele : attributesToDelete) {
+            this.attributesToDelete.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The fleet attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        setAttributesToDelete(attributesToDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The fleet attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(FleetAttribute... attributesToDelete) {
+        java.util.ArrayList<String> attributesToDeleteCopy = new java.util.ArrayList<String>(attributesToDelete.length);
+        for (FleetAttribute value : attributesToDelete) {
+            attributesToDeleteCopy.add(value.toString());
+        }
+        if (getAttributesToDelete() == null) {
+            setAttributesToDelete(attributesToDeleteCopy);
+        } else {
+            getAttributesToDelete().addAll(attributesToDeleteCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *         calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of
+     *         the role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -521,6 +1797,8 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
+        if (getImageArn() != null)
+            sb.append("ImageArn: ").append(getImageArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getInstanceType() != null)
@@ -538,7 +1816,17 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getEnableDefaultInternetAccess() != null)
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
+        if (getDomainJoinInfo() != null)
+            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
+        if (getIdleDisconnectTimeoutInSeconds() != null)
+            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
+        if (getAttributesToDelete() != null)
+            sb.append("AttributesToDelete: ").append(getAttributesToDelete()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -556,6 +1844,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getImageName() == null ^ this.getImageName() == null)
             return false;
         if (other.getImageName() != null && other.getImageName().equals(this.getImageName()) == false)
+            return false;
+        if (other.getImageArn() == null ^ this.getImageArn() == null)
+            return false;
+        if (other.getImageArn() != null && other.getImageArn().equals(this.getImageArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -593,6 +1885,27 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getEnableDefaultInternetAccess() == null ^ this.getEnableDefaultInternetAccess() == null)
+            return false;
+        if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
+            return false;
+        if (other.getDomainJoinInfo() == null ^ this.getDomainJoinInfo() == null)
+            return false;
+        if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
+            return false;
+        if (other.getIdleDisconnectTimeoutInSeconds() == null ^ this.getIdleDisconnectTimeoutInSeconds() == null)
+            return false;
+        if (other.getIdleDisconnectTimeoutInSeconds() != null
+                && other.getIdleDisconnectTimeoutInSeconds().equals(this.getIdleDisconnectTimeoutInSeconds()) == false)
+            return false;
+        if (other.getAttributesToDelete() == null ^ this.getAttributesToDelete() == null)
+            return false;
+        if (other.getAttributesToDelete() != null && other.getAttributesToDelete().equals(this.getAttributesToDelete()) == false)
+            return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -602,6 +1915,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
+        hashCode = prime * hashCode + ((getImageArn() == null) ? 0 : getImageArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getComputeCapacity() == null) ? 0 : getComputeCapacity().hashCode());
@@ -611,6 +1925,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDeleteVpcConfig() == null) ? 0 : getDeleteVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
+        hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
+        hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         return hashCode;
     }
 

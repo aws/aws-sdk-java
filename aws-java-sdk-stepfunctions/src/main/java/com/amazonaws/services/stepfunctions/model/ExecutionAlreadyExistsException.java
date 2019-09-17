@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An execution with the same name already exists.
+ * The execution has the same <code>name</code> as another execution (but a different <code>input</code>).
  * </p>
+ * <note>
+ * <p>
+ * Executions with the same <code>name</code> and <code>input</code> are considered idempotent.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionAlreadyExistsException extends com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException {

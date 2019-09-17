@@ -43,6 +43,8 @@ public class Constants {
 
     public static final String PACKAGE_NAME_WAITERS_SUFFIX = "waiters";
 
+    public static final String PACKAGE_NAME_ENDPOINT_DISCOVERY_SUFFIX = "endpointdiscovery";
+
     public static final String PACKAGE_NAME_CUSTOM_AUTH_SUFFIX = "auth";
 
     public static final String AUTH_POLICY_ENUM_CLASS_DIR = "com/amazonaws/auth/policy/actions";

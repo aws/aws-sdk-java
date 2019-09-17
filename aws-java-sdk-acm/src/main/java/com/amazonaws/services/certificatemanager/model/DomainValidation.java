@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.certificatemanager.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainValidation implements Serializable, Cloneable {
+public class DomainValidation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,10 +49,41 @@ public class DomainValidation implements Serializable, Cloneable {
     private String validationDomain;
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      */
     private String validationStatus;
+    /**
+     * <p>
+     * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * Ownership</a>.
+     * </p>
+     */
+    private ResourceRecord resourceRecord;
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     */
+    private String validationMethod;
 
     /**
      * <p>
@@ -210,11 +243,44 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validationStatus
-     *        The validation status of the domain name.
+     *        The validation status of the domain name. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>SUCCESS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>FAILED
+     *        </p>
+     *        </li>
      * @see DomainStatus
      */
 
@@ -224,10 +290,43 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The validation status of the domain name.
+     * @return The validation status of the domain name. This can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_VALIDATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code/>SUCCESS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code/>FAILED
+     *         </p>
+     *         </li>
      * @see DomainStatus
      */
 
@@ -237,11 +336,44 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validationStatus
-     *        The validation status of the domain name.
+     *        The validation status of the domain name. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>SUCCESS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>FAILED
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
@@ -253,36 +385,228 @@ public class DomainValidation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validationStatus
-     *        The validation status of the domain name.
+     *        The validation status of the domain name. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>SUCCESS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>FAILED
+     *        </p>
+     *        </li>
      * @see DomainStatus
      */
 
     public void setValidationStatus(DomainStatus validationStatus) {
-        this.validationStatus = validationStatus.toString();
+        withValidationStatus(validationStatus);
     }
 
     /**
      * <p>
-     * The validation status of the domain name.
+     * The validation status of the domain name. This can be one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_VALIDATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>SUCCESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code/>FAILED
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validationStatus
-     *        The validation status of the domain name.
+     *        The validation status of the domain name. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_VALIDATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>SUCCESS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code/>FAILED
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainStatus
      */
 
     public DomainValidation withValidationStatus(DomainStatus validationStatus) {
-        setValidationStatus(validationStatus);
+        this.validationStatus = validationStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * Ownership</a>.
+     * </p>
+     * 
+     * @param resourceRecord
+     *        Contains the CNAME record that you add to your DNS database for domain validation. For more information,
+     *        see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *        Validate Domain Ownership</a>.
+     */
+
+    public void setResourceRecord(ResourceRecord resourceRecord) {
+        this.resourceRecord = resourceRecord;
+    }
+
+    /**
+     * <p>
+     * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * Ownership</a>.
+     * </p>
+     * 
+     * @return Contains the CNAME record that you add to your DNS database for domain validation. For more information,
+     *         see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *         Validate Domain Ownership</a>.
+     */
+
+    public ResourceRecord getResourceRecord() {
+        return this.resourceRecord;
+    }
+
+    /**
+     * <p>
+     * Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain
+     * Ownership</a>.
+     * </p>
+     * 
+     * @param resourceRecord
+     *        Contains the CNAME record that you add to your DNS database for domain validation. For more information,
+     *        see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to
+     *        Validate Domain Ownership</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainValidation withResourceRecord(ResourceRecord resourceRecord) {
+        setResourceRecord(resourceRecord);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     * 
+     * @param validationMethod
+     *        Specifies the domain validation method.
+     * @see ValidationMethod
+     */
+
+    public void setValidationMethod(String validationMethod) {
+        this.validationMethod = validationMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     * 
+     * @return Specifies the domain validation method.
+     * @see ValidationMethod
+     */
+
+    public String getValidationMethod() {
+        return this.validationMethod;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     * 
+     * @param validationMethod
+     *        Specifies the domain validation method.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationMethod
+     */
+
+    public DomainValidation withValidationMethod(String validationMethod) {
+        setValidationMethod(validationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     * 
+     * @param validationMethod
+     *        Specifies the domain validation method.
+     * @see ValidationMethod
+     */
+
+    public void setValidationMethod(ValidationMethod validationMethod) {
+        withValidationMethod(validationMethod);
+    }
+
+    /**
+     * <p>
+     * Specifies the domain validation method.
+     * </p>
+     * 
+     * @param validationMethod
+     *        Specifies the domain validation method.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ValidationMethod
+     */
+
+    public DomainValidation withValidationMethod(ValidationMethod validationMethod) {
+        this.validationMethod = validationMethod.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -299,7 +623,11 @@ public class DomainValidation implements Serializable, Cloneable {
         if (getValidationDomain() != null)
             sb.append("ValidationDomain: ").append(getValidationDomain()).append(",");
         if (getValidationStatus() != null)
-            sb.append("ValidationStatus: ").append(getValidationStatus());
+            sb.append("ValidationStatus: ").append(getValidationStatus()).append(",");
+        if (getResourceRecord() != null)
+            sb.append("ResourceRecord: ").append(getResourceRecord()).append(",");
+        if (getValidationMethod() != null)
+            sb.append("ValidationMethod: ").append(getValidationMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -330,6 +658,14 @@ public class DomainValidation implements Serializable, Cloneable {
             return false;
         if (other.getValidationStatus() != null && other.getValidationStatus().equals(this.getValidationStatus()) == false)
             return false;
+        if (other.getResourceRecord() == null ^ this.getResourceRecord() == null)
+            return false;
+        if (other.getResourceRecord() != null && other.getResourceRecord().equals(this.getResourceRecord()) == false)
+            return false;
+        if (other.getValidationMethod() == null ^ this.getValidationMethod() == null)
+            return false;
+        if (other.getValidationMethod() != null && other.getValidationMethod().equals(this.getValidationMethod()) == false)
+            return false;
         return true;
     }
 
@@ -342,6 +678,8 @@ public class DomainValidation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getValidationEmails() == null) ? 0 : getValidationEmails().hashCode());
         hashCode = prime * hashCode + ((getValidationDomain() == null) ? 0 : getValidationDomain().hashCode());
         hashCode = prime * hashCode + ((getValidationStatus() == null) ? 0 : getValidationStatus().hashCode());
+        hashCode = prime * hashCode + ((getResourceRecord() == null) ? 0 : getResourceRecord().hashCode());
+        hashCode = prime * hashCode + ((getValidationMethod() == null) ? 0 : getValidationMethod().hashCode());
         return hashCode;
     }
 
@@ -352,5 +690,11 @@ public class DomainValidation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.certificatemanager.model.transform.DomainValidationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

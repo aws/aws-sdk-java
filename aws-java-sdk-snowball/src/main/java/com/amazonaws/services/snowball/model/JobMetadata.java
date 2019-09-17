@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobMetadata implements Serializable, Cloneable {
+public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,7 +49,7 @@ public class JobMetadata implements Serializable, Cloneable {
     private String jobType;
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      */
     private String snowballType;
@@ -73,13 +75,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      */
     private String kmsKeyARN;
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      */
@@ -113,8 +117,8 @@ public class JobMetadata implements Serializable, Cloneable {
     private Notification notification;
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      */
@@ -133,6 +137,13 @@ public class JobMetadata implements Serializable, Cloneable {
      * </p>
      */
     private String clusterId;
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -231,7 +242,7 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public void setJobState(JobState jobState) {
-        this.jobState = jobState.toString();
+        withJobState(jobState);
     }
 
     /**
@@ -246,7 +257,7 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public JobMetadata withJobState(JobState jobState) {
-        setJobState(jobState);
+        this.jobState = jobState.toString();
         return this;
     }
 
@@ -304,7 +315,7 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -319,17 +330,17 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public JobMetadata withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
@@ -339,10 +350,10 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
-     * @return The type of appliance used with this job.
+     * @return The type of device used with this job.
      * @see SnowballType
      */
 
@@ -352,11 +363,11 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -368,31 +379,31 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @see SnowballType
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
      * <p>
-     * The type of appliance used with this job.
+     * The type of device used with this job.
      * </p>
      * 
      * @param snowballType
-     *        The type of appliance used with this job.
+     *        The type of device used with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
 
     public JobMetadata withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -525,12 +536,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *        This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *        This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        AWS KMS.
      */
 
     public void setKmsKeyARN(String kmsKeyARN) {
@@ -540,11 +554,14 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *         This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *         This ARN was created using the <a
+     *         href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *         AWS KMS.
      */
 
     public String getKmsKeyARN() {
@@ -554,12 +571,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *        This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *        This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        AWS KMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,13 +590,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
-     *        The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
-     *        in AWS Identity and Access Management (IAM).
+     *        The role ARN associated with this job. This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
+     *        AWS Identity and Access Management (IAM).
      */
 
     public void setRoleARN(String roleARN) {
@@ -585,11 +607,13 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
-     * @return The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
+     * @return The role ARN associated with this job. This ARN was created using the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
      *         in AWS Identity and Access Management (IAM).
      */
 
@@ -599,13 +623,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
-     *        The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
-     *        in AWS Identity and Access Management (IAM).
+     *        The role ARN associated with this job. This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
+     *        AWS Identity and Access Management (IAM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,7 +782,7 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -773,7 +799,7 @@ public class JobMetadata implements Serializable, Cloneable {
      */
 
     public JobMetadata withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 
@@ -831,15 +857,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *        both import and export jobs.
+     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *        import and export jobs.
      */
 
     public void setDataTransferProgress(DataTransfer dataTransferProgress) {
@@ -848,14 +874,14 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
-     * @return A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *         This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *         both import and export jobs.
+     * @return A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *         data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *         import and export jobs.
      */
 
     public DataTransfer getDataTransferProgress() {
@@ -864,15 +890,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data
-     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
+     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the appliance is at AWS.
-     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
-     *        both import and export jobs.
+     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
+     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     *        import and export jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -974,7 +1000,54 @@ public class JobMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @return The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *         This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1015,7 +1088,9 @@ public class JobMetadata implements Serializable, Cloneable {
         if (getJobLogInfo() != null)
             sb.append("JobLogInfo: ").append(getJobLogInfo()).append(",");
         if (getClusterId() != null)
-            sb.append("ClusterId: ").append(getClusterId());
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -1094,6 +1169,10 @@ public class JobMetadata implements Serializable, Cloneable {
             return false;
         if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -1118,6 +1197,7 @@ public class JobMetadata implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDataTransferProgress() == null) ? 0 : getDataTransferProgress().hashCode());
         hashCode = prime * hashCode + ((getJobLogInfo() == null) ? 0 : getJobLogInfo().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 
@@ -1128,5 +1208,11 @@ public class JobMetadata implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.JobMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryLimits implements Serializable, Cloneable {
+public class DirectoryLimits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,19 +48,19 @@ public class DirectoryLimits implements Serializable, Cloneable {
     private Boolean cloudOnlyDirectoriesLimitReached;
     /**
      * <p>
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      * </p>
      */
     private Integer cloudOnlyMicrosoftADLimit;
     /**
      * <p>
-     * The current number of Microsoft AD directories in the region.
+     * The current number of AWS Managed Microsoft AD directories in the region.
      * </p>
      */
     private Integer cloudOnlyMicrosoftADCurrentCount;
     /**
      * <p>
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * </p>
      */
     private Boolean cloudOnlyMicrosoftADLimitReached;
@@ -215,11 +217,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADLimit
-     *        The maximum number of Microsoft AD directories allowed in the region.
+     *        The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      */
 
     public void setCloudOnlyMicrosoftADLimit(Integer cloudOnlyMicrosoftADLimit) {
@@ -228,10 +230,10 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      * </p>
      * 
-     * @return The maximum number of Microsoft AD directories allowed in the region.
+     * @return The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      */
 
     public Integer getCloudOnlyMicrosoftADLimit() {
@@ -240,11 +242,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADLimit
-     *        The maximum number of Microsoft AD directories allowed in the region.
+     *        The maximum number of AWS Managed Microsoft AD directories allowed in the region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +257,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of Microsoft AD directories in the region.
+     * The current number of AWS Managed Microsoft AD directories in the region.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADCurrentCount
-     *        The current number of Microsoft AD directories in the region.
+     *        The current number of AWS Managed Microsoft AD directories in the region.
      */
 
     public void setCloudOnlyMicrosoftADCurrentCount(Integer cloudOnlyMicrosoftADCurrentCount) {
@@ -268,10 +270,10 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of Microsoft AD directories in the region.
+     * The current number of AWS Managed Microsoft AD directories in the region.
      * </p>
      * 
-     * @return The current number of Microsoft AD directories in the region.
+     * @return The current number of AWS Managed Microsoft AD directories in the region.
      */
 
     public Integer getCloudOnlyMicrosoftADCurrentCount() {
@@ -280,11 +282,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current number of Microsoft AD directories in the region.
+     * The current number of AWS Managed Microsoft AD directories in the region.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADCurrentCount
-     *        The current number of Microsoft AD directories in the region.
+     *        The current number of AWS Managed Microsoft AD directories in the region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +297,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADLimitReached
-     *        Indicates if the Microsoft AD directory limit has been reached.
+     *        Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      */
 
     public void setCloudOnlyMicrosoftADLimitReached(Boolean cloudOnlyMicrosoftADLimitReached) {
@@ -308,10 +310,10 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * </p>
      * 
-     * @return Indicates if the Microsoft AD directory limit has been reached.
+     * @return Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      */
 
     public Boolean getCloudOnlyMicrosoftADLimitReached() {
@@ -320,11 +322,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * </p>
      * 
      * @param cloudOnlyMicrosoftADLimitReached
-     *        Indicates if the Microsoft AD directory limit has been reached.
+     *        Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,10 +337,10 @@ public class DirectoryLimits implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      * </p>
      * 
-     * @return Indicates if the Microsoft AD directory limit has been reached.
+     * @return Indicates if the AWS Managed Microsoft AD directory limit has been reached.
      */
 
     public Boolean isCloudOnlyMicrosoftADLimitReached() {
@@ -478,7 +480,8 @@ public class DirectoryLimits implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -589,5 +592,11 @@ public class DirectoryLimits implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directory.model.transform.DirectoryLimitsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

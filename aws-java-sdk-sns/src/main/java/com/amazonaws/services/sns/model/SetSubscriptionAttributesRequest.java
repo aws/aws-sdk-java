@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,11 +36,33 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
     private String subscriptionArn;
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String attributeName;
     /**
@@ -64,9 +86,31 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * @param subscriptionArn
      *        The ARN of the subscription to modify.
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *        messages, rather than receiving every message published to the topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
      * @param attributeValue
      *        The new value for the attribute in JSON format.
      */
@@ -118,16 +162,60 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *        messages, rather than receiving every message published to the topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
      */
 
     public void setAttributeName(String attributeName) {
@@ -136,15 +224,59 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
+     * @return A map of attributes with their corresponding values.</p>
      *         <p>
-     *         Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *         The following lists the names, descriptions, and values of the special request parameters that the
+     *         <code>SetTopicAttributes</code> action uses:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *         endpoints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *         messages, rather than receiving every message published to the topic.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *         SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *         otherwise created for Amazon SNS metadata.
+     *         </p>
+     *         </li>
      */
 
     public String getAttributeName() {
@@ -153,16 +285,60 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
+     * rather than receiving every message published to the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
+     * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
+     * created for Amazon SNS metadata.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
+     *        messages, rather than receiving every message published to the topic.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon
+     *        SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is
+     *        otherwise created for Amazon SNS metadata.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,7 +388,8 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

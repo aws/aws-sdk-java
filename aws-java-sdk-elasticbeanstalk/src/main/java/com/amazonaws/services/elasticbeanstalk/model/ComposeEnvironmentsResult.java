@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnvironmentDescription> environments;
+    /**
+     * <p>
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -107,7 +113,49 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     * </p>
+     * 
+     * @param nextToken
+     *        In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     * </p>
+     * 
+     * @return In a paginated request, the token that you can pass in a subsequent request to get the next response
+     *         page.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     * </p>
+     * 
+     * @param nextToken
+     *        In a paginated request, the token that you can pass in a subsequent request to get the next response page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComposeEnvironmentsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -118,7 +166,9 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironments() != null)
-            sb.append("Environments: ").append(getEnvironments());
+            sb.append("Environments: ").append(getEnvironments()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +187,10 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getEnvironments() != null && other.getEnvironments().equals(this.getEnvironments()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +200,7 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEnvironments() == null) ? 0 : getEnvironments().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -157,4 +212,5 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

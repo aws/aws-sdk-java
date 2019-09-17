@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      */
     private DocumentDescription document;
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
      * @param document
-     *        Information about the SSM document.
+     *        Information about the Systems Manager document.
      */
 
     public void setDocument(DocumentDescription document) {
@@ -45,10 +45,10 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
-     * @return Information about the SSM document.
+     * @return Information about the Systems Manager document.
      */
 
     public DocumentDescription getDocument() {
@@ -57,11 +57,11 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
      * @param document
-     *        Information about the SSM document.
+     *        Information about the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +71,8 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -121,4 +122,5 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

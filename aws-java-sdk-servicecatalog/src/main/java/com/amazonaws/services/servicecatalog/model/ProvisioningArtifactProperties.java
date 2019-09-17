@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,50 +14,78 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provisioning artifact properties.
+ * Information about a provisioning artifact (also known as a version) for a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisioningArtifactProperties implements Serializable, Cloneable {
+public class ProvisioningArtifactProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Additional information about the provisioning artifact properties.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      */
     private java.util.Map<String, String> info;
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     */
+    private Boolean disableTemplateValidation;
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact properties.
+     *        The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      */
 
     public void setName(String name) {
@@ -66,10 +94,10 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
-     * @return The name assigned to the provisioning artifact properties.
+     * @return The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      */
 
     public String getName() {
@@ -78,11 +106,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact properties.
+     *        The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +121,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact properties.
+     *        The description of the provisioning artifact, including how it differs from the previous provisioning
+     *        artifact.
      */
 
     public void setDescription(String description) {
@@ -106,10 +135,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
-     * @return The text description of the provisioning artifact properties.
+     * @return The description of the provisioning artifact, including how it differs from the previous provisioning
+     *         artifact.
      */
 
     public String getDescription() {
@@ -118,11 +148,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact properties.
+     *        The description of the provisioning artifact, including how it differs from the previous provisioning
+     *        artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +164,15 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
-     * @return Additional information about the provisioning artifact properties.
+     * @return The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *         <p>
+     *         <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -145,11 +181,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact properties.
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        <p>
+     *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -158,11 +199,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact properties.
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        <p>
+     *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +240,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -208,10 +287,43 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the provisioning artifact properties.
+     * @return The type of provisioning artifact.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *         </p>
+     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -221,11 +333,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -237,36 +382,159 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
     public void setType(ProvisioningArtifactType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of the provisioning artifact properties.
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties.
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
 
     public ProvisioningArtifactProperties withType(ProvisioningArtifactType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @param disableTemplateValidation
+     *        If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
+     */
+
+    public void setDisableTemplateValidation(Boolean disableTemplateValidation) {
+        this.disableTemplateValidation = disableTemplateValidation;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @return If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
+     */
+
+    public Boolean getDisableTemplateValidation() {
+        return this.disableTemplateValidation;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @param disableTemplateValidation
+     *        If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisioningArtifactProperties withDisableTemplateValidation(Boolean disableTemplateValidation) {
+        setDisableTemplateValidation(disableTemplateValidation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is invalid.
+     * </p>
+     * 
+     * @return If set to true, AWS Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
+     */
+
+    public Boolean isDisableTemplateValidation() {
+        return this.disableTemplateValidation;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -283,7 +551,9 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
         if (getInfo() != null)
             sb.append("Info: ").append(getInfo()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDisableTemplateValidation() != null)
+            sb.append("DisableTemplateValidation: ").append(getDisableTemplateValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -314,6 +584,10 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDisableTemplateValidation() == null ^ this.getDisableTemplateValidation() == null)
+            return false;
+        if (other.getDisableTemplateValidation() != null && other.getDisableTemplateValidation().equals(this.getDisableTemplateValidation()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +600,7 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInfo() == null) ? 0 : getInfo().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDisableTemplateValidation() == null) ? 0 : getDisableTemplateValidation().hashCode());
         return hashCode;
     }
 
@@ -336,5 +611,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ProvisioningArtifactPropertiesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

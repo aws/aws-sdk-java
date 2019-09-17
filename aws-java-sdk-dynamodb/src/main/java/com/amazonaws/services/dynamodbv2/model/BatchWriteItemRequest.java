@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,10 +42,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -60,7 +60,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -108,7 +108,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
@@ -128,7 +128,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -156,10 +156,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -174,7 +174,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -198,7 +198,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *         this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *         <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a
      *         value for the partition key. For a composite primary key, you must provide values for <i>both</i> the
@@ -218,7 +218,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *         name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *         have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *         values will be rejected with a <code>ValidationException</code> exception.
+     *         values are rejected with a <code>ValidationException</code> exception.
      *         </p>
      *         <p>
      *         If you specify any attributes that are part of an index key, then the data types for those attributes
@@ -247,10 +247,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +265,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -290,7 +290,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
@@ -310,7 +310,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -339,10 +339,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -357,7 +357,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute name
      * and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths
-     * greater than zero; and set type attributes must not be empty. Requests that contain empty values will be rejected
+     * greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected
      * with a <code>ValidationException</code> exception.
      * </p>
      * <p>
@@ -382,7 +382,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
@@ -402,7 +402,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>Item</code> - A map of attributes and their values. Each entry in this map consists of an attribute
      *        name and an attribute value. Attribute values must not be null; string and binary type attributes must
      *        have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty
-     *        values will be rejected with a <code>ValidationException</code> exception.
+     *        values are rejected with a <code>ValidationException</code> exception.
      *        </p>
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
@@ -475,7 +475,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -485,7 +485,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public BatchWriteItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -559,7 +559,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
+        withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }
 
     /**
@@ -578,12 +578,13 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public BatchWriteItemRequest withReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        setReturnItemCollectionMetrics(returnItemCollectionMetrics);
+        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

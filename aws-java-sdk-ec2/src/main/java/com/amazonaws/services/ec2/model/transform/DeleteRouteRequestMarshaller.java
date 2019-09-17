@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,16 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (deleteRouteRequest.getRouteTableId() != null) {
-            request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));
-        }
-
         if (deleteRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationCidrBlock()));
         }
 
         if (deleteRouteRequest.getDestinationIpv6CidrBlock() != null) {
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationIpv6CidrBlock()));
+        }
+
+        if (deleteRouteRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));
         }
 
         return request;

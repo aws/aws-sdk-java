@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,84 +12,51 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RespondDecisionTaskCompletedRequest Marshaller
+ * RespondDecisionTaskCompletedRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RespondDecisionTaskCompletedRequestMarshaller implements
-        Marshaller<Request<RespondDecisionTaskCompletedRequest>, RespondDecisionTaskCompletedRequest> {
+@SdkInternalApi
+public class RespondDecisionTaskCompletedRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskToken").build();
+    private static final MarshallingInfo<List> DECISIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("decisions").build();
+    private static final MarshallingInfo<String> EXECUTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionContext").build();
 
-    public RespondDecisionTaskCompletedRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RespondDecisionTaskCompletedRequestMarshaller instance = new RespondDecisionTaskCompletedRequestMarshaller();
+
+    public static RespondDecisionTaskCompletedRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RespondDecisionTaskCompletedRequest> marshall(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (respondDecisionTaskCompletedRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RespondDecisionTaskCompletedRequest> request = new DefaultRequest<RespondDecisionTaskCompletedRequest>(respondDecisionTaskCompletedRequest,
-                "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RespondDecisionTaskCompleted");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (respondDecisionTaskCompletedRequest.getTaskToken() != null) {
-                jsonGenerator.writeFieldName("taskToken").writeValue(respondDecisionTaskCompletedRequest.getTaskToken());
-            }
-
-            java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
-            if (decisionsList != null) {
-                jsonGenerator.writeFieldName("decisions");
-                jsonGenerator.writeStartArray();
-                for (Decision decisionsListValue : decisionsList) {
-                    if (decisionsListValue != null) {
-
-                        DecisionJsonMarshaller.getInstance().marshall(decisionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (respondDecisionTaskCompletedRequest.getExecutionContext() != null) {
-                jsonGenerator.writeFieldName("executionContext").writeValue(respondDecisionTaskCompletedRequest.getExecutionContext());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getTaskToken(), TASKTOKEN_BINDING);
+            protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getDecisions(), DECISIONS_BINDING);
+            protocolMarshaller.marshall(respondDecisionTaskCompletedRequest.getExecutionContext(), EXECUTIONCONTEXT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

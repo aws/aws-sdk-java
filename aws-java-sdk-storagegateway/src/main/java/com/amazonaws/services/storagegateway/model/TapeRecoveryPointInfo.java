@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TapeRecoveryPointInfo implements Serializable, Cloneable {
+public class TapeRecoveryPointInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -37,7 +39,8 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      */
     private java.util.Date tapeRecoveryPointTime;
@@ -47,7 +50,11 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * </p>
      */
     private Long tapeSizeInBytes;
-
+    /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     */
     private String tapeStatus;
 
     /**
@@ -95,14 +102,15 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *        <p>
-     *        The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *        format.
+     *        The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *        YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public void setTapeRecoveryPointTime(java.util.Date tapeRecoveryPointTime) {
@@ -114,13 +122,14 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @return The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *         <p>
-     *         The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *         format.
+     *         The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *         YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public java.util.Date getTapeRecoveryPointTime() {
@@ -132,14 +141,15 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *        <p>
-     *        The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *        format.
+     *        The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *        YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,7 +199,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
      * @param tapeStatus
+     *        The status of the virtual tapes.
      */
 
     public void setTapeStatus(String tapeStatus) {
@@ -197,7 +212,11 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
+     * @return The status of the virtual tapes.
      */
 
     public String getTapeStatus() {
@@ -205,7 +224,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the virtual tapes.
+     * </p>
+     * 
      * @param tapeStatus
+     *        The status of the virtual tapes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,7 +239,8 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -285,5 +310,11 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeRecoveryPointInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

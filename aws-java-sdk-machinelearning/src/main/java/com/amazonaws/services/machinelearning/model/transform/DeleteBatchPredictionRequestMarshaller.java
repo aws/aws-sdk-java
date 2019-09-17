@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteBatchPredictionRequest Marshaller
+ * DeleteBatchPredictionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteBatchPredictionRequestMarshaller implements Marshaller<Request<DeleteBatchPredictionRequest>, DeleteBatchPredictionRequest> {
+@SdkInternalApi
+public class DeleteBatchPredictionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BATCHPREDICTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchPredictionId").build();
 
-    public DeleteBatchPredictionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteBatchPredictionRequestMarshaller instance = new DeleteBatchPredictionRequestMarshaller();
+
+    public static DeleteBatchPredictionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteBatchPredictionRequest> marshall(DeleteBatchPredictionRequest deleteBatchPredictionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteBatchPredictionRequest deleteBatchPredictionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteBatchPredictionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteBatchPredictionRequest> request = new DefaultRequest<DeleteBatchPredictionRequest>(deleteBatchPredictionRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.DeleteBatchPrediction");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteBatchPredictionRequest.getBatchPredictionId() != null) {
-                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(deleteBatchPredictionRequest.getBatchPredictionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteBatchPredictionRequest.getBatchPredictionId(), BATCHPREDICTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

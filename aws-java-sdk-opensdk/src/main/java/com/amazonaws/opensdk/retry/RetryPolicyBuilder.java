@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,6 +73,9 @@ public final class RetryPolicyBuilder {
 
     /**
      * The default value for max number of retries is {@value PredefinedRetryPolicies#DEFAULT_MAX_ERROR_RETRY}.
+     *
+     * <p>Note that the actual max allowed retries may be less due to retry throttling. See this <a
+     * href="https://aws.amazon.com/blogs/developer/introducing-retry-throttling/">blog</a> for more details.</p>
      *
      * @param maxNumberOfRetries Max number of retries to allow.
      * @return This object for method chaining.

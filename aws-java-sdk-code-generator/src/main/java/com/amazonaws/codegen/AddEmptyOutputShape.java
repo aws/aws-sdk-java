@@ -25,11 +25,8 @@ import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.naming.NamingStrategy;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.amazonaws.codegen.internal.Constants.RESPONSE_CLASS_SUFFIX;
 
 public class AddEmptyOutputShape implements IntermediateModelShapeProcessor {
 
@@ -66,7 +63,7 @@ public class AddEmptyOutputShape implements IntermediateModelShapeProcessor {
 
             Output output = operation.getOutput();
             if (output == null) {
-                final String outputShape = operationName + RESPONSE_CLASS_SUFFIX;
+                final String outputShape = namingStrategy.getResponseClassName(operationName);
                 final OperationModel operationModel = currentOperations.get(operationName);
 
                 operationModel.setReturnType(new ReturnTypeModel(outputShape));

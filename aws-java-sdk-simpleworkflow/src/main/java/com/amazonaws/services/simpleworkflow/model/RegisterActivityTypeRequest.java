@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -32,8 +37,8 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String name;
@@ -41,12 +46,15 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The version of the activity type.
      * </p>
-     * <note>The activity type consists of the name and version, the combination of which must be unique within the
-     * domain.</note>
+     * <note>
+     * <p>
+     * The activity type consists of the name and version, the combination of which must be unique within the domain.
+     * </p>
+     * </note>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private String version;
@@ -60,11 +68,11 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a worker can take to process tasks of this activity type.
      * This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.
+     * <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskStartToCloseTimeout;
@@ -73,34 +81,35 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * If set, specifies the default maximum time before which a worker processing a task of this type must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is
      * automatically timed out. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a heartbeat or
-     * returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no
-     * longer considers the activity task to be valid; the activity worker should clean up the activity task.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record a
+     * heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case,
+     * Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity
+     * task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskHeartbeatTimeout;
     /**
      * <p>
      * If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list
-     * is used if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.
+     * is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      */
     private TaskList defaultTaskList;
     /**
      * <p>
-     * The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid
+     * values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      */
     private String defaultTaskPriority;
@@ -108,22 +117,22 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a task of this activity type can wait before being assigned
      * to a worker. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskScheduleToStartTimeout;
     /**
      * <p>
      * If set, specifies the default maximum duration for a task of this activity type. This default can be overridden
-     * when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.
+     * when scheduling an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskScheduleToCloseTimeout;
@@ -174,16 +183,17 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
      *        The name of the activity type within the domain.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      */
 
     public void setName(String name) {
@@ -196,15 +206,16 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return The name of the activity type within the domain.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *         <code>arn</code>.
      */
 
     public String getName() {
@@ -217,16 +228,17 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
      *        The name of the activity type within the domain.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,21 +251,29 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The version of the activity type.
      * </p>
-     * <note>The activity type consists of the name and version, the combination of which must be unique within the
-     * domain.</note>
+     * <note>
+     * <p>
+     * The activity type consists of the name and version, the combination of which must be unique within the domain.
+     * </p>
+     * </note>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
-     *        The version of the activity type.</p> <note>The activity type consists of the name and version, the
-     *        combination of which must be unique within the domain.</note>
+     *        The version of the activity type.</p> <note>
+     *        <p>
+     *        The activity type consists of the name and version, the combination of which must be unique within the
+     *        domain.
+     *        </p>
+     *        </note>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      */
 
     public void setVersion(String version) {
@@ -264,20 +284,28 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The version of the activity type.
      * </p>
-     * <note>The activity type consists of the name and version, the combination of which must be unique within the
-     * domain.</note>
+     * <note>
+     * <p>
+     * The activity type consists of the name and version, the combination of which must be unique within the domain.
+     * </p>
+     * </note>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
-     * @return The version of the activity type.</p> <note>The activity type consists of the name and version, the
-     *         combination of which must be unique within the domain.</note>
+     * @return The version of the activity type.</p> <note>
+     *         <p>
+     *         The activity type consists of the name and version, the combination of which must be unique within the
+     *         domain.
+     *         </p>
+     *         </note>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *         <code>arn</code>.
      */
 
     public String getVersion() {
@@ -288,21 +316,29 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The version of the activity type.
      * </p>
-     * <note>The activity type consists of the name and version, the combination of which must be unique within the
-     * domain.</note>
+     * <note>
+     * <p>
+     * The activity type consists of the name and version, the combination of which must be unique within the domain.
+     * </p>
+     * </note>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param version
-     *        The version of the activity type.</p> <note>The activity type consists of the name and version, the
-     *        combination of which must be unique within the domain.</note>
+     *        The version of the activity type.</p> <note>
+     *        <p>
+     *        The activity type consists of the name and version, the combination of which must be unique within the
+     *        domain.
+     *        </p>
+     *        </note>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,20 +391,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a worker can take to process tasks of this activity type.
      * This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.
+     * <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskStartToCloseTimeout
      *        If set, specifies the default maximum duration that a worker can take to process tasks of this activity
      *        type. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -379,19 +415,19 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a worker can take to process tasks of this activity type.
      * This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.
+     * <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return If set, specifies the default maximum duration that a worker can take to process tasks of this activity
      *         type. This default can be overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> decision.</p>
+     *         <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskStartToCloseTimeout() {
@@ -402,20 +438,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a worker can take to process tasks of this activity type.
      * This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
-     * decision.
+     * <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskStartToCloseTimeout
      *        If set, specifies the default maximum duration that a worker can take to process tasks of this activity
      *        type. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,26 +465,27 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * If set, specifies the default maximum time before which a worker processing a task of this type must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is
      * automatically timed out. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a heartbeat or
-     * returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no
-     * longer considers the activity task to be valid; the activity worker should clean up the activity task.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record a
+     * heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case,
+     * Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity
+     * task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskHeartbeatTimeout
      *        If set, specifies the default maximum time before which a worker processing a task of this type must
      *        report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      *        task is automatically timed out. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a
-     *        heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this
-     *        case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up
-     *        the activity task.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record
+     *        a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
+     *        this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean
+     *        up the activity task.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
@@ -460,25 +497,26 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * If set, specifies the default maximum time before which a worker processing a task of this type must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is
      * automatically timed out. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a heartbeat or
-     * returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no
-     * longer considers the activity task to be valid; the activity worker should clean up the activity task.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record a
+     * heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case,
+     * Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity
+     * task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return If set, specifies the default maximum time before which a worker processing a task of this type must
      *         report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      *         task is automatically timed out. This default can be overridden when scheduling an activity task using
-     *         the <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a
-     *         heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
-     *         this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean
-     *         up the activity task.</p>
+     *         the <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to
+     *         record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code>
+     *         fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker
+     *         should clean up the activity task.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskHeartbeatTimeout() {
@@ -490,26 +528,27 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * If set, specifies the default maximum time before which a worker processing a task of this type must report
      * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is
      * automatically timed out. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a heartbeat or
-     * returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no
-     * longer considers the activity task to be valid; the activity worker should clean up the activity task.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record a
+     * heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case,
+     * Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity
+     * task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskHeartbeatTimeout
      *        If set, specifies the default maximum time before which a worker processing a task of this type must
      *        report progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
      *        task is automatically timed out. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision. If the activity worker subsequently attempts to record a
-     *        heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this
-     *        case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up
-     *        the activity task.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>. If the activity worker subsequently attempts to record
+     *        a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In
+     *        this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean
+     *        up the activity task.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,14 +560,14 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list
-     * is used if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.
+     * is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
      * @param defaultTaskList
      *        If set, specifies the default task list to use for scheduling tasks of this activity type. This default
-     *        task list is used if a task list is not provided when a task is scheduled through the
-     *        <code>ScheduleActivityTask</code> decision.
+     *        task list is used if a task list isn't provided when a task is scheduled through the
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.
      */
 
     public void setDefaultTaskList(TaskList defaultTaskList) {
@@ -538,13 +577,13 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list
-     * is used if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.
+     * is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
      * @return If set, specifies the default task list to use for scheduling tasks of this activity type. This default
-     *         task list is used if a task list is not provided when a task is scheduled through the
-     *         <code>ScheduleActivityTask</code> decision.
+     *         task list is used if a task list isn't provided when a task is scheduled through the
+     *         <code>ScheduleActivityTask</code> <a>Decision</a>.
      */
 
     public TaskList getDefaultTaskList() {
@@ -554,14 +593,14 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list
-     * is used if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     * decision.
+     * is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
      * @param defaultTaskList
      *        If set, specifies the default task list to use for scheduling tasks of this activity type. This default
-     *        task list is used if a task list is not provided when a task is scheduled through the
-     *        <code>ScheduleActivityTask</code> decision.
+     *        task list is used if a task list isn't provided when a task is scheduled through the
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,24 +611,24 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid
+     * values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
      * @param defaultTaskPriority
-     *        The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid
-     *        values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used.
+     *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      */
 
     public void setDefaultTaskPriority(String defaultTaskPriority) {
@@ -598,23 +637,23 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid
+     * values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
-     * @return The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid
-     *         values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * @return The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used.
+     *         Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *         Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      */
 
     public String getDefaultTaskPriority() {
@@ -623,24 +662,24 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid values
-     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid
+     * values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * </p>
      * 
      * @param defaultTaskPriority
-     *        The default task priority to assign to the activity type. If not assigned, then "0" will be used. Valid
-     *        values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used.
+     *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -653,20 +692,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a task of this activity type can wait before being assigned
      * to a worker. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToStartTimeout
      *        If set, specifies the default maximum duration that a task of this activity type can wait before being
      *        assigned to a worker. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
@@ -677,19 +716,19 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a task of this activity type can wait before being assigned
      * to a worker. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return If set, specifies the default maximum duration that a task of this activity type can wait before being
      *         assigned to a worker. This default can be overridden when scheduling an activity task using the
-     *         <code>ScheduleActivityTask</code> decision.</p>
+     *         <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskScheduleToStartTimeout() {
@@ -700,20 +739,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * If set, specifies the default maximum duration that a task of this activity type can wait before being assigned
      * to a worker. This default can be overridden when scheduling an activity task using the
-     * <code>ScheduleActivityTask</code> decision.
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToStartTimeout
      *        If set, specifies the default maximum duration that a task of this activity type can wait before being
      *        assigned to a worker. This default can be overridden when scheduling an activity task using the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,19 +764,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default maximum duration for a task of this activity type. This default can be overridden
-     * when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.
+     * when scheduling an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToCloseTimeout
      *        If set, specifies the default maximum duration for a task of this activity type. This default can be
-     *        overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.</p>
+     *        overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {
@@ -747,18 +787,19 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default maximum duration for a task of this activity type. This default can be overridden
-     * when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.
+     * when scheduling an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @return If set, specifies the default maximum duration for a task of this activity type. This default can be
-     *         overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.</p>
+     *         overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
+     *         <a>Decision</a>.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskScheduleToCloseTimeout() {
@@ -768,19 +809,20 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If set, specifies the default maximum duration for a task of this activity type. This default can be overridden
-     * when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.
+     * when scheduling an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToCloseTimeout
      *        If set, specifies the default maximum duration for a task of this activity type. This default can be
-     *        overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> decision.</p>
+     *        overridden when scheduling an activity task using the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -790,7 +832,8 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

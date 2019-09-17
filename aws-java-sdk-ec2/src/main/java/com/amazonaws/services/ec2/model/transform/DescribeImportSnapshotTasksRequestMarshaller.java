@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,28 +42,6 @@ public class DescribeImportSnapshotTasksRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeImportSnapshotTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequest
-                .getImportTaskIds();
-        if (!describeImportSnapshotTasksRequestImportTaskIdsList.isEmpty() || !describeImportSnapshotTasksRequestImportTaskIdsList.isAutoConstruct()) {
-            int importTaskIdsListIndex = 1;
-
-            for (String describeImportSnapshotTasksRequestImportTaskIdsListValue : describeImportSnapshotTasksRequestImportTaskIdsList) {
-                if (describeImportSnapshotTasksRequestImportTaskIdsListValue != null) {
-                    request.addParameter("ImportTaskId." + importTaskIdsListIndex,
-                            StringUtils.fromString(describeImportSnapshotTasksRequestImportTaskIdsListValue));
-                }
-                importTaskIdsListIndex++;
-            }
-        }
-
-        if (describeImportSnapshotTasksRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeImportSnapshotTasksRequest.getNextToken()));
-        }
-
-        if (describeImportSnapshotTasksRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeImportSnapshotTasksRequest.getMaxResults()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeImportSnapshotTasksRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImportSnapshotTasksRequest
                 .getFilters();
         if (!describeImportSnapshotTasksRequestFiltersList.isEmpty() || !describeImportSnapshotTasksRequestFiltersList.isAutoConstruct()) {
@@ -90,6 +68,28 @@ public class DescribeImportSnapshotTasksRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeImportSnapshotTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportSnapshotTasksRequest
+                .getImportTaskIds();
+        if (!describeImportSnapshotTasksRequestImportTaskIdsList.isEmpty() || !describeImportSnapshotTasksRequestImportTaskIdsList.isAutoConstruct()) {
+            int importTaskIdsListIndex = 1;
+
+            for (String describeImportSnapshotTasksRequestImportTaskIdsListValue : describeImportSnapshotTasksRequestImportTaskIdsList) {
+                if (describeImportSnapshotTasksRequestImportTaskIdsListValue != null) {
+                    request.addParameter("ImportTaskId." + importTaskIdsListIndex,
+                            StringUtils.fromString(describeImportSnapshotTasksRequestImportTaskIdsListValue));
+                }
+                importTaskIdsListIndex++;
+            }
+        }
+
+        if (describeImportSnapshotTasksRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeImportSnapshotTasksRequest.getMaxResults()));
+        }
+
+        if (describeImportSnapshotTasksRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeImportSnapshotTasksRequest.getNextToken()));
         }
 
         return request;

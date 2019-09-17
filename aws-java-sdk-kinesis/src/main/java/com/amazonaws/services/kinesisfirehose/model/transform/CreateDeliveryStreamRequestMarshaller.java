@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,83 +12,69 @@
  */
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesisfirehose.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDeliveryStreamRequest Marshaller
+ * CreateDeliveryStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDeliveryStreamRequestMarshaller implements Marshaller<Request<CreateDeliveryStreamRequest>, CreateDeliveryStreamRequest> {
+@SdkInternalApi
+public class CreateDeliveryStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamName").build();
+    private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamType").build();
+    private static final MarshallingInfo<StructuredPojo> KINESISSTREAMSOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamSourceConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> S3DESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EXTENDEDS3DESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtendedS3DestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> REDSHIFTDESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftDestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHDESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchDestinationConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SPLUNKDESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SplunkDestinationConfiguration").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateDeliveryStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDeliveryStreamRequestMarshaller instance = new CreateDeliveryStreamRequestMarshaller();
+
+    public static CreateDeliveryStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDeliveryStreamRequest> marshall(CreateDeliveryStreamRequest createDeliveryStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDeliveryStreamRequest createDeliveryStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDeliveryStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeliveryStreamRequest> request = new DefaultRequest<CreateDeliveryStreamRequest>(createDeliveryStreamRequest, "AmazonKinesisFirehose");
-        request.addHeader("X-Amz-Target", "Firehose_20150804.CreateDeliveryStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDeliveryStreamRequest.getDeliveryStreamName() != null) {
-                jsonGenerator.writeFieldName("DeliveryStreamName").writeValue(createDeliveryStreamRequest.getDeliveryStreamName());
-            }
-            if (createDeliveryStreamRequest.getS3DestinationConfiguration() != null) {
-                jsonGenerator.writeFieldName("S3DestinationConfiguration");
-                S3DestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getS3DestinationConfiguration(), jsonGenerator);
-            }
-            if (createDeliveryStreamRequest.getExtendedS3DestinationConfiguration() != null) {
-                jsonGenerator.writeFieldName("ExtendedS3DestinationConfiguration");
-                ExtendedS3DestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getExtendedS3DestinationConfiguration(),
-                        jsonGenerator);
-            }
-            if (createDeliveryStreamRequest.getRedshiftDestinationConfiguration() != null) {
-                jsonGenerator.writeFieldName("RedshiftDestinationConfiguration");
-                RedshiftDestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getRedshiftDestinationConfiguration(),
-                        jsonGenerator);
-            }
-            if (createDeliveryStreamRequest.getElasticsearchDestinationConfiguration() != null) {
-                jsonGenerator.writeFieldName("ElasticsearchDestinationConfiguration");
-                ElasticsearchDestinationConfigurationJsonMarshaller.getInstance().marshall(
-                        createDeliveryStreamRequest.getElasticsearchDestinationConfiguration(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getKinesisStreamSourceConfiguration(), KINESISSTREAMSOURCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getS3DestinationConfiguration(), S3DESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getExtendedS3DestinationConfiguration(), EXTENDEDS3DESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getRedshiftDestinationConfiguration(), REDSHIFTDESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getElasticsearchDestinationConfiguration(), ELASTICSEARCHDESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getSplunkDestinationConfiguration(), SPLUNKDESTINATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

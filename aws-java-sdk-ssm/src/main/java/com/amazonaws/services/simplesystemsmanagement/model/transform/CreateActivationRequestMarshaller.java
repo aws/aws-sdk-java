@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,60 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateActivationRequest Marshaller
+ * CreateActivationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateActivationRequestMarshaller implements Marshaller<Request<CreateActivationRequest>, CreateActivationRequest> {
+@SdkInternalApi
+public class CreateActivationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> DEFAULTINSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultInstanceName").build();
+    private static final MarshallingInfo<String> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IamRole").build();
+    private static final MarshallingInfo<Integer> REGISTRATIONLIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationLimit").build();
+    private static final MarshallingInfo<java.util.Date> EXPIRATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateActivationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateActivationRequestMarshaller instance = new CreateActivationRequestMarshaller();
+
+    public static CreateActivationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateActivationRequest> marshall(CreateActivationRequest createActivationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateActivationRequest createActivationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createActivationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateActivationRequest> request = new DefaultRequest<CreateActivationRequest>(createActivationRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.CreateActivation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createActivationRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createActivationRequest.getDescription());
-            }
-            if (createActivationRequest.getDefaultInstanceName() != null) {
-                jsonGenerator.writeFieldName("DefaultInstanceName").writeValue(createActivationRequest.getDefaultInstanceName());
-            }
-            if (createActivationRequest.getIamRole() != null) {
-                jsonGenerator.writeFieldName("IamRole").writeValue(createActivationRequest.getIamRole());
-            }
-            if (createActivationRequest.getRegistrationLimit() != null) {
-                jsonGenerator.writeFieldName("RegistrationLimit").writeValue(createActivationRequest.getRegistrationLimit());
-            }
-            if (createActivationRequest.getExpirationDate() != null) {
-                jsonGenerator.writeFieldName("ExpirationDate").writeValue(createActivationRequest.getExpirationDate());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createActivationRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getDefaultInstanceName(), DEFAULTINSTANCENAME_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getIamRole(), IAMROLE_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getRegistrationLimit(), REGISTRATIONLIMIT_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getExpirationDate(), EXPIRATIONDATE_BINDING);
+            protocolMarshaller.marshall(createActivationRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

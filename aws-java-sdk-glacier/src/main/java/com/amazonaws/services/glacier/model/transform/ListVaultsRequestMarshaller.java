@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,63 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListVaultsRequest Marshaller
+ * ListVaultsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVaultsRequest>, ListVaultsRequest> {
+@SdkInternalApi
+public class ListVaultsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<String> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("limit").build();
 
-    public ListVaultsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListVaultsRequestMarshaller instance = new ListVaultsRequestMarshaller();
+
+    public static ListVaultsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListVaultsRequest> marshall(ListVaultsRequest listVaultsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListVaultsRequest listVaultsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listVaultsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListVaultsRequest> request = new DefaultRequest<ListVaultsRequest>(listVaultsRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/vaults";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                listVaultsRequest.getAccountId() == null ? "-" : listVaultsRequest.getAccountId());
-        request.setResourcePath(uriResourcePath);
-
-        if (listVaultsRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils.fromString(listVaultsRequest.getMarker()));
+        try {
+            protocolMarshaller.marshall(listVaultsRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listVaultsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listVaultsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listVaultsRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromString(listVaultsRequest.getLimit()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

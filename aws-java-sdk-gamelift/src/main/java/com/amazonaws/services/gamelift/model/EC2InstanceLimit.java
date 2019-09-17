@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,12 +27,12 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EC2InstanceLimit implements Serializable, Cloneable {
+public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -52,7 +54,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -60,7 +62,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @param eC2InstanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -72,14 +74,14 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *         capacity. GameLift supports the following EC2 instance types. See <a
+     *         capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -91,7 +93,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -99,7 +101,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @param eC2InstanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
@@ -113,7 +115,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -121,19 +123,19 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @param eC2InstanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        this.eC2InstanceType = eC2InstanceType.toString();
+        withEC2InstanceType(eC2InstanceType);
     }
 
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -141,14 +143,14 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @param eC2InstanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
 
     public EC2InstanceLimit withEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        setEC2InstanceType(eC2InstanceType);
+        this.eC2InstanceType = eC2InstanceType.toString();
         return this;
     }
 
@@ -233,7 +235,8 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -296,5 +299,11 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.EC2InstanceLimitMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * Each element in the array is a structure containing:
      * </p>
      * <p>
-     * Key: (string, “NAME_PREFIX” or “OWNER”)
+     * Key: (string, "NAME_PREFIX" or "OWNER")
      * </p>
      * <p>
-     * Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     * Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
@@ -55,18 +55,18 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * Each element in the array is a structure containing:
      * </p>
      * <p>
-     * Key: (string, “NAME_PREFIX” or “OWNER”)
+     * Key: (string, "NAME_PREFIX" or "OWNER")
      * </p>
      * <p>
-     * Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     * Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * </p>
      * 
      * @return Each element in the array is a structure containing: </p>
      *         <p>
-     *         Key: (string, “NAME_PREFIX” or “OWNER”)
+     *         Key: (string, "NAME_PREFIX" or "OWNER")
      *         </p>
      *         <p>
-     *         Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     *         Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      */
 
     public java.util.List<PatchOrchestratorFilter> getFilters() {
@@ -81,19 +81,19 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * Each element in the array is a structure containing:
      * </p>
      * <p>
-     * Key: (string, “NAME_PREFIX” or “OWNER”)
+     * Key: (string, "NAME_PREFIX" or "OWNER")
      * </p>
      * <p>
-     * Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     * Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * </p>
      * 
      * @param filters
      *        Each element in the array is a structure containing: </p>
      *        <p>
-     *        Key: (string, “NAME_PREFIX” or “OWNER”)
+     *        Key: (string, "NAME_PREFIX" or "OWNER")
      *        </p>
      *        <p>
-     *        Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     *        Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      */
 
     public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
@@ -110,10 +110,10 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * Each element in the array is a structure containing:
      * </p>
      * <p>
-     * Key: (string, “NAME_PREFIX” or “OWNER”)
+     * Key: (string, "NAME_PREFIX" or "OWNER")
      * </p>
      * <p>
-     * Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     * Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,10 +124,10 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * @param filters
      *        Each element in the array is a structure containing: </p>
      *        <p>
-     *        Key: (string, “NAME_PREFIX” or “OWNER”)
+     *        Key: (string, "NAME_PREFIX" or "OWNER")
      *        </p>
      *        <p>
-     *        Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     *        Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,19 +146,19 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
      * Each element in the array is a structure containing:
      * </p>
      * <p>
-     * Key: (string, “NAME_PREFIX” or “OWNER”)
+     * Key: (string, "NAME_PREFIX" or "OWNER")
      * </p>
      * <p>
-     * Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     * Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * </p>
      * 
      * @param filters
      *        Each element in the array is a structure containing: </p>
      *        <p>
-     *        Key: (string, “NAME_PREFIX” or “OWNER”)
+     *        Key: (string, "NAME_PREFIX" or "OWNER")
      *        </p>
      *        <p>
-     *        Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)
+     *        Value: (array of strings, exactly 1 entry, between 1 and 255 characters)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,7 +248,8 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

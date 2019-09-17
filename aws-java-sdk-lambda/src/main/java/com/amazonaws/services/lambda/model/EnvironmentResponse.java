@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,35 +14,39 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object returned that contains your environment's configuration settings or any error information
- * associated with your configuration settings.
+ * The results of a configuration update that applied environment variables.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentResponse" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnvironmentResponse implements Serializable, Cloneable {
+public class EnvironmentResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs returned that represent your environment's configuration settings or error information.
+     * Environment variable key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
-
+    /**
+     * <p>
+     * Error messages for environment variables that couldn't be applied.
+     * </p>
+     */
     private EnvironmentError error;
 
     /**
      * <p>
-     * The key-value pairs returned that represent your environment's configuration settings or error information.
+     * Environment variable key-value pairs.
      * </p>
      * 
-     * @return The key-value pairs returned that represent your environment's configuration settings or error
-     *         information.
+     * @return Environment variable key-value pairs.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -54,12 +58,11 @@ public class EnvironmentResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs returned that represent your environment's configuration settings or error information.
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs returned that represent your environment's configuration settings or error
-     *        information.
+     *        Environment variable key-value pairs.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -68,12 +71,11 @@ public class EnvironmentResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs returned that represent your environment's configuration settings or error information.
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs returned that represent your environment's configuration settings or error
-     *        information.
+     *        Environment variable key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +106,12 @@ public class EnvironmentResponse implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Error messages for environment variables that couldn't be applied.
+     * </p>
+     * 
      * @param error
+     *        Error messages for environment variables that couldn't be applied.
      */
 
     public void setError(EnvironmentError error) {
@@ -112,7 +119,11 @@ public class EnvironmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Error messages for environment variables that couldn't be applied.
+     * </p>
+     * 
+     * @return Error messages for environment variables that couldn't be applied.
      */
 
     public EnvironmentError getError() {
@@ -120,7 +131,12 @@ public class EnvironmentResponse implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Error messages for environment variables that couldn't be applied.
+     * </p>
+     * 
      * @param error
+     *        Error messages for environment variables that couldn't be applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +146,8 @@ public class EnvironmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -141,7 +158,7 @@ public class EnvironmentResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVariables() != null)
-            sb.append("Variables: ").append(getVariables()).append(",");
+            sb.append("Variables: ").append("***Sensitive Data Redacted***").append(",");
         if (getError() != null)
             sb.append("Error: ").append(getError());
         sb.append("}");
@@ -186,5 +203,11 @@ public class EnvironmentResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.EnvironmentResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

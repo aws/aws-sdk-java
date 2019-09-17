@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 import java.security.Provider;
+import java.security.SecureRandom;
 
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
@@ -32,9 +33,14 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     private static final long serialVersionUID = -8646831898339939580L;
 
+    private static final SecureRandom SRAND = new SecureRandom();
+
     private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
+    private boolean alwaysUseCryptoProvider;
+    private SecureRandom secureRandom;
+
     /**
      * True to ignore instruction file that cannot be found during a GET
      * operation; false otherwise. Default is true. This property is ignored if
@@ -56,13 +62,13 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      */
     public CryptoConfiguration() {
         this(CryptoMode.EncryptionOnly); // default to Encryption Only (EO) for
-                                         // backward compatibility
+        // backward compatibility
     }
 
     /**
      * @param cryptoMode
      *            cryptographic mode to be used
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -75,12 +81,13 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         // A null value implies that the default JCE crypto provider will be
         // used
         this.cryptoProvider = null;
+        this.secureRandom = SRAND;
         this.cryptoMode = cryptoMode;
     }
 
     /**
      * Sets the storage mode to the specified mode.
-     * 
+     *
      * @param storageMode
      *            The storage mode to be used for storing encryption
      *            information.
@@ -92,7 +99,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Sets the storage mode to the specified mode, and returns the updated
      * CryptoConfiguration object.
-     * 
+     *
      * @param storageMode
      *            The storage mode to be used for storing encryption
      *            information.
@@ -105,7 +112,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Returns the current storage mode of a CryptoConfiguration object.
-     * 
+     *
      * @return The storage mode to be used for storing encryption information.
      */
     public CryptoStorageMode getStorageMode() {
@@ -114,7 +121,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Sets the crypto provider to the specified provider.
-     * 
+     *
      * @param cryptoProvider
      *            The crypto provider whose encryption implementation will be
      *            used to encrypt and decrypt data.
@@ -126,7 +133,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Sets the crypto provider to the specified provider, and returns the
      * updated CryptoConfiguration object.
-     * 
+     *
      * @param cryptoProvider
      *            The crypto provider whose encryption implementation will be
      *            used to encrypt and decrypt data.
@@ -140,12 +147,67 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Returns the crypto provider whose encryption implementation will be used
      * to encrypt and decrypt data.
-     * 
+     *
      * @return the crypto provider whose encryption implementation will be used
      *         to encrypt and decrypt data.
      */
     public Provider getCryptoProvider() {
         return this.cryptoProvider;
+    }
+
+    /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public void setAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+    }
+
+    /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+        return this;
+    }
+
+    /**
+     * Returns true if the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specifies authenticated
+     * encryption.
+     *
+     * @return true if the crypto provider should always be used
+     */
+    public boolean getAlwaysUseCryptoProvider() {
+        return alwaysUseCryptoProvider;
+    }
+
+    /**
+     * Returns the SecureRandom instance that will be used to generate
+     * cryptographic parameters.
+     */
+    public SecureRandom getSecureRandom() {
+        return secureRandom;
+    }
+
+    /**
+     * Sets the secure random instance to use for generating cryptographic
+     * parameters.
+     */
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+    }
+
+    /**
+     * Sets the secure random instance to use for generating cryptographic
+     * parameters, and returns this object.
+     */
+    public CryptoConfiguration withSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+        return this;
     }
 
     /**
@@ -159,7 +221,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Sets the crypto mode; applicable only to the S3 encryption client.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -168,7 +230,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             caller to decide what to do about it.
      */
     public void setCryptoMode(CryptoMode cryptoMode)
-            throws UnsupportedOperationException {
+        throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
         check(cryptoMode);
     }
@@ -176,7 +238,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Fluent API to set the crypto mode; applicable only to the S3 encryption
      * client.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -185,7 +247,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             caller to decide what to do about it.
      */
     public CryptoConfiguration withCryptoMode(CryptoMode cryptoMode)
-            throws UnsupportedOperationException {
+        throws UnsupportedOperationException {
         this.cryptoMode = cryptoMode;
         check(cryptoMode);
         return this;
@@ -210,7 +272,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *            instruction file would always cause security exception.
      */
     public void setIgnoreMissingInstructionFile(
-            boolean ignoreMissingInstructionFile) {
+        boolean ignoreMissingInstructionFile) {
         this.ignoreMissingInstructionFile = ignoreMissingInstructionFile;
     }
 
@@ -219,32 +281,39 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * found during a GET operation.
      */
     public CryptoConfiguration withIgnoreMissingInstructionFile(
-            boolean ignoreMissingInstructionFile) {
+        boolean ignoreMissingInstructionFile) {
         this.ignoreMissingInstructionFile = ignoreMissingInstructionFile;
         return this;
     }
 
     /**
      * Checks if the crypto mode is supported by the runtime.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
      *             specified crypto mode.
      */
     private void check(CryptoMode cryptoMode) {
-        if (cryptoMode == CryptoMode.AuthenticatedEncryption
-                || cryptoMode == CryptoMode.StrictAuthenticatedEncryption) {
+        // For modes that use AES/GCM, we prefer using the BouncyCastle provider unless the
+        // user has explicitly overridden us (i.e., with the FIPS-compliant BouncyCastle
+        // implementation).
+        boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
+                           || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
+
+        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
+
+        if (preferBC && !haveOverride) {
             if (!CryptoRuntime.isBouncyCastleAvailable()) {
                 CryptoRuntime.enableBouncyCastle();
                 if (!CryptoRuntime.isBouncyCastleAvailable()) {
                     throw new UnsupportedOperationException(
-                            "The Bouncy castle library jar is required on the classpath to enable authenticated encryption");
+                        "The Bouncy castle library jar is required on the classpath to enable authenticated encryption");
                 }
             }
             if (!CryptoRuntime.isAesGcmAvailable())
                 throw new UnsupportedOperationException(
-                        "More recent version of the Bouncy castle library is required to enable authenticated encryption");
+                    "More recent version of the Bouncy castle library is required to enable authenticated encryption");
         }
     }
 
@@ -268,6 +337,18 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         @Override public CryptoConfiguration withCryptoProvider(Provider cryptoProvider) {
             throw new UnsupportedOperationException();
         }
+        @Override public void setAlwaysUseCryptoProvider(boolean value) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public void setSecureRandom(SecureRandom random) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public CryptoConfiguration withSecureRandom(SecureRandom random) {
+            throw new UnsupportedOperationException();
+        }
         @Override public void setCryptoMode(CryptoMode cryptoMode) {
             throw new UnsupportedOperationException();
         }
@@ -275,11 +356,11 @@ public class CryptoConfiguration implements Cloneable,Serializable {
             throw new UnsupportedOperationException();
         }
         @Override public void setIgnoreMissingInstructionFile(
-                boolean ignoreMissingInstructionFile) {
+            boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
         @Override public CryptoConfiguration withIgnoreMissingInstructionFile(
-                boolean ignoreMissingInstructionFile) {
+            boolean ignoreMissingInstructionFile) {
             throw new UnsupportedOperationException();
         }
         @Override public void setKmsRegion(Regions kmsRegion) {
@@ -308,6 +389,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         that.cryptoMode = this.cryptoMode;
         that.storageMode = this.storageMode;
         that.cryptoProvider = this.cryptoProvider;
+        that.alwaysUseCryptoProvider = this.alwaysUseCryptoProvider;
+        that.secureRandom = this.secureRandom;
         that.ignoreMissingInstructionFile = this.ignoreMissingInstructionFile;
         that.awskmsRegion = this.awskmsRegion;
         return that;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,20 +40,6 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeInternetGatewaysRequestInternetGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInternetGatewaysRequest
-                .getInternetGatewayIds();
-        if (!describeInternetGatewaysRequestInternetGatewayIdsList.isEmpty() || !describeInternetGatewaysRequestInternetGatewayIdsList.isAutoConstruct()) {
-            int internetGatewayIdsListIndex = 1;
-
-            for (String describeInternetGatewaysRequestInternetGatewayIdsListValue : describeInternetGatewaysRequestInternetGatewayIdsList) {
-                if (describeInternetGatewaysRequestInternetGatewayIdsListValue != null) {
-                    request.addParameter("InternetGatewayId." + internetGatewayIdsListIndex,
-                            StringUtils.fromString(describeInternetGatewaysRequestInternetGatewayIdsListValue));
-                }
-                internetGatewayIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeInternetGatewaysRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeInternetGatewaysRequest
                 .getFilters();
         if (!describeInternetGatewaysRequestFiltersList.isEmpty() || !describeInternetGatewaysRequestFiltersList.isAutoConstruct()) {
@@ -80,6 +66,28 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeInternetGatewaysRequestInternetGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInternetGatewaysRequest
+                .getInternetGatewayIds();
+        if (!describeInternetGatewaysRequestInternetGatewayIdsList.isEmpty() || !describeInternetGatewaysRequestInternetGatewayIdsList.isAutoConstruct()) {
+            int internetGatewayIdsListIndex = 1;
+
+            for (String describeInternetGatewaysRequestInternetGatewayIdsListValue : describeInternetGatewaysRequestInternetGatewayIdsList) {
+                if (describeInternetGatewaysRequestInternetGatewayIdsListValue != null) {
+                    request.addParameter("InternetGatewayId." + internetGatewayIdsListIndex,
+                            StringUtils.fromString(describeInternetGatewaysRequestInternetGatewayIdsListValue));
+                }
+                internetGatewayIdsListIndex++;
+            }
+        }
+
+        if (describeInternetGatewaysRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeInternetGatewaysRequest.getNextToken()));
+        }
+
+        if (describeInternetGatewaysRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeInternetGatewaysRequest.getMaxResults()));
         }
 
         return request;

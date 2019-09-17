@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,13 @@ import java.util.concurrent.Future;
 public class DownloadMonitor implements TransferMonitor {
 
     private Future<?> future;
-    private final DownloadImpl download;
+    private final AbstractTransfer download;
 
     public DownloadMonitor(DownloadImpl download, Future<?> future) {
+        this((AbstractTransfer) download, future);
+    }
+
+    public DownloadMonitor(AbstractTransfer download, Future<?> future) {
         this.download = download;
         this.future = future;
     }

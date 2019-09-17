@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,20 +14,22 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * A single patch operation to apply to the specified resource. Please refer to
  * http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PatchOperation implements Serializable, Cloneable {
+public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      */
     private String op;
@@ -46,30 +48,38 @@ public class PatchOperation implements Serializable, Cloneable {
     private String path;
     /**
      * <p>
-     * The new target value of the update operation.
+     * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
+     * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
+     * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * Parameters</a>.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * Not supported.
+     * The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing
+     * the location within the targeted resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a>
+     * resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.
      * </p>
      */
     private String from;
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     *        "replace". Not all valid operations are supported for a given resource. Support of the operations depends
-     *        on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an
-     *        error message.
+     *        An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     *        <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for
+     *        a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     *        unsupported operation on a resource will return an error message.
      * @see Op
      */
 
@@ -79,16 +89,16 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      * 
-     * @return An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     *         "replace". Not all valid operations are supported for a given resource. Support of the operations depends
-     *         on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an
-     *         error message.
+     * @return An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     *         <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported
+     *         for a given resource. Support of the operations depends on specific operational contexts. Attempts to
+     *         apply an unsupported operation on a resource will return an error message.
      * @see Op
      */
 
@@ -98,17 +108,17 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     *        "replace". Not all valid operations are supported for a given resource. Support of the operations depends
-     *        on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an
-     *        error message.
+     *        An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     *        <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for
+     *        a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     *        unsupported operation on a resource will return an error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Op
      */
@@ -120,43 +130,43 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     *        "replace". Not all valid operations are supported for a given resource. Support of the operations depends
-     *        on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an
-     *        error message.
+     *        An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     *        <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for
+     *        a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     *        unsupported operation on a resource will return an error message.
      * @see Op
      */
 
     public void setOp(Op op) {
-        this.op = op.toString();
+        withOp(op);
     }
 
     /**
      * <p>
-     * An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     * "replace". Not all valid operations are supported for a given resource. Support of the operations depends on
-     * specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error
-     * message.
+     * An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     * <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a
+     * given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     * unsupported operation on a resource will return an error message.
      * </p>
      * 
      * @param op
-     *        An update operation to be performed with this PATCH request. The valid value can be "add", "remove", or
-     *        "replace". Not all valid operations are supported for a given resource. Support of the operations depends
-     *        on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an
-     *        error message.
+     *        An update operation to be performed with this PATCH request. The valid value can be <code>add</code>,
+     *        <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for
+     *        a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an
+     *        unsupported operation on a resource will return an error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Op
      */
 
     public PatchOperation withOp(Op op) {
-        setOp(op);
+        this.op = op.toString();
         return this;
     }
 
@@ -247,11 +257,19 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new target value of the update operation.
+     * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
+     * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
+     * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * Parameters</a>.
      * </p>
      * 
      * @param value
-     *        The new target value of the update operation.
+     *        The new target value of the update operation. It is applicable for the <code>add</code> or
+     *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
+     *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        JSON for Parameters</a>.
      */
 
     public void setValue(String value) {
@@ -260,10 +278,18 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new target value of the update operation.
+     * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
+     * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
+     * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * Parameters</a>.
      * </p>
      * 
-     * @return The new target value of the update operation.
+     * @return The new target value of the update operation. It is applicable for the <code>add</code> or
+     *         <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
+     *         object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         JSON for Parameters</a>.
      */
 
     public String getValue() {
@@ -272,11 +298,19 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new target value of the update operation.
+     * The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code>
+     * operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single
+     * quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * Parameters</a>.
      * </p>
      * 
      * @param value
-     *        The new target value of the update operation.
+     *        The new target value of the update operation. It is applicable for the <code>add</code> or
+     *        <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON
+     *        object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        JSON for Parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +321,19 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not supported.
+     * The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing
+     * the location within the targeted resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a>
+     * resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.
      * </p>
      * 
      * @param from
-     *        Not supported.
+     *        The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value
+     *        referencing the location within the targeted resource to copy the value from. For example, to promote a
+     *        canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH
+     *        request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     *        <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.
      */
 
     public void setFrom(String from) {
@@ -300,10 +342,18 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not supported.
+     * The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing
+     * the location within the targeted resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a>
+     * resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.
      * </p>
      * 
-     * @return Not supported.
+     * @return The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value
+     *         referencing the location within the targeted resource to copy the value from. For example, to promote a
+     *         canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH
+     *         request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     *         <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.
      */
 
     public String getFrom() {
@@ -312,11 +362,19 @@ public class PatchOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not supported.
+     * The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing
+     * the location within the targeted resource to copy the value from. For example, to promote a canary deployment,
+     * you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a>
+     * resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and
+     * <code>"path":"/deploymentId"</code>.
      * </p>
      * 
      * @param from
-     *        Not supported.
+     *        The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value
+     *        referencing the location within the targeted resource to copy the value from. For example, to promote a
+     *        canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH
+     *        request on a <a>Stage</a> resource with <code>"op":"copy"</code>,
+     *        <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +384,8 @@ public class PatchOperation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -396,5 +455,11 @@ public class PatchOperation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.PatchOperationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

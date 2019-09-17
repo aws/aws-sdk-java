@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("repositoryCredentials", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setRepositoryCredentials(RepositoryCredentialsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -100,6 +104,27 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setVolumesFrom(new ListUnmarshaller<VolumeFrom>(VolumeFromJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("linuxParameters", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setLinuxParameters(LinuxParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secrets", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setSecrets(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("dependsOn", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setDependsOn(new ListUnmarshaller<ContainerDependency>(ContainerDependencyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("startTimeout", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setStartTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("stopTimeout", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setStopTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setHostname(context.getUnmarshaller(String.class).unmarshall(context));
@@ -140,6 +165,14 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setDockerSecurityOptions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("interactive", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setInteractive(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("pseudoTerminal", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setPseudoTerminal(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("dockerLabels", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setDockerLabels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
@@ -152,6 +185,23 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("logConfiguration", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("healthCheck", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setHealthCheck(HealthCheckJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("systemControls", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setSystemControls(new ListUnmarshaller<SystemControl>(SystemControlJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("resourceRequirements", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("firelensConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setFirelensConfiguration(FirelensConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

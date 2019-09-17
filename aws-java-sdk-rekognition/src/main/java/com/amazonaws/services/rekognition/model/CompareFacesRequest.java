@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,30 +22,51 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      */
     private Image sourceImage;
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      */
     private Image targetImage;
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      */
     private Float similarityThreshold;
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an S3 object
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      */
 
     public void setSourceImage(Image sourceImage) {
@@ -54,10 +75,20 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
-     * @return Source image either as bytes or an S3 object
+     * @return The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *         Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *         developer guide.
      */
 
     public Image getSourceImage() {
@@ -66,11 +97,21 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an S3 object
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +122,21 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an S3 object
+     *        The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *        Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      */
 
     public void setTargetImage(Image targetImage) {
@@ -94,10 +145,20 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
-     * @return Target image either as bytes or an S3 object
+     * @return The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *         Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *         developer guide.
      */
 
     public Image getTargetImage() {
@@ -106,11 +167,21 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an S3 object
+     *        The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *        Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +192,13 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
      * @param similarityThreshold
-     *        The minimum level of confidence in the match you want included in the result.
+     *        The minimum level of confidence in the face matches that a match must meet to be included in the
+     *        <code>FaceMatches</code> array.
      */
 
     public void setSimilarityThreshold(Float similarityThreshold) {
@@ -134,10 +207,12 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
-     * @return The minimum level of confidence in the match you want included in the result.
+     * @return The minimum level of confidence in the face matches that a match must meet to be included in the
+     *         <code>FaceMatches</code> array.
      */
 
     public Float getSimilarityThreshold() {
@@ -146,11 +221,13 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
      * @param similarityThreshold
-     *        The minimum level of confidence in the match you want included in the result.
+     *        The minimum level of confidence in the face matches that a match must meet to be included in the
+     *        <code>FaceMatches</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,7 +237,8 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

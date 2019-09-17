@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,11 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceLocation implements Serializable, Cloneable {
+public class ResourceLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      * </p>
      */
     private String availabilityZone;
@@ -41,11 +43,11 @@ public class ResourceLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone.
+     *        The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -54,10 +56,10 @@ public class ResourceLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
-     * @return The Availability Zone.
+     * @return The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      */
 
     public String getAvailabilityZone() {
@@ -66,11 +68,11 @@ public class ResourceLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone.
+     *        The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +135,7 @@ public class ResourceLocation implements Serializable, Cloneable {
      */
 
     public void setRegionName(RegionName regionName) {
-        this.regionName = regionName.toString();
+        withRegionName(regionName);
     }
 
     /**
@@ -148,12 +150,13 @@ public class ResourceLocation implements Serializable, Cloneable {
      */
 
     public ResourceLocation withRegionName(RegionName regionName) {
-        setRegionName(regionName);
+        this.regionName = regionName.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,5 +212,11 @@ public class ResourceLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.ResourceLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

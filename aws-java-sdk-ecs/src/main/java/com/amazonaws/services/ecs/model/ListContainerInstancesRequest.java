@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String filter;
@@ -45,8 +45,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -69,9 +68,10 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     private Integer maxResults;
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      */
     private String status;
@@ -126,15 +126,15 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setFilter(String filter) {
@@ -145,14 +145,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *         statements. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getFilter() {
@@ -163,15 +163,15 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,8 +184,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -197,8 +196,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *        value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -213,8 +212,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -225,8 +223,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *         This value is <code>null</code> when there are no more results to return.</p> <note>
+     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *         value.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -241,8 +239,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code> request
      * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-     * from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -254,8 +251,8 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListContainerInstances</code>
      *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
-     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
-     *        This value is <code>null</code> when there are no more results to return.</p> <note>
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code>
+     *        value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -343,15 +340,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
 
@@ -361,14 +360,16 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
-     * @return The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *         Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *         that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @return Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *         the results include only container instances that have been set to <code>DRAINING</code> using
+     *         <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *         container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
 
@@ -378,15 +379,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to all states other than <code>INACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */
@@ -398,44 +401,49 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to all states other than <code>INACTIVE</code>.
      * @see ContainerInstanceStatus
      */
 
     public void setStatus(ContainerInstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to all states other than <code>INACTIVE</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to all states other than <code>INACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */
 
     public ListContainerInstancesRequest withStatus(ContainerInstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

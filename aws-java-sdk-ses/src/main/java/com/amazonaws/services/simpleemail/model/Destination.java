@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,12 +19,16 @@ import javax.annotation.Generated;
  * <p>
  * Represents the destination of the message, consisting of To:, CC:, and BCC: fields.
  * </p>
+ * <note>
  * <p>
- * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
- * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
- * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
- * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+ * Amazon SES does not support the SMTPUTF8 extension, as described in <a
+ * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email
+ * address (the part of the email address that precedes the @ sign) may only contain <a
+ * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i>
+ * of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as
+ * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.
  * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Destination" target="_top">AWS API
  *      Documentation</a>
@@ -34,19 +38,19 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The To: field(s) of the message.
+     * The recipients to place on the To: line of the message.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> toAddresses;
     /**
      * <p>
-     * The CC: field(s) of the message.
+     * The recipients to place on the CC: line of the message.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ccAddresses;
     /**
      * <p>
-     * The BCC: field(s) of the message.
+     * The recipients to place on the BCC: line of the message.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> bccAddresses;
@@ -63,7 +67,7 @@ public class Destination implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param toAddresses
-     *        The To: field(s) of the message.
+     *        The recipients to place on the To: line of the message.
      */
     public Destination(java.util.List<String> toAddresses) {
         setToAddresses(toAddresses);
@@ -71,10 +75,10 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The To: field(s) of the message.
+     * The recipients to place on the To: line of the message.
      * </p>
      * 
-     * @return The To: field(s) of the message.
+     * @return The recipients to place on the To: line of the message.
      */
 
     public java.util.List<String> getToAddresses() {
@@ -86,11 +90,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The To: field(s) of the message.
+     * The recipients to place on the To: line of the message.
      * </p>
      * 
      * @param toAddresses
-     *        The To: field(s) of the message.
+     *        The recipients to place on the To: line of the message.
      */
 
     public void setToAddresses(java.util.Collection<String> toAddresses) {
@@ -104,7 +108,7 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The To: field(s) of the message.
+     * The recipients to place on the To: line of the message.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -113,7 +117,7 @@ public class Destination implements Serializable, Cloneable {
      * </p>
      * 
      * @param toAddresses
-     *        The To: field(s) of the message.
+     *        The recipients to place on the To: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +133,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The To: field(s) of the message.
+     * The recipients to place on the To: line of the message.
      * </p>
      * 
      * @param toAddresses
-     *        The To: field(s) of the message.
+     *        The recipients to place on the To: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +148,10 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CC: field(s) of the message.
+     * The recipients to place on the CC: line of the message.
      * </p>
      * 
-     * @return The CC: field(s) of the message.
+     * @return The recipients to place on the CC: line of the message.
      */
 
     public java.util.List<String> getCcAddresses() {
@@ -159,11 +163,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CC: field(s) of the message.
+     * The recipients to place on the CC: line of the message.
      * </p>
      * 
      * @param ccAddresses
-     *        The CC: field(s) of the message.
+     *        The recipients to place on the CC: line of the message.
      */
 
     public void setCcAddresses(java.util.Collection<String> ccAddresses) {
@@ -177,7 +181,7 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CC: field(s) of the message.
+     * The recipients to place on the CC: line of the message.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +190,7 @@ public class Destination implements Serializable, Cloneable {
      * </p>
      * 
      * @param ccAddresses
-     *        The CC: field(s) of the message.
+     *        The recipients to place on the CC: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +206,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CC: field(s) of the message.
+     * The recipients to place on the CC: line of the message.
      * </p>
      * 
      * @param ccAddresses
-     *        The CC: field(s) of the message.
+     *        The recipients to place on the CC: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,10 +221,10 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The BCC: field(s) of the message.
+     * The recipients to place on the BCC: line of the message.
      * </p>
      * 
-     * @return The BCC: field(s) of the message.
+     * @return The recipients to place on the BCC: line of the message.
      */
 
     public java.util.List<String> getBccAddresses() {
@@ -232,11 +236,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The BCC: field(s) of the message.
+     * The recipients to place on the BCC: line of the message.
      * </p>
      * 
      * @param bccAddresses
-     *        The BCC: field(s) of the message.
+     *        The recipients to place on the BCC: line of the message.
      */
 
     public void setBccAddresses(java.util.Collection<String> bccAddresses) {
@@ -250,7 +254,7 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The BCC: field(s) of the message.
+     * The recipients to place on the BCC: line of the message.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -259,7 +263,7 @@ public class Destination implements Serializable, Cloneable {
      * </p>
      * 
      * @param bccAddresses
-     *        The BCC: field(s) of the message.
+     *        The recipients to place on the BCC: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +279,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The BCC: field(s) of the message.
+     * The recipients to place on the BCC: line of the message.
      * </p>
      * 
      * @param bccAddresses
-     *        The BCC: field(s) of the message.
+     *        The recipients to place on the BCC: line of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,7 +293,8 @@ public class Destination implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -353,4 +358,5 @@ public class Destination implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,25 +18,63 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of RestoreAddressToClassic.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The move status for the IP address.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
      * The Elastic IP address.
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * The move status for the IP address.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @return The Elastic IP address.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreAddressToClassicResult withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
 
     /**
      * <p>
@@ -92,7 +130,7 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -107,52 +145,13 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      */
 
     public RestoreAddressToClassicResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
-     */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @return The Elastic IP address.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RestoreAddressToClassicResult withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -162,10 +161,10 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -180,13 +179,13 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof RestoreAddressToClassicResult == false)
             return false;
         RestoreAddressToClassicResult other = (RestoreAddressToClassicResult) obj;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -196,8 +195,8 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

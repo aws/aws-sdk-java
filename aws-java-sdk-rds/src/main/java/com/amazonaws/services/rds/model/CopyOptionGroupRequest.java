@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,8 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -43,14 +43,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
@@ -66,12 +66,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -81,7 +81,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -102,8 +102,8 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -116,22 +116,22 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -143,14 +143,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in the same region as the copy, specify a valid option group identifier, for
-     *        example <code>my-option-group</code>, or a valid ARN.
+     *        If the source option group is in the same AWS Region as the copy, specify a valid option group identifier,
+     *        for example <code>my-option-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *        example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *        If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *        for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *        </p>
      *        </li>
      */
@@ -162,8 +162,8 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -176,21 +176,21 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -202,14 +202,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         If the source option group is in the same region as the copy, specify a valid option group identifier,
-     *         for example <code>my-option-group</code>, or a valid ARN.
+     *         If the source option group is in the same AWS Region as the copy, specify a valid option group
+     *         identifier, for example <code>my-option-group</code>, or a valid ARN.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *         example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *         If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *         for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *         </p>
      *         </li>
      */
@@ -221,8 +221,8 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -235,22 +235,22 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param sourceOptionGroupIdentifier
      *        The identifier or ARN for the source option group. For information about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -262,14 +262,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in the same region as the copy, specify a valid option group identifier, for
-     *        example <code>my-option-group</code>, or a valid ARN.
+     *        If the source option group is in the same AWS Region as the copy, specify a valid option group identifier,
+     *        for example <code>my-option-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *        example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *        If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *        for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -290,12 +290,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -305,7 +305,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -321,12 +321,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -336,7 +336,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -358,12 +358,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -373,7 +373,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -388,12 +388,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Cannot be null, empty, or blank
+     *         Can't be null, empty, or blank
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -403,7 +403,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -425,12 +425,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -440,7 +440,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -456,12 +456,12 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -471,7 +471,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -581,7 +581,8 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

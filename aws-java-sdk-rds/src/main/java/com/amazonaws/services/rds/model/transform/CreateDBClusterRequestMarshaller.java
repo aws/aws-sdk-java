@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!createDBClusterRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -73,9 +74,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(createDBClusterRequest.getDBClusterParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!createDBClusterRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -127,8 +129,8 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("ReplicationSourceIdentifier", StringUtils.fromString(createDBClusterRequest.getReplicationSourceIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBClusterRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -150,6 +152,83 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
 
         if (createDBClusterRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(createDBClusterRequest.getKmsKeyId()));
+        }
+
+        if (createDBClusterRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(createDBClusterRequest.getPreSignedUrl()));
+        }
+
+        if (createDBClusterRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBClusterRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (createDBClusterRequest.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(createDBClusterRequest.getBacktrackWindow()));
+        }
+
+        if (!createDBClusterRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBClusterRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (createDBClusterRequest.getEngineMode() != null) {
+            request.addParameter("EngineMode", StringUtils.fromString(createDBClusterRequest.getEngineMode()));
+        }
+
+        {
+            ScalingConfiguration scalingConfiguration = createDBClusterRequest.getScalingConfiguration();
+            if (scalingConfiguration != null) {
+
+                if (scalingConfiguration.getMinCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MinCapacity", StringUtils.fromInteger(scalingConfiguration.getMinCapacity()));
+                }
+
+                if (scalingConfiguration.getMaxCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MaxCapacity", StringUtils.fromInteger(scalingConfiguration.getMaxCapacity()));
+                }
+
+                if (scalingConfiguration.getAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.AutoPause", StringUtils.fromBoolean(scalingConfiguration.getAutoPause()));
+                }
+
+                if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
+                }
+
+                if (scalingConfiguration.getTimeoutAction() != null) {
+                    request.addParameter("ScalingConfiguration.TimeoutAction", StringUtils.fromString(scalingConfiguration.getTimeoutAction()));
+                }
+            }
+        }
+
+        if (createDBClusterRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBClusterRequest.getDeletionProtection()));
+        }
+
+        if (createDBClusterRequest.getGlobalClusterIdentifier() != null) {
+            request.addParameter("GlobalClusterIdentifier", StringUtils.fromString(createDBClusterRequest.getGlobalClusterIdentifier()));
+        }
+
+        if (createDBClusterRequest.getEnableHttpEndpoint() != null) {
+            request.addParameter("EnableHttpEndpoint", StringUtils.fromBoolean(createDBClusterRequest.getEnableHttpEndpoint()));
+        }
+
+        if (createDBClusterRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBClusterRequest.getCopyTagsToSnapshot()));
+        }
+
+        if (createDBClusterRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,15 @@ public enum EventCode {
     SERVER_PROCESS_CRASHED("SERVER_PROCESS_CRASHED"),
     SERVER_PROCESS_TERMINATED_UNHEALTHY("SERVER_PROCESS_TERMINATED_UNHEALTHY"),
     SERVER_PROCESS_FORCE_TERMINATED("SERVER_PROCESS_FORCE_TERMINATED"),
-    SERVER_PROCESS_PROCESS_EXIT_TIMEOUT("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
+    SERVER_PROCESS_PROCESS_EXIT_TIMEOUT("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT"),
+    GAME_SESSION_ACTIVATION_TIMEOUT("GAME_SESSION_ACTIVATION_TIMEOUT"),
+    FLEET_CREATION_EXTRACTING_BUILD("FLEET_CREATION_EXTRACTING_BUILD"),
+    FLEET_CREATION_RUNNING_INSTALLER("FLEET_CREATION_RUNNING_INSTALLER"),
+    FLEET_CREATION_VALIDATING_RUNTIME_CONFIG("FLEET_CREATION_VALIDATING_RUNTIME_CONFIG"),
+    FLEET_VPC_PEERING_SUCCEEDED("FLEET_VPC_PEERING_SUCCEEDED"),
+    FLEET_VPC_PEERING_FAILED("FLEET_VPC_PEERING_FAILED"),
+    FLEET_VPC_PEERING_DELETED("FLEET_VPC_PEERING_DELETED"),
+    INSTANCE_INTERRUPTED("INSTANCE_INTERRUPTED");
 
     private String value;
 
@@ -63,6 +71,9 @@ public enum EventCode {
      * @param value
      *        real value
      * @return EventCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static EventCode fromValue(String value) {
         if (value == null || "".equals(value)) {

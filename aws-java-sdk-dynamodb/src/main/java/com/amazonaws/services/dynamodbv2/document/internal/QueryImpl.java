@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,9 +13,6 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.document.internal;
-
-import java.util.Collection;
-import java.util.Map;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.document.ItemCollection;
@@ -31,6 +28,8 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * The implementation for <code>QueryApi</code> of a table.
@@ -102,26 +101,12 @@ public class QueryImpl extends AbstractImpl implements QueryApi {
         // hash key
         final KeyAttribute hashKey = spec.getHashKey();
         if (hashKey != null) {
-            req.addKeyConditionsEntry(hashKey.getName(),
-                    new Condition()
-                    .withComparisonOperator(ComparisonOperator.EQ)
-                    .withAttributeValueList(InternalUtils.toAttributeValue(hashKey.getValue()))
-            );
+            addHashKeyCondition(req, hashKey);
         }
         // range key condition
         RangeKeyCondition rangeKeyCond = spec.getRangeKeyCondition();
         if (rangeKeyCond != null) {
-            KeyConditions keyCond = rangeKeyCond.getKeyCondition();
-            if (keyCond == null)
-                throw new IllegalArgumentException("key condition not specified in range key condition");
-            Object[] values = rangeKeyCond.getValues();
-            if (values == null)
-                throw new IllegalArgumentException("key condition values not specified in range key condition");
-            req.addKeyConditionsEntry(rangeKeyCond.getAttrName(),
-                    new Condition()
-                    .withComparisonOperator(keyCond.toComparisonOperator())
-                    .withAttributeValueList(InternalUtils.toAttributeValues(values))
-            );
+            addRangeKeyCondition(req, rangeKeyCond);
         }
         // query filters;
         Collection<QueryFilter> filters = spec.getQueryFilters();
@@ -141,6 +126,40 @@ public class QueryImpl extends AbstractImpl implements QueryApi {
            .withExpressionAttributeValues(attrValMap)
            ;
         return new QueryCollection(getClient(), spec);
+    }
+
+    private void addHashKeyCondition(QueryRequest req, KeyAttribute hashKey) {
+        addKeyCondition(req, hashKey.getName(), ComparisonOperator.EQ, InternalUtils.toAttributeValue(hashKey.getValue()));
+    }
+
+    private void addRangeKeyCondition(QueryRequest req, RangeKeyCondition rangeKeyCond) {
+        KeyConditions keyCond = rangeKeyCond.getKeyCondition();
+        if (keyCond == null) {
+            throw new IllegalArgumentException("key condition not specified in range key condition");
+        }
+
+        Object[] values = rangeKeyCond.getValues();
+        if (values == null) {
+            throw new IllegalArgumentException("key condition values not specified in range key condition");
+        }
+
+        addKeyCondition(req, rangeKeyCond.getAttrName(), keyCond.toComparisonOperator(), InternalUtils.toAttributeValues(values));
+    }
+
+    private void addKeyCondition(QueryRequest req, String keyName, ComparisonOperator comparison, AttributeValue... values) {
+        Map<String, Condition> currentConditions = req.getKeyConditions();
+        Condition currentCondition = currentConditions == null ? null : currentConditions.get(keyName);
+        Condition newCondition = new Condition().withComparisonOperator(comparison)
+                                                .withAttributeValueList(values);
+
+        // If there's already a condition on the key in the item, make sure it's not any different than the condition they
+        // specified in the query spec
+        if (currentCondition == null) {
+            req.addKeyConditionsEntry(keyName, newCondition);
+        } else if (!currentCondition.equals(newCondition)) {
+            throw new IllegalArgumentException("a different condition was specified for '" + keyName + "' in the query spec " +
+                                               "and the query request");
+        }
     }
 
     @Override

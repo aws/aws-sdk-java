@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a get deployment instance operation.
+ * Represents the output of a GetDeploymentInstance operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance" target="_top">AWS
@@ -41,7 +41,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      * @param instanceSummary
      *        Information about the instance.
      */
-
+    @Deprecated
     public void setInstanceSummary(InstanceSummary instanceSummary) {
         this.instanceSummary = instanceSummary;
     }
@@ -53,7 +53,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @return Information about the instance.
      */
-
+    @Deprecated
     public InstanceSummary getInstanceSummary() {
         return this.instanceSummary;
     }
@@ -67,14 +67,15 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
      *        Information about the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public GetDeploymentInstanceResult withInstanceSummary(InstanceSummary instanceSummary) {
         setInstanceSummary(instanceSummary);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,4 +125,5 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

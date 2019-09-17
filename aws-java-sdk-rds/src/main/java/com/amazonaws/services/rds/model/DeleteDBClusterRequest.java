@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -54,30 +44,28 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBClusterIdentifier;
     /**
      * <p>
-     * Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code>
-     * is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is
-     * created before the DB cluster is deleted.
+     * A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is
+     * deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB cluster snapshot
+     * is created before the DB cluster is deleted. By default, skip is not specified, and the DB cluster snapshot is
+     * created. By default, this parameter is disabled.
      * </p>
      * <note>
      * <p>
      * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * disabled.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      */
     private Boolean skipFinalSnapshot;
     /**
      * <p>
      * The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is
-     * set to <code>false</code>.
+     * disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an
-     * error.
+     * Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     * <code>SkipFinalShapshot</code> parameter results in an error.
      * </p>
      * </note>
      * <p>
@@ -86,7 +74,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -96,7 +84,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -113,17 +101,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -136,17 +114,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      */
@@ -165,17 +133,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -187,17 +145,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match an existing DBClusterIdentifier.
      *         </p>
      *         </li>
      */
@@ -216,17 +164,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -239,17 +177,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -262,31 +190,27 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code>
-     * is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is
-     * created before the DB cluster is deleted.
+     * A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is
+     * deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB cluster snapshot
+     * is created before the DB cluster is deleted. By default, skip is not specified, and the DB cluster snapshot is
+     * created. By default, this parameter is disabled.
      * </p>
      * <note>
      * <p>
      * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * disabled.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
      * @param skipFinalSnapshot
-     *        Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
-     *        <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *        DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *        A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster
+     *        is deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB
+     *        cluster snapshot is created before the DB cluster is deleted. By default, skip is not specified, and the
+     *        DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      *        <p>
      *        You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     *        <code>false</code>.
+     *        disabled.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Default: <code>false</code>
      */
 
     public void setSkipFinalSnapshot(Boolean skipFinalSnapshot) {
@@ -295,30 +219,26 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code>
-     * is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is
-     * created before the DB cluster is deleted.
+     * A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is
+     * deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB cluster snapshot
+     * is created before the DB cluster is deleted. By default, skip is not specified, and the DB cluster snapshot is
+     * created. By default, this parameter is disabled.
      * </p>
      * <note>
      * <p>
      * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * disabled.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
-     * @return Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
-     *         <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *         DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     * @return A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster
+     *         is deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB
+     *         cluster snapshot is created before the DB cluster is deleted. By default, skip is not specified, and the
+     *         DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      *         <p>
      *         You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     *         <code>false</code>.
+     *         disabled.
      *         </p>
-     *         </note>
-     *         <p>
-     *         Default: <code>false</code>
      */
 
     public Boolean getSkipFinalSnapshot() {
@@ -327,31 +247,27 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code>
-     * is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is
-     * created before the DB cluster is deleted.
+     * A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is
+     * deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB cluster snapshot
+     * is created before the DB cluster is deleted. By default, skip is not specified, and the DB cluster snapshot is
+     * created. By default, this parameter is disabled.
      * </p>
      * <note>
      * <p>
      * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * disabled.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
      * @param skipFinalSnapshot
-     *        Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
-     *        <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *        DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     *        A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster
+     *        is deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB
+     *        cluster snapshot is created before the DB cluster is deleted. By default, skip is not specified, and the
+     *        DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      *        <p>
      *        You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     *        <code>false</code>.
+     *        disabled.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,30 +278,26 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code>
-     * is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is
-     * created before the DB cluster is deleted.
+     * A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is
+     * deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB cluster snapshot
+     * is created before the DB cluster is deleted. By default, skip is not specified, and the DB cluster snapshot is
+     * created. By default, this parameter is disabled.
      * </p>
      * <note>
      * <p>
      * You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     * <code>false</code>.
+     * disabled.
      * </p>
      * </note>
-     * <p>
-     * Default: <code>false</code>
-     * </p>
      * 
-     * @return Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If
-     *         <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a
-     *         DB cluster snapshot is created before the DB cluster is deleted. </p> <note>
+     * @return A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster
+     *         is deleted. If skip is specified, no DB cluster snapshot is created. If skip is not specified, a DB
+     *         cluster snapshot is created before the DB cluster is deleted. By default, skip is not specified, and the
+     *         DB cluster snapshot is created. By default, this parameter is disabled.</p> <note>
      *         <p>
      *         You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is
-     *         <code>false</code>.
+     *         disabled.
      *         </p>
-     *         </note>
-     *         <p>
-     *         Default: <code>false</code>
      */
 
     public Boolean isSkipFinalSnapshot() {
@@ -395,12 +307,12 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is
-     * set to <code>false</code>.
+     * disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an
-     * error.
+     * Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     * <code>SkipFinalShapshot</code> parameter results in an error.
      * </p>
      * </note>
      * <p>
@@ -409,7 +321,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -419,17 +331,17 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *        <code>SkipFinalSnapshot</code> is disabled. </p> <note>
      *        <p>
-     *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in
-     *        an error.
+     *        Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     *        <code>SkipFinalShapshot</code> parameter results in an error.
      *        </p>
      *        </note>
      *        <p>
@@ -438,7 +350,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -448,7 +360,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      */
@@ -460,12 +372,12 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is
-     * set to <code>false</code>.
+     * disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an
-     * error.
+     * Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     * <code>SkipFinalShapshot</code> parameter results in an error.
      * </p>
      * </note>
      * <p>
@@ -474,7 +386,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -484,16 +396,16 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
      * 
      * @return The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *         <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *         <code>SkipFinalSnapshot</code> is disabled. </p> <note>
      *         <p>
-     *         Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results
-     *         in an error.
+     *         Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     *         <code>SkipFinalShapshot</code> parameter results in an error.
      *         </p>
      *         </note>
      *         <p>
@@ -502,7 +414,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -512,7 +424,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      */
@@ -524,12 +436,12 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is
-     * set to <code>false</code>.
+     * disabled.
      * </p>
      * <note>
      * <p>
-     * Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an
-     * error.
+     * Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     * <code>SkipFinalShapshot</code> parameter results in an error.
      * </p>
      * </note>
      * <p>
@@ -538,7 +450,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -548,17 +460,17 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
      * 
      * @param finalDBSnapshotIdentifier
      *        The DB cluster snapshot identifier of the new DB cluster snapshot created when
-     *        <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     *        <code>SkipFinalSnapshot</code> is disabled. </p> <note>
      *        <p>
-     *        Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in
-     *        an error.
+     *        Specifying this parameter and also skipping the creation of a final DB cluster snapshot with the
+     *        <code>SkipFinalShapshot</code> parameter results in an error.
      *        </p>
      *        </note>
      *        <p>
@@ -567,7 +479,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -577,7 +489,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -589,7 +501,8 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

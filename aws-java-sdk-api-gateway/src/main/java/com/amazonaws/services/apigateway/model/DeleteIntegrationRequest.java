@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a delete integration request's resource identifier.
+     * [Required] Specifies a delete integration request's resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Specifies a delete integration request's HTTP method.
+     * [Required] Specifies a delete integration request's HTTP method.
      * </p>
      */
     private String httpMethod;
 
     /**
      * <p>
-     * Specifies a delete integration request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a delete integration request's API identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Specifies a delete integration request's API identifier.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a delete integration request's API identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's resource identifier.
+     * [Required] Specifies a delete integration request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration request's resource identifier.
+     *        [Required] Specifies a delete integration request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -99,10 +99,10 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's resource identifier.
+     * [Required] Specifies a delete integration request's resource identifier.
      * </p>
      * 
-     * @return Specifies a delete integration request's resource identifier.
+     * @return [Required] Specifies a delete integration request's resource identifier.
      */
 
     public String getResourceId() {
@@ -111,11 +111,11 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's resource identifier.
+     * [Required] Specifies a delete integration request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a delete integration request's resource identifier.
+     *        [Required] Specifies a delete integration request's resource identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's HTTP method.
+     * [Required] Specifies a delete integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a delete integration request's HTTP method.
+     *        [Required] Specifies a delete integration request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -139,10 +139,10 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's HTTP method.
+     * [Required] Specifies a delete integration request's HTTP method.
      * </p>
      * 
-     * @return Specifies a delete integration request's HTTP method.
+     * @return [Required] Specifies a delete integration request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -151,11 +151,11 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies a delete integration request's HTTP method.
+     * [Required] Specifies a delete integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a delete integration request's HTTP method.
+     *        [Required] Specifies a delete integration request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

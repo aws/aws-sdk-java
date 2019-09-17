@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex type that controls whether access logs are written for this streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingLoggingConfig" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingLoggingConfig" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +28,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
+     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable
      * logging when you create a streaming distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and
      * <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
@@ -44,16 +44,16 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
     private String bucket;
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this streaming
-     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
-     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a
+     * prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
      * </p>
      */
     private String prefix;
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
+     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable
      * logging when you create a streaming distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and
      * <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
@@ -61,7 +61,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
+     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to
      *        enable logging when you create a streaming distribution or if you want to disable logging for an existing
      *        streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      *        <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for
@@ -75,14 +75,14 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
+     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable
      * logging when you create a streaming distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and
      * <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
      * for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.
      * </p>
      * 
-     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
+     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to
      *         enable logging when you create a streaming distribution or if you want to disable logging for an existing
      *         streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      *         <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for
@@ -96,7 +96,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
+     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable
      * logging when you create a streaming distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and
      * <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
@@ -104,7 +104,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
+     *        Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to
      *        enable logging when you create a streaming distribution or if you want to disable logging for an existing
      *        streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      *        <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for
@@ -120,14 +120,14 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable
+     * Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable
      * logging when you create a streaming distribution or if you want to disable logging for an existing streaming
      * distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and
      * <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
      * for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.
      * </p>
      * 
-     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to
+     * @return Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to
      *         enable logging when you create a streaming distribution or if you want to disable logging for an existing
      *         streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify
      *         <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for
@@ -184,16 +184,16 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this streaming
-     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
-     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a
+     * prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
      * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
-     *        streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not
-     *        want to specify a prefix, you still must include an empty <code>Prefix</code> element in the
-     *        <code>Logging</code> element.
+     *        An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     *        distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to
+     *        specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *        element.
      */
 
     public void setPrefix(String prefix) {
@@ -202,15 +202,15 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this streaming
-     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
-     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a
+     * prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
      * </p>
      * 
-     * @return An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
-     *         streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do
-     *         not want to specify a prefix, you still must include an empty <code>Prefix</code> element in the
-     *         <code>Logging</code> element.
+     * @return An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     *         distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to
+     *         specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *         element.
      */
 
     public String getPrefix() {
@@ -219,16 +219,16 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this streaming
-     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not want to specify
-     * a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
+     * An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     * distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a
+     * prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.
      * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log <code>filenames</code> for this
-     *        streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you do not
-     *        want to specify a prefix, you still must include an empty <code>Prefix</code> element in the
-     *        <code>Logging</code> element.
+     *        An optional string that you want CloudFront to prefix to the access log filenames for this streaming
+     *        distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to
+     *        specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code>
+     *        element.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,7 +238,8 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -302,4 +303,5 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,16 @@ public enum FailureReason {
     ADDITIONAL_VERIFICATION_REQUIRED("ADDITIONAL_VERIFICATION_REQUIRED"),
     DOMAIN_NOT_ALLOWED("DOMAIN_NOT_ALLOWED"),
     INVALID_PUBLIC_DOMAIN("INVALID_PUBLIC_DOMAIN"),
+    DOMAIN_VALIDATION_DENIED("DOMAIN_VALIDATION_DENIED"),
+    CAA_ERROR("CAA_ERROR"),
+    PCA_LIMIT_EXCEEDED("PCA_LIMIT_EXCEEDED"),
+    PCA_INVALID_ARN("PCA_INVALID_ARN"),
+    PCA_INVALID_STATE("PCA_INVALID_STATE"),
+    PCA_REQUEST_FAILED("PCA_REQUEST_FAILED"),
+    PCA_RESOURCE_NOT_FOUND("PCA_RESOURCE_NOT_FOUND"),
+    PCA_INVALID_ARGS("PCA_INVALID_ARGS"),
+    PCA_INVALID_DURATION("PCA_INVALID_DURATION"),
+    PCA_ACCESS_DENIED("PCA_ACCESS_DENIED"),
     OTHER("OTHER");
 
     private String value;
@@ -43,6 +53,9 @@ public enum FailureReason {
      * @param value
      *        real value
      * @return FailureReason corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static FailureReason fromValue(String value) {
         if (value == null || "".equals(value)) {

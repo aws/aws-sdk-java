@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Parameters specified in the SSM document that execute on the server when the command is run.
+ * Parameters specified in a System Manager document that run on the server when the command is run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentParameter" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentParameter implements Serializable, Cloneable {
+public class DocumentParameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class DocumentParameter implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      */
     private String type;
@@ -95,11 +97,11 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
@@ -109,10 +111,10 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
-     * @return The type of parameter. The type can be either “String” or “StringList”.
+     * @return The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
@@ -122,11 +124,11 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentParameterType
      */
@@ -138,31 +140,31 @@ public class DocumentParameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
     public void setType(DocumentParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentParameterType
      */
 
     public DocumentParameter withType(DocumentParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -259,7 +261,8 @@ public class DocumentParameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -329,5 +332,11 @@ public class DocumentParameter implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.DocumentParameterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

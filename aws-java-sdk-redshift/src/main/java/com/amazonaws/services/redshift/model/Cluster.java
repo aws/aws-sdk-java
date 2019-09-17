@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,21 @@ public class Cluster implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>available</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelling-resize</code>
      * </p>
      * </li>
      * <li>
@@ -128,6 +143,39 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterStatus;
     /**
      * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String clusterAvailabilityStatus;
+    /**
+     * <p>
      * The status of a modify operation, if any, initiated for the cluster.
      * </p>
      */
@@ -165,6 +213,16 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private Integer automatedSnapshotRetentionPeriod;
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
     /**
      * <p>
      * A list of cluster security group that are associated with the cluster. Each security group is represented by an
@@ -232,7 +290,7 @@ public class Cluster implements Serializable, Cloneable {
     private String clusterVersion;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      */
@@ -245,13 +303,13 @@ public class Cluster implements Serializable, Cloneable {
     private Integer numberOfNodes;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      */
     private Boolean encrypted;
@@ -262,6 +320,8 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private RestoreStatus restoreStatus;
+    /** <p/> */
+    private DataTransferProgress dataTransferProgress;
     /**
      * <p>
      * A value that reports whether the Amazon Redshift cluster has finished applying any hardware security module (HSM)
@@ -319,7 +379,7 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -337,6 +397,86 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterIamRole> iamRoles;
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> pendingActions;
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     */
+    private String maintenanceTrackName;
+    /**
+     * <p>
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
+     * </p>
+     */
+    private String elasticResizeNumberOfNodeOptions;
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow> deferredMaintenanceWindows;
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     */
+    private String snapshotScheduleIdentifier;
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     */
+    private String snapshotScheduleState;
+    /**
+     * <p>
+     * The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and
+     * backups enabled.
+     * </p>
+     */
+    private java.util.Date expectedNextSnapshotScheduleTime;
+    /**
+     * <p>
+     * The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible
+     * values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OnTrack - The next snapshot is expected to be taken on time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending - The next snapshot is pending to be taken.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String expectedNextSnapshotScheduleTimeStatus;
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private ResizeInfo resizeInfo;
 
     /**
      * <p>
@@ -430,6 +570,21 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -511,6 +666,21 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>available</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, prep-for-resize</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, resize-cleanup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelling-resize</code>
      *        </p>
      *        </li>
      *        <li>
@@ -606,6 +776,21 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -686,6 +871,21 @@ public class Cluster implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>available</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available, prep-for-resize</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available, resize-cleanup</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cancelling-resize</code>
      *         </p>
      *         </li>
      *         <li>
@@ -781,6 +981,21 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>available, prep-for-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available, resize-cleanup</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cancelling-resize</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>creating</code>
      * </p>
      * </li>
@@ -866,6 +1081,21 @@ public class Cluster implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>available, prep-for-resize</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available, resize-cleanup</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cancelling-resize</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>creating</code>
      *        </p>
      *        </li>
@@ -944,6 +1174,205 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withClusterStatus(String clusterStatus) {
         setClusterStatus(clusterStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterAvailabilityStatus
+     *        The availability status of the cluster for queries. Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Available - The cluster is available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable - The cluster is not available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed - The cluster failed and is not available for queries.
+     *        </p>
+     *        </li>
+     */
+
+    public void setClusterAvailabilityStatus(String clusterAvailabilityStatus) {
+        this.clusterAvailabilityStatus = clusterAvailabilityStatus;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The availability status of the cluster for queries. Possible values are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Available - The cluster is available for queries.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Unavailable - The cluster is not available for queries.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed - The cluster failed and is not available for queries.
+     *         </p>
+     *         </li>
+     */
+
+    public String getClusterAvailabilityStatus() {
+        return this.clusterAvailabilityStatus;
+    }
+
+    /**
+     * <p>
+     * The availability status of the cluster for queries. Possible values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Available - The cluster is available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Unavailable - The cluster is not available for queries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed - The cluster failed and is not available for queries.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param clusterAvailabilityStatus
+     *        The availability status of the cluster for queries. Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Available - The cluster is available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Unavailable - The cluster is not available for queries.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maintenance - The cluster is intermittently available for queries due to maintenance activities.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Modifying - The cluster is intermittently available for queries due to changes that modify the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed - The cluster failed and is not available for queries.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withClusterAvailabilityStatus(String clusterAvailabilityStatus) {
+        setClusterAvailabilityStatus(clusterAvailabilityStatus);
         return this;
     }
 
@@ -1202,6 +1631,67 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withAutomatedSnapshotRetentionPeriod(Integer automatedSnapshotRetentionPeriod) {
         setAutomatedSnapshotRetentionPeriod(automatedSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @return The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *         indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     * indefinitely. This setting doesn't change the retention period of existing snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained
+     *        indefinitely. This setting doesn't change the retention period of existing snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
         return this;
     }
 
@@ -1746,12 +2236,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     *        A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *        automatically to the cluster during the maintenance window.
      */
 
@@ -1761,11 +2251,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     * @return A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *         automatically to the cluster during the maintenance window.
      */
 
@@ -1775,12 +2265,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
      * @param allowVersionUpgrade
-     *        A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     *        A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *        automatically to the cluster during the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1792,11 +2282,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
+     * A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied automatically
      * to the cluster during the maintenance window.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
+     * @return A boolean value that, if <code>true</code>, indicates that major version upgrades will be applied
      *         automatically to the cluster during the maintenance window.
      */
 
@@ -1846,11 +2336,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     *        A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *        network.
      */
 
@@ -1860,10 +2350,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     * @return A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *         network.
      */
 
@@ -1873,11 +2363,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     *        A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *        network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1889,10 +2379,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
+     * A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public network.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
+     * @return A boolean value that, if <code>true</code>, indicates that the cluster can be accessed from a public
      *         network.
      */
 
@@ -1902,11 +2392,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     *        A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -1915,10 +2405,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * @return A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public Boolean getEncrypted() {
@@ -1927,11 +2417,11 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
      * @param encrypted
-     *        A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     *        A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1942,10 +2432,10 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      * </p>
      * 
-     * @return A Boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
+     * @return A boolean value that, if <code>true</code>, indicates that data in the cluster is encrypted at rest.
      */
 
     public Boolean isEncrypted() {
@@ -1995,6 +2485,38 @@ public class Cluster implements Serializable, Cloneable {
 
     public Cluster withRestoreStatus(RestoreStatus restoreStatus) {
         setRestoreStatus(restoreStatus);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param dataTransferProgress
+     */
+
+    public void setDataTransferProgress(DataTransferProgress dataTransferProgress) {
+        this.dataTransferProgress = dataTransferProgress;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public DataTransferProgress getDataTransferProgress() {
+        return this.dataTransferProgress;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param dataTransferProgress
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDataTransferProgress(DataTransferProgress dataTransferProgress) {
+        setDataTransferProgress(dataTransferProgress);
         return this;
     }
 
@@ -2416,7 +2938,7 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2429,7 +2951,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2446,7 +2968,7 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2458,8 +2980,8 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>
@@ -2475,7 +2997,7 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2488,7 +3010,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2507,7 +3029,7 @@ public class Cluster implements Serializable, Cloneable {
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2519,8 +3041,8 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>
@@ -2614,7 +3136,603 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @return Cluster operations that are waiting to be started.
+     */
+
+    public java.util.List<String> getPendingActions() {
+        if (pendingActions == null) {
+            pendingActions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return pendingActions;
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     */
+
+    public void setPendingActions(java.util.Collection<String> pendingActions) {
+        if (pendingActions == null) {
+            this.pendingActions = null;
+            return;
+        }
+
+        this.pendingActions = new com.amazonaws.internal.SdkInternalList<String>(pendingActions);
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPendingActions(java.util.Collection)} or {@link #withPendingActions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPendingActions(String... pendingActions) {
+        if (this.pendingActions == null) {
+            setPendingActions(new com.amazonaws.internal.SdkInternalList<String>(pendingActions.length));
+        }
+        for (String ele : pendingActions) {
+            this.pendingActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPendingActions(java.util.Collection<String> pendingActions) {
+        setPendingActions(pendingActions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the cluster.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @return The name of the maintenance track for the cluster.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name of the maintenance track for the cluster.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name of the maintenance track for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
+     * </p>
+     * 
+     * @param elasticResizeNumberOfNodeOptions
+     *        The number of nodes that you can resize the cluster to with the elastic resize method.
+     */
+
+    public void setElasticResizeNumberOfNodeOptions(String elasticResizeNumberOfNodeOptions) {
+        this.elasticResizeNumberOfNodeOptions = elasticResizeNumberOfNodeOptions;
+    }
+
+    /**
+     * <p>
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
+     * </p>
+     * 
+     * @return The number of nodes that you can resize the cluster to with the elastic resize method.
+     */
+
+    public String getElasticResizeNumberOfNodeOptions() {
+        return this.elasticResizeNumberOfNodeOptions;
+    }
+
+    /**
+     * <p>
+     * The number of nodes that you can resize the cluster to with the elastic resize method.
+     * </p>
+     * 
+     * @param elasticResizeNumberOfNodeOptions
+     *        The number of nodes that you can resize the cluster to with the elastic resize method.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withElasticResizeNumberOfNodeOptions(String elasticResizeNumberOfNodeOptions) {
+        setElasticResizeNumberOfNodeOptions(elasticResizeNumberOfNodeOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @return Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     */
+
+    public java.util.List<DeferredMaintenanceWindow> getDeferredMaintenanceWindows() {
+        if (deferredMaintenanceWindows == null) {
+            deferredMaintenanceWindows = new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>();
+        }
+        return deferredMaintenanceWindows;
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     */
+
+    public void setDeferredMaintenanceWindows(java.util.Collection<DeferredMaintenanceWindow> deferredMaintenanceWindows) {
+        if (deferredMaintenanceWindows == null) {
+            this.deferredMaintenanceWindows = null;
+            return;
+        }
+
+        this.deferredMaintenanceWindows = new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>(deferredMaintenanceWindows);
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeferredMaintenanceWindows(java.util.Collection)} or
+     * {@link #withDeferredMaintenanceWindows(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDeferredMaintenanceWindows(DeferredMaintenanceWindow... deferredMaintenanceWindows) {
+        if (this.deferredMaintenanceWindows == null) {
+            setDeferredMaintenanceWindows(new com.amazonaws.internal.SdkInternalList<DeferredMaintenanceWindow>(deferredMaintenanceWindows.length));
+        }
+        for (DeferredMaintenanceWindow ele : deferredMaintenanceWindows) {
+            this.deferredMaintenanceWindows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * </p>
+     * 
+     * @param deferredMaintenanceWindows
+     *        Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDeferredMaintenanceWindows(java.util.Collection<DeferredMaintenanceWindow> deferredMaintenanceWindows) {
+        setDeferredMaintenanceWindows(deferredMaintenanceWindows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the cluster snapshot schedule.
+     */
+
+    public void setSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        this.snapshotScheduleIdentifier = snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @return A unique identifier for the cluster snapshot schedule.
+     */
+
+    public String getSnapshotScheduleIdentifier() {
+        return this.snapshotScheduleIdentifier;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleIdentifier
+     *        A unique identifier for the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withSnapshotScheduleIdentifier(String snapshotScheduleIdentifier) {
+        setSnapshotScheduleIdentifier(snapshotScheduleIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @see ScheduleState
+     */
+
+    public void setSnapshotScheduleState(String snapshotScheduleState) {
+        this.snapshotScheduleState = snapshotScheduleState;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @return The current state of the cluster snapshot schedule.
+     * @see ScheduleState
+     */
+
+    public String getSnapshotScheduleState() {
+        return this.snapshotScheduleState;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleState
+     */
+
+    public Cluster withSnapshotScheduleState(String snapshotScheduleState) {
+        setSnapshotScheduleState(snapshotScheduleState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the cluster snapshot schedule.
+     * </p>
+     * 
+     * @param snapshotScheduleState
+     *        The current state of the cluster snapshot schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScheduleState
+     */
+
+    public Cluster withSnapshotScheduleState(ScheduleState snapshotScheduleState) {
+        this.snapshotScheduleState = snapshotScheduleState.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and
+     * backups enabled.
+     * </p>
+     * 
+     * @param expectedNextSnapshotScheduleTime
+     *        The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot
+     *        schedule and backups enabled.
+     */
+
+    public void setExpectedNextSnapshotScheduleTime(java.util.Date expectedNextSnapshotScheduleTime) {
+        this.expectedNextSnapshotScheduleTime = expectedNextSnapshotScheduleTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and
+     * backups enabled.
+     * </p>
+     * 
+     * @return The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot
+     *         schedule and backups enabled.
+     */
+
+    public java.util.Date getExpectedNextSnapshotScheduleTime() {
+        return this.expectedNextSnapshotScheduleTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot schedule and
+     * backups enabled.
+     * </p>
+     * 
+     * @param expectedNextSnapshotScheduleTime
+     *        The date and time when the next snapshot is expected to be taken for clusters with a valid snapshot
+     *        schedule and backups enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withExpectedNextSnapshotScheduleTime(java.util.Date expectedNextSnapshotScheduleTime) {
+        setExpectedNextSnapshotScheduleTime(expectedNextSnapshotScheduleTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible
+     * values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OnTrack - The next snapshot is expected to be taken on time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending - The next snapshot is pending to be taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param expectedNextSnapshotScheduleTimeStatus
+     *        The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.
+     *        Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OnTrack - The next snapshot is expected to be taken on time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Pending - The next snapshot is pending to be taken.
+     *        </p>
+     *        </li>
+     */
+
+    public void setExpectedNextSnapshotScheduleTimeStatus(String expectedNextSnapshotScheduleTimeStatus) {
+        this.expectedNextSnapshotScheduleTimeStatus = expectedNextSnapshotScheduleTimeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible
+     * values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OnTrack - The next snapshot is expected to be taken on time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending - The next snapshot is pending to be taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.
+     *         Possible values are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OnTrack - The next snapshot is expected to be taken on time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Pending - The next snapshot is pending to be taken.
+     *         </p>
+     *         </li>
+     */
+
+    public String getExpectedNextSnapshotScheduleTimeStatus() {
+        return this.expectedNextSnapshotScheduleTimeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled. Possible
+     * values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OnTrack - The next snapshot is expected to be taken on time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Pending - The next snapshot is pending to be taken.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param expectedNextSnapshotScheduleTimeStatus
+     *        The status of next expected snapshot for clusters having a valid snapshot schedule and backups enabled.
+     *        Possible values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OnTrack - The next snapshot is expected to be taken on time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Pending - The next snapshot is pending to be taken.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withExpectedNextSnapshotScheduleTimeStatus(String expectedNextSnapshotScheduleTimeStatus) {
+        setExpectedNextSnapshotScheduleTimeStatus(expectedNextSnapshotScheduleTimeStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resizeInfo
+     *        Returns the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResizeType: Returns ClassicResize
+     *        </p>
+     *        </li>
+     */
+
+    public void setResizeInfo(ResizeInfo resizeInfo) {
+        this.resizeInfo = resizeInfo;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Returns the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResizeType: Returns ClassicResize
+     *         </p>
+     *         </li>
+     */
+
+    public ResizeInfo getResizeInfo() {
+        return this.resizeInfo;
+    }
+
+    /**
+     * <p>
+     * Returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResizeType: Returns ClassicResize
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resizeInfo
+     *        Returns the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResizeType: Returns ClassicResize
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withResizeInfo(ResizeInfo resizeInfo) {
+        setResizeInfo(resizeInfo);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2630,6 +3748,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getClusterStatus() != null)
             sb.append("ClusterStatus: ").append(getClusterStatus()).append(",");
+        if (getClusterAvailabilityStatus() != null)
+            sb.append("ClusterAvailabilityStatus: ").append(getClusterAvailabilityStatus()).append(",");
         if (getModifyStatus() != null)
             sb.append("ModifyStatus: ").append(getModifyStatus()).append(",");
         if (getMasterUsername() != null)
@@ -2642,6 +3762,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
             sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getClusterSecurityGroups() != null)
             sb.append("ClusterSecurityGroups: ").append(getClusterSecurityGroups()).append(",");
         if (getVpcSecurityGroups() != null)
@@ -2670,6 +3792,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getRestoreStatus() != null)
             sb.append("RestoreStatus: ").append(getRestoreStatus()).append(",");
+        if (getDataTransferProgress() != null)
+            sb.append("DataTransferProgress: ").append(getDataTransferProgress()).append(",");
         if (getHsmStatus() != null)
             sb.append("HsmStatus: ").append(getHsmStatus()).append(",");
         if (getClusterSnapshotCopyStatus() != null)
@@ -2689,7 +3813,25 @@ public class Cluster implements Serializable, Cloneable {
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: ").append(getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles()).append(",");
+        if (getPendingActions() != null)
+            sb.append("PendingActions: ").append(getPendingActions()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getElasticResizeNumberOfNodeOptions() != null)
+            sb.append("ElasticResizeNumberOfNodeOptions: ").append(getElasticResizeNumberOfNodeOptions()).append(",");
+        if (getDeferredMaintenanceWindows() != null)
+            sb.append("DeferredMaintenanceWindows: ").append(getDeferredMaintenanceWindows()).append(",");
+        if (getSnapshotScheduleIdentifier() != null)
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
+        if (getSnapshotScheduleState() != null)
+            sb.append("SnapshotScheduleState: ").append(getSnapshotScheduleState()).append(",");
+        if (getExpectedNextSnapshotScheduleTime() != null)
+            sb.append("ExpectedNextSnapshotScheduleTime: ").append(getExpectedNextSnapshotScheduleTime()).append(",");
+        if (getExpectedNextSnapshotScheduleTimeStatus() != null)
+            sb.append("ExpectedNextSnapshotScheduleTimeStatus: ").append(getExpectedNextSnapshotScheduleTimeStatus()).append(",");
+        if (getResizeInfo() != null)
+            sb.append("ResizeInfo: ").append(getResizeInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -2716,6 +3858,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getClusterStatus() != null && other.getClusterStatus().equals(this.getClusterStatus()) == false)
             return false;
+        if (other.getClusterAvailabilityStatus() == null ^ this.getClusterAvailabilityStatus() == null)
+            return false;
+        if (other.getClusterAvailabilityStatus() != null && other.getClusterAvailabilityStatus().equals(this.getClusterAvailabilityStatus()) == false)
+            return false;
         if (other.getModifyStatus() == null ^ this.getModifyStatus() == null)
             return false;
         if (other.getModifyStatus() != null && other.getModifyStatus().equals(this.getModifyStatus()) == false)
@@ -2740,6 +3886,11 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getAutomatedSnapshotRetentionPeriod() != null
                 && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
             return false;
         if (other.getClusterSecurityGroups() == null ^ this.getClusterSecurityGroups() == null)
             return false;
@@ -2797,6 +3948,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getRestoreStatus() != null && other.getRestoreStatus().equals(this.getRestoreStatus()) == false)
             return false;
+        if (other.getDataTransferProgress() == null ^ this.getDataTransferProgress() == null)
+            return false;
+        if (other.getDataTransferProgress() != null && other.getDataTransferProgress().equals(this.getDataTransferProgress()) == false)
+            return false;
         if (other.getHsmStatus() == null ^ this.getHsmStatus() == null)
             return false;
         if (other.getHsmStatus() != null && other.getHsmStatus().equals(this.getHsmStatus()) == false)
@@ -2837,6 +3992,45 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false)
             return false;
+        if (other.getPendingActions() == null ^ this.getPendingActions() == null)
+            return false;
+        if (other.getPendingActions() != null && other.getPendingActions().equals(this.getPendingActions()) == false)
+            return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
+        if (other.getElasticResizeNumberOfNodeOptions() == null ^ this.getElasticResizeNumberOfNodeOptions() == null)
+            return false;
+        if (other.getElasticResizeNumberOfNodeOptions() != null
+                && other.getElasticResizeNumberOfNodeOptions().equals(this.getElasticResizeNumberOfNodeOptions()) == false)
+            return false;
+        if (other.getDeferredMaintenanceWindows() == null ^ this.getDeferredMaintenanceWindows() == null)
+            return false;
+        if (other.getDeferredMaintenanceWindows() != null && other.getDeferredMaintenanceWindows().equals(this.getDeferredMaintenanceWindows()) == false)
+            return false;
+        if (other.getSnapshotScheduleIdentifier() == null ^ this.getSnapshotScheduleIdentifier() == null)
+            return false;
+        if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
+            return false;
+        if (other.getSnapshotScheduleState() == null ^ this.getSnapshotScheduleState() == null)
+            return false;
+        if (other.getSnapshotScheduleState() != null && other.getSnapshotScheduleState().equals(this.getSnapshotScheduleState()) == false)
+            return false;
+        if (other.getExpectedNextSnapshotScheduleTime() == null ^ this.getExpectedNextSnapshotScheduleTime() == null)
+            return false;
+        if (other.getExpectedNextSnapshotScheduleTime() != null
+                && other.getExpectedNextSnapshotScheduleTime().equals(this.getExpectedNextSnapshotScheduleTime()) == false)
+            return false;
+        if (other.getExpectedNextSnapshotScheduleTimeStatus() == null ^ this.getExpectedNextSnapshotScheduleTimeStatus() == null)
+            return false;
+        if (other.getExpectedNextSnapshotScheduleTimeStatus() != null
+                && other.getExpectedNextSnapshotScheduleTimeStatus().equals(this.getExpectedNextSnapshotScheduleTimeStatus()) == false)
+            return false;
+        if (other.getResizeInfo() == null ^ this.getResizeInfo() == null)
+            return false;
+        if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
+            return false;
         return true;
     }
 
@@ -2848,12 +4042,14 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode());
         hashCode = prime * hashCode + ((getClusterStatus() == null) ? 0 : getClusterStatus().hashCode());
+        hashCode = prime * hashCode + ((getClusterAvailabilityStatus() == null) ? 0 : getClusterAvailabilityStatus().hashCode());
         hashCode = prime * hashCode + ((getModifyStatus() == null) ? 0 : getModifyStatus().hashCode());
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
         hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getClusterSecurityGroups() == null) ? 0 : getClusterSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroups() == null) ? 0 : getVpcSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getClusterParameterGroups() == null) ? 0 : getClusterParameterGroups().hashCode());
@@ -2868,6 +4064,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getRestoreStatus() == null) ? 0 : getRestoreStatus().hashCode());
+        hashCode = prime * hashCode + ((getDataTransferProgress() == null) ? 0 : getDataTransferProgress().hashCode());
         hashCode = prime * hashCode + ((getHsmStatus() == null) ? 0 : getHsmStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterSnapshotCopyStatus() == null) ? 0 : getClusterSnapshotCopyStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterPublicKey() == null) ? 0 : getClusterPublicKey().hashCode());
@@ -2878,6 +4075,15 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
+        hashCode = prime * hashCode + ((getPendingActions() == null) ? 0 : getPendingActions().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getElasticResizeNumberOfNodeOptions() == null) ? 0 : getElasticResizeNumberOfNodeOptions().hashCode());
+        hashCode = prime * hashCode + ((getDeferredMaintenanceWindows() == null) ? 0 : getDeferredMaintenanceWindows().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotScheduleState() == null) ? 0 : getSnapshotScheduleState().hashCode());
+        hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTime() == null) ? 0 : getExpectedNextSnapshotScheduleTime().hashCode());
+        hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTimeStatus() == null) ? 0 : getExpectedNextSnapshotScheduleTimeStatus().hashCode());
+        hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
         return hashCode;
     }
 
@@ -2889,4 +4095,5 @@ public class Cluster implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

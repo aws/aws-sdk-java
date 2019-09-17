@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,21 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
 
                 if (context.testExpression("Permanent", targetDepth)) {
                     optionGroupOption.setPermanent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RequiresAutoMinorEngineVersionUpgrade", targetDepth)) {
+                    optionGroupOption.setRequiresAutoMinorEngineVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("VpcOnly", targetDepth)) {
+                    optionGroupOption.setVpcOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsOptionVersionDowngrade", targetDepth)) {
+                    optionGroupOption.setSupportsOptionVersionDowngrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

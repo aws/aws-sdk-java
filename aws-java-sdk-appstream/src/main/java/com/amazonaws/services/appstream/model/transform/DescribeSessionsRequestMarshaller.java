@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,59 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeSessionsRequest Marshaller
+ * DescribeSessionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeSessionsRequestMarshaller implements Marshaller<Request<DescribeSessionsRequest>, DescribeSessionsRequest> {
+@SdkInternalApi
+public class DescribeSessionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackName").build();
+    private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetName").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
-    public DescribeSessionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeSessionsRequestMarshaller instance = new DescribeSessionsRequestMarshaller();
+
+    public static DescribeSessionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeSessionsRequest> marshall(DescribeSessionsRequest describeSessionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeSessionsRequest describeSessionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeSessionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSessionsRequest> request = new DefaultRequest<DescribeSessionsRequest>(describeSessionsRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.DescribeSessions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeSessionsRequest.getStackName() != null) {
-                jsonGenerator.writeFieldName("StackName").writeValue(describeSessionsRequest.getStackName());
-            }
-            if (describeSessionsRequest.getFleetName() != null) {
-                jsonGenerator.writeFieldName("FleetName").writeValue(describeSessionsRequest.getFleetName());
-            }
-            if (describeSessionsRequest.getUserId() != null) {
-                jsonGenerator.writeFieldName("UserId").writeValue(describeSessionsRequest.getUserId());
-            }
-            if (describeSessionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeSessionsRequest.getNextToken());
-            }
-            if (describeSessionsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeSessionsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeSessionsRequest.getStackName(), STACKNAME_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getFleetName(), FLEETNAME_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeSessionsRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

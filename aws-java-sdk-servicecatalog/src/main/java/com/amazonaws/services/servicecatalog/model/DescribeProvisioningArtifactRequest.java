@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,25 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
@@ -55,37 +60,53 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String productId;
+    /**
+     * <p>
+     * Indicates whether a verbose level of detail is enabled.
+     * </p>
+     */
+    private Boolean verbose;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -94,33 +115,43 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -129,34 +160,44 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +287,60 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Indicates whether a verbose level of detail is enabled.
+     * </p>
+     * 
+     * @param verbose
+     *        Indicates whether a verbose level of detail is enabled.
+     */
+
+    public void setVerbose(Boolean verbose) {
+        this.verbose = verbose;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a verbose level of detail is enabled.
+     * </p>
+     * 
+     * @return Indicates whether a verbose level of detail is enabled.
+     */
+
+    public Boolean getVerbose() {
+        return this.verbose;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a verbose level of detail is enabled.
+     * </p>
+     * 
+     * @param verbose
+     *        Indicates whether a verbose level of detail is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactRequest withVerbose(Boolean verbose) {
+        setVerbose(verbose);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a verbose level of detail is enabled.
+     * </p>
+     * 
+     * @return Indicates whether a verbose level of detail is enabled.
+     */
+
+    public Boolean isVerbose() {
+        return this.verbose;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -261,7 +355,9 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         if (getProvisioningArtifactId() != null)
             sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: ").append(getProductId());
+            sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getVerbose() != null)
+            sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +384,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
+        if (other.getVerbose() == null ^ this.getVerbose() == null)
+            return false;
+        if (other.getVerbose() != null && other.getVerbose().equals(this.getVerbose()) == false)
+            return false;
         return true;
     }
 
@@ -299,6 +399,7 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
         return hashCode;
     }
 

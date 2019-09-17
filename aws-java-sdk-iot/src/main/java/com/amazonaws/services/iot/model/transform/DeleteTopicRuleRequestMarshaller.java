@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteTopicRuleRequest Marshaller
+ * DeleteTopicRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteTopicRuleRequestMarshaller implements Marshaller<Request<DeleteTopicRuleRequest>, DeleteTopicRuleRequest> {
+@SdkInternalApi
+public class DeleteTopicRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("ruleName").build();
 
-    public DeleteTopicRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteTopicRuleRequestMarshaller instance = new DeleteTopicRuleRequestMarshaller();
+
+    public static DeleteTopicRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteTopicRuleRequest> marshall(DeleteTopicRuleRequest deleteTopicRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteTopicRuleRequest deleteTopicRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteTopicRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteTopicRuleRequest> request = new DefaultRequest<DeleteTopicRuleRequest>(deleteTopicRuleRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/rules/{ruleName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", deleteTopicRuleRequest.getRuleName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteTopicRuleRequest.getRuleName(), RULENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

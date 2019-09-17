@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,33 +27,33 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether
-     * the method response parameter is required or not. The method response header names must match the pattern of
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The
      * response parameter names defined here are available in the integration response to be mapped from an integration
      * response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a
@@ -73,11 +73,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -86,10 +86,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -98,11 +98,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -126,10 +126,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -138,11 +138,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -166,10 +166,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb of the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -178,11 +178,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
      * @param statusCode
-     *        The method response's status code.
+     *        [Required] The method response's status code.
      */
 
     public void setStatusCode(String statusCode) {
@@ -206,10 +206,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
-     * @return The method response's status code.
+     * @return [Required] The method response's status code.
      */
 
     public String getStatusCode() {
@@ -218,11 +218,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
      * @param statusCode
-     *        The method response's status code.
+     *        [Required] The method response's status code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,9 +233,9 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether
-     * the method response parameter is required or not. The method response header names must match the pattern of
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The
      * response parameter names defined here are available in the integration response to be mapped from an integration
      * response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a
@@ -244,16 +244,16 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)
      * </p>
      * 
-     * @return A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *         to the caller. A key defines a method response header name and the associated value is a Boolean flag
-     *         indicating whether the method response parameter is required or not. The method response header names
-     *         must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid
-     *         and unique header name. The response parameter names defined here are available in the integration
-     *         response to be mapped from an integration response header expressed in
-     *         <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes
-     *         (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the
-     *         form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
-     *         valid JSON expression without the <code>$</code> prefix.)
+     * @return A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *         caller. A key defines a method response header name and the associated value is a Boolean flag indicating
+     *         whether the method response parameter is required or not. The method response header names must match the
+     *         pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique
+     *         header name. The response parameter names defined here are available in the integration response to be
+     *         mapped from an integration response header expressed in <code>integration.response.header.{name}</code>,
+     *         a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     *         expression from the back-end response payload in the form of
+     *         <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid
+     *         JSON expression without the <code>$</code> prefix.)
      */
 
     public java.util.Map<String, Boolean> getResponseParameters() {
@@ -262,9 +262,9 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether
-     * the method response parameter is required or not. The method response header names must match the pattern of
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The
      * response parameter names defined here are available in the integration response to be mapped from an integration
      * response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a
@@ -274,14 +274,14 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param responseParameters
-     *        A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *        to the caller. A key defines a method response header name and the associated value is a Boolean flag
-     *        indicating whether the method response parameter is required or not. The method response header names must
-     *        match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and
-     *        unique header name. The response parameter names defined here are available in the integration response to
-     *        be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>
-     *        , a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a
-     *        JSON expression from the back-end response payload in the form of
+     *        A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *        caller. A key defines a method response header name and the associated value is a Boolean flag indicating
+     *        whether the method response parameter is required or not. The method response header names must match the
+     *        pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique
+     *        header name. The response parameter names defined here are available in the integration response to be
+     *        mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a
+     *        static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     *        expression from the back-end response payload in the form of
      *        <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid
      *        JSON expression without the <code>$</code> prefix.)
      */
@@ -292,9 +292,9 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether
-     * the method response parameter is required or not. The method response header names must match the pattern of
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header name and the associated value is a Boolean flag indicating whether the
+     * method response parameter is required or not. The method response header names must match the pattern of
      * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The
      * response parameter names defined here are available in the integration response to be mapped from an integration
      * response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a
@@ -304,14 +304,14 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param responseParameters
-     *        A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *        to the caller. A key defines a method response header name and the associated value is a Boolean flag
-     *        indicating whether the method response parameter is required or not. The method response header names must
-     *        match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and
-     *        unique header name. The response parameter names defined here are available in the integration response to
-     *        be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>
-     *        , a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a
-     *        JSON expression from the back-end response payload in the form of
+     *        A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *        caller. A key defines a method response header name and the associated value is a Boolean flag indicating
+     *        whether the method response parameter is required or not. The method response header names must match the
+     *        pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique
+     *        header name. The response parameter names defined here are available in the integration response to be
+     *        mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a
+     *        static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     *        expression from the back-end response payload in the form of
      *        <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid
      *        JSON expression without the <code>$</code> prefix.)
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -411,7 +411,8 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

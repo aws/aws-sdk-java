@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,6 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisWaiters {
@@ -30,7 +29,7 @@ public class AmazonKinesisWaiters {
      */
     private final AmazonKinesis client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonKinesisWaiters");
 
     /**
      * Constructs a new AmazonKinesisWaiters with the given client
@@ -56,4 +55,20 @@ public class AmazonKinesisWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a StreamNotExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeStreamRequest> streamNotExists() {
+
+        return new WaiterBuilder<DescribeStreamRequest, DescribeStreamResult>().withSdkFunction(new DescribeStreamFunction(client))
+                .withAcceptors(new StreamNotExists.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(18), new FixedDelayStrategy(10)))
+                .withExecutorService(executorService).build();
+    }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

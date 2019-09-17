@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotInstanceRequest> spotInstanceRequests;
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
-     * @return One or more Spot instance requests.
+     * @return One or more Spot Instance requests.
      */
 
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
@@ -49,11 +49,11 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      */
 
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
@@ -67,7 +67,7 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +106,8 @@ public class RequestSpotInstancesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

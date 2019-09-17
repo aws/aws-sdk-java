@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,14 +27,14 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Cluster" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Cluster implements Serializable, Cloneable {
+public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      * </p>
      */
     private String clusterArn;
@@ -52,7 +54,8 @@ public class Cluster implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      */
     private Integer registeredContainerInstancesCount;
@@ -75,20 +78,126 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private Integer activeServicesCount;
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<KeyValuePair> statistics;
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     * disabled for a cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      * </p>
      * 
      * @param clusterArn
      *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *        namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *        <code>cluster</code> namespace, and then the cluster name. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     *        <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      */
 
     public void setClusterArn(String clusterArn) {
@@ -98,15 +207,15 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *         namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *         <code>cluster</code> namespace, and then the cluster name. For example,
-     *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     *         <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      */
 
     public String getClusterArn() {
@@ -116,16 +225,16 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     * <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      * </p>
      * 
      * @param clusterArn
      *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *        namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *        <code>cluster</code> namespace, and then the cluster name. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
+     *        <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +337,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public void setRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
@@ -241,10 +352,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
-     * @return The number of container instances registered into the cluster.
+     * @return The number of container instances registered into the cluster. This includes container instances in both
+     *         <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public Integer getRegisteredContainerInstancesCount() {
@@ -253,11 +366,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,7 +508,923 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Additional information about your clusters that are separated by launch type, including:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         runningEC2TasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RunningFargateTasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pendingEC2TasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         pendingFargateTasksCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         activeEC2ServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         activeFargateServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         drainingEC2ServiceCount
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         drainingFargateServiceCount
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<KeyValuePair> getStatistics() {
+        if (statistics == null) {
+            statistics = new com.amazonaws.internal.SdkInternalList<KeyValuePair>();
+        }
+        return statistics;
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     */
+
+    public void setStatistics(java.util.Collection<KeyValuePair> statistics) {
+        if (statistics == null) {
+            this.statistics = null;
+            return;
+        }
+
+        this.statistics = new com.amazonaws.internal.SdkInternalList<KeyValuePair>(statistics);
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatistics(java.util.Collection)} or {@link #withStatistics(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withStatistics(KeyValuePair... statistics) {
+        if (this.statistics == null) {
+            setStatistics(new com.amazonaws.internal.SdkInternalList<KeyValuePair>(statistics.length));
+        }
+        for (KeyValuePair ele : statistics) {
+            this.statistics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional information about your clusters that are separated by launch type, including:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * runningEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RunningFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingEC2TasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * pendingFargateTasksCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * activeFargateServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingEC2ServiceCount
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * drainingFargateServiceCount
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statistics
+     *        Additional information about your clusters that are separated by launch type, including:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        runningEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RunningFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingEC2TasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        pendingFargateTasksCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        activeFargateServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingEC2ServiceCount
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        drainingFargateServiceCount
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withStatistics(java.util.Collection<KeyValuePair> statistics) {
+        setStatistics(statistics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *         a key and an optional value, both of which you define.</p>
+     *         <p>
+     *         The following basic restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of tags per resource - 50
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For each resource, each tag key must be unique, and each tag key can have only one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length - 128 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length - 256 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your tagging schema is used across multiple services and resources, remember that other services may
+     *         have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *         representable in UTF-8, and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case-sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
+     *         prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or
+     *         values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     * disabled for a cluster.
+     * </p>
+     * 
+     * @return The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled
+     *         or disabled for a cluster.
+     */
+
+    public java.util.List<ClusterSetting> getSettings() {
+        if (settings == null) {
+            settings = new com.amazonaws.internal.SdkInternalList<ClusterSetting>();
+        }
+        return settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     * disabled for a cluster.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     *        disabled for a cluster.
+     */
+
+    public void setSettings(java.util.Collection<ClusterSetting> settings) {
+        if (settings == null) {
+            this.settings = null;
+            return;
+        }
+
+        this.settings = new com.amazonaws.internal.SdkInternalList<ClusterSetting>(settings);
+    }
+
+    /**
+     * <p>
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     * disabled for a cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     *        disabled for a cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withSettings(ClusterSetting... settings) {
+        if (this.settings == null) {
+            setSettings(new com.amazonaws.internal.SdkInternalList<ClusterSetting>(settings.length));
+        }
+        for (ClusterSetting ele : settings) {
+            this.settings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     * disabled for a cluster.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
+     *        disabled for a cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withSettings(java.util.Collection<ClusterSetting> settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -416,7 +1447,13 @@ public class Cluster implements Serializable, Cloneable {
         if (getPendingTasksCount() != null)
             sb.append("PendingTasksCount: ").append(getPendingTasksCount()).append(",");
         if (getActiveServicesCount() != null)
-            sb.append("ActiveServicesCount: ").append(getActiveServicesCount());
+            sb.append("ActiveServicesCount: ").append(getActiveServicesCount()).append(",");
+        if (getStatistics() != null)
+            sb.append("Statistics: ").append(getStatistics()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +1497,18 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getActiveServicesCount() != null && other.getActiveServicesCount().equals(this.getActiveServicesCount()) == false)
             return false;
+        if (other.getStatistics() == null ^ this.getStatistics() == null)
+            return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -475,6 +1524,9 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode());
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode());
         hashCode = prime * hashCode + ((getActiveServicesCount() == null) ? 0 : getActiveServicesCount().hashCode());
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 
@@ -485,5 +1537,11 @@ public class Cluster implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.ClusterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeDBParameters</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters" target="_top">AWS API
@@ -28,7 +28,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
@@ -42,10 +42,10 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
-     * @return A list of <a>Parameter</a> values.
+     * @return A list of <code>Parameter</code> values.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -57,11 +57,11 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -75,7 +75,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of <a>Parameter</a> values.
+     * A list of <code>Parameter</code> values.
      * </p>
      * 
      * @param parameters
-     *        A list of <a>Parameter</a> values.
+     *        A list of <code>Parameter</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,7 +160,8 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -217,4 +218,5 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

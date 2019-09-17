@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,10 @@ class EC2CredentialsFetcher {
     protected volatile Date lastInstanceProfileCheck;
 
     /** Used to load the endpoint where the credentials are stored. */
-    private final CredentialsEndpointProvider credentailsEndpointProvider;
+    private final CredentialsEndpointProvider credentialsEndpointProvider;
 
-    public EC2CredentialsFetcher(CredentialsEndpointProvider credentailsEndpointProvider) {
-        this.credentailsEndpointProvider = credentailsEndpointProvider;
+    public EC2CredentialsFetcher(CredentialsEndpointProvider credentialsEndpointProvider) {
+        this.credentialsEndpointProvider = credentialsEndpointProvider;
     }
 
     public AWSCredentials getCredentials() {
@@ -118,9 +118,12 @@ class EC2CredentialsFetcher {
         try {
             lastInstanceProfileCheck = new Date();
 
-            String credentialsResponse = EC2CredentialsUtils.getInstance().readResource(credentailsEndpointProvider.getCredentialsEndpoint(), credentailsEndpointProvider.getRetryPolicy());
+            String credentialsResponse = EC2CredentialsUtils.getInstance().readResource(
+                credentialsEndpointProvider.getCredentialsEndpoint(),
+                credentialsEndpointProvider.getRetryPolicy(),
+                credentialsEndpointProvider.getHeaders());
 
-            node = Jackson.jsonNodeOf(credentialsResponse);
+            node = Jackson.fromSensitiveJsonString(credentialsResponse, JsonNode.class);
             accessKey = node.get(ACCESS_KEY_ID);
             secretKey = node.get(SECRET_ACCESS_KEY);
             token = node.get(TOKEN);

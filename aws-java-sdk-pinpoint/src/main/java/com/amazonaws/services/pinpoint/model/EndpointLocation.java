@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,28 +14,66 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies geographic information about an endpoint.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointLocation" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointLocation implements Serializable, Cloneable {
+public class EndpointLocation implements Serializable, Cloneable, StructuredPojo {
 
-    /** The city where the endpoint is located. */
+    /**
+     * <p>
+     * The name of the city where the endpoint is located.
+     * </p>
+     */
     private String city;
-    /** Country according to ISO 3166-1 Alpha-2 codes. For example, US. */
+    /**
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located.
+     * For example, US for the United States.
+     * </p>
+     */
     private String country;
-    /** The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile). */
+    /**
+     * <p>
+     * The latitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
+     */
     private Double latitude;
-    /** The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile). */
+    /**
+     * <p>
+     * The longitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
+     */
     private Double longitude;
-    /** The postal code or zip code of the endpoint. */
+    /**
+     * <p>
+     * The postal or ZIP code for the area where the endpoint is located.
+     * </p>
+     */
     private String postalCode;
-    /** The region of the endpoint location. For example, corresponds to a state in US. */
+    /**
+     * <p>
+     * The name of the region where the endpoint is located. For locations in the United States, this value is the name
+     * of a state.
+     * </p>
+     */
     private String region;
 
     /**
-     * The city where the endpoint is located.
+     * <p>
+     * The name of the city where the endpoint is located.
+     * </p>
      * 
      * @param city
-     *        The city where the endpoint is located.
+     *        The name of the city where the endpoint is located.
      */
 
     public void setCity(String city) {
@@ -43,9 +81,11 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The city where the endpoint is located.
+     * <p>
+     * The name of the city where the endpoint is located.
+     * </p>
      * 
-     * @return The city where the endpoint is located.
+     * @return The name of the city where the endpoint is located.
      */
 
     public String getCity() {
@@ -53,10 +93,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The city where the endpoint is located.
+     * <p>
+     * The name of the city where the endpoint is located.
+     * </p>
      * 
      * @param city
-     *        The city where the endpoint is located.
+     *        The name of the city where the endpoint is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +108,14 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located.
+     * For example, US for the United States.
+     * </p>
      * 
      * @param country
-     *        Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is
+     *        located. For example, US for the United States.
      */
 
     public void setCountry(String country) {
@@ -77,9 +123,13 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located.
+     * For example, US for the United States.
+     * </p>
      * 
-     * @return Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * @return The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is
+     *         located. For example, US for the United States.
      */
 
     public String getCountry() {
@@ -87,10 +137,14 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * <p>
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located.
+     * For example, US for the United States.
+     * </p>
      * 
      * @param country
-     *        Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is
+     *        located. For example, US for the United States.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,10 +154,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The latitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
      * @param latitude
-     *        The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     *        The latitude coordinate of the endpoint location, rounded to one decimal place.
      */
 
     public void setLatitude(Double latitude) {
@@ -111,9 +167,11 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The latitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
-     * @return The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * @return The latitude coordinate of the endpoint location, rounded to one decimal place.
      */
 
     public Double getLatitude() {
@@ -121,10 +179,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The latitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
      * @param latitude
-     *        The latitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     *        The latitude coordinate of the endpoint location, rounded to one decimal place.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,10 +194,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The longitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
      * @param longitude
-     *        The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     *        The longitude coordinate of the endpoint location, rounded to one decimal place.
      */
 
     public void setLongitude(Double longitude) {
@@ -145,9 +207,11 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The longitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
-     * @return The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * @return The longitude coordinate of the endpoint location, rounded to one decimal place.
      */
 
     public Double getLongitude() {
@@ -155,10 +219,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     * <p>
+     * The longitude coordinate of the endpoint location, rounded to one decimal place.
+     * </p>
      * 
      * @param longitude
-     *        The longitude of the endpoint location. Rounded to one decimal (Roughly corresponding to a mile).
+     *        The longitude coordinate of the endpoint location, rounded to one decimal place.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,10 +234,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The postal code or zip code of the endpoint.
+     * <p>
+     * The postal or ZIP code for the area where the endpoint is located.
+     * </p>
      * 
      * @param postalCode
-     *        The postal code or zip code of the endpoint.
+     *        The postal or ZIP code for the area where the endpoint is located.
      */
 
     public void setPostalCode(String postalCode) {
@@ -179,9 +247,11 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The postal code or zip code of the endpoint.
+     * <p>
+     * The postal or ZIP code for the area where the endpoint is located.
+     * </p>
      * 
-     * @return The postal code or zip code of the endpoint.
+     * @return The postal or ZIP code for the area where the endpoint is located.
      */
 
     public String getPostalCode() {
@@ -189,10 +259,12 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The postal code or zip code of the endpoint.
+     * <p>
+     * The postal or ZIP code for the area where the endpoint is located.
+     * </p>
      * 
      * @param postalCode
-     *        The postal code or zip code of the endpoint.
+     *        The postal or ZIP code for the area where the endpoint is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +274,14 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * <p>
+     * The name of the region where the endpoint is located. For locations in the United States, this value is the name
+     * of a state.
+     * </p>
      * 
      * @param region
-     *        The region of the endpoint location. For example, corresponds to a state in US.
+     *        The name of the region where the endpoint is located. For locations in the United States, this value is
+     *        the name of a state.
      */
 
     public void setRegion(String region) {
@@ -213,9 +289,13 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * <p>
+     * The name of the region where the endpoint is located. For locations in the United States, this value is the name
+     * of a state.
+     * </p>
      * 
-     * @return The region of the endpoint location. For example, corresponds to a state in US.
+     * @return The name of the region where the endpoint is located. For locations in the United States, this value is
+     *         the name of a state.
      */
 
     public String getRegion() {
@@ -223,10 +303,14 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * <p>
+     * The name of the region where the endpoint is located. For locations in the United States, this value is the name
+     * of a state.
+     * </p>
      * 
      * @param region
-     *        The region of the endpoint location. For example, corresponds to a state in US.
+     *        The name of the region where the endpoint is located. For locations in the United States, this value is
+     *        the name of a state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +320,8 @@ public class EndpointLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -320,5 +405,11 @@ public class EndpointLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

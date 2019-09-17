@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the launch specification for one or more Spot instances.
+ * Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet
+ * request, you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification" target="_top">AWS
@@ -28,31 +30,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI.
-     * </p>
-     */
-    private String imageId;
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     */
-    private String keyName;
-    /**
-     * <p>
      * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
      * When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> securityGroups;
-    /**
-     * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
-     * </p>
-     */
-    private String userData;
     /**
      * <p>
      * Deprecated.
@@ -61,60 +43,12 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     */
-    private String instanceType;
-    /**
-     * <p>
-     * The placement information.
-     * </p>
-     */
-    private SpotPlacement placement;
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     */
-    private String kernelId;
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     */
-    private String ramdiskId;
-    /**
-     * <p>
-     * One or more block device mapping entries.
+     * One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
-    /**
-     * <p>
-     * Enable or disable monitoring for the instances.
-     * </p>
-     */
-    private SpotFleetMonitoring monitoring;
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
-     * for example, "subnet-a61dafcf, subnet-65ea5f08".
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     */
-    private IamInstanceProfileSpecification iamInstanceProfile;
     /**
      * <p>
      * Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to
@@ -128,103 +62,99 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
+     * The IAM instance profile.
+     * </p>
+     */
+    private IamInstanceProfileSpecification iamInstanceProfile;
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     */
+    private String kernelId;
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     */
+    private String keyName;
+    /**
+     * <p>
+     * Enable or disable monitoring for the instances.
+     * </p>
+     */
+    private SpotFleetMonitoring monitoring;
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
+    /**
+     * <p>
+     * The placement information.
+     * </p>
+     */
+    private SpotPlacement placement;
+    /**
+     * <p>
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
+     * </p>
+     */
+    private String ramdiskId;
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
+     * </p>
+     */
+    private String spotPrice;
+    /**
+     * <p>
+     * The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     * </p>
+     */
+    private String subnetId;
+    /**
+     * <p>
+     * The Base64-encoded user data that instances use when starting up.
+     * </p>
+     */
+    private String userData;
+    /**
+     * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      */
     private Double weightedCapacity;
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The tags to apply during creation.
      * </p>
      */
-    private String spotPrice;
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     */
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @return The ID of the AMI.
-     */
-
-    public String getImageId() {
-        return this.imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withImageId(String imageId) {
-        setImageId(imageId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     */
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @return The name of the key pair.
-     */
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withKeyName(String keyName) {
-        setKeyName(keyName);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -313,58 +243,6 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
-     * </p>
-     * 
-     * @param userData
-     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
-     */
-
-    public void setUserData(String userData) {
-        this.userData = userData;
-    }
-
-    /**
-     * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
-     * </p>
-     * 
-     * @return The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *         Base64-encoded text.
-     */
-
-    public String getUserData() {
-        return this.userData;
-    }
-
-    /**
-     * <p>
-     * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
-     * </p>
-     * 
-     * @param userData
-     *        The user data to make available to the instances. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withUserData(String userData) {
-        setUserData(userData);
-        return this;
-    }
-
-    /**
-     * <p>
      * Deprecated.
      * </p>
      * 
@@ -405,203 +283,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
-     * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @return The instance type. Note that T2 and HS1 instance types are not supported.
-     * @see InstanceType
-     */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public SpotFleetLaunchSpecification withInstanceType(String instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
-    }
-
-    /**
-     * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public SpotFleetLaunchSpecification withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The placement information.
-     * </p>
-     * 
-     * @param placement
-     *        The placement information.
-     */
-
-    public void setPlacement(SpotPlacement placement) {
-        this.placement = placement;
-    }
-
-    /**
-     * <p>
-     * The placement information.
-     * </p>
-     * 
-     * @return The placement information.
-     */
-
-    public SpotPlacement getPlacement() {
-        return this.placement;
-    }
-
-    /**
-     * <p>
-     * The placement information.
-     * </p>
-     * 
-     * @param placement
-     *        The placement information.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withPlacement(SpotPlacement placement) {
-        setPlacement(placement);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @param kernelId
-     *        The ID of the kernel.
-     */
-
-    public void setKernelId(String kernelId) {
-        this.kernelId = kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @return The ID of the kernel.
-     */
-
-    public String getKernelId() {
-        return this.kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @param kernelId
-     *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withKernelId(String kernelId) {
-        setKernelId(kernelId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     */
-
-    public void setRamdiskId(String ramdiskId) {
-        this.ramdiskId = ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @return The ID of the RAM disk.
-     */
-
-    public String getRamdiskId() {
-        return this.ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withRamdiskId(String ramdiskId) {
-        setRamdiskId(ramdiskId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * 
-     * @return One or more block device mapping entries.
+     * @return One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and
+     *         an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is
+     *         the basis for a volume, it is not blank and its encryption status is used for the volume encryption
+     *         status.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -613,11 +303,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -631,7 +325,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -640,7 +336,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,223 +354,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and an
+     * encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for
+     * a volume, it is not blank and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block devices that are mapped to the Spot Instances. You can't specify both a snapshot ID and
+     *        an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the
+     *        basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotFleetLaunchSpecification withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Enable or disable monitoring for the instances.
-     * </p>
-     * 
-     * @param monitoring
-     *        Enable or disable monitoring for the instances.
-     */
-
-    public void setMonitoring(SpotFleetMonitoring monitoring) {
-        this.monitoring = monitoring;
-    }
-
-    /**
-     * <p>
-     * Enable or disable monitoring for the instances.
-     * </p>
-     * 
-     * @return Enable or disable monitoring for the instances.
-     */
-
-    public SpotFleetMonitoring getMonitoring() {
-        return this.monitoring;
-    }
-
-    /**
-     * <p>
-     * Enable or disable monitoring for the instances.
-     * </p>
-     * 
-     * @param monitoring
-     *        Enable or disable monitoring for the instances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withMonitoring(SpotFleetMonitoring monitoring) {
-        setMonitoring(monitoring);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
-     * for example, "subnet-a61dafcf, subnet-65ea5f08".
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
-     *        commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
-     */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
-     * for example, "subnet-a61dafcf, subnet-65ea5f08".
-     * </p>
-     * 
-     * @return The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
-     *         commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using commas;
-     * for example, "subnet-a61dafcf, subnet-65ea5f08".
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which to launch the instances. To specify multiple subnets, separate them using
-     *        commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *         security group IDs using the network interface.
-     */
-
-    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
-        if (networkInterfaces == null) {
-            networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
-        }
-        return networkInterfaces;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     */
-
-    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
-        if (networkInterfaces == null) {
-            this.networkInterfaces = null;
-            return;
-        }
-
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
-     * you want to override the existing values.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
-        if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
-        }
-        for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
-            this.networkInterfaces.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
-        setNetworkInterfaces(networkInterfaces);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @param iamInstanceProfile
-     *        The IAM instance profile.
-     */
-
-    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
-        this.iamInstanceProfile = iamInstanceProfile;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @return The IAM instance profile.
-     */
-
-    public IamInstanceProfileSpecification getIamInstanceProfile() {
-        return this.iamInstanceProfile;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @param iamInstanceProfile
-     *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotFleetLaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
-        setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
@@ -970,21 +465,605 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     */
+
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @return The IAM instance profile.
+     */
+
+    public IamInstanceProfileSpecification getIamInstanceProfile() {
+        return this.iamInstanceProfile;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        setIamInstanceProfile(iamInstanceProfile);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @return The instance type.
+     * @see InstanceType
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public SpotFleetLaunchSpecification withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(InstanceType instanceType) {
+        withInstanceType(instanceType);
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public SpotFleetLaunchSpecification withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     */
+
+    public void setKernelId(String kernelId) {
+        this.kernelId = kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @return The ID of the kernel.
+     */
+
+    public String getKernelId() {
+        return this.kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withKernelId(String kernelId) {
+        setKernelId(kernelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     */
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @return The name of the key pair.
+     */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withKeyName(String keyName) {
+        setKeyName(keyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @param monitoring
+     *        Enable or disable monitoring for the instances.
+     */
+
+    public void setMonitoring(SpotFleetMonitoring monitoring) {
+        this.monitoring = monitoring;
+    }
+
+    /**
+     * <p>
+     * Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @return Enable or disable monitoring for the instances.
+     */
+
+    public SpotFleetMonitoring getMonitoring() {
+        return this.monitoring;
+    }
+
+    /**
+     * <p>
+     * Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @param monitoring
+     *        Enable or disable monitoring for the instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withMonitoring(SpotFleetMonitoring monitoring) {
+        setMonitoring(monitoring);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *         security group IDs using the network interface.
+     */
+
+    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
+        if (networkInterfaces == null) {
+            networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
+        }
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
+        }
+        for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement information.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information.
+     */
+
+    public void setPlacement(SpotPlacement placement) {
+        this.placement = placement;
+    }
+
+    /**
+     * <p>
+     * The placement information.
+     * </p>
+     * 
+     * @return The placement information.
+     */
+
+    public SpotPlacement getPlacement() {
+        return this.placement;
+    }
+
+    /**
+     * <p>
+     * The placement information.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withPlacement(SpotPlacement placement) {
+        setPlacement(placement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *        AWS Resource Center and search for the kernel ID.
+     */
+
+    public void setRamdiskId(String ramdiskId) {
+        this.ramdiskId = ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
+     * </p>
+     * 
+     * @return The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *         for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *         AWS Resource Center and search for the kernel ID.
+     */
+
+    public String getRamdiskId() {
+        return this.ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements for
+     * information about whether you need to specify a RAM disk. To find kernel requirements, refer to the AWS Resource
+     * Center and search for the kernel ID.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk. Some kernels require additional drivers at launch. Check the kernel requirements
+     *        for information about whether you need to specify a RAM disk. To find kernel requirements, refer to the
+     *        AWS Resource Center and search for the kernel ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withRamdiskId(String ramdiskId) {
+        setRamdiskId(ramdiskId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
+     * </p>
+     * 
+     * @param spotPrice
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *        specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *        hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
+     */
+
+    public void setSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
+     * </p>
+     * 
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *         specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *         hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
+     */
+
+    public String getSpotPrice() {
+        return this.spotPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
+     * </p>
+     * 
+     * @param spotPrice
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *        specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *        hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withSpotPrice(String spotPrice) {
+        setSpotPrice(spotPrice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     * </p>
+     * 
+     * @param subnetId
+     *        The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using
+     *        commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     * </p>
+     * 
+     * @return The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using
+     *         commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using commas;
+     * for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     * </p>
+     * 
+     * @param subnetId
+     *        The IDs of the subnets in which to launch the instances. To specify multiple subnets, separate them using
+     *        commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Base64-encoded user data that instances use when starting up.
+     * </p>
+     * 
+     * @param userData
+     *        The Base64-encoded user data that instances use when starting up.
+     */
+
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+
+    /**
+     * <p>
+     * The Base64-encoded user data that instances use when starting up.
+     * </p>
+     * 
+     * @return The Base64-encoded user data that instances use when starting up.
+     */
+
+    public String getUserData() {
+        return this.userData;
+    }
+
+    /**
+     * <p>
+     * The Base64-encoded user data that instances use when starting up.
+     * </p>
+     * 
+     * @param userData
+     *        The Base64-encoded user data that instances use when starting up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withUserData(String userData) {
+        setUserData(userData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of units provided by the specified instance type. These are the same units that you chose to set the
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
+     * </p>
+     * <p>
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
      *        The number of units provided by the specified instance type. These are the same units that you chose to
-     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *        I/O).</p>
+     *        set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *        I/O.</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *        the next whole number. If this value is not specified, the default is 1.
+     *        If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *        instances to the next whole number. If this value is not specified, the default is 1.
      */
 
     public void setWeightedCapacity(Double weightedCapacity) {
@@ -994,19 +1073,19 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @return The number of units provided by the specified instance type. These are the same units that you chose to
-     *         set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *         I/O).</p>
+     *         set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *         I/O.</p>
      *         <p>
-     *         If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *         the next whole number. If this value is not specified, the default is 1.
+     *         If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *         instances to the next whole number. If this value is not specified, the default is 1.
      */
 
     public Double getWeightedCapacity() {
@@ -1016,20 +1095,20 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units provided by the specified instance type. These are the same units that you chose to set the
-     * target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or I/O).
+     * target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or I/O.
      * </p>
      * <p>
-     * If the target capacity divided by this value is not a whole number, we round the number of instances to the next
-     * whole number. If this value is not specified, the default is 1.
+     * If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of instances to
+     * the next whole number. If this value is not specified, the default is 1.
      * </p>
      * 
      * @param weightedCapacity
      *        The number of units provided by the specified instance type. These are the same units that you chose to
-     *        set the target capacity in terms (instances or a performance characteristic such as vCPUs, memory, or
-     *        I/O).</p>
+     *        set the target capacity in terms of instances, or a performance characteristic such as vCPUs, memory, or
+     *        I/O.</p>
      *        <p>
-     *        If the target capacity divided by this value is not a whole number, we round the number of instances to
-     *        the next whole number. If this value is not specified, the default is 1.
+     *        If the target capacity divided by this value is not a whole number, Amazon EC2 rounds the number of
+     *        instances to the next whole number. If this value is not specified, the default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1040,58 +1119,80 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The tags to apply during creation.
      * </p>
      * 
-     * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *        bid price by the value of <code>WeightedCapacity</code>.
+     * @return The tags to apply during creation.
      */
 
-    public void setSpotPrice(String spotPrice) {
-        this.spotPrice = spotPrice;
+    public java.util.List<SpotFleetTagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>();
+        }
+        return tagSpecifications;
     }
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The tags to apply during creation.
      * </p>
      * 
-     * @return The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *         is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *         bid price by the value of <code>WeightedCapacity</code>.
+     * @param tagSpecifications
+     *        The tags to apply during creation.
      */
 
-    public String getSpotPrice() {
-        return this.spotPrice;
+    public void setTagSpecifications(java.util.Collection<SpotFleetTagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>(tagSpecifications);
     }
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The tags to apply during creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
      * </p>
      * 
-     * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *        bid price by the value of <code>WeightedCapacity</code>.
+     * @param tagSpecifications
+     *        The tags to apply during creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpotFleetLaunchSpecification withSpotPrice(String spotPrice) {
-        setSpotPrice(spotPrice);
+    public SpotFleetLaunchSpecification withTagSpecifications(SpotFleetTagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>(tagSpecifications.length));
+        }
+        for (SpotFleetTagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withTagSpecifications(java.util.Collection<SpotFleetTagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1101,40 +1202,42 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null)
-            sb.append("ImageId: ").append(getImageId()).append(",");
-        if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
-        if (getUserData() != null)
-            sb.append("UserData: ").append(getUserData()).append(",");
         if (getAddressingType() != null)
             sb.append("AddressingType: ").append(getAddressingType()).append(",");
-        if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType()).append(",");
-        if (getPlacement() != null)
-            sb.append("Placement: ").append(getPlacement()).append(",");
-        if (getKernelId() != null)
-            sb.append("KernelId: ").append(getKernelId()).append(",");
-        if (getRamdiskId() != null)
-            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getBlockDeviceMappings() != null)
             sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
-        if (getMonitoring() != null)
-            sb.append("Monitoring: ").append(getMonitoring()).append(",");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
-        if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
-        if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
+        if (getIamInstanceProfile() != null)
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getKernelId() != null)
+            sb.append("KernelId: ").append(getKernelId()).append(",");
+        if (getKeyName() != null)
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getMonitoring() != null)
+            sb.append("Monitoring: ").append(getMonitoring()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getPlacement() != null)
+            sb.append("Placement: ").append(getPlacement()).append(",");
+        if (getRamdiskId() != null)
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
+        if (getSpotPrice() != null)
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getUserData() != null)
+            sb.append("UserData: ").append(getUserData()).append(",");
         if (getWeightedCapacity() != null)
             sb.append("WeightedCapacity: ").append(getWeightedCapacity()).append(",");
-        if (getSpotPrice() != null)
-            sb.append("SpotPrice: ").append(getSpotPrice());
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1149,73 +1252,77 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         if (obj instanceof SpotFleetLaunchSpecification == false)
             return false;
         SpotFleetLaunchSpecification other = (SpotFleetLaunchSpecification) obj;
-        if (other.getImageId() == null ^ this.getImageId() == null)
-            return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
-            return false;
-        if (other.getKeyName() == null ^ this.getKeyName() == null)
-            return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
-            return false;
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
-            return false;
-        if (other.getUserData() == null ^ this.getUserData() == null)
-            return false;
-        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
             return false;
         if (other.getAddressingType() == null ^ this.getAddressingType() == null)
             return false;
         if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false)
             return false;
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
-            return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
-            return false;
-        if (other.getPlacement() == null ^ this.getPlacement() == null)
-            return false;
-        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
-            return false;
-        if (other.getKernelId() == null ^ this.getKernelId() == null)
-            return false;
-        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
-            return false;
-        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
-            return false;
-        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
-            return false;
         if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
-            return false;
-        if (other.getMonitoring() == null ^ this.getMonitoring() == null)
-            return false;
-        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
-            return false;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
-            return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
-        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
-            return false;
-        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
-            return false;
-        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
-            return false;
-        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
         if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
-        if (other.getWeightedCapacity() == null ^ this.getWeightedCapacity() == null)
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
-        if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
+            return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getKernelId() == null ^ this.getKernelId() == null)
+            return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
+            return false;
+        if (other.getMonitoring() == null ^ this.getMonitoring() == null)
+            return false;
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false)
+            return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
+        if (other.getPlacement() == null ^ this.getPlacement() == null)
+            return false;
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
+            return false;
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
+            return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
             return false;
         if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getUserData() == null ^ this.getUserData() == null)
+            return false;
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
+            return false;
+        if (other.getWeightedCapacity() == null ^ this.getWeightedCapacity() == null)
+            return false;
+        if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
+            return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
         return true;
     }
@@ -1225,23 +1332,24 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
-        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode());
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
-        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
-        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
-        hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 
@@ -1253,4 +1361,5 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

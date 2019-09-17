@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,56 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CompleteMultipartUploadRequest Marshaller
+ * CompleteMultipartUploadRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Request<CompleteMultipartUploadRequest>, CompleteMultipartUploadRequest> {
+@SdkInternalApi
+public class CompleteMultipartUploadRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> UPLOADID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("uploadId").build();
+    private static final MarshallingInfo<String> ARCHIVESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-archive-size").build();
+    private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-sha256-tree-hash").build();
 
-    public CompleteMultipartUploadRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CompleteMultipartUploadRequestMarshaller instance = new CompleteMultipartUploadRequestMarshaller();
+
+    public static CompleteMultipartUploadRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CompleteMultipartUploadRequest> marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (completeMultipartUploadRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CompleteMultipartUploadRequest> request = new DefaultRequest<CompleteMultipartUploadRequest>(completeMultipartUploadRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (completeMultipartUploadRequest.getArchiveSize() != null) {
-            request.addHeader("x-amz-archive-size", StringUtils.fromString(completeMultipartUploadRequest.getArchiveSize()));
+        try {
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getUploadId(), UPLOADID_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getArchiveSize(), ARCHIVESIZE_BINDING);
+            protocolMarshaller.marshall(completeMultipartUploadRequest.getChecksum(), CHECKSUM_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (completeMultipartUploadRequest.getChecksum() != null) {
-            request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(completeMultipartUploadRequest.getChecksum()));
-        }
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                completeMultipartUploadRequest.getAccountId() == null ? "-" : completeMultipartUploadRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
-                completeMultipartUploadRequest.getVaultName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "uploadId", completeMultipartUploadRequest.getUploadId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

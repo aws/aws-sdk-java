@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * <div class="remarks">To create a new deployment of a <a>RestApi</a>, make a <code>POST</code> request against this
  * resource. To view, update, or delete an existing deployment, make a <code>GET</code>, <code>PATCH</code>, or
  * <code>DELETE</code> request, respectively, on a specified <a>Deployment</a> resource.</div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying an API</a>, <a
- * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying an API</a>, <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a
  * href="https://aws.amazon.com/tools/">AWS SDKs</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,7 +34,7 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
     private String position;
     /**
      * <p>
-     * The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<Deployment> items;
@@ -67,10 +67,10 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<Deployment> getItems() {
@@ -79,11 +79,11 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<Deployment> items) {
@@ -97,7 +97,7 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -106,7 +106,7 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param items
-     *        The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +122,11 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>Deployment</a> resources in the collection of deployment resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +136,8 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -193,4 +194,5 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

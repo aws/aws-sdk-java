@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.budgets.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.budgets.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateNotificationRequest Marshaller
+ * UpdateNotificationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateNotificationRequestMarshaller implements Marshaller<Request<UpdateNotificationRequest>, UpdateNotificationRequest> {
+@SdkInternalApi
+public class UpdateNotificationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> BUDGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BudgetName").build();
+    private static final MarshallingInfo<StructuredPojo> OLDNOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OldNotification").build();
+    private static final MarshallingInfo<StructuredPojo> NEWNOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewNotification").build();
 
-    public UpdateNotificationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateNotificationRequestMarshaller instance = new UpdateNotificationRequestMarshaller();
+
+    public static UpdateNotificationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateNotificationRequest> marshall(UpdateNotificationRequest updateNotificationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateNotificationRequest updateNotificationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateNotificationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateNotificationRequest> request = new DefaultRequest<UpdateNotificationRequest>(updateNotificationRequest, "AWSBudgets");
-        request.addHeader("X-Amz-Target", "AWSBudgetServiceGateway.UpdateNotification");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateNotificationRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(updateNotificationRequest.getAccountId());
-            }
-            if (updateNotificationRequest.getBudgetName() != null) {
-                jsonGenerator.writeFieldName("BudgetName").writeValue(updateNotificationRequest.getBudgetName());
-            }
-            if (updateNotificationRequest.getOldNotification() != null) {
-                jsonGenerator.writeFieldName("OldNotification");
-                NotificationJsonMarshaller.getInstance().marshall(updateNotificationRequest.getOldNotification(), jsonGenerator);
-            }
-            if (updateNotificationRequest.getNewNotification() != null) {
-                jsonGenerator.writeFieldName("NewNotification");
-                NotificationJsonMarshaller.getInstance().marshall(updateNotificationRequest.getNewNotification(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateNotificationRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(updateNotificationRequest.getBudgetName(), BUDGETNAME_BINDING);
+            protocolMarshaller.marshall(updateNotificationRequest.getOldNotification(), OLDNOTIFICATION_BINDING);
+            protocolMarshaller.marshall(updateNotificationRequest.getNewNotification(), NEWNOTIFICATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

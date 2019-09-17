@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the type of configuration for AWS Lambda triggers.
+ * Specifies the configuration for AWS Lambda triggers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LambdaConfigType implements Serializable, Cloneable {
+public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -74,6 +76,18 @@ public class LambdaConfigType implements Serializable, Cloneable {
      * </p>
      */
     private String verifyAuthChallengeResponse;
+    /**
+     * <p>
+     * A Lambda trigger that is invoked before token generation.
+     * </p>
+     */
+    private String preTokenGeneration;
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     */
+    private String userMigration;
 
     /**
      * <p>
@@ -396,7 +410,88 @@ public class LambdaConfigType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A Lambda trigger that is invoked before token generation.
+     * </p>
+     * 
+     * @param preTokenGeneration
+     *        A Lambda trigger that is invoked before token generation.
+     */
+
+    public void setPreTokenGeneration(String preTokenGeneration) {
+        this.preTokenGeneration = preTokenGeneration;
+    }
+
+    /**
+     * <p>
+     * A Lambda trigger that is invoked before token generation.
+     * </p>
+     * 
+     * @return A Lambda trigger that is invoked before token generation.
+     */
+
+    public String getPreTokenGeneration() {
+        return this.preTokenGeneration;
+    }
+
+    /**
+     * <p>
+     * A Lambda trigger that is invoked before token generation.
+     * </p>
+     * 
+     * @param preTokenGeneration
+     *        A Lambda trigger that is invoked before token generation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaConfigType withPreTokenGeneration(String preTokenGeneration) {
+        setPreTokenGeneration(preTokenGeneration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @param userMigration
+     *        The user migration Lambda config type.
+     */
+
+    public void setUserMigration(String userMigration) {
+        this.userMigration = userMigration;
+    }
+
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @return The user migration Lambda config type.
+     */
+
+    public String getUserMigration() {
+        return this.userMigration;
+    }
+
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @param userMigration
+     *        The user migration Lambda config type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaConfigType withUserMigration(String userMigration) {
+        setUserMigration(userMigration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -421,7 +516,11 @@ public class LambdaConfigType implements Serializable, Cloneable {
         if (getCreateAuthChallenge() != null)
             sb.append("CreateAuthChallenge: ").append(getCreateAuthChallenge()).append(",");
         if (getVerifyAuthChallengeResponse() != null)
-            sb.append("VerifyAuthChallengeResponse: ").append(getVerifyAuthChallengeResponse());
+            sb.append("VerifyAuthChallengeResponse: ").append(getVerifyAuthChallengeResponse()).append(",");
+        if (getPreTokenGeneration() != null)
+            sb.append("PreTokenGeneration: ").append(getPreTokenGeneration()).append(",");
+        if (getUserMigration() != null)
+            sb.append("UserMigration: ").append(getUserMigration());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +567,14 @@ public class LambdaConfigType implements Serializable, Cloneable {
             return false;
         if (other.getVerifyAuthChallengeResponse() != null && other.getVerifyAuthChallengeResponse().equals(this.getVerifyAuthChallengeResponse()) == false)
             return false;
+        if (other.getPreTokenGeneration() == null ^ this.getPreTokenGeneration() == null)
+            return false;
+        if (other.getPreTokenGeneration() != null && other.getPreTokenGeneration().equals(this.getPreTokenGeneration()) == false)
+            return false;
+        if (other.getUserMigration() == null ^ this.getUserMigration() == null)
+            return false;
+        if (other.getUserMigration() != null && other.getUserMigration().equals(this.getUserMigration()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +591,8 @@ public class LambdaConfigType implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefineAuthChallenge() == null) ? 0 : getDefineAuthChallenge().hashCode());
         hashCode = prime * hashCode + ((getCreateAuthChallenge() == null) ? 0 : getCreateAuthChallenge().hashCode());
         hashCode = prime * hashCode + ((getVerifyAuthChallengeResponse() == null) ? 0 : getVerifyAuthChallengeResponse().hashCode());
+        hashCode = prime * hashCode + ((getPreTokenGeneration() == null) ? 0 : getPreTokenGeneration().hashCode());
+        hashCode = prime * hashCode + ((getUserMigration() == null) ? 0 : getUserMigration().hashCode());
         return hashCode;
     }
 
@@ -494,5 +603,11 @@ public class LambdaConfigType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.LambdaConfigTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,74 +46,87 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(modifyLoadBalancerAttributesRequest.getLoadBalancerName()));
         }
 
-        LoadBalancerAttributes loadBalancerAttributes = modifyLoadBalancerAttributesRequest.getLoadBalancerAttributes();
-        if (loadBalancerAttributes != null) {
+        {
+            LoadBalancerAttributes loadBalancerAttributes = modifyLoadBalancerAttributesRequest.getLoadBalancerAttributes();
+            if (loadBalancerAttributes != null) {
 
-            CrossZoneLoadBalancing crossZoneLoadBalancing = loadBalancerAttributes.getCrossZoneLoadBalancing();
-            if (crossZoneLoadBalancing != null) {
+                {
+                    CrossZoneLoadBalancing crossZoneLoadBalancing = loadBalancerAttributes.getCrossZoneLoadBalancing();
+                    if (crossZoneLoadBalancing != null) {
 
-                if (crossZoneLoadBalancing.getEnabled() != null) {
-                    request.addParameter("LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled", StringUtils.fromBoolean(crossZoneLoadBalancing.getEnabled()));
-                }
-            }
-
-            AccessLog accessLog = loadBalancerAttributes.getAccessLog();
-            if (accessLog != null) {
-
-                if (accessLog.getEnabled() != null) {
-                    request.addParameter("LoadBalancerAttributes.AccessLog.Enabled", StringUtils.fromBoolean(accessLog.getEnabled()));
-                }
-
-                if (accessLog.getS3BucketName() != null) {
-                    request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketName", StringUtils.fromString(accessLog.getS3BucketName()));
-                }
-
-                if (accessLog.getEmitInterval() != null) {
-                    request.addParameter("LoadBalancerAttributes.AccessLog.EmitInterval", StringUtils.fromInteger(accessLog.getEmitInterval()));
-                }
-
-                if (accessLog.getS3BucketPrefix() != null) {
-                    request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.fromString(accessLog.getS3BucketPrefix()));
-                }
-            }
-
-            ConnectionDraining connectionDraining = loadBalancerAttributes.getConnectionDraining();
-            if (connectionDraining != null) {
-
-                if (connectionDraining.getEnabled() != null) {
-                    request.addParameter("LoadBalancerAttributes.ConnectionDraining.Enabled", StringUtils.fromBoolean(connectionDraining.getEnabled()));
-                }
-
-                if (connectionDraining.getTimeout() != null) {
-                    request.addParameter("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.fromInteger(connectionDraining.getTimeout()));
-                }
-            }
-
-            ConnectionSettings connectionSettings = loadBalancerAttributes.getConnectionSettings();
-            if (connectionSettings != null) {
-
-                if (connectionSettings.getIdleTimeout() != null) {
-                    request.addParameter("LoadBalancerAttributes.ConnectionSettings.IdleTimeout", StringUtils.fromInteger(connectionSettings.getIdleTimeout()));
-                }
-            }
-
-            com.amazonaws.internal.SdkInternalList<AdditionalAttribute> additionalAttributesList = (com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes
-                    .getAdditionalAttributes();
-            if (!additionalAttributesList.isEmpty() || !additionalAttributesList.isAutoConstruct()) {
-                int additionalAttributesListIndex = 1;
-
-                for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {
-
-                    if (additionalAttributesListValue.getKey() != null) {
-                        request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
-                                StringUtils.fromString(additionalAttributesListValue.getKey()));
+                        if (crossZoneLoadBalancing.getEnabled() != null) {
+                            request.addParameter("LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled",
+                                    StringUtils.fromBoolean(crossZoneLoadBalancing.getEnabled()));
+                        }
                     }
+                }
 
-                    if (additionalAttributesListValue.getValue() != null) {
-                        request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
-                                StringUtils.fromString(additionalAttributesListValue.getValue()));
+                {
+                    AccessLog accessLog = loadBalancerAttributes.getAccessLog();
+                    if (accessLog != null) {
+
+                        if (accessLog.getEnabled() != null) {
+                            request.addParameter("LoadBalancerAttributes.AccessLog.Enabled", StringUtils.fromBoolean(accessLog.getEnabled()));
+                        }
+
+                        if (accessLog.getS3BucketName() != null) {
+                            request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketName", StringUtils.fromString(accessLog.getS3BucketName()));
+                        }
+
+                        if (accessLog.getEmitInterval() != null) {
+                            request.addParameter("LoadBalancerAttributes.AccessLog.EmitInterval", StringUtils.fromInteger(accessLog.getEmitInterval()));
+                        }
+
+                        if (accessLog.getS3BucketPrefix() != null) {
+                            request.addParameter("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.fromString(accessLog.getS3BucketPrefix()));
+                        }
                     }
-                    additionalAttributesListIndex++;
+                }
+
+                {
+                    ConnectionDraining connectionDraining = loadBalancerAttributes.getConnectionDraining();
+                    if (connectionDraining != null) {
+
+                        if (connectionDraining.getEnabled() != null) {
+                            request.addParameter("LoadBalancerAttributes.ConnectionDraining.Enabled", StringUtils.fromBoolean(connectionDraining.getEnabled()));
+                        }
+
+                        if (connectionDraining.getTimeout() != null) {
+                            request.addParameter("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.fromInteger(connectionDraining.getTimeout()));
+                        }
+                    }
+                }
+
+                {
+                    ConnectionSettings connectionSettings = loadBalancerAttributes.getConnectionSettings();
+                    if (connectionSettings != null) {
+
+                        if (connectionSettings.getIdleTimeout() != null) {
+                            request.addParameter("LoadBalancerAttributes.ConnectionSettings.IdleTimeout",
+                                    StringUtils.fromInteger(connectionSettings.getIdleTimeout()));
+                        }
+                    }
+                }
+
+                if (!loadBalancerAttributes.getAdditionalAttributes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes.getAdditionalAttributes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<AdditionalAttribute> additionalAttributesList = (com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes
+                            .getAdditionalAttributes();
+                    int additionalAttributesListIndex = 1;
+
+                    for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {
+
+                        if (additionalAttributesListValue.getKey() != null) {
+                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
+                                    StringUtils.fromString(additionalAttributesListValue.getKey()));
+                        }
+
+                        if (additionalAttributesListValue.getValue() != null) {
+                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
+                                    StringUtils.fromString(additionalAttributesListValue.getValue()));
+                        }
+                        additionalAttributesListIndex++;
+                    }
                 }
             }
         }

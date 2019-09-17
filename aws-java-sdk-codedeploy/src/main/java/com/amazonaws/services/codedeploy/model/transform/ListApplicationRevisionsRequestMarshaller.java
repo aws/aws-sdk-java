@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,83 +12,62 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListApplicationRevisionsRequest Marshaller
+ * ListApplicationRevisionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListApplicationRevisionsRequestMarshaller implements Marshaller<Request<ListApplicationRevisionsRequest>, ListApplicationRevisionsRequest> {
+@SdkInternalApi
+public class ListApplicationRevisionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sortBy").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sortOrder").build();
+    private static final MarshallingInfo<String> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("s3Bucket").build();
+    private static final MarshallingInfo<String> S3KEYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3KeyPrefix").build();
+    private static final MarshallingInfo<String> DEPLOYED_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("deployed").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListApplicationRevisionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListApplicationRevisionsRequestMarshaller instance = new ListApplicationRevisionsRequestMarshaller();
+
+    public static ListApplicationRevisionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListApplicationRevisionsRequest> marshall(ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListApplicationRevisionsRequest listApplicationRevisionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listApplicationRevisionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListApplicationRevisionsRequest> request = new DefaultRequest<ListApplicationRevisionsRequest>(listApplicationRevisionsRequest,
-                "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.ListApplicationRevisions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listApplicationRevisionsRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("applicationName").writeValue(listApplicationRevisionsRequest.getApplicationName());
-            }
-            if (listApplicationRevisionsRequest.getSortBy() != null) {
-                jsonGenerator.writeFieldName("sortBy").writeValue(listApplicationRevisionsRequest.getSortBy());
-            }
-            if (listApplicationRevisionsRequest.getSortOrder() != null) {
-                jsonGenerator.writeFieldName("sortOrder").writeValue(listApplicationRevisionsRequest.getSortOrder());
-            }
-            if (listApplicationRevisionsRequest.getS3Bucket() != null) {
-                jsonGenerator.writeFieldName("s3Bucket").writeValue(listApplicationRevisionsRequest.getS3Bucket());
-            }
-            if (listApplicationRevisionsRequest.getS3KeyPrefix() != null) {
-                jsonGenerator.writeFieldName("s3KeyPrefix").writeValue(listApplicationRevisionsRequest.getS3KeyPrefix());
-            }
-            if (listApplicationRevisionsRequest.getDeployed() != null) {
-                jsonGenerator.writeFieldName("deployed").writeValue(listApplicationRevisionsRequest.getDeployed());
-            }
-            if (listApplicationRevisionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listApplicationRevisionsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getSortOrder(), SORTORDER_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getS3Bucket(), S3BUCKET_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getS3KeyPrefix(), S3KEYPREFIX_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getDeployed(), DEPLOYED_BINDING);
+            protocolMarshaller.marshall(listApplicationRevisionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

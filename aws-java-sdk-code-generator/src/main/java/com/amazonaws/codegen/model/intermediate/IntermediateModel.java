@@ -22,13 +22,12 @@ import com.amazonaws.util.ValidationUtils;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import org.joda.time.DateTime;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.Map;
+import java.util.stream.Collectors;
+import org.joda.time.DateTime;
 
 public class IntermediateModel {
 
@@ -47,7 +46,11 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
+    @JsonIgnore
     private final Map<String, AuthorizerModel> customAuthorizers;
+
+    @JsonIgnore
+    private final OperationModel endpointOperation;
 
     @JsonIgnore
     private final Map<String, WaiterDefinitionModel> waiters;
@@ -60,7 +63,7 @@ public class IntermediateModel {
             @JsonProperty("customizationConfig") CustomizationConfig customizationConfig,
             @JsonProperty("serviceExamples") ServiceExamples examples) {
 
-        this(metadata, operations, shapes, customizationConfig, examples, Collections.emptyMap(), Collections.emptyMap());
+        this(metadata, operations, shapes, customizationConfig, examples, null, Collections.emptyMap(), Collections.emptyMap());
     }
 
     public IntermediateModel(
@@ -69,6 +72,7 @@ public class IntermediateModel {
             Map<String, ShapeModel> shapes,
             CustomizationConfig customizationConfig,
             ServiceExamples examples,
+            OperationModel endpointOperation,
             Map<String, WaiterDefinitionModel> waiters,
             Map<String, AuthorizerModel> customAuthorizers) {
         this.metadata = metadata;
@@ -76,6 +80,7 @@ public class IntermediateModel {
         this.shapes = shapes;
         this.customizationConfig = customizationConfig;
         this.examples = examples;
+        this.endpointOperation = endpointOperation;
         this.waiters = ValidationUtils.assertNotNull(waiters, "waiters");
         this.customAuthorizers = customAuthorizers;
     }
@@ -88,7 +93,7 @@ public class IntermediateModel {
         return operations;
     }
 
-    public OperationModel getOperation(String operationName){
+    public OperationModel getOperation(String operationName) {
         return getOperations().get(operationName);
     }
 
@@ -108,7 +113,9 @@ public class IntermediateModel {
         return examples;
     }
 
-    public Map<String, WaiterDefinitionModel> getWaiters() {return waiters;}
+    public Map<String, WaiterDefinitionModel> getWaiters() {
+        return waiters;
+    }
 
     /**
      * ClientConfigurationFactory to use when producing default client configuration for the
@@ -163,7 +170,7 @@ public class IntermediateModel {
         try (InputStream inputStream = getClass()
                 .getResourceAsStream("/com/amazonaws/codegen/DefaultFileHeader.txt")) {
             return IOUtils.toString(inputStream)
-                    .replaceFirst("%COPYRIGHT_DATE_RANGE%", getCopyrightDateRange());
+                          .replaceFirst("%COPYRIGHT_DATE_RANGE%", getCopyrightDateRange());
         }
     }
 
@@ -173,12 +180,16 @@ public class IntermediateModel {
         return String.format("%d-%d", copyrightStartYear, currentYear);
     }
 
-    public boolean getHasWaiters(){
+    public OperationModel getEndpointOperation() {
+        return endpointOperation;
+    }
+
+    public boolean getHasWaiters() {
         return waiters.size() > 0;
     }
 
     public String getSdkBaseResponseFqcn() {
-        if(metadata.getProtocol() == Protocol.API_GATEWAY) {
+        if (metadata.getProtocol() == Protocol.API_GATEWAY) {
             return "com.amazonaws.opensdk.BaseResult";
         } else {
             return String.format("com.amazonaws.AmazonWebServiceResult<%s>",

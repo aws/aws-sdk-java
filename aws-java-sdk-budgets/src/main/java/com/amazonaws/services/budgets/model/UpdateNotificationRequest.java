@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,21 +18,45 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of UpdateNotification
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to update.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget whose notification you want to update.
+     * </p>
+     */
     private String budgetName;
-
+    /**
+     * <p>
+     * The previous notification that is associated with a budget.
+     * </p>
+     */
     private Notification oldNotification;
-
+    /**
+     * <p>
+     * The updated notification to be associated with a budget.
+     * </p>
+     */
     private Notification newNotification;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to update.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notification you want to update.
      */
 
     public void setAccountId(String accountId) {
@@ -40,7 +64,11 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to update.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget whose notification you want to update.
      */
 
     public String getAccountId() {
@@ -48,7 +76,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to update.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notification you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +91,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the budget whose notification you want to update.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notification you want to update.
      */
 
     public void setBudgetName(String budgetName) {
@@ -66,7 +104,11 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget whose notification you want to update.
+     * </p>
+     * 
+     * @return The name of the budget whose notification you want to update.
      */
 
     public String getBudgetName() {
@@ -74,7 +116,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the budget whose notification you want to update.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notification you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +131,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The previous notification that is associated with a budget.
+     * </p>
+     * 
      * @param oldNotification
+     *        The previous notification that is associated with a budget.
      */
 
     public void setOldNotification(Notification oldNotification) {
@@ -92,7 +144,11 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The previous notification that is associated with a budget.
+     * </p>
+     * 
+     * @return The previous notification that is associated with a budget.
      */
 
     public Notification getOldNotification() {
@@ -100,7 +156,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The previous notification that is associated with a budget.
+     * </p>
+     * 
      * @param oldNotification
+     *        The previous notification that is associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +171,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The updated notification to be associated with a budget.
+     * </p>
+     * 
      * @param newNotification
+     *        The updated notification to be associated with a budget.
      */
 
     public void setNewNotification(Notification newNotification) {
@@ -118,7 +184,11 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The updated notification to be associated with a budget.
+     * </p>
+     * 
+     * @return The updated notification to be associated with a budget.
      */
 
     public Notification getNewNotification() {
@@ -126,7 +196,12 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The updated notification to be associated with a budget.
+     * </p>
+     * 
      * @param newNotification
+     *        The updated notification to be associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +211,8 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

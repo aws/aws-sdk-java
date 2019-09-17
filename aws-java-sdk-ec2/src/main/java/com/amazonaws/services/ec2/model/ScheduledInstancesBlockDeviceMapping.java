@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,16 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
     private String deviceName;
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     */
+    private ScheduledInstancesEbs ebs;
     /**
      * <p>
      * Suppresses the specified device included in the block device mapping of the AMI.
@@ -42,7 +48,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -52,20 +58,14 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * </p>
      */
     private String virtualName;
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     */
-    private ScheduledInstancesEbs ebs;
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public void setDeviceName(String deviceName) {
@@ -74,10 +74,10 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public String getDeviceName() {
@@ -86,16 +86,56 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledInstancesBlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @param ebs
+     *        Parameters used to set up EBS volumes automatically when the instance is launched.
+     */
+
+    public void setEbs(ScheduledInstancesEbs ebs) {
+        this.ebs = ebs;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @return Parameters used to set up EBS volumes automatically when the instance is launched.
+     */
+
+    public ScheduledInstancesEbs getEbs() {
+        return this.ebs;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @param ebs
+     *        Parameters used to set up EBS volumes automatically when the instance is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesBlockDeviceMapping withEbs(ScheduledInstancesEbs ebs) {
+        setEbs(ebs);
         return this;
     }
 
@@ -143,7 +183,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -155,7 +195,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *        and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *        and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *        After you connect to the instance, you must mount the volume.</p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -171,7 +211,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -182,7 +222,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * 
      * @return The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0.
      *         An instance type with two available instance store volumes can specify mappings for
-     *         <code>ephemeral0</code> and <code>ephemeral1</code>.The number of available instance store volumes
+     *         <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes
      *         depends on the instance type. After you connect to the instance, you must mount the volume.</p>
      *         <p>
      *         Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for
@@ -198,7 +238,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -210,7 +250,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *        and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *        and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *        After you connect to the instance, you must mount the volume.</p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -225,47 +265,8 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
     }
 
     /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @param ebs
-     *        Parameters used to set up EBS volumes automatically when the instance is launched.
-     */
-
-    public void setEbs(ScheduledInstancesEbs ebs) {
-        this.ebs = ebs;
-    }
-
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @return Parameters used to set up EBS volumes automatically when the instance is launched.
-     */
-
-    public ScheduledInstancesEbs getEbs() {
-        return this.ebs;
-    }
-
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @param ebs
-     *        Parameters used to set up EBS volumes automatically when the instance is launched.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesBlockDeviceMapping withEbs(ScheduledInstancesEbs ebs) {
-        setEbs(ebs);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,12 +278,12 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         sb.append("{");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getEbs() != null)
+            sb.append("Ebs: ").append(getEbs()).append(",");
         if (getNoDevice() != null)
             sb.append("NoDevice: ").append(getNoDevice()).append(",");
         if (getVirtualName() != null)
-            sb.append("VirtualName: ").append(getVirtualName()).append(",");
-        if (getEbs() != null)
-            sb.append("Ebs: ").append(getEbs());
+            sb.append("VirtualName: ").append(getVirtualName());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +302,10 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
+        if (other.getEbs() == null ^ this.getEbs() == null)
+            return false;
+        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
+            return false;
         if (other.getNoDevice() == null ^ this.getNoDevice() == null)
             return false;
         if (other.getNoDevice() != null && other.getNoDevice().equals(this.getNoDevice()) == false)
@@ -308,10 +313,6 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         if (other.getVirtualName() == null ^ this.getVirtualName() == null)
             return false;
         if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
-            return false;
-        if (other.getEbs() == null ^ this.getEbs() == null)
-            return false;
-        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
             return false;
         return true;
     }
@@ -322,9 +323,9 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
-        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         return hashCode;
     }
 
@@ -336,4 +337,5 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

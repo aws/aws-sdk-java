@@ -14,34 +14,46 @@
  */
 package com.amazonaws.http.apache.client.impl;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.ProxyAuthenticationMethod;
 import com.amazonaws.Request;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.http.settings.HttpClientSettings;
-import com.amazonaws.http.request.HttpRequestFactory;
+import com.amazonaws.http.RepeatableInputStreamRequestEntity;
 import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
+import com.amazonaws.http.apache.request.impl.HttpGetWithBody;
+import com.amazonaws.http.request.HttpRequestFactory;
+import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.StringInputStream;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHeaders;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpHead;
-import org.apache.http.client.methods.HttpPatch;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.hamcrest.Matchers;
-import org.hamcrest.core.StringContains;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHeaders;
+import org.apache.http.client.config.AuthSchemes;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.methods.HttpPatch;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.io.EmptyInputStream;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.Matchers;
+import org.hamcrest.core.StringContains;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class ApacheDefaultHttpRequestFactoryTest {
 
@@ -122,8 +134,7 @@ public class ApacheDefaultHttpRequestFactoryTest {
     @Test
     public void get_request_returns_correct_apache_requests() throws IOException, URISyntaxException {
         final Request<Object> request = newDefaultRequest(HttpMethodName.GET);
-        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGet
-                .class));
+        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGetWithBody.class));
     }
 
     @Test
@@ -169,6 +180,124 @@ public class ApacheDefaultHttpRequestFactoryTest {
                 requestBase.getHeaders(CONTENT_TYPE));
 
     }
+
+    @Test
+    public void request_has_no_proxy_config_when_proxy_disabled() throws Exception {
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertThat(requestBase.getConfig().getProxyPreferredAuthSchemes(), Matchers.nullValue());
+    }
+
+    @Test
+    public void request_has_no_proxy_config_when_proxy_auth_disabled() throws Exception {
+        List<ProxyAuthenticationMethod> authMethods = Collections.singletonList(ProxyAuthenticationMethod.BASIC);
+        ClientConfiguration configuration = new ClientConfiguration().withProxyHost("localhost")
+                                                                     .withProxyPort(80)
+                                                                     .withProxyAuthenticationMethods(authMethods);
+        HttpClientSettings settings = HttpClientSettings.adapt(configuration);
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertThat(requestBase.getConfig().getProxyPreferredAuthSchemes(), Matchers.nullValue());
+    }
+
+    @Test
+    public void request_has_proxy_config_when_proxy_auth_enabled() throws Exception {
+        List<ProxyAuthenticationMethod> authMethods = Arrays.asList(ProxyAuthenticationMethod.BASIC,
+                                                                    ProxyAuthenticationMethod.DIGEST,
+                                                                    ProxyAuthenticationMethod.KERBEROS,
+                                                                    ProxyAuthenticationMethod.NTLM,
+                                                                    ProxyAuthenticationMethod.SPNEGO);
+        List<String> expectedAuthMethods = Arrays.asList(AuthSchemes.BASIC,
+                                                         AuthSchemes.DIGEST,
+                                                         AuthSchemes.KERBEROS,
+                                                         AuthSchemes.NTLM,
+                                                         AuthSchemes.SPNEGO);
+
+        ClientConfiguration configuration = new ClientConfiguration().withProxyHost("localhost")
+                                                                     .withProxyPort(80)
+                                                                     .withProxyUsername("user")
+                                                                     .withProxyPassword("password")
+                                                                     .withProxyAuthenticationMethods(authMethods);
+        HttpClientSettings settings = HttpClientSettings.adapt(configuration);
+        HttpRequestBase requestBase = requestFactory.create(newDefaultRequest(HttpMethodName.POST), settings);
+        Assert.assertEquals(expectedAuthMethods, requestBase.getConfig().getProxyPreferredAuthSchemes());
+    }
+
+    @Test
+    public void request_with_post_and_noRequiresLength_uses_RepeatableHttpEntity() throws IOException, URISyntaxException {
+        final Request<Object> request = newDefaultRequest(HttpMethodName.POST);
+        request.setResourcePath("//foo");
+        request.setEndpoint(new URI(ENDPOINT));
+
+        HttpRequestBase requestBase = requestFactory.create(request, settings);
+
+        assertThat(requestBase, CoreMatchers.instanceOf(HttpEntityEnclosingRequestBase.class));
+        HttpEntity entity = ((HttpEntityEnclosingRequestBase) requestBase).getEntity();
+        assertThat(entity, CoreMatchers.instanceOf(RepeatableInputStreamRequestEntity.class));
+    }
+
+    @Test
+    public void request_with_post_and_requiresLength_uses_BufferedHttpEntity() throws IOException, URISyntaxException {
+        final Request<Object> request = newDefaultRequest(HttpMethodName.POST);
+        request.setResourcePath("//foo");
+        request.setEndpoint(new URI(ENDPOINT));
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+
+        HttpRequestBase requestBase = requestFactory.create(request, settings);
+
+        assertThat(requestBase, CoreMatchers.instanceOf(HttpEntityEnclosingRequestBase.class));
+        HttpEntity entity = ((HttpEntityEnclosingRequestBase) requestBase).getEntity();
+        assertThat(entity, CoreMatchers.instanceOf(BufferedHttpEntity.class));
+    }
+
+    @Test
+    public void request_with_put_and_streaming_and_noRequiresLength_uses_RepeatableHttpEntity() throws IOException, URISyntaxException {
+        final Request<Object> request = newDefaultRequest(HttpMethodName.PUT);
+        request.setResourcePath("//foo");
+        request.setEndpoint(new URI(ENDPOINT));
+        request.setContent(EmptyInputStream.INSTANCE);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.FALSE);
+
+        HttpRequestBase requestBase = requestFactory.create(request, settings);
+
+        assertThat(requestBase, CoreMatchers.instanceOf(HttpEntityEnclosingRequestBase.class));
+        HttpEntity entity = ((HttpEntityEnclosingRequestBase) requestBase).getEntity();
+        assertThat(entity, CoreMatchers.instanceOf(RepeatableInputStreamRequestEntity.class));
+    }
+
+    @Test
+    public void request_with_put_and_streaming_and_requiresLength_uses_BufferedHttpEntity() throws IOException, URISyntaxException {
+        final Request<Object> request = newDefaultRequest(HttpMethodName.PUT);
+        request.setResourcePath("//foo");
+        request.setEndpoint(new URI(ENDPOINT));
+        request.setContent(EmptyInputStream.INSTANCE);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+
+        HttpRequestBase requestBase = requestFactory.create(request, settings);
+
+        assertThat(requestBase, CoreMatchers.instanceOf(HttpEntityEnclosingRequestBase.class));
+        HttpEntity entity = ((HttpEntityEnclosingRequestBase) requestBase).getEntity();
+        assertThat(entity, CoreMatchers.instanceOf(BufferedHttpEntity.class));
+    }
+
+    @Test
+    public void request_with_put_and_nonStreaming_uses_BufferedHttpEntity() throws IOException, URISyntaxException {
+        final Request<Object> request = newDefaultRequest(HttpMethodName.PUT);
+        request.setResourcePath("//foo");
+        request.setEndpoint(new URI(ENDPOINT));
+        request.setContent(EmptyInputStream.INSTANCE);
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, Boolean.TRUE);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.FALSE);
+
+
+        HttpRequestBase requestBase = requestFactory.create(request, settings);
+
+        assertThat(requestBase, CoreMatchers.instanceOf(HttpEntityEnclosingRequestBase.class));
+        HttpEntity entity = ((HttpEntityEnclosingRequestBase) requestBase).getEntity();
+        assertThat(entity, CoreMatchers.instanceOf(BufferedHttpEntity.class));
+    }
+
+
 
     private void assertContentTypeContains(String expected, Header[]
             contentTypes) {

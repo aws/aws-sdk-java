@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,14 +42,6 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
-            request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));
-        }
-
-        if (describeReservedInstancesListingsRequest.getReservedInstancesListingId() != null) {
-            request.addParameter("ReservedInstancesListingId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesListingId()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesListingsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesListingsRequest
                 .getFilters();
         if (!describeReservedInstancesListingsRequestFiltersList.isEmpty() || !describeReservedInstancesListingsRequestFiltersList.isAutoConstruct()) {
@@ -76,6 +68,14 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
+            request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesListingId() != null) {
+            request.addParameter("ReservedInstancesListingId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesListingId()));
         }
 
         return request;

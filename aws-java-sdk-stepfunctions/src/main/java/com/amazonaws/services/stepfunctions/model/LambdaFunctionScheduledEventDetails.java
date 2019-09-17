@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,19 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about a lambda function scheduled during an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduledEventDetails"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LambdaFunctionScheduledEventDetails implements Serializable, Cloneable {
+public class LambdaFunctionScheduledEventDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -163,7 +168,8 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,7 +182,7 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
         if (getResource() != null)
             sb.append("Resource: ").append(getResource()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append(getInput()).append(",");
+            sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
         if (getTimeoutInSeconds() != null)
             sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
         sb.append("}");
@@ -226,5 +232,11 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.stepfunctions.model.transform.LambdaFunctionScheduledEventDetailsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

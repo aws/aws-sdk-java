@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,20 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * This is a legacy method. We recommend that you don't use this method. Instead, use the
+     * <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to return
+     * instance information by using tags that are specified as a key-value mapping.
+     * </p>
+     * <p>
+     * If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using this
+     * method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceInformationFilter> instanceInformationFilterList;
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceInformationStringFilter> filters;
@@ -53,10 +60,21 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * This is a legacy method. We recommend that you don't use this method. Instead, use the
+     * <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to return
+     * instance information by using tags that are specified as a key-value mapping.
+     * </p>
+     * <p>
+     * If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using this
+     * method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * </p>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of instances.
+     * @return This is a legacy method. We recommend that you don't use this method. Instead, use the
+     *         <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to
+     *         return instance information by using tags that are specified as a key-value mapping. </p>
+     *         <p>
+     *         If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using
+     *         this method and the <code>InstanceInformationFilter</code> action causes an exception error.
      */
 
     public java.util.List<InstanceInformationFilter> getInstanceInformationFilterList() {
@@ -68,11 +86,22 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * This is a legacy method. We recommend that you don't use this method. Instead, use the
+     * <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to return
+     * instance information by using tags that are specified as a key-value mapping.
+     * </p>
+     * <p>
+     * If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using this
+     * method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * </p>
      * 
      * @param instanceInformationFilterList
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        This is a legacy method. We recommend that you don't use this method. Instead, use the
+     *        <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to
+     *        return instance information by using tags that are specified as a key-value mapping. </p>
+     *        <p>
+     *        If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using
+     *        this method and the <code>InstanceInformationFilter</code> action causes an exception error.
      */
 
     public void setInstanceInformationFilterList(java.util.Collection<InstanceInformationFilter> instanceInformationFilterList) {
@@ -86,7 +115,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * This is a legacy method. We recommend that you don't use this method. Instead, use the
+     * <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to return
+     * instance information by using tags that are specified as a key-value mapping.
+     * </p>
+     * <p>
+     * If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using this
+     * method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,7 +130,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param instanceInformationFilterList
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        This is a legacy method. We recommend that you don't use this method. Instead, use the
+     *        <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to
+     *        return instance information by using tags that are specified as a key-value mapping. </p>
+     *        <p>
+     *        If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using
+     *        this method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +151,22 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * This is a legacy method. We recommend that you don't use this method. Instead, use the
+     * <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to return
+     * instance information by using tags that are specified as a key-value mapping.
+     * </p>
+     * <p>
+     * If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using this
+     * method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * </p>
      * 
      * @param instanceInformationFilterList
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        This is a legacy method. We recommend that you don't use this method. Instead, use the
+     *        <a>InstanceInformationFilter</a> action. The <code>InstanceInformationFilter</code> action enables you to
+     *        return instance information by using tags that are specified as a key-value mapping. </p>
+     *        <p>
+     *        If you do use this method, then you can't use the <code>InstanceInformationFilter</code> action. Using
+     *        this method and the <code>InstanceInformationFilter</code> action causes an exception error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +177,12 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of instances.
+     * @return One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *         EC2 tag. Specify tags by using a key-value mapping.
      */
 
     public java.util.List<InstanceInformationStringFilter> getFilters() {
@@ -141,11 +194,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      */
 
     public void setFilters(java.util.Collection<InstanceInformationStringFilter> filters) {
@@ -159,7 +214,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +224,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +241,13 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more filters. Use a filter to return a more specific list of instances.
+     * One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon EC2 tag.
+     * Specify tags by using a key-value mapping.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of instances.
+     *        One or more filters. Use a filter to return a more specific list of instances. You can filter on Amazon
+     *        EC2 tag. Specify tags by using a key-value mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,7 +343,8 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

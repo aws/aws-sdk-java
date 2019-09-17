@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.shield.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,22 +26,297 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttackVectorDescription implements Serializable, Cloneable {
+public class AttackVectorDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attack type, for example, SNMP reflection or SYN flood.
+     * The attack type. Valid values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * UDP_TRAFFIC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDP_FRAGMENT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GENERIC_UDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CHARGEN_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PORT_MAPPER
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RIP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNMP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MSSQL_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NET_BIOS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SYN_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACK_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REQUEST_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
+     * </ul>
      */
     private String vectorType;
 
     /**
      * <p>
-     * The attack type, for example, SNMP reflection or SYN flood.
+     * The attack type. Valid values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * UDP_TRAFFIC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDP_FRAGMENT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GENERIC_UDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CHARGEN_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PORT_MAPPER
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RIP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNMP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MSSQL_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NET_BIOS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SYN_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACK_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REQUEST_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param vectorType
-     *        The attack type, for example, SNMP reflection or SYN flood.
+     *        The attack type. Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        UDP_TRAFFIC
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDP_FRAGMENT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_UDP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DNS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CHARGEN_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SSDP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PORT_MAPPER
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RIP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SNMP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MSSQL_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NET_BIOS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SYN_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ACK_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REQUEST_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HTTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MEMCACHED_REFLECTION
+     *        </p>
+     *        </li>
      */
 
     public void setVectorType(String vectorType) {
@@ -48,10 +325,193 @@ public class AttackVectorDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attack type, for example, SNMP reflection or SYN flood.
+     * The attack type. Valid values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * UDP_TRAFFIC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDP_FRAGMENT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GENERIC_UDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CHARGEN_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PORT_MAPPER
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RIP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNMP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MSSQL_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NET_BIOS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SYN_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACK_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REQUEST_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The attack type, for example, SNMP reflection or SYN flood.
+     * @return The attack type. Valid values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         UDP_TRAFFIC
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UDP_FRAGMENT
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GENERIC_UDP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DNS_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NTP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CHARGEN_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SSDP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PORT_MAPPER
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RIP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SNMP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MSSQL_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NET_BIOS_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SYN_FLOOD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACK_FLOOD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REQUEST_FLOOD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HTTP_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UDS_REFLECTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMCACHED_REFLECTION
+     *         </p>
+     *         </li>
      */
 
     public String getVectorType() {
@@ -60,11 +520,194 @@ public class AttackVectorDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The attack type, for example, SNMP reflection or SYN flood.
+     * The attack type. Valid values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * UDP_TRAFFIC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDP_FRAGMENT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GENERIC_UDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CHARGEN_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSDP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PORT_MAPPER
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RIP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNMP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MSSQL_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NET_BIOS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SYN_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACK_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REQUEST_FLOOD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HTTP_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UDS_REFLECTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MEMCACHED_REFLECTION
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param vectorType
-     *        The attack type, for example, SNMP reflection or SYN flood.
+     *        The attack type. Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        UDP_TRAFFIC
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDP_FRAGMENT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_UDP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DNS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CHARGEN_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SSDP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PORT_MAPPER
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RIP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SNMP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MSSQL_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NET_BIOS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SYN_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ACK_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REQUEST_FLOOD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HTTP_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UDS_REFLECTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MEMCACHED_REFLECTION
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +717,8 @@ public class AttackVectorDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -123,5 +767,11 @@ public class AttackVectorDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.shield.model.transform.AttackVectorDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

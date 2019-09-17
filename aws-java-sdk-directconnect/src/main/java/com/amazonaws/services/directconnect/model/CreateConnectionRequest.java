@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateConnection operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection" target="_top">AWS API
  *      Documentation</a>
@@ -28,14 +25,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     */
     private String location;
-
+    /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     */
     private String bandwidth;
-
+    /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     */
     private String connectionName;
+    /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     */
+    private String lagId;
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
      * @param location
+     *        The location of the connection.
      */
 
     public void setLocation(String location) {
@@ -43,7 +70,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
+     * @return The location of the connection.
      */
 
     public String getLocation() {
@@ -51,7 +82,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
      * @param location
+     *        The location of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -61,7 +97,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
      * @param bandwidth
+     *        The bandwidth of the connection.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -69,7 +110,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
+     * @return The bandwidth of the connection.
      */
 
     public String getBandwidth() {
@@ -77,7 +122,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
      * @param bandwidth
+     *        The bandwidth of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +137,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
      * @param connectionName
+     *        The name of the connection.
      */
 
     public void setConnectionName(String connectionName) {
@@ -95,7 +150,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
+     * @return The name of the connection.
      */
 
     public String getConnectionName() {
@@ -103,7 +162,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
      * @param connectionName
+     *        The name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +177,121 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
+     * @param lagId
+     *        The ID of the LAG.
+     */
+
+    public void setLagId(String lagId) {
+        this.lagId = lagId;
+    }
+
+    /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
+     * @return The ID of the LAG.
+     */
+
+    public String getLagId() {
+        return this.lagId;
+    }
+
+    /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
+     * @param lagId
+     *        The ID of the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withLagId(String lagId) {
+        setLagId(lagId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @return The tags to assign to the connection.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the connection.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -128,7 +306,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getBandwidth() != null)
             sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getLagId() != null)
+            sb.append("LagId: ").append(getLagId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +337,14 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getLagId() == null ^ this.getLagId() == null)
+            return false;
+        if (other.getLagId() != null && other.getLagId().equals(this.getLagId()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +356,8 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

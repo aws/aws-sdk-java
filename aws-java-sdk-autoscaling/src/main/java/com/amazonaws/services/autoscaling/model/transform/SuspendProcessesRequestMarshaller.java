@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class SuspendProcessesRequestMarshaller implements Marshaller<Request<Sus
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(suspendProcessesRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> scalingProcessesList = (com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest
-                .getScalingProcesses();
-        if (!scalingProcessesList.isEmpty() || !scalingProcessesList.isAutoConstruct()) {
+        if (!suspendProcessesRequest.getScalingProcesses().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest.getScalingProcesses()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> scalingProcessesList = (com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest
+                    .getScalingProcesses();
             int scalingProcessesListIndex = 1;
 
             for (String scalingProcessesListValue : scalingProcessesList) {

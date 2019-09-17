@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,7 +79,8 @@ public class ProfileAssumeRoleCredentialsProvider implements AWSCredentialsProvi
         RoleInfo roleInfo = new RoleInfo().withRoleArn(this.profile.getRoleArn())
                 .withRoleSessionName(roleSessionName)
                 .withExternalId(this.profile.getRoleExternalId())
-                .withLongLivedCredentials(sourceCredentials);
+                .withLongLivedCredentials(sourceCredentials)
+                .withWebIdentityTokenFilePath(this.profile.getWebIdentityTokenFilePath());
         return profileCredentialsService.getAssumeRoleCredentialsProvider(roleInfo);
     }
 }

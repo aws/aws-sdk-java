@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,19 +42,13 @@ import java.util.regex.Pattern;
 public enum Region {
 
     /**
-     * The US Standard Amazon S3 Region. This region
-     * uses Amazon S3 servers located in the United
-     * States.
+     * The US Standard Amazon S3 Region. This region is equivalent to 'us-east-1', see
+     * <a href="https://aws.amazon.com/s3/faqs/">Amazon Simple Storage Service (S3) FAQs</a> for more information.
      * <p>
-     * This is the default Amazon S3 Region. All requests sent to
-     * <code>s3.amazonaws.com</code> go
+     * This is the default Amazon S3 Region. All requests sent to <code>s3.amazonaws.com</code> go
      * to this region unless a location constraint is specified when creating a bucket.
-     * The US Standard Region automatically places
-     * data in either Amazon's east or west coast data centers depending on
-     * which one provides the lowest latency.
-     * </p>
      */
-    US_Standard((String[])null),
+    US_Standard((String[]) null),
 
     /**
      * The US-East-2 (Ohio) Region. This region
@@ -99,6 +93,11 @@ public enum Region {
     US_GovCloud("us-gov-west-1"),
 
     /**
+     * The US GovCloud (East) Region.
+     */
+    US_Gov_East_1("us-gov-east-1", "AWS GovCloud (US-East)"),
+
+    /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
      * in Ireland.
      */
@@ -109,6 +108,12 @@ public enum Region {
      * in London.
      */
     EU_London("eu-west-2"),
+
+    /**
+     * The EU (Paris) Amazon S3 Region. This region uses Amazon S3 servers located
+     * in Paris.
+     */
+    EU_Paris("eu-west-3"),
 
     /**
      * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
@@ -130,6 +135,39 @@ public enum Region {
      * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
      */
     EU_Frankfurt("eu-central-1"),
+
+    /**
+     * The EU (Stockholm) Amazon S3 Region. This region uses Amazon S3 servers
+     * located in Stockholm.
+     * <p>
+     * The EU (Stockholm) Region requires AWS V4 authentication, therefore when
+     * accessing buckets inside this region, you need to explicitly configure
+     * the "eu-north-1" endpoint for the AmazonS3Client in order to enable V4
+     * signing:
+     *
+     * <pre>
+     * AmazonS3Client s3 = new AmazonS3Client();
+     * s3.setRegion(RegionUtils.getRegion("eu-north-1"));
+     * </pre>
+     *
+     * </p>
+     *
+     * @see AmazonS3Client#setEndpoint(String)
+     * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
+     */
+    EU_North_1("eu-north-1"),
+
+    /**
+     * The Asia Pacific (Hong Kong) Region. This region uses Amazon S3 servers located
+     * in Hong Kong.
+     * <p>
+     * When using buckets in this region, set the client
+     * endpoint to <code>s3.ap-east-1.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    AP_HongKong("ap-east-1"),
 
     /**
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
@@ -223,7 +261,28 @@ public enum Region {
      * <code>s3.cn-north-1.amazonaws.com.cn</code>.
      * </p>
      */
-    CN_Beijing("cn-north-1");
+    CN_Beijing("cn-north-1"),
+
+    /**
+     * The China (Ningxia) Region. This region uses Amazon S3 servers
+     * located in Ningxia.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.cn-northwest-1.amazonaws.com.cn</code>.
+     * </p>
+     */
+    CN_Northwest_1("cn-northwest-1"),
+
+    /**
+     * The Middle East (Bahrain) Region. This region uses Amazon S3 servers
+     * located in Bahrain.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.me-south-1.amazonaws.com</code>.
+     * </p>
+     */
+    ME_Bahrain("me-south-1")
+    ;
 
    /**
     * Used to extract the S3 regional id from an S3 end point.

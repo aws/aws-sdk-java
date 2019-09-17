@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListOfferingTransactionsRequest Marshaller
+ * ListOfferingTransactionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListOfferingTransactionsRequestMarshaller implements Marshaller<Request<ListOfferingTransactionsRequest>, ListOfferingTransactionsRequest> {
+@SdkInternalApi
+public class ListOfferingTransactionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListOfferingTransactionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListOfferingTransactionsRequestMarshaller instance = new ListOfferingTransactionsRequestMarshaller();
+
+    public static ListOfferingTransactionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListOfferingTransactionsRequest> marshall(ListOfferingTransactionsRequest listOfferingTransactionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListOfferingTransactionsRequest listOfferingTransactionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listOfferingTransactionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListOfferingTransactionsRequest> request = new DefaultRequest<ListOfferingTransactionsRequest>(listOfferingTransactionsRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.ListOfferingTransactions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listOfferingTransactionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listOfferingTransactionsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listOfferingTransactionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

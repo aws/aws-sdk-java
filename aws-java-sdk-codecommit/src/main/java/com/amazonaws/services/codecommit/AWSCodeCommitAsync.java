@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,32 +40,32 @@ import com.amazonaws.services.codecommit.model.*;
  * <li>
  * <p>
  * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account
+ * account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateRepository</a>, which creates an AWS CodeCommit repository
+ * <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository
+ * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetRepository</a>, which returns information about a specified repository
+ * <a>GetRepository</a>, which returns information about a specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account
+ * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository
+ * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository.
  * </p>
  * </li>
  * <li>
@@ -81,44 +81,265 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBranch</a>, which creates a new branch in a specified repository
+ * <a>CreateBranch</a>, which creates a new branch in a specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetBranch</a>, which returns information about a specified branch
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListBranches</a>, which lists all branches for a specified repository
+ * <a>GetBranch</a>, which returns information about a specified branch.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateDefaultBranch</a>, which changes the default branch for a repository
+ * <a>ListBranches</a>, which lists all branches for a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateDefaultBranch</a>, which changes the default branch for a repository.
  * </p>
  * </li>
  * </ul>
  * <p>
- * Information about committed code in a repository, by calling the following:
+ * Files, by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository
+ * <a>DeleteFile</a>, which deletes the content of a specified file from a specified branch.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutFile</a>, which adds or modifies a single file in a specified repository and branch.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Commits, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>GetCommit</a>, which returns information about a commit, including commit messages and author and committer
- * information
+ * information.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch,
- * tag, HEAD, commit ID or other fully qualified reference)
+ * tag, HEAD, commit ID or other fully qualified reference).
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Merges, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in a merge between commits in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between two branches or commits for the
+ * purpose of comparing them and identifying any potential conflicts.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between the base, source, and
+ * destination versions of a file in a potential merge.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
+ * in a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit
+ * specifiers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Pull requests, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreatePullRequest</a>, which creates a pull request in a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePullRequestEvents</a>, which returns information about one or more pull request events.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetCommentsForPullRequest</a>, which returns information about comments on a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequest</a>, which returns information about a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPullRequests</a>, which lists all pull requests for a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByFastForward</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the three-way merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the specified line, file, or request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestDescription</a>, which updates the description of a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestStatus</a>, which updates the status of a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Comments in a repository, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DeleteCommentContent</a>, which deletes the content of a comment on a commit in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetComment</a>, which returns information about a comment on a commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
+ * specifiers in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentForComparedCommit</a>, which creates a comment on the comparison between two commit specifiers in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateComment</a>, which updates the content of a comment on a commit in a repository.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
  * </p>
  * </li>
  * </ul>
@@ -128,29 +349,95 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository
+ * <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete
- * triggers
+ * triggers.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger
- * target
+ * target.
  * </p>
  * </li>
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCodeCommitAsync extends AWSCodeCommit {
+
+    /**
+     * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy.
+     * </p>
+     * 
+     * @param batchDescribeMergeConflictsRequest
+     * @return A Java Future containing the result of the BatchDescribeMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsync.BatchDescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(
+            BatchDescribeMergeConflictsRequest batchDescribeMergeConflictsRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy.
+     * </p>
+     * 
+     * @param batchDescribeMergeConflictsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDescribeMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.BatchDescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(
+            BatchDescribeMergeConflictsRequest batchDescribeMergeConflictsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDescribeMergeConflictsRequest, BatchDescribeMergeConflictsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the contents of one or more commits in a repository.
+     * </p>
+     * 
+     * @param batchGetCommitsRequest
+     * @return A Java Future containing the result of the BatchGetCommits operation returned by the service.
+     * @sample AWSCodeCommitAsync.BatchGetCommits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest batchGetCommitsRequest);
+
+    /**
+     * <p>
+     * Returns information about the contents of one or more commits in a repository.
+     * </p>
+     * 
+     * @param batchGetCommitsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetCommits operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.BatchGetCommits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest batchGetCommitsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetCommitsRequest, BatchGetCommitsResult> asyncHandler);
 
     /**
      * <p>
@@ -248,6 +535,68 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Creates a commit for a repository on the tip of a specified branch.
+     * </p>
+     * 
+     * @param createCommitRequest
+     * @return A Java Future containing the result of the CreateCommit operation returned by the service.
+     * @sample AWSCodeCommitAsync.CreateCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest createCommitRequest);
+
+    /**
+     * <p>
+     * Creates a commit for a repository on the tip of a specified branch.
+     * </p>
+     * 
+     * @param createCommitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCommit operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.CreateCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest createCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCommitRequest, CreateCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a pull request in the specified repository.
+     * </p>
+     * 
+     * @param createPullRequestRequest
+     * @return A Java Future containing the result of the CreatePullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsync.CreatePullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(CreatePullRequestRequest createPullRequestRequest);
+
+    /**
+     * <p>
+     * Creates a pull request in the specified repository.
+     * </p>
+     * 
+     * @param createPullRequestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.CreatePullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreatePullRequest" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(CreatePullRequestRequest createPullRequestRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePullRequestRequest, CreatePullRequestResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new, empty repository.
      * </p>
      * 
@@ -278,6 +627,154 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(CreateRepositoryRequest createRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
+     * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
+     * fast-forward merge strategy, as that strategy does not create a merge commit.
+     * </p>
+     * <note>
+     * <p>
+     * This unreferenced merge commit can only be accessed using the GetCommit API or through git commands such as git
+     * fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it.
+     * </p>
+     * </note>
+     * 
+     * @param createUnreferencedMergeCommitRequest
+     * @return A Java Future containing the result of the CreateUnreferencedMergeCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.CreateUnreferencedMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(
+            CreateUnreferencedMergeCommitRequest createUnreferencedMergeCommitRequest);
+
+    /**
+     * <p>
+     * Creates an unreferenced commit that represents the result of merging two branches using a specified merge
+     * strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the
+     * fast-forward merge strategy, as that strategy does not create a merge commit.
+     * </p>
+     * <note>
+     * <p>
+     * This unreferenced merge commit can only be accessed using the GetCommit API or through git commands such as git
+     * fetch. To retrieve this commit, you must specify its commit ID or otherwise reference it.
+     * </p>
+     * </note>
+     * 
+     * @param createUnreferencedMergeCommitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUnreferencedMergeCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.CreateUnreferencedMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(
+            CreateUnreferencedMergeCommitRequest createUnreferencedMergeCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUnreferencedMergeCommitRequest, CreateUnreferencedMergeCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @return A Java Future containing the result of the DeleteBranch operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest deleteBranchRequest);
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBranch operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest deleteBranchRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBranchRequest, DeleteBranchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the content of a comment made on a change, file, or commit in a repository.
+     * </p>
+     * 
+     * @param deleteCommentContentRequest
+     * @return A Java Future containing the result of the DeleteCommentContent operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteCommentContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCommentContentResult> deleteCommentContentAsync(DeleteCommentContentRequest deleteCommentContentRequest);
+
+    /**
+     * <p>
+     * Deletes the content of a comment made on a change, file, or commit in a repository.
+     * </p>
+     * 
+     * @param deleteCommentContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCommentContent operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteCommentContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteCommentContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCommentContentResult> deleteCommentContentAsync(DeleteCommentContentRequest deleteCommentContentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCommentContentRequest, DeleteCommentContentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision.
+     * The file will still exist in the commits prior to the commit that contains the deletion.
+     * </p>
+     * 
+     * @param deleteFileRequest
+     * @return A Java Future containing the result of the DeleteFile operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest deleteFileRequest);
+
+    /**
+     * <p>
+     * Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision.
+     * The file will still exist in the commits prior to the commit that contains the deletion.
+     * </p>
+     * 
+     * @param deleteFileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFile operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest deleteFileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFileRequest, DeleteFileResult> asyncHandler);
 
     /**
      * <p>
@@ -323,6 +820,74 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest deleteRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
+     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * </p>
+     * 
+     * @param describeMergeConflictsRequest
+     * @return A Java Future containing the result of the DescribeMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsync.DescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(DescribeMergeConflictsRequest describeMergeConflictsRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the
+     * squash or three-way merge strategy. If the merge option for the attempted merge is specified as
+     * FAST_FORWARD_MERGE, an exception will be thrown.
+     * </p>
+     * 
+     * @param describeMergeConflictsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DescribeMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(DescribeMergeConflictsRequest describeMergeConflictsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMergeConflictsRequest, DescribeMergeConflictsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about one or more pull request events.
+     * </p>
+     * 
+     * @param describePullRequestEventsRequest
+     * @return A Java Future containing the result of the DescribePullRequestEvents operation returned by the service.
+     * @sample AWSCodeCommitAsync.DescribePullRequestEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePullRequestEventsResult> describePullRequestEventsAsync(
+            DescribePullRequestEventsRequest describePullRequestEventsRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more pull request events.
+     * </p>
+     * 
+     * @param describePullRequestEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePullRequestEvents operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DescribePullRequestEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribePullRequestEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePullRequestEventsResult> describePullRequestEventsAsync(
+            DescribePullRequestEventsRequest describePullRequestEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePullRequestEventsRequest, DescribePullRequestEventsResult> asyncHandler);
 
     /**
      * <p>
@@ -392,6 +957,105 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Returns the content of a comment made on a change, file, or commit in a repository.
+     * </p>
+     * 
+     * @param getCommentRequest
+     * @return A Java Future containing the result of the GetComment operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentResult> getCommentAsync(GetCommentRequest getCommentRequest);
+
+    /**
+     * <p>
+     * Returns the content of a comment made on a change, file, or commit in a repository.
+     * </p>
+     * 
+     * @param getCommentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetComment operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentResult> getCommentAsync(GetCommentRequest getCommentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommentRequest, GetCommentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about comments made on the comparison between two commits.
+     * </p>
+     * 
+     * @param getCommentsForComparedCommitRequest
+     * @return A Java Future containing the result of the GetCommentsForComparedCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.GetCommentsForComparedCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentsForComparedCommitResult> getCommentsForComparedCommitAsync(
+            GetCommentsForComparedCommitRequest getCommentsForComparedCommitRequest);
+
+    /**
+     * <p>
+     * Returns information about comments made on the comparison between two commits.
+     * </p>
+     * 
+     * @param getCommentsForComparedCommitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCommentsForComparedCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.GetCommentsForComparedCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForComparedCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentsForComparedCommitResult> getCommentsForComparedCommitAsync(
+            GetCommentsForComparedCommitRequest getCommentsForComparedCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommentsForComparedCommitRequest, GetCommentsForComparedCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns comments made on a pull request.
+     * </p>
+     * 
+     * @param getCommentsForPullRequestRequest
+     * @return A Java Future containing the result of the GetCommentsForPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetCommentsForPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentsForPullRequestResult> getCommentsForPullRequestAsync(
+            GetCommentsForPullRequestRequest getCommentsForPullRequestRequest);
+
+    /**
+     * <p>
+     * Returns comments made on a pull request.
+     * </p>
+     * 
+     * @param getCommentsForPullRequestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCommentsForPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetCommentsForPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentsForPullRequest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCommentsForPullRequestResult> getCommentsForPullRequestAsync(
+            GetCommentsForPullRequestRequest getCommentsForPullRequestRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommentsForPullRequestRequest, GetCommentsForPullRequestResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a commit, including commit message and committer information.
      * </p>
      * 
@@ -455,6 +1119,196 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(GetDifferencesRequest getDifferencesRequest,
             com.amazonaws.handlers.AsyncHandler<GetDifferencesRequest, GetDifferencesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded contents of a specified file and its metadata.
+     * </p>
+     * 
+     * @param getFileRequest
+     * @return A Java Future containing the result of the GetFile operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest getFileRequest);
+
+    /**
+     * <p>
+     * Returns the base-64 encoded contents of a specified file and its metadata.
+     * </p>
+     * 
+     * @param getFileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFile operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest getFileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFileRequest, GetFileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the contents of a specified folder in a repository.
+     * </p>
+     * 
+     * @param getFolderRequest
+     * @return A Java Future containing the result of the GetFolder operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest getFolderRequest);
+
+    /**
+     * <p>
+     * Returns the contents of a specified folder in a repository.
+     * </p>
+     * 
+     * @param getFolderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFolder operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest getFolderRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFolderRequest, GetFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specified merge commit.
+     * </p>
+     * 
+     * @param getMergeCommitRequest
+     * @return A Java Future containing the result of the GetMergeCommit operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(GetMergeCommitRequest getMergeCommitRequest);
+
+    /**
+     * <p>
+     * Returns information about a specified merge commit.
+     * </p>
+     * 
+     * @param getMergeCommitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMergeCommit operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetMergeCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(GetMergeCommitRequest getMergeCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMergeCommitRequest, GetMergeCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about merge conflicts between the before and after commit IDs for a pull request in a
+     * repository.
+     * </p>
+     * 
+     * @param getMergeConflictsRequest
+     * @return A Java Future containing the result of the GetMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeConflictsResult> getMergeConflictsAsync(GetMergeConflictsRequest getMergeConflictsRequest);
+
+    /**
+     * <p>
+     * Returns information about merge conflicts between the before and after commit IDs for a pull request in a
+     * repository.
+     * </p>
+     * 
+     * @param getMergeConflictsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMergeConflicts operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetMergeConflicts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeConflictsResult> getMergeConflictsAsync(GetMergeConflictsRequest getMergeConflictsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMergeConflictsRequest, GetMergeConflictsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the merge options available for merging two specified branches. For details about why a
+     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * </p>
+     * 
+     * @param getMergeOptionsRequest
+     * @return A Java Future containing the result of the GetMergeOptions operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetMergeOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(GetMergeOptionsRequest getMergeOptionsRequest);
+
+    /**
+     * <p>
+     * Returns information about the merge options available for merging two specified branches. For details about why a
+     * particular merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.
+     * </p>
+     * 
+     * @param getMergeOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMergeOptions operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetMergeOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(GetMergeOptionsRequest getMergeOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMergeOptionsRequest, GetMergeOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a pull request in a specified repository.
+     * </p>
+     * 
+     * @param getPullRequestRequest
+     * @return A Java Future containing the result of the GetPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestResult> getPullRequestAsync(GetPullRequestRequest getPullRequestRequest);
+
+    /**
+     * <p>
+     * Gets information about a pull request in a specified repository.
+     * </p>
+     * 
+     * @param getPullRequestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetPullRequest" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPullRequestResult> getPullRequestAsync(GetPullRequestRequest getPullRequestRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPullRequestRequest, GetPullRequestResult> asyncHandler);
 
     /**
      * <p>
@@ -573,6 +1427,39 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Returns a list of pull requests for a specified repository. The return list can be refined by pull request status
+     * or pull request author ARN.
+     * </p>
+     * 
+     * @param listPullRequestsRequest
+     * @return A Java Future containing the result of the ListPullRequests operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListPullRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(ListPullRequestsRequest listPullRequestsRequest);
+
+    /**
+     * <p>
+     * Returns a list of pull requests for a specified repository. The return list can be refined by pull request status
+     * or pull request author ARN.
+     * </p>
+     * 
+     * @param listPullRequestsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPullRequests operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListPullRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListPullRequests" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(ListPullRequestsRequest listPullRequestsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPullRequestsRequest, ListPullRequestsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about one or more repositories.
      * </p>
      * 
@@ -606,6 +1493,379 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit. For a list of valid
+     * resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Merges two branches using the fast-forward merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByFastForwardRequest
+     * @return A Java Future containing the result of the MergeBranchesByFastForward operation returned by the service.
+     * @sample AWSCodeCommitAsync.MergeBranchesByFastForward
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(
+            MergeBranchesByFastForwardRequest mergeBranchesByFastForwardRequest);
+
+    /**
+     * <p>
+     * Merges two branches using the fast-forward merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByFastForwardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergeBranchesByFastForward operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.MergeBranchesByFastForward
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(
+            MergeBranchesByFastForwardRequest mergeBranchesByFastForwardRequest,
+            com.amazonaws.handlers.AsyncHandler<MergeBranchesByFastForwardRequest, MergeBranchesByFastForwardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Merges two branches using the squash merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesBySquashRequest
+     * @return A Java Future containing the result of the MergeBranchesBySquash operation returned by the service.
+     * @sample AWSCodeCommitAsync.MergeBranchesBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(MergeBranchesBySquashRequest mergeBranchesBySquashRequest);
+
+    /**
+     * <p>
+     * Merges two branches using the squash merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesBySquashRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergeBranchesBySquash operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.MergeBranchesBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(MergeBranchesBySquashRequest mergeBranchesBySquashRequest,
+            com.amazonaws.handlers.AsyncHandler<MergeBranchesBySquashRequest, MergeBranchesBySquashResult> asyncHandler);
+
+    /**
+     * <p>
+     * Merges two specified branches using the three-way merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByThreeWayRequest
+     * @return A Java Future containing the result of the MergeBranchesByThreeWay operation returned by the service.
+     * @sample AWSCodeCommitAsync.MergeBranchesByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest mergeBranchesByThreeWayRequest);
+
+    /**
+     * <p>
+     * Merges two specified branches using the three-way merge strategy.
+     * </p>
+     * 
+     * @param mergeBranchesByThreeWayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergeBranchesByThreeWay operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.MergeBranchesByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest mergeBranchesByThreeWayRequest,
+            com.amazonaws.handlers.AsyncHandler<MergeBranchesByThreeWayRequest, MergeBranchesByThreeWayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull
+     * request.
+     * </p>
+     * 
+     * @param mergePullRequestByFastForwardRequest
+     * @return A Java Future containing the result of the MergePullRequestByFastForward operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.MergePullRequestByFastForward
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestByFastForwardResult> mergePullRequestByFastForwardAsync(
+            MergePullRequestByFastForwardRequest mergePullRequestByFastForwardRequest);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull
+     * request.
+     * </p>
+     * 
+     * @param mergePullRequestByFastForwardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergePullRequestByFastForward operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.MergePullRequestByFastForward
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByFastForward"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestByFastForwardResult> mergePullRequestByFastForwardAsync(
+            MergePullRequestByFastForwardRequest mergePullRequestByFastForwardRequest,
+            com.amazonaws.handlers.AsyncHandler<MergePullRequestByFastForwardRequest, MergePullRequestByFastForwardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.
+     * </p>
+     * 
+     * @param mergePullRequestBySquashRequest
+     * @return A Java Future containing the result of the MergePullRequestBySquash operation returned by the service.
+     * @sample AWSCodeCommitAsync.MergePullRequestBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(MergePullRequestBySquashRequest mergePullRequestBySquashRequest);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.
+     * </p>
+     * 
+     * @param mergePullRequestBySquashRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergePullRequestBySquash operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.MergePullRequestBySquash
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(MergePullRequestBySquashRequest mergePullRequestBySquashRequest,
+            com.amazonaws.handlers.AsyncHandler<MergePullRequestBySquashRequest, MergePullRequestBySquashResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull
+     * request.
+     * </p>
+     * 
+     * @param mergePullRequestByThreeWayRequest
+     * @return A Java Future containing the result of the MergePullRequestByThreeWay operation returned by the service.
+     * @sample AWSCodeCommitAsync.MergePullRequestByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(
+            MergePullRequestByThreeWayRequest mergePullRequestByThreeWayRequest);
+
+    /**
+     * <p>
+     * Attempts to merge the source commit of a pull request into the specified destination branch for that pull request
+     * at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull
+     * request.
+     * </p>
+     * 
+     * @param mergePullRequestByThreeWayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MergePullRequestByThreeWay operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.MergePullRequestByThreeWay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(
+            MergePullRequestByThreeWayRequest mergePullRequestByThreeWayRequest,
+            com.amazonaws.handlers.AsyncHandler<MergePullRequestByThreeWayRequest, MergePullRequestByThreeWayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Posts a comment on the comparison between two commits.
+     * </p>
+     * 
+     * @param postCommentForComparedCommitRequest
+     * @return A Java Future containing the result of the PostCommentForComparedCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.PostCommentForComparedCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentForComparedCommitResult> postCommentForComparedCommitAsync(
+            PostCommentForComparedCommitRequest postCommentForComparedCommitRequest);
+
+    /**
+     * <p>
+     * Posts a comment on the comparison between two commits.
+     * </p>
+     * 
+     * @param postCommentForComparedCommitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PostCommentForComparedCommit operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.PostCommentForComparedCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentForComparedCommitResult> postCommentForComparedCommitAsync(
+            PostCommentForComparedCommitRequest postCommentForComparedCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<PostCommentForComparedCommitRequest, PostCommentForComparedCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Posts a comment on a pull request.
+     * </p>
+     * 
+     * @param postCommentForPullRequestRequest
+     * @return A Java Future containing the result of the PostCommentForPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsync.PostCommentForPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentForPullRequestResult> postCommentForPullRequestAsync(
+            PostCommentForPullRequestRequest postCommentForPullRequestRequest);
+
+    /**
+     * <p>
+     * Posts a comment on a pull request.
+     * </p>
+     * 
+     * @param postCommentForPullRequestRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PostCommentForPullRequest operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.PostCommentForPullRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentForPullRequestResult> postCommentForPullRequestAsync(
+            PostCommentForPullRequestRequest postCommentForPullRequestRequest,
+            com.amazonaws.handlers.AsyncHandler<PostCommentForPullRequestRequest, PostCommentForPullRequestResult> asyncHandler);
+
+    /**
+     * <p>
+     * Posts a comment in reply to an existing comment on a comparison between commits or a pull request.
+     * </p>
+     * 
+     * @param postCommentReplyRequest
+     * @return A Java Future containing the result of the PostCommentReply operation returned by the service.
+     * @sample AWSCodeCommitAsync.PostCommentReply
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentReplyResult> postCommentReplyAsync(PostCommentReplyRequest postCommentReplyRequest);
+
+    /**
+     * <p>
+     * Posts a comment in reply to an existing comment on a comparison between commits or a pull request.
+     * </p>
+     * 
+     * @param postCommentReplyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PostCommentReply operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.PostCommentReply
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentReply" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PostCommentReplyResult> postCommentReplyAsync(PostCommentReplyRequest postCommentReplyRequest,
+            com.amazonaws.handlers.AsyncHandler<PostCommentReplyRequest, PostCommentReplyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
+     * the specified branch.
+     * </p>
+     * 
+     * @param putFileRequest
+     * @return A Java Future containing the result of the PutFile operation returned by the service.
+     * @sample AWSCodeCommitAsync.PutFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutFileResult> putFileAsync(PutFileRequest putFileRequest);
+
+    /**
+     * <p>
+     * Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in
+     * the specified branch.
+     * </p>
+     * 
+     * @param putFileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFile operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.PutFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutFileResult> putFileAsync(PutFileRequest putFileRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFileRequest, PutFileResult> asyncHandler);
+
+    /**
+     * <p>
      * Replaces all triggers for a repository. This can be used to create or delete triggers.
      * </p>
      * 
@@ -636,6 +1896,43 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(PutRepositoryTriggersRequest putRepositoryTriggersRequest,
             com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a
+     * href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -673,6 +1970,72 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(TestRepositoryTriggersRequest testRepositoryTriggersRequest,
             com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeCommitAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags for a resource in AWS CodeCommit. For a list of valid resources in AWS CodeCommit, see <a href=
+     * "https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"
+     * >CodeCommit Resources and Operations</a> in the AWS CodeCommit User Guide.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the contents of a comment.
+     * </p>
+     * 
+     * @param updateCommentRequest
+     * @return A Java Future containing the result of the UpdateComment operation returned by the service.
+     * @sample AWSCodeCommitAsync.UpdateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCommentResult> updateCommentAsync(UpdateCommentRequest updateCommentRequest);
+
+    /**
+     * <p>
+     * Replaces the contents of a comment.
+     * </p>
+     * 
+     * @param updateCommentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateComment operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.UpdateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCommentResult> updateCommentAsync(UpdateCommentRequest updateCommentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCommentRequest, UpdateCommentResult> asyncHandler);
 
     /**
      * <p>
@@ -718,6 +2081,103 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(UpdateDefaultBranchRequest updateDefaultBranchRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the contents of the description of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestDescriptionRequest
+     * @return A Java Future containing the result of the UpdatePullRequestDescription operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsync.UpdatePullRequestDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestDescriptionResult> updatePullRequestDescriptionAsync(
+            UpdatePullRequestDescriptionRequest updatePullRequestDescriptionRequest);
+
+    /**
+     * <p>
+     * Replaces the contents of the description of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestDescriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullRequestDescription operation returned by the
+     *         service.
+     * @sample AWSCodeCommitAsyncHandler.UpdatePullRequestDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestDescription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestDescriptionResult> updatePullRequestDescriptionAsync(
+            UpdatePullRequestDescriptionRequest updatePullRequestDescriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullRequestDescriptionRequest, UpdatePullRequestDescriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the status of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestStatusRequest
+     * @return A Java Future containing the result of the UpdatePullRequestStatus operation returned by the service.
+     * @sample AWSCodeCommitAsync.UpdatePullRequestStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestStatusResult> updatePullRequestStatusAsync(UpdatePullRequestStatusRequest updatePullRequestStatusRequest);
+
+    /**
+     * <p>
+     * Updates the status of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullRequestStatus operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.UpdatePullRequestStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestStatusResult> updatePullRequestStatusAsync(UpdatePullRequestStatusRequest updatePullRequestStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullRequestStatusRequest, UpdatePullRequestStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the title of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestTitleRequest
+     * @return A Java Future containing the result of the UpdatePullRequestTitle operation returned by the service.
+     * @sample AWSCodeCommitAsync.UpdatePullRequestTitle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestTitleResult> updatePullRequestTitleAsync(UpdatePullRequestTitleRequest updatePullRequestTitleRequest);
+
+    /**
+     * <p>
+     * Replaces the title of a pull request.
+     * </p>
+     * 
+     * @param updatePullRequestTitleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullRequestTitle operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.UpdatePullRequestTitle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdatePullRequestTitle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullRequestTitleResult> updatePullRequestTitleAsync(UpdatePullRequestTitleRequest updatePullRequestTitleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullRequestTitleRequest, UpdatePullRequestTitleResult> asyncHandler);
 
     /**
      * <p>
@@ -775,7 +2235,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 
@@ -793,7 +2253,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository
      * names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters.
      * The suffix ".git" is prohibited. For a full description of the limits on repository names, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User
      * Guide.
      * </p>
      * 

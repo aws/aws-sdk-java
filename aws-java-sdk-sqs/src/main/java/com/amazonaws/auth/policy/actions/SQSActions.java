@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public enum SQSActions implements Action {
     GetQueueUrl("sqs:GetQueueUrl"),
     /** Action for the ListDeadLetterSourceQueues operation. */
     ListDeadLetterSourceQueues("sqs:ListDeadLetterSourceQueues"),
+    /** Action for the ListQueueTags operation. */
+    ListQueueTags("sqs:ListQueueTags"),
     /** Action for the ListQueues operation. */
     ListQueues("sqs:ListQueues"),
     /** Action for the PurgeQueue operation. */
@@ -59,6 +61,10 @@ public enum SQSActions implements Action {
     SendMessageBatch("sqs:SendMessageBatch"),
     /** Action for the SetQueueAttributes operation. */
     SetQueueAttributes("sqs:SetQueueAttributes"),
+    /** Action for the TagQueue operation. */
+    TagQueue("sqs:TagQueue"),
+    /** Action for the UntagQueue operation. */
+    UntagQueue("sqs:UntagQueue"),
 
     ;
 

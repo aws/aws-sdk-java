@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the group to which the target environment belongs. Specify a group name only if the environment's
      * name is specified in an environment manifest and not with the environment name or environment ID parameters. See
-     * <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -104,6 +104,12 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String solutionStackName;
+    /**
+     * <p>
+     * The ARN of the platform, if used.
+     * </p>
+     */
+    private String platformArn;
     /**
      * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and
@@ -311,7 +317,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the group to which the target environment belongs. Specify a group name only if the environment's
      * name is specified in an environment manifest and not with the environment name or environment ID parameters. See
-     * <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -319,7 +325,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The name of the group to which the target environment belongs. Specify a group name only if the
      *        environment's name is specified in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      *        Manifest (env.yaml)</a> for details.
      */
 
@@ -331,14 +337,14 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the group to which the target environment belongs. Specify a group name only if the environment's
      * name is specified in an environment manifest and not with the environment name or environment ID parameters. See
-     * <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.
      * </p>
      * 
      * @return The name of the group to which the target environment belongs. Specify a group name only if the
      *         environment's name is specified in an environment manifest and not with the environment name or
      *         environment ID parameters. See <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      *         Manifest (env.yaml)</a> for details.
      */
 
@@ -350,7 +356,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the group to which the target environment belongs. Specify a group name only if the environment's
      * name is specified in an environment manifest and not with the environment name or environment ID parameters. See
-     * <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -358,7 +364,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The name of the group to which the target environment belongs. Specify a group name only if the
      *        environment's name is specified in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      *        Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -610,6 +616,46 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The ARN of the platform, if used.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform, if used.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform, if used.
+     * </p>
+     * 
+     * @return The ARN of the platform, if used.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform, if used.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform, if used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentRequest withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and
      * sets the specified configuration options to the requested value.
      * </p>
@@ -767,7 +813,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -795,6 +842,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getOptionSettings() != null)
             sb.append("OptionSettings: ").append(getOptionSettings()).append(",");
         if (getOptionsToRemove() != null)
@@ -849,6 +898,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
+            return false;
         if (other.getOptionSettings() == null ^ this.getOptionSettings() == null)
             return false;
         if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false)
@@ -874,6 +927,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
         hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode());
         return hashCode;

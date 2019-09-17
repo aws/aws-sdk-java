@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceGroupDetail implements Serializable, Cloneable {
+public class InstanceGroupDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,7 +54,12 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
     private String instanceRole;
     /**
      * <p>
-     * Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     * The maximum Spot price your are willing to pay for EC2 instances.
+     * </p>
+     * <p>
+     * An optional, nullable field that applies if the <code>MarketType</code> for the instance group is specified as
+     * <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum Spot
+     * price is set equal to the On-Demand price.
      * </p>
      */
     private String bidPrice;
@@ -306,7 +313,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -321,7 +328,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public InstanceGroupDetail withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 
@@ -379,7 +386,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public void setInstanceRole(InstanceRoleType instanceRole) {
-        this.instanceRole = instanceRole.toString();
+        withInstanceRole(instanceRole);
     }
 
     /**
@@ -394,17 +401,26 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public InstanceGroupDetail withInstanceRole(InstanceRoleType instanceRole) {
-        setInstanceRole(instanceRole);
+        this.instanceRole = instanceRole.toString();
         return this;
     }
 
     /**
      * <p>
-     * Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     * The maximum Spot price your are willing to pay for EC2 instances.
+     * </p>
+     * <p>
+     * An optional, nullable field that applies if the <code>MarketType</code> for the instance group is specified as
+     * <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum Spot
+     * price is set equal to the On-Demand price.
      * </p>
      * 
      * @param bidPrice
-     *        Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     *        The maximum Spot price your are willing to pay for EC2 instances.</p>
+     *        <p>
+     *        An optional, nullable field that applies if the <code>MarketType</code> for the instance group is
+     *        specified as <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified,
+     *        the maximum Spot price is set equal to the On-Demand price.
      */
 
     public void setBidPrice(String bidPrice) {
@@ -413,10 +429,19 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     * The maximum Spot price your are willing to pay for EC2 instances.
+     * </p>
+     * <p>
+     * An optional, nullable field that applies if the <code>MarketType</code> for the instance group is specified as
+     * <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum Spot
+     * price is set equal to the On-Demand price.
      * </p>
      * 
-     * @return Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     * @return The maximum Spot price your are willing to pay for EC2 instances.</p>
+     *         <p>
+     *         An optional, nullable field that applies if the <code>MarketType</code> for the instance group is
+     *         specified as <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is
+     *         specified, the maximum Spot price is set equal to the On-Demand price.
      */
 
     public String getBidPrice() {
@@ -425,11 +450,20 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     * The maximum Spot price your are willing to pay for EC2 instances.
+     * </p>
+     * <p>
+     * An optional, nullable field that applies if the <code>MarketType</code> for the instance group is specified as
+     * <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum Spot
+     * price is set equal to the On-Demand price.
      * </p>
      * 
      * @param bidPrice
-     *        Bid price for EC2 Instances when launching nodes as Spot Instances, expressed in USD.
+     *        The maximum Spot price your are willing to pay for EC2 instances.</p>
+     *        <p>
+     *        An optional, nullable field that applies if the <code>MarketType</code> for the instance group is
+     *        specified as <code>SPOT</code>. Specified in USD. If the value is NULL and <code>SPOT</code> is specified,
+     *        the maximum Spot price is set equal to the On-Demand price.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,7 +646,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public void setState(InstanceGroupState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -627,7 +661,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      */
 
     public InstanceGroupDetail withState(InstanceGroupState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -832,7 +866,8 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -972,5 +1007,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.InstanceGroupDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

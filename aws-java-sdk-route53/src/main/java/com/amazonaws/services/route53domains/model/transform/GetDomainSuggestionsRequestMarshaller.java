@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDomainSuggestionsRequest Marshaller
+ * GetDomainSuggestionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDomainSuggestionsRequestMarshaller implements Marshaller<Request<GetDomainSuggestionsRequest>, GetDomainSuggestionsRequest> {
+@SdkInternalApi
+public class GetDomainSuggestionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<Integer> SUGGESTIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SuggestionCount").build();
+    private static final MarshallingInfo<Boolean> ONLYAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnlyAvailable").build();
 
-    public GetDomainSuggestionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDomainSuggestionsRequestMarshaller instance = new GetDomainSuggestionsRequestMarshaller();
+
+    public static GetDomainSuggestionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDomainSuggestionsRequest> marshall(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDomainSuggestionsRequest getDomainSuggestionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDomainSuggestionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDomainSuggestionsRequest> request = new DefaultRequest<GetDomainSuggestionsRequest>(getDomainSuggestionsRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.GetDomainSuggestions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDomainSuggestionsRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(getDomainSuggestionsRequest.getDomainName());
-            }
-            if (getDomainSuggestionsRequest.getSuggestionCount() != null) {
-                jsonGenerator.writeFieldName("SuggestionCount").writeValue(getDomainSuggestionsRequest.getSuggestionCount());
-            }
-            if (getDomainSuggestionsRequest.getOnlyAvailable() != null) {
-                jsonGenerator.writeFieldName("OnlyAvailable").writeValue(getDomainSuggestionsRequest.getOnlyAvailable());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDomainSuggestionsRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(getDomainSuggestionsRequest.getSuggestionCount(), SUGGESTIONCOUNT_BINDING);
+            protocolMarshaller.marshall(getDomainSuggestionsRequest.getOnlyAvailable(), ONLYAVAILABLE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

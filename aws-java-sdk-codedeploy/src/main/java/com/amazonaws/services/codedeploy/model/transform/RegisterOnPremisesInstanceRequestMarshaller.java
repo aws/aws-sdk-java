@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterOnPremisesInstanceRequest Marshaller
+ * RegisterOnPremisesInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterOnPremisesInstanceRequestMarshaller implements Marshaller<Request<RegisterOnPremisesInstanceRequest>, RegisterOnPremisesInstanceRequest> {
+@SdkInternalApi
+public class RegisterOnPremisesInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
+    private static final MarshallingInfo<String> IAMSESSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamSessionArn").build();
+    private static final MarshallingInfo<String> IAMUSERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iamUserArn").build();
 
-    public RegisterOnPremisesInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterOnPremisesInstanceRequestMarshaller instance = new RegisterOnPremisesInstanceRequestMarshaller();
+
+    public static RegisterOnPremisesInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterOnPremisesInstanceRequest> marshall(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterOnPremisesInstanceRequest registerOnPremisesInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerOnPremisesInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterOnPremisesInstanceRequest> request = new DefaultRequest<RegisterOnPremisesInstanceRequest>(registerOnPremisesInstanceRequest,
-                "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.RegisterOnPremisesInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerOnPremisesInstanceRequest.getInstanceName() != null) {
-                jsonGenerator.writeFieldName("instanceName").writeValue(registerOnPremisesInstanceRequest.getInstanceName());
-            }
-            if (registerOnPremisesInstanceRequest.getIamSessionArn() != null) {
-                jsonGenerator.writeFieldName("iamSessionArn").writeValue(registerOnPremisesInstanceRequest.getIamSessionArn());
-            }
-            if (registerOnPremisesInstanceRequest.getIamUserArn() != null) {
-                jsonGenerator.writeFieldName("iamUserArn").writeValue(registerOnPremisesInstanceRequest.getIamUserArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerOnPremisesInstanceRequest.getInstanceName(), INSTANCENAME_BINDING);
+            protocolMarshaller.marshall(registerOnPremisesInstanceRequest.getIamSessionArn(), IAMSESSIONARN_BINDING);
+            protocolMarshaller.marshall(registerOnPremisesInstanceRequest.getIamUserArn(), IAMUSERARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

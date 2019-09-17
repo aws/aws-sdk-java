@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,11 +26,34 @@ import com.amazonaws.services.cloudhsm.model.*;
  * </p>
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
+ * <p>
+ * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+ * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+ * </p>
+ * <p>
+ * <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+ * CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and
+ * the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
      * </p>
@@ -47,6 +70,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
      * </p>
@@ -69,6 +104,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Creates a high-availability partition group. A high-availability partition group is a group of partitions that
      * spans multiple physical HSMs.
      * </p>
@@ -83,6 +130,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest createHapgRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Creates a high-availability partition group. A high-availability partition group is a group of partitions that
      * spans multiple physical HSMs.
@@ -104,12 +163,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Creates an uninitialized HSM instance.
      * </p>
      * <p>
-     * There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you
-     * accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
-     * operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, create a new
+     * There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation.
+     * If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
+     * operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new
      * case, and select <b>Account and Billing Support</b>.
      * </p>
      * <important>
@@ -120,7 +191,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> operation.
+     *        Contains the inputs for the <code>CreateHsm</code> operation.
      * @return A Java Future containing the result of the CreateHsm operation returned by the service.
      * @sample AWSCloudHSMAsync.CreateHsm
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm" target="_top">AWS API
@@ -130,12 +201,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Creates an uninitialized HSM instance.
      * </p>
      * <p>
-     * There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you
-     * accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
-     * operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, create a new
+     * There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation.
+     * If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
+     * operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new
      * case, and select <b>Account and Billing Support</b>.
      * </p>
      * <important>
@@ -146,7 +229,7 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
      * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> operation.
+     *        Contains the inputs for the <code>CreateHsm</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -161,6 +244,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Creates an HSM client.
      * </p>
      * 
@@ -174,6 +269,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest createLunaClientRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Creates an HSM client.
      * </p>
@@ -194,6 +301,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Deletes a high-availability partition group.
      * </p>
      * 
@@ -207,6 +326,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest deleteHapgRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Deletes a high-availability partition group.
      * </p>
@@ -227,6 +358,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.
      * </p>
      * 
@@ -240,6 +383,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest deleteHsmRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.
      * </p>
@@ -260,6 +415,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Deletes a client.
      * </p>
      * 
@@ -272,6 +439,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest deleteLunaClientRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Deletes a client.
      * </p>
@@ -291,6 +470,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Retrieves information about a high-availability partition group.
      * </p>
      * 
@@ -304,6 +495,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest describeHapgRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Retrieves information about a high-availability partition group.
      * </p>
@@ -324,6 +527,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.
      * </p>
      * 
@@ -337,6 +552,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest describeHsmRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.
      * </p>
@@ -371,6 +598,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Retrieves information about an HSM client.
      * </p>
      * 
@@ -383,6 +622,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest describeLunaClientRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Retrieves information about an HSM client.
      * </p>
@@ -417,6 +668,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Gets the configuration files necessary to connect to all high availability partition groups the client is
      * associated with.
      * </p>
@@ -430,6 +693,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest getConfigRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Gets the configuration files necessary to connect to all high availability partition groups the client is
      * associated with.
@@ -450,6 +725,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Lists the Availability Zones that have available AWS CloudHSM capacity.
      * </p>
      * 
@@ -463,6 +750,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest listAvailableZonesRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Lists the Availability Zones that have available AWS CloudHSM capacity.
      * </p>
@@ -498,12 +797,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a>
-     * to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHapgs</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHapgsRequest
@@ -516,12 +827,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a>
-     * to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHapgs</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHapgsRequest
@@ -553,12 +876,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Retrieves the identifiers of all of the HSMs provisioned for the current customer.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to
-     * retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHsms</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHsmsRequest
@@ -571,12 +906,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Retrieves the identifiers of all of the HSMs provisioned for the current customer.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to
-     * retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHsms</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHsmsRequest
@@ -608,12 +955,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Lists all of the clients.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to
-     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListLunaClients</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listLunaClientsRequest
@@ -626,12 +985,24 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Lists all of the clients.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to
-     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListLunaClients</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listLunaClientsRequest
@@ -664,6 +1035,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Returns a list of all tags for the specified AWS CloudHSM resource.
      * </p>
      * 
@@ -676,6 +1059,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Returns a list of all tags for the specified AWS CloudHSM resource.
      * </p>
@@ -695,6 +1090,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Modifies an existing high-availability partition group.
      * </p>
      * 
@@ -707,6 +1114,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest modifyHapgRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Modifies an existing high-availability partition group.
      * </p>
@@ -725,6 +1144,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
             com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Modifies an HSM.
      * </p>
@@ -746,6 +1177,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest modifyHsmRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Modifies an HSM.
      * </p>
@@ -773,6 +1216,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Modifies the certificate used by the client.
      * </p>
      * <p>
@@ -788,6 +1243,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest modifyLunaClientRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Modifies the certificate used by the client.
      * </p>
@@ -810,6 +1277,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
 
     /**
      * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
+     * <p>
      * Removes one or more tags from the specified AWS CloudHSM resource.
      * </p>
      * <p>
@@ -826,6 +1305,18 @@ public interface AWSCloudHSMAsync extends AWSCloudHSM {
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
     /**
+     * <p>
+     * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+     * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * </p>
+     * <p>
+     * <b>For information about the current version of AWS CloudHSM</b>, see <a
+     * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * </p>
      * <p>
      * Removes one or more tags from the specified AWS CloudHSM resource.
      * </p>

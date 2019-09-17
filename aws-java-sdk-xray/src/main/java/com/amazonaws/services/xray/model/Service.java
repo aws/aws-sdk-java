@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.xray.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Service implements Serializable, Cloneable {
+public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -119,10 +121,16 @@ public class Service implements Serializable, Cloneable {
     private ServiceStatistics summaryStatistics;
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      */
     private java.util.List<HistogramEntry> durationHistogram;
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     */
+    private java.util.List<HistogramEntry> responseTimeHistogram;
 
     /**
      * <p>
@@ -785,10 +793,10 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
-     * @return Histogram mapping the spread of trace durations
+     * @return A histogram that maps the spread of service durations.
      */
 
     public java.util.List<HistogramEntry> getDurationHistogram() {
@@ -797,11 +805,11 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      */
 
     public void setDurationHistogram(java.util.Collection<HistogramEntry> durationHistogram) {
@@ -815,7 +823,7 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -824,7 +832,7 @@ public class Service implements Serializable, Cloneable {
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -840,11 +848,11 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -854,7 +862,78 @@ public class Service implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @return A histogram that maps the spread of service response times.
+     */
+
+    public java.util.List<HistogramEntry> getResponseTimeHistogram() {
+        return responseTimeHistogram;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     */
+
+    public void setResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
+        if (responseTimeHistogram == null) {
+            this.responseTimeHistogram = null;
+            return;
+        }
+
+        this.responseTimeHistogram = new java.util.ArrayList<HistogramEntry>(responseTimeHistogram);
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResponseTimeHistogram(java.util.Collection)} or
+     * {@link #withResponseTimeHistogram(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withResponseTimeHistogram(HistogramEntry... responseTimeHistogram) {
+        if (this.responseTimeHistogram == null) {
+            setResponseTimeHistogram(new java.util.ArrayList<HistogramEntry>(responseTimeHistogram.length));
+        }
+        for (HistogramEntry ele : responseTimeHistogram) {
+            this.responseTimeHistogram.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
+        setResponseTimeHistogram(responseTimeHistogram);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -887,7 +966,9 @@ public class Service implements Serializable, Cloneable {
         if (getSummaryStatistics() != null)
             sb.append("SummaryStatistics: ").append(getSummaryStatistics()).append(",");
         if (getDurationHistogram() != null)
-            sb.append("DurationHistogram: ").append(getDurationHistogram());
+            sb.append("DurationHistogram: ").append(getDurationHistogram()).append(",");
+        if (getResponseTimeHistogram() != null)
+            sb.append("ResponseTimeHistogram: ").append(getResponseTimeHistogram());
         sb.append("}");
         return sb.toString();
     }
@@ -950,6 +1031,10 @@ public class Service implements Serializable, Cloneable {
             return false;
         if (other.getDurationHistogram() != null && other.getDurationHistogram().equals(this.getDurationHistogram()) == false)
             return false;
+        if (other.getResponseTimeHistogram() == null ^ this.getResponseTimeHistogram() == null)
+            return false;
+        if (other.getResponseTimeHistogram() != null && other.getResponseTimeHistogram().equals(this.getResponseTimeHistogram()) == false)
+            return false;
         return true;
     }
 
@@ -970,6 +1055,7 @@ public class Service implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEdges() == null) ? 0 : getEdges().hashCode());
         hashCode = prime * hashCode + ((getSummaryStatistics() == null) ? 0 : getSummaryStatistics().hashCode());
         hashCode = prime * hashCode + ((getDurationHistogram() == null) ? 0 : getDurationHistogram().hashCode());
+        hashCode = prime * hashCode + ((getResponseTimeHistogram() == null) ? 0 : getResponseTimeHistogram().hashCode());
         return hashCode;
     }
 
@@ -980,5 +1066,11 @@ public class Service implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.xray.model.transform.ServiceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

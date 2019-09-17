@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowTask> tasks;
@@ -40,10 +40,10 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
-     * @return Information about the tasks in the Maintenance Window.
+     * @return Information about the tasks in the maintenance window.
      */
 
     public java.util.List<MaintenanceWindowTask> getTasks() {
@@ -55,11 +55,11 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      */
 
     public void setTasks(java.util.Collection<MaintenanceWindowTask> tasks) {
@@ -73,7 +73,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the tasks in the Maintenance Window.
+     * Information about the tasks in the maintenance window.
      * </p>
      * 
      * @param tasks
-     *        Information about the tasks in the Maintenance Window.
+     *        Information about the tasks in the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,7 +158,8 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -215,4 +216,5 @@ public class DescribeMaintenanceWindowTasksResult extends com.amazonaws.AmazonWe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

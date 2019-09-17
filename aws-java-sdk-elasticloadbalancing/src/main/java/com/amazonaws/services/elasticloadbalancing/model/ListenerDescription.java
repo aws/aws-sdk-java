@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListenerDescription implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The listener.
+     * </p>
+     */
     private Listener listener;
     /**
      * <p>
@@ -35,7 +40,12 @@ public class ListenerDescription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
 
     /**
+     * <p>
+     * The listener.
+     * </p>
+     * 
      * @param listener
+     *        The listener.
      */
 
     public void setListener(Listener listener) {
@@ -43,7 +53,11 @@ public class ListenerDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The listener.
+     * </p>
+     * 
+     * @return The listener.
      */
 
     public Listener getListener() {
@@ -51,7 +65,12 @@ public class ListenerDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The listener.
+     * </p>
+     * 
      * @param listener
+     *        The listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,7 +153,8 @@ public class ListenerDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -191,4 +211,5 @@ public class ListenerDescription implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

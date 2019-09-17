@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListKeyPoliciesRequest Marshaller
+ * ListKeyPoliciesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListKeyPoliciesRequestMarshaller implements Marshaller<Request<ListKeyPoliciesRequest>, ListKeyPoliciesRequest> {
+@SdkInternalApi
+public class ListKeyPoliciesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public ListKeyPoliciesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListKeyPoliciesRequestMarshaller instance = new ListKeyPoliciesRequestMarshaller();
+
+    public static ListKeyPoliciesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListKeyPoliciesRequest> marshall(ListKeyPoliciesRequest listKeyPoliciesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListKeyPoliciesRequest listKeyPoliciesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listKeyPoliciesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListKeyPoliciesRequest> request = new DefaultRequest<ListKeyPoliciesRequest>(listKeyPoliciesRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.ListKeyPolicies");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listKeyPoliciesRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(listKeyPoliciesRequest.getKeyId());
-            }
-            if (listKeyPoliciesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listKeyPoliciesRequest.getLimit());
-            }
-            if (listKeyPoliciesRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(listKeyPoliciesRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listKeyPoliciesRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(listKeyPoliciesRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listKeyPoliciesRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

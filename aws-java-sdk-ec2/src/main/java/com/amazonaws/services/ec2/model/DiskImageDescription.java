@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,35 +28,75 @@ public class DiskImageDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     */
+    private String checksum;
+    /**
+     * <p>
      * The disk image format.
      * </p>
      */
     private String format;
     /**
      * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     */
-    private Long size;
-    /**
-     * <p>
      * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
      * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
      * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      */
     private String importManifestUrl;
     /**
      * <p>
-     * The checksum computed for the disk image.
+     * The size of the disk image, in GiB.
      * </p>
      */
-    private String checksum;
+    private Long size;
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @param checksum
+     *        The checksum computed for the disk image.
+     */
+
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
+    }
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @return The checksum computed for the disk image.
+     */
+
+    public String getChecksum() {
+        return this.checksum;
+    }
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @param checksum
+     *        The checksum computed for the disk image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImageDescription withChecksum(String checksum) {
+        setChecksum(checksum);
+        return this;
+    }
 
     /**
      * <p>
@@ -112,7 +152,7 @@ public class DiskImageDescription implements Serializable, Cloneable {
      */
 
     public void setFormat(DiskImageFormat format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -127,7 +167,86 @@ public class DiskImageDescription implements Serializable, Cloneable {
      */
 
     public DiskImageDescription withFormat(DiskImageFormat format) {
-        setFormat(format);
+        this.format = format.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
+     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * </p>
+     * 
+     * @param importManifestUrl
+     *        A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
+     *        URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     *        <p>
+     *        For information about the import manifest referenced by this API action, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     */
+
+    public void setImportManifestUrl(String importManifestUrl) {
+        this.importManifestUrl = importManifestUrl;
+    }
+
+    /**
+     * <p>
+     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
+     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * </p>
+     * 
+     * @return A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
+     *         URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *         Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     *         <p>
+     *         For information about the import manifest referenced by this API action, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     */
+
+    public String getImportManifestUrl() {
+        return this.importManifestUrl;
+    }
+
+    /**
+     * <p>
+     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
+     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For information about the import manifest referenced by this API action, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * </p>
+     * 
+     * @param importManifestUrl
+     *        A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
+     *        URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+     *        <p>
+     *        For information about the import manifest referenced by this API action, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImageDescription withImportManifestUrl(String importManifestUrl) {
+        setImportManifestUrl(importManifestUrl);
         return this;
     }
 
@@ -172,126 +291,8 @@ public class DiskImageDescription implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
-     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
-     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     * </p>
-     * 
-     * @param importManifestUrl
-     *        A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
-     *        URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
-     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
-     *        <p>
-     *        For information about the import manifest referenced by this API action, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     */
-
-    public void setImportManifestUrl(String importManifestUrl) {
-        this.importManifestUrl = importManifestUrl;
-    }
-
-    /**
-     * <p>
-     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
-     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
-     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     * </p>
-     * 
-     * @return A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
-     *         URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
-     *         Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
-     *         <p>
-     *         For information about the import manifest referenced by this API action, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     */
-
-    public String getImportManifestUrl() {
-        return this.importManifestUrl;
-    }
-
-    /**
-     * <p>
-     * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
-     * an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
-     * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     * </p>
-     * 
-     * @param importManifestUrl
-     *        A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned
-     *        URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
-     *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
-     *        <p>
-     *        For information about the import manifest referenced by this API action, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DiskImageDescription withImportManifestUrl(String importManifestUrl) {
-        setImportManifestUrl(importManifestUrl);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The checksum computed for the disk image.
-     * </p>
-     * 
-     * @param checksum
-     *        The checksum computed for the disk image.
-     */
-
-    public void setChecksum(String checksum) {
-        this.checksum = checksum;
-    }
-
-    /**
-     * <p>
-     * The checksum computed for the disk image.
-     * </p>
-     * 
-     * @return The checksum computed for the disk image.
-     */
-
-    public String getChecksum() {
-        return this.checksum;
-    }
-
-    /**
-     * <p>
-     * The checksum computed for the disk image.
-     * </p>
-     * 
-     * @param checksum
-     *        The checksum computed for the disk image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DiskImageDescription withChecksum(String checksum) {
-        setChecksum(checksum);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -301,14 +302,14 @@ public class DiskImageDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChecksum() != null)
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
-        if (getSize() != null)
-            sb.append("Size: ").append(getSize()).append(",");
         if (getImportManifestUrl() != null)
             sb.append("ImportManifestUrl: ").append(getImportManifestUrl()).append(",");
-        if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+        if (getSize() != null)
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }
@@ -323,21 +324,21 @@ public class DiskImageDescription implements Serializable, Cloneable {
         if (obj instanceof DiskImageDescription == false)
             return false;
         DiskImageDescription other = (DiskImageDescription) obj;
+        if (other.getChecksum() == null ^ this.getChecksum() == null)
+            return false;
+        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
-            return false;
-        if (other.getSize() == null ^ this.getSize() == null)
-            return false;
-        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getImportManifestUrl() == null ^ this.getImportManifestUrl() == null)
             return false;
         if (other.getImportManifestUrl() != null && other.getImportManifestUrl().equals(this.getImportManifestUrl()) == false)
             return false;
-        if (other.getChecksum() == null ^ this.getChecksum() == null)
+        if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         return true;
     }
@@ -347,10 +348,10 @@ public class DiskImageDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         return hashCode;
     }
 
@@ -362,4 +363,5 @@ public class DiskImageDescription implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

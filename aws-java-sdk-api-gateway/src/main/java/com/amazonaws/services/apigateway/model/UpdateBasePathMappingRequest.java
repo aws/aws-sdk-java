@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,16 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      */
     private String basePath;
@@ -46,11 +49,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      */
 
     public void setDomainName(String domainName) {
@@ -59,10 +62,10 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
-     * @return The domain name of the <a>BasePathMapping</a> resource to change.
+     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      */
 
     public String getDomainName() {
@@ -71,11 +74,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +89,16 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        <p>
+     *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
 
     public void setBasePath(String basePath) {
@@ -99,10 +107,15 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
-     * @return The base path of the <a>BasePathMapping</a> resource to change.
+     * @return [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *         <p>
+     *         To specify an empty base path, set this parameter to <code>'(none)'</code>.
      */
 
     public String getBasePath() {
@@ -111,11 +124,16 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
+     * </p>
+     * <p>
+     * To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * </p>
      * 
      * @param basePath
-     *        The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
+     *        <p>
+     *        To specify an empty base path, set this parameter to <code>'(none)'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +217,8 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

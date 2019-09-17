@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,9 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
     private String emailAddress;
     /**
      * <p>
-     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
-     * address has already been verified, we don't send another confirmation email.
+     * <code>True</code> if the email address for the registrant contact has already been verified, and
+     * <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation
+     * email.
      * </p>
      */
     private Boolean isAlreadyVerified;
@@ -126,13 +127,15 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
-     * address has already been verified, we don't send another confirmation email.
+     * <code>True</code> if the email address for the registrant contact has already been verified, and
+     * <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation
+     * email.
      * </p>
      * 
      * @param isAlreadyVerified
-     *        True if the email address for the registrant contact has already been verified, and false otherwise. If
-     *        the email address has already been verified, we don't send another confirmation email.
+     *        <code>True</code> if the email address for the registrant contact has already been verified, and
+     *        <code>false</code> otherwise. If the email address has already been verified, we don't send another
+     *        confirmation email.
      */
 
     public void setIsAlreadyVerified(Boolean isAlreadyVerified) {
@@ -141,12 +144,14 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
-     * address has already been verified, we don't send another confirmation email.
+     * <code>True</code> if the email address for the registrant contact has already been verified, and
+     * <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation
+     * email.
      * </p>
      * 
-     * @return True if the email address for the registrant contact has already been verified, and false otherwise. If
-     *         the email address has already been verified, we don't send another confirmation email.
+     * @return <code>True</code> if the email address for the registrant contact has already been verified, and
+     *         <code>false</code> otherwise. If the email address has already been verified, we don't send another
+     *         confirmation email.
      */
 
     public Boolean getIsAlreadyVerified() {
@@ -155,13 +160,15 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
-     * address has already been verified, we don't send another confirmation email.
+     * <code>True</code> if the email address for the registrant contact has already been verified, and
+     * <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation
+     * email.
      * </p>
      * 
      * @param isAlreadyVerified
-     *        True if the email address for the registrant contact has already been verified, and false otherwise. If
-     *        the email address has already been verified, we don't send another confirmation email.
+     *        <code>True</code> if the email address for the registrant contact has already been verified, and
+     *        <code>false</code> otherwise. If the email address has already been verified, we don't send another
+     *        confirmation email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,12 +179,14 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True if the email address for the registrant contact has already been verified, and false otherwise. If the email
-     * address has already been verified, we don't send another confirmation email.
+     * <code>True</code> if the email address for the registrant contact has already been verified, and
+     * <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation
+     * email.
      * </p>
      * 
-     * @return True if the email address for the registrant contact has already been verified, and false otherwise. If
-     *         the email address has already been verified, we don't send another confirmation email.
+     * @return <code>True</code> if the email address for the registrant contact has already been verified, and
+     *         <code>false</code> otherwise. If the email address has already been verified, we don't send another
+     *         confirmation email.
      */
 
     public Boolean isAlreadyVerified() {
@@ -185,7 +194,8 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -249,4 +259,5 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

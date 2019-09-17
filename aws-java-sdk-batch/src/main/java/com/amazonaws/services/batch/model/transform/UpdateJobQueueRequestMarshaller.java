@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,87 +12,54 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateJobQueueRequest Marshaller
+ * UpdateJobQueueRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateJobQueueRequestMarshaller implements Marshaller<Request<UpdateJobQueueRequest>, UpdateJobQueueRequest> {
+@SdkInternalApi
+public class UpdateJobQueueRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobQueue").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("state").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
+    private static final MarshallingInfo<List> COMPUTEENVIRONMENTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironmentOrder").build();
 
-    public UpdateJobQueueRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateJobQueueRequestMarshaller instance = new UpdateJobQueueRequestMarshaller();
+
+    public static UpdateJobQueueRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateJobQueueRequest> marshall(UpdateJobQueueRequest updateJobQueueRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateJobQueueRequest updateJobQueueRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateJobQueueRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateJobQueueRequest> request = new DefaultRequest<UpdateJobQueueRequest>(updateJobQueueRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/updatejobqueue";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateJobQueueRequest.getJobQueue() != null) {
-                jsonGenerator.writeFieldName("jobQueue").writeValue(updateJobQueueRequest.getJobQueue());
-            }
-            if (updateJobQueueRequest.getState() != null) {
-                jsonGenerator.writeFieldName("state").writeValue(updateJobQueueRequest.getState());
-            }
-            if (updateJobQueueRequest.getPriority() != null) {
-                jsonGenerator.writeFieldName("priority").writeValue(updateJobQueueRequest.getPriority());
-            }
-
-            java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrderList = updateJobQueueRequest.getComputeEnvironmentOrder();
-            if (computeEnvironmentOrderList != null) {
-                jsonGenerator.writeFieldName("computeEnvironmentOrder");
-                jsonGenerator.writeStartArray();
-                for (ComputeEnvironmentOrder computeEnvironmentOrderListValue : computeEnvironmentOrderList) {
-                    if (computeEnvironmentOrderListValue != null) {
-
-                        ComputeEnvironmentOrderJsonMarshaller.getInstance().marshall(computeEnvironmentOrderListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateJobQueueRequest.getJobQueue(), JOBQUEUE_BINDING);
+            protocolMarshaller.marshall(updateJobQueueRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(updateJobQueueRequest.getPriority(), PRIORITY_BINDING);
+            protocolMarshaller.marshall(updateJobQueueRequest.getComputeEnvironmentOrder(), COMPUTEENVIRONMENTORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

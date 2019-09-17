@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,47 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetAliasRequest Marshaller
+ * GetAliasRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetAliasRequestMarshaller implements Marshaller<Request<GetAliasRequest>, GetAliasRequest> {
+@SdkInternalApi
+public class GetAliasRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Name").build();
 
-    public GetAliasRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetAliasRequestMarshaller instance = new GetAliasRequestMarshaller();
+
+    public static GetAliasRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetAliasRequest> marshall(GetAliasRequest getAliasRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetAliasRequest getAliasRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getAliasRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetAliasRequest> request = new DefaultRequest<GetAliasRequest>(getAliasRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", getAliasRequest.getFunctionName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Name", getAliasRequest.getName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getAliasRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(getAliasRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

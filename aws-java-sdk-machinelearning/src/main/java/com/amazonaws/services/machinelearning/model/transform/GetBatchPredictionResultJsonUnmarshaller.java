@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,11 @@ public class GetBatchPredictionResultJsonUnmarshaller implements Unmarshaller<Ge
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBatchPredictionResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBatchPredictionResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -102,11 +102,11 @@ public class GetBatchPredictionResultJsonUnmarshaller implements Unmarshaller<Ge
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setFinishedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBatchPredictionResult.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getBatchPredictionResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TotalRecordCount", targetDepth)) {
                     context.nextToken();

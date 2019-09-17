@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,32 +14,34 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the user storage for a WorkSpace bundle.
+ * Describes the user storage for a WorkSpace bundle.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserStorage implements Serializable, Cloneable {
+public class UserStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      */
     private String capacity;
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
      * @param capacity
-     *        The amount of user storage for the bundle.
+     *        The size of the user storage.
      */
 
     public void setCapacity(String capacity) {
@@ -48,10 +50,10 @@ public class UserStorage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
-     * @return The amount of user storage for the bundle.
+     * @return The size of the user storage.
      */
 
     public String getCapacity() {
@@ -60,11 +62,11 @@ public class UserStorage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
      * @param capacity
-     *        The amount of user storage for the bundle.
+     *        The size of the user storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +76,8 @@ public class UserStorage implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -123,5 +126,11 @@ public class UserStorage implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.workspaces.model.transform.UserStorageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

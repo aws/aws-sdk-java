@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class TestJsonUnmarshaller implements Unmarshaller<Test, JsonUnmarshaller
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    test.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    test.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class TestJsonUnmarshaller implements Unmarshaller<Test, JsonUnmarshaller
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    test.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    test.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    test.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    test.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.polly.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutLexiconRequest Marshaller
+ * PutLexiconRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutLexiconRequestMarshaller implements Marshaller<Request<PutLexiconRequest>, PutLexiconRequest> {
+@SdkInternalApi
+public class PutLexiconRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("LexiconName").build();
+    private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Content").build();
 
-    public PutLexiconRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutLexiconRequestMarshaller instance = new PutLexiconRequestMarshaller();
+
+    public static PutLexiconRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutLexiconRequest> marshall(PutLexiconRequest putLexiconRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutLexiconRequest putLexiconRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putLexiconRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutLexiconRequest> request = new DefaultRequest<PutLexiconRequest>(putLexiconRequest, "AmazonPolly");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/v1/lexicons/{LexiconName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "LexiconName", putLexiconRequest.getName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (putLexiconRequest.getContent() != null) {
-                jsonGenerator.writeFieldName("Content").writeValue(putLexiconRequest.getContent());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putLexiconRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(putLexiconRequest.getContent(), CONTENT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

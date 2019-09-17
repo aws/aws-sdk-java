@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PatchComplianceData implements Serializable, Cloneable {
+public class PatchComplianceData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,7 +37,7 @@ public class PatchComplianceData implements Serializable, Cloneable {
     private String title;
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      */
     private String kBId;
@@ -53,13 +55,19 @@ public class PatchComplianceData implements Serializable, Cloneable {
     private String severity;
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      */
     private java.util.Date installedTime;
@@ -106,11 +114,11 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
      * @param kBId
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The operating system-specific ID of the patch.
      */
 
     public void setKBId(String kBId) {
@@ -119,10 +127,10 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
-     * @return The Microsoft Knowledge Base ID of the patch.
+     * @return The operating system-specific ID of the patch.
      */
 
     public String getKBId() {
@@ -131,11 +139,11 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
      * @param kBId
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The operating system-specific ID of the patch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +234,20 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
-     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     *        <p>
+     *        For descriptions of each patch state, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -240,10 +257,19 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @return The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     *         <p>
+     *         For descriptions of each patch state, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *         >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -253,11 +279,20 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
-     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     *        <p>
+     *        For descriptions of each patch state, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */
@@ -269,41 +304,61 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
-     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     *        <p>
+     *        For descriptions of each patch state, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
     public void setState(PatchComplianceDataState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
      * <p>
-     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * The state of the patch on the instance, such as INSTALLED or FAILED.
+     * </p>
+     * <p>
+     * For descriptions of each patch state, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
-     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     *        <p>
+     *        For descriptions of each patch state, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */
 
     public PatchComplianceData withState(PatchComplianceDataState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance.
+     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *        level of information.
      */
 
     public void setInstalledTime(java.util.Date installedTime) {
@@ -312,10 +367,12 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
-     * @return The date/time the patch was installed on the instance.
+     * @return The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *         level of information.
      */
 
     public java.util.Date getInstalledTime() {
@@ -324,11 +381,13 @@ public class PatchComplianceData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance.
+     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *        level of information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,7 +397,8 @@ public class PatchComplianceData implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -422,5 +482,11 @@ public class PatchComplianceData implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.PatchComplianceDataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

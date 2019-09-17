@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,36 +14,83 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing information about a new public virtual interface.
+ * Information about a public virtual interface.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPublicVirtualInterface"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NewPublicVirtualInterface implements Serializable, Cloneable {
-
-    private String virtualInterfaceName;
-
-    private Integer vlan;
-
-    private Integer asn;
-
-    private String authKey;
-
-    private String amazonAddress;
-
-    private String customerAddress;
-
-    private String addressFamily;
-
-    private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
+public class NewPublicVirtualInterface implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
+     * The name of the virtual interface assigned by the customer network.
+     * </p>
+     */
+    private String virtualInterfaceName;
+    /**
+     * <p>
+     * The ID of the VLAN.
+     * </p>
+     */
+    private Integer vlan;
+    /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     */
+    private Integer asn;
+    /**
+     * <p>
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
+     * </p>
+     */
+    private String authKey;
+    /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     */
+    private String amazonAddress;
+    /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     */
+    private String customerAddress;
+    /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     */
+    private String addressFamily;
+    /**
+     * <p>
+     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+
+    /**
+     * <p>
+     * The name of the virtual interface assigned by the customer network.
+     * </p>
+     * 
      * @param virtualInterfaceName
+     *        The name of the virtual interface assigned by the customer network.
      */
 
     public void setVirtualInterfaceName(String virtualInterfaceName) {
@@ -51,7 +98,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the virtual interface assigned by the customer network.
+     * </p>
+     * 
+     * @return The name of the virtual interface assigned by the customer network.
      */
 
     public String getVirtualInterfaceName() {
@@ -59,7 +110,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the virtual interface assigned by the customer network.
+     * </p>
+     * 
      * @param virtualInterfaceName
+     *        The name of the virtual interface assigned by the customer network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +125,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VLAN.
+     * </p>
+     * 
      * @param vlan
+     *        The ID of the VLAN.
      */
 
     public void setVlan(Integer vlan) {
@@ -77,7 +138,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the VLAN.
+     * </p>
+     * 
+     * @return The ID of the VLAN.
      */
 
     public Integer getVlan() {
@@ -85,7 +150,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VLAN.
+     * </p>
+     * 
      * @param vlan
+     *        The ID of the VLAN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,7 +165,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public void setAsn(Integer asn) {
@@ -103,7 +178,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
+     * @return The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      */
 
     public Integer getAsn() {
@@ -111,7 +190,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+     * </p>
+     * 
      * @param asn
+     *        The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +205,14 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
+     * </p>
+     * 
      * @param authKey
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      */
 
     public void setAuthKey(String authKey) {
@@ -129,7 +220,13 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
+     * </p>
+     * 
+     * @return The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *         maximun lenth of 80 characters.
      */
 
     public String getAuthKey() {
@@ -137,7 +234,14 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun
+     * lenth of 80 characters.
+     * </p>
+     * 
      * @param authKey
+     *        The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a
+     *        maximun lenth of 80 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +251,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
      * @param amazonAddress
+     *        The IP address assigned to the Amazon interface.
      */
 
     public void setAmazonAddress(String amazonAddress) {
@@ -155,7 +264,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the Amazon interface.
      */
 
     public String getAmazonAddress() {
@@ -163,7 +276,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the Amazon interface.
+     * </p>
+     * 
      * @param amazonAddress
+     *        The IP address assigned to the Amazon interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,7 +291,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      */
 
     public void setCustomerAddress(String customerAddress) {
@@ -181,7 +304,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
+     * @return The IP address assigned to the customer interface.
      */
 
     public String getCustomerAddress() {
@@ -189,7 +316,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IP address assigned to the customer interface.
+     * </p>
+     * 
      * @param customerAddress
+     *        The IP address assigned to the customer interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +331,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @see AddressFamily
      */
 
@@ -208,7 +345,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
+     * @return The address family for the BGP peer.
      * @see AddressFamily
      */
 
@@ -217,7 +358,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AddressFamily
      */
@@ -228,27 +374,41 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @see AddressFamily
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
+     * <p>
+     * The address family for the BGP peer.
+     * </p>
+     * 
      * @param addressFamily
+     *        The address family for the BGP peer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AddressFamily
      */
 
     public NewPublicVirtualInterface withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 
     /**
-     * @return
+     * <p>
+     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * </p>
+     * 
+     * @return The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
      */
 
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
@@ -259,7 +419,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * </p>
+     * 
      * @param routeFilterPrefixes
+     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
      */
 
     public void setRouteFilterPrefixes(java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
@@ -273,12 +438,16 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRouteFilterPrefixes(java.util.Collection)} or {@link #withRouteFilterPrefixes(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param routeFilterPrefixes
+     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,7 +462,12 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
+     * </p>
+     * 
      * @param routeFilterPrefixes
+     *        The routes to be advertised to the AWS network in this Region. Applies to public virtual interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,7 +477,81 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @return Any tags assigned to the public virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPublicVirtualInterface withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the public virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the public virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPublicVirtualInterface withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -328,7 +576,9 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         if (getAddressFamily() != null)
             sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes());
+            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -375,6 +625,10 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
             return false;
         if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +645,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -401,5 +656,11 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directconnect.model.transform.NewPublicVirtualInterfaceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

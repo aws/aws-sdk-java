@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,13 +60,17 @@ public class AffectedEntityJsonUnmarshaller implements Unmarshaller<AffectedEnti
                     context.nextToken();
                     affectedEntity.setEntityValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("entityUrl", targetDepth)) {
+                    context.nextToken();
+                    affectedEntity.setEntityUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("awsAccountId", targetDepth)) {
                     context.nextToken();
                     affectedEntity.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    affectedEntity.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    affectedEntity.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("statusCode", targetDepth)) {
                     context.nextToken();

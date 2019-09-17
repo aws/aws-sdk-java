@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,36 +23,36 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Landmark implements Serializable, Cloneable {
+public class Landmark implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      */
     private Float x;
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example,
-     * if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      */
     private Float y;
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @see LandmarkType
      */
 
@@ -60,10 +62,10 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
-     * @return Type of the landmark.
+     * @return Type of landmark.
      * @see LandmarkType
      */
 
@@ -73,11 +75,11 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LandmarkType
      */
@@ -89,43 +91,43 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @see LandmarkType
      */
 
     public void setType(LandmarkType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * Type of the landmark.
+     * Type of landmark.
      * </p>
      * 
      * @param type
-     *        Type of the landmark.
+     *        Type of landmark.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LandmarkType
      */
 
     public Landmark withType(LandmarkType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
      * @param x
-     *        x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For
-     *        example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     *        The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *        example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *        0.5.
      */
 
@@ -135,12 +137,12 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
-     * @return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For
-     *         example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     * @return The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *         example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *         0.5.
      */
 
@@ -150,13 +152,13 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if
-     * the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
+     * The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example,
+     * if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.
      * </p>
      * 
      * @param x
-     *        x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For
-     *        example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is
+     *        The x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For
+     *        example, if the image is 700 x 200 and the x-coordinate of the landmark is at 350 pixels, this value is
      *        0.5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,13 +170,13 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example,
-     * if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
      * @param y
-     *        y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For
-     *        example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     *        The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *        example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *        0.5.
      */
 
@@ -184,12 +186,12 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example,
-     * if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
-     * @return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For
-     *         example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     * @return The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *         example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *         0.5.
      */
 
@@ -199,13 +201,13 @@ public class Landmark implements Serializable, Cloneable {
 
     /**
      * <p>
-     * y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example,
-     * if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
+     * The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     * example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.
      * </p>
      * 
      * @param y
-     *        y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For
-     *        example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is
+     *        The y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For
+     *        example, if the image is 700 x 200 and the y-coordinate of the landmark is at 100 pixels, this value is
      *        0.5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -216,7 +218,8 @@ public class Landmark implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -279,5 +282,11 @@ public class Landmark implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.LandmarkMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

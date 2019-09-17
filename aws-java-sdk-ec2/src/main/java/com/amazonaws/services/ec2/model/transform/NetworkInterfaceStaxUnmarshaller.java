@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,18 +45,13 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    networkInterface.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("association", targetDepth)) {
+                    networkInterface.setAssociation(NetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("subnetId", targetDepth)) {
-                    networkInterface.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    networkInterface.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("attachment", targetDepth)) {
+                    networkInterface.setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,46 +65,6 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
-                if (context.testExpression("ownerId", targetDepth)) {
-                    networkInterface.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("requesterId", targetDepth)) {
-                    networkInterface.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("requesterManaged", targetDepth)) {
-                    networkInterface.setRequesterManaged(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    networkInterface.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("macAddress", targetDepth)) {
-                    networkInterface.setMacAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    networkInterface.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("privateDnsName", targetDepth)) {
-                    networkInterface.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("sourceDestCheck", targetDepth)) {
-                    networkInterface.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("groupSet", targetDepth)) {
                     networkInterface.withGroups(new ArrayList<GroupIdentifier>());
                     continue;
@@ -120,33 +75,8 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
-                if (context.testExpression("attachment", targetDepth)) {
-                    networkInterface.setAttachment(NetworkInterfaceAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("association", targetDepth)) {
-                    networkInterface.setAssociation(NetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("tagSet", targetDepth)) {
-                    networkInterface.withTagSet(new ArrayList<Tag>());
-                    continue;
-                }
-
-                if (context.testExpression("tagSet/item", targetDepth)) {
-                    networkInterface.withTagSet(TagStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("privateIpAddressesSet", targetDepth)) {
-                    networkInterface.withPrivateIpAddresses(new ArrayList<NetworkInterfacePrivateIpAddress>());
-                    continue;
-                }
-
-                if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
-                    networkInterface.withPrivateIpAddresses(NetworkInterfacePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("interfaceType", targetDepth)) {
+                    networkInterface.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -160,8 +90,78 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
-                if (context.testExpression("interfaceType", targetDepth)) {
-                    networkInterface.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("macAddress", targetDepth)) {
+                    networkInterface.setMacAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    networkInterface.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    networkInterface.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateDnsName", targetDepth)) {
+                    networkInterface.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    networkInterface.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddressesSet", targetDepth)) {
+                    networkInterface.withPrivateIpAddresses(new ArrayList<NetworkInterfacePrivateIpAddress>());
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
+                    networkInterface.withPrivateIpAddresses(NetworkInterfacePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("requesterId", targetDepth)) {
+                    networkInterface.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("requesterManaged", targetDepth)) {
+                    networkInterface.setRequesterManaged(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("sourceDestCheck", targetDepth)) {
+                    networkInterface.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("status", targetDepth)) {
+                    networkInterface.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    networkInterface.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    networkInterface.withTagSet(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    networkInterface.withTagSet(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    networkInterface.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

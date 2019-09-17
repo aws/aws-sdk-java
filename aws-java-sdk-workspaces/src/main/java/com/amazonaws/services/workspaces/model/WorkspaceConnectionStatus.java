@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.workspaces.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,23 +26,23 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkspaceConnectionStatus implements Serializable, Cloneable {
+public class WorkspaceConnectionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      */
     private String connectionState;
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      */
     private java.util.Date connectionStateCheckTimestamp;
@@ -53,11 +55,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -66,10 +68,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The ID of the WorkSpace.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -78,11 +80,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +95,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
@@ -107,10 +109,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
-     * @return The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * @return The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
@@ -120,11 +122,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */
@@ -136,41 +138,41 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */
 
     public WorkspaceConnectionStatus withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
      * @param connectionStateCheckTimestamp
-     *        The timestamp of the connection state check.
+     *        The timestamp of the connection status check.
      */
 
     public void setConnectionStateCheckTimestamp(java.util.Date connectionStateCheckTimestamp) {
@@ -179,10 +181,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
-     * @return The timestamp of the connection state check.
+     * @return The timestamp of the connection status check.
      */
 
     public java.util.Date getConnectionStateCheckTimestamp() {
@@ -191,11 +193,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
      * @param connectionStateCheckTimestamp
-     *        The timestamp of the connection state check.
+     *        The timestamp of the connection status check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,7 +247,8 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -317,5 +320,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.workspaces.model.transform.WorkspaceConnectionStatusMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

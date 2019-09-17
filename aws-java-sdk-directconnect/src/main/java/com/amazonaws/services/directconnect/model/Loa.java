@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,25 +14,39 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing the Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
+ * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Loa" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Loa implements Serializable, Cloneable {
+public class Loa implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     */
     private java.nio.ByteBuffer loaContent;
-
+    /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     */
     private String loaContentType;
 
     /**
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -43,6 +57,7 @@ public class Loa implements Serializable, Cloneable {
      * </p>
      * 
      * @param loaContent
+     *        The binary contents of the LOA-CFA document.
      */
 
     public void setLoaContent(java.nio.ByteBuffer loaContent) {
@@ -51,14 +66,17 @@ public class Loa implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}
-     * . Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
      * {@code position}.
      * </p>
      * 
-     * @return
+     * @return The binary contents of the LOA-CFA document.
      */
 
     public java.nio.ByteBuffer getLoaContent() {
@@ -66,7 +84,22 @@ public class Loa implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
      * @param loaContent
+     *        The binary contents of the LOA-CFA document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +109,12 @@ public class Loa implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
@@ -85,7 +123,11 @@ public class Loa implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
+     * @return The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
@@ -94,7 +136,12 @@ public class Loa implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
@@ -105,27 +152,38 @@ public class Loa implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
 
     public Loa withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -181,5 +239,11 @@ public class Loa implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directconnect.model.transform.LoaMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

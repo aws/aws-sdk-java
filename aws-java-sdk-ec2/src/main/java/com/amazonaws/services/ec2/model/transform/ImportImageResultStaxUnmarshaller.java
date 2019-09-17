@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,13 +45,38 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("architecture", targetDepth)) {
+                    importImageResult.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("description", targetDepth)) {
+                    importImageResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("encrypted", targetDepth)) {
+                    importImageResult.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hypervisor", targetDepth)) {
+                    importImageResult.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("imageId", targetDepth)) {
+                    importImageResult.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("importTaskId", targetDepth)) {
                     importImageResult.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("architecture", targetDepth)) {
-                    importImageResult.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    importImageResult.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,13 +90,8 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
                     continue;
                 }
 
-                if (context.testExpression("hypervisor", targetDepth)) {
-                    importImageResult.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    importImageResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("progress", targetDepth)) {
+                    importImageResult.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,23 +105,13 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
                     continue;
                 }
 
-                if (context.testExpression("imageId", targetDepth)) {
-                    importImageResult.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("progress", targetDepth)) {
-                    importImageResult.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("status", targetDepth)) {
+                    importImageResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("statusMessage", targetDepth)) {
                     importImageResult.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    importImageResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

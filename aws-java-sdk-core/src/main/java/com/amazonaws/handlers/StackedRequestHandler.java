@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,17 +14,16 @@
  */
 package com.amazonaws.handlers;
 
-import java.util.List;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-
-import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.http.HttpResponse;
+import com.amazonaws.util.ValidationUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Composite {@link RequestHandler2} to execute a chain of {@link RequestHandler2} implementations
@@ -69,6 +68,15 @@ public class StackedRequestHandler implements IRequestHandler2 {
     }
 
     @Override
+    public AmazonWebServiceRequest beforeExecution(AmazonWebServiceRequest origRequest) {
+        AmazonWebServiceRequest toReturn = origRequest;
+        for (RequestHandler2 handler : inOrderRequestHandlers) {
+            toReturn = handler.beforeExecution(toReturn);
+        }
+        return toReturn;
+    }
+
+    @Override
     public AmazonWebServiceRequest beforeMarshalling(AmazonWebServiceRequest origRequest) {
         AmazonWebServiceRequest toReturn = origRequest;
         for (RequestHandler2 handler : inOrderRequestHandlers) {
@@ -85,12 +93,26 @@ public class StackedRequestHandler implements IRequestHandler2 {
     }
 
     @Override
+    public void beforeAttempt(HandlerBeforeAttemptContext context) {
+        for (RequestHandler2 handler : inOrderRequestHandlers) {
+            handler.beforeAttempt(context);
+        }
+    }
+
+    @Override
     public HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse origHttpResponse) {
         HttpResponse toReturn = origHttpResponse;
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
             toReturn = handler.beforeUnmarshalling(request, toReturn);
         }
         return toReturn;
+    }
+
+    @Override
+    public void afterAttempt(HandlerAfterAttemptContext context) {
+        for(RequestHandler2 handler : reverseOrderRequestHandlers) {
+            handler.afterAttempt(context);
+        }
     }
 
     @Override
@@ -106,5 +128,4 @@ public class StackedRequestHandler implements IRequestHandler2 {
             handler.afterError(request, response, e);
         }
     }
-
 }

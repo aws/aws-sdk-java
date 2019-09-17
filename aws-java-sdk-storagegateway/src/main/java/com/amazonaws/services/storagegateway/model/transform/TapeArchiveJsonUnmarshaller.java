@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                 }
                 if (context.testExpression("TapeCreatedDate", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setTapeCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tapeArchive.setTapeCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
@@ -66,7 +66,7 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    tapeArchive.setCompletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tapeArchive.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RetrievedTo", targetDepth)) {
                     context.nextToken();
@@ -75,6 +75,18 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                 if (context.testExpression("TapeStatus", targetDepth)) {
                     context.nextToken();
                     tapeArchive.setTapeStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TapeUsedInBytes", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setTapeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("KMSKey", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PoolId", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

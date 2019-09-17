@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,11 +74,23 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deployment.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    deployment.setUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deployment.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("launchType", targetDepth)) {
+                    context.nextToken();
+                    deployment.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformVersion", targetDepth)) {
+                    context.nextToken();
+                    deployment.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("networkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deployment.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

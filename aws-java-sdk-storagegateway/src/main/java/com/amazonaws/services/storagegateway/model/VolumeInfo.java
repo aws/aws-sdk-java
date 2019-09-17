@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,14 +26,14 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VolumeInfo implements Serializable, Cloneable {
+public class VolumeInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:
      * </p>
      * <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -60,7 +62,11 @@ public class VolumeInfo implements Serializable, Cloneable {
      * </p>
      */
     private String gatewayId;
-
+    /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     */
     private String volumeType;
     /**
      * <p>
@@ -71,13 +77,19 @@ public class VolumeInfo implements Serializable, Cloneable {
      * </p>
      */
     private Long volumeSizeInBytes;
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     */
+    private String volumeAttachmentStatus;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:
      * </p>
      * <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -86,7 +98,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * @param volumeARN
      *        The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
      *        <p>
-     *        <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      *        </p>
      *        <p>
      *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -101,7 +113,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:
      * </p>
      * <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -109,7 +121,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
      *         <p>
-     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      *         </p>
      *         <p>
      *         Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -124,7 +136,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:
      * </p>
      * <p>
-     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -133,7 +145,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * @param volumeARN
      *        The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:</p>
      *        <p>
-     *        <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
      *        </p>
      *        <p>
      *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -294,7 +306,12 @@ public class VolumeInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public void setVolumeType(String volumeType) {
@@ -302,7 +319,11 @@ public class VolumeInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
+     * @return One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public String getVolumeType() {
@@ -310,7 +331,12 @@ public class VolumeInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,7 +401,48 @@ public class VolumeInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
+     */
+
+    public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        this.volumeAttachmentStatus = volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @return One of the VolumeStatus values that indicates the state of the storage volume.
+     */
+
+    public String getVolumeAttachmentStatus() {
+        return this.volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeInfo withVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        setVolumeAttachmentStatus(volumeAttachmentStatus);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -396,7 +463,9 @@ public class VolumeInfo implements Serializable, Cloneable {
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes());
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
+        if (getVolumeAttachmentStatus() != null)
+            sb.append("VolumeAttachmentStatus: ").append(getVolumeAttachmentStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +504,10 @@ public class VolumeInfo implements Serializable, Cloneable {
             return false;
         if (other.getVolumeSizeInBytes() != null && other.getVolumeSizeInBytes().equals(this.getVolumeSizeInBytes()) == false)
             return false;
+        if (other.getVolumeAttachmentStatus() == null ^ this.getVolumeAttachmentStatus() == null)
+            return false;
+        if (other.getVolumeAttachmentStatus() != null && other.getVolumeAttachmentStatus().equals(this.getVolumeAttachmentStatus()) == false)
+            return false;
         return true;
     }
 
@@ -449,6 +522,7 @@ public class VolumeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeInBytes() == null) ? 0 : getVolumeSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeAttachmentStatus() == null) ? 0 : getVolumeAttachmentStatus().hashCode());
         return hashCode;
     }
 
@@ -459,5 +533,11 @@ public class VolumeInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VolumeInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

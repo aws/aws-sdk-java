@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,30 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        ClientData clientData = importSnapshotRequest.getClientData();
+        if (clientData != null) {
+
+            if (clientData.getComment() != null) {
+                request.addParameter("ClientData.Comment", StringUtils.fromString(clientData.getComment()));
+            }
+
+            if (clientData.getUploadEnd() != null) {
+                request.addParameter("ClientData.UploadEnd", StringUtils.fromDate(clientData.getUploadEnd()));
+            }
+
+            if (clientData.getUploadSize() != null) {
+                request.addParameter("ClientData.UploadSize", StringUtils.fromDouble(clientData.getUploadSize()));
+            }
+
+            if (clientData.getUploadStart() != null) {
+                request.addParameter("ClientData.UploadStart", StringUtils.fromDate(clientData.getUploadStart()));
+            }
+        }
+
+        if (importSnapshotRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(importSnapshotRequest.getClientToken()));
+        }
+
         if (importSnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importSnapshotRequest.getDescription()));
         }
@@ -72,28 +96,12 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
             }
         }
 
-        ClientData clientData = importSnapshotRequest.getClientData();
-        if (clientData != null) {
-
-            if (clientData.getUploadStart() != null) {
-                request.addParameter("ClientData.UploadStart", StringUtils.fromDate(clientData.getUploadStart()));
-            }
-
-            if (clientData.getUploadEnd() != null) {
-                request.addParameter("ClientData.UploadEnd", StringUtils.fromDate(clientData.getUploadEnd()));
-            }
-
-            if (clientData.getUploadSize() != null) {
-                request.addParameter("ClientData.UploadSize", StringUtils.fromDouble(clientData.getUploadSize()));
-            }
-
-            if (clientData.getComment() != null) {
-                request.addParameter("ClientData.Comment", StringUtils.fromString(clientData.getComment()));
-            }
+        if (importSnapshotRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(importSnapshotRequest.getEncrypted()));
         }
 
-        if (importSnapshotRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(importSnapshotRequest.getClientToken()));
+        if (importSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(importSnapshotRequest.getKmsKeyId()));
         }
 
         if (importSnapshotRequest.getRoleName() != null) {

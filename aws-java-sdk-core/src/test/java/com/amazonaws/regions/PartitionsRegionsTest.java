@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.regions;
+
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -58,9 +60,9 @@ public class PartitionsRegionsTest {
     }
 
     @Test
-    public void region_name_not_matches_regionregex_returns_null() {
+    public void region_name_not_matches_regionregex_returns_defaultPartition() {
         final String regionName = "ap-new-region-1";
-        Assert.assertNull(RegionUtils.getRegion(regionName));
+        assertEquals("aws", RegionUtils.getRegion(regionName).getPartition());
     }
 
     @Test

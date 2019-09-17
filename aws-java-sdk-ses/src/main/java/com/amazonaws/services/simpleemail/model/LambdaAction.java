@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,12 @@ import javax.annotation.Generated;
  * <p>
  * To enable Amazon SES to call your AWS Lambda function or to publish to an Amazon SNS topic of another account, Amazon
  * SES must have permission to access those resources. For information about giving permissions, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * <p>
  * For information about using AWS Lambda actions in receipt rules, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -42,7 +42,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      */
@@ -51,7 +51,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS Lambda, see
-     * the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
+     * the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
      * </p>
      */
     private String functionArn;
@@ -60,8 +60,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -77,7 +77,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -85,7 +85,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public void setTopicArn(String topicArn) {
@@ -96,14 +96,14 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An
      *         example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *         information about Amazon SNS topics, see the <a
-     *         href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      */
 
     public String getTopicArn() {
@@ -114,7 +114,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An example of
      * an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about
-     * Amazon SNS topics, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.
      * </p>
      * 
@@ -122,7 +122,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is taken. An
      *        example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more
      *        information about Amazon SNS topics, see the <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,13 +135,13 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS Lambda, see
-     * the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
+     * the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
      * </p>
      * 
      * @param functionArn
      *        The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      *        <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS
-     *        Lambda, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
+     *        Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
      *        Guide</a>.
      */
 
@@ -153,12 +153,12 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS Lambda, see
-     * the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
+     * the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      *         <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS
-     *         Lambda, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
+     *         Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
      *         Guide</a>.
      */
 
@@ -170,13 +170,13 @@ public class LambdaAction implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS Lambda, see
-     * the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
+     * the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer Guide</a>.
      * </p>
      * 
      * @param functionArn
      *        The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an AWS Lambda function ARN is
      *        <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more information about AWS
-     *        Lambda, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
+     *        Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda Developer
      *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -191,8 +191,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -207,7 +207,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        that the execution of the function will immediately result in a response, and a value of
      *        <code>Event</code> means that the function will be invoked asynchronously. The default value is
      *        <code>Event</code>. For information about AWS Lambda invocation types, see the <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
      *        <important>
      *        <p>
      *        There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use
@@ -226,8 +226,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -241,7 +241,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         that the execution of the function will immediately result in a response, and a value of
      *         <code>Event</code> means that the function will be invoked asynchronously. The default value is
      *         <code>Event</code>. For information about AWS Lambda invocation types, see the <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
      *         <important>
      *         <p>
      *         There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use
@@ -260,8 +260,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -276,7 +276,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        that the execution of the function will immediately result in a response, and a value of
      *        <code>Event</code> means that the function will be invoked asynchronously. The default value is
      *        <code>Event</code>. For information about AWS Lambda invocation types, see the <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
      *        <important>
      *        <p>
      *        There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use
@@ -297,8 +297,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -313,7 +313,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        that the execution of the function will immediately result in a response, and a value of
      *        <code>Event</code> means that the function will be invoked asynchronously. The default value is
      *        <code>Event</code>. For information about AWS Lambda invocation types, see the <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
      *        <important>
      *        <p>
      *        There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use
@@ -324,7 +324,7 @@ public class LambdaAction implements Serializable, Cloneable {
      */
 
     public void setInvocationType(InvocationType invocationType) {
-        this.invocationType = invocationType.toString();
+        withInvocationType(invocationType);
     }
 
     /**
@@ -332,8 +332,8 @@ public class LambdaAction implements Serializable, Cloneable {
      * The invocation type of the AWS Lambda function. An invocation type of <code>RequestResponse</code> means that the
      * execution of the function will immediately result in a response, and a value of <code>Event</code> means that the
      * function will be invoked asynchronously. The default value is <code>Event</code>. For information about AWS
-     * Lambda invocation types, see the <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
-     * Developer Guide</a>.
+     * Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
+     * Lambda Developer Guide</a>.
      * </p>
      * <important>
      * <p>
@@ -348,7 +348,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        that the execution of the function will immediately result in a response, and a value of
      *        <code>Event</code> means that the function will be invoked asynchronously. The default value is
      *        <code>Event</code>. For information about AWS Lambda invocation types, see the <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda Developer Guide</a>.</p>
      *        <important>
      *        <p>
      *        There is a 30-second timeout on <code>RequestResponse</code> invocations. You should use
@@ -360,12 +360,13 @@ public class LambdaAction implements Serializable, Cloneable {
      */
 
     public LambdaAction withInvocationType(InvocationType invocationType) {
-        setInvocationType(invocationType);
+        this.invocationType = invocationType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -429,4 +430,5 @@ public class LambdaAction implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

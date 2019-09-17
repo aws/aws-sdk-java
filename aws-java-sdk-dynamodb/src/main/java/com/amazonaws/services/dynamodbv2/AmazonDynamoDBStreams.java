@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,32 +33,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
- * <p>
- * The following are short descriptions of each low-level DynamoDB Streams action:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>DescribeStream</i> - Returns detailed information about a particular stream.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetRecords</i> - Retrieves the stream records from within a shard.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard
- * ID.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDynamoDBStreams {
@@ -80,9 +54,10 @@ public interface AmazonDynamoDBStreams {
      * default protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -129,7 +104,7 @@ public interface AmazonDynamoDBStreams {
      * </p>
      * <note>
      * <p>
-     * You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+     * You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
      * </p>
      * </note>
      * <p>
@@ -141,7 +116,7 @@ public interface AmazonDynamoDBStreams {
      * </p>
      * 
      * @param describeStreamRequest
-     *        Represents the input of a <i>DescribeStream</i> operation.
+     *        Represents the input of a <code>DescribeStream</code> operation.
      * @return Result of the DescribeStream operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -170,7 +145,7 @@ public interface AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getRecordsRequest
-     *        Represents the input of a <i>GetRecords</i> operation.
+     *        Represents the input of a <code>GetRecords</code> operation.
      * @return Result of the GetRecords operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -184,7 +159,7 @@ public interface AmazonDynamoDBStreams {
      *         An error occurred on the server side.
      * @throws ExpiredIteratorException
      *         The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator
-     *         expires 15 minutes after it is retrieved using the <i>GetShardIterator</i> action.
+     *         expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.
      * @throws TrimmedDataAccessException
      *         The operation attempted to read past the oldest stream record in a shard.</p>
      *         <p>
@@ -200,9 +175,9 @@ public interface AmazonDynamoDBStreams {
      *         </li>
      *         <li>
      *         <p>
-     *         You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream
-     *         record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a
-     *         record that no longer exists.
+     *         You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a
+     *         stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access
+     *         a record that no longer exists.
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetRecords
@@ -224,7 +199,7 @@ public interface AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getShardIteratorRequest
-     *        Represents the input of a <i>GetShardIterator</i> operation.
+     *        Represents the input of a <code>GetShardIterator</code> operation.
      * @return Result of the GetShardIterator operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.
@@ -245,9 +220,9 @@ public interface AmazonDynamoDBStreams {
      *         </li>
      *         <li>
      *         <p>
-     *         You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream
-     *         record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a
-     *         record that no longer exists.
+     *         You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a
+     *         stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access
+     *         a record that no longer exists.
      *         </p>
      *         </li>
      * @sample AmazonDynamoDBStreams.GetShardIterator
@@ -259,16 +234,16 @@ public interface AmazonDynamoDBStreams {
     /**
      * <p>
      * Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code>
-     * parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.
+     * parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.
      * </p>
      * <note>
      * <p>
-     * You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+     * You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
      * </p>
      * </note>
      * 
      * @param listStreamsRequest
-     *        Represents the input of a <i>ListStreams</i> operation.
+     *        Represents the input of a <code>ListStreams</code> operation.
      * @return Result of the ListStreams operation returned by the service.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent stream.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,7 @@
  * <fullname>AWS Storage Gateway Service</fullname>
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to
- * provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage
+ * provide seamless and secure integration between an organization's on-premises IT environment and the AWS storage
  * infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid
  * disaster recovery.
  * </p>
@@ -26,7 +26,7 @@
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
@@ -34,29 +34,28 @@
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
- * Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
+ * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
- * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
- * elements, possible errors, and examples of requests and responses.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS
+ * Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters,
+ * response elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS Storage Gateway Regions and
- * Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
+ * Endpoints:</a> Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -64,8 +63,9 @@
  * <p>
  * AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2
  * expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For
- * example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2
- * API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.
+ * example, in Storage Gateway the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this ID
+ * with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API might not behave
+ * as expected.
  * </p>
  * </note> <important>
  * <p>
@@ -75,13 +75,13 @@
  * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS Resource IDs</a>.
  * </p>
  * <p>
- * For example, a volume ARN with the longer volume ID format will look like this:
+ * For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
  * </p>
  * <p>
  * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
  * </p>
  * <p>
- * A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+ * A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
  * </p>
  * <p>
  * For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer

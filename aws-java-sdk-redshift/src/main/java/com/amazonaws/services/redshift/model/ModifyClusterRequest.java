@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,8 +63,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -118,7 +118,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroups;
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
@@ -204,6 +205,20 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer automatedSnapshotRetentionPeriod;
     /**
      * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     */
+    private Integer manualSnapshotRetentionPeriod;
+    /**
+     * <p>
      * The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is
      * necessary during the window, it may result in an outage.
      * </p>
@@ -235,7 +250,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -320,7 +335,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      */
@@ -329,7 +344,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -340,6 +355,31 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean enhancedVpcRouting;
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     */
+    private String maintenanceTrackName;
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -500,8 +540,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -515,8 +555,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *        </p>
      *        <p>
-     *        Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -536,8 +576,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @return The new node type of the cluster. If you specify a new node type, you must also specify the number of
@@ -550,8 +590,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *         </p>
      *         <p>
-     *         Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      */
 
     public String getNodeType() {
@@ -571,8 +611,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>DescribeResize</a> to track the progress of the resize request.
      * </p>
      * <p>
-     * Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -586,8 +626,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        restored. You can use <a>DescribeResize</a> to track the progress of the resize request.
      *        </p>
      *        <p>
-     *        Valid Values: <code> ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code> ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>.
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -970,10 +1010,12 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
-     * @return A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * @return A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *         asynchronously applied as soon as possible.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -985,11 +1027,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -1003,7 +1047,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1012,7 +1057,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,11 +1074,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1523,6 +1571,91 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *        manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of
+     *        existing manual snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     */
+
+    public void setManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        this.manualSnapshotRetentionPeriod = manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @return The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *         manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods
+     *         of existing manual snapshots.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     *         </p>
+     *         <p>
+     *         The default value is -1.
+     */
+
+    public Integer getManualSnapshotRetentionPeriod() {
+        return this.manualSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual
+     * snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing
+     * manual snapshots.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param manualSnapshotRetentionPeriod
+     *        The default for number of days that a newly created manual snapshot is retained. If the value is -1, the
+     *        manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of
+     *        existing manual snapshots.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withManualSnapshotRetentionPeriod(Integer manualSnapshotRetentionPeriod) {
+        setManualSnapshotRetentionPeriod(manualSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is
      * necessary during the window, it may result in an outage.
      * </p>
@@ -1675,7 +1808,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1689,7 +1822,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        parameter group in the cluster parameter group family for the new version must be specified. The new
      *        cluster parameter group can be the default for that cluster parameter group family. For more information
      *        about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *        </p>
      *        <p>
@@ -1709,7 +1842,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1722,8 +1855,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         parameter group in the cluster parameter group family for the new version must be specified. The new
      *         cluster parameter group can be the default for that cluster parameter group family. For more information
      *         about parameters and parameter groups, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
-     *         Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *         </p>
      *         <p>
      *         Example: <code>1.0</code>
@@ -1742,7 +1875,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1756,7 +1889,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        parameter group in the cluster parameter group family for the new version must be specified. The new
      *        cluster parameter group can be the default for that cluster parameter group family. For more information
      *        about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *        </p>
      *        <p>
@@ -2243,7 +2376,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2252,7 +2385,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
 
@@ -2267,7 +2400,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2275,7 +2408,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *         gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *         >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
 
@@ -2290,7 +2423,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2299,7 +2432,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2313,7 +2446,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2326,7 +2459,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2343,7 +2476,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2355,8 +2488,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>
@@ -2372,7 +2505,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2385,7 +2518,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2404,7 +2537,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2416,8 +2549,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>
@@ -2430,7 +2563,189 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name for the maintenance track that you want to assign for the cluster. This name change is
+     *        asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the
+     *        next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster
+     *        release available for the maintenance track. At this point, the maintenance track name is applied.
+     */
+
+    public void setMaintenanceTrackName(String maintenanceTrackName) {
+        this.maintenanceTrackName = maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @return The name for the maintenance track that you want to assign for the cluster. This name change is
+     *         asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until
+     *         the next maintenance window. When the maintenance track changes, the cluster is switched to the latest
+     *         cluster release available for the maintenance track. At this point, the maintenance track name is
+     *         applied.
+     */
+
+    public String getMaintenanceTrackName() {
+        return this.maintenanceTrackName;
+    }
+
+    /**
+     * <p>
+     * The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The
+     * new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window.
+     * When the maintenance track changes, the cluster is switched to the latest cluster release available for the
+     * maintenance track. At this point, the maintenance track name is applied.
+     * </p>
+     * 
+     * @param maintenanceTrackName
+     *        The name for the maintenance track that you want to assign for the cluster. This name change is
+     *        asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the
+     *        next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster
+     *        release available for the maintenance track. At this point, the maintenance track name is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withMaintenanceTrackName(String maintenanceTrackName) {
+        setMaintenanceTrackName(maintenanceTrackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *        <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *        you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *        will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *         <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *         you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *         will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *        <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *        you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *        will use legacy encryption if you specify that the cluster is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     * <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If you
+     * don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we will use
+     * legacy encryption if you specify that the cluster is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the cluster is encrypted. If the cluster is encrypted and you provide a value for the
+     *         <code>KmsKeyId</code> parameter, we will encrypt the cluster with the provided <code>KmsKeyId</code>. If
+     *         you don't provide a <code>KmsKeyId</code>, we will encrypt with the default key. In the China region we
+     *         will use legacy encryption if you specify that the cluster is encrypted.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *        the cluster.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @return The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *         the cluster.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the
+     * cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in
+     *        the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2458,6 +2773,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ClusterParameterGroupName: ").append(getClusterParameterGroupName()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
             sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
+        if (getManualSnapshotRetentionPeriod() != null)
+            sb.append("ManualSnapshotRetentionPeriod: ").append(getManualSnapshotRetentionPeriod()).append(",");
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getClusterVersion() != null)
@@ -2475,7 +2792,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getElasticIp() != null)
             sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting());
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
+        if (getMaintenanceTrackName() != null)
+            sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -2527,6 +2850,11 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getAutomatedSnapshotRetentionPeriod() != null
                 && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false)
             return false;
+        if (other.getManualSnapshotRetentionPeriod() == null ^ this.getManualSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getManualSnapshotRetentionPeriod() != null
+                && other.getManualSnapshotRetentionPeriod().equals(this.getManualSnapshotRetentionPeriod()) == false)
+            return false;
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null)
             return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
@@ -2564,6 +2892,18 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEnhancedVpcRouting() != null && other.getEnhancedVpcRouting().equals(this.getEnhancedVpcRouting()) == false)
             return false;
+        if (other.getMaintenanceTrackName() == null ^ this.getMaintenanceTrackName() == null)
+            return false;
+        if (other.getMaintenanceTrackName() != null && other.getMaintenanceTrackName().equals(this.getMaintenanceTrackName()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -2581,6 +2921,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getClusterParameterGroupName() == null) ? 0 : getClusterParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getManualSnapshotRetentionPeriod() == null) ? 0 : getManualSnapshotRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode());
         hashCode = prime * hashCode + ((getAllowVersionUpgrade() == null) ? 0 : getAllowVersionUpgrade().hashCode());
@@ -2590,6 +2931,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

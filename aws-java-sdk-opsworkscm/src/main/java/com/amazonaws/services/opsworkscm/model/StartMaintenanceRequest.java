@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String serverName;
+    /**
+     * <p>
+     * Engine attributes that are specific to the server on which you want to run maintenance.
+     * </p>
+     */
+    private java.util.List<EngineAttribute> engineAttributes;
 
     /**
      * <p>
@@ -73,7 +79,78 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Engine attributes that are specific to the server on which you want to run maintenance.
+     * </p>
+     * 
+     * @return Engine attributes that are specific to the server on which you want to run maintenance.
+     */
+
+    public java.util.List<EngineAttribute> getEngineAttributes() {
+        return engineAttributes;
+    }
+
+    /**
+     * <p>
+     * Engine attributes that are specific to the server on which you want to run maintenance.
+     * </p>
+     * 
+     * @param engineAttributes
+     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     */
+
+    public void setEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
+        if (engineAttributes == null) {
+            this.engineAttributes = null;
+            return;
+        }
+
+        this.engineAttributes = new java.util.ArrayList<EngineAttribute>(engineAttributes);
+    }
+
+    /**
+     * <p>
+     * Engine attributes that are specific to the server on which you want to run maintenance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param engineAttributes
+     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartMaintenanceRequest withEngineAttributes(EngineAttribute... engineAttributes) {
+        if (this.engineAttributes == null) {
+            setEngineAttributes(new java.util.ArrayList<EngineAttribute>(engineAttributes.length));
+        }
+        for (EngineAttribute ele : engineAttributes) {
+            this.engineAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Engine attributes that are specific to the server on which you want to run maintenance.
+     * </p>
+     * 
+     * @param engineAttributes
+     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartMaintenanceRequest withEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
+        setEngineAttributes(engineAttributes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +161,9 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerName() != null)
-            sb.append("ServerName: ").append(getServerName());
+            sb.append("ServerName: ").append(getServerName()).append(",");
+        if (getEngineAttributes() != null)
+            sb.append("EngineAttributes: ").append(getEngineAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +182,10 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
+        if (other.getEngineAttributes() == null ^ this.getEngineAttributes() == null)
+            return false;
+        if (other.getEngineAttributes() != null && other.getEngineAttributes().equals(this.getEngineAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +195,7 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getEngineAttributes() == null) ? 0 : getEngineAttributes().hashCode());
         return hashCode;
     }
 

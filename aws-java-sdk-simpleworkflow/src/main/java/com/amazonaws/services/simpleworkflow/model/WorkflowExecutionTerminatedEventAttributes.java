@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,24 +14,29 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionTerminated</code> event.
+ * Provides the details of the <code>WorkflowExecutionTerminated</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionTerminatedEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionTerminatedEventAttributes implements Serializable, Cloneable {
+public class WorkflowExecutionTerminatedEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason provided for the termination (if any).
+     * The reason provided for the termination.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The details provided for the termination (if any).
+     * The details provided for the termination.
      * </p>
      */
     private String details;
@@ -43,11 +48,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      */
     private String childPolicy;
@@ -62,11 +79,11 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The reason provided for the termination (if any).
+     * The reason provided for the termination.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the termination (if any).
+     *        The reason provided for the termination.
      */
 
     public void setReason(String reason) {
@@ -75,10 +92,10 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The reason provided for the termination (if any).
+     * The reason provided for the termination.
      * </p>
      * 
-     * @return The reason provided for the termination (if any).
+     * @return The reason provided for the termination.
      */
 
     public String getReason() {
@@ -87,11 +104,11 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The reason provided for the termination (if any).
+     * The reason provided for the termination.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the termination (if any).
+     *        The reason provided for the termination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +119,11 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The details provided for the termination (if any).
+     * The details provided for the termination.
      * </p>
      * 
      * @param details
-     *        The details provided for the termination (if any).
+     *        The details provided for the termination.
      */
 
     public void setDetails(String details) {
@@ -115,10 +132,10 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The details provided for the termination (if any).
+     * The details provided for the termination.
      * </p>
      * 
-     * @return The details provided for the termination (if any).
+     * @return The details provided for the termination.
      */
 
     public String getDetails() {
@@ -127,11 +144,11 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
 
     /**
      * <p>
-     * The details provided for the termination (if any).
+     * The details provided for the termination.
      * </p>
      * 
      * @param details
-     *        The details provided for the termination (if any).
+     *        The details provided for the termination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +165,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -161,11 +190,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @see ChildPolicy
      */
 
@@ -181,11 +222,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The policy used for the child workflow executions of this workflow execution.</p>
@@ -193,11 +246,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      *         The supported child policies are:
      *         </p>
      *         <ul>
-     *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *         <li>
+     *         <p>
+     *         <code>TERMINATE</code> – The child executions are terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *         appropriate actions when it receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *         appropriate actions when it receives an execution history with this event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *         </p>
+     *         </li>
      * @see ChildPolicy
      */
 
@@ -213,11 +278,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -226,11 +303,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
@@ -248,11 +337,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -261,16 +362,28 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @see ChildPolicy
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -281,11 +394,23 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param childPolicy
@@ -294,17 +419,29 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
 
     public WorkflowExecutionTerminatedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 
@@ -378,7 +515,7 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public void setCause(WorkflowExecutionTerminatedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -397,12 +534,13 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public WorkflowExecutionTerminatedEventAttributes withCause(WorkflowExecutionTerminatedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -472,5 +610,12 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.WorkflowExecutionTerminatedEventAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

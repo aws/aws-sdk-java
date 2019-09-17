@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ public class JsonContent {
                 rawJsonContent = IOUtils.toByteArray(httpResponse.getContent());
             }
         } catch (Exception e) {
-            LOG.info("Unable to read HTTP response content", e);
+            LOG.debug("Unable to read HTTP response content", e);
         }
         return new JsonContent(rawJsonContent, new ObjectMapper(jsonFactory)
                 .configure(JsonParser.Feature.ALLOW_COMMENTS, true));
@@ -71,7 +71,7 @@ public class JsonContent {
         try {
             return mapper.readTree(rawJsonContent);
         } catch (Exception e) {
-            LOG.info("Unable to parse HTTP response content", e);
+            LOG.debug("Unable to parse HTTP response content", e);
             return mapper.createObjectNode();
         }
     }

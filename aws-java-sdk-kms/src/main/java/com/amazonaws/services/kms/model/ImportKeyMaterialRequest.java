@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,12 +31,15 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -45,6 +48,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
     /**
@@ -85,12 +91,15 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -99,17 +108,23 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
      *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
      *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -117,6 +132,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -129,12 +147,15 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -143,16 +164,22 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @return The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
      *         <code>EXTERNAL</code>.</p>
      *         <p>
-     *         A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -160,6 +187,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -172,12 +202,15 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -186,17 +219,23 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
      *        The identifier of the CMK to import the key material into. The CMK's <code>Origin</code> must be
      *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -204,6 +243,9 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,7 +260,7 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -264,6 +306,16 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must
      * be from the same response that contained the public key that you used to encrypt the key material.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param importToken
      *        The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It
@@ -283,7 +335,7 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * request.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -331,6 +383,16 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * The encrypted key material to import. It must be encrypted with the public key that you received in the response
      * to a previous <a>GetParametersForImport</a> request, using the wrapping algorithm that you specified in that
      * request.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param encryptedKeyMaterial
@@ -470,7 +532,7 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setExpirationModel(ExpirationModelType expirationModel) {
-        this.expirationModel = expirationModel.toString();
+        withExpirationModel(expirationModel);
     }
 
     /**
@@ -489,12 +551,13 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public ImportKeyMaterialRequest withExpirationModel(ExpirationModelType expirationModel) {
-        setExpirationModel(expirationModel);
+        this.expirationModel = expirationModel.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

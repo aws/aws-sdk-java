@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
@@ -56,8 +56,8 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String marker;
     /**
      * <p>
-     * The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might be
-     * fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      */
     private String limit;
@@ -89,9 +89,9 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @param vaultName
      *        The name of the vault.
      * @param uploadId
@@ -106,16 +106,16 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -125,15 +125,15 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *         uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *         ID, do not include any hyphens ('-') in the ID.
+     *         specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *         Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *         account ID, do not include any hyphens ('-') in the ID.
      */
 
     public String getAccountId() {
@@ -143,16 +143,16 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS
+     * an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS
      * account ID associated with the credentials used to sign the request. If you use an account ID, do not include any
      * hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier
-     *        uses the AWS account ID associated with the credentials used to sign the request. If you use an account
-     *        ID, do not include any hyphens ('-') in the ID.
+     *        specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3
+     *        Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+     *        account ID, do not include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,13 +295,13 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might be
-     * fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might
-     *        be fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     *        The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be
+     *        fewer than the specified limit, but the number of returned parts never exceeds the limit.
      */
 
     public void setLimit(String limit) {
@@ -310,11 +310,11 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might be
-     * fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
-     * @return The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might
+     * @return The maximum number of parts to be returned. The default limit is 50. The number of parts returned might
      *         be fewer than the specified limit, but the number of returned parts never exceeds the limit.
      */
 
@@ -324,13 +324,13 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might be
-     * fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     * The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be fewer
+     * than the specified limit, but the number of returned parts never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of parts to be returned. The default limit is 1000. The number of parts returned might
-     *        be fewer than the specified limit, but the number of returned parts never exceeds the limit.
+     *        The maximum number of parts to be returned. The default limit is 50. The number of parts returned might be
+     *        fewer than the specified limit, but the number of returned parts never exceeds the limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,7 +340,8 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

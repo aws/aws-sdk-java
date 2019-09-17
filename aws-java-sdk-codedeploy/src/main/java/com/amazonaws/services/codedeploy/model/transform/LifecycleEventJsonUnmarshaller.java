@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class LifecycleEventJsonUnmarshaller implements Unmarshaller<LifecycleEve
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lifecycleEvent.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
-                    lifecycleEvent.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    lifecycleEvent.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

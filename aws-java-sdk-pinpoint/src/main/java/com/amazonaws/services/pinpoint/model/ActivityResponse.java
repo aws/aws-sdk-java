@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,46 +14,107 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about an activity that was performed by a campaign.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ActivityResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityResponse implements Serializable, Cloneable {
+public class ActivityResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The ID of the application to which the campaign applies. */
+    /**
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
+     */
     private String applicationId;
-    /** The ID of the campaign to which the activity applies. */
+    /**
+     * <p>
+     * The unique identifier for the campaign that the activity applies to.
+     * </p>
+     */
     private String campaignId;
-    /** The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format. */
+    /**
+     * <p>
+     * The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
+     * </p>
+     */
     private String end;
-    /** The unique activity ID. */
+    /**
+     * <p>
+     * The unique identifier for the activity.
+     * </p>
+     */
     private String id;
     /**
-     * Indicates whether the activity succeeded.
-     * 
-     * Valid values: SUCCESS, FAIL
+     * <p>
+     * Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
+     * </p>
      */
     private String result;
-    /** The scheduled start time for the activity in ISO 8601 format. */
+    /**
+     * <p>
+     * The scheduled start time, in ISO 8601 format, for the activity.
+     * </p>
+     */
     private String scheduledStart;
-    /** The actual start time of the activity in ISO 8601 format. */
+    /**
+     * <p>
+     * The actual start time, in ISO 8601 format, of the activity.
+     * </p>
+     */
     private String start;
     /**
-     * The state of the activity.
-     * 
-     * Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     * <p>
+     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * </p>
      */
     private String state;
-    /** The total number of endpoints to which the campaign successfully delivered messages. */
+    /**
+     * <p>
+     * The total number of endpoints that the campaign successfully delivered messages to.
+     * </p>
+     */
     private Integer successfulEndpointCount;
-    /** The total number of endpoints to which the campaign attempts to deliver messages. */
+    /**
+     * <p>
+     * The total number of time zones that were completed.
+     * </p>
+     */
+    private Integer timezonesCompletedCount;
+    /**
+     * <p>
+     * The total number of unique time zones that are in the segment for the campaign.
+     * </p>
+     */
+    private Integer timezonesTotalCount;
+    /**
+     * <p>
+     * The total number of endpoints that the campaign attempted to deliver messages to.
+     * </p>
+     */
     private Integer totalEndpointCount;
-    /** The ID of a variation of the campaign used for A/B testing. */
+    /**
+     * <p>
+     * The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a
+     * campaign that's used for A/B testing of a campaign.
+     * </p>
+     */
     private String treatmentId;
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the campaign applies.
+     *        The unique identifier for the application that the campaign applies to.
      */
 
     public void setApplicationId(String applicationId) {
@@ -61,9 +122,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
-     * @return The ID of the application to which the campaign applies.
+     * @return The unique identifier for the application that the campaign applies to.
      */
 
     public String getApplicationId() {
@@ -71,10 +134,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the application to which the campaign applies.
+     * <p>
+     * The unique identifier for the application that the campaign applies to.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the campaign applies.
+     *        The unique identifier for the application that the campaign applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +149,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>
+     * The unique identifier for the campaign that the activity applies to.
+     * </p>
      * 
      * @param campaignId
-     *        The ID of the campaign to which the activity applies.
+     *        The unique identifier for the campaign that the activity applies to.
      */
 
     public void setCampaignId(String campaignId) {
@@ -95,9 +162,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>
+     * The unique identifier for the campaign that the activity applies to.
+     * </p>
      * 
-     * @return The ID of the campaign to which the activity applies.
+     * @return The unique identifier for the campaign that the activity applies to.
      */
 
     public String getCampaignId() {
@@ -105,10 +174,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the campaign to which the activity applies.
+     * <p>
+     * The unique identifier for the campaign that the activity applies to.
+     * </p>
      * 
      * @param campaignId
-     *        The ID of the campaign to which the activity applies.
+     *        The unique identifier for the campaign that the activity applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,10 +189,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     * <p>
+     * The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
+     * </p>
      * 
      * @param end
-     *        The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     *        The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
      */
 
     public void setEnd(String end) {
@@ -129,9 +202,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     * <p>
+     * The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
+     * </p>
      * 
-     * @return The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     * @return The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
      */
 
     public String getEnd() {
@@ -139,10 +214,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     * <p>
+     * The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
+     * </p>
      * 
      * @param end
-     *        The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.
+     *        The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,10 +229,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique activity ID.
+     * <p>
+     * The unique identifier for the activity.
+     * </p>
      * 
      * @param id
-     *        The unique activity ID.
+     *        The unique identifier for the activity.
      */
 
     public void setId(String id) {
@@ -163,9 +242,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique activity ID.
+     * <p>
+     * The unique identifier for the activity.
+     * </p>
      * 
-     * @return The unique activity ID.
+     * @return The unique identifier for the activity.
      */
 
     public String getId() {
@@ -173,10 +254,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique activity ID.
+     * <p>
+     * The unique identifier for the activity.
+     * </p>
      * 
      * @param id
-     *        The unique activity ID.
+     *        The unique identifier for the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,14 +269,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the activity succeeded.
-     * 
-     * Valid values: SUCCESS, FAIL
+     * <p>
+     * Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
+     * </p>
      * 
      * @param result
-     *        Indicates whether the activity succeeded.
-     * 
-     *        Valid values: SUCCESS, FAIL
+     *        Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
      */
 
     public void setResult(String result) {
@@ -201,13 +282,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the activity succeeded.
+     * <p>
+     * Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
+     * </p>
      * 
-     * Valid values: SUCCESS, FAIL
-     * 
-     * @return Indicates whether the activity succeeded.
-     * 
-     *         Valid values: SUCCESS, FAIL
+     * @return Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
      */
 
     public String getResult() {
@@ -215,14 +294,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Indicates whether the activity succeeded.
-     * 
-     * Valid values: SUCCESS, FAIL
+     * <p>
+     * Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
+     * </p>
      * 
      * @param result
-     *        Indicates whether the activity succeeded.
-     * 
-     *        Valid values: SUCCESS, FAIL
+     *        Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,10 +309,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>
+     * The scheduled start time, in ISO 8601 format, for the activity.
+     * </p>
      * 
      * @param scheduledStart
-     *        The scheduled start time for the activity in ISO 8601 format.
+     *        The scheduled start time, in ISO 8601 format, for the activity.
      */
 
     public void setScheduledStart(String scheduledStart) {
@@ -243,9 +322,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>
+     * The scheduled start time, in ISO 8601 format, for the activity.
+     * </p>
      * 
-     * @return The scheduled start time for the activity in ISO 8601 format.
+     * @return The scheduled start time, in ISO 8601 format, for the activity.
      */
 
     public String getScheduledStart() {
@@ -253,10 +334,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The scheduled start time for the activity in ISO 8601 format.
+     * <p>
+     * The scheduled start time, in ISO 8601 format, for the activity.
+     * </p>
      * 
      * @param scheduledStart
-     *        The scheduled start time for the activity in ISO 8601 format.
+     *        The scheduled start time, in ISO 8601 format, for the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,10 +349,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>
+     * The actual start time, in ISO 8601 format, of the activity.
+     * </p>
      * 
      * @param start
-     *        The actual start time of the activity in ISO 8601 format.
+     *        The actual start time, in ISO 8601 format, of the activity.
      */
 
     public void setStart(String start) {
@@ -277,9 +362,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>
+     * The actual start time, in ISO 8601 format, of the activity.
+     * </p>
      * 
-     * @return The actual start time of the activity in ISO 8601 format.
+     * @return The actual start time, in ISO 8601 format, of the activity.
      */
 
     public String getStart() {
@@ -287,10 +374,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The actual start time of the activity in ISO 8601 format.
+     * <p>
+     * The actual start time, in ISO 8601 format, of the activity.
+     * </p>
      * 
      * @param start
-     *        The actual start time of the activity in ISO 8601 format.
+     *        The actual start time, in ISO 8601 format, of the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,14 +389,13 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the activity.
-     * 
-     * Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     * <p>
+     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * </p>
      * 
      * @param state
-     *        The state of the activity.
-     * 
-     *        Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     *        The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     *        COMPLETED.
      */
 
     public void setState(String state) {
@@ -315,13 +403,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the activity.
+     * <p>
+     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * </p>
      * 
-     * Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
-     * 
-     * @return The state of the activity.
-     * 
-     *         Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     * @return The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     *         COMPLETED.
      */
 
     public String getState() {
@@ -329,14 +416,13 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The state of the activity.
-     * 
-     * Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     * <p>
+     * The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.
+     * </p>
      * 
      * @param state
-     *        The state of the activity.
-     * 
-     *        Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED
+     *        The state of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and
+     *        COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,10 +432,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered messages.
+     * <p>
+     * The total number of endpoints that the campaign successfully delivered messages to.
+     * </p>
      * 
      * @param successfulEndpointCount
-     *        The total number of endpoints to which the campaign successfully delivered messages.
+     *        The total number of endpoints that the campaign successfully delivered messages to.
      */
 
     public void setSuccessfulEndpointCount(Integer successfulEndpointCount) {
@@ -357,9 +445,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered messages.
+     * <p>
+     * The total number of endpoints that the campaign successfully delivered messages to.
+     * </p>
      * 
-     * @return The total number of endpoints to which the campaign successfully delivered messages.
+     * @return The total number of endpoints that the campaign successfully delivered messages to.
      */
 
     public Integer getSuccessfulEndpointCount() {
@@ -367,10 +457,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign successfully delivered messages.
+     * <p>
+     * The total number of endpoints that the campaign successfully delivered messages to.
+     * </p>
      * 
      * @param successfulEndpointCount
-     *        The total number of endpoints to which the campaign successfully delivered messages.
+     *        The total number of endpoints that the campaign successfully delivered messages to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,10 +472,92 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver messages.
+     * <p>
+     * The total number of time zones that were completed.
+     * </p>
+     * 
+     * @param timezonesCompletedCount
+     *        The total number of time zones that were completed.
+     */
+
+    public void setTimezonesCompletedCount(Integer timezonesCompletedCount) {
+        this.timezonesCompletedCount = timezonesCompletedCount;
+    }
+
+    /**
+     * <p>
+     * The total number of time zones that were completed.
+     * </p>
+     * 
+     * @return The total number of time zones that were completed.
+     */
+
+    public Integer getTimezonesCompletedCount() {
+        return this.timezonesCompletedCount;
+    }
+
+    /**
+     * <p>
+     * The total number of time zones that were completed.
+     * </p>
+     * 
+     * @param timezonesCompletedCount
+     *        The total number of time zones that were completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse withTimezonesCompletedCount(Integer timezonesCompletedCount) {
+        setTimezonesCompletedCount(timezonesCompletedCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of unique time zones that are in the segment for the campaign.
+     * </p>
+     * 
+     * @param timezonesTotalCount
+     *        The total number of unique time zones that are in the segment for the campaign.
+     */
+
+    public void setTimezonesTotalCount(Integer timezonesTotalCount) {
+        this.timezonesTotalCount = timezonesTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total number of unique time zones that are in the segment for the campaign.
+     * </p>
+     * 
+     * @return The total number of unique time zones that are in the segment for the campaign.
+     */
+
+    public Integer getTimezonesTotalCount() {
+        return this.timezonesTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total number of unique time zones that are in the segment for the campaign.
+     * </p>
+     * 
+     * @param timezonesTotalCount
+     *        The total number of unique time zones that are in the segment for the campaign.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityResponse withTimezonesTotalCount(Integer timezonesTotalCount) {
+        setTimezonesTotalCount(timezonesTotalCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of endpoints that the campaign attempted to deliver messages to.
+     * </p>
      * 
      * @param totalEndpointCount
-     *        The total number of endpoints to which the campaign attempts to deliver messages.
+     *        The total number of endpoints that the campaign attempted to deliver messages to.
      */
 
     public void setTotalEndpointCount(Integer totalEndpointCount) {
@@ -391,9 +565,11 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver messages.
+     * <p>
+     * The total number of endpoints that the campaign attempted to deliver messages to.
+     * </p>
      * 
-     * @return The total number of endpoints to which the campaign attempts to deliver messages.
+     * @return The total number of endpoints that the campaign attempted to deliver messages to.
      */
 
     public Integer getTotalEndpointCount() {
@@ -401,10 +577,12 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The total number of endpoints to which the campaign attempts to deliver messages.
+     * <p>
+     * The total number of endpoints that the campaign attempted to deliver messages to.
+     * </p>
      * 
      * @param totalEndpointCount
-     *        The total number of endpoints to which the campaign attempts to deliver messages.
+     *        The total number of endpoints that the campaign attempted to deliver messages to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,10 +592,14 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>
+     * The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a
+     * campaign that's used for A/B testing of a campaign.
+     * </p>
      * 
      * @param treatmentId
-     *        The ID of a variation of the campaign used for A/B testing.
+     *        The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation
+     *        of a campaign that's used for A/B testing of a campaign.
      */
 
     public void setTreatmentId(String treatmentId) {
@@ -425,9 +607,13 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>
+     * The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a
+     * campaign that's used for A/B testing of a campaign.
+     * </p>
      * 
-     * @return The ID of a variation of the campaign used for A/B testing.
+     * @return The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation
+     *         of a campaign that's used for A/B testing of a campaign.
      */
 
     public String getTreatmentId() {
@@ -435,10 +621,14 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of a variation of the campaign used for A/B testing.
+     * <p>
+     * The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a
+     * campaign that's used for A/B testing of a campaign.
+     * </p>
      * 
      * @param treatmentId
-     *        The ID of a variation of the campaign used for A/B testing.
+     *        The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation
+     *        of a campaign that's used for A/B testing of a campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,7 +638,8 @@ public class ActivityResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -476,6 +667,10 @@ public class ActivityResponse implements Serializable, Cloneable {
             sb.append("State: ").append(getState()).append(",");
         if (getSuccessfulEndpointCount() != null)
             sb.append("SuccessfulEndpointCount: ").append(getSuccessfulEndpointCount()).append(",");
+        if (getTimezonesCompletedCount() != null)
+            sb.append("TimezonesCompletedCount: ").append(getTimezonesCompletedCount()).append(",");
+        if (getTimezonesTotalCount() != null)
+            sb.append("TimezonesTotalCount: ").append(getTimezonesTotalCount()).append(",");
         if (getTotalEndpointCount() != null)
             sb.append("TotalEndpointCount: ").append(getTotalEndpointCount()).append(",");
         if (getTreatmentId() != null)
@@ -530,6 +725,14 @@ public class ActivityResponse implements Serializable, Cloneable {
             return false;
         if (other.getSuccessfulEndpointCount() != null && other.getSuccessfulEndpointCount().equals(this.getSuccessfulEndpointCount()) == false)
             return false;
+        if (other.getTimezonesCompletedCount() == null ^ this.getTimezonesCompletedCount() == null)
+            return false;
+        if (other.getTimezonesCompletedCount() != null && other.getTimezonesCompletedCount().equals(this.getTimezonesCompletedCount()) == false)
+            return false;
+        if (other.getTimezonesTotalCount() == null ^ this.getTimezonesTotalCount() == null)
+            return false;
+        if (other.getTimezonesTotalCount() != null && other.getTimezonesTotalCount().equals(this.getTimezonesTotalCount()) == false)
+            return false;
         if (other.getTotalEndpointCount() == null ^ this.getTotalEndpointCount() == null)
             return false;
         if (other.getTotalEndpointCount() != null && other.getTotalEndpointCount().equals(this.getTotalEndpointCount()) == false)
@@ -555,6 +758,8 @@ public class ActivityResponse implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getSuccessfulEndpointCount() == null) ? 0 : getSuccessfulEndpointCount().hashCode());
+        hashCode = prime * hashCode + ((getTimezonesCompletedCount() == null) ? 0 : getTimezonesCompletedCount().hashCode());
+        hashCode = prime * hashCode + ((getTimezonesTotalCount() == null) ? 0 : getTimezonesTotalCount().hashCode());
         hashCode = prime * hashCode + ((getTotalEndpointCount() == null) ? 0 : getTotalEndpointCount().hashCode());
         hashCode = prime * hashCode + ((getTreatmentId() == null) ? 0 : getTreatmentId().hashCode());
         return hashCode;
@@ -567,5 +772,11 @@ public class ActivityResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.ActivityResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

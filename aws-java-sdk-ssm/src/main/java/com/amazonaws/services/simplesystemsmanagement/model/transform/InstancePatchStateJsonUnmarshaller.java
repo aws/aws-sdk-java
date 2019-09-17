@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setSnapshotId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstallOverrideList", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setInstallOverrideList(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("OwnerInformation", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setOwnerInformation(context.getUnmarshaller(String.class).unmarshall(context));
@@ -76,6 +80,10 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setInstalledOtherCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("InstalledRejectedCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setInstalledRejectedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("MissingCount", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setMissingCount(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -84,17 +92,21 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setFailedCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("UnreportedNotApplicableCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setUnreportedNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("NotApplicableCount", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setNotApplicableCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("OperationStartTime", targetDepth)) {
                     context.nextToken();
-                    instancePatchState.setOperationStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instancePatchState.setOperationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("OperationEndTime", targetDepth)) {
                     context.nextToken();
-                    instancePatchState.setOperationEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instancePatchState.setOperationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Operation", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,61 +12,53 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetJobOutputRequest Marshaller
+ * GetJobOutputRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobOutputRequest>, GetJobOutputRequest> {
+@SdkInternalApi
+public class GetJobOutputRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> RANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("Range").build();
 
-    public GetJobOutputRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetJobOutputRequestMarshaller instance = new GetJobOutputRequestMarshaller();
+
+    public static GetJobOutputRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetJobOutputRequest> marshall(GetJobOutputRequest getJobOutputRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetJobOutputRequest getJobOutputRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getJobOutputRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetJobOutputRequest> request = new DefaultRequest<GetJobOutputRequest>(getJobOutputRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        if (getJobOutputRequest.getRange() != null) {
-            request.addHeader("Range", StringUtils.fromString(getJobOutputRequest.getRange()));
+        try {
+            protocolMarshaller.marshall(getJobOutputRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(getJobOutputRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(getJobOutputRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(getJobOutputRequest.getRange(), RANGE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                getJobOutputRequest.getAccountId() == null ? "-" : getJobOutputRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", getJobOutputRequest.getVaultName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "jobId", getJobOutputRequest.getJobId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

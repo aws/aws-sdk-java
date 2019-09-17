@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,22 +26,31 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSEncryptionConfig implements Serializable, Cloneable {
+public class KMSEncryptionConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination
+     * Amazon S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String aWSKMSKeyARN;
 
     /**
      * <p>
-     * The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination
+     * Amazon S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param aWSKMSKeyARN
-     *        The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     *        The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the
+     *        destination Amazon S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setAWSKMSKeyARN(String aWSKMSKeyARN) {
@@ -48,10 +59,16 @@ public class KMSEncryptionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination
+     * Amazon S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     * @return The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the
+     *         destination Amazon S3 bucket. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getAWSKMSKeyARN() {
@@ -60,11 +77,17 @@ public class KMSEncryptionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     * The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the destination
+     * Amazon S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param aWSKMSKeyARN
-     *        The ARN of the encryption key. Must belong to the same region as the destination Amazon S3 bucket.
+     *        The Amazon Resource Name (ARN) of the encryption key. Must belong to the same AWS Region as the
+     *        destination Amazon S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +97,8 @@ public class KMSEncryptionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -123,5 +147,11 @@ public class KMSEncryptionConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisfirehose.model.transform.KMSEncryptionConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

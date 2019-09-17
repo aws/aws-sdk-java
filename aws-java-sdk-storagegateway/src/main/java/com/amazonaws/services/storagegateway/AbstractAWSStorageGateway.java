@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,16 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public AssignTapePoolResult assignTapePool(AssignTapePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AttachVolumeResult attachVolume(AttachVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelArchivalResult cancelArchival(CancelArchivalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSMBFileShareResult createSMBFileShare(CreateSMBFileShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,6 +198,16 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeSMBFileSharesResult describeSMBFileShares(DescribeSMBFileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSMBSettingsResult describeSMBSettings(DescribeSMBSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -228,7 +253,17 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DetachVolumeResult detachVolume(DetachVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableGatewayResult disableGateway(DisableGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public JoinDomainResult joinDomain(JoinDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -283,6 +318,16 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public NotifyWhenUploadedResult notifyWhenUploaded(NotifyWhenUploadedRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RefreshCacheResult refreshCache(RefreshCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -309,6 +354,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetSMBGuestPasswordResult setSMBGuestPassword(SetSMBGuestPasswordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +399,16 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSMBFileShareResult updateSMBFileShare(UpdateSMBFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSMBSecurityStrategyResult updateSMBSecurityStrategy(UpdateSMBSecurityStrategyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

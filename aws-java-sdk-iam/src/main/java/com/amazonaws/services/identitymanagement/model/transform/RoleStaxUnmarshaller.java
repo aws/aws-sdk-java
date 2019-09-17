@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -64,7 +66,7 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    role.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    role.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -72,6 +74,32 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                     role.setAssumeRolePolicyDocument(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Description", targetDepth)) {
+                    role.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxSessionDuration", targetDepth)) {
+                    role.setMaxSessionDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    role.setPermissionsBoundary(AttachedPermissionsBoundaryStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    role.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    role.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return role;

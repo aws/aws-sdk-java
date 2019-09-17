@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      */
     private java.util.List<ScalingPolicy> scalingPolicies;
@@ -39,10 +39,10 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
-     * @return A list of scaling policy objects.
+     * @return Information about the scaling policies.
      */
 
     public java.util.List<ScalingPolicy> getScalingPolicies() {
@@ -51,11 +51,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      */
 
     public void setScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
@@ -69,7 +69,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +154,8 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -211,4 +212,5 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

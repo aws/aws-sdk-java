@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,16 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      */
     private java.util.List<String> certificateStatuses;
+    /**
+     * <p>
+     * Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     * </p>
+     */
+    private Filters includes;
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent request after you receive a response
@@ -49,10 +55,10 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      * 
-     * @return The status or statuses on which to filter the list of ACM Certificates.
+     * @return Filter the certificate list by status value.
      * @see CertificateStatus
      */
 
@@ -62,11 +68,11 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      * 
      * @param certificateStatuses
-     *        The status or statuses on which to filter the list of ACM Certificates.
+     *        Filter the certificate list by status value.
      * @see CertificateStatus
      */
 
@@ -81,7 +87,7 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +96,7 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param certificateStatuses
-     *        The status or statuses on which to filter the list of ACM Certificates.
+     *        Filter the certificate list by status value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
@@ -107,11 +113,11 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      * 
      * @param certificateStatuses
-     *        The status or statuses on which to filter the list of ACM Certificates.
+     *        Filter the certificate list by status value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
@@ -123,11 +129,11 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The status or statuses on which to filter the list of ACM Certificates.
+     * Filter the certificate list by status value.
      * </p>
      * 
      * @param certificateStatuses
-     *        The status or statuses on which to filter the list of ACM Certificates.
+     *        Filter the certificate list by status value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
@@ -142,6 +148,46 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         } else {
             getCertificateStatuses().addAll(certificateStatusesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     * </p>
+     * 
+     * @param includes
+     *        Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     */
+
+    public void setIncludes(Filters includes) {
+        this.includes = includes;
+    }
+
+    /**
+     * <p>
+     * Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     * </p>
+     * 
+     * @return Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     */
+
+    public Filters getIncludes() {
+        return this.includes;
+    }
+
+    /**
+     * <p>
+     * Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     * </p>
+     * 
+     * @param includes
+     *        Filter the certificate list. For more information, see the <a>Filters</a> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCertificatesRequest withIncludes(Filters includes) {
+        setIncludes(includes);
         return this;
     }
 
@@ -250,7 +296,8 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -262,6 +309,8 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getCertificateStatuses() != null)
             sb.append("CertificateStatuses: ").append(getCertificateStatuses()).append(",");
+        if (getIncludes() != null)
+            sb.append("Includes: ").append(getIncludes()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxItems() != null)
@@ -284,6 +333,10 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCertificateStatuses() != null && other.getCertificateStatuses().equals(this.getCertificateStatuses()) == false)
             return false;
+        if (other.getIncludes() == null ^ this.getIncludes() == null)
+            return false;
+        if (other.getIncludes() != null && other.getIncludes().equals(this.getIncludes()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -301,6 +354,7 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateStatuses() == null) ? 0 : getCertificateStatuses().hashCode());
+        hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;

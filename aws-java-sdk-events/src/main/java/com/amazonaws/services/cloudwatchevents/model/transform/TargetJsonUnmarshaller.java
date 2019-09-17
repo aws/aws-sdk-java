@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                     context.nextToken();
                     target.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RoleArn", targetDepth)) {
+                    context.nextToken();
+                    target.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Input", targetDepth)) {
                     context.nextToken();
                     target.setInput(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,30 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                 if (context.testExpression("InputPath", targetDepth)) {
                     context.nextToken();
                     target.setInputPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InputTransformer", targetDepth)) {
+                    context.nextToken();
+                    target.setInputTransformer(InputTransformerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KinesisParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setKinesisParameters(KinesisParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RunCommandParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setRunCommandParameters(RunCommandParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EcsParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setEcsParameters(EcsParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BatchParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setBatchParameters(BatchParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SqsParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setSqsParameters(SqsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

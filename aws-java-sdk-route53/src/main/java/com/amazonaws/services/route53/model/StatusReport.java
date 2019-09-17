@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,9 +36,9 @@ public class StatusReport implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The time at which the health checker performed the health check in <a
+     * The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
-     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
+     * example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      */
     private java.util.Date checkedTime;
@@ -91,15 +91,15 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the health checker performed the health check in <a
+     * The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
-     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
+     * example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The time at which the health checker performed the health check in <a
+     *        The date and time that the health checker performed the health check in <a
      *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
-     *        For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
      *        UTC.
      */
 
@@ -109,14 +109,14 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the health checker performed the health check in <a
+     * The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
-     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
+     * example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
-     * @return The time at which the health checker performed the health check in <a
+     * @return The date and time that the health checker performed the health check in <a
      *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
-     *         For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *         For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
      *         UTC.
      */
 
@@ -126,15 +126,15 @@ public class StatusReport implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time at which the health checker performed the health check in <a
+     * The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For
-     * example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751 UTC.
+     * example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param checkedTime
-     *        The time at which the health checker performed the health check in <a
+     *        The date and time that the health checker performed the health check in <a
      *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
-     *        For example, the value <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at 17:48:16.751
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
      *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,7 +145,8 @@ public class StatusReport implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -202,4 +203,5 @@ public class StatusReport implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

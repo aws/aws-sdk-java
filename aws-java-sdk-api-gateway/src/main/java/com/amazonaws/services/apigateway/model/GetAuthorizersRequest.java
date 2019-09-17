@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,31 +27,30 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -60,10 +59,10 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -72,11 +71,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,13 +86,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *        start the next page of results.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -102,12 +99,10 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *         start the next page of results.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -116,13 +111,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If not all <a>Authorizer</a> resources in the response were present, the position will specify where to start the
-     * next page of results.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        If not all <a>Authorizer</a> resources in the response were present, the position will specify where to
-     *        start the next page of results.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +126,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        Limit the number of <a>Authorizer</a> resources in the response.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -146,10 +139,10 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return Limit the number of <a>Authorizer</a> resources in the response.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -158,11 +151,11 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Limit the number of <a>Authorizer</a> resources in the response.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        Limit the number of <a>Authorizer</a> resources in the response.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,7 +165,8 @@ public class GetAuthorizersRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

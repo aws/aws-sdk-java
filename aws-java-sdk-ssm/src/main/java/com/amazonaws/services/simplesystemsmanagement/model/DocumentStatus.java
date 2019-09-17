@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The status of a document.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DocumentStatus {
@@ -23,7 +25,8 @@ public enum DocumentStatus {
     Creating("Creating"),
     Active("Active"),
     Updating("Updating"),
-    Deleting("Deleting");
+    Deleting("Deleting"),
+    Failed("Failed");
 
     private String value;
 
@@ -42,6 +45,9 @@ public enum DocumentStatus {
      * @param value
      *        real value
      * @return DocumentStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DocumentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

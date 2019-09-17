@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,77 +12,62 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ConfirmForgotPasswordRequest Marshaller
+ * ConfirmForgotPasswordRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfirmForgotPasswordRequestMarshaller implements Marshaller<Request<ConfirmForgotPasswordRequest>, ConfirmForgotPasswordRequest> {
+@SdkInternalApi
+public class ConfirmForgotPasswordRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientId").build();
+    private static final MarshallingInfo<String> SECRETHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretHash").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> CONFIRMATIONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfirmationCode").build();
+    private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Password").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
 
-    public ConfirmForgotPasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ConfirmForgotPasswordRequestMarshaller instance = new ConfirmForgotPasswordRequestMarshaller();
+
+    public static ConfirmForgotPasswordRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ConfirmForgotPasswordRequest> marshall(ConfirmForgotPasswordRequest confirmForgotPasswordRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ConfirmForgotPasswordRequest confirmForgotPasswordRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (confirmForgotPasswordRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ConfirmForgotPasswordRequest> request = new DefaultRequest<ConfirmForgotPasswordRequest>(confirmForgotPasswordRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ConfirmForgotPassword");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (confirmForgotPasswordRequest.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(confirmForgotPasswordRequest.getClientId());
-            }
-            if (confirmForgotPasswordRequest.getSecretHash() != null) {
-                jsonGenerator.writeFieldName("SecretHash").writeValue(confirmForgotPasswordRequest.getSecretHash());
-            }
-            if (confirmForgotPasswordRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(confirmForgotPasswordRequest.getUsername());
-            }
-            if (confirmForgotPasswordRequest.getConfirmationCode() != null) {
-                jsonGenerator.writeFieldName("ConfirmationCode").writeValue(confirmForgotPasswordRequest.getConfirmationCode());
-            }
-            if (confirmForgotPasswordRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(confirmForgotPasswordRequest.getPassword());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getClientId(), CLIENTID_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getSecretHash(), SECRETHASH_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getConfirmationCode(), CONFIRMATIONCODE_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(confirmForgotPasswordRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

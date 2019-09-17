@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,32 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when an
  * asynchronous operation completes.
  * <p>
- * Amazon Server Migration Service automates the process of migrating servers to EC2.
+ * <fullname>AAWS Sever Migration Service</fullname>
+ * <p>
+ * This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions, syntax, and usage examples
+ * for each of the actions and data types for the AWS Sever Migration Service (AWS SMS). The topic for each action shows
+ * the Query API request parameters and the XML response. You can also view the XML request elements in the WSDL.
+ * </p>
+ * <p>
+ * Alternatively, you can use one of the AWS SDKs to access an API that's tailored to the programming language or
+ * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+ * </p>
+ * <p>
+ * To learn more about the Server Migration Service, see the following resources:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service product page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS Sever
+ * Migration Service User Guide</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -217,6 +242,10 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
         this.executorService = executorService;
     }
 
+    public static AWSServerMigrationAsyncClientBuilder asyncBuilder() {
+        return AWSServerMigrationAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on SMS using the specified parameters.
      *
@@ -238,22 +267,23 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     }
 
     @Override
-    public java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(CreateReplicationJobRequest request) {
+    public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request) {
 
-        return createReplicationJobAsync(request, null);
+        return createAppAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(final CreateReplicationJobRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateReplicationJobRequest, CreateReplicationJobResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateAppResult> createAppAsync(final CreateAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler) {
+        final CreateAppRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<CreateReplicationJobResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<CreateAppResult>() {
             @Override
-            public CreateReplicationJobResult call() throws Exception {
-                CreateReplicationJobResult result;
+            public CreateAppResult call() throws Exception {
+                CreateAppResult result = null;
 
                 try {
-                    result = createReplicationJob(request);
+                    result = executeCreateApp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -262,7 +292,141 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(CreateReplicationJobRequest request) {
+
+        return createReplicationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicationJobResult> createReplicationJobAsync(final CreateReplicationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateReplicationJobRequest, CreateReplicationJobResult> asyncHandler) {
+        final CreateReplicationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateReplicationJobResult>() {
+            @Override
+            public CreateReplicationJobResult call() throws Exception {
+                CreateReplicationJobResult result = null;
+
+                try {
+                    result = executeCreateReplicationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request) {
+
+        return deleteAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(final DeleteAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
+        final DeleteAppRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppResult>() {
+            @Override
+            public DeleteAppResult call() throws Exception {
+                DeleteAppResult result = null;
+
+                try {
+                    result = executeDeleteApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppLaunchConfigurationResult> deleteAppLaunchConfigurationAsync(DeleteAppLaunchConfigurationRequest request) {
+
+        return deleteAppLaunchConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppLaunchConfigurationResult> deleteAppLaunchConfigurationAsync(final DeleteAppLaunchConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppLaunchConfigurationRequest, DeleteAppLaunchConfigurationResult> asyncHandler) {
+        final DeleteAppLaunchConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppLaunchConfigurationResult>() {
+            @Override
+            public DeleteAppLaunchConfigurationResult call() throws Exception {
+                DeleteAppLaunchConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteAppLaunchConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppReplicationConfigurationResult> deleteAppReplicationConfigurationAsync(
+            DeleteAppReplicationConfigurationRequest request) {
+
+        return deleteAppReplicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppReplicationConfigurationResult> deleteAppReplicationConfigurationAsync(
+            final DeleteAppReplicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppReplicationConfigurationRequest, DeleteAppReplicationConfigurationResult> asyncHandler) {
+        final DeleteAppReplicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppReplicationConfigurationResult>() {
+            @Override
+            public DeleteAppReplicationConfigurationResult call() throws Exception {
+                DeleteAppReplicationConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteAppReplicationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -278,14 +442,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<DeleteReplicationJobResult> deleteReplicationJobAsync(final DeleteReplicationJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteReplicationJobRequest, DeleteReplicationJobResult> asyncHandler) {
+        final DeleteReplicationJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteReplicationJobResult>() {
             @Override
             public DeleteReplicationJobResult call() throws Exception {
-                DeleteReplicationJobResult result;
+                DeleteReplicationJobResult result = null;
 
                 try {
-                    result = deleteReplicationJob(request);
+                    result = executeDeleteReplicationJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -294,7 +459,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -310,14 +475,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<DeleteServerCatalogResult> deleteServerCatalogAsync(final DeleteServerCatalogRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteServerCatalogRequest, DeleteServerCatalogResult> asyncHandler) {
+        final DeleteServerCatalogRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteServerCatalogResult>() {
             @Override
             public DeleteServerCatalogResult call() throws Exception {
-                DeleteServerCatalogResult result;
+                DeleteServerCatalogResult result = null;
 
                 try {
-                    result = deleteServerCatalog(request);
+                    result = executeDeleteServerCatalog(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -326,7 +492,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -342,14 +508,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<DisassociateConnectorResult> disassociateConnectorAsync(final DisassociateConnectorRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateConnectorRequest, DisassociateConnectorResult> asyncHandler) {
+        final DisassociateConnectorRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisassociateConnectorResult>() {
             @Override
             public DisassociateConnectorResult call() throws Exception {
-                DisassociateConnectorResult result;
+                DisassociateConnectorResult result = null;
 
                 try {
-                    result = disassociateConnector(request);
+                    result = executeDisassociateConnector(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -358,7 +525,173 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateChangeSetResult> generateChangeSetAsync(GenerateChangeSetRequest request) {
+
+        return generateChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateChangeSetResult> generateChangeSetAsync(final GenerateChangeSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateChangeSetRequest, GenerateChangeSetResult> asyncHandler) {
+        final GenerateChangeSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateChangeSetResult>() {
+            @Override
+            public GenerateChangeSetResult call() throws Exception {
+                GenerateChangeSetResult result = null;
+
+                try {
+                    result = executeGenerateChangeSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateTemplateResult> generateTemplateAsync(GenerateTemplateRequest request) {
+
+        return generateTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateTemplateResult> generateTemplateAsync(final GenerateTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateTemplateRequest, GenerateTemplateResult> asyncHandler) {
+        final GenerateTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateTemplateResult>() {
+            @Override
+            public GenerateTemplateResult call() throws Exception {
+                GenerateTemplateResult result = null;
+
+                try {
+                    result = executeGenerateTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request) {
+
+        return getAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppResult> getAppAsync(final GetAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler) {
+        final GetAppRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppResult>() {
+            @Override
+            public GetAppResult call() throws Exception {
+                GetAppResult result = null;
+
+                try {
+                    result = executeGetApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppLaunchConfigurationResult> getAppLaunchConfigurationAsync(GetAppLaunchConfigurationRequest request) {
+
+        return getAppLaunchConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppLaunchConfigurationResult> getAppLaunchConfigurationAsync(final GetAppLaunchConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppLaunchConfigurationRequest, GetAppLaunchConfigurationResult> asyncHandler) {
+        final GetAppLaunchConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppLaunchConfigurationResult>() {
+            @Override
+            public GetAppLaunchConfigurationResult call() throws Exception {
+                GetAppLaunchConfigurationResult result = null;
+
+                try {
+                    result = executeGetAppLaunchConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppReplicationConfigurationResult> getAppReplicationConfigurationAsync(GetAppReplicationConfigurationRequest request) {
+
+        return getAppReplicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppReplicationConfigurationResult> getAppReplicationConfigurationAsync(
+            final GetAppReplicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppReplicationConfigurationRequest, GetAppReplicationConfigurationResult> asyncHandler) {
+        final GetAppReplicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppReplicationConfigurationResult>() {
+            @Override
+            public GetAppReplicationConfigurationResult call() throws Exception {
+                GetAppReplicationConfigurationResult result = null;
+
+                try {
+                    result = executeGetAppReplicationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -374,14 +707,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<GetConnectorsResult> getConnectorsAsync(final GetConnectorsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetConnectorsRequest, GetConnectorsResult> asyncHandler) {
+        final GetConnectorsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetConnectorsResult>() {
             @Override
             public GetConnectorsResult call() throws Exception {
-                GetConnectorsResult result;
+                GetConnectorsResult result = null;
 
                 try {
-                    result = getConnectors(request);
+                    result = executeGetConnectors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -390,7 +724,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -406,14 +740,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<GetReplicationJobsResult> getReplicationJobsAsync(final GetReplicationJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetReplicationJobsRequest, GetReplicationJobsResult> asyncHandler) {
+        final GetReplicationJobsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetReplicationJobsResult>() {
             @Override
             public GetReplicationJobsResult call() throws Exception {
-                GetReplicationJobsResult result;
+                GetReplicationJobsResult result = null;
 
                 try {
-                    result = getReplicationJobs(request);
+                    result = executeGetReplicationJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -422,7 +757,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -438,14 +773,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<GetReplicationRunsResult> getReplicationRunsAsync(final GetReplicationRunsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetReplicationRunsRequest, GetReplicationRunsResult> asyncHandler) {
+        final GetReplicationRunsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetReplicationRunsResult>() {
             @Override
             public GetReplicationRunsResult call() throws Exception {
-                GetReplicationRunsResult result;
+                GetReplicationRunsResult result = null;
 
                 try {
-                    result = getReplicationRuns(request);
+                    result = executeGetReplicationRuns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -454,7 +790,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -470,14 +806,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<GetServersResult> getServersAsync(final GetServersRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetServersRequest, GetServersResult> asyncHandler) {
+        final GetServersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetServersResult>() {
             @Override
             public GetServersResult call() throws Exception {
-                GetServersResult result;
+                GetServersResult result = null;
 
                 try {
-                    result = getServers(request);
+                    result = executeGetServers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -486,7 +823,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -502,14 +839,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<ImportServerCatalogResult> importServerCatalogAsync(final ImportServerCatalogRequest request,
             final com.amazonaws.handlers.AsyncHandler<ImportServerCatalogRequest, ImportServerCatalogResult> asyncHandler) {
+        final ImportServerCatalogRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ImportServerCatalogResult>() {
             @Override
             public ImportServerCatalogResult call() throws Exception {
-                ImportServerCatalogResult result;
+                ImportServerCatalogResult result = null;
 
                 try {
-                    result = importServerCatalog(request);
+                    result = executeImportServerCatalog(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -518,7 +856,173 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<LaunchAppResult> launchAppAsync(LaunchAppRequest request) {
+
+        return launchAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LaunchAppResult> launchAppAsync(final LaunchAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<LaunchAppRequest, LaunchAppResult> asyncHandler) {
+        final LaunchAppRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<LaunchAppResult>() {
+            @Override
+            public LaunchAppResult call() throws Exception {
+                LaunchAppResult result = null;
+
+                try {
+                    result = executeLaunchApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppsResult> listAppsAsync(ListAppsRequest request) {
+
+        return listAppsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppsResult> listAppsAsync(final ListAppsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppsRequest, ListAppsResult> asyncHandler) {
+        final ListAppsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppsResult>() {
+            @Override
+            public ListAppsResult call() throws Exception {
+                ListAppsResult result = null;
+
+                try {
+                    result = executeListApps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppLaunchConfigurationResult> putAppLaunchConfigurationAsync(PutAppLaunchConfigurationRequest request) {
+
+        return putAppLaunchConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppLaunchConfigurationResult> putAppLaunchConfigurationAsync(final PutAppLaunchConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppLaunchConfigurationRequest, PutAppLaunchConfigurationResult> asyncHandler) {
+        final PutAppLaunchConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppLaunchConfigurationResult>() {
+            @Override
+            public PutAppLaunchConfigurationResult call() throws Exception {
+                PutAppLaunchConfigurationResult result = null;
+
+                try {
+                    result = executePutAppLaunchConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppReplicationConfigurationResult> putAppReplicationConfigurationAsync(PutAppReplicationConfigurationRequest request) {
+
+        return putAppReplicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppReplicationConfigurationResult> putAppReplicationConfigurationAsync(
+            final PutAppReplicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppReplicationConfigurationRequest, PutAppReplicationConfigurationResult> asyncHandler) {
+        final PutAppReplicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppReplicationConfigurationResult>() {
+            @Override
+            public PutAppReplicationConfigurationResult call() throws Exception {
+                PutAppReplicationConfigurationResult result = null;
+
+                try {
+                    result = executePutAppReplicationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAppReplicationResult> startAppReplicationAsync(StartAppReplicationRequest request) {
+
+        return startAppReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAppReplicationResult> startAppReplicationAsync(final StartAppReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAppReplicationRequest, StartAppReplicationResult> asyncHandler) {
+        final StartAppReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAppReplicationResult>() {
+            @Override
+            public StartAppReplicationResult call() throws Exception {
+                StartAppReplicationResult result = null;
+
+                try {
+                    result = executeStartAppReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -534,14 +1038,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<StartOnDemandReplicationRunResult> startOnDemandReplicationRunAsync(final StartOnDemandReplicationRunRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartOnDemandReplicationRunRequest, StartOnDemandReplicationRunResult> asyncHandler) {
+        final StartOnDemandReplicationRunRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartOnDemandReplicationRunResult>() {
             @Override
             public StartOnDemandReplicationRunResult call() throws Exception {
-                StartOnDemandReplicationRunResult result;
+                StartOnDemandReplicationRunResult result = null;
 
                 try {
-                    result = startOnDemandReplicationRun(request);
+                    result = executeStartOnDemandReplicationRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -550,7 +1055,106 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAppReplicationResult> stopAppReplicationAsync(StopAppReplicationRequest request) {
+
+        return stopAppReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAppReplicationResult> stopAppReplicationAsync(final StopAppReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopAppReplicationRequest, StopAppReplicationResult> asyncHandler) {
+        final StopAppReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopAppReplicationResult>() {
+            @Override
+            public StopAppReplicationResult call() throws Exception {
+                StopAppReplicationResult result = null;
+
+                try {
+                    result = executeStopAppReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateAppResult> terminateAppAsync(TerminateAppRequest request) {
+
+        return terminateAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateAppResult> terminateAppAsync(final TerminateAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TerminateAppRequest, TerminateAppResult> asyncHandler) {
+        final TerminateAppRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TerminateAppResult>() {
+            @Override
+            public TerminateAppResult call() throws Exception {
+                TerminateAppResult result = null;
+
+                try {
+                    result = executeTerminateApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(UpdateAppRequest request) {
+
+        return updateAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(final UpdateAppRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, UpdateAppResult> asyncHandler) {
+        final UpdateAppRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAppResult>() {
+            @Override
+            public UpdateAppResult call() throws Exception {
+                UpdateAppResult result = null;
+
+                try {
+                    result = executeUpdateApp(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -566,14 +1170,15 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
     @Override
     public java.util.concurrent.Future<UpdateReplicationJobResult> updateReplicationJobAsync(final UpdateReplicationJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateReplicationJobRequest, UpdateReplicationJobResult> asyncHandler) {
+        final UpdateReplicationJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateReplicationJobResult>() {
             @Override
             public UpdateReplicationJobResult call() throws Exception {
-                UpdateReplicationJobResult result;
+                UpdateReplicationJobResult result = null;
 
                 try {
-                    result = updateReplicationJob(request);
+                    result = executeUpdateReplicationJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -582,7 +1187,7 @@ public class AWSServerMigrationAsyncClient extends AWSServerMigrationClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

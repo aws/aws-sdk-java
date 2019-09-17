@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,78 +12,62 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.xray.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetTraceSummariesRequest Marshaller
+ * GetTraceSummariesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetTraceSummariesRequestMarshaller implements Marshaller<Request<GetTraceSummariesRequest>, GetTraceSummariesRequest> {
+@SdkInternalApi
+public class GetTraceSummariesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> TIMERANGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeRangeType").build();
+    private static final MarshallingInfo<Boolean> SAMPLING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sampling").build();
+    private static final MarshallingInfo<StructuredPojo> SAMPLINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamplingStrategy").build();
+    private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public GetTraceSummariesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetTraceSummariesRequestMarshaller instance = new GetTraceSummariesRequestMarshaller();
+
+    public static GetTraceSummariesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetTraceSummariesRequest> marshall(GetTraceSummariesRequest getTraceSummariesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetTraceSummariesRequest getTraceSummariesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getTraceSummariesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetTraceSummariesRequest> request = new DefaultRequest<GetTraceSummariesRequest>(getTraceSummariesRequest, "AWSXRay");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/TraceSummaries";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (getTraceSummariesRequest.getStartTime() != null) {
-                jsonGenerator.writeFieldName("StartTime").writeValue(getTraceSummariesRequest.getStartTime());
-            }
-            if (getTraceSummariesRequest.getEndTime() != null) {
-                jsonGenerator.writeFieldName("EndTime").writeValue(getTraceSummariesRequest.getEndTime());
-            }
-            if (getTraceSummariesRequest.getSampling() != null) {
-                jsonGenerator.writeFieldName("Sampling").writeValue(getTraceSummariesRequest.getSampling());
-            }
-            if (getTraceSummariesRequest.getFilterExpression() != null) {
-                jsonGenerator.writeFieldName("FilterExpression").writeValue(getTraceSummariesRequest.getFilterExpression());
-            }
-            if (getTraceSummariesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(getTraceSummariesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getTimeRangeType(), TIMERANGETYPE_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getSampling(), SAMPLING_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getSamplingStrategy(), SAMPLINGSTRATEGY_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(getTraceSummariesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

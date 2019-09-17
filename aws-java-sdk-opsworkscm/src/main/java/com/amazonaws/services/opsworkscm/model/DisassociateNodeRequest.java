@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,43 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     */
     private String serverName;
-
+    /**
+     * <p>
+     * The name of the client node.
+     * </p>
+     */
     private String nodeName;
-
+    /**
+     * <p>
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
+     * </p>
+     * <p class="title">
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private java.util.List<EngineAttribute> engineAttributes;
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      */
 
     public void setServerName(String serverName) {
@@ -40,7 +69,11 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
+     * @return The name of the server from which to disassociate the node.
      */
 
     public String getServerName() {
@@ -48,7 +81,12 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +96,12 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the client node.
+     * </p>
+     * 
      * @param nodeName
+     *        The name of the client node.
      */
 
     public void setNodeName(String nodeName) {
@@ -66,7 +109,11 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the client node.
+     * </p>
+     * 
+     * @return The name of the client node.
      */
 
     public String getNodeName() {
@@ -74,7 +121,12 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the client node.
+     * </p>
+     * 
      * @param nodeName
+     *        The name of the client node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +136,32 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
+     * </p>
+     * <p class="title">
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+     *         <p class="title">
+     *         <b>Attributes required in a DisassociateNode request for Chef</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only
+     *         one organization named <code>default</code> can exist.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -92,7 +169,33 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
+     * </p>
+     * <p class="title">
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param engineAttributes
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+     *        <p class="title">
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
      */
 
     public void setEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
@@ -106,12 +209,37 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
+     * </p>
+     * <p class="title">
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param engineAttributes
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+     *        <p class="title">
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +254,33 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Engine attributes that are used for disassociating the node. No attributes are required for Puppet.
+     * </p>
+     * <p class="title">
+     * <b>Attributes required in a DisassociateNode request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param engineAttributes
+     *        Engine attributes that are used for disassociating the node. No attributes are required for Puppet. </p>
+     *        <p class="title">
+     *        <b>Attributes required in a DisassociateNode request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +290,8 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

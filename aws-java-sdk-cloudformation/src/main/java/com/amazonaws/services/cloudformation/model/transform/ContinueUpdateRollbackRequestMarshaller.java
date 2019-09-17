@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,12 +49,14 @@ public class ContinueUpdateRollbackRequestMarshaller implements Marshaller<Reque
             request.addParameter("RoleARN", StringUtils.fromString(continueUpdateRollbackRequest.getRoleARN()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> resourcesToSkipList = (com.amazonaws.internal.SdkInternalList<String>) continueUpdateRollbackRequest
-                .getResourcesToSkip();
-        if (resourcesToSkipList.isEmpty() && !resourcesToSkipList.isAutoConstruct()) {
+        if (continueUpdateRollbackRequest.getResourcesToSkip().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) continueUpdateRollbackRequest.getResourcesToSkip()).isAutoConstruct()) {
             request.addParameter("ResourcesToSkip", "");
         }
-        if (!resourcesToSkipList.isEmpty() || !resourcesToSkipList.isAutoConstruct()) {
+        if (!continueUpdateRollbackRequest.getResourcesToSkip().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) continueUpdateRollbackRequest.getResourcesToSkip()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> resourcesToSkipList = (com.amazonaws.internal.SdkInternalList<String>) continueUpdateRollbackRequest
+                    .getResourcesToSkip();
             int resourcesToSkipListIndex = 1;
 
             for (String resourcesToSkipListValue : resourcesToSkipList) {
@@ -63,6 +65,10 @@ public class ContinueUpdateRollbackRequestMarshaller implements Marshaller<Reque
                 }
                 resourcesToSkipListIndex++;
             }
+        }
+
+        if (continueUpdateRollbackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(continueUpdateRollbackRequest.getClientRequestToken()));
         }
 
         return request;

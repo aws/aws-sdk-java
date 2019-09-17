@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,26 @@ public class DescribeResizeResultStaxUnmarshaller implements Unmarshaller<Descri
 
                 if (context.testExpression("EstimatedTimeToCompletionInSeconds", targetDepth)) {
                     describeResizeResult.setEstimatedTimeToCompletionInSeconds(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ResizeType", targetDepth)) {
+                    describeResizeResult.setResizeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Message", targetDepth)) {
+                    describeResizeResult.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TargetEncryptionType", targetDepth)) {
+                    describeResizeResult.setTargetEncryptionType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DataTransferProgressPercent", targetDepth)) {
+                    describeResizeResult.setDataTransferProgressPercent(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

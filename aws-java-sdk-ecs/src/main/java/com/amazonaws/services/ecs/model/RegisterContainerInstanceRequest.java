@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     private VersionInfo versionInfo;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      */
     private String containerInstanceArn;
@@ -72,6 +72,63 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlatformDevice> platformDevices;
+    /**
+     * <p>
+     * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -341,11 +398,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     *        The ARN of the container instance (if it was previously registered).
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -354,10 +411,10 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * @return The ARN of the container instance (if it was previously registered).
      */
 
     public String getContainerInstanceArn() {
@@ -366,11 +423,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     *        The ARN of the container instance (if it was previously registered).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,7 +510,510 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @return The devices that are available on the container instance. The only supported device type is a GPU.
+     */
+
+    public java.util.List<PlatformDevice> getPlatformDevices() {
+        if (platformDevices == null) {
+            platformDevices = new com.amazonaws.internal.SdkInternalList<PlatformDevice>();
+        }
+        return platformDevices;
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     */
+
+    public void setPlatformDevices(java.util.Collection<PlatformDevice> platformDevices) {
+        if (platformDevices == null) {
+            this.platformDevices = null;
+            return;
+        }
+
+        this.platformDevices = new com.amazonaws.internal.SdkInternalList<PlatformDevice>(platformDevices);
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformDevices(java.util.Collection)} or {@link #withPlatformDevices(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withPlatformDevices(PlatformDevice... platformDevices) {
+        if (this.platformDevices == null) {
+            setPlatformDevices(new com.amazonaws.internal.SdkInternalList<PlatformDevice>(platformDevices.length));
+        }
+        for (PlatformDevice ele : platformDevices) {
+            this.platformDevices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withPlatformDevices(java.util.Collection<PlatformDevice> platformDevices) {
+        setPlatformDevices(platformDevices);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The metadata that you apply to the container instance to help you categorize and organize them. Each tag
+     *         consists of a key and an optional value, both of which you define.</p>
+     *         <p>
+     *         The following basic restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of tags per resource - 50
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For each resource, each tag key must be unique, and each tag key can have only one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length - 128 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length - 256 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your tagging schema is used across multiple services and resources, remember that other services may
+     *         have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *         representable in UTF-8, and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case-sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
+     *         prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or
+     *         values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this
+     * prefix. Tags with this prefix do not count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The metadata that you apply to the container instance to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
+     *        this prefix. Tags with this prefix do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -476,7 +1036,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
         if (getContainerInstanceArn() != null)
             sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getPlatformDevices() != null)
+            sb.append("PlatformDevices: ").append(getPlatformDevices()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -520,6 +1084,14 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getPlatformDevices() == null ^ this.getPlatformDevices() == null)
+            return false;
+        if (other.getPlatformDevices() != null && other.getPlatformDevices().equals(this.getPlatformDevices()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -535,6 +1107,8 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode());
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDevices() == null) ? 0 : getPlatformDevices().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

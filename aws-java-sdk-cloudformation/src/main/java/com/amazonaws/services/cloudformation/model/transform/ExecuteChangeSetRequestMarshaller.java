@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class ExecuteChangeSetRequestMarshaller implements Marshaller<Request<Exe
 
         if (executeChangeSetRequest.getStackName() != null) {
             request.addParameter("StackName", StringUtils.fromString(executeChangeSetRequest.getStackName()));
+        }
+
+        if (executeChangeSetRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(executeChangeSetRequest.getClientRequestToken()));
         }
 
         return request;

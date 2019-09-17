@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,84 +12,54 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutMetricFilterRequest Marshaller
+ * PutMetricFilterRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutMetricFilterRequestMarshaller implements Marshaller<Request<PutMetricFilterRequest>, PutMetricFilterRequest> {
+@SdkInternalApi
+public class PutMetricFilterRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> FILTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterName").build();
+    private static final MarshallingInfo<String> FILTERPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterPattern").build();
+    private static final MarshallingInfo<List> METRICTRANSFORMATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricTransformations").build();
 
-    public PutMetricFilterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutMetricFilterRequestMarshaller instance = new PutMetricFilterRequestMarshaller();
+
+    public static PutMetricFilterRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutMetricFilterRequest> marshall(PutMetricFilterRequest putMetricFilterRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutMetricFilterRequest putMetricFilterRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putMetricFilterRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutMetricFilterRequest> request = new DefaultRequest<PutMetricFilterRequest>(putMetricFilterRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.PutMetricFilter");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putMetricFilterRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(putMetricFilterRequest.getLogGroupName());
-            }
-            if (putMetricFilterRequest.getFilterName() != null) {
-                jsonGenerator.writeFieldName("filterName").writeValue(putMetricFilterRequest.getFilterName());
-            }
-            if (putMetricFilterRequest.getFilterPattern() != null) {
-                jsonGenerator.writeFieldName("filterPattern").writeValue(putMetricFilterRequest.getFilterPattern());
-            }
-
-            com.amazonaws.internal.SdkInternalList<MetricTransformation> metricTransformationsList = (com.amazonaws.internal.SdkInternalList<MetricTransformation>) putMetricFilterRequest
-                    .getMetricTransformations();
-            if (!metricTransformationsList.isEmpty() || !metricTransformationsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("metricTransformations");
-                jsonGenerator.writeStartArray();
-                for (MetricTransformation metricTransformationsListValue : metricTransformationsList) {
-                    if (metricTransformationsListValue != null) {
-
-                        MetricTransformationJsonMarshaller.getInstance().marshall(metricTransformationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putMetricFilterRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(putMetricFilterRequest.getFilterName(), FILTERNAME_BINDING);
+            protocolMarshaller.marshall(putMetricFilterRequest.getFilterPattern(), FILTERPATTERN_BINDING);
+            protocolMarshaller.marshall(putMetricFilterRequest.getMetricTransformations(), METRICTRANSFORMATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

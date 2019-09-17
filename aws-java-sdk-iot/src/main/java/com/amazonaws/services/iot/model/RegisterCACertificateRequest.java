@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Boolean allowAutoRegistration;
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     */
+    private RegistrationConfig registrationConfig;
 
     /**
      * <p>
@@ -235,7 +241,48 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @param registrationConfig
+     *        Information about the registration configuration.
+     */
+
+    public void setRegistrationConfig(RegistrationConfig registrationConfig) {
+        this.registrationConfig = registrationConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @return Information about the registration configuration.
+     */
+
+    public RegistrationConfig getRegistrationConfig() {
+        return this.registrationConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @param registrationConfig
+     *        Information about the registration configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterCACertificateRequest withRegistrationConfig(RegistrationConfig registrationConfig) {
+        setRegistrationConfig(registrationConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -252,7 +299,9 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
         if (getSetAsActive() != null)
             sb.append("SetAsActive: ").append(getSetAsActive()).append(",");
         if (getAllowAutoRegistration() != null)
-            sb.append("AllowAutoRegistration: ").append(getAllowAutoRegistration());
+            sb.append("AllowAutoRegistration: ").append(getAllowAutoRegistration()).append(",");
+        if (getRegistrationConfig() != null)
+            sb.append("RegistrationConfig: ").append(getRegistrationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +332,10 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAllowAutoRegistration() != null && other.getAllowAutoRegistration().equals(this.getAllowAutoRegistration()) == false)
             return false;
+        if (other.getRegistrationConfig() == null ^ this.getRegistrationConfig() == null)
+            return false;
+        if (other.getRegistrationConfig() != null && other.getRegistrationConfig().equals(this.getRegistrationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -295,6 +348,7 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getVerificationCertificate() == null) ? 0 : getVerificationCertificate().hashCode());
         hashCode = prime * hashCode + ((getSetAsActive() == null) ? 0 : getSetAsActive().hashCode());
         hashCode = prime * hashCode + ((getAllowAutoRegistration() == null) ? 0 : getAllowAutoRegistration().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationConfig() == null) ? 0 : getRegistrationConfig().hashCode());
         return hashCode;
     }
 

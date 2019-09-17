@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class PutMethodResultJsonUnmarshaller implements Unmarshaller<PutMethodRe
                     context.nextToken();
                     putMethodResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("requestValidatorId", targetDepth)) {
+                    context.nextToken();
+                    putMethodResult.setRequestValidatorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("operationName", targetDepth)) {
                     context.nextToken();
                     putMethodResult.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -86,6 +90,10 @@ public class PutMethodResultJsonUnmarshaller implements Unmarshaller<PutMethodRe
                 if (context.testExpression("methodIntegration", targetDepth)) {
                     context.nextToken();
                     putMethodResult.setMethodIntegration(IntegrationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("authorizationScopes", targetDepth)) {
+                    context.nextToken();
+                    putMethodResult.setAuthorizationScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

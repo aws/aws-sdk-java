@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,34 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request) {
+
+        return deleteWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWebhookWithThirdPartyResult> deregisterWebhookWithThirdPartyAsync(
+            DeregisterWebhookWithThirdPartyRequest request) {
+
+        return deregisterWebhookWithThirdPartyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWebhookWithThirdPartyResult> deregisterWebhookWithThirdPartyAsync(
+            DeregisterWebhookWithThirdPartyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterWebhookWithThirdPartyRequest, DeregisterWebhookWithThirdPartyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(DisableStageTransitionRequest request) {
 
         return disableStageTransitionAsync(request, null);
@@ -197,6 +225,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(ListActionExecutionsRequest request) {
+
+        return listActionExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(ListActionExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListActionExecutionsRequest, ListActionExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListActionTypesResult> listActionTypesAsync(ListActionTypesRequest request) {
 
         return listActionTypesAsync(request, null);
@@ -210,6 +251,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest request) {
+
+        return listPipelineExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPipelineExecutionsRequest, ListPipelineExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request) {
 
         return listPipelinesAsync(request, null);
@@ -218,6 +272,32 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest request) {
+
+        return listWebhooksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWebhooksRequest, ListWebhooksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +407,32 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<PutWebhookResult> putWebhookAsync(PutWebhookRequest request) {
+
+        return putWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWebhookResult> putWebhookAsync(PutWebhookRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutWebhookRequest, PutWebhookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterWebhookWithThirdPartyResult> registerWebhookWithThirdPartyAsync(RegisterWebhookWithThirdPartyRequest request) {
+
+        return registerWebhookWithThirdPartyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterWebhookWithThirdPartyResult> registerWebhookWithThirdPartyAsync(RegisterWebhookWithThirdPartyRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterWebhookWithThirdPartyRequest, RegisterWebhookWithThirdPartyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RetryStageExecutionResult> retryStageExecutionAsync(RetryStageExecutionRequest request) {
 
         return retryStageExecutionAsync(request, null);
@@ -348,6 +454,32 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     @Override
     public java.util.concurrent.Future<StartPipelineExecutionResult> startPipelineExecutionAsync(StartPipelineExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartPipelineExecutionRequest, StartPipelineExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

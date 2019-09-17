@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,22 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default,
- * have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
- * represent files and folders are assigned these default Unix permissions.
+ * Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3
+ * buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage
+ * Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation
+ * is only supported for file gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NFSFileShareDefaults implements Serializable, Cloneable {
+public class NFSFileShareDefaults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -242,7 +245,8 @@ public class NFSFileShareDefaults implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,5 +316,11 @@ public class NFSFileShareDefaults implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.NFSFileShareDefaultsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

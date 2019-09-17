@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             request.addParameter("Label", StringUtils.fromString(addPermissionRequest.getLabel()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> aWSAccountIdsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
-                .getAWSAccountIds();
-        if (!aWSAccountIdsList.isEmpty() || !aWSAccountIdsList.isAutoConstruct()) {
+        if (!addPermissionRequest.getAWSAccountIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getAWSAccountIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> aWSAccountIdsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
+                    .getAWSAccountIds();
             int aWSAccountIdsListIndex = 1;
 
             for (String aWSAccountIdsListValue : aWSAccountIdsList) {
@@ -61,8 +62,9 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> actionsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActions();
-        if (!actionsList.isEmpty() || !actionsList.isAutoConstruct()) {
+        if (!addPermissionRequest.getActions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> actionsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActions();
             int actionsListIndex = 1;
 
             for (String actionsListValue : actionsList) {

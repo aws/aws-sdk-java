@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String baselineId;
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
 
     /**
      * <p>
@@ -71,7 +77,81 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @return The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineResult withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        withOperatingSystem(operatingSystem);
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -82,7 +162,9 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: ").append(getBaselineId());
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +183,10 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getBaselineId() != null && other.getBaselineId().equals(this.getBaselineId()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +196,7 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         return hashCode;
     }
 
@@ -121,4 +208,5 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

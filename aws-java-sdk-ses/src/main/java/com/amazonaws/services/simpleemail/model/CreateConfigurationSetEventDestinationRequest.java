@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Represents a request to create a configuration set event destination. A configuration set event destination, which
  * can be either Amazon CloudWatch or Amazon Kinesis Firehose, describes an AWS service in which Amazon SES publishes
  * the email sending events associated with a configuration set. For information about using configuration sets, see the
- * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+ * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -34,25 +34,24 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      */
     private EventDestination eventDestination;
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set to which to apply the event destination.
+     *        The name of the configuration set that the event destination should be associated with.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -61,10 +60,10 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
-     * @return The name of the configuration set to which to apply the event destination.
+     * @return The name of the configuration set that the event destination should be associated with.
      */
 
     public String getConfigurationSetName() {
@@ -73,11 +72,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set to which to apply the event destination.
+     *        The name of the configuration set that the event destination should be associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +87,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
      * @param eventDestination
-     *        An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *        associated with the specified configuration set.
+     *        An object that describes the AWS service that email sending event information will be published to.
      */
 
     public void setEventDestination(EventDestination eventDestination) {
@@ -103,12 +100,10 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
-     * @return An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *         associated with the specified configuration set.
+     * @return An object that describes the AWS service that email sending event information will be published to.
      */
 
     public EventDestination getEventDestination() {
@@ -117,13 +112,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
      * @param eventDestination
-     *        An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *        associated with the specified configuration set.
+     *        An object that describes the AWS service that email sending event information will be published to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +126,8 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

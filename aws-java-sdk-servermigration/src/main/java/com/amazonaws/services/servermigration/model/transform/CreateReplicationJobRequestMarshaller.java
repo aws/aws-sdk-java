@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,71 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servermigration.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateReplicationJobRequest Marshaller
+ * CreateReplicationJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateReplicationJobRequestMarshaller implements Marshaller<Request<CreateReplicationJobRequest>, CreateReplicationJobRequest> {
+@SdkInternalApi
+public class CreateReplicationJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("serverId").build();
+    private static final MarshallingInfo<java.util.Date> SEEDREPLICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("seedReplicationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frequency").build();
+    private static final MarshallingInfo<Boolean> RUNONCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runOnce").build();
+    private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseType").build();
+    private static final MarshallingInfo<String> ROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Integer> NUMBEROFRECENTAMISTOKEEP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRecentAmisToKeep").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
 
-    public CreateReplicationJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateReplicationJobRequestMarshaller instance = new CreateReplicationJobRequestMarshaller();
+
+    public static CreateReplicationJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateReplicationJobRequest> marshall(CreateReplicationJobRequest createReplicationJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateReplicationJobRequest createReplicationJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createReplicationJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateReplicationJobRequest> request = new DefaultRequest<CreateReplicationJobRequest>(createReplicationJobRequest, "AWSServerMigration");
-        request.addHeader("X-Amz-Target", "AWSServerMigrationService_V2016_10_24.CreateReplicationJob");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createReplicationJobRequest.getServerId() != null) {
-                jsonGenerator.writeFieldName("serverId").writeValue(createReplicationJobRequest.getServerId());
-            }
-            if (createReplicationJobRequest.getSeedReplicationTime() != null) {
-                jsonGenerator.writeFieldName("seedReplicationTime").writeValue(createReplicationJobRequest.getSeedReplicationTime());
-            }
-            if (createReplicationJobRequest.getFrequency() != null) {
-                jsonGenerator.writeFieldName("frequency").writeValue(createReplicationJobRequest.getFrequency());
-            }
-            if (createReplicationJobRequest.getLicenseType() != null) {
-                jsonGenerator.writeFieldName("licenseType").writeValue(createReplicationJobRequest.getLicenseType());
-            }
-            if (createReplicationJobRequest.getRoleName() != null) {
-                jsonGenerator.writeFieldName("roleName").writeValue(createReplicationJobRequest.getRoleName());
-            }
-            if (createReplicationJobRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createReplicationJobRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createReplicationJobRequest.getServerId(), SERVERID_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getSeedReplicationTime(), SEEDREPLICATIONTIME_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getFrequency(), FREQUENCY_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getRunOnce(), RUNONCE_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getLicenseType(), LICENSETYPE_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getRoleName(), ROLENAME_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getNumberOfRecentAmisToKeep(), NUMBEROFRECENTAMISTOKEEP_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(createReplicationJobRequest.getKmsKeyId(), KMSKEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

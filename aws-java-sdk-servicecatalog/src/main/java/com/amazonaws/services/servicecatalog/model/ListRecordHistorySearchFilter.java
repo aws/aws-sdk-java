@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,27 +14,41 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The search filter to limit results when listing request history records.
+ * The search filter to use when listing history records.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListRecordHistorySearchFilter"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
+public class ListRecordHistorySearchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The filter key.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>product</code> - Filter results based on the specified product identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String key;
     /**
      * <p>
-     * The filter value for <code>Key</code>.
+     * The filter value.
      * </p>
      */
     private String value;
@@ -43,9 +57,32 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
      * <p>
      * The filter key.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>product</code> - Filter results based on the specified product identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        The filter key.
+     *        The filter key.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>product</code> - Filter results based on the specified product identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     *        </p>
+     *        </li>
      */
 
     public void setKey(String key) {
@@ -56,8 +93,31 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
      * <p>
      * The filter key.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>product</code> - Filter results based on the specified product identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The filter key.
+     * @return The filter key.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>product</code> - Filter results based on the specified product identifier.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     *         </p>
+     *         </li>
      */
 
     public String getKey() {
@@ -68,9 +128,32 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
      * <p>
      * The filter key.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>product</code> - Filter results based on the specified product identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        The filter key.
+     *        The filter key.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>product</code> - Filter results based on the specified product identifier.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>provisionedproduct</code> - Filter results based on the provisioned product identifier.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +164,11 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The filter value for <code>Key</code>.
+     * The filter value.
      * </p>
      * 
      * @param value
-     *        The filter value for <code>Key</code>.
+     *        The filter value.
      */
 
     public void setValue(String value) {
@@ -94,10 +177,10 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The filter value for <code>Key</code>.
+     * The filter value.
      * </p>
      * 
-     * @return The filter value for <code>Key</code>.
+     * @return The filter value.
      */
 
     public String getValue() {
@@ -106,11 +189,11 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The filter value for <code>Key</code>.
+     * The filter value.
      * </p>
      * 
      * @param value
-     *        The filter value for <code>Key</code>.
+     *        The filter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +203,8 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,5 +260,11 @@ public class ListRecordHistorySearchFilter implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ListRecordHistorySearchFilterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

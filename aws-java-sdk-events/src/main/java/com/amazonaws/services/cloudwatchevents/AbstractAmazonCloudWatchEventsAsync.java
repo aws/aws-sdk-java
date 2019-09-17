@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,84 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(ActivateEventSourceRequest request) {
+
+        return activateEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(ActivateEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ActivateEventSourceRequest, ActivateEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBusResult> createEventBusAsync(CreateEventBusRequest request) {
+
+        return createEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBusResult> createEventBusAsync(CreateEventBusRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEventBusRequest, CreateEventBusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerEventSourceResult> createPartnerEventSourceAsync(CreatePartnerEventSourceRequest request) {
+
+        return createPartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerEventSourceResult> createPartnerEventSourceAsync(CreatePartnerEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePartnerEventSourceRequest, CreatePartnerEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateEventSourceResult> deactivateEventSourceAsync(DeactivateEventSourceRequest request) {
+
+        return deactivateEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateEventSourceResult> deactivateEventSourceAsync(DeactivateEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeactivateEventSourceRequest, DeactivateEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBusResult> deleteEventBusAsync(DeleteEventBusRequest request) {
+
+        return deleteEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBusResult> deleteEventBusAsync(DeleteEventBusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventBusRequest, DeleteEventBusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerEventSourceResult> deletePartnerEventSourceAsync(DeletePartnerEventSourceRequest request) {
+
+        return deletePartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerEventSourceResult> deletePartnerEventSourceAsync(DeletePartnerEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePartnerEventSourceRequest, DeletePartnerEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request) {
 
         return deleteRuleAsync(request, null);
@@ -36,6 +114,45 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request) {
+
+        return describeEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventBusRequest, DescribeEventBusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventSourceResult> describeEventSourceAsync(DescribeEventSourceRequest request) {
+
+        return describeEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventSourceResult> describeEventSourceAsync(DescribeEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventSourceRequest, DescribeEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(DescribePartnerEventSourceRequest request) {
+
+        return describePartnerEventSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(DescribePartnerEventSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePartnerEventSourceRequest, DescribePartnerEventSourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +197,58 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<ListEventBusesResult> listEventBusesAsync(ListEventBusesRequest request) {
+
+        return listEventBusesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBusesResult> listEventBusesAsync(ListEventBusesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEventBusesRequest, ListEventBusesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventSourcesResult> listEventSourcesAsync(ListEventSourcesRequest request) {
+
+        return listEventSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventSourcesResult> listEventSourcesAsync(ListEventSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEventSourcesRequest, ListEventSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourceAccountsResult> listPartnerEventSourceAccountsAsync(ListPartnerEventSourceAccountsRequest request) {
+
+        return listPartnerEventSourceAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourceAccountsResult> listPartnerEventSourceAccountsAsync(ListPartnerEventSourceAccountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourceAccountsRequest, ListPartnerEventSourceAccountsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request) {
+
+        return listPartnerEventSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourcesRequest, ListPartnerEventSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(ListRuleNamesByTargetRequest request) {
 
         return listRuleNamesByTargetAsync(request, null);
@@ -101,6 +270,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     @Override
     public java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +314,32 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<PutPartnerEventsResult> putPartnerEventsAsync(PutPartnerEventsRequest request) {
+
+        return putPartnerEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPartnerEventsResult> putPartnerEventsAsync(PutPartnerEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPartnerEventsRequest, PutPartnerEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request) {
+
+        return putPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest request) {
 
         return putRuleAsync(request, null);
@@ -158,6 +366,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(RemoveTargetsRequest request) {
 
         return removeTargetsAsync(request, null);
@@ -171,6 +392,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest request) {
 
         return testEventPatternAsync(request, null);
@@ -179,6 +413,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     @Override
     public java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(TestEventPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

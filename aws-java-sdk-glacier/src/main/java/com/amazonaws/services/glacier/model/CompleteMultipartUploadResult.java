@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,13 +17,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  * <p>
  * For information about the underlying REST API, see <a
- * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual
- * information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
- * with Archives in Amazon Glacier</a>.
+ * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual
+ * information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+ * with Archives in Amazon S3 Glacier</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,7 +37,7 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
     private String location;
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      */
     private String checksum;
@@ -90,11 +90,11 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
      * @param checksum
-     *        The checksum of the archive computed by Amazon Glacier.
+     *        The checksum of the archive computed by Amazon S3 Glacier.
      */
 
     public void setChecksum(String checksum) {
@@ -103,10 +103,10 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
-     * @return The checksum of the archive computed by Amazon Glacier.
+     * @return The checksum of the archive computed by Amazon S3 Glacier.
      */
 
     public String getChecksum() {
@@ -115,11 +115,11 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The checksum of the archive computed by Amazon Glacier.
+     * The checksum of the archive computed by Amazon S3 Glacier.
      * </p>
      * 
      * @param checksum
-     *        The checksum of the archive computed by Amazon Glacier.
+     *        The checksum of the archive computed by Amazon S3 Glacier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,7 +169,8 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -233,4 +234,5 @@ public class CompleteMultipartUploadResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

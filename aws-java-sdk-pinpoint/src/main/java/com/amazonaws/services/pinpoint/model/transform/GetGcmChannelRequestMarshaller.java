@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetGcmChannelRequest Marshaller
+ * GetGcmChannelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetGcmChannelRequestMarshaller implements Marshaller<Request<GetGcmChannelRequest>, GetGcmChannelRequest> {
+@SdkInternalApi
+public class GetGcmChannelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
 
-    public GetGcmChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetGcmChannelRequestMarshaller instance = new GetGcmChannelRequestMarshaller();
+
+    public static GetGcmChannelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetGcmChannelRequest> marshall(GetGcmChannelRequest getGcmChannelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetGcmChannelRequest getGcmChannelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getGcmChannelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetGcmChannelRequest> request = new DefaultRequest<GetGcmChannelRequest>(getGcmChannelRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/channels/gcm";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getGcmChannelRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getGcmChannelRequest.getApplicationId(), APPLICATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -199,6 +199,11 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public DescribeOperatingSystemsResult describeOperatingSystems(DescribeOperatingSystemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePermissionsResult describePermissions(DescribePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +274,11 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -334,12 +344,22 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UnassignInstanceResult unassignInstance(UnassignInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UnassignVolumeResult unassignVolume(UnassignVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

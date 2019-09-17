@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     */
-    private String reservedInstancesId;
-    /**
-     * <p>
-     * One or more Reserved Instance listing IDs.
-     * </p>
-     */
-    private String reservedInstancesListingId;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -69,86 +57,18 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more Reserved Instance IDs.
      * </p>
-     * 
-     * @param reservedInstancesId
-     *        One or more Reserved Instance IDs.
      */
-
-    public void setReservedInstancesId(String reservedInstancesId) {
-        this.reservedInstancesId = reservedInstancesId;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * 
-     * @return One or more Reserved Instance IDs.
-     */
-
-    public String getReservedInstancesId() {
-        return this.reservedInstancesId;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * 
-     * @param reservedInstancesId
-     *        One or more Reserved Instance IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesListingsRequest withReservedInstancesId(String reservedInstancesId) {
-        setReservedInstancesId(reservedInstancesId);
-        return this;
-    }
-
+    private String reservedInstancesId;
     /**
      * <p>
      * One or more Reserved Instance listing IDs.
      * </p>
-     * 
-     * @param reservedInstancesListingId
-     *        One or more Reserved Instance listing IDs.
      */
-
-    public void setReservedInstancesListingId(String reservedInstancesListingId) {
-        this.reservedInstancesListingId = reservedInstancesListingId;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance listing IDs.
-     * </p>
-     * 
-     * @return One or more Reserved Instance listing IDs.
-     */
-
-    public String getReservedInstancesListingId() {
-        return this.reservedInstancesListingId;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance listing IDs.
-     * </p>
-     * 
-     * @param reservedInstancesListingId
-     *        One or more Reserved Instance listing IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(String reservedInstancesListingId) {
-        setReservedInstancesListingId(reservedInstancesListingId);
-        return this;
-    }
+    private String reservedInstancesListingId;
 
     /**
      * <p>
@@ -404,6 +324,86 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * 
+     * @param reservedInstancesId
+     *        One or more Reserved Instance IDs.
+     */
+
+    public void setReservedInstancesId(String reservedInstancesId) {
+        this.reservedInstancesId = reservedInstancesId;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * 
+     * @return One or more Reserved Instance IDs.
+     */
+
+    public String getReservedInstancesId() {
+        return this.reservedInstancesId;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * 
+     * @param reservedInstancesId
+     *        One or more Reserved Instance IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesListingsRequest withReservedInstancesId(String reservedInstancesId) {
+        setReservedInstancesId(reservedInstancesId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance listing IDs.
+     * </p>
+     * 
+     * @param reservedInstancesListingId
+     *        One or more Reserved Instance listing IDs.
+     */
+
+    public void setReservedInstancesListingId(String reservedInstancesListingId) {
+        this.reservedInstancesListingId = reservedInstancesListingId;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance listing IDs.
+     * </p>
+     * 
+     * @return One or more Reserved Instance listing IDs.
+     */
+
+    public String getReservedInstancesListingId() {
+        return this.reservedInstancesListingId;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance listing IDs.
+     * </p>
+     * 
+     * @param reservedInstancesListingId
+     *        One or more Reserved Instance listing IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(String reservedInstancesListingId) {
+        setReservedInstancesListingId(reservedInstancesListingId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -415,7 +415,8 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -425,12 +426,12 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getReservedInstancesId() != null)
             sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: ").append(getReservedInstancesListingId()).append(",");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("ReservedInstancesListingId: ").append(getReservedInstancesListingId());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +446,10 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         if (obj instanceof DescribeReservedInstancesListingsRequest == false)
             return false;
         DescribeReservedInstancesListingsRequest other = (DescribeReservedInstancesListingsRequest) obj;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null)
             return false;
         if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false)
@@ -452,10 +457,6 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         if (other.getReservedInstancesListingId() == null ^ this.getReservedInstancesListingId() == null)
             return false;
         if (other.getReservedInstancesListingId() != null && other.getReservedInstancesListingId().equals(this.getReservedInstancesListingId()) == false)
-            return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -465,9 +466,9 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode());
         hashCode = prime * hashCode + ((getReservedInstancesListingId() == null) ? 0 : getReservedInstancesListingId().hashCode());
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

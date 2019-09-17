@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,7 +75,7 @@ public class GenerationMojo extends AbstractMojo {
     }
 
     private void generateCode(C2jModels models) {
-        new CodeGenerator(models, outputDirectory, resourcesDirectory, Utils.getFileNamePrefix(models.serviceModel())).execute();
+        new CodeGenerator(models, outputDirectory, resourcesDirectory, Utils.getFileNamePrefix(models.serviceModel(), models.customizationConfig())).execute();
     }
 
     private BasicCodeGenConfig loadCodeGenConfig() throws MojoExecutionException {

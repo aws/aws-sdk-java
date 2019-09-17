@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,15 +39,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String logStreamName;
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
+     * time are not included.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp equal to or later than this time are not included.
      * </p>
      */
     private Long endTime;
@@ -60,7 +61,7 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1MB, up to 10,000 log events.
+     * fit in a response size of 1 MB, up to 10,000 log events.
      * </p>
      */
     private Integer limit;
@@ -68,6 +69,10 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
+     * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
      * </p>
      */
     private Boolean startFromHead;
@@ -175,13 +180,15 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
+     * time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
+     *        earlier than this time are not included.
      */
 
     public void setStartTime(Long startTime) {
@@ -190,12 +197,14 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
+     * time are not included.
      * </p>
      * 
-     * @return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *         Events with a timestamp earlier than this time are not included.
+     * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *         Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
+     *         earlier than this time are not included.
      */
 
     public Long getStartTime() {
@@ -204,13 +213,15 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this
+     * time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        Events with a timestamp equal to this time or later than this time are included. Events with a timestamp
+     *        earlier than this time are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,13 +232,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp equal to or later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *        with a timestamp equal to or later than this time are not included.
      */
 
     public void setEndTime(Long endTime) {
@@ -236,12 +247,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp equal to or later than this time are not included.
      * </p>
      * 
-     * @return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *         with a timestamp later than this time are not included.
+     * @return The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *         with a timestamp equal to or later than this time are not included.
      */
 
     public Long getEndTime() {
@@ -250,13 +261,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp equal to or later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *        with a timestamp equal to or later than this time are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,12 +319,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1MB, up to 10,000 log events.
+     * fit in a response size of 1 MB, up to 10,000 log events.
      * </p>
      * 
      * @param limit
      *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
-     *        as can fit in a response size of 1MB, up to 10,000 log events.
+     *        as can fit in a response size of 1 MB, up to 10,000 log events.
      */
 
     public void setLimit(Integer limit) {
@@ -323,11 +334,11 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1MB, up to 10,000 log events.
+     * fit in a response size of 1 MB, up to 10,000 log events.
      * </p>
      * 
      * @return The maximum number of log events returned. If you don't specify a value, the maximum is as many log
-     *         events as can fit in a response size of 1MB, up to 10,000 log events.
+     *         events as can fit in a response size of 1 MB, up to 10,000 log events.
      */
 
     public Integer getLimit() {
@@ -337,12 +348,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can
-     * fit in a response size of 1MB, up to 10,000 log events.
+     * fit in a response size of 1 MB, up to 10,000 log events.
      * </p>
      * 
      * @param limit
      *        The maximum number of log events returned. If you don't specify a value, the maximum is as many log events
-     *        as can fit in a response size of 1MB, up to 10,000 log events.
+     *        as can fit in a response size of 1 MB, up to 10,000 log events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,10 +367,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @param startFromHead
      *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *        events are returned first. The default value is false.
+     *        events are returned first. The default value is false.</p>
+     *        <p>
+     *        If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *        <code>startFromHead</code>.
      */
 
     public void setStartFromHead(Boolean startFromHead) {
@@ -371,9 +389,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *         events are returned first. The default value is false.
+     *         events are returned first. The default value is false.</p>
+     *         <p>
+     *         If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *         <code>startFromHead</code>.
      */
 
     public Boolean getStartFromHead() {
@@ -385,10 +410,17 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @param startFromHead
      *        If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *        events are returned first. The default value is false.
+     *        events are returned first. The default value is false.</p>
+     *        <p>
+     *        If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *        <code>startFromHead</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,9 +434,16 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If the value is true, the earliest log events are returned first. If the value is false, the latest log events
      * are returned first. The default value is false.
      * </p>
+     * <p>
+     * If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     * <code>startFromHead</code>.
+     * </p>
      * 
      * @return If the value is true, the earliest log events are returned first. If the value is false, the latest log
-     *         events are returned first. The default value is false.
+     *         events are returned first. The default value is false.</p>
+     *         <p>
+     *         If you are using <code>nextToken</code> in this operation, you must specify <code>true</code> for
+     *         <code>startFromHead</code>.
      */
 
     public Boolean isStartFromHead() {
@@ -412,7 +451,8 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

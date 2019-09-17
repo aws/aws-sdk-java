@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,9 +76,10 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
             request.addParameter("MetricAggregationType", StringUtils.fromString(putScalingPolicyRequest.getMetricAggregationType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustmentsList = (com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest
-                .getStepAdjustments();
-        if (!stepAdjustmentsList.isEmpty() || !stepAdjustmentsList.isAutoConstruct()) {
+        if (!putScalingPolicyRequest.getStepAdjustments().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest.getStepAdjustments()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustmentsList = (com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest
+                    .getStepAdjustments();
             int stepAdjustmentsListIndex = 1;
 
             for (StepAdjustment stepAdjustmentsListValue : stepAdjustmentsList) {
@@ -103,6 +104,83 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
 
         if (putScalingPolicyRequest.getEstimatedInstanceWarmup() != null) {
             request.addParameter("EstimatedInstanceWarmup", StringUtils.fromInteger(putScalingPolicyRequest.getEstimatedInstanceWarmup()));
+        }
+
+        {
+            TargetTrackingConfiguration targetTrackingConfiguration = putScalingPolicyRequest.getTargetTrackingConfiguration();
+            if (targetTrackingConfiguration != null) {
+
+                {
+                    PredefinedMetricSpecification predefinedMetricSpecification = targetTrackingConfiguration.getPredefinedMetricSpecification();
+                    if (predefinedMetricSpecification != null) {
+
+                        if (predefinedMetricSpecification.getPredefinedMetricType() != null) {
+                            request.addParameter("TargetTrackingConfiguration.PredefinedMetricSpecification.PredefinedMetricType",
+                                    StringUtils.fromString(predefinedMetricSpecification.getPredefinedMetricType()));
+                        }
+
+                        if (predefinedMetricSpecification.getResourceLabel() != null) {
+                            request.addParameter("TargetTrackingConfiguration.PredefinedMetricSpecification.ResourceLabel",
+                                    StringUtils.fromString(predefinedMetricSpecification.getResourceLabel()));
+                        }
+                    }
+                }
+
+                {
+                    CustomizedMetricSpecification customizedMetricSpecification = targetTrackingConfiguration.getCustomizedMetricSpecification();
+                    if (customizedMetricSpecification != null) {
+
+                        if (customizedMetricSpecification.getMetricName() != null) {
+                            request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.MetricName",
+                                    StringUtils.fromString(customizedMetricSpecification.getMetricName()));
+                        }
+
+                        if (customizedMetricSpecification.getNamespace() != null) {
+                            request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Namespace",
+                                    StringUtils.fromString(customizedMetricSpecification.getNamespace()));
+                        }
+
+                        if (!customizedMetricSpecification.getDimensions().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<MetricDimension>) customizedMetricSpecification.getDimensions()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<MetricDimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<MetricDimension>) customizedMetricSpecification
+                                    .getDimensions();
+                            int dimensionsListIndex = 1;
+
+                            for (MetricDimension dimensionsListValue : dimensionsList) {
+
+                                if (dimensionsListValue.getName() != null) {
+                                    request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member." + dimensionsListIndex
+                                            + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
+                                }
+
+                                if (dimensionsListValue.getValue() != null) {
+                                    request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Dimensions.member." + dimensionsListIndex
+                                            + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                                }
+                                dimensionsListIndex++;
+                            }
+                        }
+
+                        if (customizedMetricSpecification.getStatistic() != null) {
+                            request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Statistic",
+                                    StringUtils.fromString(customizedMetricSpecification.getStatistic()));
+                        }
+
+                        if (customizedMetricSpecification.getUnit() != null) {
+                            request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Unit",
+                                    StringUtils.fromString(customizedMetricSpecification.getUnit()));
+                        }
+                    }
+                }
+
+                if (targetTrackingConfiguration.getTargetValue() != null) {
+                    request.addParameter("TargetTrackingConfiguration.TargetValue", StringUtils.fromDouble(targetTrackingConfiguration.getTargetValue()));
+                }
+
+                if (targetTrackingConfiguration.getDisableScaleIn() != null) {
+                    request.addParameter("TargetTrackingConfiguration.DisableScaleIn", StringUtils.fromBoolean(targetTrackingConfiguration.getDisableScaleIn()));
+                }
+            }
         }
 
         return request;

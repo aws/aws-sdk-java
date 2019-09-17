@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -41,7 +41,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -51,7 +51,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -77,7 +77,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>
@@ -86,7 +86,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -96,7 +96,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -115,7 +115,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -124,7 +124,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -147,7 +147,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>
@@ -156,7 +156,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -166,7 +166,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -186,7 +186,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -195,7 +195,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -205,7 +205,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -217,7 +217,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @return The name of the DB security group to delete.</p> <note>
      *         <p>
-     *         You cannot delete the default DB security group.
+     *         You can't delete the default DB security group.
      *         </p>
      *         </note>
      *         <p>
@@ -226,7 +226,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -236,7 +236,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -256,7 +256,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -265,7 +265,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -275,7 +275,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * <li>
@@ -288,7 +288,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>
@@ -297,7 +297,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -307,7 +307,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -324,7 +324,8 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

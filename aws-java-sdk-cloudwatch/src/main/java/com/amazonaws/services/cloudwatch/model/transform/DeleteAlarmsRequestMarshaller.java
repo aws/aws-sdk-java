@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,10 @@ public class DeleteAlarmsRequestMarshaller implements Marshaller<Request<DeleteA
         request.addParameter("Version", "2010-08-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteAlarmsRequest.getAlarmNames();
-        if (!alarmNamesList.isEmpty() || !alarmNamesList.isAutoConstruct()) {
+        if (!deleteAlarmsRequest.getAlarmNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteAlarmsRequest.getAlarmNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteAlarmsRequest
+                    .getAlarmNames();
             int alarmNamesListIndex = 1;
 
             for (String alarmNamesListValue : alarmNamesList) {

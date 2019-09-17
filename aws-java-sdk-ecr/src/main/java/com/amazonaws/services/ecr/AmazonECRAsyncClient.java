@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
- * Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar
+ * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or
- * Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage
- * images.
+ * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
+ * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
  * </p>
  */
 @ThreadSafe
@@ -223,6 +223,10 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
         this.executorService = executorService;
     }
 
+    public static AmazonECRAsyncClientBuilder asyncBuilder() {
+        return AmazonECRAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon ECR using the specified parameters.
      *
@@ -252,14 +256,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<BatchCheckLayerAvailabilityResult> batchCheckLayerAvailabilityAsync(final BatchCheckLayerAvailabilityRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchCheckLayerAvailabilityRequest, BatchCheckLayerAvailabilityResult> asyncHandler) {
+        final BatchCheckLayerAvailabilityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchCheckLayerAvailabilityResult>() {
             @Override
             public BatchCheckLayerAvailabilityResult call() throws Exception {
-                BatchCheckLayerAvailabilityResult result;
+                BatchCheckLayerAvailabilityResult result = null;
 
                 try {
-                    result = batchCheckLayerAvailability(request);
+                    result = executeBatchCheckLayerAvailability(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -268,7 +273,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -284,14 +289,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<BatchDeleteImageResult> batchDeleteImageAsync(final BatchDeleteImageRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchDeleteImageRequest, BatchDeleteImageResult> asyncHandler) {
+        final BatchDeleteImageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchDeleteImageResult>() {
             @Override
             public BatchDeleteImageResult call() throws Exception {
-                BatchDeleteImageResult result;
+                BatchDeleteImageResult result = null;
 
                 try {
-                    result = batchDeleteImage(request);
+                    result = executeBatchDeleteImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -300,7 +306,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -316,14 +322,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<BatchGetImageResult> batchGetImageAsync(final BatchGetImageRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetImageRequest, BatchGetImageResult> asyncHandler) {
+        final BatchGetImageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchGetImageResult>() {
             @Override
             public BatchGetImageResult call() throws Exception {
-                BatchGetImageResult result;
+                BatchGetImageResult result = null;
 
                 try {
-                    result = batchGetImage(request);
+                    result = executeBatchGetImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -332,7 +339,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -348,14 +355,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<CompleteLayerUploadResult> completeLayerUploadAsync(final CompleteLayerUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<CompleteLayerUploadRequest, CompleteLayerUploadResult> asyncHandler) {
+        final CompleteLayerUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CompleteLayerUploadResult>() {
             @Override
             public CompleteLayerUploadResult call() throws Exception {
-                CompleteLayerUploadResult result;
+                CompleteLayerUploadResult result = null;
 
                 try {
-                    result = completeLayerUpload(request);
+                    result = executeCompleteLayerUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -364,7 +372,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -380,14 +388,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(final CreateRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult> asyncHandler) {
+        final CreateRepositoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateRepositoryResult>() {
             @Override
             public CreateRepositoryResult call() throws Exception {
-                CreateRepositoryResult result;
+                CreateRepositoryResult result = null;
 
                 try {
-                    result = createRepository(request);
+                    result = executeCreateRepository(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -396,7 +405,40 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(final DeleteLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+        final DeleteLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLifecyclePolicyResult>() {
+            @Override
+            public DeleteLifecyclePolicyResult call() throws Exception {
+                DeleteLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeDeleteLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -412,14 +454,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(final DeleteRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult> asyncHandler) {
+        final DeleteRepositoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRepositoryResult>() {
             @Override
             public DeleteRepositoryResult call() throws Exception {
-                DeleteRepositoryResult result;
+                DeleteRepositoryResult result = null;
 
                 try {
-                    result = deleteRepository(request);
+                    result = executeDeleteRepository(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -428,7 +471,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -444,14 +487,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<DeleteRepositoryPolicyResult> deleteRepositoryPolicyAsync(final DeleteRepositoryPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRepositoryPolicyRequest, DeleteRepositoryPolicyResult> asyncHandler) {
+        final DeleteRepositoryPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRepositoryPolicyResult>() {
             @Override
             public DeleteRepositoryPolicyResult call() throws Exception {
-                DeleteRepositoryPolicyResult result;
+                DeleteRepositoryPolicyResult result = null;
 
                 try {
-                    result = deleteRepositoryPolicy(request);
+                    result = executeDeleteRepositoryPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -460,7 +504,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -476,14 +520,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(final DescribeImagesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeImagesRequest, DescribeImagesResult> asyncHandler) {
+        final DescribeImagesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeImagesResult>() {
             @Override
             public DescribeImagesResult call() throws Exception {
-                DescribeImagesResult result;
+                DescribeImagesResult result = null;
 
                 try {
-                    result = describeImages(request);
+                    result = executeDescribeImages(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -492,7 +537,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -508,14 +553,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<DescribeRepositoriesResult> describeRepositoriesAsync(final DescribeRepositoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeRepositoriesRequest, DescribeRepositoriesResult> asyncHandler) {
+        final DescribeRepositoriesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeRepositoriesResult>() {
             @Override
             public DescribeRepositoriesResult call() throws Exception {
-                DescribeRepositoriesResult result;
+                DescribeRepositoriesResult result = null;
 
                 try {
-                    result = describeRepositories(request);
+                    result = executeDescribeRepositories(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -524,7 +570,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -540,14 +586,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<GetAuthorizationTokenResult> getAuthorizationTokenAsync(final GetAuthorizationTokenRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAuthorizationTokenRequest, GetAuthorizationTokenResult> asyncHandler) {
+        final GetAuthorizationTokenRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAuthorizationTokenResult>() {
             @Override
             public GetAuthorizationTokenResult call() throws Exception {
-                GetAuthorizationTokenResult result;
+                GetAuthorizationTokenResult result = null;
 
                 try {
-                    result = getAuthorizationToken(request);
+                    result = executeGetAuthorizationToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -556,7 +603,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -572,14 +619,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<GetDownloadUrlForLayerResult> getDownloadUrlForLayerAsync(final GetDownloadUrlForLayerRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDownloadUrlForLayerRequest, GetDownloadUrlForLayerResult> asyncHandler) {
+        final GetDownloadUrlForLayerRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDownloadUrlForLayerResult>() {
             @Override
             public GetDownloadUrlForLayerResult call() throws Exception {
-                GetDownloadUrlForLayerResult result;
+                GetDownloadUrlForLayerResult result = null;
 
                 try {
-                    result = getDownloadUrlForLayer(request);
+                    result = executeGetDownloadUrlForLayer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -588,7 +636,73 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(final GetLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+        final GetLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyResult>() {
+            @Override
+            public GetLifecyclePolicyResult call() throws Exception {
+                GetLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request) {
+
+        return getLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(final GetLifecyclePolicyPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyPreviewRequest, GetLifecyclePolicyPreviewResult> asyncHandler) {
+        final GetLifecyclePolicyPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyPreviewResult>() {
+            @Override
+            public GetLifecyclePolicyPreviewResult call() throws Exception {
+                GetLifecyclePolicyPreviewResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicyPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -604,14 +718,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<GetRepositoryPolicyResult> getRepositoryPolicyAsync(final GetRepositoryPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRepositoryPolicyRequest, GetRepositoryPolicyResult> asyncHandler) {
+        final GetRepositoryPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRepositoryPolicyResult>() {
             @Override
             public GetRepositoryPolicyResult call() throws Exception {
-                GetRepositoryPolicyResult result;
+                GetRepositoryPolicyResult result = null;
 
                 try {
-                    result = getRepositoryPolicy(request);
+                    result = executeGetRepositoryPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -620,7 +735,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -636,14 +751,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<InitiateLayerUploadResult> initiateLayerUploadAsync(final InitiateLayerUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<InitiateLayerUploadRequest, InitiateLayerUploadResult> asyncHandler) {
+        final InitiateLayerUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<InitiateLayerUploadResult>() {
             @Override
             public InitiateLayerUploadResult call() throws Exception {
-                InitiateLayerUploadResult result;
+                InitiateLayerUploadResult result = null;
 
                 try {
-                    result = initiateLayerUpload(request);
+                    result = executeInitiateLayerUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -652,7 +768,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -668,14 +784,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<ListImagesResult> listImagesAsync(final ListImagesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler) {
+        final ListImagesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListImagesResult>() {
             @Override
             public ListImagesResult call() throws Exception {
-                ListImagesResult result;
+                ListImagesResult result = null;
 
                 try {
-                    result = listImages(request);
+                    result = executeListImages(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -684,7 +801,40 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -700,14 +850,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<PutImageResult> putImageAsync(final PutImageRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutImageRequest, PutImageResult> asyncHandler) {
+        final PutImageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutImageResult>() {
             @Override
             public PutImageResult call() throws Exception {
-                PutImageResult result;
+                PutImageResult result = null;
 
                 try {
-                    result = putImage(request);
+                    result = executePutImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -716,7 +867,73 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutImageTagMutabilityResult> putImageTagMutabilityAsync(PutImageTagMutabilityRequest request) {
+
+        return putImageTagMutabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutImageTagMutabilityResult> putImageTagMutabilityAsync(final PutImageTagMutabilityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutImageTagMutabilityRequest, PutImageTagMutabilityResult> asyncHandler) {
+        final PutImageTagMutabilityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutImageTagMutabilityResult>() {
+            @Override
+            public PutImageTagMutabilityResult call() throws Exception {
+                PutImageTagMutabilityResult result = null;
+
+                try {
+                    result = executePutImageTagMutability(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request) {
+
+        return putLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(final PutLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler) {
+        final PutLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecyclePolicyResult>() {
+            @Override
+            public PutLifecyclePolicyResult call() throws Exception {
+                PutLifecyclePolicyResult result = null;
+
+                try {
+                    result = executePutLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -732,14 +949,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(final SetRepositoryPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetRepositoryPolicyRequest, SetRepositoryPolicyResult> asyncHandler) {
+        final SetRepositoryPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetRepositoryPolicyResult>() {
             @Override
             public SetRepositoryPolicyResult call() throws Exception {
-                SetRepositoryPolicyResult result;
+                SetRepositoryPolicyResult result = null;
 
                 try {
-                    result = setRepositoryPolicy(request);
+                    result = executeSetRepositoryPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -748,7 +966,106 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request) {
+
+        return startLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(final StartLifecyclePolicyPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartLifecyclePolicyPreviewRequest, StartLifecyclePolicyPreviewResult> asyncHandler) {
+        final StartLifecyclePolicyPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartLifecyclePolicyPreviewResult>() {
+            @Override
+            public StartLifecyclePolicyPreviewResult call() throws Exception {
+                StartLifecyclePolicyPreviewResult result = null;
+
+                try {
+                    result = executeStartLifecyclePolicyPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -764,14 +1081,15 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     @Override
     public java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(final UploadLayerPartRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadLayerPartRequest, UploadLayerPartResult> asyncHandler) {
+        final UploadLayerPartRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadLayerPartResult>() {
             @Override
             public UploadLayerPartResult call() throws Exception {
-                UploadLayerPartResult result;
+                UploadLayerPartResult result = null;
 
                 try {
-                    result = uploadLayerPart(request);
+                    result = executeUploadLayerPart(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -780,7 +1098,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

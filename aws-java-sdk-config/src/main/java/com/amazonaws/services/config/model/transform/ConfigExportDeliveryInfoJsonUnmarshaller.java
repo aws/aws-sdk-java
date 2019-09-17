@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,15 +62,15 @@ public class ConfigExportDeliveryInfoJsonUnmarshaller implements Unmarshaller<Co
                 }
                 if (context.testExpression("lastAttemptTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastAttemptTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configExportDeliveryInfo.setLastAttemptTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastSuccessfulTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setLastSuccessfulTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configExportDeliveryInfo.setLastSuccessfulTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("nextDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo.setNextDeliveryTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    configExportDeliveryInfo.setNextDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

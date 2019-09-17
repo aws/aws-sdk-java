@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,56 +28,16 @@ public class LaunchPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID.
-     * </p>
-     */
-    private String userId;
-    /**
-     * <p>
      * The name of the group.
      * </p>
      */
     private String group;
-
     /**
      * <p>
      * The AWS account ID.
      * </p>
-     * 
-     * @param userId
-     *        The AWS account ID.
      */
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    /**
-     * <p>
-     * The AWS account ID.
-     * </p>
-     * 
-     * @return The AWS account ID.
-     */
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    /**
-     * <p>
-     * The AWS account ID.
-     * </p>
-     * 
-     * @param userId
-     *        The AWS account ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchPermission withUserId(String userId) {
-        setUserId(userId);
-        return this;
-    }
+    private String userId;
 
     /**
      * <p>
@@ -133,7 +93,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      */
 
     public void setGroup(PermissionGroup group) {
-        this.group = group.toString();
+        withGroup(group);
     }
 
     /**
@@ -148,12 +108,53 @@ public class LaunchPermission implements Serializable, Cloneable {
      */
 
     public LaunchPermission withGroup(PermissionGroup group) {
-        setGroup(group);
+        this.group = group.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * 
+     * @return The AWS account ID.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchPermission withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,10 +164,10 @@ public class LaunchPermission implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId()).append(",");
         if (getGroup() != null)
-            sb.append("Group: ").append(getGroup());
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +182,13 @@ public class LaunchPermission implements Serializable, Cloneable {
         if (obj instanceof LaunchPermission == false)
             return false;
         LaunchPermission other = (LaunchPermission) obj;
-        if (other.getUserId() == null ^ this.getUserId() == null)
-            return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
-            return false;
         if (other.getGroup() == null ^ this.getGroup() == null)
             return false;
         if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         return true;
     }
@@ -197,8 +198,8 @@ public class LaunchPermission implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 
@@ -210,4 +211,5 @@ public class LaunchPermission implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

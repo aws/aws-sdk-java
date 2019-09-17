@@ -1,4 +1,4 @@
-<#macro content operationModel metadata unmarshallerReference outputType>
+<#macro content customConfig, operationModel metadata unmarshallerReference outputType>
     HttpResponseHandler<AmazonWebServiceResponse<${outputType}>> responseHandler =
         protocolFactory.createResponseHandler(new JsonOperationMetadata()
             .withPayloadJson(${(!operationModel.hasBlobMemberAsPayload)?c})

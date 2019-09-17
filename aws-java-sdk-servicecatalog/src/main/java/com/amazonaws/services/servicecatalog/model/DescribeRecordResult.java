@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,32 +25,32 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Detailed record information for the specified product.
+     * Information about the product.
      * </p>
      */
     private RecordDetail recordDetail;
     /**
      * <p>
-     * A list of outputs for the specified Product object created as the result of a request. For example, a
-     * CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * Information about the product created as the result of a request. For example, the output for a
+     * CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * </p>
      */
     private java.util.List<RecordOutput> recordOutputs;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * Detailed record information for the specified product.
+     * Information about the product.
      * </p>
      * 
      * @param recordDetail
-     *        Detailed record information for the specified product.
+     *        Information about the product.
      */
 
     public void setRecordDetail(RecordDetail recordDetail) {
@@ -59,10 +59,10 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Detailed record information for the specified product.
+     * Information about the product.
      * </p>
      * 
-     * @return Detailed record information for the specified product.
+     * @return Information about the product.
      */
 
     public RecordDetail getRecordDetail() {
@@ -71,11 +71,11 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Detailed record information for the specified product.
+     * Information about the product.
      * </p>
      * 
      * @param recordDetail
-     *        Detailed record information for the specified product.
+     *        Information about the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +86,12 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of outputs for the specified Product object created as the result of a request. For example, a
-     * CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * Information about the product created as the result of a request. For example, the output for a
+     * CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * </p>
      * 
-     * @return A list of outputs for the specified Product object created as the result of a request. For example, a
-     *         CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * @return Information about the product created as the result of a request. For example, the output for a
+     *         CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      */
 
     public java.util.List<RecordOutput> getRecordOutputs() {
@@ -100,13 +100,13 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of outputs for the specified Product object created as the result of a request. For example, a
-     * CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * Information about the product created as the result of a request. For example, the output for a
+     * CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * </p>
      * 
      * @param recordOutputs
-     *        A list of outputs for the specified Product object created as the result of a request. For example, a
-     *        CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     *        Information about the product created as the result of a request. For example, the output for a
+     *        CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      */
 
     public void setRecordOutputs(java.util.Collection<RecordOutput> recordOutputs) {
@@ -120,8 +120,8 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of outputs for the specified Product object created as the result of a request. For example, a
-     * CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * Information about the product created as the result of a request. For example, the output for a
+     * CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,8 +130,8 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param recordOutputs
-     *        A list of outputs for the specified Product object created as the result of a request. For example, a
-     *        CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     *        Information about the product created as the result of a request. For example, the output for a
+     *        CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,13 +147,13 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of outputs for the specified Product object created as the result of a request. For example, a
-     * CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     * Information about the product created as the result of a request. For example, the output for a
+     * CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * </p>
      * 
      * @param recordOutputs
-     *        A list of outputs for the specified Product object created as the result of a request. For example, a
-     *        CloudFormation-backed product that creates an S3 bucket would have an output for the S3 bucket URL.
+     *        Information about the product created as the result of a request. For example, the output for a
+     *        CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,13 +164,13 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -179,12 +179,12 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -193,13 +193,13 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,7 +209,8 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -273,4 +274,5 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

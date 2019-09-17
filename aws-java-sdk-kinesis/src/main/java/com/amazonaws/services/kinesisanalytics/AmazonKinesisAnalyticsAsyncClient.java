@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Client for accessing Kinesis Analytics asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * <fullname>Amazon Kinesis Analytics</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
+ * <note>
+ * <p>
+ * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications.
+ * Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a
+ * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+ * </p>
+ * </note>
+ * <p>
+ * This is the <i>Amazon Kinesis Analytics v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
+ * additional information.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -216,6 +232,10 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
         this.executorService = executorService;
     }
 
+    public static AmazonKinesisAnalyticsAsyncClientBuilder asyncBuilder() {
+        return AmazonKinesisAnalyticsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Kinesis Analytics using the specified
      * parameters.
@@ -238,22 +258,25 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     }
 
     @Override
-    public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest request) {
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest request) {
 
-        return addApplicationInputAsync(request, null);
+        return addApplicationCloudWatchLoggingOptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(final AddApplicationInputRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddApplicationInputRequest, AddApplicationInputResult> asyncHandler) {
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            final AddApplicationCloudWatchLoggingOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationCloudWatchLoggingOptionRequest, AddApplicationCloudWatchLoggingOptionResult> asyncHandler) {
+        final AddApplicationCloudWatchLoggingOptionRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<AddApplicationInputResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationCloudWatchLoggingOptionResult>() {
             @Override
-            public AddApplicationInputResult call() throws Exception {
-                AddApplicationInputResult result;
+            public AddApplicationCloudWatchLoggingOptionResult call() throws Exception {
+                AddApplicationCloudWatchLoggingOptionResult result = null;
 
                 try {
-                    result = addApplicationInput(request);
+                    result = executeAddApplicationCloudWatchLoggingOption(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -262,7 +285,75 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest request) {
+
+        return addApplicationInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(final AddApplicationInputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationInputRequest, AddApplicationInputResult> asyncHandler) {
+        final AddApplicationInputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationInputResult>() {
+            @Override
+            public AddApplicationInputResult call() throws Exception {
+                AddApplicationInputResult result = null;
+
+                try {
+                    result = executeAddApplicationInput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            AddApplicationInputProcessingConfigurationRequest request) {
+
+        return addApplicationInputProcessingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            final AddApplicationInputProcessingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationInputProcessingConfigurationRequest, AddApplicationInputProcessingConfigurationResult> asyncHandler) {
+        final AddApplicationInputProcessingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationInputProcessingConfigurationResult>() {
+            @Override
+            public AddApplicationInputProcessingConfigurationResult call() throws Exception {
+                AddApplicationInputProcessingConfigurationResult result = null;
+
+                try {
+                    result = executeAddApplicationInputProcessingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -278,14 +369,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<AddApplicationOutputResult> addApplicationOutputAsync(final AddApplicationOutputRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddApplicationOutputRequest, AddApplicationOutputResult> asyncHandler) {
+        final AddApplicationOutputRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddApplicationOutputResult>() {
             @Override
             public AddApplicationOutputResult call() throws Exception {
-                AddApplicationOutputResult result;
+                AddApplicationOutputResult result = null;
 
                 try {
-                    result = addApplicationOutput(request);
+                    result = executeAddApplicationOutput(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -294,7 +386,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -312,14 +404,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     public java.util.concurrent.Future<AddApplicationReferenceDataSourceResult> addApplicationReferenceDataSourceAsync(
             final AddApplicationReferenceDataSourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddApplicationReferenceDataSourceRequest, AddApplicationReferenceDataSourceResult> asyncHandler) {
+        final AddApplicationReferenceDataSourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddApplicationReferenceDataSourceResult>() {
             @Override
             public AddApplicationReferenceDataSourceResult call() throws Exception {
-                AddApplicationReferenceDataSourceResult result;
+                AddApplicationReferenceDataSourceResult result = null;
 
                 try {
-                    result = addApplicationReferenceDataSource(request);
+                    result = executeAddApplicationReferenceDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -328,7 +421,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -344,14 +437,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
+        final CreateApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateApplicationResult>() {
             @Override
             public CreateApplicationResult call() throws Exception {
-                CreateApplicationResult result;
+                CreateApplicationResult result = null;
 
                 try {
-                    result = createApplication(request);
+                    result = executeCreateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -360,7 +454,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -376,14 +470,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(final DeleteApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+        final DeleteApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationResult>() {
             @Override
             public DeleteApplicationResult call() throws Exception {
-                DeleteApplicationResult result;
+                DeleteApplicationResult result = null;
 
                 try {
-                    result = deleteApplication(request);
+                    result = executeDeleteApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -392,7 +487,77 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest request) {
+
+        return deleteApplicationCloudWatchLoggingOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            final DeleteApplicationCloudWatchLoggingOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationCloudWatchLoggingOptionRequest, DeleteApplicationCloudWatchLoggingOptionResult> asyncHandler) {
+        final DeleteApplicationCloudWatchLoggingOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationCloudWatchLoggingOptionResult>() {
+            @Override
+            public DeleteApplicationCloudWatchLoggingOptionResult call() throws Exception {
+                DeleteApplicationCloudWatchLoggingOptionResult result = null;
+
+                try {
+                    result = executeDeleteApplicationCloudWatchLoggingOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            DeleteApplicationInputProcessingConfigurationRequest request) {
+
+        return deleteApplicationInputProcessingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            final DeleteApplicationInputProcessingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationInputProcessingConfigurationRequest, DeleteApplicationInputProcessingConfigurationResult> asyncHandler) {
+        final DeleteApplicationInputProcessingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationInputProcessingConfigurationResult>() {
+            @Override
+            public DeleteApplicationInputProcessingConfigurationResult call() throws Exception {
+                DeleteApplicationInputProcessingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteApplicationInputProcessingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -408,14 +573,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<DeleteApplicationOutputResult> deleteApplicationOutputAsync(final DeleteApplicationOutputRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteApplicationOutputRequest, DeleteApplicationOutputResult> asyncHandler) {
+        final DeleteApplicationOutputRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationOutputResult>() {
             @Override
             public DeleteApplicationOutputResult call() throws Exception {
-                DeleteApplicationOutputResult result;
+                DeleteApplicationOutputResult result = null;
 
                 try {
-                    result = deleteApplicationOutput(request);
+                    result = executeDeleteApplicationOutput(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -424,7 +590,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -442,14 +608,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     public java.util.concurrent.Future<DeleteApplicationReferenceDataSourceResult> deleteApplicationReferenceDataSourceAsync(
             final DeleteApplicationReferenceDataSourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteApplicationReferenceDataSourceRequest, DeleteApplicationReferenceDataSourceResult> asyncHandler) {
+        final DeleteApplicationReferenceDataSourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationReferenceDataSourceResult>() {
             @Override
             public DeleteApplicationReferenceDataSourceResult call() throws Exception {
-                DeleteApplicationReferenceDataSourceResult result;
+                DeleteApplicationReferenceDataSourceResult result = null;
 
                 try {
-                    result = deleteApplicationReferenceDataSource(request);
+                    result = executeDeleteApplicationReferenceDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -458,7 +625,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -474,14 +641,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(final DescribeApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler) {
+        final DescribeApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeApplicationResult>() {
             @Override
             public DescribeApplicationResult call() throws Exception {
-                DescribeApplicationResult result;
+                DescribeApplicationResult result = null;
 
                 try {
-                    result = describeApplication(request);
+                    result = executeDescribeApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -490,7 +658,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -506,14 +674,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<DiscoverInputSchemaResult> discoverInputSchemaAsync(final DiscoverInputSchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<DiscoverInputSchemaRequest, DiscoverInputSchemaResult> asyncHandler) {
+        final DiscoverInputSchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DiscoverInputSchemaResult>() {
             @Override
             public DiscoverInputSchemaResult call() throws Exception {
-                DiscoverInputSchemaResult result;
+                DiscoverInputSchemaResult result = null;
 
                 try {
-                    result = discoverInputSchema(request);
+                    result = executeDiscoverInputSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -522,7 +691,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -538,14 +707,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(final ListApplicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
+        final ListApplicationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListApplicationsResult>() {
             @Override
             public ListApplicationsResult call() throws Exception {
-                ListApplicationsResult result;
+                ListApplicationsResult result = null;
 
                 try {
-                    result = listApplications(request);
+                    result = executeListApplications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -554,7 +724,40 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -570,14 +773,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<StartApplicationResult> startApplicationAsync(final StartApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartApplicationRequest, StartApplicationResult> asyncHandler) {
+        final StartApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartApplicationResult>() {
             @Override
             public StartApplicationResult call() throws Exception {
-                StartApplicationResult result;
+                StartApplicationResult result = null;
 
                 try {
-                    result = startApplication(request);
+                    result = executeStartApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,7 +790,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -602,14 +806,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<StopApplicationResult> stopApplicationAsync(final StopApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopApplicationRequest, StopApplicationResult> asyncHandler) {
+        final StopApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopApplicationResult>() {
             @Override
             public StopApplicationResult call() throws Exception {
-                StopApplicationResult result;
+                StopApplicationResult result = null;
 
                 try {
-                    result = stopApplication(request);
+                    result = executeStopApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -618,7 +823,73 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -634,14 +905,15 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(final UpdateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+        final UpdateApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateApplicationResult>() {
             @Override
             public UpdateApplicationResult call() throws Exception {
-                UpdateApplicationResult result;
+                UpdateApplicationResult result = null;
 
                 try {
-                    result = updateApplication(request);
+                    result = executeUpdateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -650,7 +922,7 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

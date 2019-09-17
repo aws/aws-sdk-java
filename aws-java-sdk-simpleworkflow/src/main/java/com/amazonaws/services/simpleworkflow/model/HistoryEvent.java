@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,86 +14,281 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Event within a workflow execution. A history event can be one of these types:
  * </p>
  * <ul>
- * <li><b>WorkflowExecutionStarted</b>: The workflow execution was started.</li>
- * <li><b>WorkflowExecutionCompleted</b>: The workflow execution was closed due to successful completion.</li>
- * <li><b>WorkflowExecutionFailed</b>: The workflow execution closed due to a failure.</li>
- * <li><b>WorkflowExecutionTimedOut</b>: The workflow execution was closed because a time out was exceeded.</li>
- * <li><b>WorkflowExecutionCanceled</b>: The workflow execution was successfully canceled and closed.</li>
- * <li><b>WorkflowExecutionTerminated</b>: The workflow execution was terminated.</li>
- * <li><b>WorkflowExecutionContinuedAsNew</b>: The workflow execution was closed and a new execution of the same type
- * was created with the same workflowId.</li>
- * <li><b>WorkflowExecutionCancelRequested</b>: A request to cancel this workflow execution was made.</li>
- * <li><b>DecisionTaskScheduled</b>: A decision task was scheduled for the workflow execution.</li>
- * <li><b>DecisionTaskStarted</b>: The decision task was dispatched to a decider.</li>
- * <li><b>DecisionTaskCompleted</b>: The decider successfully completed a decision task by calling
- * <a>RespondDecisionTaskCompleted</a>.</li>
- * <li><b>DecisionTaskTimedOut</b>: The decision task timed out.</li>
- * <li><b>ActivityTaskScheduled</b>: An activity task was scheduled for execution.</li>
- * <li><b>ScheduleActivityTaskFailed</b>: Failed to process ScheduleActivityTask decision. This happens when the
- * decision is not configured properly, for example the activity type specified is not registered.</li>
- * <li><b>ActivityTaskStarted</b>: The scheduled activity task was dispatched to a worker.</li>
- * <li><b>ActivityTaskCompleted</b>: An activity worker successfully completed an activity task by calling
- * <a>RespondActivityTaskCompleted</a>.</li>
- * <li><b>ActivityTaskFailed</b>: An activity worker failed an activity task by calling
- * <a>RespondActivityTaskFailed</a>.</li>
- * <li><b>ActivityTaskTimedOut</b>: The activity task timed out.</li>
- * <li><b>ActivityTaskCanceled</b>: The activity task was successfully canceled.</li>
- * <li><b>ActivityTaskCancelRequested</b>: A <code>RequestCancelActivityTask</code> decision was received by the system.
+ * <li>
+ * <p>
+ * <code>ActivityTaskCancelRequested</code> – A <code>RequestCancelActivityTask</code> decision was received by the
+ * system.
+ * </p>
  * </li>
- * <li><b>RequestCancelActivityTaskFailed</b>: Failed to process RequestCancelActivityTask decision. This happens when
- * the decision is not configured properly.</li>
- * <li><b>WorkflowExecutionSignaled</b>: An external signal was received for the workflow execution.</li>
- * <li><b>MarkerRecorded</b>: A marker was recorded in the workflow history as the result of a <code>RecordMarker</code>
- * decision.</li>
- * <li><b>TimerStarted</b>: A timer was started for the workflow execution due to a <code>StartTimer</code> decision.</li>
- * <li><b>StartTimerFailed</b>: Failed to process StartTimer decision. This happens when the decision is not configured
- * properly, for example a timer already exists with the specified timer ID.</li>
- * <li><b>TimerFired</b>: A timer, previously started for this workflow execution, fired.</li>
- * <li><b>TimerCanceled</b>: A timer, previously started for this workflow execution, was successfully canceled.</li>
- * <li><b>CancelTimerFailed</b>: Failed to process CancelTimer decision. This happens when the decision is not
- * configured properly, for example no timer exists with the specified timer ID.</li>
- * <li><b>StartChildWorkflowExecutionInitiated</b>: A request was made to start a child workflow execution.</li>
- * <li><b>StartChildWorkflowExecutionFailed</b>: Failed to process StartChildWorkflowExecution decision. This happens
- * when the decision is not configured properly, for example the workflow type specified is not registered.</li>
- * <li><b>ChildWorkflowExecutionStarted</b>: A child workflow execution was successfully started.</li>
- * <li><b>ChildWorkflowExecutionCompleted</b>: A child workflow execution, started by this workflow execution, completed
- * successfully and was closed.</li>
- * <li><b>ChildWorkflowExecutionFailed</b>: A child workflow execution, started by this workflow execution, failed to
- * complete successfully and was closed.</li>
- * <li><b>ChildWorkflowExecutionTimedOut</b>: A child workflow execution, started by this workflow execution, timed out
- * and was closed.</li>
- * <li><b>ChildWorkflowExecutionCanceled</b>: A child workflow execution, started by this workflow execution, was
- * canceled and closed.</li>
- * <li><b>ChildWorkflowExecutionTerminated</b>: A child workflow execution, started by this workflow execution, was
- * terminated.</li>
- * <li><b>SignalExternalWorkflowExecutionInitiated</b>: A request to signal an external workflow was made.</li>
- * <li><b>ExternalWorkflowExecutionSignaled</b>: A signal, requested by this workflow execution, was successfully
- * delivered to the target external workflow execution.</li>
- * <li><b>SignalExternalWorkflowExecutionFailed</b>: The request to signal an external workflow execution failed.</li>
- * <li><b>RequestCancelExternalWorkflowExecutionInitiated</b>: A request was made to request the cancellation of an
- * external workflow execution.</li>
- * <li><b>ExternalWorkflowExecutionCancelRequested</b>: Request to cancel an external workflow execution was
- * successfully delivered to the target execution.</li>
- * <li><b>RequestCancelExternalWorkflowExecutionFailed</b>: Request to cancel an external workflow execution failed.</li>
- * <li><b>LambdaFunctionScheduled</b>: An AWS Lambda function was scheduled for execution.</li>
- * <li><b>LambdaFunctionStarted</b>: The scheduled function was invoked in the AWS Lambda service.</li>
- * <li><b>LambdaFunctionCompleted</b>: The AWS Lambda function successfully completed.</li>
- * <li><b>LambdaFunctionFailed</b>: The AWS Lambda function execution failed.</li>
- * <li><b>LambdaFunctionTimedOut</b>: The AWS Lambda function execution timed out.</li>
- * <li><b>ScheduleLambdaFunctionFailed</b>: Failed to process ScheduleLambdaFunction decision. This happens when the
- * workflow execution does not have the proper IAM role attached to invoke AWS Lambda functions.</li>
- * <li><b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in the AWS Lambda service. This happens
- * when the AWS Lambda service is not available in the current region, or received too many requests.</li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskCanceled</code> – The activity task was successfully canceled.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskCompleted</code> – An activity worker successfully completed an activity task by calling
+ * <a>RespondActivityTaskCompleted</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskFailed</code> – An activity worker failed an activity task by calling
+ * <a>RespondActivityTaskFailed</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskScheduled</code> – An activity task was scheduled for execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskStarted</code> – The scheduled activity task was dispatched to a worker.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ActivityTaskTimedOut</code> – The activity task timed out.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CancelTimerFailed</code> – Failed to process CancelTimer decision. This happens when the decision isn't
+ * configured properly, for example no timer exists with the specified timer Id.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CancelWorkflowExecutionFailed</code> – A request to cancel a workflow execution failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionCanceled</code> – A child workflow execution, started by this workflow execution, was
+ * canceled and closed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionCompleted</code> – A child workflow execution, started by this workflow execution,
+ * completed successfully and was closed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionFailed</code> – A child workflow execution, started by this workflow execution, failed to
+ * complete successfully and was closed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionStarted</code> – A child workflow execution was successfully started.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionTerminated</code> – A child workflow execution, started by this workflow execution, was
+ * terminated.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ChildWorkflowExecutionTimedOut</code> – A child workflow execution, started by this workflow execution, timed
+ * out and was closed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CompleteWorkflowExecutionFailed</code> – The workflow execution failed to complete.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ContinueAsNewWorkflowExecutionFailed</code> – The workflow execution failed to complete after being continued
+ * as a new workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DecisionTaskCompleted</code> – The decider successfully completed a decision task by calling
+ * <a>RespondDecisionTaskCompleted</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DecisionTaskScheduled</code> – A decision task was scheduled for the workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DecisionTaskStarted</code> – The decision task was dispatched to a decider.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DecisionTaskTimedOut</code> – The decision task timed out.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ExternalWorkflowExecutionCancelRequested</code> – Request to cancel an external workflow execution was
+ * successfully delivered to the target execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ExternalWorkflowExecutionSignaled</code> – A signal, requested by this workflow execution, was successfully
+ * delivered to the target external workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FailWorkflowExecutionFailed</code> – A request to mark a workflow execution as failed, itself failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>MarkerRecorded</code> – A marker was recorded in the workflow history as the result of a
+ * <code>RecordMarker</code> decision.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RecordMarkerFailed</code> – A <code>RecordMarker</code> decision was returned as failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelActivityTaskFailed</code> – Failed to process RequestCancelActivityTask decision. This happens
+ * when the decision isn't configured properly.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelExternalWorkflowExecutionFailed</code> – Request to cancel an external workflow execution failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RequestCancelExternalWorkflowExecutionInitiated</code> – A request was made to request the cancellation of an
+ * external workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ScheduleActivityTaskFailed</code> – Failed to process ScheduleActivityTask decision. This happens when the
+ * decision isn't configured properly, for example the activity type specified isn't registered.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>SignalExternalWorkflowExecutionFailed</code> – The request to signal an external workflow execution failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>SignalExternalWorkflowExecutionInitiated</code> – A request to signal an external workflow was made.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartActivityTaskFailed</code> – A scheduled activity task failed to start.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartChildWorkflowExecutionFailed</code> – Failed to process StartChildWorkflowExecution decision. This happens
+ * when the decision isn't configured properly, for example the workflow type specified isn't registered.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartChildWorkflowExecutionInitiated</code> – A request was made to start a child workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>StartTimerFailed</code> – Failed to process StartTimer decision. This happens when the decision isn't
+ * configured properly, for example a timer already exists with the specified timer Id.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TimerCanceled</code> – A timer, previously started for this workflow execution, was successfully canceled.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TimerFired</code> – A timer, previously started for this workflow execution, fired.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TimerStarted</code> – A timer was started for the workflow execution due to a <code>StartTimer</code> decision.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionCancelRequested</code> – A request to cancel this workflow execution was made.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionCanceled</code> – The workflow execution was successfully canceled and closed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionCompleted</code> – The workflow execution was closed due to successful completion.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionContinuedAsNew</code> – The workflow execution was closed and a new execution of the same type
+ * was created with the same workflowId.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionFailed</code> – The workflow execution closed due to a failure.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionSignaled</code> – An external signal was received for the workflow execution.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionStarted</code> – The workflow execution was started.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionTerminated</code> – The workflow execution was terminated.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.
+ * </p>
+ * </li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/HistoryEvent" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HistoryEvent implements Serializable, Cloneable {
+public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -117,345 +312,373 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionStartedEventAttributes workflowExecutionStartedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionCompletedEventAttributes workflowExecutionCompletedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private CompleteWorkflowExecutionFailedEventAttributes completeWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionFailedEventAttributes workflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private FailWorkflowExecutionFailedEventAttributes failWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionTimedOutEventAttributes workflowExecutionTimedOutEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionCanceledEventAttributes workflowExecutionCanceledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private CancelWorkflowExecutionFailedEventAttributes cancelWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionContinuedAsNewEventAttributes workflowExecutionContinuedAsNewEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private ContinueAsNewWorkflowExecutionFailedEventAttributes continueAsNewWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionTerminatedEventAttributes workflowExecutionTerminatedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionCancelRequestedEventAttributes workflowExecutionCancelRequestedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private DecisionTaskStartedEventAttributes decisionTaskStartedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private DecisionTaskCompletedEventAttributes decisionTaskCompletedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private DecisionTaskTimedOutEventAttributes decisionTaskTimedOutEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskStartedEventAttributes activityTaskStartedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskCompletedEventAttributes activityTaskCompletedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskFailedEventAttributes activityTaskFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskTimedOutEventAttributes activityTaskTimedOutEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private MarkerRecordedEventAttributes markerRecordedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      */
     private TimerStartedEventAttributes timerStartedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      */
     private TimerFiredEventAttributes timerFiredEventAttributes;
     /**
      * <p>
      * If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private TimerCanceledEventAttributes timerCanceledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private StartChildWorkflowExecutionInitiatedEventAttributes startChildWorkflowExecutionInitiatedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionStartedEventAttributes childWorkflowExecutionStartedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionCompletedEventAttributes childWorkflowExecutionCompletedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionFailedEventAttributes childWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionTimedOutEventAttributes childWorkflowExecutionTimedOutEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionCanceledEventAttributes childWorkflowExecutionCanceledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private ChildWorkflowExecutionTerminatedEventAttributes childWorkflowExecutionTerminatedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private SignalExternalWorkflowExecutionInitiatedEventAttributes signalExternalWorkflowExecutionInitiatedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private ExternalWorkflowExecutionSignaledEventAttributes externalWorkflowExecutionSignaledEventAttributes;
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private SignalExternalWorkflowExecutionFailedEventAttributes signalExternalWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private ExternalWorkflowExecutionCancelRequestedEventAttributes externalWorkflowExecutionCancelRequestedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private RequestCancelExternalWorkflowExecutionInitiatedEventAttributes requestCancelExternalWorkflowExecutionInitiatedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private RequestCancelExternalWorkflowExecutionFailedEventAttributes requestCancelExternalWorkflowExecutionFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      */
     private ScheduleActivityTaskFailedEventAttributes scheduleActivityTaskFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private StartTimerFailedEventAttributes startTimerFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      */
     private CancelTimerFailedEventAttributes cancelTimerFailedEventAttributes;
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      */
     private StartChildWorkflowExecutionFailedEventAttributes startChildWorkflowExecutionFailedEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+     * </p>
+     */
     private LambdaFunctionScheduledEventAttributes lambdaFunctionScheduledEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+     * </p>
+     */
     private LambdaFunctionStartedEventAttributes lambdaFunctionStartedEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+     * </p>
+     */
     private LambdaFunctionCompletedEventAttributes lambdaFunctionCompletedEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     */
     private LambdaFunctionFailedEventAttributes lambdaFunctionFailedEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
+     * </p>
+     */
     private LambdaFunctionTimedOutEventAttributes lambdaFunctionTimedOutEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     */
     private ScheduleLambdaFunctionFailedEventAttributes scheduleLambdaFunctionFailedEventAttributes;
-
+    /**
+     * <p>
+     * Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     */
     private StartLambdaFunctionFailedEventAttributes startLambdaFunctionFailedEventAttributes;
 
     /**
@@ -552,7 +775,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      */
 
     public void setEventType(EventType eventType) {
-        this.eventType = eventType.toString();
+        withEventType(eventType);
     }
 
     /**
@@ -567,7 +790,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      */
 
     public HistoryEvent withEventType(EventType eventType) {
-        setEventType(eventType);
+        this.eventType = eventType.toString();
         return this;
     }
 
@@ -620,12 +843,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionStartedEventAttributes
      *        If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionStartedEventAttributes(WorkflowExecutionStartedEventAttributes workflowExecutionStartedEventAttributes) {
@@ -635,11 +858,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionStartedEventAttributes getWorkflowExecutionStartedEventAttributes() {
@@ -649,12 +872,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionStartedEventAttributes
      *        If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,12 +889,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCompletedEventAttributes
      *        If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionCompletedEventAttributes(WorkflowExecutionCompletedEventAttributes workflowExecutionCompletedEventAttributes) {
@@ -681,11 +904,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionCompletedEventAttributes getWorkflowExecutionCompletedEventAttributes() {
@@ -695,12 +918,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCompletedEventAttributes
      *        If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -712,12 +935,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param completeWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setCompleteWorkflowExecutionFailedEventAttributes(CompleteWorkflowExecutionFailedEventAttributes completeWorkflowExecutionFailedEventAttributes) {
@@ -727,11 +950,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public CompleteWorkflowExecutionFailedEventAttributes getCompleteWorkflowExecutionFailedEventAttributes() {
@@ -741,12 +964,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param completeWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -759,12 +982,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionFailedEventAttributes
      *        If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionFailedEventAttributes(WorkflowExecutionFailedEventAttributes workflowExecutionFailedEventAttributes) {
@@ -774,11 +997,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionFailedEventAttributes getWorkflowExecutionFailedEventAttributes() {
@@ -788,12 +1011,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionFailedEventAttributes
      *        If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -805,12 +1028,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param failWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setFailWorkflowExecutionFailedEventAttributes(FailWorkflowExecutionFailedEventAttributes failWorkflowExecutionFailedEventAttributes) {
@@ -820,11 +1043,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public FailWorkflowExecutionFailedEventAttributes getFailWorkflowExecutionFailedEventAttributes() {
@@ -834,12 +1057,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param failWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,12 +1074,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionTimedOutEventAttributes
      *        If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionTimedOutEventAttributes(WorkflowExecutionTimedOutEventAttributes workflowExecutionTimedOutEventAttributes) {
@@ -866,11 +1089,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionTimedOutEventAttributes getWorkflowExecutionTimedOutEventAttributes() {
@@ -880,12 +1103,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionTimedOutEventAttributes
      *        If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -897,12 +1120,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCanceledEventAttributes
      *        If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionCanceledEventAttributes(WorkflowExecutionCanceledEventAttributes workflowExecutionCanceledEventAttributes) {
@@ -912,11 +1135,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionCanceledEventAttributes getWorkflowExecutionCanceledEventAttributes() {
@@ -926,12 +1149,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCanceledEventAttributes
      *        If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -943,12 +1166,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param cancelWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setCancelWorkflowExecutionFailedEventAttributes(CancelWorkflowExecutionFailedEventAttributes cancelWorkflowExecutionFailedEventAttributes) {
@@ -958,11 +1181,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public CancelWorkflowExecutionFailedEventAttributes getCancelWorkflowExecutionFailedEventAttributes() {
@@ -972,12 +1195,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param cancelWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -990,12 +1213,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionContinuedAsNewEventAttributes
      *        If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionContinuedAsNewEventAttributes(WorkflowExecutionContinuedAsNewEventAttributes workflowExecutionContinuedAsNewEventAttributes) {
@@ -1005,11 +1228,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionContinuedAsNewEventAttributes getWorkflowExecutionContinuedAsNewEventAttributes() {
@@ -1019,12 +1242,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionContinuedAsNewEventAttributes
      *        If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1037,12 +1260,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param continueAsNewWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setContinueAsNewWorkflowExecutionFailedEventAttributes(
@@ -1053,11 +1276,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public ContinueAsNewWorkflowExecutionFailedEventAttributes getContinueAsNewWorkflowExecutionFailedEventAttributes() {
@@ -1067,12 +1290,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param continueAsNewWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1085,12 +1308,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionTerminatedEventAttributes
      *        If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionTerminatedEventAttributes(WorkflowExecutionTerminatedEventAttributes workflowExecutionTerminatedEventAttributes) {
@@ -1100,11 +1323,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionTerminatedEventAttributes getWorkflowExecutionTerminatedEventAttributes() {
@@ -1114,12 +1337,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionTerminatedEventAttributes
      *        If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1131,12 +1354,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCancelRequestedEventAttributes
      *        If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionCancelRequestedEventAttributes(
@@ -1147,11 +1370,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionCancelRequestedEventAttributes getWorkflowExecutionCancelRequestedEventAttributes() {
@@ -1161,12 +1384,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionCancelRequestedEventAttributes
      *        If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1179,12 +1402,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskScheduledEventAttributes
      *        If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setDecisionTaskScheduledEventAttributes(DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes) {
@@ -1194,11 +1417,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public DecisionTaskScheduledEventAttributes getDecisionTaskScheduledEventAttributes() {
@@ -1208,12 +1431,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskScheduledEventAttributes
      *        If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1225,12 +1448,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskStartedEventAttributes
      *        If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setDecisionTaskStartedEventAttributes(DecisionTaskStartedEventAttributes decisionTaskStartedEventAttributes) {
@@ -1240,11 +1463,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public DecisionTaskStartedEventAttributes getDecisionTaskStartedEventAttributes() {
@@ -1254,12 +1477,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskStartedEventAttributes
      *        If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1271,12 +1494,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskCompletedEventAttributes
      *        If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setDecisionTaskCompletedEventAttributes(DecisionTaskCompletedEventAttributes decisionTaskCompletedEventAttributes) {
@@ -1286,11 +1509,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public DecisionTaskCompletedEventAttributes getDecisionTaskCompletedEventAttributes() {
@@ -1300,12 +1523,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskCompletedEventAttributes
      *        If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1317,12 +1540,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskTimedOutEventAttributes
      *        If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setDecisionTaskTimedOutEventAttributes(DecisionTaskTimedOutEventAttributes decisionTaskTimedOutEventAttributes) {
@@ -1332,11 +1555,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public DecisionTaskTimedOutEventAttributes getDecisionTaskTimedOutEventAttributes() {
@@ -1346,12 +1569,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param decisionTaskTimedOutEventAttributes
      *        If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,12 +1586,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskScheduledEventAttributes
      *        If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskScheduledEventAttributes(ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes) {
@@ -1378,11 +1601,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskScheduledEventAttributes getActivityTaskScheduledEventAttributes() {
@@ -1392,12 +1615,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskScheduledEventAttributes
      *        If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1409,12 +1632,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskStartedEventAttributes
      *        If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskStartedEventAttributes(ActivityTaskStartedEventAttributes activityTaskStartedEventAttributes) {
@@ -1424,11 +1647,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskStartedEventAttributes getActivityTaskStartedEventAttributes() {
@@ -1438,12 +1661,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskStartedEventAttributes
      *        If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1455,12 +1678,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCompletedEventAttributes
      *        If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskCompletedEventAttributes(ActivityTaskCompletedEventAttributes activityTaskCompletedEventAttributes) {
@@ -1470,11 +1693,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskCompletedEventAttributes getActivityTaskCompletedEventAttributes() {
@@ -1484,12 +1707,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCompletedEventAttributes
      *        If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1501,12 +1724,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskFailedEventAttributes
      *        If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskFailedEventAttributes(ActivityTaskFailedEventAttributes activityTaskFailedEventAttributes) {
@@ -1516,11 +1739,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskFailedEventAttributes getActivityTaskFailedEventAttributes() {
@@ -1530,12 +1753,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskFailedEventAttributes
      *        If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1547,12 +1770,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskTimedOutEventAttributes
      *        If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskTimedOutEventAttributes(ActivityTaskTimedOutEventAttributes activityTaskTimedOutEventAttributes) {
@@ -1562,11 +1785,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskTimedOutEventAttributes getActivityTaskTimedOutEventAttributes() {
@@ -1576,12 +1799,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskTimedOutEventAttributes
      *        If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1593,12 +1816,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCanceledEventAttributes
      *        If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskCanceledEventAttributes(ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes) {
@@ -1608,11 +1831,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskCanceledEventAttributes getActivityTaskCanceledEventAttributes() {
@@ -1622,12 +1845,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCanceledEventAttributes
      *        If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1639,12 +1862,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCancelRequestedEventAttributes
      *        If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setActivityTaskCancelRequestedEventAttributes(ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes) {
@@ -1654,11 +1877,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ActivityTaskCancelRequestedEventAttributes getActivityTaskCancelRequestedEventAttributes() {
@@ -1668,12 +1891,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param activityTaskCancelRequestedEventAttributes
      *        If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1685,12 +1908,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionSignaledEventAttributes
      *        If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setWorkflowExecutionSignaledEventAttributes(WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes) {
@@ -1700,11 +1923,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public WorkflowExecutionSignaledEventAttributes getWorkflowExecutionSignaledEventAttributes() {
@@ -1714,12 +1937,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param workflowExecutionSignaledEventAttributes
      *        If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1731,12 +1954,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param markerRecordedEventAttributes
      *        If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setMarkerRecordedEventAttributes(MarkerRecordedEventAttributes markerRecordedEventAttributes) {
@@ -1746,11 +1969,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public MarkerRecordedEventAttributes getMarkerRecordedEventAttributes() {
@@ -1760,12 +1983,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param markerRecordedEventAttributes
      *        If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1777,12 +2000,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param recordMarkerFailedEventAttributes
      *        If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributes recordMarkerFailedEventAttributes) {
@@ -1792,11 +2015,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public RecordMarkerFailedEventAttributes getRecordMarkerFailedEventAttributes() {
@@ -1806,12 +2029,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param recordMarkerFailedEventAttributes
      *        If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1823,12 +2046,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerStartedEventAttributes
      *        If the event is of type <code>TimerStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setTimerStartedEventAttributes(TimerStartedEventAttributes timerStartedEventAttributes) {
@@ -1838,11 +2061,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>TimerStarted</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public TimerStartedEventAttributes getTimerStartedEventAttributes() {
@@ -1852,12 +2075,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerStartedEventAttributes
      *        If the event is of type <code>TimerStarted</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1869,12 +2092,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerFiredEventAttributes
      *        If the event is of type <code>TimerFired</code> then this member is set and provides detailed information
-     *        about the event. It is not set for other event types.
+     *        about the event. It isn't set for other event types.
      */
 
     public void setTimerFiredEventAttributes(TimerFiredEventAttributes timerFiredEventAttributes) {
@@ -1884,11 +2107,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>TimerFired</code> then this member is set and provides detailed information
-     *         about the event. It is not set for other event types.
+     *         about the event. It isn't set for other event types.
      */
 
     public TimerFiredEventAttributes getTimerFiredEventAttributes() {
@@ -1898,12 +2121,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about
-     * the event. It is not set for other event types.
+     * the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerFiredEventAttributes
      *        If the event is of type <code>TimerFired</code> then this member is set and provides detailed information
-     *        about the event. It is not set for other event types.
+     *        about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1915,12 +2138,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerCanceledEventAttributes
      *        If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setTimerCanceledEventAttributes(TimerCanceledEventAttributes timerCanceledEventAttributes) {
@@ -1930,11 +2153,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public TimerCanceledEventAttributes getTimerCanceledEventAttributes() {
@@ -1944,12 +2167,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param timerCanceledEventAttributes
      *        If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1961,12 +2184,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startChildWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setStartChildWorkflowExecutionInitiatedEventAttributes(
@@ -1977,11 +2200,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public StartChildWorkflowExecutionInitiatedEventAttributes getStartChildWorkflowExecutionInitiatedEventAttributes() {
@@ -1991,12 +2214,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startChildWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2009,12 +2232,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionStartedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionStartedEventAttributes(ChildWorkflowExecutionStartedEventAttributes childWorkflowExecutionStartedEventAttributes) {
@@ -2024,11 +2247,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionStartedEventAttributes getChildWorkflowExecutionStartedEventAttributes() {
@@ -2038,12 +2261,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionStartedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2056,12 +2279,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionCompletedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionCompletedEventAttributes(ChildWorkflowExecutionCompletedEventAttributes childWorkflowExecutionCompletedEventAttributes) {
@@ -2071,11 +2294,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionCompletedEventAttributes getChildWorkflowExecutionCompletedEventAttributes() {
@@ -2085,12 +2308,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionCompletedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2103,12 +2326,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionFailedEventAttributes(ChildWorkflowExecutionFailedEventAttributes childWorkflowExecutionFailedEventAttributes) {
@@ -2118,11 +2341,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionFailedEventAttributes getChildWorkflowExecutionFailedEventAttributes() {
@@ -2132,12 +2355,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2149,12 +2372,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionTimedOutEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionTimedOutEventAttributes(ChildWorkflowExecutionTimedOutEventAttributes childWorkflowExecutionTimedOutEventAttributes) {
@@ -2164,11 +2387,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionTimedOutEventAttributes getChildWorkflowExecutionTimedOutEventAttributes() {
@@ -2178,12 +2401,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionTimedOutEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2196,12 +2419,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionCanceledEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionCanceledEventAttributes(ChildWorkflowExecutionCanceledEventAttributes childWorkflowExecutionCanceledEventAttributes) {
@@ -2211,11 +2434,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionCanceledEventAttributes getChildWorkflowExecutionCanceledEventAttributes() {
@@ -2225,12 +2448,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionCanceledEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2243,12 +2466,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionTerminatedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setChildWorkflowExecutionTerminatedEventAttributes(
@@ -2259,11 +2482,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public ChildWorkflowExecutionTerminatedEventAttributes getChildWorkflowExecutionTerminatedEventAttributes() {
@@ -2273,12 +2496,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param childWorkflowExecutionTerminatedEventAttributes
      *        If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2291,12 +2514,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setSignalExternalWorkflowExecutionInitiatedEventAttributes(
@@ -2307,11 +2530,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public SignalExternalWorkflowExecutionInitiatedEventAttributes getSignalExternalWorkflowExecutionInitiatedEventAttributes() {
@@ -2321,12 +2544,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2339,12 +2562,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param externalWorkflowExecutionSignaledEventAttributes
      *        If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setExternalWorkflowExecutionSignaledEventAttributes(
@@ -2355,11 +2578,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public ExternalWorkflowExecutionSignaledEventAttributes getExternalWorkflowExecutionSignaledEventAttributes() {
@@ -2369,12 +2592,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param externalWorkflowExecutionSignaledEventAttributes
      *        If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2387,12 +2610,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setSignalExternalWorkflowExecutionFailedEventAttributes(
@@ -2403,11 +2626,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public SignalExternalWorkflowExecutionFailedEventAttributes getSignalExternalWorkflowExecutionFailedEventAttributes() {
@@ -2417,12 +2640,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param signalExternalWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2435,12 +2658,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param externalWorkflowExecutionCancelRequestedEventAttributes
      *        If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setExternalWorkflowExecutionCancelRequestedEventAttributes(
@@ -2451,11 +2674,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public ExternalWorkflowExecutionCancelRequestedEventAttributes getExternalWorkflowExecutionCancelRequestedEventAttributes() {
@@ -2465,12 +2688,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param externalWorkflowExecutionCancelRequestedEventAttributes
      *        If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2483,12 +2706,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is
-     *        set and provides detailed information about the event. It is not set for other event types.
+     *        set and provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(
@@ -2499,11 +2722,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is
-     *         set and provides detailed information about the event. It is not set for other event types.
+     *         set and provides detailed information about the event. It isn't set for other event types.
      */
 
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes getRequestCancelExternalWorkflowExecutionInitiatedEventAttributes() {
@@ -2513,12 +2736,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionInitiatedEventAttributes
      *        If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is
-     *        set and provides detailed information about the event. It is not set for other event types.
+     *        set and provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2531,12 +2754,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set
-     *        and provides detailed information about the event. It is not set for other event types.
+     *        and provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setRequestCancelExternalWorkflowExecutionFailedEventAttributes(
@@ -2547,11 +2770,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set
-     *         and provides detailed information about the event. It is not set for other event types.
+     *         and provides detailed information about the event. It isn't set for other event types.
      */
 
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes getRequestCancelExternalWorkflowExecutionFailedEventAttributes() {
@@ -2561,12 +2784,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and
-     * provides detailed information about the event. It is not set for other event types.
+     * provides detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelExternalWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set
-     *        and provides detailed information about the event. It is not set for other event types.
+     *        and provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2579,12 +2802,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param scheduleActivityTaskFailedEventAttributes
      *        If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setScheduleActivityTaskFailedEventAttributes(ScheduleActivityTaskFailedEventAttributes scheduleActivityTaskFailedEventAttributes) {
@@ -2594,11 +2817,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public ScheduleActivityTaskFailedEventAttributes getScheduleActivityTaskFailedEventAttributes() {
@@ -2608,12 +2831,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed
-     * information about the event. It is not set for other event types.
+     * information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param scheduleActivityTaskFailedEventAttributes
      *        If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2625,12 +2848,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelActivityTaskFailedEventAttributes
      *        If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      */
 
     public void setRequestCancelActivityTaskFailedEventAttributes(RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes) {
@@ -2640,11 +2863,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     *         detailed information about the event. It is not set for other event types.
+     *         detailed information about the event. It isn't set for other event types.
      */
 
     public RequestCancelActivityTaskFailedEventAttributes getRequestCancelActivityTaskFailedEventAttributes() {
@@ -2654,12 +2877,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param requestCancelActivityTaskFailedEventAttributes
      *        If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
-     *        detailed information about the event. It is not set for other event types.
+     *        detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2672,12 +2895,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startTimerFailedEventAttributes
      *        If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setStartTimerFailedEventAttributes(StartTimerFailedEventAttributes startTimerFailedEventAttributes) {
@@ -2687,11 +2910,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public StartTimerFailedEventAttributes getStartTimerFailedEventAttributes() {
@@ -2701,12 +2924,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startTimerFailedEventAttributes
      *        If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2718,12 +2941,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param cancelTimerFailedEventAttributes
      *        If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      */
 
     public void setCancelTimerFailedEventAttributes(CancelTimerFailedEventAttributes cancelTimerFailedEventAttributes) {
@@ -2733,11 +2956,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed
-     *         information about the event. It is not set for other event types.
+     *         information about the event. It isn't set for other event types.
      */
 
     public CancelTimerFailedEventAttributes getCancelTimerFailedEventAttributes() {
@@ -2747,12 +2970,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information
-     * about the event. It is not set for other event types.
+     * about the event. It isn't set for other event types.
      * </p>
      * 
      * @param cancelTimerFailedEventAttributes
      *        If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed
-     *        information about the event. It is not set for other event types.
+     *        information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2764,12 +2987,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startChildWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      */
 
     public void setStartChildWorkflowExecutionFailedEventAttributes(
@@ -2780,11 +3003,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @return If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and
-     *         provides detailed information about the event. It is not set for other event types.
+     *         provides detailed information about the event. It isn't set for other event types.
      */
 
     public StartChildWorkflowExecutionFailedEventAttributes getStartChildWorkflowExecutionFailedEventAttributes() {
@@ -2794,12 +3017,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     /**
      * <p>
      * If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides
-     * detailed information about the event. It is not set for other event types.
+     * detailed information about the event. It isn't set for other event types.
      * </p>
      * 
      * @param startChildWorkflowExecutionFailedEventAttributes
      *        If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and
-     *        provides detailed information about the event. It is not set for other event types.
+     *        provides detailed information about the event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2810,7 +3033,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionScheduledEventAttributes
+     *        Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event
+     *        types.
      */
 
     public void setLambdaFunctionScheduledEventAttributes(LambdaFunctionScheduledEventAttributes lambdaFunctionScheduledEventAttributes) {
@@ -2818,7 +3047,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event
+     *         types.
      */
 
     public LambdaFunctionScheduledEventAttributes getLambdaFunctionScheduledEventAttributes() {
@@ -2826,7 +3060,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionScheduledEventAttributes
+     *        Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2836,7 +3076,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionStartedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
      */
 
     public void setLambdaFunctionStartedEventAttributes(LambdaFunctionStartedEventAttributes lambdaFunctionStartedEventAttributes) {
@@ -2844,7 +3089,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
      */
 
     public LambdaFunctionStartedEventAttributes getLambdaFunctionStartedEventAttributes() {
@@ -2852,7 +3101,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionStartedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2862,7 +3116,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionCompletedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event
+     *        types.
      */
 
     public void setLambdaFunctionCompletedEventAttributes(LambdaFunctionCompletedEventAttributes lambdaFunctionCompletedEventAttributes) {
@@ -2870,7 +3130,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event
+     *         types.
      */
 
     public LambdaFunctionCompletedEventAttributes getLambdaFunctionCompletedEventAttributes() {
@@ -2878,7 +3143,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionCompletedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2888,7 +3159,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
      */
 
     public void setLambdaFunctionFailedEventAttributes(LambdaFunctionFailedEventAttributes lambdaFunctionFailedEventAttributes) {
@@ -2896,7 +3172,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
      */
 
     public LambdaFunctionFailedEventAttributes getLambdaFunctionFailedEventAttributes() {
@@ -2904,7 +3184,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2914,7 +3199,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionTimedOutEventAttributes
+     *        Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
      */
 
     public void setLambdaFunctionTimedOutEventAttributes(LambdaFunctionTimedOutEventAttributes lambdaFunctionTimedOutEventAttributes) {
@@ -2922,7 +3212,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event
+     *         types.
      */
 
     public LambdaFunctionTimedOutEventAttributes getLambdaFunctionTimedOutEventAttributes() {
@@ -2930,7 +3225,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param lambdaFunctionTimedOutEventAttributes
+     *        Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2940,7 +3240,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param scheduleLambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event
+     *        types.
      */
 
     public void setScheduleLambdaFunctionFailedEventAttributes(ScheduleLambdaFunctionFailedEventAttributes scheduleLambdaFunctionFailedEventAttributes) {
@@ -2948,7 +3254,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event
+     *         types.
      */
 
     public ScheduleLambdaFunctionFailedEventAttributes getScheduleLambdaFunctionFailedEventAttributes() {
@@ -2956,7 +3267,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param scheduleLambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2966,7 +3283,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param startLambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event
+     *        types.
      */
 
     public void setStartLambdaFunctionFailedEventAttributes(StartLambdaFunctionFailedEventAttributes startLambdaFunctionFailedEventAttributes) {
@@ -2974,7 +3297,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
+     * @return Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event
+     *         types.
      */
 
     public StartLambdaFunctionFailedEventAttributes getStartLambdaFunctionFailedEventAttributes() {
@@ -2982,7 +3310,13 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.
+     * </p>
+     * 
      * @param startLambdaFunctionFailedEventAttributes
+     *        Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2992,7 +3326,8 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -3532,5 +3867,11 @@ public class HistoryEvent implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.HistoryEventMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

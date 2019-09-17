@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,58 +12,53 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnsubscribeFromDatasetRequest Marshaller
+ * UnsubscribeFromDatasetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsubscribeFromDatasetRequestMarshaller implements Marshaller<Request<UnsubscribeFromDatasetRequest>, UnsubscribeFromDatasetRequest> {
+@SdkInternalApi
+public class UnsubscribeFromDatasetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<String> DATASETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DatasetName").build();
+    private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DeviceId").build();
 
-    public UnsubscribeFromDatasetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UnsubscribeFromDatasetRequestMarshaller instance = new UnsubscribeFromDatasetRequestMarshaller();
+
+    public static UnsubscribeFromDatasetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UnsubscribeFromDatasetRequest> marshall(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (unsubscribeFromDatasetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UnsubscribeFromDatasetRequest> request = new DefaultRequest<UnsubscribeFromDatasetRequest>(unsubscribeFromDatasetRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
-                unsubscribeFromDatasetRequest.getIdentityPoolId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId",
-                unsubscribeFromDatasetRequest.getIdentityId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName",
-                unsubscribeFromDatasetRequest.getDatasetName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DeviceId", unsubscribeFromDatasetRequest.getDeviceId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getDatasetName(), DATASETNAME_BINDING);
+            protocolMarshaller.marshall(unsubscribeFromDatasetRequest.getDeviceId(), DEVICEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

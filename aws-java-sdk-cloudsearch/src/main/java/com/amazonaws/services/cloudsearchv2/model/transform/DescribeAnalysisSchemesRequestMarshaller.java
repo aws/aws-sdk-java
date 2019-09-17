@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,10 @@ public class DescribeAnalysisSchemesRequestMarshaller implements Marshaller<Requ
             request.addParameter("DomainName", StringUtils.fromString(describeAnalysisSchemesRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> analysisSchemeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest
-                .getAnalysisSchemeNames();
-        if (!analysisSchemeNamesList.isEmpty() || !analysisSchemeNamesList.isAutoConstruct()) {
+        if (!describeAnalysisSchemesRequest.getAnalysisSchemeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest.getAnalysisSchemeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> analysisSchemeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest
+                    .getAnalysisSchemeNames();
             int analysisSchemeNamesListIndex = 1;
 
             for (String analysisSchemeNamesListValue : analysisSchemeNamesList) {

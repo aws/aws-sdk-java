@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,15 +14,19 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For the provided the bounding box, confidence level that the bounding box actually contains a face, and the
- * similarity between the face in the bounding box and the face in the source image.
+ * Provides information about a face in a target image that matches the source image face analyzed by
+ * <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image.
+ * The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding
+ * box.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CompareFacesMatch implements Serializable, Cloneable {
+public class CompareFacesMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -118,7 +122,8 @@ public class CompareFacesMatch implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,5 +179,11 @@ public class CompareFacesMatch implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.CompareFacesMatchMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

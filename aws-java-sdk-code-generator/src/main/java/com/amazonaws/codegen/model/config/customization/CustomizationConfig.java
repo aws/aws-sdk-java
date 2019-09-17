@@ -18,10 +18,11 @@ package com.amazonaws.codegen.model.config.customization;
 import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CustomizationConfig {
 
@@ -78,6 +79,12 @@ public class CustomizationConfig {
      * Currently it's only set for SimpleDB ("SimpleDBResponseMetadata")
      */
     private String customResponseMetadataClassName;
+
+    /**
+     * Fully qualified class name of response handler implementation to use. Services with custom response metadata
+     * tends to use this like SimpleDB. This customization currently is only supported for XML based protocols.
+     */
+    private String customResponseHandlerFqcn;
 
     /**
      * True if the generated interface should NOT include shutdown() and getCachedResponseData
@@ -210,10 +217,38 @@ public class CustomizationConfig {
     private String presignersFqcn;
 
     /**
+     * A set of deprecated code that generation can be suppressed for
+     */
+    private Set<DeprecatedSuppression> deprecatedSuppressions;
+
+    /**
      * Relative path to customize transform directory. Will be generated relative
      * to the models directory. Default is {@value Constants#PACKAGE_NAME_TRANSFORM_SUFFIX}.
      */
     private String transformDirectory = Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
+
+    /**
+     * Customization to emit a setter overload that takes an enum. This breaks the POJO contract so we only do it
+     * for enums previously shipped to maintain backwards compatibility.
+     */
+    private Map<String, List<String>> emitLegacyEnumSetterFor;
+
+    /**
+     * Customization to omit an operation from the client interface (and abstract class and client implementation) but still
+     * generate the input/output Java POJOs and marshaller/unmarshaller.
+     */
+    private List<String> skipClientMethodForOperations = Collections.emptyList();
+
+    /**
+     * Overrides the Content-Type header for the protocol. For Rest-JSON we send empty content type
+     * which causes some problems with API Gateway fronted services in certain scenarios.
+     */
+    private String contentTypeOverride;
+
+    /**
+     * True if uid is used as file name prefix, false otherwise
+     */
+    private boolean useUidAsFilePrefix;
 
     private CustomizationConfig(){
     }
@@ -265,6 +300,14 @@ public class CustomizationConfig {
 
     public void setCustomResponseMetadataClassName(String customResponseMetadataClassName) {
         this.customResponseMetadataClassName = customResponseMetadataClassName;
+    }
+
+    public String getCustomResponseHandlerFqcn() {
+        return customResponseHandlerFqcn;
+    }
+
+    public void setCustomResponseHandlerFqcn(String customResponseHandlerFqcn) {
+        this.customResponseHandlerFqcn = customResponseHandlerFqcn;
     }
 
     public boolean isSkipInterfaceAdditions() {
@@ -401,13 +444,12 @@ public class CustomizationConfig {
                 .add(stringOverloadForByteBufferMember.getConvenienceTypeOverload());
     }
 
-    /**
-     * Only meant to be used by templates/macros. When customizing a service use one of the
-     * pre-canned options like {@link #setStringOverloadForInputStreamMember(StringOverloadForInputStreamMember)}
-     * or {@link #setStringOverloadForByteBufferMember(StringOverloadForByteBufferMember)}
-     */
     public List<ConvenienceTypeOverload> getConvenienceTypeOverloads() {
         return this.convenienceTypeOverloads;
+    }
+
+    public void setConvenienceTypeOverloads(List<ConvenienceTypeOverload> convenienceTypeOverloads) {
+        this.convenienceTypeOverloads.addAll(convenienceTypeOverloads);
     }
 
     public MetadataConfig getCustomServiceMetadata() {
@@ -499,4 +541,64 @@ public class CustomizationConfig {
         this.transformDirectory = transformDirectory;
         return this;
     }
+
+    public Set<DeprecatedSuppression> getDeprecatedSuppressions() {
+        return deprecatedSuppressions;
+    }
+
+    public void setDeprecatedSuppressions(Set<DeprecatedSuppression> deprecatedSuppressions) {
+        this.deprecatedSuppressions = deprecatedSuppressions;
+    }
+
+    public boolean emitClientMutationMethods() {
+        return !shouldSuppress(DeprecatedSuppression.ClientMutationMethods);
+    }
+
+    public boolean emitClientConstructors() {
+        return !shouldSuppress(DeprecatedSuppression.ClientConstructors);
+    }
+
+    public boolean emitEnumSetterOverload() {
+        return !shouldSuppress(DeprecatedSuppression.EnumSetterOverload);
+    }
+
+    private boolean shouldSuppress(DeprecatedSuppression suppression) {
+        return deprecatedSuppressions != null && deprecatedSuppressions.contains(suppression);
+    }
+
+    public Map<String, List<String>> getEmitLegacyEnumSetterFor() {
+        return emitLegacyEnumSetterFor;
+    }
+
+    public CustomizationConfig setEmitLegacyEnumSetterFor(
+            Map<String, List<String>> emitLegacyEnumSetterFor) {
+        this.emitLegacyEnumSetterFor = emitLegacyEnumSetterFor;
+        return this;
+    }
+
+    public List<String> getSkipClientMethodForOperations() {
+        return skipClientMethodForOperations;
+    }
+
+    public void setSkipClientMethodForOperations(List<String> skipClientMethodForOperations) {
+        this.skipClientMethodForOperations = skipClientMethodForOperations;
+    }
+
+    public String getContentTypeOverride() {
+        return contentTypeOverride;
+    }
+
+    public void setContentTypeOverride(String contentTypeOverride) {
+        this.contentTypeOverride = contentTypeOverride;
+    }
+
+    public boolean isUseUidAsFilePrefix() {
+        return useUidAsFilePrefix;
+    }
+
+    public void setUseUidAsFilePrefix(boolean useUidAsFilePrefix) {
+        this.useUidAsFilePrefix = useUidAsFilePrefix;
+    }
+
+
 }

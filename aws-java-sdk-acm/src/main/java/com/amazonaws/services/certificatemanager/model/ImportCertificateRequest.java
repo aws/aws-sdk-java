@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,68 +27,38 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      */
     private String certificateArn;
     /**
      * <p>
-     * The certificate to import. It must meet the following requirements:
+     * The certificate to import.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain a 1024-bit or 2048-bit RSA public key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be valid at the time of import. You cannot import a certificate before its validity period begins (the
-     * certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.nio.ByteBuffer certificate;
     /**
      * <p>
-     * The private key that matches the public key in the certificate. It must meet the following requirements:
+     * The private key that matches the public key in the certificate.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.nio.ByteBuffer privateKey;
     /**
      * <p>
-     * The certificate chain. It must be PEM-encoded.
+     * The PEM encoded certificate chain.
      * </p>
      */
     private java.nio.ByteBuffer certificateChain;
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      */
 
@@ -98,11 +68,11 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
-     * @return The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      */
 
@@ -112,12 +82,12 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -129,28 +99,10 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate to import. It must meet the following requirements:
+     * The certificate to import.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain a 1024-bit or 2048-bit RSA public key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be valid at the time of import. You cannot import a certificate before its validity period begins (the
-     * certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -161,25 +113,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param certificate
-     *        The certificate to import. It must meet the following requirements:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be PEM-encoded.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain a 1024-bit or 2048-bit RSA public key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be valid at the time of import. You cannot import a certificate before its validity period begins
-     *        (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's
-     *        <code>NotAfter</code> date).
-     *        </p>
-     *        </li>
+     *        The certificate to import.
      */
 
     public void setCertificate(java.nio.ByteBuffer certificate) {
@@ -188,26 +122,8 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate to import. It must meet the following requirements:
+     * The certificate to import.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain a 1024-bit or 2048-bit RSA public key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be valid at the time of import. You cannot import a certificate before its validity period begins (the
-     * certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -216,25 +132,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * {@code position}.
      * </p>
      * 
-     * @return The certificate to import. It must meet the following requirements:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Must be PEM-encoded.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must contain a 1024-bit or 2048-bit RSA public key.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be valid at the time of import. You cannot import a certificate before its validity period begins
-     *         (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's
-     *         <code>NotAfter</code> date).
-     *         </p>
-     *         </li>
+     * @return The certificate to import.
      */
 
     public java.nio.ByteBuffer getCertificate() {
@@ -243,47 +141,21 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate to import. It must meet the following requirements:
+     * The certificate to import.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Must be PEM-encoded.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Must contain a 1024-bit or 2048-bit RSA public key.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be valid at the time of import. You cannot import a certificate before its validity period begins (the
-     * certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param certificate
-     *        The certificate to import. It must meet the following requirements:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be PEM-encoded.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain a 1024-bit or 2048-bit RSA public key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be valid at the time of import. You cannot import a certificate before its validity period begins
-     *        (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's
-     *        <code>NotAfter</code> date).
-     *        </p>
-     *        </li>
+     *        The certificate to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,22 +166,10 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The private key that matches the public key in the certificate. It must meet the following requirements:
+     * The private key that matches the public key in the certificate.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -320,19 +180,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param privateKey
-     *        The private key that matches the public key in the certificate. It must meet the following
-     *        requirements:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be PEM-encoded.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     *        </p>
-     *        </li>
+     *        The private key that matches the public key in the certificate.
      */
 
     public void setPrivateKey(java.nio.ByteBuffer privateKey) {
@@ -341,20 +189,8 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The private key that matches the public key in the certificate. It must meet the following requirements:
+     * The private key that matches the public key in the certificate.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be PEM-encoded.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -363,19 +199,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * {@code position}.
      * </p>
      * 
-     * @return The private key that matches the public key in the certificate. It must meet the following
-     *         requirements:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Must be PEM-encoded.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     *         </p>
-     *         </li>
+     * @return The private key that matches the public key in the certificate.
      */
 
     public java.nio.ByteBuffer getPrivateKey() {
@@ -384,35 +208,21 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The private key that matches the public key in the certificate. It must meet the following requirements:
+     * The private key that matches the public key in the certificate.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Must be PEM-encoded.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
-     * </li>
-     * </ul>
      * 
      * @param privateKey
-     *        The private key that matches the public key in the certificate. It must meet the following
-     *        requirements:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be PEM-encoded.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.
-     *        </p>
-     *        </li>
+     *        The private key that matches the public key in the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,10 +233,10 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate chain. It must be PEM-encoded.
+     * The PEM encoded certificate chain.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -437,7 +247,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param certificateChain
-     *        The certificate chain. It must be PEM-encoded.
+     *        The PEM encoded certificate chain.
      */
 
     public void setCertificateChain(java.nio.ByteBuffer certificateChain) {
@@ -446,7 +256,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate chain. It must be PEM-encoded.
+     * The PEM encoded certificate chain.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -456,7 +266,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * {@code position}.
      * </p>
      * 
-     * @return The certificate chain. It must be PEM-encoded.
+     * @return The PEM encoded certificate chain.
      */
 
     public java.nio.ByteBuffer getCertificateChain() {
@@ -465,11 +275,21 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The certificate chain. It must be PEM-encoded.
+     * The PEM encoded certificate chain.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param certificateChain
-     *        The certificate chain. It must be PEM-encoded.
+     *        The PEM encoded certificate chain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,7 +299,8 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -494,7 +315,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateChain() != null)
             sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");

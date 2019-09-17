@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -211,6 +211,7 @@ final class StandardTypeConverters extends DynamoDBTypeConverterFactory {
         LONG(ScalarAttributeType.N, new ConverterMap(Long.class, Long.TYPE)
             .with(Date.class, ToLong.FromDate)
             .with(DateTime.class, ToLong.FromDate.join(ToDate.FromDateTime))
+            .with(Calendar.class, ToLong.FromDate.join(ToDate.FromCalendar))
             .with(Number.class, ToLong.FromNumber)
             .with(String.class, ToLong.FromString)
         ),

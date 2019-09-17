@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
+
 import java.io.Serializable;
 
 import com.amazonaws.util.json.Jackson;
@@ -29,10 +30,21 @@ public class ReplicationDestinationConfig implements Serializable {
     private String bucketARN;
 
     /**
+     * Account ID of the destination bucket.
+     * Currently this is only being verified if Access Control Translation is enabled.
+     */
+    private String account;
+
+    /**
      * Storage class for the replica. If not specified, Amazon S3
      * uses the storage class of the source object to create object replica.
      */
     private String storageClass;
+
+    private AccessControlTranslation accessControlTranslation;
+
+    private EncryptionConfiguration encryptionConfiguration;
+
 
     /**
      * Returns the Amazon S3 bucket ARN where the replicas are present.
@@ -64,6 +76,33 @@ public class ReplicationDestinationConfig implements Serializable {
      */
     public ReplicationDestinationConfig withBucketARN(String bucketARN) {
         setBucketARN(bucketARN);
+        return this;
+    }
+
+    /**
+     * Returns The account ID of the destination bucket.
+     */
+    public String getAccount() {
+        return account;
+    }
+
+    /**
+     * Sets the account ID of the destination bucket. This is only being verified if Access Control Translation is enabled.
+     *
+     * @param account New account id.
+     */
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    /**
+     * Sets the account ID of the destination bucket. This is only being verified if Access Control Translation is enabled.
+     *
+     * @param account New account id.
+     * @return This object for method chaining.
+     */
+    public ReplicationDestinationConfig withAccount(String account) {
+        setAccount(account);
         return this;
     }
 
@@ -115,8 +154,63 @@ public class ReplicationDestinationConfig implements Serializable {
         return storageClass;
     }
 
+    /**
+     * @return The access control translation.
+     */
+    public AccessControlTranslation getAccessControlTranslation() {
+        return accessControlTranslation;
+    }
+
+    /**
+     * Sets the access control translation.
+     *
+     * @param accessControlTranslation New access control translation.
+     */
+    public void setAccessControlTranslation(AccessControlTranslation accessControlTranslation) {
+        this.accessControlTranslation = accessControlTranslation;
+    }
+
+    /**
+     * Sets the access control translation.
+     *
+     * @param accessControlTranslation New access control translation.
+     * @return This object for method chaining.
+     */
+    public ReplicationDestinationConfig withAccessControlTranslation(AccessControlTranslation accessControlTranslation) {
+        setAccessControlTranslation(accessControlTranslation);
+        return this;
+    }
+
+    /**
+     * @return Container for information regarding encryption based configuration for replicas
+     */
+    public EncryptionConfiguration getEncryptionConfiguration() {
+        return encryptionConfiguration;
+    }
+
+    /**
+     * Sets the container for information regarding encryption based configuration for replicas
+     *
+     * @param encryptionConfiguration New encryption configuration.
+     */
+    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        this.encryptionConfiguration = encryptionConfiguration;
+    }
+
+    /**
+     * Sets the container for information regarding encryption based configuration for replicas
+     *
+     * @param encryptionConfiguration New encryption configuration.
+     * @return This object for method chaining.
+     */
+    public ReplicationDestinationConfig withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        setEncryptionConfiguration(encryptionConfiguration);
+        return this;
+    }
+
     @Override
     public String toString() {
         return Jackson.toJsonString(this);
     }
+
 }

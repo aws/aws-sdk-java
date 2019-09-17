@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,12 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class S3OutputLocation implements Serializable, Cloneable {
+public class S3OutputLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 region where the association information is stored.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -47,11 +50,13 @@ public class S3OutputLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 region where the association information is stored.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The Amazon S3 region where the association information is stored.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -60,10 +65,12 @@ public class S3OutputLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 region where the association information is stored.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
-     * @return The Amazon S3 region where the association information is stored.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *         automatically determines the Amazon S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -72,11 +79,13 @@ public class S3OutputLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 region where the association information is stored.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The Amazon S3 region where the association information is stored.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +175,8 @@ public class S3OutputLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,5 +239,11 @@ public class S3OutputLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.S3OutputLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

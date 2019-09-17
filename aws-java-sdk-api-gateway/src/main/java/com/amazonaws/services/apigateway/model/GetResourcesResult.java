@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a collection of <a>Resource</a> resources.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -28,7 +28,7 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
     private String position;
     /**
      * <p>
-     * Gets the current <a>Resource</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<Resource> items;
@@ -61,10 +61,10 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Gets the current <a>Resource</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return Gets the current <a>Resource</a> resource in the collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<Resource> getItems() {
@@ -73,11 +73,11 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Gets the current <a>Resource</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Resource</a> resource in the collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<Resource> items) {
@@ -91,7 +91,7 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Gets the current <a>Resource</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +100,7 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Resource</a> resource in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Gets the current <a>Resource</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Resource</a> resource in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +130,8 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -187,4 +188,5 @@ public class GetResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

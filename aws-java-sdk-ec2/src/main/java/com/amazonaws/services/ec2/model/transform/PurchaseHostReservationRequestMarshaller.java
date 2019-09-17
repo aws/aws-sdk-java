@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,12 @@ public class PurchaseHostReservationRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (purchaseHostReservationRequest.getOfferingId() != null) {
-            request.addParameter("OfferingId", StringUtils.fromString(purchaseHostReservationRequest.getOfferingId()));
+        if (purchaseHostReservationRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(purchaseHostReservationRequest.getClientToken()));
+        }
+
+        if (purchaseHostReservationRequest.getCurrencyCode() != null) {
+            request.addParameter("CurrencyCode", StringUtils.fromString(purchaseHostReservationRequest.getCurrencyCode()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> purchaseHostReservationRequestHostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) purchaseHostReservationRequest
@@ -61,12 +65,8 @@ public class PurchaseHostReservationRequestMarshaller implements Marshaller<Requ
             request.addParameter("LimitPrice", StringUtils.fromString(purchaseHostReservationRequest.getLimitPrice()));
         }
 
-        if (purchaseHostReservationRequest.getCurrencyCode() != null) {
-            request.addParameter("CurrencyCode", StringUtils.fromString(purchaseHostReservationRequest.getCurrencyCode()));
-        }
-
-        if (purchaseHostReservationRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(purchaseHostReservationRequest.getClientToken()));
+        if (purchaseHostReservationRequest.getOfferingId() != null) {
+            request.addParameter("OfferingId", StringUtils.fromString(purchaseHostReservationRequest.getOfferingId()));
         }
 
         return request;

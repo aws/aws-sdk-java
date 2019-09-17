@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> diskIds;
 
     /**
@@ -56,7 +61,14 @@ public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * @return
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
+     * @return An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *         minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *         API.
      */
 
     public java.util.List<String> getDiskIds() {
@@ -67,7 +79,15 @@ public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      */
 
     public void setDiskIds(java.util.Collection<String> diskIds) {
@@ -81,12 +101,19 @@ public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDiskIds(java.util.Collection)} or {@link #withDiskIds(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +128,15 @@ public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +146,8 @@ public class AddCacheRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

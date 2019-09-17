@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,14 +53,14 @@ public class UpdateStreamingDistributionRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}/config";
+        String uriResourcePath = "/2019-03-26/streaming-distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-11-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             StreamingDistributionConfig streamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfig != null) {

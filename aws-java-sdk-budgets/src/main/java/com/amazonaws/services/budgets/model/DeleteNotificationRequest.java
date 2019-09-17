@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,19 +18,39 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of DeleteNotification
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to delete.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget whose notification you want to delete.
+     * </p>
+     */
     private String budgetName;
-
+    /**
+     * <p>
+     * The notification that you want to delete.
+     * </p>
+     */
     private Notification notification;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to delete.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notification you want to delete.
      */
 
     public void setAccountId(String accountId) {
@@ -38,7 +58,11 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to delete.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget whose notification you want to delete.
      */
 
     public String getAccountId() {
@@ -46,7 +70,12 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notification you want to delete.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notification you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +85,12 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the budget whose notification you want to delete.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notification you want to delete.
      */
 
     public void setBudgetName(String budgetName) {
@@ -64,7 +98,11 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget whose notification you want to delete.
+     * </p>
+     * 
+     * @return The name of the budget whose notification you want to delete.
      */
 
     public String getBudgetName() {
@@ -72,7 +110,12 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the budget whose notification you want to delete.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notification you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +125,12 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The notification that you want to delete.
+     * </p>
+     * 
      * @param notification
+     *        The notification that you want to delete.
      */
 
     public void setNotification(Notification notification) {
@@ -90,7 +138,11 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The notification that you want to delete.
+     * </p>
+     * 
+     * @return The notification that you want to delete.
      */
 
     public Notification getNotification() {
@@ -98,7 +150,12 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The notification that you want to delete.
+     * </p>
+     * 
      * @param notification
+     *        The notification that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,7 +165,8 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

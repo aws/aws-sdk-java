@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #addPermissionAsync(AddPermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(String queueUrl, String label, java.util.List<String> aWSAccountIds,
             java.util.List<String> actions, com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
@@ -94,6 +95,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #changeMessageVisibilityAsync(ChangeMessageVisibilityRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(String queueUrl, String receiptHandle,
             Integer visibilityTimeout, com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler) {
 
@@ -132,6 +134,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(String queueUrl,
             java.util.List<ChangeMessageVisibilityBatchRequestEntry> entries,
             com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResult> asyncHandler) {
@@ -168,6 +171,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #createQueueAsync(CreateQueueRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateQueueResult> createQueueAsync(String queueName,
             com.amazonaws.handlers.AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler) {
 
@@ -203,6 +207,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #deleteMessageAsync(DeleteMessageRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(String queueUrl, String receiptHandle,
             com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler) {
 
@@ -238,6 +243,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #deleteMessageBatchAsync(DeleteMessageBatchRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteMessageBatchResult> deleteMessageBatchAsync(String queueUrl,
             java.util.List<DeleteMessageBatchRequestEntry> entries,
             com.amazonaws.handlers.AsyncHandler<DeleteMessageBatchRequest, DeleteMessageBatchResult> asyncHandler) {
@@ -274,6 +280,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #deleteQueueAsync(DeleteQueueRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(String queueUrl,
             com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler) {
 
@@ -309,6 +316,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #getQueueAttributesAsync(GetQueueAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetQueueAttributesResult> getQueueAttributesAsync(String queueUrl, java.util.List<String> attributeNames,
             com.amazonaws.handlers.AsyncHandler<GetQueueAttributesRequest, GetQueueAttributesResult> asyncHandler) {
 
@@ -344,6 +352,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #getQueueUrlAsync(GetQueueUrlRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetQueueUrlResult> getQueueUrlAsync(String queueName,
             com.amazonaws.handlers.AsyncHandler<GetQueueUrlRequest, GetQueueUrlResult> asyncHandler) {
 
@@ -361,6 +370,42 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
             com.amazonaws.handlers.AsyncHandler<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest request) {
+
+        return listQueueTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl) {
+
+        return listQueueTagsAsync(new ListQueueTagsRequest().withQueueUrl(queueUrl));
+    }
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation with an AsyncHandler.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl,
+            com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+
+        return listQueueTagsAsync(new ListQueueTagsRequest().withQueueUrl(queueUrl), asyncHandler);
     }
 
     @Override
@@ -392,6 +437,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #listQueuesAsync(ListQueuesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(com.amazonaws.handlers.AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler) {
 
         return listQueuesAsync(new ListQueuesRequest(), asyncHandler);
@@ -413,6 +459,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #listQueuesAsync(ListQueuesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(String queueNamePrefix,
             com.amazonaws.handlers.AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler) {
 
@@ -461,6 +508,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #receiveMessageAsync(ReceiveMessageRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ReceiveMessageResult> receiveMessageAsync(String queueUrl,
             com.amazonaws.handlers.AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> asyncHandler) {
 
@@ -496,6 +544,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #removePermissionAsync(RemovePermissionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(String queueUrl, String label,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
@@ -531,6 +580,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #sendMessageAsync(SendMessageRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SendMessageResult> sendMessageAsync(String queueUrl, String messageBody,
             com.amazonaws.handlers.AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler) {
 
@@ -566,6 +616,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #sendMessageBatchAsync(SendMessageBatchRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SendMessageBatchResult> sendMessageBatchAsync(String queueUrl, java.util.List<SendMessageBatchRequestEntry> entries,
             com.amazonaws.handlers.AsyncHandler<SendMessageBatchRequest, SendMessageBatchResult> asyncHandler) {
 
@@ -601,10 +652,83 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
      *
      * @see #setQueueAttributesAsync(SetQueueAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(String queueUrl, java.util.Map<String, String> attributes,
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
         return setQueueAttributesAsync(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest request) {
+
+        return tagQueueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Simplified method form for invoking the TagQueue operation.
+     *
+     * @see #tagQueueAsync(TagQueueRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags) {
+
+        return tagQueueAsync(new TagQueueRequest().withQueueUrl(queueUrl).withTags(tags));
+    }
+
+    /**
+     * Simplified method form for invoking the TagQueue operation with an AsyncHandler.
+     *
+     * @see #tagQueueAsync(TagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags,
+            com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+
+        return tagQueueAsync(new TagQueueRequest().withQueueUrl(queueUrl).withTags(tags), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest request) {
+
+        return untagQueueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys) {
+
+        return untagQueueAsync(new UntagQueueRequest().withQueueUrl(queueUrl).withTagKeys(tagKeys));
+    }
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation with an AsyncHandler.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys,
+            com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+
+        return untagQueueAsync(new UntagQueueRequest().withQueueUrl(queueUrl).withTagKeys(tagKeys), asyncHandler);
     }
 
 }

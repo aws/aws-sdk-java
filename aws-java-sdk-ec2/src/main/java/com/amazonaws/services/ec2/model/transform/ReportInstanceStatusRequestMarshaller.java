@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,14 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (reportInstanceStatusRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(reportInstanceStatusRequest.getDescription()));
+        }
+
+        if (reportInstanceStatusRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(reportInstanceStatusRequest.getEndTime()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> reportInstanceStatusRequestInstancesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
                 .getInstances();
         if (!reportInstanceStatusRequestInstancesList.isEmpty() || !reportInstanceStatusRequestInstancesList.isAutoConstruct()) {
@@ -51,18 +59,6 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
                 }
                 instancesListIndex++;
             }
-        }
-
-        if (reportInstanceStatusRequest.getStatus() != null) {
-            request.addParameter("Status", StringUtils.fromString(reportInstanceStatusRequest.getStatus()));
-        }
-
-        if (reportInstanceStatusRequest.getStartTime() != null) {
-            request.addParameter("StartTime", StringUtils.fromDate(reportInstanceStatusRequest.getStartTime()));
-        }
-
-        if (reportInstanceStatusRequest.getEndTime() != null) {
-            request.addParameter("EndTime", StringUtils.fromDate(reportInstanceStatusRequest.getEndTime()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> reportInstanceStatusRequestReasonCodesList = (com.amazonaws.internal.SdkInternalList<String>) reportInstanceStatusRequest
@@ -78,8 +74,12 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
             }
         }
 
-        if (reportInstanceStatusRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(reportInstanceStatusRequest.getDescription()));
+        if (reportInstanceStatusRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(reportInstanceStatusRequest.getStartTime()));
+        }
+
+        if (reportInstanceStatusRequest.getStatus() != null) {
+            request.addParameter("Status", StringUtils.fromString(reportInstanceStatusRequest.getStatus()));
         }
 
         return request;

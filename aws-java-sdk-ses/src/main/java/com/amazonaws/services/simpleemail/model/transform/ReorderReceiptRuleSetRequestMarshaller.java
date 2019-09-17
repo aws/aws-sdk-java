@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,10 @@ public class ReorderReceiptRuleSetRequestMarshaller implements Marshaller<Reques
             request.addParameter("RuleSetName", StringUtils.fromString(reorderReceiptRuleSetRequest.getRuleSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
-                .getRuleNames();
-        if (!ruleNamesList.isEmpty() || !ruleNamesList.isAutoConstruct()) {
+        if (!reorderReceiptRuleSetRequest.getRuleNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest.getRuleNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
+                    .getRuleNames();
             int ruleNamesListIndex = 1;
 
             for (String ruleNamesListValue : ruleNamesList) {

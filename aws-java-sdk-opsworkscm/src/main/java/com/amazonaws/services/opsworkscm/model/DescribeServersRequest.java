@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,21 +33,13 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
     private String serverName;
     /**
      * <p>
-     * NextToken is a string that is returned in some command responses. It indicates that not all entries have been
-     * returned, and that you must run at least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous results as the value of the
-     * <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code>
-     * parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your
-     * previous results causes an <code>InvalidNextTokenException</code> to occur.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * To receive a paginated response, use this parameter to specify the maximum number of results to be returned with
-     * a single call. If the number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next
-     * set of results.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      */
     private Integer maxResults;
@@ -94,21 +86,11 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * NextToken is a string that is returned in some command responses. It indicates that not all entries have been
-     * returned, and that you must run at least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous results as the value of the
-     * <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code>
-     * parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your
-     * previous results causes an <code>InvalidNextTokenException</code> to occur.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
      * @param nextToken
-     *        NextToken is a string that is returned in some command responses. It indicates that not all entries have
-     *        been returned, and that you must run at least one more request to get remaining items. To get remaining
-     *        results, call <code>DescribeServers</code> again, and assign the token from the previous results as the
-     *        value of the <code>nextToken</code> parameter. If there are no more results, the response object's
-     *        <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that
-     *        was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.
+     *        This is not currently implemented for <code>DescribeServers</code> requests.
      */
 
     public void setNextToken(String nextToken) {
@@ -117,20 +99,10 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * NextToken is a string that is returned in some command responses. It indicates that not all entries have been
-     * returned, and that you must run at least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous results as the value of the
-     * <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code>
-     * parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your
-     * previous results causes an <code>InvalidNextTokenException</code> to occur.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
-     * @return NextToken is a string that is returned in some command responses. It indicates that not all entries have
-     *         been returned, and that you must run at least one more request to get remaining items. To get remaining
-     *         results, call <code>DescribeServers</code> again, and assign the token from the previous results as the
-     *         value of the <code>nextToken</code> parameter. If there are no more results, the response object's
-     *         <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that
-     *         was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.
+     * @return This is not currently implemented for <code>DescribeServers</code> requests.
      */
 
     public String getNextToken() {
@@ -139,21 +111,11 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * NextToken is a string that is returned in some command responses. It indicates that not all entries have been
-     * returned, and that you must run at least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous results as the value of the
-     * <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code>
-     * parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your
-     * previous results causes an <code>InvalidNextTokenException</code> to occur.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
      * @param nextToken
-     *        NextToken is a string that is returned in some command responses. It indicates that not all entries have
-     *        been returned, and that you must run at least one more request to get remaining items. To get remaining
-     *        results, call <code>DescribeServers</code> again, and assign the token from the previous results as the
-     *        value of the <code>nextToken</code> parameter. If there are no more results, the response object's
-     *        <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that
-     *        was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur.
+     *        This is not currently implemented for <code>DescribeServers</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,17 +126,11 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * To receive a paginated response, use this parameter to specify the maximum number of results to be returned with
-     * a single call. If the number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next
-     * set of results.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
      * @param maxResults
-     *        To receive a paginated response, use this parameter to specify the maximum number of results to be
-     *        returned with a single call. If the number of available results exceeds this maximum, the response
-     *        includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request
-     *        parameter to get the next set of results.
+     *        This is not currently implemented for <code>DescribeServers</code> requests.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -183,16 +139,10 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * To receive a paginated response, use this parameter to specify the maximum number of results to be returned with
-     * a single call. If the number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next
-     * set of results.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
-     * @return To receive a paginated response, use this parameter to specify the maximum number of results to be
-     *         returned with a single call. If the number of available results exceeds this maximum, the response
-     *         includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request
-     *         parameter to get the next set of results.
+     * @return This is not currently implemented for <code>DescribeServers</code> requests.
      */
 
     public Integer getMaxResults() {
@@ -201,17 +151,11 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * To receive a paginated response, use this parameter to specify the maximum number of results to be returned with
-     * a single call. If the number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next
-     * set of results.
+     * This is not currently implemented for <code>DescribeServers</code> requests.
      * </p>
      * 
      * @param maxResults
-     *        To receive a paginated response, use this parameter to specify the maximum number of results to be
-     *        returned with a single call. If the number of available results exceeds this maximum, the response
-     *        includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request
-     *        parameter to get the next set of results.
+     *        This is not currently implemented for <code>DescribeServers</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,7 +165,8 @@ public class DescribeServersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

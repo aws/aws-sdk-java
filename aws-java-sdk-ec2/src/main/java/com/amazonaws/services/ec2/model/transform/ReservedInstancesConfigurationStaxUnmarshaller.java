@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,11 +48,6 @@ public class ReservedInstancesConfigurationStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
-                if (context.testExpression("platform", targetDepth)) {
-                    reservedInstancesConfiguration.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("instanceCount", targetDepth)) {
                     reservedInstancesConfiguration.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -60,6 +55,11 @@ public class ReservedInstancesConfigurationStaxUnmarshaller implements Unmarshal
 
                 if (context.testExpression("instanceType", targetDepth)) {
                     reservedInstancesConfiguration.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("platform", targetDepth)) {
+                    reservedInstancesConfiguration.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

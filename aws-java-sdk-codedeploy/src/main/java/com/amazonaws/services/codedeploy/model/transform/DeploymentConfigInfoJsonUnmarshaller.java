@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,15 @@ public class DeploymentConfigInfoJsonUnmarshaller implements Unmarshaller<Deploy
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentConfigInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deploymentConfigInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfigInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("trafficRoutingConfig", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfigInfo.setTrafficRoutingConfig(TrafficRoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

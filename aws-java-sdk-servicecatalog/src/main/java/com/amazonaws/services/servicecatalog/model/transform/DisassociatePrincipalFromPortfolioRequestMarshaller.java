@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisassociatePrincipalFromPortfolioRequest Marshaller
+ * DisassociatePrincipalFromPortfolioRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisassociatePrincipalFromPortfolioRequestMarshaller implements
-        Marshaller<Request<DisassociatePrincipalFromPortfolioRequest>, DisassociatePrincipalFromPortfolioRequest> {
+@SdkInternalApi
+public class DisassociatePrincipalFromPortfolioRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
+    private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalARN").build();
 
-    public DisassociatePrincipalFromPortfolioRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisassociatePrincipalFromPortfolioRequestMarshaller instance = new DisassociatePrincipalFromPortfolioRequestMarshaller();
+
+    public static DisassociatePrincipalFromPortfolioRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisassociatePrincipalFromPortfolioRequest> marshall(DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisassociatePrincipalFromPortfolioRequest disassociatePrincipalFromPortfolioRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disassociatePrincipalFromPortfolioRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisassociatePrincipalFromPortfolioRequest> request = new DefaultRequest<DisassociatePrincipalFromPortfolioRequest>(
-                disassociatePrincipalFromPortfolioRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.DisassociatePrincipalFromPortfolio");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disassociatePrincipalFromPortfolioRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(disassociatePrincipalFromPortfolioRequest.getAcceptLanguage());
-            }
-            if (disassociatePrincipalFromPortfolioRequest.getPortfolioId() != null) {
-                jsonGenerator.writeFieldName("PortfolioId").writeValue(disassociatePrincipalFromPortfolioRequest.getPortfolioId());
-            }
-            if (disassociatePrincipalFromPortfolioRequest.getPrincipalARN() != null) {
-                jsonGenerator.writeFieldName("PrincipalARN").writeValue(disassociatePrincipalFromPortfolioRequest.getPrincipalARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disassociatePrincipalFromPortfolioRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(disassociatePrincipalFromPortfolioRequest.getPortfolioId(), PORTFOLIOID_BINDING);
+            protocolMarshaller.marshall(disassociatePrincipalFromPortfolioRequest.getPrincipalARN(), PRINCIPALARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

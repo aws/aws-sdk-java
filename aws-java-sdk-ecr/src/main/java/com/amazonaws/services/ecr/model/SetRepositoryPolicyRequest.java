@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,9 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     private String repositoryName;
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      */
     private String policyText;
@@ -141,11 +143,15 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param policyText
-     *        The JSON repository policy text to apply to the repository.
+     *        The JSON repository policy text to apply to the repository. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *        Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      */
 
     public void setPolicyText(String policyText) {
@@ -154,10 +160,14 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
-     * @return The JSON repository policy text to apply to the repository.
+     * @return The JSON repository policy text to apply to the repository. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *         Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      */
 
     public String getPolicyText() {
@@ -166,11 +176,15 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON repository policy text to apply to the repository.
+     * The JSON repository policy text to apply to the repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR Repository
+     * Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param policyText
-     *        The JSON repository policy text to apply to the repository.
+     *        The JSON repository policy text to apply to the repository. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html">Amazon ECR
+     *        Repository Policy Examples</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,7 +262,8 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterHistory implements Serializable, Cloneable {
+public class ParameterHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -68,6 +70,43 @@ public class ParameterHistory implements Serializable, Cloneable {
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     */
+    private String allowedPattern;
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     */
+    private Long version;
+    /**
+     * <p>
+     * Labels assigned to the parameter version.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> labels;
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     */
+    private String tier;
+    /**
+     * <p>
+     * Information about the policies assigned to a parameter.
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy> policies;
 
     /**
      * <p>
@@ -163,7 +202,7 @@ public class ParameterHistory implements Serializable, Cloneable {
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -178,7 +217,7 @@ public class ParameterHistory implements Serializable, Cloneable {
      */
 
     public ParameterHistory withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -383,7 +422,350 @@ public class ParameterHistory implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        Parameter names can include the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     */
+
+    public void setAllowedPattern(String allowedPattern) {
+        this.allowedPattern = allowedPattern;
+    }
+
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @return Parameter names can include the following letters and symbols.</p>
+     *         <p>
+     *         a-zA-Z0-9_.-
+     */
+
+    public String getAllowedPattern() {
+        return this.allowedPattern;
+    }
+
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        Parameter names can include the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withAllowedPattern(String allowedPattern) {
+        setAllowedPattern(allowedPattern);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @return The parameter version.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Labels assigned to the parameter version.
+     * </p>
+     * 
+     * @return Labels assigned to the parameter version.
+     */
+
+    public java.util.List<String> getLabels() {
+        if (labels == null) {
+            labels = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return labels;
+    }
+
+    /**
+     * <p>
+     * Labels assigned to the parameter version.
+     * </p>
+     * 
+     * @param labels
+     *        Labels assigned to the parameter version.
+     */
+
+    public void setLabels(java.util.Collection<String> labels) {
+        if (labels == null) {
+            this.labels = null;
+            return;
+        }
+
+        this.labels = new com.amazonaws.internal.SdkInternalList<String>(labels);
+    }
+
+    /**
+     * <p>
+     * Labels assigned to the parameter version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param labels
+     *        Labels assigned to the parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withLabels(String... labels) {
+        if (this.labels == null) {
+            setLabels(new com.amazonaws.internal.SdkInternalList<String>(labels.length));
+        }
+        for (String ele : labels) {
+            this.labels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Labels assigned to the parameter version.
+     * </p>
+     * 
+     * @param labels
+     *        Labels assigned to the parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withLabels(java.util.Collection<String> labels) {
+        setLabels(labels);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @see ParameterTier
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @return The parameter tier.
+     * @see ParameterTier
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public ParameterHistory withTier(String tier) {
+        setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @see ParameterTier
+     */
+
+    public void setTier(ParameterTier tier) {
+        withTier(tier);
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public ParameterHistory withTier(ParameterTier tier) {
+        this.tier = tier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the policies assigned to a parameter.
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @return Information about the policies assigned to a parameter.</p>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *         Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public java.util.List<ParameterInlinePolicy> getPolicies() {
+        if (policies == null) {
+            policies = new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>();
+        }
+        return policies;
+    }
+
+    /**
+     * <p>
+     * Information about the policies assigned to a parameter.
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param policies
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public void setPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
+        if (policies == null) {
+            this.policies = null;
+            return;
+        }
+
+        this.policies = new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>(policies);
+    }
+
+    /**
+     * <p>
+     * Information about the policies assigned to a parameter.
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param policies
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withPolicies(ParameterInlinePolicy... policies) {
+        if (this.policies == null) {
+            setPolicies(new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>(policies.length));
+        }
+        for (ParameterInlinePolicy ele : policies) {
+            this.policies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the policies assigned to a parameter.
+     * </p>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Working with
+     * Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param policies
+     *        Information about the policies assigned to a parameter.</p>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">
+     *        Working with Parameter Policies</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
+        setPolicies(policies);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -406,7 +788,17 @@ public class ParameterHistory implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getAllowedPattern() != null)
+            sb.append("AllowedPattern: ").append(getAllowedPattern()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getLabels() != null)
+            sb.append("Labels: ").append(getLabels()).append(",");
+        if (getTier() != null)
+            sb.append("Tier: ").append(getTier()).append(",");
+        if (getPolicies() != null)
+            sb.append("Policies: ").append(getPolicies());
         sb.append("}");
         return sb.toString();
     }
@@ -449,6 +841,26 @@ public class ParameterHistory implements Serializable, Cloneable {
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getAllowedPattern() == null ^ this.getAllowedPattern() == null)
+            return false;
+        if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        if (other.getLabels() == null ^ this.getLabels() == null)
+            return false;
+        if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
+            return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
+        if (other.getPolicies() == null ^ this.getPolicies() == null)
+            return false;
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
+            return false;
         return true;
     }
 
@@ -464,6 +876,11 @@ public class ParameterHistory implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLastModifiedUser() == null) ? 0 : getLastModifiedUser().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         return hashCode;
     }
 
@@ -474,5 +891,11 @@ public class ParameterHistory implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.ParameterHistoryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

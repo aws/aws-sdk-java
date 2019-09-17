@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,100 @@ import com.amazonaws.services.budgets.model.*;
  * {@link com.amazonaws.services.budgets.AbstractAWSBudgetsAsync} instead.
  * </p>
  * <p>
- * All public APIs for AWS Budgets
+ * <p>
+ * The AWS Budgets API enables you to use AWS Budgets to plan your service usage, service costs, and instance
+ * reservations. The API reference provides descriptions, syntax, and usage examples for each of the actions and data
+ * types for AWS Budgets.
+ * </p>
+ * <p>
+ * Budgets provide you with a way to see the following information:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * How close your plan is to your budgeted amount or to the free tier limits
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Your usage-to-date, including how much you've used of your Reserved Instances (RIs)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Your current estimated charges from AWS, and how much your predicted usage will accrue in charges by the end of the
+ * month
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * How much of your budget has been used
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * AWS updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and
+ * RIs. You can create the following types of budgets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>Cost budgets</b> - Plan how much you want to spend on a service.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Usage budgets</b> - Plan how much you want to use one or more services.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>RI utilization budgets</b> - Define a utilization threshold, and receive alerts when your RI usage falls below
+ * that threshold. This lets you see if your RIs are unused or under-utilized.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>RI coverage budgets</b> - Define a coverage threshold, and receive alerts when the number of your instance hours
+ * that are covered by RIs fall below that threshold. This lets you see how much of your instance usage is covered by a
+ * reservation.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Service Endpoint
+ * </p>
+ * <p>
+ * The AWS Budgets API provides the following endpoint:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * https://budgets.amazonaws.com
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For information about costs that are associated with the AWS Budgets API, see <a
+ * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSBudgetsAsync extends AWSBudgets {
 
     /**
-     * Create a new budget
+     * <p>
+     * Creates a budget and, if included, notifications and subscribers.
+     * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param createBudgetRequest
      *        Request of CreateBudget
@@ -41,7 +128,18 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<CreateBudgetResult> createBudgetAsync(CreateBudgetRequest createBudgetRequest);
 
     /**
-     * Create a new budget
+     * <p>
+     * Creates a budget and, if included, notifications and subscribers.
+     * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param createBudgetRequest
      *        Request of CreateBudget
@@ -56,7 +154,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<CreateBudgetRequest, CreateBudgetResult> asyncHandler);
 
     /**
-     * Create a new Notification with subscribers for a budget
+     * <p>
+     * Creates a notification. You must create the budget before you create the associated notification.
+     * </p>
      * 
      * @param createNotificationRequest
      *        Request of CreateNotification
@@ -66,7 +166,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<CreateNotificationResult> createNotificationAsync(CreateNotificationRequest createNotificationRequest);
 
     /**
-     * Create a new Notification with subscribers for a budget
+     * <p>
+     * Creates a notification. You must create the budget before you create the associated notification.
+     * </p>
      * 
      * @param createNotificationRequest
      *        Request of CreateNotification
@@ -81,7 +183,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<CreateNotificationRequest, CreateNotificationResult> asyncHandler);
 
     /**
-     * Create a new Subscriber for a notification
+     * <p>
+     * Creates a subscriber. You must create the associated budget and notification before you create the subscriber.
+     * </p>
      * 
      * @param createSubscriberRequest
      *        Request of CreateSubscriber
@@ -91,7 +195,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<CreateSubscriberResult> createSubscriberAsync(CreateSubscriberRequest createSubscriberRequest);
 
     /**
-     * Create a new Subscriber for a notification
+     * <p>
+     * Creates a subscriber. You must create the associated budget and notification before you create the subscriber.
+     * </p>
      * 
      * @param createSubscriberRequest
      *        Request of CreateSubscriber
@@ -106,7 +212,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<CreateSubscriberRequest, CreateSubscriberResult> asyncHandler);
 
     /**
-     * Delete a budget and related notifications
+     * <p>
+     * Deletes a budget. You can delete your budget at any time.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting a budget also deletes the notifications and subscribers that are associated with that budget.
+     * </p>
+     * </important>
      * 
      * @param deleteBudgetRequest
      *        Request of DeleteBudget
@@ -116,7 +229,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<DeleteBudgetResult> deleteBudgetAsync(DeleteBudgetRequest deleteBudgetRequest);
 
     /**
-     * Delete a budget and related notifications
+     * <p>
+     * Deletes a budget. You can delete your budget at any time.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting a budget also deletes the notifications and subscribers that are associated with that budget.
+     * </p>
+     * </important>
      * 
      * @param deleteBudgetRequest
      *        Request of DeleteBudget
@@ -131,7 +251,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DeleteBudgetRequest, DeleteBudgetResult> asyncHandler);
 
     /**
-     * Delete a notification and related subscribers
+     * <p>
+     * Deletes a notification.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting a notification also deletes the subscribers that are associated with the notification.
+     * </p>
+     * </important>
      * 
      * @param deleteNotificationRequest
      *        Request of DeleteNotification
@@ -141,7 +268,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<DeleteNotificationResult> deleteNotificationAsync(DeleteNotificationRequest deleteNotificationRequest);
 
     /**
-     * Delete a notification and related subscribers
+     * <p>
+     * Deletes a notification.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting a notification also deletes the subscribers that are associated with the notification.
+     * </p>
+     * </important>
      * 
      * @param deleteNotificationRequest
      *        Request of DeleteNotification
@@ -156,7 +290,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DeleteNotificationRequest, DeleteNotificationResult> asyncHandler);
 
     /**
-     * Delete a Subscriber for a notification
+     * <p>
+     * Deletes a subscriber.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the last subscriber to a notification also deletes the notification.
+     * </p>
+     * </important>
      * 
      * @param deleteSubscriberRequest
      *        Request of DeleteSubscriber
@@ -166,7 +307,14 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<DeleteSubscriberResult> deleteSubscriberAsync(DeleteSubscriberRequest deleteSubscriberRequest);
 
     /**
-     * Delete a Subscriber for a notification
+     * <p>
+     * Deletes a subscriber.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the last subscriber to a notification also deletes the notification.
+     * </p>
+     * </important>
      * 
      * @param deleteSubscriberRequest
      *        Request of DeleteSubscriber
@@ -181,7 +329,17 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DeleteSubscriberRequest, DeleteSubscriberResult> asyncHandler);
 
     /**
-     * Get a single budget
+     * <p>
+     * Describes a budget.
+     * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetRequest
      *        Request of DescribeBudget
@@ -191,7 +349,17 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<DescribeBudgetResult> describeBudgetAsync(DescribeBudgetRequest describeBudgetRequest);
 
     /**
-     * Get a single budget
+     * <p>
+     * Describes a budget.
+     * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetRequest
      *        Request of DescribeBudget
@@ -206,7 +374,50 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DescribeBudgetRequest, DescribeBudgetResult> asyncHandler);
 
     /**
-     * Get all budgets for an account
+     * <p>
+     * Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget
+     * history isn't available for <code>ANNUAL</code> budgets.
+     * </p>
+     * 
+     * @param describeBudgetPerformanceHistoryRequest
+     * @return A Java Future containing the result of the DescribeBudgetPerformanceHistory operation returned by the
+     *         service.
+     * @sample AWSBudgetsAsync.DescribeBudgetPerformanceHistory
+     */
+    java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest describeBudgetPerformanceHistoryRequest);
+
+    /**
+     * <p>
+     * Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget
+     * history isn't available for <code>ANNUAL</code> budgets.
+     * </p>
+     * 
+     * @param describeBudgetPerformanceHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBudgetPerformanceHistory operation returned by the
+     *         service.
+     * @sample AWSBudgetsAsyncHandler.DescribeBudgetPerformanceHistory
+     */
+    java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest describeBudgetPerformanceHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetPerformanceHistoryRequest, DescribeBudgetPerformanceHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the budgets that are associated with an account.
+     * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetsRequest
      *        Request of DescribeBudgets
@@ -216,7 +427,17 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<DescribeBudgetsResult> describeBudgetsAsync(DescribeBudgetsRequest describeBudgetsRequest);
 
     /**
-     * Get all budgets for an account
+     * <p>
+     * Lists the budgets that are associated with an account.
+     * </p>
+     * <important>
+     * <p>
+     * The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see
+     * the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param describeBudgetsRequest
      *        Request of DescribeBudgets
@@ -231,7 +452,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DescribeBudgetsRequest, DescribeBudgetsResult> asyncHandler);
 
     /**
-     * Get notifications of a budget
+     * <p>
+     * Lists the notifications that are associated with a budget.
+     * </p>
      * 
      * @param describeNotificationsForBudgetRequest
      *        Request of DescribeNotificationsForBudget
@@ -243,7 +466,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest);
 
     /**
-     * Get notifications of a budget
+     * <p>
+     * Lists the notifications that are associated with a budget.
+     * </p>
      * 
      * @param describeNotificationsForBudgetRequest
      *        Request of DescribeNotificationsForBudget
@@ -260,7 +485,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DescribeNotificationsForBudgetRequest, DescribeNotificationsForBudgetResult> asyncHandler);
 
     /**
-     * Get subscribers of a notification
+     * <p>
+     * Lists the subscribers that are associated with a notification.
+     * </p>
      * 
      * @param describeSubscribersForNotificationRequest
      *        Request of DescribeSubscribersForNotification
@@ -272,7 +499,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             DescribeSubscribersForNotificationRequest describeSubscribersForNotificationRequest);
 
     /**
-     * Get subscribers of a notification
+     * <p>
+     * Lists the subscribers that are associated with a notification.
+     * </p>
      * 
      * @param describeSubscribersForNotificationRequest
      *        Request of DescribeSubscribersForNotification
@@ -289,7 +518,20 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<DescribeSubscribersForNotificationRequest, DescribeSubscribersForNotificationResult> asyncHandler);
 
     /**
-     * Update the information of a budget already created
+     * <p>
+     * Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the
+     * <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS
+     * has new usage data to use for forecasting.
+     * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param updateBudgetRequest
      *        Request of UpdateBudget
@@ -299,7 +541,20 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<UpdateBudgetResult> updateBudgetAsync(UpdateBudgetRequest updateBudgetRequest);
 
     /**
-     * Update the information of a budget already created
+     * <p>
+     * Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the
+     * <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS
+     * has new usage data to use for forecasting.
+     * </p>
+     * <important>
+     * <p>
+     * Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one
+     * time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code>
+     * syntax. For <code>PlannedBudgetLimits</code>, see the <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples"
+     * >Examples</a> section.
+     * </p>
+     * </important>
      * 
      * @param updateBudgetRequest
      *        Request of UpdateBudget
@@ -314,7 +569,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<UpdateBudgetRequest, UpdateBudgetResult> asyncHandler);
 
     /**
-     * Update the information about a notification already created
+     * <p>
+     * Updates a notification.
+     * </p>
      * 
      * @param updateNotificationRequest
      *        Request of UpdateNotification
@@ -324,7 +581,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<UpdateNotificationResult> updateNotificationAsync(UpdateNotificationRequest updateNotificationRequest);
 
     /**
-     * Update the information about a notification already created
+     * <p>
+     * Updates a notification.
+     * </p>
      * 
      * @param updateNotificationRequest
      *        Request of UpdateNotification
@@ -339,7 +598,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
             com.amazonaws.handlers.AsyncHandler<UpdateNotificationRequest, UpdateNotificationResult> asyncHandler);
 
     /**
-     * Update a subscriber
+     * <p>
+     * Updates a subscriber.
+     * </p>
      * 
      * @param updateSubscriberRequest
      *        Request of UpdateSubscriber
@@ -349,7 +610,9 @@ public interface AWSBudgetsAsync extends AWSBudgets {
     java.util.concurrent.Future<UpdateSubscriberResult> updateSubscriberAsync(UpdateSubscriberRequest updateSubscriberRequest);
 
     /**
-     * Update a subscriber
+     * <p>
+     * Updates a subscriber.
+     * </p>
      * 
      * @param updateSubscriberRequest
      *        Request of UpdateSubscriber

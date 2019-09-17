@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class CreateDBSubnetGroupRequestMarshaller implements Marshaller<Request<
             request.addParameter("DBSubnetGroupDescription", StringUtils.fromString(createDBSubnetGroupRequest.getDBSubnetGroupDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBSubnetGroupRequest
-                .getSubnetIds();
-        if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
+        if (!createDBSubnetGroupRequest.getSubnetIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBSubnetGroupRequest.getSubnetIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBSubnetGroupRequest
+                    .getSubnetIds();
             int subnetIdsListIndex = 1;
 
             for (String subnetIdsListValue : subnetIdsList) {
@@ -61,8 +62,9 @@ public class CreateDBSubnetGroupRequestMarshaller implements Marshaller<Request<
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBSubnetGroupRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBSubnetGroupRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBSubnetGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBSubnetGroupRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

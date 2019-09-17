@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,23 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about the events of an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HistoryEvent implements Serializable, Cloneable {
+public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date and time the event occurred.
      * </p>
      */
     private java.util.Date timestamp;
@@ -49,7 +54,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     private Long previousEventId;
 
     private ActivityFailedEventDetails activityFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about an activity schedule event that failed during an execution.
+     * </p>
+     */
     private ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails;
 
     private ActivityScheduledEventDetails activityScheduledEventDetails;
@@ -59,6 +68,54 @@ public class HistoryEvent implements Serializable, Cloneable {
     private ActivitySucceededEventDetails activitySucceededEventDetails;
 
     private ActivityTimedOutEventDetails activityTimedOutEventDetails;
+    /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     */
+    private TaskFailedEventDetails taskFailedEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     */
+    private TaskScheduledEventDetails taskScheduledEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     */
+    private TaskStartFailedEventDetails taskStartFailedEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     */
+    private TaskStartedEventDetails taskStartedEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     */
+    private TaskSubmitFailedEventDetails taskSubmitFailedEventDetails;
+    /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     */
+    private TaskSubmittedEventDetails taskSubmittedEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     */
+    private TaskSucceededEventDetails taskSucceededEventDetails;
+    /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     */
+    private TaskTimedOutEventDetails taskTimedOutEventDetails;
 
     private ExecutionFailedEventDetails executionFailedEventDetails;
 
@@ -69,15 +126,53 @@ public class HistoryEvent implements Serializable, Cloneable {
     private ExecutionAbortedEventDetails executionAbortedEventDetails;
 
     private ExecutionTimedOutEventDetails executionTimedOutEventDetails;
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     */
+    private MapStateStartedEventDetails mapStateStartedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationStartedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationSucceededEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationFailedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationAbortedEventDetails;
 
     private LambdaFunctionFailedEventDetails lambdaFunctionFailedEventDetails;
 
     private LambdaFunctionScheduleFailedEventDetails lambdaFunctionScheduleFailedEventDetails;
 
     private LambdaFunctionScheduledEventDetails lambdaFunctionScheduledEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a lambda function that failed to start during an execution.
+     * </p>
+     */
     private LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a lambda function that terminated successfully during an execution.
+     * </p>
+     */
     private LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails;
 
     private LambdaFunctionTimedOutEventDetails lambdaFunctionTimedOutEventDetails;
@@ -88,11 +183,11 @@ public class HistoryEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date and time the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occured.
+     *        The date and time the event occurred.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -101,10 +196,10 @@ public class HistoryEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date and time the event occurred.
      * </p>
      * 
-     * @return The date the event occured.
+     * @return The date and time the event occurred.
      */
 
     public java.util.Date getTimestamp() {
@@ -113,11 +208,11 @@ public class HistoryEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date and time the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occured.
+     *        The date and time the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,7 +275,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      */
 
     public void setType(HistoryEventType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -195,7 +290,7 @@ public class HistoryEvent implements Serializable, Cloneable {
      */
 
     public HistoryEvent withType(HistoryEventType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -306,7 +401,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about an activity schedule event that failed during an execution.
+     * </p>
+     * 
      * @param activityScheduleFailedEventDetails
+     *        Contains details about an activity schedule event that failed during an execution.
      */
 
     public void setActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails) {
@@ -314,7 +414,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about an activity schedule event that failed during an execution.
+     * </p>
+     * 
+     * @return Contains details about an activity schedule event that failed during an execution.
      */
 
     public ActivityScheduleFailedEventDetails getActivityScheduleFailedEventDetails() {
@@ -322,7 +426,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about an activity schedule event that failed during an execution.
+     * </p>
+     * 
      * @param activityScheduleFailedEventDetails
+     *        Contains details about an activity schedule event that failed during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,6 +541,326 @@ public class HistoryEvent implements Serializable, Cloneable {
 
     public HistoryEvent withActivityTimedOutEventDetails(ActivityTimedOutEventDetails activityTimedOutEventDetails) {
         setActivityTimedOutEventDetails(activityTimedOutEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
+     * @param taskFailedEventDetails
+     *        Contains details about the failure of a task.
+     */
+
+    public void setTaskFailedEventDetails(TaskFailedEventDetails taskFailedEventDetails) {
+        this.taskFailedEventDetails = taskFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
+     * @return Contains details about the failure of a task.
+     */
+
+    public TaskFailedEventDetails getTaskFailedEventDetails() {
+        return this.taskFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
+     * @param taskFailedEventDetails
+     *        Contains details about the failure of a task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskFailedEventDetails(TaskFailedEventDetails taskFailedEventDetails) {
+        setTaskFailedEventDetails(taskFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
+     * @param taskScheduledEventDetails
+     *        Contains details about a task that was scheduled.
+     */
+
+    public void setTaskScheduledEventDetails(TaskScheduledEventDetails taskScheduledEventDetails) {
+        this.taskScheduledEventDetails = taskScheduledEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
+     * @return Contains details about a task that was scheduled.
+     */
+
+    public TaskScheduledEventDetails getTaskScheduledEventDetails() {
+        return this.taskScheduledEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
+     * @param taskScheduledEventDetails
+     *        Contains details about a task that was scheduled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskScheduledEventDetails(TaskScheduledEventDetails taskScheduledEventDetails) {
+        setTaskScheduledEventDetails(taskScheduledEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
+     * @param taskStartFailedEventDetails
+     *        Contains details about a task that failed to start.
+     */
+
+    public void setTaskStartFailedEventDetails(TaskStartFailedEventDetails taskStartFailedEventDetails) {
+        this.taskStartFailedEventDetails = taskStartFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
+     * @return Contains details about a task that failed to start.
+     */
+
+    public TaskStartFailedEventDetails getTaskStartFailedEventDetails() {
+        return this.taskStartFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
+     * @param taskStartFailedEventDetails
+     *        Contains details about a task that failed to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskStartFailedEventDetails(TaskStartFailedEventDetails taskStartFailedEventDetails) {
+        setTaskStartFailedEventDetails(taskStartFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
+     * @param taskStartedEventDetails
+     *        Contains details about a task that was started.
+     */
+
+    public void setTaskStartedEventDetails(TaskStartedEventDetails taskStartedEventDetails) {
+        this.taskStartedEventDetails = taskStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
+     * @return Contains details about a task that was started.
+     */
+
+    public TaskStartedEventDetails getTaskStartedEventDetails() {
+        return this.taskStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
+     * @param taskStartedEventDetails
+     *        Contains details about a task that was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskStartedEventDetails(TaskStartedEventDetails taskStartedEventDetails) {
+        setTaskStartedEventDetails(taskStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
+     * @param taskSubmitFailedEventDetails
+     *        Contains details about a task that where the submit failed.
+     */
+
+    public void setTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetails taskSubmitFailedEventDetails) {
+        this.taskSubmitFailedEventDetails = taskSubmitFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
+     * @return Contains details about a task that where the submit failed.
+     */
+
+    public TaskSubmitFailedEventDetails getTaskSubmitFailedEventDetails() {
+        return this.taskSubmitFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
+     * @param taskSubmitFailedEventDetails
+     *        Contains details about a task that where the submit failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetails taskSubmitFailedEventDetails) {
+        setTaskSubmitFailedEventDetails(taskSubmitFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
+     * @param taskSubmittedEventDetails
+     *        Contains details about a submitted task.
+     */
+
+    public void setTaskSubmittedEventDetails(TaskSubmittedEventDetails taskSubmittedEventDetails) {
+        this.taskSubmittedEventDetails = taskSubmittedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
+     * @return Contains details about a submitted task.
+     */
+
+    public TaskSubmittedEventDetails getTaskSubmittedEventDetails() {
+        return this.taskSubmittedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
+     * @param taskSubmittedEventDetails
+     *        Contains details about a submitted task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSubmittedEventDetails(TaskSubmittedEventDetails taskSubmittedEventDetails) {
+        setTaskSubmittedEventDetails(taskSubmittedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
+     * @param taskSucceededEventDetails
+     *        Contains details about a task that succeeded.
+     */
+
+    public void setTaskSucceededEventDetails(TaskSucceededEventDetails taskSucceededEventDetails) {
+        this.taskSucceededEventDetails = taskSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
+     * @return Contains details about a task that succeeded.
+     */
+
+    public TaskSucceededEventDetails getTaskSucceededEventDetails() {
+        return this.taskSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
+     * @param taskSucceededEventDetails
+     *        Contains details about a task that succeeded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskSucceededEventDetails(TaskSucceededEventDetails taskSucceededEventDetails) {
+        setTaskSucceededEventDetails(taskSucceededEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
+     * @param taskTimedOutEventDetails
+     *        Contains details about a task that timed out.
+     */
+
+    public void setTaskTimedOutEventDetails(TaskTimedOutEventDetails taskTimedOutEventDetails) {
+        this.taskTimedOutEventDetails = taskTimedOutEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
+     * @return Contains details about a task that timed out.
+     */
+
+    public TaskTimedOutEventDetails getTaskTimedOutEventDetails() {
+        return this.taskTimedOutEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
+     * @param taskTimedOutEventDetails
+     *        Contains details about a task that timed out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withTaskTimedOutEventDetails(TaskTimedOutEventDetails taskTimedOutEventDetails) {
+        setTaskTimedOutEventDetails(taskTimedOutEventDetails);
         return this;
     }
 
@@ -566,6 +995,206 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @param mapStateStartedEventDetails
+     *        Contains details about Map state that was started.
+     */
+
+    public void setMapStateStartedEventDetails(MapStateStartedEventDetails mapStateStartedEventDetails) {
+        this.mapStateStartedEventDetails = mapStateStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @return Contains details about Map state that was started.
+     */
+
+    public MapStateStartedEventDetails getMapStateStartedEventDetails() {
+        return this.mapStateStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @param mapStateStartedEventDetails
+     *        Contains details about Map state that was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapStateStartedEventDetails(MapStateStartedEventDetails mapStateStartedEventDetails) {
+        setMapStateStartedEventDetails(mapStateStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @param mapIterationStartedEventDetails
+     *        Contains details about an iteration of a Map state that was started.
+     */
+
+    public void setMapIterationStartedEventDetails(MapIterationEventDetails mapIterationStartedEventDetails) {
+        this.mapIterationStartedEventDetails = mapIterationStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that was started.
+     */
+
+    public MapIterationEventDetails getMapIterationStartedEventDetails() {
+        return this.mapIterationStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @param mapIterationStartedEventDetails
+     *        Contains details about an iteration of a Map state that was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationStartedEventDetails(MapIterationEventDetails mapIterationStartedEventDetails) {
+        setMapIterationStartedEventDetails(mapIterationStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @param mapIterationSucceededEventDetails
+     *        Contains details about an iteration of a Map state that succeeded.
+     */
+
+    public void setMapIterationSucceededEventDetails(MapIterationEventDetails mapIterationSucceededEventDetails) {
+        this.mapIterationSucceededEventDetails = mapIterationSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that succeeded.
+     */
+
+    public MapIterationEventDetails getMapIterationSucceededEventDetails() {
+        return this.mapIterationSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @param mapIterationSucceededEventDetails
+     *        Contains details about an iteration of a Map state that succeeded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationSucceededEventDetails(MapIterationEventDetails mapIterationSucceededEventDetails) {
+        setMapIterationSucceededEventDetails(mapIterationSucceededEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @param mapIterationFailedEventDetails
+     *        Contains details about an iteration of a Map state that failed.
+     */
+
+    public void setMapIterationFailedEventDetails(MapIterationEventDetails mapIterationFailedEventDetails) {
+        this.mapIterationFailedEventDetails = mapIterationFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that failed.
+     */
+
+    public MapIterationEventDetails getMapIterationFailedEventDetails() {
+        return this.mapIterationFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @param mapIterationFailedEventDetails
+     *        Contains details about an iteration of a Map state that failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationFailedEventDetails(MapIterationEventDetails mapIterationFailedEventDetails) {
+        setMapIterationFailedEventDetails(mapIterationFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @param mapIterationAbortedEventDetails
+     *        Contains details about an iteration of a Map state that was aborted.
+     */
+
+    public void setMapIterationAbortedEventDetails(MapIterationEventDetails mapIterationAbortedEventDetails) {
+        this.mapIterationAbortedEventDetails = mapIterationAbortedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that was aborted.
+     */
+
+    public MapIterationEventDetails getMapIterationAbortedEventDetails() {
+        return this.mapIterationAbortedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @param mapIterationAbortedEventDetails
+     *        Contains details about an iteration of a Map state that was aborted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationAbortedEventDetails(MapIterationEventDetails mapIterationAbortedEventDetails) {
+        setMapIterationAbortedEventDetails(mapIterationAbortedEventDetails);
+        return this;
+    }
+
+    /**
      * @param lambdaFunctionFailedEventDetails
      */
 
@@ -644,7 +1273,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function that failed to start during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionStartFailedEventDetails
+     *        Contains details about a lambda function that failed to start during an execution.
      */
 
     public void setLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails) {
@@ -652,7 +1286,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a lambda function that failed to start during an execution.
+     * </p>
+     * 
+     * @return Contains details about a lambda function that failed to start during an execution.
      */
 
     public LambdaFunctionStartFailedEventDetails getLambdaFunctionStartFailedEventDetails() {
@@ -660,7 +1298,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function that failed to start during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionStartFailedEventDetails
+     *        Contains details about a lambda function that failed to start during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,7 +1313,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function that terminated successfully during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionSucceededEventDetails
+     *        Contains details about a lambda function that terminated successfully during an execution.
      */
 
     public void setLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails) {
@@ -678,7 +1326,11 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a lambda function that terminated successfully during an execution.
+     * </p>
+     * 
+     * @return Contains details about a lambda function that terminated successfully during an execution.
      */
 
     public LambdaFunctionSucceededEventDetails getLambdaFunctionSucceededEventDetails() {
@@ -686,7 +1338,12 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function that terminated successfully during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionSucceededEventDetails
+     *        Contains details about a lambda function that terminated successfully during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -774,7 +1431,8 @@ public class HistoryEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -804,6 +1462,22 @@ public class HistoryEvent implements Serializable, Cloneable {
             sb.append("ActivitySucceededEventDetails: ").append(getActivitySucceededEventDetails()).append(",");
         if (getActivityTimedOutEventDetails() != null)
             sb.append("ActivityTimedOutEventDetails: ").append(getActivityTimedOutEventDetails()).append(",");
+        if (getTaskFailedEventDetails() != null)
+            sb.append("TaskFailedEventDetails: ").append(getTaskFailedEventDetails()).append(",");
+        if (getTaskScheduledEventDetails() != null)
+            sb.append("TaskScheduledEventDetails: ").append(getTaskScheduledEventDetails()).append(",");
+        if (getTaskStartFailedEventDetails() != null)
+            sb.append("TaskStartFailedEventDetails: ").append(getTaskStartFailedEventDetails()).append(",");
+        if (getTaskStartedEventDetails() != null)
+            sb.append("TaskStartedEventDetails: ").append(getTaskStartedEventDetails()).append(",");
+        if (getTaskSubmitFailedEventDetails() != null)
+            sb.append("TaskSubmitFailedEventDetails: ").append(getTaskSubmitFailedEventDetails()).append(",");
+        if (getTaskSubmittedEventDetails() != null)
+            sb.append("TaskSubmittedEventDetails: ").append(getTaskSubmittedEventDetails()).append(",");
+        if (getTaskSucceededEventDetails() != null)
+            sb.append("TaskSucceededEventDetails: ").append(getTaskSucceededEventDetails()).append(",");
+        if (getTaskTimedOutEventDetails() != null)
+            sb.append("TaskTimedOutEventDetails: ").append(getTaskTimedOutEventDetails()).append(",");
         if (getExecutionFailedEventDetails() != null)
             sb.append("ExecutionFailedEventDetails: ").append(getExecutionFailedEventDetails()).append(",");
         if (getExecutionStartedEventDetails() != null)
@@ -814,6 +1488,16 @@ public class HistoryEvent implements Serializable, Cloneable {
             sb.append("ExecutionAbortedEventDetails: ").append(getExecutionAbortedEventDetails()).append(",");
         if (getExecutionTimedOutEventDetails() != null)
             sb.append("ExecutionTimedOutEventDetails: ").append(getExecutionTimedOutEventDetails()).append(",");
+        if (getMapStateStartedEventDetails() != null)
+            sb.append("MapStateStartedEventDetails: ").append(getMapStateStartedEventDetails()).append(",");
+        if (getMapIterationStartedEventDetails() != null)
+            sb.append("MapIterationStartedEventDetails: ").append(getMapIterationStartedEventDetails()).append(",");
+        if (getMapIterationSucceededEventDetails() != null)
+            sb.append("MapIterationSucceededEventDetails: ").append(getMapIterationSucceededEventDetails()).append(",");
+        if (getMapIterationFailedEventDetails() != null)
+            sb.append("MapIterationFailedEventDetails: ").append(getMapIterationFailedEventDetails()).append(",");
+        if (getMapIterationAbortedEventDetails() != null)
+            sb.append("MapIterationAbortedEventDetails: ").append(getMapIterationAbortedEventDetails()).append(",");
         if (getLambdaFunctionFailedEventDetails() != null)
             sb.append("LambdaFunctionFailedEventDetails: ").append(getLambdaFunctionFailedEventDetails()).append(",");
         if (getLambdaFunctionScheduleFailedEventDetails() != null)
@@ -887,6 +1571,38 @@ public class HistoryEvent implements Serializable, Cloneable {
             return false;
         if (other.getActivityTimedOutEventDetails() != null && other.getActivityTimedOutEventDetails().equals(this.getActivityTimedOutEventDetails()) == false)
             return false;
+        if (other.getTaskFailedEventDetails() == null ^ this.getTaskFailedEventDetails() == null)
+            return false;
+        if (other.getTaskFailedEventDetails() != null && other.getTaskFailedEventDetails().equals(this.getTaskFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskScheduledEventDetails() == null ^ this.getTaskScheduledEventDetails() == null)
+            return false;
+        if (other.getTaskScheduledEventDetails() != null && other.getTaskScheduledEventDetails().equals(this.getTaskScheduledEventDetails()) == false)
+            return false;
+        if (other.getTaskStartFailedEventDetails() == null ^ this.getTaskStartFailedEventDetails() == null)
+            return false;
+        if (other.getTaskStartFailedEventDetails() != null && other.getTaskStartFailedEventDetails().equals(this.getTaskStartFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskStartedEventDetails() == null ^ this.getTaskStartedEventDetails() == null)
+            return false;
+        if (other.getTaskStartedEventDetails() != null && other.getTaskStartedEventDetails().equals(this.getTaskStartedEventDetails()) == false)
+            return false;
+        if (other.getTaskSubmitFailedEventDetails() == null ^ this.getTaskSubmitFailedEventDetails() == null)
+            return false;
+        if (other.getTaskSubmitFailedEventDetails() != null && other.getTaskSubmitFailedEventDetails().equals(this.getTaskSubmitFailedEventDetails()) == false)
+            return false;
+        if (other.getTaskSubmittedEventDetails() == null ^ this.getTaskSubmittedEventDetails() == null)
+            return false;
+        if (other.getTaskSubmittedEventDetails() != null && other.getTaskSubmittedEventDetails().equals(this.getTaskSubmittedEventDetails()) == false)
+            return false;
+        if (other.getTaskSucceededEventDetails() == null ^ this.getTaskSucceededEventDetails() == null)
+            return false;
+        if (other.getTaskSucceededEventDetails() != null && other.getTaskSucceededEventDetails().equals(this.getTaskSucceededEventDetails()) == false)
+            return false;
+        if (other.getTaskTimedOutEventDetails() == null ^ this.getTaskTimedOutEventDetails() == null)
+            return false;
+        if (other.getTaskTimedOutEventDetails() != null && other.getTaskTimedOutEventDetails().equals(this.getTaskTimedOutEventDetails()) == false)
+            return false;
         if (other.getExecutionFailedEventDetails() == null ^ this.getExecutionFailedEventDetails() == null)
             return false;
         if (other.getExecutionFailedEventDetails() != null && other.getExecutionFailedEventDetails().equals(this.getExecutionFailedEventDetails()) == false)
@@ -908,6 +1624,30 @@ public class HistoryEvent implements Serializable, Cloneable {
             return false;
         if (other.getExecutionTimedOutEventDetails() != null
                 && other.getExecutionTimedOutEventDetails().equals(this.getExecutionTimedOutEventDetails()) == false)
+            return false;
+        if (other.getMapStateStartedEventDetails() == null ^ this.getMapStateStartedEventDetails() == null)
+            return false;
+        if (other.getMapStateStartedEventDetails() != null && other.getMapStateStartedEventDetails().equals(this.getMapStateStartedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationStartedEventDetails() == null ^ this.getMapIterationStartedEventDetails() == null)
+            return false;
+        if (other.getMapIterationStartedEventDetails() != null
+                && other.getMapIterationStartedEventDetails().equals(this.getMapIterationStartedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationSucceededEventDetails() == null ^ this.getMapIterationSucceededEventDetails() == null)
+            return false;
+        if (other.getMapIterationSucceededEventDetails() != null
+                && other.getMapIterationSucceededEventDetails().equals(this.getMapIterationSucceededEventDetails()) == false)
+            return false;
+        if (other.getMapIterationFailedEventDetails() == null ^ this.getMapIterationFailedEventDetails() == null)
+            return false;
+        if (other.getMapIterationFailedEventDetails() != null
+                && other.getMapIterationFailedEventDetails().equals(this.getMapIterationFailedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationAbortedEventDetails() == null ^ this.getMapIterationAbortedEventDetails() == null)
+            return false;
+        if (other.getMapIterationAbortedEventDetails() != null
+                && other.getMapIterationAbortedEventDetails().equals(this.getMapIterationAbortedEventDetails()) == false)
             return false;
         if (other.getLambdaFunctionFailedEventDetails() == null ^ this.getLambdaFunctionFailedEventDetails() == null)
             return false;
@@ -965,11 +1705,24 @@ public class HistoryEvent implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getActivityStartedEventDetails() == null) ? 0 : getActivityStartedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getActivitySucceededEventDetails() == null) ? 0 : getActivitySucceededEventDetails().hashCode());
         hashCode = prime * hashCode + ((getActivityTimedOutEventDetails() == null) ? 0 : getActivityTimedOutEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskFailedEventDetails() == null) ? 0 : getTaskFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskScheduledEventDetails() == null) ? 0 : getTaskScheduledEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskStartFailedEventDetails() == null) ? 0 : getTaskStartFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskStartedEventDetails() == null) ? 0 : getTaskStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSubmitFailedEventDetails() == null) ? 0 : getTaskSubmitFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSubmittedEventDetails() == null) ? 0 : getTaskSubmittedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskSucceededEventDetails() == null) ? 0 : getTaskSucceededEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getTaskTimedOutEventDetails() == null) ? 0 : getTaskTimedOutEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionFailedEventDetails() == null) ? 0 : getExecutionFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionStartedEventDetails() == null) ? 0 : getExecutionStartedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionSucceededEventDetails() == null) ? 0 : getExecutionSucceededEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionAbortedEventDetails() == null) ? 0 : getExecutionAbortedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionTimedOutEventDetails() == null) ? 0 : getExecutionTimedOutEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapStateStartedEventDetails() == null) ? 0 : getMapStateStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationStartedEventDetails() == null) ? 0 : getMapIterationStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationSucceededEventDetails() == null) ? 0 : getMapIterationSucceededEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationFailedEventDetails() == null) ? 0 : getMapIterationFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationAbortedEventDetails() == null) ? 0 : getMapIterationAbortedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionFailedEventDetails() == null) ? 0 : getLambdaFunctionFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionScheduleFailedEventDetails() == null) ? 0 : getLambdaFunctionScheduleFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionScheduledEventDetails() == null) ? 0 : getLambdaFunctionScheduledEventDetails().hashCode());
@@ -988,5 +1741,11 @@ public class HistoryEvent implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.stepfunctions.model.transform.HistoryEventMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

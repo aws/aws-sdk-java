@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class AttackSummaryJsonUnmarshaller implements Unmarshaller<AttackSummary
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    attackSummary.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    attackSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    attackSummary.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    attackSummary.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AttackVectors", targetDepth)) {
                     context.nextToken();

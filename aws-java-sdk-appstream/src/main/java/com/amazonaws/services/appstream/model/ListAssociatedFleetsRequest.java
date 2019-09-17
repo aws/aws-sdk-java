@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      */
     private String stackName;
@@ -41,11 +41,11 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack whose associated fleets are listed.
+     *        The name of the stack.
      */
 
     public void setStackName(String stackName) {
@@ -54,10 +54,10 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
-     * @return The name of the stack whose associated fleets are listed.
+     * @return The name of the stack.
      */
 
     public String getStackName() {
@@ -66,11 +66,11 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack whose associated fleets are listed.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +126,8 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

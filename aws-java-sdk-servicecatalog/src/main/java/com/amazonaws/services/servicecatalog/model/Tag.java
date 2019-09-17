@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,40 +14,41 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Key/value pairs to associate with this provisioning. These tags are entirely discretionary and are propagated to the
- * resources created in the provisioning.
+ * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a
+ * product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Tag implements Serializable, Cloneable {
+public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The esired value for this key.
+     * The value for this key.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The tag key.
      */
 
     public void setKey(String key) {
@@ -56,11 +57,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
-     * @return The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return The tag key.
      */
 
     public String getKey() {
@@ -69,12 +69,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,11 +84,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The esired value for this key.
+     * The value for this key.
      * </p>
      * 
      * @param value
-     *        The esired value for this key.
+     *        The value for this key.
      */
 
     public void setValue(String value) {
@@ -98,10 +97,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The esired value for this key.
+     * The value for this key.
      * </p>
      * 
-     * @return The esired value for this key.
+     * @return The value for this key.
      */
 
     public String getValue() {
@@ -110,11 +109,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The esired value for this key.
+     * The value for this key.
      * </p>
      * 
      * @param value
-     *        The esired value for this key.
+     *        The value for this key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +123,8 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,5 +180,11 @@ public class Tag implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.TagMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

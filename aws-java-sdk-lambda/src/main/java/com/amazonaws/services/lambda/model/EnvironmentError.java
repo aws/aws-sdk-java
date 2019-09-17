@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,40 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains error information associated with your configuration settings.
+ * Error messages for environment variables that couldn't be applied.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnvironmentError implements Serializable, Cloneable {
+public class EnvironmentError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code returned by the environment error object.
+     *        The error code.
      */
 
     public void setErrorCode(String errorCode) {
@@ -54,10 +56,10 @@ public class EnvironmentError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
-     * @return The error code returned by the environment error object.
+     * @return The error code.
      */
 
     public String getErrorCode() {
@@ -66,11 +68,11 @@ public class EnvironmentError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code returned by the environment error object.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code returned by the environment error object.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +83,11 @@ public class EnvironmentError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
      * @param message
-     *        The message returned by the environment error object.
+     *        The error message.
      */
 
     public void setMessage(String message) {
@@ -94,10 +96,10 @@ public class EnvironmentError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
-     * @return The message returned by the environment error object.
+     * @return The error message.
      */
 
     public String getMessage() {
@@ -106,11 +108,11 @@ public class EnvironmentError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message returned by the environment error object.
+     * The error message.
      * </p>
      * 
      * @param message
-     *        The message returned by the environment error object.
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +122,8 @@ public class EnvironmentError implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,7 +136,7 @@ public class EnvironmentError implements Serializable, Cloneable {
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -176,5 +179,11 @@ public class EnvironmentError implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.EnvironmentErrorMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

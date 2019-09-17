@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -444,6 +444,19 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request) {
+
+        return describeOperatingSystemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeOperatingSystemsRequest, DescribeOperatingSystemsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePermissionsResult> describePermissionsAsync(DescribePermissionsRequest request) {
 
         return describePermissionsAsync(request, null);
@@ -628,6 +641,19 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
+
+        return listTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(RebootInstanceRequest request) {
 
         return rebootInstanceAsync(request, null);
@@ -797,6 +823,19 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(UnassignInstanceRequest request) {
 
         return unassignInstanceAsync(request, null);
@@ -818,6 +857,19 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     @Override
     public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(UnassignVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, UnassignVolumeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

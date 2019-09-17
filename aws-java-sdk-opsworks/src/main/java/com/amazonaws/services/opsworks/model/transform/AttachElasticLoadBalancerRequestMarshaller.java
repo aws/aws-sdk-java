@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AttachElasticLoadBalancerRequest Marshaller
+ * AttachElasticLoadBalancerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachElasticLoadBalancerRequestMarshaller implements Marshaller<Request<AttachElasticLoadBalancerRequest>, AttachElasticLoadBalancerRequest> {
+@SdkInternalApi
+public class AttachElasticLoadBalancerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ELASTICLOADBALANCERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticLoadBalancerName").build();
+    private static final MarshallingInfo<String> LAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerId").build();
 
-    public AttachElasticLoadBalancerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AttachElasticLoadBalancerRequestMarshaller instance = new AttachElasticLoadBalancerRequestMarshaller();
+
+    public static AttachElasticLoadBalancerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AttachElasticLoadBalancerRequest> marshall(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (attachElasticLoadBalancerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachElasticLoadBalancerRequest> request = new DefaultRequest<AttachElasticLoadBalancerRequest>(attachElasticLoadBalancerRequest,
-                "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.AttachElasticLoadBalancer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (attachElasticLoadBalancerRequest.getElasticLoadBalancerName() != null) {
-                jsonGenerator.writeFieldName("ElasticLoadBalancerName").writeValue(attachElasticLoadBalancerRequest.getElasticLoadBalancerName());
-            }
-            if (attachElasticLoadBalancerRequest.getLayerId() != null) {
-                jsonGenerator.writeFieldName("LayerId").writeValue(attachElasticLoadBalancerRequest.getLayerId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(attachElasticLoadBalancerRequest.getElasticLoadBalancerName(), ELASTICLOADBALANCERNAME_BINDING);
+            protocolMarshaller.marshall(attachElasticLoadBalancerRequest.getLayerId(), LAYERID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

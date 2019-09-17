@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,19 +60,21 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             request.addParameter("Description", StringUtils.fromString(updateEnvironmentRequest.getDescription()));
         }
 
-        EnvironmentTier tier = updateEnvironmentRequest.getTier();
-        if (tier != null) {
+        {
+            EnvironmentTier tier = updateEnvironmentRequest.getTier();
+            if (tier != null) {
 
-            if (tier.getName() != null) {
-                request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
-            }
+                if (tier.getName() != null) {
+                    request.addParameter("Tier.Name", StringUtils.fromString(tier.getName()));
+                }
 
-            if (tier.getType() != null) {
-                request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
-            }
+                if (tier.getType() != null) {
+                    request.addParameter("Tier.Type", StringUtils.fromString(tier.getType()));
+                }
 
-            if (tier.getVersion() != null) {
-                request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                if (tier.getVersion() != null) {
+                    request.addParameter("Tier.Version", StringUtils.fromString(tier.getVersion()));
+                }
             }
         }
 
@@ -88,9 +90,14 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             request.addParameter("SolutionStackName", StringUtils.fromString(updateEnvironmentRequest.getSolutionStackName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (updateEnvironmentRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(updateEnvironmentRequest.getPlatformArn()));
+        }
+
+        if (!updateEnvironmentRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest.getOptionSettings()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
@@ -118,9 +125,10 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest
-                .getOptionsToRemove();
-        if (!optionsToRemoveList.isEmpty() || !optionsToRemoveList.isAutoConstruct()) {
+        if (!updateEnvironmentRequest.getOptionsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest.getOptionsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest
+                    .getOptionsToRemove();
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {

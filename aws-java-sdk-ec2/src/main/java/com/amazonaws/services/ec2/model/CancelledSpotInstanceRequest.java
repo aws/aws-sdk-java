@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a request to cancel a Spot instance.
+ * Describes a request to cancel a Spot Instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelledSpotInstanceRequest" target="_top">AWS
@@ -28,24 +28,24 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      */
     private String spotInstanceRequestId;
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      */
     private String state;
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        The ID of the Spot instance request.
+     *        The ID of the Spot Instance request.
      */
 
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
@@ -54,10 +54,10 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
-     * @return The ID of the Spot instance request.
+     * @return The ID of the Spot Instance request.
      */
 
     public String getSpotInstanceRequestId() {
@@ -66,11 +66,11 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        The ID of the Spot instance request.
+     *        The ID of the Spot Instance request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      * 
      * @param state
-     *        The state of the Spot instance request.
+     *        The state of the Spot Instance request.
      * @see CancelSpotInstanceRequestState
      */
 
@@ -95,10 +95,10 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      * 
-     * @return The state of the Spot instance request.
+     * @return The state of the Spot Instance request.
      * @see CancelSpotInstanceRequestState
      */
 
@@ -108,11 +108,11 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      * 
      * @param state
-     *        The state of the Spot instance request.
+     *        The state of the Spot Instance request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CancelSpotInstanceRequestState
      */
@@ -124,36 +124,37 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      * 
      * @param state
-     *        The state of the Spot instance request.
+     *        The state of the Spot Instance request.
      * @see CancelSpotInstanceRequestState
      */
 
     public void setState(CancelSpotInstanceRequestState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
      * <p>
-     * The state of the Spot instance request.
+     * The state of the Spot Instance request.
      * </p>
      * 
      * @param state
-     *        The state of the Spot instance request.
+     *        The state of the Spot Instance request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CancelSpotInstanceRequestState
      */
 
     public CancelledSpotInstanceRequest withState(CancelSpotInstanceRequestState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,4 +211,5 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

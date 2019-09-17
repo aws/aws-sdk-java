@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,9 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileShareInfo implements Serializable, Cloneable {
+public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
+
+    private String fileShareType;
 
     private String fileShareARN;
 
@@ -33,6 +37,46 @@ public class FileShareInfo implements Serializable, Cloneable {
     private String fileShareStatus;
 
     private String gatewayARN;
+
+    /**
+     * @param fileShareType
+     * @see FileShareType
+     */
+
+    public void setFileShareType(String fileShareType) {
+        this.fileShareType = fileShareType;
+    }
+
+    /**
+     * @return
+     * @see FileShareType
+     */
+
+    public String getFileShareType() {
+        return this.fileShareType;
+    }
+
+    /**
+     * @param fileShareType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileShareType
+     */
+
+    public FileShareInfo withFileShareType(String fileShareType) {
+        setFileShareType(fileShareType);
+        return this;
+    }
+
+    /**
+     * @param fileShareType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileShareType
+     */
+
+    public FileShareInfo withFileShareType(FileShareType fileShareType) {
+        this.fileShareType = fileShareType.toString();
+        return this;
+    }
 
     /**
      * @param fileShareARN
@@ -139,7 +183,8 @@ public class FileShareInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -149,6 +194,8 @@ public class FileShareInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFileShareType() != null)
+            sb.append("FileShareType: ").append(getFileShareType()).append(",");
         if (getFileShareARN() != null)
             sb.append("FileShareARN: ").append(getFileShareARN()).append(",");
         if (getFileShareId() != null)
@@ -171,6 +218,10 @@ public class FileShareInfo implements Serializable, Cloneable {
         if (obj instanceof FileShareInfo == false)
             return false;
         FileShareInfo other = (FileShareInfo) obj;
+        if (other.getFileShareType() == null ^ this.getFileShareType() == null)
+            return false;
+        if (other.getFileShareType() != null && other.getFileShareType().equals(this.getFileShareType()) == false)
+            return false;
         if (other.getFileShareARN() == null ^ this.getFileShareARN() == null)
             return false;
         if (other.getFileShareARN() != null && other.getFileShareARN().equals(this.getFileShareARN()) == false)
@@ -195,6 +246,7 @@ public class FileShareInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFileShareType() == null) ? 0 : getFileShareType().hashCode());
         hashCode = prime * hashCode + ((getFileShareARN() == null) ? 0 : getFileShareARN().hashCode());
         hashCode = prime * hashCode + ((getFileShareId() == null) ? 0 : getFileShareId().hashCode());
         hashCode = prime * hashCode + ((getFileShareStatus() == null) ? 0 : getFileShareStatus().hashCode());
@@ -209,5 +261,11 @@ public class FileShareInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.FileShareInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

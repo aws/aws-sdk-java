@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,54 +14,103 @@ package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure for specifying the conditions under which the operations permitted by the grant are allowed.
+ * Use this structure to allow cryptographic operations in the grant only when the operation request includes the
+ * specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
+ * context</a>.
  * </p>
  * <p>
- * You can use this structure to allow the operations permitted by the grant only when a specified encryption context is
- * present. For more information about encryption context, see <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
- * <i>AWS Key Management Service Developer Guide</i>.
+ * AWS KMS applies the grant constraints only when the grant allows a cryptographic operation that accepts an encryption
+ * context as input, such as the following.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>Encrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>Decrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKeyWithoutPlaintext</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ReEncrypt</a>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * AWS KMS does not apply the grant constraints to other operations, such as <a>DescribeKey</a> or
+ * <a>ScheduleKeyDeletion</a>.
+ * </p>
+ * <important>
+ * <p>
+ * In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive
+ * match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can
+ * vary.
+ * </p>
+ * <p>
+ * However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case
+ * sensitive.
+ * </p>
+ * <p>
+ * To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully
+ * case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and
+ * <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href=
+ * "https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context"
+ * >kms:EncryptionContext:</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+ * </p>
+ * </important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantConstraints" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GrantConstraints implements Serializable, Cloneable {
+public class GrantConstraints implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent
-     * operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption
-     * context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the
-     * operation is not allowed.
+     * A list of key-value pairs that must be included in the encryption context of the cryptographic operation request.
+     * The grant allows the cryptographic operation only when the encryption context in the request includes the
+     * key-value pairs specified in this constraint, although it can include additional key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextSubset;
     /**
      * <p>
-     * Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation
-     * permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that
-     * matches this list, the grant allows the operation. Otherwise, the operation is not allowed.
+     * A list of key-value pairs that must match the encryption context in the cryptographic operation request. The
+     * grant allows the operation only when the encryption context in the request is the same as the encryption context
+     * specified in this constraint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> encryptionContextEquals;
 
     /**
      * <p>
-     * Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent
-     * operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption
-     * context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the
-     * operation is not allowed.
+     * A list of key-value pairs that must be included in the encryption context of the cryptographic operation request.
+     * The grant allows the cryptographic operation only when the encryption context in the request includes the
+     * key-value pairs specified in this constraint, although it can include additional key-value pairs.
      * </p>
      * 
-     * @return Contains a list of key-value pairs, a subset of which must be present in the encryption context of a
-     *         subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes
-     *         an encryption context that matches this list or is a subset of this list, the grant allows the operation.
-     *         Otherwise, the operation is not allowed.
+     * @return A list of key-value pairs that must be included in the encryption context of the cryptographic operation
+     *         request. The grant allows the cryptographic operation only when the encryption context in the request
+     *         includes the key-value pairs specified in this constraint, although it can include additional key-value
+     *         pairs.
      */
 
     public java.util.Map<String, String> getEncryptionContextSubset() {
@@ -73,17 +122,16 @@ public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent
-     * operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption
-     * context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the
-     * operation is not allowed.
+     * A list of key-value pairs that must be included in the encryption context of the cryptographic operation request.
+     * The grant allows the cryptographic operation only when the encryption context in the request includes the
+     * key-value pairs specified in this constraint, although it can include additional key-value pairs.
      * </p>
      * 
      * @param encryptionContextSubset
-     *        Contains a list of key-value pairs, a subset of which must be present in the encryption context of a
-     *        subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes
-     *        an encryption context that matches this list or is a subset of this list, the grant allows the operation.
-     *        Otherwise, the operation is not allowed.
+     *        A list of key-value pairs that must be included in the encryption context of the cryptographic operation
+     *        request. The grant allows the cryptographic operation only when the encryption context in the request
+     *        includes the key-value pairs specified in this constraint, although it can include additional key-value
+     *        pairs.
      */
 
     public void setEncryptionContextSubset(java.util.Map<String, String> encryptionContextSubset) {
@@ -93,17 +141,16 @@ public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of key-value pairs, a subset of which must be present in the encryption context of a subsequent
-     * operation permitted by the grant. When a subsequent operation permitted by the grant includes an encryption
-     * context that matches this list or is a subset of this list, the grant allows the operation. Otherwise, the
-     * operation is not allowed.
+     * A list of key-value pairs that must be included in the encryption context of the cryptographic operation request.
+     * The grant allows the cryptographic operation only when the encryption context in the request includes the
+     * key-value pairs specified in this constraint, although it can include additional key-value pairs.
      * </p>
      * 
      * @param encryptionContextSubset
-     *        Contains a list of key-value pairs, a subset of which must be present in the encryption context of a
-     *        subsequent operation permitted by the grant. When a subsequent operation permitted by the grant includes
-     *        an encryption context that matches this list or is a subset of this list, the grant allows the operation.
-     *        Otherwise, the operation is not allowed.
+     *        A list of key-value pairs that must be included in the encryption context of the cryptographic operation
+     *        request. The grant allows the cryptographic operation only when the encryption context in the request
+     *        includes the key-value pairs specified in this constraint, although it can include additional key-value
+     *        pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,15 +182,14 @@ public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation
-     * permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that
-     * matches this list, the grant allows the operation. Otherwise, the operation is not allowed.
+     * A list of key-value pairs that must match the encryption context in the cryptographic operation request. The
+     * grant allows the operation only when the encryption context in the request is the same as the encryption context
+     * specified in this constraint.
      * </p>
      * 
-     * @return Contains a list of key-value pairs that must be present in the encryption context of a subsequent
-     *         operation permitted by the grant. When a subsequent operation permitted by the grant includes an
-     *         encryption context that matches this list, the grant allows the operation. Otherwise, the operation is
-     *         not allowed.
+     * @return A list of key-value pairs that must match the encryption context in the cryptographic operation request.
+     *         The grant allows the operation only when the encryption context in the request is the same as the
+     *         encryption context specified in this constraint.
      */
 
     public java.util.Map<String, String> getEncryptionContextEquals() {
@@ -155,16 +201,15 @@ public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation
-     * permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that
-     * matches this list, the grant allows the operation. Otherwise, the operation is not allowed.
+     * A list of key-value pairs that must match the encryption context in the cryptographic operation request. The
+     * grant allows the operation only when the encryption context in the request is the same as the encryption context
+     * specified in this constraint.
      * </p>
      * 
      * @param encryptionContextEquals
-     *        Contains a list of key-value pairs that must be present in the encryption context of a subsequent
-     *        operation permitted by the grant. When a subsequent operation permitted by the grant includes an
-     *        encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not
-     *        allowed.
+     *        A list of key-value pairs that must match the encryption context in the cryptographic operation request.
+     *        The grant allows the operation only when the encryption context in the request is the same as the
+     *        encryption context specified in this constraint.
      */
 
     public void setEncryptionContextEquals(java.util.Map<String, String> encryptionContextEquals) {
@@ -174,16 +219,15 @@ public class GrantConstraints implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of key-value pairs that must be present in the encryption context of a subsequent operation
-     * permitted by the grant. When a subsequent operation permitted by the grant includes an encryption context that
-     * matches this list, the grant allows the operation. Otherwise, the operation is not allowed.
+     * A list of key-value pairs that must match the encryption context in the cryptographic operation request. The
+     * grant allows the operation only when the encryption context in the request is the same as the encryption context
+     * specified in this constraint.
      * </p>
      * 
      * @param encryptionContextEquals
-     *        Contains a list of key-value pairs that must be present in the encryption context of a subsequent
-     *        operation permitted by the grant. When a subsequent operation permitted by the grant includes an
-     *        encryption context that matches this list, the grant allows the operation. Otherwise, the operation is not
-     *        allowed.
+     *        A list of key-value pairs that must match the encryption context in the cryptographic operation request.
+     *        The grant allows the operation only when the encryption context in the request is the same as the
+     *        encryption context specified in this constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,7 +258,8 @@ public class GrantConstraints implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -270,5 +315,11 @@ public class GrantConstraints implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kms.model.transform.GrantConstraintsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

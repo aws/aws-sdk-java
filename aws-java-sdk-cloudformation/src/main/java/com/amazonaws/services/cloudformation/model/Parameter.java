@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class Parameter implements Serializable, Cloneable {
     private String parameterKey;
     /**
      * <p>
-     * The value associated with the parameter.
+     * The input value associated with the parameter.
      * </p>
      */
     private String parameterValue;
@@ -46,6 +46,15 @@ public class Parameter implements Serializable, Cloneable {
      * </p>
      */
     private Boolean usePreviousValue;
+    /**
+     * <p>
+     * Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     * > <code>SSM</code> parameter types</a> in the template.
+     * </p>
+     */
+    private String resolvedValue;
 
     /**
      * <p>
@@ -95,11 +104,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value associated with the parameter.
+     * The input value associated with the parameter.
      * </p>
      * 
      * @param parameterValue
-     *        The value associated with the parameter.
+     *        The input value associated with the parameter.
      */
 
     public void setParameterValue(String parameterValue) {
@@ -108,10 +117,10 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value associated with the parameter.
+     * The input value associated with the parameter.
      * </p>
      * 
-     * @return The value associated with the parameter.
+     * @return The input value associated with the parameter.
      */
 
     public String getParameterValue() {
@@ -120,11 +129,11 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value associated with the parameter.
+     * The input value associated with the parameter.
      * </p>
      * 
      * @param parameterValue
-     *        The value associated with the parameter.
+     *        The input value associated with the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +203,66 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     * > <code>SSM</code> parameter types</a> in the template.
+     * </p>
+     * 
+     * @param resolvedValue
+     *        Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     *        > <code>SSM</code> parameter types</a> in the template.
+     */
+
+    public void setResolvedValue(String resolvedValue) {
+        this.resolvedValue = resolvedValue;
+    }
+
+    /**
+     * <p>
+     * Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     * > <code>SSM</code> parameter types</a> in the template.
+     * </p>
+     * 
+     * @return Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for
+     *         <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     *         > <code>SSM</code> parameter types</a> in the template.
+     */
+
+    public String getResolvedValue() {
+        return this.resolvedValue;
+    }
+
+    /**
+     * <p>
+     * Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for <a
+     * href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     * > <code>SSM</code> parameter types</a> in the template.
+     * </p>
+     * 
+     * @param resolvedValue
+     *        Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"
+     *        > <code>SSM</code> parameter types</a> in the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withResolvedValue(String resolvedValue) {
+        setResolvedValue(resolvedValue);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,7 +277,9 @@ public class Parameter implements Serializable, Cloneable {
         if (getParameterValue() != null)
             sb.append("ParameterValue: ").append(getParameterValue()).append(",");
         if (getUsePreviousValue() != null)
-            sb.append("UsePreviousValue: ").append(getUsePreviousValue());
+            sb.append("UsePreviousValue: ").append(getUsePreviousValue()).append(",");
+        if (getResolvedValue() != null)
+            sb.append("ResolvedValue: ").append(getResolvedValue());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +306,10 @@ public class Parameter implements Serializable, Cloneable {
             return false;
         if (other.getUsePreviousValue() != null && other.getUsePreviousValue().equals(this.getUsePreviousValue()) == false)
             return false;
+        if (other.getResolvedValue() == null ^ this.getResolvedValue() == null)
+            return false;
+        if (other.getResolvedValue() != null && other.getResolvedValue().equals(this.getResolvedValue()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +321,7 @@ public class Parameter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameterKey() == null) ? 0 : getParameterKey().hashCode());
         hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode());
         hashCode = prime * hashCode + ((getUsePreviousValue() == null) ? 0 : getUsePreviousValue().hashCode());
+        hashCode = prime * hashCode + ((getResolvedValue() == null) ? 0 : getResolvedValue().hashCode());
         return hashCode;
     }
 
@@ -258,4 +333,5 @@ public class Parameter implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

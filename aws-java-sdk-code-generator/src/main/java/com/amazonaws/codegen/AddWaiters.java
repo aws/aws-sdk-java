@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -115,7 +115,7 @@ class AddWaiters {
      */
     private Process executeToAstProcess(String argument) throws IOException {
         try {
-            Process p = new ProcessBuilder("python3.4", codeGenBinDirectory + "/jp-to-ast.py", argument).start();
+            Process p = new ProcessBuilder("python", codeGenBinDirectory + "/jp-to-ast.py", argument).start();
             p.waitFor();
             return p;
         } catch (InterruptedException e) {

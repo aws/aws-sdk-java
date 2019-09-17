@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class ExtendedS3DestinationUpdateJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     extendedS3DestinationUpdate.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ErrorOutputPrefix", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationUpdate.setErrorOutputPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BufferingHints", targetDepth)) {
                     context.nextToken();
                     extendedS3DestinationUpdate.setBufferingHints(BufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -87,6 +91,11 @@ public class ExtendedS3DestinationUpdateJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("S3BackupUpdate", targetDepth)) {
                     context.nextToken();
                     extendedS3DestinationUpdate.setS3BackupUpdate(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataFormatConversionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationUpdate.setDataFormatConversionConfiguration(DataFormatConversionConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

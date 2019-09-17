@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,12 +40,12 @@ public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<Det
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (detachVpnGatewayRequest.getVpnGatewayId() != null) {
-            request.addParameter("VpnGatewayId", StringUtils.fromString(detachVpnGatewayRequest.getVpnGatewayId()));
-        }
-
         if (detachVpnGatewayRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(detachVpnGatewayRequest.getVpcId()));
+        }
+
+        if (detachVpnGatewayRequest.getVpnGatewayId() != null) {
+            request.addParameter("VpnGatewayId", StringUtils.fromString(detachVpnGatewayRequest.getVpnGatewayId()));
         }
 
         return request;

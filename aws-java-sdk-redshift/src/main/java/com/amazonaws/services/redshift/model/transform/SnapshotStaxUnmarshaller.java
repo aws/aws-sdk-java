@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    snapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -76,7 +76,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    snapshot.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    snapshot.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -202,6 +202,26 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
 
                 if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
                     snapshot.setEnhancedVpcRouting(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaintenanceTrackName", targetDepth)) {
+                    snapshot.setMaintenanceTrackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ManualSnapshotRetentionPeriod", targetDepth)) {
+                    snapshot.setManualSnapshotRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ManualSnapshotRemainingDays", targetDepth)) {
+                    snapshot.setManualSnapshotRemainingDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotRetentionStartTime", targetDepth)) {
+                    snapshot.setSnapshotRetentionStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

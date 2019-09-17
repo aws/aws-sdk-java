@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions" target="_top">AWS
+ *      API Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -36,24 +41,36 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Specifies the type of the workflow executions to be counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowTypeFilter typeFilter;
     /**
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private TagFilter tagFilter;
     /**
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowExecutionFilter executionFilter;
 
@@ -141,13 +158,19 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Specifies the type of the workflow executions to be counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
-     *        Specifies the type of the workflow executions to be counted.</p> <note><code>executionFilter</code>,
-     *        <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     *        these in a request.
+     *        Specifies the type of the workflow executions to be counted.</p> <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -158,12 +181,18 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Specifies the type of the workflow executions to be counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the type of the workflow executions to be counted.</p> <note><code>executionFilter</code>,
-     *         <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     *         these in a request.
+     * @return Specifies the type of the workflow executions to be counted.</p> <note>
+     *         <p>
+     *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowTypeFilter getTypeFilter() {
@@ -174,13 +203,19 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Specifies the type of the workflow executions to be counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
-     *        Specifies the type of the workflow executions to be counted.</p> <note><code>executionFilter</code>,
-     *        <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-     *        these in a request.
+     *        Specifies the type of the workflow executions to be counted.</p> <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,13 +228,19 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTagFilter(TagFilter tagFilter) {
@@ -210,12 +251,18 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *         <p>
      *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public TagFilter getTagFilter() {
@@ -226,13 +273,19 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,13 +298,20 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
-     *        <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
+     *        <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -262,12 +322,19 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are
-     *         counted.</p> <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
-     *         mutually exclusive. You can specify at most one of these in a request.
+     *         counted.</p> <note>
+     *         <p>
+     *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowExecutionFilter getExecutionFilter() {
@@ -278,13 +345,20 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
-     *        <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
+     *        <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,7 +368,8 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

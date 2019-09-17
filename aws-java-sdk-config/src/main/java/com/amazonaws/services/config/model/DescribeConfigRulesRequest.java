@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> configRuleNames;
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      */
@@ -124,12 +124,12 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      */
 
@@ -139,11 +139,11 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
-     * @return The <code>NextToken</code> string returned on a previous page that you use to get the next page of
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
      *         results in a paginated response.
      */
 
@@ -153,12 +153,12 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -169,7 +169,8 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

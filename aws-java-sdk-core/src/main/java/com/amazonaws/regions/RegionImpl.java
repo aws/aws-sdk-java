@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public interface RegionImpl {
     String getServiceEndpoint(String serviceName);
 
     /**
-     * Returns whether the given service support the https protocol in this region.
+     * Returns whether the given service support the http protocol in this region.
      *
      * @param serviceName
      *         The service endpoint prefix which can be retrieved from the
@@ -77,7 +77,7 @@ public interface RegionImpl {
     boolean hasHttpEndpoint(String serviceName);
 
     /**
-     * Returns whether the given service support the http protocol in this region.
+     * Returns whether the given service support the https protocol in this region.
      *
      * @param serviceName
      *         The service endpoint prefix which can be retrieved from the

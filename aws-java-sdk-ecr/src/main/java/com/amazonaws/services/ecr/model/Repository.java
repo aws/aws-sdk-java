@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.ecr.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,14 +26,13 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Repository implements Serializable, Cloneable {
+public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      */
     private String repositoryArn;
@@ -49,29 +50,34 @@ public class Repository implements Serializable, Cloneable {
     private String repositoryName;
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      */
     private String repositoryUri;
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The tag mutability setting for the repository.
+     * </p>
+     */
+    private String imageTagMutability;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *        repository owner, the repository namespace, and then the repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *        repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -82,14 +88,13 @@ public class Repository implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *         repository owner, the repository namespace, and then the repository name. For example,
+     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *         repository owner, repository namespace, and repository name. For example,
      *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -100,15 +105,14 @@ public class Repository implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *        repository owner, the repository namespace, and then the repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *        repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -200,11 +204,11 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *        operations.
      */
 
@@ -214,10 +218,10 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
-     * @return The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     * @return The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *         operations.
      */
 
@@ -227,11 +231,11 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *        operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -243,11 +247,11 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in JavaScript date/time format, when the repository was created.
+     *        The date and time, in JavaScript date format, when the repository was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -256,10 +260,10 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
-     * @return The date and time, in JavaScript date/time format, when the repository was created.
+     * @return The date and time, in JavaScript date format, when the repository was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -268,11 +272,11 @@ public class Repository implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in JavaScript date/time format, when the repository was created.
+     *        The date and time, in JavaScript date format, when the repository was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,7 +286,67 @@ public class Repository implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tag mutability setting for the repository.
+     * </p>
+     * 
+     * @param imageTagMutability
+     *        The tag mutability setting for the repository.
+     * @see ImageTagMutability
+     */
+
+    public void setImageTagMutability(String imageTagMutability) {
+        this.imageTagMutability = imageTagMutability;
+    }
+
+    /**
+     * <p>
+     * The tag mutability setting for the repository.
+     * </p>
+     * 
+     * @return The tag mutability setting for the repository.
+     * @see ImageTagMutability
+     */
+
+    public String getImageTagMutability() {
+        return this.imageTagMutability;
+    }
+
+    /**
+     * <p>
+     * The tag mutability setting for the repository.
+     * </p>
+     * 
+     * @param imageTagMutability
+     *        The tag mutability setting for the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageTagMutability
+     */
+
+    public Repository withImageTagMutability(String imageTagMutability) {
+        setImageTagMutability(imageTagMutability);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag mutability setting for the repository.
+     * </p>
+     * 
+     * @param imageTagMutability
+     *        The tag mutability setting for the repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageTagMutability
+     */
+
+    public Repository withImageTagMutability(ImageTagMutability imageTagMutability) {
+        this.imageTagMutability = imageTagMutability.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -301,7 +365,9 @@ public class Repository implements Serializable, Cloneable {
         if (getRepositoryUri() != null)
             sb.append("RepositoryUri: ").append(getRepositoryUri()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getImageTagMutability() != null)
+            sb.append("ImageTagMutability: ").append(getImageTagMutability());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +402,10 @@ public class Repository implements Serializable, Cloneable {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getImageTagMutability() == null ^ this.getImageTagMutability() == null)
+            return false;
+        if (other.getImageTagMutability() != null && other.getImageTagMutability().equals(this.getImageTagMutability()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +419,7 @@ public class Repository implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getRepositoryUri() == null) ? 0 : getRepositoryUri().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getImageTagMutability() == null) ? 0 : getImageTagMutability().hashCode());
         return hashCode;
     }
 
@@ -359,5 +430,11 @@ public class Repository implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecr.model.transform.RepositoryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

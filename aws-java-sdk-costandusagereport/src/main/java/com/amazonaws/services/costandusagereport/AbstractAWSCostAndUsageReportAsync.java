@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public class AbstractAWSCostAndUsageReportAsync extends AbstractAWSCostAndUsageR
     @Override
     public java.util.concurrent.Future<DescribeReportDefinitionsResult> describeReportDefinitionsAsync(DescribeReportDefinitionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReportDefinitionsRequest, DescribeReportDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(ModifyReportDefinitionRequest request) {
+
+        return modifyReportDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(ModifyReportDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyReportDefinitionRequest, ModifyReportDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

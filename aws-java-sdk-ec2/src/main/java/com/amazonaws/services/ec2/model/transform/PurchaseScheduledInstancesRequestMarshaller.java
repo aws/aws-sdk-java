@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,14 +51,14 @@ public class PurchaseScheduledInstancesRequestMarshaller implements Marshaller<R
 
             for (PurchaseRequest purchaseScheduledInstancesRequestPurchaseRequestsListValue : purchaseScheduledInstancesRequestPurchaseRequestsList) {
 
-                if (purchaseScheduledInstancesRequestPurchaseRequestsListValue.getPurchaseToken() != null) {
-                    request.addParameter("PurchaseRequest." + purchaseRequestsListIndex + ".PurchaseToken",
-                            StringUtils.fromString(purchaseScheduledInstancesRequestPurchaseRequestsListValue.getPurchaseToken()));
-                }
-
                 if (purchaseScheduledInstancesRequestPurchaseRequestsListValue.getInstanceCount() != null) {
                     request.addParameter("PurchaseRequest." + purchaseRequestsListIndex + ".InstanceCount",
                             StringUtils.fromInteger(purchaseScheduledInstancesRequestPurchaseRequestsListValue.getInstanceCount()));
+                }
+
+                if (purchaseScheduledInstancesRequestPurchaseRequestsListValue.getPurchaseToken() != null) {
+                    request.addParameter("PurchaseRequest." + purchaseRequestsListIndex + ".PurchaseToken",
+                            StringUtils.fromString(purchaseScheduledInstancesRequestPurchaseRequestsListValue.getPurchaseToken()));
                 }
                 purchaseRequestsListIndex++;
             }

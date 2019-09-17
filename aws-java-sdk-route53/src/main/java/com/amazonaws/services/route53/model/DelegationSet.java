@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the name servers for this hosted zone.
+ * A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the
+ * <code>ID</code> for the delegation set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet" target="_top">AWS API
@@ -34,16 +35,14 @@ public class DelegationSet implements Serializable, Cloneable {
     private String id;
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry failed
-     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
-     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     * delegation set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> nameServers;
@@ -60,7 +59,8 @@ public class DelegationSet implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param nameServers
-     *        A complex type that contains a list of the authoritative name servers for the hosted zone.
+     *        A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     *        delegation set.
      */
     public DelegationSet(java.util.List<String> nameServers) {
         setNameServers(nameServers);
@@ -108,18 +108,12 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry failed
-     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
-     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request, and that allows you to retry failed
-     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
-     *        must use a unique <code>CallerReference</code> string every time you submit a
-     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
-     *        for example, a date/time stamp.
+     *        The value that you specified for <code>CallerReference</code> when you created the reusable delegation
+     *        set.
      */
 
     public void setCallerReference(String callerReference) {
@@ -128,17 +122,11 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry failed
-     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
-     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.
      * </p>
      * 
-     * @return A unique string that identifies the request, and that allows you to retry failed
-     *         <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
-     *         must use a unique <code>CallerReference</code> string every time you submit a
-     *         <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
-     *         for example, a date/time stamp.
+     * @return The value that you specified for <code>CallerReference</code> when you created the reusable delegation
+     *         set.
      */
 
     public String getCallerReference() {
@@ -147,18 +135,12 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique string that identifies the request, and that allows you to retry failed
-     * <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use
-     * a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-     * request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
+     * The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.
      * </p>
      * 
      * @param callerReference
-     *        A unique string that identifies the request, and that allows you to retry failed
-     *        <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You
-     *        must use a unique <code>CallerReference</code> string every time you submit a
-     *        <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string,
-     *        for example, a date/time stamp.
+     *        The value that you specified for <code>CallerReference</code> when you created the reusable delegation
+     *        set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +151,12 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     * delegation set.
      * </p>
      * 
-     * @return A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * @return A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     *         delegation set.
      */
 
     public java.util.List<String> getNameServers() {
@@ -184,11 +168,13 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     * delegation set.
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains a list of the authoritative name servers for the hosted zone.
+     *        A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     *        delegation set.
      */
 
     public void setNameServers(java.util.Collection<String> nameServers) {
@@ -202,7 +188,8 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     * delegation set.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +198,8 @@ public class DelegationSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains a list of the authoritative name servers for the hosted zone.
+     *        A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     *        delegation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +215,13 @@ public class DelegationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains a list of the authoritative name servers for the hosted zone.
+     * A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     * delegation set.
      * </p>
      * 
      * @param nameServers
-     *        A complex type that contains a list of the authoritative name servers for the hosted zone.
+     *        A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable
+     *        delegation set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,7 +231,8 @@ public class DelegationSet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -305,4 +296,5 @@ public class DelegationSet implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

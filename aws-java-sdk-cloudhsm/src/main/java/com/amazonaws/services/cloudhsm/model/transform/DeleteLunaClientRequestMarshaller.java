@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteLunaClientRequest Marshaller
+ * DeleteLunaClientRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteLunaClientRequestMarshaller implements Marshaller<Request<DeleteLunaClientRequest>, DeleteLunaClientRequest> {
+@SdkInternalApi
+public class DeleteLunaClientRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLIENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientArn").build();
 
-    public DeleteLunaClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteLunaClientRequestMarshaller instance = new DeleteLunaClientRequestMarshaller();
+
+    public static DeleteLunaClientRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteLunaClientRequest> marshall(DeleteLunaClientRequest deleteLunaClientRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteLunaClientRequest deleteLunaClientRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteLunaClientRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteLunaClientRequest> request = new DefaultRequest<DeleteLunaClientRequest>(deleteLunaClientRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.DeleteLunaClient");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteLunaClientRequest.getClientArn() != null) {
-                jsonGenerator.writeFieldName("ClientArn").writeValue(deleteLunaClientRequest.getClientArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteLunaClientRequest.getClientArn(), CLIENTARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

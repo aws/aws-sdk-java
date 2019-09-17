@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,9 +50,10 @@ public class PutNotificationConfigurationRequestMarshaller implements
             request.addParameter("TopicARN", StringUtils.fromString(putNotificationConfigurationRequest.getTopicARN()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> notificationTypesList = (com.amazonaws.internal.SdkInternalList<String>) putNotificationConfigurationRequest
-                .getNotificationTypes();
-        if (!notificationTypesList.isEmpty() || !notificationTypesList.isAutoConstruct()) {
+        if (!putNotificationConfigurationRequest.getNotificationTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) putNotificationConfigurationRequest.getNotificationTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> notificationTypesList = (com.amazonaws.internal.SdkInternalList<String>) putNotificationConfigurationRequest
+                    .getNotificationTypes();
             int notificationTypesListIndex = 1;
 
             for (String notificationTypesListValue : notificationTypesList) {

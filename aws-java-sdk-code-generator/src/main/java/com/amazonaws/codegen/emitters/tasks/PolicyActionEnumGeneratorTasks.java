@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import com.amazonaws.codegen.emitters.GeneratorTaskParams;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.AuthPolicyActions;
 import com.amazonaws.codegen.model.intermediate.Metadata;
-import com.amazonaws.util.ImmutableMapParameter;
-
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -52,13 +52,15 @@ public class PolicyActionEnumGeneratorTasks extends BaseGeneratorTasks {
 
         String serviceName = getPolicyActionServiceName();
         String actionPrefix = getEnumActionPrefix();
+        List<String> additionalOperations = getAdditionalOperations();
 
-        Map<String, Object> dataModel = ImmutableMapParameter.of(
-                "fileHeader", model.getFileHeader(),
-                "operations", model.getOperations().keySet(),
-                "metadata", model.getMetadata(),
-                "serviceName", serviceName,
-                "actionPrefix", actionPrefix);
+        Map<String, Object> dataModel = new HashMap<String, Object>();
+        dataModel.put("fileHeader", model.getFileHeader());
+        dataModel.put("operations", model.getOperations().keySet());
+        dataModel.put("additionalOperations", additionalOperations);
+        dataModel.put("metadata", model.getMetadata());
+        dataModel.put("serviceName", serviceName);
+        dataModel.put("actionPrefix", actionPrefix);
 
         return Collections.singletonList(
                 new FreemarkerGeneratorTask(new CodeWriter(policyEnumClassDir, serviceName + "Actions"),
@@ -85,6 +87,11 @@ public class PolicyActionEnumGeneratorTasks extends BaseGeneratorTasks {
             return policyActions.getActionPrefix();
         }
         return metadata.getEndpointPrefix();
+    }
+
+    private List<String> getAdditionalOperations() {
+        return policyActions != null && policyActions.getAdditionalOperations() != null
+               ? policyActions.getAdditionalOperations() : new ArrayList<String>();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * </pre>
  *
  * <p>Please note, there are some risks in distributed systems when using
- * enumerations as attributes intead of simply using a String.
+ * enumerations as attributes instead of simply using a String.
  * When adding new values to the enumeration, the enum only changes must
  * be deployed before the enumeration value can be persisted. This will
  * ensure that all systems have the correct code to map it from the item

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,13 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
 
     /**
      * <p>
+     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     * instances in a peer VPC.
+     * </p>
+     */
+    private Boolean allowDnsResolutionFromRemoteVpc;
+    /**
+     * <p>
      * Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering
      * connection.
      * </p>
@@ -40,13 +47,66 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
      * </p>
      */
     private Boolean allowEgressFromLocalVpcToRemoteClassicLink;
+
     /**
      * <p>
      * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
      * instances in a peer VPC.
      * </p>
+     * 
+     * @param allowDnsResolutionFromRemoteVpc
+     *        Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     *        instances in a peer VPC.
      */
-    private Boolean allowDnsResolutionFromRemoteVpc;
+
+    public void setAllowDnsResolutionFromRemoteVpc(Boolean allowDnsResolutionFromRemoteVpc) {
+        this.allowDnsResolutionFromRemoteVpc = allowDnsResolutionFromRemoteVpc;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     * instances in a peer VPC.
+     * </p>
+     * 
+     * @return Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     *         instances in a peer VPC.
+     */
+
+    public Boolean getAllowDnsResolutionFromRemoteVpc() {
+        return this.allowDnsResolutionFromRemoteVpc;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     * instances in a peer VPC.
+     * </p>
+     * 
+     * @param allowDnsResolutionFromRemoteVpc
+     *        Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     *        instances in a peer VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionOptionsDescription withAllowDnsResolutionFromRemoteVpc(Boolean allowDnsResolutionFromRemoteVpc) {
+        setAllowDnsResolutionFromRemoteVpc(allowDnsResolutionFromRemoteVpc);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     * instances in a peer VPC.
+     * </p>
+     * 
+     * @return Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
+     *         instances in a peer VPC.
+     */
+
+    public Boolean isAllowDnsResolutionFromRemoteVpc() {
+        return this.allowDnsResolutionFromRemoteVpc;
+    }
 
     /**
      * <p>
@@ -169,67 +229,8 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
     }
 
     /**
-     * <p>
-     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     * instances in a peer VPC.
-     * </p>
-     * 
-     * @param allowDnsResolutionFromRemoteVpc
-     *        Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     *        instances in a peer VPC.
-     */
-
-    public void setAllowDnsResolutionFromRemoteVpc(Boolean allowDnsResolutionFromRemoteVpc) {
-        this.allowDnsResolutionFromRemoteVpc = allowDnsResolutionFromRemoteVpc;
-    }
-
-    /**
-     * <p>
-     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     * instances in a peer VPC.
-     * </p>
-     * 
-     * @return Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     *         instances in a peer VPC.
-     */
-
-    public Boolean getAllowDnsResolutionFromRemoteVpc() {
-        return this.allowDnsResolutionFromRemoteVpc;
-    }
-
-    /**
-     * <p>
-     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     * instances in a peer VPC.
-     * </p>
-     * 
-     * @param allowDnsResolutionFromRemoteVpc
-     *        Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     *        instances in a peer VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcPeeringConnectionOptionsDescription withAllowDnsResolutionFromRemoteVpc(Boolean allowDnsResolutionFromRemoteVpc) {
-        setAllowDnsResolutionFromRemoteVpc(allowDnsResolutionFromRemoteVpc);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     * instances in a peer VPC.
-     * </p>
-     * 
-     * @return Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from
-     *         instances in a peer VPC.
-     */
-
-    public Boolean isAllowDnsResolutionFromRemoteVpc() {
-        return this.allowDnsResolutionFromRemoteVpc;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -239,12 +240,12 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowDnsResolutionFromRemoteVpc() != null)
+            sb.append("AllowDnsResolutionFromRemoteVpc: ").append(getAllowDnsResolutionFromRemoteVpc()).append(",");
         if (getAllowEgressFromLocalClassicLinkToRemoteVpc() != null)
             sb.append("AllowEgressFromLocalClassicLinkToRemoteVpc: ").append(getAllowEgressFromLocalClassicLinkToRemoteVpc()).append(",");
         if (getAllowEgressFromLocalVpcToRemoteClassicLink() != null)
-            sb.append("AllowEgressFromLocalVpcToRemoteClassicLink: ").append(getAllowEgressFromLocalVpcToRemoteClassicLink()).append(",");
-        if (getAllowDnsResolutionFromRemoteVpc() != null)
-            sb.append("AllowDnsResolutionFromRemoteVpc: ").append(getAllowDnsResolutionFromRemoteVpc());
+            sb.append("AllowEgressFromLocalVpcToRemoteClassicLink: ").append(getAllowEgressFromLocalVpcToRemoteClassicLink());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +260,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
         if (obj instanceof VpcPeeringConnectionOptionsDescription == false)
             return false;
         VpcPeeringConnectionOptionsDescription other = (VpcPeeringConnectionOptionsDescription) obj;
+        if (other.getAllowDnsResolutionFromRemoteVpc() == null ^ this.getAllowDnsResolutionFromRemoteVpc() == null)
+            return false;
+        if (other.getAllowDnsResolutionFromRemoteVpc() != null
+                && other.getAllowDnsResolutionFromRemoteVpc().equals(this.getAllowDnsResolutionFromRemoteVpc()) == false)
+            return false;
         if (other.getAllowEgressFromLocalClassicLinkToRemoteVpc() == null ^ this.getAllowEgressFromLocalClassicLinkToRemoteVpc() == null)
             return false;
         if (other.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null
@@ -269,11 +275,6 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
         if (other.getAllowEgressFromLocalVpcToRemoteClassicLink() != null
                 && other.getAllowEgressFromLocalVpcToRemoteClassicLink().equals(this.getAllowEgressFromLocalVpcToRemoteClassicLink()) == false)
             return false;
-        if (other.getAllowDnsResolutionFromRemoteVpc() == null ^ this.getAllowDnsResolutionFromRemoteVpc() == null)
-            return false;
-        if (other.getAllowDnsResolutionFromRemoteVpc() != null
-                && other.getAllowDnsResolutionFromRemoteVpc().equals(this.getAllowDnsResolutionFromRemoteVpc()) == false)
-            return false;
         return true;
     }
 
@@ -282,11 +283,11 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowDnsResolutionFromRemoteVpc() == null) ? 0 : getAllowDnsResolutionFromRemoteVpc().hashCode());
         hashCode = prime * hashCode
                 + ((getAllowEgressFromLocalClassicLinkToRemoteVpc() == null) ? 0 : getAllowEgressFromLocalClassicLinkToRemoteVpc().hashCode());
         hashCode = prime * hashCode
                 + ((getAllowEgressFromLocalVpcToRemoteClassicLink() == null) ? 0 : getAllowEgressFromLocalVpcToRemoteClassicLink().hashCode());
-        hashCode = prime * hashCode + ((getAllowDnsResolutionFromRemoteVpc() == null) ? 0 : getAllowDnsResolutionFromRemoteVpc().hashCode());
         return hashCode;
     }
 
@@ -298,4 +299,5 @@ public class VpcPeeringConnectionOptionsDescription implements Serializable, Clo
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

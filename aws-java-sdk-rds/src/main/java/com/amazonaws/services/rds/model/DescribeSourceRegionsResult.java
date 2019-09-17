@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>DescribeSourceRegions</a> action.
+ * Contains the result of a successful invocation of the <code>DescribeSourceRegions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions" target="_top">AWS API
@@ -35,7 +35,7 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
     private String marker;
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get a Read
      * Replica or a DB snapshot from.
      * </p>
      */
@@ -89,12 +89,12 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get a Read
      * Replica or a DB snapshot from.
      * </p>
      * 
-     * @return A list of SourceRegion instances that contains each source AWS Region that the current region can get a
-     *         Read Replica or a DB snapshot from.
+     * @return A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get
+     *         a Read Replica or a DB snapshot from.
      */
 
     public java.util.List<SourceRegion> getSourceRegions() {
@@ -106,13 +106,13 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get a Read
      * Replica or a DB snapshot from.
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
-     *        Read Replica or a DB snapshot from.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get
+     *        a Read Replica or a DB snapshot from.
      */
 
     public void setSourceRegions(java.util.Collection<SourceRegion> sourceRegions) {
@@ -126,7 +126,7 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get a Read
      * Replica or a DB snapshot from.
      * </p>
      * <p>
@@ -136,8 +136,8 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
-     *        Read Replica or a DB snapshot from.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get
+     *        a Read Replica or a DB snapshot from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,13 +153,13 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of SourceRegion instances that contains each source AWS Region that the current region can get a Read
+     * A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get a Read
      * Replica or a DB snapshot from.
      * </p>
      * 
      * @param sourceRegions
-     *        A list of SourceRegion instances that contains each source AWS Region that the current region can get a
-     *        Read Replica or a DB snapshot from.
+     *        A list of SourceRegion instances that contains each source AWS Region that the current AWS Region can get
+     *        a Read Replica or a DB snapshot from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,7 +169,8 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -226,4 +227,5 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

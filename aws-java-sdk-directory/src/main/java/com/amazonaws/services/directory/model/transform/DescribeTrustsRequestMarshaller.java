@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,82 +12,54 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTrustsRequest Marshaller
+ * DescribeTrustsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTrustsRequestMarshaller implements Marshaller<Request<DescribeTrustsRequest>, DescribeTrustsRequest> {
+@SdkInternalApi
+public class DescribeTrustsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<List> TRUSTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TrustIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeTrustsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTrustsRequestMarshaller instance = new DescribeTrustsRequestMarshaller();
+
+    public static DescribeTrustsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTrustsRequest> marshall(DescribeTrustsRequest describeTrustsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTrustsRequest describeTrustsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTrustsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTrustsRequest> request = new DefaultRequest<DescribeTrustsRequest>(describeTrustsRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.DescribeTrusts");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTrustsRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(describeTrustsRequest.getDirectoryId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> trustIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeTrustsRequest.getTrustIds();
-            if (!trustIdsList.isEmpty() || !trustIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("TrustIds");
-                jsonGenerator.writeStartArray();
-                for (String trustIdsListValue : trustIdsList) {
-                    if (trustIdsListValue != null) {
-                        jsonGenerator.writeValue(trustIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeTrustsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeTrustsRequest.getNextToken());
-            }
-            if (describeTrustsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeTrustsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTrustsRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(describeTrustsRequest.getTrustIds(), TRUSTIDS_BINDING);
+            protocolMarshaller.marshall(describeTrustsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeTrustsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

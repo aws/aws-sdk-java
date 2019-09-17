@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,16 @@ public class CustomOriginConfigStaxUnmarshaller implements Unmarshaller<CustomOr
 
                 if (context.testExpression("OriginSslProtocols", targetDepth)) {
                     customOriginConfig.setOriginSslProtocols(OriginSslProtocolsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginReadTimeout", targetDepth)) {
+                    customOriginConfig.setOriginReadTimeout(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginKeepaliveTimeout", targetDepth)) {
+                    customOriginConfig.setOriginKeepaliveTimeout(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

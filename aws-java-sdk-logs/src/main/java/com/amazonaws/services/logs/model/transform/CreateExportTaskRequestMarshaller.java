@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,82 +12,62 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateExportTaskRequest Marshaller
+ * CreateExportTaskRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateExportTaskRequestMarshaller implements Marshaller<Request<CreateExportTaskRequest>, CreateExportTaskRequest> {
+@SdkInternalApi
+public class CreateExportTaskRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskName").build();
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> LOGSTREAMNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamNamePrefix").build();
+    private static final MarshallingInfo<Long> FROM_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("from").build();
+    private static final MarshallingInfo<Long> TO_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("to").build();
+    private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<String> DESTINATIONPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationPrefix").build();
 
-    public CreateExportTaskRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateExportTaskRequestMarshaller instance = new CreateExportTaskRequestMarshaller();
+
+    public static CreateExportTaskRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateExportTaskRequest> marshall(CreateExportTaskRequest createExportTaskRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateExportTaskRequest createExportTaskRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createExportTaskRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateExportTaskRequest> request = new DefaultRequest<CreateExportTaskRequest>(createExportTaskRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.CreateExportTask");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createExportTaskRequest.getTaskName() != null) {
-                jsonGenerator.writeFieldName("taskName").writeValue(createExportTaskRequest.getTaskName());
-            }
-            if (createExportTaskRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(createExportTaskRequest.getLogGroupName());
-            }
-            if (createExportTaskRequest.getLogStreamNamePrefix() != null) {
-                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(createExportTaskRequest.getLogStreamNamePrefix());
-            }
-            if (createExportTaskRequest.getFrom() != null) {
-                jsonGenerator.writeFieldName("from").writeValue(createExportTaskRequest.getFrom());
-            }
-            if (createExportTaskRequest.getTo() != null) {
-                jsonGenerator.writeFieldName("to").writeValue(createExportTaskRequest.getTo());
-            }
-            if (createExportTaskRequest.getDestination() != null) {
-                jsonGenerator.writeFieldName("destination").writeValue(createExportTaskRequest.getDestination());
-            }
-            if (createExportTaskRequest.getDestinationPrefix() != null) {
-                jsonGenerator.writeFieldName("destinationPrefix").writeValue(createExportTaskRequest.getDestinationPrefix());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createExportTaskRequest.getTaskName(), TASKNAME_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getLogStreamNamePrefix(), LOGSTREAMNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getFrom(), FROM_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getTo(), TO_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(createExportTaskRequest.getDestinationPrefix(), DESTINATIONPREFIX_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

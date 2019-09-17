@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,11 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    updateEnvironmentResult.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TemplateName", targetDepth)) {
                     updateEnvironmentResult.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -91,12 +96,12 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                 }
 
                 if (context.testExpression("DateCreated", targetDepth)) {
-                    updateEnvironmentResult.setDateCreated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateEnvironmentResult.setDateCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DateUpdated", targetDepth)) {
-                    updateEnvironmentResult.setDateUpdated(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    updateEnvironmentResult.setDateUpdated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -140,6 +145,10 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    updateEnvironmentResult.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return updateEnvironmentResult;

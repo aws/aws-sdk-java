@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,97 +12,66 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateCustomActionTypeRequest Marshaller
+ * CreateCustomActionTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateCustomActionTypeRequestMarshaller implements Marshaller<Request<CreateCustomActionTypeRequest>, CreateCustomActionTypeRequest> {
+@SdkInternalApi
+public class CreateCustomActionTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("category").build();
+    private static final MarshallingInfo<String> PROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("provider").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
+    private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<List> CONFIGURATIONPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationProperties").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTARTIFACTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputArtifactDetails").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTARTIFACTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputArtifactDetails").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public CreateCustomActionTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateCustomActionTypeRequestMarshaller instance = new CreateCustomActionTypeRequestMarshaller();
+
+    public static CreateCustomActionTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateCustomActionTypeRequest> marshall(CreateCustomActionTypeRequest createCustomActionTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateCustomActionTypeRequest createCustomActionTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createCustomActionTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateCustomActionTypeRequest> request = new DefaultRequest<CreateCustomActionTypeRequest>(createCustomActionTypeRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.CreateCustomActionType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createCustomActionTypeRequest.getCategory() != null) {
-                jsonGenerator.writeFieldName("category").writeValue(createCustomActionTypeRequest.getCategory());
-            }
-            if (createCustomActionTypeRequest.getProvider() != null) {
-                jsonGenerator.writeFieldName("provider").writeValue(createCustomActionTypeRequest.getProvider());
-            }
-            if (createCustomActionTypeRequest.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(createCustomActionTypeRequest.getVersion());
-            }
-            if (createCustomActionTypeRequest.getSettings() != null) {
-                jsonGenerator.writeFieldName("settings");
-                ActionTypeSettingsJsonMarshaller.getInstance().marshall(createCustomActionTypeRequest.getSettings(), jsonGenerator);
-            }
-
-            java.util.List<ActionConfigurationProperty> configurationPropertiesList = createCustomActionTypeRequest.getConfigurationProperties();
-            if (configurationPropertiesList != null) {
-                jsonGenerator.writeFieldName("configurationProperties");
-                jsonGenerator.writeStartArray();
-                for (ActionConfigurationProperty configurationPropertiesListValue : configurationPropertiesList) {
-                    if (configurationPropertiesListValue != null) {
-
-                        ActionConfigurationPropertyJsonMarshaller.getInstance().marshall(configurationPropertiesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createCustomActionTypeRequest.getInputArtifactDetails() != null) {
-                jsonGenerator.writeFieldName("inputArtifactDetails");
-                ArtifactDetailsJsonMarshaller.getInstance().marshall(createCustomActionTypeRequest.getInputArtifactDetails(), jsonGenerator);
-            }
-            if (createCustomActionTypeRequest.getOutputArtifactDetails() != null) {
-                jsonGenerator.writeFieldName("outputArtifactDetails");
-                ArtifactDetailsJsonMarshaller.getInstance().marshall(createCustomActionTypeRequest.getOutputArtifactDetails(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getProvider(), PROVIDER_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getConfigurationProperties(), CONFIGURATIONPROPERTIES_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getInputArtifactDetails(), INPUTARTIFACTDETAILS_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getOutputArtifactDetails(), OUTPUTARTIFACTDETAILS_BINDING);
+            protocolMarshaller.marshall(createCustomActionTypeRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

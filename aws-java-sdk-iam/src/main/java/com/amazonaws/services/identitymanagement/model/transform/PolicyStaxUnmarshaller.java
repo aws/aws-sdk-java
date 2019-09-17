@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,11 @@ public class PolicyStaxUnmarshaller implements Unmarshaller<Policy, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundaryUsageCount", targetDepth)) {
+                    policy.setPermissionsBoundaryUsageCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("IsAttachable", targetDepth)) {
                     policy.setIsAttachable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -84,12 +89,12 @@ public class PolicyStaxUnmarshaller implements Unmarshaller<Policy, StaxUnmarsha
                 }
 
                 if (context.testExpression("CreateDate", targetDepth)) {
-                    policy.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    policy.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("UpdateDate", targetDepth)) {
-                    policy.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    policy.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

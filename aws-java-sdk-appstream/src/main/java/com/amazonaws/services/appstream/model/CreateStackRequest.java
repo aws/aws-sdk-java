@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,93 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     */
+    private java.util.List<StorageConnector> storageConnectors;
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     */
+    private String feedbackURL;
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     */
+    private java.util.List<UserSetting> userSettings;
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     */
+    private ApplicationSettings applicationSettings;
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
+     * </p>
+     */
+    private java.util.List<AccessEndpoint> accessEndpoints;
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier for this stack.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -59,10 +122,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
-     * @return The unique identifier for this stack.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -71,11 +134,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier for this stack.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +149,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -99,10 +162,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
-     * @return The description displayed to end users on the AppStream 2.0 portal.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -111,11 +174,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +189,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -139,10 +202,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name to display.
      * </p>
      * 
-     * @return The name displayed to end users on the AppStream 2.0 portal.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -151,11 +214,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +228,526 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @return The storage connectors to enable.
+     */
+
+    public java.util.List<StorageConnector> getStorageConnectors() {
+        return storageConnectors;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     */
+
+    public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        if (storageConnectors == null) {
+            this.storageConnectors = null;
+            return;
+        }
+
+        this.storageConnectors = new java.util.ArrayList<StorageConnector>(storageConnectors);
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorageConnectors(java.util.Collection)} or {@link #withStorageConnectors(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withStorageConnectors(StorageConnector... storageConnectors) {
+        if (this.storageConnectors == null) {
+            setStorageConnectors(new java.util.ArrayList<StorageConnector>(storageConnectors.length));
+        }
+        for (StorageConnector ele : storageConnectors) {
+            this.storageConnectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to enable.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to enable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        setStorageConnectors(storageConnectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL that users are redirected to after their streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @return The URL that users are redirected to after their streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after their streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL that users are redirected to after their streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @param feedbackURL
+     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        Send Feedback link is displayed.
+     */
+
+    public void setFeedbackURL(String feedbackURL) {
+        this.feedbackURL = feedbackURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *         Send Feedback link is displayed.
+     */
+
+    public String getFeedbackURL() {
+        return this.feedbackURL;
+    }
+
+    /**
+     * <p>
+     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * Feedback link is displayed.
+     * </p>
+     * 
+     * @param feedbackURL
+     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        Send Feedback link is displayed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withFeedbackURL(String feedbackURL) {
+        setFeedbackURL(feedbackURL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @return The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *         actions are enabled.
+     */
+
+    public java.util.List<UserSetting> getUserSettings() {
+        return userSettings;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     */
+
+    public void setUserSettings(java.util.Collection<UserSetting> userSettings) {
+        if (userSettings == null) {
+            this.userSettings = null;
+            return;
+        }
+
+        this.userSettings = new java.util.ArrayList<UserSetting>(userSettings);
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserSettings(java.util.Collection)} or {@link #withUserSettings(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(UserSetting... userSettings) {
+        if (this.userSettings == null) {
+            setUserSettings(new java.util.ArrayList<UserSetting>(userSettings.length));
+        }
+        for (UserSetting ele : userSettings) {
+            this.userSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(java.util.Collection<UserSetting> userSettings) {
+        setUserSettings(userSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *        users make to applications and Windows settings are automatically saved after each session and applied to
+     *        the next session.
+     */
+
+    public void setApplicationSettings(ApplicationSettings applicationSettings) {
+        this.applicationSettings = applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @return The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *         users make to applications and Windows settings are automatically saved after each session and applied to
+     *         the next session.
+     */
+
+    public ApplicationSettings getApplicationSettings() {
+        return this.applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *        users make to applications and Windows settings are automatically saved after each session and applied to
+     *        the next session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withApplicationSettings(ApplicationSettings applicationSettings) {
+        setApplicationSettings(applicationSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     * 
+     * @return The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *         Environment=Test. If you do not specify a value, Environment=. </p>
+     *         <p>
+     *         If you do not specify a value, the value is set to an empty string.
+     *         </p>
+     *         <p>
+     *         Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *         special characters:
+     *         </p>
+     *         <p>
+     *         _ . : / = + \ - @
+     *         </p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special
+     * characters:
+     * </p>
+     * <p>
+     * _ . : / = + \ - @
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following
+     *        special characters:
+     *        </p>
+     *        <p>
+     *        _ . : / = + \ - @
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStackRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
+     * </p>
+     * 
+     * @return The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
+     *         AppStream 2.0 only through the specified endpoints.
+     */
+
+    public java.util.List<AccessEndpoint> getAccessEndpoints() {
+        return accessEndpoints;
+    }
+
+    /**
+     * <p>
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     */
+
+    public void setAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        if (accessEndpoints == null) {
+            this.accessEndpoints = null;
+            return;
+        }
+
+        this.accessEndpoints = new java.util.ArrayList<AccessEndpoint>(accessEndpoints);
+    }
+
+    /**
+     * <p>
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccessEndpoints(java.util.Collection)} or {@link #withAccessEndpoints(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withAccessEndpoints(AccessEndpoint... accessEndpoints) {
+        if (this.accessEndpoints == null) {
+            setAccessEndpoints(new java.util.ArrayList<AccessEndpoint>(accessEndpoints.length));
+        }
+        for (AccessEndpoint ele : accessEndpoints) {
+            this.accessEndpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        setAccessEndpoints(accessEndpoints);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,7 +762,21 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getStorageConnectors() != null)
+            sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
+        if (getFeedbackURL() != null)
+            sb.append("FeedbackURL: ").append(getFeedbackURL()).append(",");
+        if (getUserSettings() != null)
+            sb.append("UserSettings: ").append(getUserSettings()).append(",");
+        if (getApplicationSettings() != null)
+            sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAccessEndpoints() != null)
+            sb.append("AccessEndpoints: ").append(getAccessEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +803,34 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getStorageConnectors() == null ^ this.getStorageConnectors() == null)
+            return false;
+        if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
+            return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
+        if (other.getFeedbackURL() == null ^ this.getFeedbackURL() == null)
+            return false;
+        if (other.getFeedbackURL() != null && other.getFeedbackURL().equals(this.getFeedbackURL()) == false)
+            return false;
+        if (other.getUserSettings() == null ^ this.getUserSettings() == null)
+            return false;
+        if (other.getUserSettings() != null && other.getUserSettings().equals(this.getUserSettings()) == false)
+            return false;
+        if (other.getApplicationSettings() == null ^ this.getApplicationSettings() == null)
+            return false;
+        if (other.getApplicationSettings() != null && other.getApplicationSettings().equals(this.getApplicationSettings()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getAccessEndpoints() == null ^ this.getAccessEndpoints() == null)
+            return false;
+        if (other.getAccessEndpoints() != null && other.getAccessEndpoints().equals(this.getAccessEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +842,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
+        hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
+        hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
         return hashCode;
     }
 

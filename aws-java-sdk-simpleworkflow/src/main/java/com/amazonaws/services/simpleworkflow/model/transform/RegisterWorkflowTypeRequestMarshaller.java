@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,93 +12,71 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterWorkflowTypeRequest Marshaller
+ * RegisterWorkflowTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterWorkflowTypeRequestMarshaller implements Marshaller<Request<RegisterWorkflowTypeRequest>, RegisterWorkflowTypeRequest> {
+@SdkInternalApi
+public class RegisterWorkflowTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DEFAULTTASKSTARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskStartToCloseTimeout").build();
+    private static final MarshallingInfo<String> DEFAULTEXECUTIONSTARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultExecutionStartToCloseTimeout").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTTASKLIST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskList").build();
+    private static final MarshallingInfo<String> DEFAULTTASKPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTaskPriority").build();
+    private static final MarshallingInfo<String> DEFAULTCHILDPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultChildPolicy").build();
+    private static final MarshallingInfo<String> DEFAULTLAMBDAROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultLambdaRole").build();
 
-    public RegisterWorkflowTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterWorkflowTypeRequestMarshaller instance = new RegisterWorkflowTypeRequestMarshaller();
+
+    public static RegisterWorkflowTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterWorkflowTypeRequest> marshall(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterWorkflowTypeRequest registerWorkflowTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerWorkflowTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterWorkflowTypeRequest> request = new DefaultRequest<RegisterWorkflowTypeRequest>(registerWorkflowTypeRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RegisterWorkflowType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerWorkflowTypeRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(registerWorkflowTypeRequest.getDomain());
-            }
-            if (registerWorkflowTypeRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(registerWorkflowTypeRequest.getName());
-            }
-            if (registerWorkflowTypeRequest.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(registerWorkflowTypeRequest.getVersion());
-            }
-            if (registerWorkflowTypeRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(registerWorkflowTypeRequest.getDescription());
-            }
-            if (registerWorkflowTypeRequest.getDefaultTaskStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultTaskStartToCloseTimeout").writeValue(registerWorkflowTypeRequest.getDefaultTaskStartToCloseTimeout());
-            }
-            if (registerWorkflowTypeRequest.getDefaultExecutionStartToCloseTimeout() != null) {
-                jsonGenerator.writeFieldName("defaultExecutionStartToCloseTimeout").writeValue(
-                        registerWorkflowTypeRequest.getDefaultExecutionStartToCloseTimeout());
-            }
-            if (registerWorkflowTypeRequest.getDefaultTaskList() != null) {
-                jsonGenerator.writeFieldName("defaultTaskList");
-                TaskListJsonMarshaller.getInstance().marshall(registerWorkflowTypeRequest.getDefaultTaskList(), jsonGenerator);
-            }
-            if (registerWorkflowTypeRequest.getDefaultTaskPriority() != null) {
-                jsonGenerator.writeFieldName("defaultTaskPriority").writeValue(registerWorkflowTypeRequest.getDefaultTaskPriority());
-            }
-            if (registerWorkflowTypeRequest.getDefaultChildPolicy() != null) {
-                jsonGenerator.writeFieldName("defaultChildPolicy").writeValue(registerWorkflowTypeRequest.getDefaultChildPolicy());
-            }
-            if (registerWorkflowTypeRequest.getDefaultLambdaRole() != null) {
-                jsonGenerator.writeFieldName("defaultLambdaRole").writeValue(registerWorkflowTypeRequest.getDefaultLambdaRole());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultTaskStartToCloseTimeout(), DEFAULTTASKSTARTTOCLOSETIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultExecutionStartToCloseTimeout(), DEFAULTEXECUTIONSTARTTOCLOSETIMEOUT_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultTaskList(), DEFAULTTASKLIST_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultTaskPriority(), DEFAULTTASKPRIORITY_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultChildPolicy(), DEFAULTCHILDPOLICY_BINDING);
+            protocolMarshaller.marshall(registerWorkflowTypeRequest.getDefaultLambdaRole(), DEFAULTLAMBDAROLE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,11 @@ public class TimeRangeJsonUnmarshaller implements Unmarshaller<TimeRange, JsonUn
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("FromInclusive", targetDepth)) {
                     context.nextToken();
-                    timeRange.setFromInclusive(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timeRange.setFromInclusive(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ToExclusive", targetDepth)) {
                     context.nextToken();
-                    timeRange.setToExclusive(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timeRange.setToExclusive(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
-     * @return The failed requests.
+     * @return Information about the WorkSpaces that could not be started.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -47,11 +47,11 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -65,7 +65,7 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +104,8 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -154,4 +155,5 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

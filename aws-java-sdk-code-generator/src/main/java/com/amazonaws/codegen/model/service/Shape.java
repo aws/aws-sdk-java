@@ -41,6 +41,8 @@ public class Shape {
 
     private boolean streaming;
 
+    private boolean requiresLength;
+
     private boolean wrapper;
 
     private Member listMember;
@@ -63,6 +65,10 @@ public class Shape {
     private boolean fault;
 
     private boolean deprecated;
+
+    private boolean sensitive;
+
+    private String timestampFormat;
 
     public boolean isFault() {
         return fault;
@@ -196,6 +202,14 @@ public class Shape {
         this.streaming = streaming;
     }
 
+    public boolean isRequiresLength() {
+        return requiresLength;
+    }
+
+    public void setRequiresLength(boolean requiresLength) {
+        this.requiresLength = requiresLength;
+    }
+
     public boolean isWrapper() {
         return wrapper;
     }
@@ -218,5 +232,21 @@ public class Shape {
 
     public void setDeprecated(boolean deprecated) {
         this.deprecated = deprecated;
+    }
+
+    public boolean isSensitive() {
+        return sensitive;
+    }
+
+    public void setSensitive(boolean sensitive) {
+        this.sensitive = sensitive;
+    }
+
+    public String getTimestampFormat() {
+        return timestampFormat;
+    }
+
+    public void setTimestampFormat(String timestampFormat) {
+        this.timestampFormat = timestampFormat;
     }
 }

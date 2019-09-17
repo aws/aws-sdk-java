@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified service is not active. You cannot update a service that is not active. If you have previously deleted a
+ * The specified service is not active. You can't update a service that is inactive. If you have previously deleted a
  * service, you can re-create it with <a>CreateService</a>.
  * </p>
  */

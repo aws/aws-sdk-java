@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StreamDescription implements Serializable, Cloneable {
+public class StreamDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -37,7 +39,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -54,7 +56,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -202,7 +204,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -219,7 +221,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -227,9 +229,9 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamLabel
      *        A timestamp, in ISO 8601 format, for this stream.</p>
      *        <p>
-     *        Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *        a stream from another table might have the same timestamp. However, the combination of the following three
-     *        elements is guaranteed to be unique:
+     *        Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible
+     *        that a stream from another table might have the same timestamp. However, the combination of the following
+     *        three elements is guaranteed to be unique:
      *        </p>
      *        <ul>
      *        <li>
@@ -244,7 +246,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        the <i>StreamLabel</i>
+     *        the <code>StreamLabel</code>
      *        </p>
      *        </li>
      */
@@ -258,7 +260,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -275,16 +277,16 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @return A timestamp, in ISO 8601 format, for this stream.</p>
      *         <p>
-     *         Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *         a stream from another table might have the same timestamp. However, the combination of the following
-     *         three elements is guaranteed to be unique:
+     *         Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is
+     *         possible that a stream from another table might have the same timestamp. However, the combination of the
+     *         following three elements is guaranteed to be unique:
      *         </p>
      *         <ul>
      *         <li>
@@ -299,7 +301,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         the <i>StreamLabel</i>
+     *         the <code>StreamLabel</code>
      *         </p>
      *         </li>
      */
@@ -313,7 +315,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * A timestamp, in ISO 8601 format, for this stream.
      * </p>
      * <p>
-     * Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that a
+     * Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a
      * stream from another table might have the same timestamp. However, the combination of the following three elements
      * is guaranteed to be unique:
      * </p>
@@ -330,7 +332,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * the <i>StreamLabel</i>
+     * the <code>StreamLabel</code>
      * </p>
      * </li>
      * </ul>
@@ -338,9 +340,9 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamLabel
      *        A timestamp, in ISO 8601 format, for this stream.</p>
      *        <p>
-     *        Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it is possible that
-     *        a stream from another table might have the same timestamp. However, the combination of the following three
-     *        elements is guaranteed to be unique:
+     *        Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible
+     *        that a stream from another table might have the same timestamp. However, the combination of the following
+     *        three elements is guaranteed to be unique:
      *        </p>
      *        <ul>
      *        <li>
@@ -355,7 +357,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        the <i>StreamLabel</i>
+     *        the <code>StreamLabel</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -592,7 +594,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public void setStreamStatus(StreamStatus streamStatus) {
-        this.streamStatus = streamStatus.toString();
+        withStreamStatus(streamStatus);
     }
 
     /**
@@ -650,7 +652,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
-        setStreamStatus(streamStatus);
+        this.streamStatus = streamStatus.toString();
         return this;
     }
 
@@ -880,7 +882,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public void setStreamViewType(StreamViewType streamViewType) {
-        this.streamViewType = streamViewType.toString();
+        withStreamViewType(streamViewType);
     }
 
     /**
@@ -938,7 +940,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public StreamDescription withStreamViewType(StreamViewType streamViewType) {
-        setStreamViewType(streamViewType);
+        this.streamViewType = streamViewType.toString();
         return this;
     }
 
@@ -1260,7 +1262,8 @@ public class StreamDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1365,5 +1368,11 @@ public class StreamDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.StreamDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

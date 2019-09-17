@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/App" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class App implements Serializable, Cloneable {
+public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -109,15 +111,15 @@ public class App implements Serializable, Cloneable {
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instances. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <note>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variable names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
-     * exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     * structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API)
+     * with an "Environment: is too large (maximum is 20 KB)" message.
      * </p>
      * </note>
      */
@@ -450,7 +452,7 @@ public class App implements Serializable, Cloneable {
      */
 
     public void setType(AppType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -465,7 +467,7 @@ public class App implements Serializable, Cloneable {
      */
 
     public App withType(AppType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -791,28 +793,28 @@ public class App implements Serializable, Cloneable {
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instances. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <note>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variable names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
-     * exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     * structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API)
+     * with an "Environment: is too large (maximum is 20 KB)" message.
      * </p>
      * </note>
      * 
      * @return An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *         with the app. After you deploy the app, these variables are defined on the associated app server
      *         instances. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *         "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *         > Environment Variables</a>. </p> <note>
      *         <p>
      *         There is no specific limit on the number of environment variables. However, the size of the associated
-     *         data structure - which includes the variable names, values, and protected flag values - cannot exceed 10
-     *         KB (10240 Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you
-     *         will cause an exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     *         data structure - which includes the variable names, values, and protected flag values - cannot exceed 20
+     *         KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
+     *         exception (API) with an "Environment: is too large (maximum is 20 KB)" message.
      *         </p>
      */
 
@@ -828,15 +830,15 @@ public class App implements Serializable, Cloneable {
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instances. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <note>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variable names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
-     * exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     * structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API)
+     * with an "Environment: is too large (maximum is 20 KB)" message.
      * </p>
      * </note>
      * 
@@ -844,13 +846,13 @@ public class App implements Serializable, Cloneable {
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server
      *        instances. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>. </p> <note>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you
-     *        will cause an exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
+     *        exception (API) with an "Environment: is too large (maximum is 20 KB)" message.
      *        </p>
      */
 
@@ -868,15 +870,15 @@ public class App implements Serializable, Cloneable {
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instances. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <note>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variable names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
-     * exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     * structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API)
+     * with an "Environment: is too large (maximum is 20 KB)" message.
      * </p>
      * </note>
      * <p>
@@ -889,13 +891,13 @@ public class App implements Serializable, Cloneable {
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server
      *        instances. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>. </p> <note>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you
-     *        will cause an exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
+     *        exception (API) with an "Environment: is too large (maximum is 20 KB)" message.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -915,15 +917,15 @@ public class App implements Serializable, Cloneable {
      * An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the
      * app. After you deploy the app, these variables are defined on the associated app server instances. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     * "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      * > Environment Variables</a>.
      * </p>
      * <note>
      * <p>
      * There is no specific limit on the number of environment variables. However, the size of the associated data
-     * structure - which includes the variable names, values, and protected flag values - cannot exceed 10 KB (10240
-     * Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
-     * exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     * structure - which includes the variable names, values, and protected flag values - cannot exceed 20 KB. This
+     * limit should accommodate most if not all use cases, but if you do exceed it, you will cause an exception (API)
+     * with an "Environment: is too large (maximum is 20 KB)" message.
      * </p>
      * </note>
      * 
@@ -931,13 +933,13 @@ public class App implements Serializable, Cloneable {
      *        An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated
      *        with the app. After you deploy the app, these variables are defined on the associated app server
      *        instances. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
+     *        "https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"
      *        > Environment Variables</a>. </p> <note>
      *        <p>
      *        There is no specific limit on the number of environment variables. However, the size of the associated
-     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 10
-     *        KB (10240 Bytes). This limit should accommodate most if not all use cases, but if you do exceed it, you
-     *        will cause an exception (API) with an "Environment: is too large (maximum is 10KB)" message.
+     *        data structure - which includes the variable names, values, and protected flag values - cannot exceed 20
+     *        KB. This limit should accommodate most if not all use cases, but if you do exceed it, you will cause an
+     *        exception (API) with an "Environment: is too large (maximum is 20 KB)" message.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -948,7 +950,8 @@ public class App implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1088,5 +1091,11 @@ public class App implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.AppMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

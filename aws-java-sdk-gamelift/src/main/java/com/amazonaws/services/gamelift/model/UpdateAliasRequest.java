@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String aliasId;
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
@@ -48,7 +48,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      */
     private RoutingStrategy routingStrategy;
@@ -95,11 +95,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -108,10 +108,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -120,11 +120,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
      * @param routingStrategy
-     *        Object specifying the fleet and routing type to use for the alias.
+     *        Object that specifies the fleet and routing type to use for the alias.
      */
 
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
@@ -188,10 +188,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
-     * @return Object specifying the fleet and routing type to use for the alias.
+     * @return Object that specifies the fleet and routing type to use for the alias.
      */
 
     public RoutingStrategy getRoutingStrategy() {
@@ -200,11 +200,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
      * @param routingStrategy
-     *        Object specifying the fleet and routing type to use for the alias.
+     *        Object that specifies the fleet and routing type to use for the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,7 +214,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

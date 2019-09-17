@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Date endTime;
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      */
     private Integer maxResults;
@@ -230,11 +230,11 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        The number of events to return. Possible values are 1 through 50. The default is 10.
+     *        The number of events to return. Possible values are 1 through 50. The default is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -243,10 +243,10 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
-     * @return The number of events to return. Possible values are 1 through 50. The default is 10.
+     * @return The number of events to return. Possible values are 1 through 50. The default is 50.
      */
 
     public Integer getMaxResults() {
@@ -255,11 +255,11 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The number of events to return. Possible values are 1 through 50. The default is 10.
+     * The number of events to return. Possible values are 1 through 50. The default is 50.
      * </p>
      * 
      * @param maxResults
-     *        The number of events to return. Possible values are 1 through 50. The default is 10.
+     *        The number of events to return. Possible values are 1 through 50. The default is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,7 +324,8 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

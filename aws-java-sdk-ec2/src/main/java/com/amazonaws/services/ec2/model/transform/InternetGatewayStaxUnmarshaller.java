@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,11 +45,6 @@ public class InternetGatewayStaxUnmarshaller implements Unmarshaller<InternetGat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("internetGatewayId", targetDepth)) {
-                    internetGateway.setInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("attachmentSet", targetDepth)) {
                     internetGateway.withAttachments(new ArrayList<InternetGatewayAttachment>());
                     continue;
@@ -57,6 +52,16 @@ public class InternetGatewayStaxUnmarshaller implements Unmarshaller<InternetGat
 
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
                     internetGateway.withAttachments(InternetGatewayAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("internetGatewayId", targetDepth)) {
+                    internetGateway.setInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    internetGateway.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

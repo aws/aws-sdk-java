@@ -18,8 +18,10 @@ public class ${metadata.asyncAbstractClass} extends ${metadata.syncAbstractClass
     protected ${metadata.asyncAbstractClass}() {
     }
   <#list operations?values as operationModel>
-    <@AsyncClientMethodForUnsupportedOperation.content operationModel />
-    <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@AsyncClientMethodForUnsupportedOperation.content operationModel />
+        <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalClientMethodsMacro?has_content>

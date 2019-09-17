@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ElasticsearchClusterConfig implements Serializable, Cloneable {
+public class ElasticsearchClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,6 +53,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * </p>
      */
     private Boolean zoneAwarenessEnabled;
+    /**
+     * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     */
+    private ZoneAwarenessConfig zoneAwarenessConfig;
     /**
      * <p>
      * The instance type for a dedicated master node.
@@ -118,7 +126,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      */
 
     public void setInstanceType(ESPartitionInstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -133,7 +141,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      */
 
     public ElasticsearchClusterConfig withInstanceType(ESPartitionInstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -315,6 +323,46 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @param zoneAwarenessConfig
+     *        Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     */
+
+    public void setZoneAwarenessConfig(ZoneAwarenessConfig zoneAwarenessConfig) {
+        this.zoneAwarenessConfig = zoneAwarenessConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @return Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     */
+
+    public ZoneAwarenessConfig getZoneAwarenessConfig() {
+        return this.zoneAwarenessConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @param zoneAwarenessConfig
+     *        Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchClusterConfig withZoneAwarenessConfig(ZoneAwarenessConfig zoneAwarenessConfig) {
+        setZoneAwarenessConfig(zoneAwarenessConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The instance type for a dedicated master node.
      * </p>
      * 
@@ -367,7 +415,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      */
 
     public void setDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
-        this.dedicatedMasterType = dedicatedMasterType.toString();
+        withDedicatedMasterType(dedicatedMasterType);
     }
 
     /**
@@ -382,7 +430,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      */
 
     public ElasticsearchClusterConfig withDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
-        setDedicatedMasterType(dedicatedMasterType);
+        this.dedicatedMasterType = dedicatedMasterType.toString();
         return this;
     }
 
@@ -427,7 +475,8 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -445,6 +494,8 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
             sb.append("DedicatedMasterEnabled: ").append(getDedicatedMasterEnabled()).append(",");
         if (getZoneAwarenessEnabled() != null)
             sb.append("ZoneAwarenessEnabled: ").append(getZoneAwarenessEnabled()).append(",");
+        if (getZoneAwarenessConfig() != null)
+            sb.append("ZoneAwarenessConfig: ").append(getZoneAwarenessConfig()).append(",");
         if (getDedicatedMasterType() != null)
             sb.append("DedicatedMasterType: ").append(getDedicatedMasterType()).append(",");
         if (getDedicatedMasterCount() != null)
@@ -479,6 +530,10 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
             return false;
         if (other.getZoneAwarenessEnabled() != null && other.getZoneAwarenessEnabled().equals(this.getZoneAwarenessEnabled()) == false)
             return false;
+        if (other.getZoneAwarenessConfig() == null ^ this.getZoneAwarenessConfig() == null)
+            return false;
+        if (other.getZoneAwarenessConfig() != null && other.getZoneAwarenessConfig().equals(this.getZoneAwarenessConfig()) == false)
+            return false;
         if (other.getDedicatedMasterType() == null ^ this.getDedicatedMasterType() == null)
             return false;
         if (other.getDedicatedMasterType() != null && other.getDedicatedMasterType().equals(this.getDedicatedMasterType()) == false)
@@ -499,6 +554,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterEnabled() == null) ? 0 : getDedicatedMasterEnabled().hashCode());
         hashCode = prime * hashCode + ((getZoneAwarenessEnabled() == null) ? 0 : getZoneAwarenessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getZoneAwarenessConfig() == null) ? 0 : getZoneAwarenessConfig().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterType() == null) ? 0 : getDedicatedMasterType().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterCount() == null) ? 0 : getDedicatedMasterCount().hashCode());
         return hashCode;
@@ -511,5 +567,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticsearch.model.transform.ElasticsearchClusterConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

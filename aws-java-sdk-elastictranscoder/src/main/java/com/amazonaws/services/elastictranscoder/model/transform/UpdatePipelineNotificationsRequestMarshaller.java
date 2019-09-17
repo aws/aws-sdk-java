@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,47 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdatePipelineNotificationsRequest Marshaller
+ * UpdatePipelineNotificationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdatePipelineNotificationsRequestMarshaller implements
-        Marshaller<Request<UpdatePipelineNotificationsRequest>, UpdatePipelineNotificationsRequest> {
+@SdkInternalApi
+public class UpdatePipelineNotificationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Id").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Notifications").build();
 
-    public UpdatePipelineNotificationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdatePipelineNotificationsRequestMarshaller instance = new UpdatePipelineNotificationsRequestMarshaller();
+
+    public static UpdatePipelineNotificationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdatePipelineNotificationsRequest> marshall(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updatePipelineNotificationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdatePipelineNotificationsRequest> request = new DefaultRequest<UpdatePipelineNotificationsRequest>(updatePipelineNotificationsRequest,
-                "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2012-09-25/pipelines/{Id}/notifications";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updatePipelineNotificationsRequest.getId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updatePipelineNotificationsRequest.getNotifications() != null) {
-                jsonGenerator.writeFieldName("Notifications");
-                NotificationsJsonMarshaller.getInstance().marshall(updatePipelineNotificationsRequest.getNotifications(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updatePipelineNotificationsRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(updatePipelineNotificationsRequest.getNotifications(), NOTIFICATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

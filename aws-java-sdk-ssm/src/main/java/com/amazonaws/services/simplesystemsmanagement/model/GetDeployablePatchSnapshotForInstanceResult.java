@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,13 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
      * </p>
      */
     private String snapshotDownloadUrl;
+    /**
+     * <p>
+     * Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the instance
+     * for the specified patch snapshot.
+     * </p>
+     */
+    private String product;
 
     /**
      * <p>
@@ -164,7 +171,54 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the instance
+     * for the specified patch snapshot.
+     * </p>
+     * 
+     * @param product
+     *        Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the
+     *        instance for the specified patch snapshot.
+     */
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    /**
+     * <p>
+     * Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the instance
+     * for the specified patch snapshot.
+     * </p>
+     * 
+     * @return Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the
+     *         instance for the specified patch snapshot.
+     */
+
+    public String getProduct() {
+        return this.product;
+    }
+
+    /**
+     * <p>
+     * Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the instance
+     * for the specified patch snapshot.
+     * </p>
+     * 
+     * @param product
+     *        Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the
+     *        instance for the specified patch snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeployablePatchSnapshotForInstanceResult withProduct(String product) {
+        setProduct(product);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,7 +233,9 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getSnapshotDownloadUrl() != null)
-            sb.append("SnapshotDownloadUrl: ").append(getSnapshotDownloadUrl());
+            sb.append("SnapshotDownloadUrl: ").append(getSnapshotDownloadUrl()).append(",");
+        if (getProduct() != null)
+            sb.append("Product: ").append(getProduct());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +262,10 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
             return false;
         if (other.getSnapshotDownloadUrl() != null && other.getSnapshotDownloadUrl().equals(this.getSnapshotDownloadUrl()) == false)
             return false;
+        if (other.getProduct() == null ^ this.getProduct() == null)
+            return false;
+        if (other.getProduct() != null && other.getProduct().equals(this.getProduct()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +277,7 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotDownloadUrl() == null) ? 0 : getSnapshotDownloadUrl().hashCode());
+        hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
         return hashCode;
     }
 
@@ -228,4 +289,5 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,10 @@ public class MultiFactorAuthentication implements Serializable {
     private String token;
 
     /**
-     * Constructs a new {@link MultiFactorAuthentication} object for use in any 
-     * Amazonn S3
+     * Constructs a new {@link MultiFactorAuthentication} object for use in any
+     * Amazon S3
      * operation that accepts requests with Multi-Factor Authentication (MFA).
-     * 
+     *
      * @param deviceSerialNumber
      *            The serial number identifying the MFA device associated with
      *            the caller's AWS account.

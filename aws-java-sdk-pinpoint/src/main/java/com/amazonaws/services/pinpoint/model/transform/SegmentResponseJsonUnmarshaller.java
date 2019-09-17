@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class SegmentResponseJsonUnmarshaller implements Unmarshaller<SegmentResp
                     context.nextToken();
                     segmentResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    segmentResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     segmentResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -76,9 +80,18 @@ public class SegmentResponseJsonUnmarshaller implements Unmarshaller<SegmentResp
                     context.nextToken();
                     segmentResponse.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SegmentGroups", targetDepth)) {
+                    context.nextToken();
+                    segmentResponse.setSegmentGroups(SegmentGroupListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SegmentType", targetDepth)) {
                     context.nextToken();
                     segmentResponse.setSegmentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    segmentResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

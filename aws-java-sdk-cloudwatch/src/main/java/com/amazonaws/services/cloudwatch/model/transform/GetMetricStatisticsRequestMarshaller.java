@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
             request.addParameter("MetricName", StringUtils.fromString(getMetricStatisticsRequest.getMetricName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) getMetricStatisticsRequest
-                .getDimensions();
-        if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+        if (!getMetricStatisticsRequest.getDimensions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Dimension>) getMetricStatisticsRequest.getDimensions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) getMetricStatisticsRequest
+                    .getDimensions();
             int dimensionsListIndex = 1;
 
             for (Dimension dimensionsListValue : dimensionsList) {
@@ -78,9 +79,10 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
             request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> statisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
-                .getStatistics();
-        if (!statisticsList.isEmpty() || !statisticsList.isAutoConstruct()) {
+        if (!getMetricStatisticsRequest.getStatistics().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest.getStatistics()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> statisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
+                    .getStatistics();
             int statisticsListIndex = 1;
 
             for (String statisticsListValue : statisticsList) {
@@ -91,9 +93,10 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> extendedStatisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
-                .getExtendedStatistics();
-        if (!extendedStatisticsList.isEmpty() || !extendedStatisticsList.isAutoConstruct()) {
+        if (!getMetricStatisticsRequest.getExtendedStatistics().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest.getExtendedStatistics()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> extendedStatisticsList = (com.amazonaws.internal.SdkInternalList<String>) getMetricStatisticsRequest
+                    .getExtendedStatistics();
             int extendedStatisticsListIndex = 1;
 
             for (String extendedStatisticsListValue : extendedStatisticsList) {

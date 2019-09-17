@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,15 +14,17 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID
+ * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID
  * that you assigned.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Face implements Serializable, Cloneable {
+public class Face implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -30,11 +32,15 @@ public class Face implements Serializable, Cloneable {
      * </p>
      */
     private String faceId;
-
+    /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     */
     private BoundingBox boundingBox;
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      */
     private String imageId;
@@ -92,7 +98,12 @@ public class Face implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -100,7 +111,11 @@ public class Face implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
+     * @return Bounding box of the face.
      */
 
     public BoundingBox getBoundingBox() {
@@ -108,7 +123,12 @@ public class Face implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +139,11 @@ public class Face implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
      * @param imageId
-     *        Unique identifier that Amazon Rekognition assigns to the source image.
+     *        Unique identifier that Amazon Rekognition assigns to the input image.
      */
 
     public void setImageId(String imageId) {
@@ -132,10 +152,10 @@ public class Face implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
-     * @return Unique identifier that Amazon Rekognition assigns to the source image.
+     * @return Unique identifier that Amazon Rekognition assigns to the input image.
      */
 
     public String getImageId() {
@@ -144,11 +164,11 @@ public class Face implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
      * @param imageId
-     *        Unique identifier that Amazon Rekognition assigns to the source image.
+     *        Unique identifier that Amazon Rekognition assigns to the input image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,7 +258,8 @@ public class Face implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -315,5 +336,11 @@ public class Face implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.FaceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

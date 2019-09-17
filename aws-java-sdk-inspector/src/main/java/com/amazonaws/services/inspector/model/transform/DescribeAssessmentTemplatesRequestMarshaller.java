@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,45 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeAssessmentTemplatesRequest Marshaller
+ * DescribeAssessmentTemplatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeAssessmentTemplatesRequestMarshaller implements
-        Marshaller<Request<DescribeAssessmentTemplatesRequest>, DescribeAssessmentTemplatesRequest> {
+@SdkInternalApi
+public class DescribeAssessmentTemplatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ASSESSMENTTEMPLATEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTemplateArns").build();
 
-    public DescribeAssessmentTemplatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeAssessmentTemplatesRequestMarshaller instance = new DescribeAssessmentTemplatesRequestMarshaller();
+
+    public static DescribeAssessmentTemplatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeAssessmentTemplatesRequest> marshall(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeAssessmentTemplatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAssessmentTemplatesRequest> request = new DefaultRequest<DescribeAssessmentTemplatesRequest>(describeAssessmentTemplatesRequest,
-                "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.DescribeAssessmentTemplates");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> assessmentTemplateArnsList = describeAssessmentTemplatesRequest.getAssessmentTemplateArns();
-            if (assessmentTemplateArnsList != null) {
-                jsonGenerator.writeFieldName("assessmentTemplateArns");
-                jsonGenerator.writeStartArray();
-                for (String assessmentTemplateArnsListValue : assessmentTemplateArnsList) {
-                    if (assessmentTemplateArnsListValue != null) {
-                        jsonGenerator.writeValue(assessmentTemplateArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeAssessmentTemplatesRequest.getAssessmentTemplateArns(), ASSESSMENTTEMPLATEARNS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

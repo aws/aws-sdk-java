@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public enum RRType {
     PTR("PTR"),
     SRV("SRV"),
     SPF("SPF"),
-    AAAA("AAAA");
+    AAAA("AAAA"),
+    CAA("CAA");
 
     private String value;
 
@@ -49,6 +50,9 @@ public enum RRType {
      * @param value
      *        real value
      * @return RRType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static RRType fromValue(String value) {
         if (value == null || "".equals(value)) {

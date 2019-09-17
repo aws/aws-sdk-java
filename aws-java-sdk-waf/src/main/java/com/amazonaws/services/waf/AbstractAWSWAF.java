@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,12 +43,37 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateGeoMatchSetResult createGeoMatchSet(CreateGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public CreateRateBasedRuleResult createRateBasedRule(CreateRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegexMatchSetResult createRegexMatchSet(CreateRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegexPatternSetResult createRegexPatternSet(CreateRegexPatternSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRuleResult createRule(CreateRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRuleGroupResult createRuleGroup(CreateRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,12 +103,47 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public DeleteGeoMatchSetResult deleteGeoMatchSet(DeleteGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRateBasedRuleResult deleteRateBasedRule(DeleteRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegexMatchSetResult deleteRegexMatchSet(DeleteRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegexPatternSetResult deleteRegexPatternSet(DeleteRegexPatternSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRuleGroupResult deleteRuleGroup(DeleteRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,12 +183,52 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public GetGeoMatchSetResult getGeoMatchSet(GetGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIPSetResult getIPSet(GetIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRateBasedRuleResult getRateBasedRule(GetRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRateBasedRuleManagedKeysResult getRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRegexMatchSetResult getRegexMatchSet(GetRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRegexPatternSetResult getRegexPatternSet(GetRegexPatternSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRuleResult getRule(GetRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRuleGroupResult getRuleGroup(GetRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,12 +258,47 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListActivatedRulesInRuleGroupResult listActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListByteMatchSetsResult listByteMatchSets(ListByteMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListGeoMatchSetsResult listGeoMatchSets(ListGeoMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIPSetsResult listIPSets(ListIPSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRateBasedRulesResult listRateBasedRules(ListRateBasedRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegexMatchSetsResult listRegexMatchSets(ListRegexMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegexPatternSetsResult listRegexPatternSets(ListRegexPatternSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRuleGroupsResult listRuleGroups(ListRuleGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,6 +318,16 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListSubscribedRuleGroupsResult listSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWebACLsResult listWebACLs(ListWebACLsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -193,7 +338,32 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public PutLoggingConfigurationResult putLoggingConfiguration(PutLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateByteMatchSetResult updateByteMatchSet(UpdateByteMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGeoMatchSetResult updateGeoMatchSet(UpdateGeoMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,7 +373,27 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public UpdateRateBasedRuleResult updateRateBasedRule(UpdateRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegexMatchSetResult updateRegexMatchSet(UpdateRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegexPatternSetResult updateRegexPatternSet(UpdateRegexPatternSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRuleResult updateRule(UpdateRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRuleGroupResult updateRuleGroup(UpdateRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

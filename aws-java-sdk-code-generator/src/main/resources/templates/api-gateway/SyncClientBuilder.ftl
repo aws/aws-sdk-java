@@ -19,8 +19,8 @@ import java.net.URI;
 import javax.annotation.Generated;
 
 /**
- * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}. Use of the
- * builder is preferred over using constructors of the client class.
+ * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}.
+ * @see ${metadata.packageName + "." + metadata.syncInterface}#builder
 **/
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

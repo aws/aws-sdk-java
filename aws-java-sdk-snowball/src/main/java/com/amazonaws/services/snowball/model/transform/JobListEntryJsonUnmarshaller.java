@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,7 @@ public class JobListEntryJsonUnmarshaller implements Unmarshaller<JobListEntry, 
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    jobListEntry.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobListEntry.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();

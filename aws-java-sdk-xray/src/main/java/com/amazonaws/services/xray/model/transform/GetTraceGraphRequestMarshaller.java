@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.xray.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetTraceGraphRequest Marshaller
+ * GetTraceGraphRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetTraceGraphRequestMarshaller implements Marshaller<Request<GetTraceGraphRequest>, GetTraceGraphRequest> {
+@SdkInternalApi
+public class GetTraceGraphRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> TRACEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TraceIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public GetTraceGraphRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetTraceGraphRequestMarshaller instance = new GetTraceGraphRequestMarshaller();
+
+    public static GetTraceGraphRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetTraceGraphRequest> marshall(GetTraceGraphRequest getTraceGraphRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetTraceGraphRequest getTraceGraphRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getTraceGraphRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetTraceGraphRequest> request = new DefaultRequest<GetTraceGraphRequest>(getTraceGraphRequest, "AWSXRay");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/TraceGraph";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> traceIdsList = getTraceGraphRequest.getTraceIds();
-            if (traceIdsList != null) {
-                jsonGenerator.writeFieldName("TraceIds");
-                jsonGenerator.writeStartArray();
-                for (String traceIdsListValue : traceIdsList) {
-                    if (traceIdsListValue != null) {
-                        jsonGenerator.writeValue(traceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (getTraceGraphRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(getTraceGraphRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getTraceGraphRequest.getTraceIds(), TRACEIDS_BINDING);
+            protocolMarshaller.marshall(getTraceGraphRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

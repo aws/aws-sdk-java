@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateKeysAndCertificateRequest Marshaller
+ * CreateKeysAndCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateKeysAndCertificateRequestMarshaller implements Marshaller<Request<CreateKeysAndCertificateRequest>, CreateKeysAndCertificateRequest> {
+@SdkInternalApi
+public class CreateKeysAndCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Boolean> SETASACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("setAsActive").build();
 
-    public CreateKeysAndCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateKeysAndCertificateRequestMarshaller instance = new CreateKeysAndCertificateRequestMarshaller();
+
+    public static CreateKeysAndCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateKeysAndCertificateRequest> marshall(CreateKeysAndCertificateRequest createKeysAndCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateKeysAndCertificateRequest createKeysAndCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createKeysAndCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateKeysAndCertificateRequest> request = new DefaultRequest<CreateKeysAndCertificateRequest>(createKeysAndCertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/keys-and-certificate";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (createKeysAndCertificateRequest.getSetAsActive() != null) {
-            request.addParameter("setAsActive", StringUtils.fromBoolean(createKeysAndCertificateRequest.getSetAsActive()));
+        try {
+            protocolMarshaller.marshall(createKeysAndCertificateRequest.getSetAsActive(), SETASACTIVE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

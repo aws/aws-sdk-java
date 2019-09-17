@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                     context.nextToken();
                     container.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("runtimeId", targetDepth)) {
+                    context.nextToken();
+                    container.setRuntimeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
                     container.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,34 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 if (context.testExpression("networkBindings", targetDepth)) {
                     context.nextToken();
                     container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("networkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("healthStatus", targetDepth)) {
+                    context.nextToken();
+                    container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    container.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    container.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memoryReservation", targetDepth)) {
+                    context.nextToken();
+                    container.setMemoryReservation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("gpuIds", targetDepth)) {
+                    context.nextToken();
+                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("firelensConfiguration", targetDepth)) {
+                    context.nextToken();
+                    container.setFirelensConfiguration(FirelensConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

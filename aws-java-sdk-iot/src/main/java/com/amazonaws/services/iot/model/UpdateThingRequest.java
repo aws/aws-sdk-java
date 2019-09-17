@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -59,7 +59,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Long expectedVersion;
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      */
     private Boolean removeThingType;
@@ -149,7 +149,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -158,7 +158,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributePayload
      *        A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *        <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *        </p>
      *        <p>
      *        This data is used to add new attributes or update existing attributes.
@@ -173,7 +173,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -181,7 +181,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *         <p>
-     *         <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *         <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *         </p>
      *         <p>
      *         This data is used to add new attributes or update existing attributes.
@@ -196,7 +196,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -205,7 +205,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributePayload
      *        A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *        <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *        </p>
      *        <p>
      *        This data is used to add new attributes or update existing attributes.
@@ -271,11 +271,11 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
      * @param removeThingType
-     *        Remove a thing type association. If <b>true</b>, the assocation is removed.
+     *        Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public void setRemoveThingType(Boolean removeThingType) {
@@ -284,10 +284,10 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
-     * @return Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * @return Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public Boolean getRemoveThingType() {
@@ -296,11 +296,11 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
      * @param removeThingType
-     *        Remove a thing type association. If <b>true</b>, the assocation is removed.
+     *        Remove a thing type association. If <b>true</b>, the association is removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,10 +311,10 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * Remove a thing type association. If <b>true</b>, the association is removed.
      * </p>
      * 
-     * @return Remove a thing type association. If <b>true</b>, the assocation is removed.
+     * @return Remove a thing type association. If <b>true</b>, the association is removed.
      */
 
     public Boolean isRemoveThingType() {
@@ -322,7 +322,8 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

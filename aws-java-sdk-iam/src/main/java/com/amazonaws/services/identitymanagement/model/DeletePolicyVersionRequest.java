@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
@@ -41,13 +41,13 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -59,15 +59,15 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -81,14 +81,14 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -102,15 +102,15 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a version.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -125,26 +125,26 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versionId
      *        The policy version to delete.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *        followed by a period '.' and a string of letters and digits.
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *        Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -157,25 +157,25 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The policy version to delete.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *         followed by a period '.' and a string of letters and digits.
      *         </p>
      *         <p>
      *         For more information about managed policy versions, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *         Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -188,26 +188,26 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The policy version to delete.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally followed by a
      * period '.' and a string of letters and digits.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param versionId
      *        The policy version to delete.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that consists of the lowercase letter 'v' followed by one or two digits, and optionally
      *        followed by a period '.' and a string of letters and digits.
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *        Managed Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -218,7 +218,8 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

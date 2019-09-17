@@ -33,6 +33,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
 
     private final java.util.concurrent.ExecutorService executorService;
 
+<#if customizationConfig.emitClientConstructors()>
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * ${metadata.serviceName}. A credentials provider chain will be used
@@ -228,6 +229,11 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
     }
+</#if>
+
+    public static ${metadata.asyncClientBuilderClassName} asyncBuilder() {
+        return ${metadata.asyncClientBuilderClassName}.standard();
+    }
 
     /**
      * Constructs a new asynchronous client to invoke service methods on
@@ -252,8 +258,10 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
     }
 
   <#list operations?values as operationModel>
-    <@AsyncClientMethodForOperation.content operationModel />
-    <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@AsyncClientMethodForOperation.content operationModel />
+        <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalClientMethodsMacro?has_content>

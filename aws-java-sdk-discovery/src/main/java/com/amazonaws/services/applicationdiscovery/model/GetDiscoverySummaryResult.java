@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,25 +20,25 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers discovered.
+     * The number of servers discovered.
      * </p>
      */
     private Long servers;
     /**
      * <p>
-     * Number of applications discovered.
+     * The number of applications discovered.
      * </p>
      */
     private Long applications;
     /**
      * <p>
-     * Number of servers mapped to applications.
+     * The number of servers mapped to applications.
      * </p>
      */
     private Long serversMappedToApplications;
     /**
      * <p>
-     * Number of servers mapped to tags.
+     * The number of servers mapped to tags.
      * </p>
      */
     private Long serversMappedtoTags;
@@ -57,11 +57,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers discovered.
+     * The number of servers discovered.
      * </p>
      * 
      * @param servers
-     *        Number of servers discovered.
+     *        The number of servers discovered.
      */
 
     public void setServers(Long servers) {
@@ -70,10 +70,10 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers discovered.
+     * The number of servers discovered.
      * </p>
      * 
-     * @return Number of servers discovered.
+     * @return The number of servers discovered.
      */
 
     public Long getServers() {
@@ -82,11 +82,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers discovered.
+     * The number of servers discovered.
      * </p>
      * 
      * @param servers
-     *        Number of servers discovered.
+     *        The number of servers discovered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of applications discovered.
+     * The number of applications discovered.
      * </p>
      * 
      * @param applications
-     *        Number of applications discovered.
+     *        The number of applications discovered.
      */
 
     public void setApplications(Long applications) {
@@ -110,10 +110,10 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of applications discovered.
+     * The number of applications discovered.
      * </p>
      * 
-     * @return Number of applications discovered.
+     * @return The number of applications discovered.
      */
 
     public Long getApplications() {
@@ -122,11 +122,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of applications discovered.
+     * The number of applications discovered.
      * </p>
      * 
      * @param applications
-     *        Number of applications discovered.
+     *        The number of applications discovered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to applications.
+     * The number of servers mapped to applications.
      * </p>
      * 
      * @param serversMappedToApplications
-     *        Number of servers mapped to applications.
+     *        The number of servers mapped to applications.
      */
 
     public void setServersMappedToApplications(Long serversMappedToApplications) {
@@ -150,10 +150,10 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to applications.
+     * The number of servers mapped to applications.
      * </p>
      * 
-     * @return Number of servers mapped to applications.
+     * @return The number of servers mapped to applications.
      */
 
     public Long getServersMappedToApplications() {
@@ -162,11 +162,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to applications.
+     * The number of servers mapped to applications.
      * </p>
      * 
      * @param serversMappedToApplications
-     *        Number of servers mapped to applications.
+     *        The number of servers mapped to applications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +177,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to tags.
+     * The number of servers mapped to tags.
      * </p>
      * 
      * @param serversMappedtoTags
-     *        Number of servers mapped to tags.
+     *        The number of servers mapped to tags.
      */
 
     public void setServersMappedtoTags(Long serversMappedtoTags) {
@@ -190,10 +190,10 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to tags.
+     * The number of servers mapped to tags.
      * </p>
      * 
-     * @return Number of servers mapped to tags.
+     * @return The number of servers mapped to tags.
      */
 
     public Long getServersMappedtoTags() {
@@ -202,11 +202,11 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Number of servers mapped to tags.
+     * The number of servers mapped to tags.
      * </p>
      * 
      * @param serversMappedtoTags
-     *        Number of servers mapped to tags.
+     *        The number of servers mapped to tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,7 +296,8 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -381,4 +382,5 @@ public class GetDiscoverySummaryResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

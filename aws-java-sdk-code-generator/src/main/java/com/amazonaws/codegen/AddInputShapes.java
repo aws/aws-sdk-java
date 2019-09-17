@@ -16,11 +16,16 @@
 package com.amazonaws.codegen;
 
 import com.amazonaws.codegen.model.intermediate.OperationModel;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
 import com.amazonaws.codegen.model.service.Input;
+import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.Operation;
 
+import com.amazonaws.codegen.model.service.Shape;
+import com.amazonaws.util.TimestampFormat;
+import com.amazonaws.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -71,6 +76,33 @@ final class AddInputShapes extends AddShapes implements IntermediateModelShapePr
         return javaShapes;
     }
 
+    /**
+     * Throw exception if timestamp format is provided for non-json protocol.
+     */
+    @Override
+    protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes,
+                                                String protocolString, Shape parentShape) {
+
+        validateTimestampProtocol(protocolString, c2jMemberDefinition.getTimestampFormat(), c2jMemberDefinition.getShape());
+
+        String shapeName = c2jMemberDefinition.getShape();
+        Shape shape = allC2jShapes.get(shapeName);
+
+        validateTimestampProtocol(protocolString, shape.getTimestampFormat(), shapeName);
+
+        return super.getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocolString, parentShape);
+    }
+
+    /**
+     * Override the default header timestamp format for input type because we have always marshalled header value as ISO_8601, changing it to
+     * rfc822 might break existing customers who are relying on that behavior. If not configured, we set it to UNKNOWN and let HeaderMarshallers.DATE
+     * to set the default format.
+     */
+    @Override
+    protected String defaultHeaderTimestamp() {
+        return TimestampFormat.UNKNOWN.getFormat();
+    }
+
     private ShapeModel generateInputShapeModel(Operation operation,
                                                String javaInputShapeNameOverride) {
         Input input = operation.getInput();
@@ -82,5 +114,25 @@ final class AddInputShapes extends AddShapes implements IntermediateModelShapePr
                 createInputShapeMarshaller(getServiceModel().getMetadata(), operation));
 
         return shapeModel;
+    }
+
+
+    /**
+     * Throw exception if timestamp is provided for non-json protocol
+     */
+    private void validateTimestampProtocol(String protocolString, String timestampFormat, String shape2) {
+        if (!StringUtils.isNullOrEmpty(timestampFormat) && isNonJsonProtocol(protocolString)) {
+            throw new IllegalArgumentException(String.format(
+                "Shape %s has timestamp format provided. Timestamp format for requests is not supported for xml, query or ec2 "
+                + "protocol",
+                shape2));
+
+        }
+    }
+
+    private boolean isNonJsonProtocol(String protocolString) {
+        return Protocol.REST_XML.getValue().equals(protocolString)
+               || Protocol.QUERY.getValue().equals(protocolString)
+               || Protocol.EC2.getValue().equals(protocolString);
     }
 }

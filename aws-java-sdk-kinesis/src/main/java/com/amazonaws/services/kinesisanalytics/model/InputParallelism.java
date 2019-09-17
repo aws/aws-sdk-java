@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,12 +14,14 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes the number of in-application streams to create for a given streaming source. For information about
- * parallellism, see <a
- * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+ * parallelism, see <a
+ * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
  * Input</a>.
  * </p>
  * 
@@ -27,12 +29,12 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InputParallelism implements Serializable, Cloneable {
+public class InputParallelism implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      */
     private Integer count;
@@ -40,12 +42,12 @@ public class InputParallelism implements Serializable, Cloneable {
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @param count
      *        Number of in-application streams to create. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      */
 
     public void setCount(Integer count) {
@@ -55,11 +57,11 @@ public class InputParallelism implements Serializable, Cloneable {
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @return Number of in-application streams to create. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      */
 
     public Integer getCount() {
@@ -69,12 +71,12 @@ public class InputParallelism implements Serializable, Cloneable {
     /**
      * <p>
      * Number of in-application streams to create. For more information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * 
      * @param count
      *        Number of in-application streams to create. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +86,8 @@ public class InputParallelism implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,5 +136,11 @@ public class InputParallelism implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.InputParallelismMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

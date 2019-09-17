@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,19 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String instanceName;
+    /**
+     * <p>
+     * When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to
+     * stop.
+     * </p>
+     * <important>
+     * <p>
+     * Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any
+     * other state, your instance should stop normally without adding this parameter to your API request.
+     * </p>
+     * </important>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -73,7 +86,108 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to
+     * stop.
+     * </p>
+     * <important>
+     * <p>
+     * Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any
+     * other state, your instance should stop normally without adding this parameter to your API request.
+     * </p>
+     * </important>
+     * 
+     * @param force
+     *        When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state
+     *        to stop.</p> <important>
+     *        <p>
+     *        Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In
+     *        any other state, your instance should stop normally without adding this parameter to your API request.
+     *        </p>
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to
+     * stop.
+     * </p>
+     * <important>
+     * <p>
+     * Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any
+     * other state, your instance should stop normally without adding this parameter to your API request.
+     * </p>
+     * </important>
+     * 
+     * @return When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state
+     *         to stop.</p> <important>
+     *         <p>
+     *         Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state.
+     *         In any other state, your instance should stop normally without adding this parameter to your API request.
+     *         </p>
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to
+     * stop.
+     * </p>
+     * <important>
+     * <p>
+     * Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any
+     * other state, your instance should stop normally without adding this parameter to your API request.
+     * </p>
+     * </important>
+     * 
+     * @param force
+     *        When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state
+     *        to stop.</p> <important>
+     *        <p>
+     *        Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In
+     *        any other state, your instance should stop normally without adding this parameter to your API request.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopInstanceRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to
+     * stop.
+     * </p>
+     * <important>
+     * <p>
+     * Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any
+     * other state, your instance should stop normally without adding this parameter to your API request.
+     * </p>
+     * </important>
+     * 
+     * @return When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state
+     *         to stop.</p> <important>
+     *         <p>
+     *         Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state.
+     *         In any other state, your instance should stop normally without adding this parameter to your API request.
+     *         </p>
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +198,9 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: ").append(getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +219,10 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
             return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +232,7 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

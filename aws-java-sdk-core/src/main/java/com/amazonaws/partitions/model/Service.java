@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
  */
 package com.amazonaws.partitions.model;
 
-import com.amazonaws.util.ValidationUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -47,7 +47,10 @@ public class Service {
 
     public Service(@JsonProperty(value = "endpoints") Map<String,
             Endpoint> endpoints) {
-        this.endpoints = ValidationUtils.assertNotNull(endpoints, "endpoints");;
+        // Technically the endpoints member should never be null if the
+        // endpoints file is properly formed, but this is currently not always
+        // true. See TRE-739 for details
+        this.endpoints = endpoints == null ? Collections.<String, Endpoint>emptyMap() : endpoints;
     }
 
     /**

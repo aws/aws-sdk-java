@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,5 +24,6 @@ public class JsonDocumentFields {
      public static final String PRINCIPAL = "Principal";
      public static final String ACTION = "Action";
      public static final String RESOURCE = "Resource";
+     public static final String NOT_RESOURCE = "NotResource";
      public static final String CONDITION = "Condition";
 }

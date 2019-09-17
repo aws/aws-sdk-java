@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+    - pip install awscli --upgrade --user
+
+  pre_build:
+    commands:
+    - ROOT=`pwd`
+    - CREDENTIALS=$ROOT/credentials
+    - SETTINGS_XML=$CREDENTIALS/settings.xml
+    - GPG_HOME=$CREDENTIALS/gpghome
+
+  build:
+    commands:
+    - RELEASE_VERSION=`mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec`
+    - SONATYPE_URL="https://oss.sonatype.org/service/local/repositories/releases/content/com/amazonaws/aws-java-sdk/$RELEASE_VERSION/"
+    - |
+      if ! curl -f --head $SONATYPE_URL; then
+        mkdir -p $CREDENTIALS
+        aws s3 cp s3://aws-java-sdk-credentials/ $CREDENTIALS/ --recursive
+        mvn clean deploy -B -s $SETTINGS_XML -Dgpg.homedir=$GPG_HOME -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Ddoclint=none -Dadditionalparam=--allow-script-in-comments -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30
+      else
+        echo "This version was already released."
+      fi

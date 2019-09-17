@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
     private String cluster;
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which you
-     * would like to update the Amazon ECS container agent.
+     * The container instance ID or full ARN entries for the container instance on which you would like to update the
+     * Amazon ECS container agent.
      * </p>
      */
     private String containerInstance;
@@ -88,13 +88,13 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which you
-     * would like to update the Amazon ECS container agent.
+     * The container instance ID or full ARN entries for the container instance on which you would like to update the
+     * Amazon ECS container agent.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which
-     *        you would like to update the Amazon ECS container agent.
+     *        The container instance ID or full ARN entries for the container instance on which you would like to update
+     *        the Amazon ECS container agent.
      */
 
     public void setContainerInstance(String containerInstance) {
@@ -103,12 +103,12 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which you
-     * would like to update the Amazon ECS container agent.
+     * The container instance ID or full ARN entries for the container instance on which you would like to update the
+     * Amazon ECS container agent.
      * </p>
      * 
-     * @return The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which
-     *         you would like to update the Amazon ECS container agent.
+     * @return The container instance ID or full ARN entries for the container instance on which you would like to
+     *         update the Amazon ECS container agent.
      */
 
     public String getContainerInstance() {
@@ -117,13 +117,13 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which you
-     * would like to update the Amazon ECS container agent.
+     * The container instance ID or full ARN entries for the container instance on which you would like to update the
+     * Amazon ECS container agent.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) entries for the container instance on which
-     *        you would like to update the Amazon ECS container agent.
+     *        The container instance ID or full ARN entries for the container instance on which you would like to update
+     *        the Amazon ECS container agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +133,8 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

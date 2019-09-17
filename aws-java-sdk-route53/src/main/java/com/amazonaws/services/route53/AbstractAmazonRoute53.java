@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public CreateQueryLoggingConfigResult createQueryLoggingConfig(CreateQueryLoggingConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public DeleteQueryLoggingConfigResult deleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -120,6 +130,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccountLimitResult getAccountLimit(GetAccountLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,7 +204,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public GetHostedZoneLimitResult getHostedZoneLimit(GetHostedZoneLimitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQueryLoggingConfigResult getQueryLoggingConfig(GetQueryLoggingConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReusableDelegationSetLimitResult getReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -251,6 +281,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public ListHostedZonesByNameResult listHostedZonesByName() {
         return listHostedZonesByName(new ListHostedZonesByNameRequest());
+    }
+
+    @Override
+    public ListQueryLoggingConfigsResult listQueryLoggingConfigs(ListQueryLoggingConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

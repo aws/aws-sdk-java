@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,22 +36,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB parameter group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -94,22 +79,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the name of an existing DB parameter group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @param parameters
@@ -141,22 +111,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB parameter group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -169,22 +124,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the name of an existing DB parameter group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -203,22 +143,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB parameter group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -230,22 +155,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the name of an existing DB parameter group
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *         </p>
      *         </li>
      */
@@ -264,22 +174,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB parameter group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -292,22 +187,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the name of an existing DB parameter group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -480,7 +360,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

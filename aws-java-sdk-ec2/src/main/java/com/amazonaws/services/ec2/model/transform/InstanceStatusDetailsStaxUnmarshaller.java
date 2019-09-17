@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class InstanceStatusDetailsStaxUnmarshaller implements Unmarshaller<Insta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("impairedSince", targetDepth)) {
+                    instanceStatusDetails.setImpairedSince(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("name", targetDepth)) {
                     instanceStatusDetails.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class InstanceStatusDetailsStaxUnmarshaller implements Unmarshaller<Insta
 
                 if (context.testExpression("status", targetDepth)) {
                     instanceStatusDetails.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("impairedSince", targetDepth)) {
-                    instanceStatusDetails.setImpairedSince(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

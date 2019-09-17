@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteModelRequest Marshaller
+ * DeleteModelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteModelRequestMarshaller implements Marshaller<Request<DeleteModelRequest>, DeleteModelRequest> {
+@SdkInternalApi
+public class DeleteModelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("model_name").build();
 
-    public DeleteModelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteModelRequestMarshaller instance = new DeleteModelRequestMarshaller();
+
+    public static DeleteModelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteModelRequest> marshall(DeleteModelRequest deleteModelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteModelRequest deleteModelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteModelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteModelRequest> request = new DefaultRequest<DeleteModelRequest>(deleteModelRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteModelRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "model_name", deleteModelRequest.getModelName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteModelRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(deleteModelRequest.getModelName(), MODELNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

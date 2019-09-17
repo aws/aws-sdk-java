@@ -27,6 +27,8 @@ public class ServiceMetadata {
 
     private String serviceFullName;
 
+    private String serviceId;
+
     private String xmlNamespace;
 
     private String protocol;
@@ -83,6 +85,14 @@ public class ServiceMetadata {
 
     public void setServiceFullName(String serviceFullName) {
         this.serviceFullName = serviceFullName;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getXmlNamespace() {

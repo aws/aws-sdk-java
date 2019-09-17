@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,12 +21,12 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code> cache node.
+ * Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.
  * </p>
  * </li>
  * <li>
  * <p>
- * Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+ * Creating a snapshot of a cluster that is running Memcached rather than Redis.
  * </p>
  * </li>
  * </ul>

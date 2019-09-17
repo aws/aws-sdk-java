@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,14 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
             request.addParameter("TemplateURL", StringUtils.fromString(estimateTemplateCostRequest.getTemplateURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (estimateTemplateCostRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!estimateTemplateCostRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -71,6 +73,11 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
                 if (parametersListValue.getUsePreviousValue() != null) {
                     request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
                             StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
+                }
+
+                if (parametersListValue.getResolvedValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parametersListValue.getResolvedValue()));
                 }
                 parametersListIndex++;
             }

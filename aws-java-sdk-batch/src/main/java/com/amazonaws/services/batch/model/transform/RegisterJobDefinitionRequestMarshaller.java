@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,90 +12,64 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterJobDefinitionRequest Marshaller
+ * RegisterJobDefinitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterJobDefinitionRequestMarshaller implements Marshaller<Request<RegisterJobDefinitionRequest>, RegisterJobDefinitionRequest> {
+@SdkInternalApi
+public class RegisterJobDefinitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobDefinitionName").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerProperties").build();
+    private static final MarshallingInfo<StructuredPojo> NODEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodeProperties").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
 
-    public RegisterJobDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterJobDefinitionRequestMarshaller instance = new RegisterJobDefinitionRequestMarshaller();
+
+    public static RegisterJobDefinitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterJobDefinitionRequest> marshall(RegisterJobDefinitionRequest registerJobDefinitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterJobDefinitionRequest registerJobDefinitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerJobDefinitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterJobDefinitionRequest> request = new DefaultRequest<RegisterJobDefinitionRequest>(registerJobDefinitionRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/registerjobdefinition";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (registerJobDefinitionRequest.getJobDefinitionName() != null) {
-                jsonGenerator.writeFieldName("jobDefinitionName").writeValue(registerJobDefinitionRequest.getJobDefinitionName());
-            }
-            if (registerJobDefinitionRequest.getType() != null) {
-                jsonGenerator.writeFieldName("type").writeValue(registerJobDefinitionRequest.getType());
-            }
-
-            java.util.Map<String, String> parametersMap = registerJobDefinitionRequest.getParameters();
-            if (parametersMap != null) {
-                jsonGenerator.writeFieldName("parameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> parametersMapValue : parametersMap.entrySet()) {
-                    if (parametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(parametersMapValue.getKey());
-
-                        jsonGenerator.writeValue(parametersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (registerJobDefinitionRequest.getContainerProperties() != null) {
-                jsonGenerator.writeFieldName("containerProperties");
-                ContainerPropertiesJsonMarshaller.getInstance().marshall(registerJobDefinitionRequest.getContainerProperties(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getJobDefinitionName(), JOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getContainerProperties(), CONTAINERPROPERTIES_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getNodeProperties(), NODEPROPERTIES_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getTimeout(), TIMEOUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

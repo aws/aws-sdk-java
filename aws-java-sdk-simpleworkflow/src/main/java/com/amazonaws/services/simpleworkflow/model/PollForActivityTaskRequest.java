@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -32,8 +37,8 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -91,16 +96,17 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for activity tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -113,15 +119,16 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for activity tasks.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *         <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -134,16 +141,17 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for activity tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,7 +210,8 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

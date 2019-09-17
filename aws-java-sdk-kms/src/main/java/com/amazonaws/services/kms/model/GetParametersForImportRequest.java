@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,12 +31,15 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -45,13 +48,16 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
     /**
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -69,12 +75,15 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -83,17 +92,23 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
      *        The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
      *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -101,6 +116,9 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -113,12 +131,15 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -127,16 +148,22 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @return The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
      *         <code>EXTERNAL</code>.</p>
      *         <p>
-     *         A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -144,6 +171,9 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -156,12 +186,15 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -170,17 +203,23 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
      *        The identifier of the CMK into which you will import key material. The CMK's <code>Origin</code> must be
      *        <code>EXTERNAL</code>.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -188,6 +227,9 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,14 +242,14 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param wrappingAlgorithm
      *        The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
      *        >Encrypt the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see AlgorithmSpec
      */
@@ -220,13 +262,13 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
      *         >Encrypt the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see AlgorithmSpec
      */
@@ -239,14 +281,14 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param wrappingAlgorithm
      *        The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
      *        >Encrypt the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlgorithmSpec
@@ -261,41 +303,41 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param wrappingAlgorithm
      *        The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
      *        >Encrypt the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see AlgorithmSpec
      */
 
     public void setWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
-        this.wrappingAlgorithm = wrappingAlgorithm.toString();
+        withWrappingAlgorithm(wrappingAlgorithm);
     }
 
     /**
      * <p>
      * The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the
      * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param wrappingAlgorithm
      *        The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html"
      *        >Encrypt the Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlgorithmSpec
      */
 
     public GetParametersForImportRequest withWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
-        setWrappingAlgorithm(wrappingAlgorithm);
+        this.wrappingAlgorithm = wrappingAlgorithm.toString();
         return this;
     }
 
@@ -357,7 +399,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
-        this.wrappingKeySpec = wrappingKeySpec.toString();
+        withWrappingKeySpec(wrappingKeySpec);
     }
 
     /**
@@ -373,12 +415,13 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public GetParametersForImportRequest withWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
-        setWrappingKeySpec(wrappingKeySpec);
+        this.wrappingKeySpec = wrappingKeySpec.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

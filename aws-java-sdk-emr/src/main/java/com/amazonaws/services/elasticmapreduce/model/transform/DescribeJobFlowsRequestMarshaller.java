@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,93 +12,54 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeJobFlowsRequest Marshaller
+ * DescribeJobFlowsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeJobFlowsRequestMarshaller implements Marshaller<Request<DescribeJobFlowsRequest>, DescribeJobFlowsRequest> {
+@SdkInternalApi
+public class DescribeJobFlowsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAfter").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedBefore").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> JOBFLOWIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobFlowIds").build();
+    private static final MarshallingInfo<List> JOBFLOWSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobFlowStates").build();
 
-    public DescribeJobFlowsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeJobFlowsRequestMarshaller instance = new DescribeJobFlowsRequestMarshaller();
+
+    public static DescribeJobFlowsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeJobFlowsRequest> marshall(DescribeJobFlowsRequest describeJobFlowsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeJobFlowsRequest describeJobFlowsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeJobFlowsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeJobFlowsRequest> request = new DefaultRequest<DescribeJobFlowsRequest>(describeJobFlowsRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.DescribeJobFlows");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeJobFlowsRequest.getCreatedAfter() != null) {
-                jsonGenerator.writeFieldName("CreatedAfter").writeValue(describeJobFlowsRequest.getCreatedAfter());
-            }
-            if (describeJobFlowsRequest.getCreatedBefore() != null) {
-                jsonGenerator.writeFieldName("CreatedBefore").writeValue(describeJobFlowsRequest.getCreatedBefore());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> jobFlowIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeJobFlowsRequest
-                    .getJobFlowIds();
-            if (!jobFlowIdsList.isEmpty() || !jobFlowIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("JobFlowIds");
-                jsonGenerator.writeStartArray();
-                for (String jobFlowIdsListValue : jobFlowIdsList) {
-                    if (jobFlowIdsListValue != null) {
-                        jsonGenerator.writeValue(jobFlowIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> jobFlowStatesList = (com.amazonaws.internal.SdkInternalList<String>) describeJobFlowsRequest
-                    .getJobFlowStates();
-            if (!jobFlowStatesList.isEmpty() || !jobFlowStatesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("JobFlowStates");
-                jsonGenerator.writeStartArray();
-                for (String jobFlowStatesListValue : jobFlowStatesList) {
-                    if (jobFlowStatesListValue != null) {
-                        jsonGenerator.writeValue(jobFlowStatesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeJobFlowsRequest.getCreatedAfter(), CREATEDAFTER_BINDING);
+            protocolMarshaller.marshall(describeJobFlowsRequest.getCreatedBefore(), CREATEDBEFORE_BINDING);
+            protocolMarshaller.marshall(describeJobFlowsRequest.getJobFlowIds(), JOBFLOWIDS_BINDING);
+            protocolMarshaller.marshall(describeJobFlowsRequest.getJobFlowStates(), JOBFLOWSTATES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

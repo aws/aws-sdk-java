@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                     context.nextToken();
                     updatePatchBaselineResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OperatingSystem", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GlobalFilters", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setGlobalFilters(PatchFilterGroupJsonUnmarshaller.getInstance().unmarshall(context));
@@ -68,21 +72,37 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                     context.nextToken();
                     updatePatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setApprovedPatchesComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ApprovedPatchesEnableNonSecurity", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setApprovedPatchesEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("RejectedPatchesAction", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setRejectedPatchesAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    updatePatchBaselineResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updatePatchBaselineResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedDate", targetDepth)) {
                     context.nextToken();
-                    updatePatchBaselineResult.setModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    updatePatchBaselineResult.setModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Sources", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

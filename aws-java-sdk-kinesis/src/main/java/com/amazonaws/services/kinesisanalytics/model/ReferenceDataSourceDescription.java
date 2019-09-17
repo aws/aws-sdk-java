@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,12 +26,14 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReferenceDataSourceDescription implements Serializable, Cloneable {
+public class ReferenceDataSourceDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      */
     private String referenceId;
@@ -47,18 +51,27 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
      * </p>
      */
     private S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription;
-
+    /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     */
     private SourceSchema referenceSchema;
 
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
      *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *        reference data source to your application using the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *        >AddApplicationReferenceDataSource</a> operation.
      */
 
     public void setReferenceId(String referenceId) {
@@ -68,11 +81,15 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @return ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *         reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *         reference data source to your application using the <a href=
+     *         "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *         >AddApplicationReferenceDataSource</a> operation.
      */
 
     public String getReferenceId() {
@@ -82,12 +99,16 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     /**
      * <p>
      * ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the reference
-     * data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     * data source to your application using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * 
      * @param referenceId
      *        ID of the reference data source. This is the ID that Amazon Kinesis Analytics assigns when you add the
-     *        reference data source to your application using the <a>AddApplicationReferenceDataSource</a> operation.
+     *        reference data source to your application using the <a href=
+     *        "https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     *        >AddApplicationReferenceDataSource</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,7 +210,14 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      */
 
     public void setReferenceSchema(SourceSchema referenceSchema) {
@@ -197,7 +225,13 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
+     * @return Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *         columns created in the in-application stream.
      */
 
     public SourceSchema getReferenceSchema() {
@@ -205,7 +239,14 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,7 +256,8 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -286,5 +328,11 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.ReferenceDataSourceDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

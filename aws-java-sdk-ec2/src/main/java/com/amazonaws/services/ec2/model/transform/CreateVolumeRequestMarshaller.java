@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,22 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createVolumeRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createVolumeRequest.getAvailabilityZone()));
+        }
+
+        if (createVolumeRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(createVolumeRequest.getEncrypted()));
+        }
+
+        if (createVolumeRequest.getIops() != null) {
+            request.addParameter("Iops", StringUtils.fromInteger(createVolumeRequest.getIops()));
+        }
+
+        if (createVolumeRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
+        }
+
         if (createVolumeRequest.getSize() != null) {
             request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
         }
@@ -48,24 +64,43 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
             request.addParameter("SnapshotId", StringUtils.fromString(createVolumeRequest.getSnapshotId()));
         }
 
-        if (createVolumeRequest.getAvailabilityZone() != null) {
-            request.addParameter("AvailabilityZone", StringUtils.fromString(createVolumeRequest.getAvailabilityZone()));
-        }
-
         if (createVolumeRequest.getVolumeType() != null) {
             request.addParameter("VolumeType", StringUtils.fromString(createVolumeRequest.getVolumeType()));
         }
 
-        if (createVolumeRequest.getIops() != null) {
-            request.addParameter("Iops", StringUtils.fromInteger(createVolumeRequest.getIops()));
-        }
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createVolumeRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createVolumeRequest
+                .getTagSpecifications();
+        if (!createVolumeRequestTagSpecificationsList.isEmpty() || !createVolumeRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
 
-        if (createVolumeRequest.getEncrypted() != null) {
-            request.addParameter("Encrypted", StringUtils.fromBoolean(createVolumeRequest.getEncrypted()));
-        }
+            for (TagSpecification createVolumeRequestTagSpecificationsListValue : createVolumeRequestTagSpecificationsList) {
 
-        if (createVolumeRequest.getKmsKeyId() != null) {
-            request.addParameter("KmsKeyId", StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
+                if (createVolumeRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createVolumeRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createVolumeRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
         }
 
         return request;

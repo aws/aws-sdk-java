@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
     private String subscriptionName;
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -107,8 +106,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -137,9 +135,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *        only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *        hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -172,8 +168,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -201,9 +196,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </li>
      * </ul>
      * 
-     * @return The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *         only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *         hyphens.</p>
+     * @return The identifier of the event source to be added.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -236,8 +229,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -266,9 +258,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *        only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *        hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -302,7 +292,8 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

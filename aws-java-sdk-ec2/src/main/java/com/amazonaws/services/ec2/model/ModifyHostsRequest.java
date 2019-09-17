@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,98 +20,31 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyHostsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifyHosts.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyHostsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ModifyHostsRequest> {
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
+     * Specify whether to enable or disable auto-placement.
+     * </p>
+     */
+    private String autoPlacement;
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts to modify.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIds;
     /**
      * <p>
-     * Specify whether to enable or disable auto-placement.
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    private String autoPlacement;
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * 
-     * @return The host IDs of the Dedicated Hosts you want to modify.
-     */
-
-    public java.util.List<String> getHostIds() {
-        if (hostIds == null) {
-            hostIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostIds;
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     */
-
-    public void setHostIds(java.util.Collection<String> hostIds) {
-        if (hostIds == null) {
-            this.hostIds = null;
-            return;
-        }
-
-        this.hostIds = new com.amazonaws.internal.SdkInternalList<String>(hostIds);
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostIds(java.util.Collection)} or {@link #withHostIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyHostsRequest withHostIds(String... hostIds) {
-        if (this.hostIds == null) {
-            setHostIds(new com.amazonaws.internal.SdkInternalList<String>(hostIds.length));
-        }
-        for (String ele : hostIds) {
-            this.hostIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyHostsRequest withHostIds(java.util.Collection<String> hostIds) {
-        setHostIds(hostIds);
-        return this;
-    }
+    private String hostRecovery;
 
     /**
      * <p>
@@ -167,7 +100,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      */
 
     public void setAutoPlacement(AutoPlacement autoPlacement) {
-        this.autoPlacement = autoPlacement.toString();
+        withAutoPlacement(autoPlacement);
     }
 
     /**
@@ -182,7 +115,173 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      */
 
     public ModifyHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
-        setAutoPlacement(autoPlacement);
+        this.autoPlacement = autoPlacement.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts to modify.
+     * </p>
+     * 
+     * @return The IDs of the Dedicated Hosts to modify.
+     */
+
+    public java.util.List<String> getHostIds() {
+        if (hostIds == null) {
+            hostIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts to modify.
+     * </p>
+     * 
+     * @param hostIds
+     *        The IDs of the Dedicated Hosts to modify.
+     */
+
+    public void setHostIds(java.util.Collection<String> hostIds) {
+        if (hostIds == null) {
+            this.hostIds = null;
+            return;
+        }
+
+        this.hostIds = new com.amazonaws.internal.SdkInternalList<String>(hostIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts to modify.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostIds(java.util.Collection)} or {@link #withHostIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param hostIds
+     *        The IDs of the Dedicated Hosts to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withHostIds(String... hostIds) {
+        if (this.hostIds == null) {
+            setHostIds(new com.amazonaws.internal.SdkInternalList<String>(hostIds.length));
+        }
+        for (String ele : hostIds) {
+            this.hostIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts to modify.
+     * </p>
+     * 
+     * @param hostIds
+     *        The IDs of the Dedicated Hosts to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withHostIds(java.util.Collection<String> hostIds) {
+        setHostIds(hostIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(String hostRecovery) {
+        this.hostRecovery = hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *         Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public String getHostRecovery() {
+        return this.hostRecovery;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public ModifyHostsRequest withHostRecovery(String hostRecovery) {
+        setHostRecovery(hostRecovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @see HostRecovery
+     */
+
+    public void setHostRecovery(HostRecovery hostRecovery) {
+        withHostRecovery(hostRecovery);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
+     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param hostRecovery
+     *        Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
+     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostRecovery
+     */
+
+    public ModifyHostsRequest withHostRecovery(HostRecovery hostRecovery) {
+        this.hostRecovery = hostRecovery.toString();
         return this;
     }
 
@@ -198,7 +297,8 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -208,10 +308,12 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAutoPlacement() != null)
+            sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
         if (getHostIds() != null)
             sb.append("HostIds: ").append(getHostIds()).append(",");
-        if (getAutoPlacement() != null)
-            sb.append("AutoPlacement: ").append(getAutoPlacement());
+        if (getHostRecovery() != null)
+            sb.append("HostRecovery: ").append(getHostRecovery());
         sb.append("}");
         return sb.toString();
     }
@@ -226,13 +328,17 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof ModifyHostsRequest == false)
             return false;
         ModifyHostsRequest other = (ModifyHostsRequest) obj;
+        if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
+            return false;
+        if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+            return false;
         if (other.getHostIds() == null ^ this.getHostIds() == null)
             return false;
         if (other.getHostIds() != null && other.getHostIds().equals(this.getHostIds()) == false)
             return false;
-        if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
+        if (other.getHostRecovery() == null ^ this.getHostRecovery() == null)
             return false;
-        if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+        if (other.getHostRecovery() != null && other.getHostRecovery().equals(this.getHostRecovery()) == false)
             return false;
         return true;
     }
@@ -242,8 +348,9 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
+        hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
+        hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         return hashCode;
     }
 

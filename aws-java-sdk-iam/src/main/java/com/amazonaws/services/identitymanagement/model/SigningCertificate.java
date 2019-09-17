@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * This data type is used as a response element in the <a>UploadSigningCertificate</a> and
- * <a>ListSigningCertificates</a> actions.
+ * <a>ListSigningCertificates</a> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SigningCertificate" target="_top">AWS API
@@ -50,7 +50,7 @@ public class SigningCertificate implements Serializable, Cloneable {
     private String certificateBody;
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      */
@@ -80,8 +80,8 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param certificateBody
      *        The contents of the signing certificate.
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      */
     public SigningCertificate(String userName, String certificateId, String certificateBody, String status) {
         setUserName(userName);
@@ -101,8 +101,8 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param certificateBody
      *        The contents of the signing certificate.
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      */
     public SigningCertificate(String userName, String certificateId, String certificateBody, StatusType status) {
         setUserName(userName);
@@ -233,13 +233,13 @@ public class SigningCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -249,12 +249,12 @@ public class SigningCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
-     * @return The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *         <code>Inactive</code> means it is not.
+     * @return The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *         while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -264,13 +264,13 @@ public class SigningCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -282,35 +282,35 @@ public class SigningCertificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
+     * The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the signing certificate. <code>Active</code> means the key is valid for API calls, while
-     *        <code>Inactive</code> means it is not.
+     *        The status of the signing certificate. <code>Active</code> means that the key is valid for API calls,
+     *        while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
     public SigningCertificate withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -355,7 +355,8 @@ public class SigningCertificate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -433,4 +434,5 @@ public class SigningCertificate implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

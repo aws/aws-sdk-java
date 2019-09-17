@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,23 +27,24 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An array of strings that contain the identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> workspaceIds;
     /**
      * <p>
-     * The next token of the request.
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of strings that contain the identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
-     * @return An array of strings that contain the identifiers of the WorkSpaces.
+     * @return The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      */
 
     public java.util.List<String> getWorkspaceIds() {
@@ -55,11 +56,11 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An array of strings that contain the identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaceIds
-     *        An array of strings that contain the identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      */
 
     public void setWorkspaceIds(java.util.Collection<String> workspaceIds) {
@@ -73,7 +74,7 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An array of strings that contain the identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +83,7 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param workspaceIds
-     *        An array of strings that contain the identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +99,11 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * An array of strings that contain the identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaceIds
-     *        An array of strings that contain the identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +114,13 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The next token of the request.
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The next token of the request.
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -126,10 +129,12 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The next token of the request.
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
-     * @return The next token of the request.
+     * @return If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *         receive the next set of results.
      */
 
     public String getNextToken() {
@@ -138,11 +143,13 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The next token of the request.
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The next token of the request.
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,7 +159,8 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

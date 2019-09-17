@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class ModifyTargetGroupRequestMarshaller implements Marshaller<Request<Mo
             request.addParameter("HealthCheckPath", StringUtils.fromString(modifyTargetGroupRequest.getHealthCheckPath()));
         }
 
+        if (modifyTargetGroupRequest.getHealthCheckEnabled() != null) {
+            request.addParameter("HealthCheckEnabled", StringUtils.fromBoolean(modifyTargetGroupRequest.getHealthCheckEnabled()));
+        }
+
         if (modifyTargetGroupRequest.getHealthCheckIntervalSeconds() != null) {
             request.addParameter("HealthCheckIntervalSeconds", StringUtils.fromInteger(modifyTargetGroupRequest.getHealthCheckIntervalSeconds()));
         }
@@ -72,11 +76,13 @@ public class ModifyTargetGroupRequestMarshaller implements Marshaller<Request<Mo
             request.addParameter("UnhealthyThresholdCount", StringUtils.fromInteger(modifyTargetGroupRequest.getUnhealthyThresholdCount()));
         }
 
-        Matcher matcher = modifyTargetGroupRequest.getMatcher();
-        if (matcher != null) {
+        {
+            Matcher matcher = modifyTargetGroupRequest.getMatcher();
+            if (matcher != null) {
 
-            if (matcher.getHttpCode() != null) {
-                request.addParameter("Matcher.HttpCode", StringUtils.fromString(matcher.getHttpCode()));
+                if (matcher.getHttpCode() != null) {
+                    request.addParameter("Matcher.HttpCode", StringUtils.fromString(matcher.getHttpCode()));
+                }
             }
         }
 

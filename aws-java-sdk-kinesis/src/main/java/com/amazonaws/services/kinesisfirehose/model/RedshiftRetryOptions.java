@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,41 +14,43 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
+ * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RedshiftRetryOptions implements Serializable, Cloneable {
+public class RedshiftRetryOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
-     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
-     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
-     * value.
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * longer than the current value.
      * </p>
      */
     private Integer durationInSeconds;
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
-     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
-     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
-     * value.
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * longer than the current value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Firehose retries delivery after a failure, starting from the initial
-     *        request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not
-     *        retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
-     *        longer than the current value.
+     *        The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
+     *        initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
+     *        Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *        delivery attempt takes longer than the current value.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -57,16 +59,16 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
-     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
-     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
-     * value.
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * longer than the current value.
      * </p>
      * 
-     * @return The length of time during which Firehose retries delivery after a failure, starting from the initial
-     *         request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does
-     *         not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
-     *         takes longer than the current value.
+     * @return The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
+     *         initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
+     *         Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *         delivery attempt takes longer than the current value.
      */
 
     public Integer getDurationInSeconds() {
@@ -75,17 +77,17 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The length of time during which Firehose retries delivery after a failure, starting from the initial request and
-     * including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value
-     * of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes longer than the current
-     * value.
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * longer than the current value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Firehose retries delivery after a failure, starting from the initial
-     *        request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not
-     *        retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
-     *        longer than the current value.
+     *        The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
+     *        initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
+     *        Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *        delivery attempt takes longer than the current value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,7 +97,8 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -144,5 +147,11 @@ public class RedshiftRetryOptions implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisfirehose.model.transform.RedshiftRetryOptionsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

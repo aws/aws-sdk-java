@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,10 @@ public class RawMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The raw data of the message. The client must ensure that the message format complies with Internet email
-     * standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.
+     * The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through
+     * the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the base 64-encoding
+     * for you. In all cases, the client must ensure that the message format complies with Internet email standards
+     * regarding email header fields, MIME types, and MIME encoding.
      * </p>
      * <p>
      * The To:, CC:, and BCC: headers in the raw message can contain a group list.
@@ -47,7 +49,7 @@ public class RawMessage implements Serializable, Cloneable {
      * </important>
      * <p>
      * For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
      * </p>
      */
     private java.nio.ByteBuffer data;
@@ -64,8 +66,10 @@ public class RawMessage implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param data
-     *        The raw data of the message. The client must ensure that the message format complies with Internet email
-     *        standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.</p>
+     *        The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly
+     *        through the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the
+     *        base 64-encoding for you. In all cases, the client must ensure that the message format complies with
+     *        Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a group list.
      *        </p>
@@ -82,7 +86,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        </important>
      *        <p>
      *        For more information, go to the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
      *        Guide</a>.
      */
     public RawMessage(java.nio.ByteBuffer data) {
@@ -91,8 +95,10 @@ public class RawMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The raw data of the message. The client must ensure that the message format complies with Internet email
-     * standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.
+     * The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through
+     * the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the base 64-encoding
+     * for you. In all cases, the client must ensure that the message format complies with Internet email standards
+     * regarding email header fields, MIME types, and MIME encoding.
      * </p>
      * <p>
      * The To:, CC:, and BCC: headers in the raw message can contain a group list.
@@ -110,10 +116,10 @@ public class RawMessage implements Serializable, Cloneable {
      * </important>
      * <p>
      * For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -124,8 +130,10 @@ public class RawMessage implements Serializable, Cloneable {
      * </p>
      * 
      * @param data
-     *        The raw data of the message. The client must ensure that the message format complies with Internet email
-     *        standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.</p>
+     *        The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly
+     *        through the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the
+     *        base 64-encoding for you. In all cases, the client must ensure that the message format complies with
+     *        Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a group list.
      *        </p>
@@ -142,7 +150,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        </important>
      *        <p>
      *        For more information, go to the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
      *        Guide</a>.
      */
 
@@ -152,8 +160,10 @@ public class RawMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The raw data of the message. The client must ensure that the message format complies with Internet email
-     * standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.
+     * The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through
+     * the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the base 64-encoding
+     * for you. In all cases, the client must ensure that the message format complies with Internet email standards
+     * regarding email header fields, MIME types, and MIME encoding.
      * </p>
      * <p>
      * The To:, CC:, and BCC: headers in the raw message can contain a group list.
@@ -171,7 +181,7 @@ public class RawMessage implements Serializable, Cloneable {
      * </important>
      * <p>
      * For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -181,8 +191,10 @@ public class RawMessage implements Serializable, Cloneable {
      * {@code position}.
      * </p>
      * 
-     * @return The raw data of the message. The client must ensure that the message format complies with Internet email
-     *         standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.</p>
+     * @return The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly
+     *         through the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the
+     *         base 64-encoding for you. In all cases, the client must ensure that the message format complies with
+     *         Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
      *         <p>
      *         The To:, CC:, and BCC: headers in the raw message can contain a group list.
      *         </p>
@@ -199,7 +211,7 @@ public class RawMessage implements Serializable, Cloneable {
      *         </important>
      *         <p>
      *         For more information, go to the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
      *         Guide</a>.
      */
 
@@ -209,8 +221,10 @@ public class RawMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The raw data of the message. The client must ensure that the message format complies with Internet email
-     * standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.
+     * The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly through
+     * the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the base 64-encoding
+     * for you. In all cases, the client must ensure that the message format complies with Internet email standards
+     * regarding email header fields, MIME types, and MIME encoding.
      * </p>
      * <p>
      * The To:, CC:, and BCC: headers in the raw message can contain a group list.
@@ -228,12 +242,24 @@ public class RawMessage implements Serializable, Cloneable {
      * </important>
      * <p>
      * For more information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param data
-     *        The raw data of the message. The client must ensure that the message format complies with Internet email
-     *        standards regarding email header fields, MIME types, MIME encoding, and base64 encoding.</p>
+     *        The raw data of the message. This data needs to base64-encoded if you are accessing Amazon SES directly
+     *        through the HTTPS interface. If you are accessing Amazon SES using an AWS SDK, the SDK takes care of the
+     *        base 64-encoding for you. In all cases, the client must ensure that the message format complies with
+     *        Internet email standards regarding email header fields, MIME types, and MIME encoding.</p>
      *        <p>
      *        The To:, CC:, and BCC: headers in the raw message can contain a group list.
      *        </p>
@@ -250,7 +276,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        </important>
      *        <p>
      *        For more information, go to the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer
      *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -261,7 +287,8 @@ public class RawMessage implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -311,4 +338,5 @@ public class RawMessage implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

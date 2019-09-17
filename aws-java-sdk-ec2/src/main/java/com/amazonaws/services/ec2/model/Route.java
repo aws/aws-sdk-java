@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,22 @@ public class Route implements Serializable, Cloneable {
     private String destinationCidrBlock;
     /**
      * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     */
+    private String destinationIpv6CidrBlock;
+    /**
+     * <p>
      * The prefix of the AWS service.
      * </p>
      */
     private String destinationPrefixListId;
+    /**
+     * <p>
+     * The ID of the egress-only internet gateway.
+     * </p>
+     */
+    private String egressOnlyInternetGatewayId;
     /**
      * <p>
      * The ID of a gateway attached to your VPC.
@@ -57,29 +69,22 @@ public class Route implements Serializable, Cloneable {
     private String instanceOwnerId;
     /**
      * <p>
-     * The ID of the network interface.
-     * </p>
-     */
-    private String networkInterfaceId;
-    /**
-     * <p>
-     * The ID of the VPC peering connection.
-     * </p>
-     */
-    private String vpcPeeringConnectionId;
-    /**
-     * <p>
      * The ID of a NAT gateway.
      * </p>
      */
     private String natGatewayId;
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of a transit gateway.
      * </p>
      */
-    private String state;
+    private String transitGatewayId;
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
     /**
      * <p>
      * Describes how the route was created.
@@ -105,16 +110,17 @@ public class Route implements Serializable, Cloneable {
     private String origin;
     /**
      * <p>
-     * The IPv6 CIDR block used for the destination match.
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      */
-    private String destinationIpv6CidrBlock;
+    private String state;
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of a VPC peering connection.
      * </p>
      */
-    private String egressOnlyInternetGatewayId;
+    private String vpcPeeringConnectionId;
 
     /**
      * <p>
@@ -158,6 +164,46 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match.
+     */
+
+    public void setDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        this.destinationIpv6CidrBlock = destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block used for the destination match.
+     */
+
+    public String getDestinationIpv6CidrBlock() {
+        return this.destinationIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block used for the destination match.
+     * </p>
+     * 
+     * @param destinationIpv6CidrBlock
+     *        The IPv6 CIDR block used for the destination match.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
+        setDestinationIpv6CidrBlock(destinationIpv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
      * The prefix of the AWS service.
      * </p>
      * 
@@ -193,6 +239,46 @@ public class Route implements Serializable, Cloneable {
 
     public Route withDestinationPrefixListId(String destinationPrefixListId) {
         setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only internet gateway.
+     */
+
+    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only internet gateway.
+     * </p>
+     * 
+     * @return The ID of the egress-only internet gateway.
+     */
+
+    public String getEgressOnlyInternetGatewayId() {
+        return this.egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
         return this;
     }
 
@@ -318,86 +404,6 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     */
-
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @return The ID of the network interface.
-     */
-
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Route withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC peering connection.
-     * </p>
-     * 
-     * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
-     */
-
-    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
-        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC peering connection.
-     * </p>
-     * 
-     * @return The ID of the VPC peering connection.
-     */
-
-    public String getVpcPeeringConnectionId() {
-        return this.vpcPeeringConnectionId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC peering connection.
-     * </p>
-     * 
-     * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
-        setVpcPeeringConnectionId(vpcPeeringConnectionId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The ID of a NAT gateway.
      * </p>
      * 
@@ -438,89 +444,81 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of a transit gateway.
      * </p>
      * 
-     * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
-     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
-     *        terminated).
-     * @see RouteState
+     * @param transitGatewayId
+     *        The ID of a transit gateway.
      */
 
-    public void setState(String state) {
-        this.state = state;
+    public void setTransitGatewayId(String transitGatewayId) {
+        this.transitGatewayId = transitGatewayId;
     }
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of a transit gateway.
      * </p>
      * 
-     * @return The state of the route. The <code>blackhole</code> state indicates that the route's target isn't
-     *         available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance
-     *         has been terminated).
-     * @see RouteState
+     * @return The ID of a transit gateway.
      */
 
-    public String getState() {
-        return this.state;
+    public String getTransitGatewayId() {
+        return this.transitGatewayId;
     }
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of a transit gateway.
      * </p>
      * 
-     * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
-     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
-     *        terminated).
+     * @param transitGatewayId
+     *        The ID of a transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RouteState
      */
 
-    public Route withState(String state) {
-        setState(state);
+    public Route withTransitGatewayId(String transitGatewayId) {
+        setTransitGatewayId(transitGatewayId);
         return this;
     }
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of the network interface.
      * </p>
      * 
-     * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
-     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
-     *        terminated).
-     * @see RouteState
+     * @param networkInterfaceId
+     *        The ID of the network interface.
      */
 
-    public void setState(RouteState state) {
-        this.state = state.toString();
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
     }
 
     /**
      * <p>
-     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
-     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * The ID of the network interface.
      * </p>
      * 
-     * @param state
-     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
-     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
-     *        terminated).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RouteState
+     * @return The ID of the network interface.
      */
 
-    public Route withState(RouteState state) {
-        setState(state);
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
@@ -710,7 +708,7 @@ public class Route implements Serializable, Cloneable {
      */
 
     public void setOrigin(RouteOrigin origin) {
-        this.origin = origin.toString();
+        withOrigin(origin);
     }
 
     /**
@@ -758,92 +756,141 @@ public class Route implements Serializable, Cloneable {
      */
 
     public Route withOrigin(RouteOrigin origin) {
-        setOrigin(origin);
+        this.origin = origin.toString();
         return this;
     }
 
     /**
      * <p>
-     * The IPv6 CIDR block used for the destination match.
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
-     * @param destinationIpv6CidrBlock
-     *        The IPv6 CIDR block used for the destination match.
+     * @param state
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @see RouteState
      */
 
-    public void setDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
-        this.destinationIpv6CidrBlock = destinationIpv6CidrBlock;
+    public void setState(String state) {
+        this.state = state;
     }
 
     /**
      * <p>
-     * The IPv6 CIDR block used for the destination match.
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
-     * @return The IPv6 CIDR block used for the destination match.
+     * @return The state of the route. The <code>blackhole</code> state indicates that the route's target isn't
+     *         available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance
+     *         has been terminated).
+     * @see RouteState
      */
 
-    public String getDestinationIpv6CidrBlock() {
-        return this.destinationIpv6CidrBlock;
+    public String getState() {
+        return this.state;
     }
 
     /**
      * <p>
-     * The IPv6 CIDR block used for the destination match.
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
      * </p>
      * 
-     * @param destinationIpv6CidrBlock
-     *        The IPv6 CIDR block used for the destination match.
+     * @param state
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RouteState
+     */
+
+    public Route withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * </p>
+     * 
+     * @param state
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @see RouteState
+     */
+
+    public void setState(RouteState state) {
+        withState(state);
+    }
+
+    /**
+     * <p>
+     * The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for
+     * example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).
+     * </p>
+     * 
+     * @param state
+     *        The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available
+     *        (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been
+     *        terminated).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RouteState
+     */
+
+    public Route withState(RouteState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC peering connection.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionId
+     *        The ID of a VPC peering connection.
+     */
+
+    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC peering connection.
+     * </p>
+     * 
+     * @return The ID of a VPC peering connection.
+     */
+
+    public String getVpcPeeringConnectionId() {
+        return this.vpcPeeringConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC peering connection.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionId
+     *        The ID of a VPC peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Route withDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
-        setDestinationIpv6CidrBlock(destinationIpv6CidrBlock);
+    public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        setVpcPeeringConnectionId(vpcPeeringConnectionId);
         return this;
     }
 
     /**
-     * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     * 
-     * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
-     */
-
-    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
-        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     * 
-     * @return The ID of the egress-only Internet gateway.
-     */
-
-    public String getEgressOnlyInternetGatewayId() {
-        return this.egressOnlyInternetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     * 
-     * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Route withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
-        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -855,28 +902,30 @@ public class Route implements Serializable, Cloneable {
         sb.append("{");
         if (getDestinationCidrBlock() != null)
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
+        if (getDestinationIpv6CidrBlock() != null)
+            sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
         if (getDestinationPrefixListId() != null)
             sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId()).append(",");
+        if (getEgressOnlyInternetGatewayId() != null)
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getGatewayId() != null)
             sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceOwnerId() != null)
             sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
-        if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getNatGatewayId() != null)
             sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
+        if (getTransitGatewayId() != null)
+            sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getOrigin() != null)
             sb.append("Origin: ").append(getOrigin()).append(",");
-        if (getDestinationIpv6CidrBlock() != null)
-            sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
-        if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId());
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getVpcPeeringConnectionId() != null)
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }
@@ -895,9 +944,17 @@ public class Route implements Serializable, Cloneable {
             return false;
         if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
             return false;
+        if (other.getDestinationIpv6CidrBlock() == null ^ this.getDestinationIpv6CidrBlock() == null)
+            return false;
+        if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
+            return false;
         if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
             return false;
         if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
             return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
@@ -911,33 +968,29 @@ public class Route implements Serializable, Cloneable {
             return false;
         if (other.getInstanceOwnerId() != null && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false)
             return false;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
-            return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
-            return false;
-        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
-            return false;
-        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
-            return false;
         if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
             return false;
         if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
-        if (other.getState() == null ^ this.getState() == null)
+        if (other.getTransitGatewayId() == null ^ this.getTransitGatewayId() == null)
             return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+        if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getOrigin() == null ^ this.getOrigin() == null)
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
-        if (other.getDestinationIpv6CidrBlock() == null ^ this.getDestinationIpv6CidrBlock() == null)
+        if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
             return false;
-        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
         return true;
     }
@@ -948,17 +1001,18 @@ public class Route implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
-        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
-        hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         return hashCode;
     }
 
@@ -970,4 +1024,5 @@ public class Route implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,78 +12,48 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkspacesConnectionStatusRequest Marshaller
+ * DescribeWorkspacesConnectionStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkspacesConnectionStatusRequestMarshaller implements
-        Marshaller<Request<DescribeWorkspacesConnectionStatusRequest>, DescribeWorkspacesConnectionStatusRequest> {
+@SdkInternalApi
+public class DescribeWorkspacesConnectionStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> WORKSPACEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WorkspaceIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeWorkspacesConnectionStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeWorkspacesConnectionStatusRequestMarshaller instance = new DescribeWorkspacesConnectionStatusRequestMarshaller();
+
+    public static DescribeWorkspacesConnectionStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeWorkspacesConnectionStatusRequest> marshall(DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeWorkspacesConnectionStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkspacesConnectionStatusRequest> request = new DefaultRequest<DescribeWorkspacesConnectionStatusRequest>(
-                describeWorkspacesConnectionStatusRequest, "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.DescribeWorkspacesConnectionStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> workspaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeWorkspacesConnectionStatusRequest
-                    .getWorkspaceIds();
-            if (!workspaceIdsList.isEmpty() || !workspaceIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("WorkspaceIds");
-                jsonGenerator.writeStartArray();
-                for (String workspaceIdsListValue : workspaceIdsList) {
-                    if (workspaceIdsListValue != null) {
-                        jsonGenerator.writeValue(workspaceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeWorkspacesConnectionStatusRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeWorkspacesConnectionStatusRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeWorkspacesConnectionStatusRequest.getWorkspaceIds(), WORKSPACEIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspacesConnectionStatusRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

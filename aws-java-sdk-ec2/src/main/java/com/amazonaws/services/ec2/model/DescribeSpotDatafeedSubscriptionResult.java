@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      */
     private SpotDatafeedSubscription spotDatafeedSubscription;
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
      * @param spotDatafeedSubscription
-     *        The Spot instance data feed subscription.
+     *        The Spot Instance data feed subscription.
      */
 
     public void setSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
@@ -48,10 +48,10 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
-     * @return The Spot instance data feed subscription.
+     * @return The Spot Instance data feed subscription.
      */
 
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
@@ -60,11 +60,11 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
      * @param spotDatafeedSubscription
-     *        The Spot instance data feed subscription.
+     *        The Spot Instance data feed subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

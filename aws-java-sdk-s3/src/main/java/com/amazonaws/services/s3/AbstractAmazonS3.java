@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -184,6 +184,12 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public boolean doesBucketExist(String bucketName)
+            throws SdkClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public boolean doesBucketExistV2(String bucketName)
             throws SdkClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
@@ -841,6 +847,12 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public RestoreObjectResult restoreObjectV2(RestoreObjectRequest request)
+        throws AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public void enableRequesterPays(String bucketName)
             throws AmazonServiceException, SdkClientException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
@@ -1081,6 +1093,106 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(
             ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
             throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeleteBucketEncryptionResult deleteBucketEncryption(String bucketName) throws SdkClientException {
+        return deleteBucketEncryption(new DeleteBucketEncryptionRequest().withBucketName(bucketName));
+    }
+
+    @Override
+    public DeleteBucketEncryptionResult deleteBucketEncryption(DeleteBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketEncryptionResult getBucketEncryption(String bucketName) throws SdkClientException {
+        return getBucketEncryption(new GetBucketEncryptionRequest().withBucketName(bucketName));
+    }
+
+    @Override
+    public GetBucketEncryptionResult getBucketEncryption(GetBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketEncryptionResult setBucketEncryption(SetBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetPublicAccessBlockResult setPublicAccessBlock(SetPublicAccessBlockRequest request) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest request) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketPolicyStatusResult getBucketPolicyStatus(GetBucketPolicyStatusRequest request) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest) throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetObjectLegalHoldResult setObjectLegalHold(SetObjectLegalHoldRequest setObjectLegalHoldRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetObjectLegalHoldResult getObjectLegalHold(GetObjectLegalHoldRequest getObjectLegalHoldRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetObjectLockConfigurationResult setObjectLockConfiguration(SetObjectLockConfigurationRequest setObjectLockConfigurationRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetObjectLockConfigurationResult getObjectLockConfiguration(GetObjectLockConfigurationRequest getObjectLockConfigurationRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetObjectRetentionResult setObjectRetention(SetObjectRetentionRequest setObjectRetentionRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public PresignedUrlDownloadResult download(PresignedUrlDownloadRequest presignedUrlDownloadRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public void download(PresignedUrlDownloadRequest presignedUrlDownloadRequest, File destinationFile) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public PresignedUrlUploadResult upload(PresignedUrlUploadRequest presignedUrlUploadRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public void shutdown() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 

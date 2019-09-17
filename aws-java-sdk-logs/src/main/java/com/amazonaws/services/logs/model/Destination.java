@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.logs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Destination implements Serializable, Cloneable {
+public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class Destination implements Serializable, Cloneable {
     private String destinationName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      */
@@ -59,7 +61,7 @@ public class Destination implements Serializable, Cloneable {
     private String arn;
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
@@ -106,12 +108,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example,
+     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
      *        a Kinesis stream).
      */
 
@@ -121,12 +123,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for
-     *         example, a Kinesis stream).
+     * @return The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
+     *         a Kinesis stream).
      */
 
     public String getTargetArn() {
@@ -135,12 +137,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example,
+     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
      *        a Kinesis stream).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -275,11 +277,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination.
+     *        The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *        UTC.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -288,10 +291,11 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the destination.
+     * @return The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *         UTC.
      */
 
     public Long getCreationTime() {
@@ -300,11 +304,12 @@ public class Destination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination.
+     *        The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,7 +319,8 @@ public class Destination implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -398,5 +404,11 @@ public class Destination implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.logs.model.transform.DestinationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

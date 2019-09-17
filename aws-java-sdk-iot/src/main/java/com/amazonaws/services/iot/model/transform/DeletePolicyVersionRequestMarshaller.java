@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,55 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeletePolicyVersionRequest Marshaller
+ * DeletePolicyVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeletePolicyVersionRequestMarshaller implements Marshaller<Request<DeletePolicyVersionRequest>, DeletePolicyVersionRequest> {
+@SdkInternalApi
+public class DeletePolicyVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("policyName").build();
+    private static final MarshallingInfo<String> POLICYVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("policyVersionId").build();
 
-    public DeletePolicyVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeletePolicyVersionRequestMarshaller instance = new DeletePolicyVersionRequestMarshaller();
+
+    public static DeletePolicyVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeletePolicyVersionRequest> marshall(DeletePolicyVersionRequest deletePolicyVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeletePolicyVersionRequest deletePolicyVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deletePolicyVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePolicyVersionRequest> request = new DefaultRequest<DeletePolicyVersionRequest>(deletePolicyVersionRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "policyName", deletePolicyVersionRequest.getPolicyName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyVersionId",
-                deletePolicyVersionRequest.getPolicyVersionId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deletePolicyVersionRequest.getPolicyName(), POLICYNAME_BINDING);
+            protocolMarshaller.marshall(deletePolicyVersionRequest.getPolicyVersionId(), POLICYVERSIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

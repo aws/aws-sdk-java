@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.amazonaws.codegen.customization.processors;
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
 
 public class SendEmptyNonAutoConstructedListAsEmptyListProcessor implements
@@ -39,8 +40,8 @@ public class SendEmptyNonAutoConstructedListAsEmptyListProcessor implements
             intermediateModel.getShapes().values().stream()
                     .filter(s -> s.getMembers() != null)
                     .flatMap(s -> s.getMembers().stream())
-                    .filter(m -> m.isList())
-                    .map(m -> m.getListModel())
+                    .filter(MemberModel::isList)
+                    .map(MemberModel::getListModel)
                     .forEach(m -> m.setMarshallNonAutoConstructedEmptyLists(true));
         }
     }

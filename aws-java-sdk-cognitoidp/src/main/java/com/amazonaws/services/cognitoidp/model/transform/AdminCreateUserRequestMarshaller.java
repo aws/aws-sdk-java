@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,116 +12,66 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AdminCreateUserRequest Marshaller
+ * AdminCreateUserRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AdminCreateUserRequestMarshaller implements Marshaller<Request<AdminCreateUserRequest>, AdminCreateUserRequest> {
+@SdkInternalApi
+public class AdminCreateUserRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<List> USERATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAttributes").build();
+    private static final MarshallingInfo<List> VALIDATIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationData").build();
+    private static final MarshallingInfo<String> TEMPORARYPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemporaryPassword").build();
+    private static final MarshallingInfo<Boolean> FORCEALIASCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceAliasCreation").build();
+    private static final MarshallingInfo<String> MESSAGEACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageAction").build();
+    private static final MarshallingInfo<List> DESIREDDELIVERYMEDIUMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredDeliveryMediums").build();
 
-    public AdminCreateUserRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AdminCreateUserRequestMarshaller instance = new AdminCreateUserRequestMarshaller();
+
+    public static AdminCreateUserRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AdminCreateUserRequest> marshall(AdminCreateUserRequest adminCreateUserRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AdminCreateUserRequest adminCreateUserRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (adminCreateUserRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AdminCreateUserRequest> request = new DefaultRequest<AdminCreateUserRequest>(adminCreateUserRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminCreateUser");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (adminCreateUserRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(adminCreateUserRequest.getUserPoolId());
-            }
-            if (adminCreateUserRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(adminCreateUserRequest.getUsername());
-            }
-
-            java.util.List<AttributeType> userAttributesList = adminCreateUserRequest.getUserAttributes();
-            if (userAttributesList != null) {
-                jsonGenerator.writeFieldName("UserAttributes");
-                jsonGenerator.writeStartArray();
-                for (AttributeType userAttributesListValue : userAttributesList) {
-                    if (userAttributesListValue != null) {
-
-                        AttributeTypeJsonMarshaller.getInstance().marshall(userAttributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<AttributeType> validationDataList = adminCreateUserRequest.getValidationData();
-            if (validationDataList != null) {
-                jsonGenerator.writeFieldName("ValidationData");
-                jsonGenerator.writeStartArray();
-                for (AttributeType validationDataListValue : validationDataList) {
-                    if (validationDataListValue != null) {
-
-                        AttributeTypeJsonMarshaller.getInstance().marshall(validationDataListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (adminCreateUserRequest.getTemporaryPassword() != null) {
-                jsonGenerator.writeFieldName("TemporaryPassword").writeValue(adminCreateUserRequest.getTemporaryPassword());
-            }
-            if (adminCreateUserRequest.getForceAliasCreation() != null) {
-                jsonGenerator.writeFieldName("ForceAliasCreation").writeValue(adminCreateUserRequest.getForceAliasCreation());
-            }
-            if (adminCreateUserRequest.getMessageAction() != null) {
-                jsonGenerator.writeFieldName("MessageAction").writeValue(adminCreateUserRequest.getMessageAction());
-            }
-
-            java.util.List<String> desiredDeliveryMediumsList = adminCreateUserRequest.getDesiredDeliveryMediums();
-            if (desiredDeliveryMediumsList != null) {
-                jsonGenerator.writeFieldName("DesiredDeliveryMediums");
-                jsonGenerator.writeStartArray();
-                for (String desiredDeliveryMediumsListValue : desiredDeliveryMediumsList) {
-                    if (desiredDeliveryMediumsListValue != null) {
-                        jsonGenerator.writeValue(desiredDeliveryMediumsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(adminCreateUserRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getUserAttributes(), USERATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getValidationData(), VALIDATIONDATA_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getTemporaryPassword(), TEMPORARYPASSWORD_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getForceAliasCreation(), FORCEALIASCREATION_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getMessageAction(), MESSAGEACTION_BINDING);
+            protocolMarshaller.marshall(adminCreateUserRequest.getDesiredDeliveryMediums(), DESIREDDELIVERYMEDIUMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

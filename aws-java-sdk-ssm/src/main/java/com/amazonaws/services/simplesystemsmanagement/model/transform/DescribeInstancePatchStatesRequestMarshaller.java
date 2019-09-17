@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,81 +12,51 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeInstancePatchStatesRequest Marshaller
+ * DescribeInstancePatchStatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeInstancePatchStatesRequestMarshaller implements
-        Marshaller<Request<DescribeInstancePatchStatesRequest>, DescribeInstancePatchStatesRequest> {
+@SdkInternalApi
+public class DescribeInstancePatchStatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> INSTANCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("InstanceIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
-    public DescribeInstancePatchStatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeInstancePatchStatesRequestMarshaller instance = new DescribeInstancePatchStatesRequestMarshaller();
+
+    public static DescribeInstancePatchStatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeInstancePatchStatesRequest> marshall(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeInstancePatchStatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeInstancePatchStatesRequest> request = new DefaultRequest<DescribeInstancePatchStatesRequest>(describeInstancePatchStatesRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DescribeInstancePatchStates");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstancePatchStatesRequest
-                    .getInstanceIds();
-            if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("InstanceIds");
-                jsonGenerator.writeStartArray();
-                for (String instanceIdsListValue : instanceIdsList) {
-                    if (instanceIdsListValue != null) {
-                        jsonGenerator.writeValue(instanceIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeInstancePatchStatesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeInstancePatchStatesRequest.getNextToken());
-            }
-            if (describeInstancePatchStatesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(describeInstancePatchStatesRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeInstancePatchStatesRequest.getInstanceIds(), INSTANCEIDS_BINDING);
+            protocolMarshaller.marshall(describeInstancePatchStatesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeInstancePatchStatesRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

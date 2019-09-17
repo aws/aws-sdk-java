@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,57 +28,23 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the VPC.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
      * IPv6 addresses, or the size of the CIDR block.
      * </p>
      */
     private Boolean amazonProvidedIpv6CidrBlock;
-
+    /**
+     * <p>
+     * An IPv4 CIDR block to associate with the VPC.
+     * </p>
+     */
+    private String cidrBlock;
     /**
      * <p>
      * The ID of the VPC.
      * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
      */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @return The ID of the VPC.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateVpcCidrBlockRequest withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
+    private String vpcId;
 
     /**
      * <p>
@@ -141,6 +107,86 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * An IPv4 CIDR block to associate with the VPC.
+     * </p>
+     * 
+     * @param cidrBlock
+     *        An IPv4 CIDR block to associate with the VPC.
+     */
+
+    public void setCidrBlock(String cidrBlock) {
+        this.cidrBlock = cidrBlock;
+    }
+
+    /**
+     * <p>
+     * An IPv4 CIDR block to associate with the VPC.
+     * </p>
+     * 
+     * @return An IPv4 CIDR block to associate with the VPC.
+     */
+
+    public String getCidrBlock() {
+        return this.cidrBlock;
+    }
+
+    /**
+     * <p>
+     * An IPv4 CIDR block to associate with the VPC.
+     * </p>
+     * 
+     * @param cidrBlock
+     *        An IPv4 CIDR block to associate with the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateVpcCidrBlockRequest withCidrBlock(String cidrBlock) {
+        setCidrBlock(cidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @return The ID of the VPC.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateVpcCidrBlockRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -152,7 +198,8 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -162,10 +209,12 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getAmazonProvidedIpv6CidrBlock() != null)
-            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock());
+            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock()).append(",");
+        if (getCidrBlock() != null)
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -180,13 +229,17 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
         if (obj instanceof AssociateVpcCidrBlockRequest == false)
             return false;
         AssociateVpcCidrBlockRequest other = (AssociateVpcCidrBlockRequest) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
         if (other.getAmazonProvidedIpv6CidrBlock() == null ^ this.getAmazonProvidedIpv6CidrBlock() == null)
             return false;
         if (other.getAmazonProvidedIpv6CidrBlock() != null && other.getAmazonProvidedIpv6CidrBlock().equals(this.getAmazonProvidedIpv6CidrBlock()) == false)
+            return false;
+        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
+            return false;
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -196,8 +249,9 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getAmazonProvidedIpv6CidrBlock() == null) ? 0 : getAmazonProvidedIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

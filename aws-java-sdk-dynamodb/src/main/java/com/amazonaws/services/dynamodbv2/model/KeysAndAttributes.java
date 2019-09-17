@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -29,7 +31,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KeysAndAttributes implements Serializable, Cloneable {
+public class KeysAndAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,7 +42,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -63,8 +65,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -105,7 +107,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -133,8 +135,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -213,12 +215,12 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
      *         Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -229,13 +231,13 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
      *        Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -251,7 +253,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -262,7 +264,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
      *        Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -280,13 +282,13 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">
      *        Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -367,8 +369,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -382,7 +384,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -401,8 +403,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -415,7 +417,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -434,8 +436,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -449,7 +451,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -495,7 +497,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -523,8 +525,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -561,7 +563,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -590,7 +592,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -634,7 +636,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -662,8 +664,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -701,7 +703,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -730,7 +732,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -774,7 +776,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -802,8 +804,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -841,7 +843,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -870,7 +872,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -902,7 +904,8 @@ public class KeysAndAttributes implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -979,5 +982,11 @@ public class KeysAndAttributes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.KeysAndAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

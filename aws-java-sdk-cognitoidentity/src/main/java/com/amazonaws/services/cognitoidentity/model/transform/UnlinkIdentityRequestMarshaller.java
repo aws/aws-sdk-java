@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,94 +12,52 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnlinkIdentityRequest Marshaller
+ * UnlinkIdentityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnlinkIdentityRequestMarshaller implements Marshaller<Request<UnlinkIdentityRequest>, UnlinkIdentityRequest> {
+@SdkInternalApi
+public class UnlinkIdentityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Logins").build();
+    private static final MarshallingInfo<List> LOGINSTOREMOVE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoginsToRemove").build();
 
-    public UnlinkIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UnlinkIdentityRequestMarshaller instance = new UnlinkIdentityRequestMarshaller();
+
+    public static UnlinkIdentityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UnlinkIdentityRequest> marshall(UnlinkIdentityRequest unlinkIdentityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UnlinkIdentityRequest unlinkIdentityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (unlinkIdentityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UnlinkIdentityRequest> request = new DefaultRequest<UnlinkIdentityRequest>(unlinkIdentityRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.UnlinkIdentity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (unlinkIdentityRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(unlinkIdentityRequest.getIdentityId());
-            }
-
-            java.util.Map<String, String> loginsMap = unlinkIdentityRequest.getLogins();
-            if (loginsMap != null) {
-                jsonGenerator.writeFieldName("Logins");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
-                    if (loginsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
-
-                        jsonGenerator.writeValue(loginsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.List<String> loginsToRemoveList = unlinkIdentityRequest.getLoginsToRemove();
-            if (loginsToRemoveList != null) {
-                jsonGenerator.writeFieldName("LoginsToRemove");
-                jsonGenerator.writeStartArray();
-                for (String loginsToRemoveListValue : loginsToRemoveList) {
-                    if (loginsToRemoveListValue != null) {
-                        jsonGenerator.writeValue(loginsToRemoveListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(unlinkIdentityRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(unlinkIdentityRequest.getLogins(), LOGINS_BINDING);
+            protocolMarshaller.marshall(unlinkIdentityRequest.getLoginsToRemove(), LOGINSTOREMOVE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

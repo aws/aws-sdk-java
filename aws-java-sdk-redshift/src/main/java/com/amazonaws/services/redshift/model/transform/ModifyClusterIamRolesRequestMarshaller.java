@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class ModifyClusterIamRolesRequestMarshaller implements Marshaller<Reques
             request.addParameter("ClusterIdentifier", StringUtils.fromString(modifyClusterIamRolesRequest.getClusterIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> addIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
-                .getAddIamRoles();
-        if (!addIamRolesList.isEmpty() || !addIamRolesList.isAutoConstruct()) {
+        if (!modifyClusterIamRolesRequest.getAddIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest.getAddIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> addIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
+                    .getAddIamRoles();
             int addIamRolesListIndex = 1;
 
             for (String addIamRolesListValue : addIamRolesList) {
@@ -57,9 +58,10 @@ public class ModifyClusterIamRolesRequestMarshaller implements Marshaller<Reques
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> removeIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
-                .getRemoveIamRoles();
-        if (!removeIamRolesList.isEmpty() || !removeIamRolesList.isAutoConstruct()) {
+        if (!modifyClusterIamRolesRequest.getRemoveIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest.getRemoveIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> removeIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
+                    .getRemoveIamRoles();
             int removeIamRolesListIndex = 1;
 
             for (String removeIamRolesListValue : removeIamRolesList) {

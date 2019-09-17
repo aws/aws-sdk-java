@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,10 @@ import java.lang.annotation.Target;
  * version checks are performed</b>, as required by the
  * {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)}
  * API.
+ *
+ * <p>Note that for transactionWrite, <b>no version checks are performed</b>.
+ * An {@link com.amazonaws.SdkClientException} exception is thrown, if class of
+ * any input object is annotated with {@link DynamoDBVersionAttribute}.</p>
  *
  * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBVersioned
  */

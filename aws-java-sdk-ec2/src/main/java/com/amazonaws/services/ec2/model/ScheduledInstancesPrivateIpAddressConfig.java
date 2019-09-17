@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,56 +28,16 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
 
     /**
      * <p>
-     * The IPv4 address.
-     * </p>
-     */
-    private String privateIpAddress;
-    /**
-     * <p>
      * Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.
      * </p>
      */
     private Boolean primary;
-
     /**
      * <p>
      * The IPv4 address.
      * </p>
-     * 
-     * @param privateIpAddress
-     *        The IPv4 address.
      */
-
-    public void setPrivateIpAddress(String privateIpAddress) {
-        this.privateIpAddress = privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The IPv4 address.
-     * </p>
-     * 
-     * @return The IPv4 address.
-     */
-
-    public String getPrivateIpAddress() {
-        return this.privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The IPv4 address.
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        The IPv4 address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesPrivateIpAddressConfig withPrivateIpAddress(String privateIpAddress) {
-        setPrivateIpAddress(privateIpAddress);
-        return this;
-    }
+    private String privateIpAddress;
 
     /**
      * <p>
@@ -132,7 +92,48 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The IPv4 address.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The IPv4 address.
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The IPv4 address.
+     * </p>
+     * 
+     * @return The IPv4 address.
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The IPv4 address.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesPrivateIpAddressConfig withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -142,10 +143,10 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrimary() != null)
-            sb.append("Primary: ").append(getPrimary());
+            sb.append("Primary: ").append(getPrimary()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -160,13 +161,13 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
         if (obj instanceof ScheduledInstancesPrivateIpAddressConfig == false)
             return false;
         ScheduledInstancesPrivateIpAddressConfig other = (ScheduledInstancesPrivateIpAddressConfig) obj;
-        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
-            return false;
-        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
-            return false;
         if (other.getPrimary() == null ^ this.getPrimary() == null)
             return false;
         if (other.getPrimary() != null && other.getPrimary().equals(this.getPrimary()) == false)
+            return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         return true;
     }
@@ -176,8 +177,8 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         return hashCode;
     }
 
@@ -189,4 +190,5 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

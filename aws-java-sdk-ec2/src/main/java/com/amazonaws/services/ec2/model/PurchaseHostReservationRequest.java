@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,26 +28,13 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the offering.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      */
-    private String offeringId;
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
-    /**
-     * <p>
-     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
-     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
-     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
-     * of USD 100, specify 100.00.
-     * </p>
-     */
-    private String limitPrice;
+    private String clientToken;
     /**
      * <p>
      * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
@@ -58,187 +45,82 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     private String currencyCode;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      */
-    private String clientToken;
-
-    /**
-     * <p>
-     * The ID of the offering.
-     * </p>
-     * 
-     * @param offeringId
-     *        The ID of the offering.
-     */
-
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
-    }
-
-    /**
-     * <p>
-     * The ID of the offering.
-     * </p>
-     * 
-     * @return The ID of the offering.
-     */
-
-    public String getOfferingId() {
-        return this.offeringId;
-    }
-
-    /**
-     * <p>
-     * The ID of the offering.
-     * </p>
-     * 
-     * @param offeringId
-     *        The ID of the offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationRequest withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @return The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     */
-
-    public java.util.List<String> getHostIdSet() {
-        if (hostIdSet == null) {
-            hostIdSet = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostIdSet;
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     */
-
-    public void setHostIdSet(java.util.Collection<String> hostIdSet) {
-        if (hostIdSet == null) {
-            this.hostIdSet = null;
-            return;
-        }
-
-        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostIdSet);
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostIdSet(java.util.Collection)} or {@link #withHostIdSet(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationRequest withHostIdSet(String... hostIdSet) {
-        if (this.hostIdSet == null) {
-            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostIdSet.length));
-        }
-        for (String ele : hostIdSet) {
-            this.hostIdSet.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationRequest withHostIdSet(java.util.Collection<String> hostIdSet) {
-        setHostIdSet(hostIdSet);
-        return this;
-    }
-
+    private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
     /**
      * <p>
      * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
      * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
      * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
      * of USD 100, specify 100.00.
      * </p>
+     */
+    private String limitPrice;
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     */
+    private String offeringId;
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
+     * </p>
      * 
-     * @param limitPrice
-     *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
-     *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *        specified price limit, the request will fail. This is used to ensure that the purchase does not exceed the
-     *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
-     *        example, to indicate a limit price of USD 100, specify 100.00.
+     * @param clientToken
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      */
 
-    public void setLimitPrice(String limitPrice) {
-        this.limitPrice = limitPrice;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
-     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
-     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
-     * of USD 100, specify 100.00.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
-     * @return The specified limit is checked against the total upfront cost of the reservation (calculated as the
-     *         offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *         specified price limit, the request will fail. This is used to ensure that the purchase does not exceed
-     *         the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>.
-     *         For example, to indicate a limit price of USD 100, specify 100.00.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a>.
      */
 
-    public String getLimitPrice() {
-        return this.limitPrice;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
-     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
-     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
-     * of USD 100, specify 100.00.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
-     * @param limitPrice
-     *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
-     *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *        specified price limit, the request will fail. This is used to ensure that the purchase does not exceed the
-     *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
-     *        example, to indicate a limit price of USD 100, specify 100.00.
+     * @param clientToken
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationRequest withLimitPrice(String limitPrice) {
-        setLimitPrice(limitPrice);
+    public PurchaseHostReservationRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -312,7 +194,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -331,59 +213,184 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      */
 
     public PurchaseHostReservationRequest withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The IDs of the Dedicated Hosts with which the reservation will be associated.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public java.util.List<String> getHostIdSet() {
+        if (hostIdSet == null) {
+            hostIdSet = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostIdSet;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public void setHostIdSet(java.util.Collection<String> hostIdSet) {
+        if (hostIdSet == null) {
+            this.hostIdSet = null;
+            return;
+        }
+
+        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostIdSet);
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostIdSet(java.util.Collection)} or {@link #withHostIdSet(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public PurchaseHostReservationRequest withHostIdSet(String... hostIdSet) {
+        if (this.hostIdSet == null) {
+            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostIdSet.length));
+        }
+        for (String ele : hostIdSet) {
+            this.hostIdSet.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
+     * </p>
+     * 
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationRequest withHostIdSet(java.util.Collection<String> hostIdSet) {
+        setHostIdSet(hostIdSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
+     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
+     * of USD 100, specify 100.00.
+     * </p>
+     * 
+     * @param limitPrice
+     *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
+     *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
+     *        specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
+     *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
+     *        example, to indicate a limit price of USD 100, specify 100.00.
+     */
+
+    public void setLimitPrice(String limitPrice) {
+        this.limitPrice = limitPrice;
+    }
+
+    /**
+     * <p>
+     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
+     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
+     * of USD 100, specify 100.00.
+     * </p>
+     * 
+     * @return The specified limit is checked against the total upfront cost of the reservation (calculated as the
+     *         offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
+     *         specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
+     *         expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
+     *         example, to indicate a limit price of USD 100, specify 100.00.
+     */
+
+    public String getLimitPrice() {
+        return this.limitPrice;
+    }
+
+    /**
+     * <p>
+     * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
+     * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
+     * of USD 100, specify 100.00.
+     * </p>
+     * 
+     * @param limitPrice
+     *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
+     *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
+     *        specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
+     *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
+     *        example, to indicate a limit price of USD 100, specify 100.00.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationRequest withLimitPrice(String limitPrice) {
+        setLimitPrice(limitPrice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the offering.
+     */
+
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @return The ID of the offering.
+     */
+
+    public String getOfferingId() {
+        return this.offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationRequest withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
         return this;
     }
 
@@ -399,7 +406,8 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -409,16 +417,16 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getCurrencyCode() != null)
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getHostIdSet() != null)
             sb.append("HostIdSet: ").append(getHostIdSet()).append(",");
         if (getLimitPrice() != null)
             sb.append("LimitPrice: ").append(getLimitPrice()).append(",");
-        if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -433,9 +441,13 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         if (obj instanceof PurchaseHostReservationRequest == false)
             return false;
         PurchaseHostReservationRequest other = (PurchaseHostReservationRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
+            return false;
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getHostIdSet() == null ^ this.getHostIdSet() == null)
             return false;
@@ -445,13 +457,9 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getLimitPrice() != null && other.getLimitPrice().equals(this.getLimitPrice()) == false)
             return false;
-        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
             return false;
-        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -461,11 +469,11 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
         hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
-        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

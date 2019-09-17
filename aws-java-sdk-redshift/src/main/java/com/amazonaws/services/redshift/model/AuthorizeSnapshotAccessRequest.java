@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,9 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The identifier of the AWS customer account authorized to restore the specified snapshot.
+     * </p>
+     * <p>
+     * To share a snapshot with AWS support, specify amazon-redshift-support.
      * </p>
      */
     private String accountWithRestoreAccess;
@@ -139,9 +142,14 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The identifier of the AWS customer account authorized to restore the specified snapshot.
      * </p>
+     * <p>
+     * To share a snapshot with AWS support, specify amazon-redshift-support.
+     * </p>
      * 
      * @param accountWithRestoreAccess
-     *        The identifier of the AWS customer account authorized to restore the specified snapshot.
+     *        The identifier of the AWS customer account authorized to restore the specified snapshot.</p>
+     *        <p>
+     *        To share a snapshot with AWS support, specify amazon-redshift-support.
      */
 
     public void setAccountWithRestoreAccess(String accountWithRestoreAccess) {
@@ -152,8 +160,13 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The identifier of the AWS customer account authorized to restore the specified snapshot.
      * </p>
+     * <p>
+     * To share a snapshot with AWS support, specify amazon-redshift-support.
+     * </p>
      * 
-     * @return The identifier of the AWS customer account authorized to restore the specified snapshot.
+     * @return The identifier of the AWS customer account authorized to restore the specified snapshot.</p>
+     *         <p>
+     *         To share a snapshot with AWS support, specify amazon-redshift-support.
      */
 
     public String getAccountWithRestoreAccess() {
@@ -164,9 +177,14 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The identifier of the AWS customer account authorized to restore the specified snapshot.
      * </p>
+     * <p>
+     * To share a snapshot with AWS support, specify amazon-redshift-support.
+     * </p>
      * 
      * @param accountWithRestoreAccess
-     *        The identifier of the AWS customer account authorized to restore the specified snapshot.
+     *        The identifier of the AWS customer account authorized to restore the specified snapshot.</p>
+     *        <p>
+     *        To share a snapshot with AWS support, specify amazon-redshift-support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,7 +194,8 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The ID of the change batch request. The value that you specify here is the value that
-     * <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     * <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
      * </p>
      */
     private String id;
@@ -49,7 +49,8 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param id
      *        The ID of the change batch request. The value that you specify here is the value that
-     *        <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     *        <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the
+     *        request.
      */
     public GetChangeRequest(String id) {
         setId(id);
@@ -58,12 +59,13 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The ID of the change batch request. The value that you specify here is the value that
-     * <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     * <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
      * </p>
      * 
      * @param id
      *        The ID of the change batch request. The value that you specify here is the value that
-     *        <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     *        <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the
+     *        request.
      */
 
     public void setId(String id) {
@@ -73,11 +75,12 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The ID of the change batch request. The value that you specify here is the value that
-     * <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     * <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
      * </p>
      * 
      * @return The ID of the change batch request. The value that you specify here is the value that
-     *         <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     *         <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the
+     *         request.
      */
 
     public String getId() {
@@ -87,12 +90,13 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The ID of the change batch request. The value that you specify here is the value that
-     * <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     * <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
      * </p>
      * 
      * @param id
      *        The ID of the change batch request. The value that you specify here is the value that
-     *        <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.
+     *        <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,7 +106,8 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

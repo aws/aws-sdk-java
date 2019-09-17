@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             request.addParameter("PreferredAvailabilityZone", StringUtils.fromString(createCacheClusterRequest.getPreferredAvailabilityZone()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
-                .getPreferredAvailabilityZones();
-        if (!preferredAvailabilityZonesList.isEmpty() || !preferredAvailabilityZonesList.isAutoConstruct()) {
+        if (!createCacheClusterRequest.getPreferredAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getPreferredAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getPreferredAvailabilityZones();
             int preferredAvailabilityZonesListIndex = 1;
 
             for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
@@ -94,9 +95,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(createCacheClusterRequest.getCacheSubnetGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
-                .getCacheSecurityGroupNames();
-        if (!cacheSecurityGroupNamesList.isEmpty() || !cacheSecurityGroupNamesList.isAutoConstruct()) {
+        if (!createCacheClusterRequest.getCacheSecurityGroupNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getCacheSecurityGroupNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getCacheSecurityGroupNames();
             int cacheSecurityGroupNamesListIndex = 1;
 
             for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
@@ -108,9 +110,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
-                .getSecurityGroupIds();
-        if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+        if (!createCacheClusterRequest.getSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getSecurityGroupIds();
             int securityGroupIdsListIndex = 1;
 
             for (String securityGroupIdsListValue : securityGroupIdsList) {
@@ -121,8 +124,9 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createCacheClusterRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createCacheClusterRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createCacheClusterRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createCacheClusterRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -138,9 +142,10 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> snapshotArnsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
-                .getSnapshotArns();
-        if (!snapshotArnsList.isEmpty() || !snapshotArnsList.isAutoConstruct()) {
+        if (!createCacheClusterRequest.getSnapshotArns().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getSnapshotArns()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> snapshotArnsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getSnapshotArns();
             int snapshotArnsListIndex = 1;
 
             for (String snapshotArnsListValue : snapshotArnsList) {

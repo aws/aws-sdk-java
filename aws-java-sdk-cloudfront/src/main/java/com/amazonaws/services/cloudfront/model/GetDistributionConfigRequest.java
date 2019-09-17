@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The request to get a distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,7 +30,7 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The distribution's ID.
+     * The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      * </p>
      */
     private String id;
@@ -47,7 +47,7 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The distribution's ID.
+     *        The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      */
     public GetDistributionConfigRequest(String id) {
         setId(id);
@@ -55,11 +55,11 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The distribution's ID.
+     * The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      * </p>
      * 
      * @param id
-     *        The distribution's ID.
+     *        The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The distribution's ID.
+     * The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      * </p>
      * 
-     * @return The distribution's ID.
+     * @return The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The distribution's ID.
+     * The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      * </p>
      * 
      * @param id
-     *        The distribution's ID.
+     *        The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +94,8 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

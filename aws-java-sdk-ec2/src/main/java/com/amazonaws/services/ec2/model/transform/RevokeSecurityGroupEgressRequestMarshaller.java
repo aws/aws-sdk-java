@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,30 +44,6 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
             request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupEgressRequest.getGroupId()));
         }
 
-        if (revokeSecurityGroupEgressRequest.getSourceSecurityGroupName() != null) {
-            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupEgressRequest.getSourceSecurityGroupName()));
-        }
-
-        if (revokeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId() != null) {
-            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId()));
-        }
-
-        if (revokeSecurityGroupEgressRequest.getIpProtocol() != null) {
-            request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupEgressRequest.getIpProtocol()));
-        }
-
-        if (revokeSecurityGroupEgressRequest.getFromPort() != null) {
-            request.addParameter("FromPort", StringUtils.fromInteger(revokeSecurityGroupEgressRequest.getFromPort()));
-        }
-
-        if (revokeSecurityGroupEgressRequest.getToPort() != null) {
-            request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupEgressRequest.getToPort()));
-        }
-
-        if (revokeSecurityGroupEgressRequest.getCidrIp() != null) {
-            request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupEgressRequest.getCidrIp()));
-        }
-
         com.amazonaws.internal.SdkInternalList<IpPermission> revokeSecurityGroupEgressRequestIpPermissionsList = (com.amazonaws.internal.SdkInternalList<IpPermission>) revokeSecurityGroupEgressRequest
                 .getIpPermissions();
         if (!revokeSecurityGroupEgressRequestIpPermissionsList.isEmpty() || !revokeSecurityGroupEgressRequestIpPermissionsList.isAutoConstruct()) {
@@ -75,14 +51,54 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
 
             for (IpPermission revokeSecurityGroupEgressRequestIpPermissionsListValue : revokeSecurityGroupEgressRequestIpPermissionsList) {
 
+                if (revokeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort",
+                            StringUtils.fromInteger(revokeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort()));
+                }
+
                 if (revokeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol() != null) {
                     request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
                             StringUtils.fromString(revokeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol()));
                 }
 
-                if (revokeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort",
-                            StringUtils.fromInteger(revokeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort()));
+                com.amazonaws.internal.SdkInternalList<Ipv6Range> ipPermissionIpv6RangesList = (com.amazonaws.internal.SdkInternalList<Ipv6Range>) revokeSecurityGroupEgressRequestIpPermissionsListValue
+                        .getIpv6Ranges();
+                if (!ipPermissionIpv6RangesList.isEmpty() || !ipPermissionIpv6RangesList.isAutoConstruct()) {
+                    int ipv6RangesListIndex = 1;
+
+                    for (Ipv6Range ipPermissionIpv6RangesListValue : ipPermissionIpv6RangesList) {
+
+                        if (ipPermissionIpv6RangesListValue.getCidrIpv6() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".CidrIpv6",
+                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getCidrIpv6()));
+                        }
+
+                        if (ipPermissionIpv6RangesListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getDescription()));
+                        }
+                        ipv6RangesListIndex++;
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<PrefixListId> ipPermissionPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<PrefixListId>) revokeSecurityGroupEgressRequestIpPermissionsListValue
+                        .getPrefixListIds();
+                if (!ipPermissionPrefixListIdsList.isEmpty() || !ipPermissionPrefixListIdsList.isAutoConstruct()) {
+                    int prefixListIdsListIndex = 1;
+
+                    for (PrefixListId ipPermissionPrefixListIdsListValue : ipPermissionPrefixListIdsList) {
+
+                        if (ipPermissionPrefixListIdsListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionPrefixListIdsListValue.getDescription()));
+                        }
+
+                        if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
+                                    StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
+                        }
+                        prefixListIdsListIndex++;
+                    }
                 }
 
                 if (revokeSecurityGroupEgressRequestIpPermissionsListValue.getToPort() != null) {
@@ -97,9 +113,14 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
 
                     for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
 
-                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
+                        if (ipPermissionUserIdGroupPairsListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getDescription()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
                         }
 
                         if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
@@ -107,9 +128,14 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
                         }
 
-                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
+                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
                         }
 
                         if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
@@ -122,42 +148,7 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                                     "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
                         }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
-                        }
                         userIdGroupPairsListIndex++;
-                    }
-                }
-
-                com.amazonaws.internal.SdkInternalList<Ipv6Range> ipPermissionIpv6RangesList = (com.amazonaws.internal.SdkInternalList<Ipv6Range>) revokeSecurityGroupEgressRequestIpPermissionsListValue
-                        .getIpv6Ranges();
-                if (!ipPermissionIpv6RangesList.isEmpty() || !ipPermissionIpv6RangesList.isAutoConstruct()) {
-                    int ipv6RangesListIndex = 1;
-
-                    for (Ipv6Range ipPermissionIpv6RangesListValue : ipPermissionIpv6RangesList) {
-
-                        if (ipPermissionIpv6RangesListValue.getCidrIpv6() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".CidrIpv6",
-                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getCidrIpv6()));
-                        }
-                        ipv6RangesListIndex++;
-                    }
-                }
-
-                com.amazonaws.internal.SdkInternalList<PrefixListId> ipPermissionPrefixListIdsList = (com.amazonaws.internal.SdkInternalList<PrefixListId>) revokeSecurityGroupEgressRequestIpPermissionsListValue
-                        .getPrefixListIds();
-                if (!ipPermissionPrefixListIdsList.isEmpty() || !ipPermissionPrefixListIdsList.isAutoConstruct()) {
-                    int prefixListIdsListIndex = 1;
-
-                    for (PrefixListId ipPermissionPrefixListIdsListValue : ipPermissionPrefixListIdsList) {
-
-                        if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
-                                    StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
-                        }
-                        prefixListIdsListIndex++;
                     }
                 }
 
@@ -172,11 +163,40 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".CidrIp",
                                     StringUtils.fromString(ipPermissionIpv4RangesListValue.getCidrIp()));
                         }
+
+                        if (ipPermissionIpv4RangesListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getDescription()));
+                        }
                         ipv4RangesListIndex++;
                     }
                 }
                 ipPermissionsListIndex++;
             }
+        }
+
+        if (revokeSecurityGroupEgressRequest.getCidrIp() != null) {
+            request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupEgressRequest.getCidrIp()));
+        }
+
+        if (revokeSecurityGroupEgressRequest.getFromPort() != null) {
+            request.addParameter("FromPort", StringUtils.fromInteger(revokeSecurityGroupEgressRequest.getFromPort()));
+        }
+
+        if (revokeSecurityGroupEgressRequest.getIpProtocol() != null) {
+            request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupEgressRequest.getIpProtocol()));
+        }
+
+        if (revokeSecurityGroupEgressRequest.getToPort() != null) {
+            request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupEgressRequest.getToPort()));
+        }
+
+        if (revokeSecurityGroupEgressRequest.getSourceSecurityGroupName() != null) {
+            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupEgressRequest.getSourceSecurityGroupName()));
+        }
+
+        if (revokeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId() != null) {
+            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId()));
         }
 
         return request;

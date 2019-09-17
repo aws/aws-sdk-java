@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codedeploy.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,23 +26,29 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ErrorInformation implements Serializable, Cloneable {
+public class ErrorInformation implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
      * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -72,17 +80,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -98,8 +106,8 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
@@ -114,19 +122,25 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -158,17 +172,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -184,25 +198,31 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the
-     *        application is deleted after the deployment is created but before it is started.
+     *        APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application
+     *        is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if
-     *        the deployment group is deleted after the deployment is created but before it is started.
+     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     *        deployment group is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
@@ -234,17 +254,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_INSTANCES: No instance were specified, or no instance can be found.
+     *        NO_INSTANCES: No instances were specified, or no instances can be found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     *        OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      *        </p>
      *        </li>
      *        <li>
@@ -260,8 +280,8 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision
-     *        is deleted after the deployment is created but before it is started.
+     *        REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is
+     *        deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      * @see ErrorCode
@@ -273,19 +293,25 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -317,17 +343,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -343,24 +369,30 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The error code:</p>
+     * @return For more information, see <a
+     *         href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *         CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *         User Guide</a>.</p>
+     *         <p>
+     *         The error code:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the
-     *         application is deleted after the deployment is created but before it is started.
+     *         APPLICATION_MISSING: The application was missing. This error code is most likely raised if the
+     *         application is deleted after the deployment is created, but before it is started.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if
-     *         the deployment group is deleted after the deployment is created but before it is started.
+     *         DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     *         deployment group is deleted after the deployment is created, but before it is started.
      *         </p>
      *         </li>
      *         <li>
@@ -392,17 +424,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     *         NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NO_INSTANCES: No instance were specified, or no instance can be found.
+     *         NO_INSTANCES: No instances were specified, or no instances can be found.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     *         OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      *         </p>
      *         </li>
      *         <li>
@@ -418,8 +450,8 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision
-     *         is deleted after the deployment is created but before it is started.
+     *         REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is
+     *         deleted after the deployment is created, but before it is started.
      *         </p>
      *         </li>
      * @see ErrorCode
@@ -431,19 +463,25 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -475,17 +513,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -501,25 +539,31 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the
-     *        application is deleted after the deployment is created but before it is started.
+     *        APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application
+     *        is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if
-     *        the deployment group is deleted after the deployment is created but before it is started.
+     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     *        deployment group is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
@@ -551,17 +595,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_INSTANCES: No instance were specified, or no instance can be found.
+     *        NO_INSTANCES: No instances were specified, or no instances can be found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     *        OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      *        </p>
      *        </li>
      *        <li>
@@ -577,8 +621,8 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision
-     *        is deleted after the deployment is created but before it is started.
+     *        REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is
+     *        deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -592,19 +636,25 @@ public class ErrorInformation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
+     * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -636,17 +686,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -662,25 +712,31 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the
-     *        application is deleted after the deployment is created but before it is started.
+     *        APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application
+     *        is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if
-     *        the deployment group is deleted after the deployment is created but before it is started.
+     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     *        deployment group is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
@@ -712,17 +768,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_INSTANCES: No instance were specified, or no instance can be found.
+     *        NO_INSTANCES: No instances were specified, or no instances can be found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     *        OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      *        </p>
      *        </li>
      *        <li>
@@ -738,32 +794,38 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision
-     *        is deleted after the deployment is created but before it is started.
+     *        REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is
+     *        deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      * @see ErrorCode
      */
 
     public void setCode(ErrorCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     * CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+     * Guide</a>.
+     * </p>
      * <p>
      * The error code:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the application
-     * is deleted after the deployment is created but before it is started.
+     * APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application is
+     * deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if the
-     * deployment group is deleted after the deployment is created but before it is started.
+     * DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     * deployment group is deleted after the deployment is created, but before it is started.
      * </p>
      * </li>
      * <li>
@@ -795,17 +857,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     * NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NO_INSTANCES: No instance were specified, or no instance can be found.
+     * NO_INSTANCES: No instances were specified, or no instances can be found.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     * OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      * </p>
      * </li>
      * <li>
@@ -821,25 +883,31 @@ public class ErrorInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision is
-     * deleted after the deployment is created but before it is started.
+     * REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is deleted
+     * after the deployment is created, but before it is started.
      * </p>
      * </li>
      * </ul>
      * 
      * @param code
-     *        The error code:</p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error Codes for AWS
+     *        CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     *        User Guide</a>.</p>
+     *        <p>
+     *        The error code:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        APPLICATION_MISSING: The application was missing. This error code will most likely be raised if the
-     *        application is deleted after the deployment is created but before it is started.
+     *        APPLICATION_MISSING: The application was missing. This error code is most likely raised if the application
+     *        is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most likely be raised if
-     *        the deployment group is deleted after the deployment is created but before it is started.
+     *        DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code is most likely raised if the
+     *        deployment group is deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      *        <li>
@@ -871,17 +939,17 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+     *        NO_EC2_SUBSCRIPTION: The calling account is not subscribed to Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NO_INSTANCES: No instance were specified, or no instance can be found.
+     *        NO_INSTANCES: No instances were specified, or no instances can be found.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+     *        OVER_MAX_INSTANCES: The maximum number of instances was exceeded.
      *        </p>
      *        </li>
      *        <li>
@@ -897,8 +965,8 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        REVISION_MISSING: The revision ID was missing. This error code will most likely be raised if the revision
-     *        is deleted after the deployment is created but before it is started.
+     *        REVISION_MISSING: The revision ID was missing. This error code is most likely raised if the revision is
+     *        deleted after the deployment is created, but before it is started.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -906,7 +974,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      */
 
     public ErrorInformation withCode(ErrorCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 
@@ -951,7 +1019,8 @@ public class ErrorInformation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1007,5 +1076,11 @@ public class ErrorInformation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codedeploy.model.transform.ErrorInformationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

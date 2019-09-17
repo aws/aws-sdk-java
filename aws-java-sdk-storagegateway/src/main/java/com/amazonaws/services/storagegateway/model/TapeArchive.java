@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TapeArchive implements Serializable, Cloneable {
+public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -38,7 +40,11 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      */
     private String tapeBarcode;
-
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     */
     private java.util.Date tapeCreatedDate;
     /**
      * <p>
@@ -51,13 +57,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      */
     private java.util.Date completionTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
@@ -70,6 +76,29 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      */
     private String tapeStatus;
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     */
+    private Long tapeUsedInBytes;
+
+    private String kMSKey;
+    /**
+     * <p>
+     * The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class
+     * that is associated with the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     */
+    private String poolId;
 
     /**
      * <p>
@@ -152,7 +181,12 @@ public class TapeArchive implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      */
 
     public void setTapeCreatedDate(java.util.Date tapeCreatedDate) {
@@ -160,7 +194,11 @@ public class TapeArchive implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @return The date the virtual tape was created.
      */
 
     public java.util.Date getTapeCreatedDate() {
@@ -168,7 +206,12 @@ public class TapeArchive implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,13 +265,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
      * @param completionTime
      *        The time that the archiving of the virtual tape was completed.</p>
      *        <p>
-     *        The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     *        The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public void setCompletionTime(java.util.Date completionTime) {
@@ -240,12 +283,12 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
      * @return The time that the archiving of the virtual tape was completed.</p>
      *         <p>
-     *         The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     *         The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public java.util.Date getCompletionTime() {
@@ -257,13 +300,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * The time that the archiving of the virtual tape was completed.
      * </p>
      * <p>
-     * The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * </p>
      * 
      * @param completionTime
      *        The time that the archiving of the virtual tape was completed.</p>
      *        <p>
-     *        The string format of the completion time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     *        The default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,14 +317,14 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -292,13 +335,13 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     * @return The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -309,14 +352,14 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -368,7 +411,159 @@ public class TapeArchive implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     */
+
+    public void setTapeUsedInBytes(Long tapeUsedInBytes) {
+        this.tapeUsedInBytes = tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @return The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *         <p>
+     *         This value is not available for tapes created prior to May 13, 2015.
+     *         </p>
+     */
+
+    public Long getTapeUsedInBytes() {
+        return this.tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withTapeUsedInBytes(Long tapeUsedInBytes) {
+        setTapeUsedInBytes(tapeUsedInBytes);
+        return this;
+    }
+
+    /**
+     * @param kMSKey
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * @param kMSKey
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class
+     * that is associated with the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
+     *        storage class that is associated with the pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class
+     * that is associated with the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @return The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
+     *         storage class that is associated with the pool.</p>
+     *         <p>
+     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public String getPoolId() {
+        return this.poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3 storage class
+     * that is associated with the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that was used to archive the tape. The tapes in this pool are archived in the S3
+     *        storage class that is associated with the pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withPoolId(String poolId) {
+        setPoolId(poolId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -391,7 +586,13 @@ public class TapeArchive implements Serializable, Cloneable {
         if (getRetrievedTo() != null)
             sb.append("RetrievedTo: ").append(getRetrievedTo()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: ").append(getTapeStatus());
+            sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
+        if (getTapeUsedInBytes() != null)
+            sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getPoolId() != null)
+            sb.append("PoolId: ").append(getPoolId());
         sb.append("}");
         return sb.toString();
     }
@@ -434,6 +635,18 @@ public class TapeArchive implements Serializable, Cloneable {
             return false;
         if (other.getTapeStatus() != null && other.getTapeStatus().equals(this.getTapeStatus()) == false)
             return false;
+        if (other.getTapeUsedInBytes() == null ^ this.getTapeUsedInBytes() == null)
+            return false;
+        if (other.getTapeUsedInBytes() != null && other.getTapeUsedInBytes().equals(this.getTapeUsedInBytes()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
+        if (other.getPoolId() == null ^ this.getPoolId() == null)
+            return false;
+        if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
         return true;
     }
 
@@ -449,6 +662,9 @@ public class TapeArchive implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getRetrievedTo() == null) ? 0 : getRetrievedTo().hashCode());
         hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         return hashCode;
     }
 
@@ -459,5 +675,11 @@ public class TapeArchive implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeArchiveMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

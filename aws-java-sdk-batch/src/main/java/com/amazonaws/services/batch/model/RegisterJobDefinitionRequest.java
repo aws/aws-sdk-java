@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      */
     private String jobDefinitionName;
@@ -47,19 +48,52 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      */
     private ContainerProperties containerProperties;
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register.
+     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
+     *        and underscores are allowed.
      */
 
     public void setJobDefinitionName(String jobDefinitionName) {
@@ -68,10 +102,12 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
-     * @return The name of the job definition to register.
+     * @return The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers,
+     *         hyphens, and underscores are allowed.
      */
 
     public String getJobDefinitionName() {
@@ -80,11 +116,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register.
+     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
+     *        and underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +185,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setType(JobDefinitionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -162,7 +200,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public RegisterJobDefinitionRequest withType(JobDefinitionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -241,13 +279,15 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific for container-based jobs. This parameter is required if the
-     *        <code>type</code> parameter is <code>container</code>.
+     *        An object with various properties specific to single-node container-based jobs. If the job definition's
+     *        <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>.
      */
 
     public void setContainerProperties(ContainerProperties containerProperties) {
@@ -256,12 +296,14 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
-     * @return An object with various properties specific for container-based jobs. This parameter is required if the
-     *         <code>type</code> parameter is <code>container</code>.
+     * @return An object with various properties specific to single-node container-based jobs. If the job definition's
+     *         <code>type</code> parameter is <code>container</code>, then you must specify either
+     *         <code>containerProperties</code> or <code>nodeProperties</code>.
      */
 
     public ContainerProperties getContainerProperties() {
@@ -270,13 +312,15 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific for container-based jobs. This parameter is required if the
-     * <code>type</code> parameter is <code>container</code>.
+     * An object with various properties specific to single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>.
      * </p>
      * 
      * @param containerProperties
-     *        An object with various properties specific for container-based jobs. This parameter is required if the
-     *        <code>type</code> parameter is <code>container</code>.
+     *        An object with various properties specific to single-node container-based jobs. If the job definition's
+     *        <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,7 +330,203 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
+     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        <code>nodeProperties</code>.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
+     *         for a job, it becomes a multi-node parallel job. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *         Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *         is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *         <code>nodeProperties</code>.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     * it becomes a multi-node parallel job. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
+     * <code>container</code>, then you must specify either <code>containerProperties</code> or
+     * <code>nodeProperties</code>.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
+     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        <code>nodeProperties</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *        is terminated due to a timeout, it is not retried.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
+     * </p>
+     * 
+     * @return The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *         that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *         is terminated due to a timeout, it is not retried.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *        is terminated due to a timeout, it is not retried.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *         terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *         retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *         during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -303,7 +543,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: ").append(getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +580,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
             return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -346,6 +604,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

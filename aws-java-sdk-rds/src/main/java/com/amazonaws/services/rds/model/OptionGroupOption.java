@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,27 @@ public class OptionGroupOption implements Serializable, Cloneable {
      * </p>
      */
     private Boolean permanent;
+    /**
+     * <p>
+     * If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this
+     * option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB
+     * instance later.
+     * </p>
+     */
+    private Boolean requiresAutoMinorEngineVersionUpgrade;
+    /**
+     * <p>
+     * If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     */
+    private Boolean vpcOnly;
+    /**
+     * <p>
+     * If true, you can change the option to an earlier version of the option. This only applies to options that have
+     * different versions available.
+     * </p>
+     */
+    private Boolean supportsOptionVersionDowngrade;
     /**
      * <p>
      * The option settings that are available (and the default value) for each option in an option group.
@@ -676,6 +697,186 @@ public class OptionGroupOption implements Serializable, Cloneable {
 
     /**
      * <p>
+     * If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this
+     * option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB
+     * instance later.
+     * </p>
+     * 
+     * @param requiresAutoMinorEngineVersionUpgrade
+     *        If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use
+     *        this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by
+     *        modifying your DB instance later.
+     */
+
+    public void setRequiresAutoMinorEngineVersionUpgrade(Boolean requiresAutoMinorEngineVersionUpgrade) {
+        this.requiresAutoMinorEngineVersionUpgrade = requiresAutoMinorEngineVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this
+     * option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB
+     * instance later.
+     * </p>
+     * 
+     * @return If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use
+     *         this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by
+     *         modifying your DB instance later.
+     */
+
+    public Boolean getRequiresAutoMinorEngineVersionUpgrade() {
+        return this.requiresAutoMinorEngineVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this
+     * option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB
+     * instance later.
+     * </p>
+     * 
+     * @param requiresAutoMinorEngineVersionUpgrade
+     *        If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use
+     *        this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by
+     *        modifying your DB instance later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOption withRequiresAutoMinorEngineVersionUpgrade(Boolean requiresAutoMinorEngineVersionUpgrade) {
+        setRequiresAutoMinorEngineVersionUpgrade(requiresAutoMinorEngineVersionUpgrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this
+     * option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB
+     * instance later.
+     * </p>
+     * 
+     * @return If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use
+     *         this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by
+     *         modifying your DB instance later.
+     */
+
+    public Boolean isRequiresAutoMinorEngineVersionUpgrade() {
+        return this.requiresAutoMinorEngineVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     * 
+     * @param vpcOnly
+     *        If true, you can only use this option with a DB instance that is in a VPC.
+     */
+
+    public void setVpcOnly(Boolean vpcOnly) {
+        this.vpcOnly = vpcOnly;
+    }
+
+    /**
+     * <p>
+     * If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     * 
+     * @return If true, you can only use this option with a DB instance that is in a VPC.
+     */
+
+    public Boolean getVpcOnly() {
+        return this.vpcOnly;
+    }
+
+    /**
+     * <p>
+     * If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     * 
+     * @param vpcOnly
+     *        If true, you can only use this option with a DB instance that is in a VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOption withVpcOnly(Boolean vpcOnly) {
+        setVpcOnly(vpcOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     * 
+     * @return If true, you can only use this option with a DB instance that is in a VPC.
+     */
+
+    public Boolean isVpcOnly() {
+        return this.vpcOnly;
+    }
+
+    /**
+     * <p>
+     * If true, you can change the option to an earlier version of the option. This only applies to options that have
+     * different versions available.
+     * </p>
+     * 
+     * @param supportsOptionVersionDowngrade
+     *        If true, you can change the option to an earlier version of the option. This only applies to options that
+     *        have different versions available.
+     */
+
+    public void setSupportsOptionVersionDowngrade(Boolean supportsOptionVersionDowngrade) {
+        this.supportsOptionVersionDowngrade = supportsOptionVersionDowngrade;
+    }
+
+    /**
+     * <p>
+     * If true, you can change the option to an earlier version of the option. This only applies to options that have
+     * different versions available.
+     * </p>
+     * 
+     * @return If true, you can change the option to an earlier version of the option. This only applies to options that
+     *         have different versions available.
+     */
+
+    public Boolean getSupportsOptionVersionDowngrade() {
+        return this.supportsOptionVersionDowngrade;
+    }
+
+    /**
+     * <p>
+     * If true, you can change the option to an earlier version of the option. This only applies to options that have
+     * different versions available.
+     * </p>
+     * 
+     * @param supportsOptionVersionDowngrade
+     *        If true, you can change the option to an earlier version of the option. This only applies to options that
+     *        have different versions available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOption withSupportsOptionVersionDowngrade(Boolean supportsOptionVersionDowngrade) {
+        setSupportsOptionVersionDowngrade(supportsOptionVersionDowngrade);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, you can change the option to an earlier version of the option. This only applies to options that have
+     * different versions available.
+     * </p>
+     * 
+     * @return If true, you can change the option to an earlier version of the option. This only applies to options that
+     *         have different versions available.
+     */
+
+    public Boolean isSupportsOptionVersionDowngrade() {
+        return this.supportsOptionVersionDowngrade;
+    }
+
+    /**
+     * <p>
      * The option settings that are available (and the default value) for each option in an option group.
      * </p>
      * 
@@ -821,7 +1022,8 @@ public class OptionGroupOption implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -853,6 +1055,12 @@ public class OptionGroupOption implements Serializable, Cloneable {
             sb.append("Persistent: ").append(getPersistent()).append(",");
         if (getPermanent() != null)
             sb.append("Permanent: ").append(getPermanent()).append(",");
+        if (getRequiresAutoMinorEngineVersionUpgrade() != null)
+            sb.append("RequiresAutoMinorEngineVersionUpgrade: ").append(getRequiresAutoMinorEngineVersionUpgrade()).append(",");
+        if (getVpcOnly() != null)
+            sb.append("VpcOnly: ").append(getVpcOnly()).append(",");
+        if (getSupportsOptionVersionDowngrade() != null)
+            sb.append("SupportsOptionVersionDowngrade: ").append(getSupportsOptionVersionDowngrade()).append(",");
         if (getOptionGroupOptionSettings() != null)
             sb.append("OptionGroupOptionSettings: ").append(getOptionGroupOptionSettings()).append(",");
         if (getOptionGroupOptionVersions() != null)
@@ -916,6 +1124,20 @@ public class OptionGroupOption implements Serializable, Cloneable {
             return false;
         if (other.getPermanent() != null && other.getPermanent().equals(this.getPermanent()) == false)
             return false;
+        if (other.getRequiresAutoMinorEngineVersionUpgrade() == null ^ this.getRequiresAutoMinorEngineVersionUpgrade() == null)
+            return false;
+        if (other.getRequiresAutoMinorEngineVersionUpgrade() != null
+                && other.getRequiresAutoMinorEngineVersionUpgrade().equals(this.getRequiresAutoMinorEngineVersionUpgrade()) == false)
+            return false;
+        if (other.getVpcOnly() == null ^ this.getVpcOnly() == null)
+            return false;
+        if (other.getVpcOnly() != null && other.getVpcOnly().equals(this.getVpcOnly()) == false)
+            return false;
+        if (other.getSupportsOptionVersionDowngrade() == null ^ this.getSupportsOptionVersionDowngrade() == null)
+            return false;
+        if (other.getSupportsOptionVersionDowngrade() != null
+                && other.getSupportsOptionVersionDowngrade().equals(this.getSupportsOptionVersionDowngrade()) == false)
+            return false;
         if (other.getOptionGroupOptionSettings() == null ^ this.getOptionGroupOptionSettings() == null)
             return false;
         if (other.getOptionGroupOptionSettings() != null && other.getOptionGroupOptionSettings().equals(this.getOptionGroupOptionSettings()) == false)
@@ -943,6 +1165,9 @@ public class OptionGroupOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOptionsConflictsWith() == null) ? 0 : getOptionsConflictsWith().hashCode());
         hashCode = prime * hashCode + ((getPersistent() == null) ? 0 : getPersistent().hashCode());
         hashCode = prime * hashCode + ((getPermanent() == null) ? 0 : getPermanent().hashCode());
+        hashCode = prime * hashCode + ((getRequiresAutoMinorEngineVersionUpgrade() == null) ? 0 : getRequiresAutoMinorEngineVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getVpcOnly() == null) ? 0 : getVpcOnly().hashCode());
+        hashCode = prime * hashCode + ((getSupportsOptionVersionDowngrade() == null) ? 0 : getSupportsOptionVersionDowngrade().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupOptionSettings() == null) ? 0 : getOptionGroupOptionSettings().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupOptionVersions() == null) ? 0 : getOptionGroupOptionVersions().hashCode());
         return hashCode;
@@ -956,4 +1181,5 @@ public class OptionGroupOption implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

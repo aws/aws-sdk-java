@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,13 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String streamName;
+    /**
+     * <p>
+     * If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     * registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.
+     * </p>
+     */
+    private Boolean enforceConsumerDeletion;
 
     /**
      * <p>
@@ -76,7 +83,72 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     * registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.
+     * </p>
+     * 
+     * @param enforceConsumerDeletion
+     *        If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     *        registered consumers, the call to <code>DeleteStream</code> fails with a
+     *        <code>ResourceInUseException</code>.
+     */
+
+    public void setEnforceConsumerDeletion(Boolean enforceConsumerDeletion) {
+        this.enforceConsumerDeletion = enforceConsumerDeletion;
+    }
+
+    /**
+     * <p>
+     * If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     * registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.
+     * </p>
+     * 
+     * @return If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     *         registered consumers, the call to <code>DeleteStream</code> fails with a
+     *         <code>ResourceInUseException</code>.
+     */
+
+    public Boolean getEnforceConsumerDeletion() {
+        return this.enforceConsumerDeletion;
+    }
+
+    /**
+     * <p>
+     * If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     * registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.
+     * </p>
+     * 
+     * @param enforceConsumerDeletion
+     *        If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     *        registered consumers, the call to <code>DeleteStream</code> fails with a
+     *        <code>ResourceInUseException</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteStreamRequest withEnforceConsumerDeletion(Boolean enforceConsumerDeletion) {
+        setEnforceConsumerDeletion(enforceConsumerDeletion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     * registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.
+     * </p>
+     * 
+     * @return If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has
+     *         registered consumers, the call to <code>DeleteStream</code> fails with a
+     *         <code>ResourceInUseException</code>.
+     */
+
+    public Boolean isEnforceConsumerDeletion() {
+        return this.enforceConsumerDeletion;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +159,9 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: ").append(getStreamName());
+            sb.append("StreamName: ").append(getStreamName()).append(",");
+        if (getEnforceConsumerDeletion() != null)
+            sb.append("EnforceConsumerDeletion: ").append(getEnforceConsumerDeletion());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +180,10 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
+        if (other.getEnforceConsumerDeletion() == null ^ this.getEnforceConsumerDeletion() == null)
+            return false;
+        if (other.getEnforceConsumerDeletion() != null && other.getEnforceConsumerDeletion().equals(this.getEnforceConsumerDeletion()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +193,7 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getEnforceConsumerDeletion() == null) ? 0 : getEnforceConsumerDeletion().hashCode());
         return hashCode;
     }
 

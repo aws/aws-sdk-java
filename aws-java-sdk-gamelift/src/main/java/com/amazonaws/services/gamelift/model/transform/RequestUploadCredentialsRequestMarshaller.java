@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RequestUploadCredentialsRequest Marshaller
+ * RequestUploadCredentialsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestUploadCredentialsRequestMarshaller implements Marshaller<Request<RequestUploadCredentialsRequest>, RequestUploadCredentialsRequest> {
+@SdkInternalApi
+public class RequestUploadCredentialsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BUILDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BuildId").build();
 
-    public RequestUploadCredentialsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RequestUploadCredentialsRequestMarshaller instance = new RequestUploadCredentialsRequestMarshaller();
+
+    public static RequestUploadCredentialsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RequestUploadCredentialsRequest> marshall(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RequestUploadCredentialsRequest requestUploadCredentialsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (requestUploadCredentialsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RequestUploadCredentialsRequest> request = new DefaultRequest<RequestUploadCredentialsRequest>(requestUploadCredentialsRequest,
-                "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.RequestUploadCredentials");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (requestUploadCredentialsRequest.getBuildId() != null) {
-                jsonGenerator.writeFieldName("BuildId").writeValue(requestUploadCredentialsRequest.getBuildId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(requestUploadCredentialsRequest.getBuildId(), BUILDID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

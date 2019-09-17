@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,8 +50,21 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
                     StringUtils.fromString(copyDBClusterSnapshotRequest.getTargetDBClusterSnapshotIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (copyDBClusterSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copyDBClusterSnapshotRequest.getKmsKeyId()));
+        }
+
+        if (copyDBClusterSnapshotRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(copyDBClusterSnapshotRequest.getPreSignedUrl()));
+        }
+
+        if (copyDBClusterSnapshotRequest.getCopyTags() != null) {
+            request.addParameter("CopyTags", StringUtils.fromBoolean(copyDBClusterSnapshotRequest.getCopyTags()));
+        }
+
+        if (!copyDBClusterSnapshotRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -65,6 +78,10 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
                 }
                 tagsListIndex++;
             }
+        }
+
+        if (copyDBClusterSnapshotRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(copyDBClusterSnapshotRequest.getSourceRegion()));
         }
 
         return request;

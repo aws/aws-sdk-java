@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SearchFacesRequest Marshaller
+ * SearchFacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SearchFacesRequestMarshaller implements Marshaller<Request<SearchFacesRequest>, SearchFacesRequest> {
+@SdkInternalApi
+public class SearchFacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
+    private static final MarshallingInfo<String> FACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FaceId").build();
+    private static final MarshallingInfo<Integer> MAXFACES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFaces").build();
+    private static final MarshallingInfo<Float> FACEMATCHTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaceMatchThreshold").build();
 
-    public SearchFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SearchFacesRequestMarshaller instance = new SearchFacesRequestMarshaller();
+
+    public static SearchFacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SearchFacesRequest> marshall(SearchFacesRequest searchFacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SearchFacesRequest searchFacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (searchFacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SearchFacesRequest> request = new DefaultRequest<SearchFacesRequest>(searchFacesRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.SearchFaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (searchFacesRequest.getCollectionId() != null) {
-                jsonGenerator.writeFieldName("CollectionId").writeValue(searchFacesRequest.getCollectionId());
-            }
-            if (searchFacesRequest.getFaceId() != null) {
-                jsonGenerator.writeFieldName("FaceId").writeValue(searchFacesRequest.getFaceId());
-            }
-            if (searchFacesRequest.getMaxFaces() != null) {
-                jsonGenerator.writeFieldName("MaxFaces").writeValue(searchFacesRequest.getMaxFaces());
-            }
-            if (searchFacesRequest.getFaceMatchThreshold() != null) {
-                jsonGenerator.writeFieldName("FaceMatchThreshold").writeValue(searchFacesRequest.getFaceMatchThreshold());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(searchFacesRequest.getCollectionId(), COLLECTIONID_BINDING);
+            protocolMarshaller.marshall(searchFacesRequest.getFaceId(), FACEID_BINDING);
+            protocolMarshaller.marshall(searchFacesRequest.getMaxFaces(), MAXFACES_BINDING);
+            protocolMarshaller.marshall(searchFacesRequest.getFaceMatchThreshold(), FACEMATCHTHRESHOLD_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

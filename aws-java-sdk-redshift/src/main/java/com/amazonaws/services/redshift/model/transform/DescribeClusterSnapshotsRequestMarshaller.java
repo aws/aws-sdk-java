@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,9 +73,10 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
             request.addParameter("OwnerAccount", StringUtils.fromString(describeClusterSnapshotsRequest.getOwnerAccount()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest
-                .getTagKeys();
-        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+        if (!describeClusterSnapshotsRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest
+                    .getTagKeys();
             int tagKeysListIndex = 1;
 
             for (String tagKeysListValue : tagKeysList) {
@@ -86,9 +87,10 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest
-                .getTagValues();
-        if (!tagValuesList.isEmpty() || !tagValuesList.isAutoConstruct()) {
+        if (!describeClusterSnapshotsRequest.getTagValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest.getTagValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSnapshotsRequest
+                    .getTagValues();
             int tagValuesListIndex = 1;
 
             for (String tagValuesListValue : tagValuesList) {
@@ -96,6 +98,31 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
                     request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
                 }
                 tagValuesListIndex++;
+            }
+        }
+
+        if (describeClusterSnapshotsRequest.getClusterExists() != null) {
+            request.addParameter("ClusterExists", StringUtils.fromBoolean(describeClusterSnapshotsRequest.getClusterExists()));
+        }
+
+        if (!describeClusterSnapshotsRequest.getSortingEntities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest.getSortingEntities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity> sortingEntitiesList = (com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest
+                    .getSortingEntities();
+            int sortingEntitiesListIndex = 1;
+
+            for (SnapshotSortingEntity sortingEntitiesListValue : sortingEntitiesList) {
+
+                if (sortingEntitiesListValue.getAttribute() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".Attribute",
+                            StringUtils.fromString(sortingEntitiesListValue.getAttribute()));
+                }
+
+                if (sortingEntitiesListValue.getSortOrder() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".SortOrder",
+                            StringUtils.fromString(sortingEntitiesListValue.getSortOrder()));
+                }
+                sortingEntitiesListIndex++;
             }
         }
 

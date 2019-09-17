@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,63 +12,50 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetImportJobsRequest Marshaller
+ * GetImportJobsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetImportJobsRequestMarshaller implements Marshaller<Request<GetImportJobsRequest>, GetImportJobsRequest> {
+@SdkInternalApi
+public class GetImportJobsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("page-size").build();
+    private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("token").build();
 
-    public GetImportJobsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetImportJobsRequestMarshaller instance = new GetImportJobsRequestMarshaller();
+
+    public static GetImportJobsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetImportJobsRequest> marshall(GetImportJobsRequest getImportJobsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetImportJobsRequest getImportJobsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getImportJobsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetImportJobsRequest> request = new DefaultRequest<GetImportJobsRequest>(getImportJobsRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/jobs/import";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getImportJobsRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getImportJobsRequest.getPageSize() != null) {
-            request.addParameter("page-size", StringUtils.fromString(getImportJobsRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(getImportJobsRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getImportJobsRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(getImportJobsRequest.getToken(), TOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getImportJobsRequest.getToken() != null) {
-            request.addParameter("token", StringUtils.fromString(getImportJobsRequest.getToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

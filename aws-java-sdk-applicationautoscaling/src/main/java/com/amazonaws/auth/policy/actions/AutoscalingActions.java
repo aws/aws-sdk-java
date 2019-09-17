@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ public enum AutoscalingActions implements Action {
 
     /** Action for the DeleteScalingPolicy operation. */
     DeleteScalingPolicy("autoscaling:DeleteScalingPolicy"),
+    /** Action for the DeleteScheduledAction operation. */
+    DeleteScheduledAction("autoscaling:DeleteScheduledAction"),
     /** Action for the DeregisterScalableTarget operation. */
     DeregisterScalableTarget("autoscaling:DeregisterScalableTarget"),
     /** Action for the DescribeScalableTargets operation. */
@@ -35,8 +37,12 @@ public enum AutoscalingActions implements Action {
     DescribeScalingActivities("autoscaling:DescribeScalingActivities"),
     /** Action for the DescribeScalingPolicies operation. */
     DescribeScalingPolicies("autoscaling:DescribeScalingPolicies"),
+    /** Action for the DescribeScheduledActions operation. */
+    DescribeScheduledActions("autoscaling:DescribeScheduledActions"),
     /** Action for the PutScalingPolicy operation. */
     PutScalingPolicy("autoscaling:PutScalingPolicy"),
+    /** Action for the PutScheduledAction operation. */
+    PutScheduledAction("autoscaling:PutScheduledAction"),
     /** Action for the RegisterScalableTarget operation. */
     RegisterScalableTarget("autoscaling:RegisterScalableTarget"),
 

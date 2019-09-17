@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      */
     private String configurationType;
@@ -35,7 +35,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      * >Querying Discovered Configuration Items</a>.
      * </p>
      */
@@ -58,19 +58,19 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     * >Using the ListConfigurations Action</a>.
      * </p>
      */
     private java.util.List<OrderByElement> orderBy;
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      * 
      * @param configurationType
-     *        A valid configuration identified by the Discovery Service.
+     *        A valid configuration identified by Application Discovery Service.
      * @see ConfigurationItemType
      */
 
@@ -80,10 +80,10 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      * 
-     * @return A valid configuration identified by the Discovery Service.
+     * @return A valid configuration identified by Application Discovery Service.
      * @see ConfigurationItemType
      */
 
@@ -93,11 +93,11 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      * 
      * @param configurationType
-     *        A valid configuration identified by the Discovery Service.
+     *        A valid configuration identified by Application Discovery Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemType
      */
@@ -109,31 +109,31 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      * 
      * @param configurationType
-     *        A valid configuration identified by the Discovery Service.
+     *        A valid configuration identified by Application Discovery Service.
      * @see ConfigurationItemType
      */
 
     public void setConfigurationType(ConfigurationItemType configurationType) {
-        this.configurationType = configurationType.toString();
+        withConfigurationType(configurationType);
     }
 
     /**
      * <p>
-     * A valid configuration identified by the Discovery Service.
+     * A valid configuration identified by Application Discovery Service.
      * </p>
      * 
      * @param configurationType
-     *        A valid configuration identified by the Discovery Service.
+     *        A valid configuration identified by Application Discovery Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemType
      */
 
     public ListConfigurationsRequest withConfigurationType(ConfigurationItemType configurationType) {
-        setConfigurationType(configurationType);
+        this.configurationType = configurationType.toString();
         return this;
     }
 
@@ -146,7 +146,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
@@ -157,7 +157,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         <p>
      *         For a complete list of filter options and guidance about using them with this action, see <a href=
-     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      *         >Querying Discovered Configuration Items</a>.
      */
 
@@ -174,7 +174,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
@@ -186,7 +186,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      *        >Querying Discovered Configuration Items</a>.
      */
 
@@ -208,7 +208,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      * >Querying Discovered Configuration Items</a>.
      * </p>
      * <p>
@@ -225,7 +225,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      *        >Querying Discovered Configuration Items</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -249,7 +249,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For a complete list of filter options and guidance about using them with this action, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
@@ -261,7 +261,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        For a complete list of filter options and guidance about using them with this action, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
      *        >Querying Discovered Configuration Items</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -367,14 +367,14 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     * >Using the ListConfigurations Action</a>.
      * </p>
      * 
      * @return Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *         output characteristics for each filter, see <a href=
-     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     *         >Querying Discovered Configuration Items</a>.
+     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     *         >Using the ListConfigurations Action</a>.
      */
 
     public java.util.List<OrderByElement> getOrderBy() {
@@ -385,15 +385,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     * >Using the ListConfigurations Action</a>.
      * </p>
      * 
      * @param orderBy
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     *        >Querying Discovered Configuration Items</a>.
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     *        >Using the ListConfigurations Action</a>.
      */
 
     public void setOrderBy(java.util.Collection<OrderByElement> orderBy) {
@@ -409,8 +409,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     * >Using the ListConfigurations Action</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -421,8 +421,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param orderBy
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     *        >Querying Discovered Configuration Items</a>.
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     *        >Using the ListConfigurations Action</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,15 +440,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
      * characteristics for each filter, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     * >Using the ListConfigurations Action</a>.
      * </p>
      * 
      * @param orderBy
      *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
      *        output characteristics for each filter, see <a href=
-     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
-     *        >Querying Discovered Configuration Items</a>.
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations"
+     *        >Using the ListConfigurations Action</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,7 +458,8 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

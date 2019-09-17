@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Pipeline implements Serializable, Cloneable {
+public class Pipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -89,10 +91,10 @@ public class Pipeline implements Serializable, Cloneable {
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      */
     private String awsKmsKeyArn;
@@ -114,7 +116,7 @@ public class Pipeline implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
+     * <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
      * processing the job.
      * </p>
      * </li>
@@ -716,20 +718,20 @@ public class Pipeline implements Serializable, Cloneable {
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @param awsKmsKeyArn
      *        The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *        <p>
-     *        If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *        If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *        don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *        you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *        or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *        <code>AES-GCM</code>.
+     *        or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *        or <code>aes-gcm</code>.
      */
 
     public void setAwsKmsKeyArn(String awsKmsKeyArn) {
@@ -741,19 +743,19 @@ public class Pipeline implements Serializable, Cloneable {
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *         <p>
-     *         If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *         If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *         don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *         you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *         or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *         <code>AES-GCM</code>.
+     *         or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *         or <code>aes-gcm</code>.
      */
 
     public String getAwsKmsKeyArn() {
@@ -765,20 +767,20 @@ public class Pipeline implements Serializable, Cloneable {
      * The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
      * </p>
      * <p>
-     * If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you don't need
+     * If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need
      * to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically.
      * You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an
-     * <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.
+     * <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
      * </p>
      * 
      * @param awsKmsKeyArn
      *        The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
      *        <p>
-     *        If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as your <code>Encryption:Mode</code>, you
+     *        If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you
      *        don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for
      *        you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key,
-     *        or if you are using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
-     *        <code>AES-GCM</code>.
+     *        or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+     *        or <code>aes-gcm</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -805,7 +807,7 @@ public class Pipeline implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
+     * <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
      * processing the job.
      * </p>
      * </li>
@@ -839,7 +841,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
+     *        <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
      *        finished processing the job.
      *        </p>
      *        </li>
@@ -879,7 +881,7 @@ public class Pipeline implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
+     * <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
      * processing the job.
      * </p>
      * </li>
@@ -912,7 +914,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
+     *         <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
      *         finished processing the job.
      *         </p>
      *         </li>
@@ -952,7 +954,7 @@ public class Pipeline implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
+     * <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has finished
      * processing the job.
      * </p>
      * </li>
@@ -986,7 +988,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
+     *        <b>Complete</b> (optional): The Amazon SNS topic that you want to notify when Elastic Transcoder has
      *        finished processing the job.
      *        </p>
      *        </li>
@@ -2123,7 +2125,8 @@ public class Pipeline implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2242,5 +2245,11 @@ public class Pipeline implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elastictranscoder.model.transform.PipelineMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,44 +14,57 @@ package com.amazonaws.services.elasticfilesystem.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time
- * at which that size was determined in its <code>Timestamp</code> field. Note that the value does not represent the
- * size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the
- * file system. That is, the value will represent the actual size only if the file system is not modified for a period
- * longer than a couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any
- * instant in time.
+ * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
+ * time at which that size was determined in its <code>Timestamp</code> field. The value doesn't represent the size of a
+ * consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system.
+ * That is, the value represents the actual size only if the file system is not modified for a period longer than a
+ * couple of hours. Otherwise, the value is not necessarily the exact size the file system was at any instant in time.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemSize" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileSystemSize implements Serializable, Cloneable {
+public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system.
+     * The latest known metered size (in bytes) of data stored in the file system.
      * </p>
      */
     private Long value;
     /**
      * <p>
-     * Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
+     * The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
      * integer number of seconds since 1970-01-01T00:00:00Z.
      * </p>
      */
     private java.util.Date timestamp;
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     */
+    private Long valueInIA;
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     */
+    private Long valueInStandard;
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system.
+     * The latest known metered size (in bytes) of data stored in the file system.
      * </p>
      * 
      * @param value
-     *        Latest known metered size (in bytes) of data stored in the file system.
+     *        The latest known metered size (in bytes) of data stored in the file system.
      */
 
     public void setValue(Long value) {
@@ -60,10 +73,10 @@ public class FileSystemSize implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system.
+     * The latest known metered size (in bytes) of data stored in the file system.
      * </p>
      * 
-     * @return Latest known metered size (in bytes) of data stored in the file system.
+     * @return The latest known metered size (in bytes) of data stored in the file system.
      */
 
     public Long getValue() {
@@ -72,11 +85,11 @@ public class FileSystemSize implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system.
+     * The latest known metered size (in bytes) of data stored in the file system.
      * </p>
      * 
      * @param value
-     *        Latest known metered size (in bytes) of data stored in the file system.
+     *        The latest known metered size (in bytes) of data stored in the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,13 +100,13 @@ public class FileSystemSize implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
+     * The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
      * integer number of seconds since 1970-01-01T00:00:00Z.
      * </p>
      * 
      * @param timestamp
-     *        Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
-     *        integer number of seconds since 1970-01-01T00:00:00Z.
+     *        The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is
+     *        the integer number of seconds since 1970-01-01T00:00:00Z.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -102,12 +115,12 @@ public class FileSystemSize implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
+     * The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
      * integer number of seconds since 1970-01-01T00:00:00Z.
      * </p>
      * 
-     * @return Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is
-     *         the integer number of seconds since 1970-01-01T00:00:00Z.
+     * @return The time at which the size of data, returned in the <code>Value</code> field, was determined. The value
+     *         is the integer number of seconds since 1970-01-01T00:00:00Z.
      */
 
     public java.util.Date getTimestamp() {
@@ -116,13 +129,13 @@ public class FileSystemSize implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
+     * The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
      * integer number of seconds since 1970-01-01T00:00:00Z.
      * </p>
      * 
      * @param timestamp
-     *        Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the
-     *        integer number of seconds since 1970-01-01T00:00:00Z.
+     *        The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is
+     *        the integer number of seconds since 1970-01-01T00:00:00Z.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,7 +145,88 @@ public class FileSystemSize implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @param valueInIA
+     *        The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     */
+
+    public void setValueInIA(Long valueInIA) {
+        this.valueInIA = valueInIA;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @return The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     */
+
+    public Long getValueInIA() {
+        return this.valueInIA;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @param valueInIA
+     *        The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemSize withValueInIA(Long valueInIA) {
+        setValueInIA(valueInIA);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @param valueInStandard
+     *        The latest known metered size (in bytes) of data stored in the Standard storage class.
+     */
+
+    public void setValueInStandard(Long valueInStandard) {
+        this.valueInStandard = valueInStandard;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @return The latest known metered size (in bytes) of data stored in the Standard storage class.
+     */
+
+    public Long getValueInStandard() {
+        return this.valueInStandard;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @param valueInStandard
+     *        The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemSize withValueInStandard(Long valueInStandard) {
+        setValueInStandard(valueInStandard);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -145,7 +239,11 @@ public class FileSystemSize implements Serializable, Cloneable {
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
+        if (getValueInIA() != null)
+            sb.append("ValueInIA: ").append(getValueInIA()).append(",");
+        if (getValueInStandard() != null)
+            sb.append("ValueInStandard: ").append(getValueInStandard());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +266,14 @@ public class FileSystemSize implements Serializable, Cloneable {
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
+        if (other.getValueInIA() == null ^ this.getValueInIA() == null)
+            return false;
+        if (other.getValueInIA() != null && other.getValueInIA().equals(this.getValueInIA()) == false)
+            return false;
+        if (other.getValueInStandard() == null ^ this.getValueInStandard() == null)
+            return false;
+        if (other.getValueInStandard() != null && other.getValueInStandard().equals(this.getValueInStandard()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +284,8 @@ public class FileSystemSize implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getValueInIA() == null) ? 0 : getValueInIA().hashCode());
+        hashCode = prime * hashCode + ((getValueInStandard() == null) ? 0 : getValueInStandard().hashCode());
         return hashCode;
     }
 
@@ -188,5 +296,11 @@ public class FileSystemSize implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticfilesystem.model.transform.FileSystemSizeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

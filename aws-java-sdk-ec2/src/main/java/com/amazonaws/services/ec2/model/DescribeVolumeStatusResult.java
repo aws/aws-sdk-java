@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,19 +18,11 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeVolumeStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * A list of volumes.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<VolumeStatusItem> volumeStatuses;
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
@@ -38,79 +30,12 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
-     * A list of volumes.
+     * Information about the status of the volumes.
      * </p>
-     * 
-     * @return A list of volumes.
      */
-
-    public java.util.List<VolumeStatusItem> getVolumeStatuses() {
-        if (volumeStatuses == null) {
-            volumeStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>();
-        }
-        return volumeStatuses;
-    }
-
-    /**
-     * <p>
-     * A list of volumes.
-     * </p>
-     * 
-     * @param volumeStatuses
-     *        A list of volumes.
-     */
-
-    public void setVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
-        if (volumeStatuses == null) {
-            this.volumeStatuses = null;
-            return;
-        }
-
-        this.volumeStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>(volumeStatuses);
-    }
-
-    /**
-     * <p>
-     * A list of volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVolumeStatuses(java.util.Collection)} or {@link #withVolumeStatuses(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param volumeStatuses
-     *        A list of volumes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumeStatusResult withVolumeStatuses(VolumeStatusItem... volumeStatuses) {
-        if (this.volumeStatuses == null) {
-            setVolumeStatuses(new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>(volumeStatuses.length));
-        }
-        for (VolumeStatusItem ele : volumeStatuses) {
-            this.volumeStatuses.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of volumes.
-     * </p>
-     * 
-     * @param volumeStatuses
-     *        A list of volumes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumeStatusResult withVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
-        setVolumeStatuses(volumeStatuses);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<VolumeStatusItem> volumeStatuses;
 
     /**
      * <p>
@@ -159,7 +84,81 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the status of the volumes.
+     * </p>
+     * 
+     * @return Information about the status of the volumes.
+     */
+
+    public java.util.List<VolumeStatusItem> getVolumeStatuses() {
+        if (volumeStatuses == null) {
+            volumeStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>();
+        }
+        return volumeStatuses;
+    }
+
+    /**
+     * <p>
+     * Information about the status of the volumes.
+     * </p>
+     * 
+     * @param volumeStatuses
+     *        Information about the status of the volumes.
+     */
+
+    public void setVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
+        if (volumeStatuses == null) {
+            this.volumeStatuses = null;
+            return;
+        }
+
+        this.volumeStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>(volumeStatuses);
+    }
+
+    /**
+     * <p>
+     * Information about the status of the volumes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeStatuses(java.util.Collection)} or {@link #withVolumeStatuses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param volumeStatuses
+     *        Information about the status of the volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumeStatusResult withVolumeStatuses(VolumeStatusItem... volumeStatuses) {
+        if (this.volumeStatuses == null) {
+            setVolumeStatuses(new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>(volumeStatuses.length));
+        }
+        for (VolumeStatusItem ele : volumeStatuses) {
+            this.volumeStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the status of the volumes.
+     * </p>
+     * 
+     * @param volumeStatuses
+     *        Information about the status of the volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumeStatusResult withVolumeStatuses(java.util.Collection<VolumeStatusItem> volumeStatuses) {
+        setVolumeStatuses(volumeStatuses);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,10 +168,10 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeStatuses() != null)
-            sb.append("VolumeStatuses: ").append(getVolumeStatuses()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVolumeStatuses() != null)
+            sb.append("VolumeStatuses: ").append(getVolumeStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +186,13 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DescribeVolumeStatusResult == false)
             return false;
         DescribeVolumeStatusResult other = (DescribeVolumeStatusResult) obj;
-        if (other.getVolumeStatuses() == null ^ this.getVolumeStatuses() == null)
-            return false;
-        if (other.getVolumeStatuses() != null && other.getVolumeStatuses().equals(this.getVolumeStatuses()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getVolumeStatuses() == null ^ this.getVolumeStatuses() == null)
+            return false;
+        if (other.getVolumeStatuses() != null && other.getVolumeStatuses().equals(this.getVolumeStatuses()) == false)
             return false;
         return true;
     }
@@ -203,8 +202,8 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeStatuses() == null) ? 0 : getVolumeStatuses().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatuses() == null) ? 0 : getVolumeStatuses().hashCode());
         return hashCode;
     }
 

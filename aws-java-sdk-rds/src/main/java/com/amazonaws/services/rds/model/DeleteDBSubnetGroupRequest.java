@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,15 +32,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -54,15 +53,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -71,15 +69,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name of the database subnet group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default subnet group.
+     *        You can't delete the default subnet group.
      *        </p>
      *        </note>
      *        <p>
      *        Constraints:
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -95,15 +92,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -111,15 +107,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The name of the database subnet group to delete.</p> <note>
      *         <p>
-     *         You cannot delete the default subnet group.
+     *         You can't delete the default subnet group.
      *         </p>
      *         </note>
      *         <p>
      *         Constraints:
      *         </p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -135,15 +130,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -152,15 +146,14 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name of the database subnet group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default subnet group.
+     *        You can't delete the default subnet group.
      *        </p>
      *        </note>
      *        <p>
      *        Constraints:
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -173,7 +166,8 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

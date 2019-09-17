@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,12 +26,26 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LogConfiguration implements Serializable, Cloneable {
+public class LogConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -37,13 +53,13 @@ public class LogConfiguration implements Serializable, Cloneable {
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private String logDriver;
@@ -51,16 +67,36 @@ public class LogConfiguration implements Serializable, Cloneable {
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private java.util.Map<String, String> options;
+    /**
+     * <p>
+     * The secrets to pass to the log configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Secret> secretOptions;
 
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
+     * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -68,31 +104,45 @@ public class LogConfiguration implements Serializable, Cloneable {
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. </p> <note>
+     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     *        <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For more information about using the <code>awslogs</code> log driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you would like to have included.
-     *        However, Amazon Web Services does not currently provide support for running modified copies of this
-     *        software.
+     *        However, Amazon Web Services does not currently support running modified copies of this software.
      *        </p>
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
@@ -105,36 +155,64 @@ public class LogConfiguration implements Serializable, Cloneable {
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
      * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * <note>
      * <p>
      * If you have a custom driver that is not listed above that you would like to work with the Amazon ECS container
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *         the Amazon ECS container agent can communicate with by default. </p> <note>
+     *         the Amazon ECS container agent can communicate with by default.</p>
+     *         <p>
+     *         For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     *         <code>splunk</code>.
+     *         </p>
+     *         <p>
+     *         For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *         <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *         <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
+     *         </p>
+     *         <p>
+     *         For more information about using the <code>awslogs</code> log driver, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *         Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <note>
      *         <p>
      *         If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *         container agent, you can fork the Amazon ECS container agent project that is <a
      *         href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *         driver. We encourage you to submit pull requests for changes that you would like to have included.
-     *         However, Amazon Web Services does not currently provide support for running modified copies of this
-     *         software.
+     *         However, Amazon Web Services does not currently support running modified copies of this software.
      *         </p>
      *         </note>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *         check the Docker Remote API version on your container instance, log into your container instance and run
-     *         the following command: <code>sudo docker version | grep "Server API version"</code>
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
+     *         the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
@@ -147,37 +225,65 @@ public class LogConfiguration implements Serializable, Cloneable {
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
      * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * <note>
      * <p>
      * If you have a custom driver that is not listed above that you would like to work with the Amazon ECS container
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. </p> <note>
+     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     *        <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For more information about using the <code>awslogs</code> log driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you would like to have included.
-     *        However, Amazon Web Services does not currently provide support for running modified copies of this
-     *        software.
+     *        However, Amazon Web Services does not currently support running modified copies of this software.
      *        </p>
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
      */
@@ -192,42 +298,70 @@ public class LogConfiguration implements Serializable, Cloneable {
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
      * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * <note>
      * <p>
      * If you have a custom driver that is not listed above that you would like to work with the Amazon ECS container
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. </p> <note>
+     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     *        <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For more information about using the <code>awslogs</code> log driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you would like to have included.
-     *        However, Amazon Web Services does not currently provide support for running modified copies of this
-     *        software.
+     *        However, Amazon Web Services does not currently support running modified copies of this software.
      *        </p>
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
     public void setLogDriver(LogDriver logDriver) {
-        this.logDriver = logDriver.toString();
+        withLogDriver(logDriver);
     }
 
     /**
@@ -235,43 +369,71 @@ public class LogConfiguration implements Serializable, Cloneable {
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default.
      * </p>
+     * <p>
+     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     * <code>splunk</code>.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * and <code>splunk</code>.
+     * </p>
+     * <p>
+     * For more information about using the <code>awslogs</code> log driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * <note>
      * <p>
      * If you have a custom driver that is not listed above that you would like to work with the Amazon ECS container
      * agent, you can fork the Amazon ECS container agent project that is <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you would like to have included. However, Amazon Web
-     * Services does not currently provide support for running modified copies of this software.
+     * Services does not currently support running modified copies of this software.
      * </p>
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. </p> <note>
+     *        the Amazon ECS container agent can communicate with by default.</p>
+     *        <p>
+     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
+     *        <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, and <code>splunk</code>.
+     *        </p>
+     *        <p>
+     *        For more information about using the <code>awslogs</code> log driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you would like to have included.
-     *        However, Amazon Web Services does not currently provide support for running modified copies of this
-     *        software.
+     *        However, Amazon Web Services does not currently support running modified copies of this software.
      *        </p>
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
      */
 
     public LogConfiguration withLogDriver(LogDriver logDriver) {
-        setLogDriver(logDriver);
+        this.logDriver = logDriver.toString();
         return this;
     }
 
@@ -279,14 +441,14 @@ public class LogConfiguration implements Serializable, Cloneable {
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *         Remote API or greater on your container instance. To check the Docker Remote API version on your
-     *         container instance, log into your container instance and run the following command:
-     *         <code>sudo docker version | grep "Server API version"</code>
+     *         container instance, log in to your container instance and run the following command:
+     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public java.util.Map<String, String> getOptions() {
@@ -297,15 +459,15 @@ public class LogConfiguration implements Serializable, Cloneable {
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        instance, log in to your container instance and run the following command:
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public void setOptions(java.util.Map<String, String> options) {
@@ -316,15 +478,15 @@ public class LogConfiguration implements Serializable, Cloneable {
      * <p>
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * into your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        instance, log in to your container instance and run the following command:
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,7 +517,81 @@ public class LogConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The secrets to pass to the log configuration.
+     * </p>
+     * 
+     * @return The secrets to pass to the log configuration.
+     */
+
+    public java.util.List<Secret> getSecretOptions() {
+        if (secretOptions == null) {
+            secretOptions = new com.amazonaws.internal.SdkInternalList<Secret>();
+        }
+        return secretOptions;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the log configuration.
+     * </p>
+     * 
+     * @param secretOptions
+     *        The secrets to pass to the log configuration.
+     */
+
+    public void setSecretOptions(java.util.Collection<Secret> secretOptions) {
+        if (secretOptions == null) {
+            this.secretOptions = null;
+            return;
+        }
+
+        this.secretOptions = new com.amazonaws.internal.SdkInternalList<Secret>(secretOptions);
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the log configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecretOptions(java.util.Collection)} or {@link #withSecretOptions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param secretOptions
+     *        The secrets to pass to the log configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogConfiguration withSecretOptions(Secret... secretOptions) {
+        if (this.secretOptions == null) {
+            setSecretOptions(new com.amazonaws.internal.SdkInternalList<Secret>(secretOptions.length));
+        }
+        for (Secret ele : secretOptions) {
+            this.secretOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the log configuration.
+     * </p>
+     * 
+     * @param secretOptions
+     *        The secrets to pass to the log configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogConfiguration withSecretOptions(java.util.Collection<Secret> secretOptions) {
+        setSecretOptions(secretOptions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -368,7 +604,9 @@ public class LogConfiguration implements Serializable, Cloneable {
         if (getLogDriver() != null)
             sb.append("LogDriver: ").append(getLogDriver()).append(",");
         if (getOptions() != null)
-            sb.append("Options: ").append(getOptions());
+            sb.append("Options: ").append(getOptions()).append(",");
+        if (getSecretOptions() != null)
+            sb.append("SecretOptions: ").append(getSecretOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +629,10 @@ public class LogConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
+        if (other.getSecretOptions() == null ^ this.getSecretOptions() == null)
+            return false;
+        if (other.getSecretOptions() != null && other.getSecretOptions().equals(this.getSecretOptions()) == false)
+            return false;
         return true;
     }
 
@@ -401,6 +643,7 @@ public class LogConfiguration implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getLogDriver() == null) ? 0 : getLogDriver().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getSecretOptions() == null) ? 0 : getSecretOptions().hashCode());
         return hashCode;
     }
 
@@ -411,5 +654,11 @@ public class LogConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.LogConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

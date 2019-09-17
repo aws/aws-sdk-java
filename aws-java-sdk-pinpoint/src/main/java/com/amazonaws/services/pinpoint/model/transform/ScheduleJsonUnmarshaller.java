@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
                     schedule.setEndTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EventFilter", targetDepth)) {
+                    context.nextToken();
+                    schedule.setEventFilter(CampaignEventFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Frequency", targetDepth)) {
                     context.nextToken();

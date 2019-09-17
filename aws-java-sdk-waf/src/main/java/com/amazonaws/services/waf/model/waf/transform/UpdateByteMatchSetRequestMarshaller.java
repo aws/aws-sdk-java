@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,82 +12,51 @@
  */
 package com.amazonaws.services.waf.model.waf.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateByteMatchSetRequest Marshaller
+ * UpdateByteMatchSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateByteMatchSetRequestMarshaller implements Marshaller<Request<UpdateByteMatchSetRequest>, UpdateByteMatchSetRequest> {
+@SdkInternalApi
+public class UpdateByteMatchSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BYTEMATCHSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ByteMatchSetId").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
+    private static final MarshallingInfo<List> UPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Updates").build();
 
-    public UpdateByteMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateByteMatchSetRequestMarshaller instance = new UpdateByteMatchSetRequestMarshaller();
+
+    public static UpdateByteMatchSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateByteMatchSetRequest> marshall(UpdateByteMatchSetRequest updateByteMatchSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateByteMatchSetRequest updateByteMatchSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateByteMatchSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateByteMatchSetRequest> request = new DefaultRequest<UpdateByteMatchSetRequest>(updateByteMatchSetRequest, "AWSWAF");
-        request.addHeader("X-Amz-Target", "AWSWAF_20150824.UpdateByteMatchSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateByteMatchSetRequest.getByteMatchSetId() != null) {
-                jsonGenerator.writeFieldName("ByteMatchSetId").writeValue(updateByteMatchSetRequest.getByteMatchSetId());
-            }
-            if (updateByteMatchSetRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(updateByteMatchSetRequest.getChangeToken());
-            }
-
-            java.util.List<ByteMatchSetUpdate> updatesList = updateByteMatchSetRequest.getUpdates();
-            if (updatesList != null) {
-                jsonGenerator.writeFieldName("Updates");
-                jsonGenerator.writeStartArray();
-                for (ByteMatchSetUpdate updatesListValue : updatesList) {
-                    if (updatesListValue != null) {
-
-                        ByteMatchSetUpdateJsonMarshaller.getInstance().marshall(updatesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateByteMatchSetRequest.getByteMatchSetId(), BYTEMATCHSETID_BINDING);
+            protocolMarshaller.marshall(updateByteMatchSetRequest.getChangeToken(), CHANGETOKEN_BINDING);
+            protocolMarshaller.marshall(updateByteMatchSetRequest.getUpdates(), UPDATES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

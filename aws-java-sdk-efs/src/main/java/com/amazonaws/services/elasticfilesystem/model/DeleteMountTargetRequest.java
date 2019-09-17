@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target to delete (String).
+     *        The ID of the mount target to delete (String).
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -48,10 +48,10 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
-     * @return ID of the mount target to delete (String).
+     * @return The ID of the mount target to delete (String).
      */
 
     public String getMountTargetId() {
@@ -60,11 +60,11 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target to delete (String).
+     *        The ID of the mount target to delete (String).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

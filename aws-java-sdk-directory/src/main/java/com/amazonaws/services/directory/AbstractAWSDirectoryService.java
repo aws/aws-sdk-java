@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,6 +83,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +109,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,7 +148,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DescribeDomainControllersResult describeDomainControllers(DescribeDomainControllersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +218,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -208,6 +238,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -218,7 +253,17 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ShareDirectoryResult shareDirectory(ShareDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -228,12 +273,27 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateNumberOfDomainControllersResult updateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRadiusResult updateRadius(UpdateRadiusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTrustResult updateTrust(UpdateTrustRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

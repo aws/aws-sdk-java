@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,11 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                 }
                 if (context.testExpression("startDate", targetDepth)) {
                     context.nextToken();
-                    describeExecutionResult.setStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeExecutionResult.setStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopDate", targetDepth)) {
                     context.nextToken();
-                    describeExecutionResult.setStopDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeExecutionResult.setStopDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();

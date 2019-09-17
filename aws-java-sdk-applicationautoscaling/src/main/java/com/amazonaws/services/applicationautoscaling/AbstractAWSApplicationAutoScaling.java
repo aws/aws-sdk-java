@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSApplicationAutoScaling implements AWSApplicationAutoScal
     }
 
     @Override
+    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,7 +68,17 @@ public class AbstractAWSApplicationAutoScaling implements AWSApplicationAutoScal
     }
 
     @Override
+    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutScheduledActionResult putScheduledAction(PutScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

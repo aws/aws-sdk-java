@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,20 +28,20 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
-     * maximum, and a maximum value for the quota.
+     * A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the
+     * quota maximum, and a maximum value for the quota.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountQuota> accountQuotas;
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
-     * maximum, and a maximum value for the quota.
+     * A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the
+     * quota maximum, and a maximum value for the quota.
      * </p>
      * 
-     * @return A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
-     *         the quota maximum, and a maximum value for the quota.
+     * @return A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage
+     *         toward the quota maximum, and a maximum value for the quota.
      */
 
     public java.util.List<AccountQuota> getAccountQuotas() {
@@ -53,13 +53,13 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
-     * maximum, and a maximum value for the quota.
+     * A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the
+     * quota maximum, and a maximum value for the quota.
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
-     *        the quota maximum, and a maximum value for the quota.
+     *        A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage
+     *        toward the quota maximum, and a maximum value for the quota.
      */
 
     public void setAccountQuotas(java.util.Collection<AccountQuota> accountQuotas) {
@@ -73,8 +73,8 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
-     * maximum, and a maximum value for the quota.
+     * A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the
+     * quota maximum, and a maximum value for the quota.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +83,8 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
-     *        the quota maximum, and a maximum value for the quota.
+     *        A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage
+     *        toward the quota maximum, and a maximum value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward the quota
-     * maximum, and a maximum value for the quota.
+     * A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the
+     * quota maximum, and a maximum value for the quota.
      * </p>
      * 
      * @param accountQuotas
-     *        A list of <a>AccountQuota</a> objects. Within this list, each quota has a name, a count of usage toward
-     *        the quota maximum, and a maximum value for the quota.
+     *        A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage
+     *        toward the quota maximum, and a maximum value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +116,8 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -166,4 +167,5 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     */
     private DevicePool devicePool;
 
     /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
      * @param devicePool
+     *        The device pool you just updated.
      */
 
     public void setDevicePool(DevicePool devicePool) {
@@ -37,7 +47,11 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
+     * @return The device pool you just updated.
      */
 
     public DevicePool getDevicePool() {
@@ -45,7 +59,12 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The device pool you just updated.
+     * </p>
+     * 
      * @param devicePool
+     *        The device pool you just updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +74,8 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -105,4 +125,5 @@ public class UpdateDevicePoolResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

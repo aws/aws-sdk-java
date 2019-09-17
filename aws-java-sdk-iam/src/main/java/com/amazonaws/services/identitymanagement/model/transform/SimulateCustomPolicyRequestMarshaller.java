@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,10 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
-                .getPolicyInputList();
-        if (!policyInputListList.isEmpty() || !policyInputListList.isAutoConstruct()) {
+        if (!simulateCustomPolicyRequest.getPolicyInputList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest.getPolicyInputList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
+                    .getPolicyInputList();
             int policyInputListListIndex = 1;
 
             for (String policyInputListListValue : policyInputListList) {
@@ -53,9 +54,10 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> actionNamesList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
-                .getActionNames();
-        if (!actionNamesList.isEmpty() || !actionNamesList.isAutoConstruct()) {
+        if (!simulateCustomPolicyRequest.getActionNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest.getActionNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> actionNamesList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
+                    .getActionNames();
             int actionNamesListIndex = 1;
 
             for (String actionNamesListValue : actionNamesList) {
@@ -66,9 +68,10 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> resourceArnsList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
-                .getResourceArns();
-        if (!resourceArnsList.isEmpty() || !resourceArnsList.isAutoConstruct()) {
+        if (!simulateCustomPolicyRequest.getResourceArns().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest.getResourceArns()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> resourceArnsList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
+                    .getResourceArns();
             int resourceArnsListIndex = 1;
 
             for (String resourceArnsListValue : resourceArnsList) {
@@ -91,9 +94,10 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
             request.addParameter("CallerArn", StringUtils.fromString(simulateCustomPolicyRequest.getCallerArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntriesList = (com.amazonaws.internal.SdkInternalList<ContextEntry>) simulateCustomPolicyRequest
-                .getContextEntries();
-        if (!contextEntriesList.isEmpty() || !contextEntriesList.isAutoConstruct()) {
+        if (!simulateCustomPolicyRequest.getContextEntries().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ContextEntry>) simulateCustomPolicyRequest.getContextEntries()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntriesList = (com.amazonaws.internal.SdkInternalList<ContextEntry>) simulateCustomPolicyRequest
+                    .getContextEntries();
             int contextEntriesListIndex = 1;
 
             for (ContextEntry contextEntriesListValue : contextEntriesList) {
@@ -103,9 +107,10 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
                             StringUtils.fromString(contextEntriesListValue.getContextKeyName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> contextKeyValuesList = (com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue
-                        .getContextKeyValues();
-                if (!contextKeyValuesList.isEmpty() || !contextKeyValuesList.isAutoConstruct()) {
+                if (!contextEntriesListValue.getContextKeyValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue.getContextKeyValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> contextKeyValuesList = (com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue
+                            .getContextKeyValues();
                     int contextKeyValuesListIndex = 1;
 
                     for (String contextKeyValuesListValue : contextKeyValuesList) {

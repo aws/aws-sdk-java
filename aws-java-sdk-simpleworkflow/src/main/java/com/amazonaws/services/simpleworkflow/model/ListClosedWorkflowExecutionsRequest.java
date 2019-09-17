@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions" target="_top">AWS
+ *      API Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -32,8 +37,12 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their start times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      */
     private ExecutionTimeFilter startTimeFilter;
     /**
@@ -42,16 +51,24 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their close times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      */
     private ExecutionTimeFilter closeTimeFilter;
     /**
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowExecutionFilter executionFilter;
     /**
@@ -59,31 +76,45 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED
      * is specified, then only TERMINATED workflow executions are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private CloseStatusFilter closeStatusFilter;
     /**
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowTypeFilter typeFilter;
     /**
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private TagFilter tagFilter;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -92,13 +123,8 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      */
     private Integer maximumPageSize;
@@ -156,15 +182,21 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their start times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param startTimeFilter
      *        If specified, the workflow executions are included in the returned results based on whether their start
      *        times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *        results are ordered by their start times.</p> <note><code>startTimeFilter</code> and
-     *        <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *        both.
+     *        results are ordered by their start times.</p> <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      */
 
     public void setStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -177,14 +209,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their start times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @return If specified, the workflow executions are included in the returned results based on whether their start
      *         times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *         results are ordered by their start times.</p> <note><code>startTimeFilter</code> and
-     *         <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *         both.
+     *         results are ordered by their start times.</p> <note>
+     *         <p>
+     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify
+     *         one of these in a request but not both.
+     *         </p>
      */
 
     public ExecutionTimeFilter getStartTimeFilter() {
@@ -197,15 +235,21 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their start times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param startTimeFilter
      *        If specified, the workflow executions are included in the returned results based on whether their start
      *        times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *        results are ordered by their start times.</p> <note><code>startTimeFilter</code> and
-     *        <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *        both.
+     *        results are ordered by their start times.</p> <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,15 +264,21 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their close times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param closeTimeFilter
      *        If specified, the workflow executions are included in the returned results based on whether their close
      *        times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *        results are ordered by their close times.</p> <note><code>startTimeFilter</code> and
-     *        <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *        both.
+     *        results are ordered by their close times.</p> <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      */
 
     public void setCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
@@ -241,14 +291,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their close times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @return If specified, the workflow executions are included in the returned results based on whether their close
      *         times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *         results are ordered by their close times.</p> <note><code>startTimeFilter</code> and
-     *         <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *         both.
+     *         results are ordered by their close times.</p> <note>
+     *         <p>
+     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify
+     *         one of these in a request but not both.
+     *         </p>
      */
 
     public ExecutionTimeFilter getCloseTimeFilter() {
@@ -261,15 +317,21 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered
      * by their close times.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param closeTimeFilter
      *        If specified, the workflow executions are included in the returned results based on whether their close
      *        times are within the range specified by this filter. Also, if this parameter is specified, the returned
-     *        results are ordered by their close times.</p> <note><code>startTimeFilter</code> and
-     *        <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not
-     *        both.
+     *        results are ordered by their close times.</p> <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,13 +344,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <note>
+     *        <p>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -299,12 +368,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *         <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *         <note>
+     *         <p>
+     *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowExecutionFilter getExecutionFilter() {
@@ -315,13 +391,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <note>
+     *        <p>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,14 +418,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED
      * is specified, then only TERMINATED workflow executions are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param closeStatusFilter
      *        If specified, only workflow executions that match this <i>close status</i> are listed. For example, if
      *        TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setCloseStatusFilter(CloseStatusFilter closeStatusFilter) {
@@ -354,13 +443,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED
      * is specified, then only TERMINATED workflow executions are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions that match this <i>close status</i> are listed. For example, if
      *         TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public CloseStatusFilter getCloseStatusFilter() {
@@ -372,14 +467,20 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED
      * is specified, then only TERMINATED workflow executions are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param closeStatusFilter
      *        If specified, only workflow executions that match this <i>close status</i> are listed. For example, if
      *        TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,13 +493,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -409,12 +516,18 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowTypeFilter getTypeFilter() {
@@ -425,13 +538,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,13 +563,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have the matching tag are listed.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTagFilter(TagFilter tagFilter) {
@@ -461,12 +586,18 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions that have the matching tag are listed.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public TagFilter getTagFilter() {
@@ -477,13 +608,19 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have the matching tag are listed.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,18 +631,22 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -516,17 +657,21 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -537,18 +682,22 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -561,22 +710,13 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      */
 
     public void setMaximumPageSize(Integer maximumPageSize) {
@@ -585,21 +725,12 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *         however, specify a page size <i>smaller</i> than the maximum.</p>
-     *         <p>
-     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *         specified maximum.
+     * @return The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain
+     *         further pages of results.
      */
 
     public Integer getMaximumPageSize() {
@@ -608,22 +739,13 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -693,7 +815,8 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

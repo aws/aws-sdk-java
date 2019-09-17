@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,56 +28,16 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the resource.
-     * </p>
-     */
-    private String resourceId;
-    /**
-     * <p>
      * Information about the error.
      * </p>
      */
     private UnsuccessfulItemError error;
-
     /**
      * <p>
      * The ID of the resource.
      * </p>
-     * 
-     * @param resourceId
-     *        The ID of the resource.
      */
-
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the resource.
-     * </p>
-     * 
-     * @return The ID of the resource.
-     */
-
-    public String getResourceId() {
-        return this.resourceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the resource.
-     * </p>
-     * 
-     * @param resourceId
-     *        The ID of the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UnsuccessfulItem withResourceId(String resourceId) {
-        setResourceId(resourceId);
-        return this;
-    }
+    private String resourceId;
 
     /**
      * <p>
@@ -120,7 +80,48 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the resource.
+     * </p>
+     * 
+     * @param resourceId
+     *        The ID of the resource.
+     */
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the resource.
+     * </p>
+     * 
+     * @return The ID of the resource.
+     */
+
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the resource.
+     * </p>
+     * 
+     * @param resourceId
+     *        The ID of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnsuccessfulItem withResourceId(String resourceId) {
+        setResourceId(resourceId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,10 +131,10 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResourceId() != null)
-            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getError() != null)
-            sb.append("Error: ").append(getError());
+            sb.append("Error: ").append(getError()).append(",");
+        if (getResourceId() != null)
+            sb.append("ResourceId: ").append(getResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +149,13 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         if (obj instanceof UnsuccessfulItem == false)
             return false;
         UnsuccessfulItem other = (UnsuccessfulItem) obj;
-        if (other.getResourceId() == null ^ this.getResourceId() == null)
-            return false;
-        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
-            return false;
         if (other.getError() == null ^ this.getError() == null)
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getResourceId() == null ^ this.getResourceId() == null)
+            return false;
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         return true;
     }
@@ -164,8 +165,8 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         return hashCode;
     }
 
@@ -177,4 +178,5 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

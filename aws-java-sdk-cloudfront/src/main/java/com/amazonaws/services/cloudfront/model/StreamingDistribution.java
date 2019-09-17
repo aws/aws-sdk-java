@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,10 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A streaming distribution.
+ * A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how
+ * to track and manage content delivery.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingDistribution" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistribution" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,7 +33,13 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      */
     private String id;
-
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     */
     private String aRN;
     /**
      * <p>
@@ -49,7 +56,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      */
@@ -68,7 +75,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -121,7 +128,16 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
      * @param aRN
+     *        The ARN (Amazon Resource Name) for the distribution. For example:
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      */
 
     public void setARN(String aRN) {
@@ -129,7 +145,15 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) for the distribution. For example:
+     *         <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *         <code>123456789012</code> is your AWS account ID.
      */
 
     public String getARN() {
@@ -137,7 +161,16 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where <code>123456789012</code> is
+     * your AWS account ID.
+     * </p>
+     * 
      * @param aRN
+     *        The ARN (Amazon Resource Name) for the distribution. For example:
+     *        <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+     *        <code>123456789012</code> is your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,12 +267,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the streaming distribution. For example:
+     *        The domain name that corresponds to the streaming distribution, for example,
      *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
@@ -249,11 +282,11 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
-     * @return The domain name that corresponds to the streaming distribution. For example:
+     * @return The domain name that corresponds to the streaming distribution, for example,
      *         <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
@@ -263,12 +296,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the streaming distribution. For example:
+     *        The domain name that corresponds to the streaming distribution, for example,
      *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -292,7 +325,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -309,7 +342,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -331,7 +364,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -347,7 +380,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *         Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -369,7 +402,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
      * Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
@@ -386,7 +419,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      *        Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -437,7 +470,8 @@ public class StreamingDistribution implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -529,4 +563,5 @@ public class StreamingDistribution implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

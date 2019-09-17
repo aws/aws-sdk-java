@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * CloudFront origin access identity.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentity"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CloudFrontOriginAccessIdentity"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +28,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      */
     private String id;
@@ -58,7 +58,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * @param s3CanonicalUserId
      *        The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
      *        identity read permission to an object in Amazon S3.
@@ -70,11 +70,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      */
 
     public void setId(String id) {
@@ -83,10 +83,10 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
-     * @return The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * @return The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      */
 
     public String getId() {
@@ -95,11 +95,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,7 +195,8 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -260,4 +261,5 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

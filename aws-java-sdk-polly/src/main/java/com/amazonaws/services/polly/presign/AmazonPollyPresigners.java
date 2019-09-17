@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.polly.presign;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -25,12 +24,10 @@ import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.AmazonPolly;
 import com.amazonaws.services.polly.model.SynthesizeSpeechRequest;
-
-import org.joda.time.DateTime;
-
 import java.net.URI;
 import java.net.URL;
 import java.util.Date;
+import org.joda.time.DateTime;
 
 /**
  * Presigning extensions methods for {@link AmazonPolly}.
@@ -90,6 +87,20 @@ public final class AmazonPollyPresigners {
             for (String lexiconName : synthesizeSpeechRequest.getLexiconNames()) {
                 request.addParameter("LexiconNames", lexiconName);
             }
+        }
+
+        if (synthesizeSpeechRequest.getSpeechMarkTypes() != null) {
+            for (String speechMarkType : synthesizeSpeechRequest.getSpeechMarkTypes()) {
+                request.addParameter("SpeechMarkTypes", speechMarkType);
+            }
+        }
+
+        if (synthesizeSpeechRequest.getLanguageCode() != null) {
+            request.addParameter("LanguageCode", synthesizeSpeechRequest.getLanguageCode());
+        }
+
+        if (synthesizeSpeechRequest.getEngine() != null) {
+            request.addParameter("Engine", synthesizeSpeechRequest.getEngine());
         }
     }
 

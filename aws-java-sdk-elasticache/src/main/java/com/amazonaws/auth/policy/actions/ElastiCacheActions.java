@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public enum ElastiCacheActions implements Action {
     AddTagsToResource("elasticache:AddTagsToResource"),
     /** Action for the AuthorizeCacheSecurityGroupIngress operation. */
     AuthorizeCacheSecurityGroupIngress("elasticache:AuthorizeCacheSecurityGroupIngress"),
+    /** Action for the BatchApplyUpdateAction operation. */
+    BatchApplyUpdateAction("elasticache:BatchApplyUpdateAction"),
+    /** Action for the BatchStopUpdateAction operation. */
+    BatchStopUpdateAction("elasticache:BatchStopUpdateAction"),
     /** Action for the CopySnapshot operation. */
     CopySnapshot("elasticache:CopySnapshot"),
     /** Action for the CreateCacheCluster operation. */
@@ -43,6 +47,8 @@ public enum ElastiCacheActions implements Action {
     CreateReplicationGroup("elasticache:CreateReplicationGroup"),
     /** Action for the CreateSnapshot operation. */
     CreateSnapshot("elasticache:CreateSnapshot"),
+    /** Action for the DecreaseReplicaCount operation. */
+    DecreaseReplicaCount("elasticache:DecreaseReplicaCount"),
     /** Action for the DeleteCacheCluster operation. */
     DeleteCacheCluster("elasticache:DeleteCacheCluster"),
     /** Action for the DeleteCacheParameterGroup operation. */
@@ -77,8 +83,14 @@ public enum ElastiCacheActions implements Action {
     DescribeReservedCacheNodes("elasticache:DescribeReservedCacheNodes"),
     /** Action for the DescribeReservedCacheNodesOfferings operation. */
     DescribeReservedCacheNodesOfferings("elasticache:DescribeReservedCacheNodesOfferings"),
+    /** Action for the DescribeServiceUpdates operation. */
+    DescribeServiceUpdates("elasticache:DescribeServiceUpdates"),
     /** Action for the DescribeSnapshots operation. */
     DescribeSnapshots("elasticache:DescribeSnapshots"),
+    /** Action for the DescribeUpdateActions operation. */
+    DescribeUpdateActions("elasticache:DescribeUpdateActions"),
+    /** Action for the IncreaseReplicaCount operation. */
+    IncreaseReplicaCount("elasticache:IncreaseReplicaCount"),
     /** Action for the ListAllowedNodeTypeModifications operation. */
     ListAllowedNodeTypeModifications("elasticache:ListAllowedNodeTypeModifications"),
     /** Action for the ListTagsForResource operation. */
@@ -91,6 +103,8 @@ public enum ElastiCacheActions implements Action {
     ModifyCacheSubnetGroup("elasticache:ModifyCacheSubnetGroup"),
     /** Action for the ModifyReplicationGroup operation. */
     ModifyReplicationGroup("elasticache:ModifyReplicationGroup"),
+    /** Action for the ModifyReplicationGroupShardConfiguration operation. */
+    ModifyReplicationGroupShardConfiguration("elasticache:ModifyReplicationGroupShardConfiguration"),
     /** Action for the PurchaseReservedCacheNodesOffering operation. */
     PurchaseReservedCacheNodesOffering("elasticache:PurchaseReservedCacheNodesOffering"),
     /** Action for the RebootCacheCluster operation. */
@@ -101,6 +115,8 @@ public enum ElastiCacheActions implements Action {
     ResetCacheParameterGroup("elasticache:ResetCacheParameterGroup"),
     /** Action for the RevokeCacheSecurityGroupIngress operation. */
     RevokeCacheSecurityGroupIngress("elasticache:RevokeCacheSecurityGroupIngress"),
+    /** Action for the TestFailover operation. */
+    TestFailover("elasticache:TestFailover"),
 
     ;
 

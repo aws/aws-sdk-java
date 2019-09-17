@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.util.XmlUtils;
 import java.io.InputStream;
 import java.util.Map.Entry;
 
@@ -28,23 +29,19 @@ import com.amazonaws.transform.Unmarshaller;
 public class BucketNotificationConfigurationStaxUnmarshaller implements
         Unmarshaller<BucketNotificationConfiguration, InputStream> {
 
-    private static BucketNotificationConfigurationStaxUnmarshaller instance = new BucketNotificationConfigurationStaxUnmarshaller();
+    private static final BucketNotificationConfigurationStaxUnmarshaller instance = new BucketNotificationConfigurationStaxUnmarshaller();
 
     public static BucketNotificationConfigurationStaxUnmarshaller getInstance() {
         return instance;
     }
-
-    private final XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 
     private BucketNotificationConfigurationStaxUnmarshaller() {
     }
 
     @Override
     public BucketNotificationConfiguration unmarshall(InputStream inputStream) throws Exception {
-        StaxUnmarshallerContext context;
-        synchronized (inputFactory) {
-            context = new StaxUnmarshallerContext(inputFactory.createXMLEventReader(inputStream));
-        }
+        StaxUnmarshallerContext context =
+            new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -119,6 +119,18 @@ public class GlacierJobDescriptionJsonUnmarshaller implements Unmarshaller<Glaci
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
                     glacierJobDescription.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobOutputPath", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setJobOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SelectParameters", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

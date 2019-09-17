@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,42 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                 if (context.testExpression("autoRollbackConfiguration", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setAutoRollbackConfiguration(AutoRollbackConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("deploymentStyle", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setDeploymentStyle(DeploymentStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("blueGreenDeploymentConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("loadBalancerInfo", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLoadBalancerInfo(LoadBalancerInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lastSuccessfulDeployment", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLastSuccessfulDeployment(LastDeploymentInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lastAttemptedDeployment", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLastAttemptedDeployment(LastDeploymentInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ec2TagSet", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setEc2TagSet(EC2TagSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("onPremisesTagSet", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setOnPremisesTagSet(OnPremisesTagSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ecsServices", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setEcsServices(new ListUnmarshaller<ECSService>(ECSServiceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

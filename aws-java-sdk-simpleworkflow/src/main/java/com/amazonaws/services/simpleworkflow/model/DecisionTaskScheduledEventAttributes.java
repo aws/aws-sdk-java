@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,19 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Provides details about the <code>DecisionTaskScheduled</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DecisionTaskScheduledEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DecisionTaskScheduledEventAttributes implements Serializable, Cloneable {
+public class DecisionTaskScheduledEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -31,25 +36,25 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
     private TaskList taskList;
     /**
      * <p>
-     * <i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range
+     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String taskPriority;
     /**
      * <p>
-     * The maximum duration for this decision task. The task is considered timed out if it does not completed within
-     * this duration.
+     * The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this
+     * duration.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String startToCloseTimeout;
@@ -96,24 +101,24 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range
+     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values
-     *        are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+     *        A task priority that, if set, specifies the priority for this decision task. Valid values are integers
+     *        that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     *        (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public void setTaskPriority(String taskPriority) {
@@ -122,23 +127,23 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range
+     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
-     * @return Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values
-     *         are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+     * @return A task priority that, if set, specifies the priority for this decision task. Valid values are integers
+     *         that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     *         (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *         Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public String getTaskPriority() {
@@ -147,24 +152,24 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * A task priority that, if set, specifies the priority for this decision task. Valid values are integers that range
+     * from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher
+     * numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> A task priority that, if set, specifies the priority for this decision task. Valid values
-     *        are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-     *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+     *        A task priority that, if set, specifies the priority for this decision task. Valid values are integers
+     *        that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     *        (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,20 +180,20 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The maximum duration for this decision task. The task is considered timed out if it does not completed within
-     * this duration.
+     * The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this
+     * duration.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        The maximum duration for this decision task. The task is considered timed out if it does not completed
+     *        The maximum duration for this decision task. The task is considered timed out if it doesn't completed
      *        within this duration.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setStartToCloseTimeout(String startToCloseTimeout) {
@@ -197,19 +202,19 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The maximum duration for this decision task. The task is considered timed out if it does not completed within
-     * this duration.
+     * The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this
+     * duration.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
-     * @return The maximum duration for this decision task. The task is considered timed out if it does not completed
+     * @return The maximum duration for this decision task. The task is considered timed out if it doesn't completed
      *         within this duration.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getStartToCloseTimeout() {
@@ -218,20 +223,20 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The maximum duration for this decision task. The task is considered timed out if it does not completed within
-     * this duration.
+     * The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this
+     * duration.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param startToCloseTimeout
-     *        The maximum duration for this decision task. The task is considered timed out if it does not completed
+     *        The maximum duration for this decision task. The task is considered timed out if it doesn't completed
      *        within this duration.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,7 +246,8 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,5 +310,11 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.DecisionTaskScheduledEventAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

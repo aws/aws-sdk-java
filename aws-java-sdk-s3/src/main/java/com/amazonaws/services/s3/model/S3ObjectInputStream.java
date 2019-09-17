@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,17 @@
  */
 package com.amazonaws.services.s3.model;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.conn.EofSensorInputStream;
-
 import com.amazonaws.internal.MetricAware;
 import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricFilterInputStream;
 import com.amazonaws.services.s3.metrics.S3ServiceMetric;
 import com.amazonaws.util.IOUtils;
+import java.io.IOException;
+import java.io.InputStream;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.conn.EofSensorInputStream;
 
 /**
  * Input stream representing the content of an {@link S3Object}. In addition to
@@ -38,8 +36,6 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
 
     private final HttpRequestBase httpRequest;
 
-    private boolean eof;
-
     public S3ObjectInputStream(InputStream in, HttpRequestBase httpRequest) {
         this(in, httpRequest, wrapWithByteCounting(in));
     }
@@ -48,11 +44,9 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
             InputStream in,
             HttpRequestBase httpRequest,
             boolean collectMetrics) {
-
         super(collectMetrics
-                ? new MetricFilterInputStream(S3ServiceMetric.S3DownloadThroughput, in)
-                : in);
-
+                      ? new MetricFilterInputStream(S3ServiceMetric.S3DownloadThroughput, in)
+                      : in);
         this.httpRequest = httpRequest;
     }
 
@@ -61,10 +55,11 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      * counting wrapper; false otherwise.
      */
     private static boolean wrapWithByteCounting(InputStream in) {
-        if (!AwsSdkMetrics.isMetricsEnabled())
+        if (!AwsSdkMetrics.isMetricsEnabled()) {
             return false;   // metrics is disabled
+        }
         if (in instanceof MetricAware) {
-            MetricAware aware = (MetricAware)in;
+            MetricAware aware = (MetricAware) in;
             // wrap only if not already wrapped in one of it's inner chain of input stream
             return !aware.isMetricActivated();
         }
@@ -90,18 +85,18 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      */
     @Override
     public void abort() {
-        doAbort();
-    }
+        super.abort();
 
-    /**
-     * To allow customers to override abort to just close. We can think about exposing this method
-     * as protected to allow customers to completely prevent the abort behavior if there is a need
-     */
-    private void doAbort() {
         if (httpRequest != null) {
             httpRequest.abort();
         }
-        IOUtils.closeQuietly(in, null);
+
+        // The default abort() implementation calls abort on the wrapped stream
+        // if it's an SdkFilterInputStream; otherwise we'll need to close the
+        // stream.
+        if (!(in instanceof SdkFilterInputStream)) {
+            IOUtils.closeQuietly(in, null);
+        }
     }
 
     /**
@@ -129,59 +124,16 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
 
     /**
      * {@inheritDoc}
-     */
-    @Override
-    public int read() throws IOException {
-        int value = super.read();
-        if (value == -1) {
-            eof = true;
-        }
-        return value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int read(byte[] b) throws IOException {
-        return read(b, 0, b.length);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public int read(byte[] b, int off, int len) throws IOException {
-        int value = super.read(b, off, len);
-        if (value == -1) {
-            eof = true;
-        }
-        return value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void reset() throws IOException {
-        super.reset();
-        eof = false;
-    }
-
-    /**
-     * {@inheritDoc}
      *
      * Delegates to {@link S3ObjectInputStream#abort()} if there is any data
      * remaining in the stream. Otherwise, it safely closes the stream.
      *
-     * @see {@link S3ObjectInputStream#abort()}
+     * @see S3ObjectInputStream#abort()
+     * @see com.amazonaws.services.s3.internal.S3AbortableInputStream
      */
     @Override
     public void close() throws IOException {
-        if (eof) {
-            super.close();
-        } else {
-            doAbort();
-        }
+        super.close();
     }
+
 }

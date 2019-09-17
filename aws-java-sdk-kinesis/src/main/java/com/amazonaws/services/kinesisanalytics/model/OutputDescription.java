@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -26,7 +28,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OutputDescription implements Serializable, Cloneable {
+public class OutputDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,6 +54,12 @@ public class OutputDescription implements Serializable, Cloneable {
      * </p>
      */
     private KinesisFirehoseOutputDescription kinesisFirehoseOutputDescription;
+    /**
+     * <p>
+     * Describes the AWS Lambda function configured as the destination where output is written.
+     * </p>
+     */
+    private LambdaOutputDescription lambdaOutputDescription;
     /**
      * <p>
      * Data format used for writing data to the destination.
@@ -224,6 +232,46 @@ public class OutputDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Describes the AWS Lambda function configured as the destination where output is written.
+     * </p>
+     * 
+     * @param lambdaOutputDescription
+     *        Describes the AWS Lambda function configured as the destination where output is written.
+     */
+
+    public void setLambdaOutputDescription(LambdaOutputDescription lambdaOutputDescription) {
+        this.lambdaOutputDescription = lambdaOutputDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Lambda function configured as the destination where output is written.
+     * </p>
+     * 
+     * @return Describes the AWS Lambda function configured as the destination where output is written.
+     */
+
+    public LambdaOutputDescription getLambdaOutputDescription() {
+        return this.lambdaOutputDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Lambda function configured as the destination where output is written.
+     * </p>
+     * 
+     * @param lambdaOutputDescription
+     *        Describes the AWS Lambda function configured as the destination where output is written.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputDescription withLambdaOutputDescription(LambdaOutputDescription lambdaOutputDescription) {
+        setLambdaOutputDescription(lambdaOutputDescription);
+        return this;
+    }
+
+    /**
+     * <p>
      * Data format used for writing data to the destination.
      * </p>
      * 
@@ -263,7 +311,8 @@ public class OutputDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -281,6 +330,8 @@ public class OutputDescription implements Serializable, Cloneable {
             sb.append("KinesisStreamsOutputDescription: ").append(getKinesisStreamsOutputDescription()).append(",");
         if (getKinesisFirehoseOutputDescription() != null)
             sb.append("KinesisFirehoseOutputDescription: ").append(getKinesisFirehoseOutputDescription()).append(",");
+        if (getLambdaOutputDescription() != null)
+            sb.append("LambdaOutputDescription: ").append(getLambdaOutputDescription()).append(",");
         if (getDestinationSchema() != null)
             sb.append("DestinationSchema: ").append(getDestinationSchema());
         sb.append("}");
@@ -315,6 +366,10 @@ public class OutputDescription implements Serializable, Cloneable {
         if (other.getKinesisFirehoseOutputDescription() != null
                 && other.getKinesisFirehoseOutputDescription().equals(this.getKinesisFirehoseOutputDescription()) == false)
             return false;
+        if (other.getLambdaOutputDescription() == null ^ this.getLambdaOutputDescription() == null)
+            return false;
+        if (other.getLambdaOutputDescription() != null && other.getLambdaOutputDescription().equals(this.getLambdaOutputDescription()) == false)
+            return false;
         if (other.getDestinationSchema() == null ^ this.getDestinationSchema() == null)
             return false;
         if (other.getDestinationSchema() != null && other.getDestinationSchema().equals(this.getDestinationSchema()) == false)
@@ -331,6 +386,7 @@ public class OutputDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamsOutputDescription() == null) ? 0 : getKinesisStreamsOutputDescription().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseOutputDescription() == null) ? 0 : getKinesisFirehoseOutputDescription().hashCode());
+        hashCode = prime * hashCode + ((getLambdaOutputDescription() == null) ? 0 : getLambdaOutputDescription().hashCode());
         hashCode = prime * hashCode + ((getDestinationSchema() == null) ? 0 : getDestinationSchema().hashCode());
         return hashCode;
     }
@@ -342,5 +398,11 @@ public class OutputDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.OutputDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

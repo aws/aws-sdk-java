@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * An update operation for a record.
@@ -22,7 +24,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RecordPatch implements Serializable, Cloneable {
+public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
 
     /** An operation, either replace or remove. */
     private String op;
@@ -81,7 +83,7 @@ public class RecordPatch implements Serializable, Cloneable {
      */
 
     public void setOp(Operation op) {
-        this.op = op.toString();
+        withOp(op);
     }
 
     /**
@@ -94,7 +96,7 @@ public class RecordPatch implements Serializable, Cloneable {
      */
 
     public RecordPatch withOp(Operation op) {
-        setOp(op);
+        this.op = op.toString();
         return this;
     }
 
@@ -235,7 +237,8 @@ public class RecordPatch implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,5 +315,11 @@ public class RecordPatch implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitosync.model.transform.RecordPatchMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

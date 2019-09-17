@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,51 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTasksRequest Marshaller
+ * DescribeTasksRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTasksRequestMarshaller implements Marshaller<Request<DescribeTasksRequest>, DescribeTasksRequest> {
+@SdkInternalApi
+public class DescribeTasksRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<List> TASKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tasks").build();
+    private static final MarshallingInfo<List> INCLUDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("include").build();
 
-    public DescribeTasksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTasksRequestMarshaller instance = new DescribeTasksRequestMarshaller();
+
+    public static DescribeTasksRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTasksRequest> marshall(DescribeTasksRequest describeTasksRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTasksRequest describeTasksRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTasksRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTasksRequest> request = new DefaultRequest<DescribeTasksRequest>(describeTasksRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DescribeTasks");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTasksRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(describeTasksRequest.getCluster());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> tasksList = (com.amazonaws.internal.SdkInternalList<String>) describeTasksRequest.getTasks();
-            if (!tasksList.isEmpty() || !tasksList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("tasks");
-                jsonGenerator.writeStartArray();
-                for (String tasksListValue : tasksList) {
-                    if (tasksListValue != null) {
-                        jsonGenerator.writeValue(tasksListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTasksRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(describeTasksRequest.getTasks(), TASKS_BINDING);
+            protocolMarshaller.marshall(describeTasksRequest.getInclude(), INCLUDE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

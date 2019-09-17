@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,9 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     private String logGroupName;
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      */
     private String filterName;
@@ -60,8 +62,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -82,8 +84,9 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     private String roleArn;
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      */
     private String distribution;
@@ -130,11 +133,16 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
-     *        A name for the subscription filter.
+     *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *        with a log group. To find the name of the filter currently associated with a log group, use
+     *        <a>DescribeSubscriptionFilters</a>.
      */
 
     public void setFilterName(String filterName) {
@@ -143,10 +151,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
-     * @return A name for the subscription filter.
+     * @return A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *         name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *         with a log group. To find the name of the filter currently associated with a log group, use
+     *         <a>DescribeSubscriptionFilters</a>.
      */
 
     public String getFilterName() {
@@ -155,11 +168,16 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
-     *        A name for the subscription filter.
+     *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *        with a log group. To find the name of the filter currently associated with a log group, use
+     *        <a>DescribeSubscriptionFilters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,8 +243,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -254,7 +272,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *        An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *        same-account delivery.
      *        </p>
      *        </li>
@@ -287,8 +305,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -315,7 +333,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *         An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *         same-account delivery.
      *         </p>
      *         </li>
@@ -348,8 +366,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -377,7 +395,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *        An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *        same-account delivery.
      *        </p>
      *        </li>
@@ -449,14 +467,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
@@ -466,13 +485,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
-     * @return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *         stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *         data randomly.
+     * @return The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *         but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *         the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
@@ -482,14 +502,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Distribution
      */
@@ -501,42 +522,45 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
     public void setDistribution(Distribution distribution) {
-        this.distribution = distribution.toString();
+        withDistribution(distribution);
     }
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Distribution
      */
 
     public PutSubscriptionFilterRequest withDistribution(Distribution distribution) {
-        setDistribution(distribution);
+        this.distribution = distribution.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

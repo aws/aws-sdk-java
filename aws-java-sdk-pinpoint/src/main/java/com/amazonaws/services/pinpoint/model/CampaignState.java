@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,26 +14,38 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about the status of a campaign.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignState" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CampaignState implements Serializable, Cloneable {
+public class CampaignState implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      */
     private String campaignStatus;
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -42,13 +54,14 @@ public class CampaignState implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
-     * 
-     * @return The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *         Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * @return The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *         campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have
+     *         a status of COMPLETED.
      * @see CampaignStatus
      */
 
@@ -57,14 +70,15 @@ public class CampaignState implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */
@@ -75,41 +89,44 @@ public class CampaignState implements Serializable, Cloneable {
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @see CampaignStatus
      */
 
     public void setCampaignStatus(CampaignStatus campaignStatus) {
-        this.campaignStatus = campaignStatus.toString();
+        withCampaignStatus(campaignStatus);
     }
 
     /**
-     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     * Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     * <p>
+     * The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a campaign uses
+     * A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a status of COMPLETED.
+     * </p>
      * 
      * @param campaignStatus
-     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign.
-     * 
-     *        Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED
+     *        The status of the campaign, or the status of a treatment that belongs to an A/B test campaign. If a
+     *        campaign uses A/B testing, the campaign has a status of COMPLETED only when all campaign treatments have a
+     *        status of COMPLETED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CampaignStatus
      */
 
     public CampaignState withCampaignStatus(CampaignStatus campaignStatus) {
-        setCampaignStatus(campaignStatus);
+        this.campaignStatus = campaignStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -158,5 +175,11 @@ public class CampaignState implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.CampaignStateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

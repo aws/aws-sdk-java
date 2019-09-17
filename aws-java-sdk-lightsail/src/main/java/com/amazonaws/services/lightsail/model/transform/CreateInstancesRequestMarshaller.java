@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,92 +12,66 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateInstancesRequest Marshaller
+ * CreateInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateInstancesRequestMarshaller implements Marshaller<Request<CreateInstancesRequest>, CreateInstancesRequest> {
+@SdkInternalApi
+public class CreateInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> INSTANCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("instanceNames").build();
+    private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
+    private static final MarshallingInfo<String> CUSTOMIMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customImageName").build();
+    private static final MarshallingInfo<String> BLUEPRINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueprintId").build();
+    private static final MarshallingInfo<String> BUNDLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bundleId").build();
+    private static final MarshallingInfo<String> USERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("userData").build();
+    private static final MarshallingInfo<String> KEYPAIRNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("keyPairName").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public CreateInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateInstancesRequestMarshaller instance = new CreateInstancesRequestMarshaller();
+
+    public static CreateInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateInstancesRequest> marshall(CreateInstancesRequest createInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateInstancesRequest createInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateInstancesRequest> request = new DefaultRequest<CreateInstancesRequest>(createInstancesRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.CreateInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> instanceNamesList = createInstancesRequest.getInstanceNames();
-            if (instanceNamesList != null) {
-                jsonGenerator.writeFieldName("instanceNames");
-                jsonGenerator.writeStartArray();
-                for (String instanceNamesListValue : instanceNamesList) {
-                    if (instanceNamesListValue != null) {
-                        jsonGenerator.writeValue(instanceNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createInstancesRequest.getAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("availabilityZone").writeValue(createInstancesRequest.getAvailabilityZone());
-            }
-            if (createInstancesRequest.getCustomImageName() != null) {
-                jsonGenerator.writeFieldName("customImageName").writeValue(createInstancesRequest.getCustomImageName());
-            }
-            if (createInstancesRequest.getBlueprintId() != null) {
-                jsonGenerator.writeFieldName("blueprintId").writeValue(createInstancesRequest.getBlueprintId());
-            }
-            if (createInstancesRequest.getBundleId() != null) {
-                jsonGenerator.writeFieldName("bundleId").writeValue(createInstancesRequest.getBundleId());
-            }
-            if (createInstancesRequest.getUserData() != null) {
-                jsonGenerator.writeFieldName("userData").writeValue(createInstancesRequest.getUserData());
-            }
-            if (createInstancesRequest.getKeyPairName() != null) {
-                jsonGenerator.writeFieldName("keyPairName").writeValue(createInstancesRequest.getKeyPairName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createInstancesRequest.getInstanceNames(), INSTANCENAMES_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getCustomImageName(), CUSTOMIMAGENAME_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getBlueprintId(), BLUEPRINTID_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getBundleId(), BUNDLEID_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getUserData(), USERDATA_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getKeyPairName(), KEYPAIRNAME_BINDING);
+            protocolMarshaller.marshall(createInstancesRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

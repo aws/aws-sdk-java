@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,17 +26,18 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ComputeResource implements Serializable, Cloneable {
+public class ComputeResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      */
     private Integer minvCpus;
@@ -52,13 +55,24 @@ public class ComputeResource implements Serializable, Cloneable {
     private Integer desiredvCpus;
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      */
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      */
     private java.util.List<String> subnets;
@@ -76,39 +90,71 @@ public class ComputeResource implements Serializable, Cloneable {
     private String ec2KeyPair;
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     */
+    private String placementGroup;
+    /**
+     * <p>
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      */
     private Integer bidPercentage;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String spotIamFleetRole;
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
@@ -118,10 +164,10 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
-     * @return The type of compute environment.
+     * @return The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
@@ -131,11 +177,11 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
@@ -147,41 +193,43 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @see CRType
      */
 
     public void setType(CRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of compute environment.
+     * The type of compute environment: EC2 or SPOT.
      * </p>
      * 
      * @param type
-     *        The type of compute environment.
+     *        The type of compute environment: EC2 or SPOT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRType
      */
 
     public ComputeResource withType(CRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).
      */
 
     public void setMinvCpus(Integer minvCpus) {
@@ -190,10 +238,12 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
-     * @return The minimum number of EC2 vCPUs that an environment should maintain.
+     * @return The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *         <code>DISABLED</code>).
      */
 
     public Integer getMinvCpus() {
@@ -202,11 +252,13 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,10 +349,17 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
-     * @return The instances types that may launched.
+     * @return The instances types that may be launched. You can specify instance families to launch any instance type
+     *         within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific
+     *         sizes within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *         instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *         queues.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -309,11 +368,18 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -327,7 +393,10 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -336,7 +405,11 @@ public class ComputeResource implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +425,18 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the C, M, and R instance families) on the fly that match the demand of your job
+     *        queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,10 +447,54 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
      * </p>
      * 
-     * @return The VPC subnets into which the compute resources are launched.
+     * @param imageId
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     * 
+     * @return The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     * 
+     * @param imageId
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
+     * </p>
+     * 
+     * @return The VPC subnets into which the compute resources are launched. For more information, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *         <i>Amazon VPC User Guide</i>.
      */
 
     public java.util.List<String> getSubnets() {
@@ -379,11 +503,15 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -397,7 +525,9 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -406,7 +536,9 @@ public class ComputeResource implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +554,15 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The VPC subnets into which the compute resources are launched.
+     * The VPC subnets into which the compute resources are launched. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param subnets
-     *        The VPC subnets into which the compute resources are launched.
+     *        The VPC subnets into which the compute resources are launched. For more information, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a> in the
+     *        <i>Amazon VPC User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,11 +683,22 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setInstanceRole(String instanceRole) {
@@ -560,10 +707,21 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *         the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *         <code> <i>ecsInstanceRole</i> </code> or
+     *         <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *         Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getInstanceRole() {
@@ -572,11 +730,22 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * <code> <i>ecsInstanceRole</i> </code> or
+     * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     * Instance Role</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,10 +756,14 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
-     * @return Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * @return Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *         Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *         value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -599,11 +772,15 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to resources that are launched in the compute environment.
+     *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -612,11 +789,15 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Key-value pair tags to be applied to resources that are launched in the compute environment.
+     * Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS Batch, these
+     * take the form of "String1": "String2", where String1 is the tag key and String2 is the tag value—for example, {
+     * "Name": "AWS Batch Instance - C4OnDemand" }.
      * </p>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to resources that are launched in the compute environment.
+     *        Key-value pair tags to be applied to resources that are launched in the compute environment. For AWS
+     *        Batch, these take the form of "String1": "String2", where String1 is the tag key and String2 is the tag
+     *        value—for example, { "Name": "AWS Batch Instance - C4OnDemand" }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -648,15 +829,92 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public void setPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @return The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *         multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *         group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *         grouping of instances within a single Availability Zone with high network flow potential. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public String getPlacementGroup() {
+        return this.placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withPlacementGroup(String placementGroup) {
+        setPlacementGroup(placementGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
-     *        The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *        instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance.
+     *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
+     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
+     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
+     *        value is 100% of the On-Demand price.
      */
 
     public void setBidPercentage(Integer bidPercentage) {
@@ -665,14 +923,18 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
-     * @return The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *         instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *         price must be below 20% of the current On-Demand price for that EC2 instance.
+     * @return The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *         instance type before instances are launched. For example, if your maximum percentage is 20%, then the
+     *         Spot price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the
+     *         lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
+     *         default value is 100% of the On-Demand price.
      */
 
     public Integer getBidPercentage() {
@@ -681,15 +943,19 @@ public class ComputeResource implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
-     *        The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *        instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance.
+     *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
+     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
+     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
+     *        value is 100% of the On-Demand price.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -701,12 +967,16 @@ public class ComputeResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment.
+     *        compute environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setSpotIamFleetRole(String spotIamFleetRole) {
@@ -716,11 +986,15 @@ public class ComputeResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *         compute environment.
+     *         compute environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *         Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getSpotIamFleetRole() {
@@ -730,12 +1004,16 @@ public class ComputeResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment.
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment.
+     *        compute environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -745,7 +1023,75 @@ public class ComputeResource implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use for your compute resources. Any other compute resource parameters that you
+     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *        template. You must specify either the launch template ID or launch template name in the request, but not
+     *        both. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *        Support</a> in the <i>AWS Batch User Guide</i>.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @return The launch template to use for your compute resources. Any other compute resource parameters that you
+     *         specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *         template. You must specify either the launch template ID or launch template name in the request, but not
+     *         both. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *         Support</a> in the <i>AWS Batch User Guide</i>.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both. For more information,
+     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     * Support</a> in the <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use for your compute resources. Any other compute resource parameters that you
+     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *        template. You must specify either the launch template ID or launch template name in the request, but not
+     *        both. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch Template
+     *        Support</a> in the <i>AWS Batch User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -765,6 +1111,8 @@ public class ComputeResource implements Serializable, Cloneable {
             sb.append("DesiredvCpus: ").append(getDesiredvCpus()).append(",");
         if (getInstanceTypes() != null)
             sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroupIds() != null)
@@ -775,10 +1123,14 @@ public class ComputeResource implements Serializable, Cloneable {
             sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getPlacementGroup() != null)
+            sb.append("PlacementGroup: ").append(getPlacementGroup()).append(",");
         if (getBidPercentage() != null)
             sb.append("BidPercentage: ").append(getBidPercentage()).append(",");
         if (getSpotIamFleetRole() != null)
-            sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole());
+            sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -813,6 +1165,10 @@ public class ComputeResource implements Serializable, Cloneable {
             return false;
         if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
@@ -833,6 +1189,10 @@ public class ComputeResource implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null)
+            return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
+            return false;
         if (other.getBidPercentage() == null ^ this.getBidPercentage() == null)
             return false;
         if (other.getBidPercentage() != null && other.getBidPercentage().equals(this.getBidPercentage()) == false)
@@ -840,6 +1200,10 @@ public class ComputeResource implements Serializable, Cloneable {
         if (other.getSpotIamFleetRole() == null ^ this.getSpotIamFleetRole() == null)
             return false;
         if (other.getSpotIamFleetRole() != null && other.getSpotIamFleetRole().equals(this.getSpotIamFleetRole()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         return true;
     }
@@ -854,13 +1218,16 @@ public class ComputeResource implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxvCpus() == null) ? 0 : getMaxvCpus().hashCode());
         hashCode = prime * hashCode + ((getDesiredvCpus() == null) ? 0 : getDesiredvCpus().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getEc2KeyPair() == null) ? 0 : getEc2KeyPair().hashCode());
         hashCode = prime * hashCode + ((getInstanceRole() == null) ? 0 : getInstanceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode());
         hashCode = prime * hashCode + ((getBidPercentage() == null) ? 0 : getBidPercentage().hashCode());
         hashCode = prime * hashCode + ((getSpotIamFleetRole() == null) ? 0 : getSpotIamFleetRole().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         return hashCode;
     }
 
@@ -871,5 +1238,11 @@ public class ComputeResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.ComputeResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

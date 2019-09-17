@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,43 +45,13 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    instanceAttribute.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("groupSet", targetDepth)) {
+                    instanceAttribute.withGroups(new ArrayList<GroupIdentifier>());
                     continue;
                 }
 
-                if (context.testExpression("instanceType/value", targetDepth)) {
-                    instanceAttribute.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("kernel/value", targetDepth)) {
-                    instanceAttribute.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ramdisk/value", targetDepth)) {
-                    instanceAttribute.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("userData/value", targetDepth)) {
-                    instanceAttribute.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("disableApiTermination/value", targetDepth)) {
-                    instanceAttribute.setDisableApiTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceInitiatedShutdownBehavior/value", targetDepth)) {
-                    instanceAttribute.setInstanceInitiatedShutdownBehavior(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("rootDeviceName/value", targetDepth)) {
-                    instanceAttribute.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("groupSet/item", targetDepth)) {
+                    instanceAttribute.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,6 +65,41 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     continue;
                 }
 
+                if (context.testExpression("disableApiTermination/value", targetDepth)) {
+                    instanceAttribute.setDisableApiTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("enaSupport/value", targetDepth)) {
+                    instanceAttribute.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ebsOptimized/value", targetDepth)) {
+                    instanceAttribute.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceId", targetDepth)) {
+                    instanceAttribute.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceInitiatedShutdownBehavior/value", targetDepth)) {
+                    instanceAttribute.setInstanceInitiatedShutdownBehavior(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceType/value", targetDepth)) {
+                    instanceAttribute.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kernel/value", targetDepth)) {
+                    instanceAttribute.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("productCodes", targetDepth)) {
                     instanceAttribute.withProductCodes(new ArrayList<ProductCode>());
                     continue;
@@ -105,18 +110,13 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     continue;
                 }
 
-                if (context.testExpression("ebsOptimized/value", targetDepth)) {
-                    instanceAttribute.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ramdisk/value", targetDepth)) {
+                    instanceAttribute.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("sriovNetSupport/value", targetDepth)) {
-                    instanceAttribute.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("enaSupport/value", targetDepth)) {
-                    instanceAttribute.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("rootDeviceName/value", targetDepth)) {
+                    instanceAttribute.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -125,16 +125,15 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     continue;
                 }
 
-                if (context.testExpression("groupSet", targetDepth)) {
-                    instanceAttribute.withGroups(new ArrayList<GroupIdentifier>());
+                if (context.testExpression("sriovNetSupport/value", targetDepth)) {
+                    instanceAttribute.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("groupSet/item", targetDepth)) {
-                    instanceAttribute.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("userData/value", targetDepth)) {
+                    instanceAttribute.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceAttribute;

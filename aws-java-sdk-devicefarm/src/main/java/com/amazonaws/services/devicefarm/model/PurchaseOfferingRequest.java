@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer quantity;
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     */
+    private String offeringPromotionId;
 
     /**
      * <p>
@@ -122,7 +128,48 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID of the offering promotion to be applied to the purchase.
+     */
+
+    public void setOfferingPromotionId(String offeringPromotionId) {
+        this.offeringPromotionId = offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @return The ID of the offering promotion to be applied to the purchase.
+     */
+
+    public String getOfferingPromotionId() {
+        return this.offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the offering promotion to be applied to the purchase.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID of the offering promotion to be applied to the purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseOfferingRequest withOfferingPromotionId(String offeringPromotionId) {
+        setOfferingPromotionId(offeringPromotionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,7 +182,9 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
         if (getOfferingId() != null)
             sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: ").append(getQuantity());
+            sb.append("Quantity: ").append(getQuantity()).append(",");
+        if (getOfferingPromotionId() != null)
+            sb.append("OfferingPromotionId: ").append(getOfferingPromotionId());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +207,10 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
+        if (other.getOfferingPromotionId() == null ^ this.getOfferingPromotionId() == null)
+            return false;
+        if (other.getOfferingPromotionId() != null && other.getOfferingPromotionId().equals(this.getOfferingPromotionId()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +221,7 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
+        hashCode = prime * hashCode + ((getOfferingPromotionId() == null) ? 0 : getOfferingPromotionId().hashCode());
         return hashCode;
     }
 

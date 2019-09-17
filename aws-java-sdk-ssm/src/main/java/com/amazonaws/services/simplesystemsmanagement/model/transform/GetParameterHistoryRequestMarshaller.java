@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetParameterHistoryRequest Marshaller
+ * GetParameterHistoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetParameterHistoryRequestMarshaller implements Marshaller<Request<GetParameterHistoryRequest>, GetParameterHistoryRequest> {
+@SdkInternalApi
+public class GetParameterHistoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Boolean> WITHDECRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WithDecryption").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public GetParameterHistoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetParameterHistoryRequestMarshaller instance = new GetParameterHistoryRequestMarshaller();
+
+    public static GetParameterHistoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetParameterHistoryRequest> marshall(GetParameterHistoryRequest getParameterHistoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetParameterHistoryRequest getParameterHistoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getParameterHistoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetParameterHistoryRequest> request = new DefaultRequest<GetParameterHistoryRequest>(getParameterHistoryRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.GetParameterHistory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getParameterHistoryRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(getParameterHistoryRequest.getName());
-            }
-            if (getParameterHistoryRequest.getWithDecryption() != null) {
-                jsonGenerator.writeFieldName("WithDecryption").writeValue(getParameterHistoryRequest.getWithDecryption());
-            }
-            if (getParameterHistoryRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(getParameterHistoryRequest.getMaxResults());
-            }
-            if (getParameterHistoryRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(getParameterHistoryRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getParameterHistoryRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(getParameterHistoryRequest.getWithDecryption(), WITHDECRYPTION_BINDING);
+            protocolMarshaller.marshall(getParameterHistoryRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getParameterHistoryRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

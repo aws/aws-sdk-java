@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,63 +15,56 @@ package com.amazonaws.services.glacier.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UploadArchiveRequest Marshaller
+ * UploadArchiveRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UploadArchiveRequestMarshaller implements Marshaller<Request<UploadArchiveRequest>, UploadArchiveRequest> {
+@SdkInternalApi
+public class UploadArchiveRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> ARCHIVEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-archive-description").build();
+    private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-sha256-tree-hash").build();
+    private static final MarshallingInfo<java.io.InputStream> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
+    private static final MarshallingInfo<Long> CONTENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("Content-Length").build();
 
-    public UploadArchiveRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UploadArchiveRequestMarshaller instance = new UploadArchiveRequestMarshaller();
+
+    public static UploadArchiveRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UploadArchiveRequest> marshall(UploadArchiveRequest uploadArchiveRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UploadArchiveRequest uploadArchiveRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (uploadArchiveRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UploadArchiveRequest> request = new DefaultRequest<UploadArchiveRequest>(uploadArchiveRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (uploadArchiveRequest.getArchiveDescription() != null) {
-            request.addHeader("x-amz-archive-description", StringUtils.fromString(uploadArchiveRequest.getArchiveDescription()));
+        try {
+            protocolMarshaller.marshall(uploadArchiveRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(uploadArchiveRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(uploadArchiveRequest.getArchiveDescription(), ARCHIVEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(uploadArchiveRequest.getChecksum(), CHECKSUM_BINDING);
+            protocolMarshaller.marshall(uploadArchiveRequest.getBody(), BODY_BINDING);
+            protocolMarshaller.marshall(uploadArchiveRequest.getContentLength(), CONTENTLENGTH_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (uploadArchiveRequest.getChecksum() != null) {
-            request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
-        }
-
-        if (uploadArchiveRequest.getContentLength() != null) {
-            request.addHeader("Content-Length", StringUtils.fromLong(uploadArchiveRequest.getContentLength()));
-        }
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", uploadArchiveRequest.getVaultName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                uploadArchiveRequest.getAccountId() == null ? "-" : uploadArchiveRequest.getAccountId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(uploadArchiveRequest.getBody());
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

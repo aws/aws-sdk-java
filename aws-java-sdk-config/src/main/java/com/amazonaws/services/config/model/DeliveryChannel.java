@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeliveryChannel implements Serializable, Cloneable {
+public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,7 +45,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      */
@@ -62,12 +64,16 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      */
     private String snsTopicARN;
-
+    /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     */
     private ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties;
 
     /**
@@ -136,7 +142,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -146,7 +152,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        <p>
      *        If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *        access permissions to AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *        Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      */
 
@@ -162,7 +168,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -171,7 +177,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *         <p>
      *         If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *         access permissions to AWS Config. For more information, see <a
-     *         href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *         Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      */
 
@@ -187,7 +193,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -197,7 +203,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        <p>
      *        If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *        access permissions to AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *        Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -255,7 +261,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -265,7 +271,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        <p>
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *        Amazon SNS Topic</a> in the AWS Config Developer Guide.
      */
 
@@ -281,7 +287,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -290,7 +296,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *         <p>
      *         If you choose a topic from another account, the topic must have policies that grant access permissions to
      *         AWS Config. For more information, see <a
-     *         href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *         Amazon SNS Topic</a> in the AWS Config Developer Guide.
      */
 
@@ -306,7 +312,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -316,7 +322,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        <p>
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *        Amazon SNS Topic</a> in the AWS Config Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -327,7 +333,12 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
      * @param configSnapshotDeliveryProperties
+     *        The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      */
 
     public void setConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
@@ -335,7 +346,11 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
+     * @return The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      */
 
     public ConfigSnapshotDeliveryProperties getConfigSnapshotDeliveryProperties() {
@@ -343,7 +358,12 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
+     * </p>
+     * 
      * @param configSnapshotDeliveryProperties
+     *        The options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,7 +373,8 @@ public class DeliveryChannel implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -431,5 +452,11 @@ public class DeliveryChannel implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.DeliveryChannelMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

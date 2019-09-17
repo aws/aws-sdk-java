@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -56,8 +56,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -160,7 +175,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -175,8 +190,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -185,7 +215,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>service-name</code>: The name of the AWS service.
+     *         <code>service-name</code>: The name of the service.
      *         </p>
      *         </li>
      *         <li>
@@ -200,8 +230,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> | <code>deleted</code>)
+     *         <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *         <code>rejected</code> | <code>failed</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      */
@@ -220,7 +265,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -235,8 +280,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -246,7 +306,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -261,8 +321,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      */
@@ -283,7 +358,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -298,8 +373,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -314,7 +404,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -329,8 +419,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -353,7 +458,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -368,8 +473,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * </ul>
@@ -379,7 +499,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -394,8 +514,23 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -519,7 +654,8 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

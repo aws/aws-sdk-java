@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,13 +14,15 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed,
  * along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only
  * returned if the request asked for it. For more information, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
  * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * 
@@ -28,7 +30,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConsumedCapacity implements Serializable, Cloneable {
+public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -42,6 +44,18 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * </p>
      */
     private Double capacityUnits;
+    /**
+     * <p>
+     * The total number of read capacity units consumed by the operation.
+     * </p>
+     */
+    private Double readCapacityUnits;
+    /**
+     * <p>
+     * The total number of write capacity units consumed by the operation.
+     * </p>
+     */
+    private Double writeCapacityUnits;
     /**
      * <p>
      * The amount of throughput consumed on the table affected by the operation.
@@ -138,6 +152,86 @@ public class ConsumedCapacity implements Serializable, Cloneable {
 
     public ConsumedCapacity withCapacityUnits(Double capacityUnits) {
         setCapacityUnits(capacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of read capacity units consumed by the operation.
+     * </p>
+     * 
+     * @param readCapacityUnits
+     *        The total number of read capacity units consumed by the operation.
+     */
+
+    public void setReadCapacityUnits(Double readCapacityUnits) {
+        this.readCapacityUnits = readCapacityUnits;
+    }
+
+    /**
+     * <p>
+     * The total number of read capacity units consumed by the operation.
+     * </p>
+     * 
+     * @return The total number of read capacity units consumed by the operation.
+     */
+
+    public Double getReadCapacityUnits() {
+        return this.readCapacityUnits;
+    }
+
+    /**
+     * <p>
+     * The total number of read capacity units consumed by the operation.
+     * </p>
+     * 
+     * @param readCapacityUnits
+     *        The total number of read capacity units consumed by the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConsumedCapacity withReadCapacityUnits(Double readCapacityUnits) {
+        setReadCapacityUnits(readCapacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of write capacity units consumed by the operation.
+     * </p>
+     * 
+     * @param writeCapacityUnits
+     *        The total number of write capacity units consumed by the operation.
+     */
+
+    public void setWriteCapacityUnits(Double writeCapacityUnits) {
+        this.writeCapacityUnits = writeCapacityUnits;
+    }
+
+    /**
+     * <p>
+     * The total number of write capacity units consumed by the operation.
+     * </p>
+     * 
+     * @return The total number of write capacity units consumed by the operation.
+     */
+
+    public Double getWriteCapacityUnits() {
+        return this.writeCapacityUnits;
+    }
+
+    /**
+     * <p>
+     * The total number of write capacity units consumed by the operation.
+     * </p>
+     * 
+     * @param writeCapacityUnits
+     *        The total number of write capacity units consumed by the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConsumedCapacity withWriteCapacityUnits(Double writeCapacityUnits) {
+        setWriteCapacityUnits(writeCapacityUnits);
         return this;
     }
 
@@ -304,7 +398,8 @@ public class ConsumedCapacity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -318,6 +413,10 @@ public class ConsumedCapacity implements Serializable, Cloneable {
             sb.append("TableName: ").append(getTableName()).append(",");
         if (getCapacityUnits() != null)
             sb.append("CapacityUnits: ").append(getCapacityUnits()).append(",");
+        if (getReadCapacityUnits() != null)
+            sb.append("ReadCapacityUnits: ").append(getReadCapacityUnits()).append(",");
+        if (getWriteCapacityUnits() != null)
+            sb.append("WriteCapacityUnits: ").append(getWriteCapacityUnits()).append(",");
         if (getTable() != null)
             sb.append("Table: ").append(getTable()).append(",");
         if (getLocalSecondaryIndexes() != null)
@@ -346,6 +445,14 @@ public class ConsumedCapacity implements Serializable, Cloneable {
             return false;
         if (other.getCapacityUnits() != null && other.getCapacityUnits().equals(this.getCapacityUnits()) == false)
             return false;
+        if (other.getReadCapacityUnits() == null ^ this.getReadCapacityUnits() == null)
+            return false;
+        if (other.getReadCapacityUnits() != null && other.getReadCapacityUnits().equals(this.getReadCapacityUnits()) == false)
+            return false;
+        if (other.getWriteCapacityUnits() == null ^ this.getWriteCapacityUnits() == null)
+            return false;
+        if (other.getWriteCapacityUnits() != null && other.getWriteCapacityUnits().equals(this.getWriteCapacityUnits()) == false)
+            return false;
         if (other.getTable() == null ^ this.getTable() == null)
             return false;
         if (other.getTable() != null && other.getTable().equals(this.getTable()) == false)
@@ -368,6 +475,8 @@ public class ConsumedCapacity implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getCapacityUnits() == null) ? 0 : getCapacityUnits().hashCode());
+        hashCode = prime * hashCode + ((getReadCapacityUnits() == null) ? 0 : getReadCapacityUnits().hashCode());
+        hashCode = prime * hashCode + ((getWriteCapacityUnits() == null) ? 0 : getWriteCapacityUnits().hashCode());
         hashCode = prime * hashCode + ((getTable() == null) ? 0 : getTable().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
@@ -381,5 +490,11 @@ public class ConsumedCapacity implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.ConsumedCapacityMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

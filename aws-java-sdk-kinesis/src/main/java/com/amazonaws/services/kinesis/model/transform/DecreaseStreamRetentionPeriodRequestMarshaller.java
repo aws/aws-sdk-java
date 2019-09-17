@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DecreaseStreamRetentionPeriodRequest Marshaller
+ * DecreaseStreamRetentionPeriodRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DecreaseStreamRetentionPeriodRequestMarshaller implements
-        Marshaller<Request<DecreaseStreamRetentionPeriodRequest>, DecreaseStreamRetentionPeriodRequest> {
+@SdkInternalApi
+public class DecreaseStreamRetentionPeriodRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<Integer> RETENTIONPERIODHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionPeriodHours").build();
 
-    public DecreaseStreamRetentionPeriodRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DecreaseStreamRetentionPeriodRequestMarshaller instance = new DecreaseStreamRetentionPeriodRequestMarshaller();
+
+    public static DecreaseStreamRetentionPeriodRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DecreaseStreamRetentionPeriodRequest> marshall(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DecreaseStreamRetentionPeriodRequest decreaseStreamRetentionPeriodRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (decreaseStreamRetentionPeriodRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DecreaseStreamRetentionPeriodRequest> request = new DefaultRequest<DecreaseStreamRetentionPeriodRequest>(decreaseStreamRetentionPeriodRequest,
-                "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.DecreaseStreamRetentionPeriod");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (decreaseStreamRetentionPeriodRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(decreaseStreamRetentionPeriodRequest.getStreamName());
-            }
-            if (decreaseStreamRetentionPeriodRequest.getRetentionPeriodHours() != null) {
-                jsonGenerator.writeFieldName("RetentionPeriodHours").writeValue(decreaseStreamRetentionPeriodRequest.getRetentionPeriodHours());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(decreaseStreamRetentionPeriodRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(decreaseStreamRetentionPeriodRequest.getRetentionPeriodHours(), RETENTIONPERIODHOURS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,31 +27,40 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the Resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The maximum number of <a>Resource</a> resources in the collection to get information about. The default limit is
-     * 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * </p>
+     */
+    private java.util.List<String> embed;
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the Resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the Resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -60,10 +69,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the Resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the Resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -72,11 +81,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the Resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the Resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +96,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -100,11 +109,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the next set of results in the current <a>Resources</a> resource to get information
-     *         about.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -113,11 +121,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the next set of results in the current <a>Resources</a> resource to get information about.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,13 +136,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of <a>Resource</a> resources in the collection to get information about. The default limit is
-     * 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Resource</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -143,12 +149,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of <a>Resource</a> resources in the collection to get information about. The default limit is
-     * 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of <a>Resource</a> resources in the collection to get information about. The default
-     *         limit is 25. It should be an integer between 1 - 500.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -157,13 +161,11 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of <a>Resource</a> resources in the collection to get information about. The default limit is
-     * 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Resource</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,7 +175,110 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * </p>
+     * 
+     * @return A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a>
+     *         resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings.
+     *         Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The
+     *         query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
+     *         example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     */
+
+    public java.util.List<String> getEmbed() {
+        return embed;
+    }
+
+    /**
+     * <p>
+     * A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a>
+     *        resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings.
+     *        Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query
+     *        parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     */
+
+    public void setEmbed(java.util.Collection<String> embed) {
+        if (embed == null) {
+            this.embed = null;
+            return;
+        }
+
+        this.embed = new java.util.ArrayList<String>(embed);
+    }
+
+    /**
+     * <p>
+     * A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEmbed(java.util.Collection)} or {@link #withEmbed(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a>
+     *        resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings.
+     *        Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query
+     *        parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withEmbed(String... embed) {
+        if (this.embed == null) {
+            setEmbed(new java.util.ArrayList<String>(embed.length));
+        }
+        for (String ele : embed) {
+            this.embed.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a> resource in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter used to retrieve the specified resources embedded in the returned <a>Resources</a>
+     *        resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings.
+     *        Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way. The query
+     *        parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withEmbed(java.util.Collection<String> embed) {
+        setEmbed(embed);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -188,7 +293,9 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit());
+            sb.append("Limit: ").append(getLimit()).append(",");
+        if (getEmbed() != null)
+            sb.append("Embed: ").append(getEmbed());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +322,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getEmbed() == null ^ this.getEmbed() == null)
+            return false;
+        if (other.getEmbed() != null && other.getEmbed().equals(this.getEmbed()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +337,7 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getEmbed() == null) ? 0 : getEmbed().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Instance implements Serializable, Cloneable {
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -74,6 +76,24 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private String instanceGroupId;
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     */
+    private String instanceFleetId;
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     */
+    private String market;
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     */
+    private String instanceType;
     /**
      * <p>
      * The list of EBS volumes that are attached to this instance.
@@ -403,6 +423,159 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet to which an EC2 instance belongs.
+     */
+
+    public void setInstanceFleetId(String instanceFleetId) {
+        this.instanceFleetId = instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @return The unique identifier of the instance fleet to which an EC2 instance belongs.
+     */
+
+    public String getInstanceFleetId() {
+        return this.instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet to which an EC2 instance belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withInstanceFleetId(String instanceFleetId) {
+        setInstanceFleetId(instanceFleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public void setMarket(String market) {
+        this.market = market;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @return The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public String getMarket() {
+        return this.market;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MarketType
+     */
+
+    public Instance withMarket(String market) {
+        setMarket(market);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @see MarketType
+     */
+
+    public void setMarket(MarketType market) {
+        withMarket(market);
+    }
+
+    /**
+     * <p>
+     * The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * </p>
+     * 
+     * @param market
+     *        The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MarketType
+     */
+
+    public Instance withMarket(MarketType market) {
+        this.market = market.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @return The EC2 instance type, for example <code>m3.xlarge</code>.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * </p>
+     * 
+     * @param instanceType
+     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
      * The list of EBS volumes that are attached to this instance.
      * </p>
      * 
@@ -475,7 +648,8 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -501,6 +675,12 @@ public class Instance implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getInstanceGroupId() != null)
             sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
+        if (getInstanceFleetId() != null)
+            sb.append("InstanceFleetId: ").append(getInstanceFleetId()).append(",");
+        if (getMarket() != null)
+            sb.append("Market: ").append(getMarket()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getEbsVolumes() != null)
             sb.append("EbsVolumes: ").append(getEbsVolumes());
         sb.append("}");
@@ -549,6 +729,18 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getInstanceGroupId() != null && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
             return false;
+        if (other.getInstanceFleetId() == null ^ this.getInstanceFleetId() == null)
+            return false;
+        if (other.getInstanceFleetId() != null && other.getInstanceFleetId().equals(this.getInstanceFleetId()) == false)
+            return false;
+        if (other.getMarket() == null ^ this.getMarket() == null)
+            return false;
+        if (other.getMarket() != null && other.getMarket().equals(this.getMarket()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
         if (other.getEbsVolumes() == null ^ this.getEbsVolumes() == null)
             return false;
         if (other.getEbsVolumes() != null && other.getEbsVolumes().equals(this.getEbsVolumes()) == false)
@@ -569,6 +761,9 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFleetId() == null) ? 0 : getInstanceFleetId().hashCode());
+        hashCode = prime * hashCode + ((getMarket() == null) ? 0 : getMarket().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getEbsVolumes() == null) ? 0 : getEbsVolumes().hashCode());
         return hashCode;
     }
@@ -580,5 +775,11 @@ public class Instance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

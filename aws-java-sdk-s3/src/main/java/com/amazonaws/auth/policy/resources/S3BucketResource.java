@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,6 +59,20 @@ public class S3BucketResource extends Resource {
      *            policy resource.
      */
     public S3BucketResource(String bucketName) {
-        super("arn:aws:s3:::" + bucketName);
+        this("aws", bucketName);
+    }
+
+    /**
+     * Constructs a new bucket resource that represents the the specified bucket
+     * but <b>not any of the contained objects</b>.
+     *
+     * @param partitionName
+     *            The name of the partition in which the specified bucket is located.
+     * @param bucketName
+     *            The name of the bucket represented by this AWS access control
+     *            policy resource.
+     */
+    public S3BucketResource(String partitionName, String bucketName) {
+        super(String.format("arn:%s:s3:::%s", partitionName, bucketName));
     }
 }

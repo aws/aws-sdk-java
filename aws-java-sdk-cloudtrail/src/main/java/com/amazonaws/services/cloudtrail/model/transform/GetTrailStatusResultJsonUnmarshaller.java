@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,19 +62,19 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                 }
                 if (context.testExpression("LatestDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestDeliveryTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setLatestDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestNotificationTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestNotificationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setLatestNotificationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartLoggingTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setStartLoggingTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setStartLoggingTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StopLoggingTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setStopLoggingTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setStopLoggingTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestCloudWatchLogsDeliveryError", targetDepth)) {
                     context.nextToken();
@@ -82,11 +82,11 @@ public class GetTrailStatusResultJsonUnmarshaller implements Unmarshaller<GetTra
                 }
                 if (context.testExpression("LatestCloudWatchLogsDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestCloudWatchLogsDeliveryTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setLatestCloudWatchLogsDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestDigestDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    getTrailStatusResult.setLatestDigestDeliveryTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getTrailStatusResult.setLatestDigestDeliveryTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LatestDigestDeliveryError", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,60 +12,40 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAvailableZonesRequest Marshaller
+ * ListAvailableZonesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAvailableZonesRequestMarshaller implements Marshaller<Request<ListAvailableZonesRequest>, ListAvailableZonesRequest> {
+@SdkInternalApi
+public class ListAvailableZonesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final ListAvailableZonesRequestMarshaller instance = new ListAvailableZonesRequestMarshaller();
 
-    public ListAvailableZonesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static ListAvailableZonesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAvailableZonesRequest> marshall(ListAvailableZonesRequest listAvailableZonesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAvailableZonesRequest listAvailableZonesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAvailableZonesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAvailableZonesRequest> request = new DefaultRequest<ListAvailableZonesRequest>(listAvailableZonesRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.ListAvailableZones");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

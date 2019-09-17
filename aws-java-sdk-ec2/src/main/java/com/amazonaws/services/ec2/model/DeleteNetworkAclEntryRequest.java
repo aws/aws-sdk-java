@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,14 +20,18 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteNetworkAclEntryRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteNetworkAclEntry.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<DeleteNetworkAclEntryRequest> {
 
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule.
+     * </p>
+     */
+    private Boolean egress;
     /**
      * <p>
      * The ID of the network ACL.
@@ -40,12 +44,58 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private Integer ruleNumber;
+
     /**
      * <p>
      * Indicates whether the rule is an egress rule.
      * </p>
+     * 
+     * @param egress
+     *        Indicates whether the rule is an egress rule.
      */
-    private Boolean egress;
+
+    public void setEgress(Boolean egress) {
+        this.egress = egress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule.
+     * </p>
+     * 
+     * @return Indicates whether the rule is an egress rule.
+     */
+
+    public Boolean getEgress() {
+        return this.egress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule.
+     * </p>
+     * 
+     * @param egress
+     *        Indicates whether the rule is an egress rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteNetworkAclEntryRequest withEgress(Boolean egress) {
+        setEgress(egress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule.
+     * </p>
+     * 
+     * @return Indicates whether the rule is an egress rule.
+     */
+
+    public Boolean isEgress() {
+        return this.egress;
+    }
 
     /**
      * <p>
@@ -128,58 +178,6 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * <p>
-     * Indicates whether the rule is an egress rule.
-     * </p>
-     * 
-     * @param egress
-     *        Indicates whether the rule is an egress rule.
-     */
-
-    public void setEgress(Boolean egress) {
-        this.egress = egress;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the rule is an egress rule.
-     * </p>
-     * 
-     * @return Indicates whether the rule is an egress rule.
-     */
-
-    public Boolean getEgress() {
-        return this.egress;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the rule is an egress rule.
-     * </p>
-     * 
-     * @param egress
-     *        Indicates whether the rule is an egress rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteNetworkAclEntryRequest withEgress(Boolean egress) {
-        setEgress(egress);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the rule is an egress rule.
-     * </p>
-     * 
-     * @return Indicates whether the rule is an egress rule.
-     */
-
-    public Boolean isEgress() {
-        return this.egress;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -191,7 +189,8 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -201,12 +200,12 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEgress() != null)
+            sb.append("Egress: ").append(getEgress()).append(",");
         if (getNetworkAclId() != null)
             sb.append("NetworkAclId: ").append(getNetworkAclId()).append(",");
         if (getRuleNumber() != null)
-            sb.append("RuleNumber: ").append(getRuleNumber()).append(",");
-        if (getEgress() != null)
-            sb.append("Egress: ").append(getEgress());
+            sb.append("RuleNumber: ").append(getRuleNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +220,10 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         if (obj instanceof DeleteNetworkAclEntryRequest == false)
             return false;
         DeleteNetworkAclEntryRequest other = (DeleteNetworkAclEntryRequest) obj;
+        if (other.getEgress() == null ^ this.getEgress() == null)
+            return false;
+        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
+            return false;
         if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null)
             return false;
         if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false)
@@ -228,10 +231,6 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         if (other.getRuleNumber() == null ^ this.getRuleNumber() == null)
             return false;
         if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false)
-            return false;
-        if (other.getEgress() == null ^ this.getEgress() == null)
-            return false;
-        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
             return false;
         return true;
     }
@@ -241,9 +240,9 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
         hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode());
         hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
-        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
         return hashCode;
     }
 

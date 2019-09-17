@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.List<Rule> rules;
+    /**
+     * <p>
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     * </p>
+     */
+    private String nextMarker;
 
     /**
      * <p>
@@ -101,7 +107,48 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     * </p>
+     * 
+     * @param nextMarker
+     *        If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     */
+
+    public void setNextMarker(String nextMarker) {
+        this.nextMarker = nextMarker;
+    }
+
+    /**
+     * <p>
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     * </p>
+     * 
+     * @return If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     */
+
+    public String getNextMarker() {
+        return this.nextMarker;
+    }
+
+    /**
+     * <p>
+     * If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     * </p>
+     * 
+     * @param nextMarker
+     *        If there are additional results, this is the marker for the next set of results. Otherwise, this is null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRulesResult withNextMarker(String nextMarker) {
+        setNextMarker(nextMarker);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -112,7 +159,9 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getNextMarker() != null)
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -131,6 +180,10 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null)
+            return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
+            return false;
         return true;
     }
 
@@ -140,6 +193,7 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 
@@ -151,4 +205,5 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

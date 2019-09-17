@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentIdentifier> documentIdentifiers;
@@ -39,10 +39,10 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
-     * @return The names of the SSM documents.
+     * @return The names of the Systems Manager documents.
      */
 
     public java.util.List<DocumentIdentifier> getDocumentIdentifiers() {
@@ -54,11 +54,11 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      */
 
     public void setDocumentIdentifiers(java.util.Collection<DocumentIdentifier> documentIdentifiers) {
@@ -72,7 +72,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +157,8 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -214,4 +215,5 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

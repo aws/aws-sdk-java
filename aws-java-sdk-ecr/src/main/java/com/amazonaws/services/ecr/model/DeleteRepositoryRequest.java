@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     private String repositoryName;
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      */
     private Boolean force;
@@ -133,11 +133,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
+     *        If a repository contains images, forces the deletion.
      */
 
     public void setForce(Boolean force) {
@@ -146,10 +146,10 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean getForce() {
@@ -158,11 +158,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
+     *        If a repository contains images, forces the deletion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +173,10 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean isForce() {
@@ -184,7 +184,8 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

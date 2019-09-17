@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,20 +20,12 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ResetInstanceAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ResetInstanceAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ResetInstanceAttributeRequest> {
 
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     */
-    private String instanceId;
     /**
      * <p>
      * The attribute to reset.
@@ -46,6 +38,12 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      * </important>
      */
     private String attribute;
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * Default constructor for ResetInstanceAttributeRequest object. Callers should use the setter or fluent setter
@@ -88,46 +86,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
     public ResetInstanceAttributeRequest(String instanceId, InstanceAttributeName attribute) {
         setInstanceId(instanceId);
         setAttribute(attribute.toString());
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @return The ID of the instance.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResetInstanceAttributeRequest withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
     }
 
     /**
@@ -224,7 +182,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public void setAttribute(InstanceAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -249,7 +207,47 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public ResetInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResetInstanceAttributeRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -265,7 +263,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,10 +274,10 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -293,13 +292,13 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ResetInstanceAttributeRequest == false)
             return false;
         ResetInstanceAttributeRequest other = (ResetInstanceAttributeRequest) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         return true;
     }
@@ -309,8 +308,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

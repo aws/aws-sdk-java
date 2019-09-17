@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the UntagResource operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UntagResource" target="_top">AWS API
  *      Documentation</a>
@@ -30,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The list of tag keys to remove.
+     * The tag keys of the tags to remove.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -68,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys to remove.
+     * The tag keys of the tags to remove.
      * </p>
      * 
-     * @return The list of tag keys to remove.
+     * @return The tag keys of the tags to remove.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -98,11 +95,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys to remove.
+     * The tag keys of the tags to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The list of tag keys to remove.
+     *        The tag keys of the tags to remove.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -116,7 +113,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys to remove.
+     * The tag keys of the tags to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +122,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The list of tag keys to remove.
+     *        The tag keys of the tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +138,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of tag keys to remove.
+     * The tag keys of the tags to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The list of tag keys to remove.
+     *        The tag keys of the tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,7 +152,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

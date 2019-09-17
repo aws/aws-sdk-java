@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,34 +28,12 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the reservation offering.
-     * </p>
-     */
-    private String offeringId;
-    /**
-     * <p>
-     * This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.
-     * </p>
-     */
-    private Integer minDuration;
-    /**
-     * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
-     * </p>
-     */
-    private Integer maxDuration;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -69,56 +47,318 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * </p>
+     */
+    private Integer maxDuration;
+    /**
+     * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
+     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
+     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.
+     * </p>
+     */
+    private Integer minDuration;
     /**
      * <p>
      * The token to use to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * The ID of the reservation offering.
      * </p>
+     */
+    private String offeringId;
+
+    /**
+     * <p>
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param offeringId
-     *        The ID of the reservation offering.
+     * @return The filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *         <code>AllUpfront</code>).
+     *         </p>
+     *         </li>
      */
 
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
+    public java.util.List<Filter> getFilter() {
+        if (filter == null) {
+            filter = new com.amazonaws.internal.SdkInternalList<Filter>();
+        }
+        return filter;
     }
 
     /**
      * <p>
-     * The ID of the reservation offering.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the reservation offering.
+     * @param filter
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
+     *        </p>
+     *        </li>
      */
 
-    public String getOfferingId() {
-        return this.offeringId;
+    public void setFilter(java.util.Collection<Filter> filter) {
+        if (filter == null) {
+            this.filter = null;
+            return;
+        }
+
+        this.filter = new com.amazonaws.internal.SdkInternalList<Filter>(filter);
     }
 
     /**
      * <p>
-     * The ID of the reservation offering.
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilter(java.util.Collection)} or {@link #withFilter(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param offeringId
-     *        The ID of the reservation offering.
+     * @param filter
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeHostReservationOfferingsRequest withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
+    public DescribeHostReservationOfferingsRequest withFilter(Filter... filter) {
+        if (this.filter == null) {
+            setFilter(new com.amazonaws.internal.SdkInternalList<Filter>(filter.length));
+        }
+        for (Filter ele : filter) {
+            this.filter.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     * <code>AllUpfront</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filter
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
+     *        <code>AllUpfront</code>).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationOfferingsRequest withFilter(java.util.Collection<Filter> filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * </p>
+     * 
+     * @param maxDuration
+     *        This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *        available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *        in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *        three years.
+     */
+
+    public void setMaxDuration(Integer maxDuration) {
+        this.maxDuration = maxDuration;
+    }
+
+    /**
+     * <p>
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * </p>
+     * 
+     * @return This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *         available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *         in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *         three years.
+     */
+
+    public Integer getMaxDuration() {
+        return this.maxDuration;
+    }
+
+    /**
+     * <p>
+     * This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in
+     * one-year and three-year terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
+     * </p>
+     * 
+     * @param maxDuration
+     *        This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are
+     *        available in one-year and three-year terms. The number of seconds specified must be the number of seconds
+     *        in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for
+     *        three years.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationOfferingsRequest withMaxDuration(Integer maxDuration) {
+        setMaxDuration(maxDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return for the request in a single page. The remaining results can be
+     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * </p>
+     * 
+     * @return The maximum number of results to return for the request in a single page. The remaining results can be
+     *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *         5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return for the request in a single page. The remaining results can be
+     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationOfferingsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -179,286 +419,6 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
-     * </p>
-     * 
-     * @param maxDuration
-     *        This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations
-     *        are available in one-year and three-year terms. The number of seconds specified must be the number of
-     *        seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify
-     *        94608000 for three years.
-     */
-
-    public void setMaxDuration(Integer maxDuration) {
-        this.maxDuration = maxDuration;
-    }
-
-    /**
-     * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
-     * </p>
-     * 
-     * @return This is the maximum duration of the reservation you'd like to purchase, specified in seconds.
-     *         Reservations are available in one-year and three-year terms. The number of seconds specified must be the
-     *         number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example,
-     *         specify 94608000 for three years.
-     */
-
-    public Integer getMaxDuration() {
-        return this.maxDuration;
-    }
-
-    /**
-     * <p>
-     * This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations are
-     * available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a
-     * year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.
-     * </p>
-     * 
-     * @param maxDuration
-     *        This is the maximum duration of the reservation you'd like to purchase, specified in seconds. Reservations
-     *        are available in one-year and three-year terms. The number of seconds specified must be the number of
-     *        seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify
-     *        94608000 for three years.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationOfferingsRequest withMaxDuration(Integer maxDuration) {
-        setMaxDuration(maxDuration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     * <code>AllUpfront</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return One or more filters.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     *         <code>AllUpfront</code>).
-     *         </p>
-     *         </li>
-     */
-
-    public java.util.List<Filter> getFilter() {
-        if (filter == null) {
-            filter = new com.amazonaws.internal.SdkInternalList<Filter>();
-        }
-        return filter;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     * <code>AllUpfront</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param filter
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     *        <code>AllUpfront</code>).
-     *        </p>
-     *        </li>
-     */
-
-    public void setFilter(java.util.Collection<Filter> filter) {
-        if (filter == null) {
-            this.filter = null;
-            return;
-        }
-
-        this.filter = new com.amazonaws.internal.SdkInternalList<Filter>(filter);
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     * <code>AllUpfront</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFilter(java.util.Collection)} or {@link #withFilter(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param filter
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     *        <code>AllUpfront</code>).
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationOfferingsRequest withFilter(Filter... filter) {
-        if (this.filter == null) {
-            setFilter(new com.amazonaws.internal.SdkInternalList<Filter>(filter.length));
-        }
-        for (Filter ele : filter) {
-            this.filter.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     * <code>AllUpfront</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param filter
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>instance-family</code> - The instance family of the offering (e.g., <code>m4</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> |
-     *        <code>AllUpfront</code>).
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationOfferingsRequest withFilter(java.util.Collection<Filter> filter) {
-        setFilter(filter);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     * </p>
-     * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *         5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationOfferingsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * The token to use to retrieve the next page of results.
      * </p>
      * 
@@ -498,6 +458,46 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The ID of the reservation offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the reservation offering.
+     */
+
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the reservation offering.
+     * </p>
+     * 
+     * @return The ID of the reservation offering.
+     */
+
+    public String getOfferingId() {
+        return this.offeringId;
+    }
+
+    /**
+     * <p>
+     * The ID of the reservation offering.
+     * </p>
+     * 
+     * @param offeringId
+     *        The ID of the reservation offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationOfferingsRequest withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -509,7 +509,8 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -519,18 +520,18 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
-        if (getMinDuration() != null)
-            sb.append("MinDuration: ").append(getMinDuration()).append(",");
-        if (getMaxDuration() != null)
-            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
+        if (getMaxDuration() != null)
+            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getMinDuration() != null)
+            sb.append("MinDuration: ").append(getMinDuration()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -545,29 +546,29 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
         if (obj instanceof DescribeHostReservationOfferingsRequest == false)
             return false;
         DescribeHostReservationOfferingsRequest other = (DescribeHostReservationOfferingsRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+        if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
-            return false;
-        if (other.getMinDuration() == null ^ this.getMinDuration() == null)
-            return false;
-        if (other.getMinDuration() != null && other.getMinDuration().equals(this.getMinDuration()) == false)
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
         if (other.getMaxDuration() == null ^ this.getMaxDuration() == null)
             return false;
         if (other.getMaxDuration() != null && other.getMaxDuration().equals(this.getMaxDuration()) == false)
             return false;
-        if (other.getFilter() == null ^ this.getFilter() == null)
-            return false;
-        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getMinDuration() == null ^ this.getMinDuration() == null)
+            return false;
+        if (other.getMinDuration() != null && other.getMinDuration().equals(this.getMinDuration()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+            return false;
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -577,12 +578,12 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
-        hashCode = prime * hashCode + ((getMinDuration() == null) ? 0 : getMinDuration().hashCode());
-        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getMaxDuration() == null) ? 0 : getMaxDuration().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getMinDuration() == null) ? 0 : getMinDuration().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

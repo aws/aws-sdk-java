@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,12 +20,10 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.cloudformation.AmazonCloudFormation;
-import com.amazonaws.services.cloudformation.AmazonCloudFormationClient;
+import com.amazonaws.services.cloudformation.AmazonCloudFormationClientBuilder;
 import com.amazonaws.services.cloudformation.model.CreateStackRequest;
 import com.amazonaws.services.cloudformation.model.DeleteStackRequest;
 import com.amazonaws.services.cloudformation.model.DescribeStackResourcesRequest;
@@ -58,9 +56,9 @@ public class CloudFormationSample {
          * credential profile by reading from the credentials file located at
          * (~/.aws/credentials).
          */
-        AWSCredentials credentials = null;
+        ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -69,9 +67,10 @@ public class CloudFormationSample {
                     e);
         }
 
-        AmazonCloudFormation stackbuilder = new AmazonCloudFormationClient(credentials);
-        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-        stackbuilder.setRegion(usWest2);
+        AmazonCloudFormation stackbuilder = AmazonCloudFormationClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion(Regions.US_WEST_2)
+            .build();
 
         System.out.println("===========================================");
         System.out.println("Getting Started with AWS CloudFormation");

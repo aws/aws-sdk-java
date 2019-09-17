@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,27 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public CreateAppResult createApp(CreateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppResult deleteApp(DeleteAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppLaunchConfigurationResult deleteAppLaunchConfiguration(DeleteAppLaunchConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppReplicationConfigurationResult deleteAppReplicationConfiguration(DeleteAppReplicationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +74,31 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
 
     @Override
     public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GenerateChangeSetResult generateChangeSet(GenerateChangeSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GenerateTemplateResult generateTemplate(GenerateTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppResult getApp(GetAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppLaunchConfigurationResult getAppLaunchConfiguration(GetAppLaunchConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppReplicationConfigurationResult getAppReplicationConfiguration(GetAppReplicationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +128,47 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public LaunchAppResult launchApp(LaunchAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppsResult listApps(ListAppsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAppLaunchConfigurationResult putAppLaunchConfiguration(PutAppLaunchConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAppReplicationConfigurationResult putAppReplicationConfiguration(PutAppReplicationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAppReplicationResult startAppReplication(StartAppReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopAppReplicationResult stopAppReplication(StopAppReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TerminateAppResult terminateApp(TerminateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppResult updateApp(UpdateAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

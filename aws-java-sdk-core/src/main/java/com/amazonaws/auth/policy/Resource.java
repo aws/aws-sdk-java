@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.amazonaws.auth.policy;
  */
 public class Resource {
     private final String resource;
+    private boolean isNotType;
 
     /**
      * Constructs a new AWS access control policy resource. Resources are
@@ -70,5 +71,29 @@ public class Resource {
      */
     public String getId() {
         return resource;
+    }
+
+    /**
+     * Returns whether this Resource is a NotResource element, which explicitly matches everything except the specified
+     * list of resources. Note that Statements must include either a Resource or a NotResource element
+     *
+     * @return the type of the Resource. If true, this resource will be rendered as a NotResource element in the
+     * Statement
+     */
+    public boolean isNotType() {
+        return isNotType;
+    }
+
+    /**
+     * Sets whether this resource is a NotResource, which explicitly matches everything except the specified list
+     * of resources. Note that Statements must include either a Resource or a NotResource element
+     *
+     * @param isNotType the type. If true, this resource will be rendered as a NotResource element in the Statement
+     * @return The updated Resource object so that additional method calls can
+     *         be chained together.
+     */
+    public Resource withIsNotType(boolean isNotType) {
+        this.isNotType = isNotType;
+        return this;
     }
 }

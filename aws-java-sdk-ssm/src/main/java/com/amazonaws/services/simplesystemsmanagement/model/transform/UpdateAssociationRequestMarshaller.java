@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,98 +12,82 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateAssociationRequest Marshaller
+ * UpdateAssociationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateAssociationRequestMarshaller implements Marshaller<Request<UpdateAssociationRequest>, UpdateAssociationRequest> {
+@SdkInternalApi
+public class UpdateAssociationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationId").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<String> SCHEDULEEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<String> ASSOCIATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
+    private static final MarshallingInfo<String> ASSOCIATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationVersion").build();
+    private static final MarshallingInfo<String> AUTOMATIONTARGETPARAMETERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationTargetParameterName").build();
+    private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
+    private static final MarshallingInfo<String> COMPLIANCESEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSeverity").build();
 
-    public UpdateAssociationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateAssociationRequestMarshaller instance = new UpdateAssociationRequestMarshaller();
+
+    public static UpdateAssociationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateAssociationRequest> marshall(UpdateAssociationRequest updateAssociationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateAssociationRequest updateAssociationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateAssociationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateAssociationRequest> request = new DefaultRequest<UpdateAssociationRequest>(updateAssociationRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.UpdateAssociation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateAssociationRequest.getAssociationId() != null) {
-                jsonGenerator.writeFieldName("AssociationId").writeValue(updateAssociationRequest.getAssociationId());
-            }
-
-            java.util.Map<String, java.util.List<String>> parametersMap = updateAssociationRequest.getParameters();
-            if (parametersMap != null) {
-                jsonGenerator.writeFieldName("Parameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap.entrySet()) {
-                    if (parametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(parametersMapValue.getKey());
-
-                        jsonGenerator.writeStartArray();
-                        for (String parametersMapValueList : parametersMapValue.getValue()) {
-                            if (parametersMapValueList != null) {
-                                jsonGenerator.writeValue(parametersMapValueList);
-                            }
-                        }
-                        jsonGenerator.writeEndArray();
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (updateAssociationRequest.getDocumentVersion() != null) {
-                jsonGenerator.writeFieldName("DocumentVersion").writeValue(updateAssociationRequest.getDocumentVersion());
-            }
-            if (updateAssociationRequest.getScheduleExpression() != null) {
-                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(updateAssociationRequest.getScheduleExpression());
-            }
-            if (updateAssociationRequest.getOutputLocation() != null) {
-                jsonGenerator.writeFieldName("OutputLocation");
-                InstanceAssociationOutputLocationJsonMarshaller.getInstance().marshall(updateAssociationRequest.getOutputLocation(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateAssociationRequest.getAssociationId(), ASSOCIATIONID_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getOutputLocation(), OUTPUTLOCATION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getAssociationName(), ASSOCIATIONNAME_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getAssociationVersion(), ASSOCIATIONVERSION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getAutomationTargetParameterName(), AUTOMATIONTARGETPARAMETERNAME_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

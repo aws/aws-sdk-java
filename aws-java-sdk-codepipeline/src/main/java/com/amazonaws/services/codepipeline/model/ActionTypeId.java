@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActionTypeId implements Serializable, Cloneable {
+public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,13 +45,15 @@ public class ActionTypeId implements Serializable, Cloneable {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      */
     private String provider;
     /**
      * <p>
-     * A string that identifies the action type.
+     * A string that describes the action version.
      * </p>
      */
     private String version;
@@ -116,7 +120,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      */
 
     public void setCategory(ActionCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -133,7 +137,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      */
 
     public ActionTypeId withCategory(ActionCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 
@@ -191,7 +195,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      */
 
     public void setOwner(ActionOwner owner) {
-        this.owner = owner.toString();
+        withOwner(owner);
     }
 
     /**
@@ -206,7 +210,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      */
 
     public ActionTypeId withOwner(ActionOwner owner) {
-        setOwner(owner);
+        this.owner = owner.toString();
         return this;
     }
 
@@ -214,13 +218,18 @@ public class ActionTypeId implements Serializable, Cloneable {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy.
+     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      */
 
     public void setProvider(String provider) {
@@ -231,12 +240,17 @@ public class ActionTypeId implements Serializable, Cloneable {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @return The provider of the service being called by the action. Valid providers are determined by the action
      *         category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *         which would be specified as CodeDeploy.
+     *         which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *         >Valid Action Types and Providers in CodePipeline</a>.
      */
 
     public String getProvider() {
@@ -247,13 +261,18 @@ public class ActionTypeId implements Serializable, Cloneable {
      * <p>
      * The provider of the service being called by the action. Valid providers are determined by the action category.
      * For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be
-     * specified as CodeDeploy.
+     * specified as CodeDeploy. To reference a list of action providers by action type, see <a href=
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     * >Valid Action Types and Providers in CodePipeline</a>.
      * </p>
      * 
      * @param provider
      *        The provider of the service being called by the action. Valid providers are determined by the action
      *        category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy,
-     *        which would be specified as CodeDeploy.
+     *        which would be specified as CodeDeploy. To reference a list of action providers by action type, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers"
+     *        >Valid Action Types and Providers in CodePipeline</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +283,11 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the action type.
+     * A string that describes the action version.
      * </p>
      * 
      * @param version
-     *        A string that identifies the action type.
+     *        A string that describes the action version.
      */
 
     public void setVersion(String version) {
@@ -277,10 +296,10 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the action type.
+     * A string that describes the action version.
      * </p>
      * 
-     * @return A string that identifies the action type.
+     * @return A string that describes the action version.
      */
 
     public String getVersion() {
@@ -289,11 +308,11 @@ public class ActionTypeId implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string that identifies the action type.
+     * A string that describes the action version.
      * </p>
      * 
      * @param version
-     *        A string that identifies the action type.
+     *        A string that describes the action version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,7 +322,8 @@ public class ActionTypeId implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -373,5 +393,11 @@ public class ActionTypeId implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.ActionTypeIdMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

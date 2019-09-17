@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesisanalytics.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddApplicationInputRequest Marshaller
+ * AddApplicationInputRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddApplicationInputRequestMarshaller implements Marshaller<Request<AddApplicationInputRequest>, AddApplicationInputRequest> {
+@SdkInternalApi
+public class AddApplicationInputRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationName").build();
+    private static final MarshallingInfo<Long> CURRENTAPPLICATIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
+    private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Input").build();
 
-    public AddApplicationInputRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddApplicationInputRequestMarshaller instance = new AddApplicationInputRequestMarshaller();
+
+    public static AddApplicationInputRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddApplicationInputRequest> marshall(AddApplicationInputRequest addApplicationInputRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddApplicationInputRequest addApplicationInputRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addApplicationInputRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddApplicationInputRequest> request = new DefaultRequest<AddApplicationInputRequest>(addApplicationInputRequest, "AmazonKinesisAnalytics");
-        request.addHeader("X-Amz-Target", "KinesisAnalytics_20150814.AddApplicationInput");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (addApplicationInputRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("ApplicationName").writeValue(addApplicationInputRequest.getApplicationName());
-            }
-            if (addApplicationInputRequest.getCurrentApplicationVersionId() != null) {
-                jsonGenerator.writeFieldName("CurrentApplicationVersionId").writeValue(addApplicationInputRequest.getCurrentApplicationVersionId());
-            }
-            if (addApplicationInputRequest.getInput() != null) {
-                jsonGenerator.writeFieldName("Input");
-                InputJsonMarshaller.getInstance().marshall(addApplicationInputRequest.getInput(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addApplicationInputRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(addApplicationInputRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
+            protocolMarshaller.marshall(addApplicationInputRequest.getInput(), INPUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -22,14 +24,14 @@ import javax.annotation.Generated;
  * <div class="remarks">
  * <p>
  * Publishing API documentation involves creating a documentation version associated with an API stage and exporting the
- * versioned documentation to an external (e.g., Swagger) file.
+ * versioned documentation to an external (e.g., OpenAPI) file.
  * </p>
  * </div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an
  * API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentationVersion implements Serializable, Cloneable {
+public class DocumentationVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -171,7 +173,8 @@ public class DocumentationVersion implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -234,5 +237,11 @@ public class DocumentationVersion implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.DocumentationVersionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

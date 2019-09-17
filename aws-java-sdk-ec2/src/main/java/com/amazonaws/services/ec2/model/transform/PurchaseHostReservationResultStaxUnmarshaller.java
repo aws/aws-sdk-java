@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,23 +45,8 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("purchase", targetDepth)) {
-                    purchaseHostReservationResult.withPurchase(new ArrayList<Purchase>());
-                    continue;
-                }
-
-                if (context.testExpression("purchase/member", targetDepth)) {
-                    purchaseHostReservationResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
-                    purchaseHostReservationResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("totalHourlyPrice", targetDepth)) {
-                    purchaseHostReservationResult.setTotalHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("clientToken", targetDepth)) {
+                    purchaseHostReservationResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,8 +55,23 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
-                if (context.testExpression("clientToken", targetDepth)) {
-                    purchaseHostReservationResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("purchase", targetDepth)) {
+                    purchaseHostReservationResult.withPurchase(new ArrayList<Purchase>());
+                    continue;
+                }
+
+                if (context.testExpression("purchase/item", targetDepth)) {
+                    purchaseHostReservationResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalHourlyPrice", targetDepth)) {
+                    purchaseHostReservationResult.setTotalHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
+                    purchaseHostReservationResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

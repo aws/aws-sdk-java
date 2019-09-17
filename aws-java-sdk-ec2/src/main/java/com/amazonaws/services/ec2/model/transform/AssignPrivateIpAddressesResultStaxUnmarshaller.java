@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -42,6 +44,21 @@ public class AssignPrivateIpAddressesResultStaxUnmarshaller implements Unmarshal
                 return assignPrivateIpAddressesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    assignPrivateIpAddressesResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("assignedPrivateIpAddressesSet", targetDepth)) {
+                    assignPrivateIpAddressesResult.withAssignedPrivateIpAddresses(new ArrayList<AssignedPrivateIpAddress>());
+                    continue;
+                }
+
+                if (context.testExpression("assignedPrivateIpAddressesSet/item", targetDepth)) {
+                    assignPrivateIpAddressesResult.withAssignedPrivateIpAddresses(AssignedPrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
 
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {

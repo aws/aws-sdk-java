@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,53 +43,8 @@ public class ScheduledInstanceAvailabilityStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    scheduledInstanceAvailability.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("platform", targetDepth)) {
-                    scheduledInstanceAvailability.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("networkPlatform", targetDepth)) {
-                    scheduledInstanceAvailability.setNetworkPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     scheduledInstanceAvailability.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("purchaseToken", targetDepth)) {
-                    scheduledInstanceAvailability.setPurchaseToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("slotDurationInHours", targetDepth)) {
-                    scheduledInstanceAvailability.setSlotDurationInHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("recurrence", targetDepth)) {
-                    scheduledInstanceAvailability.setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("firstSlotStartTime", targetDepth)) {
-                    scheduledInstanceAvailability.setFirstSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hourlyPrice", targetDepth)) {
-                    scheduledInstanceAvailability.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("totalScheduledInstanceHours", targetDepth)) {
-                    scheduledInstanceAvailability.setTotalScheduledInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -98,13 +53,58 @@ public class ScheduledInstanceAvailabilityStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
-                if (context.testExpression("minTermDurationInDays", targetDepth)) {
-                    scheduledInstanceAvailability.setMinTermDurationInDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("firstSlotStartTime", targetDepth)) {
+                    scheduledInstanceAvailability.setFirstSlotStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hourlyPrice", targetDepth)) {
+                    scheduledInstanceAvailability.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceType", targetDepth)) {
+                    scheduledInstanceAvailability.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("maxTermDurationInDays", targetDepth)) {
                     scheduledInstanceAvailability.setMaxTermDurationInDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("minTermDurationInDays", targetDepth)) {
+                    scheduledInstanceAvailability.setMinTermDurationInDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkPlatform", targetDepth)) {
+                    scheduledInstanceAvailability.setNetworkPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("platform", targetDepth)) {
+                    scheduledInstanceAvailability.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("purchaseToken", targetDepth)) {
+                    scheduledInstanceAvailability.setPurchaseToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("recurrence", targetDepth)) {
+                    scheduledInstanceAvailability.setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("slotDurationInHours", targetDepth)) {
+                    scheduledInstanceAvailability.setSlotDurationInHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalScheduledInstanceHours", targetDepth)) {
+                    scheduledInstanceAvailability.setTotalScheduledInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

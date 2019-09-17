@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,40 +14,116 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about the configuration, dimension, and other settings for a segment.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentResponse implements Serializable, Cloneable {
+public class SegmentResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The ID of the application to which the segment applies. */
+    /**
+     * <p>
+     * The unique identifier for the application that the segment is associated with.
+     * </p>
+     */
     private String applicationId;
-    /** The date the segment was created in ISO 8601 format. */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the segment.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * The date and time when the segment was created.
+     * </p>
+     */
     private String creationDate;
-    /** The segment dimensions attributes. */
+    /**
+     * <p>
+     * The dimension settings for the segment.
+     * </p>
+     */
     private SegmentDimensions dimensions;
-    /** The unique segment ID. */
+    /**
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
+     */
     private String id;
-    /** The import job settings. */
+    /**
+     * <p>
+     * The settings for the import job that's associated with the segment.
+     * </p>
+     */
     private SegmentImportResource importDefinition;
-    /** The date the segment was last updated in ISO 8601 format. */
+    /**
+     * <p>
+     * The date and time when the segment was last modified.
+     * </p>
+     */
     private String lastModifiedDate;
-    /** The name of segment */
+    /**
+     * <p>
+     * The name of the segment.
+     * </p>
+     */
     private String name;
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base
+     * segments and the dimensions that are applied to those base segments.
+     * </p>
+     */
+    private SegmentGroupList segmentGroups;
+    /**
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String segmentType;
-    /** The segment version number. */
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The version number of the segment.
+     * </p>
+     */
     private Integer version;
 
     /**
-     * The ID of the application to which the segment applies.
+     * <p>
+     * The unique identifier for the application that the segment is associated with.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the segment applies.
+     *        The unique identifier for the application that the segment is associated with.
      */
 
     public void setApplicationId(String applicationId) {
@@ -55,9 +131,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the application to which the segment applies.
+     * <p>
+     * The unique identifier for the application that the segment is associated with.
+     * </p>
      * 
-     * @return The ID of the application to which the segment applies.
+     * @return The unique identifier for the application that the segment is associated with.
      */
 
     public String getApplicationId() {
@@ -65,10 +143,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The ID of the application to which the segment applies.
+     * <p>
+     * The unique identifier for the application that the segment is associated with.
+     * </p>
      * 
      * @param applicationId
-     *        The ID of the application to which the segment applies.
+     *        The unique identifier for the application that the segment is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +158,52 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * <p>
+     * The Amazon Resource Name (ARN) of the segment.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the segment.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the segment.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the segment.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the segment.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the segment was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the segment was created in ISO 8601 format.
+     *        The date and time when the segment was created.
      */
 
     public void setCreationDate(String creationDate) {
@@ -89,9 +211,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * <p>
+     * The date and time when the segment was created.
+     * </p>
      * 
-     * @return The date the segment was created in ISO 8601 format.
+     * @return The date and time when the segment was created.
      */
 
     public String getCreationDate() {
@@ -99,10 +223,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * <p>
+     * The date and time when the segment was created.
+     * </p>
      * 
      * @param creationDate
-     *        The date the segment was created in ISO 8601 format.
+     *        The date and time when the segment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,10 +238,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The dimension settings for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        The segment dimensions attributes.
+     *        The dimension settings for the segment.
      */
 
     public void setDimensions(SegmentDimensions dimensions) {
@@ -123,9 +251,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The dimension settings for the segment.
+     * </p>
      * 
-     * @return The segment dimensions attributes.
+     * @return The dimension settings for the segment.
      */
 
     public SegmentDimensions getDimensions() {
@@ -133,10 +263,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment dimensions attributes.
+     * <p>
+     * The dimension settings for the segment.
+     * </p>
      * 
      * @param dimensions
-     *        The segment dimensions attributes.
+     *        The dimension settings for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,10 +278,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique segment ID.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param id
-     *        The unique segment ID.
+     *        The unique identifier for the segment.
      */
 
     public void setId(String id) {
@@ -157,9 +291,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique segment ID.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
-     * @return The unique segment ID.
+     * @return The unique identifier for the segment.
      */
 
     public String getId() {
@@ -167,10 +303,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The unique segment ID.
+     * <p>
+     * The unique identifier for the segment.
+     * </p>
      * 
      * @param id
-     *        The unique segment ID.
+     *        The unique identifier for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,10 +318,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The import job settings.
+     * <p>
+     * The settings for the import job that's associated with the segment.
+     * </p>
      * 
      * @param importDefinition
-     *        The import job settings.
+     *        The settings for the import job that's associated with the segment.
      */
 
     public void setImportDefinition(SegmentImportResource importDefinition) {
@@ -191,9 +331,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The import job settings.
+     * <p>
+     * The settings for the import job that's associated with the segment.
+     * </p>
      * 
-     * @return The import job settings.
+     * @return The settings for the import job that's associated with the segment.
      */
 
     public SegmentImportResource getImportDefinition() {
@@ -201,10 +343,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The import job settings.
+     * <p>
+     * The settings for the import job that's associated with the segment.
+     * </p>
      * 
      * @param importDefinition
-     *        The import job settings.
+     *        The settings for the import job that's associated with the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,10 +358,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * <p>
+     * The date and time when the segment was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date the segment was last updated in ISO 8601 format.
+     *        The date and time when the segment was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -225,9 +371,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * <p>
+     * The date and time when the segment was last modified.
+     * </p>
      * 
-     * @return The date the segment was last updated in ISO 8601 format.
+     * @return The date and time when the segment was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -235,10 +383,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * <p>
+     * The date and time when the segment was last modified.
+     * </p>
      * 
      * @param lastModifiedDate
-     *        The date the segment was last updated in ISO 8601 format.
+     *        The date and time when the segment was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,10 +398,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      */
 
     public void setName(String name) {
@@ -259,9 +411,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
-     * @return The name of segment
+     * @return The name of the segment.
      */
 
     public String getName() {
@@ -269,10 +423,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The name of segment
+     * <p>
+     * The name of the segment.
+     * </p>
      * 
      * @param name
-     *        The name of segment
+     *        The name of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,18 +438,86 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base
+     * segments and the dimensions that are applied to those base segments.
+     * </p>
+     * 
+     * @param segmentGroups
+     *        A list of one or more segment groups that apply to the segment. Each segment group consists of zero or
+     *        more base segments and the dimensions that are applied to those base segments.
+     */
+
+    public void setSegmentGroups(SegmentGroupList segmentGroups) {
+        this.segmentGroups = segmentGroups;
+    }
+
+    /**
+     * <p>
+     * A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base
+     * segments and the dimensions that are applied to those base segments.
+     * </p>
+     * 
+     * @return A list of one or more segment groups that apply to the segment. Each segment group consists of zero or
+     *         more base segments and the dimensions that are applied to those base segments.
+     */
+
+    public SegmentGroupList getSegmentGroups() {
+        return this.segmentGroups;
+    }
+
+    /**
+     * <p>
+     * A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base
+     * segments and the dimensions that are applied to those base segments.
+     * </p>
+     * 
+     * @param segmentGroups
+     *        A list of one or more segment groups that apply to the segment. Each segment group consists of zero or
+     *        more base segments and the dimensions that are applied to those base segments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withSegmentGroups(SegmentGroupList segmentGroups) {
+        setSegmentGroups(segmentGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you import from a file. Imported segments are static; they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
-     *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
-     *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
-     *        Pinpoint console or by making a POST request to the jobs/import resource.
+     *        The segment type. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is
+     *        based on endpoint data that's reported by your app. Dynamic segments can change over time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based
+     *        on endpoint definitions that you import from a file. Imported segments are static; they don't change over
+     *        time.
+     *        </p>
+     *        </li>
      * @see SegmentType
      */
 
@@ -302,17 +526,39 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you import from a file. Imported segments are static; they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
-     *         reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *         console or by making a POST request to the segments resource. IMPORT – A static segment built from an
-     *         imported set of endpoint definitions. You create this type of segment by importing a segment in the
-     *         Amazon Pinpoint console or by making a POST request to the jobs/import resource.
+     * @return The segment type. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is
+     *         based on endpoint data that's reported by your app. Dynamic segments can change over time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based
+     *         on endpoint definitions that you import from a file. Imported segments are static; they don't change over
+     *         time.
+     *         </p>
+     *         </li>
      * @see SegmentType
      */
 
@@ -321,18 +567,40 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you import from a file. Imported segments are static; they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
-     *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
-     *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
-     *        Pinpoint console or by making a POST request to the jobs/import resource.
+     *        The segment type. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is
+     *        based on endpoint data that's reported by your app. Dynamic segments can change over time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based
+     *        on endpoint definitions that you import from a file. Imported segments are static; they don't change over
+     *        time.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SegmentType
      */
@@ -343,52 +611,165 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you import from a file. Imported segments are static; they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
-     *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
-     *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
-     *        Pinpoint console or by making a POST request to the jobs/import resource.
+     *        The segment type. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is
+     *        based on endpoint data that's reported by your app. Dynamic segments can change over time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based
+     *        on endpoint definitions that you import from a file. Imported segments are static; they don't change over
+     *        time.
+     *        </p>
+     *        </li>
      * @see SegmentType
      */
 
     public void setSegmentType(SegmentType segmentType) {
-        this.segmentType = segmentType.toString();
+        withSegmentType(segmentType);
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
-     * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
-     * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
-     * POST request to the jobs/import resource.
+     * <p>
+     * The segment type. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint data that's reported by your app. Dynamic segments can change over time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on
+     * endpoint definitions that you import from a file. Imported segments are static; they don't change over time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
-     *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
-     *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
-     *        Pinpoint console or by making a POST request to the jobs/import resource.
+     *        The segment type. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is
+     *        based on endpoint data that's reported by your app. Dynamic segments can change over time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based
+     *        on endpoint definitions that you import from a file. Imported segments are static; they don't change over
+     *        time.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SegmentType
      */
 
     public SegmentResponse withSegmentType(SegmentType segmentType) {
-        setSegmentType(segmentType);
+        this.segmentType = segmentType.toString();
         return this;
     }
 
     /**
-     * The segment version number.
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
+     * 
+     * @return A string-to-string map of key-value pairs that identifies the tags that are associated with the segment.
+     *         Each tag consists of a required tag key and an associated tag value.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
+     * 
+     * @param tags
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the segment.
+     *        Each tag consists of a required tag key and an associated tag value.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag
+     * consists of a required tag key and an associated tag value.
+     * </p>
+     * 
+     * @param tags
+     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the segment.
+     *        Each tag consists of a required tag key and an associated tag value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public SegmentResponse addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
      * @param version
-     *        The segment version number.
+     *        The version number of the segment.
      */
 
     public void setVersion(Integer version) {
@@ -396,9 +777,11 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment version number.
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
-     * @return The segment version number.
+     * @return The version number of the segment.
      */
 
     public Integer getVersion() {
@@ -406,10 +789,12 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The segment version number.
+     * <p>
+     * The version number of the segment.
+     * </p>
      * 
      * @param version
-     *        The segment version number.
+     *        The version number of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,7 +804,8 @@ public class SegmentResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -431,6 +817,8 @@ public class SegmentResponse implements Serializable, Cloneable {
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDimensions() != null)
@@ -443,8 +831,12 @@ public class SegmentResponse implements Serializable, Cloneable {
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getSegmentGroups() != null)
+            sb.append("SegmentGroups: ").append(getSegmentGroups()).append(",");
         if (getSegmentType() != null)
             sb.append("SegmentType: ").append(getSegmentType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -464,6 +856,10 @@ public class SegmentResponse implements Serializable, Cloneable {
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
@@ -489,9 +885,17 @@ public class SegmentResponse implements Serializable, Cloneable {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSegmentGroups() == null ^ this.getSegmentGroups() == null)
+            return false;
+        if (other.getSegmentGroups() != null && other.getSegmentGroups().equals(this.getSegmentGroups()) == false)
+            return false;
         if (other.getSegmentType() == null ^ this.getSegmentType() == null)
             return false;
         if (other.getSegmentType() != null && other.getSegmentType().equals(this.getSegmentType()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
@@ -506,13 +910,16 @@ public class SegmentResponse implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getImportDefinition() == null) ? 0 : getImportDefinition().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSegmentGroups() == null) ? 0 : getSegmentGroups().hashCode());
         hashCode = prime * hashCode + ((getSegmentType() == null) ? 0 : getSegmentType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
@@ -524,5 +931,11 @@ public class SegmentResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

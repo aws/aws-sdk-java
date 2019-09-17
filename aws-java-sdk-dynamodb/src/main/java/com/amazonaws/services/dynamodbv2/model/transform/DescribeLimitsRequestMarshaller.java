@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,60 +12,40 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeLimitsRequest Marshaller
+ * DescribeLimitsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeLimitsRequestMarshaller implements Marshaller<Request<DescribeLimitsRequest>, DescribeLimitsRequest> {
+@SdkInternalApi
+public class DescribeLimitsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final DescribeLimitsRequestMarshaller instance = new DescribeLimitsRequestMarshaller();
 
-    public DescribeLimitsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static DescribeLimitsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeLimitsRequest> marshall(DescribeLimitsRequest describeLimitsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeLimitsRequest describeLimitsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeLimitsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeLimitsRequest> request = new DefaultRequest<DescribeLimitsRequest>(describeLimitsRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.DescribeLimits");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

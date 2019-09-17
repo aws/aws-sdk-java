@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetInstanceAccessDetailsRequest Marshaller
+ * GetInstanceAccessDetailsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetInstanceAccessDetailsRequestMarshaller implements Marshaller<Request<GetInstanceAccessDetailsRequest>, GetInstanceAccessDetailsRequest> {
+@SdkInternalApi
+public class GetInstanceAccessDetailsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
+    private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("protocol").build();
 
-    public GetInstanceAccessDetailsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetInstanceAccessDetailsRequestMarshaller instance = new GetInstanceAccessDetailsRequestMarshaller();
+
+    public static GetInstanceAccessDetailsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetInstanceAccessDetailsRequest> marshall(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetInstanceAccessDetailsRequest getInstanceAccessDetailsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getInstanceAccessDetailsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetInstanceAccessDetailsRequest> request = new DefaultRequest<GetInstanceAccessDetailsRequest>(getInstanceAccessDetailsRequest,
-                "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.GetInstanceAccessDetails");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getInstanceAccessDetailsRequest.getInstanceName() != null) {
-                jsonGenerator.writeFieldName("instanceName").writeValue(getInstanceAccessDetailsRequest.getInstanceName());
-            }
-            if (getInstanceAccessDetailsRequest.getProtocol() != null) {
-                jsonGenerator.writeFieldName("protocol").writeValue(getInstanceAccessDetailsRequest.getProtocol());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getInstanceAccessDetailsRequest.getInstanceName(), INSTANCENAME_BINDING);
+            protocolMarshaller.marshall(getInstanceAccessDetailsRequest.getProtocol(), PROTOCOL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

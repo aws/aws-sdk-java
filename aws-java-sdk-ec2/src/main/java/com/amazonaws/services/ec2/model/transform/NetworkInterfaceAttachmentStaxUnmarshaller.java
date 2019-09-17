@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,23 @@ public class NetworkInterfaceAttachmentStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("attachTime", targetDepth)) {
+                    networkInterfaceAttachment.setAttachTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("attachmentId", targetDepth)) {
                     networkInterfaceAttachment.setAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    networkInterfaceAttachment.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deviceIndex", targetDepth)) {
+                    networkInterfaceAttachment.setDeviceIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,23 +73,8 @@ public class NetworkInterfaceAttachmentStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
-                if (context.testExpression("deviceIndex", targetDepth)) {
-                    networkInterfaceAttachment.setDeviceIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("status", targetDepth)) {
                     networkInterfaceAttachment.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("attachTime", targetDepth)) {
-                    networkInterfaceAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    networkInterfaceAttachment.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

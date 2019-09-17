@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,13 @@ import javax.annotation.Generated;
  * <p>
  * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on
  * the content as the message body. For more information, see <a
- * href="http://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.
+ * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.
  * </p>
  * <p>
  * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts
  * of the message attribute, including name, type, and value, are included in the message size restriction, which is
  * currently 256 KB (262,144 bytes). For more information, see <a
- * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.
+ * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Using Amazon SNS Message Attributes</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/MessageAttributeValue" target="_top">AWS API
@@ -36,8 +36,9 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+     * Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.
      * </p>
      */
@@ -45,8 +46,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      */
     private String stringValue;
@@ -59,15 +59,16 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+     * Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.
      * </p>
      * 
      * @param dataType
-     *        Amazon SNS supports the following logical data types: String, Number, and Binary. For more information,
-     *        see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
+     *        Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      */
 
@@ -77,14 +78,15 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+     * Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.
      * </p>
      * 
-     * @return Amazon SNS supports the following logical data types: String, Number, and Binary. For more information,
-     *         see <a href=
-     *         "http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
+     * @return Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
      *         >Message Attribute Data Types</a>.
      */
 
@@ -94,15 +96,16 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SNS supports the following logical data types: String, Number, and Binary. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
+     * Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
      * Attribute Data Types</a>.
      * </p>
      * 
      * @param dataType
-     *        Amazon SNS supports the following logical data types: String, Number, and Binary. For more information,
-     *        see <a
-     *        href="http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
+     *        Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -115,14 +118,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
      *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
     public void setStringValue(String stringValue) {
@@ -132,13 +133,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @return Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *         href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
     public String getStringValue() {
@@ -148,14 +147,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     /**
      * <p>
      * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     * >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     * href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
      *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
-     *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *        >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+     *        href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,7 +166,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -211,6 +208,16 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <p>
      * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param binaryValue
      *        Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
@@ -223,7 +230,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -287,4 +295,5 @@ public class MessageAttributeValue implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

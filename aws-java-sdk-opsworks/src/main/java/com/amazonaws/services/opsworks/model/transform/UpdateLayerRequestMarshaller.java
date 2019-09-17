@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,156 +12,94 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateLayerRequest Marshaller
+ * UpdateLayerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLayerRequest>, UpdateLayerRequest> {
+@SdkInternalApi
+public class UpdateLayerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SHORTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Shortname").build();
+    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogsConfiguration").build();
+    private static final MarshallingInfo<String> CUSTOMINSTANCEPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomInstanceProfileArn").build();
+    private static final MarshallingInfo<String> CUSTOMJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomJson").build();
+    private static final MarshallingInfo<List> CUSTOMSECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomSecurityGroupIds").build();
+    private static final MarshallingInfo<List> PACKAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Packages").build();
+    private static final MarshallingInfo<List> VOLUMECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeConfigurations").build();
+    private static final MarshallingInfo<Boolean> ENABLEAUTOHEALING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableAutoHealing").build();
+    private static final MarshallingInfo<Boolean> AUTOASSIGNELASTICIPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoAssignElasticIps").build();
+    private static final MarshallingInfo<Boolean> AUTOASSIGNPUBLICIPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoAssignPublicIps").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMRECIPES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomRecipes").build();
+    private static final MarshallingInfo<Boolean> INSTALLUPDATESONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstallUpdatesOnBoot").build();
+    private static final MarshallingInfo<Boolean> USEEBSOPTIMIZEDINSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseEbsOptimizedInstances").build();
+    private static final MarshallingInfo<StructuredPojo> LIFECYCLEEVENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleEventConfiguration").build();
 
-    public UpdateLayerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateLayerRequestMarshaller instance = new UpdateLayerRequestMarshaller();
+
+    public static UpdateLayerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateLayerRequest> marshall(UpdateLayerRequest updateLayerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateLayerRequest updateLayerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateLayerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateLayerRequest> request = new DefaultRequest<UpdateLayerRequest>(updateLayerRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.UpdateLayer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateLayerRequest.getLayerId() != null) {
-                jsonGenerator.writeFieldName("LayerId").writeValue(updateLayerRequest.getLayerId());
-            }
-            if (updateLayerRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateLayerRequest.getName());
-            }
-            if (updateLayerRequest.getShortname() != null) {
-                jsonGenerator.writeFieldName("Shortname").writeValue(updateLayerRequest.getShortname());
-            }
-
-            com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) updateLayerRequest
-                    .getAttributes();
-            if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Attributes");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> attributesMapValue : attributesMap.entrySet()) {
-                    if (attributesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(attributesMapValue.getKey());
-
-                        jsonGenerator.writeValue(attributesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (updateLayerRequest.getCustomInstanceProfileArn() != null) {
-                jsonGenerator.writeFieldName("CustomInstanceProfileArn").writeValue(updateLayerRequest.getCustomInstanceProfileArn());
-            }
-            if (updateLayerRequest.getCustomJson() != null) {
-                jsonGenerator.writeFieldName("CustomJson").writeValue(updateLayerRequest.getCustomJson());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> customSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) updateLayerRequest
-                    .getCustomSecurityGroupIds();
-            if (!customSecurityGroupIdsList.isEmpty() || !customSecurityGroupIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("CustomSecurityGroupIds");
-                jsonGenerator.writeStartArray();
-                for (String customSecurityGroupIdsListValue : customSecurityGroupIdsList) {
-                    if (customSecurityGroupIdsListValue != null) {
-                        jsonGenerator.writeValue(customSecurityGroupIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> packagesList = (com.amazonaws.internal.SdkInternalList<String>) updateLayerRequest.getPackages();
-            if (!packagesList.isEmpty() || !packagesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Packages");
-                jsonGenerator.writeStartArray();
-                for (String packagesListValue : packagesList) {
-                    if (packagesListValue != null) {
-                        jsonGenerator.writeValue(packagesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<VolumeConfiguration> volumeConfigurationsList = (com.amazonaws.internal.SdkInternalList<VolumeConfiguration>) updateLayerRequest
-                    .getVolumeConfigurations();
-            if (!volumeConfigurationsList.isEmpty() || !volumeConfigurationsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("VolumeConfigurations");
-                jsonGenerator.writeStartArray();
-                for (VolumeConfiguration volumeConfigurationsListValue : volumeConfigurationsList) {
-                    if (volumeConfigurationsListValue != null) {
-
-                        VolumeConfigurationJsonMarshaller.getInstance().marshall(volumeConfigurationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateLayerRequest.getEnableAutoHealing() != null) {
-                jsonGenerator.writeFieldName("EnableAutoHealing").writeValue(updateLayerRequest.getEnableAutoHealing());
-            }
-            if (updateLayerRequest.getAutoAssignElasticIps() != null) {
-                jsonGenerator.writeFieldName("AutoAssignElasticIps").writeValue(updateLayerRequest.getAutoAssignElasticIps());
-            }
-            if (updateLayerRequest.getAutoAssignPublicIps() != null) {
-                jsonGenerator.writeFieldName("AutoAssignPublicIps").writeValue(updateLayerRequest.getAutoAssignPublicIps());
-            }
-            if (updateLayerRequest.getCustomRecipes() != null) {
-                jsonGenerator.writeFieldName("CustomRecipes");
-                RecipesJsonMarshaller.getInstance().marshall(updateLayerRequest.getCustomRecipes(), jsonGenerator);
-            }
-            if (updateLayerRequest.getInstallUpdatesOnBoot() != null) {
-                jsonGenerator.writeFieldName("InstallUpdatesOnBoot").writeValue(updateLayerRequest.getInstallUpdatesOnBoot());
-            }
-            if (updateLayerRequest.getUseEbsOptimizedInstances() != null) {
-                jsonGenerator.writeFieldName("UseEbsOptimizedInstances").writeValue(updateLayerRequest.getUseEbsOptimizedInstances());
-            }
-            if (updateLayerRequest.getLifecycleEventConfiguration() != null) {
-                jsonGenerator.writeFieldName("LifecycleEventConfiguration");
-                LifecycleEventConfigurationJsonMarshaller.getInstance().marshall(updateLayerRequest.getLifecycleEventConfiguration(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateLayerRequest.getLayerId(), LAYERID_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getShortname(), SHORTNAME_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getCloudWatchLogsConfiguration(), CLOUDWATCHLOGSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getCustomInstanceProfileArn(), CUSTOMINSTANCEPROFILEARN_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getCustomJson(), CUSTOMJSON_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getCustomSecurityGroupIds(), CUSTOMSECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getPackages(), PACKAGES_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getVolumeConfigurations(), VOLUMECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getEnableAutoHealing(), ENABLEAUTOHEALING_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getAutoAssignElasticIps(), AUTOASSIGNELASTICIPS_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getAutoAssignPublicIps(), AUTOASSIGNPUBLICIPS_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getCustomRecipes(), CUSTOMRECIPES_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getInstallUpdatesOnBoot(), INSTALLUPDATESONBOOT_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getUseEbsOptimizedInstances(), USEEBSOPTIMIZEDINSTANCES_BINDING);
+            protocolMarshaller.marshall(updateLayerRequest.getLifecycleEventConfiguration(), LIFECYCLEEVENTCONFIGURATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

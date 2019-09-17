@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,66 +12,44 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ResendContactReachabilityEmailRequest Marshaller
+ * ResendContactReachabilityEmailRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResendContactReachabilityEmailRequestMarshaller implements
-        Marshaller<Request<ResendContactReachabilityEmailRequest>, ResendContactReachabilityEmailRequest> {
+@SdkInternalApi
+public class ResendContactReachabilityEmailRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
 
-    public ResendContactReachabilityEmailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ResendContactReachabilityEmailRequestMarshaller instance = new ResendContactReachabilityEmailRequestMarshaller();
+
+    public static ResendContactReachabilityEmailRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ResendContactReachabilityEmailRequest> marshall(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (resendContactReachabilityEmailRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ResendContactReachabilityEmailRequest> request = new DefaultRequest<ResendContactReachabilityEmailRequest>(
-                resendContactReachabilityEmailRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.ResendContactReachabilityEmail");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (resendContactReachabilityEmailRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("domainName").writeValue(resendContactReachabilityEmailRequest.getDomainName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(resendContactReachabilityEmailRequest.getDomainName(), DOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

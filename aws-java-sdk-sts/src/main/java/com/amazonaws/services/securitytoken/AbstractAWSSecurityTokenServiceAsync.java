@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,19 @@ public class AbstractAWSSecurityTokenServiceAsync extends AbstractAWSSecurityTok
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessKeyInfoResult> getAccessKeyInfoAsync(GetAccessKeyInfoRequest request) {
+
+        return getAccessKeyInfoAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessKeyInfoResult> getAccessKeyInfoAsync(GetAccessKeyInfoRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessKeyInfoRequest, GetAccessKeyInfoResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(GetCallerIdentityRequest request) {
 
         return getCallerIdentityAsync(request, null);
@@ -134,6 +147,7 @@ public class AbstractAWSSecurityTokenServiceAsync extends AbstractAWSSecurityTok
      *
      * @see #getSessionTokenAsync(GetSessionTokenRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSessionTokenResult> getSessionTokenAsync(
             com.amazonaws.handlers.AsyncHandler<GetSessionTokenRequest, GetSessionTokenResult> asyncHandler) {
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,7 +103,7 @@ public class MetricAlarm implements Serializable, Cloneable {
     private java.util.Date stateUpdatedTimestamp;
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      */
     private String metricName;
@@ -152,6 +152,12 @@ public class MetricAlarm implements Serializable, Cloneable {
     private Integer evaluationPeriods;
     /**
      * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     */
+    private Integer datapointsToAlarm;
+    /**
+     * <p>
      * The value to compare with the specified statistic.
      * </p>
      */
@@ -163,6 +169,36 @@ public class MetricAlarm implements Serializable, Cloneable {
      * </p>
      */
     private String comparisonOperator;
+    /**
+     * <p>
+     * Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of
+     * <code>missing</code> is used.
+     * </p>
+     */
+    private String treatMissingData;
+    /**
+     * <p>
+     * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
+     * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
+     * </p>
+     */
+    private String evaluateLowSampleCountPercentile;
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     */
+    private String thresholdMetricId;
 
     /**
      * <p>
@@ -673,7 +709,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        withStateValue(stateValue);
     }
 
     /**
@@ -688,7 +724,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withStateValue(StateValue stateValue) {
-        setStateValue(stateValue);
+        this.stateValue = stateValue.toString();
         return this;
     }
 
@@ -814,11 +850,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric associated with the alarm.
+     *        The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      */
 
     public void setMetricName(String metricName) {
@@ -827,10 +863,10 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
-     * @return The name of the metric associated with the alarm.
+     * @return The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      */
 
     public String getMetricName() {
@@ -839,11 +875,11 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the metric associated with the alarm.
+     * The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric associated with the alarm.
+     *        The name of the metric associated with the alarm, if this is an alarm based on a single metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -954,7 +990,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -971,7 +1007,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 
@@ -1182,7 +1218,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -1197,7 +1233,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 
@@ -1238,6 +1274,46 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     public MetricAlarm withEvaluationPeriods(Integer evaluationPeriods) {
         setEvaluationPeriods(evaluationPeriods);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public void setDatapointsToAlarm(Integer datapointsToAlarm) {
+        this.datapointsToAlarm = datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @return The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public Integer getDatapointsToAlarm() {
+        return this.datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withDatapointsToAlarm(Integer datapointsToAlarm) {
+        setDatapointsToAlarm(datapointsToAlarm);
         return this;
     }
 
@@ -1343,7 +1419,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -1360,12 +1436,253 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of
+     * <code>missing</code> is used.
+     * </p>
+     * 
+     * @param treatMissingData
+     *        Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior
+     *        of <code>missing</code> is used.
+     */
+
+    public void setTreatMissingData(String treatMissingData) {
+        this.treatMissingData = treatMissingData;
+    }
+
+    /**
+     * <p>
+     * Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of
+     * <code>missing</code> is used.
+     * </p>
+     * 
+     * @return Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior
+     *         of <code>missing</code> is used.
+     */
+
+    public String getTreatMissingData() {
+        return this.treatMissingData;
+    }
+
+    /**
+     * <p>
+     * Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of
+     * <code>missing</code> is used.
+     * </p>
+     * 
+     * @param treatMissingData
+     *        Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior
+     *        of <code>missing</code> is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withTreatMissingData(String treatMissingData) {
+        setTreatMissingData(treatMissingData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
+     * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
+     * </p>
+     * 
+     * @param evaluateLowSampleCountPercentile
+     *        Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
+     *        periods with too few data points to be statistically significant. If <code>evaluate</code> or this
+     *        parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *        points are available.
+     */
+
+    public void setEvaluateLowSampleCountPercentile(String evaluateLowSampleCountPercentile) {
+        this.evaluateLowSampleCountPercentile = evaluateLowSampleCountPercentile;
+    }
+
+    /**
+     * <p>
+     * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
+     * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
+     * </p>
+     * 
+     * @return Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
+     *         periods with too few data points to be statistically significant. If <code>evaluate</code> or this
+     *         parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *         points are available.
+     */
+
+    public String getEvaluateLowSampleCountPercentile() {
+        return this.evaluateLowSampleCountPercentile;
+    }
+
+    /**
+     * <p>
+     * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
+     * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
+     * </p>
+     * 
+     * @param evaluateLowSampleCountPercentile
+     *        Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
+     *        periods with too few data points to be statistically significant. If <code>evaluate</code> or this
+     *        parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *        points are available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withEvaluateLowSampleCountPercentile(String evaluateLowSampleCountPercentile) {
+        setEvaluateLowSampleCountPercentile(evaluateLowSampleCountPercentile);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     * 
+     * @return An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each
+     *         structure either retrieves a metric or performs a math expression. One item in the Metrics array is the
+     *         math expression that the alarm watches. This expression by designated by having <code>ReturnValue</code>
+     *         set to true.
+     */
+
+    public java.util.List<MetricDataQuery> getMetrics() {
+        if (metrics == null) {
+            metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>();
+        }
+        return metrics;
+    }
+
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
+     */
+
+    public void setMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        if (metrics == null) {
+            this.metrics = null;
+            return;
+        }
+
+        this.metrics = new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics);
+    }
+
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withMetrics(MetricDataQuery... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new com.amazonaws.internal.SdkInternalList<MetricDataQuery>(metrics.length));
+        }
+        for (MetricDataQuery ele : metrics) {
+            this.metrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure either
+     * retrieves a metric or performs a math expression. One item in the Metrics array is the math expression that the
+     * alarm watches. This expression by designated by having <code>ReturnValue</code> set to true.
+     * </p>
+     * 
+     * @param metrics
+     *        An array of MetricDataQuery structures, used in an alarm based on a metric math expression. Each structure
+     *        either retrieves a metric or performs a math expression. One item in the Metrics array is the math
+     *        expression that the alarm watches. This expression by designated by having <code>ReturnValue</code> set to
+     *        true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withMetrics(java.util.Collection<MetricDataQuery> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     *        function used as the threshold for the alarm.
+     */
+
+    public void setThresholdMetricId(String thresholdMetricId) {
+        this.thresholdMetricId = thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @return In an alarm based on an anomaly detection model, this is the ID of the
+     *         <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm.
+     */
+
+    public String getThresholdMetricId() {
+        return this.thresholdMetricId;
+    }
+
+    /**
+     * <p>
+     * In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     * function used as the threshold for the alarm.
+     * </p>
+     * 
+     * @param thresholdMetricId
+     *        In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+     *        function used as the threshold for the alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withThresholdMetricId(String thresholdMetricId) {
+        setThresholdMetricId(thresholdMetricId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1415,10 +1732,20 @@ public class MetricAlarm implements Serializable, Cloneable {
             sb.append("Unit: ").append(getUnit()).append(",");
         if (getEvaluationPeriods() != null)
             sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
+        if (getDatapointsToAlarm() != null)
+            sb.append("DatapointsToAlarm: ").append(getDatapointsToAlarm()).append(",");
         if (getThreshold() != null)
             sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: ").append(getComparisonOperator());
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
+        if (getTreatMissingData() != null)
+            sb.append("TreatMissingData: ").append(getTreatMissingData()).append(",");
+        if (getEvaluateLowSampleCountPercentile() != null)
+            sb.append("EvaluateLowSampleCountPercentile: ").append(getEvaluateLowSampleCountPercentile()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getThresholdMetricId() != null)
+            sb.append("ThresholdMetricId: ").append(getThresholdMetricId());
         sb.append("}");
         return sb.toString();
     }
@@ -1514,6 +1841,10 @@ public class MetricAlarm implements Serializable, Cloneable {
             return false;
         if (other.getEvaluationPeriods() != null && other.getEvaluationPeriods().equals(this.getEvaluationPeriods()) == false)
             return false;
+        if (other.getDatapointsToAlarm() == null ^ this.getDatapointsToAlarm() == null)
+            return false;
+        if (other.getDatapointsToAlarm() != null && other.getDatapointsToAlarm().equals(this.getDatapointsToAlarm()) == false)
+            return false;
         if (other.getThreshold() == null ^ this.getThreshold() == null)
             return false;
         if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false)
@@ -1521,6 +1852,23 @@ public class MetricAlarm implements Serializable, Cloneable {
         if (other.getComparisonOperator() == null ^ this.getComparisonOperator() == null)
             return false;
         if (other.getComparisonOperator() != null && other.getComparisonOperator().equals(this.getComparisonOperator()) == false)
+            return false;
+        if (other.getTreatMissingData() == null ^ this.getTreatMissingData() == null)
+            return false;
+        if (other.getTreatMissingData() != null && other.getTreatMissingData().equals(this.getTreatMissingData()) == false)
+            return false;
+        if (other.getEvaluateLowSampleCountPercentile() == null ^ this.getEvaluateLowSampleCountPercentile() == null)
+            return false;
+        if (other.getEvaluateLowSampleCountPercentile() != null
+                && other.getEvaluateLowSampleCountPercentile().equals(this.getEvaluateLowSampleCountPercentile()) == false)
+            return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
+        if (other.getThresholdMetricId() == null ^ this.getThresholdMetricId() == null)
+            return false;
+        if (other.getThresholdMetricId() != null && other.getThresholdMetricId().equals(this.getThresholdMetricId()) == false)
             return false;
         return true;
     }
@@ -1550,8 +1898,13 @@ public class MetricAlarm implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode());
+        hashCode = prime * hashCode + ((getDatapointsToAlarm() == null) ? 0 : getDatapointsToAlarm().hashCode());
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
+        hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateLowSampleCountPercentile() == null) ? 0 : getEvaluateLowSampleCountPercentile().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getThresholdMetricId() == null) ? 0 : getThresholdMetricId().hashCode());
         return hashCode;
     }
 
@@ -1563,4 +1916,5 @@ public class MetricAlarm implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

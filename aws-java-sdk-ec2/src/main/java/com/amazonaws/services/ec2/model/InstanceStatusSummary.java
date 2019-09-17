@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,89 +28,16 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
      * The system instance health or application instance health.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceStatusDetails> details;
-
     /**
      * <p>
      * The status.
      * </p>
-     * 
-     * @param status
-     *        The status.
-     * @see SummaryStatus
      */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status.
-     * </p>
-     * 
-     * @return The status.
-     * @see SummaryStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status.
-     * </p>
-     * 
-     * @param status
-     *        The status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SummaryStatus
-     */
-
-    public InstanceStatusSummary withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status.
-     * </p>
-     * 
-     * @param status
-     *        The status.
-     * @see SummaryStatus
-     */
-
-    public void setStatus(SummaryStatus status) {
-        this.status = status.toString();
-    }
-
-    /**
-     * <p>
-     * The status.
-     * </p>
-     * 
-     * @param status
-     *        The status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SummaryStatus
-     */
-
-    public InstanceStatusSummary withStatus(SummaryStatus status) {
-        setStatus(status);
-        return this;
-    }
+    private String status;
 
     /**
      * <p>
@@ -186,7 +113,81 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The status.
+     * </p>
+     * 
+     * @param status
+     *        The status.
+     * @see SummaryStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status.
+     * </p>
+     * 
+     * @return The status.
+     * @see SummaryStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status.
+     * </p>
+     * 
+     * @param status
+     *        The status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SummaryStatus
+     */
+
+    public InstanceStatusSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status.
+     * </p>
+     * 
+     * @param status
+     *        The status.
+     * @see SummaryStatus
+     */
+
+    public void setStatus(SummaryStatus status) {
+        withStatus(status);
+    }
+
+    /**
+     * <p>
+     * The status.
+     * </p>
+     * 
+     * @param status
+     *        The status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SummaryStatus
+     */
+
+    public InstanceStatusSummary withStatus(SummaryStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -196,10 +197,10 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -214,13 +215,13 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
         if (obj instanceof InstanceStatusSummary == false)
             return false;
         InstanceStatusSummary other = (InstanceStatusSummary) obj;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -230,8 +231,8 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 
@@ -243,4 +244,5 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

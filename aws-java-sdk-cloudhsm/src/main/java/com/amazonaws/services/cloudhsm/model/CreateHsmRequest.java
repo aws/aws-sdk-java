@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>CreateHsm</a> operation.
+ * Contains the inputs for the <code>CreateHsm</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm" target="_top">AWS API
@@ -57,7 +57,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String iamRoleArn;
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      */
     private String externalId;
@@ -258,11 +258,11 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
      * @param externalId
-     *        The external ID from <b>IamRoleArn</b>, if present.
+     *        The external ID from <code>IamRoleArn</code>, if present.
      */
 
     public void setExternalId(String externalId) {
@@ -271,10 +271,10 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
-     * @return The external ID from <b>IamRoleArn</b>, if present.
+     * @return The external ID from <code>IamRoleArn</code>, if present.
      */
 
     public String getExternalId() {
@@ -283,11 +283,11 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
      * @param externalId
-     *        The external ID from <b>IamRoleArn</b>, if present.
+     *        The external ID from <code>IamRoleArn</code>, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,7 +331,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
@@ -341,7 +341,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateHsmRequest withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 
@@ -438,7 +438,8 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

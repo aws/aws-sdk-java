@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,57 +28,17 @@ public class TargetReservationValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration of the Convertible Reserved Instances that make up the exchange.
-     * </p>
-     */
-    private TargetConfiguration targetConfiguration;
-    /**
-     * <p>
      * The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list
      * value, remaining upfront price, and additional upfront cost of the exchange.
      * </p>
      */
     private ReservationValue reservationValue;
-
     /**
      * <p>
      * The configuration of the Convertible Reserved Instances that make up the exchange.
      * </p>
-     * 
-     * @param targetConfiguration
-     *        The configuration of the Convertible Reserved Instances that make up the exchange.
      */
-
-    public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
-        this.targetConfiguration = targetConfiguration;
-    }
-
-    /**
-     * <p>
-     * The configuration of the Convertible Reserved Instances that make up the exchange.
-     * </p>
-     * 
-     * @return The configuration of the Convertible Reserved Instances that make up the exchange.
-     */
-
-    public TargetConfiguration getTargetConfiguration() {
-        return this.targetConfiguration;
-    }
-
-    /**
-     * <p>
-     * The configuration of the Convertible Reserved Instances that make up the exchange.
-     * </p>
-     * 
-     * @param targetConfiguration
-     *        The configuration of the Convertible Reserved Instances that make up the exchange.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TargetReservationValue withTargetConfiguration(TargetConfiguration targetConfiguration) {
-        setTargetConfiguration(targetConfiguration);
-        return this;
-    }
+    private TargetConfiguration targetConfiguration;
 
     /**
      * <p>
@@ -127,7 +87,48 @@ public class TargetReservationValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The configuration of the Convertible Reserved Instances that make up the exchange.
+     * </p>
+     * 
+     * @param targetConfiguration
+     *        The configuration of the Convertible Reserved Instances that make up the exchange.
+     */
+
+    public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
+        this.targetConfiguration = targetConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration of the Convertible Reserved Instances that make up the exchange.
+     * </p>
+     * 
+     * @return The configuration of the Convertible Reserved Instances that make up the exchange.
+     */
+
+    public TargetConfiguration getTargetConfiguration() {
+        return this.targetConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration of the Convertible Reserved Instances that make up the exchange.
+     * </p>
+     * 
+     * @param targetConfiguration
+     *        The configuration of the Convertible Reserved Instances that make up the exchange.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetReservationValue withTargetConfiguration(TargetConfiguration targetConfiguration) {
+        setTargetConfiguration(targetConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -137,10 +138,10 @@ public class TargetReservationValue implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTargetConfiguration() != null)
-            sb.append("TargetConfiguration: ").append(getTargetConfiguration()).append(",");
         if (getReservationValue() != null)
-            sb.append("ReservationValue: ").append(getReservationValue());
+            sb.append("ReservationValue: ").append(getReservationValue()).append(",");
+        if (getTargetConfiguration() != null)
+            sb.append("TargetConfiguration: ").append(getTargetConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -155,13 +156,13 @@ public class TargetReservationValue implements Serializable, Cloneable {
         if (obj instanceof TargetReservationValue == false)
             return false;
         TargetReservationValue other = (TargetReservationValue) obj;
-        if (other.getTargetConfiguration() == null ^ this.getTargetConfiguration() == null)
-            return false;
-        if (other.getTargetConfiguration() != null && other.getTargetConfiguration().equals(this.getTargetConfiguration()) == false)
-            return false;
         if (other.getReservationValue() == null ^ this.getReservationValue() == null)
             return false;
         if (other.getReservationValue() != null && other.getReservationValue().equals(this.getReservationValue()) == false)
+            return false;
+        if (other.getTargetConfiguration() == null ^ this.getTargetConfiguration() == null)
+            return false;
+        if (other.getTargetConfiguration() != null && other.getTargetConfiguration().equals(this.getTargetConfiguration()) == false)
             return false;
         return true;
     }
@@ -171,8 +172,8 @@ public class TargetReservationValue implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTargetConfiguration() == null) ? 0 : getTargetConfiguration().hashCode());
         hashCode = prime * hashCode + ((getReservationValue() == null) ? 0 : getReservationValue().hashCode());
+        hashCode = prime * hashCode + ((getTargetConfiguration() == null) ? 0 : getTargetConfiguration().hashCode());
         return hashCode;
     }
 
@@ -184,4 +185,5 @@ public class TargetReservationValue implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

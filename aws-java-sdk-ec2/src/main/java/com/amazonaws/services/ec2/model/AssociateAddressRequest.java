@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,13 +20,17 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AssociateAddressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AssociateAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AssociateAddressRequest> {
 
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     */
+    private String allocationId;
     /**
      * <p>
      * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
@@ -37,30 +41,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     private String instanceId;
     /**
      * <p>
-     * The Elastic IP address. This is required for EC2-Classic.
+     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      */
     private String publicIp;
-    /**
-     * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     * </p>
-     */
-    private String allocationId;
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
-     * a network interface ID.
-     * </p>
-     */
-    private String networkInterfaceId;
-    /**
-     * <p>
-     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
-     * address is specified, the Elastic IP address is associated with the primary private IP address.
-     * </p>
-     */
-    private String privateIpAddress;
     /**
      * <p>
      * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
@@ -71,6 +55,23 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private Boolean allowReassociation;
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
+     * a network interface ID.
+     * </p>
+     * <p>
+     * For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     * </p>
+     */
+    private String networkInterfaceId;
+    /**
+     * <p>
+     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
+     * address is specified, the Elastic IP address is associated with the primary private IP address.
+     * </p>
+     */
+    private String privateIpAddress;
 
     /**
      * Default constructor for AssociateAddressRequest object. Callers should use the setter or fluent setter (with...)
@@ -88,11 +89,51 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      *        ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless
      *        exactly one network interface is attached.
      * @param publicIp
-     *        The Elastic IP address. This is required for EC2-Classic.
+     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
     public AssociateAddressRequest(String instanceId, String publicIp) {
         setInstanceId(instanceId);
         setPublicIp(publicIp);
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     */
+
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     */
+
+    public String getAllocationId() {
+        return this.allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateAddressRequest withAllocationId(String allocationId) {
+        setAllocationId(allocationId);
+        return this;
     }
 
     /**
@@ -149,11 +190,11 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address. This is required for EC2-Classic.
+     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
      * @param publicIp
-     *        The Elastic IP address. This is required for EC2-Classic.
+     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
 
     public void setPublicIp(String publicIp) {
@@ -162,10 +203,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address. This is required for EC2-Classic.
+     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
-     * @return The Elastic IP address. This is required for EC2-Classic.
+     * @return The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
 
     public String getPublicIp() {
@@ -174,149 +215,16 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address. This is required for EC2-Classic.
+     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
      * @param publicIp
-     *        The Elastic IP address. This is required for EC2-Classic.
+     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssociateAddressRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     * </p>
-     * 
-     * @param allocationId
-     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     */
-
-    public void setAllocationId(String allocationId) {
-        this.allocationId = allocationId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     * </p>
-     * 
-     * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     */
-
-    public String getAllocationId() {
-        return this.allocationId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     * </p>
-     * 
-     * @param allocationId
-     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateAddressRequest withAllocationId(String allocationId) {
-        setAllocationId(allocationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
-     * a network interface ID.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
-     *        specify a network interface ID.
-     */
-
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
-     * a network interface ID.
-     * </p>
-     * 
-     * @return [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
-     *         specify a network interface ID.
-     */
-
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
-     * a network interface ID.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
-     *        specify a network interface ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateAddressRequest withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
-     * address is specified, the Elastic IP address is associated with the primary private IP address.
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
-     *        private IP address is specified, the Elastic IP address is associated with the primary private IP address.
-     */
-
-    public void setPrivateIpAddress(String privateIpAddress) {
-        this.privateIpAddress = privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
-     * address is specified, the Elastic IP address is associated with the primary private IP address.
-     * </p>
-     * 
-     * @return [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
-     *         private IP address is specified, the Elastic IP address is associated with the primary private IP
-     *         address.
-     */
-
-    public String getPrivateIpAddress() {
-        return this.privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
-     * address is specified, the Elastic IP address is associated with the primary private IP address.
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
-     *        private IP address is specified, the Elastic IP address is associated with the primary private IP address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateAddressRequest withPrivateIpAddress(String privateIpAddress) {
-        setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
@@ -405,6 +313,114 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
+     * a network interface ID.
+     * </p>
+     * <p>
+     * For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
+     *        specify a network interface ID.</p>
+     *        <p>
+     *        For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
+     * a network interface ID.
+     * </p>
+     * <p>
+     * For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     * </p>
+     * 
+     * @return [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
+     *         specify a network interface ID.</p>
+     *         <p>
+     *         For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
+     * a network interface ID.
+     * </p>
+     * <p>
+     * For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must
+     *        specify a network interface ID.</p>
+     *        <p>
+     *        For EC2-VPC, you can specify either the instance ID or the network interface ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateAddressRequest withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
+     * address is specified, the Elastic IP address is associated with the primary private IP address.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
+     *        private IP address is specified, the Elastic IP address is associated with the primary private IP address.
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
+     * address is specified, the Elastic IP address is associated with the primary private IP address.
+     * </p>
+     * 
+     * @return [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
+     *         private IP address is specified, the Elastic IP address is associated with the primary private IP
+     *         address.
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP
+     * address is specified, the Elastic IP address is associated with the primary private IP address.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no
+     *        private IP address is specified, the Elastic IP address is associated with the primary private IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateAddressRequest withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -416,7 +432,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -426,18 +443,18 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllocationId() != null)
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPublicIp() != null)
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
-        if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getAllowReassociation() != null)
+            sb.append("AllowReassociation: ").append(getAllowReassociation()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
-        if (getAllowReassociation() != null)
-            sb.append("AllowReassociation: ").append(getAllowReassociation());
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +469,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof AssociateAddressRequest == false)
             return false;
         AssociateAddressRequest other = (AssociateAddressRequest) obj;
+        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+            return false;
+        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -460,9 +481,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
-        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+        if (other.getAllowReassociation() == null ^ this.getAllowReassociation() == null)
             return false;
-        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+        if (other.getAllowReassociation() != null && other.getAllowReassociation().equals(this.getAllowReassociation()) == false)
             return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
@@ -472,10 +493,6 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
-        if (other.getAllowReassociation() == null ^ this.getAllowReassociation() == null)
-            return false;
-        if (other.getAllowReassociation() != null && other.getAllowReassociation().equals(this.getAllowReassociation()) == false)
-            return false;
         return true;
     }
 
@@ -484,12 +501,12 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getAllowReassociation() == null) ? 0 : getAllowReassociation().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
-        hashCode = prime * hashCode + ((getAllowReassociation() == null) ? 0 : getAllowReassociation().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,78 +12,48 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutInventoryRequest Marshaller
+ * PutInventoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutInventoryRequestMarshaller implements Marshaller<Request<PutInventoryRequest>, PutInventoryRequest> {
+@SdkInternalApi
+public class PutInventoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Items").build();
 
-    public PutInventoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutInventoryRequestMarshaller instance = new PutInventoryRequestMarshaller();
+
+    public static PutInventoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutInventoryRequest> marshall(PutInventoryRequest putInventoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutInventoryRequest putInventoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putInventoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutInventoryRequest> request = new DefaultRequest<PutInventoryRequest>(putInventoryRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.PutInventory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putInventoryRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(putInventoryRequest.getInstanceId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<InventoryItem> itemsList = (com.amazonaws.internal.SdkInternalList<InventoryItem>) putInventoryRequest
-                    .getItems();
-            if (!itemsList.isEmpty() || !itemsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Items");
-                jsonGenerator.writeStartArray();
-                for (InventoryItem itemsListValue : itemsList) {
-                    if (itemsListValue != null) {
-
-                        InventoryItemJsonMarshaller.getInstance().marshall(itemsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putInventoryRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(putInventoryRequest.getItems(), ITEMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

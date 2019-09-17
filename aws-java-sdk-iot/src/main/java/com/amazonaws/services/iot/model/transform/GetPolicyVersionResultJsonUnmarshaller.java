@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,18 @@ public class GetPolicyVersionResultJsonUnmarshaller implements Unmarshaller<GetP
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
                     context.nextToken();
                     getPolicyVersionResult.setIsDefaultVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("creationDate", targetDepth)) {
+                    context.nextToken();
+                    getPolicyVersionResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    getPolicyVersionResult.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("generationId", targetDepth)) {
+                    context.nextToken();
+                    getPolicyVersionResult.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

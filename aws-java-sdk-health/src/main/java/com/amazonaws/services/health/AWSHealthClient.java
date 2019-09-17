@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.health.AWSHealthClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -98,10 +101,11 @@ import com.amazonaws.services.health.model.transform.*;
  * </p>
  * <p>
  * For authentication of requests, AWS Health uses the <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
+ * Process</a>.
  * </p>
  * <p>
- * See the <a href="http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS Health User Guide</a> for
+ * See the <a href="https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS Health User Guide</a> for
  * information about how to use the API.
  * </p>
  * <p>
@@ -121,6 +125,7 @@ import com.amazonaws.services.health.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -132,17 +137,19 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withModeledClass(
-                                    com.amazonaws.services.health.model.UnsupportedLocaleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withExceptionUnmarshaller(
+                                    com.amazonaws.services.health.model.transform.UnsupportedLocaleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withModeledClass(
-                                    com.amazonaws.services.health.model.InvalidPaginationTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withExceptionUnmarshaller(
+                                    com.amazonaws.services.health.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.health.model.AWSHealthException.class));
 
     /**
@@ -228,6 +235,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     public AWSHealthClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -292,7 +300,12 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     public AWSHealthClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AWSHealthClientBuilder builder() {
+        return AWSHealthClientBuilder.standard();
     }
 
     /**
@@ -306,8 +319,23 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *        Object providing client parameters.
      */
     AWSHealthClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWSHealth using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSHealthClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -345,7 +373,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
+    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAffectedEntities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAffectedEntitiesResult executeDescribeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAffectedEntitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -356,9 +390,15 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAffectedEntitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAffectedEntitiesRequest));
+                request = new DescribeAffectedEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAffectedEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAffectedEntities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -389,7 +429,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
+    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntityAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntityAggregatesResult executeDescribeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEntityAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -400,9 +446,15 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEntityAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEntityAggregatesRequest));
+                request = new DescribeEntityAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntityAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntityAggregates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -435,7 +487,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
+    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventAggregatesResult executeDescribeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -446,9 +504,15 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventAggregatesRequest));
+                request = new DescribeEventAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventAggregates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -486,7 +550,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
+    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventDetails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventDetailsResult executeDescribeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -497,9 +567,14 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
+                request = new DescribeEventDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -533,7 +608,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
+    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventTypesResult executeDescribeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -544,9 +625,14 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
+                request = new DescribeEventTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -586,7 +672,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -597,9 +689,14 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
+                request = new DescribeEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -640,9 +737,18 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -652,7 +758,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -660,13 +766,27 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

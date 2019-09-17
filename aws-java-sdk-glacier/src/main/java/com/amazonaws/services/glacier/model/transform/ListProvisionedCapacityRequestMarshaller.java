@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListProvisionedCapacityRequest Marshaller
+ * ListProvisionedCapacityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListProvisionedCapacityRequestMarshaller implements Marshaller<Request<ListProvisionedCapacityRequest>, ListProvisionedCapacityRequest> {
+@SdkInternalApi
+public class ListProvisionedCapacityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
 
-    public ListProvisionedCapacityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListProvisionedCapacityRequestMarshaller instance = new ListProvisionedCapacityRequestMarshaller();
+
+    public static ListProvisionedCapacityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListProvisionedCapacityRequest> marshall(ListProvisionedCapacityRequest listProvisionedCapacityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListProvisionedCapacityRequest listProvisionedCapacityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listProvisionedCapacityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListProvisionedCapacityRequest> request = new DefaultRequest<ListProvisionedCapacityRequest>(listProvisionedCapacityRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/provisioned-capacity";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                listProvisionedCapacityRequest.getAccountId() == null ? "-" : listProvisionedCapacityRequest.getAccountId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(listProvisionedCapacityRequest.getAccountId(), ACCOUNTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

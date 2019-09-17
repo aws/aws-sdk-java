@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,77 +12,63 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateMicrosoftADRequest Marshaller
+ * CreateMicrosoftADRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateMicrosoftADRequestMarshaller implements Marshaller<Request<CreateMicrosoftADRequest>, CreateMicrosoftADRequest> {
+@SdkInternalApi
+public class CreateMicrosoftADRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SHORTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ShortName").build();
+    private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Password").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<StructuredPojo> VPCSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcSettings").build();
+    private static final MarshallingInfo<String> EDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Edition").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateMicrosoftADRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateMicrosoftADRequestMarshaller instance = new CreateMicrosoftADRequestMarshaller();
+
+    public static CreateMicrosoftADRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateMicrosoftADRequest> marshall(CreateMicrosoftADRequest createMicrosoftADRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateMicrosoftADRequest createMicrosoftADRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createMicrosoftADRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateMicrosoftADRequest> request = new DefaultRequest<CreateMicrosoftADRequest>(createMicrosoftADRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.CreateMicrosoftAD");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createMicrosoftADRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createMicrosoftADRequest.getName());
-            }
-            if (createMicrosoftADRequest.getShortName() != null) {
-                jsonGenerator.writeFieldName("ShortName").writeValue(createMicrosoftADRequest.getShortName());
-            }
-            if (createMicrosoftADRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(createMicrosoftADRequest.getPassword());
-            }
-            if (createMicrosoftADRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createMicrosoftADRequest.getDescription());
-            }
-            if (createMicrosoftADRequest.getVpcSettings() != null) {
-                jsonGenerator.writeFieldName("VpcSettings");
-                DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(createMicrosoftADRequest.getVpcSettings(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getShortName(), SHORTNAME_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getVpcSettings(), VPCSETTINGS_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getEdition(), EDITION_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

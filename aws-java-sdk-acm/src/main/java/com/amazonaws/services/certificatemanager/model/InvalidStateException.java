@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using
- * email validation, or the current certificate status does not permit the requested operation. See the exception
- * message returned by ACM to determine which state is not valid.
+ * Processing has reached an invalid state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

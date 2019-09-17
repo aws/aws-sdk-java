@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     */
     private String nodeAssociationStatusToken;
-
+    /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     */
     private String serverName;
 
     /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
      * @param nodeAssociationStatusToken
+     *        The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      */
 
     public void setNodeAssociationStatusToken(String nodeAssociationStatusToken) {
@@ -38,7 +52,11 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
+     * @return The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      */
 
     public String getNodeAssociationStatusToken() {
@@ -46,7 +64,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
      * @param nodeAssociationStatusToken
+     *        The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      */
 
     public void setServerName(String serverName) {
@@ -64,7 +92,11 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
+     * @return The name of the server from which to disassociate the node.
      */
 
     public String getServerName() {
@@ -72,7 +104,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +119,8 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

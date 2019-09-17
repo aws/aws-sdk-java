@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,5 +20,4 @@ import com.amazonaws.auth.Signer;
 public abstract class SignerProvider {
 
     public abstract Signer getSigner(SignerProviderContext context);
-
 }

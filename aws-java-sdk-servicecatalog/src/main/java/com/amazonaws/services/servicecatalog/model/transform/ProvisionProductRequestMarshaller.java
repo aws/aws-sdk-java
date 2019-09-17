@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,119 +12,75 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ProvisionProductRequest Marshaller
+ * ProvisionProductRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisionProductRequestMarshaller implements Marshaller<Request<ProvisionProductRequest>, ProvisionProductRequest> {
+@SdkInternalApi
+public class ProvisionProductRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PATHID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PathId").build();
+    private static final MarshallingInfo<String> PROVISIONEDPRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductName").build();
+    private static final MarshallingInfo<List> PROVISIONINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningParameters").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONINGPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningPreferences").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> NOTIFICATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationArns").build();
+    private static final MarshallingInfo<String> PROVISIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
-    public ProvisionProductRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ProvisionProductRequestMarshaller instance = new ProvisionProductRequestMarshaller();
+
+    public static ProvisionProductRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ProvisionProductRequest> marshall(ProvisionProductRequest provisionProductRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ProvisionProductRequest provisionProductRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (provisionProductRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ProvisionProductRequest> request = new DefaultRequest<ProvisionProductRequest>(provisionProductRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.ProvisionProduct");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (provisionProductRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(provisionProductRequest.getAcceptLanguage());
-            }
-            if (provisionProductRequest.getProductId() != null) {
-                jsonGenerator.writeFieldName("ProductId").writeValue(provisionProductRequest.getProductId());
-            }
-            if (provisionProductRequest.getProvisioningArtifactId() != null) {
-                jsonGenerator.writeFieldName("ProvisioningArtifactId").writeValue(provisionProductRequest.getProvisioningArtifactId());
-            }
-            if (provisionProductRequest.getPathId() != null) {
-                jsonGenerator.writeFieldName("PathId").writeValue(provisionProductRequest.getPathId());
-            }
-            if (provisionProductRequest.getProvisionedProductName() != null) {
-                jsonGenerator.writeFieldName("ProvisionedProductName").writeValue(provisionProductRequest.getProvisionedProductName());
-            }
-
-            java.util.List<ProvisioningParameter> provisioningParametersList = provisionProductRequest.getProvisioningParameters();
-            if (provisioningParametersList != null) {
-                jsonGenerator.writeFieldName("ProvisioningParameters");
-                jsonGenerator.writeStartArray();
-                for (ProvisioningParameter provisioningParametersListValue : provisioningParametersList) {
-                    if (provisioningParametersListValue != null) {
-
-                        ProvisioningParameterJsonMarshaller.getInstance().marshall(provisioningParametersListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<Tag> tagsList = provisionProductRequest.getTags();
-            if (tagsList != null) {
-                jsonGenerator.writeFieldName("Tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<String> notificationArnsList = provisionProductRequest.getNotificationArns();
-            if (notificationArnsList != null) {
-                jsonGenerator.writeFieldName("NotificationArns");
-                jsonGenerator.writeStartArray();
-                for (String notificationArnsListValue : notificationArnsList) {
-                    if (notificationArnsListValue != null) {
-                        jsonGenerator.writeValue(notificationArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            jsonGenerator.writeFieldName("ProvisionToken").writeValue(IdempotentUtils.resolveString(provisionProductRequest.getProvisionToken()));
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(provisionProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getPathId(), PATHID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisionedProductName(), PROVISIONEDPRODUCTNAME_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisioningParameters(), PROVISIONINGPARAMETERS_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisioningPreferences(), PROVISIONINGPREFERENCES_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getNotificationArns(), NOTIFICATIONARNS_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisionToken(), PROVISIONTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

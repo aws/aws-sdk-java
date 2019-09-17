@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
- * This exception is thrown if paging token signature didn't match the token, or the paging token isn't for this request
+ * <p>
+ * The pagination token is invalid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.budgets.model.AWSBudgetsException {

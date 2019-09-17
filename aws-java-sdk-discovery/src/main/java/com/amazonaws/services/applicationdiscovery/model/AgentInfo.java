@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AgentInfo implements Serializable, Cloneable {
+public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -81,7 +83,7 @@ public class AgentInfo implements Serializable, Cloneable {
     private String agentType;
     /**
      * <p>
-     * Agent's first registration time stamp in UTC.
+     * Agent's first registration timestamp in UTC.
      * </p>
      */
     private String registeredTime;
@@ -370,7 +372,7 @@ public class AgentInfo implements Serializable, Cloneable {
      */
 
     public void setHealth(AgentStatus health) {
-        this.health = health.toString();
+        withHealth(health);
     }
 
     /**
@@ -385,7 +387,7 @@ public class AgentInfo implements Serializable, Cloneable {
      */
 
     public AgentInfo withHealth(AgentStatus health) {
-        setHealth(health);
+        this.health = health.toString();
         return this;
     }
 
@@ -511,11 +513,11 @@ public class AgentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Agent's first registration time stamp in UTC.
+     * Agent's first registration timestamp in UTC.
      * </p>
      * 
      * @param registeredTime
-     *        Agent's first registration time stamp in UTC.
+     *        Agent's first registration timestamp in UTC.
      */
 
     public void setRegisteredTime(String registeredTime) {
@@ -524,10 +526,10 @@ public class AgentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Agent's first registration time stamp in UTC.
+     * Agent's first registration timestamp in UTC.
      * </p>
      * 
-     * @return Agent's first registration time stamp in UTC.
+     * @return Agent's first registration timestamp in UTC.
      */
 
     public String getRegisteredTime() {
@@ -536,11 +538,11 @@ public class AgentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Agent's first registration time stamp in UTC.
+     * Agent's first registration timestamp in UTC.
      * </p>
      * 
      * @param registeredTime
-     *        Agent's first registration time stamp in UTC.
+     *        Agent's first registration timestamp in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,7 +552,8 @@ public class AgentInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -662,5 +665,11 @@ public class AgentInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.AgentInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

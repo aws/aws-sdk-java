@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,10 @@ public class VolumeStatusItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume ID.
+     * The details of the operation.
      * </p>
      */
-    private String volumeId;
+    private com.amazonaws.internal.SdkInternalList<VolumeStatusAction> actions;
     /**
      * <p>
      * The Availability Zone of the volume.
@@ -40,60 +40,93 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The volume status.
-     * </p>
-     */
-    private VolumeStatusInfo volumeStatus;
-    /**
-     * <p>
      * A list of events associated with the volume.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeStatusEvent> events;
     /**
      * <p>
+     * The volume ID.
+     * </p>
+     */
+    private String volumeId;
+    /**
+     * <p>
+     * The volume status.
+     * </p>
+     */
+    private VolumeStatusInfo volumeStatus;
+
+    /**
+     * <p>
      * The details of the operation.
      * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<VolumeStatusAction> actions;
-
-    /**
-     * <p>
-     * The volume ID.
-     * </p>
      * 
-     * @param volumeId
-     *        The volume ID.
+     * @return The details of the operation.
      */
 
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
+    public java.util.List<VolumeStatusAction> getActions() {
+        if (actions == null) {
+            actions = new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>();
+        }
+        return actions;
     }
 
     /**
      * <p>
-     * The volume ID.
+     * The details of the operation.
      * </p>
      * 
-     * @return The volume ID.
+     * @param actions
+     *        The details of the operation.
      */
 
-    public String getVolumeId() {
-        return this.volumeId;
+    public void setActions(java.util.Collection<VolumeStatusAction> actions) {
+        if (actions == null) {
+            this.actions = null;
+            return;
+        }
+
+        this.actions = new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>(actions);
     }
 
     /**
      * <p>
-     * The volume ID.
+     * The details of the operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param volumeId
-     *        The volume ID.
+     * @param actions
+     *        The details of the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeStatusItem withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
+    public VolumeStatusItem withActions(VolumeStatusAction... actions) {
+        if (this.actions == null) {
+            setActions(new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>(actions.length));
+        }
+        for (VolumeStatusAction ele : actions) {
+            this.actions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the operation.
+     * </p>
+     * 
+     * @param actions
+     *        The details of the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusItem withActions(java.util.Collection<VolumeStatusAction> actions) {
+        setActions(actions);
         return this;
     }
 
@@ -134,46 +167,6 @@ public class VolumeStatusItem implements Serializable, Cloneable {
 
     public VolumeStatusItem withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The volume status.
-     * </p>
-     * 
-     * @param volumeStatus
-     *        The volume status.
-     */
-
-    public void setVolumeStatus(VolumeStatusInfo volumeStatus) {
-        this.volumeStatus = volumeStatus;
-    }
-
-    /**
-     * <p>
-     * The volume status.
-     * </p>
-     * 
-     * @return The volume status.
-     */
-
-    public VolumeStatusInfo getVolumeStatus() {
-        return this.volumeStatus;
-    }
-
-    /**
-     * <p>
-     * The volume status.
-     * </p>
-     * 
-     * @param volumeStatus
-     *        The volume status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VolumeStatusItem withVolumeStatus(VolumeStatusInfo volumeStatus) {
-        setVolumeStatus(volumeStatus);
         return this;
     }
 
@@ -252,79 +245,87 @@ public class VolumeStatusItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The details of the operation.
+     * The volume ID.
      * </p>
      * 
-     * @return The details of the operation.
+     * @param volumeId
+     *        The volume ID.
      */
 
-    public java.util.List<VolumeStatusAction> getActions() {
-        if (actions == null) {
-            actions = new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>();
-        }
-        return actions;
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
     }
 
     /**
      * <p>
-     * The details of the operation.
+     * The volume ID.
      * </p>
      * 
-     * @param actions
-     *        The details of the operation.
+     * @return The volume ID.
      */
 
-    public void setActions(java.util.Collection<VolumeStatusAction> actions) {
-        if (actions == null) {
-            this.actions = null;
-            return;
-        }
-
-        this.actions = new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>(actions);
+    public String getVolumeId() {
+        return this.volumeId;
     }
 
     /**
      * <p>
-     * The details of the operation.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
-     * the existing values.
+     * The volume ID.
      * </p>
      * 
-     * @param actions
-     *        The details of the operation.
+     * @param volumeId
+     *        The volume ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeStatusItem withActions(VolumeStatusAction... actions) {
-        if (this.actions == null) {
-            setActions(new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>(actions.length));
-        }
-        for (VolumeStatusAction ele : actions) {
-            this.actions.add(ele);
-        }
+    public VolumeStatusItem withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
         return this;
     }
 
     /**
      * <p>
-     * The details of the operation.
+     * The volume status.
      * </p>
      * 
-     * @param actions
-     *        The details of the operation.
+     * @param volumeStatus
+     *        The volume status.
+     */
+
+    public void setVolumeStatus(VolumeStatusInfo volumeStatus) {
+        this.volumeStatus = volumeStatus;
+    }
+
+    /**
+     * <p>
+     * The volume status.
+     * </p>
+     * 
+     * @return The volume status.
+     */
+
+    public VolumeStatusInfo getVolumeStatus() {
+        return this.volumeStatus;
+    }
+
+    /**
+     * <p>
+     * The volume status.
+     * </p>
+     * 
+     * @param volumeStatus
+     *        The volume status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeStatusItem withActions(java.util.Collection<VolumeStatusAction> actions) {
-        setActions(actions);
+    public VolumeStatusItem withVolumeStatus(VolumeStatusInfo volumeStatus) {
+        setVolumeStatus(volumeStatus);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -334,16 +335,16 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
+        if (getActions() != null)
+            sb.append("Actions: ").append(getActions()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
-        if (getVolumeStatus() != null)
-            sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
         if (getEvents() != null)
             sb.append("Events: ").append(getEvents()).append(",");
-        if (getActions() != null)
-            sb.append("Actions: ").append(getActions());
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
+        if (getVolumeStatus() != null)
+            sb.append("VolumeStatus: ").append(getVolumeStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -358,25 +359,25 @@ public class VolumeStatusItem implements Serializable, Cloneable {
         if (obj instanceof VolumeStatusItem == false)
             return false;
         VolumeStatusItem other = (VolumeStatusItem) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+        if (other.getActions() == null ^ this.getActions() == null)
             return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
-            return false;
-        if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
-            return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
         if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
-        if (other.getActions() == null ^ this.getActions() == null)
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
-        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
+            return false;
+        if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
+            return false;
+        if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
             return false;
         return true;
     }
@@ -386,11 +387,11 @@ public class VolumeStatusItem implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
-        hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
-        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
         return hashCode;
     }
 
@@ -402,4 +403,5 @@ public class VolumeStatusItem implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

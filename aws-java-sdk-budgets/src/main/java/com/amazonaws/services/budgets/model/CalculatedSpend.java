@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,43 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A structure holds the actual and forecasted spend for a budget.
+ * <p>
+ * The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used,
+ * cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your
+ * current usage remains steady.
+ * </p>
+ * <p>
+ * For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your
+ * <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CalculatedSpend implements Serializable, Cloneable {
+public class CalculatedSpend implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The amount of cost, usage, or RI units that you have used.
+     * </p>
+     */
     private Spend actualSpend;
-
+    /**
+     * <p>
+     * The amount of cost, usage, or RI units that you are forecasted to use.
+     * </p>
+     */
     private Spend forecastedSpend;
 
     /**
+     * <p>
+     * The amount of cost, usage, or RI units that you have used.
+     * </p>
+     * 
      * @param actualSpend
+     *        The amount of cost, usage, or RI units that you have used.
      */
 
     public void setActualSpend(Spend actualSpend) {
@@ -34,7 +58,11 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The amount of cost, usage, or RI units that you have used.
+     * </p>
+     * 
+     * @return The amount of cost, usage, or RI units that you have used.
      */
 
     public Spend getActualSpend() {
@@ -42,7 +70,12 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The amount of cost, usage, or RI units that you have used.
+     * </p>
+     * 
      * @param actualSpend
+     *        The amount of cost, usage, or RI units that you have used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -52,7 +85,12 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The amount of cost, usage, or RI units that you are forecasted to use.
+     * </p>
+     * 
      * @param forecastedSpend
+     *        The amount of cost, usage, or RI units that you are forecasted to use.
      */
 
     public void setForecastedSpend(Spend forecastedSpend) {
@@ -60,7 +98,11 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The amount of cost, usage, or RI units that you are forecasted to use.
+     * </p>
+     * 
+     * @return The amount of cost, usage, or RI units that you are forecasted to use.
      */
 
     public Spend getForecastedSpend() {
@@ -68,7 +110,12 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The amount of cost, usage, or RI units that you are forecasted to use.
+     * </p>
+     * 
      * @param forecastedSpend
+     *        The amount of cost, usage, or RI units that you are forecasted to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +125,8 @@ public class CalculatedSpend implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -134,5 +182,11 @@ public class CalculatedSpend implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.CalculatedSpendMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

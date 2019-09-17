@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String webACLId;
+    /**
+     * <p>
+     * The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * </p>
+     */
+    private String resourceType;
 
     /**
      * <p>
@@ -73,7 +79,67 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * @see ResourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * </p>
+     * 
+     * @return The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * @see ResourceType
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ListResourcesForWebACLRequest withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource to list, either an application load balancer or Amazon API Gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ListResourcesForWebACLRequest withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +150,9 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: ").append(getWebACLId());
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +171,10 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false)
             return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +184,7 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getWebACLId() == null) ? 0 : getWebACLId().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 

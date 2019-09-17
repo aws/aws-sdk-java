@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContext.UnmarshallerType;
 import com.amazonaws.transform.Unmarshaller;
 import com.fasterxml.jackson.core.JsonFactory;
 
@@ -36,11 +37,14 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
 
     private final JsonFactory jsonFactory;
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers;
+    private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers;
 
     public SdkStructuredJsonFactoryImpl(JsonFactory jsonFactory,
-                                        Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers) {
+                                        Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallers,
+                                        Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers) {
         this.jsonFactory = jsonFactory;
         this.unmarshallers = unmarshallers;
+        this.customTypeUnmarshallers = customTypeUnmarshallers;
     }
 
     @Override
@@ -54,7 +58,7 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
     @Override
     public <T> JsonResponseHandler<T> createResponseHandler(JsonOperationMetadata operationMetadata,
                                                             Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller) {
-        return new JsonResponseHandler(responseUnmarshaller, unmarshallers, jsonFactory,
+        return new JsonResponseHandler(responseUnmarshaller, unmarshallers, customTypeUnmarshallers, jsonFactory,
                                        operationMetadata.isHasStreamingSuccessResponse(),
                                        operationMetadata.isPayloadJson());
     }
@@ -63,6 +67,8 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
     public JsonErrorResponseHandler createErrorResponseHandler(
             final List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName) {
         return new JsonErrorResponseHandler(errorUnmarshallers,
+                                            unmarshallers,
+                                            customTypeUnmarshallers,
                                             getErrorCodeParser(customErrorCodeFieldName),
                                             JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                             jsonFactory);

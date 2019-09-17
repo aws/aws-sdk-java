@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -192,7 +192,7 @@ public class ManagedAction implements Serializable, Cloneable {
      */
 
     public void setActionType(ActionType actionType) {
-        this.actionType = actionType.toString();
+        withActionType(actionType);
     }
 
     /**
@@ -207,7 +207,7 @@ public class ManagedAction implements Serializable, Cloneable {
      */
 
     public ManagedAction withActionType(ActionType actionType) {
-        setActionType(actionType);
+        this.actionType = actionType.toString();
         return this;
     }
 
@@ -273,7 +273,7 @@ public class ManagedAction implements Serializable, Cloneable {
      */
 
     public void setStatus(ActionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -290,7 +290,7 @@ public class ManagedAction implements Serializable, Cloneable {
      */
 
     public ManagedAction withStatus(ActionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -335,7 +335,8 @@ public class ManagedAction implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -413,4 +414,5 @@ public class ManagedAction implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

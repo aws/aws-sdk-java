@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RequestCancelWorkflowExecutionRequest Marshaller
+ * RequestCancelWorkflowExecutionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestCancelWorkflowExecutionRequestMarshaller implements
-        Marshaller<Request<RequestCancelWorkflowExecutionRequest>, RequestCancelWorkflowExecutionRequest> {
+@SdkInternalApi
+public class RequestCancelWorkflowExecutionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<String> WORKFLOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowId").build();
+    private static final MarshallingInfo<String> RUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runId").build();
 
-    public RequestCancelWorkflowExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RequestCancelWorkflowExecutionRequestMarshaller instance = new RequestCancelWorkflowExecutionRequestMarshaller();
+
+    public static RequestCancelWorkflowExecutionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RequestCancelWorkflowExecutionRequest> marshall(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (requestCancelWorkflowExecutionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RequestCancelWorkflowExecutionRequest> request = new DefaultRequest<RequestCancelWorkflowExecutionRequest>(
-                requestCancelWorkflowExecutionRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.RequestCancelWorkflowExecution");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (requestCancelWorkflowExecutionRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(requestCancelWorkflowExecutionRequest.getDomain());
-            }
-            if (requestCancelWorkflowExecutionRequest.getWorkflowId() != null) {
-                jsonGenerator.writeFieldName("workflowId").writeValue(requestCancelWorkflowExecutionRequest.getWorkflowId());
-            }
-            if (requestCancelWorkflowExecutionRequest.getRunId() != null) {
-                jsonGenerator.writeFieldName("runId").writeValue(requestCancelWorkflowExecutionRequest.getRunId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(requestCancelWorkflowExecutionRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(requestCancelWorkflowExecutionRequest.getWorkflowId(), WORKFLOWID_BINDING);
+            protocolMarshaller.marshall(requestCancelWorkflowExecutionRequest.getRunId(), RUNID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

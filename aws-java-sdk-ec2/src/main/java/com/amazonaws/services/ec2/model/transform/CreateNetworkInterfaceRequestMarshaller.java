@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,8 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createNetworkInterfaceRequest.getSubnetId() != null) {
-            request.addParameter("SubnetId", StringUtils.fromString(createNetworkInterfaceRequest.getSubnetId()));
-        }
-
         if (createNetworkInterfaceRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createNetworkInterfaceRequest.getDescription()));
-        }
-
-        if (createNetworkInterfaceRequest.getPrivateIpAddress() != null) {
-            request.addParameter("PrivateIpAddress", StringUtils.fromString(createNetworkInterfaceRequest.getPrivateIpAddress()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> createNetworkInterfaceRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createNetworkInterfaceRequest
@@ -65,28 +57,8 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> createNetworkInterfaceRequestPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) createNetworkInterfaceRequest
-                .getPrivateIpAddresses();
-        if (!createNetworkInterfaceRequestPrivateIpAddressesList.isEmpty() || !createNetworkInterfaceRequestPrivateIpAddressesList.isAutoConstruct()) {
-            int privateIpAddressesListIndex = 1;
-
-            for (PrivateIpAddressSpecification createNetworkInterfaceRequestPrivateIpAddressesListValue : createNetworkInterfaceRequestPrivateIpAddressesList) {
-
-                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress() != null) {
-                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress",
-                            StringUtils.fromString(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress()));
-                }
-
-                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary() != null) {
-                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary",
-                            StringUtils.fromBoolean(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary()));
-                }
-                privateIpAddressesListIndex++;
-            }
-        }
-
-        if (createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount() != null) {
-            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
+        if (createNetworkInterfaceRequest.getIpv6AddressCount() != null) {
+            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getIpv6AddressCount()));
         }
 
         com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> createNetworkInterfaceRequestIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>) createNetworkInterfaceRequest
@@ -104,8 +76,40 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        if (createNetworkInterfaceRequest.getIpv6AddressCount() != null) {
-            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getIpv6AddressCount()));
+        if (createNetworkInterfaceRequest.getPrivateIpAddress() != null) {
+            request.addParameter("PrivateIpAddress", StringUtils.fromString(createNetworkInterfaceRequest.getPrivateIpAddress()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification> createNetworkInterfaceRequestPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>) createNetworkInterfaceRequest
+                .getPrivateIpAddresses();
+        if (!createNetworkInterfaceRequestPrivateIpAddressesList.isEmpty() || !createNetworkInterfaceRequestPrivateIpAddressesList.isAutoConstruct()) {
+            int privateIpAddressesListIndex = 1;
+
+            for (PrivateIpAddressSpecification createNetworkInterfaceRequestPrivateIpAddressesListValue : createNetworkInterfaceRequestPrivateIpAddressesList) {
+
+                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary() != null) {
+                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary",
+                            StringUtils.fromBoolean(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrimary()));
+                }
+
+                if (createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress() != null) {
+                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress",
+                            StringUtils.fromString(createNetworkInterfaceRequestPrivateIpAddressesListValue.getPrivateIpAddress()));
+                }
+                privateIpAddressesListIndex++;
+            }
+        }
+
+        if (createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount() != null) {
+            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
+        }
+
+        if (createNetworkInterfaceRequest.getInterfaceType() != null) {
+            request.addParameter("InterfaceType", StringUtils.fromString(createNetworkInterfaceRequest.getInterfaceType()));
+        }
+
+        if (createNetworkInterfaceRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(createNetworkInterfaceRequest.getSubnetId()));
         }
 
         return request;

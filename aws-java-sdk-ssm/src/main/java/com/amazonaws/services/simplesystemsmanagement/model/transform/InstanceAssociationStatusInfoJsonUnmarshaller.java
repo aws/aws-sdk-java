@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,13 +60,17 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     instanceAssociationStatusInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceAssociationStatusInfo.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
                     instanceAssociationStatusInfo.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExecutionDate", targetDepth)) {
                     context.nextToken();
-                    instanceAssociationStatusInfo.setExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceAssociationStatusInfo.setExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -87,6 +91,10 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("OutputUrl", targetDepth)) {
                     context.nextToken();
                     instanceAssociationStatusInfo.setOutputUrl(InstanceAssociationOutputUrlJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AssociationName", targetDepth)) {
+                    context.nextToken();
+                    instanceAssociationStatusInfo.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

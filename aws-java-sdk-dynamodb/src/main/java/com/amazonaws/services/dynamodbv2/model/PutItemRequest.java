@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,9 +49,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
-     * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about primary keys, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.
@@ -60,8 +60,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.util.Map<String, AttributeValue> item;
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -106,7 +106,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -129,7 +129,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -140,8 +140,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String conditionExpression;
@@ -181,7 +181,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -209,9 +209,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
@@ -240,8 +240,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
@@ -273,7 +273,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -304,7 +304,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -359,7 +359,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -449,9 +449,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
-     * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about primary keys, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.
@@ -470,7 +470,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </p>
      *         <p>
      *         For more information about primary keys, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *         >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         <p>
@@ -496,9 +496,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
-     * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about primary keys, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.
@@ -518,7 +518,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -544,9 +544,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
-     * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information about primary keys, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.
@@ -566,7 +566,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        <p>
@@ -602,14 +602,14 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *         >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -619,15 +619,15 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -637,15 +637,15 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -894,7 +894,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setReturnValues(ReturnValue returnValues) {
-        this.returnValues = returnValues.toString();
+        withReturnValues(returnValues);
     }
 
     /**
@@ -950,7 +950,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public PutItemRequest withReturnValues(ReturnValue returnValues) {
-        setReturnValues(returnValues);
+        this.returnValues = returnValues.toString();
         return this;
     }
 
@@ -989,7 +989,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -999,7 +999,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public PutItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -1073,7 +1073,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
+        withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }
 
     /**
@@ -1092,21 +1092,21 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public PutItemRequest withReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        setReturnItemCollectionMetrics(returnItemCollectionMetrics);
+        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1118,13 +1118,13 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1136,14 +1136,14 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1157,40 +1157,40 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
      */
 
     public PutItemRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -1212,7 +1212,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1223,8 +1223,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionExpression
@@ -1245,7 +1245,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -1256,8 +1256,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setConditionExpression(String conditionExpression) {
@@ -1282,7 +1282,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1293,8 +1293,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to
@@ -1314,7 +1314,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *         Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *         </p>
      *         </li>
      *         <li>
@@ -1325,8 +1325,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </ul>
      *         <p>
      *         For more information on condition expressions, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public String getConditionExpression() {
@@ -1351,7 +1351,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -1362,8 +1362,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionExpression
@@ -1384,7 +1384,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -1395,8 +1395,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </ul>
      *        <p>
      *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1441,7 +1441,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -1469,9 +1469,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
@@ -1507,7 +1507,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -1536,8 +1536,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -1580,7 +1580,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -1608,9 +1608,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -1647,7 +1647,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -1676,8 +1676,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -1720,7 +1720,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -1748,9 +1748,9 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -1787,7 +1787,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -1816,8 +1816,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1872,8 +1872,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more values that can be substituted in an expression.</p>
@@ -1899,8 +1899,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
@@ -1932,8 +1932,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
@@ -1960,8 +1960,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeValues(java.util.Map<String, AttributeValue> expressionAttributeValues) {
@@ -1993,8 +1993,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
@@ -2021,8 +2021,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2053,7 +2053,8 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

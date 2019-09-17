@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,15 +50,19 @@ public class GetServiceGraphResultJsonUnmarshaller implements Unmarshaller<GetSe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    getServiceGraphResult.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getServiceGraphResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    getServiceGraphResult.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getServiceGraphResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Services", targetDepth)) {
                     context.nextToken();
                     getServiceGraphResult.setServices(new ListUnmarshaller<Service>(ServiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ContainsOldGroupVersions", targetDepth)) {
+                    context.nextToken();
+                    getServiceGraphResult.setContainsOldGroupVersions(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

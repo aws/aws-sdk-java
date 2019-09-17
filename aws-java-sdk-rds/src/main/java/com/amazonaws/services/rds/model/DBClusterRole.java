@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,13 @@ public class DBClusterRole implements Serializable, Cloneable {
      * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     */
+    private String featureName;
 
     /**
      * <p>
@@ -257,7 +264,54 @@ public class DBClusterRole implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @param featureName
+     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     *        supported feature names, see <a>DBEngineVersion</a>.
+     */
+
+    public void setFeatureName(String featureName) {
+        this.featureName = featureName;
+    }
+
+    /**
+     * <p>
+     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @return The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list
+     *         of supported feature names, see <a>DBEngineVersion</a>.
+     */
+
+    public String getFeatureName() {
+        return this.featureName;
+    }
+
+    /**
+     * <p>
+     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @param featureName
+     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
+     *        supported feature names, see <a>DBEngineVersion</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterRole withFeatureName(String featureName) {
+        setFeatureName(featureName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -270,7 +324,9 @@ public class DBClusterRole implements Serializable, Cloneable {
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getFeatureName() != null)
+            sb.append("FeatureName: ").append(getFeatureName());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +349,10 @@ public class DBClusterRole implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getFeatureName() == null ^ this.getFeatureName() == null)
+            return false;
+        if (other.getFeatureName() != null && other.getFeatureName().equals(this.getFeatureName()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +363,7 @@ public class DBClusterRole implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
         return hashCode;
     }
 
@@ -314,4 +375,5 @@ public class DBClusterRole implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

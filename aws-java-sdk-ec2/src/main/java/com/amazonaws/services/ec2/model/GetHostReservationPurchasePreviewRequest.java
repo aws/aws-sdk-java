@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,89 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
+    /**
+     * <p>
      * The offering ID of the reservation.
      * </p>
      */
     private String offeringId;
+
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
      * </p>
+     * 
+     * @return The IDs of the Dedicated Hosts with which the reservation is associated.
      */
-    private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
+
+    public java.util.List<String> getHostIdSet() {
+        if (hostIdSet == null) {
+            hostIdSet = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostIdSet;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
+     * </p>
+     * 
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
+     */
+
+    public void setHostIdSet(java.util.Collection<String> hostIdSet) {
+        if (hostIdSet == null) {
+            this.hostIdSet = null;
+            return;
+        }
+
+        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostIdSet);
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostIdSet(java.util.Collection)} or {@link #withHostIdSet(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetHostReservationPurchasePreviewRequest withHostIdSet(String... hostIdSet) {
+        if (this.hostIdSet == null) {
+            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostIdSet.length));
+        }
+        for (String ele : hostIdSet) {
+            this.hostIdSet.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the Dedicated Hosts with which the reservation is associated.
+     * </p>
+     * 
+     * @param hostIdSet
+     *        The IDs of the Dedicated Hosts with which the reservation is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetHostReservationPurchasePreviewRequest withHostIdSet(java.util.Collection<String> hostIdSet) {
+        setHostIdSet(hostIdSet);
+        return this;
+    }
 
     /**
      * <p>
@@ -80,79 +153,6 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @return The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     */
-
-    public java.util.List<String> getHostIdSet() {
-        if (hostIdSet == null) {
-            hostIdSet = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostIdSet;
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     */
-
-    public void setHostIdSet(java.util.Collection<String> hostIdSet) {
-        if (hostIdSet == null) {
-            this.hostIdSet = null;
-            return;
-        }
-
-        this.hostIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostIdSet);
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostIdSet(java.util.Collection)} or {@link #withHostIdSet(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetHostReservationPurchasePreviewRequest withHostIdSet(String... hostIdSet) {
-        if (this.hostIdSet == null) {
-            setHostIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostIdSet.length));
-        }
-        for (String ele : hostIdSet) {
-            this.hostIdSet.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * </p>
-     * 
-     * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetHostReservationPurchasePreviewRequest withHostIdSet(java.util.Collection<String> hostIdSet) {
-        setHostIdSet(hostIdSet);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -164,7 +164,8 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,10 +175,10 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getHostIdSet() != null)
-            sb.append("HostIdSet: ").append(getHostIdSet());
+            sb.append("HostIdSet: ").append(getHostIdSet()).append(",");
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -192,13 +193,13 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
         if (obj instanceof GetHostReservationPurchasePreviewRequest == false)
             return false;
         GetHostReservationPurchasePreviewRequest other = (GetHostReservationPurchasePreviewRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
-            return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
-            return false;
         if (other.getHostIdSet() == null ^ this.getHostIdSet() == null)
             return false;
         if (other.getHostIdSet() != null && other.getHostIdSet().equals(this.getHostIdSet()) == false)
+            return false;
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+            return false;
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -208,8 +209,8 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

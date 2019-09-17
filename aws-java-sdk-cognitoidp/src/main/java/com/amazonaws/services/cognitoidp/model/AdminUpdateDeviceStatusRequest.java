@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID&gt;
+     * The user pool ID.
      * </p>
      */
     private String userPoolId;
@@ -55,11 +55,11 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID&gt;
+     * The user pool ID.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID&gt;
+     *        The user pool ID.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -68,10 +68,10 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID&gt;
+     * The user pool ID.
      * </p>
      * 
-     * @return The user pool ID&gt;
+     * @return The user pool ID.
      */
 
     public String getUserPoolId() {
@@ -80,11 +80,11 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool ID&gt;
+     * The user pool ID.
      * </p>
      * 
      * @param userPoolId
-     *        The user pool ID&gt;
+     *        The user pool ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,7 +227,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        this.deviceRememberedStatus = deviceRememberedStatus.toString();
+        withDeviceRememberedStatus(deviceRememberedStatus);
     }
 
     /**
@@ -242,12 +242,13 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      */
 
     public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        setDeviceRememberedStatus(deviceRememberedStatus);
+        this.deviceRememberedStatus = deviceRememberedStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -260,7 +261,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
         if (getUserPoolId() != null)
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getDeviceKey() != null)
             sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceRememberedStatus() != null)

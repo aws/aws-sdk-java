@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,18 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceGroupTypes;
+    /**
+     * <p>
+     * The unique identifier of the instance fleet.
+     * </p>
+     */
+    private String instanceFleetId;
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     */
+    private String instanceFleetType;
     /**
      * <p>
      * A list of instance states that will filter the instances returned with this request.
@@ -242,6 +254,119 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The unique identifier of the instance fleet.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet.
+     */
+
+    public void setInstanceFleetId(String instanceFleetId) {
+        this.instanceFleetId = instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet.
+     * </p>
+     * 
+     * @return The unique identifier of the instance fleet.
+     */
+
+    public String getInstanceFleetId() {
+        return this.instanceFleetId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the instance fleet.
+     * </p>
+     * 
+     * @param instanceFleetId
+     *        The unique identifier of the instance fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInstancesRequest withInstanceFleetId(String instanceFleetId) {
+        setInstanceFleetId(instanceFleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     * 
+     * @param instanceFleetType
+     *        The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * @see InstanceFleetType
+     */
+
+    public void setInstanceFleetType(String instanceFleetType) {
+        this.instanceFleetType = instanceFleetType;
+    }
+
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     * 
+     * @return The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * @see InstanceFleetType
+     */
+
+    public String getInstanceFleetType() {
+        return this.instanceFleetType;
+    }
+
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     * 
+     * @param instanceFleetType
+     *        The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceFleetType
+     */
+
+    public ListInstancesRequest withInstanceFleetType(String instanceFleetType) {
+        setInstanceFleetType(instanceFleetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     * 
+     * @param instanceFleetType
+     *        The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * @see InstanceFleetType
+     */
+
+    public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
+        withInstanceFleetType(instanceFleetType);
+    }
+
+    /**
+     * <p>
+     * The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * </p>
+     * 
+     * @param instanceFleetType
+     *        The node type of the instance fleet. For example MASTER, CORE, or TASK.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceFleetType
+     */
+
+    public ListInstancesRequest withInstanceFleetType(InstanceFleetType instanceFleetType) {
+        this.instanceFleetType = instanceFleetType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of instance states that will filter the instances returned with this request.
      * </p>
      * 
@@ -382,7 +507,8 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -398,6 +524,10 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getInstanceGroupTypes() != null)
             sb.append("InstanceGroupTypes: ").append(getInstanceGroupTypes()).append(",");
+        if (getInstanceFleetId() != null)
+            sb.append("InstanceFleetId: ").append(getInstanceFleetId()).append(",");
+        if (getInstanceFleetType() != null)
+            sb.append("InstanceFleetType: ").append(getInstanceFleetType()).append(",");
         if (getInstanceStates() != null)
             sb.append("InstanceStates: ").append(getInstanceStates()).append(",");
         if (getMarker() != null)
@@ -428,6 +558,14 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getInstanceGroupTypes() != null && other.getInstanceGroupTypes().equals(this.getInstanceGroupTypes()) == false)
             return false;
+        if (other.getInstanceFleetId() == null ^ this.getInstanceFleetId() == null)
+            return false;
+        if (other.getInstanceFleetId() != null && other.getInstanceFleetId().equals(this.getInstanceFleetId()) == false)
+            return false;
+        if (other.getInstanceFleetType() == null ^ this.getInstanceFleetType() == null)
+            return false;
+        if (other.getInstanceFleetType() != null && other.getInstanceFleetType().equals(this.getInstanceFleetType()) == false)
+            return false;
         if (other.getInstanceStates() == null ^ this.getInstanceStates() == null)
             return false;
         if (other.getInstanceStates() != null && other.getInstanceStates().equals(this.getInstanceStates()) == false)
@@ -447,6 +585,8 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId().hashCode());
         hashCode = prime * hashCode + ((getInstanceGroupTypes() == null) ? 0 : getInstanceGroupTypes().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFleetId() == null) ? 0 : getInstanceFleetId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFleetType() == null) ? 0 : getInstanceFleetType().hashCode());
         hashCode = prime * hashCode + ((getInstanceStates() == null) ? 0 : getInstanceStates().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

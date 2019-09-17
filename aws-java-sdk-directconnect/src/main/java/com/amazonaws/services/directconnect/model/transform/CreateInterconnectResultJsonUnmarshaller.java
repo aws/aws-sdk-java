@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,7 +74,31 @@ public class CreateInterconnectResultJsonUnmarshaller implements Unmarshaller<Cr
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createInterconnectResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lagId", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDevice", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    createInterconnectResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

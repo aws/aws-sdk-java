@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentFilter> documentFilterList;
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DocumentKeyValuesFilter> filters;
     /**
      * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
@@ -115,6 +121,79 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public ListDocumentsRequest withDocumentFilterList(java.util.Collection<DocumentFilter> documentFilterList) {
         setDocumentFilterList(documentFilterList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @return One or more filters. Use a filter to return a more specific list of results.
+     */
+
+    public java.util.List<DocumentKeyValuesFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<DocumentKeyValuesFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     */
+
+    public void setFilters(java.util.Collection<DocumentKeyValuesFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<DocumentKeyValuesFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDocumentsRequest withFilters(DocumentKeyValuesFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<DocumentKeyValuesFilter>(filters.length));
+        }
+        for (DocumentKeyValuesFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDocumentsRequest withFilters(java.util.Collection<DocumentKeyValuesFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -205,7 +284,8 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -217,6 +297,8 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getDocumentFilterList() != null)
             sb.append("DocumentFilterList: ").append(getDocumentFilterList()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -239,6 +321,10 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDocumentFilterList() != null && other.getDocumentFilterList().equals(this.getDocumentFilterList()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -256,6 +342,7 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDocumentFilterList() == null) ? 0 : getDocumentFilterList().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -292,6 +292,10 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
         this.executorService = executorService;
     }
 
+    public static AWSSupportAsyncClientBuilder asyncBuilder() {
+        return AWSSupportAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Support using the specified parameters.
      *
@@ -321,14 +325,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<AddAttachmentsToSetResult> addAttachmentsToSetAsync(final AddAttachmentsToSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddAttachmentsToSetRequest, AddAttachmentsToSetResult> asyncHandler) {
+        final AddAttachmentsToSetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddAttachmentsToSetResult>() {
             @Override
             public AddAttachmentsToSetResult call() throws Exception {
-                AddAttachmentsToSetResult result;
+                AddAttachmentsToSetResult result = null;
 
                 try {
-                    result = addAttachmentsToSet(request);
+                    result = executeAddAttachmentsToSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -337,7 +342,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -353,14 +358,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<AddCommunicationToCaseResult> addCommunicationToCaseAsync(final AddCommunicationToCaseRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddCommunicationToCaseRequest, AddCommunicationToCaseResult> asyncHandler) {
+        final AddCommunicationToCaseRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddCommunicationToCaseResult>() {
             @Override
             public AddCommunicationToCaseResult call() throws Exception {
-                AddCommunicationToCaseResult result;
+                AddCommunicationToCaseResult result = null;
 
                 try {
-                    result = addCommunicationToCase(request);
+                    result = executeAddCommunicationToCase(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -369,7 +375,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -385,14 +391,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<CreateCaseResult> createCaseAsync(final CreateCaseRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCaseRequest, CreateCaseResult> asyncHandler) {
+        final CreateCaseRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateCaseResult>() {
             @Override
             public CreateCaseResult call() throws Exception {
-                CreateCaseResult result;
+                CreateCaseResult result = null;
 
                 try {
-                    result = createCase(request);
+                    result = executeCreateCase(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -401,7 +408,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -417,14 +424,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeAttachmentResult> describeAttachmentAsync(final DescribeAttachmentRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAttachmentRequest, DescribeAttachmentResult> asyncHandler) {
+        final DescribeAttachmentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAttachmentResult>() {
             @Override
             public DescribeAttachmentResult call() throws Exception {
-                DescribeAttachmentResult result;
+                DescribeAttachmentResult result = null;
 
                 try {
-                    result = describeAttachment(request);
+                    result = executeDescribeAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -433,7 +441,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -449,14 +457,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(final DescribeCasesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult> asyncHandler) {
+        final DescribeCasesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCasesResult>() {
             @Override
             public DescribeCasesResult call() throws Exception {
-                DescribeCasesResult result;
+                DescribeCasesResult result = null;
 
                 try {
-                    result = describeCases(request);
+                    result = executeDescribeCases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -465,7 +474,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -488,6 +497,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
      *
      * @see #describeCasesAsync(DescribeCasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult> asyncHandler) {
 
@@ -503,14 +513,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeCommunicationsResult> describeCommunicationsAsync(final DescribeCommunicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCommunicationsRequest, DescribeCommunicationsResult> asyncHandler) {
+        final DescribeCommunicationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCommunicationsResult>() {
             @Override
             public DescribeCommunicationsResult call() throws Exception {
-                DescribeCommunicationsResult result;
+                DescribeCommunicationsResult result = null;
 
                 try {
-                    result = describeCommunications(request);
+                    result = executeDescribeCommunications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -519,7 +530,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -535,14 +546,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(final DescribeServicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
+        final DescribeServicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeServicesResult>() {
             @Override
             public DescribeServicesResult call() throws Exception {
-                DescribeServicesResult result;
+                DescribeServicesResult result = null;
 
                 try {
-                    result = describeServices(request);
+                    result = executeDescribeServices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -551,7 +563,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -574,6 +586,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
      *
      * @see #describeServicesAsync(DescribeServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
 
@@ -589,14 +602,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(final DescribeSeverityLevelsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
+        final DescribeSeverityLevelsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSeverityLevelsResult>() {
             @Override
             public DescribeSeverityLevelsResult call() throws Exception {
-                DescribeSeverityLevelsResult result;
+                DescribeSeverityLevelsResult result = null;
 
                 try {
-                    result = describeSeverityLevels(request);
+                    result = executeDescribeSeverityLevels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -605,7 +619,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -628,6 +642,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
      *
      * @see #describeSeverityLevelsAsync(DescribeSeverityLevelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
 
@@ -645,14 +660,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     public java.util.concurrent.Future<DescribeTrustedAdvisorCheckRefreshStatusesResult> describeTrustedAdvisorCheckRefreshStatusesAsync(
             final DescribeTrustedAdvisorCheckRefreshStatusesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResult> asyncHandler) {
+        final DescribeTrustedAdvisorCheckRefreshStatusesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTrustedAdvisorCheckRefreshStatusesResult>() {
             @Override
             public DescribeTrustedAdvisorCheckRefreshStatusesResult call() throws Exception {
-                DescribeTrustedAdvisorCheckRefreshStatusesResult result;
+                DescribeTrustedAdvisorCheckRefreshStatusesResult result = null;
 
                 try {
-                    result = describeTrustedAdvisorCheckRefreshStatuses(request);
+                    result = executeDescribeTrustedAdvisorCheckRefreshStatuses(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -661,7 +677,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -679,14 +695,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     public java.util.concurrent.Future<DescribeTrustedAdvisorCheckResultResult> describeTrustedAdvisorCheckResultAsync(
             final DescribeTrustedAdvisorCheckResultRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResult> asyncHandler) {
+        final DescribeTrustedAdvisorCheckResultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTrustedAdvisorCheckResultResult>() {
             @Override
             public DescribeTrustedAdvisorCheckResultResult call() throws Exception {
-                DescribeTrustedAdvisorCheckResultResult result;
+                DescribeTrustedAdvisorCheckResultResult result = null;
 
                 try {
-                    result = describeTrustedAdvisorCheckResult(request);
+                    result = executeDescribeTrustedAdvisorCheckResult(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -695,7 +712,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -713,14 +730,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     public java.util.concurrent.Future<DescribeTrustedAdvisorCheckSummariesResult> describeTrustedAdvisorCheckSummariesAsync(
             final DescribeTrustedAdvisorCheckSummariesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResult> asyncHandler) {
+        final DescribeTrustedAdvisorCheckSummariesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTrustedAdvisorCheckSummariesResult>() {
             @Override
             public DescribeTrustedAdvisorCheckSummariesResult call() throws Exception {
-                DescribeTrustedAdvisorCheckSummariesResult result;
+                DescribeTrustedAdvisorCheckSummariesResult result = null;
 
                 try {
-                    result = describeTrustedAdvisorCheckSummaries(request);
+                    result = executeDescribeTrustedAdvisorCheckSummaries(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -729,7 +747,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -745,14 +763,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<DescribeTrustedAdvisorChecksResult> describeTrustedAdvisorChecksAsync(final DescribeTrustedAdvisorChecksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResult> asyncHandler) {
+        final DescribeTrustedAdvisorChecksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTrustedAdvisorChecksResult>() {
             @Override
             public DescribeTrustedAdvisorChecksResult call() throws Exception {
-                DescribeTrustedAdvisorChecksResult result;
+                DescribeTrustedAdvisorChecksResult result = null;
 
                 try {
-                    result = describeTrustedAdvisorChecks(request);
+                    result = executeDescribeTrustedAdvisorChecks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -761,7 +780,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -777,14 +796,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<RefreshTrustedAdvisorCheckResult> refreshTrustedAdvisorCheckAsync(final RefreshTrustedAdvisorCheckRequest request,
             final com.amazonaws.handlers.AsyncHandler<RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResult> asyncHandler) {
+        final RefreshTrustedAdvisorCheckRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RefreshTrustedAdvisorCheckResult>() {
             @Override
             public RefreshTrustedAdvisorCheckResult call() throws Exception {
-                RefreshTrustedAdvisorCheckResult result;
+                RefreshTrustedAdvisorCheckResult result = null;
 
                 try {
-                    result = refreshTrustedAdvisorCheck(request);
+                    result = executeRefreshTrustedAdvisorCheck(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -793,7 +813,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -809,14 +829,15 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
     @Override
     public java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(final ResolveCaseRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler) {
+        final ResolveCaseRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResolveCaseResult>() {
             @Override
             public ResolveCaseResult call() throws Exception {
-                ResolveCaseResult result;
+                ResolveCaseResult result = null;
 
                 try {
-                    result = resolveCase(request);
+                    result = executeResolveCase(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -825,7 +846,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -848,6 +869,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements AWSSuppor
      *
      * @see #resolveCaseAsync(ResolveCaseRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(
             com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler) {
 

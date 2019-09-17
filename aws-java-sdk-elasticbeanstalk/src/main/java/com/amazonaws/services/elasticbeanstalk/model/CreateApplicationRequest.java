@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,16 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
+    /**
+     * <p>
+     * Specifies the tags applied to the application.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the application. Environments that you create in the application
+     * don't inherit the tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * Default constructor for CreateApplicationRequest object. Callers should use the setter or fluent setter (with...)
@@ -221,7 +231,109 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies the tags applied to the application.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the application. Environments that you create in the application
+     * don't inherit the tags.
+     * </p>
+     * 
+     * @return Specifies the tags applied to the application.</p>
+     *         <p>
+     *         Elastic Beanstalk applies these tags only to the application. Environments that you create in the
+     *         application don't inherit the tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the application.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the application. Environments that you create in the application
+     * don't inherit the tags.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the application.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the application. Environments that you create in the
+     *        application don't inherit the tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the application.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the application. Environments that you create in the application
+     * don't inherit the tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the application.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the application. Environments that you create in the
+     *        application don't inherit the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the application.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the application. Environments that you create in the application
+     * don't inherit the tags.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the application.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the application. Environments that you create in the
+     *        application don't inherit the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -236,7 +348,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getResourceLifecycleConfig() != null)
-            sb.append("ResourceLifecycleConfig: ").append(getResourceLifecycleConfig());
+            sb.append("ResourceLifecycleConfig: ").append(getResourceLifecycleConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +377,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourceLifecycleConfig() != null && other.getResourceLifecycleConfig().equals(this.getResourceLifecycleConfig()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +392,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getResourceLifecycleConfig() == null) ? 0 : getResourceLifecycleConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

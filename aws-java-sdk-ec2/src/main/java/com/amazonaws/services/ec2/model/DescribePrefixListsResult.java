@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,26 +18,70 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribePrefixLists.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
      * All available prefix lists.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrefixList> prefixLists;
+
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
      */
-    private String nextToken;
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePrefixListsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,53 +157,8 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePrefixListsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,10 +168,10 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrefixLists() != null)
-            sb.append("PrefixLists: ").append(getPrefixLists()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPrefixLists() != null)
+            sb.append("PrefixLists: ").append(getPrefixLists());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +186,13 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof DescribePrefixListsResult == false)
             return false;
         DescribePrefixListsResult other = (DescribePrefixListsResult) obj;
-        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
-            return false;
-        if (other.getPrefixLists() != null && other.getPrefixLists().equals(this.getPrefixLists()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
+            return false;
+        if (other.getPrefixLists() != null && other.getPrefixLists().equals(this.getPrefixLists()) == false)
             return false;
         return true;
     }
@@ -203,8 +202,8 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
         return hashCode;
     }
 

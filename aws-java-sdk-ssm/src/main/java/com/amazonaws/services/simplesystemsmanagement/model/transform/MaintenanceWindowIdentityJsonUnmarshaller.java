@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class MaintenanceWindowIdentityJsonUnmarshaller implements Unmarshaller<M
                     context.nextToken();
                     maintenanceWindowIdentity.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowIdentity.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -67,6 +71,26 @@ public class MaintenanceWindowIdentityJsonUnmarshaller implements Unmarshaller<M
                 if (context.testExpression("Cutoff", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowIdentity.setCutoff(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Schedule", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ScheduleTimezone", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setScheduleTimezone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndDate", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setEndDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartDate", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setStartDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NextExecutionTime", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setNextExecutionTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

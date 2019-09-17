@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,13 +35,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers,
  * virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application
  * Discovery Service also collects application performance data, which can help you assess the outcome of your
- * migration. The data collected by Application Discovery Service is securely retained in an Amazon-hosted and managed
+ * migration. The data collected by Application Discovery Service is securely retained in an AWS-hosted and managed
  * database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or
- * cloud-migration solution to plan your migration. For more information, see the Application Discovery Service <a
- * href="http://aws.amazon.com/application-discovery/faqs/">FAQ</a>.
+ * cloud-migration solution to plan your migration. For more information, see <a
+ * href="http://aws.amazon.com/application-discovery/faqs/">AWS Application Discovery Service FAQ</a>.
  * </p>
  * <p>
- * Application Discovery Service offers two modes of operation.
+ * Application Discovery Service offers two modes of operation:
  * </p>
  * <ul>
  * <li>
@@ -50,43 +50,39 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * require you to install an agent on each host. Agentless discovery gathers server information regardless of the
  * operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless
  * discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware
- * environments. We recommend that you use agent-based discovery for non-VMware environments and if you want to collect
- * information about software and software dependencies. You can also run agent-based and agentless discovery
- * simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install
- * agents on select hosts to gather information about software and software dependencies.
+ * environments.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using Amazon software,
- * the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures
- * infrastructure and application information, including an inventory of installed software applications, system and
- * process performance, resource utilization, and network dependencies between workloads. The information collected by
- * agents is secured at rest and in transit to the Application Discovery Service database in the cloud.
+ * <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using the AWS Application
+ * Discovery Agent, which you install on one or more hosts in your data center. The agent captures infrastructure and
+ * application information, including an inventory of installed software applications, system and process performance,
+ * resource utilization, and network dependencies between workloads. The information collected by agents is secured at
+ * rest and in transit to the Application Discovery Service database in the cloud.
  * </p>
  * </li>
  * </ul>
  * <p>
+ * We recommend that you use agent-based discovery for non-VMware environments and to collect information about software
+ * and software dependencies. You can also run agent-based and agentless discovery simultaneously. Use agentless
+ * discovery to quickly complete the initial infrastructure assessment and then install agents on select hosts.
+ * </p>
+ * <p>
  * Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN)
- * partners. Third-party application discovery tools can query the Application Discovery Service and write to the
+ * partners. Third-party application discovery tools can query Application Discovery Service and write to the
  * Application Discovery Service database using a public API. You can then import the data into either a visualization
  * tool or cloud-migration solution.
  * </p>
  * <important>
  * <p>
  * Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a
- * href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate Application Discovery Service using
- * offline mode to inspect collected data before it is shared with the service.
+ * href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate Application Discovery Service offline
+ * to inspect collected data before it is shared with the service.
  * </p>
  * </important>
  * <p>
- * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, sign up for the AWS Application Discovery Service <a
- * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We will send you information about how to get
- * started.
- * </p>
- * <p>
- * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the
+ * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
  * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
@@ -282,6 +278,10 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
         this.executorService = executorService;
     }
 
+    public static AWSApplicationDiscoveryAsyncClientBuilder asyncBuilder() {
+        return AWSApplicationDiscoveryAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Application Discovery Service using the
      * specified parameters.
@@ -314,14 +314,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     public java.util.concurrent.Future<AssociateConfigurationItemsToApplicationResult> associateConfigurationItemsToApplicationAsync(
             final AssociateConfigurationItemsToApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateConfigurationItemsToApplicationRequest, AssociateConfigurationItemsToApplicationResult> asyncHandler) {
+        final AssociateConfigurationItemsToApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssociateConfigurationItemsToApplicationResult>() {
             @Override
             public AssociateConfigurationItemsToApplicationResult call() throws Exception {
-                AssociateConfigurationItemsToApplicationResult result;
+                AssociateConfigurationItemsToApplicationResult result = null;
 
                 try {
-                    result = associateConfigurationItemsToApplication(request);
+                    result = executeAssociateConfigurationItemsToApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -330,7 +331,40 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest request) {
+
+        return batchDeleteImportDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(final BatchDeleteImportDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteImportDataRequest, BatchDeleteImportDataResult> asyncHandler) {
+        final BatchDeleteImportDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteImportDataResult>() {
+            @Override
+            public BatchDeleteImportDataResult call() throws Exception {
+                BatchDeleteImportDataResult result = null;
+
+                try {
+                    result = executeBatchDeleteImportData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -346,14 +380,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(final CreateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
+        final CreateApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateApplicationResult>() {
             @Override
             public CreateApplicationResult call() throws Exception {
-                CreateApplicationResult result;
+                CreateApplicationResult result = null;
 
                 try {
-                    result = createApplication(request);
+                    result = executeCreateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -362,7 +397,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -378,14 +413,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(final CreateTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
+        final CreateTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateTagsResult>() {
             @Override
             public CreateTagsResult call() throws Exception {
-                CreateTagsResult result;
+                CreateTagsResult result = null;
 
                 try {
-                    result = createTags(request);
+                    result = executeCreateTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -394,7 +430,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -410,14 +446,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<DeleteApplicationsResult> deleteApplicationsAsync(final DeleteApplicationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteApplicationsRequest, DeleteApplicationsResult> asyncHandler) {
+        final DeleteApplicationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationsResult>() {
             @Override
             public DeleteApplicationsResult call() throws Exception {
-                DeleteApplicationsResult result;
+                DeleteApplicationsResult result = null;
 
                 try {
-                    result = deleteApplications(request);
+                    result = executeDeleteApplications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -426,7 +463,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -442,14 +479,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(final DeleteTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+        final DeleteTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
             @Override
             public DeleteTagsResult call() throws Exception {
-                DeleteTagsResult result;
+                DeleteTagsResult result = null;
 
                 try {
-                    result = deleteTags(request);
+                    result = executeDeleteTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -458,7 +496,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -474,14 +512,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<DescribeAgentsResult> describeAgentsAsync(final DescribeAgentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAgentsRequest, DescribeAgentsResult> asyncHandler) {
+        final DescribeAgentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAgentsResult>() {
             @Override
             public DescribeAgentsResult call() throws Exception {
-                DescribeAgentsResult result;
+                DescribeAgentsResult result = null;
 
                 try {
-                    result = describeAgents(request);
+                    result = executeDescribeAgents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -490,7 +529,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -506,14 +545,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<DescribeConfigurationsResult> describeConfigurationsAsync(final DescribeConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConfigurationsRequest, DescribeConfigurationsResult> asyncHandler) {
+        final DescribeConfigurationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeConfigurationsResult>() {
             @Override
             public DescribeConfigurationsResult call() throws Exception {
-                DescribeConfigurationsResult result;
+                DescribeConfigurationsResult result = null;
 
                 try {
-                    result = describeConfigurations(request);
+                    result = executeDescribeConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -522,7 +562,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -530,22 +570,23 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(DescribeExportConfigurationsRequest request) {
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(DescribeContinuousExportsRequest request) {
 
-        return describeExportConfigurationsAsync(request, null);
+        return describeContinuousExportsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(final DescribeExportConfigurationsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeExportConfigurationsRequest, DescribeExportConfigurationsResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(final DescribeContinuousExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContinuousExportsRequest, DescribeContinuousExportsResult> asyncHandler) {
+        final DescribeContinuousExportsRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<DescribeExportConfigurationsResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContinuousExportsResult>() {
             @Override
-            public DescribeExportConfigurationsResult call() throws Exception {
-                DescribeExportConfigurationsResult result;
+            public DescribeContinuousExportsResult call() throws Exception {
+                DescribeContinuousExportsResult result = null;
 
                 try {
-                    result = describeExportConfigurations(request);
+                    result = executeDescribeContinuousExports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -554,7 +595,108 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    @Deprecated
+    public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(DescribeExportConfigurationsRequest request) {
+
+        return describeExportConfigurationsAsync(request, null);
+    }
+
+    @Override
+    @Deprecated
+    public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(final DescribeExportConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExportConfigurationsRequest, DescribeExportConfigurationsResult> asyncHandler) {
+        final DescribeExportConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeExportConfigurationsResult>() {
+            @Override
+            public DescribeExportConfigurationsResult call() throws Exception {
+                DescribeExportConfigurationsResult result = null;
+
+                try {
+                    result = executeDescribeExportConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest request) {
+
+        return describeExportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(final DescribeExportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler) {
+        final DescribeExportTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeExportTasksResult>() {
+            @Override
+            public DescribeExportTasksResult call() throws Exception {
+                DescribeExportTasksResult result = null;
+
+                try {
+                    result = executeDescribeExportTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(DescribeImportTasksRequest request) {
+
+        return describeImportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(final DescribeImportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImportTasksRequest, DescribeImportTasksResult> asyncHandler) {
+        final DescribeImportTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImportTasksResult>() {
+            @Override
+            public DescribeImportTasksResult call() throws Exception {
+                DescribeImportTasksResult result = null;
+
+                try {
+                    result = executeDescribeImportTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -570,14 +712,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(final DescribeTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
+        final DescribeTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTagsResult>() {
             @Override
             public DescribeTagsResult call() throws Exception {
-                DescribeTagsResult result;
+                DescribeTagsResult result = null;
 
                 try {
-                    result = describeTags(request);
+                    result = executeDescribeTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,7 +729,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -604,14 +747,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     public java.util.concurrent.Future<DisassociateConfigurationItemsFromApplicationResult> disassociateConfigurationItemsFromApplicationAsync(
             final DisassociateConfigurationItemsFromApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateConfigurationItemsFromApplicationRequest, DisassociateConfigurationItemsFromApplicationResult> asyncHandler) {
+        final DisassociateConfigurationItemsFromApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisassociateConfigurationItemsFromApplicationResult>() {
             @Override
             public DisassociateConfigurationItemsFromApplicationResult call() throws Exception {
-                DisassociateConfigurationItemsFromApplicationResult result;
+                DisassociateConfigurationItemsFromApplicationResult result = null;
 
                 try {
-                    result = disassociateConfigurationItemsFromApplication(request);
+                    result = executeDisassociateConfigurationItemsFromApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -620,7 +764,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -628,22 +772,25 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ExportConfigurationsResult> exportConfigurationsAsync(ExportConfigurationsRequest request) {
 
         return exportConfigurationsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ExportConfigurationsResult> exportConfigurationsAsync(final ExportConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ExportConfigurationsRequest, ExportConfigurationsResult> asyncHandler) {
+        final ExportConfigurationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ExportConfigurationsResult>() {
             @Override
             public ExportConfigurationsResult call() throws Exception {
-                ExportConfigurationsResult result;
+                ExportConfigurationsResult result = null;
 
                 try {
-                    result = exportConfigurations(request);
+                    result = executeExportConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -652,7 +799,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -668,14 +815,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<GetDiscoverySummaryResult> getDiscoverySummaryAsync(final GetDiscoverySummaryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDiscoverySummaryRequest, GetDiscoverySummaryResult> asyncHandler) {
+        final GetDiscoverySummaryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDiscoverySummaryResult>() {
             @Override
             public GetDiscoverySummaryResult call() throws Exception {
-                GetDiscoverySummaryResult result;
+                GetDiscoverySummaryResult result = null;
 
                 try {
-                    result = getDiscoverySummary(request);
+                    result = executeGetDiscoverySummary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -684,7 +832,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -700,14 +848,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(final ListConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult> asyncHandler) {
+        final ListConfigurationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListConfigurationsResult>() {
             @Override
             public ListConfigurationsResult call() throws Exception {
-                ListConfigurationsResult result;
+                ListConfigurationsResult result = null;
 
                 try {
-                    result = listConfigurations(request);
+                    result = executeListConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -716,7 +865,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -732,14 +881,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<ListServerNeighborsResult> listServerNeighborsAsync(final ListServerNeighborsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListServerNeighborsRequest, ListServerNeighborsResult> asyncHandler) {
+        final ListServerNeighborsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListServerNeighborsResult>() {
             @Override
             public ListServerNeighborsResult call() throws Exception {
-                ListServerNeighborsResult result;
+                ListServerNeighborsResult result = null;
 
                 try {
-                    result = listServerNeighbors(request);
+                    result = executeListServerNeighbors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -748,7 +898,40 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(StartContinuousExportRequest request) {
+
+        return startContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(final StartContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartContinuousExportRequest, StartContinuousExportResult> asyncHandler) {
+        final StartContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartContinuousExportResult>() {
+            @Override
+            public StartContinuousExportResult call() throws Exception {
+                StartContinuousExportResult result = null;
+
+                try {
+                    result = executeStartContinuousExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -765,14 +948,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     public java.util.concurrent.Future<StartDataCollectionByAgentIdsResult> startDataCollectionByAgentIdsAsync(
             final StartDataCollectionByAgentIdsRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartDataCollectionByAgentIdsRequest, StartDataCollectionByAgentIdsResult> asyncHandler) {
+        final StartDataCollectionByAgentIdsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartDataCollectionByAgentIdsResult>() {
             @Override
             public StartDataCollectionByAgentIdsResult call() throws Exception {
-                StartDataCollectionByAgentIdsResult result;
+                StartDataCollectionByAgentIdsResult result = null;
 
                 try {
-                    result = startDataCollectionByAgentIds(request);
+                    result = executeStartDataCollectionByAgentIds(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -781,7 +965,106 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest request) {
+
+        return startExportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(final StartExportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartExportTaskRequest, StartExportTaskResult> asyncHandler) {
+        final StartExportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartExportTaskResult>() {
+            @Override
+            public StartExportTaskResult call() throws Exception {
+                StartExportTaskResult result = null;
+
+                try {
+                    result = executeStartExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(StartImportTaskRequest request) {
+
+        return startImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(final StartImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartImportTaskRequest, StartImportTaskResult> asyncHandler) {
+        final StartImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartImportTaskResult>() {
+            @Override
+            public StartImportTaskResult call() throws Exception {
+                StartImportTaskResult result = null;
+
+                try {
+                    result = executeStartImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(StopContinuousExportRequest request) {
+
+        return stopContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(final StopContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopContinuousExportRequest, StopContinuousExportResult> asyncHandler) {
+        final StopContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopContinuousExportResult>() {
+            @Override
+            public StopContinuousExportResult call() throws Exception {
+                StopContinuousExportResult result = null;
+
+                try {
+                    result = executeStopContinuousExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -797,14 +1080,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<StopDataCollectionByAgentIdsResult> stopDataCollectionByAgentIdsAsync(final StopDataCollectionByAgentIdsRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopDataCollectionByAgentIdsRequest, StopDataCollectionByAgentIdsResult> asyncHandler) {
+        final StopDataCollectionByAgentIdsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopDataCollectionByAgentIdsResult>() {
             @Override
             public StopDataCollectionByAgentIdsResult call() throws Exception {
-                StopDataCollectionByAgentIdsResult result;
+                StopDataCollectionByAgentIdsResult result = null;
 
                 try {
-                    result = stopDataCollectionByAgentIds(request);
+                    result = executeStopDataCollectionByAgentIds(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -813,7 +1097,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -829,14 +1113,15 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(final UpdateApplicationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+        final UpdateApplicationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateApplicationResult>() {
             @Override
             public UpdateApplicationResult call() throws Exception {
-                UpdateApplicationResult result;
+                UpdateApplicationResult result = null;
 
                 try {
-                    result = updateApplication(request);
+                    result = executeUpdateApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -845,7 +1130,7 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

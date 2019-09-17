@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -190,7 +190,7 @@ public enum CloudFrontUrlSigner {
                     ;
             return signedUrl;
         } catch (InvalidKeyException e) {
-            throw new AmazonClientException("Coudln't sign url", e);
+            throw new AmazonClientException("Couldn't sign url", e);
         }
     }
 
@@ -275,8 +275,8 @@ public enum CloudFrontUrlSigner {
      * @param limitToIpAddressCIDR
      *            An optional range of client IP addresses that will be allowed
      *            to access the distribution, specified as a CIDR range. If
-     *            null, the CIDR will be <tt>0.0.0.0/0</tt> and any client will
-     *            be permitted.
+     *            null, the CIDR will be omitted and any client will be
+     *            permitted.
      * @param epochDateGreaterThan
      *            An optional UTC time and date when the signed URL will become
      *            active. If null, the signed URL will be active as soon as it
@@ -294,12 +294,7 @@ public enum CloudFrontUrlSigner {
         if ( resourcePath == null ) {
             resourcePath = "*";
         }
-        String ipAddress = (limitToIpAddressCIDR == null
-                         ? "0.0.0.0/0" // No IP restriction
-                         : limitToIpAddressCIDR)
-                         ;
         return buildCustomPolicy(resourcePath, epochDateLessThan,
-                epochDateGreaterThan, ipAddress);
+                epochDateGreaterThan, limitToIpAddressCIDR);
     }
-
 }

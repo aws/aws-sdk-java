@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,9 +42,10 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> launchConfigurationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest
-                .getLaunchConfigurationNames();
-        if (!launchConfigurationNamesList.isEmpty() || !launchConfigurationNamesList.isAutoConstruct()) {
+        if (!describeLaunchConfigurationsRequest.getLaunchConfigurationNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest.getLaunchConfigurationNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> launchConfigurationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest
+                    .getLaunchConfigurationNames();
             int launchConfigurationNamesListIndex = 1;
 
             for (String launchConfigurationNamesListValue : launchConfigurationNamesList) {

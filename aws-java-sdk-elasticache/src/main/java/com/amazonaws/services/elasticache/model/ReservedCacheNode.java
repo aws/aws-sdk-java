@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * The cache node type for the reserved cache nodes.
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -53,24 +55,52 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
+     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -79,48 +109,58 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
+     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * <p>
-     * <b>Notes:</b>
+     * <b>Additional node type info</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     * All current generation instance types are created in Amazon VPC by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis append-only files (AOF) are not supported for T1 or T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     * Redis Multi-AZ with automatic failover is not supported on T1 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis
+     * version 2.8.22 and later.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
-     * </p>
      */
     private String cacheNodeType;
     /**
@@ -177,6 +217,15 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the reserved cache node.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * </p>
+     */
+    private String reservationARN;
 
     /**
      * <p>
@@ -263,7 +312,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * The cache node type for the reserved cache nodes.
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -273,24 +324,52 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
+     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -299,53 +378,65 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
+     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * <p>
-     * <b>Notes:</b>
+     * <b>Additional node type info</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     * All current generation instance types are created in Amazon VPC by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis append-only files (AOF) are not supported for T1 or T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     * Redis Multi-AZ with automatic failover is not supported on T1 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis
+     * version 2.8.22 and later.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
-     * </p>
      * 
      * @param cacheNodeType
      *        The cache node type for the reserved cache nodes.</p>
      *        <p>
-     *        Valid node types are as follows:
+     *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *        provide more memory and computational power at lower cost when compared to their equivalent previous
+     *        generation counterparts.
      *        </p>
      *        <ul>
      *        <li>
@@ -355,23 +446,54 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
+     *        <code>cache.m5.24xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *        <code>cache.t2.medium</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *        </p>
+     *        <p>
+     *        <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        Compute optimized:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -380,48 +502,60 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
-     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
+     *        <code>cache.r5.24xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *        <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Notes:</b>
+     *        <b>Additional node type info</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     *        All current generation instance types are created in Amazon VPC by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *        Redis append-only files (AOF) are not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     *        Redis Multi-AZ with automatic failover is not supported on T1 instances.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on
+     *        Redis version 2.8.22 and later.
+     *        </p>
+     *        </li>
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -433,7 +567,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * The cache node type for the reserved cache nodes.
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -443,24 +579,52 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
+     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -469,52 +633,64 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
+     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * <p>
-     * <b>Notes:</b>
+     * <b>Additional node type info</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     * All current generation instance types are created in Amazon VPC by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis append-only files (AOF) are not supported for T1 or T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     * Redis Multi-AZ with automatic failover is not supported on T1 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis
+     * version 2.8.22 and later.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
-     * </p>
      * 
      * @return The cache node type for the reserved cache nodes.</p>
      *         <p>
-     *         Valid node types are as follows:
+     *         The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *         provide more memory and computational power at lower cost when compared to their equivalent previous
+     *         generation counterparts.
      *         </p>
      *         <ul>
      *         <li>
@@ -524,25 +700,54 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
-     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
-     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     *         <code>cache.m4.10xlarge</code>
+     *         Current generation:
+     *         </p>
+     *         <p>
+     *         <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     *         <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
+     *         <code>cache.m5.24xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *         <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *         </p>
+     *         <p>
+     *         <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         Compute optimized:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -551,48 +756,60 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
-     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *         Current generation:
+     *         </p>
+     *         <p>
+     *         <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     *         <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
+     *         <code>cache.r5.24xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *         <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *         <code>cache.r4.16xlarge</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *         <code>cache.m2.4xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>Notes:</b>
+     *         <b>Additional node type info</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     *         All current generation instance types are created in Amazon VPC by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *         Redis append-only files (AOF) are not supported for T1 or T2 instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     *         Redis Multi-AZ with automatic failover is not supported on T1 instances.
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
      *         <p>
-     *         For a complete listing of node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         either <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Redis</a>.
+     *         Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on
+     *         Redis version 2.8.22 and later.
+     *         </p>
+     *         </li>
      */
 
     public String getCacheNodeType() {
@@ -604,7 +821,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * The cache node type for the reserved cache nodes.
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -614,24 +833,52 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
+     * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -640,53 +887,65 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
+     * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+     * </p>
+     * <p>
+     * <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * </ul>
      * <p>
-     * <b>Notes:</b>
+     * <b>Additional node type info</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     * All current generation instance types are created in Amazon VPC by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis append-only files (AOF) are not supported for T1 or T2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     * Redis Multi-AZ with automatic failover is not supported on T1 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis
+     * version 2.8.22 and later.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
-     * </p>
      * 
      * @param cacheNodeType
      *        The cache node type for the reserved cache nodes.</p>
      *        <p>
-     *        Valid node types are as follows:
+     *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *        provide more memory and computational power at lower cost when compared to their equivalent previous
+     *        generation counterparts.
      *        </p>
      *        <ul>
      *        <li>
@@ -696,23 +955,54 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
+     *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
+     *        <code>cache.m5.24xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *        <code>cache.t2.medium</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *        </p>
+     *        <p>
+     *        <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        Compute optimized:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -721,48 +1011,60 @@ public class ReservedCacheNode implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
-     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
+     *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
+     *        <code>cache.r5.24xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *        <code>cache.m2.4xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>Notes:</b>
+     *        <b>Additional node type info</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
+     *        All current generation instance types are created in Amazon VPC by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *        Redis append-only files (AOF) are not supported for T1 or T2 instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
+     *        Redis Multi-AZ with automatic failover is not supported on T1 instances.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on
+     *        Redis version 2.8.22 and later.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1165,7 +1467,66 @@ public class ReservedCacheNode implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) of the reserved cache node.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * </p>
+     * 
+     * @param reservationARN
+     *        The Amazon Resource Name (ARN) of the reserved cache node.</p>
+     *        <p>
+     *        Example:
+     *        <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     */
+
+    public void setReservationARN(String reservationARN) {
+        this.reservationARN = reservationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the reserved cache node.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the reserved cache node.</p>
+     *         <p>
+     *         Example:
+     *         <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     */
+
+    public String getReservationARN() {
+        return this.reservationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the reserved cache node.
+     * </p>
+     * <p>
+     * Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * </p>
+     * 
+     * @param reservationARN
+     *        The Amazon Resource Name (ARN) of the reserved cache node.</p>
+     *        <p>
+     *        Example:
+     *        <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedCacheNode withReservationARN(String reservationARN) {
+        setReservationARN(reservationARN);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1198,7 +1559,9 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: ").append(getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
+        if (getReservationARN() != null)
+            sb.append("ReservationARN: ").append(getReservationARN());
         sb.append("}");
         return sb.toString();
     }
@@ -1261,6 +1624,10 @@ public class ReservedCacheNode implements Serializable, Cloneable {
             return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
+        if (other.getReservationARN() == null ^ this.getReservationARN() == null)
+            return false;
+        if (other.getReservationARN() != null && other.getReservationARN().equals(this.getReservationARN()) == false)
+            return false;
         return true;
     }
 
@@ -1281,6 +1648,7 @@ public class ReservedCacheNode implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getReservationARN() == null) ? 0 : getReservationARN().hashCode());
         return hashCode;
     }
 
@@ -1292,4 +1660,5 @@ public class ReservedCacheNode implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

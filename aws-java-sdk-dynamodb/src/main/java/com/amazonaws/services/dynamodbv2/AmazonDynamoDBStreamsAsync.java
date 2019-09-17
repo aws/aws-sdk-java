@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,32 +32,6 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
- * <p>
- * The following are short descriptions of each low-level DynamoDB Streams action:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>DescribeStream</i> - Returns detailed information about a particular stream.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetRecords</i> - Retrieves the stream records from within a shard.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard
- * ID.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
@@ -69,7 +43,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * <note>
      * <p>
-     * You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+     * You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
      * </p>
      * </note>
      * <p>
@@ -81,7 +55,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * 
      * @param describeStreamRequest
-     *        Represents the input of a <i>DescribeStream</i> operation.
+     *        Represents the input of a <code>DescribeStream</code> operation.
      * @return A Java Future containing the result of the DescribeStream operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.DescribeStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream"
@@ -96,7 +70,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * <note>
      * <p>
-     * You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+     * You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
      * </p>
      * </note>
      * <p>
@@ -108,7 +82,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </p>
      * 
      * @param describeStreamRequest
-     *        Represents the input of a <i>DescribeStream</i> operation.
+     *        Represents the input of a <code>DescribeStream</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -138,7 +112,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getRecordsRequest
-     *        Represents the input of a <i>GetRecords</i> operation.
+     *        Represents the input of a <code>GetRecords</code> operation.
      * @return A Java Future containing the result of the GetRecords operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.GetRecords
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords" target="_top">AWS
@@ -163,7 +137,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getRecordsRequest
-     *        Represents the input of a <i>GetRecords</i> operation.
+     *        Represents the input of a <code>GetRecords</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -189,7 +163,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getShardIteratorRequest
-     *        Represents the input of a <i>GetShardIterator</i> operation.
+     *        Represents the input of a <code>GetShardIterator</code> operation.
      * @return A Java Future containing the result of the GetShardIterator operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.GetShardIterator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator"
@@ -210,7 +184,7 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
      * </note>
      * 
      * @param getShardIteratorRequest
-     *        Represents the input of a <i>GetShardIterator</i> operation.
+     *        Represents the input of a <code>GetShardIterator</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -226,16 +200,16 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
     /**
      * <p>
      * Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code>
-     * parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.
+     * parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.
      * </p>
      * <note>
      * <p>
-     * You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+     * You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
      * </p>
      * </note>
      * 
      * @param listStreamsRequest
-     *        Represents the input of a <i>ListStreams</i> operation.
+     *        Represents the input of a <code>ListStreams</code> operation.
      * @return A Java Future containing the result of the ListStreams operation returned by the service.
      * @sample AmazonDynamoDBStreamsAsync.ListStreams
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams" target="_top">AWS
@@ -246,16 +220,16 @@ public interface AmazonDynamoDBStreamsAsync extends AmazonDynamoDBStreams {
     /**
      * <p>
      * Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code>
-     * parameter is present, then <i>ListStreams</i> will return only the streams ARNs for that table.
+     * parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.
      * </p>
      * <note>
      * <p>
-     * You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+     * You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
      * </p>
      * </note>
      * 
      * @param listStreamsRequest
-     *        Represents the input of a <i>ListStreams</i> operation.
+     *        Represents the input of a <code>ListStreams</code> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

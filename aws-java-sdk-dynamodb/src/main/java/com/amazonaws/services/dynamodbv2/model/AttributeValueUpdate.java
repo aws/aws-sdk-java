@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -36,7 +38,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttributeValueUpdate implements Serializable, Cloneable {
+public class AttributeValueUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -48,8 +50,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private AttributeValue value;
@@ -170,8 +172,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
      *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
@@ -288,8 +290,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
      *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
@@ -404,8 +406,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param value
@@ -416,8 +418,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setValue(AttributeValue value) {
@@ -434,8 +436,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Represents the data for an attribute.</p>
@@ -445,8 +447,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *         >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *         >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public AttributeValue getValue() {
@@ -463,8 +465,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param value
@@ -475,8 +477,8 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1287,7 +1289,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      */
 
     public void setAction(AttributeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -1489,12 +1491,13 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      */
 
     public AttributeValueUpdate withAction(AttributeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1550,5 +1553,11 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.AttributeValueUpdateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

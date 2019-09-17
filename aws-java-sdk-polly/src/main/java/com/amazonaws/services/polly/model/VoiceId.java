@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,53 +20,64 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VoiceId {
 
-    Geraint("Geraint"),
-    Gwyneth("Gwyneth"),
-    Mads("Mads"),
-    Naja("Naja"),
-    Hans("Hans"),
-    Marlene("Marlene"),
-    Nicole("Nicole"),
-    Russell("Russell"),
+    Aditi("Aditi"),
     Amy("Amy"),
+    Astrid("Astrid"),
+    Bianca("Bianca"),
     Brian("Brian"),
+    Carla("Carla"),
+    Carmen("Carmen"),
+    Celine("Celine"),
+    Chantal("Chantal"),
+    Conchita("Conchita"),
+    Cristiano("Cristiano"),
+    Dora("Dora"),
     Emma("Emma"),
-    Raveena("Raveena"),
+    Enrique("Enrique"),
+    Ewa("Ewa"),
+    Filiz("Filiz"),
+    Geraint("Geraint"),
+    Giorgio("Giorgio"),
+    Gwyneth("Gwyneth"),
+    Hans("Hans"),
+    Ines("Ines"),
     Ivy("Ivy"),
+    Jacek("Jacek"),
+    Jan("Jan"),
     Joanna("Joanna"),
     Joey("Joey"),
     Justin("Justin"),
+    Karl("Karl"),
     Kendra("Kendra"),
     Kimberly("Kimberly"),
-    Salli("Salli"),
-    Conchita("Conchita"),
-    Enrique("Enrique"),
-    Miguel("Miguel"),
-    Penelope("Penelope"),
-    Chantal("Chantal"),
-    Celine("Celine"),
-    Mathieu("Mathieu"),
-    Dora("Dora"),
-    Karl("Karl"),
-    Carla("Carla"),
-    Giorgio("Giorgio"),
-    Mizuki("Mizuki"),
+    Lea("Lea"),
     Liv("Liv"),
     Lotte("Lotte"),
-    Ruben("Ruben"),
-    Ewa("Ewa"),
-    Jacek("Jacek"),
-    Jan("Jan"),
+    Lucia("Lucia"),
+    Mads("Mads"),
     Maja("Maja"),
-    Ricardo("Ricardo"),
-    Vitoria("Vitoria"),
-    Cristiano("Cristiano"),
-    Ines("Ines"),
-    Carmen("Carmen"),
+    Marlene("Marlene"),
+    Mathieu("Mathieu"),
+    Matthew("Matthew"),
     Maxim("Maxim"),
+    Mia("Mia"),
+    Miguel("Miguel"),
+    Mizuki("Mizuki"),
+    Naja("Naja"),
+    Nicole("Nicole"),
+    Penelope("Penelope"),
+    Raveena("Raveena"),
+    Ricardo("Ricardo"),
+    Ruben("Ruben"),
+    Russell("Russell"),
+    Salli("Salli"),
+    Seoyeon("Seoyeon"),
+    Takumi("Takumi"),
     Tatyana("Tatyana"),
-    Astrid("Astrid"),
-    Filiz("Filiz");
+    Vicki("Vicki"),
+    Vitoria("Vitoria"),
+    Zeina("Zeina"),
+    Zhiyu("Zhiyu");
 
     private String value;
 
@@ -85,6 +96,9 @@ public enum VoiceId {
      * @param value
      *        real value
      * @return VoiceId corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static VoiceId fromValue(String value) {
         if (value == null || "".equals(value)) {

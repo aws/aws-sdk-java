@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,9 @@
  */
 package com.amazonaws.http.settings;
 
+import com.amazonaws.Protocol;
+import com.amazonaws.ProxyAuthenticationMethod;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import java.net.InetAddress;
 import java.security.SecureRandom;
 
@@ -22,6 +25,8 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DnsResolver;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
+import java.util.List;
+import javax.net.ssl.KeyManager;
 
 /**
  * A convienient class that expose all settings in {@link ClientConfiguration} and other internal settings to the
@@ -95,6 +100,10 @@ public class HttpClientSettings {
         return config.getNonProxyHosts();
     }
 
+    public List<ProxyAuthenticationMethod> getProxyAuthenticationMethods() {
+        return config.getProxyAuthenticationMethods();
+    }
+
     public boolean useReaper() {
         return config.useReaper();
     }
@@ -143,6 +152,10 @@ public class HttpClientSettings {
         return config.getConnectionMaxIdleMillis();
     }
 
+    public int getValidateAfterInactivityMillis() {
+        return config.getValidateAfterInactivityMillis();
+    }
+
     public String getProxyWorkstation() {
         return config.getProxyWorkstation();
     }
@@ -159,4 +172,23 @@ public class HttpClientSettings {
         return config.isUseExpectContinue();
     }
 
+    public boolean isProxyEnabled() {
+        return getProxyHost() != null && getProxyPort() > 0;
+    }
+
+    public boolean disableSocketProxy() {
+        return config.disableSocketProxy();
+    }
+
+    public boolean isAuthenticatedProxy() {
+        return getProxyUsername() != null && getProxyPassword() != null;
+    }
+
+    public Protocol getProxyProtocol() {
+        return config.getProxyProtocol();
+    }
+
+    public TlsKeyManagersProvider getTlsKeyMangersProvider() {
+        return config.getTlsKeyManagersProvider();
+    }
 }

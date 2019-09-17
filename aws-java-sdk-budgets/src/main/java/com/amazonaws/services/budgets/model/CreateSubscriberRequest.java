@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,21 +18,45 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of CreateSubscriber
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget that you want to subscribe to. Budget names must be unique within an account.
+     * </p>
+     */
     private String budgetName;
-
+    /**
+     * <p>
+     * The notification that you want to create a subscriber for.
+     * </p>
+     */
     private Notification notification;
-
+    /**
+     * <p>
+     * The subscriber that you want to associate with a budget notification.
+     * </p>
+     */
     private Subscriber subscriber;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
      */
 
     public void setAccountId(String accountId) {
@@ -40,7 +64,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
      */
 
     public String getAccountId() {
@@ -48,7 +76,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +91,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the budget that you want to subscribe to. Budget names must be unique within an account.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want to subscribe to. Budget names must be unique within an account.
      */
 
     public void setBudgetName(String budgetName) {
@@ -66,7 +104,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget that you want to subscribe to. Budget names must be unique within an account.
+     * </p>
+     * 
+     * @return The name of the budget that you want to subscribe to. Budget names must be unique within an account.
      */
 
     public String getBudgetName() {
@@ -74,7 +116,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the budget that you want to subscribe to. Budget names must be unique within an account.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want to subscribe to. Budget names must be unique within an account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +131,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The notification that you want to create a subscriber for.
+     * </p>
+     * 
      * @param notification
+     *        The notification that you want to create a subscriber for.
      */
 
     public void setNotification(Notification notification) {
@@ -92,7 +144,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The notification that you want to create a subscriber for.
+     * </p>
+     * 
+     * @return The notification that you want to create a subscriber for.
      */
 
     public Notification getNotification() {
@@ -100,7 +156,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The notification that you want to create a subscriber for.
+     * </p>
+     * 
      * @param notification
+     *        The notification that you want to create a subscriber for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +171,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The subscriber that you want to associate with a budget notification.
+     * </p>
+     * 
      * @param subscriber
+     *        The subscriber that you want to associate with a budget notification.
      */
 
     public void setSubscriber(Subscriber subscriber) {
@@ -118,7 +184,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The subscriber that you want to associate with a budget notification.
+     * </p>
+     * 
+     * @return The subscriber that you want to associate with a budget notification.
      */
 
     public Subscriber getSubscriber() {
@@ -126,7 +196,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The subscriber that you want to associate with a budget notification.
+     * </p>
+     * 
      * @param subscriber
+     *        The subscriber that you want to associate with a budget notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +211,8 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

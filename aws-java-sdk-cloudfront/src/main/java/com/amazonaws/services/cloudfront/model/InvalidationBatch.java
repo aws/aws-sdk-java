@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * An invalidation batch.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/InvalidationBatch" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/InvalidationBatch" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,7 +30,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the objects that you want to invalidate. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -71,7 +71,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * @param paths
      *        A complex type that contains information about the objects that you want to invalidate. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      *        >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @param callerReference
      *        A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to
@@ -124,14 +124,14 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the objects that you want to invalidate. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param paths
      *        A complex type that contains information about the objects that you want to invalidate. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      *        >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -143,13 +143,13 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the objects that you want to invalidate. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return A complex type that contains information about the objects that you want to invalidate. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      *         >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -161,14 +161,14 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * <p>
      * A complex type that contains information about the objects that you want to invalidate. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      * >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param paths
      *        A complex type that contains information about the objects that you want to invalidate. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects"
      *        >Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -306,7 +306,8 @@ public class InvalidationBatch implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -363,4 +364,5 @@ public class InvalidationBatch implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,53 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeMountTargetsRequest Marshaller
+ * DescribeMountTargetsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeMountTargetsRequestMarshaller implements Marshaller<Request<DescribeMountTargetsRequest>, DescribeMountTargetsRequest> {
+@SdkInternalApi
+public class DescribeMountTargetsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
+    private static final MarshallingInfo<String> FILESYSTEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FileSystemId").build();
+    private static final MarshallingInfo<String> MOUNTTARGETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MountTargetId").build();
 
-    public DescribeMountTargetsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeMountTargetsRequestMarshaller instance = new DescribeMountTargetsRequestMarshaller();
+
+    public static DescribeMountTargetsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeMountTargetsRequest> marshall(DescribeMountTargetsRequest describeMountTargetsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeMountTargetsRequest describeMountTargetsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeMountTargetsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeMountTargetsRequest> request = new DefaultRequest<DescribeMountTargetsRequest>(describeMountTargetsRequest, "AmazonElasticFileSystem");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-02-01/mount-targets";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (describeMountTargetsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils.fromInteger(describeMountTargetsRequest.getMaxItems()));
+        try {
+            protocolMarshaller.marshall(describeMountTargetsRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(describeMountTargetsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeMountTargetsRequest.getFileSystemId(), FILESYSTEMID_BINDING);
+            protocolMarshaller.marshall(describeMountTargetsRequest.getMountTargetId(), MOUNTTARGETID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (describeMountTargetsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils.fromString(describeMountTargetsRequest.getMarker()));
-        }
-
-        if (describeMountTargetsRequest.getFileSystemId() != null) {
-            request.addParameter("FileSystemId", StringUtils.fromString(describeMountTargetsRequest.getFileSystemId()));
-        }
-
-        if (describeMountTargetsRequest.getMountTargetId() != null) {
-            request.addParameter("MountTargetId", StringUtils.fromString(describeMountTargetsRequest.getMountTargetId()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

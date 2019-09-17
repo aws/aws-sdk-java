@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ import com.amazonaws.services.workspaces.model.*;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This reference provides detailed information about the Amazon WorkSpaces operations.
+ * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops for your
+ * users.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,11 +36,166 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for a WorkSpace.
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @return A Java Future containing the result of the AssociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(AssociateIpGroupsRequest associateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(AssociateIpGroupsRequest associateIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpGroupsRequest, AssociateIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @return A Java Future containing the result of the AuthorizeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsync.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(AuthorizeIpRulesRequest authorizeIpRulesRequest);
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AuthorizeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(AuthorizeIpRulesRequest authorizeIpRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<AuthorizeIpRulesRequest, AuthorizeIpRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Copies the specified image from the specified Region to the current Region.
+     * </p>
+     * 
+     * @param copyWorkspaceImageRequest
+     * @return A Java Future containing the result of the CopyWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CopyWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyWorkspaceImageResult> copyWorkspaceImageAsync(CopyWorkspaceImageRequest copyWorkspaceImageRequest);
+
+    /**
+     * <p>
+     * Copies the specified image from the specified Region to the current Region.
+     * </p>
+     * 
+     * @param copyWorkspaceImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CopyWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CopyWorkspaceImageResult> copyWorkspaceImageAsync(CopyWorkspaceImageRequest copyWorkspaceImageRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyWorkspaceImageRequest, CopyWorkspaceImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @return A Java Future containing the result of the CreateIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest createIpGroupRequest);
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest createIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIpGroupRequest, CreateIpGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the <a>CreateTags</a> operation.
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.CreateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags" target="_top">AWS API
@@ -49,11 +205,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for a WorkSpace.
+     * Creates the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the <a>CreateTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -70,14 +225,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * Creates one or more WorkSpaces.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
-     * </note>
      * 
      * @param createWorkspacesRequest
-     *        Contains the inputs for the <a>CreateWorkspaces</a> operation.
      * @return A Java Future containing the result of the CreateWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.CreateWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces" target="_top">AWS
@@ -89,14 +241,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * Creates one or more WorkSpaces.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
-     * </note>
      * 
      * @param createWorkspacesRequest
-     *        Contains the inputs for the <a>CreateWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -111,11 +260,47 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes tags from a WorkSpace.
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @return A Java Future containing the result of the DeleteIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest);
+
+    /**
+     * <p>
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIpGroupRequest, DeleteIpGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified tags from the specified WorkSpaces resource.
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the <a>DeleteTags</a> operation.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.DeleteTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags" target="_top">AWS API
@@ -125,11 +310,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes tags from a WorkSpace.
+     * Deletes the specified tags from the specified WorkSpaces resource.
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the <a>DeleteTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -144,11 +328,173 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes tags for a WorkSpace.
+     * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
+     * associated with the image and un-share the image if it is shared with other accounts.
+     * </p>
+     * 
+     * @param deleteWorkspaceImageRequest
+     * @return A Java Future containing the result of the DeleteWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DeleteWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceImageResult> deleteWorkspaceImageAsync(DeleteWorkspaceImageRequest deleteWorkspaceImageRequest);
+
+    /**
+     * <p>
+     * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
+     * associated with the image and un-share the image if it is shared with other accounts.
+     * </p>
+     * 
+     * @param deleteWorkspaceImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DeleteWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceImageResult> deleteWorkspaceImageAsync(DeleteWorkspaceImageRequest deleteWorkspaceImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceImageRequest, DeleteWorkspaceImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.
+     * </p>
+     * 
+     * @param describeAccountRequest
+     * @return A Java Future containing the result of the DescribeAccount operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountResult> describeAccountAsync(DescribeAccountRequest describeAccountRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.
+     * </p>
+     * 
+     * @param describeAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccount operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountResult> describeAccountAsync(DescribeAccountRequest describeAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountRequest, DescribeAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the
+     * specified account.
+     * </p>
+     * 
+     * @param describeAccountModificationsRequest
+     * @return A Java Future containing the result of the DescribeAccountModifications operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsync.DescribeAccountModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountModificationsResult> describeAccountModificationsAsync(
+            DescribeAccountModificationsRequest describeAccountModificationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the
+     * specified account.
+     * </p>
+     * 
+     * @param describeAccountModificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountModifications operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeAccountModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountModificationsResult> describeAccountModificationsAsync(
+            DescribeAccountModificationsRequest describeAccountModificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountModificationsRequest, DescribeAccountModificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param describeClientPropertiesRequest
+     * @return A Java Future containing the result of the DescribeClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(DescribeClientPropertiesRequest describeClientPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param describeClientPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClientPropertiesResult> describeClientPropertiesAsync(DescribeClientPropertiesRequest describeClientPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClientPropertiesRequest, DescribeClientPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @return A Java Future containing the result of the DescribeIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest describeIpGroupsRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest describeIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpGroupsRequest, DescribeIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the <a>DescribeTags</a> operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags" target="_top">AWS API
@@ -158,11 +504,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes tags for a WorkSpace.
+     * Describes the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the <a>DescribeTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -177,20 +522,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the WorkSpace bundles that are available to your account in the specified region.
+     * Retrieves a list that describes the available WorkSpace bundles.
      * </p>
      * <p>
-     * You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter,
-     * but not both.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using either bundle ID or owner, but not both.
      * </p>
      * 
      * @param describeWorkspaceBundlesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaceBundles operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaceBundles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"
@@ -200,20 +538,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the WorkSpace bundles that are available to your account in the specified region.
+     * Retrieves a list that describes the available WorkSpace bundles.
      * </p>
      * <p>
-     * You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter,
-     * but not both.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using either bundle ID or owner, but not both.
      * </p>
      * 
      * @param describeWorkspaceBundlesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -243,17 +574,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon
-     * WorkSpaces and are available to your account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.
      * </p>
      * 
      * @param describeWorkspaceDirectoriesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaceDirectories operation returned by the
      *         service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaceDirectories
@@ -265,17 +589,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon
-     * WorkSpaces and are available to your account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.
      * </p>
      * 
      * @param describeWorkspaceDirectoriesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -307,20 +624,47 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the specified WorkSpaces.
+     * Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise,
+     * all images in the account are described.
+     * </p>
+     * 
+     * @param describeWorkspaceImagesRequest
+     * @return A Java Future containing the result of the DescribeWorkspaceImages operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeWorkspaceImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceImagesResult> describeWorkspaceImagesAsync(DescribeWorkspaceImagesRequest describeWorkspaceImagesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise,
+     * all images in the account are described.
+     * </p>
+     * 
+     * @param describeWorkspaceImagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeWorkspaceImages operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeWorkspaceImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceImagesResult> describeWorkspaceImagesAsync(DescribeWorkspaceImagesRequest describeWorkspaceImagesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceImagesRequest, DescribeWorkspaceImagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified WorkSpaces.
      * </p>
      * <p>
-     * Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-     * <code>WorkspaceIds</code>, can be specified at a time.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify
+     * only one filter at a time.
      * </p>
      * 
      * @param describeWorkspacesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaces</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces" target="_top">AWS
@@ -330,20 +674,14 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the specified WorkSpaces.
+     * Describes the specified WorkSpaces.
      * </p>
      * <p>
-     * Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-     * <code>WorkspaceIds</code>, can be specified at a time.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify
+     * only one filter at a time.
      * </p>
      * 
      * @param describeWorkspacesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -373,7 +711,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the connection status of a specified WorkSpace.
+     * Describes the connection status of the specified WorkSpaces.
      * </p>
      * 
      * @param describeWorkspacesConnectionStatusRequest
@@ -388,7 +726,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the connection status of a specified WorkSpace.
+     * Describes the connection status of the specified WorkSpaces.
      * </p>
      * 
      * @param describeWorkspacesConnectionStatusRequest
@@ -408,7 +746,180 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @return A Java Future containing the result of the DisassociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(DisassociateIpGroupsRequest disassociateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(DisassociateIpGroupsRequest disassociateIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpGroupsRequest, DisassociateIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The
+     * image must be an already licensed EC2 image that is in your AWS account, and you must own the image.
+     * </p>
+     * 
+     * @param importWorkspaceImageRequest
+     * @return A Java Future containing the result of the ImportWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ImportWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportWorkspaceImageResult> importWorkspaceImageAsync(ImportWorkspaceImageRequest importWorkspaceImageRequest);
+
+    /**
+     * <p>
+     * Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The
+     * image must be an already licensed EC2 image that is in your AWS account, and you must own the image.
+     * </p>
+     * 
+     * @param importWorkspaceImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportWorkspaceImage operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ImportWorkspaceImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportWorkspaceImageResult> importWorkspaceImageAsync(ImportWorkspaceImageRequest importWorkspaceImageRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportWorkspaceImageRequest, ImportWorkspaceImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management
+     * interface when you enable bring your own license (BYOL).
+     * </p>
+     * <p>
+     * The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for
+     * interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to
+     * manage the WorkSpace.
+     * </p>
+     * 
+     * @param listAvailableManagementCidrRangesRequest
+     * @return A Java Future containing the result of the ListAvailableManagementCidrRanges operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsync.ListAvailableManagementCidrRanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAvailableManagementCidrRangesResult> listAvailableManagementCidrRangesAsync(
+            ListAvailableManagementCidrRangesRequest listAvailableManagementCidrRangesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management
+     * interface when you enable bring your own license (BYOL).
+     * </p>
+     * <p>
+     * The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for
+     * interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to
+     * manage the WorkSpace.
+     * </p>
+     * 
+     * @param listAvailableManagementCidrRangesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAvailableManagementCidrRanges operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsyncHandler.ListAvailableManagementCidrRanges
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAvailableManagementCidrRangesResult> listAvailableManagementCidrRangesAsync(
+            ListAvailableManagementCidrRangesRequest listAvailableManagementCidrRangesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAvailableManagementCidrRangesRequest, ListAvailableManagementCidrRangesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the configuration of bring your own license (BYOL) for the specified account.
+     * </p>
+     * 
+     * @param modifyAccountRequest
+     * @return A Java Future containing the result of the ModifyAccount operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest modifyAccountRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of bring your own license (BYOL) for the specified account.
+     * </p>
+     * 
+     * @param modifyAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyAccount operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest modifyAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyAccountRequest, ModifyAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the properties of the specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param modifyClientPropertiesRequest
+     * @return A Java Future containing the result of the ModifyClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(ModifyClientPropertiesRequest modifyClientPropertiesRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of the specified Amazon WorkSpaces clients.
+     * </p>
+     * 
+     * @param modifyClientPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClientProperties operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyClientProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClientPropertiesResult> modifyClientPropertiesAsync(ModifyClientPropertiesRequest modifyClientPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClientPropertiesRequest, ModifyClientPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified WorkSpace properties.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -422,7 +933,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+     * Modifies the specified WorkSpace properties.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -441,20 +952,59 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop
+     * WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
+     * state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @return A Java Future containing the result of the ModifyWorkspaceState operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest);
+
+    /**
+     * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop
+     * WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code>
+     * state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyWorkspaceState operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyWorkspaceStateRequest, ModifyWorkspaceStateResult> asyncHandler);
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-     * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
      * </p>
-     * </note>
      * 
      * @param rebootWorkspacesRequest
-     *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebootWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.RebootWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces" target="_top">AWS
@@ -467,17 +1017,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-     * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
      * </p>
-     * </note>
      * 
      * @param rebootWorkspacesRequest
-     *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -492,39 +1038,22 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a
-     * WorkSpace causes the following to occur:
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have
-     * been installed, or system settings that have been made since the WorkSpace was created will be lost.
+     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+     * a WorkSpace</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current
-     * contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so
-     * the snapshot can be as much as 12 hours old.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or
-     * <code>ERROR</code>.
-     * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
      * </p>
-     * </note>
      * 
      * @param rebuildWorkspacesRequest
-     *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebuildWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.RebuildWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces" target="_top">AWS
@@ -534,39 +1063,22 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a
-     * WorkSpace causes the following to occur:
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have
-     * been installed, or system settings that have been made since the WorkSpace was created will be lost.
+     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+     * a WorkSpace</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current
-     * contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so
-     * the snapshot can be as much as 12 hours old.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or
-     * <code>ERROR</code>.
-     * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
      * </p>
-     * </note>
      * 
      * @param rebuildWorkspacesRequest
-     *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -581,8 +1093,42 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to “STOPPED.”
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @return A Java Future containing the result of the RevokeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsync.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(RevokeIpRulesRequest revokeIpRulesRequest);
+
+    /**
+     * <p>
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(RevokeIpRulesRequest revokeIpRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeIpRulesRequest, RevokeIpRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>STOPPED</code>.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -595,8 +1141,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to “STOPPED.”
+     * Starts the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>STOPPED</code>.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -614,8 +1163,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.
      * </p>
      * 
      * @param stopWorkspacesRequest
@@ -628,8 +1180,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.
      * </p>
      * 
      * @param stopWorkspacesRequest
@@ -650,20 +1205,17 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
-     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be
-     * destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.
+     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to
+     * archive any user data, contact Amazon Web Services before terminating the WorkSpace.
      * </p>
      * <p>
      * You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely terminated.
      * </p>
-     * </note>
      * 
      * @param terminateWorkspacesRequest
-     *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @return A Java Future containing the result of the TerminateWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.TerminateWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces" target="_top">AWS
@@ -676,20 +1228,17 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
-     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be
-     * destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.
+     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to
+     * archive any user data, contact Amazon Web Services before terminating the WorkSpace.
      * </p>
      * <p>
      * You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely terminated.
      * </p>
-     * </note>
      * 
      * @param terminateWorkspacesRequest
-     *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -701,5 +1250,36 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<TerminateWorkspacesResult> terminateWorkspacesAsync(TerminateWorkspacesRequest terminateWorkspacesRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateWorkspacesRequest, TerminateWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @return A Java Future containing the result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest);
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRulesOfIpGroupRequest, UpdateRulesOfIpGroupResult> asyncHandler);
 
 }

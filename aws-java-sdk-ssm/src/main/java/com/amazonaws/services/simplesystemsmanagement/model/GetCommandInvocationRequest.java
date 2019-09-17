@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     private String instanceId;
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only one
-     * plugin, the name can be omitted and the details will be returned.
+     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
+     * the name can be omitted and the details will be returned.
      * </p>
      */
     private String pluginName;
@@ -134,13 +134,13 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only one
-     * plugin, the name can be omitted and the details will be returned.
+     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
+     * the name can be omitted and the details will be returned.
      * </p>
      * 
      * @param pluginName
-     *        (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only
-     *        one plugin, the name can be omitted and the details will be returned.
+     *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
+     *        plugin, the name can be omitted and the details will be returned.
      */
 
     public void setPluginName(String pluginName) {
@@ -149,12 +149,12 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only one
-     * plugin, the name can be omitted and the details will be returned.
+     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
+     * the name can be omitted and the details will be returned.
      * </p>
      * 
-     * @return (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only
-     *         one plugin, the name can be omitted and the details will be returned.
+     * @return (Optional) The name of the plugin for which you want detailed results. If the document contains only one
+     *         plugin, the name can be omitted and the details will be returned.
      */
 
     public String getPluginName() {
@@ -163,13 +163,13 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only one
-     * plugin, the name can be omitted and the details will be returned.
+     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
+     * the name can be omitted and the details will be returned.
      * </p>
      * 
      * @param pluginName
-     *        (Optional) The name of the plugin for which you want detailed results. If the SSM document contains only
-     *        one plugin, the name can be omitted and the details will be returned.
+     *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
+     *        plugin, the name can be omitted and the details will be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +179,8 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

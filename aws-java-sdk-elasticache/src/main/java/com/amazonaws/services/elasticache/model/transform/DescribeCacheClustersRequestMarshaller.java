@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,11 @@ public class DescribeCacheClustersRequestMarshaller implements Marshaller<Reques
 
         if (describeCacheClustersRequest.getShowCacheNodeInfo() != null) {
             request.addParameter("ShowCacheNodeInfo", StringUtils.fromBoolean(describeCacheClustersRequest.getShowCacheNodeInfo()));
+        }
+
+        if (describeCacheClustersRequest.getShowCacheClustersNotInReplicationGroups() != null) {
+            request.addParameter("ShowCacheClustersNotInReplicationGroups",
+                    StringUtils.fromBoolean(describeCacheClustersRequest.getShowCacheClustersNotInReplicationGroups()));
         }
 
         return request;

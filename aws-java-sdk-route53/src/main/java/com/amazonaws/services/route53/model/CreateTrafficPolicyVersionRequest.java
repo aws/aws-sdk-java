@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the traffic policy for which you want to create a new version.
+ * A complex type that contains information about the traffic policy that you want to create a new version for.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion" target="_top">AWS
@@ -37,8 +37,9 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     * <a>CreateTrafficPolicy</a>.
+     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     * >CreateTrafficPolicy</a>.
      * </p>
      */
     private String document;
@@ -92,14 +93,16 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     * <a>CreateTrafficPolicy</a>.
+     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     * >CreateTrafficPolicy</a>.
      * </p>
      * 
      * @param document
      *        The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     *        <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     *        <a>CreateTrafficPolicy</a>.
+     *        <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     *        >CreateTrafficPolicy</a>.
      */
 
     public void setDocument(String document) {
@@ -109,13 +112,15 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     * <a>CreateTrafficPolicy</a>.
+     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     * >CreateTrafficPolicy</a>.
      * </p>
      * 
      * @return The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     *         <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     *         <a>CreateTrafficPolicy</a>.
+     *         <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     *         >CreateTrafficPolicy</a>.
      */
 
     public String getDocument() {
@@ -125,14 +130,16 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     * <a>CreateTrafficPolicy</a>.
+     * <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     * >CreateTrafficPolicy</a>.
      * </p>
      * 
      * @param document
      *        The definition of this version of the traffic policy, in JSON format. You specified the JSON in the
-     *        <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see
-     *        <a>CreateTrafficPolicy</a>.
+     *        <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html"
+     *        >CreateTrafficPolicy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,7 +189,8 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

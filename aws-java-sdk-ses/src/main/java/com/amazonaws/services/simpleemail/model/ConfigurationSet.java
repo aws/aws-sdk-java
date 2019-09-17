@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,10 @@ import javax.annotation.Generated;
  * The name of the configuration set.
  * </p>
  * <p>
- * Configuration sets enable you to publish email sending events. For information about using configuration sets, see
- * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+ * Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For
+ * more information about using configuration sets, see <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html">Using Amazon SES
+ * Configuration Sets</a> in the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -33,17 +35,17 @@ public class ConfigurationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration set. The name must:
+     * The name of the configuration set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -52,32 +54,32 @@ public class ConfigurationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration set. The name must:
+     * The name of the configuration set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the configuration set. The name must:</p>
+     *        The name of the configuration set. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -88,31 +90,31 @@ public class ConfigurationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration set. The name must:
+     * The name of the configuration set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the configuration set. The name must:</p>
+     * @return The name of the configuration set. The name must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 64 characters.
+     *         Contain 64 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -123,32 +125,32 @@ public class ConfigurationSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the configuration set. The name must:
+     * The name of the configuration set. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the configuration set. The name must:</p>
+     *        The name of the configuration set. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -160,7 +162,8 @@ public class ConfigurationSet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,4 +213,5 @@ public class ConfigurationSet implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

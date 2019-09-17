@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,128 +12,70 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateIdentityPoolRequest Marshaller
+ * UpdateIdentityPoolRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateIdentityPoolRequestMarshaller implements Marshaller<Request<UpdateIdentityPoolRequest>, UpdateIdentityPoolRequest> {
+@SdkInternalApi
+public class UpdateIdentityPoolRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYPOOLNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolName").build();
+    private static final MarshallingInfo<Boolean> ALLOWUNAUTHENTICATEDIDENTITIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowUnauthenticatedIdentities").build();
+    private static final MarshallingInfo<Map> SUPPORTEDLOGINPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedLoginProviders").build();
+    private static final MarshallingInfo<String> DEVELOPERPROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeveloperProviderName").build();
+    private static final MarshallingInfo<List> OPENIDCONNECTPROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenIdConnectProviderARNs").build();
+    private static final MarshallingInfo<List> COGNITOIDENTITYPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoIdentityProviders").build();
+    private static final MarshallingInfo<List> SAMLPROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamlProviderARNs").build();
+    private static final MarshallingInfo<Map> IDENTITYPOOLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolTags").build();
 
-    public UpdateIdentityPoolRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateIdentityPoolRequestMarshaller instance = new UpdateIdentityPoolRequestMarshaller();
+
+    public static UpdateIdentityPoolRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateIdentityPoolRequest> marshall(UpdateIdentityPoolRequest updateIdentityPoolRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateIdentityPoolRequest updateIdentityPoolRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateIdentityPoolRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIdentityPoolRequest> request = new DefaultRequest<UpdateIdentityPoolRequest>(updateIdentityPoolRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.UpdateIdentityPool");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateIdentityPoolRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(updateIdentityPoolRequest.getIdentityPoolId());
-            }
-            if (updateIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolName").writeValue(updateIdentityPoolRequest.getIdentityPoolName());
-            }
-            if (updateIdentityPoolRequest.getAllowUnauthenticatedIdentities() != null) {
-                jsonGenerator.writeFieldName("AllowUnauthenticatedIdentities").writeValue(updateIdentityPoolRequest.getAllowUnauthenticatedIdentities());
-            }
-
-            java.util.Map<String, String> supportedLoginProvidersMap = updateIdentityPoolRequest.getSupportedLoginProviders();
-            if (supportedLoginProvidersMap != null) {
-                jsonGenerator.writeFieldName("SupportedLoginProviders");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> supportedLoginProvidersMapValue : supportedLoginProvidersMap.entrySet()) {
-                    if (supportedLoginProvidersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(supportedLoginProvidersMapValue.getKey());
-
-                        jsonGenerator.writeValue(supportedLoginProvidersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (updateIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonGenerator.writeFieldName("DeveloperProviderName").writeValue(updateIdentityPoolRequest.getDeveloperProviderName());
-            }
-
-            java.util.List<String> openIdConnectProviderARNsList = updateIdentityPoolRequest.getOpenIdConnectProviderARNs();
-            if (openIdConnectProviderARNsList != null) {
-                jsonGenerator.writeFieldName("OpenIdConnectProviderARNs");
-                jsonGenerator.writeStartArray();
-                for (String openIdConnectProviderARNsListValue : openIdConnectProviderARNsList) {
-                    if (openIdConnectProviderARNsListValue != null) {
-                        jsonGenerator.writeValue(openIdConnectProviderARNsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<CognitoIdentityProvider> cognitoIdentityProvidersList = updateIdentityPoolRequest.getCognitoIdentityProviders();
-            if (cognitoIdentityProvidersList != null) {
-                jsonGenerator.writeFieldName("CognitoIdentityProviders");
-                jsonGenerator.writeStartArray();
-                for (CognitoIdentityProvider cognitoIdentityProvidersListValue : cognitoIdentityProvidersList) {
-                    if (cognitoIdentityProvidersListValue != null) {
-
-                        CognitoIdentityProviderJsonMarshaller.getInstance().marshall(cognitoIdentityProvidersListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<String> samlProviderARNsList = updateIdentityPoolRequest.getSamlProviderARNs();
-            if (samlProviderARNsList != null) {
-                jsonGenerator.writeFieldName("SamlProviderARNs");
-                jsonGenerator.writeStartArray();
-                for (String samlProviderARNsListValue : samlProviderARNsList) {
-                    if (samlProviderARNsListValue != null) {
-                        jsonGenerator.writeValue(samlProviderARNsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolName(), IDENTITYPOOLNAME_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getAllowUnauthenticatedIdentities(), ALLOWUNAUTHENTICATEDIDENTITIES_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getSupportedLoginProviders(), SUPPORTEDLOGINPROVIDERS_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getDeveloperProviderName(), DEVELOPERPROVIDERNAME_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getOpenIdConnectProviderARNs(), OPENIDCONNECTPROVIDERARNS_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getCognitoIdentityProviders(), COGNITOIDENTITYPROVIDERS_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getSamlProviderARNs(), SAMLPROVIDERARNS_BINDING);
+            protocolMarshaller.marshall(updateIdentityPoolRequest.getIdentityPoolTags(), IDENTITYPOOLTAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

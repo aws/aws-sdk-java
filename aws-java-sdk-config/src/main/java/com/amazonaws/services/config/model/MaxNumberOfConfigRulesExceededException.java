@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules. Consider
- * deleting any deactivated rules before adding new rules.
+ * Failed to add the AWS Config rule because the account already contains the maximum number of 150 rules. Consider
+ * deleting any deactivated rules before you add new rules.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

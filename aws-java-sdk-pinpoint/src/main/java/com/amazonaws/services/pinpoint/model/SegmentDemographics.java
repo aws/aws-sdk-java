@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,23 +14,62 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies demographic-based dimension settings for including or excluding endpoints from a segment. These settings
+ * derive from characteristics of endpoint devices, such as platform, make, and model.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDemographics" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentDemographics implements Serializable, Cloneable {
+public class SegmentDemographics implements Serializable, Cloneable, StructuredPojo {
 
-    /** The app version criteria for the segment. */
+    /**
+     * <p>
+     * The app version criteria for the segment.
+     * </p>
+     */
     private SetDimension appVersion;
-    /** The device type criteria for the segment. */
+    /**
+     * <p>
+     * The channel criteria for the segment.
+     * </p>
+     */
+    private SetDimension channel;
+    /**
+     * <p>
+     * The device type criteria for the segment.
+     * </p>
+     */
     private SetDimension deviceType;
-    /** The device make criteria for the segment. */
+    /**
+     * <p>
+     * The device make criteria for the segment.
+     * </p>
+     */
     private SetDimension make;
-    /** The device model criteria for the segment. */
+    /**
+     * <p>
+     * The device model criteria for the segment.
+     * </p>
+     */
     private SetDimension model;
-    /** The device platform criteria for the segment. */
+    /**
+     * <p>
+     * The device platform criteria for the segment.
+     * </p>
+     */
     private SetDimension platform;
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @param appVersion
      *        The app version criteria for the segment.
@@ -41,7 +80,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @return The app version criteria for the segment.
      */
@@ -51,7 +92,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The app version criteria for the segment.
+     * </p>
      * 
      * @param appVersion
      *        The app version criteria for the segment.
@@ -64,7 +107,49 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The channel criteria for the segment.
+     * </p>
+     * 
+     * @param channel
+     *        The channel criteria for the segment.
+     */
+
+    public void setChannel(SetDimension channel) {
+        this.channel = channel;
+    }
+
+    /**
+     * <p>
+     * The channel criteria for the segment.
+     * </p>
+     * 
+     * @return The channel criteria for the segment.
+     */
+
+    public SetDimension getChannel() {
+        return this.channel;
+    }
+
+    /**
+     * <p>
+     * The channel criteria for the segment.
+     * </p>
+     * 
+     * @param channel
+     *        The channel criteria for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDemographics withChannel(SetDimension channel) {
+        setChannel(channel);
+        return this;
+    }
+
+    /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @param deviceType
      *        The device type criteria for the segment.
@@ -75,7 +160,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @return The device type criteria for the segment.
      */
@@ -85,7 +172,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device type criteria for the segment.
+     * </p>
      * 
      * @param deviceType
      *        The device type criteria for the segment.
@@ -98,7 +187,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @param make
      *        The device make criteria for the segment.
@@ -109,7 +200,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @return The device make criteria for the segment.
      */
@@ -119,7 +212,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device make criteria for the segment.
+     * </p>
      * 
      * @param make
      *        The device make criteria for the segment.
@@ -132,7 +227,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @param model
      *        The device model criteria for the segment.
@@ -143,7 +240,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @return The device model criteria for the segment.
      */
@@ -153,7 +252,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device model criteria for the segment.
+     * </p>
      * 
      * @param model
      *        The device model criteria for the segment.
@@ -166,7 +267,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @param platform
      *        The device platform criteria for the segment.
@@ -177,7 +280,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @return The device platform criteria for the segment.
      */
@@ -187,7 +292,9 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The device platform criteria for the segment.
+     * </p>
      * 
      * @param platform
      *        The device platform criteria for the segment.
@@ -200,7 +307,8 @@ public class SegmentDemographics implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -212,6 +320,8 @@ public class SegmentDemographics implements Serializable, Cloneable {
         sb.append("{");
         if (getAppVersion() != null)
             sb.append("AppVersion: ").append(getAppVersion()).append(",");
+        if (getChannel() != null)
+            sb.append("Channel: ").append(getChannel()).append(",");
         if (getDeviceType() != null)
             sb.append("DeviceType: ").append(getDeviceType()).append(",");
         if (getMake() != null)
@@ -238,6 +348,10 @@ public class SegmentDemographics implements Serializable, Cloneable {
             return false;
         if (other.getAppVersion() != null && other.getAppVersion().equals(this.getAppVersion()) == false)
             return false;
+        if (other.getChannel() == null ^ this.getChannel() == null)
+            return false;
+        if (other.getChannel() != null && other.getChannel().equals(this.getChannel()) == false)
+            return false;
         if (other.getDeviceType() == null ^ this.getDeviceType() == null)
             return false;
         if (other.getDeviceType() != null && other.getDeviceType().equals(this.getDeviceType()) == false)
@@ -263,6 +377,7 @@ public class SegmentDemographics implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppVersion() == null) ? 0 : getAppVersion().hashCode());
+        hashCode = prime * hashCode + ((getChannel() == null) ? 0 : getChannel().hashCode());
         hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         hashCode = prime * hashCode + ((getMake() == null) ? 0 : getMake().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
@@ -277,5 +392,11 @@ public class SegmentDemographics implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentDemographicsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

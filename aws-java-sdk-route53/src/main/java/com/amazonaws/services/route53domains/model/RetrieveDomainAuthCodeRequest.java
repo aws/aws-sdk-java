@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The RetrieveDomainAuthCode request includes the following element.
+ * A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide
+ * this value to the new registrar.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"
@@ -30,56 +31,18 @@ public class RetrieveDomainAuthCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to get an authorization code for.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to get an authorization code for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to get an authorization code for.
      */
 
     public void setDomainName(String domainName) {
@@ -88,35 +51,10 @@ public class RetrieveDomainAuthCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to get an authorization code for.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
-     *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The name of the domain that you want to get an authorization code for.
      */
 
     public String getDomainName() {
@@ -125,36 +63,11 @@ public class RetrieveDomainAuthCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to get an authorization code for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to get an authorization code for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +77,8 @@ public class RetrieveDomainAuthCodeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

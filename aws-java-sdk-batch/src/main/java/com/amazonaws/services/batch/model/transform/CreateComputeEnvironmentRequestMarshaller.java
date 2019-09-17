@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,56 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateComputeEnvironmentRequest Marshaller
+ * CreateComputeEnvironmentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateComputeEnvironmentRequestMarshaller implements Marshaller<Request<CreateComputeEnvironmentRequest>, CreateComputeEnvironmentRequest> {
+@SdkInternalApi
+public class CreateComputeEnvironmentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COMPUTEENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironmentName").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("state").build();
+    private static final MarshallingInfo<StructuredPojo> COMPUTERESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeResources").build();
+    private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
 
-    public CreateComputeEnvironmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateComputeEnvironmentRequestMarshaller instance = new CreateComputeEnvironmentRequestMarshaller();
+
+    public static CreateComputeEnvironmentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateComputeEnvironmentRequest> marshall(CreateComputeEnvironmentRequest createComputeEnvironmentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateComputeEnvironmentRequest createComputeEnvironmentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createComputeEnvironmentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateComputeEnvironmentRequest> request = new DefaultRequest<CreateComputeEnvironmentRequest>(createComputeEnvironmentRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/createcomputeenvironment";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createComputeEnvironmentRequest.getComputeEnvironmentName() != null) {
-                jsonGenerator.writeFieldName("computeEnvironmentName").writeValue(createComputeEnvironmentRequest.getComputeEnvironmentName());
-            }
-            if (createComputeEnvironmentRequest.getType() != null) {
-                jsonGenerator.writeFieldName("type").writeValue(createComputeEnvironmentRequest.getType());
-            }
-            if (createComputeEnvironmentRequest.getState() != null) {
-                jsonGenerator.writeFieldName("state").writeValue(createComputeEnvironmentRequest.getState());
-            }
-            if (createComputeEnvironmentRequest.getComputeResources() != null) {
-                jsonGenerator.writeFieldName("computeResources");
-                ComputeResourceJsonMarshaller.getInstance().marshall(createComputeEnvironmentRequest.getComputeResources(), jsonGenerator);
-            }
-            if (createComputeEnvironmentRequest.getServiceRole() != null) {
-                jsonGenerator.writeFieldName("serviceRole").writeValue(createComputeEnvironmentRequest.getServiceRole());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getComputeEnvironmentName(), COMPUTEENVIRONMENTNAME_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getComputeResources(), COMPUTERESOURCES_BINDING);
+            protocolMarshaller.marshall(createComputeEnvironmentRequest.getServiceRole(), SERVICEROLE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

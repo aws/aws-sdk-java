@@ -1,0 +1,73 @@
+/*
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.simpleemail.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.Request;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.services.simpleemail.model.*;
+import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.StringUtils;
+
+/**
+ * UpdateCustomVerificationEmailTemplateRequest Marshaller
+ */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateCustomVerificationEmailTemplateRequestMarshaller implements
+        Marshaller<Request<UpdateCustomVerificationEmailTemplateRequest>, UpdateCustomVerificationEmailTemplateRequest> {
+
+    public Request<UpdateCustomVerificationEmailTemplateRequest> marshall(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest) {
+
+        if (updateCustomVerificationEmailTemplateRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        Request<UpdateCustomVerificationEmailTemplateRequest> request = new DefaultRequest<UpdateCustomVerificationEmailTemplateRequest>(
+                updateCustomVerificationEmailTemplateRequest, "AmazonSimpleEmailService");
+        request.addParameter("Action", "UpdateCustomVerificationEmailTemplate");
+        request.addParameter("Version", "2010-12-01");
+        request.setHttpMethod(HttpMethodName.POST);
+
+        if (updateCustomVerificationEmailTemplateRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getTemplateName()));
+        }
+
+        if (updateCustomVerificationEmailTemplateRequest.getFromEmailAddress() != null) {
+            request.addParameter("FromEmailAddress", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getFromEmailAddress()));
+        }
+
+        if (updateCustomVerificationEmailTemplateRequest.getTemplateSubject() != null) {
+            request.addParameter("TemplateSubject", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getTemplateSubject()));
+        }
+
+        if (updateCustomVerificationEmailTemplateRequest.getTemplateContent() != null) {
+            request.addParameter("TemplateContent", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getTemplateContent()));
+        }
+
+        if (updateCustomVerificationEmailTemplateRequest.getSuccessRedirectionURL() != null) {
+            request.addParameter("SuccessRedirectionURL", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getSuccessRedirectionURL()));
+        }
+
+        if (updateCustomVerificationEmailTemplateRequest.getFailureRedirectionURL() != null) {
+            request.addParameter("FailureRedirectionURL", StringUtils.fromString(updateCustomVerificationEmailTemplateRequest.getFailureRedirectionURL()));
+        }
+
+        return request;
+    }
+
+}

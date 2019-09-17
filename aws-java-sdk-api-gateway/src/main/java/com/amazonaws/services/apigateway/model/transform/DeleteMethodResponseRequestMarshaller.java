@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,59 +12,53 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteMethodResponseRequest Marshaller
+ * DeleteMethodResponseRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMethodResponseRequestMarshaller implements Marshaller<Request<DeleteMethodResponseRequest>, DeleteMethodResponseRequest> {
+@SdkInternalApi
+public class DeleteMethodResponseRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("status_code").build();
 
-    public DeleteMethodResponseRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteMethodResponseRequestMarshaller instance = new DeleteMethodResponseRequestMarshaller();
+
+    public static DeleteMethodResponseRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteMethodResponseRequest> marshall(DeleteMethodResponseRequest deleteMethodResponseRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteMethodResponseRequest deleteMethodResponseRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteMethodResponseRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteMethodResponseRequest> request = new DefaultRequest<DeleteMethodResponseRequest>(deleteMethodResponseRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
-                .marshall(uriResourcePath, "restapi_id", deleteMethodResponseRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id",
-                deleteMethodResponseRequest.getResourceId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method",
-                deleteMethodResponseRequest.getHttpMethod());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code",
-                deleteMethodResponseRequest.getStatusCode());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteMethodResponseRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(deleteMethodResponseRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(deleteMethodResponseRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(deleteMethodResponseRequest.getStatusCode(), STATUSCODE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

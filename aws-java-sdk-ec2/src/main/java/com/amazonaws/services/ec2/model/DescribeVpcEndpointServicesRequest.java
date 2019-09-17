@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,39 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
+     * One or more service names.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> serviceNames;
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>service-name</code>: The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<Filter> filters;
+    /**
+     * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
      * subsequent call to get the next set of results.
      * </p>
@@ -44,6 +77,316 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * One or more service names.
+     * </p>
+     * 
+     * @return One or more service names.
+     */
+
+    public java.util.List<String> getServiceNames() {
+        if (serviceNames == null) {
+            serviceNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return serviceNames;
+    }
+
+    /**
+     * <p>
+     * One or more service names.
+     * </p>
+     * 
+     * @param serviceNames
+     *        One or more service names.
+     */
+
+    public void setServiceNames(java.util.Collection<String> serviceNames) {
+        if (serviceNames == null) {
+            this.serviceNames = null;
+            return;
+        }
+
+        this.serviceNames = new com.amazonaws.internal.SdkInternalList<String>(serviceNames);
+    }
+
+    /**
+     * <p>
+     * One or more service names.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceNames(java.util.Collection)} or {@link #withServiceNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param serviceNames
+     *        One or more service names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointServicesRequest withServiceNames(String... serviceNames) {
+        if (this.serviceNames == null) {
+            setServiceNames(new com.amazonaws.internal.SdkInternalList<String>(serviceNames.length));
+        }
+        for (String ele : serviceNames) {
+            this.serviceNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more service names.
+     * </p>
+     * 
+     * @param serviceNames
+     *        One or more service names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointServicesRequest withServiceNames(java.util.Collection<String> serviceNames) {
+        setServiceNames(serviceNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>service-name</code>: The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return One or more filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>service-name</code>: The name of the service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>service-name</code>: The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>service-name</code>: The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
+     *        </p>
+     *        </li>
+     */
+
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>service-name</code>: The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>service-name</code>: The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointServicesRequest withFilters(Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>service-name</code>: The name of the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>service-name</code>: The name of the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointServicesRequest withFilters(java.util.Collection<Filter> filters) {
+        setFilters(filters);
+        return this;
+    }
 
     /**
      * <p>
@@ -158,7 +501,8 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -168,6 +512,10 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getServiceNames() != null)
+            sb.append("ServiceNames: ").append(getServiceNames()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -186,6 +534,14 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
         if (obj instanceof DescribeVpcEndpointServicesRequest == false)
             return false;
         DescribeVpcEndpointServicesRequest other = (DescribeVpcEndpointServicesRequest) obj;
+        if (other.getServiceNames() == null ^ this.getServiceNames() == null)
+            return false;
+        if (other.getServiceNames() != null && other.getServiceNames().equals(this.getServiceNames()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -202,6 +558,8 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getServiceNames() == null) ? 0 : getServiceNames().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CancelRetrievalRequest Marshaller
+ * CancelRetrievalRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CancelRetrievalRequestMarshaller implements Marshaller<Request<CancelRetrievalRequest>, CancelRetrievalRequest> {
+@SdkInternalApi
+public class CancelRetrievalRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<String> TAPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TapeARN").build();
 
-    public CancelRetrievalRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CancelRetrievalRequestMarshaller instance = new CancelRetrievalRequestMarshaller();
+
+    public static CancelRetrievalRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CancelRetrievalRequest> marshall(CancelRetrievalRequest cancelRetrievalRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CancelRetrievalRequest cancelRetrievalRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (cancelRetrievalRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CancelRetrievalRequest> request = new DefaultRequest<CancelRetrievalRequest>(cancelRetrievalRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.CancelRetrieval");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (cancelRetrievalRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(cancelRetrievalRequest.getGatewayARN());
-            }
-            if (cancelRetrievalRequest.getTapeARN() != null) {
-                jsonGenerator.writeFieldName("TapeARN").writeValue(cancelRetrievalRequest.getTapeARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(cancelRetrievalRequest.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(cancelRetrievalRequest.getTapeARN(), TAPEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

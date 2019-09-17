@@ -16,6 +16,7 @@
 package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.model.service.Location;
+import com.amazonaws.protocol.MarshallLocation;
 
 public class ParameterHttpMapping {
 
@@ -30,6 +31,7 @@ public class ParameterHttpMapping {
     private Location location;
     private boolean flattened;
     private boolean isGreedy;
+    private boolean requiresLength;
 
     public boolean getIsPayload() {
         return isPayload;
@@ -164,4 +166,34 @@ public class ParameterHttpMapping {
         setIsGreedy(greedy);
         return this;
     }
+
+    public boolean isRequiresLength() {
+        return requiresLength;
+    }
+
+    public void setRequiresLength(boolean requiresLength) {
+        this.requiresLength = requiresLength;
+    }
+
+    public ParameterHttpMapping withRequiresLength(boolean requiresLength) {
+        setRequiresLength(requiresLength);
+        return this;
+    }
+
+    public MarshallLocation getMarshallLocation() {
+        if(location == null) {
+            return MarshallLocation.PAYLOAD;
+        }
+        switch (location) {
+            case HEADER:
+            case HEADERS:
+                return MarshallLocation.HEADER;
+            case QUERY_STRING:
+                return MarshallLocation.QUERY_PARAM;
+            case URI:
+                return isGreedy ? MarshallLocation.GREEDY_PATH : MarshallLocation.PATH;
+        }
+        return MarshallLocation.PAYLOAD;
+    }
+
 }

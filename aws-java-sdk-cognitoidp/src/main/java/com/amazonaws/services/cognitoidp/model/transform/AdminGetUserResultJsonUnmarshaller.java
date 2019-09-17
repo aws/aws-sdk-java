@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
                 }
                 if (context.testExpression("UserCreateDate", targetDepth)) {
                     context.nextToken();
-                    adminGetUserResult.setUserCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    adminGetUserResult.setUserCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UserLastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    adminGetUserResult.setUserLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    adminGetUserResult.setUserLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
@@ -75,6 +75,14 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
                 if (context.testExpression("MFAOptions", targetDepth)) {
                     context.nextToken();
                     adminGetUserResult.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("PreferredMfaSetting", targetDepth)) {
+                    context.nextToken();
+                    adminGetUserResult.setPreferredMfaSetting(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UserMFASettingList", targetDepth)) {
+                    context.nextToken();
+                    adminGetUserResult.setUserMFASettingList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

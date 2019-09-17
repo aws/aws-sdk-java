@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -99,10 +99,10 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -111,11 +111,11 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -139,10 +139,10 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb of the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -151,11 +151,11 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

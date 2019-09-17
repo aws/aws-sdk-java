@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -66,8 +66,8 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
     private Integer status;
     /**
      * <p>
-     * The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides the
-     * range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
+     * The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the
+     * range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
      * </p>
      */
     private String contentRange;
@@ -351,14 +351,14 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides the
-     * range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
+     * The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the
+     * range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
      * </p>
      * 
      * @param contentRange
-     *        The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides
-     *        the range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB
-     *        from 8 MB.
+     *        The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response
+     *        provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the
+     *        first 1 MB from 8 MB.
      */
 
     public void setContentRange(String contentRange) {
@@ -367,12 +367,12 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides the
-     * range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
+     * The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the
+     * range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
      * </p>
      * 
-     * @return The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response
-     *         provides the range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the
+     * @return The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response
+     *         provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the
      *         first 1 MB from 8 MB.
      */
 
@@ -382,14 +382,14 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides the
-     * range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
+     * The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the
+     * range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.
      * </p>
      * 
      * @param contentRange
-     *        The range of bytes returned by Amazon Glacier. If only partial output is downloaded, the response provides
-     *        the range of bytes Amazon Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB
-     *        from 8 MB.
+     *        The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response
+     *        provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the
+     *        first 1 MB from 8 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,7 +543,8 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -635,4 +636,5 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

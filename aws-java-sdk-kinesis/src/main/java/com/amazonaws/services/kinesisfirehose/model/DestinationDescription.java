@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DestinationDescription implements Serializable, Cloneable {
+public class DestinationDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -56,6 +58,12 @@ public class DestinationDescription implements Serializable, Cloneable {
      * </p>
      */
     private ElasticsearchDestinationDescription elasticsearchDestinationDescription;
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     */
+    private SplunkDestinationDescription splunkDestinationDescription;
 
     /**
      * <p>
@@ -258,7 +266,48 @@ public class DestinationDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @param splunkDestinationDescription
+     *        The destination in Splunk.
+     */
+
+    public void setSplunkDestinationDescription(SplunkDestinationDescription splunkDestinationDescription) {
+        this.splunkDestinationDescription = splunkDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @return The destination in Splunk.
+     */
+
+    public SplunkDestinationDescription getSplunkDestinationDescription() {
+        return this.splunkDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in Splunk.
+     * </p>
+     * 
+     * @param splunkDestinationDescription
+     *        The destination in Splunk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationDescription withSplunkDestinationDescription(SplunkDestinationDescription splunkDestinationDescription) {
+        setSplunkDestinationDescription(splunkDestinationDescription);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,7 +326,9 @@ public class DestinationDescription implements Serializable, Cloneable {
         if (getRedshiftDestinationDescription() != null)
             sb.append("RedshiftDestinationDescription: ").append(getRedshiftDestinationDescription()).append(",");
         if (getElasticsearchDestinationDescription() != null)
-            sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription());
+            sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription()).append(",");
+        if (getSplunkDestinationDescription() != null)
+            sb.append("SplunkDestinationDescription: ").append(getSplunkDestinationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +366,10 @@ public class DestinationDescription implements Serializable, Cloneable {
         if (other.getElasticsearchDestinationDescription() != null
                 && other.getElasticsearchDestinationDescription().equals(this.getElasticsearchDestinationDescription()) == false)
             return false;
+        if (other.getSplunkDestinationDescription() == null ^ this.getSplunkDestinationDescription() == null)
+            return false;
+        if (other.getSplunkDestinationDescription() != null && other.getSplunkDestinationDescription().equals(this.getSplunkDestinationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +383,7 @@ public class DestinationDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExtendedS3DestinationDescription() == null) ? 0 : getExtendedS3DestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationDescription() == null) ? 0 : getRedshiftDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationDescription() == null) ? 0 : getElasticsearchDestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getSplunkDestinationDescription() == null) ? 0 : getSplunkDestinationDescription().hashCode());
         return hashCode;
     }
 
@@ -338,5 +394,11 @@ public class DestinationDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisfirehose.model.transform.DestinationDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.xray.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Edge implements Serializable, Cloneable {
+public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,7 +53,7 @@ public class Edge implements Serializable, Cloneable {
     private EdgeStatistics summaryStatistics;
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      */
     private java.util.List<HistogramEntry> responseTimeHistogram;
@@ -224,10 +226,10 @@ public class Edge implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
-     * @return Histogram describing the prominence of response times on the edge.
+     * @return A histogram that maps the spread of client response times on an edge.
      */
 
     public java.util.List<HistogramEntry> getResponseTimeHistogram() {
@@ -236,11 +238,11 @@ public class Edge implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      */
 
     public void setResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
@@ -254,7 +256,7 @@ public class Edge implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +265,7 @@ public class Edge implements Serializable, Cloneable {
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +281,11 @@ public class Edge implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,7 +365,8 @@ public class Edge implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -447,5 +450,11 @@ public class Edge implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.xray.model.transform.EdgeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

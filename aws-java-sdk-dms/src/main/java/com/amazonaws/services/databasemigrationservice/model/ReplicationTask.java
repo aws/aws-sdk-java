@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p/>
@@ -22,11 +24,11 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicationTask implements Serializable, Cloneable {
+public class ReplicationTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -34,7 +36,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -118,6 +120,47 @@ public class ReplicationTask implements Serializable, Cloneable {
     private java.util.Date replicationTaskStartDate;
     /**
      * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     */
+    private String cdcStartPosition;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     */
+    private String cdcStopPosition;
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     */
+    private String recoveryCheckpoint;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      */
@@ -131,7 +174,7 @@ public class ReplicationTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -139,7 +182,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -155,14 +198,14 @@ public class ReplicationTask implements Serializable, Cloneable {
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        The user-assigned replication task identifier or name.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -183,7 +226,7 @@ public class ReplicationTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -191,7 +234,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -206,14 +249,14 @@ public class ReplicationTask implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The replication task identifier.</p>
+     * @return The user-assigned replication task identifier or name.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -234,7 +277,7 @@ public class ReplicationTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -242,7 +285,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -258,14 +301,14 @@ public class ReplicationTask implements Serializable, Cloneable {
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        The user-assigned replication task identifier or name.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -460,7 +503,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      */
 
     public void setMigrationType(MigrationTypeValue migrationType) {
-        this.migrationType = migrationType.toString();
+        withMigrationType(migrationType);
     }
 
     /**
@@ -475,7 +518,7 @@ public class ReplicationTask implements Serializable, Cloneable {
      */
 
     public ReplicationTask withMigrationType(MigrationTypeValue migrationType) {
-        setMigrationType(migrationType);
+        this.migrationType = migrationType.toString();
         return this;
     }
 
@@ -761,6 +804,261 @@ public class ReplicationTask implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either
+     *        <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *        start. Specifying both values results in an error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public void setCdcStartPosition(String cdcStartPosition) {
+        this.cdcStartPosition = cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to start. Use either
+     *         <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *         start. Specifying both values results in an error.</p>
+     *         <p>
+     *         The value can be in date, checkpoint, or LSN/SCN format.
+     *         </p>
+     *         <p>
+     *         Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *         </p>
+     *         <p>
+     *         Checkpoint Example: --cdc-start-position
+     *         "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *         </p>
+     *         <p>
+     *         LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public String getCdcStartPosition() {
+        return this.cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code>
+     * or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results
+     * in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either
+     *        <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to
+     *        start. Specifying both values results in an error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withCdcStartPosition(String cdcStartPosition) {
+        setCdcStartPosition(cdcStartPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public void setCdcStopPosition(String cdcStopPosition) {
+        this.cdcStopPosition = cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
+     *         time or commit time.</p>
+     *         <p>
+     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         </p>
+     *         <p>
+     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public String getCdcStopPosition() {
+        return this.cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withCdcStopPosition(String cdcStopPosition) {
+        setCdcStopPosition(cdcStopPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @param recoveryCheckpoint
+     *        Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *        this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *        checkpoint.
+     */
+
+    public void setRecoveryCheckpoint(String recoveryCheckpoint) {
+        this.recoveryCheckpoint = recoveryCheckpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @return Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *         this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *         checkpoint.
+     */
+
+    public String getRecoveryCheckpoint() {
+        return this.recoveryCheckpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @param recoveryCheckpoint
+     *        Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *        this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *        checkpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withRecoveryCheckpoint(String recoveryCheckpoint) {
+        setRecoveryCheckpoint(recoveryCheckpoint);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      * 
@@ -840,7 +1138,8 @@ public class ReplicationTask implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -874,6 +1173,12 @@ public class ReplicationTask implements Serializable, Cloneable {
             sb.append("ReplicationTaskCreationDate: ").append(getReplicationTaskCreationDate()).append(",");
         if (getReplicationTaskStartDate() != null)
             sb.append("ReplicationTaskStartDate: ").append(getReplicationTaskStartDate()).append(",");
+        if (getCdcStartPosition() != null)
+            sb.append("CdcStartPosition: ").append(getCdcStartPosition()).append(",");
+        if (getCdcStopPosition() != null)
+            sb.append("CdcStopPosition: ").append(getCdcStopPosition()).append(",");
+        if (getRecoveryCheckpoint() != null)
+            sb.append("RecoveryCheckpoint: ").append(getRecoveryCheckpoint()).append(",");
         if (getReplicationTaskArn() != null)
             sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getReplicationTaskStats() != null)
@@ -940,6 +1245,18 @@ public class ReplicationTask implements Serializable, Cloneable {
             return false;
         if (other.getReplicationTaskStartDate() != null && other.getReplicationTaskStartDate().equals(this.getReplicationTaskStartDate()) == false)
             return false;
+        if (other.getCdcStartPosition() == null ^ this.getCdcStartPosition() == null)
+            return false;
+        if (other.getCdcStartPosition() != null && other.getCdcStartPosition().equals(this.getCdcStartPosition()) == false)
+            return false;
+        if (other.getCdcStopPosition() == null ^ this.getCdcStopPosition() == null)
+            return false;
+        if (other.getCdcStopPosition() != null && other.getCdcStopPosition().equals(this.getCdcStopPosition()) == false)
+            return false;
+        if (other.getRecoveryCheckpoint() == null ^ this.getRecoveryCheckpoint() == null)
+            return false;
+        if (other.getRecoveryCheckpoint() != null && other.getRecoveryCheckpoint().equals(this.getRecoveryCheckpoint()) == false)
+            return false;
         if (other.getReplicationTaskArn() == null ^ this.getReplicationTaskArn() == null)
             return false;
         if (other.getReplicationTaskArn() != null && other.getReplicationTaskArn().equals(this.getReplicationTaskArn()) == false)
@@ -968,6 +1285,9 @@ public class ReplicationTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStopReason() == null) ? 0 : getStopReason().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskCreationDate() == null) ? 0 : getReplicationTaskCreationDate().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStartDate() == null) ? 0 : getReplicationTaskStartDate().hashCode());
+        hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
+        hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
+        hashCode = prime * hashCode + ((getRecoveryCheckpoint() == null) ? 0 : getRecoveryCheckpoint().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStats() == null) ? 0 : getReplicationTaskStats().hashCode());
         return hashCode;
@@ -980,5 +1300,11 @@ public class ReplicationTask implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.databasemigrationservice.model.transform.ReplicationTaskMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

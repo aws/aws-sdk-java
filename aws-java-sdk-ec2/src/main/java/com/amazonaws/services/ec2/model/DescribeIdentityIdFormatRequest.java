@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeIdentityIdFormatRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeIdentityIdFormat.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,63 +28,25 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
-     * </p>
-     */
-    private String resource;
-    /**
-     * <p>
      * The ARN of the principal, which can be an IAM role, IAM user, or the root user.
      * </p>
      */
     private String principalArn;
-
     /**
      * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
      * </p>
-     * 
-     * @param resource
-     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *        <code>volume</code>
      */
-
-    public void setResource(String resource) {
-        this.resource = resource;
-    }
-
-    /**
-     * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
-     * </p>
-     * 
-     * @return The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *         <code>volume</code>
-     */
-
-    public String getResource() {
-        return this.resource;
-    }
-
-    /**
-     * <p>
-     * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     * <code>volume</code>
-     * </p>
-     * 
-     * @param resource
-     *        The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
-     *        <code>volume</code>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeIdentityIdFormatRequest withResource(String resource) {
-        setResource(resource);
-        return this;
-    }
+    private String resource;
 
     /**
      * <p>
@@ -129,6 +89,103 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
+     * </p>
+     * 
+     * @param resource
+     *        The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     *        <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *        <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *        <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *        <code>network-acl-association</code> | <code>network-interface</code> |
+     *        <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *        <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *        <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *        <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *        <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *        <code>vpn-gateway</code>
+     */
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    /**
+     * <p>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
+     * </p>
+     * 
+     * @return The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
+     *         | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *         <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *         <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *         <code>network-acl-association</code> | <code>network-interface</code> |
+     *         <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *         <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *         <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *         <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *         <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *         <code>vpn-gateway</code>
+     */
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    /**
+     * <p>
+     * The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>
+     * </p>
+     * 
+     * @param resource
+     *        The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> |
+     *        <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     *        <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     *        <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     *        <code>network-acl-association</code> | <code>network-interface</code> |
+     *        <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> |
+     *        <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     *        <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     *        <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     *        <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
+     *        <code>vpn-gateway</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIdentityIdFormatRequest withResource(String resource) {
+        setResource(resource);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -140,7 +197,8 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -150,10 +208,10 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getResource() != null)
-            sb.append("Resource: ").append(getResource()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: ").append(getPrincipalArn());
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
+        if (getResource() != null)
+            sb.append("Resource: ").append(getResource());
         sb.append("}");
         return sb.toString();
     }
@@ -168,13 +226,13 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DescribeIdentityIdFormatRequest == false)
             return false;
         DescribeIdentityIdFormatRequest other = (DescribeIdentityIdFormatRequest) obj;
-        if (other.getResource() == null ^ this.getResource() == null)
-            return false;
-        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
-            return false;
         if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
             return false;
         if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+            return false;
+        if (other.getResource() == null ^ this.getResource() == null)
+            return false;
+        if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
         return true;
     }
@@ -184,8 +242,8 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
+        hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         return hashCode;
     }
 

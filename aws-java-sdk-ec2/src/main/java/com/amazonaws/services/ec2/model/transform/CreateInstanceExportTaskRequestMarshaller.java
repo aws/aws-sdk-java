@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,23 +44,15 @@ public class CreateInstanceExportTaskRequestMarshaller implements Marshaller<Req
             request.addParameter("Description", StringUtils.fromString(createInstanceExportTaskRequest.getDescription()));
         }
 
-        if (createInstanceExportTaskRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(createInstanceExportTaskRequest.getInstanceId()));
-        }
-
-        if (createInstanceExportTaskRequest.getTargetEnvironment() != null) {
-            request.addParameter("TargetEnvironment", StringUtils.fromString(createInstanceExportTaskRequest.getTargetEnvironment()));
-        }
-
         ExportToS3TaskSpecification exportToS3Task = createInstanceExportTaskRequest.getExportToS3Task();
         if (exportToS3Task != null) {
 
-            if (exportToS3Task.getDiskImageFormat() != null) {
-                request.addParameter("ExportToS3.DiskImageFormat", StringUtils.fromString(exportToS3Task.getDiskImageFormat()));
-            }
-
             if (exportToS3Task.getContainerFormat() != null) {
                 request.addParameter("ExportToS3.ContainerFormat", StringUtils.fromString(exportToS3Task.getContainerFormat()));
+            }
+
+            if (exportToS3Task.getDiskImageFormat() != null) {
+                request.addParameter("ExportToS3.DiskImageFormat", StringUtils.fromString(exportToS3Task.getDiskImageFormat()));
             }
 
             if (exportToS3Task.getS3Bucket() != null) {
@@ -70,6 +62,14 @@ public class CreateInstanceExportTaskRequestMarshaller implements Marshaller<Req
             if (exportToS3Task.getS3Prefix() != null) {
                 request.addParameter("ExportToS3.S3Prefix", StringUtils.fromString(exportToS3Task.getS3Prefix()));
             }
+        }
+
+        if (createInstanceExportTaskRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(createInstanceExportTaskRequest.getInstanceId()));
+        }
+
+        if (createInstanceExportTaskRequest.getTargetEnvironment() != null) {
+            request.addParameter("TargetEnvironment", StringUtils.fromString(createInstanceExportTaskRequest.getTargetEnvironment()));
         }
 
         return request;

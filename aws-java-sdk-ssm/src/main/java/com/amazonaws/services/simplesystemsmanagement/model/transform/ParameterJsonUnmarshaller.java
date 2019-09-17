@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,26 @@ public class ParameterJsonUnmarshaller implements Unmarshaller<Parameter, JsonUn
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
                     parameter.setValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    parameter.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("Selector", targetDepth)) {
+                    context.nextToken();
+                    parameter.setSelector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceResult", targetDepth)) {
+                    context.nextToken();
+                    parameter.setSourceResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    parameter.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ARN", targetDepth)) {
+                    context.nextToken();
+                    parameter.setARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

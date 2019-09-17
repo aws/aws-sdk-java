@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,16 +23,14 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentationPartLocation implements Serializable, Cloneable {
+public class DocumentationPartLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      */
     private String type;
@@ -77,21 +77,20 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      * 
      * @param type
-     *        The type of API entity to which the documentation content applies. It is a valid and required field for
-     *        API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     *        <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     *        <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     *        <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any
-     *        entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.
+     *        [Required] The type of API entity to which the documentation content applies. Valid values are
+     *        <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     *        <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     *        <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
+     *        <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>,
+     *        <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or
+     *        <code>RESOURCE</code> type.
      * @see DocumentationPartType
      */
 
@@ -101,21 +100,19 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      * 
-     * @return The type of API entity to which the documentation content applies. It is a valid and required field for
-     *         API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     *         <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     *         <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     *         <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any
-     *         entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code>
-     *         type.
+     * @return [Required] The type of API entity to which the documentation content applies. Valid values are
+     *         <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>
+     *         , <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     *         <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
+     *         <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>,
+     *         <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or
+     *         <code>RESOURCE</code> type.
      * @see DocumentationPartType
      */
 
@@ -125,21 +122,20 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      * 
      * @param type
-     *        The type of API entity to which the documentation content applies. It is a valid and required field for
-     *        API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     *        <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     *        <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     *        <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any
-     *        entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.
+     *        [Required] The type of API entity to which the documentation content applies. Valid values are
+     *        <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     *        <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     *        <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
+     *        <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>,
+     *        <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or
+     *        <code>RESOURCE</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentationPartType
      */
@@ -151,51 +147,49 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      * 
      * @param type
-     *        The type of API entity to which the documentation content applies. It is a valid and required field for
-     *        API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     *        <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     *        <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     *        <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any
-     *        entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.
+     *        [Required] The type of API entity to which the documentation content applies. Valid values are
+     *        <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     *        <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     *        <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
+     *        <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>,
+     *        <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or
+     *        <code>RESOURCE</code> type.
      * @see DocumentationPartType
      */
 
     public void setType(DocumentationPartType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The type of API entity to which the documentation content applies. It is a valid and required field for API
-     * entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-     * Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-     * <code>MODEL</code>, or <code>RESOURCE</code> type.
+     * [Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>,
+     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     * <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does
+     * not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
      * </p>
      * 
      * @param type
-     *        The type of API entity to which the documentation content applies. It is a valid and required field for
-     *        API entity types of <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     *        <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     *        <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     *        <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any
-     *        entity of the <code>API</code>, <code>AUTHROZER</code>, <code>MODEL</code>, or <code>RESOURCE</code> type.
+     *        [Required] The type of API entity to which the documentation content applies. Valid values are
+     *        <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>,
+     *        <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     *        <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
+     *        <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>,
+     *        <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or
+     *        <code>RESOURCE</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentationPartType
      */
 
     public DocumentationPartLocation withType(DocumentationPartType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -465,7 +459,8 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -542,5 +537,11 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.DocumentationPartLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

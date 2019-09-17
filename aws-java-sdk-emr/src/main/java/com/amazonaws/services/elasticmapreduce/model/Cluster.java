@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Cluster implements Serializable, Cloneable {
+public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,6 +54,19 @@ public class Cluster implements Serializable, Cloneable {
      */
     private Ec2InstanceAttributes ec2InstanceAttributes;
     /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     */
+    private String instanceCollectionType;
+    /**
      * <p>
      * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
@@ -71,8 +86,13 @@ public class Cluster implements Serializable, Cloneable {
     private String runningAmiVersion;
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such
+     * as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      */
     private String releaseLabel;
@@ -91,10 +111,13 @@ public class Cluster implements Serializable, Cloneable {
     private Boolean terminationProtected;
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -118,7 +141,7 @@ public class Cluster implements Serializable, Cloneable {
     private String serviceRole;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
@@ -127,18 +150,14 @@ public class Cluster implements Serializable, Cloneable {
     private Integer normalizedInstanceHours;
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      */
     private String masterPublicDnsName;
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
@@ -170,6 +189,35 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private String scaleDownBehavior;
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     */
+    private String customAmiId;
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     */
+    private Integer ebsRootVolumeSize;
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     */
+    private String repoUpgradeOnBoot;
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     */
+    private KerberosAttributes kerberosAttributes;
 
     /**
      * <p>
@@ -338,6 +386,154 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @see InstanceCollectionType
+     */
+
+    public void setInstanceCollectionType(String instanceCollectionType) {
+        this.instanceCollectionType = instanceCollectionType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @return <p>
+     *         The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding
+     *         5.0.x versions.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *         uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *         configuration.
+     * @see InstanceCollectionType
+     */
+
+    public String getInstanceCollectionType() {
+        return this.instanceCollectionType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceCollectionType
+     */
+
+    public Cluster withInstanceCollectionType(String instanceCollectionType) {
+        setInstanceCollectionType(instanceCollectionType);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @see InstanceCollectionType
+     */
+
+    public void setInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
+        withInstanceCollectionType(instanceCollectionType);
+    }
+
+    /**
+     * <note>
+     * <p>
+     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.
+     * </p>
+     * </note>
+     * <p>
+     * The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a uniform
+     * instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.
+     * </p>
+     * 
+     * @param instanceCollectionType
+     *        <p>
+     *        The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     *        versions.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code> indicates a
+     *        uniform instance group configuration. A value of <code>INSTANCE_FLEET</code> indicates an instance fleets
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceCollectionType
+     */
+
+    public Cluster withInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
+        this.instanceCollectionType = instanceCollectionType.toString();
+        return this;
+    }
+
+    /**
      * <p>
      * The path to the Amazon S3 location where logs for this cluster are stored.
      * </p>
@@ -459,13 +655,23 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such
+     * as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The Amazon EMR release label, which determines the version of open-source application packages installed
+     *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *        release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     *        and included application versions and features, see <a
+     *        href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -474,12 +680,22 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such
+     * as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
-     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *         instead of ReleaseLabel.
+     * @return The Amazon EMR release label, which determines the version of open-source application packages installed
+     *         on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *         release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     *         and included application versions and features, see <a
+     *         href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *         >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *         releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.
      */
 
     public String getReleaseLabel() {
@@ -488,13 +704,23 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The Amazon EMR release label, which determines the version of open-source application packages installed on the
+     * cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such
+     * as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application
+     * versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.
+     * com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later.
+     * Earlier versions use <code>AmiVersion</code>.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The Amazon EMR release label, which determines the version of open-source application packages installed
+     *        on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR
+     *        release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions
+     *        and included application versions and features, see <a
+     *        href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+     *        >https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR
+     *        releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -617,16 +843,21 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
+     *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
      *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      */
@@ -637,16 +868,21 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
-     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
-     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -656,16 +892,21 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
-     *        job flow if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
+     *        Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *        cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
      *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -678,16 +919,21 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the job flow if
-     * they have the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created
-     * the cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and manage the cluster if they have
+     * the proper policy permissions set. If this value is <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Indicates whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage
-     *         the job flow if they have the proper policy permissions set. If this value is <code>false</code>, only
-     *         the IAM user that created the cluster can view and manage it. This value can be changed using the
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Indicates whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and manage the
+     *         cluster if they have the proper policy permissions set. If this value is <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -883,14 +1129,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -902,14 +1148,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
      *         that is roughly four times more expensive would result in the normalized instance hours being incremented
      *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
@@ -920,14 +1166,14 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -941,11 +1187,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The public DNS name of the master EC2 instance.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      */
 
     public void setMasterPublicDnsName(String masterPublicDnsName) {
@@ -954,10 +1202,12 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
-     * @return The public DNS name of the master EC2 instance.
+     * @return The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On
+     *         a public subnet, this is the public DNS name.
      */
 
     public String getMasterPublicDnsName() {
@@ -966,11 +1216,13 @@ public class Cluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The public DNS name of the master EC2 instance.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -980,21 +1232,12 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
-     * @return <p>
-     *         Amazon EMR releases 4.x or later.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         The list of Configurations supplied to the EMR cluster.
+     * @return Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR
+     *         cluster.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1005,22 +1248,12 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      */
 
     public void setConfigurations(java.util.Collection<Configuration> configurations) {
@@ -1033,13 +1266,8 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1048,12 +1276,7 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1068,22 +1291,12 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1306,7 +1519,7 @@ public class Cluster implements Serializable, Cloneable {
      */
 
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        this.scaleDownBehavior = scaleDownBehavior.toString();
+        withScaleDownBehavior(scaleDownBehavior);
     }
 
     /**
@@ -1338,12 +1551,243 @@ public class Cluster implements Serializable, Cloneable {
      */
 
     public Cluster withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        setScaleDownBehavior(scaleDownBehavior);
+        this.scaleDownBehavior = scaleDownBehavior.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        the cluster uses a custom AMI.
+     */
+
+    public void setCustomAmiId(String customAmiId) {
+        this.customAmiId = customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @return Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *         the cluster uses a custom AMI.
+     */
+
+    public String getCustomAmiId() {
+        return this.customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        the cluster uses a custom AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCustomAmiId(String customAmiId) {
+        setCustomAmiId(customAmiId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     */
+
+    public void setEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        this.ebsRootVolumeSize = ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @return The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *         Available in Amazon EMR version 4.x and later.
+     */
+
+    public Integer getEbsRootVolumeSize() {
+        return this.ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        setEbsRootVolumeSize(ebsRootVolumeSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @return Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *         the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public String getRepoUpgradeOnBoot() {
+        return this.repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public Cluster withRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        withRepoUpgradeOnBoot(repoUpgradeOnBoot);
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public Cluster withRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public void setKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        this.kerberosAttributes = kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @return Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *         configuration. For more information see <a
+     *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *         Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public KerberosAttributes getKerberosAttributes() {
+        return this.kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        setKerberosAttributes(kerberosAttributes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1361,6 +1805,8 @@ public class Cluster implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getEc2InstanceAttributes() != null)
             sb.append("Ec2InstanceAttributes: ").append(getEc2InstanceAttributes()).append(",");
+        if (getInstanceCollectionType() != null)
+            sb.append("InstanceCollectionType: ").append(getInstanceCollectionType()).append(",");
         if (getLogUri() != null)
             sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getRequestedAmiVersion() != null)
@@ -1392,7 +1838,15 @@ public class Cluster implements Serializable, Cloneable {
         if (getAutoScalingRole() != null)
             sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior()).append(",");
+        if (getCustomAmiId() != null)
+            sb.append("CustomAmiId: ").append(getCustomAmiId()).append(",");
+        if (getEbsRootVolumeSize() != null)
+            sb.append("EbsRootVolumeSize: ").append(getEbsRootVolumeSize()).append(",");
+        if (getRepoUpgradeOnBoot() != null)
+            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot()).append(",");
+        if (getKerberosAttributes() != null)
+            sb.append("KerberosAttributes: ").append(getKerberosAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1422,6 +1876,10 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getEc2InstanceAttributes() == null ^ this.getEc2InstanceAttributes() == null)
             return false;
         if (other.getEc2InstanceAttributes() != null && other.getEc2InstanceAttributes().equals(this.getEc2InstanceAttributes()) == false)
+            return false;
+        if (other.getInstanceCollectionType() == null ^ this.getInstanceCollectionType() == null)
+            return false;
+        if (other.getInstanceCollectionType() != null && other.getInstanceCollectionType().equals(this.getInstanceCollectionType()) == false)
             return false;
         if (other.getLogUri() == null ^ this.getLogUri() == null)
             return false;
@@ -1487,6 +1945,22 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getScaleDownBehavior() != null && other.getScaleDownBehavior().equals(this.getScaleDownBehavior()) == false)
             return false;
+        if (other.getCustomAmiId() == null ^ this.getCustomAmiId() == null)
+            return false;
+        if (other.getCustomAmiId() != null && other.getCustomAmiId().equals(this.getCustomAmiId()) == false)
+            return false;
+        if (other.getEbsRootVolumeSize() == null ^ this.getEbsRootVolumeSize() == null)
+            return false;
+        if (other.getEbsRootVolumeSize() != null && other.getEbsRootVolumeSize().equals(this.getEbsRootVolumeSize()) == false)
+            return false;
+        if (other.getRepoUpgradeOnBoot() == null ^ this.getRepoUpgradeOnBoot() == null)
+            return false;
+        if (other.getRepoUpgradeOnBoot() != null && other.getRepoUpgradeOnBoot().equals(this.getRepoUpgradeOnBoot()) == false)
+            return false;
+        if (other.getKerberosAttributes() == null ^ this.getKerberosAttributes() == null)
+            return false;
+        if (other.getKerberosAttributes() != null && other.getKerberosAttributes().equals(this.getKerberosAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -1499,6 +1973,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceAttributes() == null) ? 0 : getEc2InstanceAttributes().hashCode());
+        hashCode = prime * hashCode + ((getInstanceCollectionType() == null) ? 0 : getInstanceCollectionType().hashCode());
         hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode());
         hashCode = prime * hashCode + ((getRequestedAmiVersion() == null) ? 0 : getRequestedAmiVersion().hashCode());
         hashCode = prime * hashCode + ((getRunningAmiVersion() == null) ? 0 : getRunningAmiVersion().hashCode());
@@ -1515,6 +1990,10 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingRole() == null) ? 0 : getAutoScalingRole().hashCode());
         hashCode = prime * hashCode + ((getScaleDownBehavior() == null) ? 0 : getScaleDownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getCustomAmiId() == null) ? 0 : getCustomAmiId().hashCode());
+        hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
+        hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         return hashCode;
     }
 
@@ -1525,5 +2004,11 @@ public class Cluster implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.ClusterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

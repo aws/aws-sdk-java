@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,90 +12,65 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreatePipelineRequest Marshaller
+ * CreatePipelineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreatePipelineRequestMarshaller implements Marshaller<Request<CreatePipelineRequest>, CreatePipelineRequest> {
+@SdkInternalApi
+public class CreatePipelineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> INPUTBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputBucket").build();
+    private static final MarshallingInfo<String> OUTPUTBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputBucket").build();
+    private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> AWSKMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsKmsKeyArn").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Notifications").build();
+    private static final MarshallingInfo<StructuredPojo> CONTENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentConfig").build();
+    private static final MarshallingInfo<StructuredPojo> THUMBNAILCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThumbnailConfig").build();
 
-    public CreatePipelineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreatePipelineRequestMarshaller instance = new CreatePipelineRequestMarshaller();
+
+    public static CreatePipelineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreatePipelineRequest> marshall(CreatePipelineRequest createPipelineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreatePipelineRequest createPipelineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createPipelineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreatePipelineRequest> request = new DefaultRequest<CreatePipelineRequest>(createPipelineRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2012-09-25/pipelines";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createPipelineRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createPipelineRequest.getName());
-            }
-            if (createPipelineRequest.getInputBucket() != null) {
-                jsonGenerator.writeFieldName("InputBucket").writeValue(createPipelineRequest.getInputBucket());
-            }
-            if (createPipelineRequest.getOutputBucket() != null) {
-                jsonGenerator.writeFieldName("OutputBucket").writeValue(createPipelineRequest.getOutputBucket());
-            }
-            if (createPipelineRequest.getRole() != null) {
-                jsonGenerator.writeFieldName("Role").writeValue(createPipelineRequest.getRole());
-            }
-            if (createPipelineRequest.getAwsKmsKeyArn() != null) {
-                jsonGenerator.writeFieldName("AwsKmsKeyArn").writeValue(createPipelineRequest.getAwsKmsKeyArn());
-            }
-            if (createPipelineRequest.getNotifications() != null) {
-                jsonGenerator.writeFieldName("Notifications");
-                NotificationsJsonMarshaller.getInstance().marshall(createPipelineRequest.getNotifications(), jsonGenerator);
-            }
-            if (createPipelineRequest.getContentConfig() != null) {
-                jsonGenerator.writeFieldName("ContentConfig");
-                PipelineOutputConfigJsonMarshaller.getInstance().marshall(createPipelineRequest.getContentConfig(), jsonGenerator);
-            }
-            if (createPipelineRequest.getThumbnailConfig() != null) {
-                jsonGenerator.writeFieldName("ThumbnailConfig");
-                PipelineOutputConfigJsonMarshaller.getInstance().marshall(createPipelineRequest.getThumbnailConfig(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createPipelineRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getInputBucket(), INPUTBUCKET_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getOutputBucket(), OUTPUTBUCKET_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getAwsKmsKeyArn(), AWSKMSKEYARN_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getNotifications(), NOTIFICATIONS_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getContentConfig(), CONTENTCONFIG_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getThumbnailConfig(), THUMBNAILCONFIG_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,28 +31,45 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs
-     * to restrict what a user can do while using the temporary credentials.
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
+     * credentials.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
     /**
      * <p>
-     * A list of names of API actions to evaluate in the simulation. Each action is evaluated against each resource.
-     * Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> actionNames;
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value
+     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
      * and reports it in the response.
@@ -68,8 +85,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
@@ -80,29 +97,49 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourcePolicy;
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
+     * </p>
+     * <p>
+     * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
+     * example, to represent the account with the 112233445566 ID, use the following ARN:
+     * <code>arn:aws:iam::112233445566-ID:root</code>.
      * </p>
      */
     private String resourceOwner;
     /**
      * <p>
-     * The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code> is
-     * required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a
-     * value to use in evaluating the policy.
+     * The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the policy.
      * </p>
      * <p>
      * You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a
@@ -113,16 +150,16 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContextEntry> contextEntries;
     /**
      * <p>
-     * Specifies the type of simulation to run. Different APIs that support resource-based policies require different
-     * combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to
-     * enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not
-     * match one of the following scenarios, then you can omit this parameter. The following list shows each of the
+     * Specifies the type of simulation to run. Different API operations that support resource-based policies require
+     * different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator
+     * to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does
+     * not match one of the following scenarios, then you can omit this parameter. The following list shows each of the
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
@@ -130,8 +167,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>AWS EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -187,15 +224,15 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     private String resourceHandlingOption;
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -214,31 +251,63 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs
-     * to restrict what a user can do while using the temporary credentials.
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
+     * credentials.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A list of policy documents to include in the simulation. Each document is specified as a string
      *         containing the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in
      *         this parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code>
      *         parameter. The policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *         >GetFederationToken</a> or one of the <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs to
-     *         restrict what a user can do while using the temporary credentials.</p>
+     *         href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *         operations. In other words, do not use policies designed to restrict what a user can do while using the
+     *         temporary credentials.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -254,32 +323,64 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs
-     * to restrict what a user can do while using the temporary credentials.
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
+     * credentials.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        A list of policy documents to include in the simulation. Each document is specified as a string containing
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs to
-     *        restrict what a user can do while using the temporary credentials.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        operations. In other words, do not use policies designed to restrict what a user can do while using the
+     *        temporary credentials.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -297,16 +398,32 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs
-     * to restrict what a user can do while using the temporary credentials.
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
+     * credentials.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicyInputList(java.util.Collection)} or {@link #withPolicyInputList(java.util.Collection)} if you
@@ -318,16 +435,32 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs to
-     *        restrict what a user can do while using the temporary credentials.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        operations. In other words, do not use policies designed to restrict what a user can do while using the
+     *        temporary credentials.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,32 +480,64 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this parameter. Any
      * resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The policies cannot be
      * "scope-down" policies, such as you could include in a call to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
-     * one of the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs
-     * to restrict what a user can do while using the temporary credentials.
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a> or
+     * one of the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     * operations. In other words, do not use policies designed to restrict what a user can do while using the temporary
+     * credentials.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        A list of policy documents to include in the simulation. Each document is specified as a string containing
      *        the complete, valid JSON text of an IAM policy. Do not include any resource-based policies in this
      *        parameter. Any resource-based policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      *        policies cannot be "scope-down" policies, such as you could include in a call to <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html"
      *        >GetFederationToken</a> or one of the <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> APIs to
-     *        restrict what a user can do while using the temporary credentials.</p>
+     *        href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a> API
+     *        operations. In other words, do not use policies designed to restrict what a user can do while using the
+     *        temporary credentials.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,12 +548,14 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of names of API actions to evaluate in the simulation. Each action is evaluated against each resource.
-     * Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
-     * @return A list of names of API actions to evaluate in the simulation. Each action is evaluated against each
-     *         resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * @return A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     *         resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *         operation does not support using wildcards (*) in an action name.
      */
 
     public java.util.List<String> getActionNames() {
@@ -400,13 +567,15 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of names of API actions to evaluate in the simulation. Each action is evaluated against each resource.
-     * Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
      * @param actionNames
-     *        A list of names of API actions to evaluate in the simulation. Each action is evaluated against each
-     *        resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      */
 
     public void setActionNames(java.util.Collection<String> actionNames) {
@@ -420,8 +589,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of names of API actions to evaluate in the simulation. Each action is evaluated against each resource.
-     * Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -430,8 +600,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param actionNames
-     *        A list of names of API actions to evaluate in the simulation. Each action is evaluated against each
-     *        resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,13 +618,15 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of names of API actions to evaluate in the simulation. Each action is evaluated against each resource.
-     * Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     * A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     * resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This operation
+     * does not support using wildcards (*) in an action name.
      * </p>
      * 
      * @param actionNames
-     *        A list of names of API actions to evaluate in the simulation. Each action is evaluated against each
-     *        resource. Each action must include the service identifier, such as <code>iam:CreateUser</code>.
+     *        A list of names of API operations to evaluate in the simulation. Each operation is evaluated against each
+     *        resource. Each operation must include the service identifier, such as <code>iam:CreateUser</code>. This
+     *        operation does not support using wildcards (*) in an action name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,7 +637,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value
+     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
      * and reports it in the response.
@@ -480,11 +653,11 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the
+     * @return A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *         value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
      *         of each combination and reports it in the response.</p>
@@ -499,7 +672,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -512,7 +685,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value
+     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
      * and reports it in the response.
@@ -528,12 +701,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the
+     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
      *        of each combination and reports it in the response.</p>
@@ -548,7 +721,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -563,7 +736,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value
+     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
      * and reports it in the response.
@@ -579,8 +752,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -589,7 +762,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the
+     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
      *        of each combination and reports it in the response.</p>
@@ -604,7 +777,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -621,7 +794,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the value
+     * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
      * and reports it in the response.
@@ -637,12 +810,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
-     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided then the
+     *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
      *        of each combination and reports it in the response.</p>
@@ -657,7 +830,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -674,10 +847,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourcePolicy
      *        A resource-based policy to include in the simulation provided as a string. Each resource in the simulation
@@ -685,10 +873,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        simulation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setResourcePolicy(String resourcePolicy) {
@@ -702,20 +905,50 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A resource-based policy to include in the simulation provided as a string. Each resource in the
      *         simulation is treated as if it had this policy attached. You can include only one resource-based policy
      *         in a simulation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getResourcePolicy() {
@@ -729,10 +962,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourcePolicy
      *        A resource-based policy to include in the simulation provided as a string. Each resource in the simulation
@@ -740,10 +988,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        simulation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,23 +1017,33 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
+     * </p>
+     * <p>
+     * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
+     * example, to represent the account with the 112233445566 ID, use the following ARN:
+     * <code>arn:aws:iam::112233445566-ID:root</code>.
      * </p>
      * 
      * @param resourceOwner
-     *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *        used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *        <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *        policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *        required only if you specify a resource-based policy and account that owns the resource is different from
-     *        the account that owns the simulated calling user <code>CallerArn</code>.
+     *        An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
+     *        identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *        <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *        <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not
+     *        specified, then the owner of the resources and the resource policy defaults to the account of the identity
+     *        provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy
+     *        and account that owns the resource is different from the account that owns the simulated calling user
+     *        <code>CallerArn</code>.</p>
+     *        <p>
+     *        The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
+     *        For example, to represent the account with the 112233445566 ID, use the following ARN:
+     *        <code>arn:aws:iam::112233445566-ID:root</code>.
      */
 
     public void setResourceOwner(String resourceOwner) {
@@ -779,22 +1052,32 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
+     * </p>
+     * <p>
+     * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
+     * example, to represent the account with the 112233445566 ID, use the following ARN:
+     * <code>arn:aws:iam::112233445566-ID:root</code>.
      * </p>
      * 
-     * @return An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *         the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *         used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *         <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *         policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *         required only if you specify a resource-based policy and account that owns the resource is different from
-     *         the account that owns the simulated calling user <code>CallerArn</code>.
+     * @return An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
+     *         identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *         <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *         <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is
+     *         not specified, then the owner of the resources and the resource policy defaults to the account of the
+     *         identity provided in <code>CallerArn</code>. This parameter is required only if you specify a
+     *         resource-based policy and account that owns the resource is different from the account that owns the
+     *         simulated calling user <code>CallerArn</code>.</p>
+     *         <p>
+     *         The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
+     *         For example, to represent the account with the 112233445566 ID, use the following ARN:
+     *         <code>arn:aws:iam::112233445566-ID:root</code>.
      */
 
     public String getResourceOwner() {
@@ -803,23 +1086,33 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not identify
+     * its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     * <code>ResourceOwner</code> is specified, it is also used as the account owner of any <code>ResourcePolicy</code>
+     * included in the simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the
+     * resources and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>.
+     * This parameter is required only if you specify a resource-based policy and account that owns the resource is
+     * different from the account that owns the simulated calling user <code>CallerArn</code>.
+     * </p>
+     * <p>
+     * The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For
+     * example, to represent the account with the 112233445566 ID, use the following ARN:
+     * <code>arn:aws:iam::112233445566-ID:root</code>.
      * </p>
      * 
      * @param resourceOwner
-     *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *        used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *        <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *        policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *        required only if you specify a resource-based policy and account that owns the resource is different from
-     *        the account that owns the simulated calling user <code>CallerArn</code>.
+     *        An ARN representing the AWS account ID that specifies the owner of any simulated resource that does not
+     *        identify its owner in the resource ARN. Examples of resource ARNs include an S3 bucket or object. If
+     *        <code>ResourceOwner</code> is specified, it is also used as the account owner of any
+     *        <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code> parameter is not
+     *        specified, then the owner of the resources and the resource policy defaults to the account of the identity
+     *        provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based policy
+     *        and account that owns the resource is different from the account that owns the simulated calling user
+     *        <code>CallerArn</code>.</p>
+     *        <p>
+     *        The ARN for an account uses the following syntax: <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>.
+     *        For example, to represent the account with the 112233445566 ID, use the following ARN:
+     *        <code>arn:aws:iam::112233445566-ID:root</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -830,9 +1123,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code> is
-     * required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a
-     * value to use in evaluating the policy.
+     * The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the policy.
      * </p>
      * <p>
      * You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a
@@ -840,9 +1133,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callerArn
-     *        The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code>
-     *        is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
-     *        element has a value to use in evaluating the policy.</p>
+     *        The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     *        <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     *        <code>Principal</code> element has a value to use in evaluating the policy.</p>
      *        <p>
      *        You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated
      *        user, or a service principal.
@@ -854,18 +1147,18 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code> is
-     * required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a
-     * value to use in evaluating the policy.
+     * The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the policy.
      * </p>
      * <p>
      * You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a
      * service principal.
      * </p>
      * 
-     * @return The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code>
-     *         is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
-     *         element has a value to use in evaluating the policy.</p>
+     * @return The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     *         <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     *         <code>Principal</code> element has a value to use in evaluating the policy.</p>
      *         <p>
      *         You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated
      *         user, or a service principal.
@@ -877,9 +1170,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code> is
-     * required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a
-     * value to use in evaluating the policy.
+     * The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     * <code>Principal</code> element has a value to use in evaluating the policy.
      * </p>
      * <p>
      * You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a
@@ -887,9 +1180,9 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callerArn
-     *        The ARN of the IAM user that you want to use as the simulated caller of the APIs. <code>CallerArn</code>
-     *        is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code>
-     *        element has a value to use in evaluating the policy.</p>
+     *        The ARN of the IAM user that you want to use as the simulated caller of the API operations.
+     *        <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's
+     *        <code>Principal</code> element has a value to use in evaluating the policy.</p>
      *        <p>
      *        You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated
      *        user, or a service principal.
@@ -904,11 +1197,11 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @return A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *         evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *         evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public java.util.List<ContextEntry> getContextEntries() {
@@ -921,12 +1214,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      */
 
     public void setContextEntries(java.util.Collection<ContextEntry> contextEntries) {
@@ -941,7 +1234,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -951,7 +1244,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -968,12 +1261,12 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A list of context keys and corresponding values for the simulation to use. Whenever a context key is evaluated in
-     * one of the simulated IAM permission policies, the corresponding value is supplied.
+     * one of the simulated IAM permissions policies, the corresponding value is supplied.
      * </p>
      * 
      * @param contextEntries
      *        A list of context keys and corresponding values for the simulation to use. Whenever a context key is
-     *        evaluated in one of the simulated IAM permission policies, the corresponding value is supplied.
+     *        evaluated in one of the simulated IAM permissions policies, the corresponding value is supplied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -984,10 +1277,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the type of simulation to run. Different APIs that support resource-based policies require different
-     * combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to
-     * enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not
-     * match one of the following scenarios, then you can omit this parameter. The following list shows each of the
+     * Specifies the type of simulation to run. Different API operations that support resource-based policies require
+     * different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator
+     * to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does
+     * not match one of the following scenarios, then you can omit this parameter. The following list shows each of the
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
@@ -995,8 +1288,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>AWS EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1050,19 +1343,19 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param resourceHandlingOption
-     *        Specifies the type of simulation to run. Different APIs that support resource-based policies require
-     *        different combinations of resources. By specifying the type of simulation to run, you enable the policy
-     *        simulator to enforce the presence of the required resources to ensure reliable simulation results. If your
-     *        simulation does not match one of the following scenarios, then you can omit this parameter. The following
-     *        list shows each of the supported scenario values and the resources that you must define to run the
-     *        simulation.</p>
+     *        Specifies the type of simulation to run. Different API operations that support resource-based policies
+     *        require different combinations of resources. By specifying the type of simulation to run, you enable the
+     *        policy simulator to enforce the presence of the required resources to ensure reliable simulation results.
+     *        If your simulation does not match one of the following scenarios, then you can omit this parameter. The
+     *        following list shows each of the supported scenario values and the resources that you must define to run
+     *        the simulation.</p>
      *        <p>
      *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>AWS EC2 User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1121,10 +1414,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the type of simulation to run. Different APIs that support resource-based policies require different
-     * combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to
-     * enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not
-     * match one of the following scenarios, then you can omit this parameter. The following list shows each of the
+     * Specifies the type of simulation to run. Different API operations that support resource-based policies require
+     * different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator
+     * to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does
+     * not match one of the following scenarios, then you can omit this parameter. The following list shows each of the
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
@@ -1132,8 +1425,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>AWS EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1186,10 +1479,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * 
-     * @return Specifies the type of simulation to run. Different APIs that support resource-based policies require
-     *         different combinations of resources. By specifying the type of simulation to run, you enable the policy
-     *         simulator to enforce the presence of the required resources to ensure reliable simulation results. If
-     *         your simulation does not match one of the following scenarios, then you can omit this parameter. The
+     * @return Specifies the type of simulation to run. Different API operations that support resource-based policies
+     *         require different combinations of resources. By specifying the type of simulation to run, you enable the
+     *         policy simulator to enforce the presence of the required resources to ensure reliable simulation results.
+     *         If your simulation does not match one of the following scenarios, then you can omit this parameter. The
      *         following list shows each of the supported scenario values and the resources that you must define to run
      *         the simulation.</p>
      *         <p>
@@ -1197,8 +1490,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         your scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2
      *         scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet,
      *         then you must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a> in the <i>AWS EC2 User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1257,10 +1550,10 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the type of simulation to run. Different APIs that support resource-based policies require different
-     * combinations of resources. By specifying the type of simulation to run, you enable the policy simulator to
-     * enforce the presence of the required resources to ensure reliable simulation results. If your simulation does not
-     * match one of the following scenarios, then you can omit this parameter. The following list shows each of the
+     * Specifies the type of simulation to run. Different API operations that support resource-based policies require
+     * different combinations of resources. By specifying the type of simulation to run, you enable the policy simulator
+     * to enforce the presence of the required resources to ensure reliable simulation results. If your simulation does
+     * not match one of the following scenarios, then you can omit this parameter. The following list shows each of the
      * supported scenario values and the resources that you must define to run the simulation.
      * </p>
      * <p>
@@ -1268,8 +1561,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a> in
-     * the <i>AWS EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1323,19 +1616,19 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param resourceHandlingOption
-     *        Specifies the type of simulation to run. Different APIs that support resource-based policies require
-     *        different combinations of resources. By specifying the type of simulation to run, you enable the policy
-     *        simulator to enforce the presence of the required resources to ensure reliable simulation results. If your
-     *        simulation does not match one of the following scenarios, then you can omit this parameter. The following
-     *        list shows each of the supported scenario values and the resources that you must define to run the
-     *        simulation.</p>
+     *        Specifies the type of simulation to run. Different API operations that support resource-based policies
+     *        require different combinations of resources. By specifying the type of simulation to run, you enable the
+     *        policy simulator to enforce the presence of the required resources to ensure reliable simulation results.
+     *        If your simulation does not match one of the following scenarios, then you can omit this parameter. The
+     *        following list shows each of the supported scenario values and the resources that you must define to run
+     *        the simulation.</p>
      *        <p>
      *        Each of the EC2 scenarios requires that you specify instance, image, and security-group resources. If your
      *        scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>AWS EC2 User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1396,26 +1689,26 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -1424,25 +1717,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
-     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
-     *         tells the service where to continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -1451,26 +1744,26 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1532,7 +1825,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

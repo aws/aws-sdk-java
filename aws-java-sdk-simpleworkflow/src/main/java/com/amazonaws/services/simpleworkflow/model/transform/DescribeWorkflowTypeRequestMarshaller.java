@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkflowTypeRequest Marshaller
+ * DescribeWorkflowTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkflowTypeRequestMarshaller implements Marshaller<Request<DescribeWorkflowTypeRequest>, DescribeWorkflowTypeRequest> {
+@SdkInternalApi
+public class DescribeWorkflowTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<StructuredPojo> WORKFLOWTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowType").build();
 
-    public DescribeWorkflowTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeWorkflowTypeRequestMarshaller instance = new DescribeWorkflowTypeRequestMarshaller();
+
+    public static DescribeWorkflowTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeWorkflowTypeRequest> marshall(DescribeWorkflowTypeRequest describeWorkflowTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeWorkflowTypeRequest describeWorkflowTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeWorkflowTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkflowTypeRequest> request = new DefaultRequest<DescribeWorkflowTypeRequest>(describeWorkflowTypeRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.DescribeWorkflowType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeWorkflowTypeRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(describeWorkflowTypeRequest.getDomain());
-            }
-            if (describeWorkflowTypeRequest.getWorkflowType() != null) {
-                jsonGenerator.writeFieldName("workflowType");
-                WorkflowTypeJsonMarshaller.getInstance().marshall(describeWorkflowTypeRequest.getWorkflowType(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeWorkflowTypeRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(describeWorkflowTypeRequest.getWorkflowType(), WORKFLOWTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

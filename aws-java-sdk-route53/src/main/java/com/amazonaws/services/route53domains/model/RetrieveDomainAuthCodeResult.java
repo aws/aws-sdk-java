@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,6 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String authCode;
 
@@ -40,14 +37,9 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param authCode
-     *        The authorization code for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The authorization code for the domain.
      */
 
     public void setAuthCode(String authCode) {
@@ -58,13 +50,8 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The authorization code for the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The authorization code for the domain.
      */
 
     public String getAuthCode() {
@@ -75,14 +62,9 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param authCode
-     *        The authorization code for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The authorization code for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,7 +74,8 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -103,7 +86,7 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthCode() != null)
-            sb.append("AuthCode: ").append(getAuthCode());
+            sb.append("AuthCode: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -142,4 +125,5 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

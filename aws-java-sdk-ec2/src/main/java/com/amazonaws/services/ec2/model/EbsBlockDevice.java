@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,53 +28,25 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the snapshot.
-     * </p>
-     */
-    private String snapshotId;
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     */
-    private Integer volumeSize;
-    /**
-     * <p>
      * Indicates whether the EBS volume is deleted on instance termination.
      * </p>
      */
     private Boolean deleteOnTermination;
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+     * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
-     * </p>
-     */
-    private String volumeType;
-    /**
-     * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this represents
-     * the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -84,148 +56,70 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * The ID of the snapshot.
+     * </p>
+     */
+    private String snapshotId;
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
+     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
+     * size must be equal to or larger than the snapshot size.
+     * </p>
+     */
+    private Integer volumeSize;
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     */
+    private String volumeType;
+    /**
+     * <p>
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      */
     private Boolean encrypted;
-
     /**
      * <p>
-     * The ID of the snapshot.
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
+     * encrypted.
      * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
+     * <p>
+     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     * RequestSpotInstances</a>.
+     * </p>
      */
-
-    public void setSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @return The ID of the snapshot.
-     */
-
-    public String getSnapshotId() {
-        return this.snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EbsBlockDevice withSnapshotId(String snapshotId) {
-        setSnapshotId(snapshotId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     * 
-     * @param volumeSize
-     *        The size of the volume, in GiB.</p>
-     *        <p>
-     *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
-     *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
-     */
-
-    public void setVolumeSize(Integer volumeSize) {
-        this.volumeSize = volumeSize;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     * 
-     * @return The size of the volume, in GiB.</p>
-     *         <p>
-     *         Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     *         <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     *         <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
-     *         the volume size must be equal to or larger than the snapshot size.
-     *         </p>
-     *         <p>
-     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
-     *         the snapshot size.
-     */
-
-    public Integer getVolumeSize() {
-        return this.volumeSize;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     * 
-     * @param volumeSize
-     *        The size of the volume, in GiB.</p>
-     *        <p>
-     *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
-     *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
-     *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
-     *        volume size must be equal to or larger than the snapshot size.
-     *        </p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EbsBlockDevice withVolumeSize(Integer volumeSize) {
-        setVolumeSize(volumeSize);
-        return this;
-    }
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -281,123 +175,19 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
+     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+     * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Default: <code>standard</code>
-     * </p>
-     * 
-     * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
-     *        <p>
-     *        Default: <code>standard</code>
-     * @see VolumeType
-     */
-
-    public void setVolumeType(String volumeType) {
-        this.volumeType = volumeType;
-    }
-
-    /**
-     * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
-     * </p>
-     * 
-     * @return The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *         <code>standard</code>.</p>
-     *         <p>
-     *         Default: <code>standard</code>
-     * @see VolumeType
-     */
-
-    public String getVolumeType() {
-        return this.volumeType;
-    }
-
-    /**
-     * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
-     * </p>
-     * 
-     * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
-     *        <p>
-     *        Default: <code>standard</code>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VolumeType
-     */
-
-    public EbsBlockDevice withVolumeType(String volumeType) {
-        setVolumeType(volumeType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
-     * </p>
-     * 
-     * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
-     *        <p>
-     *        Default: <code>standard</code>
-     * @see VolumeType
-     */
-
-    public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
-    }
-
-    /**
-     * <p>
-     * The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     * .
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
-     * </p>
-     * 
-     * @param volumeType
-     *        The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>, <code>sc1</code>, or
-     *        <code>standard</code>.</p>
-     *        <p>
-     *        Default: <code>standard</code>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VolumeType
-     */
-
-    public EbsBlockDevice withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this represents
-     * the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -405,15 +195,19 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this
-     *        represents the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents
-     *        the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     *        bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes,
+     *        this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
+     *        represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     *        for bursting. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
+     *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
+     *        <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
+     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -426,30 +220,38 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this represents
-     * the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+     * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
+     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
      * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this
-     *         represents the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents
-     *         the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     *         bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     * @return The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes,
+     *         this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes,
+     *         this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
+     *         credits for bursting. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
-     *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *         volumes.
+     *         Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
+     *         <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">
+     *         Nitro-based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *         EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *         </p>
      *         <p>
      *         Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -463,15 +265,19 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this represents
-     * the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
+     * the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
+     * Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for <code>io1</code>
+     * volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in requests
@@ -479,15 +285,19 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code>, this
-     *        represents the number of IOPS that are provisioned for the volume. For <code>gp2</code>, this represents
-     *        the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     *        bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS) that the volume supports. For <code>io1</code> volumes,
+     *        this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this
+     *        represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits
+     *        for bursting. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
+     *        Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000IOPS for
+     *        <code>io1</code> volumes in most Regions. Maximum <code>io1</code> IOPS of 64,000 is guaranteed only on <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-
+     *        based instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      *        </p>
      *        <p>
      *        Condition: This parameter is required for requests to create <code>io1</code> volumes; it is not used in
@@ -502,13 +312,283 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     */
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @return The ID of the snapshot.
+     */
+
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsBlockDevice withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
+     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
+     * size must be equal to or larger than the snapshot size.
+     * </p>
+     * 
+     * @param volumeSize
+     *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
+     *        <p>
+     *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.
+     */
+
+    public void setVolumeSize(Integer volumeSize) {
+        this.volumeSize = volumeSize;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
+     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
+     * size must be equal to or larger than the snapshot size.
+     * </p>
+     * 
+     * @return The size of the volume, in GiB.</p>
+     *         <p>
+     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
+     *         the snapshot size.
+     *         </p>
+     *         <p>
+     *         Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     *         <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     *         <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot,
+     *         the volume size must be equal to or larger than the snapshot size.
+     */
+
+    public Integer getVolumeSize() {
+        return this.volumeSize;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * <p>
+     * Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     * <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     * <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the volume
+     * size must be equal to or larger than the snapshot size.
+     * </p>
+     * 
+     * @param volumeSize
+     *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     *        </p>
+     *        <p>
+     *        Constraints: 1-16384 for General Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD (
+     *        <code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>), 500-16384 for Cold HDD (
+     *        <code>sc1</code>), and 1-1024 for Magnetic (<code>standard</code>) volumes. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsBlockDevice withVolumeSize(Integer volumeSize) {
+        setVolumeSize(volumeSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
+     *        <p>
+     *        Default: <code>gp2</code>
+     * @see VolumeType
+     */
+
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     * 
+     * @return The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *         supports.</p>
+     *         <p>
+     *         Default: <code>gp2</code>
+     * @see VolumeType
+     */
+
+    public String getVolumeType() {
+        return this.volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
+     *        <p>
+     *        Default: <code>gp2</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeType
+     */
+
+    public EbsBlockDevice withVolumeType(String volumeType) {
+        setVolumeType(volumeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
+     *        <p>
+     *        Default: <code>gp2</code>
+     * @see VolumeType
+     */
+
+    public void setVolumeType(VolumeType volumeType) {
+        withVolumeType(volumeType);
+    }
+
+    /**
+     * <p>
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     * supports.
+     * </p>
+     * <p>
+     * Default: <code>gp2</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
+     *        supports.</p>
+     *        <p>
+     *        Default: <code>gp2</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeType
+     */
+
+    public EbsBlockDevice withVolumeType(VolumeType volumeType) {
+        this.volumeType = volumeType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *        instances that support Amazon EBS encryption.
+     *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *        snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *        (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *        enabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        In no case can you remove encryption from an encrypted volume.
+     *        </p>
+     *        <p>
+     *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        >Supported Instance Types</a>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -517,12 +597,37 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *         instances that support Amazon EBS encryption.
+     * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *         (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *         enabled. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
+     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         In no case can you remove encryption from an encrypted volume.
+     *         </p>
+     *         <p>
+     *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         >Supported Instance Types</a>.
      */
 
     public Boolean getEncrypted() {
@@ -531,13 +636,38 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *        instances that support Amazon EBS encryption.
+     *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *        snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *        (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *        enabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
+     *        EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        In no case can you remove encryption from an encrypted volume.
+     *        </p>
+     *        <p>
+     *        Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *        >Supported Instance Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,12 +678,37 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
+     * The effect of setting the encryption state to <code>true</code> depends on the volume origin (new or from a
+     * snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * In no case can you remove encryption from an encrypted volume.
+     * </p>
+     * <p>
+     * Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * >Supported Instance Types</a>.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *         instances that support Amazon EBS encryption.
+     * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
+     *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
+     *         (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is
+     *         enabled. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters"
+     *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         In no case can you remove encryption from an encrypted volume.
+     *         </p>
+     *         <p>
+     *         Encrypted volumes can only be attached to instances that support Amazon EBS encryption. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     *         >Supported Instance Types</a>.
      */
 
     public Boolean isEncrypted() {
@@ -561,7 +716,96 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     * RequestSpotInstances</a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume
+     *        is encrypted.</p>
+     *        <p>
+     *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *        and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *        RequestSpotInstances</a>.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     * RequestSpotInstances</a>.
+     * </p>
+     * 
+     * @return Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS
+     *         volume is encrypted.</p>
+     *         <p>
+     *         This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *         href
+     *         ="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *         and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *         RequestSpotInstances</a>.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is
+     * encrypted.
+     * </p>
+     * <p>
+     * This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     * RequestSpotInstances</a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume
+     *        is encrypted.</p>
+     *        <p>
+     *        This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     *        and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
+     *        RequestSpotInstances</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsBlockDevice withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -571,18 +815,20 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeleteOnTermination() != null)
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getIops() != null)
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
-        if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
-        if (getIops() != null)
-            sb.append("Iops: ").append(getIops()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: ").append(getEncrypted());
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -597,6 +843,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         if (obj instanceof EbsBlockDevice == false)
             return false;
         EbsBlockDevice other = (EbsBlockDevice) obj;
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
+            return false;
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
+            return false;
+        if (other.getIops() == null ^ this.getIops() == null)
+            return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
@@ -605,21 +859,17 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             return false;
         if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false)
             return false;
-        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
-            return false;
-        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
-            return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
             return false;
-        if (other.getIops() == null ^ this.getIops() == null)
-            return false;
-        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
-            return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
         if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -629,12 +879,13 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
-        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 
@@ -646,4 +897,5 @@ public class EbsBlockDevice implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

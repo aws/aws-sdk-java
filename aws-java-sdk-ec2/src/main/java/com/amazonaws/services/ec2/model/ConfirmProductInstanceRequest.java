@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ConfirmProductInstanceRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ConfirmProductInstance.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,16 +28,16 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The product code. This must be a product code that you own.
-     * </p>
-     */
-    private String productCode;
-    /**
-     * <p>
      * The ID of the instance.
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * The product code. This must be a product code that you own.
+     * </p>
+     */
+    private String productCode;
 
     /**
      * Default constructor for ConfirmProductInstanceRequest object. Callers should use the setter or fluent setter
@@ -60,46 +58,6 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     public ConfirmProductInstanceRequest(String productCode, String instanceId) {
         setProductCode(productCode);
         setInstanceId(instanceId);
-    }
-
-    /**
-     * <p>
-     * The product code. This must be a product code that you own.
-     * </p>
-     * 
-     * @param productCode
-     *        The product code. This must be a product code that you own.
-     */
-
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
-    }
-
-    /**
-     * <p>
-     * The product code. This must be a product code that you own.
-     * </p>
-     * 
-     * @return The product code. This must be a product code that you own.
-     */
-
-    public String getProductCode() {
-        return this.productCode;
-    }
-
-    /**
-     * <p>
-     * The product code. This must be a product code that you own.
-     * </p>
-     * 
-     * @param productCode
-     *        The product code. This must be a product code that you own.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ConfirmProductInstanceRequest withProductCode(String productCode) {
-        setProductCode(productCode);
-        return this;
     }
 
     /**
@@ -143,6 +101,46 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The product code. This must be a product code that you own.
+     * </p>
+     * 
+     * @param productCode
+     *        The product code. This must be a product code that you own.
+     */
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
+    /**
+     * <p>
+     * The product code. This must be a product code that you own.
+     * </p>
+     * 
+     * @return The product code. This must be a product code that you own.
+     */
+
+    public String getProductCode() {
+        return this.productCode;
+    }
+
+    /**
+     * <p>
+     * The product code. This must be a product code that you own.
+     * </p>
+     * 
+     * @param productCode
+     *        The product code. This must be a product code that you own.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfirmProductInstanceRequest withProductCode(String productCode) {
+        setProductCode(productCode);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -154,7 +152,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -164,10 +163,10 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getProductCode() != null)
-            sb.append("ProductCode: ").append(getProductCode()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getProductCode() != null)
+            sb.append("ProductCode: ").append(getProductCode());
         sb.append("}");
         return sb.toString();
     }
@@ -182,13 +181,13 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ConfirmProductInstanceRequest == false)
             return false;
         ConfirmProductInstanceRequest other = (ConfirmProductInstanceRequest) obj;
-        if (other.getProductCode() == null ^ this.getProductCode() == null)
-            return false;
-        if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
-            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getProductCode() == null ^ this.getProductCode() == null)
+            return false;
+        if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
             return false;
         return true;
     }
@@ -198,8 +197,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
         return hashCode;
     }
 

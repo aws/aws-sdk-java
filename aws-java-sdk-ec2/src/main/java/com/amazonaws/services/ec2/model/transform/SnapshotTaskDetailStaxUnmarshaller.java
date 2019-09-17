@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,18 +43,48 @@ public class SnapshotTaskDetailStaxUnmarshaller implements Unmarshaller<Snapshot
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("diskImageSize", targetDepth)) {
-                    snapshotTaskDetail.setDiskImageSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("description", targetDepth)) {
                     snapshotTaskDetail.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("diskImageSize", targetDepth)) {
+                    snapshotTaskDetail.setDiskImageSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("encrypted", targetDepth)) {
+                    snapshotTaskDetail.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("format", targetDepth)) {
                     snapshotTaskDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    snapshotTaskDetail.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("progress", targetDepth)) {
+                    snapshotTaskDetail.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("snapshotId", targetDepth)) {
+                    snapshotTaskDetail.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("status", targetDepth)) {
+                    snapshotTaskDetail.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    snapshotTaskDetail.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,26 +95,6 @@ public class SnapshotTaskDetailStaxUnmarshaller implements Unmarshaller<Snapshot
 
                 if (context.testExpression("userBucket", targetDepth)) {
                     snapshotTaskDetail.setUserBucket(UserBucketDetailsStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("snapshotId", targetDepth)) {
-                    snapshotTaskDetail.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("progress", targetDepth)) {
-                    snapshotTaskDetail.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    snapshotTaskDetail.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    snapshotTaskDetail.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

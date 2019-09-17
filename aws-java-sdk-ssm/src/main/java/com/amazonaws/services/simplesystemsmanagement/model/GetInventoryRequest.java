@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,14 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InventoryFilter> filters;
+    /**
+     * <p>
+     * Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an
+     * expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many
+     * Windows and Linux instances exist in your inventoried fleet.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InventoryAggregator> aggregators;
     /**
      * <p>
      * The list of inventory item types to return.
@@ -121,6 +129,95 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public GetInventoryRequest withFilters(java.util.Collection<InventoryFilter> filters) {
         setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an
+     * expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many
+     * Windows and Linux instances exist in your inventoried fleet.
+     * </p>
+     * 
+     * @return Returns counts of inventory types based on one or more expressions. For example, if you aggregate by
+     *         using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a
+     *         count of how many Windows and Linux instances exist in your inventoried fleet.
+     */
+
+    public java.util.List<InventoryAggregator> getAggregators() {
+        if (aggregators == null) {
+            aggregators = new com.amazonaws.internal.SdkInternalList<InventoryAggregator>();
+        }
+        return aggregators;
+    }
+
+    /**
+     * <p>
+     * Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an
+     * expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many
+     * Windows and Linux instances exist in your inventoried fleet.
+     * </p>
+     * 
+     * @param aggregators
+     *        Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using
+     *        an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     *        how many Windows and Linux instances exist in your inventoried fleet.
+     */
+
+    public void setAggregators(java.util.Collection<InventoryAggregator> aggregators) {
+        if (aggregators == null) {
+            this.aggregators = null;
+            return;
+        }
+
+        this.aggregators = new com.amazonaws.internal.SdkInternalList<InventoryAggregator>(aggregators);
+    }
+
+    /**
+     * <p>
+     * Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an
+     * expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many
+     * Windows and Linux instances exist in your inventoried fleet.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAggregators(java.util.Collection)} or {@link #withAggregators(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param aggregators
+     *        Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using
+     *        an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     *        how many Windows and Linux instances exist in your inventoried fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInventoryRequest withAggregators(InventoryAggregator... aggregators) {
+        if (this.aggregators == null) {
+            setAggregators(new com.amazonaws.internal.SdkInternalList<InventoryAggregator>(aggregators.length));
+        }
+        for (InventoryAggregator ele : aggregators) {
+            this.aggregators.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an
+     * expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many
+     * Windows and Linux instances exist in your inventoried fleet.
+     * </p>
+     * 
+     * @param aggregators
+     *        Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using
+     *        an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of
+     *        how many Windows and Linux instances exist in your inventoried fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInventoryRequest withAggregators(java.util.Collection<InventoryAggregator> aggregators) {
+        setAggregators(aggregators);
         return this;
     }
 
@@ -284,7 +381,8 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -296,6 +394,8 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
+        if (getAggregators() != null)
+            sb.append("Aggregators: ").append(getAggregators()).append(",");
         if (getResultAttributes() != null)
             sb.append("ResultAttributes: ").append(getResultAttributes()).append(",");
         if (getNextToken() != null)
@@ -320,6 +420,10 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getAggregators() == null ^ this.getAggregators() == null)
+            return false;
+        if (other.getAggregators() != null && other.getAggregators().equals(this.getAggregators()) == false)
+            return false;
         if (other.getResultAttributes() == null ^ this.getResultAttributes() == null)
             return false;
         if (other.getResultAttributes() != null && other.getResultAttributes().equals(this.getResultAttributes()) == false)
@@ -341,6 +445,7 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getAggregators() == null) ? 0 : getAggregators().hashCode());
         hashCode = prime * hashCode + ((getResultAttributes() == null) ? 0 : getResultAttributes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

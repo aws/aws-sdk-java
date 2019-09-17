@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,36 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -49,7 +79,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private String status;
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      */
     private java.util.Date startDate;
@@ -61,7 +91,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date stopDate;
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      */
     private String input;
@@ -69,6 +99,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      */
     private String output;
 
@@ -156,9 +191,68 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -169,8 +263,67 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the execution.
+     * @return The name of the execution.</p>
+     *         <p>
+     *         A name must <i>not</i> contain:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         white space
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         brackets <code>&lt; &gt; { } [ ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         wildcard characters <code>? *</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -181,9 +334,68 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,7 +458,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -261,17 +473,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeExecutionResult withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -280,10 +492,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
-     * @return The date the execution was started.
+     * @return The date the execution is started.
      */
 
     public java.util.Date getStartDate() {
@@ -292,11 +504,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,11 +559,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
      * @param input
-     *        The JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution.
      */
 
     public void setInput(String input) {
@@ -360,10 +572,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
-     * @return The JSON input data of the execution.
+     * @return The string that contains the JSON input data of the execution.
      */
 
     public String getInput() {
@@ -372,11 +584,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
      * @param input
-     *        The JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,9 +601,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.
+     *        The JSON output data of the execution.</p> <note>
+     *        <p>
+     *        This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *        </p>
      */
 
     public void setOutput(String output) {
@@ -402,8 +622,16 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
-     * @return The JSON output data of the execution.
+     * @return The JSON output data of the execution.</p> <note>
+     *         <p>
+     *         This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *         </p>
      */
 
     public String getOutput() {
@@ -414,9 +642,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.
+     *        The JSON output data of the execution.</p> <note>
+     *        <p>
+     *        This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,7 +662,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -449,9 +686,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         if (getStopDate() != null)
             sb.append("StopDate: ").append(getStopDate()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append(getInput()).append(",");
+            sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -525,4 +762,5 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

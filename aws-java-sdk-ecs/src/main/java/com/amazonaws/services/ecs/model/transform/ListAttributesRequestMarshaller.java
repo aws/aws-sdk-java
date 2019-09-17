@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAttributesRequest Marshaller
+ * ListAttributesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAttributesRequestMarshaller implements Marshaller<Request<ListAttributesRequest>, ListAttributesRequest> {
+@SdkInternalApi
+public class ListAttributesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<String> TARGETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetType").build();
+    private static final MarshallingInfo<String> ATTRIBUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeName").build();
+    private static final MarshallingInfo<String> ATTRIBUTEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeValue").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
-    public ListAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAttributesRequestMarshaller instance = new ListAttributesRequestMarshaller();
+
+    public static ListAttributesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAttributesRequest> marshall(ListAttributesRequest listAttributesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAttributesRequest listAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAttributesRequest> request = new DefaultRequest<ListAttributesRequest>(listAttributesRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.ListAttributes");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listAttributesRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(listAttributesRequest.getCluster());
-            }
-            if (listAttributesRequest.getTargetType() != null) {
-                jsonGenerator.writeFieldName("targetType").writeValue(listAttributesRequest.getTargetType());
-            }
-            if (listAttributesRequest.getAttributeName() != null) {
-                jsonGenerator.writeFieldName("attributeName").writeValue(listAttributesRequest.getAttributeName());
-            }
-            if (listAttributesRequest.getAttributeValue() != null) {
-                jsonGenerator.writeFieldName("attributeValue").writeValue(listAttributesRequest.getAttributeValue());
-            }
-            if (listAttributesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listAttributesRequest.getNextToken());
-            }
-            if (listAttributesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listAttributesRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listAttributesRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(listAttributesRequest.getTargetType(), TARGETTYPE_BINDING);
+            protocolMarshaller.marshall(listAttributesRequest.getAttributeName(), ATTRIBUTENAME_BINDING);
+            protocolMarshaller.marshall(listAttributesRequest.getAttributeValue(), ATTRIBUTEVALUE_BINDING);
+            protocolMarshaller.marshall(listAttributesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAttributesRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

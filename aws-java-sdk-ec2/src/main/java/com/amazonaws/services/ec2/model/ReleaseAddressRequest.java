@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,25 +20,23 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ReleaseAddressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ReleaseAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ReleaseAddressRequest> {
 
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     */
-    private String publicIp;
-    /**
-     * <p>
      * [EC2-VPC] The allocation ID. Required for EC2-VPC.
      * </p>
      */
     private String allocationId;
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     */
+    private String publicIp;
 
     /**
      * Default constructor for ReleaseAddressRequest object. Callers should use the setter or fluent setter (with...)
@@ -56,46 +54,6 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      */
     public ReleaseAddressRequest(String publicIp) {
         setPublicIp(publicIp);
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReleaseAddressRequest withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
     }
 
     /**
@@ -139,6 +97,46 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @param publicIp
+     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @param publicIp
+     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReleaseAddressRequest withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -150,7 +148,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -160,10 +159,10 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -178,13 +177,13 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
         if (obj instanceof ReleaseAddressRequest == false)
             return false;
         ReleaseAddressRequest other = (ReleaseAddressRequest) obj;
-        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
-            return false;
-        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
-            return false;
         if (other.getAllocationId() == null ^ this.getAllocationId() == null)
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
+            return false;
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         return true;
     }
@@ -194,8 +193,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 

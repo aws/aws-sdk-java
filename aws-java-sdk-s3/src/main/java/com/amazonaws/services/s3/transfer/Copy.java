@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,6 +23,11 @@ import com.amazonaws.services.s3.transfer.model.CopyResult;
  * <p>
  * See {@link TransferManager} for more information about creating transfers.
  * </p>
+ *
+ * Please note that when copying data between s3 buckets there is no progress
+ * updates whilst data is in transit. This means that the
+ * {@link TransferProgress#getBytesTransferred()} will not be accurate until
+ * the copy is complete.
  *
  * @see TransferManager#copy(String, String, String, String)
  * @see TransferManager#copy(com.amazonaws.services.s3.model.CopyObjectRequest)

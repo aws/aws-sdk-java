@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,19 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     */
+    private String keyId;
+    /**
+     * <p>
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -38,16 +49,86 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer limit;
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @param keyId
+     *        Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *        Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN
+     *        in this value.</p>
+     *        <p>
+     *        This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *        and region.
+     */
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    /**
+     * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @return Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *         Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias
+     *         ARN in this value.</p>
+     *         <p>
+     *         This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *         and region.
+     */
+
+    public String getKeyId() {
+        return this.keyId;
+    }
+
+    /**
+     * <p>
+     * Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon Resource
+     * Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN in this value.
+     * </p>
+     * <p>
+     * This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account and
+     * region.
+     * </p>
+     * 
+     * @param keyId
+     *        Lists only aliases that refer to the specified CMK. The value of this parameter can be the ID or Amazon
+     *        Resource Name (ARN) of a CMK in the caller's account and region. You cannot use an alias name or alias ARN
+     *        in this value.</p>
+     *        <p>
+     *        This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases in the account
+     *        and region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAliasesRequest withKeyId(String keyId) {
+        setKeyId(keyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -55,9 +136,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *        include a value, it defaults to 50.
@@ -69,17 +149,16 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
      * value, it defaults to 50.
      * </p>
      * 
-     * @return When paginating results, specify the maximum number of items to return in the response. If additional
-     *         items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *         true.</p>
+     * @return Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *         does not return more than the specified number of items, but it might return fewer.</p>
      *         <p>
      *         This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *         include a value, it defaults to 50.
@@ -91,8 +170,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a
@@ -100,9 +179,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not
      *        include a value, it defaults to 50.
@@ -116,14 +194,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public void setMarker(String marker) {
@@ -132,13 +209,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *         response with truncated results. Set it to the value of <code>NextMarker</code> from the response you
-     *         just received.
+     * @return Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *         the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public String getMarker() {
@@ -147,14 +223,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +239,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -174,6 +250,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKeyId() != null)
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
@@ -192,6 +270,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof ListAliasesRequest == false)
             return false;
         ListAliasesRequest other = (ListAliasesRequest) obj;
+        if (other.getKeyId() == null ^ this.getKeyId() == null)
+            return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
+            return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
@@ -208,6 +290,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

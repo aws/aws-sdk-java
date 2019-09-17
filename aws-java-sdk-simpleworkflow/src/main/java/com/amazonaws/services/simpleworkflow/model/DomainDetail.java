@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,33 @@ import javax.annotation.Generated;
  * <p>
  * Contains details of a domain.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DomainDetail" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     */
     private DomainInfo domainInfo;
-
+    /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     */
     private DomainConfiguration configuration;
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
+     *        The basic information about a domain, such as its name, status, and description.
      */
 
     public void setDomainInfo(DomainInfo domainInfo) {
@@ -36,7 +53,11 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
+     * @return The basic information about a domain, such as its name, status, and description.
      */
 
     public DomainInfo getDomainInfo() {
@@ -44,7 +65,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
+     *        The basic information about a domain, such as its name, status, and description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +80,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
+     *        The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public void setConfiguration(DomainConfiguration configuration) {
@@ -62,7 +93,11 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
+     * @return The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public DomainConfiguration getConfiguration() {
@@ -70,7 +105,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
+     *        The domain configuration. Currently, this includes only the domain's retention period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +120,8 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -137,4 +178,5 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserType implements Serializable, Cloneable {
+public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -84,6 +86,18 @@ public class UserType implements Serializable, Cloneable {
      * <li>
      * <p>
      * UNKNOWN - User status is not known.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
      * </p>
      * </li>
      * </ul>
@@ -368,6 +382,18 @@ public class UserType implements Serializable, Cloneable {
      * UNKNOWN - User status is not known.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
@@ -396,6 +422,18 @@ public class UserType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
+     *        he or she can sign in.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
+     *        first sign-in, the user must change his or her password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @see UserStatusType
@@ -435,6 +473,18 @@ public class UserType implements Serializable, Cloneable {
      * UNKNOWN - User status is not known.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The user status. Can be one of the following:</p>
@@ -462,6 +512,18 @@ public class UserType implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         UNKNOWN - User status is not known.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
+     *         he or she can sign in.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
+     *         first sign-in, the user must change his or her password to a new value before doing anything else.
      *         </p>
      *         </li>
      * @see UserStatusType
@@ -501,6 +563,18 @@ public class UserType implements Serializable, Cloneable {
      * UNKNOWN - User status is not known.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
@@ -529,6 +603,18 @@ public class UserType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        UNKNOWN - User status is not known.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
+     *        he or she can sign in.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
+     *        first sign-in, the user must change his or her password to a new value before doing anything else.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -570,6 +656,18 @@ public class UserType implements Serializable, Cloneable {
      * UNKNOWN - User status is not known.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
@@ -600,11 +698,23 @@ public class UserType implements Serializable, Cloneable {
      *        UNKNOWN - User status is not known.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
+     *        he or she can sign in.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
+     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        </p>
+     *        </li>
      * @see UserStatusType
      */
 
     public void setUserStatus(UserStatusType userStatus) {
-        this.userStatus = userStatus.toString();
+        withUserStatus(userStatus);
     }
 
     /**
@@ -637,6 +747,18 @@ public class UserType implements Serializable, Cloneable {
      * UNKNOWN - User status is not known.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before he or
+     * she can sign in.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first
+     * sign-in, the user must change his or her password to a new value before doing anything else.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param userStatus
@@ -667,12 +789,24 @@ public class UserType implements Serializable, Cloneable {
      *        UNKNOWN - User status is not known.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        RESET_REQUIRED - User is confirmed, but the user must request a code and reset his or her password before
+     *        he or she can sign in.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on
+     *        first sign-in, the user must change his or her password to a new value before doing anything else.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserStatusType
      */
 
     public UserType withUserStatus(UserStatusType userStatus) {
-        setUserStatus(userStatus);
+        this.userStatus = userStatus.toString();
         return this;
     }
 
@@ -747,7 +881,8 @@ public class UserType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -758,7 +893,7 @@ public class UserType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getUserCreateDate() != null)
@@ -838,5 +973,11 @@ public class UserType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.UserTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

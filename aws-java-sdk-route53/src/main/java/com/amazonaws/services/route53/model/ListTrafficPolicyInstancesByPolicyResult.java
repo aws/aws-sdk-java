@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance in the next group of traffic policy instances.
      * </p>
      */
     private String hostedZoneIdMarker;
@@ -59,7 +59,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     * truncated, you can get the next group of traffic policy instances by calling
      * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -158,13 +158,12 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance in the next group of traffic policy instances.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *        instances.
+     *        zone of the first traffic policy instance in the next group of traffic policy instances.
      */
 
     public void setHostedZoneIdMarker(String hostedZoneIdMarker) {
@@ -174,12 +173,11 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance in the next group of traffic policy instances.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *         zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *         instances.
+     *         zone of the first traffic policy instance in the next group of traffic policy instances.
      */
 
     public String getHostedZoneIdMarker() {
@@ -189,13 +187,12 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance in the next group of traffic policy instances.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *        instances.
+     *        zone of the first traffic policy instance in the next group of traffic policy instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +318,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
      */
 
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
+        withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }
 
     /**
@@ -340,14 +337,14 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
      */
 
     public ListTrafficPolicyInstancesByPolicyResult withTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
+        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
         return this;
     }
 
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     * truncated, you can get the next group of traffic policy instances by calling
      * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -355,7 +352,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *        truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     *        truncated, you can get the next group of traffic policy instances by calling
      *        <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -368,14 +365,14 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     * truncated, you can get the next group of traffic policy instances by calling
      * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     *         truncated, you can get the next group of traffic policy instances by calling
      *         <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      *         <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -388,7 +385,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     * truncated, you can get the next group of traffic policy instances by calling
      * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -396,7 +393,7 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *        truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     *        truncated, you can get the next group of traffic policy instances by calling
      *        <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -411,14 +408,14 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     * truncated, you can get the next group of traffic policy instances by calling
      * <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      * <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
+     *         truncated, you can get the next group of traffic policy instances by calling
      *         <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the
      *         <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
      *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
@@ -475,7 +472,8 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -562,4 +560,5 @@ public class ListTrafficPolicyInstancesByPolicyResult extends com.amazonaws.Amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

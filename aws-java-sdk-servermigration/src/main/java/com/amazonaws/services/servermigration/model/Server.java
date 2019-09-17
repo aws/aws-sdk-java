@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,27 +14,57 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Object representing a server
+ * <p>
+ * Represents a server.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Server" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Server implements Serializable, Cloneable {
+public class Server implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     */
     private String serverId;
-
+    /**
+     * <p>
+     * The type of server.
+     * </p>
+     */
     private String serverType;
-
+    /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     */
     private VmServer vmServer;
-
+    /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
-
+    /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     */
     private Boolean replicationJobTerminated;
 
     /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
      * @param serverId
+     *        The identifier of the server.
      */
 
     public void setServerId(String serverId) {
@@ -42,7 +72,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
+     * @return The identifier of the server.
      */
 
     public String getServerId() {
@@ -50,7 +84,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
      * @param serverId
+     *        The identifier of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +99,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @see ServerType
      */
 
@@ -69,7 +113,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of server.
+     * </p>
+     * 
+     * @return The type of server.
      * @see ServerType
      */
 
@@ -78,7 +126,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
@@ -89,27 +142,42 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @see ServerType
      */
 
     public void setServerType(ServerType serverType) {
-        this.serverType = serverType.toString();
+        withServerType(serverType);
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
 
     public Server withServerType(ServerType serverType) {
-        setServerType(serverType);
+        this.serverType = serverType.toString();
         return this;
     }
 
     /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
      * @param vmServer
+     *        Information about the VM server.
      */
 
     public void setVmServer(VmServer vmServer) {
@@ -117,7 +185,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
+     * @return Information about the VM server.
      */
 
     public VmServer getVmServer() {
@@ -125,7 +197,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
      * @param vmServer
+     *        Information about the VM server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,7 +212,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -143,7 +225,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
+     * @return The identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -151,7 +237,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,7 +252,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
      * @param replicationJobTerminated
+     *        Indicates whether the replication job is deleted or failed.
      */
 
     public void setReplicationJobTerminated(Boolean replicationJobTerminated) {
@@ -169,7 +265,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
+     * @return Indicates whether the replication job is deleted or failed.
      */
 
     public Boolean getReplicationJobTerminated() {
@@ -177,7 +277,12 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
      * @param replicationJobTerminated
+     *        Indicates whether the replication job is deleted or failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +292,11 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
+     * @return Indicates whether the replication job is deleted or failed.
      */
 
     public Boolean isReplicationJobTerminated() {
@@ -195,7 +304,8 @@ public class Server implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -272,5 +382,11 @@ public class Server implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servermigration.model.transform.ServerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

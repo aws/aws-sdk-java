@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,18 +42,6 @@ public class DescribeHostReservationOfferingsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeHostReservationOfferingsRequest.getOfferingId() != null) {
-            request.addParameter("OfferingId", StringUtils.fromString(describeHostReservationOfferingsRequest.getOfferingId()));
-        }
-
-        if (describeHostReservationOfferingsRequest.getMinDuration() != null) {
-            request.addParameter("MinDuration", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMinDuration()));
-        }
-
-        if (describeHostReservationOfferingsRequest.getMaxDuration() != null) {
-            request.addParameter("MaxDuration", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMaxDuration()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeHostReservationOfferingsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationOfferingsRequest
                 .getFilter();
         if (!describeHostReservationOfferingsRequestFilterList.isEmpty() || !describeHostReservationOfferingsRequestFilterList.isAutoConstruct()) {
@@ -82,12 +70,24 @@ public class DescribeHostReservationOfferingsRequestMarshaller implements
             }
         }
 
+        if (describeHostReservationOfferingsRequest.getMaxDuration() != null) {
+            request.addParameter("MaxDuration", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMaxDuration()));
+        }
+
         if (describeHostReservationOfferingsRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMaxResults()));
         }
 
+        if (describeHostReservationOfferingsRequest.getMinDuration() != null) {
+            request.addParameter("MinDuration", StringUtils.fromInteger(describeHostReservationOfferingsRequest.getMinDuration()));
+        }
+
         if (describeHostReservationOfferingsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeHostReservationOfferingsRequest.getNextToken()));
+        }
+
+        if (describeHostReservationOfferingsRequest.getOfferingId() != null) {
+            request.addParameter("OfferingId", StringUtils.fromString(describeHostReservationOfferingsRequest.getOfferingId()));
         }
 
         return request;

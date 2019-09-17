@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,28 +44,8 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             request.addParameter("ImageLocation", StringUtils.fromString(registerImageRequest.getImageLocation()));
         }
 
-        if (registerImageRequest.getName() != null) {
-            request.addParameter("Name", StringUtils.fromString(registerImageRequest.getName()));
-        }
-
-        if (registerImageRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(registerImageRequest.getDescription()));
-        }
-
         if (registerImageRequest.getArchitecture() != null) {
             request.addParameter("Architecture", StringUtils.fromString(registerImageRequest.getArchitecture()));
-        }
-
-        if (registerImageRequest.getKernelId() != null) {
-            request.addParameter("KernelId", StringUtils.fromString(registerImageRequest.getKernelId()));
-        }
-
-        if (registerImageRequest.getRamdiskId() != null) {
-            request.addParameter("RamdiskId", StringUtils.fromString(registerImageRequest.getRamdiskId()));
-        }
-
-        if (registerImageRequest.getRootDeviceName() != null) {
-            request.addParameter("RootDeviceName", StringUtils.fromString(registerImageRequest.getRootDeviceName()));
         }
 
         com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> registerImageRequestBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) registerImageRequest
@@ -75,18 +55,27 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
             for (BlockDeviceMapping registerImageRequestBlockDeviceMappingsListValue : registerImageRequestBlockDeviceMappingsList) {
 
-                if (registerImageRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(registerImageRequestBlockDeviceMappingsListValue.getVirtualName()));
-                }
-
                 if (registerImageRequestBlockDeviceMappingsListValue.getDeviceName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
                             StringUtils.fromString(registerImageRequestBlockDeviceMappingsListValue.getDeviceName()));
                 }
 
+                if (registerImageRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
+                            StringUtils.fromString(registerImageRequestBlockDeviceMappingsListValue.getVirtualName()));
+                }
+
                 EbsBlockDevice ebs = registerImageRequestBlockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
+
+                    if (ebs.getDeleteOnTermination() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                    }
+
+                    if (ebs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
+                    }
 
                     if (ebs.getSnapshotId() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
@@ -98,23 +87,18 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
                                 StringUtils.fromInteger(ebs.getVolumeSize()));
                     }
 
-                    if (ebs.getDeleteOnTermination() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                    }
-
                     if (ebs.getVolumeType() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                 StringUtils.fromString(ebs.getVolumeType()));
                     }
 
-                    if (ebs.getIops() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
-                    }
-
                     if (ebs.getEncrypted() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
                                 StringUtils.fromBoolean(ebs.getEncrypted()));
+                    }
+
+                    if (ebs.getKmsKeyId() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
                 }
 
@@ -126,16 +110,49 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             }
         }
 
-        if (registerImageRequest.getVirtualizationType() != null) {
-            request.addParameter("VirtualizationType", StringUtils.fromString(registerImageRequest.getVirtualizationType()));
+        if (registerImageRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(registerImageRequest.getDescription()));
+        }
+
+        if (registerImageRequest.getEnaSupport() != null) {
+            request.addParameter("EnaSupport", StringUtils.fromBoolean(registerImageRequest.getEnaSupport()));
+        }
+
+        if (registerImageRequest.getKernelId() != null) {
+            request.addParameter("KernelId", StringUtils.fromString(registerImageRequest.getKernelId()));
+        }
+
+        if (registerImageRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(registerImageRequest.getName()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> registerImageRequestBillingProductsList = (com.amazonaws.internal.SdkInternalList<String>) registerImageRequest
+                .getBillingProducts();
+        if (!registerImageRequestBillingProductsList.isEmpty() || !registerImageRequestBillingProductsList.isAutoConstruct()) {
+            int billingProductsListIndex = 1;
+
+            for (String registerImageRequestBillingProductsListValue : registerImageRequestBillingProductsList) {
+                if (registerImageRequestBillingProductsListValue != null) {
+                    request.addParameter("BillingProduct." + billingProductsListIndex, StringUtils.fromString(registerImageRequestBillingProductsListValue));
+                }
+                billingProductsListIndex++;
+            }
+        }
+
+        if (registerImageRequest.getRamdiskId() != null) {
+            request.addParameter("RamdiskId", StringUtils.fromString(registerImageRequest.getRamdiskId()));
+        }
+
+        if (registerImageRequest.getRootDeviceName() != null) {
+            request.addParameter("RootDeviceName", StringUtils.fromString(registerImageRequest.getRootDeviceName()));
         }
 
         if (registerImageRequest.getSriovNetSupport() != null) {
             request.addParameter("SriovNetSupport", StringUtils.fromString(registerImageRequest.getSriovNetSupport()));
         }
 
-        if (registerImageRequest.getEnaSupport() != null) {
-            request.addParameter("EnaSupport", StringUtils.fromBoolean(registerImageRequest.getEnaSupport()));
+        if (registerImageRequest.getVirtualizationType() != null) {
+            request.addParameter("VirtualizationType", StringUtils.fromString(registerImageRequest.getVirtualizationType()));
         }
 
         return request;

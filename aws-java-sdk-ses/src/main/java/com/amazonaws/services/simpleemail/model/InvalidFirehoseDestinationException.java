@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,17 @@ import javax.annotation.Generated;
 public class InvalidFirehoseDestinationException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     */
     private String configurationSetName;
-
+    /**
+     * <p>
+     * Indicates that the event destination does not exist.
+     * </p>
+     */
     private String eventDestinationName;
 
     /**
@@ -38,7 +47,12 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
      * @param configurationSetName
+     *        Indicates that the configuration set does not exist.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -46,7 +60,11 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
+     * @return Indicates that the configuration set does not exist.
      */
 
     public String getConfigurationSetName() {
@@ -54,7 +72,12 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
      * @param configurationSetName
+     *        Indicates that the configuration set does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +87,12 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
+     * <p>
+     * Indicates that the event destination does not exist.
+     * </p>
+     * 
      * @param eventDestinationName
+     *        Indicates that the event destination does not exist.
      */
 
     public void setEventDestinationName(String eventDestinationName) {
@@ -72,7 +100,11 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the event destination does not exist.
+     * </p>
+     * 
+     * @return Indicates that the event destination does not exist.
      */
 
     public String getEventDestinationName() {
@@ -80,7 +112,12 @@ public class InvalidFirehoseDestinationException extends com.amazonaws.services.
     }
 
     /**
+     * <p>
+     * Indicates that the event destination does not exist.
+     * </p>
+     * 
      * @param eventDestinationName
+     *        Indicates that the event destination does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

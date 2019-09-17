@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,55 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CompleteVaultLockRequest Marshaller
+ * CompleteVaultLockRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CompleteVaultLockRequestMarshaller implements Marshaller<Request<CompleteVaultLockRequest>, CompleteVaultLockRequest> {
+@SdkInternalApi
+public class CompleteVaultLockRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<String> LOCKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("lockId").build();
 
-    public CompleteVaultLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CompleteVaultLockRequestMarshaller instance = new CompleteVaultLockRequestMarshaller();
+
+    public static CompleteVaultLockRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CompleteVaultLockRequest> marshall(CompleteVaultLockRequest completeVaultLockRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CompleteVaultLockRequest completeVaultLockRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (completeVaultLockRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CompleteVaultLockRequest> request = new DefaultRequest<CompleteVaultLockRequest>(completeVaultLockRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy/{lockId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                completeVaultLockRequest.getAccountId() == null ? "-" : completeVaultLockRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", completeVaultLockRequest.getVaultName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "lockId", completeVaultLockRequest.getLockId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(completeVaultLockRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(completeVaultLockRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(completeVaultLockRequest.getLockId(), LOCKID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

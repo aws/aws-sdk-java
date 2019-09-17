@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private ConsumedCapacity consumedCapacity;
@@ -64,7 +64,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -156,8 +156,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param consumedCapacity
@@ -165,8 +165,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
@@ -179,16 +179,16 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total
      *         provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *         operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *         parameter was specified. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *         >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public ConsumedCapacity getConsumedCapacity() {
@@ -201,8 +201,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param consumedCapacity
@@ -210,8 +210,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
-     *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        >Read/Write Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,7 +239,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -267,7 +267,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -303,7 +303,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -330,7 +330,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *         <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *         two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes projected into all of the local
      *         secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -366,7 +366,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -394,7 +394,7 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -414,7 +414,8 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -478,4 +479,5 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,12 +64,14 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             request.addParameter("StackPolicyDuringUpdateURL", StringUtils.fromString(updateStackRequest.getStackPolicyDuringUpdateURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) updateStackRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (updateStackRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) updateStackRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!updateStackRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) updateStackRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) updateStackRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -88,15 +90,23 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
                     request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
                             StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
                 }
+
+                if (parametersListValue.getResolvedValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                }
                 parametersListIndex++;
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getCapabilities();
-        if (capabilitiesList.isEmpty() && !capabilitiesList.isAutoConstruct()) {
+        if (updateStackRequest.getCapabilities().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getCapabilities()).isAutoConstruct()) {
             request.addParameter("Capabilities", "");
         }
-        if (!capabilitiesList.isEmpty() || !capabilitiesList.isAutoConstruct()) {
+        if (!updateStackRequest.getCapabilities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getCapabilities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
+                    .getCapabilities();
             int capabilitiesListIndex = 1;
 
             for (String capabilitiesListValue : capabilitiesList) {
@@ -107,12 +117,14 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
-                .getResourceTypes();
-        if (resourceTypesList.isEmpty() && !resourceTypesList.isAutoConstruct()) {
+        if (updateStackRequest.getResourceTypes().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getResourceTypes()).isAutoConstruct()) {
             request.addParameter("ResourceTypes", "");
         }
-        if (!resourceTypesList.isEmpty() || !resourceTypesList.isAutoConstruct()) {
+        if (!updateStackRequest.getResourceTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getResourceTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
+                    .getResourceTypes();
             int resourceTypesListIndex = 1;
 
             for (String resourceTypesListValue : resourceTypesList) {
@@ -127,6 +139,42 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             request.addParameter("RoleARN", StringUtils.fromString(updateStackRequest.getRoleARN()));
         }
 
+        {
+            RollbackConfiguration rollbackConfiguration = updateStackRequest.getRollbackConfiguration();
+            if (rollbackConfiguration != null) {
+
+                if (rollbackConfiguration.getRollbackTriggers().isEmpty()
+                        && !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                    request.addParameter("RollbackConfiguration.RollbackTriggers", "");
+                }
+                if (!rollbackConfiguration.getRollbackTriggers().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
+                            .getRollbackTriggers();
+                    int rollbackTriggersListIndex = 1;
+
+                    for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
+
+                        if (rollbackTriggersListValue.getArn() != null) {
+                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
+                                    StringUtils.fromString(rollbackTriggersListValue.getArn()));
+                        }
+
+                        if (rollbackTriggersListValue.getType() != null) {
+                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
+                                    StringUtils.fromString(rollbackTriggersListValue.getType()));
+                        }
+                        rollbackTriggersListIndex++;
+                    }
+                }
+
+                if (rollbackConfiguration.getMonitoringTimeInMinutes() != null) {
+                    request.addParameter("RollbackConfiguration.MonitoringTimeInMinutes",
+                            StringUtils.fromInteger(rollbackConfiguration.getMonitoringTimeInMinutes()));
+                }
+            }
+        }
+
         if (updateStackRequest.getStackPolicyBody() != null) {
             request.addParameter("StackPolicyBody", StringUtils.fromString(updateStackRequest.getStackPolicyBody()));
         }
@@ -135,12 +183,14 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             request.addParameter("StackPolicyURL", StringUtils.fromString(updateStackRequest.getStackPolicyURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
-                .getNotificationARNs();
-        if (notificationARNsList.isEmpty() && !notificationARNsList.isAutoConstruct()) {
+        if (updateStackRequest.getNotificationARNs().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getNotificationARNs()).isAutoConstruct()) {
             request.addParameter("NotificationARNs", "");
         }
-        if (!notificationARNsList.isEmpty() || !notificationARNsList.isAutoConstruct()) {
+        if (!updateStackRequest.getNotificationARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateStackRequest.getNotificationARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) updateStackRequest
+                    .getNotificationARNs();
             int notificationARNsListIndex = 1;
 
             for (String notificationARNsListValue : notificationARNsList) {
@@ -151,11 +201,11 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest.getTags();
-        if (tagsList.isEmpty() && !tagsList.isAutoConstruct()) {
+        if (updateStackRequest.getTags().isEmpty() && !((com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest.getTags()).isAutoConstruct()) {
             request.addParameter("Tags", "");
         }
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!updateStackRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -169,6 +219,10 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
                 }
                 tagsListIndex++;
             }
+        }
+
+        if (updateStackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(updateStackRequest.getClientRequestToken()));
         }
 
         return request;

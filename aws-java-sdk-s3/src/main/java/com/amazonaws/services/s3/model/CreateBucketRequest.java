@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
      * cannedAcl will be ignored.
      */
     private AccessControlList accessControlList;
+
+    private boolean objectLockEnabled;
 
     /**
      * Constructs a new {@link CreateBucketRequest},
@@ -220,4 +222,25 @@ public class CreateBucketRequest extends AmazonWebServiceRequest implements
         return this;
     }
 
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public boolean getObjectLockEnabledForBucket() {
+        return objectLockEnabled;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public CreateBucketRequest withObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        this.objectLockEnabled = objectLockEnabled;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+     */
+    public void setObjectLockEnabledForBucket(boolean objectLockEnabled) {
+        withObjectLockEnabledForBucket(objectLockEnabled);
+    }
 }

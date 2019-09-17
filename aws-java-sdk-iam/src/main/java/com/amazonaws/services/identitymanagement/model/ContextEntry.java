@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class ContextEntry implements Serializable, Cloneable {
     private String contextKeyName;
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
-     * when the key is referenced by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation when
+     * the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> contextKeyValues;
@@ -101,12 +101,12 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
-     * when the key is referenced by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation when
+     * the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
      * @return The value (or values, if the condition context key supports multiple values) to provide to the simulation
-     *         for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     *         when the key is referenced by a <code>Condition</code> element in an input policy.
      */
 
     public java.util.List<String> getContextKeyValues() {
@@ -118,13 +118,13 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
-     * when the key is referenced by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation when
+     * the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
      * @param contextKeyValues
      *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
-     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     *        when the key is referenced by a <code>Condition</code> element in an input policy.
      */
 
     public void setContextKeyValues(java.util.Collection<String> contextKeyValues) {
@@ -138,8 +138,8 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
-     * when the key is referenced by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation when
+     * the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,7 +149,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * 
      * @param contextKeyValues
      *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
-     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     *        when the key is referenced by a <code>Condition</code> element in an input policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,13 +165,13 @@ public class ContextEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value (or values, if the condition context key supports multiple values) to provide to the simulation for use
-     * when the key is referenced by a <code>Condition</code> element in an input policy.
+     * The value (or values, if the condition context key supports multiple values) to provide to the simulation when
+     * the key is referenced by a <code>Condition</code> element in an input policy.
      * </p>
      * 
      * @param contextKeyValues
      *        The value (or values, if the condition context key supports multiple values) to provide to the simulation
-     *        for use when the key is referenced by a <code>Condition</code> element in an input policy.
+     *        when the key is referenced by a <code>Condition</code> element in an input policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,7 +234,7 @@ public class ContextEntry implements Serializable, Cloneable {
      */
 
     public void setContextKeyType(ContextKeyTypeEnum contextKeyType) {
-        this.contextKeyType = contextKeyType.toString();
+        withContextKeyType(contextKeyType);
     }
 
     /**
@@ -249,12 +249,13 @@ public class ContextEntry implements Serializable, Cloneable {
      */
 
     public ContextEntry withContextKeyType(ContextKeyTypeEnum contextKeyType) {
-        setContextKeyType(contextKeyType);
+        this.contextKeyType = contextKeyType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -318,4 +319,5 @@ public class ContextEntry implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

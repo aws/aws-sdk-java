@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,7 +100,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
 
         removePrefix(rrset.getAliasTarget());
         rrset.setHealthCheckId(removePrefix(rrset.getHealthCheckId()));
-        rrset.setSetIdentifier(removePrefix(rrset.getSetIdentifier()));
     }
 
     private void removePrefix(AliasTarget aliasTarget) {

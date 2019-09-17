@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,19 +20,11 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeFlowLogsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeFlowLogs.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeFlowLogsRequest> {
 
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
     /**
      * <p>
      * One or more filters.
@@ -41,6 +33,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
      * </p>
      * </li>
      * <li>
@@ -60,7 +58,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)
+     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).
      * </p>
      * </li>
      * </ul>
@@ -68,92 +66,26 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
      * </p>
      */
-    private String nextToken;
+    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
-
     /**
      * <p>
-     * One or more flow log IDs.
+     * The token for the next page of results.
      * </p>
-     * 
-     * @return One or more flow log IDs.
      */
-
-    public java.util.List<String> getFlowLogIds() {
-        if (flowLogIds == null) {
-            flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return flowLogIds;
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     */
-
-    public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
-        if (flowLogIds == null) {
-            this.flowLogIds = null;
-            return;
-        }
-
-        this.flowLogIds = new com.amazonaws.internal.SdkInternalList<String>(flowLogIds);
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeFlowLogsRequest withFlowLogIds(String... flowLogIds) {
-        if (this.flowLogIds == null) {
-            setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(flowLogIds.length));
-        }
-        for (String ele : flowLogIds) {
-            this.flowLogIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeFlowLogsRequest withFlowLogIds(java.util.Collection<String> flowLogIds) {
-        setFlowLogIds(flowLogIds);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -163,6 +95,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * <li>
      * <p>
      * <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
      * </p>
      * </li>
      * <li>
@@ -182,7 +120,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)
+     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).
      * </p>
      * </li>
      * </ul>
@@ -193,6 +131,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *         <p>
      *         <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |
      *         <code>FAILED</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>log-destination-type</code> - The type of destination to which the flow log publishes data.
+     *         Possible destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -213,7 +157,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *         <li>
      *         <p>
      *         <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |
-     *         <code>ALL</code>)
+     *         <code>ALL</code>).
      *         </p>
      *         </li>
      */
@@ -237,6 +181,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
+     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>flow-log-id</code> - The ID of the flow log.
      * </p>
      * </li>
@@ -252,7 +202,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)
+     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).
      * </p>
      * </li>
      * </ul>
@@ -264,6 +214,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <p>
      *        <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |
      *        <code>FAILED</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -284,7 +240,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |
-     *        <code>ALL</code>)
+     *        <code>ALL</code>).
      *        </p>
      *        </li>
      */
@@ -310,6 +266,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
+     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>flow-log-id</code> - The ID of the flow log.
      * </p>
      * </li>
@@ -325,7 +287,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)
+     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).
      * </p>
      * </li>
      * </ul>
@@ -346,6 +308,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>flow-log-id</code> - The ID of the flow log.
      *        </p>
      *        </li>
@@ -362,7 +330,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |
-     *        <code>ALL</code>)
+     *        <code>ALL</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,6 +358,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
+     * <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     * destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>flow-log-id</code> - The ID of the flow log.
      * </p>
      * </li>
@@ -405,7 +379,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </li>
      * <li>
      * <p>
-     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)
+     * <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).
      * </p>
      * </li>
      * </ul>
@@ -417,6 +391,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <p>
      *        <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> |
      *        <code>FAILED</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>log-destination-type</code> - The type of destination to which the flow log publishes data. Possible
+     *        destination types include <code>cloud-watch-logs</code> and <code>S3</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -437,7 +417,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      *        <li>
      *        <p>
      *        <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> |
-     *        <code>ALL</code>)
+     *        <code>ALL</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -450,57 +430,106 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @return One or more flow log IDs.</p>
+     *         <p>
+     *         Constraint: Maximum of 1000 flow log IDs.
      */
 
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public java.util.List<String> getFlowLogIds() {
+        if (flowLogIds == null) {
+            flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return flowLogIds;
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @param flowLogIds
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      */
 
-    public String getNextToken() {
-        return this.nextToken;
+    public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
+        if (flowLogIds == null) {
+            this.flowLogIds = null;
+            return;
+        }
+
+        this.flowLogIds = new com.amazonaws.internal.SdkInternalList<String>(flowLogIds);
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @param flowLogIds
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFlowLogsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeFlowLogsRequest withFlowLogIds(String... flowLogIds) {
+        if (this.flowLogIds == null) {
+            setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(flowLogIds.length));
+        }
+        for (String ele : flowLogIds) {
+            this.flowLogIds.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
+     * 
+     * @param flowLogIds
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowLogsRequest withFlowLogIds(java.util.Collection<String> flowLogIds) {
+        setFlowLogIds(flowLogIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        You cannot specify this parameter and the flow log IDs parameter in the same request.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -509,16 +538,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *         5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *         You cannot specify this parameter and the flow log IDs parameter in the same request.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -527,22 +552,58 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned. You cannot specify
-     * this parameter and the flow log IDs parameter in the same request.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>NextToken</code> value. This value can be between
-     *        5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are returned.
-     *        You cannot specify this parameter and the flow log IDs parameter in the same request.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeFlowLogsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @return The token for the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowLogsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -558,7 +619,8 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -568,14 +630,14 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFlowLogIds() != null)
-            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFlowLogIds() != null)
+            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -590,21 +652,21 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof DescribeFlowLogsRequest == false)
             return false;
         DescribeFlowLogsRequest other = (DescribeFlowLogsRequest) obj;
-        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
-            return false;
-        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
-            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -614,10 +676,10 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,10 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerInstance.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusReason", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("agentConnected", targetDepth)) {
                     context.nextToken();
                     containerInstance.setAgentConnected(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -95,6 +99,18 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     containerInstance.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("registeredAt", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setRegisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("attachments", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

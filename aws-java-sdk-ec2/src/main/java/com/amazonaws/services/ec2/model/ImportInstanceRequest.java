@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ImportInstance.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
@@ -35,16 +33,16 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     private String description;
     /**
      * <p>
-     * The launch specification.
-     * </p>
-     */
-    private ImportInstanceLaunchSpecification launchSpecification;
-    /**
-     * <p>
      * The disk image.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DiskImage> diskImages;
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     */
+    private ImportInstanceLaunchSpecification launchSpecification;
     /**
      * <p>
      * The instance operating system.
@@ -89,46 +87,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
 
     public ImportInstanceRequest withDescription(String description) {
         setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The launch specification.
-     * </p>
-     * 
-     * @param launchSpecification
-     *        The launch specification.
-     */
-
-    public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
-        this.launchSpecification = launchSpecification;
-    }
-
-    /**
-     * <p>
-     * The launch specification.
-     * </p>
-     * 
-     * @return The launch specification.
-     */
-
-    public ImportInstanceLaunchSpecification getLaunchSpecification() {
-        return this.launchSpecification;
-    }
-
-    /**
-     * <p>
-     * The launch specification.
-     * </p>
-     * 
-     * @param launchSpecification
-     *        The launch specification.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
-        setLaunchSpecification(launchSpecification);
         return this;
     }
 
@@ -207,6 +165,46 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     */
+
+    public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
+        this.launchSpecification = launchSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @return The launch specification.
+     */
+
+    public ImportInstanceLaunchSpecification getLaunchSpecification() {
+        return this.launchSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
+        setLaunchSpecification(launchSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
      * The instance operating system.
      * </p>
      * 
@@ -259,7 +257,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      */
 
     public void setPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -274,7 +272,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      */
 
     public ImportInstanceRequest withPlatform(PlatformValues platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -290,7 +288,8 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -302,10 +301,10 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
         if (getDiskImages() != null)
             sb.append("DiskImages: ").append(getDiskImages()).append(",");
+        if (getLaunchSpecification() != null)
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform());
         sb.append("}");
@@ -326,13 +325,13 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
-            return false;
-        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
-            return false;
         if (other.getDiskImages() == null ^ this.getDiskImages() == null)
             return false;
         if (other.getDiskImages() != null && other.getDiskImages().equals(this.getDiskImages()) == false)
+            return false;
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
+            return false;
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
             return false;
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
@@ -347,8 +346,8 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
         hashCode = prime * hashCode + ((getDiskImages() == null) ? 0 : getDiskImages().hashCode());
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }

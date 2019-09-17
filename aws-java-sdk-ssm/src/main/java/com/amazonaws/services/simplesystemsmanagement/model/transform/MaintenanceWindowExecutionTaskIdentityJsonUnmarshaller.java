@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,11 @@ public class MaintenanceWindowExecutionTaskIdentityJsonUnmarshaller implements U
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecutionTaskIdentity.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecutionTaskIdentity.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    maintenanceWindowExecutionTaskIdentity.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    maintenanceWindowExecutionTaskIdentity.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TaskArn", targetDepth)) {
                     context.nextToken();

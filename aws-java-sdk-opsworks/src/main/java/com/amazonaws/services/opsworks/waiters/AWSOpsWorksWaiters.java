@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,6 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSOpsWorksWaiters {
@@ -30,7 +29,7 @@ public class AWSOpsWorksWaiters {
      */
     private final AWSOpsWorks client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSOpsWorksWaiters");
 
     /**
      * Constructs a new AWSOpsWorksWaiters with the given client
@@ -112,10 +111,9 @@ public class AWSOpsWorksWaiters {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
-                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsOnlineMatcher(),
-                        new InstanceStopped.IsPendingMatcher(), new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(),
-                        new InstanceStopped.IsRunning_setupMatcher(), new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(),
-                        new InstanceStopped.IsStop_failedMatcher())
+                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsPendingMatcher(),
+                        new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(), new InstanceStopped.IsRunning_setupMatcher(),
+                        new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(), new InstanceStopped.IsStop_failedMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
@@ -137,4 +135,7 @@ public class AWSOpsWorksWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

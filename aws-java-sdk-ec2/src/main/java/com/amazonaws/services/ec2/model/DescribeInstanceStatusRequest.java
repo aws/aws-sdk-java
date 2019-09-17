@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeInstanceStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,19 +28,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your instances.
-     * </p>
-     * <p>
-     * Constraints: Maximum 100 explicitly specified instance IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -64,6 +50,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -76,9 +67,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -117,10 +114,16 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your instances.
+     * </p>
+     * <p>
+     * Constraints: Maximum 100 explicitly specified instance IDs.
      * </p>
      */
-    private String nextToken;
+    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
@@ -129,6 +132,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     */
+    private String nextToken;
     /**
      * <p>
      * When <code>true</code>, includes the health status for all instances. When <code>false</code>, includes the
@@ -142,124 +151,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your instances.
-     * </p>
-     * <p>
-     * Constraints: Maximum 100 explicitly specified instance IDs.
-     * </p>
-     * 
-     * @return One or more instance IDs.</p>
-     *         <p>
-     *         Default: Describes all your instances.
-     *         </p>
-     *         <p>
-     *         Constraints: Maximum 100 explicitly specified instance IDs.
-     */
-
-    public java.util.List<String> getInstanceIds() {
-        if (instanceIds == null) {
-            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return instanceIds;
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your instances.
-     * </p>
-     * <p>
-     * Constraints: Maximum 100 explicitly specified instance IDs.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your instances.
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 100 explicitly specified instance IDs.
-     */
-
-    public void setInstanceIds(java.util.Collection<String> instanceIds) {
-        if (instanceIds == null) {
-            this.instanceIds = null;
-            return;
-        }
-
-        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your instances.
-     * </p>
-     * <p>
-     * Constraints: Maximum 100 explicitly specified instance IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your instances.
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 100 explicitly specified instance IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
-        if (this.instanceIds == null) {
-            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
-        }
-        for (String ele : instanceIds) {
-            this.instanceIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your instances.
-     * </p>
-     * <p>
-     * Constraints: Maximum 100 explicitly specified instance IDs.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your instances.
-     *        </p>
-     *        <p>
-     *        Constraints: Maximum 100 explicitly specified instance IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInstanceStatusRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        setInstanceIds(instanceIds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -281,6 +173,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -293,9 +190,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -331,7 +234,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -352,6 +255,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
+     *         <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *         <code>2014-09-15T17:15:20.000Z</code>).
      *         </p>
@@ -364,8 +272,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
+     *         <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *         <code>2014-09-15T17:15:20.000Z</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The
-     *         high byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *         high byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *         represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *         (stopping), and 80 (stopped).
      *         </p>
@@ -414,7 +328,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -436,6 +350,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -448,9 +367,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -487,7 +412,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -508,6 +433,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -520,8 +450,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -572,7 +508,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -594,6 +530,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -606,9 +547,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -650,7 +597,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -671,6 +618,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -683,8 +635,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -737,7 +695,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -759,6 +717,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -771,9 +734,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -810,7 +779,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -831,6 +800,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -843,8 +817,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -892,41 +872,118 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your instances.
+     * </p>
+     * <p>
+     * Constraints: Maximum 100 explicitly specified instance IDs.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @return The instance IDs.</p>
+     *         <p>
+     *         Default: Describes all your instances.
+     *         </p>
+     *         <p>
+     *         Constraints: Maximum 100 explicitly specified instance IDs.
      */
 
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public java.util.List<String> getInstanceIds() {
+        if (instanceIds == null) {
+            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceIds;
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your instances.
+     * </p>
+     * <p>
+     * Constraints: Maximum 100 explicitly specified instance IDs.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @param instanceIds
+     *        The instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your instances.
+     *        </p>
+     *        <p>
+     *        Constraints: Maximum 100 explicitly specified instance IDs.
      */
 
-    public String getNextToken() {
-        return this.nextToken;
+    public void setInstanceIds(java.util.Collection<String> instanceIds) {
+        if (instanceIds == null) {
+            this.instanceIds = null;
+            return;
+        }
+
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your instances.
+     * </p>
+     * <p>
+     * Constraints: Maximum 100 explicitly specified instance IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @param instanceIds
+     *        The instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your instances.
+     *        </p>
+     *        <p>
+     *        Constraints: Maximum 100 explicitly specified instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeInstanceStatusRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
+        if (this.instanceIds == null) {
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
+        }
+        for (String ele : instanceIds) {
+            this.instanceIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your instances.
+     * </p>
+     * <p>
+     * Constraints: Maximum 100 explicitly specified instance IDs.
+     * </p>
+     * 
+     * @param instanceIds
+     *        The instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your instances.
+     *        </p>
+     *        <p>
+     *        Constraints: Maximum 100 explicitly specified instance IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceStatusRequest withInstanceIds(java.util.Collection<String> instanceIds) {
+        setInstanceIds(instanceIds);
         return this;
     }
 
@@ -979,6 +1036,46 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
 
     public DescribeInstanceStatusRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceStatusRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -1074,7 +1171,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1084,14 +1182,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceIds() != null)
-            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getInstanceIds() != null)
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getIncludeAllInstances() != null)
             sb.append("IncludeAllInstances: ").append(getIncludeAllInstances());
         sb.append("}");
@@ -1108,21 +1206,21 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         if (obj instanceof DescribeInstanceStatusRequest == false)
             return false;
         DescribeInstanceStatusRequest other = (DescribeInstanceStatusRequest) obj;
-        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
-            return false;
-        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         if (other.getIncludeAllInstances() == null ^ this.getIncludeAllInstances() == null)
             return false;
@@ -1136,10 +1234,10 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getIncludeAllInstances() == null) ? 0 : getIncludeAllInstances().hashCode());
         return hashCode;
     }

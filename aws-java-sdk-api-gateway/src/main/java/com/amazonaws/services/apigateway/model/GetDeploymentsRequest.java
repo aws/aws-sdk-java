@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to get information about a <a>Deployments</a> collection.
+ * Requests API Gateway to get information about a <a>Deployments</a> collection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,34 +27,30 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     * information about.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     * information about.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     *        information about.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -63,12 +59,10 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     * information about.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     *         information about.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -77,13 +71,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     * information about.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a> resources to get
-     *        information about.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +86,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>Deployment</a> resource in the collection to get information about.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -107,10 +99,10 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -119,11 +111,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The position of the current <a>Deployment</a> resource in the collection to get information about.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the current <a>Deployment</a> resource in the collection to get information about.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +126,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -149,12 +139,10 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *         limit is 25. It should be an integer between 1 - 500.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -163,13 +151,11 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of <a>Deployment</a> resources in the collection to get information about. The default limit
-     * is 25. It should be an integer between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>Deployment</a> resources in the collection to get information about. The default
-     *        limit is 25. It should be an integer between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +165,8 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

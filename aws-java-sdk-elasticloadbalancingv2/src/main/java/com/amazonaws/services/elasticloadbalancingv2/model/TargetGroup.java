@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,12 @@ public class TargetGroup implements Serializable, Cloneable {
     private String healthCheckPort;
     /**
      * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     */
+    private Boolean healthCheckEnabled;
+    /**
+     * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      */
@@ -110,6 +116,14 @@ public class TargetGroup implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> loadBalancerArns;
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     */
+    private String targetType;
 
     /**
      * <p>
@@ -245,7 +259,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -260,7 +274,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public TargetGroup withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -398,7 +412,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        this.healthCheckProtocol = healthCheckProtocol.toString();
+        withHealthCheckProtocol(healthCheckProtocol);
     }
 
     /**
@@ -413,7 +427,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public TargetGroup withHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        setHealthCheckProtocol(healthCheckProtocol);
+        this.healthCheckProtocol = healthCheckProtocol.toString();
         return this;
     }
 
@@ -455,6 +469,58 @@ public class TargetGroup implements Serializable, Cloneable {
     public TargetGroup withHealthCheckPort(String healthCheckPort) {
         setHealthCheckPort(healthCheckPort);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @param healthCheckEnabled
+     *        Indicates whether health checks are enabled.
+     */
+
+    public void setHealthCheckEnabled(Boolean healthCheckEnabled) {
+        this.healthCheckEnabled = healthCheckEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @return Indicates whether health checks are enabled.
+     */
+
+    public Boolean getHealthCheckEnabled() {
+        return this.healthCheckEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @param healthCheckEnabled
+     *        Indicates whether health checks are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetGroup withHealthCheckEnabled(Boolean healthCheckEnabled) {
+        setHealthCheckEnabled(healthCheckEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @return Indicates whether health checks are enabled.
+     */
+
+    public Boolean isHealthCheckEnabled() {
+        return this.healthCheckEnabled;
     }
 
     /**
@@ -769,7 +835,101 @@ public class TargetGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address).
+     * @see TargetTypeEnum
+     */
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     * 
+     * @return The type of target that you must specify when registering targets with this target group. The possible
+     *         values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *         specified by IP address).
+     * @see TargetTypeEnum
+     */
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetTypeEnum
+     */
+
+    public TargetGroup withTargetType(String targetType) {
+        setTargetType(targetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address).
+     * @see TargetTypeEnum
+     */
+
+    public void setTargetType(TargetTypeEnum targetType) {
+        withTargetType(targetType);
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetTypeEnum
+     */
+
+    public TargetGroup withTargetType(TargetTypeEnum targetType) {
+        this.targetType = targetType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -793,6 +953,8 @@ public class TargetGroup implements Serializable, Cloneable {
             sb.append("HealthCheckProtocol: ").append(getHealthCheckProtocol()).append(",");
         if (getHealthCheckPort() != null)
             sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
+        if (getHealthCheckEnabled() != null)
+            sb.append("HealthCheckEnabled: ").append(getHealthCheckEnabled()).append(",");
         if (getHealthCheckIntervalSeconds() != null)
             sb.append("HealthCheckIntervalSeconds: ").append(getHealthCheckIntervalSeconds()).append(",");
         if (getHealthCheckTimeoutSeconds() != null)
@@ -806,7 +968,9 @@ public class TargetGroup implements Serializable, Cloneable {
         if (getMatcher() != null)
             sb.append("Matcher: ").append(getMatcher()).append(",");
         if (getLoadBalancerArns() != null)
-            sb.append("LoadBalancerArns: ").append(getLoadBalancerArns());
+            sb.append("LoadBalancerArns: ").append(getLoadBalancerArns()).append(",");
+        if (getTargetType() != null)
+            sb.append("TargetType: ").append(getTargetType());
         sb.append("}");
         return sb.toString();
     }
@@ -849,6 +1013,10 @@ public class TargetGroup implements Serializable, Cloneable {
             return false;
         if (other.getHealthCheckPort() != null && other.getHealthCheckPort().equals(this.getHealthCheckPort()) == false)
             return false;
+        if (other.getHealthCheckEnabled() == null ^ this.getHealthCheckEnabled() == null)
+            return false;
+        if (other.getHealthCheckEnabled() != null && other.getHealthCheckEnabled().equals(this.getHealthCheckEnabled()) == false)
+            return false;
         if (other.getHealthCheckIntervalSeconds() == null ^ this.getHealthCheckIntervalSeconds() == null)
             return false;
         if (other.getHealthCheckIntervalSeconds() != null && other.getHealthCheckIntervalSeconds().equals(this.getHealthCheckIntervalSeconds()) == false)
@@ -877,6 +1045,10 @@ public class TargetGroup implements Serializable, Cloneable {
             return false;
         if (other.getLoadBalancerArns() != null && other.getLoadBalancerArns().equals(this.getLoadBalancerArns()) == false)
             return false;
+        if (other.getTargetType() == null ^ this.getTargetType() == null)
+            return false;
+        if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
+            return false;
         return true;
     }
 
@@ -892,6 +1064,7 @@ public class TargetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckProtocol() == null) ? 0 : getHealthCheckProtocol().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckEnabled() == null) ? 0 : getHealthCheckEnabled().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckIntervalSeconds() == null) ? 0 : getHealthCheckIntervalSeconds().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckTimeoutSeconds() == null) ? 0 : getHealthCheckTimeoutSeconds().hashCode());
         hashCode = prime * hashCode + ((getHealthyThresholdCount() == null) ? 0 : getHealthyThresholdCount().hashCode());
@@ -899,6 +1072,7 @@ public class TargetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath().hashCode());
         hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerArns() == null) ? 0 : getLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         return hashCode;
     }
 
@@ -910,4 +1084,5 @@ public class TargetGroup implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

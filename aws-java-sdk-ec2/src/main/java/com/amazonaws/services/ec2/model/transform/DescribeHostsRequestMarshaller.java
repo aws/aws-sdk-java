@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,27 +40,6 @@ public class DescribeHostsRequestMarshaller implements Marshaller<Request<Descri
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequest
-                .getHostIds();
-        if (!describeHostsRequestHostIdsList.isEmpty() || !describeHostsRequestHostIdsList.isAutoConstruct()) {
-            int hostIdsListIndex = 1;
-
-            for (String describeHostsRequestHostIdsListValue : describeHostsRequestHostIdsList) {
-                if (describeHostsRequestHostIdsListValue != null) {
-                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(describeHostsRequestHostIdsListValue));
-                }
-                hostIdsListIndex++;
-            }
-        }
-
-        if (describeHostsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeHostsRequest.getNextToken()));
-        }
-
-        if (describeHostsRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeHostsRequest.getMaxResults()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeHostsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostsRequest
                 .getFilter();
         if (!describeHostsRequestFilterList.isEmpty() || !describeHostsRequestFilterList.isAutoConstruct()) {
@@ -86,6 +65,27 @@ public class DescribeHostsRequestMarshaller implements Marshaller<Request<Descri
                 }
                 filterListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeHostsRequest
+                .getHostIds();
+        if (!describeHostsRequestHostIdsList.isEmpty() || !describeHostsRequestHostIdsList.isAutoConstruct()) {
+            int hostIdsListIndex = 1;
+
+            for (String describeHostsRequestHostIdsListValue : describeHostsRequestHostIdsList) {
+                if (describeHostsRequestHostIdsListValue != null) {
+                    request.addParameter("HostId." + hostIdsListIndex, StringUtils.fromString(describeHostsRequestHostIdsListValue));
+                }
+                hostIdsListIndex++;
+            }
+        }
+
+        if (describeHostsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeHostsRequest.getMaxResults()));
+        }
+
+        if (describeHostsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeHostsRequest.getNextToken()));
         }
 
         return request;

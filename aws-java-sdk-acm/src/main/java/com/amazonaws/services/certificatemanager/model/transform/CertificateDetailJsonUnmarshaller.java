@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,15 +79,15 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("IssuedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setIssuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setIssuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ImportedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setImportedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setImportedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -95,7 +95,7 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("RevokedAt", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setRevokedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setRevokedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RevocationReason", targetDepth)) {
                     context.nextToken();
@@ -103,11 +103,11 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 }
                 if (context.testExpression("NotBefore", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setNotBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("NotAfter", targetDepth)) {
                     context.nextToken();
-                    certificateDetail.setNotAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    certificateDetail.setNotAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("KeyAlgorithm", targetDepth)) {
                     context.nextToken();
@@ -132,6 +132,27 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                 if (context.testExpression("RenewalSummary", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setRenewalSummary(RenewalSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KeyUsages", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setKeyUsages(new ListUnmarshaller<KeyUsage>(KeyUsageJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ExtendedKeyUsages", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setExtendedKeyUsages(new ListUnmarshaller<ExtendedKeyUsage>(ExtendedKeyUsageJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("CertificateAuthorityArn", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RenewalEligibility", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setRenewalEligibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Options", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setOptions(CertificateOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

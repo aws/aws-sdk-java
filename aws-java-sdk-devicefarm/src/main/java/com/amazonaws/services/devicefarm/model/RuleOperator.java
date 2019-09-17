@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,9 +22,12 @@ public enum RuleOperator {
 
     EQUALS("EQUALS"),
     LESS_THAN("LESS_THAN"),
+    LESS_THAN_OR_EQUALS("LESS_THAN_OR_EQUALS"),
     GREATER_THAN("GREATER_THAN"),
+    GREATER_THAN_OR_EQUALS("GREATER_THAN_OR_EQUALS"),
     IN("IN"),
-    NOT_IN("NOT_IN");
+    NOT_IN("NOT_IN"),
+    CONTAINS("CONTAINS");
 
     private String value;
 
@@ -43,6 +46,9 @@ public enum RuleOperator {
      * @param value
      *        real value
      * @return RuleOperator corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static RuleOperator fromValue(String value) {
         if (value == null || "".equals(value)) {

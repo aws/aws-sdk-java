@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,56 @@ public class InstanceCount implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The states of the listed Reserved Instances.
-     * </p>
-     */
-    private String state;
-    /**
-     * <p>
      * The number of listed Reserved Instances in the state specified by the <code>state</code>.
      * </p>
      */
     private Integer instanceCount;
+    /**
+     * <p>
+     * The states of the listed Reserved Instances.
+     * </p>
+     */
+    private String state;
+
+    /**
+     * <p>
+     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     * </p>
+     * 
+     * @param instanceCount
+     *        The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     */
+
+    public void setInstanceCount(Integer instanceCount) {
+        this.instanceCount = instanceCount;
+    }
+
+    /**
+     * <p>
+     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     * </p>
+     * 
+     * @return The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     */
+
+    public Integer getInstanceCount() {
+        return this.instanceCount;
+    }
+
+    /**
+     * <p>
+     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     * </p>
+     * 
+     * @param instanceCount
+     *        The number of listed Reserved Instances in the state specified by the <code>state</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceCount withInstanceCount(Integer instanceCount) {
+        setInstanceCount(instanceCount);
+        return this;
+    }
 
     /**
      * <p>
@@ -93,7 +133,7 @@ public class InstanceCount implements Serializable, Cloneable {
      */
 
     public void setState(ListingState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,52 +148,13 @@ public class InstanceCount implements Serializable, Cloneable {
      */
 
     public InstanceCount withState(ListingState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
-     * <p>
-     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     * </p>
-     * 
-     * @param instanceCount
-     *        The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     */
-
-    public void setInstanceCount(Integer instanceCount) {
-        this.instanceCount = instanceCount;
-    }
-
-    /**
-     * <p>
-     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     * </p>
-     * 
-     * @return The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     */
-
-    public Integer getInstanceCount() {
-        return this.instanceCount;
-    }
-
-    /**
-     * <p>
-     * The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     * </p>
-     * 
-     * @param instanceCount
-     *        The number of listed Reserved Instances in the state specified by the <code>state</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceCount withInstanceCount(Integer instanceCount) {
-        setInstanceCount(instanceCount);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,10 +164,10 @@ public class InstanceCount implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: ").append(getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +182,13 @@ public class InstanceCount implements Serializable, Cloneable {
         if (obj instanceof InstanceCount == false)
             return false;
         InstanceCount other = (InstanceCount) obj;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
-            return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         return true;
     }
@@ -197,8 +198,8 @@ public class InstanceCount implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 
@@ -210,4 +211,5 @@ public class InstanceCount implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

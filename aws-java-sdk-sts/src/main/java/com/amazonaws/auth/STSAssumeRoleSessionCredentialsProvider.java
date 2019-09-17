@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,16 +23,18 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
 import com.amazonaws.util.ValidationUtils;
-
+import java.io.Closeable;
 import java.util.concurrent.Callable;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to assume a Role
  * and create temporary, short-lived sessions to use for authentication.
+ *
+ * This credentials provider uses a background thread to refresh credentials. This background thread can be shut down via the
+ * {@link #close()} method when the credentials provider is no longer used.
  */
 @ThreadSafe
-public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider {
-
+public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider, Closeable {
     /**
      * Default duration for started sessions.
      */
@@ -321,6 +323,15 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     }
 
     /**
+     * Shut down this credentials provider, shutting down the thread that performs asynchronous credential refreshing. This
+     * should not be invoked if the credentials provider is still in use by an AWS client.
+     */
+    @Override
+    public void close() {
+        refreshableTask.close();
+    }
+
+    /**
      * Provides a builder pattern to avoid combinatorial explosion of the number of parameters that
      * are passed to constructors. The builder introspects which parameters have been set and calls
      * the appropriate constructor.
@@ -422,10 +433,6 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          * @return the itself for chained calls
          */
         public Builder withRoleSessionDurationSeconds(int roleSessionDurationSeconds) {
-            if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600) {
-                throw new IllegalArgumentException(
-                        "Assume Role session duration should be in the range of 15min - 1Hr");
-            }
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
             return this;
         }

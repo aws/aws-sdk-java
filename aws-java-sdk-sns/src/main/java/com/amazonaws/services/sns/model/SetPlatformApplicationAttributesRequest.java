@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,54 +41,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * <code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered messages.
+     * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.
      * </p>
      * </li>
      * </ul>
@@ -142,54 +142,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * <code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered messages.
+     * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.
      * </p>
      * </li>
      * </ul>
@@ -198,57 +198,56 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PlatformCredential</code> -- The credential received from the notification service. For
+     *         <code>PlatformCredential</code> – The credential received from the notification service. For
      *         APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
      *         PlatformCredential is "client secret".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PlatformPrincipal</code> -- The principal received from the notification service. For
+     *         <code>PlatformPrincipal</code> – The principal received from the notification service. For
      *         APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable.
      *         For ADM, PlatformPrincipal is "client id".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
+     *         <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be
      *         sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
+     *         <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be
      *         sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be
-     *         sent.
+     *         <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be
-     *         sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
+     *         <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
+     *         upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use
-     *         CloudWatch Logs on your behalf.
+     *         <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *         Logs on your behalf.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use
-     *         CloudWatch Logs on your behalf.
+     *         <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *         Logs on your behalf.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered
+     *         <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered
      *         messages.
      *         </p>
      *         </li>
@@ -268,54 +267,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * <code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered messages.
+     * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.
      * </p>
      * </li>
      * </ul>
@@ -325,56 +324,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PlatformCredential</code> -- The credential received from the notification service. For
+     *        <code>PlatformCredential</code> – The credential received from the notification service. For
      *        APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
      *        PlatformCredential is "client secret".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PlatformPrincipal</code> -- The principal received from the notification service. For
+     *        <code>PlatformPrincipal</code> – The principal received from the notification service. For
      *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For
      *        ADM, PlatformPrincipal is "client id".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
-     *        sent.
+     *        <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
-     *        sent.
+     *        <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     *        <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent
+     *        <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
      *        upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *        <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
      *        Logs on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *        <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
      *        Logs on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered
+     *        <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered
      *        messages.
      *        </p>
      *        </li>
@@ -391,54 +388,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * <code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformCredential</code> – The credential received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is
      * "client secret".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX,
+     * <code>PlatformPrincipal</code> – The principal received from the notification service. For APNS/APNS_SANDBOX,
      * PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is
      * "client id".
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon
      * Direct Publish delivery failure (permanent) to one of the application's endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs
-     * on your behalf.
+     * <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch Logs on
+     * your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered messages.
+     * <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered messages.
      * </p>
      * </li>
      * </ul>
@@ -448,56 +445,54 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PlatformCredential</code> -- The credential received from the notification service. For
+     *        <code>PlatformCredential</code> – The credential received from the notification service. For
      *        APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential is "API key". For ADM,
      *        PlatformCredential is "client secret".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PlatformPrincipal</code> -- The principal received from the notification service. For
+     *        <code>PlatformPrincipal</code> – The principal received from the notification service. For
      *        APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal is not applicable. For
      *        ADM, PlatformPrincipal is "client id".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be
-     *        sent.
+     *        <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be
-     *        sent.
+     *        <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.
+     *        <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent
+     *        <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent
      *        upon Direct Publish delivery failure (permanent) to one of the application's endpoints.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *        <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
      *        Logs on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write access to use CloudWatch
+     *        <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS write access to use CloudWatch
      *        Logs on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully delivered
+     *        <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100) of successfully delivered
      *        messages.
      *        </p>
      *        </li>
@@ -531,7 +526,8 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

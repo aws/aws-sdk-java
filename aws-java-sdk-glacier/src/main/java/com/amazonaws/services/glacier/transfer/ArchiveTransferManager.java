@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon Technologies, Inc.
+ * Copyright 2012-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.sns.AmazonSNS;
+import com.amazonaws.services.sqs.AmazonSQS;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -94,9 +97,9 @@ public class ArchiveTransferManager {
 
     private final ClientConfiguration clientConfiguration;
 
-    private final AmazonSQSClient sqs;
+    private final AmazonSQS sqs;
 
-    private final AmazonSNSClient sns;
+    private final AmazonSNS sns;
 
     private static final Log log = LogFactory.getLog(ArchiveTransferManager.class);
 
@@ -106,6 +109,7 @@ public class ArchiveTransferManager {
      *
      * @param credentials
      *            The AWS credentials used to authenticate requests.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AWSCredentials credentials) {
         this(new StaticCredentialsProvider(credentials), new ClientConfiguration());
@@ -119,6 +123,7 @@ public class ArchiveTransferManager {
      *            The AWS credentials provider used to authenticate requests.
      * @param clientConfiguration
      *            Client specific options, such as proxy settings, retries, and timeouts.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
         this(new AmazonGlacierClient(credentialsProvider, clientConfiguration), credentialsProvider, clientConfiguration);
@@ -132,6 +137,7 @@ public class ArchiveTransferManager {
      *            The client for working with Amazon Glacier.
      * @param credentialsProvider
      *            The AWS credentials provider used to authenticate requests.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentialsProvider credentialsProvider) {
         this(glacier, credentialsProvider, new ClientConfiguration());
@@ -145,6 +151,7 @@ public class ArchiveTransferManager {
      *            The client for working with Amazon Glacier.
      * @param credentials
      *            The AWS credentials used to authenticate requests.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentials credentials) {
         this(glacier, new StaticCredentialsProvider(credentials), new ClientConfiguration());
@@ -161,6 +168,7 @@ public class ArchiveTransferManager {
      * @param clientConfiguration
      *            Client specific options, such as proxy settings, retries, and
      *            timeouts.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
         this.credentialsProvider = credentialsProvider;
@@ -188,6 +196,7 @@ public class ArchiveTransferManager {
      * @param sns
      *            The client for working with Amazon SNS when polling archive
      *            retrieval job status.
+     * @deprecated Use {@link ArchiveTransferManagerBuilder}.
      */
     public ArchiveTransferManager(AmazonGlacierClient glacier, AmazonSQSClient sqs, AmazonSNSClient sns) {
         this.credentialsProvider = null;
@@ -195,6 +204,15 @@ public class ArchiveTransferManager {
         this.glacier = glacier;
         this.sqs = sqs;
         this.sns = sns;
+    }
+
+    @SdkInternalApi
+    ArchiveTransferManager(ArchiveTransferManagerParams params) {
+        this.credentialsProvider = null;
+        this.clientConfiguration = null;
+        this.glacier = params.getAmazonGlacier();
+        this.sqs = params.getAmazonSQS();
+        this.sns = params.getAmazonSNS();
     }
 
     /**

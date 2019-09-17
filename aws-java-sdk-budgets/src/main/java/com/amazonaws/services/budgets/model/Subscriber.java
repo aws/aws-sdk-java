@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,56 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Subscriber model. Each notification may contain multiple subscribers with different addresses.
+ * <p>
+ * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS
+ * topic or an email address.
+ * </p>
+ * <p>
+ * For example, an email subscriber would have the following parameters:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * A <code>subscriptionType</code> of <code>EMAIL</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * An <code>address</code> of <code>example@example.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Subscriber implements Serializable, Cloneable {
+public class Subscriber implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     */
     private String subscriptionType;
-
+    /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
+     */
     private String address;
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
@@ -35,7 +72,11 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
+     * @return The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
@@ -44,7 +85,12 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionType
      */
@@ -55,27 +101,47 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @see SubscriptionType
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
+     * <p>
+     * The type of notification that AWS sends to a subscriber.
+     * </p>
+     * 
      * @param subscriptionType
+     *        The type of notification that AWS sends to a subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionType
      */
 
     public Subscriber withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 
     /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
+     * 
      * @param address
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *        <p>
+     *        AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      */
 
     public void setAddress(String address) {
@@ -83,7 +149,16 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
+     * 
+     * @return The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *         <p>
+     *         AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      */
 
     public String getAddress() {
@@ -91,7 +166,17 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The address that AWS sends budget notifications to, either an SNS topic or an email.
+     * </p>
+     * <p>
+     * AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
+     * </p>
+     * 
      * @param address
+     *        The address that AWS sends budget notifications to, either an SNS topic or an email.</p>
+     *        <p>
+     *        AWS validates the address for a <code>CreateSubscriber</code> request with the <code>.*</code> regex.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +186,8 @@ public class Subscriber implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -114,7 +200,7 @@ public class Subscriber implements Serializable, Cloneable {
         if (getSubscriptionType() != null)
             sb.append("SubscriptionType: ").append(getSubscriptionType()).append(",");
         if (getAddress() != null)
-            sb.append("Address: ").append(getAddress());
+            sb.append("Address: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -157,5 +243,11 @@ public class Subscriber implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.SubscriberMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * templates can be used to transform the back-end response.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -568,7 +568,7 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -618,12 +618,13 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      */
 
     public GetIntegrationResponseResult withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -701,4 +702,5 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

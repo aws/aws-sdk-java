@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeGameSessionsRequest Marshaller
+ * DescribeGameSessionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeGameSessionsRequestMarshaller implements Marshaller<Request<DescribeGameSessionsRequest>, DescribeGameSessionsRequest> {
+@SdkInternalApi
+public class DescribeGameSessionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetId").build();
+    private static final MarshallingInfo<String> GAMESESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
+    private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusFilter").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeGameSessionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeGameSessionsRequestMarshaller instance = new DescribeGameSessionsRequestMarshaller();
+
+    public static DescribeGameSessionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeGameSessionsRequest> marshall(DescribeGameSessionsRequest describeGameSessionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeGameSessionsRequest describeGameSessionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeGameSessionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeGameSessionsRequest> request = new DefaultRequest<DescribeGameSessionsRequest>(describeGameSessionsRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.DescribeGameSessions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeGameSessionsRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(describeGameSessionsRequest.getFleetId());
-            }
-            if (describeGameSessionsRequest.getGameSessionId() != null) {
-                jsonGenerator.writeFieldName("GameSessionId").writeValue(describeGameSessionsRequest.getGameSessionId());
-            }
-            if (describeGameSessionsRequest.getAliasId() != null) {
-                jsonGenerator.writeFieldName("AliasId").writeValue(describeGameSessionsRequest.getAliasId());
-            }
-            if (describeGameSessionsRequest.getStatusFilter() != null) {
-                jsonGenerator.writeFieldName("StatusFilter").writeValue(describeGameSessionsRequest.getStatusFilter());
-            }
-            if (describeGameSessionsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeGameSessionsRequest.getLimit());
-            }
-            if (describeGameSessionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeGameSessionsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getFleetId(), FLEETID_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getGameSessionId(), GAMESESSIONID_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getStatusFilter(), STATUSFILTER_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

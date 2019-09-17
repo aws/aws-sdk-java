@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,62 @@ public class DescribeScheduledInstanceAvailabilityRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        com.amazonaws.internal.SdkInternalList<Filter> describeScheduledInstanceAvailabilityRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeScheduledInstanceAvailabilityRequest
+                .getFilters();
+        if (!describeScheduledInstanceAvailabilityRequestFiltersList.isEmpty() || !describeScheduledInstanceAvailabilityRequestFiltersList.isAutoConstruct()) {
+            int filtersListIndex = 1;
+
+            for (Filter describeScheduledInstanceAvailabilityRequestFiltersListValue : describeScheduledInstanceAvailabilityRequestFiltersList) {
+
+                if (describeScheduledInstanceAvailabilityRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeScheduledInstanceAvailabilityRequestFiltersListValue.getName()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstanceAvailabilityRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
+                    int valuesListIndex = 1;
+
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
+        SlotDateTimeRangeRequest firstSlotStartTimeRange = describeScheduledInstanceAvailabilityRequest.getFirstSlotStartTimeRange();
+        if (firstSlotStartTimeRange != null) {
+
+            if (firstSlotStartTimeRange.getEarliestTime() != null) {
+                request.addParameter("FirstSlotStartTimeRange.EarliestTime", StringUtils.fromDate(firstSlotStartTimeRange.getEarliestTime()));
+            }
+
+            if (firstSlotStartTimeRange.getLatestTime() != null) {
+                request.addParameter("FirstSlotStartTimeRange.LatestTime", StringUtils.fromDate(firstSlotStartTimeRange.getLatestTime()));
+            }
+        }
+
+        if (describeScheduledInstanceAvailabilityRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMaxResults()));
+        }
+
+        if (describeScheduledInstanceAvailabilityRequest.getMaxSlotDurationInHours() != null) {
+            request.addParameter("MaxSlotDurationInHours", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMaxSlotDurationInHours()));
+        }
+
+        if (describeScheduledInstanceAvailabilityRequest.getMinSlotDurationInHours() != null) {
+            request.addParameter("MinSlotDurationInHours", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMinSlotDurationInHours()));
+        }
+
+        if (describeScheduledInstanceAvailabilityRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeScheduledInstanceAvailabilityRequest.getNextToken()));
+        }
+
         ScheduledInstanceRecurrenceRequest recurrence = describeScheduledInstanceAvailabilityRequest.getRecurrence();
         if (recurrence != null) {
 
@@ -74,62 +130,6 @@ public class DescribeScheduledInstanceAvailabilityRequestMarshaller implements
 
             if (recurrence.getOccurrenceUnit() != null) {
                 request.addParameter("Recurrence.OccurrenceUnit", StringUtils.fromString(recurrence.getOccurrenceUnit()));
-            }
-        }
-
-        SlotDateTimeRangeRequest firstSlotStartTimeRange = describeScheduledInstanceAvailabilityRequest.getFirstSlotStartTimeRange();
-        if (firstSlotStartTimeRange != null) {
-
-            if (firstSlotStartTimeRange.getEarliestTime() != null) {
-                request.addParameter("FirstSlotStartTimeRange.EarliestTime", StringUtils.fromDate(firstSlotStartTimeRange.getEarliestTime()));
-            }
-
-            if (firstSlotStartTimeRange.getLatestTime() != null) {
-                request.addParameter("FirstSlotStartTimeRange.LatestTime", StringUtils.fromDate(firstSlotStartTimeRange.getLatestTime()));
-            }
-        }
-
-        if (describeScheduledInstanceAvailabilityRequest.getMinSlotDurationInHours() != null) {
-            request.addParameter("MinSlotDurationInHours", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMinSlotDurationInHours()));
-        }
-
-        if (describeScheduledInstanceAvailabilityRequest.getMaxSlotDurationInHours() != null) {
-            request.addParameter("MaxSlotDurationInHours", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMaxSlotDurationInHours()));
-        }
-
-        if (describeScheduledInstanceAvailabilityRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeScheduledInstanceAvailabilityRequest.getNextToken()));
-        }
-
-        if (describeScheduledInstanceAvailabilityRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeScheduledInstanceAvailabilityRequest.getMaxResults()));
-        }
-
-        com.amazonaws.internal.SdkInternalList<Filter> describeScheduledInstanceAvailabilityRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeScheduledInstanceAvailabilityRequest
-                .getFilters();
-        if (!describeScheduledInstanceAvailabilityRequestFiltersList.isEmpty() || !describeScheduledInstanceAvailabilityRequestFiltersList.isAutoConstruct()) {
-            int filtersListIndex = 1;
-
-            for (Filter describeScheduledInstanceAvailabilityRequestFiltersListValue : describeScheduledInstanceAvailabilityRequestFiltersList) {
-
-                if (describeScheduledInstanceAvailabilityRequestFiltersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name",
-                            StringUtils.fromString(describeScheduledInstanceAvailabilityRequestFiltersListValue.getName()));
-                }
-
-                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstanceAvailabilityRequestFiltersListValue
-                        .getValues();
-                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
-                    int valuesListIndex = 1;
-
-                    for (String filterValuesListValue : filterValuesList) {
-                        if (filterValuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
-                }
-                filtersListIndex++;
             }
         }
 

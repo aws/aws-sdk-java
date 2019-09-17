@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class InitiateJobResultJsonUnmarshaller implements Unmarshaller<InitiateJ
             if (context.getHeader("x-amz-job-id") != null) {
                 context.setCurrentHeader("x-amz-job-id");
                 initiateJobResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+            }
+            if (context.getHeader("x-amz-job-output-path") != null) {
+                context.setCurrentHeader("x-amz-job-output-path");
+                initiateJobResult.setJobOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
             }
         }
 

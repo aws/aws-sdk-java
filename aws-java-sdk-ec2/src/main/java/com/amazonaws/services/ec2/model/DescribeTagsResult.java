@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,33 +18,77 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeTags.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<TagDescription> tags;
-    /**
-     * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagDescription> tags;
 
     /**
      * <p>
-     * A list of tags.
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
      * </p>
      * 
-     * @return A list of tags.
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTagsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @return The tags.
      */
 
     public java.util.List<TagDescription> getTags() {
@@ -56,11 +100,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      */
 
     public void setTags(java.util.Collection<TagDescription> tags) {
@@ -74,7 +118,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +127,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +143,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,53 +157,8 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
-     * </p>
-     * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return..
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeTagsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,10 +168,10 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +186,13 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof DescribeTagsResult == false)
             return false;
         DescribeTagsResult other = (DescribeTagsResult) obj;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -203,8 +202,8 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,18 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                     context.nextToken();
                     fleetAttributes.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FleetType", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceType", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -62,11 +74,11 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleetAttributes.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    fleetAttributes.setTerminationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleetAttributes.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -75,6 +87,10 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 if (context.testExpression("BuildId", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setBuildId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ScriptId", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setScriptId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerLaunchPath", targetDepth)) {
                     context.nextToken();
@@ -99,6 +115,22 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                 if (context.testExpression("ResourceCreationLimitPolicy", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setResourceCreationLimitPolicy(ResourceCreationLimitPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MetricGroups", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setMetricGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("StoppedActions", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setStoppedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("InstanceRoleArn", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setInstanceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CertificateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setCertificateConfiguration(CertificateConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

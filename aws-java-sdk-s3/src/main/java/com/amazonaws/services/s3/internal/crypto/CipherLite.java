@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ import javax.crypto.SecretKey;
  * cannot be reused after the {@link #doFinal()} methods have been invoked. In
  * other words, it is NOT true that, upon finishing, the doFinal method will
  * reset the cipher lite object to the state it was in when first constructed.
- * 
+ *
  * @author Hanson Char
- * 
+ *
  * @see GCMCipherLite
  */
 class CipherLite {
@@ -86,7 +86,7 @@ class CipherLite {
      */
     CipherLite recreate() {
         return scheme.createCipherLite(secreteKey, cipher.getIV(),
-                this.cipherMode, cipher.getProvider());
+                this.cipherMode, cipher.getProvider(), true);
     }
 
     /**
@@ -95,13 +95,13 @@ class CipherLite {
      */
     CipherLite createUsingIV(byte[] iv) {
         return scheme.createCipherLite(secreteKey, iv, this.cipherMode,
-                cipher.getProvider());
+                cipher.getProvider(), true);
     }
 
     /**
      * Returns an auxiliary {@link CipherLite} for partial plaintext
      * re-encryption (or re-decryption) purposes.
-     * 
+     *
      * @param startingBytePos
      *            the starting byte position of the plaintext. Must be a
      *            multiple of the cipher block size.
@@ -128,27 +128,27 @@ class CipherLite {
         else
             throw new UnsupportedOperationException();
         return scheme.createCipherLite(secreteKey, cipher.getIV(),
-                inversedMode, cipher.getProvider());
+                inversedMode, cipher.getProvider(), true);
     }
 
     /**
      * Finishes a multiple-part encryption or decryption operation, depending on
      * how the underlying cipher was initialized.
-     * 
+     *
      * <p>
      * Input data that may have been buffered during a previous
      * <code>update</code> operation is processed, with padding (if requested)
      * being applied. If an AEAD mode such as GCM/CCM is being used, the
      * authentication tag is appended in the case of encryption, or verified in
      * the case of decryption. The result is stored in a new buffer.
-     * 
+     *
      * <p>
      * Note: if any exception is thrown, a new instance of this cipher lite
      * object may need to be constructed before it can be used again. be
      * reconstructed before it can be used again.
-     * 
+     *
      * @return the new buffer with the result
-     * 
+     *
      * @exception IllegalStateException
      *                if this cipher is in a wrong state (e.g., has not been
      *                initialized)
@@ -162,7 +162,7 @@ class CipherLite {
      *                if this cipher is in decryption mode, and (un)padding has
      *                been requested, but the decrypted data is not bounded by
      *                the appropriate padding bytes
-     * @exception BadTagException
+     * @exception javax.crypto.AEADBadTagException
      *                if this cipher is decrypting in an AEAD mode (such as
      *                GCM/CCM), and the received authentication tag does not
      *                match the calculated value
@@ -176,7 +176,7 @@ class CipherLite {
      * Encrypts or decrypts data in a single-part operation, or finishes a
      * multiple-part operation. The data is encrypted or decrypted, depending on
      * how the underlying cipher was initialized.
-     * 
+     *
      * <p>
      * The bytes in the <code>input</code> buffer, and any input bytes that may
      * have been buffered during a previous <code>update</code> operation, are
@@ -184,16 +184,16 @@ class CipherLite {
      * such as GCM/CCM is being used, the authentication tag is appended in the
      * case of encryption, or verified in the case of decryption. The result is
      * stored in a new buffer.
-     * 
+     *
      * <p>
      * Note: if any exception is thrown, a new instance of this cipher lite
      * object may need to be constructed before it can be used again.
-     * 
+     *
      * @param input
      *            the input buffer
-     * 
+     *
      * @return the new buffer with the result
-     * 
+     *
      * @exception IllegalStateException
      *                if this cipher is in a wrong state (e.g., has not been
      *                initialized)
@@ -220,7 +220,7 @@ class CipherLite {
      * Encrypts or decrypts data in a single-part operation, or finishes a
      * multiple-part operation. The data is encrypted or decrypted, depending on
      * how the underlying cipher was initialized.
-     * 
+     *
      * <p>
      * The first <code>inputLen</code> bytes in the <code>input</code> buffer,
      * starting at <code>inputOffset</code> inclusive, and any input bytes that
@@ -229,20 +229,20 @@ class CipherLite {
      * such as GCM/CCM is being used, the authentication tag is appended in the
      * case of encryption, or verified in the case of decryption. The result is
      * stored in a new buffer.
-     * 
+     *
      * <p>
      * Note: if any exception is thrown, a new instance of this cipher lite
      * object may need to be constructed before it can be used again.
-     * 
+     *
      * @param input
      *            the input buffer
      * @param inputOffset
      *            the offset in <code>input</code> where the input starts
      * @param inputLen
      *            the input length
-     * 
+     *
      * @return the new buffer with the result
-     * 
+     *
      * @exception IllegalStateException
      *                if this cipher is in a wrong state (e.g., has not been
      *                initialized)
@@ -269,26 +269,26 @@ class CipherLite {
      * Continues a multiple-part encryption or decryption operation (depending
      * on how the underlying cipher was initialized), processing another data
      * part.
-     * 
+     *
      * <p>
      * The first <code>inputLen</code> bytes in the <code>input</code> buffer,
      * starting at <code>inputOffset</code> inclusive, are processed, and the
      * result is stored in a new buffer.
-     * 
+     *
      * <p>
      * If <code>inputLen</code> is zero, this method returns <code>null</code>.
-     * 
+     *
      * @param input
      *            the input buffer
      * @param inputOffset
      *            the offset in <code>input</code> where the input starts
      * @param inputLen
      *            the input length
-     * 
+     *
      * @return the new buffer with the result, or null if the underlying cipher
      *         is a block cipher and the input data is too short to result in a
      *         new block.
-     * 
+     *
      * @exception IllegalStateException
      *                if the underlying cipher is in a wrong state (e.g., has
      *                not been initialized)
@@ -377,7 +377,7 @@ class CipherLite {
      * position so that subsequent crypto operations will be logically performed
      * in an idempotent manner as if the cipher has been rewinded back to the
      * marked position.
-     * 
+     *
      * <p>
      * The general contract of <code>mark</code> is that, if the method
      * <code>markSupported</code> returns <code>true</code>, the cipher lite
@@ -385,7 +385,7 @@ class CipherLite {
      * and stands ready to restore to the internal state so that it would be
      * able to produce the same output given the same input again if and
      * whenever the method <code>reset</code> is called.
-     * 
+     *
      * @return the current position marked or -1 if mark/reset is not supported.
      */
     long mark() { return -1; }
@@ -393,10 +393,10 @@ class CipherLite {
     /**
      * Repositions this cipher lite to the position at the time the
      * <code>mark</code> method was last called.
-     * 
+     *
      * <p>
      * The general contract of <code>reset</code> is:
-     * 
+     *
      * <p>
      * <ul>
      * <li>If the method <code>markSupported</code> returns <code>true</code>,
@@ -406,7 +406,7 @@ class CipherLite {
      * <code>udpate</code> or <code>doFinal</code> method would produce the same
      * output given the same input data identical to the input data after the
      * <code>mark</code> method was last called..</li>
-     * 
+     *
      * <li>If the method <code>markSupported</code> returns <code>false</code>,
      * then the call to <code>reset</code> may throw an
      * <code>IllegalStateException</code>.</li>

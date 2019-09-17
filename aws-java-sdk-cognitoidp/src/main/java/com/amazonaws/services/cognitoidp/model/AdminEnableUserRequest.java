@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      */
     private String username;
@@ -83,11 +83,11 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to ebable.
+     *        The user name of the user you wish to enable.
      */
 
     public void setUsername(String username) {
@@ -96,10 +96,10 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
-     * @return The user name of the user you wish to ebable.
+     * @return The user name of the user you wish to enable.
      */
 
     public String getUsername() {
@@ -108,11 +108,11 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to ebable.
+     *        The user name of the user you wish to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +122,8 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,7 +136,7 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
         if (getUserPoolId() != null)
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

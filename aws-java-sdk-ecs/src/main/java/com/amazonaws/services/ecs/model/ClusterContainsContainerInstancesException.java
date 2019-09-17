@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You cannot delete a cluster that has registered container instances. You must first deregister the container
- * instances before you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.
+ * You cannot delete a cluster that has registered container instances. First, deregister the container instances before
+ * you can delete the cluster. For more information, see <a>DeregisterContainerInstance</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

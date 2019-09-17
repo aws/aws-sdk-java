@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VolumeConfiguration implements Serializable, Cloneable {
+public class VolumeConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,22 +54,38 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     private Integer size;
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>standard</code> - Magnetic
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> - Provisioned IOPS (SSD)
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>gp2</code> - General Purpose (SSD)
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
      * </p>
      * </li>
      * </ul>
@@ -79,6 +97,13 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private Integer iops;
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     */
+    private Boolean encrypted;
 
     /**
      * <p>
@@ -242,42 +267,75 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>standard</code> - Magnetic
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> - Provisioned IOPS (SSD)
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>gp2</code> - General Purpose (SSD)
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
      * </p>
      * </li>
      * </ul>
      * 
      * @param volumeType
-     *        The volume type:</p>
+     *        The volume type. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        Types</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>standard</code> - Magnetic
+     *        <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of
+     *        1024 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> - Provisioned IOPS (SSD)
+     *        <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *        size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>gp2</code> - General Purpose (SSD)
+     *        <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *        maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        16384 GiB.
      *        </p>
      *        </li>
      */
@@ -288,41 +346,74 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>standard</code> - Magnetic
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> - Provisioned IOPS (SSD)
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>gp2</code> - General Purpose (SSD)
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The volume type:</p>
+     * @return The volume type. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *         Types</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>standard</code> - Magnetic
+     *         <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size
+     *         of 1024 GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>io1</code> - Provisioned IOPS (SSD)
+     *         <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *         size of 16384 GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>gp2</code> - General Purpose (SSD)
+     *         <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *         maximum size of 16384 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *         a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *         16384 GiB.
      *         </p>
      *         </li>
      */
@@ -333,42 +424,75 @@ public class VolumeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type:
+     * The volume type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>standard</code> - Magnetic
+     * <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>io1</code> - Provisioned IOPS (SSD)
+     * <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of
+     * 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>gp2</code> - General Purpose (SSD)
+     * <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum
+     * size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
+     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * GiB.
      * </p>
      * </li>
      * </ul>
      * 
      * @param volumeType
-     *        The volume type:</p>
+     *        The volume type. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume
+     *        Types</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>standard</code> - Magnetic
+     *        <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of
+     *        1024 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>io1</code> - Provisioned IOPS (SSD)
+     *        <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum
+     *        size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>gp2</code> - General Purpose (SSD)
+     *        <code>gp2</code> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a
+     *        maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
+     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        16384 GiB.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -420,7 +544,68 @@ public class VolumeConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @param encrypted
+     *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @param encrypted
+     *        Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeConfiguration withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     * </p>
+     * 
+     * @return Specifies whether an Amazon EBS volume is encrypted. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -441,7 +626,9 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: ").append(getIops());
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +667,10 @@ public class VolumeConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
         return true;
     }
 
@@ -494,6 +685,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }
 
@@ -504,5 +696,11 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.VolumeConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

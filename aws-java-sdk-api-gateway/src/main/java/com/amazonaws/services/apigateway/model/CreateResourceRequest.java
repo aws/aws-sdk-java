@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to create a <a>Resource</a> resource.
+ * Requests API Gateway to create a <a>Resource</a> resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> for the resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The parent resource's identifier.
+     * [Required] The parent resource's identifier.
      * </p>
      */
     private String parentId;
@@ -46,11 +46,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> for the resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> for the resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> for the resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The identifier of the <a>RestApi</a> for the resource.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> for the resource.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> for the resource.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent resource's identifier.
+     * [Required] The parent resource's identifier.
      * </p>
      * 
      * @param parentId
-     *        The parent resource's identifier.
+     *        [Required] The parent resource's identifier.
      */
 
     public void setParentId(String parentId) {
@@ -99,10 +99,10 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent resource's identifier.
+     * [Required] The parent resource's identifier.
      * </p>
      * 
-     * @return The parent resource's identifier.
+     * @return [Required] The parent resource's identifier.
      */
 
     public String getParentId() {
@@ -111,11 +111,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parent resource's identifier.
+     * [Required] The parent resource's identifier.
      * </p>
      * 
      * @param parentId
-     *        The parent resource's identifier.
+     *        [Required] The parent resource's identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

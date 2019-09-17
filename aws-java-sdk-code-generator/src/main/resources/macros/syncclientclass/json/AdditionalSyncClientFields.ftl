@@ -1,16 +1,19 @@
 <#macro content serviceModelRoot>
-    private final ${serviceModelRoot.metadata.protocolFactory} protocolFactory = new ${serviceModelRoot.metadata.protocolFactory}(new JsonClientMetadata()
+<#local customConfig = serviceModelRoot.customizationConfig/>
+    private static final ${serviceModelRoot.metadata.protocolFactory} protocolFactory = new ${serviceModelRoot.metadata.protocolFactory}(new JsonClientMetadata()
         .withProtocolVersion("${serviceModelRoot.metadata.jsonVersion}")
         .withSupportsCbor(${serviceModelRoot.metadata.cborProtocol?c})
         .withSupportsIon(${serviceModelRoot.metadata.ionProtocol?c})
-        <#if serviceModelRoot.metadata.contentType??>
+        <#if serviceModelRoot.metadata.contentType?? && !customConfig.contentTypeOverride??>
         .withContentTypeOverride("${serviceModelRoot.metadata.contentType}")
+        <#elseif customConfig.contentTypeOverride??>
+        .withContentTypeOverride("${customConfig.contentTypeOverride}")
         </#if>
         <#list serviceModelRoot.shapes?values as shapeModel>
             <#if shapeModel.type == "Exception">
                 .addErrorMetadata(new JsonErrorShapeMetadata()
                     .withErrorCode("${shapeModel.errorCode}")
-                    .withModeledClass(${serviceModelRoot.metadata.packageName}.model.${shapeModel.shapeName}.class))
+                    .withExceptionUnmarshaller(${serviceModelRoot.transformPackage}.${shapeModel.shapeName}Unmarshaller.getInstance()))
             </#if>
         </#list>
         .withBaseServiceExceptionClass(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)

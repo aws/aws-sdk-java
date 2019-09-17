@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -55,11 +55,11 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     * Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private Integer limit;
@@ -72,7 +72,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -97,9 +97,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -125,7 +125,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      * >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -133,7 +133,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -205,9 +205,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String projectionExpression;
@@ -224,7 +224,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -265,7 +265,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -293,9 +293,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> expressionAttributeNames;
@@ -305,7 +305,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -324,8 +324,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.Map<String, AttributeValue> expressionAttributeValues;
@@ -337,7 +337,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not
-     * contain the results from other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+     * contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>
+     * , or <code>DeleteItem</code>).
      * </p>
      * </li>
      * <li>
@@ -475,13 +476,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *         >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -492,14 +493,14 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -515,7 +516,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -527,7 +528,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -545,14 +546,14 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributesToGet
      *        This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -567,23 +568,23 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     * Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param limit
      *        The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *        processes the number of items up to the limit while processing the results, it stops the operation and
      *        returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *        subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *        subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     *        Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setLimit(Integer limit) {
@@ -595,22 +596,22 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     * Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *         processes the number of items up to the limit while processing the results, it stops the operation and
      *         returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *         subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *         subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *         exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values
      *         up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to
      *         continue the operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     *         Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     *         Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public Integer getLimit() {
@@ -622,23 +623,23 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the
      * number of items up to the limit while processing the results, it stops the operation and returns the matching
      * values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that
-     * you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB reaches
-     * this limit, it stops the operation and returns the matching values up to the limit, and a key in
+     * you can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before DynamoDB reaches this
+     * limit, it stops the operation and returns the matching values up to the limit, and a key in
      * <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue the operation. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     * Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     * Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param limit
      *        The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB
      *        processes the number of items up to the limit while processing the results, it stops the operation and
      *        returns the matching values up to that point, and a key in <code>LastEvaluatedKey</code> to apply in a
-     *        subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
+     *        subsequent operation, so that you can pick up where you left off. Also, if the processed dataset size
      *        exceeds 1 MB before DynamoDB reaches this limit, it stops the operation and returns the matching values up
      *        to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation to continue
      *        the operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and
-     *        Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with
+     *        Queries</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,7 +657,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -681,9 +682,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -713,9 +714,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -738,9 +739,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
-     *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
-     *        table. This extra fetching incurs additional throughput cost and latency.
+     *        index, the operation reads only the index and not the table. If any of the requested attributes are not
+     *        projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table.
+     *        This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
      *        If you query or scan a global secondary index, you can only request attributes that are projected into the
@@ -776,7 +777,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -801,9 +802,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -832,9 +833,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         <li>
      *         <p>
      *         <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If
-     *         you query a local secondary index, then for each matching item in the index DynamoDB will fetch the
-     *         entire item from the parent table. If the index is configured to project all item attributes, then all of
-     *         the data can be obtained from the local secondary index, and no fetching is required.
+     *         you query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire
+     *         item from the parent table. If the index is configured to project all item attributes, then all of the
+     *         data can be obtained from the local secondary index, and no fetching is required.
      *         </p>
      *         </li>
      *         <li>
@@ -857,9 +858,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </p>
      *         <p>
      *         If you query or scan a local secondary index and request only attributes that are projected into that
-     *         index, the operation will read only the index and not the table. If any of the requested attributes are
-     *         not projected into the local secondary index, DynamoDB will fetch each of these attributes from the
-     *         parent table. This extra fetching incurs additional throughput cost and latency.
+     *         index, the operation reads only the index and not the table. If any of the requested attributes are not
+     *         projected into the local secondary index, DynamoDB fetches each of these attributes from the parent
+     *         table. This extra fetching incurs additional throughput cost and latency.
      *         </p>
      *         <p>
      *         If you query or scan a global secondary index, you can only request attributes that are projected into
@@ -896,7 +897,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -921,9 +922,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -953,9 +954,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -978,9 +979,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
-     *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
-     *        table. This extra fetching incurs additional throughput cost and latency.
+     *        index, the operation reads only the index and not the table. If any of the requested attributes are not
+     *        projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table.
+     *        This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
      *        If you query or scan a global secondary index, you can only request attributes that are projected into the
@@ -1018,7 +1019,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -1043,9 +1044,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -1075,9 +1076,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -1100,9 +1101,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
-     *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
-     *        table. This extra fetching incurs additional throughput cost and latency.
+     *        index, the operation reads only the index and not the table. If any of the requested attributes are not
+     *        projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table.
+     *        This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
      *        If you query or scan a global secondary index, you can only request attributes that are projected into the
@@ -1126,7 +1127,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public void setSelect(Select select) {
-        this.select = select.toString();
+        withSelect(select);
     }
 
     /**
@@ -1138,7 +1139,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you query
-     * a local secondary index, then for each matching item in the index DynamoDB will fetch the entire item from the
+     * a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item from the
      * parent table. If the index is configured to project all item attributes, then all of the data can be obtained
      * from the local secondary index, and no fetching is required.
      * </p>
@@ -1163,9 +1164,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * If you query or scan a local secondary index and request only attributes that are projected into that index, the
-     * operation will read only the index and not the table. If any of the requested attributes are not projected into
-     * the local secondary index, DynamoDB will fetch each of these attributes from the parent table. This extra
-     * fetching incurs additional throughput cost and latency.
+     * operation reads only the index and not the table. If any of the requested attributes are not projected into the
+     * local secondary index, DynamoDB fetches each of these attributes from the parent table. This extra fetching
+     * incurs additional throughput cost and latency.
      * </p>
      * <p>
      * If you query or scan a global secondary index, you can only request attributes that are projected into the index.
@@ -1195,9 +1196,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified table or index. If you
-     *        query a local secondary index, then for each matching item in the index DynamoDB will fetch the entire
-     *        item from the parent table. If the index is configured to project all item attributes, then all of the
-     *        data can be obtained from the local secondary index, and no fetching is required.
+     *        query a local secondary index, then for each matching item in the index, DynamoDB fetches the entire item
+     *        from the parent table. If the index is configured to project all item attributes, then all of the data can
+     *        be obtained from the local secondary index, and no fetching is required.
      *        </p>
      *        </li>
      *        <li>
@@ -1220,9 +1221,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        If you query or scan a local secondary index and request only attributes that are projected into that
-     *        index, the operation will read only the index and not the table. If any of the requested attributes are
-     *        not projected into the local secondary index, DynamoDB will fetch each of these attributes from the parent
-     *        table. This extra fetching incurs additional throughput cost and latency.
+     *        index, the operation reads only the index and not the table. If any of the requested attributes are not
+     *        projected into the local secondary index, DynamoDB fetches each of these attributes from the parent table.
+     *        This extra fetching incurs additional throughput cost and latency.
      *        </p>
      *        <p>
      *        If you query or scan a global secondary index, you can only request attributes that are projected into the
@@ -1247,19 +1248,19 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public ScanRequest withSelect(Select select) {
-        setSelect(select);
+        this.select = select.toString();
         return this;
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      * >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      *         >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1270,13 +1271,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      * >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param scanFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      *        >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1287,13 +1288,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      * >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param scanFilter
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html"
      *        >ScanFilter</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1327,13 +1328,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1345,12 +1346,12 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -1362,13 +1363,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1382,38 +1383,38 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
      * <p>
      * This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
      */
 
     public ScanRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -1564,7 +1565,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1574,7 +1575,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public ScanRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -1835,9 +1836,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param projectionExpression
@@ -1850,8 +1851,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setProjectionExpression(String projectionExpression) {
@@ -1869,9 +1870,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return A string that identifies one or more attributes to retrieve from the specified table or index. These
@@ -1883,8 +1884,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public String getProjectionExpression() {
@@ -1902,9 +1903,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * not found, they will not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param projectionExpression
@@ -1917,8 +1918,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1940,7 +1941,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1955,7 +1956,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1976,7 +1977,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1990,7 +1991,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </note>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2011,7 +2012,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
      * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2026,7 +2027,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </note>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2072,7 +2073,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2100,9 +2101,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more substitution tokens for attribute names in an expression. The following are some use cases
@@ -2138,7 +2139,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -2167,8 +2168,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, String> getExpressionAttributeNames() {
@@ -2211,7 +2212,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2239,9 +2240,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -2278,7 +2279,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -2307,8 +2308,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeNames(java.util.Map<String, String> expressionAttributeNames) {
@@ -2351,7 +2352,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2379,9 +2380,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeNames
@@ -2418,7 +2419,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -2447,8 +2448,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
-     *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        >Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2484,7 +2485,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2503,15 +2504,15 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return One or more values that can be substituted in an expression.</p>
      *         <p>
      *         Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *         suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *         following:
+     *         suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *         the following:
      *         </p>
      *         <p>
      *         <code>Available | Backordered | Discontinued</code>
@@ -2530,8 +2531,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
@@ -2544,7 +2545,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2563,16 +2564,16 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
      *        One or more values that can be substituted in an expression.</p>
      *        <p>
      *        Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *        suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *        following:
+     *        suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *        the following:
      *        </p>
      *        <p>
      *        <code>Available | Backordered | Discontinued</code>
@@ -2591,8 +2592,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setExpressionAttributeValues(java.util.Map<String, AttributeValue> expressionAttributeValues) {
@@ -2605,7 +2606,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example, suppose that
-     * you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the following:
+     * you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of the following:
      * </p>
      * <p>
      * <code>Available | Backordered | Discontinued</code>
@@ -2624,16 +2625,16 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expressionAttributeValues
      *        One or more values that can be substituted in an expression.</p>
      *        <p>
      *        Use the <b>:</b> (colon) character in an expression to dereference an attribute value. For example,
-     *        suppose that you wanted to check whether the value of the <i>ProductStatus</i> attribute was one of the
-     *        following:
+     *        suppose that you wanted to check whether the value of the <code>ProductStatus</code> attribute was one of
+     *        the following:
      *        </p>
      *        <p>
      *        <code>Available | Backordered | Discontinued</code>
@@ -2652,8 +2653,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
-     *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        >Condition Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2691,7 +2692,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not
-     * contain the results from other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+     * contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>
+     * , or <code>DeleteItem</code>).
      * </p>
      * </li>
      * <li>
@@ -2716,8 +2718,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might
-     *        not contain the results from other recently completed write operations (PutItem, UpdateItem or
-     *        DeleteItem).
+     *        not contain the results from other recently completed write operations (<code>PutItem</code>,
+     *        <code>UpdateItem</code>, or <code>DeleteItem</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2748,7 +2750,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not
-     * contain the results from other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+     * contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>
+     * , or <code>DeleteItem</code>).
      * </p>
      * </li>
      * <li>
@@ -2772,8 +2775,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         <li>
      *         <p>
      *         If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might
-     *         not contain the results from other recently completed write operations (PutItem, UpdateItem or
-     *         DeleteItem).
+     *         not contain the results from other recently completed write operations (<code>PutItem</code>,
+     *         <code>UpdateItem</code>, or <code>DeleteItem</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -2804,7 +2807,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not
-     * contain the results from other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+     * contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>
+     * , or <code>DeleteItem</code>).
      * </p>
      * </li>
      * <li>
@@ -2829,8 +2833,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        <li>
      *        <p>
      *        If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might
-     *        not contain the results from other recently completed write operations (PutItem, UpdateItem or
-     *        DeleteItem).
+     *        not contain the results from other recently completed write operations (<code>PutItem</code>,
+     *        <code>UpdateItem</code>, or <code>DeleteItem</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2863,7 +2867,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * <li>
      * <p>
      * If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might not
-     * contain the results from other recently completed write operations (PutItem, UpdateItem or DeleteItem).
+     * contain the results from other recently completed write operations (<code>PutItem</code>, <code>UpdateItem</code>
+     * , or <code>DeleteItem</code>).
      * </p>
      * </li>
      * <li>
@@ -2887,8 +2892,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         <li>
      *         <p>
      *         If <code>ConsistentRead</code> is <code>false</code>, then the data returned from <code>Scan</code> might
-     *         not contain the results from other recently completed write operations (PutItem, UpdateItem or
-     *         DeleteItem).
+     *         not contain the results from other recently completed write operations (<code>PutItem</code>,
+     *         <code>UpdateItem</code>, or <code>DeleteItem</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -2956,7 +2961,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

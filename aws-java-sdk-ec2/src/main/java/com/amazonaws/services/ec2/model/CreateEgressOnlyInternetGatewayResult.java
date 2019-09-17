@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,64 +26,24 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the egress-only Internet gateway.
-     * </p>
-     */
-    private EgressOnlyInternetGateway egressOnlyInternetGateway;
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientToken;
-
     /**
      * <p>
-     * Information about the egress-only Internet gateway.
+     * Information about the egress-only internet gateway.
      * </p>
-     * 
-     * @param egressOnlyInternetGateway
-     *        Information about the egress-only Internet gateway.
      */
-
-    public void setEgressOnlyInternetGateway(EgressOnlyInternetGateway egressOnlyInternetGateway) {
-        this.egressOnlyInternetGateway = egressOnlyInternetGateway;
-    }
+    private EgressOnlyInternetGateway egressOnlyInternetGateway;
 
     /**
      * <p>
-     * Information about the egress-only Internet gateway.
-     * </p>
-     * 
-     * @return Information about the egress-only Internet gateway.
-     */
-
-    public EgressOnlyInternetGateway getEgressOnlyInternetGateway() {
-        return this.egressOnlyInternetGateway;
-    }
-
-    /**
-     * <p>
-     * Information about the egress-only Internet gateway.
-     * </p>
-     * 
-     * @param egressOnlyInternetGateway
-     *        Information about the egress-only Internet gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEgressOnlyInternetGatewayResult withEgressOnlyInternetGateway(EgressOnlyInternetGateway egressOnlyInternetGateway) {
-        setEgressOnlyInternetGateway(egressOnlyInternetGateway);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -92,10 +52,10 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientToken() {
@@ -104,11 +64,11 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +78,48 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the egress-only internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGateway
+     *        Information about the egress-only internet gateway.
+     */
+
+    public void setEgressOnlyInternetGateway(EgressOnlyInternetGateway egressOnlyInternetGateway) {
+        this.egressOnlyInternetGateway = egressOnlyInternetGateway;
+    }
+
+    /**
+     * <p>
+     * Information about the egress-only internet gateway.
+     * </p>
+     * 
+     * @return Information about the egress-only internet gateway.
+     */
+
+    public EgressOnlyInternetGateway getEgressOnlyInternetGateway() {
+        return this.egressOnlyInternetGateway;
+    }
+
+    /**
+     * <p>
+     * Information about the egress-only internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGateway
+     *        Information about the egress-only internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEgressOnlyInternetGatewayResult withEgressOnlyInternetGateway(EgressOnlyInternetGateway egressOnlyInternetGateway) {
+        setEgressOnlyInternetGateway(egressOnlyInternetGateway);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -128,10 +129,10 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEgressOnlyInternetGateway() != null)
-            sb.append("EgressOnlyInternetGateway: ").append(getEgressOnlyInternetGateway()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getEgressOnlyInternetGateway() != null)
+            sb.append("EgressOnlyInternetGateway: ").append(getEgressOnlyInternetGateway());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +147,13 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
         if (obj instanceof CreateEgressOnlyInternetGatewayResult == false)
             return false;
         CreateEgressOnlyInternetGatewayResult other = (CreateEgressOnlyInternetGatewayResult) obj;
-        if (other.getEgressOnlyInternetGateway() == null ^ this.getEgressOnlyInternetGateway() == null)
-            return false;
-        if (other.getEgressOnlyInternetGateway() != null && other.getEgressOnlyInternetGateway().equals(this.getEgressOnlyInternetGateway()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getEgressOnlyInternetGateway() == null ^ this.getEgressOnlyInternetGateway() == null)
+            return false;
+        if (other.getEgressOnlyInternetGateway() != null && other.getEgressOnlyInternetGateway().equals(this.getEgressOnlyInternetGateway()) == false)
             return false;
         return true;
     }
@@ -162,8 +163,8 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEgressOnlyInternetGateway() == null) ? 0 : getEgressOnlyInternetGateway().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getEgressOnlyInternetGateway() == null) ? 0 : getEgressOnlyInternetGateway().hashCode());
         return hashCode;
     }
 

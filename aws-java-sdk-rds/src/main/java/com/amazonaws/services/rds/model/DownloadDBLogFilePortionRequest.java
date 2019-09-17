@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -68,7 +58,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file
-     * will be truncated at 1 MB in size.
+     * is truncated at 1 MB in size.
      * </p>
      * <p>
      * If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the
@@ -115,17 +105,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -138,17 +118,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -167,17 +137,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -189,17 +149,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing DBInstance.
      *         </p>
      *         </li>
      */
@@ -218,17 +168,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -241,17 +181,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -351,7 +281,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file
-     * will be truncated at 1 MB in size.
+     * is truncated at 1 MB in size.
      * </p>
      * <p>
      * If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the
@@ -388,7 +318,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param numberOfLines
      *        The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the
-     *        file will be truncated at 1 MB in size.</p>
+     *        file is truncated at 1 MB in size.</p>
      *        <p>
      *        If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or
      *        the end of the log file, depending on the value of the Marker parameter.
@@ -429,7 +359,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file
-     * will be truncated at 1 MB in size.
+     * is truncated at 1 MB in size.
      * </p>
      * <p>
      * If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the
@@ -465,7 +395,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @return The number of lines to download. If the number of lines specified results in a file over 1 MB in size,
-     *         the file will be truncated at 1 MB in size.</p>
+     *         the file is truncated at 1 MB in size.</p>
      *         <p>
      *         If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning
      *         or the end of the log file, depending on the value of the Marker parameter.
@@ -506,7 +436,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file
-     * will be truncated at 1 MB in size.
+     * is truncated at 1 MB in size.
      * </p>
      * <p>
      * If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or the
@@ -543,7 +473,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param numberOfLines
      *        The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the
-     *        file will be truncated at 1 MB in size.</p>
+     *        file is truncated at 1 MB in size.</p>
      *        <p>
      *        If the NumberOfLines parameter is specified, then the block of lines returned can be from the beginning or
      *        the end of the log file, depending on the value of the Marker parameter.
@@ -584,7 +514,8 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

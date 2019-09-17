@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,59 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AttachPrincipalPolicyRequest Marshaller
+ * AttachPrincipalPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachPrincipalPolicyRequestMarshaller implements Marshaller<Request<AttachPrincipalPolicyRequest>, AttachPrincipalPolicyRequest> {
+@SdkInternalApi
+public class AttachPrincipalPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("policyName").build();
+    private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-iot-principal").build();
 
-    public AttachPrincipalPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AttachPrincipalPolicyRequestMarshaller instance = new AttachPrincipalPolicyRequestMarshaller();
+
+    public static AttachPrincipalPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AttachPrincipalPolicyRequest> marshall(AttachPrincipalPolicyRequest attachPrincipalPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AttachPrincipalPolicyRequest attachPrincipalPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (attachPrincipalPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachPrincipalPolicyRequest> request = new DefaultRequest<AttachPrincipalPolicyRequest>(attachPrincipalPolicyRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (attachPrincipalPolicyRequest.getPrincipal() != null) {
-            request.addHeader("x-amzn-iot-principal", StringUtils.fromString(attachPrincipalPolicyRequest.getPrincipal()));
+        try {
+            protocolMarshaller.marshall(attachPrincipalPolicyRequest.getPolicyName(), POLICYNAME_BINDING);
+            protocolMarshaller.marshall(attachPrincipalPolicyRequest.getPrincipal(), PRINCIPAL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/principal-policies/{policyName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName",
-                attachPrincipalPolicyRequest.getPolicyName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

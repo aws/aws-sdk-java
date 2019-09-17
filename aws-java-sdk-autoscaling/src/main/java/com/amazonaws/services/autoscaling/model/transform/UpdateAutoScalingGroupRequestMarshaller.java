@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,109 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("LaunchConfigurationName", StringUtils.fromString(updateAutoScalingGroupRequest.getLaunchConfigurationName()));
         }
 
+        {
+            LaunchTemplateSpecification launchTemplate = updateAutoScalingGroupRequest.getLaunchTemplate();
+            if (launchTemplate != null) {
+
+                if (launchTemplate.getLaunchTemplateId() != null) {
+                    request.addParameter("LaunchTemplate.LaunchTemplateId", StringUtils.fromString(launchTemplate.getLaunchTemplateId()));
+                }
+
+                if (launchTemplate.getLaunchTemplateName() != null) {
+                    request.addParameter("LaunchTemplate.LaunchTemplateName", StringUtils.fromString(launchTemplate.getLaunchTemplateName()));
+                }
+
+                if (launchTemplate.getVersion() != null) {
+                    request.addParameter("LaunchTemplate.Version", StringUtils.fromString(launchTemplate.getVersion()));
+                }
+            }
+        }
+
+        {
+            MixedInstancesPolicy mixedInstancesPolicy = updateAutoScalingGroupRequest.getMixedInstancesPolicy();
+            if (mixedInstancesPolicy != null) {
+
+                {
+                    LaunchTemplate launchTemplate = mixedInstancesPolicy.getLaunchTemplate();
+                    if (launchTemplate != null) {
+
+                        {
+                            LaunchTemplateSpecification launchTemplateSpecification = launchTemplate.getLaunchTemplateSpecification();
+                            if (launchTemplateSpecification != null) {
+
+                                if (launchTemplateSpecification.getLaunchTemplateId() != null) {
+                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.LaunchTemplateId",
+                                            StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateId()));
+                                }
+
+                                if (launchTemplateSpecification.getLaunchTemplateName() != null) {
+                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.LaunchTemplateName",
+                                            StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateName()));
+                                }
+
+                                if (launchTemplateSpecification.getVersion() != null) {
+                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.LaunchTemplateSpecification.Version",
+                                            StringUtils.fromString(launchTemplateSpecification.getVersion()));
+                                }
+                            }
+                        }
+
+                        if (!launchTemplate.getOverrides().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides>) launchTemplate.getOverrides()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> overridesList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides>) launchTemplate
+                                    .getOverrides();
+                            int overridesListIndex = 1;
+
+                            for (LaunchTemplateOverrides overridesListValue : overridesList) {
+
+                                if (overridesListValue.getInstanceType() != null) {
+                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
+                                            StringUtils.fromString(overridesListValue.getInstanceType()));
+                                }
+                                overridesListIndex++;
+                            }
+                        }
+                    }
+                }
+
+                {
+                    InstancesDistribution instancesDistribution = mixedInstancesPolicy.getInstancesDistribution();
+                    if (instancesDistribution != null) {
+
+                        if (instancesDistribution.getOnDemandAllocationStrategy() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.OnDemandAllocationStrategy",
+                                    StringUtils.fromString(instancesDistribution.getOnDemandAllocationStrategy()));
+                        }
+
+                        if (instancesDistribution.getOnDemandBaseCapacity() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.OnDemandBaseCapacity",
+                                    StringUtils.fromInteger(instancesDistribution.getOnDemandBaseCapacity()));
+                        }
+
+                        if (instancesDistribution.getOnDemandPercentageAboveBaseCapacity() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.OnDemandPercentageAboveBaseCapacity",
+                                    StringUtils.fromInteger(instancesDistribution.getOnDemandPercentageAboveBaseCapacity()));
+                        }
+
+                        if (instancesDistribution.getSpotAllocationStrategy() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.SpotAllocationStrategy",
+                                    StringUtils.fromString(instancesDistribution.getSpotAllocationStrategy()));
+                        }
+
+                        if (instancesDistribution.getSpotInstancePools() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.SpotInstancePools",
+                                    StringUtils.fromInteger(instancesDistribution.getSpotInstancePools()));
+                        }
+
+                        if (instancesDistribution.getSpotMaxPrice() != null) {
+                            request.addParameter("MixedInstancesPolicy.InstancesDistribution.SpotMaxPrice",
+                                    StringUtils.fromString(instancesDistribution.getSpotMaxPrice()));
+                        }
+                    }
+                }
+            }
+        }
+
         if (updateAutoScalingGroupRequest.getMinSize() != null) {
             request.addParameter("MinSize", StringUtils.fromInteger(updateAutoScalingGroupRequest.getMinSize()));
         }
@@ -64,9 +167,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("DefaultCooldown", StringUtils.fromInteger(updateAutoScalingGroupRequest.getDefaultCooldown()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!updateAutoScalingGroupRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -93,9 +197,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("VPCZoneIdentifier", StringUtils.fromString(updateAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
-                .getTerminationPolicies();
-        if (!terminationPoliciesList.isEmpty() || !terminationPoliciesList.isAutoConstruct()) {
+        if (!updateAutoScalingGroupRequest.getTerminationPolicies().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest.getTerminationPolicies()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
+                    .getTerminationPolicies();
             int terminationPoliciesListIndex = 1;
 
             for (String terminationPoliciesListValue : terminationPoliciesList) {
@@ -109,6 +214,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
         if (updateAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn() != null) {
             request.addParameter("NewInstancesProtectedFromScaleIn",
                     StringUtils.fromBoolean(updateAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
+        }
+
+        if (updateAutoScalingGroupRequest.getServiceLinkedRoleARN() != null) {
+            request.addParameter("ServiceLinkedRoleARN", StringUtils.fromString(updateAutoScalingGroupRequest.getServiceLinkedRoleARN()));
         }
 
         return request;

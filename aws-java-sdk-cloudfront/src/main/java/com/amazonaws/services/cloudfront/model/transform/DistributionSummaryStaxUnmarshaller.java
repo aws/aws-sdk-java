@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -59,7 +61,7 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                 }
 
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
-                    distributionSummary.setLastModifiedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    distributionSummary.setLastModifiedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -75,6 +77,11 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
 
                 if (context.testExpression("Origins", targetDepth)) {
                     distributionSummary.setOrigins(OriginsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginGroups", targetDepth)) {
+                    distributionSummary.setOriginGroups(OriginGroupsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -132,6 +139,17 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     distributionSummary.setIsIPV6Enabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AliasICPRecordals", targetDepth)) {
+                    distributionSummary.withAliasICPRecordals(new ArrayList<AliasICPRecordal>());
+                    continue;
+                }
+
+                if (context.testExpression("AliasICPRecordals/AliasICPRecordal", targetDepth)) {
+                    distributionSummary.withAliasICPRecordals(AliasICPRecordalStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionSummary;

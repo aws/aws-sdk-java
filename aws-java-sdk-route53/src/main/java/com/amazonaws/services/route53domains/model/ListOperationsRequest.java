@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,19 +30,17 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * An optional parameter that lets you get information about all the operations that you submitted after a specified
+     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * </p>
+     */
+    private java.util.Date submittedSince;
+    /**
+     * <p>
      * For an initial request for a list of operations, omit this element. If the number of operations that are not yet
      * complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private String marker;
@@ -51,19 +49,56 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Integer maxItems;
+
+    /**
+     * <p>
+     * An optional parameter that lets you get information about all the operations that you submitted after a specified
+     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * </p>
+     * 
+     * @param submittedSince
+     *        An optional parameter that lets you get information about all the operations that you submitted after a
+     *        specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     */
+
+    public void setSubmittedSince(java.util.Date submittedSince) {
+        this.submittedSince = submittedSince;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lets you get information about all the operations that you submitted after a specified
+     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * </p>
+     * 
+     * @return An optional parameter that lets you get information about all the operations that you submitted after a
+     *         specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     */
+
+    public java.util.Date getSubmittedSince() {
+        return this.submittedSince;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that lets you get information about all the operations that you submitted after a specified
+     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * </p>
+     * 
+     * @param submittedSince
+     *        An optional parameter that lets you get information about all the operations that you submitted after a
+     *        specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListOperationsRequest withSubmittedSince(java.util.Date submittedSince) {
+        setSubmittedSince(submittedSince);
+        return this;
+    }
 
     /**
      * <p>
@@ -72,30 +107,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param marker
      *        For an initial request for a list of operations, omit this element. If the number of operations that are
      *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
      *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
-     *        the <code>Marker</code> element.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        the <code>Marker</code> element.
      */
 
     public void setMarker(String marker) {
@@ -109,29 +127,12 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @return For an initial request for a list of operations, omit this element. If the number of operations that are
      *         not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *         <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from
      *         the previous response, and submit another request that includes the value of <code>NextPageMarker</code>
-     *         in the <code>Marker</code> element.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: No
+     *         in the <code>Marker</code> element.
      */
 
     public String getMarker() {
@@ -145,30 +146,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and
      * submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param marker
      *        For an initial request for a list of operations, omit this element. If the number of operations that are
      *        not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use
      *        <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the
      *        previous response, and submit another request that includes the value of <code>NextPageMarker</code> in
-     *        the <code>Marker</code> element.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: No
+     *        the <code>Marker</code> element.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,31 +166,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -218,30 +184,12 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return Number of domains to be returned.</p>
      *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
      *         Default: 20
-     *         </p>
-     *         <p>
-     *         Constraints: A value between 1 and 100.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Integer getMaxItems() {
@@ -253,31 +201,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,7 +217,8 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -297,6 +228,8 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getSubmittedSince() != null)
+            sb.append("SubmittedSince: ").append(getSubmittedSince()).append(",");
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
@@ -315,6 +248,10 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof ListOperationsRequest == false)
             return false;
         ListOperationsRequest other = (ListOperationsRequest) obj;
+        if (other.getSubmittedSince() == null ^ this.getSubmittedSince() == null)
+            return false;
+        if (other.getSubmittedSince() != null && other.getSubmittedSince().equals(this.getSubmittedSince()) == false)
+            return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
@@ -331,6 +268,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getSubmittedSince() == null) ? 0 : getSubmittedSince().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteApiKeyRequest Marshaller
+ * DeleteApiKeyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteApiKeyRequestMarshaller implements Marshaller<Request<DeleteApiKeyRequest>, DeleteApiKeyRequest> {
+@SdkInternalApi
+public class DeleteApiKeyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APIKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("api_Key").build();
 
-    public DeleteApiKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteApiKeyRequestMarshaller instance = new DeleteApiKeyRequestMarshaller();
+
+    public static DeleteApiKeyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteApiKeyRequest> marshall(DeleteApiKeyRequest deleteApiKeyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteApiKeyRequest deleteApiKeyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteApiKeyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteApiKeyRequest> request = new DefaultRequest<DeleteApiKeyRequest>(deleteApiKeyRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/apikeys/{api_Key}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "api_Key", deleteApiKeyRequest.getApiKey());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteApiKeyRequest.getApiKey(), APIKEY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

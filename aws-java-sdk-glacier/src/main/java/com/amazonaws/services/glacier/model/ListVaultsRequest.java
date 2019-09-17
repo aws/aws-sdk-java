@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String marker;
     /**
      * <p>
-     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be
      * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      */
@@ -85,8 +85,8 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should
      *        begin.
      * @param limit
-     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
-     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
+     *        The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might
+     *        be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
     public ListVaultsRequest(String accountId, String marker, String limit) {
         setAccountId(accountId);
@@ -200,13 +200,13 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be
      * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
-     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
+     *        The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might
+     *        be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
 
     public void setLimit(String limit) {
@@ -215,12 +215,12 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be
      * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
-     * @return The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
-     *         might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
+     * @return The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might
+     *         be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      */
 
     public String getLimit() {
@@ -229,13 +229,13 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be
+     * The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might be
      * fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * </p>
      * 
      * @param limit
-     *        The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned
-     *        might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
+     *        The maximum number of vaults to be returned. The default limit is 10. The number of vaults returned might
+     *        be fewer than the specified limit, but the number of returned vaults never exceeds the limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,7 +245,8 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -203,5 +203,39 @@ public class EncryptedGetObjectRequest extends GetObjectRequest implements Seria
     public EncryptedGetObjectRequest withKeyWrapExpected(boolean keyWrapExpected) {
         this.keyWrapExpected = keyWrapExpected;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof EncryptedGetObjectRequest)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        final EncryptedGetObjectRequest that = (EncryptedGetObjectRequest) o;
+
+        if (keyWrapExpected != that.isKeyWrapExpected()) {
+            return false;
+        }
+        if (supplemental != null ? !supplemental.equals(that.supplemental) : that.supplemental != null) {
+            return false;
+        }
+        return getInstructionFileSuffix() != null ? getInstructionFileSuffix().equals(that.getInstructionFileSuffix()) : that.getInstructionFileSuffix() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int prime = 31;
+
+        int result = super.hashCode();
+        result = prime * result + (supplemental != null ? supplemental.hashCode() : 0);
+        result = prime * result + (getInstructionFileSuffix() != null ? getInstructionFileSuffix().hashCode() : 0);
+        result = prime * result + (isKeyWrapExpected() ? 1 : 0);
+        return result;
     }
 }

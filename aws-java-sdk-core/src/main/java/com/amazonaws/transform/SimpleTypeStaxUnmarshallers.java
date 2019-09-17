@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
 
+import com.amazonaws.util.TimestampFormat;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -169,6 +170,42 @@ public class SimpleTypeStaxUnmarshallers {
 
         public static ByteStaxUnmarshaller getInstance() {
             return instance;
+        }
+    }
+
+
+    public static class DateStaxUnmarshallerFactory implements Unmarshaller<Date, StaxUnmarshallerContext> {
+
+        private final String dateFormatType;
+
+        private DateStaxUnmarshallerFactory(String dateFormatType) {
+            this.dateFormatType = dateFormatType;
+        }
+
+        @Override
+        public Date unmarshall(StaxUnmarshallerContext unmarshallerContext) throws Exception {
+            String dateString = unmarshallerContext.readText();
+            if (dateString == null) return null;
+
+            try {
+                if (TimestampFormat.RFC_822.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseRFC822Date(dateString);
+                }
+
+                if (TimestampFormat.UNIX_TIMESTAMP.getFormat().equals(dateFormatType)) {
+                    return DateUtils.parseServiceSpecificDate(dateString);
+                }
+
+                return DateUtils.parseISO8601Date(dateString);
+
+            } catch (Exception e) {
+                log.warn("Unable to parse date '" + dateString + "':  " + e.getMessage(), e);
+                return null;
+            }
+        }
+
+        public static DateStaxUnmarshallerFactory getInstance(String dateFormatType) {
+            return new DateStaxUnmarshallerFactory(dateFormatType);
         }
     }
 

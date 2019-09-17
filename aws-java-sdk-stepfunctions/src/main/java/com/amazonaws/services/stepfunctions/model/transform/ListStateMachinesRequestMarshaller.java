@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListStateMachinesRequest Marshaller
+ * ListStateMachinesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListStateMachinesRequestMarshaller implements Marshaller<Request<ListStateMachinesRequest>, ListStateMachinesRequest> {
+@SdkInternalApi
+public class ListStateMachinesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListStateMachinesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListStateMachinesRequestMarshaller instance = new ListStateMachinesRequestMarshaller();
+
+    public static ListStateMachinesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListStateMachinesRequest> marshall(ListStateMachinesRequest listStateMachinesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListStateMachinesRequest listStateMachinesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listStateMachinesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListStateMachinesRequest> request = new DefaultRequest<ListStateMachinesRequest>(listStateMachinesRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.ListStateMachines");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listStateMachinesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listStateMachinesRequest.getMaxResults());
-            }
-            if (listStateMachinesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listStateMachinesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listStateMachinesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listStateMachinesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

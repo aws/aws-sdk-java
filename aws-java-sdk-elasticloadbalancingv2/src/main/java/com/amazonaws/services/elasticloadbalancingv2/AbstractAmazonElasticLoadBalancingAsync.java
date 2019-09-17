@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
 public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBalancingAsync {
 
     protected AbstractAmazonElasticLoadBalancingAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(AddListenerCertificatesRequest request) {
+
+        return addListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(AddListenerCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddListenerCertificatesRequest, AddListenerCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -153,6 +166,32 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     @Override
     public java.util.concurrent.Future<DeregisterTargetsResult> deregisterTargetsAsync(DeregisterTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterTargetsRequest, DeregisterTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
+
+        return describeAccountLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(DescribeListenerCertificatesRequest request) {
+
+        return describeListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(DescribeListenerCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeListenerCertificatesRequest, DescribeListenerCertificatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,6 +387,19 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     @Override
     public java.util.concurrent.Future<RegisterTargetsResult> registerTargetsAsync(RegisterTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterTargetsRequest, RegisterTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(RemoveListenerCertificatesRequest request) {
+
+        return removeListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(RemoveListenerCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveListenerCertificatesRequest, RemoveListenerCertificatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

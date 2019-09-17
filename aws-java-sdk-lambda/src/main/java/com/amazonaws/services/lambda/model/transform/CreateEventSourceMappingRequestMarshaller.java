@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,81 +12,62 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateEventSourceMappingRequest Marshaller
+ * CreateEventSourceMappingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateEventSourceMappingRequestMarshaller implements Marshaller<Request<CreateEventSourceMappingRequest>, CreateEventSourceMappingRequest> {
+@SdkInternalApi
+public class CreateEventSourceMappingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> EVENTSOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceArn").build();
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
+    private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
+    private static final MarshallingInfo<String> STARTINGPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPosition").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGPOSITIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPositionTimestamp").timestampFormat("unixTimestamp").build();
 
-    public CreateEventSourceMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
+
+    public static CreateEventSourceMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateEventSourceMappingRequest> marshall(CreateEventSourceMappingRequest createEventSourceMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateEventSourceMappingRequest createEventSourceMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createEventSourceMappingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateEventSourceMappingRequest> request = new DefaultRequest<CreateEventSourceMappingRequest>(createEventSourceMappingRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-03-31/event-source-mappings/";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createEventSourceMappingRequest.getEventSourceArn() != null) {
-                jsonGenerator.writeFieldName("EventSourceArn").writeValue(createEventSourceMappingRequest.getEventSourceArn());
-            }
-            if (createEventSourceMappingRequest.getFunctionName() != null) {
-                jsonGenerator.writeFieldName("FunctionName").writeValue(createEventSourceMappingRequest.getFunctionName());
-            }
-            if (createEventSourceMappingRequest.getEnabled() != null) {
-                jsonGenerator.writeFieldName("Enabled").writeValue(createEventSourceMappingRequest.getEnabled());
-            }
-            if (createEventSourceMappingRequest.getBatchSize() != null) {
-                jsonGenerator.writeFieldName("BatchSize").writeValue(createEventSourceMappingRequest.getBatchSize());
-            }
-            if (createEventSourceMappingRequest.getStartingPosition() != null) {
-                jsonGenerator.writeFieldName("StartingPosition").writeValue(createEventSourceMappingRequest.getStartingPosition());
-            }
-            if (createEventSourceMappingRequest.getStartingPositionTimestamp() != null) {
-                jsonGenerator.writeFieldName("StartingPositionTimestamp").writeValue(createEventSourceMappingRequest.getStartingPositionTimestamp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getEventSourceArn(), EVENTSOURCEARN_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPosition(), STARTINGPOSITION_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPositionTimestamp(), STARTINGPOSITIONTIMESTAMP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

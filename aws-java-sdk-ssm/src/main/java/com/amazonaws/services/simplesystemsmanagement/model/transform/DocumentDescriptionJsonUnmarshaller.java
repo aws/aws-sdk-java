@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,17 +64,25 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
                     documentDescription.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentDescription.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     documentDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
@@ -108,6 +116,23 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("DefaultVersion", targetDepth)) {
                     context.nextToken();
                     documentDescription.setDefaultVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetType", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AttachmentsInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setAttachmentsInformation(new ListUnmarshaller<AttachmentInformation>(AttachmentInformationJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

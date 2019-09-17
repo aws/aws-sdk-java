@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,14 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     */
+    private String excessCapacityTerminationPolicy;
+    /**
+     * <p>
+     * The ID of the Spot Fleet request.
      * </p>
      */
     private String spotFleetRequestId;
@@ -42,19 +49,101 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     private Integer targetCapacity;
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * The number of On-Demand Instances in the fleet.
      * </p>
      */
-    private String excessCapacityTerminationPolicy;
+    private Integer onDemandTargetCapacity;
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     * 
+     * @param excessCapacityTerminationPolicy
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
+     * @see ExcessCapacityTerminationPolicy
+     */
+
+    public void setExcessCapacityTerminationPolicy(String excessCapacityTerminationPolicy) {
+        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+    }
+
+    /**
+     * <p>
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     * 
+     * @return Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *         request is decreased below the current size of the Spot Fleet.
+     * @see ExcessCapacityTerminationPolicy
+     */
+
+    public String getExcessCapacityTerminationPolicy() {
+        return this.excessCapacityTerminationPolicy;
+    }
+
+    /**
+     * <p>
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     * 
+     * @param excessCapacityTerminationPolicy
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExcessCapacityTerminationPolicy
+     */
+
+    public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(String excessCapacityTerminationPolicy) {
+        setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     * 
+     * @param excessCapacityTerminationPolicy
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
+     * @see ExcessCapacityTerminationPolicy
+     */
+
+    public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
+        withExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
+    }
+
+    /**
+     * <p>
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
+     * </p>
+     * 
+     * @param excessCapacityTerminationPolicy
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExcessCapacityTerminationPolicy
+     */
+
+    public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
+        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      */
 
     public void setSpotFleetRequestId(String spotFleetRequestId) {
@@ -63,10 +152,10 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The ID of the Spot Fleet request.
      */
 
     public String getSpotFleetRequestId() {
@@ -75,11 +164,11 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,84 +219,41 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * The number of On-Demand Instances in the fleet.
      * </p>
      * 
-     * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
-     * @see ExcessCapacityTerminationPolicy
+     * @param onDemandTargetCapacity
+     *        The number of On-Demand Instances in the fleet.
      */
 
-    public void setExcessCapacityTerminationPolicy(String excessCapacityTerminationPolicy) {
-        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+    public void setOnDemandTargetCapacity(Integer onDemandTargetCapacity) {
+        this.onDemandTargetCapacity = onDemandTargetCapacity;
     }
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * The number of On-Demand Instances in the fleet.
      * </p>
      * 
-     * @return Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *         request is decreased below the current size of the Spot fleet.
-     * @see ExcessCapacityTerminationPolicy
+     * @return The number of On-Demand Instances in the fleet.
      */
 
-    public String getExcessCapacityTerminationPolicy() {
-        return this.excessCapacityTerminationPolicy;
+    public Integer getOnDemandTargetCapacity() {
+        return this.onDemandTargetCapacity;
     }
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * The number of On-Demand Instances in the fleet.
      * </p>
      * 
-     * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
+     * @param onDemandTargetCapacity
+     *        The number of On-Demand Instances in the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ExcessCapacityTerminationPolicy
      */
 
-    public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(String excessCapacityTerminationPolicy) {
-        setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
-     * </p>
-     * 
-     * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
-     * @see ExcessCapacityTerminationPolicy
-     */
-
-    public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
-    }
-
-    /**
-     * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
-     * </p>
-     * 
-     * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ExcessCapacityTerminationPolicy
-     */
-
-    public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
+    public ModifySpotFleetRequestRequest withOnDemandTargetCapacity(Integer onDemandTargetCapacity) {
+        setOnDemandTargetCapacity(onDemandTargetCapacity);
         return this;
     }
 
@@ -223,7 +269,8 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -233,12 +280,14 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getExcessCapacityTerminationPolicy() != null)
+            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy()).append(",");
         if (getSpotFleetRequestId() != null)
             sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getTargetCapacity() != null)
             sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
-        if (getExcessCapacityTerminationPolicy() != null)
-            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy());
+        if (getOnDemandTargetCapacity() != null)
+            sb.append("OnDemandTargetCapacity: ").append(getOnDemandTargetCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +302,11 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ModifySpotFleetRequestRequest == false)
             return false;
         ModifySpotFleetRequestRequest other = (ModifySpotFleetRequestRequest) obj;
+        if (other.getExcessCapacityTerminationPolicy() == null ^ this.getExcessCapacityTerminationPolicy() == null)
+            return false;
+        if (other.getExcessCapacityTerminationPolicy() != null
+                && other.getExcessCapacityTerminationPolicy().equals(this.getExcessCapacityTerminationPolicy()) == false)
+            return false;
         if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
         if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
@@ -261,10 +315,9 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getTargetCapacity() != null && other.getTargetCapacity().equals(this.getTargetCapacity()) == false)
             return false;
-        if (other.getExcessCapacityTerminationPolicy() == null ^ this.getExcessCapacityTerminationPolicy() == null)
+        if (other.getOnDemandTargetCapacity() == null ^ this.getOnDemandTargetCapacity() == null)
             return false;
-        if (other.getExcessCapacityTerminationPolicy() != null
-                && other.getExcessCapacityTerminationPolicy().equals(this.getExcessCapacityTerminationPolicy()) == false)
+        if (other.getOnDemandTargetCapacity() != null && other.getOnDemandTargetCapacity().equals(this.getOnDemandTargetCapacity()) == false)
             return false;
         return true;
     }
@@ -274,9 +327,10 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
-        hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandTargetCapacity() == null) ? 0 : getOnDemandTargetCapacity().hashCode());
         return hashCode;
     }
 

@@ -34,6 +34,7 @@ public interface ${metadata.syncInterface} {
      */
     String ENDPOINT_PREFIX = "${metadata.endpointPrefix}";
 
+<#if customizationConfig.emitClientMutationMethods() >
     /**
      * Overrides the default endpoint for this client<#if metadata.defaultEndpoint?has_content> ("${metadata.defaultEndpoint}")</#if>.
      * Callers can use this method to control which AWS region they want to work with.
@@ -45,8 +46,8 @@ public interface ${metadata.syncInterface} {
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
      * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint">
+     * https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the
      * client is created and before any service requests are made. Changing it
@@ -63,12 +64,14 @@ public interface ${metadata.syncInterface} {
      */
     @Deprecated
     void setEndpoint(String endpoint);
-
+</#if>
   <#if shapes.Region?has_content>
     <#assign regionClassType="com.amazonaws.regions.Region" />
   <#else>
     <#assign regionClassType="Region" />
   </#if>
+
+<#if customizationConfig.emitClientMutationMethods() >
     /**
      * An alternative to {@link ${metadata.syncInterface}#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
@@ -96,9 +99,12 @@ public interface ${metadata.syncInterface} {
      */
     @Deprecated
     void setRegion(${regionClassType} region);
+</#if>
 
   <#list operations?values as operationModel>
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
     <@InterfaceMethodForOperationMacro.content metadata operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalInterfaceMethodsMacro??>

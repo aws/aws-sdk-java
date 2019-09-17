@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,26 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("LastSoftwareUpdate", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setLastSoftwareUpdate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2InstanceId", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setEc2InstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2InstanceRegion", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setEc2InstanceRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("VPCEndpoint", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setVPCEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchLogGroupARN", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setCloudWatchLogGroupARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

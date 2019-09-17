@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,16 +18,14 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeInstances.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Reservation> reservations;
@@ -41,10 +39,10 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
-     * @return Zero or more reservations.
+     * @return Information about the reservations.
      */
 
     public java.util.List<Reservation> getReservations() {
@@ -56,11 +54,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      */
 
     public void setReservations(java.util.Collection<Reservation> reservations) {
@@ -74,7 +72,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +81,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +97,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,7 +157,8 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

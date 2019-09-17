@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterMetadata implements Serializable, Cloneable {
+public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -68,8 +70,8 @@ public class ClusterMetadata implements Serializable, Cloneable {
     private String jobType;
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      */
     private String snowballType;
@@ -94,27 +96,27 @@ public class ClusterMetadata implements Serializable, Cloneable {
     private String addressId;
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -131,6 +133,13 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * </p>
      */
     private Notification notification;
+    /**
+     * <p>
+     * The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This
+     * field is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -370,7 +379,7 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public void setClusterState(ClusterState clusterState) {
-        this.clusterState = clusterState.toString();
+        withClusterState(clusterState);
     }
 
     /**
@@ -385,7 +394,7 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public ClusterMetadata withClusterState(ClusterState clusterState) {
-        setClusterState(clusterState);
+        this.clusterState = clusterState.toString();
         return this;
     }
 
@@ -447,7 +456,7 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -463,19 +472,19 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public ClusterMetadata withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -485,12 +494,12 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *         for cluster jobs is <code>EDGE</code>.
+     * @return The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *         are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -500,13 +509,13 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -518,35 +527,35 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type for
-     * cluster jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this cluster. Currently, the only supported appliance type
-     *        for cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this cluster. The only supported device types for cluster jobs
+     *        are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
 
     public ClusterMetadata withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -678,27 +687,27 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -710,25 +719,25 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
-     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
-     *        which typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, devices shipped express are
+     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
+     *        typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -745,27 +754,27 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -776,25 +785,25 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *         Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while
-     *         in transit. Regional shipping speeds are as follows:</p>
+     *         device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *         shipping speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *         In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *         about a day.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped
-     *         express are delivered in about a day. In addition, most countries in the EU have access to standard
-     *         shipping, which typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, devices shipped express are
+     *         delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
+     *         typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowball Edges are delivered in one to seven days.
+     *         In India, devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -811,27 +820,27 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -843,25 +852,25 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
-     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
-     *        which typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, devices shipped express are
+     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
+     *        typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -880,27 +889,27 @@ public class ClusterMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -912,25 +921,25 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
-     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
-     *        which typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, devices shipped express are
+     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
+     *        typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -942,32 +951,32 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
      * <p>
-     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball
-     * Edge appliance, rather it represents how quickly each appliance moves to its destination while in transit.
-     * Regional shipping speeds are as follows:
+     * The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device,
+     * rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in about a
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
      * day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
-     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
-     * takes less than a week, one way.
+     * In the European Union (EU), you have access to express shipping. Typically, devices shipped express are delivered
+     * in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -979,25 +988,25 @@ public class ClusterMetadata implements Serializable, Cloneable {
      * 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
-     *        Snowball Edge appliance, rather it represents how quickly each appliance moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        device, rather it represents how quickly each device moves to its destination while in transit. Regional
+     *        shipping speeds are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, appliances shipped express are delivered in
+     *        In Australia, you have access to express shipping. Typically, devices shipped express are delivered in
      *        about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
-     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
-     *        which typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, devices shipped express are
+     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
+     *        typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1010,7 +1019,7 @@ public class ClusterMetadata implements Serializable, Cloneable {
      */
 
     public ClusterMetadata withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -1055,7 +1064,54 @@ public class ClusterMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This
+     * field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This
+     * field is not supported in most regions.
+     * </p>
+     * 
+     * @return The ID of the address that you want a cluster shipped to, after it will be shipped to its primary
+     *         address. This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This
+     * field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterMetadata withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1088,7 +1144,9 @@ public class ClusterMetadata implements Serializable, Cloneable {
         if (getShippingOption() != null)
             sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: ").append(getNotification());
+            sb.append("Notification: ").append(getNotification()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -1151,6 +1209,10 @@ public class ClusterMetadata implements Serializable, Cloneable {
             return false;
         if (other.getNotification() != null && other.getNotification().equals(this.getNotification()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -1171,6 +1233,7 @@ public class ClusterMetadata implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAddressId() == null) ? 0 : getAddressId().hashCode());
         hashCode = prime * hashCode + ((getShippingOption() == null) ? 0 : getShippingOption().hashCode());
         hashCode = prime * hashCode + ((getNotification() == null) ? 0 : getNotification().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 
@@ -1181,5 +1244,11 @@ public class ClusterMetadata implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.ClusterMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

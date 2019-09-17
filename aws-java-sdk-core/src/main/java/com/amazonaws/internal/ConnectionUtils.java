@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@ package com.amazonaws.internal;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.Proxy;
 import java.net.URI;
+import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -36,12 +38,17 @@ public class ConnectionUtils {
         return instance;
     }
 
-    public HttpURLConnection connectToEndpoint(URI endpoint) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) endpoint.toURL().openConnection();
+    public HttpURLConnection connectToEndpoint(URI endpoint, Map<String, String> headers) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) endpoint.toURL().openConnection(Proxy.NO_PROXY);
         connection.setConnectTimeout(1000 * 2);
         connection.setReadTimeout(1000 * 5);
         connection.setRequestMethod("GET");
         connection.setDoOutput(true);
+
+        for (Map.Entry<String, String> header : headers.entrySet()) {
+            connection.addRequestProperty(header.getKey(), header.getValue());
+        }
+
         // TODO should we autoredirect 3xx
         // connection.setInstanceFollowRedirects(false);
         connection.connect();

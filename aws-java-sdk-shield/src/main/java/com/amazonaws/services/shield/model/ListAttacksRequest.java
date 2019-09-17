@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,19 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      */
     private TimeRange startTime;
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      */
     private TimeRange endTime;
@@ -55,6 +61,12 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results
      * will be returned.
+     * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are
+     * still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return,
+     * AWS WAF will always also return a <code>NextToken</code>.
      * </p>
      */
     private Integer maxResults;
@@ -139,11 +151,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param startTime
-     *        The time period for the attacks.
+     *        The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      */
 
     public void setStartTime(TimeRange startTime) {
@@ -152,10 +171,17 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
-     * @return The time period for the attacks.
+     * @return The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *         above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *         However any valid <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *         format</a> is allowed.
      */
 
     public TimeRange getStartTime() {
@@ -164,11 +190,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param startTime
-     *        The time period for the attacks.
+     *        The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +212,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period for the attacks.
+     *        The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      */
 
     public void setEndTime(TimeRange endTime) {
@@ -192,10 +232,17 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
-     * @return The end of the time period for the attacks.
+     * @return The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *         above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *         However any valid <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *         format</a> is allowed.
      */
 
     public TimeRange getEndTime() {
@@ -204,11 +251,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period for the attacks.
+     *        The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,10 +322,21 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results
      * will be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are
+     * still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return,
+     * AWS WAF will always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20
-     *        results will be returned.
+     *        results will be returned.</p>
+     *        <p>
+     *        This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *        the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if
+     *        there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a>
+     *        objects to return, AWS WAF will always also return a <code>NextToken</code>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -283,9 +348,20 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results
      * will be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are
+     * still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return,
+     * AWS WAF will always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @return The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20
-     *         results will be returned.
+     *         results will be returned.</p>
+     *         <p>
+     *         This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *         the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if
+     *         there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a>
+     *         objects to return, AWS WAF will always also return a <code>NextToken</code>.
      */
 
     public Integer getMaxResults() {
@@ -297,10 +373,21 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results
      * will be returned.
      * </p>
+     * <p>
+     * This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is, the
+     * number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if there are
+     * still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a> objects to return,
+     * AWS WAF will always also return a <code>NextToken</code>.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20
-     *        results will be returned.
+     *        results will be returned.</p>
+     *        <p>
+     *        This is a maximum value; it is possible that AWS WAF will return the results in smaller batches. That is,
+     *        the number of <a>AttackSummary</a> objects returned could be less than <code>MaxResults</code>, even if
+     *        there are still more <a>AttackSummary</a> objects yet to return. If there are more <a>AttackSummary</a>
+     *        objects to return, AWS WAF will always also return a <code>NextToken</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,7 +397,8 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

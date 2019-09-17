@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -44,7 +44,7 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
     private String creationDate;
     /**
      * <p>
-     * The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This value
+     * The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value
      * should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      * </p>
      */
@@ -192,12 +192,12 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This value
+     * The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value
      * should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      * </p>
      * 
      * @param lastInventoryDate
-     *        The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This
+     *        The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This
      *        value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      */
 
@@ -207,11 +207,11 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This value
+     * The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value
      * should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      * </p>
      * 
-     * @return The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This
+     * @return The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This
      *         value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      */
 
@@ -221,12 +221,12 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This value
+     * The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value
      * should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      * </p>
      * 
      * @param lastInventoryDate
-     *        The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault inventory. This
+     *        The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This
      *        value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -330,7 +330,8 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -415,4 +416,5 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

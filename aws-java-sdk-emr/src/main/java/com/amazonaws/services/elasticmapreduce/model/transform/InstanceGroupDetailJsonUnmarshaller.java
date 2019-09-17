@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,19 +90,19 @@ public class InstanceGroupDetailJsonUnmarshaller implements Unmarshaller<Instanc
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupDetail.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setStartDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupDetail.setStartDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setReadyDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupDetail.setReadyDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    instanceGroupDetail.setEndDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceGroupDetail.setEndDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

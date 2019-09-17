@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,40 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of the fleet error.
+ * Describes a fleet error.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/FleetError" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FleetError implements Serializable, Cloneable {
+public class FleetError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message generated when the fleet has errors.
+     * The error message.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code for the fleet error.
+     *        The error code.
      * @see FleetErrorCode
      */
 
@@ -55,10 +57,10 @@ public class FleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      * 
-     * @return The error code for the fleet error.
+     * @return The error code.
      * @see FleetErrorCode
      */
 
@@ -68,11 +70,11 @@ public class FleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code for the fleet error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetErrorCode
      */
@@ -84,41 +86,41 @@ public class FleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code for the fleet error.
+     *        The error code.
      * @see FleetErrorCode
      */
 
     public void setErrorCode(FleetErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
      * <p>
-     * The error code for the fleet error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The error code for the fleet error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetErrorCode
      */
 
     public FleetError withErrorCode(FleetErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 
     /**
      * <p>
-     * The error message generated when the fleet has errors.
+     * The error message.
      * </p>
      * 
      * @param errorMessage
-     *        The error message generated when the fleet has errors.
+     *        The error message.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -127,10 +129,10 @@ public class FleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message generated when the fleet has errors.
+     * The error message.
      * </p>
      * 
-     * @return The error message generated when the fleet has errors.
+     * @return The error message.
      */
 
     public String getErrorMessage() {
@@ -139,11 +141,11 @@ public class FleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message generated when the fleet has errors.
+     * The error message.
      * </p>
      * 
      * @param errorMessage
-     *        The error message generated when the fleet has errors.
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +155,8 @@ public class FleetError implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,5 +212,11 @@ public class FleetError implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appstream.model.transform.FleetErrorMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

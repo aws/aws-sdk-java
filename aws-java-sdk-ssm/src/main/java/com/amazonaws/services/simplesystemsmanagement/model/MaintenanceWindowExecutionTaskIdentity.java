@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,27 +14,29 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a task execution performed as part of a Maintenance Window execution.
+ * Information about a task execution performed as part of a maintenance window execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskIdentity"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Cloneable {
+public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      */
     private String taskExecutionId;
@@ -64,24 +66,24 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
     private java.util.Date endTime;
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      */
     private String taskType;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -90,10 +92,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that ran the task.
+     * @return The ID of the maintenance window execution that ran the task.
      */
 
     public String getWindowExecutionId() {
@@ -102,11 +104,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +119,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -130,10 +132,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window execution.
+     * @return The ID of the specific task execution in the maintenance window execution.
      */
 
     public String getTaskExecutionId() {
@@ -142,11 +144,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,7 +211,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -224,7 +226,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public MaintenanceWindowExecutionTaskIdentity withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -350,11 +352,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -363,10 +365,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
-     * @return The ARN of the executed task.
+     * @return The ARN of the task that ran.
      */
 
     public String getTaskArn() {
@@ -375,11 +377,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,11 +392,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
@@ -404,10 +406,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
-     * @return The type of executed task.
+     * @return The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
@@ -417,11 +419,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -433,36 +435,37 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
     public void setTaskType(MaintenanceWindowTaskType taskType) {
-        this.taskType = taskType.toString();
+        withTaskType(taskType);
     }
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
 
     public MaintenanceWindowExecutionTaskIdentity withTaskType(MaintenanceWindowTaskType taskType) {
-        setTaskType(taskType);
+        this.taskType = taskType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -560,5 +563,12 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.MaintenanceWindowExecutionTaskIdentityMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

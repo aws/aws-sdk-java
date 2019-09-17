@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PlatformType {
 
-    WINDOWS("WINDOWS");
+    WINDOWS("WINDOWS"),
+    WINDOWS_SERVER_2016("WINDOWS_SERVER_2016"),
+    WINDOWS_SERVER_2019("WINDOWS_SERVER_2019");
 
     private String value;
 
@@ -39,6 +41,9 @@ public enum PlatformType {
      * @param value
      *        real value
      * @return PlatformType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PlatformType fromValue(String value) {
         if (value == null || "".equals(value)) {

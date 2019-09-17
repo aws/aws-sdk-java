@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,7 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * Current state of Replication Job
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReplicationJobState {
@@ -24,7 +24,10 @@ public enum ReplicationJobState {
     ACTIVE("ACTIVE"),
     FAILED("FAILED"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    COMPLETED("COMPLETED"),
+    PAUSED_ON_FAILURE("PAUSED_ON_FAILURE"),
+    FAILING("FAILING");
 
     private String value;
 
@@ -43,6 +46,9 @@ public enum ReplicationJobState {
      * @param value
      *        real value
      * @return ReplicationJobState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReplicationJobState fromValue(String value) {
         if (value == null || "".equals(value)) {

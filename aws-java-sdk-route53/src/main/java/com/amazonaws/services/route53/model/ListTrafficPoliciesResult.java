@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,12 +36,9 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>MaxItems</code> traffic policies by calling <code>ListTrafficPolicies</code>
-     * again and specifying the value of the <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      */
     private Boolean isTruncated;
@@ -54,8 +51,8 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     private String trafficPolicyIdMarker;
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the call to
-     * <code>ListTrafficPolicies</code> that produced the current response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      */
     private String maxItems;
@@ -144,21 +141,16 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>MaxItems</code> traffic policies by calling <code>ListTrafficPolicies</code>
-     * again and specifying the value of the <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
-     *        you can get the next group of <code>MaxItems</code> traffic policies by calling
-     *        <code>ListTrafficPolicies</code> again and specifying the value of the <code>TrafficPolicyIdMarker</code>
-     *        element in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code>
+     *        request and specifying the value of <code>TrafficPolicyIdMarker</code> in the
+     *        <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -168,20 +160,15 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>MaxItems</code> traffic policies by calling <code>ListTrafficPolicies</code>
-     * again and specifying the value of the <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policies by calling
-     *         <code>ListTrafficPolicies</code> again and specifying the value of the <code>TrafficPolicyIdMarker</code>
-     *         element in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+     *         in the <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -191,21 +178,16 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>MaxItems</code> traffic policies by calling <code>ListTrafficPolicies</code>
-     * again and specifying the value of the <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
-     *        you can get the next group of <code>MaxItems</code> traffic policies by calling
-     *        <code>ListTrafficPolicies</code> again and specifying the value of the <code>TrafficPolicyIdMarker</code>
-     *        element in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *        <p>
-     *        Valid Values: <code>true</code> | <code>false</code>
+     *        you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code>
+     *        request and specifying the value of <code>TrafficPolicyIdMarker</code> in the
+     *        <code>TrafficPolicyIdMarker</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,20 +199,15 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>MaxItems</code> traffic policies by calling <code>ListTrafficPolicies</code>
-     * again and specifying the value of the <code>TrafficPolicyIdMarker</code> element in the
-     * <code>TrafficPolicyIdMarker</code> request parameter.
-     * </p>
-     * <p>
-     * Valid Values: <code>true</code> | <code>false</code>
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and
+     * specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request
+     * parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policies by calling
-     *         <code>ListTrafficPolicies</code> again and specifying the value of the <code>TrafficPolicyIdMarker</code>
-     *         element in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-     *         <p>
-     *         Valid Values: <code>true</code> | <code>false</code>
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+     *         in the <code>TrafficPolicyIdMarker</code> request parameter.
      */
 
     public Boolean isTruncated() {
@@ -285,13 +262,13 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the call to
-     * <code>ListTrafficPolicies</code> that produced the current response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>MaxItems</code> parameter in the call to
-     *        <code>ListTrafficPolicies</code> that produced the current response.
+     *        The value that you specified for the <code>MaxItems</code> parameter in the
+     *        <code>ListTrafficPolicies</code> request that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -300,12 +277,12 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the call to
-     * <code>ListTrafficPolicies</code> that produced the current response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
-     * @return The value that you specified for the <code>MaxItems</code> parameter in the call to
-     *         <code>ListTrafficPolicies</code> that produced the current response.
+     * @return The value that you specified for the <code>MaxItems</code> parameter in the
+     *         <code>ListTrafficPolicies</code> request that produced the current response.
      */
 
     public String getMaxItems() {
@@ -314,13 +291,13 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the call to
-     * <code>ListTrafficPolicies</code> that produced the current response.
+     * The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+     * request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>MaxItems</code> parameter in the call to
-     *        <code>ListTrafficPolicies</code> that produced the current response.
+     *        The value that you specified for the <code>MaxItems</code> parameter in the
+     *        <code>ListTrafficPolicies</code> request that produced the current response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,7 +307,8 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -401,4 +379,5 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

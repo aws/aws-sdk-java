@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A description of a job flow.
+ * A description of a cluster (job flow).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowDetail" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobFlowDetail implements Serializable, Cloneable {
+public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,10 +48,8 @@ public class JobFlowDetail implements Serializable, Cloneable {
     private String logUri;
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     * Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     * <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * </p>
      */
     private String amiVersion;
@@ -86,10 +86,13 @@ public class JobFlowDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedProducts;
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -278,17 +281,13 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     * Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     * <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * </p>
      * 
      * @param amiVersion
-     *        The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     *        currently supported by Amazon EMR, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     *        Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     *        <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      */
 
     public void setAmiVersion(String amiVersion) {
@@ -297,16 +296,12 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     * Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     * <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * </p>
      * 
-     * @return The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI
-     *         versions currently supported by Amazon EMR, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *         >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     * @return Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     *         <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      */
 
     public String getAmiVersion() {
@@ -315,17 +310,13 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     * Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     * <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * </p>
      * 
      * @param amiVersion
-     *        The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     *        currently supported by Amazon EMR, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
+     *        Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later,
+     *        <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -643,17 +634,22 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *        have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *        IAM user that created the job flow can view and manage it. This value can be changed using the
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
+     *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -663,16 +659,21 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *         have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *         IAM user that created the job flow can view and manage it. This value can be changed using the
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -682,17 +683,22 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *        have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *        IAM user that created the job flow can view and manage it. This value can be changed using the
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
+     *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -704,16 +710,21 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *         have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *         IAM user that created the job flow can view and manage it. This value can be changed using the
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -978,7 +989,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      */
 
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        this.scaleDownBehavior = scaleDownBehavior.toString();
+        withScaleDownBehavior(scaleDownBehavior);
     }
 
     /**
@@ -1009,12 +1020,13 @@ public class JobFlowDetail implements Serializable, Cloneable {
      */
 
     public JobFlowDetail withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        setScaleDownBehavior(scaleDownBehavior);
+        this.scaleDownBehavior = scaleDownBehavior.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1154,5 +1166,11 @@ public class JobFlowDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.JobFlowDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

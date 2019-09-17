@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A domain name that you want to use as the basis for a list of possible domain names. The domain name must contain
+     * a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * </p>
+     */
     private String domainName;
-
+    /**
+     * <p>
+     * The number of suggested domain names that you want Amazon Route 53 to return.
+     * </p>
+     */
     private Integer suggestionCount;
-
+    /**
+     * <p>
+     * If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are available.
+     * If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is available, you can call
+     * <code>checkDomainAvailability</code> for each suggestion.
+     * </p>
+     */
     private Boolean onlyAvailable;
 
     /**
+     * <p>
+     * A domain name that you want to use as the basis for a list of possible domain names. The domain name must contain
+     * a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * </p>
+     * 
      * @param domainName
+     *        A domain name that you want to use as the basis for a list of possible domain names. The domain name must
+     *        contain a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *        Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public void setDomainName(String domainName) {
@@ -40,7 +70,17 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * A domain name that you want to use as the basis for a list of possible domain names. The domain name must contain
+     * a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * </p>
+     * 
+     * @return A domain name that you want to use as the basis for a list of possible domain names. The domain name must
+     *         contain a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *         Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public String getDomainName() {
@@ -48,7 +88,18 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A domain name that you want to use as the basis for a list of possible domain names. The domain name must contain
+     * a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * </p>
+     * 
      * @param domainName
+     *        A domain name that you want to use as the basis for a list of possible domain names. The domain name must
+     *        contain a top-level domain (TLD), such as .com, that Amazon Route 53 supports. For a list of TLDs, see <a
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *        Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +109,12 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The number of suggested domain names that you want Amazon Route 53 to return.
+     * </p>
+     * 
      * @param suggestionCount
+     *        The number of suggested domain names that you want Amazon Route 53 to return.
      */
 
     public void setSuggestionCount(Integer suggestionCount) {
@@ -66,7 +122,11 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The number of suggested domain names that you want Amazon Route 53 to return.
+     * </p>
+     * 
+     * @return The number of suggested domain names that you want Amazon Route 53 to return.
      */
 
     public Integer getSuggestionCount() {
@@ -74,7 +134,12 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The number of suggested domain names that you want Amazon Route 53 to return.
+     * </p>
+     * 
      * @param suggestionCount
+     *        The number of suggested domain names that you want Amazon Route 53 to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +149,18 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are available.
+     * If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is available, you can call
+     * <code>checkDomainAvailability</code> for each suggestion.
+     * </p>
+     * 
      * @param onlyAvailable
+     *        If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are
+     *        available. If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names
+     *        without checking whether they're available to be registered. To determine whether the domain is available,
+     *        you can call <code>checkDomainAvailability</code> for each suggestion.
      */
 
     public void setOnlyAvailable(Boolean onlyAvailable) {
@@ -92,7 +168,17 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are available.
+     * If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is available, you can call
+     * <code>checkDomainAvailability</code> for each suggestion.
+     * </p>
+     * 
+     * @return If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are
+     *         available. If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names
+     *         without checking whether they're available to be registered. To determine whether the domain is
+     *         available, you can call <code>checkDomainAvailability</code> for each suggestion.
      */
 
     public Boolean getOnlyAvailable() {
@@ -100,7 +186,18 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are available.
+     * If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is available, you can call
+     * <code>checkDomainAvailability</code> for each suggestion.
+     * </p>
+     * 
      * @param onlyAvailable
+     *        If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are
+     *        available. If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names
+     *        without checking whether they're available to be registered. To determine whether the domain is available,
+     *        you can call <code>checkDomainAvailability</code> for each suggestion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +207,17 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are available.
+     * If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names without checking
+     * whether they're available to be registered. To determine whether the domain is available, you can call
+     * <code>checkDomainAvailability</code> for each suggestion.
+     * </p>
+     * 
+     * @return If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain names that are
+     *         available. If <code>OnlyAvailable</code> is <code>false</code>, Amazon Route 53 returns domain names
+     *         without checking whether they're available to be registered. To determine whether the domain is
+     *         available, you can call <code>checkDomainAvailability</code> for each suggestion.
      */
 
     public Boolean isOnlyAvailable() {
@@ -118,7 +225,8 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

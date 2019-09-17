@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,9 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     private String applicationName;
     /**
      * <p>
-     * Version of the application to which you want add the output configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the output configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
@@ -43,8 +44,8 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
-     * of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose
-     * delivery stream), and record the formation to use when writing to the destination.
+     * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      */
     private Output output;
@@ -91,15 +92,17 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Version of the application to which you want add the output configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the output configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application to which you want add the output configuration. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application to which you want to add the output configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -108,13 +111,15 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Version of the application to which you want add the output configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the output configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return Version of the application to which you want add the output configuration. You can use the
-     *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     * @return Version of the application to which you want to add the output configuration. You can use the <a
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *         >DescribeApplication</a> operation to get the current application version. If the version specified is
      *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
@@ -124,15 +129,17 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Version of the application to which you want add the output configuration. You can use the
-     * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
+     * Version of the application to which you want to add the output configuration. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        Version of the application to which you want add the output configuration. You can use the
-     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        Version of the application to which you want to add the output configuration. You can use the <a
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     *        >DescribeApplication</a> operation to get the current application version. If the version specified is not
+     *        the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,14 +151,15 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
-     * of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose
-     * delivery stream), and record the formation to use when writing to the destination.
+     * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @param output
      *        An array of objects, each describing one output configuration. In the output configuration, you specify
-     *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon
-     *        Kinesis Firehose delivery stream), and record the formation to use when writing to the destination.
+     *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
+     *        Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *        destination.
      */
 
     public void setOutput(Output output) {
@@ -161,13 +169,14 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
-     * of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose
-     * delivery stream), and record the formation to use when writing to the destination.
+     * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @return An array of objects, each describing one output configuration. In the output configuration, you specify
-     *         the name of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon
-     *         Kinesis Firehose delivery stream), and record the formation to use when writing to the destination.
+     *         the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
+     *         Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *         destination.
      */
 
     public Output getOutput() {
@@ -177,14 +186,15 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
-     * of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon Kinesis Firehose
-     * delivery stream), and record the formation to use when writing to the destination.
+     * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @param output
      *        An array of objects, each describing one output configuration. In the output configuration, you specify
-     *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream or an Amazon
-     *        Kinesis Firehose delivery stream), and record the formation to use when writing to the destination.
+     *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
+     *        Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *        destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +204,8 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

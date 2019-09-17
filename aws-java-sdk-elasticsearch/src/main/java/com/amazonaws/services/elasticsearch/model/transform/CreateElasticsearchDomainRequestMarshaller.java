@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,103 +12,79 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateElasticsearchDomainRequest Marshaller
+ * CreateElasticsearchDomainRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateElasticsearchDomainRequestMarshaller implements Marshaller<Request<CreateElasticsearchDomainRequest>, CreateElasticsearchDomainRequest> {
+@SdkInternalApi
+public class CreateElasticsearchDomainRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> ELASTICSEARCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchVersion").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHCLUSTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchClusterConfig").build();
+    private static final MarshallingInfo<StructuredPojo> EBSOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSOptions").build();
+    private static final MarshallingInfo<String> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
+    private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
+    private static final MarshallingInfo<StructuredPojo> COGNITOOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoOptions").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
+    private static final MarshallingInfo<StructuredPojo> NODETONODEENCRYPTIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeToNodeEncryptionOptions").build();
+    private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdvancedOptions").build();
+    private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
 
-    public CreateElasticsearchDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateElasticsearchDomainRequestMarshaller instance = new CreateElasticsearchDomainRequestMarshaller();
+
+    public static CreateElasticsearchDomainRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateElasticsearchDomainRequest> marshall(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateElasticsearchDomainRequest createElasticsearchDomainRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createElasticsearchDomainRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateElasticsearchDomainRequest> request = new DefaultRequest<CreateElasticsearchDomainRequest>(createElasticsearchDomainRequest,
-                "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-01-01/es/domain";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createElasticsearchDomainRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(createElasticsearchDomainRequest.getDomainName());
-            }
-            if (createElasticsearchDomainRequest.getElasticsearchVersion() != null) {
-                jsonGenerator.writeFieldName("ElasticsearchVersion").writeValue(createElasticsearchDomainRequest.getElasticsearchVersion());
-            }
-            if (createElasticsearchDomainRequest.getElasticsearchClusterConfig() != null) {
-                jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
-                ElasticsearchClusterConfigJsonMarshaller.getInstance()
-                        .marshall(createElasticsearchDomainRequest.getElasticsearchClusterConfig(), jsonGenerator);
-            }
-            if (createElasticsearchDomainRequest.getEBSOptions() != null) {
-                jsonGenerator.writeFieldName("EBSOptions");
-                EBSOptionsJsonMarshaller.getInstance().marshall(createElasticsearchDomainRequest.getEBSOptions(), jsonGenerator);
-            }
-            if (createElasticsearchDomainRequest.getAccessPolicies() != null) {
-                jsonGenerator.writeFieldName("AccessPolicies").writeValue(createElasticsearchDomainRequest.getAccessPolicies());
-            }
-            if (createElasticsearchDomainRequest.getSnapshotOptions() != null) {
-                jsonGenerator.writeFieldName("SnapshotOptions");
-                SnapshotOptionsJsonMarshaller.getInstance().marshall(createElasticsearchDomainRequest.getSnapshotOptions(), jsonGenerator);
-            }
-
-            java.util.Map<String, String> advancedOptionsMap = createElasticsearchDomainRequest.getAdvancedOptions();
-            if (advancedOptionsMap != null) {
-                jsonGenerator.writeFieldName("AdvancedOptions");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> advancedOptionsMapValue : advancedOptionsMap.entrySet()) {
-                    if (advancedOptionsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(advancedOptionsMapValue.getKey());
-
-                        jsonGenerator.writeValue(advancedOptionsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getElasticsearchVersion(), ELASTICSEARCHVERSION_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getElasticsearchClusterConfig(), ELASTICSEARCHCLUSTERCONFIG_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getEBSOptions(), EBSOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getVPCOptions(), VPCOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getCognitoOptions(), COGNITOOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

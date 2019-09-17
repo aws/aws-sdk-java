@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen;
 
+import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.customization.processors.DefaultCustomizationProcessor;
 import com.amazonaws.codegen.internal.TypeUtils;
@@ -70,7 +71,7 @@ public class IntermediateModelBuilder {
         this.codeGenConfig = models.codeGenConfig();
         this.service = models.serviceModel();
         this.examples = models.examplesModel();
-        this.namingStrategy = new DefaultNamingStrategy(service, codeGenConfig, customConfig);
+        this.namingStrategy = new DefaultNamingStrategy(service, customConfig);
         this.typeUtils = new TypeUtils(namingStrategy);
         this.shapeProcessors = createShapeProcessors();
         this.waiters = models.waitersModel();
@@ -115,6 +116,14 @@ public class IntermediateModelBuilder {
         waiters.putAll(new AddWaiters(this.waiters, operations, codeGenBinDirectory).constructWaiters());
         authorizers.putAll(new AddCustomAuthorizers(this.service, getNamingStrategy()).constructAuthorizers());
 
+        OperationModel endpointOperation = null;
+
+        for (OperationModel o : operations.values()) {
+            if (o.isEndpointOperation()) {
+                endpointOperation = o;
+            }
+        }
+
         for (IntermediateModelShapeProcessor processor : shapeProcessors) {
             shapes.putAll(processor.process(Collections.unmodifiableMap(operations),
                                             Collections.unmodifiableMap(shapes)));
@@ -124,7 +133,7 @@ public class IntermediateModelBuilder {
 
         IntermediateModel fullModel = new IntermediateModel(
                 constructMetadata(service, codeGenConfig, customConfig), operations, shapes,
-                customConfig, examples, waiters, authorizers);
+                customConfig, examples, endpointOperation, waiters, authorizers);
 
         customization.postprocess(fullModel);
 
@@ -140,6 +149,7 @@ public class IntermediateModelBuilder {
                                                                trimmedShapes,
                                                                fullModel.getCustomizationConfig(),
                                                                fullModel.getExamples(),
+                                                               fullModel.getEndpointOperation(),
                                                                fullModel.getWaiters(),
                                                                fullModel.getCustomAuthorizers());
 
@@ -188,32 +198,55 @@ public class IntermediateModelBuilder {
         }
     }
 
-    private void linkCustomAuthorizationToRequestShapes(IntermediateModel model) {
-        if (model.getMetadata().getProtocol() != Protocol.API_GATEWAY) {
-            return;
-        }
-
+    private void linkCustomAuthorizationToRequestShapes(final IntermediateModel model) {
         model.getOperations().values().stream()
                 .filter(OperationModel::isAuthenticated)
                 .forEach(operation -> {
                     Operation c2jOperation = service.getOperation(operation.getOperationName());
 
-                    ShapeModel shape = operation.getInputShape();
-                    if (shape == null) {
-                        throw new RuntimeException(String.format("Operation %s has unknown input shape", operation.getOperationName()));
+                    ShapeModel inputShape = operation.getInputShape();
+                    if (inputShape == null) {
+                        throw new IllegalStateException(String.format("Operation %s has unknown input shape", operation.getOperationName()));
                     }
-                    if(AuthType.CUSTOM.equals(c2jOperation.getAuthType())) {
-                        AuthorizerModel auth = model.getCustomAuthorizers().get(c2jOperation.getAuthorizer());
-                        if (auth == null) {
-                            throw new RuntimeException(String.format("Required custom auth not defined: %s", c2jOperation.getAuthorizer()));
-                        }
-                        shape.setRequestSignerClassFqcn(model.getMetadata().getPackageName() + ".auth." + auth.getInterfaceName());
-                    } else if (AuthType.IAM.equals(c2jOperation.getAuthType())) {
-                        model.getMetadata().setRequiresIamSigners(true);
-                        shape.setRequestSignerClassFqcn("com.amazonaws.opensdk.protect.auth.IamRequestSigner");
+
+                    if (model.getMetadata().getProtocol() == Protocol.API_GATEWAY) {
+                        linkCustomAuthorizationToRequestShapeForApiGatewayProtocol(model, c2jOperation, inputShape);
+                    } else {
+                        linkCustomAuthorizationToRequestShapeForAwsProtocol(c2jOperation.getAuthType(), inputShape);
                     }
                 });
     }
+
+    private void linkCustomAuthorizationToRequestShapeForApiGatewayProtocol(IntermediateModel model, Operation c2jOperation, ShapeModel inputShape) {
+        if(AuthType.CUSTOM.equals(c2jOperation.getAuthType())) {
+            AuthorizerModel auth = model.getCustomAuthorizers().get(c2jOperation.getAuthorizer());
+            if (auth == null) {
+                throw new IllegalStateException(String.format("Required custom auth not defined: %s", c2jOperation.getAuthorizer()));
+            }
+            inputShape.setRequestSignerClassFqcn(model.getMetadata().getPackageName() + ".auth." + auth.getInterfaceName());
+        } else if (AuthType.IAM.equals(c2jOperation.getAuthType())) {
+            model.getMetadata().setRequiresIamSigners(true);
+            inputShape.setRequestSignerClassFqcn("com.amazonaws.opensdk.protect.auth.IamRequestSigner");
+        }
+    }
+
+    private void linkCustomAuthorizationToRequestShapeForAwsProtocol(AuthType authType, ShapeModel inputShape) {
+        switch (authType) {
+            case V4:
+                inputShape.setSignerType(SignerFactory.VERSION_FOUR_SIGNER);
+                break;
+            case V4_UNSIGNED_BODY:
+                inputShape.setSignerType(SignerFactory.VERSION_FOUR_UNSIGNED_PAYLOAD_SIGNER);
+                break;
+            case NONE:
+            case IAM:
+                // just ignore this, this is the default value but only applicable to APIG generated clients
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported authtype for AWS Request: " + authType);
+        }
+    }
+
 
     public CustomizationConfig getCustomConfig() {
         return customConfig;

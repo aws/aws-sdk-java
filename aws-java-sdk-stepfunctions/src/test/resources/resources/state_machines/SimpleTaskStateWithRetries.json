@@ -1,0 +1,32 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Next": "NextState",
+      "Resource": "resource-arn",
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Foo",
+            "Bar"
+          ],
+          "IntervalSeconds": 20,
+          "BackoffRate": 2.0,
+          "MaxAttempts": 3
+        },
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 30,
+          "BackoffRate": 2.0,
+          "MaxAttempts": 10
+        }
+      ]
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

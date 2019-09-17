@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.simpledb.AmazonSimpleDBClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -65,6 +68,7 @@ import com.amazonaws.services.simpledb.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleDBClient extends AmazonWebServiceClient implements AmazonSimpleDB {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -75,6 +79,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -164,6 +170,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonSimpleDBClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -229,7 +236,12 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AmazonSimpleDBClientBuilder builder() {
+        return AmazonSimpleDBClientBuilder.standard();
     }
 
     /**
@@ -243,8 +255,23 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *        Object providing client parameters.
      */
     AmazonSimpleDBClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon SimpleDB using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonSimpleDBClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -296,7 +323,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.BatchDeleteAttributes
      */
     @Override
-    public BatchDeleteAttributesResult batchDeleteAttributes(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
+    public BatchDeleteAttributesResult batchDeleteAttributes(BatchDeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteAttributesResult executeBatchDeleteAttributes(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchDeleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -310,6 +343,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchDeleteAttributesRequestMarshaller().marshall(super.beforeMarshalling(batchDeleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -397,7 +435,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.BatchPutAttributes
      */
     @Override
-    public BatchPutAttributesResult batchPutAttributes(BatchPutAttributesRequest batchPutAttributesRequest) {
+    public BatchPutAttributesResult batchPutAttributes(BatchPutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchPutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final BatchPutAttributesResult executeBatchPutAttributes(BatchPutAttributesRequest batchPutAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchPutAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -411,6 +455,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchPutAttributesRequestMarshaller().marshall(super.beforeMarshalling(batchPutAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -453,7 +502,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.CreateDomain
      */
     @Override
-    public CreateDomainResult createDomain(CreateDomainRequest createDomainRequest) {
+    public CreateDomainResult createDomain(CreateDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateDomainResult executeCreateDomain(CreateDomainRequest createDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -467,6 +522,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDomainRequestMarshaller().marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -511,7 +571,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DeleteAttributes
      */
     @Override
-    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttributesResult executeDeleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -525,6 +591,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteAttributesRequestMarshaller().marshall(super.beforeMarshalling(deleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -554,7 +625,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DeleteDomain
      */
     @Override
-    public DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest) {
+    public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDomainResult executeDeleteDomain(DeleteDomainRequest deleteDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -568,6 +645,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDomainRequestMarshaller().marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,7 +681,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.DomainMetadata
      */
     @Override
-    public DomainMetadataResult domainMetadata(DomainMetadataRequest domainMetadataRequest) {
+    public DomainMetadataResult domainMetadata(DomainMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDomainMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DomainMetadataResult executeDomainMetadata(DomainMetadataRequest domainMetadataRequest) {
 
         ExecutionContext executionContext = createExecutionContext(domainMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -613,6 +701,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DomainMetadataRequestMarshaller().marshall(super.beforeMarshalling(domainMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DomainMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -650,7 +743,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.GetAttributes
      */
     @Override
-    public GetAttributesResult getAttributes(GetAttributesRequest getAttributesRequest) {
+    public GetAttributesResult getAttributes(GetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetAttributesResult executeGetAttributes(GetAttributesRequest getAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -664,6 +763,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new GetAttributesRequestMarshaller().marshall(super.beforeMarshalling(getAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -698,7 +802,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.ListDomains
      */
     @Override
-    public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsResult executeListDomains(ListDomainsRequest listDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -712,6 +822,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDomainsRequestMarshaller().marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -792,7 +907,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.PutAttributes
      */
     @Override
-    public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutAttributesResult executePutAttributes(PutAttributesRequest putAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -806,6 +927,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new PutAttributesRequestMarshaller().marshall(super.beforeMarshalling(putAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -861,7 +987,13 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonSimpleDB.Select
      */
     @Override
-    public SelectResult select(SelectRequest selectRequest) {
+    public SelectResult select(SelectRequest request) {
+        request = beforeClientExecution(request);
+        return executeSelect(request);
+    }
+
+    @SdkInternalApi
+    final SelectResult executeSelect(SelectRequest selectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(selectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -875,6 +1007,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new SelectRequestMarshaller().marshall(super.beforeMarshalling(selectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Select");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -919,9 +1056,18 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -931,7 +1077,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -939,8 +1085,17 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

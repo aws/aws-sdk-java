@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,16 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProjectResult createProject(CreateProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,7 +68,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateVPCEConfigurationResult createVPCEConfiguration(CreateVPCEConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,12 +108,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public DeleteVPCEConfigurationResult deleteVPCEConfiguration(DeleteVPCEConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetDeviceResult getDevice(GetDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeviceInstanceResult getDeviceInstance(GetDeviceInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +138,17 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetJobResult getJob(GetJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,12 +188,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public GetVPCEConfigurationResult getVPCEConfiguration(GetVPCEConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public InstallToRemoteAccessSessionResult installToRemoteAccessSession(InstallToRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListArtifactsResult listArtifacts(ListArtifactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDeviceInstancesResult listDeviceInstances(ListDeviceInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,7 +218,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOfferingPromotionsResult listOfferingPromotions(ListOfferingPromotionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +273,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTestsResult listTests(ListTestsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +289,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public ListUploadsResult listUploads(ListUploadsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVPCEConfigurationsResult listVPCEConfigurations(ListVPCEConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -233,6 +313,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public StopJobResult stopJob(StopJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopRemoteAccessSessionResult stopRemoteAccessSession(StopRemoteAccessSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,12 +328,47 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDeviceInstanceResult updateDeviceInstance(UpdateDeviceInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateInstanceProfileResult updateInstanceProfile(UpdateInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateUploadResult updateUpload(UpdateUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVPCEConfigurationResult updateVPCEConfiguration(UpdateVPCEConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

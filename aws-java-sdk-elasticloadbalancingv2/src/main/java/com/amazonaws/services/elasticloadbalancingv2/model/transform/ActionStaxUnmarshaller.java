@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,31 @@ public class ActionStaxUnmarshaller implements Unmarshaller<Action, StaxUnmarsha
 
                 if (context.testExpression("TargetGroupArn", targetDepth)) {
                     action.setTargetGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AuthenticateOidcConfig", targetDepth)) {
+                    action.setAuthenticateOidcConfig(AuthenticateOidcActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AuthenticateCognitoConfig", targetDepth)) {
+                    action.setAuthenticateCognitoConfig(AuthenticateCognitoActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Order", targetDepth)) {
+                    action.setOrder(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RedirectConfig", targetDepth)) {
+                    action.setRedirectConfig(RedirectActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("FixedResponseConfig", targetDepth)) {
+                    action.setFixedResponseConfig(FixedResponseActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

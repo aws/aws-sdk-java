@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the state of a Classic load balancer.
+ * Describes the state of a Classic Load Balancer.
  * </p>
  * <p>
  * If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is
@@ -25,10 +25,10 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state
- * transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If ELB
- * health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one
- * instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in
- * the <code>Added</code> state.
+ * transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic
+ * Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after
+ * at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load
+ * balancer remains in the <code>Added</code> state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerState" target="_top">AWS API
@@ -331,7 +331,8 @@ public class LoadBalancerState implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -388,4 +389,5 @@ public class LoadBalancerState implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

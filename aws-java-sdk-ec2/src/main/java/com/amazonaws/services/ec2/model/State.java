@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,10 +20,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum State {
 
+    PendingAcceptance("PendingAcceptance"),
     Pending("Pending"),
     Available("Available"),
     Deleting("Deleting"),
-    Deleted("Deleted");
+    Deleted("Deleted"),
+    Rejected("Rejected"),
+    Failed("Failed"),
+    Expired("Expired");
 
     private String value;
 
@@ -42,6 +46,9 @@ public enum State {
      * @param value
      *        real value
      * @return State corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static State fromValue(String value) {
         if (value == null || "".equals(value)) {

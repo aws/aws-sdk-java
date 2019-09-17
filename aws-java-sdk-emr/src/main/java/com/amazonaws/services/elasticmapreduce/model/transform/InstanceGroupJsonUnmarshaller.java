@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,19 @@ public class InstanceGroupJsonUnmarshaller implements Unmarshaller<InstanceGroup
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
                     instanceGroup.setConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ConfigurationsVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfullyAppliedConfigurations", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setLastSuccessfullyAppliedConfigurations(new ListUnmarshaller<Configuration>(ConfigurationJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfullyAppliedConfigurationsVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceGroup.setLastSuccessfullyAppliedConfigurationsVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("EbsBlockDevices", targetDepth)) {
                     context.nextToken();

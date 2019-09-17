@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,21 +18,47 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of DescribeNotificationsForBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget whose notifications you want descriptions of.
+     * </p>
+     */
     private String budgetName;
-
+    /**
+     * <p>
+     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notifications you want descriptions
+     *        of.
      */
 
     public void setAccountId(String accountId) {
@@ -40,7 +66,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget whose notifications you want descriptions
+     *         of.
      */
 
     public String getAccountId() {
@@ -48,7 +79,13 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget whose notifications you want descriptions
+     *        of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +95,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The name of the budget whose notifications you want descriptions of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notifications you want descriptions of.
      */
 
     public void setBudgetName(String budgetName) {
@@ -66,7 +108,11 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget whose notifications you want descriptions of.
+     * </p>
+     * 
+     * @return The name of the budget whose notifications you want descriptions of.
      */
 
     public String getBudgetName() {
@@ -74,7 +120,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The name of the budget whose notifications you want descriptions of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget whose notifications you want descriptions of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +135,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional integer that represents how many entries a paginated response contains. The maximum is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -92,7 +148,11 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * </p>
+     * 
+     * @return An optional integer that represents how many entries a paginated response contains. The maximum is 100.
      */
 
     public Integer getMaxResults() {
@@ -100,7 +160,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional integer that represents how many entries a paginated response contains. The maximum is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +175,14 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that you include in your request to indicate the next set of results that you want to
+     *        retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,7 +190,13 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
+     * </p>
+     * 
+     * @return The pagination token that you include in your request to indicate the next set of results that you want
+     *         to retrieve.
      */
 
     public String getNextToken() {
@@ -126,7 +204,14 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that you include in your request to indicate the next set of results that you want to
+     *        retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +221,8 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

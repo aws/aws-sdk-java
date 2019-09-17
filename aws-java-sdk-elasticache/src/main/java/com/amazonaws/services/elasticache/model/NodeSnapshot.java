@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents an individual cache node in a snapshot of a cache cluster.
+ * Represents an individual cache node in a snapshot of a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeSnapshot" target="_top">AWS API
@@ -28,7 +28,7 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the source cache cluster.
+     * A unique identifier for the source cluster.
      * </p>
      */
     private String cacheClusterId;
@@ -40,7 +40,7 @@ public class NodeSnapshot implements Serializable, Cloneable {
     private String nodeGroupId;
     /**
      * <p>
-     * The cache node identifier for the node in the source cache cluster.
+     * The cache node identifier for the node in the source cluster.
      * </p>
      */
     private String cacheNodeId;
@@ -58,7 +58,7 @@ public class NodeSnapshot implements Serializable, Cloneable {
     private String cacheSize;
     /**
      * <p>
-     * The date and time when the cache node was created in the source cache cluster.
+     * The date and time when the cache node was created in the source cluster.
      * </p>
      */
     private java.util.Date cacheNodeCreateTime;
@@ -71,11 +71,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the source cache cluster.
+     * A unique identifier for the source cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        A unique identifier for the source cache cluster.
+     *        A unique identifier for the source cluster.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -84,10 +84,10 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the source cache cluster.
+     * A unique identifier for the source cluster.
      * </p>
      * 
-     * @return A unique identifier for the source cache cluster.
+     * @return A unique identifier for the source cluster.
      */
 
     public String getCacheClusterId() {
@@ -96,11 +96,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the source cache cluster.
+     * A unique identifier for the source cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        A unique identifier for the source cache cluster.
+     *        A unique identifier for the source cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +151,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node identifier for the node in the source cache cluster.
+     * The cache node identifier for the node in the source cluster.
      * </p>
      * 
      * @param cacheNodeId
-     *        The cache node identifier for the node in the source cache cluster.
+     *        The cache node identifier for the node in the source cluster.
      */
 
     public void setCacheNodeId(String cacheNodeId) {
@@ -164,10 +164,10 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node identifier for the node in the source cache cluster.
+     * The cache node identifier for the node in the source cluster.
      * </p>
      * 
-     * @return The cache node identifier for the node in the source cache cluster.
+     * @return The cache node identifier for the node in the source cluster.
      */
 
     public String getCacheNodeId() {
@@ -176,11 +176,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node identifier for the node in the source cache cluster.
+     * The cache node identifier for the node in the source cluster.
      * </p>
      * 
      * @param cacheNodeId
-     *        The cache node identifier for the node in the source cache cluster.
+     *        The cache node identifier for the node in the source cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,11 +271,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache node was created in the source cache cluster.
+     * The date and time when the cache node was created in the source cluster.
      * </p>
      * 
      * @param cacheNodeCreateTime
-     *        The date and time when the cache node was created in the source cache cluster.
+     *        The date and time when the cache node was created in the source cluster.
      */
 
     public void setCacheNodeCreateTime(java.util.Date cacheNodeCreateTime) {
@@ -284,10 +284,10 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache node was created in the source cache cluster.
+     * The date and time when the cache node was created in the source cluster.
      * </p>
      * 
-     * @return The date and time when the cache node was created in the source cache cluster.
+     * @return The date and time when the cache node was created in the source cluster.
      */
 
     public java.util.Date getCacheNodeCreateTime() {
@@ -296,11 +296,11 @@ public class NodeSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache node was created in the source cache cluster.
+     * The date and time when the cache node was created in the source cluster.
      * </p>
      * 
      * @param cacheNodeCreateTime
-     *        The date and time when the cache node was created in the source cache cluster.
+     *        The date and time when the cache node was created in the source cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,7 +350,8 @@ public class NodeSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -442,4 +443,5 @@ public class NodeSnapshot implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

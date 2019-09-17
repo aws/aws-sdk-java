@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Tape implements Serializable, Cloneable {
+public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -38,11 +40,15 @@ public class Tape implements Serializable, Cloneable {
      * </p>
      */
     private String tapeBarcode;
-
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     */
     private java.util.Date tapeCreatedDate;
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      */
     private Long tapeSizeInBytes;
@@ -67,6 +73,30 @@ public class Tape implements Serializable, Cloneable {
      * </p>
      */
     private Double progress;
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     */
+    private Long tapeUsedInBytes;
+
+    private String kMSKey;
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     */
+    private String poolId;
 
     /**
      * <p>
@@ -149,7 +179,12 @@ public class Tape implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      */
 
     public void setTapeCreatedDate(java.util.Date tapeCreatedDate) {
@@ -157,7 +192,11 @@ public class Tape implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @return The date the virtual tape was created.
      */
 
     public java.util.Date getTapeCreatedDate() {
@@ -165,7 +204,12 @@ public class Tape implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +220,11 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape.
+     *        The size, in bytes, of the virtual tape capacity.
      */
 
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -189,10 +233,10 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
-     * @return The size, in bytes, of the virtual tape.
+     * @return The size, in bytes, of the virtual tape capacity.
      */
 
     public Long getTapeSizeInBytes() {
@@ -201,11 +245,11 @@ public class Tape implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape.
+     *        The size, in bytes, of the virtual tape capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,7 +397,168 @@ public class Tape implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     */
+
+    public void setTapeUsedInBytes(Long tapeUsedInBytes) {
+        this.tapeUsedInBytes = tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @return The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *         <p>
+     *         This value is not available for tapes created prior to May 13, 2015.
+     *         </p>
+     */
+
+    public Long getTapeUsedInBytes() {
+        return this.tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data stored on the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May 13, 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data stored on the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May 13, 2015.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withTapeUsedInBytes(Long tapeUsedInBytes) {
+        setTapeUsedInBytes(tapeUsedInBytes);
+        return this;
+    }
+
+    /**
+     * @param kMSKey
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * @param kMSKey
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
+     *        the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the
+     *        pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @return The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *         S3 storage class that is associated with the pool. When you use your backup application to eject the
+     *         tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
+     *         the pool.</p>
+     *         <p>
+     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public String getPoolId() {
+        return this.poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
+     *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
+     *        the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the
+     *        pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withPoolId(String poolId) {
+        setPoolId(poolId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -376,7 +581,13 @@ public class Tape implements Serializable, Cloneable {
         if (getVTLDevice() != null)
             sb.append("VTLDevice: ").append(getVTLDevice()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: ").append(getProgress());
+            sb.append("Progress: ").append(getProgress()).append(",");
+        if (getTapeUsedInBytes() != null)
+            sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getPoolId() != null)
+            sb.append("PoolId: ").append(getPoolId());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +630,18 @@ public class Tape implements Serializable, Cloneable {
             return false;
         if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
+        if (other.getTapeUsedInBytes() == null ^ this.getTapeUsedInBytes() == null)
+            return false;
+        if (other.getTapeUsedInBytes() != null && other.getTapeUsedInBytes().equals(this.getTapeUsedInBytes()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
+        if (other.getPoolId() == null ^ this.getPoolId() == null)
+            return false;
+        if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +657,9 @@ public class Tape implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
         hashCode = prime * hashCode + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         return hashCode;
     }
 
@@ -444,5 +670,11 @@ public class Tape implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions
-     * range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If the duration is longer
-     * than one hour, the session for AWS account owners defaults to one hour.
+     * range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
+     * longer than one hour, the session for AWS account owners defaults to one hour.
      * </p>
      */
     private Integer durationSeconds;
@@ -45,16 +45,17 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:/-
      * </p>
      */
     private String serialNumber;
     /**
      * <p>
      * The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA
-     * code, specify this value. If MFA authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access denied" response when requesting
-     * resources that require MFA authentication.
+     * code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives an "access denied" response when
+     * requesting resources that require MFA authentication.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
@@ -65,16 +66,16 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions
-     * range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If the duration is longer
-     * than one hour, the session for AWS account owners defaults to one hour.
+     * range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
+     * longer than one hour, the session for AWS account owners defaults to one hour.
      * </p>
      * 
      * @param durationSeconds
      *        The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user
-     *        sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours)
-     *        as the default. Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If
-     *        the duration is longer than one hour, the session for AWS account owners defaults to one hour.
+     *        sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours)
+     *        as the default. Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour).
+     *        If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -84,15 +85,15 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions
-     * range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If the duration is longer
-     * than one hour, the session for AWS account owners defaults to one hour.
+     * range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
+     * longer than one hour, the session for AWS account owners defaults to one hour.
      * </p>
      * 
      * @return The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user
-     *         sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours)
-     *         as the default. Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour).
-     *         If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
+     *         sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12
+     *         hours) as the default. Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one
+     *         hour). If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
      */
 
     public Integer getDurationSeconds() {
@@ -102,16 +103,16 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions
-     * range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If the duration is longer
-     * than one hour, the session for AWS account owners defaults to one hour.
+     * range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
+     * longer than one hour, the session for AWS account owners defaults to one hour.
      * </p>
      * 
      * @param durationSeconds
      *        The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user
-     *        sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours)
-     *        as the default. Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one hour). If
-     *        the duration is longer than one hour, the session for AWS account owners defaults to one hour.
+     *        sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours)
+     *        as the default. Sessions for AWS account owners are restricted to a maximum of 3,600 seconds (one hour).
+     *        If the duration is longer than one hour, the session for AWS account owners defaults to one hour.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +132,8 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:/-
      * </p>
      * 
      * @param serialNumber
@@ -144,7 +146,7 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@-
+     *        characters: =,.@:/-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -162,7 +164,8 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:/-
      * </p>
      * 
      * @return The identification number of the MFA device that is associated with the IAM user who is making the
@@ -174,7 +177,7 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *         alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *         characters: =,.@-
+     *         characters: =,.@:/-
      */
 
     public String getSerialNumber() {
@@ -192,7 +195,8 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:/-
      * </p>
      * 
      * @param serialNumber
@@ -205,7 +209,7 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@-
+     *        characters: =,.@:/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,9 +221,9 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA
-     * code, specify this value. If MFA authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access denied" response when requesting
-     * resources that require MFA authentication.
+     * code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives an "access denied" response when
+     * requesting resources that require MFA authentication.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
@@ -227,9 +231,9 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an
-     *        MFA code, specify this value. If MFA authentication is required, and the user does not provide a code when
-     *        requesting a set of temporary security credentials, the user will receive an "access denied" response when
-     *        requesting resources that require MFA authentication.</p>
+     *        MFA code, specify this value. If MFA authentication is required, the user must provide a code when
+     *        requesting a set of temporary security credentials. A user who fails to provide the code receives an
+     *        "access denied" response when requesting resources that require MFA authentication.</p>
      *        <p>
      *        The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      */
@@ -241,18 +245,18 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA
-     * code, specify this value. If MFA authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access denied" response when requesting
-     * resources that require MFA authentication.
+     * code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives an "access denied" response when
+     * requesting resources that require MFA authentication.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      * </p>
      * 
      * @return The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit
-     *         an MFA code, specify this value. If MFA authentication is required, and the user does not provide a code
-     *         when requesting a set of temporary security credentials, the user will receive an "access denied"
-     *         response when requesting resources that require MFA authentication.</p>
+     *         an MFA code, specify this value. If MFA authentication is required, the user must provide a code when
+     *         requesting a set of temporary security credentials. A user who fails to provide the code receives an
+     *         "access denied" response when requesting resources that require MFA authentication.</p>
      *         <p>
      *         The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      */
@@ -264,9 +268,9 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA
-     * code, specify this value. If MFA authentication is required, and the user does not provide a code when requesting
-     * a set of temporary security credentials, the user will receive an "access denied" response when requesting
-     * resources that require MFA authentication.
+     * code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set
+     * of temporary security credentials. A user who fails to provide the code receives an "access denied" response when
+     * requesting resources that require MFA authentication.
      * </p>
      * <p>
      * The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
@@ -274,9 +278,9 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param tokenCode
      *        The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an
-     *        MFA code, specify this value. If MFA authentication is required, and the user does not provide a code when
-     *        requesting a set of temporary security credentials, the user will receive an "access denied" response when
-     *        requesting resources that require MFA authentication.</p>
+     *        MFA code, specify this value. If MFA authentication is required, the user must provide a code when
+     *        requesting a set of temporary security credentials. A user who fails to provide the code receives an
+     *        "access denied" response when requesting resources that require MFA authentication.</p>
      *        <p>
      *        The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -288,7 +292,8 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,10 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
                     xmlWriter.startElement("Inverted").value(updateHealthCheckRequest.getInverted()).endElement();
                 }
 
+                if (updateHealthCheckRequest.getDisabled() != null) {
+                    xmlWriter.startElement("Disabled").value(updateHealthCheckRequest.getDisabled()).endElement();
+                }
+
                 if (updateHealthCheckRequest.getHealthThreshold() != null) {
                     xmlWriter.startElement("HealthThreshold").value(updateHealthCheckRequest.getHealthThreshold()).endElement();
                 }
@@ -141,6 +145,19 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
 
                 if (updateHealthCheckRequest.getInsufficientDataHealthStatus() != null) {
                     xmlWriter.startElement("InsufficientDataHealthStatus").value(updateHealthCheckRequest.getInsufficientDataHealthStatus()).endElement();
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> updateHealthCheckRequestResetElementsList = (com.amazonaws.internal.SdkInternalList<String>) updateHealthCheckRequest
+                        .getResetElements();
+                if (!updateHealthCheckRequestResetElementsList.isEmpty() || !updateHealthCheckRequestResetElementsList.isAutoConstruct()) {
+                    xmlWriter.startElement("ResetElements");
+
+                    for (String updateHealthCheckRequestResetElementsListValue : updateHealthCheckRequestResetElementsList) {
+                        xmlWriter.startElement("ResettableElementName");
+                        xmlWriter.value(updateHealthCheckRequestResetElementsListValue);
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
                 }
             }
             xmlWriter.endElement();

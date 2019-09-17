@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The summary metadata about the specified product.
+ * Summary information about a product view.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewSummary" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProductViewSummary implements Serializable, Cloneable {
+public class ProductViewSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -58,7 +60,8 @@ public class ProductViewSummary implements Serializable, Cloneable {
     private String shortDescription;
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      */
     private String type;
@@ -70,10 +73,9 @@ public class ProductViewSummary implements Serializable, Cloneable {
     private String distributor;
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      */
     private Boolean hasDefaultPath;
@@ -298,11 +300,13 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
@@ -312,10 +316,12 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
-     * @return The product type. Contact the product administrator for the significance of this value.
+     * @return The product type. Contact the product administrator for the significance of this value. If this value is
+     *         <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
@@ -325,11 +331,13 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */
@@ -341,31 +349,35 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
     public void setType(ProductType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */
 
     public ProductViewSummary withType(ProductType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -411,17 +423,16 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     *        Indicates whether the product has a default path. If the product does not have a default path, call
+     *        <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *        and the output of <a>ProductViewSummary</a> can be used directly with
+     *        <a>DescribeProvisioningParameters</a>.
      */
 
     public void setHasDefaultPath(Boolean hasDefaultPath) {
@@ -430,16 +441,15 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     * @return Indicates whether the product has a default path. If the product does not have a default path, call
+     *         <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *         and the output of <a>ProductViewSummary</a> can be used directly with
+     *         <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean getHasDefaultPath() {
@@ -448,17 +458,16 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param hasDefaultPath
-     *        A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *        <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *        between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *        <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     *        Indicates whether the product has a default path. If the product does not have a default path, call
+     *        <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *        and the output of <a>ProductViewSummary</a> can be used directly with
+     *        <a>DescribeProvisioningParameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,16 +478,15 @@ public class ProductViewSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     * <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate between
-     * paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the <a>ProductViewSummary</a> operation
-     * can be used directly with <a>DescribeProvisioningParameters</a>.
+     * Indicates whether the product has a default path. If the product does not have a default path, call
+     * <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required, and the
+     * output of <a>ProductViewSummary</a> can be used directly with <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
-     * @return A value of <code>false</code> indicates that the product does not have a default path, while a value of
-     *         <code>true</code> indicates that it does. If it's false, call <a>ListLaunchPaths</a> to disambiguate
-     *         between paths. If true, <a>ListLaunchPaths</a> is not required, and the output of the
-     *         <a>ProductViewSummary</a> operation can be used directly with <a>DescribeProvisioningParameters</a>.
+     * @return Indicates whether the product has a default path. If the product does not have a default path, call
+     *         <a>ListLaunchPaths</a> to disambiguate between paths. Otherwise, <a>ListLaunchPaths</a> is not required,
+     *         and the output of <a>ProductViewSummary</a> can be used directly with
+     *         <a>DescribeProvisioningParameters</a>.
      */
 
     public Boolean isHasDefaultPath() {
@@ -606,7 +614,8 @@ public class ProductViewSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -725,5 +734,11 @@ public class ProductViewSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ProductViewSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

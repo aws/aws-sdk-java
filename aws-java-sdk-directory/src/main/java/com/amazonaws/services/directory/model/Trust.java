@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,16 +14,18 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain.
+ * Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Trust implements Serializable, Cloneable {
+public class Trust implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -45,7 +47,7 @@ public class Trust implements Serializable, Cloneable {
     private String remoteDomainName;
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      */
     private String trustType;
@@ -85,6 +87,12 @@ public class Trust implements Serializable, Cloneable {
      * </p>
      */
     private String trustStateReason;
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     */
+    private String selectiveAuth;
 
     /**
      * <p>
@@ -208,11 +216,11 @@ public class Trust implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -222,10 +230,10 @@ public class Trust implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
-     * @return The trust relationship type.
+     * @return The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -235,11 +243,11 @@ public class Trust implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
@@ -251,31 +259,31 @@ public class Trust implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
     public void setTrustType(TrustType trustType) {
-        this.trustType = trustType.toString();
+        withTrustType(trustType);
     }
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
 
     public Trust withTrustType(TrustType trustType) {
-        setTrustType(trustType);
+        this.trustType = trustType.toString();
         return this;
     }
 
@@ -333,7 +341,7 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public void setTrustDirection(TrustDirection trustDirection) {
-        this.trustDirection = trustDirection.toString();
+        withTrustDirection(trustDirection);
     }
 
     /**
@@ -348,7 +356,7 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public Trust withTrustDirection(TrustDirection trustDirection) {
-        setTrustDirection(trustDirection);
+        this.trustDirection = trustDirection.toString();
         return this;
     }
 
@@ -406,7 +414,7 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public void setTrustState(TrustState trustState) {
-        this.trustState = trustState.toString();
+        withTrustState(trustState);
     }
 
     /**
@@ -421,7 +429,7 @@ public class Trust implements Serializable, Cloneable {
      */
 
     public Trust withTrustState(TrustState trustState) {
-        setTrustState(trustState);
+        this.trustState = trustState.toString();
         return this;
     }
 
@@ -586,7 +594,81 @@ public class Trust implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(String selectiveAuth) {
+        this.selectiveAuth = selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @return Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public String getSelectiveAuth() {
+        return this.selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public Trust withSelectiveAuth(String selectiveAuth) {
+        setSelectiveAuth(selectiveAuth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(SelectiveAuth selectiveAuth) {
+        withSelectiveAuth(selectiveAuth);
+    }
+
+    /**
+     * <p>
+     * Current state of selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Current state of selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public Trust withSelectiveAuth(SelectiveAuth selectiveAuth) {
+        this.selectiveAuth = selectiveAuth.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -615,7 +697,9 @@ public class Trust implements Serializable, Cloneable {
         if (getStateLastUpdatedDateTime() != null)
             sb.append("StateLastUpdatedDateTime: ").append(getStateLastUpdatedDateTime()).append(",");
         if (getTrustStateReason() != null)
-            sb.append("TrustStateReason: ").append(getTrustStateReason());
+            sb.append("TrustStateReason: ").append(getTrustStateReason()).append(",");
+        if (getSelectiveAuth() != null)
+            sb.append("SelectiveAuth: ").append(getSelectiveAuth());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +754,10 @@ public class Trust implements Serializable, Cloneable {
             return false;
         if (other.getTrustStateReason() != null && other.getTrustStateReason().equals(this.getTrustStateReason()) == false)
             return false;
+        if (other.getSelectiveAuth() == null ^ this.getSelectiveAuth() == null)
+            return false;
+        if (other.getSelectiveAuth() != null && other.getSelectiveAuth().equals(this.getSelectiveAuth()) == false)
+            return false;
         return true;
     }
 
@@ -688,6 +776,7 @@ public class Trust implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getStateLastUpdatedDateTime() == null) ? 0 : getStateLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getTrustStateReason() == null) ? 0 : getTrustStateReason().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveAuth() == null) ? 0 : getSelectiveAuth().hashCode());
         return hashCode;
     }
 
@@ -698,5 +787,11 @@ public class Trust implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directory.model.transform.TrustMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

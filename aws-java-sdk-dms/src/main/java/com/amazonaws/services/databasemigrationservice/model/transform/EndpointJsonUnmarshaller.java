@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setEngineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineDisplayName", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setEngineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     endpoint.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
@@ -99,6 +103,46 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                 if (context.testExpression("SslMode", targetDepth)) {
                     context.nextToken();
                     endpoint.setSslMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalTableDefinition", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setExternalTableDefinition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalId", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DynamoDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDynamoDbSettings(DynamoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3Settings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setS3Settings(S3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DmsTransferSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDmsTransferSettings(DmsTransferSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MongoDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMongoDbSettings(MongoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KinesisSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setKinesisSettings(KinesisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ElasticsearchSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setElasticsearchSettings(ElasticsearchSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RedshiftSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setRedshiftSettings(RedshiftSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

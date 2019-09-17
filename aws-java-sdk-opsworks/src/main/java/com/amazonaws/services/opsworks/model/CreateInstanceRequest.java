@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
      * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
      * supported types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
@@ -67,8 +67,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -79,7 +80,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -102,18 +103,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * For more information about the supported operating systems, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      */
@@ -122,7 +123,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating
      * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * <note>
@@ -141,7 +142,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String availabilityZone;
@@ -154,7 +155,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the
-     * stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     * stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.
      * </p>
      */
     private String subnetId;
@@ -162,15 +163,15 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      */
     private String architecture;
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      */
     private String rootDeviceType;
@@ -178,7 +179,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * </p>
      */
@@ -206,7 +207,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -217,7 +218,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
+     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then
      * automatically installs that version on the instance.
      * </p>
      * </li>
@@ -225,7 +226,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      * </p>
      */
     private String agentVersion;
@@ -238,7 +239,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and
      * <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about
      * dedicated instances, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
      * <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.
      * </p>
      */
@@ -362,7 +363,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
      * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
      * supported types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
@@ -371,7 +372,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
      *        in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
      *        currently supported types. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
      *        Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
      *        column of the <b>Available Instance Types</b> table.
      */
@@ -385,7 +386,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
      * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
      * supported types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
@@ -393,7 +394,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
      *         in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
      *         currently supported types. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
      *         Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
      *         column of the <b>Available Instance Types</b> table.
      */
@@ -407,7 +408,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the
      * console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently
      * supported types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * The parameter values that you use to specify the various types are in the <b>API Name</b> column of the
      * <b>Available Instance Types</b> table.
      * </p>
@@ -416,7 +417,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack
      *        in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the
      *        currently supported types. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
      *        Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b>
      *        column of the <b>Available Instance Types</b> table.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -481,7 +482,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -496,7 +497,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
@@ -547,8 +548,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -559,7 +561,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -582,18 +584,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * For more information about the supported operating systems, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * 
@@ -602,8 +604,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -614,7 +618,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CentOS 7</code>
+     *        <code>CentOS Linux 7</code>
      *        </p>
      *        </li>
      *        <li>
@@ -637,18 +641,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        For more information about the supported operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to
-     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information on
-     *        the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
+     *        about supported operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *        Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      */
 
@@ -663,8 +667,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -675,7 +680,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -698,18 +703,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * For more information about the supported operating systems, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * 
@@ -717,8 +722,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *         <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *         <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *         <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -729,7 +736,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CentOS 7</code>
+     *         <code>CentOS Linux 7</code>
      *         </p>
      *         </li>
      *         <li>
@@ -752,19 +759,19 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on the supported operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *         For more information about the supported operating systems, see <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *         Operating Systems</a>.
      *         </p>
      *         <p>
      *         The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *         you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want
      *         to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
-     *         on the supported operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
-     *         AMIs</a>.
+     *         about supported operating systems, see <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *         Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.
      */
 
     public String getOs() {
@@ -778,8 +785,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     * <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -790,7 +798,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -813,18 +821,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * For more information about the supported operating systems, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * 
@@ -833,8 +841,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>,
+     *        <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -845,7 +855,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CentOS 7</code>
+     *        <code>CentOS Linux 7</code>
      *        </p>
      *        </li>
      *        <li>
@@ -868,18 +878,18 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        For more information about the supported operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to
-     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information on
-     *        the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>For more information on how to use custom AMIs with AWS OpsWorks, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
+     *        about supported operating systems, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
+     *        Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -893,7 +903,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating
      * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * <note>
@@ -905,7 +915,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param amiId
      *        A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported
      *        operating systems. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.</p> <note>
      *        <p>
      *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
@@ -920,7 +930,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating
      * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * <note>
@@ -931,8 +941,8 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported
      *         operating systems. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
-     *         AMIs</a>.</p> <note>
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
+     *         Custom AMIs</a>.</p> <note>
      *         <p>
      *         If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
      *         </p>
@@ -946,7 +956,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating
      * systems. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * <note>
@@ -958,7 +968,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param amiId
      *        A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported
      *        operating systems. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.</p> <note>
      *        <p>
      *        If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
@@ -1014,12 +1024,12 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -1029,11 +1039,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The instance Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getAvailabilityZone() {
@@ -1043,12 +1053,12 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,12 +1110,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the
-     * stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     * stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.
      * </p>
      * 
      * @param subnetId
      *        The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override
-     *        the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     *        the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different
+     *        subnet.
      */
 
     public void setSubnetId(String subnetId) {
@@ -1115,11 +1126,12 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the
-     * stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     * stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.
      * </p>
      * 
      * @return The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override
-     *         the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     *         the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different
+     *         subnet.
      */
 
     public String getSubnetId() {
@@ -1129,12 +1141,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the
-     * stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     * stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.
      * </p>
      * 
      * @param subnetId
      *        The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override
-     *        the stack's default subnet ID value and direct AWS OpsWorks to launch the instance in a different subnet.
+     *        the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different
+     *        subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1147,13 +1160,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
      *        The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily
      *        support both architectures. For a list of the architectures that are supported by the different instance
-     *        types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *        types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *        Families and Types</a>.
      * @see Architecture
      */
@@ -1166,12 +1179,12 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @return The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily
      *         support both architectures. For a list of the architectures that are supported by the different instance
-     *         types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *         Families and Types</a>.
      * @see Architecture
      */
@@ -1184,13 +1197,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
      *        The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily
      *        support both architectures. For a list of the architectures that are supported by the different instance
-     *        types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *        types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *        Families and Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
@@ -1205,52 +1218,52 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
      *        The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily
      *        support both architectures. For a list of the architectures that are supported by the different instance
-     *        types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *        types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *        Families and Types</a>.
      * @see Architecture
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
      * <p>
      * The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support
      * both architectures. For a list of the architectures that are supported by the different instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
      * </p>
      * 
      * @param architecture
      *        The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily
      *        support both architectures. For a list of the architectures that are supported by the different instance
-     *        types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *        types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      *        Families and Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Architecture
      */
 
     public CreateInstanceRequest withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1262,12 +1275,12 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @return The instance root device type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1279,13 +1292,13 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
@@ -1299,38 +1312,38 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
 
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
      * <p>
      * The instance root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
     public CreateInstanceRequest withRootDeviceType(RootDeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -1338,14 +1351,14 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * </p>
      * 
      * @return An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     *         Mapping</a>. Note that block device mappings are not supported for custom AMIs.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -1359,14 +1372,14 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      */
 
@@ -1383,7 +1396,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * </p>
      * <p>
@@ -1395,7 +1408,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1414,14 +1427,14 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      * Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * </p>
      * 
      * @param blockDeviceMappings
      *        An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
      *        Mapping</a>. Note that block device mappings are not supported for custom AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1605,7 +1618,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1616,7 +1629,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
+     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then
      * automatically installs that version on the instance.
      * </p>
      * </li>
@@ -1624,11 +1637,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following options:</p>
+     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1638,15 +1651,15 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
-     *        To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the instance.
+     *        To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks
+     *        Stacks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *        version number, not the abbreviated number shown on the console. For a list of available agent version
-     *        numbers, call <a>DescribeAgentVersions</a>.
+     *        numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -1655,7 +1668,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1666,7 +1679,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
+     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then
      * automatically installs that version on the instance.
      * </p>
      * </li>
@@ -1674,10 +1687,10 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      * </p>
      * 
-     * @return The default AWS OpsWorks agent version. You have the following options:</p>
+     * @return The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1688,14 +1701,14 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         <i>version_number</i> - Use the specified agent version. This value overrides the stack's default
      *         setting. To update the agent version, edit the instance configuration and specify a new version. AWS
-     *         OpsWorks then automatically installs that version on the instance.
+     *         OpsWorks Stacks then automatically installs that version on the instance.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *         version number, not the abbreviated number shown on the console. For a list of available agent version
-     *         numbers, call <a>DescribeAgentVersions</a>.
+     *         numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      */
 
     public String getAgentVersion() {
@@ -1704,7 +1717,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1715,7 +1728,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
+     * update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then
      * automatically installs that version on the instance.
      * </p>
      * </li>
@@ -1723,11 +1736,11 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
-     * <a>DescribeAgentVersions</a>.
+     * <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following options:</p>
+     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1737,15 +1750,15 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
-     *        To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks then
-     *        automatically installs that version on the instance.
+     *        To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks
+     *        Stacks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *        version number, not the abbreviated number shown on the console. For a list of available agent version
-     *        numbers, call <a>DescribeAgentVersions</a>.
+     *        numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1763,7 +1776,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and
      * <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about
      * dedicated instances, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
      * <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.
      * </p>
      * 
@@ -1776,7 +1789,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a
      *        href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information
      *        about dedicated instances, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
      *        Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2
      *        Dedicated Instances</a>.
      */
@@ -1794,7 +1807,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and
      * <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about
      * dedicated instances, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
      * <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.
      * </p>
      * 
@@ -1806,7 +1819,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a
      *         href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information
      *         about dedicated instances, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
      *         Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2
      *         Dedicated Instances</a>.
      */
@@ -1824,7 +1837,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and
      * <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about
      * dedicated instances, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and
      * <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.
      * </p>
      * 
@@ -1837,7 +1850,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a
      *        href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information
      *        about dedicated instances, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated
      *        Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2
      *        Dedicated Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1849,7 +1862,8 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

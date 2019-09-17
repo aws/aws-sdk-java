@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -201,6 +201,11 @@ public interface Headers {
      */
     public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID = "x-amz-server-side-encryption-aws-kms-key-id";
 
+    /**
+     * AWS KMS Encryption Context to use for object encryption
+     */
+    public static final String SERVER_SIDE_ENCRYPTION_AWS_KMS_CONTEXT= "x-amz-server-side-encryption-context";
+
     /** Header for the replication status of an Amazon S3 Object.*/
     public static final String OBJECT_REPLICATION_STATUS = "x-amz-replication-status";
 
@@ -226,4 +231,20 @@ public interface Headers {
     public static final String S3_TAGGING_COUNT = "x-amz-tagging-count";
 
     public static final String TAGGING_DIRECTIVE = "x-amz-tagging-directive";
+
+    public static final String REMOVE_SELF_BUCKET_ACCESS = "x-amz-confirm-remove-self-bucket-access";
+
+    public static final String S3_RESTORE_OUTPUT_PATH = "x-amz-restore-output-path";
+
+    public static final String OBJECT_LOCK_MODE = "x-amz-object-lock-mode";
+
+    public static final String OBJECT_LOCK_RETAIN_UNTIL_DATE = "x-amz-object-lock-retain-until-date";
+
+    public static final String OBJECT_LOCK_LEGAL_HOLD_STATUS = "x-amz-object-lock-legal-hold";
+
+    public static final String OBJECT_LOCK_TOKEN = "x-amz-bucket-object-lock-token";
+
+    public static final String OBJECT_LOCK_ENABLED_FOR_BUCKET = "x-amz-bucket-object-lock-enabled";
+
+    public static final String BYPASS_GOVERNANCE_RETENTION = "x-amz-bypass-governance-retention";
 }

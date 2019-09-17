@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,59 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies data for one or more attributes that describe the user who's associated with an endpoint.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointUser" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointUser implements Serializable, Cloneable {
+public class EndpointUser implements Serializable, Cloneable, StructuredPojo {
 
-    /** Custom attributesd specific to the user. */
+    /**
+     * <p>
+     * One or more custom attributes that describe the user by associating a name with an array of values. For example,
+     * the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use these attributes
+     * as filter criteria when you create segments.
+     * </p>
+     * <p>
+     * When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:),
+     * question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that
+     * contain these characters. This limitation doesn't apply to attribute values.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> userAttributes;
-    /** The unique ID of the user. */
+    /**
+     * <p>
+     * The unique identifier for the user.
+     * </p>
+     */
     private String userId;
 
     /**
-     * Custom attributesd specific to the user.
+     * <p>
+     * One or more custom attributes that describe the user by associating a name with an array of values. For example,
+     * the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use these attributes
+     * as filter criteria when you create segments.
+     * </p>
+     * <p>
+     * When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:),
+     * question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that
+     * contain these characters. This limitation doesn't apply to attribute values.
+     * </p>
      * 
-     * @return Custom attributesd specific to the user.
+     * @return One or more custom attributes that describe the user by associating a name with an array of values. For
+     *         example, the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use
+     *         these attributes as filter criteria when you create segments.</p>
+     *         <p>
+     *         When you define the name of a custom attribute, avoid using the following characters: number sign (#),
+     *         colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display
+     *         attribute names that contain these characters. This limitation doesn't apply to attribute values.
      */
 
     public java.util.Map<String, java.util.List<String>> getUserAttributes() {
@@ -34,10 +74,25 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * Custom attributesd specific to the user.
+     * <p>
+     * One or more custom attributes that describe the user by associating a name with an array of values. For example,
+     * the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use these attributes
+     * as filter criteria when you create segments.
+     * </p>
+     * <p>
+     * When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:),
+     * question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that
+     * contain these characters. This limitation doesn't apply to attribute values.
+     * </p>
      * 
      * @param userAttributes
-     *        Custom attributesd specific to the user.
+     *        One or more custom attributes that describe the user by associating a name with an array of values. For
+     *        example, the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use
+     *        these attributes as filter criteria when you create segments.</p>
+     *        <p>
+     *        When you define the name of a custom attribute, avoid using the following characters: number sign (#),
+     *        colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display
+     *        attribute names that contain these characters. This limitation doesn't apply to attribute values.
      */
 
     public void setUserAttributes(java.util.Map<String, java.util.List<String>> userAttributes) {
@@ -45,10 +100,25 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * Custom attributesd specific to the user.
+     * <p>
+     * One or more custom attributes that describe the user by associating a name with an array of values. For example,
+     * the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use these attributes
+     * as filter criteria when you create segments.
+     * </p>
+     * <p>
+     * When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:),
+     * question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that
+     * contain these characters. This limitation doesn't apply to attribute values.
+     * </p>
      * 
      * @param userAttributes
-     *        Custom attributesd specific to the user.
+     *        One or more custom attributes that describe the user by associating a name with an array of values. For
+     *        example, the value of an attribute named Interests might be: ["science", "music", "travel"]. You can use
+     *        these attributes as filter criteria when you create segments.</p>
+     *        <p>
+     *        When you define the name of a custom attribute, avoid using the following characters: number sign (#),
+     *        colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display
+     *        attribute names that contain these characters. This limitation doesn't apply to attribute values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +149,12 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
      * @param userId
-     *        The unique ID of the user.
+     *        The unique identifier for the user.
      */
 
     public void setUserId(String userId) {
@@ -90,9 +162,11 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
-     * @return The unique ID of the user.
+     * @return The unique identifier for the user.
      */
 
     public String getUserId() {
@@ -100,10 +174,12 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * The unique ID of the user.
+     * <p>
+     * The unique identifier for the user.
+     * </p>
      * 
      * @param userId
-     *        The unique ID of the user.
+     *        The unique identifier for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +189,8 @@ public class EndpointUser implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,5 +246,11 @@ public class EndpointUser implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointUserMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

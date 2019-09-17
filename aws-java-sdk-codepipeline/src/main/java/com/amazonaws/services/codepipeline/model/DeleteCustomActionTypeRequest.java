@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a delete custom action operation. The custom action will be marked as deleted.
+ * Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType"
@@ -101,7 +101,7 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setCategory(ActionCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -116,7 +116,7 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DeleteCustomActionTypeRequest withCategory(ActionCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 
@@ -201,7 +201,8 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

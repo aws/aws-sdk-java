@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains information about the request to get a geo location.
+ * A request for information about whether a specified geographic location is supported for Amazon Route 53 geolocation
+ * resource record sets.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation" target="_top">AWS API
@@ -81,9 +82,9 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
-     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
-     * <code>CountryCode</code>.
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      */
     private String subdivisionCode;
@@ -396,16 +397,16 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
-     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
-     * <code>CountryCode</code>.
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
      * @param subdivisionCode
      *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
-     *        doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must
-     *        also specify <code>CountryCode</code>.
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *        support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *        specify <code>countrycode</code>.
      */
 
     public void setSubdivisionCode(String subdivisionCode) {
@@ -415,15 +416,15 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
-     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
-     * <code>CountryCode</code>.
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
      * @return Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
-     *         doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you
-     *         must also specify <code>CountryCode</code>.
+     *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *         support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *         specify <code>countrycode</code>.
      */
 
     public String getSubdivisionCode() {
@@ -433,16 +434,16 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't
-     * support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must also specify
-     * <code>CountryCode</code>.
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't support
+     * subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>.
      * </p>
      * 
      * @param subdivisionCode
      *        Amazon Route 53 uses the one- to three-letter subdivision codes that are specified in <a
-     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Amazon Route 53
-     *        doesn't support subdivision codes for all countries. If you specify <code>SubdivisionCode</code>, you must
-     *        also specify <code>CountryCode</code>.
+     *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>. Route 53 doesn't
+     *        support subdivision codes for all countries. If you specify <code>subdivisioncode</code>, you must also
+     *        specify <code>countrycode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,7 +453,8 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.elasticsearch.AWSElasticsearchClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -61,6 +64,7 @@ import com.amazonaws.services.elasticsearch.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSElasticsearchClient extends AmazonWebServiceClient implements AWSElasticsearch {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -72,36 +76,38 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.DisabledOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.BaseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.InternalException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.BaseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.InternalExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class));
 
     /**
@@ -188,6 +194,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     public AWSElasticsearchClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -253,7 +260,12 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AWSElasticsearchClientBuilder builder() {
+        return AWSElasticsearchClientBuilder.standard();
     }
 
     /**
@@ -267,8 +279,23 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      *        Object providing client parameters.
      */
     AWSElasticsearchClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Elasticsearch Service using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSElasticsearchClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -308,7 +335,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.AddTags
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -319,15 +352,88 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
+     * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+     * state.
+     * </p>
+     * 
+     * @param cancelElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code>
+     *        operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software
+     *        update on.
+     * @return Result of the CancelElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.CancelElasticsearchServiceSoftwareUpdate
+     */
+    @Override
+    public CancelElasticsearchServiceSoftwareUpdateResult cancelElasticsearchServiceSoftwareUpdate(CancelElasticsearchServiceSoftwareUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelElasticsearchServiceSoftwareUpdate(request);
+    }
+
+    @SdkInternalApi
+    final CancelElasticsearchServiceSoftwareUpdateResult executeCancelElasticsearchServiceSoftwareUpdate(
+            CancelElasticsearchServiceSoftwareUpdateRequest cancelElasticsearchServiceSoftwareUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelElasticsearchServiceSoftwareUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelElasticsearchServiceSoftwareUpdateRequest> request = null;
+        Response<CancelElasticsearchServiceSoftwareUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelElasticsearchServiceSoftwareUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelElasticsearchServiceSoftwareUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelElasticsearchServiceSoftwareUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelElasticsearchServiceSoftwareUpdateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CancelElasticsearchServiceSoftwareUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -368,7 +474,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.CreateElasticsearchDomain
      */
     @Override
-    public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
+    public CreateElasticsearchDomainResult createElasticsearchDomain(CreateElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final CreateElasticsearchDomainResult executeCreateElasticsearchDomain(CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -379,9 +491,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateElasticsearchDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createElasticsearchDomainRequest));
+                request = new CreateElasticsearchDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateElasticsearchDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -421,7 +539,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DeleteElasticsearchDomain
      */
     @Override
-    public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
+    public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteElasticsearchDomainResult executeDeleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -432,9 +556,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteElasticsearchDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteElasticsearchDomainRequest));
+                request = new DeleteElasticsearchDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteElasticsearchDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +572,71 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteElasticsearchDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion
+     * will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before
+     * deleting the role. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+     * target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service
+     * Domains</i>.
+     * </p>
+     * 
+     * @param deleteElasticsearchServiceRoleRequest
+     * @return Result of the DeleteElasticsearchServiceRole operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DeleteElasticsearchServiceRole
+     */
+    @Override
+    public DeleteElasticsearchServiceRoleResult deleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteElasticsearchServiceRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteElasticsearchServiceRoleResult executeDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteElasticsearchServiceRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteElasticsearchServiceRoleRequest> request = null;
+        Response<DeleteElasticsearchServiceRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteElasticsearchServiceRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteElasticsearchServiceRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteElasticsearchServiceRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchServiceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteElasticsearchServiceRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -473,7 +668,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomain
      */
     @Override
-    public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
+    public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainResult executeDescribeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -484,10 +685,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeElasticsearchDomainRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeElasticsearchDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticsearchDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -527,7 +733,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomainConfig
      */
     @Override
-    public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
+    public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(DescribeElasticsearchDomainConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomainConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainConfigResult executeDescribeElasticsearchDomainConfig(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainConfigRequest);
@@ -539,10 +751,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainConfigRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeElasticsearchDomainConfigRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticsearchDomainConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,7 +797,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.DescribeElasticsearchDomains
      */
     @Override
-    public DescribeElasticsearchDomainsResult describeElasticsearchDomains(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
+    public DescribeElasticsearchDomainsResult describeElasticsearchDomains(DescribeElasticsearchDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchDomains(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchDomainsResult executeDescribeElasticsearchDomains(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -591,10 +814,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticsearchDomainsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeElasticsearchDomainsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeElasticsearchDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticsearchDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -602,6 +830,404 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeElasticsearchDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @return Result of the DescribeElasticsearchInstanceTypeLimits operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchInstanceTypeLimits
+     */
+    @Override
+    public DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticsearchInstanceTypeLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticsearchInstanceTypeLimitsResult executeDescribeElasticsearchInstanceTypeLimits(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeElasticsearchInstanceTypeLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeElasticsearchInstanceTypeLimitsRequest> request = null;
+        Response<DescribeElasticsearchInstanceTypeLimitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeElasticsearchInstanceTypeLimitsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeElasticsearchInstanceTypeLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticsearchInstanceTypeLimits");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeElasticsearchInstanceTypeLimitsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeElasticsearchInstanceTypeLimitsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @return Result of the DescribeReservedElasticsearchInstanceOfferings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstanceOfferings
+     */
+    @Override
+    public DescribeReservedElasticsearchInstanceOfferingsResult describeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedElasticsearchInstanceOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedElasticsearchInstanceOfferingsResult executeDescribeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedElasticsearchInstanceOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedElasticsearchInstanceOfferingsRequest> request = null;
+        Response<DescribeReservedElasticsearchInstanceOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedElasticsearchInstanceOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReservedElasticsearchInstanceOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedElasticsearchInstanceOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedElasticsearchInstanceOfferingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReservedElasticsearchInstanceOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @return Result of the DescribeReservedElasticsearchInstances operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstances
+     */
+    @Override
+    public DescribeReservedElasticsearchInstancesResult describeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedElasticsearchInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedElasticsearchInstancesResult executeDescribeReservedElasticsearchInstances(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedElasticsearchInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedElasticsearchInstancesRequest> request = null;
+        Response<DescribeReservedElasticsearchInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedElasticsearchInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReservedElasticsearchInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedElasticsearchInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedElasticsearchInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReservedElasticsearchInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a
+     * <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
+     * </p>
+     * 
+     * @param getCompatibleElasticsearchVersionsRequest
+     *        Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
+     * @return Result of the GetCompatibleElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetCompatibleElasticsearchVersions
+     */
+    @Override
+    public GetCompatibleElasticsearchVersionsResult getCompatibleElasticsearchVersions(GetCompatibleElasticsearchVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCompatibleElasticsearchVersions(request);
+    }
+
+    @SdkInternalApi
+    final GetCompatibleElasticsearchVersionsResult executeGetCompatibleElasticsearchVersions(
+            GetCompatibleElasticsearchVersionsRequest getCompatibleElasticsearchVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCompatibleElasticsearchVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCompatibleElasticsearchVersionsRequest> request = null;
+        Response<GetCompatibleElasticsearchVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCompatibleElasticsearchVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCompatibleElasticsearchVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCompatibleElasticsearchVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCompatibleElasticsearchVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCompatibleElasticsearchVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeHistoryRequest
+     *        Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
+     * @return Result of the GetUpgradeHistory operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetUpgradeHistory
+     */
+    @Override
+    public GetUpgradeHistoryResult getUpgradeHistory(GetUpgradeHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUpgradeHistory(request);
+    }
+
+    @SdkInternalApi
+    final GetUpgradeHistoryResult executeGetUpgradeHistory(GetUpgradeHistoryRequest getUpgradeHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUpgradeHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUpgradeHistoryRequest> request = null;
+        Response<GetUpgradeHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUpgradeHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUpgradeHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUpgradeHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUpgradeHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUpgradeHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeStatusRequest
+     *        Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.
+     * @return Result of the GetUpgradeStatus operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.GetUpgradeStatus
+     */
+    @Override
+    public GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUpgradeStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetUpgradeStatusResult executeGetUpgradeStatus(GetUpgradeStatusRequest getUpgradeStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUpgradeStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUpgradeStatusRequest> request = null;
+        Response<GetUpgradeStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUpgradeStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUpgradeStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUpgradeStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUpgradeStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUpgradeStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -626,7 +1252,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListDomainNames
      */
     @Override
-    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
+    public ListDomainNamesResult listDomainNames(ListDomainNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainNames(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainNamesResult executeListDomainNames(ListDomainNamesRequest listDomainNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -637,15 +1269,154 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainNamesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainNamesRequest));
+                request = new ListDomainNamesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainNames");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDomainNamesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainNamesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @return Result of the ListElasticsearchInstanceTypes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchInstanceTypes
+     */
+    @Override
+    public ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListElasticsearchInstanceTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListElasticsearchInstanceTypesResult executeListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listElasticsearchInstanceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListElasticsearchInstanceTypesRequest> request = null;
+        Response<ListElasticsearchInstanceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListElasticsearchInstanceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listElasticsearchInstanceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListElasticsearchInstanceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListElasticsearchInstanceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListElasticsearchInstanceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @return Result of the ListElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchVersions
+     */
+    @Override
+    public ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListElasticsearchVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListElasticsearchVersionsResult executeListElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listElasticsearchVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListElasticsearchVersionsRequest> request = null;
+        Response<ListElasticsearchVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListElasticsearchVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listElasticsearchVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListElasticsearchVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListElasticsearchVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListElasticsearchVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -677,7 +1448,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.ListTags
      */
     @Override
-    public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+    public ListTagsResult listTags(ListTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTags(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsResult executeListTags(ListTagsRequest listTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -688,15 +1465,91 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
+                request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @return Result of the PurchaseReservedElasticsearchInstanceOffering operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.PurchaseReservedElasticsearchInstanceOffering
+     */
+    @Override
+    public PurchaseReservedElasticsearchInstanceOfferingResult purchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseReservedElasticsearchInstanceOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseReservedElasticsearchInstanceOfferingResult executePurchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedElasticsearchInstanceOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseReservedElasticsearchInstanceOfferingRequest> request = null;
+        Response<PurchaseReservedElasticsearchInstanceOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseReservedElasticsearchInstanceOfferingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(purchaseReservedElasticsearchInstanceOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedElasticsearchInstanceOffering");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PurchaseReservedElasticsearchInstanceOfferingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PurchaseReservedElasticsearchInstanceOfferingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -726,7 +1579,13 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.RemoveTags
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -737,15 +1596,85 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Schedules a service software update for an Amazon ES domain.
+     * </p>
+     * 
+     * @param startElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation.
+     *        Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+     * @return Result of the StartElasticsearchServiceSoftwareUpdate operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.StartElasticsearchServiceSoftwareUpdate
+     */
+    @Override
+    public StartElasticsearchServiceSoftwareUpdateResult startElasticsearchServiceSoftwareUpdate(StartElasticsearchServiceSoftwareUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartElasticsearchServiceSoftwareUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartElasticsearchServiceSoftwareUpdateResult executeStartElasticsearchServiceSoftwareUpdate(
+            StartElasticsearchServiceSoftwareUpdateRequest startElasticsearchServiceSoftwareUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startElasticsearchServiceSoftwareUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartElasticsearchServiceSoftwareUpdateRequest> request = null;
+        Response<StartElasticsearchServiceSoftwareUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartElasticsearchServiceSoftwareUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startElasticsearchServiceSoftwareUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartElasticsearchServiceSoftwareUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartElasticsearchServiceSoftwareUpdateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartElasticsearchServiceSoftwareUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -784,7 +1713,14 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * @sample AWSElasticsearch.UpdateElasticsearchDomainConfig
      */
     @Override
-    public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
+    public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateElasticsearchDomainConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateElasticsearchDomainConfigResult executeUpdateElasticsearchDomainConfig(
+            UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -795,10 +1731,15 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticsearchDomainConfigRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateElasticsearchDomainConfigRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateElasticsearchDomainConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateElasticsearchDomainConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,6 +1747,75 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<UpdateElasticsearchDomainConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateElasticsearchDomainConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch
+     * version.
+     * </p>
+     * 
+     * @param upgradeElasticsearchDomainRequest
+     *        Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
+     * @return Result of the UpgradeElasticsearchDomain operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.UpgradeElasticsearchDomain
+     */
+    @Override
+    public UpgradeElasticsearchDomainResult upgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpgradeElasticsearchDomain(request);
+    }
+
+    @SdkInternalApi
+    final UpgradeElasticsearchDomainResult executeUpgradeElasticsearchDomain(UpgradeElasticsearchDomainRequest upgradeElasticsearchDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(upgradeElasticsearchDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpgradeElasticsearchDomainRequest> request = null;
+        Response<UpgradeElasticsearchDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpgradeElasticsearchDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(upgradeElasticsearchDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpgradeElasticsearchDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpgradeElasticsearchDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpgradeElasticsearchDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -840,9 +1850,18 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -852,7 +1871,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -860,13 +1879,27 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

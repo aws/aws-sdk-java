@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      */
     private String autoScalingGroupName;
@@ -46,28 +46,34 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      */
     private String lifecycleState;
     /**
      * <p>
      * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
+     * replace it.
      * </p>
      */
     private String healthStatus;
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      */
     private String launchConfigurationName;
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * The launch template for the instance.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      */
     private Boolean protectedFromScaleIn;
@@ -114,11 +120,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with the instance.
+     *        The name of the Auto Scaling group for the instance.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -127,10 +133,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
-     * @return The name of the Auto Scaling group associated with the instance.
+     * @return The name of the Auto Scaling group for the instance.
      */
 
     public String getAutoScalingGroupName() {
@@ -139,11 +145,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with the instance.
+     *        The name of the Auto Scaling group for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,15 +200,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     *        Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     *        The lifecycle state for the instance.
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -211,14 +213,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
-     * @return The lifecycle state for the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
-     *         Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * @return The lifecycle state for the instance.
      */
 
     public String getLifecycleState() {
@@ -227,15 +225,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * The lifecycle state for the instance.
      * </p>
      * 
      * @param lifecycleState
-     *        The lifecycle state for the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     *        Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     *        The lifecycle state for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,13 +241,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
      * @param healthStatus
      *        The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
-     *        replace it.
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
+     *        terminate and replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -263,12 +258,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
      * @return The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *         remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
-     *         replace it.
+     *         remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
+     *         terminate and replace it.
      */
 
     public String getHealthStatus() {
@@ -278,13 +274,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and replace it.
+     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
+     * replace it.
      * </p>
      * 
      * @param healthStatus
      *        The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Auto Scaling should terminate and
-     *        replace it.
+     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
+     *        terminate and replace it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +292,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The launch configuration associated with the instance.
+     *        The launch configuration used to launch the instance. This value is not available if you attached the
+     *        instance to the Auto Scaling group.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -308,10 +307,12 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
-     * @return The launch configuration associated with the instance.
+     * @return The launch configuration used to launch the instance. This value is not available if you attached the
+     *         instance to the Auto Scaling group.
      */
 
     public String getLaunchConfigurationName() {
@@ -320,11 +321,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The launch configuration associated with the instance.
+     *        The launch configuration used to launch the instance. This value is not available if you attached the
+     *        instance to the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +338,51 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template for the instance.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @return The launch template for the instance.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingInstanceDetails withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
@@ -348,10 +391,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean getProtectedFromScaleIn() {
@@ -360,11 +403,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
      * @param protectedFromScaleIn
-     *        Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,10 +418,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      * </p>
      * 
-     * @return Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
+     * @return Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.
      */
 
     public Boolean isProtectedFromScaleIn() {
@@ -386,7 +429,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -408,6 +452,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getProtectedFromScaleIn() != null)
             sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn());
         sb.append("}");
@@ -448,6 +494,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             return false;
         if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
         if (other.getProtectedFromScaleIn() == null ^ this.getProtectedFromScaleIn() == null)
             return false;
         if (other.getProtectedFromScaleIn() != null && other.getProtectedFromScaleIn().equals(this.getProtectedFromScaleIn()) == false)
@@ -466,6 +516,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLifecycleState() == null) ? 0 : getLifecycleState().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getProtectedFromScaleIn() == null) ? 0 : getProtectedFromScaleIn().hashCode());
         return hashCode;
     }
@@ -478,4 +529,5 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

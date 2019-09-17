@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request) {
+
+        return connectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConnectCustomKeyStoreRequest, ConnectCustomKeyStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
@@ -48,6 +61,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(CreateCustomKeyStoreRequest request) {
+
+        return createCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(CreateCustomKeyStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomKeyStoreRequest, CreateCustomKeyStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +120,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #createKeyAsync(CreateKeyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
 
         return createKeyAsync(new CreateKeyRequest(), asyncHandler);
@@ -126,6 +153,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request) {
+
+        return deleteCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomKeyStoreRequest, DeleteCustomKeyStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request) {
 
         return deleteImportedKeyMaterialAsync(request, null);
@@ -134,6 +174,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteImportedKeyMaterialRequest, DeleteImportedKeyMaterialResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request) {
+
+        return describeCustomKeyStoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCustomKeyStoresRequest, DescribeCustomKeyStoresResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,6 +226,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<DisableKeyRotationResult> disableKeyRotationAsync(DisableKeyRotationRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableKeyRotationRequest, DisableKeyRotationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request) {
+
+        return disconnectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisconnectCustomKeyStoreRequest, DisconnectCustomKeyStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -273,6 +339,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #generateRandomAsync(GenerateRandomRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GenerateRandomResult> generateRandomAsync(
             com.amazonaws.handlers.AsyncHandler<GenerateRandomRequest, GenerateRandomResult> asyncHandler) {
 
@@ -360,6 +427,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #listAliasesAsync(ListAliasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler) {
 
@@ -421,9 +489,23 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #listKeysAsync(ListKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListKeysResult> listKeysAsync(com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
 
         return listKeysAsync(new ListKeysRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(ListResourceTagsRequest request) {
+
+        return listResourceTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTagsResult> listResourceTagsAsync(ListResourceTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceTagsRequest, ListResourceTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -494,6 +576,7 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
      *
      * @see #retireGrantAsync(RetireGrantRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
             com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
 
@@ -527,6 +610,32 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest request) {
 
         return updateAliasAsync(request, null);
@@ -535,6 +644,19 @@ public class AbstractAWSKMSAsync extends AbstractAWSKMS implements AWSKMSAsync {
     @Override
     public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(UpdateAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request) {
+
+        return updateCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomKeyStoreRequest, UpdateCustomKeyStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

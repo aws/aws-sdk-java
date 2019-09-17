@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,19 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private String vpcEndpointId;
     /**
      * <p>
+     * The type of endpoint.
+     * </p>
+     */
+    private String vpcEndpointType;
+    /**
+     * <p>
      * The ID of the VPC to which the endpoint is associated.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      */
     private String serviceName;
@@ -52,22 +58,70 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The policy document associated with the endpoint.
+     * The policy document associated with the endpoint, if applicable.
      * </p>
      */
     private String policyDocument;
     /**
      * <p>
-     * One or more route tables associated with the endpoint.
+     * (Gateway endpoint) One or more route tables associated with the endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
+    /**
+     * <p>
+     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> subnetIds;
+    /**
+     * <p>
+     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier> groups;
+    /**
+     * <p>
+     * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * </p>
+     */
+    private Boolean privateDnsEnabled;
+    /**
+     * <p>
+     * Indicates whether the VPC endpoint is being managed by its service.
+     * </p>
+     */
+    private Boolean requesterManaged;
+    /**
+     * <p>
+     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> networkInterfaceIds;
+    /**
+     * <p>
+     * (Interface endpoint) The DNS entries for the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DnsEntry> dnsEntries;
     /**
      * <p>
      * The date and time the VPC endpoint was created.
      * </p>
      */
     private java.util.Date creationTimestamp;
+    /**
+     * <p>
+     * Any tags assigned to the VPC endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
@@ -106,6 +160,79 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     public VpcEndpoint withVpcEndpointId(String vpcEndpointId) {
         setVpcEndpointId(vpcEndpointId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointType
+     *        The type of endpoint.
+     * @see VpcEndpointType
+     */
+
+    public void setVpcEndpointType(String vpcEndpointType) {
+        this.vpcEndpointType = vpcEndpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint.
+     * </p>
+     * 
+     * @return The type of endpoint.
+     * @see VpcEndpointType
+     */
+
+    public String getVpcEndpointType() {
+        return this.vpcEndpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointType
+     *        The type of endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VpcEndpointType
+     */
+
+    public VpcEndpoint withVpcEndpointType(String vpcEndpointType) {
+        setVpcEndpointType(vpcEndpointType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointType
+     *        The type of endpoint.
+     * @see VpcEndpointType
+     */
+
+    public void setVpcEndpointType(VpcEndpointType vpcEndpointType) {
+        withVpcEndpointType(vpcEndpointType);
+    }
+
+    /**
+     * <p>
+     * The type of endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointType
+     *        The type of endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VpcEndpointType
+     */
+
+    public VpcEndpoint withVpcEndpointType(VpcEndpointType vpcEndpointType) {
+        this.vpcEndpointType = vpcEndpointType.toString();
         return this;
     }
 
@@ -151,11 +278,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
+     *        The name of the service to which the endpoint is associated.
      */
 
     public void setServiceName(String serviceName) {
@@ -164,10 +291,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
-     * @return The name of the AWS service to which the endpoint is associated.
+     * @return The name of the service to which the endpoint is associated.
      */
 
     public String getServiceName() {
@@ -176,11 +303,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service to which the endpoint is associated.
+     * The name of the service to which the endpoint is associated.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
+     *        The name of the service to which the endpoint is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,7 +370,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      */
 
     public void setState(State state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -258,17 +385,17 @@ public class VpcEndpoint implements Serializable, Cloneable {
      */
 
     public VpcEndpoint withState(State state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
      * <p>
-     * The policy document associated with the endpoint.
+     * The policy document associated with the endpoint, if applicable.
      * </p>
      * 
      * @param policyDocument
-     *        The policy document associated with the endpoint.
+     *        The policy document associated with the endpoint, if applicable.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -277,10 +404,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy document associated with the endpoint.
+     * The policy document associated with the endpoint, if applicable.
      * </p>
      * 
-     * @return The policy document associated with the endpoint.
+     * @return The policy document associated with the endpoint, if applicable.
      */
 
     public String getPolicyDocument() {
@@ -289,11 +416,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy document associated with the endpoint.
+     * The policy document associated with the endpoint, if applicable.
      * </p>
      * 
      * @param policyDocument
-     *        The policy document associated with the endpoint.
+     *        The policy document associated with the endpoint, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,10 +431,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more route tables associated with the endpoint.
+     * (Gateway endpoint) One or more route tables associated with the endpoint.
      * </p>
      * 
-     * @return One or more route tables associated with the endpoint.
+     * @return (Gateway endpoint) One or more route tables associated with the endpoint.
      */
 
     public java.util.List<String> getRouteTableIds() {
@@ -319,11 +446,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more route tables associated with the endpoint.
+     * (Gateway endpoint) One or more route tables associated with the endpoint.
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) One or more route tables associated with the endpoint.
      */
 
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
@@ -337,7 +464,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more route tables associated with the endpoint.
+     * (Gateway endpoint) One or more route tables associated with the endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -346,7 +473,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) One or more route tables associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,16 +489,412 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more route tables associated with the endpoint.
+     * (Gateway endpoint) One or more route tables associated with the endpoint.
      * </p>
      * 
      * @param routeTableIds
-     *        One or more route tables associated with the endpoint.
+     *        (Gateway endpoint) One or more route tables associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpcEndpoint withRouteTableIds(java.util.Collection<String> routeTableIds) {
         setRouteTableIds(routeTableIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * </p>
+     * 
+     * @return (Interface endpoint) One or more subnets in which the endpoint is located.
+     */
+
+    public java.util.List<String> getSubnetIds() {
+        if (subnetIds == null) {
+            subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return subnetIds;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * </p>
+     * 
+     * @param subnetIds
+     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     */
+
+    public void setSubnetIds(java.util.Collection<String> subnetIds) {
+        if (subnetIds == null) {
+            this.subnetIds = null;
+            return;
+        }
+
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param subnetIds
+     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withSubnetIds(String... subnetIds) {
+        if (this.subnetIds == null) {
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
+        }
+        for (String ele : subnetIds) {
+            this.subnetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more subnets in which the endpoint is located.
+     * </p>
+     * 
+     * @param subnetIds
+     *        (Interface endpoint) One or more subnets in which the endpoint is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withSubnetIds(java.util.Collection<String> subnetIds) {
+        setSubnetIds(subnetIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * </p>
+     * 
+     * @return (Interface endpoint) Information about the security groups associated with the network interface.
+     */
+
+    public java.util.List<SecurityGroupIdentifier> getGroups() {
+        if (groups == null) {
+            groups = new com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier>();
+        }
+        return groups;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * </p>
+     * 
+     * @param groups
+     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     */
+
+    public void setGroups(java.util.Collection<SecurityGroupIdentifier> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+
+        this.groups = new com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier>(groups);
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param groups
+     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withGroups(SecurityGroupIdentifier... groups) {
+        if (this.groups == null) {
+            setGroups(new com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier>(groups.length));
+        }
+        for (SecurityGroupIdentifier ele : groups) {
+            this.groups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * </p>
+     * 
+     * @param groups
+     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withGroups(java.util.Collection<SecurityGroupIdentifier> groups) {
+        setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * </p>
+     * 
+     * @param privateDnsEnabled
+     *        (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     */
+
+    public void setPrivateDnsEnabled(Boolean privateDnsEnabled) {
+        this.privateDnsEnabled = privateDnsEnabled;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * </p>
+     * 
+     * @return (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     */
+
+    public Boolean getPrivateDnsEnabled() {
+        return this.privateDnsEnabled;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * </p>
+     * 
+     * @param privateDnsEnabled
+     *        (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withPrivateDnsEnabled(Boolean privateDnsEnabled) {
+        setPrivateDnsEnabled(privateDnsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     * </p>
+     * 
+     * @return (Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.
+     */
+
+    public Boolean isPrivateDnsEnabled() {
+        return this.privateDnsEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC endpoint is being managed by its service.
+     * </p>
+     * 
+     * @param requesterManaged
+     *        Indicates whether the VPC endpoint is being managed by its service.
+     */
+
+    public void setRequesterManaged(Boolean requesterManaged) {
+        this.requesterManaged = requesterManaged;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC endpoint is being managed by its service.
+     * </p>
+     * 
+     * @return Indicates whether the VPC endpoint is being managed by its service.
+     */
+
+    public Boolean getRequesterManaged() {
+        return this.requesterManaged;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC endpoint is being managed by its service.
+     * </p>
+     * 
+     * @param requesterManaged
+     *        Indicates whether the VPC endpoint is being managed by its service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withRequesterManaged(Boolean requesterManaged) {
+        setRequesterManaged(requesterManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC endpoint is being managed by its service.
+     * </p>
+     * 
+     * @return Indicates whether the VPC endpoint is being managed by its service.
+     */
+
+    public Boolean isRequesterManaged() {
+        return this.requesterManaged;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * </p>
+     * 
+     * @return (Interface endpoint) One or more network interfaces for the endpoint.
+     */
+
+    public java.util.List<String> getNetworkInterfaceIds() {
+        if (networkInterfaceIds == null) {
+            networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return networkInterfaceIds;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     */
+
+    public void setNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
+        if (networkInterfaceIds == null) {
+            this.networkInterfaceIds = null;
+            return;
+        }
+
+        this.networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds);
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaceIds(java.util.Collection)} or {@link #withNetworkInterfaceIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withNetworkInterfaceIds(String... networkInterfaceIds) {
+        if (this.networkInterfaceIds == null) {
+            setNetworkInterfaceIds(new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds.length));
+        }
+        for (String ele : networkInterfaceIds) {
+            this.networkInterfaceIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) One or more network interfaces for the endpoint.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        (Interface endpoint) One or more network interfaces for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
+        setNetworkInterfaceIds(networkInterfaceIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) The DNS entries for the endpoint.
+     * </p>
+     * 
+     * @return (Interface endpoint) The DNS entries for the endpoint.
+     */
+
+    public java.util.List<DnsEntry> getDnsEntries() {
+        if (dnsEntries == null) {
+            dnsEntries = new com.amazonaws.internal.SdkInternalList<DnsEntry>();
+        }
+        return dnsEntries;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) The DNS entries for the endpoint.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        (Interface endpoint) The DNS entries for the endpoint.
+     */
+
+    public void setDnsEntries(java.util.Collection<DnsEntry> dnsEntries) {
+        if (dnsEntries == null) {
+            this.dnsEntries = null;
+            return;
+        }
+
+        this.dnsEntries = new com.amazonaws.internal.SdkInternalList<DnsEntry>(dnsEntries);
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) The DNS entries for the endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnsEntries(java.util.Collection)} or {@link #withDnsEntries(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        (Interface endpoint) The DNS entries for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withDnsEntries(DnsEntry... dnsEntries) {
+        if (this.dnsEntries == null) {
+            setDnsEntries(new com.amazonaws.internal.SdkInternalList<DnsEntry>(dnsEntries.length));
+        }
+        for (DnsEntry ele : dnsEntries) {
+            this.dnsEntries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Interface endpoint) The DNS entries for the endpoint.
+     * </p>
+     * 
+     * @param dnsEntries
+     *        (Interface endpoint) The DNS entries for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withDnsEntries(java.util.Collection<DnsEntry> dnsEntries) {
+        setDnsEntries(dnsEntries);
         return this;
     }
 
@@ -416,7 +939,121 @@ public class VpcEndpoint implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Any tags assigned to the VPC endpoint.
+     * </p>
+     * 
+     * @return Any tags assigned to the VPC endpoint.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC endpoint.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC endpoint.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC endpoint.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the VPC endpoint.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the VPC endpoint.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the VPC endpoint.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -428,6 +1065,8 @@ public class VpcEndpoint implements Serializable, Cloneable {
         sb.append("{");
         if (getVpcEndpointId() != null)
             sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
+        if (getVpcEndpointType() != null)
+            sb.append("VpcEndpointType: ").append(getVpcEndpointType()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getServiceName() != null)
@@ -438,8 +1077,24 @@ public class VpcEndpoint implements Serializable, Cloneable {
             sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRouteTableIds() != null)
             sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
+        if (getSubnetIds() != null)
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
+        if (getGroups() != null)
+            sb.append("Groups: ").append(getGroups()).append(",");
+        if (getPrivateDnsEnabled() != null)
+            sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
+        if (getRequesterManaged() != null)
+            sb.append("RequesterManaged: ").append(getRequesterManaged()).append(",");
+        if (getNetworkInterfaceIds() != null)
+            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
+        if (getDnsEntries() != null)
+            sb.append("DnsEntries: ").append(getDnsEntries()).append(",");
         if (getCreationTimestamp() != null)
-            sb.append("CreationTimestamp: ").append(getCreationTimestamp());
+            sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -457,6 +1112,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
         if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
             return false;
         if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
+            return false;
+        if (other.getVpcEndpointType() == null ^ this.getVpcEndpointType() == null)
+            return false;
+        if (other.getVpcEndpointType() != null && other.getVpcEndpointType().equals(this.getVpcEndpointType()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
@@ -478,9 +1137,41 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
             return false;
+        if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
+            return false;
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+            return false;
+        if (other.getGroups() == null ^ this.getGroups() == null)
+            return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
+        if (other.getPrivateDnsEnabled() == null ^ this.getPrivateDnsEnabled() == null)
+            return false;
+        if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
+            return false;
+        if (other.getRequesterManaged() == null ^ this.getRequesterManaged() == null)
+            return false;
+        if (other.getRequesterManaged() != null && other.getRequesterManaged().equals(this.getRequesterManaged()) == false)
+            return false;
+        if (other.getNetworkInterfaceIds() == null ^ this.getNetworkInterfaceIds() == null)
+            return false;
+        if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
+            return false;
+        if (other.getDnsEntries() == null ^ this.getDnsEntries() == null)
+            return false;
+        if (other.getDnsEntries() != null && other.getDnsEntries().equals(this.getDnsEntries()) == false)
+            return false;
         if (other.getCreationTimestamp() == null ^ this.getCreationTimestamp() == null)
             return false;
         if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
         return true;
     }
@@ -491,12 +1182,21 @@ public class VpcEndpoint implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointType() == null) ? 0 : getVpcEndpointType().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRequesterManaged() == null) ? 0 : getRequesterManaged().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
+        hashCode = prime * hashCode + ((getDnsEntries() == null) ? 0 : getDnsEntries().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 
@@ -508,4 +1208,5 @@ public class VpcEndpoint implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

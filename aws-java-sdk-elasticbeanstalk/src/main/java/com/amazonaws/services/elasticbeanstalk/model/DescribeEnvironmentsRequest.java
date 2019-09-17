@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,25 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Date includedDeletedBackTo;
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of environments to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     * </p>
+     */
+    private Integer maxRecords;
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -477,7 +496,125 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * For a paginated request. Specify a maximum number of environments to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     * </p>
+     * 
+     * @param maxRecords
+     *        For a paginated request. Specify a maximum number of environments to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     */
+
+    public void setMaxRecords(Integer maxRecords) {
+        this.maxRecords = maxRecords;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of environments to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     * </p>
+     * 
+     * @return For a paginated request. Specify a maximum number of environments to include in each response.</p>
+     *         <p>
+     *         If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single
+     *         response.
+     */
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a maximum number of environments to include in each response.
+     * </p>
+     * <p>
+     * If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     * </p>
+     * 
+     * @param maxRecords
+     *        For a paginated request. Specify a maximum number of environments to include in each response.</p>
+     *        <p>
+     *        If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEnvironmentsRequest withMaxRecords(Integer maxRecords) {
+        setMaxRecords(maxRecords);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @return For a paginated request. Specify a token from a previous response page to retrieve the next response
+     *         page. All other parameter values must be identical to the ones specified in the initial request.</p>
+     *         <p>
+     *         If no <code>NextToken</code> is specified, the first page is retrieved.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEnvironmentsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -498,7 +635,11 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
         if (getIncludeDeleted() != null)
             sb.append("IncludeDeleted: ").append(getIncludeDeleted()).append(",");
         if (getIncludedDeletedBackTo() != null)
-            sb.append("IncludedDeletedBackTo: ").append(getIncludedDeletedBackTo());
+            sb.append("IncludedDeletedBackTo: ").append(getIncludedDeletedBackTo()).append(",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +678,14 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getIncludedDeletedBackTo() != null && other.getIncludedDeletedBackTo().equals(this.getIncludedDeletedBackTo()) == false)
             return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +700,8 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getEnvironmentNames() == null) ? 0 : getEnvironmentNames().hashCode());
         hashCode = prime * hashCode + ((getIncludeDeleted() == null) ? 0 : getIncludeDeleted().hashCode());
         hashCode = prime * hashCode + ((getIncludedDeletedBackTo() == null) ? 0 : getIncludedDeletedBackTo().hashCode());
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

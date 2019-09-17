@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elastictranscoder.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,14 +23,14 @@ import javax.annotation.Generated;
  * this playlist.
  * </p>
  * <p>
- * PlayReady DRM encrypts your media files using <code>AES-CTR</code> encryption.
+ * PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
  * </p>
  * <p>
  * If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PlayReadyDrm implements Serializable, Cloneable {
+public class PlayReadyDrm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -449,7 +451,8 @@ public class PlayReadyDrm implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -533,5 +536,11 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elastictranscoder.model.transform.PlayReadyDrmMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

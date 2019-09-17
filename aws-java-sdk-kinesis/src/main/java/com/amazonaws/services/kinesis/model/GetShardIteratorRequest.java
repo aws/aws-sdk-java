@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      */
     private String streamName;
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      */
     private String shardId;
@@ -62,7 +62,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -90,10 +90,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
     private String startingSequenceNumber;
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A
-     * timestamp is the Unix epoch date with precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp
-     * does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
      * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      */
@@ -101,11 +101,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
+     *        The name of the Amazon Kinesis data stream.
      */
 
     public void setStreamName(String streamName) {
@@ -114,10 +114,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
-     * @return The name of the Amazon Kinesis stream.
+     * @return The name of the Amazon Kinesis data stream.
      */
 
     public String getStreamName() {
@@ -126,11 +126,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
+     *        The name of the Amazon Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Amazon Kinesis shard to get the iterator for.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public void setShardId(String shardId) {
@@ -154,10 +154,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
-     * @return The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * @return The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public String getShardId() {
@@ -166,11 +166,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Amazon Kinesis shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Amazon Kinesis shard to get the iterator for.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +201,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -239,7 +239,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      *        <code>Timestamp</code>.
      *        </p>
      *        </li>
@@ -284,7 +284,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -321,7 +321,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     *         AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      *         <code>Timestamp</code>.
      *         </p>
      *         </li>
@@ -366,7 +366,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -404,7 +404,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      *        <code>Timestamp</code>.
      *        </p>
      *        </li>
@@ -451,7 +451,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -489,7 +489,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      *        <code>Timestamp</code>.
      *        </p>
      *        </li>
@@ -509,7 +509,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
-        this.shardIteratorType = shardIteratorType.toString();
+        withShardIteratorType(shardIteratorType);
     }
 
     /**
@@ -534,7 +534,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     * AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      * <code>Timestamp</code>.
      * </p>
      * </li>
@@ -572,7 +572,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value
+     *        AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided in the value
      *        <code>Timestamp</code>.
      *        </p>
      *        </li>
@@ -593,7 +593,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public GetShardIteratorRequest withShardIteratorType(ShardIteratorType shardIteratorType) {
-        setShardIteratorType(shardIteratorType);
+        this.shardIteratorType = shardIteratorType.toString();
         return this;
     }
 
@@ -645,19 +645,19 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A
-     * timestamp is the Unix epoch date with precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp
-     * does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
      * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
-     *        A timestamp is the Unix epoch date with precision in milliseconds. For example,
+     *        The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
+     *        A time stamp is the Unix epoch date with precision in milliseconds. For example,
      *        <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
-     *        timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older
-     *        than the current trim horizon, the iterator returned is for the oldest untrimmed data record
+     *        time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *        older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
      *        (TRIM_HORIZON).
      */
 
@@ -667,18 +667,18 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A
-     * timestamp is the Unix epoch date with precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp
-     * does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
      * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
-     * @return The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
-     *         A timestamp is the Unix epoch date with precision in milliseconds. For example,
+     * @return The time stamp of the data record from which to start reading. Used with shard iterator type
+     *         AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds. For example,
      *         <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
-     *         timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older
-     *         than the current trim horizon, the iterator returned is for the oldest untrimmed data record
+     *         time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *         older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
      *         (TRIM_HORIZON).
      */
 
@@ -688,19 +688,19 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A
-     * timestamp is the Unix epoch date with precision in milliseconds. For example,
-     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp
-     * does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current
+     * The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A time
+     * stamp is the Unix epoch date with precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact time stamp
+     * does not exist, the iterator returned is for the next (later) record. If the time stamp is older than the current
      * trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
-     *        A timestamp is the Unix epoch date with precision in milliseconds. For example,
+     *        The time stamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP.
+     *        A time stamp is the Unix epoch date with precision in milliseconds. For example,
      *        <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact
-     *        timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older
-     *        than the current trim horizon, the iterator returned is for the oldest untrimmed data record
+     *        time stamp does not exist, the iterator returned is for the next (later) record. If the time stamp is
+     *        older than the current trim horizon, the iterator returned is for the oldest untrimmed data record
      *        (TRIM_HORIZON).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -711,7 +711,8 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

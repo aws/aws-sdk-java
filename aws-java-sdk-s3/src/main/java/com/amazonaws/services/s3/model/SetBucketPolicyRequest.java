@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
-import java.io.Serializable;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
+import java.io.Serializable;
 
 /**
  * Sets the policy associated with the specified bucket. Only the owner of
@@ -44,6 +44,8 @@ public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements S
     /** The policy to apply to the specified bucket. */
     private String policyText;
 
+    /** Whether or not this request can remove requester access to the specified bucket */
+    private Boolean confirmRemoveSelfBucketAccess;
 
     /**
      * Creates a new request object, ready to be executed to set an Amazon S3
@@ -58,7 +60,6 @@ public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements S
         this.bucketName = bucketName;
         this.policyText = policyText;
     }
-
 
     /**
      * Returns the name of the Amazon S3 bucket whose policy is being set.
@@ -126,6 +127,33 @@ public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements S
      */
     public SetBucketPolicyRequest withPolicyText(String policyText) {
         setPolicyText(policyText);
+        return this;
+    }
+
+    /**
+     * @return The current value of confirmRemoveSelfBucketAccess.
+     */
+    public Boolean getConfirmRemoveSelfBucketAccess() {
+        return confirmRemoveSelfBucketAccess;
+    }
+
+    /**
+     * Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.
+     *
+     * @param confirmRemoveSelfBucketAccess New value for confirmRemoveSelfBucketAccess.
+     */
+    public void setConfirmRemoveSelfBucketAccess(Boolean confirmRemoveSelfBucketAccess) {
+        this.confirmRemoveSelfBucketAccess = confirmRemoveSelfBucketAccess;
+    }
+
+    /**
+     * Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.
+     *
+     * @param confirmRemoveSelfBucketAccess New value for confirmRemoveSelfBucketAccess.
+     * @return This object for method chaining.
+     */
+    public SetBucketPolicyRequest withConfirmRemoveSelfBucketAccess(Boolean confirmRemoveSelfBucketAccess) {
+        setConfirmRemoveSelfBucketAccess(confirmRemoveSelfBucketAccess);
         return this;
     }
 }

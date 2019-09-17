@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteFunctionRequest Marshaller
+ * DeleteFunctionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteFunctionRequestMarshaller implements Marshaller<Request<DeleteFunctionRequest>, DeleteFunctionRequest> {
+@SdkInternalApi
+public class DeleteFunctionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
 
-    public DeleteFunctionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteFunctionRequestMarshaller instance = new DeleteFunctionRequestMarshaller();
+
+    public static DeleteFunctionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteFunctionRequest> marshall(DeleteFunctionRequest deleteFunctionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteFunctionRequest deleteFunctionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteFunctionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteFunctionRequest> request = new DefaultRequest<DeleteFunctionRequest>(deleteFunctionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", deleteFunctionRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        if (deleteFunctionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils.fromString(deleteFunctionRequest.getQualifier()));
+        try {
+            protocolMarshaller.marshall(deleteFunctionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(deleteFunctionRequest.getQualifier(), QUALIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

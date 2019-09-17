@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
                     context.nextToken();
                     replicationRun.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stageDetails", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setStageDetails(ReplicationRunStageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("statusMessage", targetDepth)) {
                     context.nextToken();
                     replicationRun.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
@@ -70,15 +74,23 @@ public class ReplicationRunJsonUnmarshaller implements Unmarshaller<ReplicationR
                 }
                 if (context.testExpression("scheduledStartTime", targetDepth)) {
                     context.nextToken();
-                    replicationRun.setScheduledStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationRun.setScheduledStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completedTime", targetDepth)) {
                     context.nextToken();
-                    replicationRun.setCompletedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationRun.setCompletedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     replicationRun.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encrypted", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    replicationRun.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineDeclaration implements Serializable, Cloneable {
+public class PipelineDeclaration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,13 +36,36 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      */
     private String roleArn;
-
+    /**
+     * <p>
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     */
     private ArtifactStore artifactStore;
+    /**
+     * <p>
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     */
+    private java.util.Map<String, ArtifactStore> artifactStores;
     /**
      * <p>
      * The stage in which to perform the action.
@@ -97,13 +122,13 @@ public class PipelineDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *        actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *        <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      */
 
     public void setRoleArn(String roleArn) {
@@ -112,12 +137,12 @@ public class PipelineDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *         actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *         <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      */
 
     public String getRoleArn() {
@@ -126,13 +151,13 @@ public class PipelineDeclaration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no actionRoleArn, or to
-     * use to assume roles for actions with an actionRoleArn.
+     * The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
+     * <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no
-     *        actionRoleArn, or to use to assume roles for actions with an actionRoleArn.
+     *        <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +167,23 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
      * @param artifactStore
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      */
 
     public void setArtifactStore(ArtifactStore artifactStore) {
@@ -150,7 +191,22 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
+     * @return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *         <p>
+     *         You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *         you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *         <code>artifactStores</code>.
+     *         </p>
      */
 
     public ArtifactStore getArtifactStore() {
@@ -158,12 +214,128 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
      * @param artifactStore
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PipelineDeclaration withArtifactStore(ArtifactStore artifactStore) {
         setArtifactStore(artifactStore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
+     * @return A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an
+     *         artifact store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
+     *         <p>
+     *         You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *         you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *         <code>artifactStores</code>.
+     *         </p>
+     */
+
+    public java.util.Map<String, ArtifactStore> getArtifactStores() {
+        return artifactStores;
+    }
+
+    /**
+     * <p>
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
+     * @param artifactStores
+     *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
+     *        store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
+     */
+
+    public void setArtifactStores(java.util.Map<String, ArtifactStore> artifactStores) {
+        this.artifactStores = artifactStores;
+    }
+
+    /**
+     * <p>
+     * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
+     * for the pipeline region and for each cross-region action within the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
+     * 
+     * @param artifactStores
+     *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
+     *        store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineDeclaration withArtifactStores(java.util.Map<String, ArtifactStore> artifactStores) {
+        setArtifactStores(artifactStores);
+        return this;
+    }
+
+    public PipelineDeclaration addArtifactStoresEntry(String key, ArtifactStore value) {
+        if (null == this.artifactStores) {
+            this.artifactStores = new java.util.HashMap<String, ArtifactStore>();
+        }
+        if (this.artifactStores.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.artifactStores.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ArtifactStores.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineDeclaration clearArtifactStoresEntries() {
+        this.artifactStores = null;
         return this;
     }
 
@@ -284,7 +456,8 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -300,6 +473,8 @@ public class PipelineDeclaration implements Serializable, Cloneable {
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getArtifactStore() != null)
             sb.append("ArtifactStore: ").append(getArtifactStore()).append(",");
+        if (getArtifactStores() != null)
+            sb.append("ArtifactStores: ").append(getArtifactStores()).append(",");
         if (getStages() != null)
             sb.append("Stages: ").append(getStages()).append(",");
         if (getVersion() != null)
@@ -330,6 +505,10 @@ public class PipelineDeclaration implements Serializable, Cloneable {
             return false;
         if (other.getArtifactStore() != null && other.getArtifactStore().equals(this.getArtifactStore()) == false)
             return false;
+        if (other.getArtifactStores() == null ^ this.getArtifactStores() == null)
+            return false;
+        if (other.getArtifactStores() != null && other.getArtifactStores().equals(this.getArtifactStores()) == false)
+            return false;
         if (other.getStages() == null ^ this.getStages() == null)
             return false;
         if (other.getStages() != null && other.getStages().equals(this.getStages()) == false)
@@ -349,6 +528,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getArtifactStore() == null) ? 0 : getArtifactStore().hashCode());
+        hashCode = prime * hashCode + ((getArtifactStores() == null) ? 0 : getArtifactStores().hashCode());
         hashCode = prime * hashCode + ((getStages() == null) ? 0 : getStages().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
@@ -361,5 +541,11 @@ public class PipelineDeclaration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.PipelineDeclarationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

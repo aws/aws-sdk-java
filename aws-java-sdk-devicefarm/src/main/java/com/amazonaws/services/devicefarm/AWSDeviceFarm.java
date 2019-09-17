@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,9 +51,10 @@ public interface AWSDeviceFarm {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -117,6 +118,48 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a profile that can be applied to one or more private fleet device instances.
+     * </p>
+     * 
+     * @param createInstanceProfileRequest
+     * @return Result of the CreateInstanceProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return Result of the CreateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest);
+
+    /**
+     * <p>
      * Creates a new project.
      * </p>
      * 
@@ -131,6 +174,8 @@ public interface AWSDeviceFarm {
      *         A limit was exceeded.
      * @throws ServiceAccountException
      *         There was a problem with the service account.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
      * @sample AWSDeviceFarm.CreateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject" target="_top">AWS API
      *      Documentation</a>
@@ -183,6 +228,25 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @return Result of the CreateVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVPCEConfigurationResult createVPCEConfiguration(CreateVPCEConfigurationRequest createVPCEConfigurationRequest);
+
+    /**
+     * <p>
      * Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.
      * </p>
      * 
@@ -202,6 +266,48 @@ public interface AWSDeviceFarm {
      *      API Documentation</a>
      */
     DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest);
+
+    /**
+     * <p>
+     * Deletes a profile that can be applied to one or more private device instances.
+     * </p>
+     * 
+     * @param deleteInstanceProfileRequest
+     * @return Result of the DeleteInstanceProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return Result of the DeleteNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
 
     /**
      * <p>
@@ -299,6 +405,28 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @return Result of the DeleteVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @throws InvalidOperationException
+     *         There was an error with the update request, or you do not have sufficient permissions to update this VPC
+     *         endpoint configuration.
+     * @sample AWSDeviceFarm.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVPCEConfigurationResult deleteVPCEConfiguration(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest);
+
+    /**
+     * <p>
      * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
@@ -340,6 +468,27 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
+
+    /**
+     * <p>
+     * Returns information about a device instance belonging to a private device fleet.
+     * </p>
+     * 
+     * @param getDeviceInstanceRequest
+     * @return Result of the GetDeviceInstance operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetDeviceInstanceResult getDeviceInstance(GetDeviceInstanceRequest getDeviceInstanceRequest);
 
     /**
      * <p>
@@ -387,6 +536,27 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about the specified instance profile.
+     * </p>
+     * 
+     * @param getInstanceProfileRequest
+     * @return Result of the GetInstanceProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest);
+
+    /**
+     * <p>
      * Gets information about a job.
      * </p>
      * 
@@ -406,6 +576,27 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     GetJobResult getJob(GetJobRequest getJobRequest);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return Result of the GetNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest);
 
     /**
      * <p>
@@ -569,6 +760,25 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @return Result of the GetVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVPCEConfigurationResult getVPCEConfiguration(GetVPCEConfigurationRequest getVPCEConfigurationRequest);
+
+    /**
+     * <p>
      * Installs an application to the device in a remote access session. For Android applications, the file must be in
      * .apk format. For iOS applications, the file must be in .ipa format.
      * </p>
@@ -612,6 +822,27 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     ListArtifactsResult listArtifacts(ListArtifactsRequest listArtifactsRequest);
+
+    /**
+     * <p>
+     * Returns information about the private device instances associated with one or more AWS accounts.
+     * </p>
+     * 
+     * @param listDeviceInstancesRequest
+     * @return Result of the ListDeviceInstances operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListDeviceInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListDeviceInstancesResult listDeviceInstances(ListDeviceInstancesRequest listDeviceInstancesRequest);
 
     /**
      * <p>
@@ -659,7 +890,28 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about jobs.
+     * Returns information about all the instance profiles in an AWS account.
+     * </p>
+     * 
+     * @param listInstanceProfilesRequest
+     * @return Result of the ListInstanceProfiles operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest);
+
+    /**
+     * <p>
+     * Gets information about jobs for a given test run.
      * </p>
      * 
      * @param listJobsRequest
@@ -678,6 +930,53 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @return Result of the ListNetworkProfiles operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest listNetworkProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @return Result of the ListOfferingPromotions operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOfferingPromotionsResult listOfferingPromotions(ListOfferingPromotionsRequest listOfferingPromotionsRequest);
 
     /**
      * <p>
@@ -803,7 +1102,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples, given an AWS Device Farm project ARN
+     * Gets information about samples, given an AWS Device Farm job ARN.
      * </p>
      * 
      * @param listSamplesRequest
@@ -825,7 +1124,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about suites.
+     * Gets information about test suites for a given job.
      * </p>
      * 
      * @param listSuitesRequest
@@ -847,7 +1146,24 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about tests.
+     * List the tags for an AWS Device Farm resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets information about tests in a given test suite.
      * </p>
      * 
      * @param listTestsRequest
@@ -910,6 +1226,23 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     ListUploadsResult listUploads(ListUploadsRequest listUploadsRequest);
+
+    /**
+     * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @return Result of the ListVPCEConfigurations operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListVPCEConfigurationsResult listVPCEConfigurations(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest);
 
     /**
      * <p>
@@ -993,6 +1326,30 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @return Result of the StopJob operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopJobResult stopJob(StopJobRequest stopJobRequest);
+
+    /**
+     * <p>
      * Ends a specified remote access session.
      * </p>
      * 
@@ -1040,6 +1397,69 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws TagPolicyException
+     *         The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your
+     *         request and then retry it.
+     * @sample AWSDeviceFarm.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws TagOperationException
+     *         The operation was not successful. Try again.
+     * @sample AWSDeviceFarm.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing private device instance.
+     * </p>
+     * 
+     * @param updateDeviceInstanceRequest
+     * @return Result of the UpdateDeviceInstance operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDeviceInstanceResult updateDeviceInstance(UpdateDeviceInstanceRequest updateDeviceInstanceRequest);
+
+    /**
+     * <p>
      * Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates
      * are all-or-nothing, meaning they can only be updated as a whole (or not at all).
      * </p>
@@ -1063,6 +1483,48 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Updates information about an existing private device instance profile.
+     * </p>
+     * 
+     * @param updateInstanceProfileRequest
+     * @return Result of the UpdateInstanceProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInstanceProfileResult updateInstanceProfile(UpdateInstanceProfileRequest updateInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return Result of the UpdateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest);
+
+    /**
+     * <p>
      * Modifies the specified project name, given the project ARN and a new name.
      * </p>
      * 
@@ -1082,6 +1544,49 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @return Result of the UpdateUpload operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateUploadResult updateUpload(UpdateUploadRequest updateUploadRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @return Result of the UpdateVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @throws InvalidOperationException
+     *         There was an error with the update request, or you do not have sufficient permissions to update this VPC
+     *         endpoint configuration.
+     * @sample AWSDeviceFarm.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateVPCEConfigurationResult updateVPCEConfiguration(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

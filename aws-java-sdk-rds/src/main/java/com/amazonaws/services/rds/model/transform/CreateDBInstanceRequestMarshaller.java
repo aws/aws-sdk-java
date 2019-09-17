@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,9 +68,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("MasterUserPassword", StringUtils.fromString(createDBInstanceRequest.getMasterUserPassword()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
-                .getDBSecurityGroups();
-        if (!dBSecurityGroupsList.isEmpty() || !dBSecurityGroupsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getDBSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getDBSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
 
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
@@ -81,9 +82,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -155,8 +157,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceRequest.getPubliclyAccessible()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -222,6 +225,66 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         if (createDBInstanceRequest.getTimezone() != null) {
             request.addParameter("Timezone", StringUtils.fromString(createDBInstanceRequest.getTimezone()));
+        }
+
+        if (createDBInstanceRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBInstanceRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (createDBInstanceRequest.getEnablePerformanceInsights() != null) {
+            request.addParameter("EnablePerformanceInsights", StringUtils.fromBoolean(createDBInstanceRequest.getEnablePerformanceInsights()));
+        }
+
+        if (createDBInstanceRequest.getPerformanceInsightsKMSKeyId() != null) {
+            request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
+        }
+
+        if (createDBInstanceRequest.getPerformanceInsightsRetentionPeriod() != null) {
+            request.addParameter("PerformanceInsightsRetentionPeriod", StringUtils.fromInteger(createDBInstanceRequest.getPerformanceInsightsRetentionPeriod()));
+        }
+
+        if (!createDBInstanceRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (!createDBInstanceRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (createDBInstanceRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceRequest.getDeletionProtection()));
+        }
+
+        if (createDBInstanceRequest.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(createDBInstanceRequest.getMaxAllocatedStorage()));
         }
 
         return request;

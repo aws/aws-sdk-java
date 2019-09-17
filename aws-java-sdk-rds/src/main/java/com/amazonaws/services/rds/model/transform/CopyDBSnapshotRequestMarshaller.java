@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,8 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
             request.addParameter("KmsKeyId", StringUtils.fromString(copyDBSnapshotRequest.getKmsKeyId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!copyDBSnapshotRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -75,6 +75,10 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
 
         if (copyDBSnapshotRequest.getPreSignedUrl() != null) {
             request.addParameter("PreSignedUrl", StringUtils.fromString(copyDBSnapshotRequest.getPreSignedUrl()));
+        }
+
+        if (copyDBSnapshotRequest.getOptionGroupName() != null) {
+            request.addParameter("OptionGroupName", StringUtils.fromString(copyDBSnapshotRequest.getOptionGroupName()));
         }
 
         if (copyDBSnapshotRequest.getSourceRegion() != null) {

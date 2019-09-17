@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setEc2InstanceAttributes(Ec2InstanceAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InstanceCollectionType", targetDepth)) {
+                    context.nextToken();
+                    cluster.setInstanceCollectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
                     cluster.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));
@@ -127,6 +131,22 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                 if (context.testExpression("ScaleDownBehavior", targetDepth)) {
                     context.nextToken();
                     cluster.setScaleDownBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomAmiId", targetDepth)) {
+                    context.nextToken();
+                    cluster.setCustomAmiId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsRootVolumeSize", targetDepth)) {
+                    context.nextToken();
+                    cluster.setEbsRootVolumeSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("RepoUpgradeOnBoot", targetDepth)) {
+                    context.nextToken();
+                    cluster.setRepoUpgradeOnBoot(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KerberosAttributes", targetDepth)) {
+                    context.nextToken();
+                    cluster.setKerberosAttributes(KerberosAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

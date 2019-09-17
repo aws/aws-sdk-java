@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationDescription implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     */
+    private String applicationArn;
     /**
      * <p>
      * The name of the application.
@@ -68,6 +74,46 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * </p>
      */
     private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     */
+
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the application.
+     */
+
+    public String getApplicationArn() {
+        return this.applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDescription withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -416,7 +462,8 @@ public class ApplicationDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -426,6 +473,8 @@ public class ApplicationDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getApplicationName() != null)
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
@@ -454,6 +503,10 @@ public class ApplicationDescription implements Serializable, Cloneable {
         if (obj instanceof ApplicationDescription == false)
             return false;
         ApplicationDescription other = (ApplicationDescription) obj;
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
+            return false;
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
+            return false;
         if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
@@ -490,6 +543,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
@@ -508,4 +562,5 @@ public class ApplicationDescription implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

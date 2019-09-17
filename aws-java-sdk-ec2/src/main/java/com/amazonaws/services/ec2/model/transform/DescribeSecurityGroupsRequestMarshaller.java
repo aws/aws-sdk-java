@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,32 +40,6 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSecurityGroupsRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupsRequest
-                .getGroupNames();
-        if (!describeSecurityGroupsRequestGroupNamesList.isEmpty() || !describeSecurityGroupsRequestGroupNamesList.isAutoConstruct()) {
-            int groupNamesListIndex = 1;
-
-            for (String describeSecurityGroupsRequestGroupNamesListValue : describeSecurityGroupsRequestGroupNamesList) {
-                if (describeSecurityGroupsRequestGroupNamesListValue != null) {
-                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(describeSecurityGroupsRequestGroupNamesListValue));
-                }
-                groupNamesListIndex++;
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<String> describeSecurityGroupsRequestGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupsRequest
-                .getGroupIds();
-        if (!describeSecurityGroupsRequestGroupIdsList.isEmpty() || !describeSecurityGroupsRequestGroupIdsList.isAutoConstruct()) {
-            int groupIdsListIndex = 1;
-
-            for (String describeSecurityGroupsRequestGroupIdsListValue : describeSecurityGroupsRequestGroupIdsList) {
-                if (describeSecurityGroupsRequestGroupIdsListValue != null) {
-                    request.addParameter("GroupId." + groupIdsListIndex, StringUtils.fromString(describeSecurityGroupsRequestGroupIdsListValue));
-                }
-                groupIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSecurityGroupsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSecurityGroupsRequest
                 .getFilters();
         if (!describeSecurityGroupsRequestFiltersList.isEmpty() || !describeSecurityGroupsRequestFiltersList.isAutoConstruct()) {
@@ -92,6 +66,40 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSecurityGroupsRequestGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupsRequest
+                .getGroupIds();
+        if (!describeSecurityGroupsRequestGroupIdsList.isEmpty() || !describeSecurityGroupsRequestGroupIdsList.isAutoConstruct()) {
+            int groupIdsListIndex = 1;
+
+            for (String describeSecurityGroupsRequestGroupIdsListValue : describeSecurityGroupsRequestGroupIdsList) {
+                if (describeSecurityGroupsRequestGroupIdsListValue != null) {
+                    request.addParameter("GroupId." + groupIdsListIndex, StringUtils.fromString(describeSecurityGroupsRequestGroupIdsListValue));
+                }
+                groupIdsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSecurityGroupsRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeSecurityGroupsRequest
+                .getGroupNames();
+        if (!describeSecurityGroupsRequestGroupNamesList.isEmpty() || !describeSecurityGroupsRequestGroupNamesList.isAutoConstruct()) {
+            int groupNamesListIndex = 1;
+
+            for (String describeSecurityGroupsRequestGroupNamesListValue : describeSecurityGroupsRequestGroupNamesList) {
+                if (describeSecurityGroupsRequestGroupNamesListValue != null) {
+                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(describeSecurityGroupsRequestGroupNamesListValue));
+                }
+                groupNamesListIndex++;
+            }
+        }
+
+        if (describeSecurityGroupsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSecurityGroupsRequest.getNextToken()));
+        }
+
+        if (describeSecurityGroupsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSecurityGroupsRequest.getMaxResults()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,80 +12,54 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDeploymentInstancesRequest Marshaller
+ * ListDeploymentInstancesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDeploymentInstancesRequestMarshaller implements Marshaller<Request<ListDeploymentInstancesRequest>, ListDeploymentInstancesRequest> {
+@SdkInternalApi
+public class ListDeploymentInstancesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<List> INSTANCESTATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceStatusFilter").build();
+    private static final MarshallingInfo<List> INSTANCETYPEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceTypeFilter").build();
 
-    public ListDeploymentInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDeploymentInstancesRequestMarshaller instance = new ListDeploymentInstancesRequestMarshaller();
+
+    public static ListDeploymentInstancesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDeploymentInstancesRequest> marshall(ListDeploymentInstancesRequest listDeploymentInstancesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDeploymentInstancesRequest listDeploymentInstancesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDeploymentInstancesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDeploymentInstancesRequest> request = new DefaultRequest<ListDeploymentInstancesRequest>(listDeploymentInstancesRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.ListDeploymentInstances");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listDeploymentInstancesRequest.getDeploymentId() != null) {
-                jsonGenerator.writeFieldName("deploymentId").writeValue(listDeploymentInstancesRequest.getDeploymentId());
-            }
-            if (listDeploymentInstancesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listDeploymentInstancesRequest.getNextToken());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> instanceStatusFilterList = (com.amazonaws.internal.SdkInternalList<String>) listDeploymentInstancesRequest
-                    .getInstanceStatusFilter();
-            if (!instanceStatusFilterList.isEmpty() || !instanceStatusFilterList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("instanceStatusFilter");
-                jsonGenerator.writeStartArray();
-                for (String instanceStatusFilterListValue : instanceStatusFilterList) {
-                    if (instanceStatusFilterListValue != null) {
-                        jsonGenerator.writeValue(instanceStatusFilterListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDeploymentInstancesRequest.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(listDeploymentInstancesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDeploymentInstancesRequest.getInstanceStatusFilter(), INSTANCESTATUSFILTER_BINDING);
+            protocolMarshaller.marshall(listDeploymentInstancesRequest.getInstanceTypeFilter(), INSTANCETYPEFILTER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

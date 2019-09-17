@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,11 +34,10 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     private String cluster;
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS
-     * account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container
-     * instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
+     * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
+     * example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      * </p>
      */
     private String containerInstance;
@@ -51,9 +50,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
-     * load balancer or target group.
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered. They begin connection draining according to the settings on the load
+     * balancer or target group.
      * </p>
      */
     private Boolean force;
@@ -106,20 +105,18 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS
-     * account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container
-     * instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
+     * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
+     * example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The
-     *        ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the
-     *        AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then
-     *        the container instance ID. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
-     *        .
+     *        The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     *        <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
+     *        of the container instance owner, the <code>container-instance</code> namespace, and then the container
+     *        instance ID. For example,
+     *        <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      */
 
     public void setContainerInstance(String containerInstance) {
@@ -128,19 +125,17 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS
-     * account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container
-     * instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
+     * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
+     * example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      * </p>
      * 
-     * @return The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The
-     *         ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance,
-     *         the AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and
-     *         then the container instance ID. For example,
-     *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
-     *         .
+     * @return The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     *         <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
+     *         of the container instance owner, the <code>container-instance</code> namespace, and then the container
+     *         instance ID. For example,
+     *         <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      */
 
     public String getContainerInstance() {
@@ -149,20 +144,18 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The ARN
-     * contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS
-     * account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container
-     * instance ID. For example,
-     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
+     * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
+     * example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      * </p>
      * 
      * @param containerInstance
-     *        The container instance ID or full Amazon Resource Name (ARN) of the container instance to deregister. The
-     *        ARN contains the <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the
-     *        AWS account ID of the container instance owner, the <code>container-instance</code> namespace, and then
-     *        the container instance ID. For example,
-     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
-     *        .
+     *        The container instance ID or full ARN of the container instance to deregister. The ARN contains the
+     *        <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
+     *        of the container instance owner, the <code>container-instance</code> namespace, and then the container
+     *        instance ID. For example,
+     *        <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,9 +173,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
-     * load balancer or target group.
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered. They begin connection draining according to the settings on the load
+     * balancer or target group.
      * </p>
      * 
      * @param force
@@ -193,9 +186,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
      *        <p>
-     *        Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *        Application load balancer target group are deregistered, and they will begin connection draining according
-     *        to the settings on the load balancer or target group.
+     *        Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *        Application Load Balancer target group are deregistered. They begin connection draining according to the
+     *        settings on the load balancer or target group.
      */
 
     public void setForce(Boolean force) {
@@ -211,9 +204,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
-     * load balancer or target group.
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered. They begin connection draining according to the settings on the load
+     * balancer or target group.
      * </p>
      * 
      * @return Forces the deregistration of the container instance. If you have tasks running on the container instance
@@ -223,9 +216,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>
      *         <p>
-     *         Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *         Application load balancer target group are deregistered, and they will begin connection draining
-     *         according to the settings on the load balancer or target group.
+     *         Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *         Application Load Balancer target group are deregistered. They begin connection draining according to the
+     *         settings on the load balancer or target group.
      */
 
     public Boolean getForce() {
@@ -241,9 +234,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
-     * load balancer or target group.
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered. They begin connection draining according to the settings on the load
+     * balancer or target group.
      * </p>
      * 
      * @param force
@@ -254,9 +247,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
      *        <p>
-     *        Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *        Application load balancer target group are deregistered, and they will begin connection draining according
-     *        to the settings on the load balancer or target group.
+     *        Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *        Application Load Balancer target group are deregistered. They begin connection draining according to the
+     *        settings on the load balancer or target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,9 +267,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
-     * load balancer or target group.
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered. They begin connection draining according to the settings on the load
+     * balancer or target group.
      * </p>
      * 
      * @return Forces the deregistration of the container instance. If you have tasks running on the container instance
@@ -286,9 +279,9 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>
      *         <p>
-     *         Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *         Application load balancer target group are deregistered, and they will begin connection draining
-     *         according to the settings on the load balancer or target group.
+     *         Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *         Application Load Balancer target group are deregistered. They begin connection draining according to the
+     *         settings on the load balancer or target group.
      */
 
     public Boolean isForce() {
@@ -296,7 +289,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

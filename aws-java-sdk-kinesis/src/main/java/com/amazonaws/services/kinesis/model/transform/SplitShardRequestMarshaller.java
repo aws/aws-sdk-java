@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SplitShardRequest Marshaller
+ * SplitShardRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SplitShardRequestMarshaller implements Marshaller<Request<SplitShardRequest>, SplitShardRequest> {
+@SdkInternalApi
+public class SplitShardRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> SHARDTOSPLIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardToSplit").build();
+    private static final MarshallingInfo<String> NEWSTARTINGHASHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewStartingHashKey").build();
 
-    public SplitShardRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SplitShardRequestMarshaller instance = new SplitShardRequestMarshaller();
+
+    public static SplitShardRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SplitShardRequest> marshall(SplitShardRequest splitShardRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SplitShardRequest splitShardRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (splitShardRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SplitShardRequest> request = new DefaultRequest<SplitShardRequest>(splitShardRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.SplitShard");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (splitShardRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(splitShardRequest.getStreamName());
-            }
-            if (splitShardRequest.getShardToSplit() != null) {
-                jsonGenerator.writeFieldName("ShardToSplit").writeValue(splitShardRequest.getShardToSplit());
-            }
-            if (splitShardRequest.getNewStartingHashKey() != null) {
-                jsonGenerator.writeFieldName("NewStartingHashKey").writeValue(splitShardRequest.getNewStartingHashKey());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(splitShardRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(splitShardRequest.getShardToSplit(), SHARDTOSPLIT_BINDING);
+            protocolMarshaller.marshall(splitShardRequest.getNewStartingHashKey(), NEWSTARTINGHASHKEY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

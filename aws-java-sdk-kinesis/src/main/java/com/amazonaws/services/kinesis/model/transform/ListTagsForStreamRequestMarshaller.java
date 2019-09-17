@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTagsForStreamRequest Marshaller
+ * ListTagsForStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTagsForStreamRequestMarshaller implements Marshaller<Request<ListTagsForStreamRequest>, ListTagsForStreamRequest> {
+@SdkInternalApi
+public class ListTagsForStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> EXCLUSIVESTARTTAGKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartTagKey").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public ListTagsForStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTagsForStreamRequestMarshaller instance = new ListTagsForStreamRequestMarshaller();
+
+    public static ListTagsForStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTagsForStreamRequest> marshall(ListTagsForStreamRequest listTagsForStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTagsForStreamRequest listTagsForStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTagsForStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTagsForStreamRequest> request = new DefaultRequest<ListTagsForStreamRequest>(listTagsForStreamRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.ListTagsForStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listTagsForStreamRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(listTagsForStreamRequest.getStreamName());
-            }
-            if (listTagsForStreamRequest.getExclusiveStartTagKey() != null) {
-                jsonGenerator.writeFieldName("ExclusiveStartTagKey").writeValue(listTagsForStreamRequest.getExclusiveStartTagKey());
-            }
-            if (listTagsForStreamRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listTagsForStreamRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listTagsForStreamRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(listTagsForStreamRequest.getExclusiveStartTagKey(), EXCLUSIVESTARTTAGKEY_BINDING);
+            protocolMarshaller.marshall(listTagsForStreamRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

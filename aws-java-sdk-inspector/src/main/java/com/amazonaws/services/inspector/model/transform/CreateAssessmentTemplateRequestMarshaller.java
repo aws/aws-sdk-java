@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,98 +12,57 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateAssessmentTemplateRequest Marshaller
+ * CreateAssessmentTemplateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAssessmentTemplateRequestMarshaller implements Marshaller<Request<CreateAssessmentTemplateRequest>, CreateAssessmentTemplateRequest> {
+@SdkInternalApi
+public class CreateAssessmentTemplateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTTARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTargetArn").build();
+    private static final MarshallingInfo<String> ASSESSMENTTEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTemplateName").build();
+    private static final MarshallingInfo<Integer> DURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("durationInSeconds").build();
+    private static final MarshallingInfo<List> RULESPACKAGEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rulesPackageArns").build();
+    private static final MarshallingInfo<List> USERATTRIBUTESFORFINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAttributesForFindings").build();
 
-    public CreateAssessmentTemplateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateAssessmentTemplateRequestMarshaller instance = new CreateAssessmentTemplateRequestMarshaller();
+
+    public static CreateAssessmentTemplateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateAssessmentTemplateRequest> marshall(CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateAssessmentTemplateRequest createAssessmentTemplateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createAssessmentTemplateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateAssessmentTemplateRequest> request = new DefaultRequest<CreateAssessmentTemplateRequest>(createAssessmentTemplateRequest,
-                "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.CreateAssessmentTemplate");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createAssessmentTemplateRequest.getAssessmentTargetArn() != null) {
-                jsonGenerator.writeFieldName("assessmentTargetArn").writeValue(createAssessmentTemplateRequest.getAssessmentTargetArn());
-            }
-            if (createAssessmentTemplateRequest.getAssessmentTemplateName() != null) {
-                jsonGenerator.writeFieldName("assessmentTemplateName").writeValue(createAssessmentTemplateRequest.getAssessmentTemplateName());
-            }
-            if (createAssessmentTemplateRequest.getDurationInSeconds() != null) {
-                jsonGenerator.writeFieldName("durationInSeconds").writeValue(createAssessmentTemplateRequest.getDurationInSeconds());
-            }
-
-            java.util.List<String> rulesPackageArnsList = createAssessmentTemplateRequest.getRulesPackageArns();
-            if (rulesPackageArnsList != null) {
-                jsonGenerator.writeFieldName("rulesPackageArns");
-                jsonGenerator.writeStartArray();
-                for (String rulesPackageArnsListValue : rulesPackageArnsList) {
-                    if (rulesPackageArnsListValue != null) {
-                        jsonGenerator.writeValue(rulesPackageArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<Attribute> userAttributesForFindingsList = createAssessmentTemplateRequest.getUserAttributesForFindings();
-            if (userAttributesForFindingsList != null) {
-                jsonGenerator.writeFieldName("userAttributesForFindings");
-                jsonGenerator.writeStartArray();
-                for (Attribute userAttributesForFindingsListValue : userAttributesForFindingsList) {
-                    if (userAttributesForFindingsListValue != null) {
-
-                        AttributeJsonMarshaller.getInstance().marshall(userAttributesForFindingsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createAssessmentTemplateRequest.getAssessmentTargetArn(), ASSESSMENTTARGETARN_BINDING);
+            protocolMarshaller.marshall(createAssessmentTemplateRequest.getAssessmentTemplateName(), ASSESSMENTTEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(createAssessmentTemplateRequest.getDurationInSeconds(), DURATIONINSECONDS_BINDING);
+            protocolMarshaller.marshall(createAssessmentTemplateRequest.getRulesPackageArns(), RULESPACKAGEARNS_BINDING);
+            protocolMarshaller.marshall(createAssessmentTemplateRequest.getUserAttributesForFindings(), USERATTRIBUTESFORFINDINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

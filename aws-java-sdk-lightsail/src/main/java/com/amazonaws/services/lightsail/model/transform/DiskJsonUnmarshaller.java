@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    disk.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    disk.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -72,13 +72,13 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                     context.nextToken();
                     disk.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    disk.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("sizeInGb", targetDepth)) {
                     context.nextToken();
                     disk.setSizeInGb(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
-                if (context.testExpression("gbInUse", targetDepth)) {
-                    context.nextToken();
-                    disk.setGbInUse(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("isSystemDisk", targetDepth)) {
                     context.nextToken();
@@ -92,6 +92,10 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                     context.nextToken();
                     disk.setPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("state", targetDepth)) {
+                    context.nextToken();
+                    disk.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("attachedTo", targetDepth)) {
                     context.nextToken();
                     disk.setAttachedTo(context.getUnmarshaller(String.class).unmarshall(context));
@@ -103,6 +107,10 @@ public class DiskJsonUnmarshaller implements Unmarshaller<Disk, JsonUnmarshaller
                 if (context.testExpression("attachmentState", targetDepth)) {
                     context.nextToken();
                     disk.setAttachmentState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("gbInUse", targetDepth)) {
+                    context.nextToken();
+                    disk.setGbInUse(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

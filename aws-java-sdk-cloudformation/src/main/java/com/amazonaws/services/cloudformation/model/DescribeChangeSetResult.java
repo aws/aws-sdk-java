@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      */
@@ -101,6 +101,13 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     */
+    private RollbackConfiguration rollbackConfiguration;
     /**
      * <p>
      * If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was
@@ -333,13 +340,13 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @return A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *         create the change set. For more information, see the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *         data type.
      */
 
@@ -354,14 +361,14 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      */
 
@@ -378,7 +385,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * <p>
@@ -390,7 +397,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -409,14 +416,14 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -544,7 +551,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setExecutionStatus(ExecutionStatus executionStatus) {
-        this.executionStatus = executionStatus.toString();
+        withExecutionStatus(executionStatus);
     }
 
     /**
@@ -565,7 +572,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeChangeSetResult withExecutionStatus(ExecutionStatus executionStatus) {
-        setExecutionStatus(executionStatus);
+        this.executionStatus = executionStatus.toString();
         return this;
     }
 
@@ -631,7 +638,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setStatus(ChangeSetStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -648,7 +655,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeChangeSetResult withStatus(ChangeSetStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -776,6 +783,52 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeChangeSetResult withNotificationARNs(java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     */
+
+    public void setRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        this.rollbackConfiguration = rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @return The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations,
+     *         and for the specified monitoring period afterwards.
+     */
+
+    public RollbackConfiguration getRollbackConfiguration() {
+        return this.rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChangeSetResult withRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        setRollbackConfiguration(rollbackConfiguration);
         return this;
     }
 
@@ -1091,7 +1144,8 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1123,6 +1177,8 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getNotificationARNs() != null)
             sb.append("NotificationARNs: ").append(getNotificationARNs()).append(",");
+        if (getRollbackConfiguration() != null)
+            sb.append("RollbackConfiguration: ").append(getRollbackConfiguration()).append(",");
         if (getCapabilities() != null)
             sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getTags() != null)
@@ -1189,6 +1245,10 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false)
             return false;
+        if (other.getRollbackConfiguration() == null ^ this.getRollbackConfiguration() == null)
+            return false;
+        if (other.getRollbackConfiguration() != null && other.getRollbackConfiguration().equals(this.getRollbackConfiguration()) == false)
+            return false;
         if (other.getCapabilities() == null ^ this.getCapabilities() == null)
             return false;
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
@@ -1224,6 +1284,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());
+        hashCode = prime * hashCode + ((getRollbackConfiguration() == null) ? 0 : getRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChanges() == null) ? 0 : getChanges().hashCode());
@@ -1239,4 +1300,5 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

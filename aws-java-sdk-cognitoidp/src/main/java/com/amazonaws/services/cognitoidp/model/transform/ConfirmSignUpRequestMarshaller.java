@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,62 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ConfirmSignUpRequest Marshaller
+ * ConfirmSignUpRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfirmSignUpRequestMarshaller implements Marshaller<Request<ConfirmSignUpRequest>, ConfirmSignUpRequest> {
+@SdkInternalApi
+public class ConfirmSignUpRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientId").build();
+    private static final MarshallingInfo<String> SECRETHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretHash").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> CONFIRMATIONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfirmationCode").build();
+    private static final MarshallingInfo<Boolean> FORCEALIASCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceAliasCreation").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
 
-    public ConfirmSignUpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ConfirmSignUpRequestMarshaller instance = new ConfirmSignUpRequestMarshaller();
+
+    public static ConfirmSignUpRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ConfirmSignUpRequest> marshall(ConfirmSignUpRequest confirmSignUpRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ConfirmSignUpRequest confirmSignUpRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (confirmSignUpRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ConfirmSignUpRequest> request = new DefaultRequest<ConfirmSignUpRequest>(confirmSignUpRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ConfirmSignUp");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (confirmSignUpRequest.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(confirmSignUpRequest.getClientId());
-            }
-            if (confirmSignUpRequest.getSecretHash() != null) {
-                jsonGenerator.writeFieldName("SecretHash").writeValue(confirmSignUpRequest.getSecretHash());
-            }
-            if (confirmSignUpRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(confirmSignUpRequest.getUsername());
-            }
-            if (confirmSignUpRequest.getConfirmationCode() != null) {
-                jsonGenerator.writeFieldName("ConfirmationCode").writeValue(confirmSignUpRequest.getConfirmationCode());
-            }
-            if (confirmSignUpRequest.getForceAliasCreation() != null) {
-                jsonGenerator.writeFieldName("ForceAliasCreation").writeValue(confirmSignUpRequest.getForceAliasCreation());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(confirmSignUpRequest.getClientId(), CLIENTID_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getSecretHash(), SECRETHASH_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getConfirmationCode(), CONFIRMATIONCODE_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getForceAliasCreation(), FORCEALIASCREATION_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

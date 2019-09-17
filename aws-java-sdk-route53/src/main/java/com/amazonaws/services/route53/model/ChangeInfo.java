@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,9 @@ public class ChangeInfo implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      */
     private java.util.Date submittedAt;
@@ -52,8 +52,9 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      */
     private String comment;
@@ -75,9 +76,10 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        The current state of the request. <code>PENDING</code> indicates that this request has not yet been
      *        applied to all Amazon Route 53 DNS servers.
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
     public ChangeInfo(String id, String status, java.util.Date submittedAt) {
         setId(id);
@@ -95,9 +97,10 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        The current state of the request. <code>PENDING</code> indicates that this request has not yet been
      *        applied to all Amazon Route 53 DNS servers.
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
     public ChangeInfo(String id, ChangeStatus status, java.util.Date submittedAt) {
         setId(id);
@@ -207,7 +210,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      */
 
     public void setStatus(ChangeStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -224,21 +227,22 @@ public class ChangeInfo implements Serializable, Cloneable {
      */
 
     public ChangeInfo withStatus(ChangeStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
 
     public void setSubmittedAt(java.util.Date submittedAt) {
@@ -247,14 +251,15 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
-     * @return The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *         <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * @return The date and time that the change request was submitted in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *         For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *         UTC.
      */
 
     public java.util.Date getSubmittedAt() {
@@ -263,15 +268,16 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,15 +291,17 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param comment
      *        A complex type that describes change information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      */
 
     public void setComment(String comment) {
@@ -305,14 +313,16 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @return A complex type that describes change information about changes made to your hosted zone.</p>
      *         <p>
-     *         This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *         information about the change.
+     *         This element contains an ID that you use when performing a <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *         get detailed information about the change.
      */
 
     public String getComment() {
@@ -324,15 +334,17 @@ public class ChangeInfo implements Serializable, Cloneable {
      * A complex type that describes change information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param comment
      *        A complex type that describes change information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,7 +354,8 @@ public class ChangeInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -413,4 +426,5 @@ public class ChangeInfo implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

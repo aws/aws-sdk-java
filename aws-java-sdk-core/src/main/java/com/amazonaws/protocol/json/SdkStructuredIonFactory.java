@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,12 +13,6 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.protocol.json;
-
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.util.Date;
-import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.internal.http.CompositeErrorCodeParser;
@@ -41,7 +35,12 @@ import com.amazonaws.transform.SimpleTypeIonUnmarshallers.StringIonUnmarshaller;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.ImmutableMapParameter;
 import com.fasterxml.jackson.core.JsonFactory;
-
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Map;
 import software.amazon.ion.IonSystem;
 import software.amazon.ion.system.IonBinaryWriterBuilder;
 import software.amazon.ion.system.IonSystemBuilder;
@@ -52,7 +51,8 @@ import software.amazon.ion.system.IonWriterBuilder;
 class SdkStructuredIonFactory extends SdkStructuredJsonFactoryImpl {
     private static final IonSystem ION_SYSTEM = IonSystemBuilder.standard().build();
     private static final JsonFactory JSON_FACTORY = new IonFactory(ION_SYSTEM);
-    private static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
+    private static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> UNMARSHALLERS =
+            new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()
             .put(BigDecimal.class, BigDecimalIonUnmarshaller.getInstance())
             .put(BigInteger.class, BigIntegerIonUnmarshaller.getInstance())
             .put(Boolean.class, BooleanIonUnmarshaller.getInstance())
@@ -66,6 +66,7 @@ class SdkStructuredIonFactory extends SdkStructuredJsonFactoryImpl {
             .put(Short.class, ShortIonUnmarshaller.getInstance())
             .put(String.class, StringIonUnmarshaller.getInstance())
             .build();
+
     private static final IonBinaryWriterBuilder BINARY_WRITER_BUILDER = IonBinaryWriterBuilder.standard().immutable();
     private static final IonTextWriterBuilder TEXT_WRITER_BUILDER = IonTextWriterBuilder.standard().immutable();
 
@@ -75,7 +76,8 @@ class SdkStructuredIonFactory extends SdkStructuredJsonFactoryImpl {
     private final IonWriterBuilder builder;
 
     private SdkStructuredIonFactory(IonWriterBuilder builder) {
-        super(JSON_FACTORY, UNMARSHALLERS);
+        super(JSON_FACTORY, UNMARSHALLERS,
+              Collections.<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>>emptyMap());
         this.builder = builder;
     }
 

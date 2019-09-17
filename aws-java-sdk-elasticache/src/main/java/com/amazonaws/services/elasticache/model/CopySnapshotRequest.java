@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,16 +49,22 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      */
     private String targetBucket;
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -154,12 +160,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -169,13 +175,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *        this S3 bucket. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *        >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *        Guide</i>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *        Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      */
 
@@ -191,12 +197,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -205,13 +211,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *         this S3 bucket. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *         >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *         Guide</i>.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *         Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      */
 
@@ -227,12 +233,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3
      * bucket. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      * >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      * Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * </p>
      * 
@@ -242,13 +248,13 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to
      *        this S3 bucket. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess"
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access"
      *        >Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User
      *        Guide</i>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting a
+     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting a
      *        Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,7 +265,48 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the target snapshot.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @return The ID of the KMS key used to encrypt the target snapshot.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the target snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopySnapshotRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -274,7 +321,9 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTargetSnapshotName() != null)
             sb.append("TargetSnapshotName: ").append(getTargetSnapshotName()).append(",");
         if (getTargetBucket() != null)
-            sb.append("TargetBucket: ").append(getTargetBucket());
+            sb.append("TargetBucket: ").append(getTargetBucket()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +350,10 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTargetBucket() != null && other.getTargetBucket().equals(this.getTargetBucket()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +365,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSourceSnapshotName() == null) ? 0 : getSourceSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getTargetSnapshotName() == null) ? 0 : getTargetSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getTargetBucket() == null) ? 0 : getTargetBucket().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

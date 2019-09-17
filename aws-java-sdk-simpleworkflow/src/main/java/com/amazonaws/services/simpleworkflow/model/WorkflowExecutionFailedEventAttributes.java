@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,24 +14,29 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionFailed</code> event.
+ * Provides the details of the <code>WorkflowExecutionFailed</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionFailedEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionFailedEventAttributes implements Serializable, Cloneable {
+public class WorkflowExecutionFailedEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The descriptive reason provided for the failure (if any).
+     * The descriptive reason provided for the failure.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      */
     private String details;
@@ -46,11 +51,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The descriptive reason provided for the failure (if any).
+     * The descriptive reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The descriptive reason provided for the failure (if any).
+     *        The descriptive reason provided for the failure.
      */
 
     public void setReason(String reason) {
@@ -59,10 +64,10 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The descriptive reason provided for the failure (if any).
+     * The descriptive reason provided for the failure.
      * </p>
      * 
-     * @return The descriptive reason provided for the failure (if any).
+     * @return The descriptive reason provided for the failure.
      */
 
     public String getReason() {
@@ -71,11 +76,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The descriptive reason provided for the failure (if any).
+     * The descriptive reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The descriptive reason provided for the failure (if any).
+     *        The descriptive reason provided for the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +91,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      */
 
     public void setDetails(String details) {
@@ -99,10 +104,10 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
-     * @return The details of the failure (if any).
+     * @return The details of the failure.
      */
 
     public String getDetails() {
@@ -111,11 +116,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,7 +182,8 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -240,5 +246,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.WorkflowExecutionFailedEventAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

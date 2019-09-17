@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatibilityMessage implements Serializable, Cloneable {
+public class IncompatibilityMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -58,6 +60,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * <li>
      * <p>
      * PLATFORM: The platform (for example, Android or iOS).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
      * </p>
      * </li>
      * </ul>
@@ -132,6 +144,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -158,6 +180,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -195,6 +227,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of incompatibility.</p>
@@ -220,6 +262,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         PLATFORM: The platform (for example, Android or iOS).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_VERSION: The Appium version for the test.
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -257,6 +309,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -283,6 +345,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -322,6 +394,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -350,11 +432,21 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
+     *        </p>
+     *        </li>
      * @see DeviceAttribute
      */
 
     public void setType(DeviceAttribute type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -385,6 +477,16 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -413,17 +515,28 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceAttribute
      */
 
     public IncompatibilityMessage withType(DeviceAttribute type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -479,5 +592,11 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.IncompatibilityMessageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

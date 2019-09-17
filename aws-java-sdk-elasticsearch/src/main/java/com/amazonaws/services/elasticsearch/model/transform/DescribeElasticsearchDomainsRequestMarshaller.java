@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,78 +12,45 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeElasticsearchDomainsRequest Marshaller
+ * DescribeElasticsearchDomainsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeElasticsearchDomainsRequestMarshaller implements
-        Marshaller<Request<DescribeElasticsearchDomainsRequest>, DescribeElasticsearchDomainsRequest> {
+@SdkInternalApi
+public class DescribeElasticsearchDomainsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> DOMAINNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DomainNames").build();
 
-    public DescribeElasticsearchDomainsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeElasticsearchDomainsRequestMarshaller instance = new DescribeElasticsearchDomainsRequestMarshaller();
+
+    public static DescribeElasticsearchDomainsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeElasticsearchDomainsRequest> marshall(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeElasticsearchDomainsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeElasticsearchDomainsRequest> request = new DefaultRequest<DescribeElasticsearchDomainsRequest>(describeElasticsearchDomainsRequest,
-                "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-01-01/es/domain-info";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> domainNamesList = describeElasticsearchDomainsRequest.getDomainNames();
-            if (domainNamesList != null) {
-                jsonGenerator.writeFieldName("DomainNames");
-                jsonGenerator.writeStartArray();
-                for (String domainNamesListValue : domainNamesList) {
-                    if (domainNamesListValue != null) {
-                        jsonGenerator.writeValue(domainNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeElasticsearchDomainsRequest.getDomainNames(), DOMAINNAMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

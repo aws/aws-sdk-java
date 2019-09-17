@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTaskDefinitionFamiliesRequest Marshaller
+ * ListTaskDefinitionFamiliesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTaskDefinitionFamiliesRequestMarshaller implements Marshaller<Request<ListTaskDefinitionFamiliesRequest>, ListTaskDefinitionFamiliesRequest> {
+@SdkInternalApi
+public class ListTaskDefinitionFamiliesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FAMILYPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("familyPrefix").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
-    public ListTaskDefinitionFamiliesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTaskDefinitionFamiliesRequestMarshaller instance = new ListTaskDefinitionFamiliesRequestMarshaller();
+
+    public static ListTaskDefinitionFamiliesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTaskDefinitionFamiliesRequest> marshall(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTaskDefinitionFamiliesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTaskDefinitionFamiliesRequest> request = new DefaultRequest<ListTaskDefinitionFamiliesRequest>(listTaskDefinitionFamiliesRequest,
-                "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listTaskDefinitionFamiliesRequest.getFamilyPrefix() != null) {
-                jsonGenerator.writeFieldName("familyPrefix").writeValue(listTaskDefinitionFamiliesRequest.getFamilyPrefix());
-            }
-            if (listTaskDefinitionFamiliesRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(listTaskDefinitionFamiliesRequest.getStatus());
-            }
-            if (listTaskDefinitionFamiliesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listTaskDefinitionFamiliesRequest.getNextToken());
-            }
-            if (listTaskDefinitionFamiliesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listTaskDefinitionFamiliesRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listTaskDefinitionFamiliesRequest.getFamilyPrefix(), FAMILYPREFIX_BINDING);
+            protocolMarshaller.marshall(listTaskDefinitionFamiliesRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listTaskDefinitionFamiliesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listTaskDefinitionFamiliesRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

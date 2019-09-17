@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(describePoliciesRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest
-                .getPolicyNames();
-        if (!policyNamesList.isEmpty() || !policyNamesList.isAutoConstruct()) {
+        if (!describePoliciesRequest.getPolicyNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest.getPolicyNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest
+                    .getPolicyNames();
             int policyNamesListIndex = 1;
 
             for (String policyNamesListValue : policyNamesList) {
@@ -57,9 +58,10 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> policyTypesList = (com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest
-                .getPolicyTypes();
-        if (!policyTypesList.isEmpty() || !policyTypesList.isAutoConstruct()) {
+        if (!describePoliciesRequest.getPolicyTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest.getPolicyTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyTypesList = (com.amazonaws.internal.SdkInternalList<String>) describePoliciesRequest
+                    .getPolicyTypes();
             int policyTypesListIndex = 1;
 
             for (String policyTypesListValue : policyTypesList) {

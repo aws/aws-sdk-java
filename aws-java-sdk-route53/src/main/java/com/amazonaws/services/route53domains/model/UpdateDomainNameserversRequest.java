@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The UpdateDomainNameserver request includes the following elements.
+ * Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon
+ * Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.
+ * </p>
+ * <p>
+ * If successful, this operation returns an operation ID that you can use to track the progress and completion of the
+ * action. If the request is not completed successfully, the domain registrant will be notified by email.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"
@@ -30,20 +35,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to change name servers for.
      * </p>
      */
     private String domainName;
@@ -52,55 +44,22 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * The authorization key for .fi domains
      * </p>
      */
+    @Deprecated
     private String fIAuthKey;
     /**
      * <p>
      * A list of new name servers for the domain.
-     * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>GlueIps</code>
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Nameserver> nameservers;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to change name servers for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to change name servers for.
      */
 
     public void setDomainName(String domainName) {
@@ -109,35 +68,10 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to change name servers for.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and
-     *         hyphen (-). Internationalized Domain Names are not supported.
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return The name of the domain that you want to change name servers for.
      */
 
     public String getDomainName() {
@@ -146,36 +80,11 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-).
-     * Internationalized Domain Names are not supported.
-     * </p>
-     * <p>
-     * Required: Yes
+     * The name of the domain that you want to change name servers for.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen
-     *        (-). Internationalized Domain Names are not supported.
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        The name of the domain that you want to change name servers for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +101,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * @param fIAuthKey
      *        The authorization key for .fi domains
      */
-
+    @Deprecated
     public void setFIAuthKey(String fIAuthKey) {
         this.fIAuthKey = fIAuthKey;
     }
@@ -204,7 +113,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * 
      * @return The authorization key for .fi domains
      */
-
+    @Deprecated
     public String getFIAuthKey() {
         return this.fIAuthKey;
     }
@@ -218,7 +127,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      *        The authorization key for .fi domains
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateDomainNameserversRequest withFIAuthKey(String fIAuthKey) {
         setFIAuthKey(fIAuthKey);
         return this;
@@ -228,25 +137,8 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of new name servers for the domain.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>GlueIps</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
-     * @return A list of new name servers for the domain.</p>
-     *         <p>
-     *         Type: Complex
-     *         </p>
-     *         <p>
-     *         Children: <code>Name</code>, <code>GlueIps</code>
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     * @return A list of new name servers for the domain.
      */
 
     public java.util.List<Nameserver> getNameservers() {
@@ -260,26 +152,9 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of new name servers for the domain.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>GlueIps</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param nameservers
-     *        A list of new name servers for the domain.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>GlueIps</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        A list of new name servers for the domain.
      */
 
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
@@ -296,30 +171,13 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * A list of new name servers for the domain.
      * </p>
      * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>GlueIps</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNameservers(java.util.Collection)} or {@link #withNameservers(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param nameservers
-     *        A list of new name servers for the domain.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>GlueIps</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        A list of new name servers for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,26 +195,9 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of new name servers for the domain.
      * </p>
-     * <p>
-     * Type: Complex
-     * </p>
-     * <p>
-     * Children: <code>Name</code>, <code>GlueIps</code>
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param nameservers
-     *        A list of new name servers for the domain.</p>
-     *        <p>
-     *        Type: Complex
-     *        </p>
-     *        <p>
-     *        Children: <code>Name</code>, <code>GlueIps</code>
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        A list of new name servers for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,7 +207,8 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

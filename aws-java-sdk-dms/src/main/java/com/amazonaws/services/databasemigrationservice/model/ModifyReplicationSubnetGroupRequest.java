@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     private String replicationSubnetGroupIdentifier;
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      */
     private String replicationSubnetGroupDescription;
@@ -87,11 +87,11 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication instance subnet group.
+     *        A description for the replication instance subnet group.
      */
 
     public void setReplicationSubnetGroupDescription(String replicationSubnetGroupDescription) {
@@ -100,10 +100,10 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
-     * @return The description of the replication instance subnet group.
+     * @return A description for the replication instance subnet group.
      */
 
     public String getReplicationSubnetGroupDescription() {
@@ -112,11 +112,11 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The description of the replication instance subnet group.
+     * A description for the replication instance subnet group.
      * </p>
      * 
      * @param replicationSubnetGroupDescription
-     *        The description of the replication instance subnet group.
+     *        A description for the replication instance subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,7 +196,8 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

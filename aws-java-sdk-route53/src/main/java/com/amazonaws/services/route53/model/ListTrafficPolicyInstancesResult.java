@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,32 +36,33 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      */
     private String hostedZoneIdMarker;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      */
     private String trafficPolicyInstanceNameMarker;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      */
     private String trafficPolicyInstanceTypeMarker;
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     * corresponding request parameters.
+     * truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and
+     * specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.
      * </p>
      */
     private Boolean isTruncated;
@@ -157,13 +158,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *        instances.
+     *        zone of the first traffic policy instance that Route 53 will return if you submit another
+     *        <code>ListTrafficPolicyInstances</code> request.
      */
 
     public void setHostedZoneIdMarker(String hostedZoneIdMarker) {
@@ -173,12 +175,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *         zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *         instances.
+     *         zone of the first traffic policy instance that Route 53 will return if you submit another
+     *         <code>ListTrafficPolicyInstances</code> request.
      */
 
     public String getHostedZoneIdMarker() {
@@ -188,13 +191,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * the first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *        instances.
+     *        zone of the first traffic policy instance that Route 53 will return if you submit another
+     *        <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,12 +210,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     *        of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     *        of the first traffic policy instance that Route 53 will return if you submit another
+     *        <code>ListTrafficPolicyInstances</code> request.
      */
 
     public void setTrafficPolicyInstanceNameMarker(String trafficPolicyInstanceNameMarker) {
@@ -221,12 +227,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the
-     *         name of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy
-     *         instances.
+     *         name of the first traffic policy instance that Route 53 will return if you submit another
+     *         <code>ListTrafficPolicyInstances</code> request.
      */
 
     public String getTrafficPolicyInstanceNameMarker() {
@@ -236,12 +243,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     * first traffic policy instance that Route 53 will return if you submit another
+     * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     *        of the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+     *        of the first traffic policy instance that Route 53 will return if you submit another
+     *        <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,14 +262,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     *        type of the resource record sets that are associated with the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        type of the resource record sets that are associated with the first traffic policy instance that Amazon
+     *        Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * @see RRType
      */
 
@@ -271,13 +280,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     *         type of the resource record sets that are associated with the first traffic policy instance in the next
-     *         group of <code>MaxItems</code> traffic policy instances.
+     *         type of the resource record sets that are associated with the first traffic policy instance that Amazon
+     *         Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * @see RRType
      */
 
@@ -288,14 +297,14 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     *        type of the resource record sets that are associated with the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        type of the resource record sets that are associated with the first traffic policy instance that Amazon
+     *        Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -308,56 +317,55 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     *        type of the resource record sets that are associated with the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        type of the resource record sets that are associated with the first traffic policy instance that Amazon
+     *        Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * @see RRType
      */
 
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
+        withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }
 
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of
-     * the resource record sets that are associated with the first traffic policy instance in the next group of
-     * <code>MaxItems</code> traffic policy instances.
+     * the resource record sets that are associated with the first traffic policy instance that Amazon Route 53 will
+     * return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceTypeMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS
-     *        type of the resource record sets that are associated with the first traffic policy instance in the next
-     *        group of <code>MaxItems</code> traffic policy instances.
+     *        type of the resource record sets that are associated with the first traffic policy instance that Amazon
+     *        Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
+        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
         return this;
     }
 
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     * corresponding request parameters.
+     * truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and
+     * specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *        truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     *        <code>ListTrafficPolicyInstances</code> again and specifying the values of the
-     *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
+     *        truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code>
+     *        again and specifying the values of the <code>HostedZoneIdMarker</code>,
+     *        <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the
+     *        corresponding request parameters.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -367,17 +375,16 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     * corresponding request parameters.
+     * truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and
+     * specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     *         <code>ListTrafficPolicyInstances</code> again and specifying the values of the
-     *         <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
+     *         truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code>
+     *         again and specifying the values of the <code>HostedZoneIdMarker</code>,
+     *         <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the
+     *         corresponding request parameters.
      */
 
     public Boolean getIsTruncated() {
@@ -387,18 +394,17 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     * corresponding request parameters.
+     * truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and
+     * specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *        truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     *        <code>ListTrafficPolicyInstances</code> again and specifying the values of the
-     *        <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *        <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
+     *        truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code>
+     *        again and specifying the values of the <code>HostedZoneIdMarker</code>,
+     *        <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the
+     *        corresponding request parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,17 +416,16 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     * truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     * <code>ListTrafficPolicyInstances</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
-     * <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the
-     * corresponding request parameters.
+     * truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and
+     * specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request parameters.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policy instances to be listed. If the response was
-     *         truncated, you can get the next group of <code>MaxItems</code> traffic policy instances by calling
-     *         <code>ListTrafficPolicyInstances</code> again and specifying the values of the
-     *         <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
-     *         <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.
+     *         truncated, you can get more traffic policy instances by calling <code>ListTrafficPolicyInstances</code>
+     *         again and specifying the values of the <code>HostedZoneIdMarker</code>,
+     *         <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> in the
+     *         corresponding request parameters.
      */
 
     public Boolean isTruncated() {
@@ -474,7 +479,8 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -561,4 +567,5 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

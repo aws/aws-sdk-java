@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,32 +30,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more Scheduled Instance IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> scheduledInstanceIds;
-    /**
-     * <p>
-     * The time period for the first schedule to start.
-     * </p>
-     */
-    private SlotStartTimeRangeRequest slotStartTimeRange;
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
-     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -81,157 +56,274 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The Scheduled Instance IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> scheduledInstanceIds;
+    /**
+     * <p>
+     * The time period for the first schedule to start.
+     * </p>
+     */
+    private SlotStartTimeRangeRequest slotStartTimeRange;
 
     /**
      * <p>
-     * One or more Scheduled Instance IDs.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more Scheduled Instance IDs.
+     * @return The filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *         </p>
+     *         </li>
      */
 
-    public java.util.List<String> getScheduledInstanceIds() {
-        if (scheduledInstanceIds == null) {
-            scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>();
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
         }
-        return scheduledInstanceIds;
+        return filters;
     }
 
     /**
      * <p>
-     * One or more Scheduled Instance IDs.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param scheduledInstanceIds
-     *        One or more Scheduled Instance IDs.
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
      */
 
-    public void setScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
-        if (scheduledInstanceIds == null) {
-            this.scheduledInstanceIds = null;
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
             return;
         }
 
-        this.scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds);
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
      * <p>
-     * One or more Scheduled Instance IDs.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setScheduledInstanceIds(java.util.Collection)} or {@link #withScheduledInstanceIds(java.util.Collection)}
-     * if you want to override the existing values.
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param scheduledInstanceIds
-     *        One or more Scheduled Instance IDs.
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withScheduledInstanceIds(String... scheduledInstanceIds) {
-        if (this.scheduledInstanceIds == null) {
-            setScheduledInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds.length));
+    public DescribeScheduledInstancesRequest withFilters(Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
         }
-        for (String ele : scheduledInstanceIds) {
-            this.scheduledInstanceIds.add(ele);
+        for (Filter ele : filters) {
+            this.filters.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * One or more Scheduled Instance IDs.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param scheduledInstanceIds
-     *        One or more Scheduled Instance IDs.
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
-        setScheduledInstanceIds(scheduledInstanceIds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time period for the first schedule to start.
-     * </p>
-     * 
-     * @param slotStartTimeRange
-     *        The time period for the first schedule to start.
-     */
-
-    public void setSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
-        this.slotStartTimeRange = slotStartTimeRange;
-    }
-
-    /**
-     * <p>
-     * The time period for the first schedule to start.
-     * </p>
-     * 
-     * @return The time period for the first schedule to start.
-     */
-
-    public SlotStartTimeRangeRequest getSlotStartTimeRange() {
-        return this.slotStartTimeRange;
-    }
-
-    /**
-     * <p>
-     * The time period for the first schedule to start.
-     * </p>
-     * 
-     * @param slotStartTimeRange
-     *        The time period for the first schedule to start.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeScheduledInstancesRequest withSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
-        setSlotStartTimeRange(slotStartTimeRange);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @return The token for the next set of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeScheduledInstancesRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeScheduledInstancesRequest withFilters(java.util.Collection<Filter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -286,246 +378,154 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more filters.
+     * The token for the next set of results.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return One or more filters.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *         </p>
-     *         </li>
+     * @param nextToken
+     *        The token for the next set of results.
      */
 
-    public java.util.List<Filter> getFilters() {
-        if (filters == null) {
-            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
-        }
-        return filters;
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * One or more filters.
+     * The token for the next set of results.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
+     * @return The token for the next set of results.
      */
 
-    public void setFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-            return;
-        }
-
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
+    public String getNextToken() {
+        return this.nextToken;
     }
 
     /**
      * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
-     * the existing values.
+     * The token for the next set of results.
      * </p>
      * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
+     * @param nextToken
+     *        The token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withFilters(Filter... filters) {
-        if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
+    public DescribeScheduledInstancesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Scheduled Instance IDs.
+     * </p>
+     * 
+     * @return The Scheduled Instance IDs.
+     */
+
+    public java.util.List<String> getScheduledInstanceIds() {
+        if (scheduledInstanceIds == null) {
+            scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
-        for (Filter ele : filters) {
-            this.filters.add(ele);
+        return scheduledInstanceIds;
+    }
+
+    /**
+     * <p>
+     * The Scheduled Instance IDs.
+     * </p>
+     * 
+     * @param scheduledInstanceIds
+     *        The Scheduled Instance IDs.
+     */
+
+    public void setScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
+        if (scheduledInstanceIds == null) {
+            this.scheduledInstanceIds = null;
+            return;
+        }
+
+        this.scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds);
+    }
+
+    /**
+     * <p>
+     * The Scheduled Instance IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScheduledInstanceIds(java.util.Collection)} or {@link #withScheduledInstanceIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param scheduledInstanceIds
+     *        The Scheduled Instance IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScheduledInstancesRequest withScheduledInstanceIds(String... scheduledInstanceIds) {
+        if (this.scheduledInstanceIds == null) {
+            setScheduledInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(scheduledInstanceIds.length));
+        }
+        for (String ele : scheduledInstanceIds) {
+            this.scheduledInstanceIds.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * One or more filters.
+     * The Scheduled Instance IDs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
+     * @param scheduledInstanceIds
+     *        The Scheduled Instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstancesRequest withFilters(java.util.Collection<Filter> filters) {
-        setFilters(filters);
+    public DescribeScheduledInstancesRequest withScheduledInstanceIds(java.util.Collection<String> scheduledInstanceIds) {
+        setScheduledInstanceIds(scheduledInstanceIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time period for the first schedule to start.
+     * </p>
+     * 
+     * @param slotStartTimeRange
+     *        The time period for the first schedule to start.
+     */
+
+    public void setSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
+        this.slotStartTimeRange = slotStartTimeRange;
+    }
+
+    /**
+     * <p>
+     * The time period for the first schedule to start.
+     * </p>
+     * 
+     * @return The time period for the first schedule to start.
+     */
+
+    public SlotStartTimeRangeRequest getSlotStartTimeRange() {
+        return this.slotStartTimeRange;
+    }
+
+    /**
+     * <p>
+     * The time period for the first schedule to start.
+     * </p>
+     * 
+     * @param slotStartTimeRange
+     *        The time period for the first schedule to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScheduledInstancesRequest withSlotStartTimeRange(SlotStartTimeRangeRequest slotStartTimeRange) {
+        setSlotStartTimeRange(slotStartTimeRange);
         return this;
     }
 
@@ -541,7 +541,8 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -551,16 +552,16 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getScheduledInstanceIds() != null)
             sb.append("ScheduledInstanceIds: ").append(getScheduledInstanceIds()).append(",");
         if (getSlotStartTimeRange() != null)
-            sb.append("SlotStartTimeRange: ").append(getSlotStartTimeRange()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("SlotStartTimeRange: ").append(getSlotStartTimeRange());
         sb.append("}");
         return sb.toString();
     }
@@ -575,6 +576,18 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
         if (obj instanceof DescribeScheduledInstancesRequest == false)
             return false;
         DescribeScheduledInstancesRequest other = (DescribeScheduledInstancesRequest) obj;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getScheduledInstanceIds() == null ^ this.getScheduledInstanceIds() == null)
             return false;
         if (other.getScheduledInstanceIds() != null && other.getScheduledInstanceIds().equals(this.getScheduledInstanceIds()) == false)
@@ -582,18 +595,6 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
         if (other.getSlotStartTimeRange() == null ^ this.getSlotStartTimeRange() == null)
             return false;
         if (other.getSlotStartTimeRange() != null && other.getSlotStartTimeRange().equals(this.getSlotStartTimeRange()) == false)
-            return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         return true;
     }
@@ -603,11 +604,11 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getScheduledInstanceIds() == null) ? 0 : getScheduledInstanceIds().hashCode());
         hashCode = prime * hashCode + ((getSlotStartTimeRange() == null) ? 0 : getSlotStartTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

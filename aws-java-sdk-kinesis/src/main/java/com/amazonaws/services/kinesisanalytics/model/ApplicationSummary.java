@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,8 +14,17 @@ package com.amazonaws.services.kinesisanalytics.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <note>
+ * <p>
+ * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications.
+ * Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a
+ * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+ * </p>
+ * </note>
  * <p>
  * Provides application summary information, including the application Amazon Resource Name (ARN), name, and status.
  * </p>
@@ -24,7 +33,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationSummary implements Serializable, Cloneable {
+public class ApplicationSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -179,7 +188,7 @@ public class ApplicationSummary implements Serializable, Cloneable {
      */
 
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
-        this.applicationStatus = applicationStatus.toString();
+        withApplicationStatus(applicationStatus);
     }
 
     /**
@@ -194,12 +203,13 @@ public class ApplicationSummary implements Serializable, Cloneable {
      */
 
     public ApplicationSummary withApplicationStatus(ApplicationStatus applicationStatus) {
-        setApplicationStatus(applicationStatus);
+        this.applicationStatus = applicationStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -262,5 +272,11 @@ public class ApplicationSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisanalytics.model.transform.ApplicationSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

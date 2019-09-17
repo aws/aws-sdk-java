@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstancePortInfo implements Serializable, Cloneable {
+public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,8 +42,32 @@ public class InstancePortInfo implements Serializable, Cloneable {
     private Integer toPort;
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String protocol;
     /**
@@ -151,11 +177,58 @@ public class InstancePortInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocol
-     *        The protocol.
+     *        The protocol being used. Can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked
+     *        delivery of streamed data between applications running on hosts communicating by an IP network. If you
+     *        have an application that doesn't require reliable data stream service, use UDP instead.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>all</code> - All transport layer protocol types. For more general information, see <a
+     *        href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or
+     *        datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to
+     *        set up transmission channels or data paths. Applications that don't require reliable data stream service
+     *        can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over
+     *        reliability. If you do require reliable data stream service, use TCP instead.
+     *        </p>
+     *        </li>
      * @see NetworkProtocol
      */
 
@@ -165,10 +238,57 @@ public class InstancePortInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The protocol.
+     * @return The protocol being used. Can be one of the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked
+     *         delivery of streamed data between applications running on hosts communicating by an IP network. If you
+     *         have an application that doesn't require reliable data stream service, use UDP instead.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>all</code> - All transport layer protocol types. For more general information, see <a
+     *         href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or
+     *         datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to
+     *         set up transmission channels or data paths. Applications that don't require reliable data stream service
+     *         can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over
+     *         reliability. If you do require reliable data stream service, use TCP instead.
+     *         </p>
+     *         </li>
      * @see NetworkProtocol
      */
 
@@ -178,11 +298,58 @@ public class InstancePortInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocol
-     *        The protocol.
+     *        The protocol being used. Can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked
+     *        delivery of streamed data between applications running on hosts communicating by an IP network. If you
+     *        have an application that doesn't require reliable data stream service, use UDP instead.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>all</code> - All transport layer protocol types. For more general information, see <a
+     *        href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or
+     *        datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to
+     *        set up transmission channels or data paths. Applications that don't require reliable data stream service
+     *        can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over
+     *        reliability. If you do require reliable data stream service, use TCP instead.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProtocol
      */
@@ -194,31 +361,125 @@ public class InstancePortInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocol
-     *        The protocol.
+     *        The protocol being used. Can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked
+     *        delivery of streamed data between applications running on hosts communicating by an IP network. If you
+     *        have an application that doesn't require reliable data stream service, use UDP instead.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>all</code> - All transport layer protocol types. For more general information, see <a
+     *        href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or
+     *        datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to
+     *        set up transmission channels or data paths. Applications that don't require reliable data stream service
+     *        can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over
+     *        reliability. If you do require reliable data stream service, use TCP instead.
+     *        </p>
+     *        </li>
      * @see NetworkProtocol
      */
 
     public void setProtocol(NetworkProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
      * <p>
-     * The protocol.
+     * The protocol being used. Can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of
+     * streamed data between applications running on hosts communicating by an IP network. If you have an application
+     * that doesn't require reliable data stream service, use UDP instead.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>all</code> - All transport layer protocol types. For more general information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to
+     * other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission
+     * channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides
+     * a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable
+     * data stream service, use TCP instead.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param protocol
-     *        The protocol.
+     *        The protocol being used. Can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked
+     *        delivery of streamed data between applications running on hosts communicating by an IP network. If you
+     *        have an application that doesn't require reliable data stream service, use UDP instead.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>all</code> - All transport layer protocol types. For more general information, see <a
+     *        href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on Wikipedia.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or
+     *        datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to
+     *        set up transmission channels or data paths. Applications that don't require reliable data stream service
+     *        can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over
+     *        reliability. If you do require reliable data stream service, use TCP instead.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProtocol
      */
 
     public InstancePortInfo withProtocol(NetworkProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -316,7 +577,7 @@ public class InstancePortInfo implements Serializable, Cloneable {
      */
 
     public void setAccessType(PortAccessType accessType) {
-        this.accessType = accessType.toString();
+        withAccessType(accessType);
     }
 
     /**
@@ -331,7 +592,7 @@ public class InstancePortInfo implements Serializable, Cloneable {
      */
 
     public InstancePortInfo withAccessType(PortAccessType accessType) {
-        setAccessType(accessType);
+        this.accessType = accessType.toString();
         return this;
     }
 
@@ -429,7 +690,7 @@ public class InstancePortInfo implements Serializable, Cloneable {
      */
 
     public void setAccessDirection(AccessDirection accessDirection) {
-        this.accessDirection = accessDirection.toString();
+        withAccessDirection(accessDirection);
     }
 
     /**
@@ -444,12 +705,13 @@ public class InstancePortInfo implements Serializable, Cloneable {
      */
 
     public InstancePortInfo withAccessDirection(AccessDirection accessDirection) {
-        setAccessDirection(accessDirection);
+        this.accessDirection = accessDirection.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -540,5 +802,11 @@ public class InstancePortInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.InstancePortInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import com.amazonaws.transform.Unmarshaller;
 
 class S3KeyFilterStaxUnmarshaller implements Unmarshaller<S3KeyFilter, StaxUnmarshallerContext> {
 
-    private static S3KeyFilterStaxUnmarshaller instance = new S3KeyFilterStaxUnmarshaller();
+    private static final S3KeyFilterStaxUnmarshaller instance = new S3KeyFilterStaxUnmarshaller();
 
     public static S3KeyFilterStaxUnmarshaller getInstance() {
         return instance;

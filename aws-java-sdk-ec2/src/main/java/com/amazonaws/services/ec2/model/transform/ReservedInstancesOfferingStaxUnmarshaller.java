@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,16 +45,6 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("reservedInstancesOfferingId", targetDepth)) {
-                    reservedInstancesOffering.setReservedInstancesOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceType", targetDepth)) {
-                    reservedInstancesOffering.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     reservedInstancesOffering.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,13 +55,13 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     continue;
                 }
 
-                if (context.testExpression("usagePrice", targetDepth)) {
-                    reservedInstancesOffering.setUsagePrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("fixedPrice", targetDepth)) {
+                    reservedInstancesOffering.setFixedPrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("fixedPrice", targetDepth)) {
-                    reservedInstancesOffering.setFixedPrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    reservedInstancesOffering.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -80,8 +70,13 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     continue;
                 }
 
-                if (context.testExpression("instanceTenancy", targetDepth)) {
-                    reservedInstancesOffering.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("reservedInstancesOfferingId", targetDepth)) {
+                    reservedInstancesOffering.setReservedInstancesOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("usagePrice", targetDepth)) {
+                    reservedInstancesOffering.setUsagePrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -90,23 +85,23 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     continue;
                 }
 
-                if (context.testExpression("offeringType", targetDepth)) {
-                    reservedInstancesOffering.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("recurringCharges", targetDepth)) {
-                    reservedInstancesOffering.withRecurringCharges(new ArrayList<RecurringCharge>());
-                    continue;
-                }
-
-                if (context.testExpression("recurringCharges/item", targetDepth)) {
-                    reservedInstancesOffering.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceTenancy", targetDepth)) {
+                    reservedInstancesOffering.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("marketplace", targetDepth)) {
                     reservedInstancesOffering.setMarketplace(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("offeringClass", targetDepth)) {
+                    reservedInstancesOffering.setOfferingClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("offeringType", targetDepth)) {
+                    reservedInstancesOffering.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -120,8 +115,13 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     continue;
                 }
 
-                if (context.testExpression("offeringClass", targetDepth)) {
-                    reservedInstancesOffering.setOfferingClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("recurringCharges", targetDepth)) {
+                    reservedInstancesOffering.withRecurringCharges(new ArrayList<RecurringCharge>());
+                    continue;
+                }
+
+                if (context.testExpression("recurringCharges/item", targetDepth)) {
+                    reservedInstancesOffering.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

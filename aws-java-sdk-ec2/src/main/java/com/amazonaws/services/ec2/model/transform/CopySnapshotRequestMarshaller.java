@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,14 +40,6 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (copySnapshotRequest.getSourceRegion() != null) {
-            request.addParameter("SourceRegion", StringUtils.fromString(copySnapshotRequest.getSourceRegion()));
-        }
-
-        if (copySnapshotRequest.getSourceSnapshotId() != null) {
-            request.addParameter("SourceSnapshotId", StringUtils.fromString(copySnapshotRequest.getSourceSnapshotId()));
-        }
-
         if (copySnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(copySnapshotRequest.getDescription()));
         }
@@ -56,16 +48,24 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
             request.addParameter("DestinationRegion", StringUtils.fromString(copySnapshotRequest.getDestinationRegion()));
         }
 
-        if (copySnapshotRequest.getPresignedUrl() != null) {
-            request.addParameter("PresignedUrl", StringUtils.fromString(copySnapshotRequest.getPresignedUrl()));
-        }
-
         if (copySnapshotRequest.getEncrypted() != null) {
             request.addParameter("Encrypted", StringUtils.fromBoolean(copySnapshotRequest.getEncrypted()));
         }
 
         if (copySnapshotRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(copySnapshotRequest.getKmsKeyId()));
+        }
+
+        if (copySnapshotRequest.getPresignedUrl() != null) {
+            request.addParameter("PresignedUrl", StringUtils.fromString(copySnapshotRequest.getPresignedUrl()));
+        }
+
+        if (copySnapshotRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(copySnapshotRequest.getSourceRegion()));
+        }
+
+        if (copySnapshotRequest.getSourceSnapshotId() != null) {
+            request.addParameter("SourceSnapshotId", StringUtils.fromString(copySnapshotRequest.getSourceSnapshotId()));
         }
 
         return request;

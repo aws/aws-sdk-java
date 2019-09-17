@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Backup implements Serializable, Cloneable {
+public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -107,15 +109,17 @@ public class Backup implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      */
+    @Deprecated
     private Integer s3DataSize;
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      */
+    @Deprecated
     private String s3DataUrl;
     /**
      * <p>
@@ -161,8 +165,7 @@ public class Backup implements Serializable, Cloneable {
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      */
     private String toolsVersion;
@@ -307,7 +310,7 @@ public class Backup implements Serializable, Cloneable {
      */
 
     public void setBackupType(BackupType backupType) {
-        this.backupType = backupType.toString();
+        withBackupType(backupType);
     }
 
     /**
@@ -322,7 +325,7 @@ public class Backup implements Serializable, Cloneable {
      */
 
     public Backup withBackupType(BackupType backupType) {
-        setBackupType(backupType);
+        this.backupType = backupType.toString();
         return this;
     }
 
@@ -735,39 +738,39 @@ public class Backup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataSize
-     *        The size of the backup, in bytes. The size is returned by the instance in the command results.
+     *        This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public void setS3DataSize(Integer s3DataSize) {
         this.s3DataSize = s3DataSize;
     }
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
-     * @return The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * @return This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public Integer getS3DataSize() {
         return this.s3DataSize;
     }
 
     /**
      * <p>
-     * The size of the backup, in bytes. The size is returned by the instance in the command results.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataSize
-     *        The size of the backup, in bytes. The size is returned by the instance in the command results.
+     *        This field is deprecated and is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Backup withS3DataSize(Integer s3DataSize) {
         setS3DataSize(s3DataSize);
         return this;
@@ -775,39 +778,39 @@ public class Backup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataUrl
-     *        The Amazon S3 URL of the backup's tar.gz file.
+     *        This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public void setS3DataUrl(String s3DataUrl) {
         this.s3DataUrl = s3DataUrl;
     }
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
-     * @return The Amazon S3 URL of the backup's tar.gz file.
+     * @return This field is deprecated and is no longer used.
      */
-
+    @Deprecated
     public String getS3DataUrl() {
         return this.s3DataUrl;
     }
 
     /**
      * <p>
-     * The Amazon S3 URL of the backup's tar.gz file.
+     * This field is deprecated and is no longer used.
      * </p>
      * 
      * @param s3DataUrl
-     *        The Amazon S3 URL of the backup's tar.gz file.
+     *        This field is deprecated and is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Backup withS3DataUrl(String s3DataUrl) {
         setS3DataUrl(s3DataUrl);
         return this;
@@ -1057,7 +1060,7 @@ public class Backup implements Serializable, Cloneable {
      */
 
     public void setStatus(BackupStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1072,7 +1075,7 @@ public class Backup implements Serializable, Cloneable {
      */
 
     public Backup withStatus(BackupStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1188,13 +1191,11 @@ public class Backup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
      * @param toolsVersion
-     *        The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *        backup is created.
+     *        The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      */
 
     public void setToolsVersion(String toolsVersion) {
@@ -1203,12 +1204,11 @@ public class Backup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
-     * @return The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *         backup is created.
+     * @return The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is
+     *         created.
      */
 
     public String getToolsVersion() {
@@ -1217,13 +1217,11 @@ public class Backup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
      * @param toolsVersion
-     *        The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *        backup is created.
+     *        The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1273,7 +1271,8 @@ public class Backup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1483,5 +1482,11 @@ public class Backup implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworkscm.model.transform.BackupMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -54,14 +48,34 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
+     * The host reservation IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
+    /**
+     * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      */
     private Integer maxResults;
@@ -74,85 +88,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @return One or more host reservation IDs.
-     */
-
-    public java.util.List<String> getHostReservationIdSet() {
-        if (hostReservationIdSet == null) {
-            hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostReservationIdSet;
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     */
-
-    public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
-        if (hostReservationIdSet == null) {
-            this.hostReservationIdSet = null;
-            return;
-        }
-
-        this.hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet);
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostReservationIdSet(java.util.Collection)} or {@link #withHostReservationIdSet(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationsRequest withHostReservationIdSet(String... hostReservationIdSet) {
-        if (this.hostReservationIdSet == null) {
-            setHostReservationIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet.length));
-        }
-        for (String ele : hostReservationIdSet) {
-            this.hostReservationIdSet.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationsRequest withHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
-        setHostReservationIdSet(hostReservationIdSet);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -167,13 +108,27 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *         <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -188,6 +143,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *         <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilter() {
@@ -199,12 +168,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -219,14 +188,28 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -239,6 +222,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <p>
      *        <code>state</code> - The state of the reservation (<code>payment-pending</code> |
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      */
@@ -254,12 +251,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -274,6 +271,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -282,11 +293,11 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -299,6 +310,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <p>
      *        <code>state</code> - The state of the reservation (<code>payment-pending</code> |
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -316,12 +341,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     * <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      * </p>
      * </li>
      * <li>
@@ -336,14 +361,28 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * <code>active</code> | <code>retired</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-family</code> - The instance family (e.g., <code>m4</code>).
+     *        <code>instance-family</code> - The instance family (for example, <code>m4</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -358,6 +397,20 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      *        <code>payment-failed</code> | <code>active</code> | <code>retired</code>).
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,15 +421,88 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The host reservation IDs.
+     * </p>
+     * 
+     * @return The host reservation IDs.
+     */
+
+    public java.util.List<String> getHostReservationIdSet() {
+        if (hostReservationIdSet == null) {
+            hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostReservationIdSet;
+    }
+
+    /**
+     * <p>
+     * The host reservation IDs.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        The host reservation IDs.
+     */
+
+    public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
+        if (hostReservationIdSet == null) {
+            this.hostReservationIdSet = null;
+            return;
+        }
+
+        this.hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet);
+    }
+
+    /**
+     * <p>
+     * The host reservation IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostReservationIdSet(java.util.Collection)} or {@link #withHostReservationIdSet(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        The host reservation IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationsRequest withHostReservationIdSet(String... hostReservationIdSet) {
+        if (this.hostReservationIdSet == null) {
+            setHostReservationIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet.length));
+        }
+        for (String ele : hostReservationIdSet) {
+            this.hostReservationIdSet.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The host reservation IDs.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        The host reservation IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationsRequest withHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
+        setHostReservationIdSet(hostReservationIdSet);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -386,13 +512,13 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results can be
      *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *         5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *         5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public Integer getMaxResults() {
@@ -402,14 +528,14 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
      *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500; if <code>maxResults</code> is given a larger value than 500, you will receive an error.
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,7 +596,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -480,10 +607,10 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHostReservationIdSet() != null)
-            sb.append("HostReservationIdSet: ").append(getHostReservationIdSet()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
+        if (getHostReservationIdSet() != null)
+            sb.append("HostReservationIdSet: ").append(getHostReservationIdSet()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -502,13 +629,13 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DescribeHostReservationsRequest == false)
             return false;
         DescribeHostReservationsRequest other = (DescribeHostReservationsRequest) obj;
-        if (other.getHostReservationIdSet() == null ^ this.getHostReservationIdSet() == null)
-            return false;
-        if (other.getHostReservationIdSet() != null && other.getHostReservationIdSet().equals(this.getHostReservationIdSet()) == false)
-            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        if (other.getHostReservationIdSet() == null ^ this.getHostReservationIdSet() == null)
+            return false;
+        if (other.getHostReservationIdSet() != null && other.getHostReservationIdSet().equals(this.getHostReservationIdSet()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -526,8 +653,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHostReservationIdSet() == null) ? 0 : getHostReservationIdSet().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getHostReservationIdSet() == null) ? 0 : getHostReservationIdSet().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

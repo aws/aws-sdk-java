@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
-     * @return The tags.
+     * @return The tags for the log group.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -47,11 +47,11 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        The tags for the log group.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -60,11 +60,11 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        The tags for the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,7 +95,8 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -145,4 +146,5 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

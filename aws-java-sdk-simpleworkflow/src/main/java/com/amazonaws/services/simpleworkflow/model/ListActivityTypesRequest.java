@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -40,9 +45,11 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
     private String registrationStatus;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -51,13 +58,8 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      */
     private Integer maximumPageSize;
@@ -203,7 +205,7 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -218,24 +220,28 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public ListActivityTypesRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -246,17 +252,21 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      */
@@ -267,18 +277,22 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -291,22 +305,13 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      */
 
     public void setMaximumPageSize(Integer maximumPageSize) {
@@ -315,21 +320,12 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *         however, specify a page size <i>smaller</i> than the maximum.</p>
-     *         <p>
-     *         This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *         specified maximum.
+     * @return The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain
+     *         further pages of results.
      */
 
     public Integer getMaximumPageSize() {
@@ -338,22 +334,13 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
-     * </p>
-     * <p>
-     * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
-     * maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
-     *        <p>
-     *        This is an upper limit only; the actual number of results returned per call may be fewer than the
-     *        specified maximum.
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,7 +410,8 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

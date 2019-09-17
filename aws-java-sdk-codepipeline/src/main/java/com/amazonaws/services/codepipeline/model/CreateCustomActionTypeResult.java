@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a create custom action operation.
+ * Represents the output of a <code>CreateCustomActionType</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType"
@@ -26,10 +26,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     */
     private ActionType actionType;
+    /**
+     * <p>
+     * Specifies the tags applied to the custom action.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
      * @param actionType
+     *        Returns information about the details of an action type.
      */
 
     public void setActionType(ActionType actionType) {
@@ -37,7 +53,11 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
+     * @return Returns information about the details of an action type.
      */
 
     public ActionType getActionType() {
@@ -45,7 +65,12 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
      * @param actionType
+     *        Returns information about the details of an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +80,78 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies the tags applied to the custom action.
+     * </p>
+     * 
+     * @return Specifies the tags applied to the custom action.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the custom action.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the custom action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the custom action.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the custom action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomActionTypeResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -66,7 +162,9 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionType() != null)
-            sb.append("ActionType: ").append(getActionType());
+            sb.append("ActionType: ").append(getActionType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -85,6 +183,10 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getActionType() != null && other.getActionType().equals(this.getActionType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -94,6 +196,7 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActionType() == null) ? 0 : getActionType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -105,4 +208,5 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

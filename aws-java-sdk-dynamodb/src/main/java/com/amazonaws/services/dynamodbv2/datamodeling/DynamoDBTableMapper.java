@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,6 +234,38 @@ public final class DynamoDBTableMapper<T extends Object, H extends Object, R ext
      */
     public List<DynamoDBMapper.FailedBatch> batchWrite(Iterable<T> objectsToWrite, Iterable<T> objectsToDelete) {
         return mapper.batchWrite(objectsToWrite, objectsToDelete);
+    }
+
+    /**
+     * Transactionally writes objects specified by transactionWriteRequest by calling
+     * {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#transactionWrite(TransactionWriteRequest)} API.
+     * @param transactionWriteRequest List of objects to write
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#transactionWrite(TransactionWriteRequest)
+     */
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest) {
+        for (TransactionWriteRequest.TransactionWriteOperation transactionWriteOperation : transactionWriteRequest.getTransactionWriteOperations()) {
+            if (!model.targetType().equals(transactionWriteOperation.getObject().getClass())) {
+                throw new DynamoDBMappingException("Input object is of the classType: " + transactionWriteOperation.getObject().getClass()
+                                                           + " but tableMapper is declared with classType: " + model.targetType());
+            }
+        }
+        mapper.transactionWrite(transactionWriteRequest);
+    }
+
+    /**
+     * Transactionally loads objects specified by transactionLoadRequest by calling
+     * {@link com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#transactionLoad(TransactionLoadRequest)} API.
+     * @param transactionLoadRequest List of objects to load
+     * @return List of objects
+     * @see com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper#transactionLoad(TransactionLoadRequest)
+     */
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest) {
+        for (Object object : transactionLoadRequest.getObjectsToLoad() ) {
+            if (!model.targetType().equals(object.getClass())) {
+                throw new DynamoDBMappingException("Input object is of the classType: " + object.getClass() + " but tableMapper is declared with classType: " + model.targetType());
+            }
+        }
+        return mapper.transactionLoad(transactionLoadRequest);
     }
 
     /**

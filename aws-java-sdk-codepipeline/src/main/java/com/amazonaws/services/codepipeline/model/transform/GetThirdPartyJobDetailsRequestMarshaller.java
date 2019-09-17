@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetThirdPartyJobDetailsRequest Marshaller
+ * GetThirdPartyJobDetailsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetThirdPartyJobDetailsRequestMarshaller implements Marshaller<Request<GetThirdPartyJobDetailsRequest>, GetThirdPartyJobDetailsRequest> {
+@SdkInternalApi
+public class GetThirdPartyJobDetailsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
 
-    public GetThirdPartyJobDetailsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetThirdPartyJobDetailsRequestMarshaller instance = new GetThirdPartyJobDetailsRequestMarshaller();
+
+    public static GetThirdPartyJobDetailsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetThirdPartyJobDetailsRequest> marshall(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getThirdPartyJobDetailsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetThirdPartyJobDetailsRequest> request = new DefaultRequest<GetThirdPartyJobDetailsRequest>(getThirdPartyJobDetailsRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.GetThirdPartyJobDetails");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getThirdPartyJobDetailsRequest.getJobId() != null) {
-                jsonGenerator.writeFieldName("jobId").writeValue(getThirdPartyJobDetailsRequest.getJobId());
-            }
-            if (getThirdPartyJobDetailsRequest.getClientToken() != null) {
-                jsonGenerator.writeFieldName("clientToken").writeValue(getThirdPartyJobDetailsRequest.getClientToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getThirdPartyJobDetailsRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(getThirdPartyJobDetailsRequest.getClientToken(), CLIENTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

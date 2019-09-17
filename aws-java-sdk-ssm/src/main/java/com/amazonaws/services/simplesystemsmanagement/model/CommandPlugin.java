@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommandPlugin implements Serializable, Cloneable {
+public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,75 +37,71 @@ public class CommandPlugin implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     * Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
-     * command. This is a terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
+     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     * terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was
-     * not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
-     * Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.
+     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
+     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit, and
-     * they don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>.
-     * This is a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -111,19 +109,19 @@ public class CommandPlugin implements Serializable, Cloneable {
     private String statusDetails;
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      */
     private Integer responseCode;
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      */
     private java.util.Date responseStartDateTime;
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      */
     private java.util.Date responseFinishDateTime;
@@ -149,7 +147,8 @@ public class CommandPlugin implements Serializable, Cloneable {
     private String standardErrorUrl;
     /**
      * <p>
-     * The name of the region where the output is stored in Amazon S3.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -159,19 +158,19 @@ public class CommandPlugin implements Serializable, Cloneable {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      */
     private String outputS3BucketName;
@@ -181,19 +180,19 @@ public class CommandPlugin implements Serializable, Cloneable {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      */
     private String outputS3KeyPrefix;
@@ -246,11 +245,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -260,10 +259,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
-     * @return The status of this plugin. You can execute a document with multiple plugins.
+     * @return The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -273,11 +272,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
@@ -289,167 +288,161 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
     public void setStatus(CommandPluginStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
 
     public CommandPlugin withStatus(CommandPluginStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     * Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
-     * command. This is a terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
+     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     * terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was
-     * not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
-     * Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.
+     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
+     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit, and
-     * they don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>.
-     * This is a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
-     *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
+     *        results than Status. For more information about these statuses, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to the instance.
+     *        Pending: The command has not been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     *        Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *        contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *        is a terminal state.
+     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *        whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – Command execution started on the instance, but the execution was not complete before
-     *        the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
-     *        parent command. This is a terminal state.
+     *        Execution Timed Out: Command execution started on the instance, but the execution was not complete before
+     *        the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
+     *        This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The command was not successful on the instance. For a plugin, this indicates that the result code
+     *        Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
      *        was not zero. For a command invocation, this indicates that the result code for one or more plugins was
-     *        not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This
-     *        is a terminal state.
+     *        not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might
-     *        not be responding. Undeliverable invocations don't count against the parent command’s
-     *        <code>MaxErrors</code> limit, and they don't contribute to whether the parent command status is
-     *        <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     *        Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might
+     *        not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and
+     *        they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *        invocations were canceled by the system. This is a terminal state.
+     *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *        canceled by the system. This is a terminal state.
      *        </p>
      *        </li>
      */
@@ -460,136 +453,130 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     * Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
-     * command. This is a terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
+     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     * terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was
-     * not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
-     * Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.
+     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
+     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit, and
-     * they don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>.
-     * This is a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     *         <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *         <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     *         about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     * @return A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     *         includes states resulting from error and concurrency control parameters. StatusDetails can show different
+     *         results than Status. For more information about these statuses, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending – The command has not been sent to the instance.
+     *         Pending: The command has not been sent to the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *         In Progress: The command has been sent to the instance but has not reached a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     *         Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *         Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *         contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *         is a terminal state.
+     *         Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *         Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *         whether the parent command status is Success or Incomplete. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Execution Timed Out – Command execution started on the instance, but the execution was not complete
-     *         before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit
-     *         of the parent command. This is a terminal state.
+     *         Execution Timed Out: Command execution started on the instance, but the execution was not complete before
+     *         the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent
+     *         command. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed – The command was not successful on the instance. For a plugin, this indicates that the result
-     *         code was not zero. For a command invocation, this indicates that the result code for one or more plugins
-     *         was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command.
-     *         This is a terminal state.
+     *         Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
+     *         was not zero. For a command invocation, this indicates that the result code for one or more plugins was
+     *         not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *         state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Canceled – The command was terminated before it was completed. This is a terminal state.
+     *         Canceled: The command was terminated before it was completed. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might
-     *         not be responding. Undeliverable invocations don't count against the parent command’s
-     *         <code>MaxErrors</code> limit, and they don't contribute to whether the parent command status is
-     *         <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     *         Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might
+     *         not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit,
+     *         and they don't contribute to whether the parent command status is Success or Incomplete. This is a
+     *         terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *         invocations were canceled by the system. This is a terminal state.
+     *         Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *         canceled by the system. This is a terminal state.
      *         </p>
      *         </li>
      */
@@ -600,137 +587,131 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     * Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – Command execution started on the instance, but the execution was not complete before the
-     * execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent
-     * command. This is a terminal state.
+     * Execution Timed Out: Command execution started on the instance, but the execution was not complete before the
+     * execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     * terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was
-     * not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
-     * Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-     * state.
+     * Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not
+     * zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit, and
-     * they don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>.
-     * This is a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
-     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
-     *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
+     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
+     *        results than Status. For more information about these statuses, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to the instance.
+     *        Pending: The command has not been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The execution of the command or plugin was successfully completed. This is a terminal state.
+     *        Success: The execution of the command or plugin was successfully completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *        contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *        is a terminal state.
+     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *        whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – Command execution started on the instance, but the execution was not complete before
-     *        the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
-     *        parent command. This is a terminal state.
+     *        Execution Timed Out: Command execution started on the instance, but the execution was not complete before
+     *        the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
+     *        This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The command was not successful on the instance. For a plugin, this indicates that the result code
+     *        Failed: The command was not successful on the instance. For a plugin, this indicates that the result code
      *        was not zero. For a command invocation, this indicates that the result code for one or more plugins was
-     *        not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This
-     *        is a terminal state.
+     *        not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might
-     *        not be responding. Undeliverable invocations don't count against the parent command’s
-     *        <code>MaxErrors</code> limit, and they don't contribute to whether the parent command status is
-     *        <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     *        Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might
+     *        not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and
+     *        they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *        invocations were canceled by the system. This is a terminal state.
+     *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *        canceled by the system. This is a terminal state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -743,11 +724,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -756,10 +737,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
-     * @return A numeric response code generated after executing the plugin.
+     * @return A numeric response code generated after running the plugin.
      */
 
     public Integer getResponseCode() {
@@ -768,11 +749,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -783,11 +764,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      */
 
     public void setResponseStartDateTime(java.util.Date responseStartDateTime) {
@@ -796,10 +777,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
-     * @return The time the plugin started executing.
+     * @return The time the plugin started running.
      */
 
     public java.util.Date getResponseStartDateTime() {
@@ -808,11 +789,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -823,11 +804,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public void setResponseFinishDateTime(java.util.Date responseFinishDateTime) {
@@ -836,10 +817,10 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
-     * @return The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * @return The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public java.util.Date getResponseFinishDateTime() {
@@ -848,11 +829,11 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -995,11 +976,13 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the output is stored in Amazon S3.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The name of the region where the output is stored in Amazon S3.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -1008,10 +991,12 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the output is stored in Amazon S3.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
-     * @return The name of the region where the output is stored in Amazon S3.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *         automatically determines the Amazon S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -1020,11 +1005,13 @@ public class CommandPlugin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region where the output is stored in Amazon S3.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The name of the region where the output is stored in Amazon S3.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1039,38 +1026,38 @@ public class CommandPlugin implements Serializable, Cloneable {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the Amazon S3 bucket;
      *        </p>
      *        <p>
-     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        <code>i-1234567876543</code> is the instance ID;
+     *        i-1234567876543 is the instance ID;
      *        </p>
      *        <p>
-     *        <code>awsrunShellScript</code> is the name of the plugin.
+     *        awsrunShellScript is the name of the plugin.
      */
 
     public void setOutputS3BucketName(String outputS3BucketName) {
@@ -1083,37 +1070,37 @@ public class CommandPlugin implements Serializable, Cloneable {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @return The S3 bucket where the responses to the command executions should be stored. This was requested when
      *         issuing the command. For example, in the following response:</p>
      *         <p>
-     *         <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *         </p>
      *         <p>
-     *         <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *         test_folder is the name of the Amazon S3 bucket;
      *         </p>
      *         <p>
-     *         <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         <code>i-1234567876543</code> is the instance ID;
+     *         i-1234567876543 is the instance ID;
      *         </p>
      *         <p>
-     *         <code>awsrunShellScript</code> is the name of the plugin.
+     *         awsrunShellScript is the name of the plugin.
      */
 
     public String getOutputS3BucketName() {
@@ -1126,38 +1113,38 @@ public class CommandPlugin implements Serializable, Cloneable {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the Amazon S3 bucket;
      *        </p>
      *        <p>
-     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        <code>i-1234567876543</code> is the instance ID;
+     *        i-1234567876543 is the instance ID;
      *        </p>
      *        <p>
-     *        <code>awsrunShellScript</code> is the name of the plugin.
+     *        awsrunShellScript is the name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1172,38 +1159,38 @@ public class CommandPlugin implements Serializable, Cloneable {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the Amazon S3 bucket;
      *        </p>
      *        <p>
-     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        <code>i-1234567876543</code> is the instance ID;
+     *        i-1234567876543 is the instance ID;
      *        </p>
      *        <p>
-     *        <code>awsrunShellScript</code> is the name of the plugin.
+     *        awsrunShellScript is the name of the plugin.
      */
 
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
@@ -1216,37 +1203,37 @@ public class CommandPlugin implements Serializable, Cloneable {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @return The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *         This was requested when issuing the command. For example, in the following response:</p>
      *         <p>
-     *         <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *         </p>
      *         <p>
-     *         <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *         test_folder is the name of the Amazon S3 bucket;
      *         </p>
      *         <p>
-     *         <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         <code>i-1234567876543</code> is the instance ID;
+     *         i-1234567876543 is the instance ID;
      *         </p>
      *         <p>
-     *         <code>awsrunShellScript</code> is the name of the plugin.
+     *         awsrunShellScript is the name of the plugin.
      */
 
     public String getOutputS3KeyPrefix() {
@@ -1259,38 +1246,38 @@ public class CommandPlugin implements Serializable, Cloneable {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * <code>test_folder</code> is the name of the Amazon S3 bucket;
+     * test_folder is the name of the Amazon S3 bucket;
      * </p>
      * <p>
-     * <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * <code>i-1234567876543</code> is the instance ID;
+     * i-1234567876543 is the instance ID;
      * </p>
      * <p>
-     * <code>awsrunShellScript</code> is the name of the plugin.
+     * awsrunShellScript is the name of the plugin.
      * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        <code>test_folder</code> is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the Amazon S3 bucket;
      *        </p>
      *        <p>
-     *        <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+     *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        <code>i-1234567876543</code> is the instance ID;
+     *        i-1234567876543 is the instance ID;
      *        </p>
      *        <p>
-     *        <code>awsrunShellScript</code> is the name of the plugin.
+     *        awsrunShellScript is the name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1300,7 +1287,8 @@ public class CommandPlugin implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1426,5 +1414,11 @@ public class CommandPlugin implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.CommandPluginMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

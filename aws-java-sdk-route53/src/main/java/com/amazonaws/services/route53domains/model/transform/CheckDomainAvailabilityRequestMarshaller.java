@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CheckDomainAvailabilityRequest Marshaller
+ * CheckDomainAvailabilityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CheckDomainAvailabilityRequestMarshaller implements Marshaller<Request<CheckDomainAvailabilityRequest>, CheckDomainAvailabilityRequest> {
+@SdkInternalApi
+public class CheckDomainAvailabilityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> IDNLANGCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdnLangCode").build();
 
-    public CheckDomainAvailabilityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CheckDomainAvailabilityRequestMarshaller instance = new CheckDomainAvailabilityRequestMarshaller();
+
+    public static CheckDomainAvailabilityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CheckDomainAvailabilityRequest> marshall(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (checkDomainAvailabilityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CheckDomainAvailabilityRequest> request = new DefaultRequest<CheckDomainAvailabilityRequest>(checkDomainAvailabilityRequest,
-                "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.CheckDomainAvailability");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (checkDomainAvailabilityRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(checkDomainAvailabilityRequest.getDomainName());
-            }
-            if (checkDomainAvailabilityRequest.getIdnLangCode() != null) {
-                jsonGenerator.writeFieldName("IdnLangCode").writeValue(checkDomainAvailabilityRequest.getIdnLangCode());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(checkDomainAvailabilityRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(checkDomainAvailabilityRequest.getIdnLangCode(), IDNLANGCODE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,54 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * State of the connection.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the
- * ordering state until the owner of the hosted connection confirms or declines the connection order.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Requested</b>: The initial state of a standard connection. The connection stays in the requested state until the
- * Letter of Authorization (LOA) is sent to the customer.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Pending</b>: The connection has been approved, and is being initialized.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Available</b>: The network link is up, and the connection is ready for use.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Down</b>: The network link is down.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleting</b>: The connection is in the process of being deleted.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Deleted</b>: The connection has been deleted.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the
- * end customer.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConnectionState {
@@ -74,7 +27,8 @@ public enum ConnectionState {
     Down("down"),
     Deleting("deleting"),
     Deleted("deleted"),
-    Rejected("rejected");
+    Rejected("rejected"),
+    Unknown("unknown");
 
     private String value;
 
@@ -93,6 +47,9 @@ public enum ConnectionState {
      * @param value
      *        real value
      * @return ConnectionState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ConnectionState fromValue(String value) {
         if (value == null || "".equals(value)) {

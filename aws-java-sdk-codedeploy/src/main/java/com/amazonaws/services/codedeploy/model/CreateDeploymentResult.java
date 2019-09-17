@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a create deployment operation.
+ * Represents the output of a CreateDeployment operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS API
@@ -28,18 +28,18 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      */
     private String deploymentId;
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        A unique deployment ID.
+     *        The unique ID of a deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -48,10 +48,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
-     * @return A unique deployment ID.
+     * @return The unique ID of a deployment.
      */
 
     public String getDeploymentId() {
@@ -60,11 +60,11 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        A unique deployment ID.
+     *        The unique ID of a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,4 +125,5 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

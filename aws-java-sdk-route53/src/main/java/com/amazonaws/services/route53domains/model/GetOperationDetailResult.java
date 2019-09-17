@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,17 +30,11 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The identifier for the operation.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String operationId;
     /**
      * <p>
      * The current status of the requested operation in the system.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String status;
@@ -48,26 +42,17 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Detailed information on the status including possible errors.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String message;
     /**
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String domainName;
     /**
      * <p>
      * The type of operation that was requested.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String type;
@@ -82,14 +67,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The identifier for the operation.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        The identifier for the operation.</p>
-     *        <p>
-     *        Type: String
+     *        The identifier for the operation.
      */
 
     public void setOperationId(String operationId) {
@@ -100,13 +80,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The identifier for the operation.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The identifier for the operation.</p>
-     *         <p>
-     *         Type: String
+     * @return The identifier for the operation.
      */
 
     public String getOperationId() {
@@ -117,14 +92,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The identifier for the operation.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        The identifier for the operation.</p>
-     *        <p>
-     *        Type: String
+     *        The identifier for the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,14 +107,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -156,13 +121,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The current status of the requested operation in the system.</p>
-     *         <p>
-     *         Type: String
+     * @return The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -174,14 +134,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
@@ -195,39 +150,29 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
     public void setStatus(OperationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
 
     public GetOperationDetailResult withStatus(OperationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -235,14 +180,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Detailed information on the status including possible errors.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param message
-     *        Detailed information on the status including possible errors.</p>
-     *        <p>
-     *        Type: String
+     *        Detailed information on the status including possible errors.
      */
 
     public void setMessage(String message) {
@@ -253,13 +193,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Detailed information on the status including possible errors.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Detailed information on the status including possible errors.</p>
-     *         <p>
-     *         Type: String
+     * @return Detailed information on the status including possible errors.
      */
 
     public String getMessage() {
@@ -270,14 +205,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Detailed information on the status including possible errors.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param message
-     *        Detailed information on the status including possible errors.</p>
-     *        <p>
-     *        Type: String
+     *        Detailed information on the status including possible errors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,14 +220,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of a domain.
      */
 
     public void setDomainName(String domainName) {
@@ -308,13 +233,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of a domain.
      */
 
     public String getDomainName() {
@@ -325,14 +245,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The name of a domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,14 +260,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The type of operation that was requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param type
-     *        The type of operation that was requested.</p>
-     *        <p>
-     *        Type: String
+     *        The type of operation that was requested.
      * @see OperationType
      */
 
@@ -364,13 +274,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The type of operation that was requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The type of operation that was requested.</p>
-     *         <p>
-     *         Type: String
+     * @return The type of operation that was requested.
      * @see OperationType
      */
 
@@ -382,14 +287,9 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The type of operation that was requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param type
-     *        The type of operation that was requested.</p>
-     *        <p>
-     *        Type: String
+     *        The type of operation that was requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -403,39 +303,29 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The type of operation that was requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param type
-     *        The type of operation that was requested.</p>
-     *        <p>
-     *        Type: String
+     *        The type of operation that was requested.
      * @see OperationType
      */
 
     public void setType(OperationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
      * <p>
      * The type of operation that was requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param type
-     *        The type of operation that was requested.</p>
-     *        <p>
-     *        Type: String
+     *        The type of operation that was requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
 
     public GetOperationDetailResult withType(OperationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -480,7 +370,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -565,4 +456,5 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.certificatemanager.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ResendValidationEmailRequest Marshaller
+ * ResendValidationEmailRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResendValidationEmailRequestMarshaller implements Marshaller<Request<ResendValidationEmailRequest>, ResendValidationEmailRequest> {
+@SdkInternalApi
+public class ResendValidationEmailRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Domain").build();
+    private static final MarshallingInfo<String> VALIDATIONDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationDomain").build();
 
-    public ResendValidationEmailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ResendValidationEmailRequestMarshaller instance = new ResendValidationEmailRequestMarshaller();
+
+    public static ResendValidationEmailRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ResendValidationEmailRequest> marshall(ResendValidationEmailRequest resendValidationEmailRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ResendValidationEmailRequest resendValidationEmailRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (resendValidationEmailRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ResendValidationEmailRequest> request = new DefaultRequest<ResendValidationEmailRequest>(resendValidationEmailRequest, "AWSCertificateManager");
-        request.addHeader("X-Amz-Target", "CertificateManager.ResendValidationEmail");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (resendValidationEmailRequest.getCertificateArn() != null) {
-                jsonGenerator.writeFieldName("CertificateArn").writeValue(resendValidationEmailRequest.getCertificateArn());
-            }
-            if (resendValidationEmailRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("Domain").writeValue(resendValidationEmailRequest.getDomain());
-            }
-            if (resendValidationEmailRequest.getValidationDomain() != null) {
-                jsonGenerator.writeFieldName("ValidationDomain").writeValue(resendValidationEmailRequest.getValidationDomain());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(resendValidationEmailRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(resendValidationEmailRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(resendValidationEmailRequest.getValidationDomain(), VALIDATIONDOMAIN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

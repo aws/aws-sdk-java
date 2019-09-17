@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.waf.model.waf.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSizeConstraintSetRequest Marshaller
+ * GetSizeConstraintSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSizeConstraintSetRequestMarshaller implements Marshaller<Request<GetSizeConstraintSetRequest>, GetSizeConstraintSetRequest> {
+@SdkInternalApi
+public class GetSizeConstraintSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SIZECONSTRAINTSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SizeConstraintSetId").build();
 
-    public GetSizeConstraintSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSizeConstraintSetRequestMarshaller instance = new GetSizeConstraintSetRequestMarshaller();
+
+    public static GetSizeConstraintSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSizeConstraintSetRequest> marshall(GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSizeConstraintSetRequest getSizeConstraintSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSizeConstraintSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSizeConstraintSetRequest> request = new DefaultRequest<GetSizeConstraintSetRequest>(getSizeConstraintSetRequest, "AWSWAF");
-        request.addHeader("X-Amz-Target", "AWSWAF_20150824.GetSizeConstraintSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getSizeConstraintSetRequest.getSizeConstraintSetId() != null) {
-                jsonGenerator.writeFieldName("SizeConstraintSetId").writeValue(getSizeConstraintSetRequest.getSizeConstraintSetId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getSizeConstraintSetRequest.getSizeConstraintSetId(), SIZECONSTRAINTSETID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      * The URL of the Amazon SQS queue whose message's visibility is changed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -63,7 +63,7 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      * @param queueUrl
      *        The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @param receiptHandle
      *        The receipt handle associated with the message whose visibility timeout is changed. This parameter is
      *        returned by the <code> <a>ReceiveMessage</a> </code> action.
@@ -82,13 +82,13 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      * The URL of the Amazon SQS queue whose message's visibility is changed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -100,12 +100,12 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      * The URL of the Amazon SQS queue whose message's visibility is changed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @return The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      *         <p>
-     *         Queue URLs are case-sensitive.
+     *         Queue URLs and names are case-sensitive.
      */
 
     public String getQueueUrl() {
@@ -117,13 +117,13 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
      * The URL of the Amazon SQS queue whose message's visibility is changed.
      * </p>
      * <p>
-     * Queue URLs are case-sensitive.
+     * Queue URLs and names are case-sensitive.
      * </p>
      * 
      * @param queueUrl
      *        The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      *        <p>
-     *        Queue URLs are case-sensitive.
+     *        Queue URLs and names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,7 +225,8 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

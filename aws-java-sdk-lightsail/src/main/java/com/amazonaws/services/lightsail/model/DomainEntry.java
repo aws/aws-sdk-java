@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainEntry implements Serializable, Cloneable {
+public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -42,19 +44,80 @@ public class DomainEntry implements Serializable, Cloneable {
      * <p>
      * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
      * </p>
+     * <p>
+     * For Lightsail load balancers, the value looks like
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * </p>
      */
     private String target;
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
+     * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
+     * to your load balancer
      * </p>
+     */
+    private Boolean isAlias;
+    /**
+     * <p>
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private java.util.Map<String, String> options;
 
     /**
@@ -141,9 +204,18 @@ public class DomainEntry implements Serializable, Cloneable {
      * <p>
      * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
      * </p>
+     * <p>
+     * For Lightsail load balancers, the value looks like
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * </p>
      * 
      * @param target
-     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     *        <p>
+     *        For Lightsail load balancers, the value looks like
+     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
      */
 
     public void setTarget(String target) {
@@ -154,8 +226,17 @@ public class DomainEntry implements Serializable, Cloneable {
      * <p>
      * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
      * </p>
+     * <p>
+     * For Lightsail load balancers, the value looks like
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * </p>
      * 
-     * @return The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     * @return The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     *         <p>
+     *         For Lightsail load balancers, the value looks like
+     *         <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     *         <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
      */
 
     public String getTarget() {
@@ -166,9 +247,18 @@ public class DomainEntry implements Serializable, Cloneable {
      * <p>
      * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
      * </p>
+     * <p>
+     * For Lightsail load balancers, the value looks like
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * </p>
      * 
      * @param target
-     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     *        <p>
+     *        For Lightsail load balancers, the value looks like
+     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
+     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +269,160 @@ public class DomainEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
+     * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
+     * to your load balancer
      * </p>
      * 
+     * @param isAlias
+     *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *        balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
+     *        name and routes traffic to your load balancer
+     */
+
+    public void setIsAlias(Boolean isAlias) {
+        this.isAlias = isAlias;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
+     * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
+     * to your load balancer
+     * </p>
+     * 
+     * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *         balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
+     *         name and routes traffic to your load balancer
+     */
+
+    public Boolean getIsAlias() {
+        return this.isAlias;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
+     * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
+     * to your load balancer
+     * </p>
+     * 
+     * @param isAlias
+     *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *        balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
+     *        name and routes traffic to your load balancer
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainEntry withIsAlias(Boolean isAlias) {
+        setIsAlias(isAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
+     * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
+     * to your load balancer
+     * </p>
+     * 
+     * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *         balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
+     *         name and routes traffic to your load balancer
+     */
+
+    public Boolean isAlias() {
+        return this.isAlias;
+    }
+
+    /**
+     * <p>
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param type
-     *        The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        <p>
+     *        The following domain entry types can be used:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CNAME</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MX</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SOA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SRV</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TXT</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -192,10 +431,91 @@ public class DomainEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * @return The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *         (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *         <p>
+     *         The following domain entry types can be used:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>A</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CNAME</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MX</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SOA</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SRV</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TXT</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -204,11 +524,92 @@ public class DomainEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+     * start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
+     * <p>
+     * The following domain entry types can be used:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CNAME</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MX</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SOA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SRV</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TXT</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
+     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
+     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        <p>
+     *        The following domain entry types can be used:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CNAME</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MX</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SOA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SRV</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TXT</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,44 +620,75 @@ public class DomainEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
-     * @return The options for the domain entry.
+     * @return (Deprecated) The options for the domain entry.</p> <note>
+     *         <p>
+     *         In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *         deprecated.
+     *         </p>
      */
-
+    @Deprecated
     public java.util.Map<String, String> getOptions() {
         return options;
     }
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The options for the domain entry.
+     *        (Deprecated) The options for the domain entry.</p> <note>
+     *        <p>
+     *        In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
      */
-
+    @Deprecated
     public void setOptions(java.util.Map<String, String> options) {
         this.options = options;
     }
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The options for the domain entry.
+     *        (Deprecated) The options for the domain entry.</p> <note>
+     *        <p>
+     *        In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DomainEntry withOptions(java.util.Map<String, String> options) {
         setOptions(options);
         return this;
     }
 
+    @Deprecated
     public DomainEntry addOptionsEntry(String key, String value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, String>();
@@ -272,14 +704,15 @@ public class DomainEntry implements Serializable, Cloneable {
      *
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DomainEntry clearOptionsEntries() {
         this.options = null;
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -295,6 +728,8 @@ public class DomainEntry implements Serializable, Cloneable {
             sb.append("Name: ").append(getName()).append(",");
         if (getTarget() != null)
             sb.append("Target: ").append(getTarget()).append(",");
+        if (getIsAlias() != null)
+            sb.append("IsAlias: ").append(getIsAlias()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getOptions() != null)
@@ -325,6 +760,10 @@ public class DomainEntry implements Serializable, Cloneable {
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
+        if (other.getIsAlias() == null ^ this.getIsAlias() == null)
+            return false;
+        if (other.getIsAlias() != null && other.getIsAlias().equals(this.getIsAlias()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -344,6 +783,7 @@ public class DomainEntry implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getIsAlias() == null) ? 0 : getIsAlias().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
@@ -356,5 +796,11 @@ public class DomainEntry implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.DomainEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

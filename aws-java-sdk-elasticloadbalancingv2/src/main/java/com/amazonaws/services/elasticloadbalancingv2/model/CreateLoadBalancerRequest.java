@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,21 +30,42 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You
-     * must specify subnets from at least two Availability Zones.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      */
     private java.util.List<String> subnets;
     /**
      * <p>
-     * The IDs of the security groups to assign to the load balancer.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
+     * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your load balancer.
+     * </p>
+     */
+    private java.util.List<SubnetMapping> subnetMappings;
+    /**
+     * <p>
+     * [Application Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      */
     private java.util.List<String> securityGroups;
@@ -52,7 +73,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -72,9 +93,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      */
     private String ipAddressType;
@@ -84,15 +111,16 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *        alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *        "internal-".
      */
 
     public void setName(String name) {
@@ -104,14 +132,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @return The name of the load balancer.</p>
      *         <p>
-     *         This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     *         alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *         This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *         alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *         "internal-".
      */
 
     public String getName() {
@@ -123,15 +152,16 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the load balancer.
      * </p>
      * <p>
-     * This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
-     *        This name must be unique within your AWS account, can have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *        alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *        "internal-".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,12 +172,23 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You
-     * must specify subnets from at least two Availability Zones.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
-     * @return The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability
-     *         Zone. You must specify subnets from at least two Availability Zones.
+     * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *         either subnets or subnet mappings.</p>
+     *         <p>
+     *         [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *         </p>
+     *         <p>
+     *         [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      */
 
     public java.util.List<String> getSubnets() {
@@ -156,13 +197,24 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You
-     * must specify subnets from at least two Availability Zones.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability
-     *        Zone. You must specify subnets from at least two Availability Zones.
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -176,8 +228,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You
-     * must specify subnets from at least two Availability Zones.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,8 +244,13 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability
-     *        Zone. You must specify subnets from at least two Availability Zones.
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,13 +266,24 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability Zone. You
-     * must specify subnets from at least two Availability Zones.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets to attach to the load balancer. You can specify only one subnet per Availability
-     *        Zone. You must specify subnets from at least two Availability Zones.
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,10 +294,148 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the security groups to assign to the load balancer.
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
+     * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your load balancer.
      * </p>
      * 
-     * @return The IDs of the security groups to assign to the load balancer.
+     * @return The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *         either subnets or subnet mappings.</p>
+     *         <p>
+     *         [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
+     *         specify Elastic IP addresses for your subnets.
+     *         </p>
+     *         <p>
+     *         [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
+     *         Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     */
+
+    public java.util.List<SubnetMapping> getSubnetMappings() {
+        return subnetMappings;
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
+     * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your load balancer.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
+     *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
+     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     */
+
+    public void setSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
+        if (subnetMappings == null) {
+            this.subnetMappings = null;
+            return;
+        }
+
+        this.subnetMappings = new java.util.ArrayList<SubnetMapping>(subnetMappings);
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
+     * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your load balancer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetMappings(java.util.Collection)} or {@link #withSubnetMappings(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
+     *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
+     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLoadBalancerRequest withSubnetMappings(SubnetMapping... subnetMappings) {
+        if (this.subnetMappings == null) {
+            setSubnetMappings(new java.util.ArrayList<SubnetMapping>(subnetMappings.length));
+        }
+        for (SubnetMapping ele : subnetMappings) {
+            this.subnetMappings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either
+     * subnets or subnet mappings.
+     * </p>
+     * <p>
+     * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
+     * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your load balancer.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify
+     *        either subnets or subnet mappings.</p>
+     *        <p>
+     *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
+     *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
+     *        Elastic IP address per subnet if you need static IP addresses for your load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLoadBalancerRequest withSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
+        setSubnetMappings(subnetMappings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers] The IDs of the security groups for the load balancer.
+     * </p>
+     * 
+     * @return [Application Load Balancers] The IDs of the security groups for the load balancer.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -232,11 +444,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the security groups to assign to the load balancer.
+     * [Application Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to assign to the load balancer.
+     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -250,7 +462,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the security groups to assign to the load balancer.
+     * [Application Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -259,7 +471,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to assign to the load balancer.
+     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +487,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IDs of the security groups to assign to the load balancer.
+     * [Application Load Balancers] The IDs of the security groups for the load balancer.
      * </p>
      * 
      * @param securityGroups
-     *        The IDs of the security groups to assign to the load balancer.
+     *        [Application Load Balancers] The IDs of the security groups for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,7 +504,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -306,7 +518,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -325,7 +537,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -338,7 +550,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
      *         Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore,
-     *         Internet-facing load balancers can route requests from clients over the Internet.</p>
+     *         Internet-facing load balancers can route requests from clients over the internet.</p>
      *         <p>
      *         The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *         balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -357,7 +569,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -371,7 +583,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -392,7 +604,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -406,7 +618,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -418,14 +630,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setScheme(LoadBalancerSchemeEnum scheme) {
-        this.scheme = scheme.toString();
+        withScheme(scheme);
     }
 
     /**
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -439,7 +651,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -452,7 +664,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public CreateLoadBalancerRequest withScheme(LoadBalancerSchemeEnum scheme) {
-        setScheme(scheme);
+        this.scheme = scheme.toString();
         return this;
     }
 
@@ -528,15 +740,88 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     * 
+     * @param type
+     *        The type of load balancer. The default is <code>application</code>.
+     * @see LoadBalancerTypeEnum
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     * 
+     * @return The type of load balancer. The default is <code>application</code>.
+     * @see LoadBalancerTypeEnum
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     * 
+     * @param type
+     *        The type of load balancer. The default is <code>application</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LoadBalancerTypeEnum
+     */
+
+    public CreateLoadBalancerRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     * 
+     * @param type
+     *        The type of load balancer. The default is <code>application</code>.
+     * @see LoadBalancerTypeEnum
+     */
+
+    public void setType(LoadBalancerTypeEnum type) {
+        withType(type);
+    }
+
+    /**
+     * <p>
+     * The type of load balancer. The default is <code>application</code>.
+     * </p>
+     * 
+     * @param type
+     *        The type of load balancer. The default is <code>application</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LoadBalancerTypeEnum
+     */
+
+    public CreateLoadBalancerRequest withType(LoadBalancerTypeEnum type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     *        load balancers must use <code>ipv4</code>.
+     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
+     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+     *        addresses). Internal load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -546,14 +831,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
-     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     *         load balancers must use <code>ipv4</code>.
+     * @return [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
+     *         possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+     *         addresses). Internal load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
@@ -563,15 +848,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     *        load balancers must use <code>ipv4</code>.
+     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
+     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+     *        addresses). Internal load balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -583,44 +868,45 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     *        load balancers must use <code>ipv4</code>.
+     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
+     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+     *        addresses). Internal load balancers must use <code>ipv4</code>.
      * @see IpAddressType
      */
 
     public void setIpAddressType(IpAddressType ipAddressType) {
-        this.ipAddressType = ipAddressType.toString();
+        withIpAddressType(ipAddressType);
     }
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers must use
-     * <code>ipv4</code>.
+     * [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible
+     * values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Internal load balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     *        load balancers must use <code>ipv4</code>.
+     *        [Application Load Balancers] The type of IP addresses used by the subnets for your load balancer. The
+     *        possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6
+     *        addresses). Internal load balancers must use <code>ipv4</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
 
     public CreateLoadBalancerRequest withIpAddressType(IpAddressType ipAddressType) {
-        setIpAddressType(ipAddressType);
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -634,12 +920,16 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Name: ").append(getName()).append(",");
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
+        if (getSubnetMappings() != null)
+            sb.append("SubnetMappings: ").append(getSubnetMappings()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getScheme() != null)
             sb.append("Scheme: ").append(getScheme()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getIpAddressType() != null)
             sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
@@ -664,6 +954,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
+        if (other.getSubnetMappings() == null ^ this.getSubnetMappings() == null)
+            return false;
+        if (other.getSubnetMappings() != null && other.getSubnetMappings().equals(this.getSubnetMappings()) == false)
+            return false;
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
@@ -675,6 +969,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
             return false;
@@ -690,9 +988,11 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSubnetMappings() == null) ? 0 : getSubnetMappings().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }

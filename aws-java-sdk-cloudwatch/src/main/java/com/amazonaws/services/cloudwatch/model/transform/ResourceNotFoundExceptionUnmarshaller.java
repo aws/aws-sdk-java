@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import org.w3c.dom.Node;
 import javax.annotation.Generated;
 
 import com.amazonaws.AmazonServiceException;
-
+import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.cloudwatch.model.ResourceNotFoundException;
@@ -33,10 +33,12 @@ public class ResourceNotFoundExceptionUnmarshaller extends StandardErrorUnmarsha
         // Bail out if this isn't the right error code that this
         // marshaller understands
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ResourceNotFound"))
+        if (errorCode == null || !errorCode.equals("ResourceNotFoundException"))
             return null;
 
         ResourceNotFoundException e = (ResourceNotFoundException) super.unmarshall(node);
+        e.setResourceType(XpathUtils.asString(getErrorPropertyPath("ResourceType"), node));
+        e.setResourceId(XpathUtils.asString(getErrorPropertyPath("ResourceId"), node));
 
         return e;
     }

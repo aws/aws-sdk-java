@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemoveTagsFromStreamRequest Marshaller
+ * RemoveTagsFromStreamRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemoveTagsFromStreamRequestMarshaller implements Marshaller<Request<RemoveTagsFromStreamRequest>, RemoveTagsFromStreamRequest> {
+@SdkInternalApi
+public class RemoveTagsFromStreamRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagKeys").build();
 
-    public RemoveTagsFromStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RemoveTagsFromStreamRequestMarshaller instance = new RemoveTagsFromStreamRequestMarshaller();
+
+    public static RemoveTagsFromStreamRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemoveTagsFromStreamRequest> marshall(RemoveTagsFromStreamRequest removeTagsFromStreamRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemoveTagsFromStreamRequest removeTagsFromStreamRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removeTagsFromStreamRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemoveTagsFromStreamRequest> request = new DefaultRequest<RemoveTagsFromStreamRequest>(removeTagsFromStreamRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.RemoveTagsFromStream");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (removeTagsFromStreamRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(removeTagsFromStreamRequest.getStreamName());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsFromStreamRequest
-                    .getTagKeys();
-            if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("TagKeys");
-                jsonGenerator.writeStartArray();
-                for (String tagKeysListValue : tagKeysList) {
-                    if (tagKeysListValue != null) {
-                        jsonGenerator.writeValue(tagKeysListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(removeTagsFromStreamRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(removeTagsFromStreamRequest.getTagKeys(), TAGKEYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

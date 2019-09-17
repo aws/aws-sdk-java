@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,132 +12,91 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutIntegrationRequest Marshaller
+ * PutIntegrationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutIntegrationRequestMarshaller implements Marshaller<Request<PutIntegrationRequest>, PutIntegrationRequest> {
+@SdkInternalApi
+public class PutIntegrationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("resource_id").build();
+    private static final MarshallingInfo<String> HTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("http_method").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> INTEGRATIONHTTPMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpMethod").build();
+    private static final MarshallingInfo<String> URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("uri").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
+    private static final MarshallingInfo<String> CREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentials").build();
+    private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
+    private static final MarshallingInfo<Map> REQUESTTEMPLATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestTemplates").build();
+    private static final MarshallingInfo<String> PASSTHROUGHBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("passthroughBehavior").build();
+    private static final MarshallingInfo<String> CACHENAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheNamespace").build();
+    private static final MarshallingInfo<List> CACHEKEYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheKeyParameters").build();
+    private static final MarshallingInfo<String> CONTENTHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentHandling").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
 
-    public PutIntegrationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutIntegrationRequestMarshaller instance = new PutIntegrationRequestMarshaller();
+
+    public static PutIntegrationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutIntegrationRequest> marshall(PutIntegrationRequest putIntegrationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutIntegrationRequest putIntegrationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putIntegrationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutIntegrationRequest> request = new DefaultRequest<PutIntegrationRequest>(putIntegrationRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", putIntegrationRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", putIntegrationRequest.getResourceId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", putIntegrationRequest.getHttpMethod());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (putIntegrationRequest.getType() != null) {
-                jsonGenerator.writeFieldName("type").writeValue(putIntegrationRequest.getType());
-            }
-            if (putIntegrationRequest.getIntegrationHttpMethod() != null) {
-                jsonGenerator.writeFieldName("httpMethod").writeValue(putIntegrationRequest.getIntegrationHttpMethod());
-            }
-            if (putIntegrationRequest.getUri() != null) {
-                jsonGenerator.writeFieldName("uri").writeValue(putIntegrationRequest.getUri());
-            }
-            if (putIntegrationRequest.getCredentials() != null) {
-                jsonGenerator.writeFieldName("credentials").writeValue(putIntegrationRequest.getCredentials());
-            }
-
-            java.util.Map<String, String> requestParametersMap = putIntegrationRequest.getRequestParameters();
-            if (requestParametersMap != null) {
-                jsonGenerator.writeFieldName("requestParameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> requestParametersMapValue : requestParametersMap.entrySet()) {
-                    if (requestParametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestParametersMapValue.getKey());
-
-                        jsonGenerator.writeValue(requestParametersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, String> requestTemplatesMap = putIntegrationRequest.getRequestTemplates();
-            if (requestTemplatesMap != null) {
-                jsonGenerator.writeFieldName("requestTemplates");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> requestTemplatesMapValue : requestTemplatesMap.entrySet()) {
-                    if (requestTemplatesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(requestTemplatesMapValue.getKey());
-
-                        jsonGenerator.writeValue(requestTemplatesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (putIntegrationRequest.getPassthroughBehavior() != null) {
-                jsonGenerator.writeFieldName("passthroughBehavior").writeValue(putIntegrationRequest.getPassthroughBehavior());
-            }
-            if (putIntegrationRequest.getCacheNamespace() != null) {
-                jsonGenerator.writeFieldName("cacheNamespace").writeValue(putIntegrationRequest.getCacheNamespace());
-            }
-
-            java.util.List<String> cacheKeyParametersList = putIntegrationRequest.getCacheKeyParameters();
-            if (cacheKeyParametersList != null) {
-                jsonGenerator.writeFieldName("cacheKeyParameters");
-                jsonGenerator.writeStartArray();
-                for (String cacheKeyParametersListValue : cacheKeyParametersList) {
-                    if (cacheKeyParametersListValue != null) {
-                        jsonGenerator.writeValue(cacheKeyParametersListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (putIntegrationRequest.getContentHandling() != null) {
-                jsonGenerator.writeFieldName("contentHandling").writeValue(putIntegrationRequest.getContentHandling());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putIntegrationRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getHttpMethod(), HTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getIntegrationHttpMethod(), INTEGRATIONHTTPMETHOD_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getUri(), URI_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionType(), CONNECTIONTYPE_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionId(), CONNECTIONID_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getCredentials(), CREDENTIALS_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getCacheNamespace(), CACHENAMESPACE_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getContentHandling(), CONTENTHANDLING_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,14 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (describeSpotFleetRequestsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestsRequest.getMaxResults()));
+        }
+
+        if (describeSpotFleetRequestsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetRequestsRequest.getNextToken()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> describeSpotFleetRequestsRequestSpotFleetRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotFleetRequestsRequest
                 .getSpotFleetRequestIds();
         if (!describeSpotFleetRequestsRequestSpotFleetRequestIdsList.isEmpty() || !describeSpotFleetRequestsRequestSpotFleetRequestIdsList.isAutoConstruct()) {
@@ -52,14 +60,6 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
                 }
                 spotFleetRequestIdsListIndex++;
             }
-        }
-
-        if (describeSpotFleetRequestsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetRequestsRequest.getNextToken()));
-        }
-
-        if (describeSpotFleetRequestsRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestsRequest.getMaxResults()));
         }
 
         return request;

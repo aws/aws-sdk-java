@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,38 +14,40 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The reason why the last state change occurred.
+ * Describes the reason why the last image state change occurred.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageStateChangeReason implements Serializable, Cloneable {
+public class ImageStateChangeReason implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
@@ -55,10 +57,10 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
-     * @return The state change reason code of the image.
+     * @return The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
@@ -68,11 +70,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageStateChangeReasonCode
      */
@@ -84,41 +86,41 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
     public void setCode(ImageStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageStateChangeReasonCode
      */
 
     public ImageStateChangeReason withCode(ImageStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
      * @param message
-     *        The state change reason message to the end user.
+     *        The state change reason message.
      */
 
     public void setMessage(String message) {
@@ -127,10 +129,10 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
-     * @return The state change reason message to the end user.
+     * @return The state change reason message.
      */
 
     public String getMessage() {
@@ -139,11 +141,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
      * @param message
-     *        The state change reason message to the end user.
+     *        The state change reason message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +155,8 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,5 +212,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appstream.model.transform.ImageStateChangeReasonMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,16 +29,16 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ID of the AMI.
-     * </p>
-     */
-    private String imageId;
-    /**
-     * <p>
      * The attribute to reset (currently you can only reset the launch permission attribute).
      * </p>
      */
     private String attribute;
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     */
+    private String imageId;
 
     /**
      * Default constructor for ResetImageAttributeRequest object. Callers should use the setter or fluent setter
@@ -73,46 +73,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     public ResetImageAttributeRequest(String imageId, ResetImageAttributeName attribute) {
         setImageId(imageId);
         setAttribute(attribute.toString());
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     */
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @return The ID of the AMI.
-     */
-
-    public String getImageId() {
-        return this.imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResetImageAttributeRequest withImageId(String imageId) {
-        setImageId(imageId);
-        return this;
     }
 
     /**
@@ -169,7 +129,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      */
 
     public void setAttribute(ResetImageAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -184,7 +144,47 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      */
 
     public ResetImageAttributeRequest withAttribute(ResetImageAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResetImageAttributeRequest withImageId(String imageId) {
+        setImageId(imageId);
         return this;
     }
 
@@ -200,7 +200,8 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,10 +211,10 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null)
-            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId());
         sb.append("}");
         return sb.toString();
     }
@@ -228,13 +229,13 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof ResetImageAttributeRequest == false)
             return false;
         ResetImageAttributeRequest other = (ResetImageAttributeRequest) obj;
-        if (other.getImageId() == null ^ this.getImageId() == null)
-            return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         return true;
     }
@@ -244,8 +245,8 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         return hashCode;
     }
 

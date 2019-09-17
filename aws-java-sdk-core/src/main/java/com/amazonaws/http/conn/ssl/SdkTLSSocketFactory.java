@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon Technologies, Inc.
+ * Copyright 2014-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 package com.amazonaws.http.conn.ssl;
 
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.http.apache.utils.HttpContextUtils;
 import com.amazonaws.internal.SdkMetricsSocket;
 import com.amazonaws.internal.SdkSSLMetricsSocket;
 import com.amazonaws.internal.SdkSSLSocket;
@@ -35,6 +36,7 @@ import javax.net.ssl.SSLSessionContext;
 import javax.net.ssl.SSLSocket;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,6 +63,14 @@ public class SdkTLSSocketFactory extends SSLConnectionSocketFactory {
         this.sslContext = sslContext;
         this.masterSecretValidator = MasterSecretValidators.getMasterSecretValidator();
         this.shouldClearSslSessionsPredicate = new ShouldClearSslSessionPredicate(JavaVersionParser.getCurrentJavaVersion());
+    }
+
+    @Override
+    public Socket createSocket(HttpContext ctx) throws IOException {
+        if (HttpContextUtils.disableSocketProxy(ctx)) {
+            return new Socket(Proxy.NO_PROXY);
+        }
+        return super.createSocket(ctx);
     }
 
     /**

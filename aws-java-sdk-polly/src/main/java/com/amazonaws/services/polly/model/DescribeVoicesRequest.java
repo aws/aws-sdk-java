@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     */
+    private String engine;
+    /**
+     * <p>
      * The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list
      * of voices returned. If you don't specify this optional parameter, all available voices are returned.
      * </p>
@@ -34,11 +41,103 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String languageCode;
     /**
      * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     */
+    private Boolean includeAdditionalLanguageCodes;
+    /**
+     * <p>
      * An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this
      * indicates where to continue the listing.
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @see Engine
+     */
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @return Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *         input text for speech synthesis.
+     * @see Engine
+     */
+
+    public String getEngine() {
+        return this.engine;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public DescribeVoicesRequest withEngine(String engine) {
+        setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @see Engine
+     */
+
+    public void setEngine(Engine engine) {
+        withEngine(engine);
+    }
+
+    /**
+     * <p>
+     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
+     * text for speech synthesis.
+     * </p>
+     * 
+     * @param engine
+     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
+     *        input text for speech synthesis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Engine
+     */
+
+    public DescribeVoicesRequest withEngine(Engine engine) {
+        this.engine = engine.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -106,7 +205,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setLanguageCode(LanguageCode languageCode) {
-        this.languageCode = languageCode.toString();
+        withLanguageCode(languageCode);
     }
 
     /**
@@ -124,8 +223,84 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeVoicesRequest withLanguageCode(LanguageCode languageCode) {
-        setLanguageCode(languageCode);
+        this.languageCode = languageCode.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @param includeAdditionalLanguageCodes
+     *        Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *        additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *        an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *        specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public void setIncludeAdditionalLanguageCodes(Boolean includeAdditionalLanguageCodes) {
+        this.includeAdditionalLanguageCodes = includeAdditionalLanguageCodes;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @return Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *         additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *         an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *         specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public Boolean getIncludeAdditionalLanguageCodes() {
+        return this.includeAdditionalLanguageCodes;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @param includeAdditionalLanguageCodes
+     *        Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *        additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *        an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *        specify <code>yes</code> but not if you specify <code>no</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVoicesRequest withIncludeAdditionalLanguageCodes(Boolean includeAdditionalLanguageCodes) {
+        setIncludeAdditionalLanguageCodes(includeAdditionalLanguageCodes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @return Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *         additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *         an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *         specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public Boolean isIncludeAdditionalLanguageCodes() {
+        return this.includeAdditionalLanguageCodes;
     }
 
     /**
@@ -175,7 +350,8 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -185,8 +361,12 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEngine() != null)
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
+        if (getIncludeAdditionalLanguageCodes() != null)
+            sb.append("IncludeAdditionalLanguageCodes: ").append(getIncludeAdditionalLanguageCodes()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -203,9 +383,18 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof DescribeVoicesRequest == false)
             return false;
         DescribeVoicesRequest other = (DescribeVoicesRequest) obj;
+        if (other.getEngine() == null ^ this.getEngine() == null)
+            return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
+            return false;
+        if (other.getIncludeAdditionalLanguageCodes() == null ^ this.getIncludeAdditionalLanguageCodes() == null)
+            return false;
+        if (other.getIncludeAdditionalLanguageCodes() != null
+                && other.getIncludeAdditionalLanguageCodes().equals(this.getIncludeAdditionalLanguageCodes()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -219,7 +408,9 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
+        hashCode = prime * hashCode + ((getIncludeAdditionalLanguageCodes() == null) ? 0 : getIncludeAdditionalLanguageCodes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

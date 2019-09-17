@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,67 +20,20 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportImageRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ImportImage.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImportImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportImageRequest> {
 
     /**
      * <p>
-     * A description string for the import image task.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * Information about the disk containers.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<ImageDiskContainer> diskContainers;
-    /**
-     * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after importing.
-     * </p>
-     * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
-     * </p>
-     */
-    private String licenseType;
-    /**
-     * <p>
-     * The target hypervisor platform.
-     * </p>
-     * <p>
-     * Valid values: <code>xen</code>
-     * </p>
-     */
-    private String hypervisor;
-    /**
-     * <p>
      * The architecture of the virtual machine.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
      * </p>
      */
     private String architecture;
-    /**
-     * <p>
-     * The operating system of the virtual machine.
-     * </p>
-     * <p>
-     * Valid values: <code>Windows</code> | <code>Linux</code>
-     * </p>
-     */
-    private String platform;
     /**
      * <p>
      * The client-specific data.
@@ -95,10 +48,248 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private String clientToken;
     /**
      * <p>
+     * A description string for the import image task.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Information about the disk containers.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ImageDiskContainer> diskContainers;
+    /**
+     * <p>
+     * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
+     * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * The target hypervisor platform.
+     * </p>
+     * <p>
+     * Valid values: <code>xen</code>
+     * </p>
+     */
+    private String hypervisor;
+    /**
+     * <p>
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
+     * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the Region that the AMI is being copied to.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
+     * </p>
+     * <p>
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
+     * </p>
+     */
+    private String licenseType;
+    /**
+     * <p>
+     * The operating system of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>Windows</code> | <code>Linux</code>
+     * </p>
+     */
+    private String platform;
+    /**
+     * <p>
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      */
     private String roleName;
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the virtual machine.</p>
+     *        <p>
+     *        Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     * </p>
+     * 
+     * @return The architecture of the virtual machine.</p>
+     *         <p>
+     *         Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the virtual machine.</p>
+     *        <p>
+     *        Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @param clientData
+     *        The client-specific data.
+     */
+
+    public void setClientData(ClientData clientData) {
+        this.clientData = clientData;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @return The client-specific data.
+     */
+
+    public ClientData getClientData() {
+        return this.clientData;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @param clientData
+     *        The client-specific data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withClientData(ClientData clientData) {
+        setClientData(clientData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @param clientToken
+     *        The token to enable idempotency for VM import requests.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @return The token to enable idempotency for VM import requests.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @param clientToken
+     *        The token to enable idempotency for VM import requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -215,93 +406,82 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after importing.
-     * </p>
-     * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
+     * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @param licenseType
-     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
-     *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *        third party cloud like AWS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     *        >Prerequisites</a> in the VM Import/Export User Guide.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>AWS</code> | <code>BYOL</code>
+     * @param encrypted
+     *        Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
+     *        is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
-    public void setLicenseType(String licenseType) {
-        this.licenseType = licenseType;
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
     }
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after importing.
-     * </p>
-     * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
+     * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
-     *         <p>
-     *         <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *         third party cloud like AWS. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     *         >Prerequisites</a> in the VM Import/Export User Guide.
-     *         </p>
-     *         <p>
-     *         Valid values: <code>AWS</code> | <code>BYOL</code>
+     * @return Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
+     *         is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
-    public String getLicenseType() {
-        return this.licenseType;
+    public Boolean getEncrypted() {
+        return this.encrypted;
     }
 
     /**
      * <p>
-     * The license type to be used for the Amazon Machine Image (AMI) after importing.
-     * </p>
-     * <p>
-     * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
-     * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     * >Prerequisites</a> in the VM Import/Export User Guide.
-     * </p>
-     * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
+     * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @param licenseType
-     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
-     *        <p>
-     *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
-     *        third party cloud like AWS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
-     *        >Prerequisites</a> in the VM Import/Export User Guide.
-     *        </p>
-     *        <p>
-     *        Valid values: <code>AWS</code> | <code>BYOL</code>
+     * @param encrypted
+     *        Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
+     *        is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageRequest withLicenseType(String licenseType) {
-        setLicenseType(licenseType);
+    public ImportImageRequest withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
+     * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
+     *         is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
     }
 
     /**
@@ -361,56 +541,388 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The architecture of the virtual machine.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
+     * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
-     * @param architecture
-     *        The architecture of the virtual machine.</p>
+     * @param kmsKeyId
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter
+     *        is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        </p>
+     *        <p>
+     *        The specified CMK must exist in the Region that the AMI is being copied to.
      */
 
-    public void setArchitecture(String architecture) {
-        this.architecture = architecture;
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
     }
 
     /**
      * <p>
-     * The architecture of the virtual machine.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
+     * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
-     * @return The architecture of the virtual machine.</p>
+     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *         the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set. </p>
      *         <p>
-     *         Valid values: <code>i386</code> | <code>x86_64</code>
+     *         The CMK identifier may be provided in any of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     *         CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
+     *         example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
+     *         the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *         example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the
+     *         Region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
+     *         CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *         even though you provided an invalid identifier. This action will eventually report failure.
+     *         </p>
+     *         <p>
+     *         The specified CMK must exist in the Region that the AMI is being copied to.
      */
 
-    public String getArchitecture() {
-        return this.architecture;
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
     }
 
     /**
      * <p>
-     * The architecture of the virtual machine.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
      * </p>
      * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK, the
+     * AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
      * 
-     * @param architecture
-     *        The architecture of the virtual machine.</p>
+     * @param kmsKeyId
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter
+     *        is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
+     *        CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        </p>
+     *        <p>
+     *        The specified CMK must exist in the Region that the AMI is being copied to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportImageRequest withArchitecture(String architecture) {
-        setArchitecture(architecture);
+    public ImportImageRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
+     * </p>
+     * <p>
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
+     * </p>
+     * 
+     * @param licenseType
+     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
+     *        <p>
+     *        By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *        <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *        <code>BYOL</code> to retain the source-system license, if appropriate.
+     *        </p>
+     *        <p>
+     *        To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *        party cloud, such as AWS. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
+     */
+
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+    }
+
+    /**
+     * <p>
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
+     * </p>
+     * <p>
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
+     * </p>
+     * 
+     * @return The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
+     *         <p>
+     *         By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *         <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *         <code>BYOL</code> to retain the source-system license, if appropriate.
+     *         </p>
+     *         <p>
+     *         To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *         party cloud, such as AWS. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *         >Prerequisites</a> in the VM Import/Export User Guide.
+     */
+
+    public String getLicenseType() {
+        return this.licenseType;
+    }
+
+    /**
+     * <p>
+     * The license type to be used for the Amazon Machine Image (AMI) after importing.
+     * </p>
+     * <p>
+     * By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     * <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     * <code>BYOL</code> to retain the source-system license, if appropriate.
+     * </p>
+     * <p>
+     * To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party
+     * cloud, such as AWS. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * >Prerequisites</a> in the VM Import/Export User Guide.
+     * </p>
+     * 
+     * @param licenseType
+     *        The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
+     *        <p>
+     *        By default, we detect the source-system operating system (OS) and apply the appropriate license. Specify
+     *        <code>AWS</code> to replace the source-system license with an AWS license, if appropriate. Specify
+     *        <code>BYOL</code> to retain the source-system license, if appropriate.
+     *        </p>
+     *        <p>
+     *        To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third
+     *        party cloud, such as AWS. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        >Prerequisites</a> in the VM Import/Export User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withLicenseType(String licenseType) {
+        setLicenseType(licenseType);
         return this;
     }
 
@@ -471,86 +983,6 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @param clientData
-     *        The client-specific data.
-     */
-
-    public void setClientData(ClientData clientData) {
-        this.clientData = clientData;
-    }
-
-    /**
-     * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @return The client-specific data.
-     */
-
-    public ClientData getClientData() {
-        return this.clientData;
-    }
-
-    /**
-     * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @param clientData
-     *        The client-specific data.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withClientData(ClientData clientData) {
-        setClientData(clientData);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @param clientToken
-     *        The token to enable idempotency for VM import requests.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @return The token to enable idempotency for VM import requests.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @param clientToken
-     *        The token to enable idempotency for VM import requests.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
-     * <p>
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      * 
@@ -601,7 +1033,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -611,22 +1044,26 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getDiskContainers() != null)
-            sb.append("DiskContainers: ").append(getDiskContainers()).append(",");
-        if (getLicenseType() != null)
-            sb.append("LicenseType: ").append(getLicenseType()).append(",");
-        if (getHypervisor() != null)
-            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
-        if (getPlatform() != null)
-            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getClientData() != null)
             sb.append("ClientData: ").append(getClientData()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDiskContainers() != null)
+            sb.append("DiskContainers: ").append(getDiskContainers()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getHypervisor() != null)
+            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getLicenseType() != null)
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
@@ -643,29 +1080,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof ImportImageRequest == false)
             return false;
         ImportImageRequest other = (ImportImageRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDiskContainers() == null ^ this.getDiskContainers() == null)
-            return false;
-        if (other.getDiskContainers() != null && other.getDiskContainers().equals(this.getDiskContainers()) == false)
-            return false;
-        if (other.getLicenseType() == null ^ this.getLicenseType() == null)
-            return false;
-        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
-            return false;
-        if (other.getHypervisor() == null ^ this.getHypervisor() == null)
-            return false;
-        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
-            return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
-            return false;
-        if (other.getPlatform() == null ^ this.getPlatform() == null)
-            return false;
-        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getClientData() == null ^ this.getClientData() == null)
             return false;
@@ -674,6 +1091,34 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDiskContainers() == null ^ this.getDiskContainers() == null)
+            return false;
+        if (other.getDiskContainers() != null && other.getDiskContainers().equals(this.getDiskContainers()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getHypervisor() == null ^ this.getHypervisor() == null)
+            return false;
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
+        if (other.getLicenseType() == null ^ this.getLicenseType() == null)
+            return false;
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
+            return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
@@ -687,14 +1132,16 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDiskContainers() == null) ? 0 : getDiskContainers().hashCode());
-        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
-        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
-        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getClientData() == null) ? 0 : getClientData().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDiskContainers() == null) ? 0 : getDiskContainers().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThingTypeDefinition implements Serializable, Cloneable {
+public class ThingTypeDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -31,11 +33,22 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
     private String thingTypeName;
     /**
      * <p>
+     * The thing type ARN.
+     * </p>
+     */
+    private String thingTypeArn;
+    /**
+     * <p>
      * The ThingTypeProperties for the thing type.
      * </p>
      */
     private ThingTypeProperties thingTypeProperties;
-
+    /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     */
     private ThingTypeMetadata thingTypeMetadata;
 
     /**
@@ -80,6 +93,46 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     */
+
+    public void setThingTypeArn(String thingTypeArn) {
+        this.thingTypeArn = thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @return The thing type ARN.
+     */
+
+    public String getThingTypeArn() {
+        return this.thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThingTypeDefinition withThingTypeArn(String thingTypeArn) {
+        setThingTypeArn(thingTypeArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ThingTypeProperties for the thing type.
      * </p>
      * 
@@ -119,7 +172,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
      * @param thingTypeMetadata
+     *        The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *        time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
      */
 
     public void setThingTypeMetadata(ThingTypeMetadata thingTypeMetadata) {
@@ -127,7 +187,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
+     * @return The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *         time, a value indicating whether the thing type is deprecated, and a date and time when it was
+     *         deprecated.
      */
 
     public ThingTypeMetadata getThingTypeMetadata() {
@@ -135,7 +202,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
      * @param thingTypeMetadata
+     *        The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *        time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +219,8 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -157,6 +232,8 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
         sb.append("{");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
+        if (getThingTypeArn() != null)
+            sb.append("ThingTypeArn: ").append(getThingTypeArn()).append(",");
         if (getThingTypeProperties() != null)
             sb.append("ThingTypeProperties: ").append(getThingTypeProperties()).append(",");
         if (getThingTypeMetadata() != null)
@@ -179,6 +256,10 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
+        if (other.getThingTypeArn() == null ^ this.getThingTypeArn() == null)
+            return false;
+        if (other.getThingTypeArn() != null && other.getThingTypeArn().equals(this.getThingTypeArn()) == false)
+            return false;
         if (other.getThingTypeProperties() == null ^ this.getThingTypeProperties() == null)
             return false;
         if (other.getThingTypeProperties() != null && other.getThingTypeProperties().equals(this.getThingTypeProperties()) == false)
@@ -196,6 +277,7 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeArn() == null) ? 0 : getThingTypeArn().hashCode());
         hashCode = prime * hashCode + ((getThingTypeProperties() == null) ? 0 : getThingTypeProperties().hashCode());
         hashCode = prime * hashCode + ((getThingTypeMetadata() == null) ? 0 : getThingTypeMetadata().hashCode());
         return hashCode;
@@ -208,5 +290,11 @@ public class ThingTypeDefinition implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.ThingTypeDefinitionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

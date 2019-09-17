@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,20 +26,14 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Nameserver implements Serializable, Cloneable {
+public class Nameserver implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      */
     private String name;
@@ -48,13 +44,7 @@ public class Nameserver implements Serializable, Cloneable {
      * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
-     * Type: List of IP addresses.
-     * </p>
-     * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> glueIps;
@@ -64,25 +54,13 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @param name
      *        The fully qualified host name of the name server.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Constraint: Maximum 255 characterss
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
+     *        Constraint: Maximum 255 characters
      */
 
     public void setName(String name) {
@@ -94,24 +72,12 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @return The fully qualified host name of the name server.</p>
      *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Constraint: Maximum 255 characterss
-     *         </p>
-     *         <p>
-     *         Parent: <code>Nameservers</code>
+     *         Constraint: Maximum 255 characters
      */
 
     public String getName() {
@@ -123,25 +89,13 @@ public class Nameserver implements Serializable, Cloneable {
      * The fully qualified host name of the name server.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Constraint: Maximum 255 characterss
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
+     * Constraint: Maximum 255 characters
      * </p>
      * 
      * @param name
      *        The fully qualified host name of the name server.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Constraint: Maximum 255 characterss
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
+     *        Constraint: Maximum 255 characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,26 +111,14 @@ public class Nameserver implements Serializable, Cloneable {
      * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
-     * Type: List of IP addresses.
-     * </p>
-     * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      * 
      * @return Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name
      *         server is a subdomain of the domain. For example, if your domain is example.com and the name server for
      *         the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *         <p>
-     *         Type: List of IP addresses.
-     *         </p>
-     *         <p>
      *         Constraints: The list can contain only one IPv4 and one IPv6 address.
-     *         </p>
-     *         <p>
-     *         Parent: <code>Nameservers</code>
      */
 
     public java.util.List<String> getGlueIps() {
@@ -193,13 +135,7 @@ public class Nameserver implements Serializable, Cloneable {
      * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
-     * Type: List of IP addresses.
-     * </p>
-     * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      * 
      * @param glueIps
@@ -207,13 +143,7 @@ public class Nameserver implements Serializable, Cloneable {
      *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
      *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
      *        Constraints: The list can contain only one IPv4 and one IPv6 address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
      */
 
     public void setGlueIps(java.util.Collection<String> glueIps) {
@@ -232,13 +162,7 @@ public class Nameserver implements Serializable, Cloneable {
      * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
-     * Type: List of IP addresses.
-     * </p>
-     * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -251,13 +175,7 @@ public class Nameserver implements Serializable, Cloneable {
      *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
      *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
      *        Constraints: The list can contain only one IPv4 and one IPv6 address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,13 +196,7 @@ public class Nameserver implements Serializable, Cloneable {
      * ns.example.com, you need to specify the IP address for ns.example.com.
      * </p>
      * <p>
-     * Type: List of IP addresses.
-     * </p>
-     * <p>
      * Constraints: The list can contain only one IPv4 and one IPv6 address.
-     * </p>
-     * <p>
-     * Parent: <code>Nameservers</code>
      * </p>
      * 
      * @param glueIps
@@ -292,13 +204,7 @@ public class Nameserver implements Serializable, Cloneable {
      *        server is a subdomain of the domain. For example, if your domain is example.com and the name server for
      *        the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
      *        <p>
-     *        Type: List of IP addresses.
-     *        </p>
-     *        <p>
      *        Constraints: The list can contain only one IPv4 and one IPv6 address.
-     *        </p>
-     *        <p>
-     *        Parent: <code>Nameservers</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,7 +214,8 @@ public class Nameserver implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -364,5 +271,11 @@ public class Nameserver implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.NameserverMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

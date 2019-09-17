@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
 
     @Override
     public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckDomainTransferabilityResult checkDomainTransferability(CheckDomainTransferabilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,10 @@ public class UpdateOpenIDConnectProviderThumbprintRequestMarshaller implements
             request.addParameter("OpenIDConnectProviderArn", StringUtils.fromString(updateOpenIDConnectProviderThumbprintRequest.getOpenIDConnectProviderArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> thumbprintListList = (com.amazonaws.internal.SdkInternalList<String>) updateOpenIDConnectProviderThumbprintRequest
-                .getThumbprintList();
-        if (!thumbprintListList.isEmpty() || !thumbprintListList.isAutoConstruct()) {
+        if (!updateOpenIDConnectProviderThumbprintRequest.getThumbprintList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateOpenIDConnectProviderThumbprintRequest.getThumbprintList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> thumbprintListList = (com.amazonaws.internal.SdkInternalList<String>) updateOpenIDConnectProviderThumbprintRequest
+                    .getThumbprintList();
             int thumbprintListListIndex = 1;
 
             for (String thumbprintListListValue : thumbprintListList) {

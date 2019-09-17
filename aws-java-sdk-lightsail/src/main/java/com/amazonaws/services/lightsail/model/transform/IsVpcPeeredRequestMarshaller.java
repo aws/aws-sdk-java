@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,60 +12,40 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * IsVpcPeeredRequest Marshaller
+ * IsVpcPeeredRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IsVpcPeeredRequestMarshaller implements Marshaller<Request<IsVpcPeeredRequest>, IsVpcPeeredRequest> {
+@SdkInternalApi
+public class IsVpcPeeredRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final IsVpcPeeredRequestMarshaller instance = new IsVpcPeeredRequestMarshaller();
 
-    public IsVpcPeeredRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    public static IsVpcPeeredRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<IsVpcPeeredRequest> marshall(IsVpcPeeredRequest isVpcPeeredRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(IsVpcPeeredRequest isVpcPeeredRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (isVpcPeeredRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<IsVpcPeeredRequest> request = new DefaultRequest<IsVpcPeeredRequest>(isVpcPeeredRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.IsVpcPeered");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

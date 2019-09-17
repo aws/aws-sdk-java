@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
      * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
-     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * <code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
      * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      */
@@ -66,7 +66,7 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
      *        any hyphens ('-') in the ID.
      * @param vaultName
@@ -81,14 +81,14 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
      * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
-     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * <code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
      * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
      *        any hyphens ('-') in the ID.
      */
@@ -101,13 +101,13 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
      * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
-     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * <code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
      * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @return The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *         associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *         optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID
      *         associated with the credentials used to sign the request. If you specify your account ID, do not include
      *         any hyphens ('-') in the ID.
      */
@@ -120,14 +120,14 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with
      * the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '
-     * <code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials
+     * <code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
      * used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
      *        The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID
      *        associated with the credentials used to sign the request. You can either specify an AWS account ID or
-     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     *        optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID
      *        associated with the credentials used to sign the request. If you specify your account ID, do not include
      *        any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -179,7 +179,8 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

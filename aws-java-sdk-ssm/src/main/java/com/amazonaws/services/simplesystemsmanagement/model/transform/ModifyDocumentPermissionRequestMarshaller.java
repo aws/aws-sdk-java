@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,94 +12,54 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ModifyDocumentPermissionRequest Marshaller
+ * ModifyDocumentPermissionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModifyDocumentPermissionRequestMarshaller implements Marshaller<Request<ModifyDocumentPermissionRequest>, ModifyDocumentPermissionRequest> {
+@SdkInternalApi
+public class ModifyDocumentPermissionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionType").build();
+    private static final MarshallingInfo<List> ACCOUNTIDSTOADD_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountIdsToAdd").build();
+    private static final MarshallingInfo<List> ACCOUNTIDSTOREMOVE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountIdsToRemove").build();
 
-    public ModifyDocumentPermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ModifyDocumentPermissionRequestMarshaller instance = new ModifyDocumentPermissionRequestMarshaller();
+
+    public static ModifyDocumentPermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ModifyDocumentPermissionRequest> marshall(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (modifyDocumentPermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ModifyDocumentPermissionRequest> request = new DefaultRequest<ModifyDocumentPermissionRequest>(modifyDocumentPermissionRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.ModifyDocumentPermission");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (modifyDocumentPermissionRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(modifyDocumentPermissionRequest.getName());
-            }
-            if (modifyDocumentPermissionRequest.getPermissionType() != null) {
-                jsonGenerator.writeFieldName("PermissionType").writeValue(modifyDocumentPermissionRequest.getPermissionType());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> accountIdsToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDocumentPermissionRequest
-                    .getAccountIdsToAdd();
-            if (!accountIdsToAddList.isEmpty() || !accountIdsToAddList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("AccountIdsToAdd");
-                jsonGenerator.writeStartArray();
-                for (String accountIdsToAddListValue : accountIdsToAddList) {
-                    if (accountIdsToAddListValue != null) {
-                        jsonGenerator.writeValue(accountIdsToAddListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> accountIdsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDocumentPermissionRequest
-                    .getAccountIdsToRemove();
-            if (!accountIdsToRemoveList.isEmpty() || !accountIdsToRemoveList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("AccountIdsToRemove");
-                jsonGenerator.writeStartArray();
-                for (String accountIdsToRemoveListValue : accountIdsToRemoveList) {
-                    if (accountIdsToRemoveListValue != null) {
-                        jsonGenerator.writeValue(accountIdsToRemoveListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(modifyDocumentPermissionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(modifyDocumentPermissionRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
+            protocolMarshaller.marshall(modifyDocumentPermissionRequest.getAccountIdsToAdd(), ACCOUNTIDSTOADD_BINDING);
+            protocolMarshaller.marshall(modifyDocumentPermissionRequest.getAccountIdsToRemove(), ACCOUNTIDSTOREMOVE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

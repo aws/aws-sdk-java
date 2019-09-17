@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,22 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("creationTime", targetDepth)) {
-                    flowLog.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    flowLog.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deliverLogsErrorMessage", targetDepth)) {
+                    flowLog.setDeliverLogsErrorMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deliverLogsPermissionArn", targetDepth)) {
+                    flowLog.setDeliverLogsPermissionArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deliverLogsStatus", targetDepth)) {
+                    flowLog.setDeliverLogsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,6 +73,11 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("logGroupName", targetDepth)) {
+                    flowLog.setLogGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("resourceId", targetDepth)) {
                     flowLog.setResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -68,23 +88,18 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     continue;
                 }
 
-                if (context.testExpression("logGroupName", targetDepth)) {
-                    flowLog.setLogGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("logDestinationType", targetDepth)) {
+                    flowLog.setLogDestinationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("deliverLogsStatus", targetDepth)) {
-                    flowLog.setDeliverLogsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("logDestination", targetDepth)) {
+                    flowLog.setLogDestination(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("deliverLogsErrorMessage", targetDepth)) {
-                    flowLog.setDeliverLogsErrorMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deliverLogsPermissionArn", targetDepth)) {
-                    flowLog.setDeliverLogsPermissionArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("logFormat", targetDepth)) {
+                    flowLog.setLogFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

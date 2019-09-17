@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -39,8 +39,9 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String clientCertificateId;
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
-     * Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     * Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128
+     * characters.
      * </p>
      */
     private String stageName;
@@ -91,15 +92,43 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String documentationVersion;
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * Settings for logging access in this stage.
+     * </p>
+     */
+    private AccessLogSettings accessLogSettings;
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     */
+    private CanarySettings canarySettings;
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     */
+    private Boolean tracingEnabled;
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     */
+    private String webAclArn;
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The timestamp when the stage was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -186,13 +215,15 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
-     * Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     * Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128
+     * characters.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     *        128 characters.
      */
 
     public void setStageName(String stageName) {
@@ -201,12 +232,14 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
-     * Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     * Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128
+     * characters.
      * </p>
      * 
-     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *         Amazon API Gateway.
+     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *         Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length
+     *         is 128 characters.
      */
 
     public String getStageName() {
@@ -215,13 +248,15 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
-     * Gateway.
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     * Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128
+     * characters.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     *        128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,7 +451,7 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        this.cacheClusterStatus = cacheClusterStatus.toString();
+        withCacheClusterStatus(cacheClusterStatus);
     }
 
     /**
@@ -431,7 +466,7 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public UpdateStageResult withCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        setCacheClusterStatus(cacheClusterStatus);
+        this.cacheClusterStatus = cacheClusterStatus.toString();
         return this;
     }
 
@@ -620,13 +655,244 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        Settings for logging access in this stage.
+     */
+
+    public void setAccessLogSettings(AccessLogSettings accessLogSettings) {
+        this.accessLogSettings = accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @return Settings for logging access in this stage.
+     */
+
+    public AccessLogSettings getAccessLogSettings() {
+        return this.accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * Settings for logging access in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        Settings for logging access in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withAccessLogSettings(AccessLogSettings accessLogSettings) {
+        setAccessLogSettings(accessLogSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     */
+
+    public void setCanarySettings(CanarySettings canarySettings) {
+        this.canarySettings = canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @return Settings for the canary deployment in this stage.
+     */
+
+    public CanarySettings getCanarySettings() {
+        return this.canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withCanarySettings(CanarySettings canarySettings) {
+        setCanarySettings(canarySettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @param tracingEnabled
+     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public void setTracingEnabled(Boolean tracingEnabled) {
+        this.tracingEnabled = tracingEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public Boolean getTracingEnabled() {
+        return this.tracingEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @param tracingEnabled
+     *        Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withTracingEnabled(Boolean tracingEnabled) {
+        setTracingEnabled(tracingEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     * </p>
+     * 
+     * @return Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.
+     */
+
+    public Boolean isTracingEnabled() {
+        return this.tracingEnabled;
+    }
+
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @param webAclArn
+     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     */
+
+    public void setWebAclArn(String webAclArn) {
+        this.webAclArn = webAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @return The ARN of the WebAcl associated with the <a>Stage</a>.
+     */
+
+    public String getWebAclArn() {
+        return this.webAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the WebAcl associated with the <a>Stage</a>.
+     * </p>
+     * 
+     * @param webAclArn
+     *        The ARN of the WebAcl associated with the <a>Stage</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withWebAclArn(String webAclArn) {
+        setWebAclArn(webAclArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @return The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public UpdateStageResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStageResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -635,12 +901,10 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
-     * @return The date and time that the stage was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -649,13 +913,11 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,13 +928,11 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -681,12 +941,10 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
-     * @return The date and time that information about the stage was last updated, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -695,13 +953,11 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -711,7 +967,8 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -741,6 +998,16 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
             sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
+        if (getAccessLogSettings() != null)
+            sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
+        if (getCanarySettings() != null)
+            sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
+        if (getTracingEnabled() != null)
+            sb.append("TracingEnabled: ").append(getTracingEnabled()).append(",");
+        if (getWebAclArn() != null)
+            sb.append("WebAclArn: ").append(getWebAclArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
@@ -799,6 +1066,26 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
             return false;
+        if (other.getAccessLogSettings() == null ^ this.getAccessLogSettings() == null)
+            return false;
+        if (other.getAccessLogSettings() != null && other.getAccessLogSettings().equals(this.getAccessLogSettings()) == false)
+            return false;
+        if (other.getCanarySettings() == null ^ this.getCanarySettings() == null)
+            return false;
+        if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
+            return false;
+        if (other.getTracingEnabled() == null ^ this.getTracingEnabled() == null)
+            return false;
+        if (other.getTracingEnabled() != null && other.getTracingEnabled().equals(this.getTracingEnabled()) == false)
+            return false;
+        if (other.getWebAclArn() == null ^ this.getWebAclArn() == null)
+            return false;
+        if (other.getWebAclArn() != null && other.getWebAclArn().equals(this.getWebAclArn()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -825,6 +1112,11 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getMethodSettings() == null) ? 0 : getMethodSettings().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
+        hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
+        hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
+        hashCode = prime * hashCode + ((getTracingEnabled() == null) ? 0 : getTracingEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWebAclArn() == null) ? 0 : getWebAclArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;
@@ -838,4 +1130,5 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

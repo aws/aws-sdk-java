@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,35 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint
+ * was active.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentBehaviors" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentBehaviors implements Serializable, Cloneable {
+public class SegmentBehaviors implements Serializable, Cloneable, StructuredPojo {
 
-    /** The recency of use. */
+    /**
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
+     */
     private RecencyDimension recency;
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
      * @param recency
-     *        The recency of use.
+     *        The dimension settings that are based on how recently an endpoint was active.
      */
 
     public void setRecency(RecencyDimension recency) {
@@ -33,9 +50,11 @@ public class SegmentBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
-     * @return The recency of use.
+     * @return The dimension settings that are based on how recently an endpoint was active.
      */
 
     public RecencyDimension getRecency() {
@@ -43,10 +62,12 @@ public class SegmentBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * The recency of use.
+     * <p>
+     * The dimension settings that are based on how recently an endpoint was active.
+     * </p>
      * 
      * @param recency
-     *        The recency of use.
+     *        The dimension settings that are based on how recently an endpoint was active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +77,8 @@ public class SegmentBehaviors implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -105,5 +127,11 @@ public class SegmentBehaviors implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentBehaviorsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

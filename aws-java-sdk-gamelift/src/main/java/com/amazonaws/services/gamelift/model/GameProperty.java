@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,40 +14,45 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set of key-value pairs containing information a server process requires to set up a game session. This object allows
- * you to pass in any set of data needed for your game. For more information, see the <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.
+ * Set of key-value pairs that contain information about a game session. When included in a game session request, these
+ * properties communicate details to be used when setting up the new game session, such as to specify a game mode,
+ * level, or map. Game properties are passed to the game server process when initiating a new game session; the server
+ * process uses the properties as appropriate. For more information, see the <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"
+ * > Amazon GameLift Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GameProperty implements Serializable, Cloneable {
+public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * TBD
+     * Game property identifier.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * TBD
+     * Game property value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * TBD
+     * Game property identifier.
      * </p>
      * 
      * @param key
-     *        TBD
+     *        Game property identifier.
      */
 
     public void setKey(String key) {
@@ -56,10 +61,10 @@ public class GameProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * TBD
+     * Game property identifier.
      * </p>
      * 
-     * @return TBD
+     * @return Game property identifier.
      */
 
     public String getKey() {
@@ -68,11 +73,11 @@ public class GameProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * TBD
+     * Game property identifier.
      * </p>
      * 
      * @param key
-     *        TBD
+     *        Game property identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +88,11 @@ public class GameProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * TBD
+     * Game property value.
      * </p>
      * 
      * @param value
-     *        TBD
+     *        Game property value.
      */
 
     public void setValue(String value) {
@@ -96,10 +101,10 @@ public class GameProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * TBD
+     * Game property value.
      * </p>
      * 
-     * @return TBD
+     * @return Game property value.
      */
 
     public String getValue() {
@@ -108,11 +113,11 @@ public class GameProperty implements Serializable, Cloneable {
 
     /**
      * <p>
-     * TBD
+     * Game property value.
      * </p>
      * 
      * @param value
-     *        TBD
+     *        Game property value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +127,8 @@ public class GameProperty implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,5 +184,11 @@ public class GameProperty implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.GamePropertyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

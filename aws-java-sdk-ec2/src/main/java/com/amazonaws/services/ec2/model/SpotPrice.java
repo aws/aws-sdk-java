@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+ * Describes the maximum price per hour that you are willing to pay for a Spot Instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotPrice" target="_top">AWS API
@@ -28,7 +28,13 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The Availability Zone.
+     * </p>
+     */
+    private String availabilityZone;
+    /**
+     * <p>
+     * The instance type.
      * </p>
      */
     private String instanceType;
@@ -40,7 +46,7 @@ public class SpotPrice implements Serializable, Cloneable {
     private String productDescription;
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      */
     private String spotPrice;
@@ -51,20 +57,54 @@ public class SpotPrice implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date timestamp;
+
     /**
      * <p>
      * The Availability Zone.
      * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone.
      */
-    private String availabilityZone;
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The Availability Zone.
+     * </p>
+     * 
+     * @return The Availability Zone.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotPrice withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
@@ -74,10 +114,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
-     * @return The instance type. Note that T2 and HS1 instance types are not supported.
+     * @return The instance type.
      * @see InstanceType
      */
 
@@ -87,11 +127,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -103,31 +143,31 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
 
     public SpotPrice withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -185,7 +225,7 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -200,17 +240,17 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public SpotPrice withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot instance.
+     *        The maximum price per hour that you are willing to pay for a Spot Instance.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -219,10 +259,10 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
-     * @return The maximum price (bid) that you are willing to pay for a Spot instance.
+     * @return The maximum price per hour that you are willing to pay for a Spot Instance.
      */
 
     public String getSpotPrice() {
@@ -231,11 +271,11 @@ public class SpotPrice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price (bid) that you are willing to pay for a Spot instance.
+     * The maximum price per hour that you are willing to pay for a Spot Instance.
      * </p>
      * 
      * @param spotPrice
-     *        The maximum price (bid) that you are willing to pay for a Spot instance.
+     *        The maximum price per hour that you are willing to pay for a Spot Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,47 +331,8 @@ public class SpotPrice implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone.
-     */
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone.
-     * </p>
-     * 
-     * @return The Availability Zone.
-     */
-
-    public String getAvailabilityZone() {
-        return this.availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotPrice withAvailabilityZone(String availabilityZone) {
-        setAvailabilityZone(availabilityZone);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -341,6 +342,8 @@ public class SpotPrice implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getProductDescription() != null)
@@ -348,9 +351,7 @@ public class SpotPrice implements Serializable, Cloneable {
         if (getSpotPrice() != null)
             sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp()).append(",");
-        if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +366,10 @@ public class SpotPrice implements Serializable, Cloneable {
         if (obj instanceof SpotPrice == false)
             return false;
         SpotPrice other = (SpotPrice) obj;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
@@ -381,10 +386,6 @@ public class SpotPrice implements Serializable, Cloneable {
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
-        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
-            return false;
-        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
-            return false;
         return true;
     }
 
@@ -393,11 +394,11 @@ public class SpotPrice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 
@@ -409,4 +410,5 @@ public class SpotPrice implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

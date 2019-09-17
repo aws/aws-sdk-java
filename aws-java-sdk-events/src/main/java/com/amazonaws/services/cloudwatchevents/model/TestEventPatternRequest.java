@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>TestEventPattern</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern" target="_top">AWS API
  *      Documentation</a>
@@ -30,24 +27,30 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      */
     private String eventPattern;
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      */
     private String event;
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern you want to test.
+     *        The event pattern. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -56,10 +59,14 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
-     * @return The event pattern you want to test.
+     * @return The event pattern. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     *         Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public String getEventPattern() {
@@ -68,11 +75,15 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event pattern you want to test.
+     * The event pattern. For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
-     *        The event pattern you want to test.
+     *        The event pattern. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
+     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +94,11 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
      * @param event
-     *        The event in the JSON format to test against the event pattern.
+     *        The event, in JSON format, to test against the event pattern.
      */
 
     public void setEvent(String event) {
@@ -96,10 +107,10 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
-     * @return The event in the JSON format to test against the event pattern.
+     * @return The event, in JSON format, to test against the event pattern.
      */
 
     public String getEvent() {
@@ -108,11 +119,11 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The event in the JSON format to test against the event pattern.
+     * The event, in JSON format, to test against the event pattern.
      * </p>
      * 
      * @param event
-     *        The event in the JSON format to test against the event pattern.
+     *        The event, in JSON format, to test against the event pattern.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +133,8 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

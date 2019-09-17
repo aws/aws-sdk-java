@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,6 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
 import com.amazonaws.waiters.*;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonElasticLoadBalancingWaiters {
@@ -30,7 +29,7 @@ public class AmazonElasticLoadBalancingWaiters {
      */
     private final AmazonElasticLoadBalancing client;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AmazonElasticLoadBalancingWaiters");
 
     /**
      * Constructs a new AmazonElasticLoadBalancingWaiters with the given client
@@ -77,9 +76,12 @@ public class AmazonElasticLoadBalancingWaiters {
     public Waiter<DescribeInstanceHealthRequest> instanceInService() {
 
         return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>().withSdkFunction(new DescribeInstanceHealthFunction(client))
-                .withAcceptors(new InstanceInService.IsInServiceMatcher())
+                .withAcceptors(new InstanceInService.IsInServiceMatcher(), new InstanceInService.IsInvalidInstanceMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

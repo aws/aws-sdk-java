@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
@@ -44,14 +44,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events.</p>
+     *        The type of source that is generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      */
@@ -62,13 +62,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
-     * @return The type of source that will be generating the events.</p>
+     * @return The type of source that is generating the events.</p>
      *         <p>
      *         Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      */
@@ -79,14 +79,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events.</p>
+     *        The type of source that is generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -171,7 +171,8 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

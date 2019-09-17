@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a batch get deployment groups operation.
+ * Represents the output of a BatchGetDeploymentGroups operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups"
@@ -34,7 +34,7 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<DeploymentGroupInfo> deploymentGroupsInfo;
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      */
     private String errorMessage;
@@ -114,11 +114,11 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API call.
+     *        Information about errors that might have occurred during the API call.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -127,10 +127,10 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
-     * @return Information about errors that may have occurred during the API call.
+     * @return Information about errors that might have occurred during the API call.
      */
 
     public String getErrorMessage() {
@@ -139,11 +139,11 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API call.
+     *        Information about errors that might have occurred during the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +153,8 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,4 +211,5 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

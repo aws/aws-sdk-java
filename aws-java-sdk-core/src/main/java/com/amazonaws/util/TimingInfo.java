@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,6 +94,16 @@ public class TimingInfo {
      */
     public static TimingInfo startTimingFullSupport(long startTimeNano) {
         return new TimingInfoFullSupport(null, startTimeNano, null);
+    }
+
+    /**
+     * Captures the given wall clock time and start time in nanosecond
+     *
+     * @param startTimeMillis start time since epoch in millisecond
+     * @param startTimeNano start time in nanosecond
+     */
+    public static TimingInfo startTimingFullSupport(long startTimeMillis, long startTimeNano) {
+        return new TimingInfoFullSupport(startTimeMillis, startTimeNano, null);
     }
 
     /**

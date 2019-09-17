@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteDomainEntryRequest Marshaller
+ * DeleteDomainEntryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteDomainEntryRequestMarshaller implements Marshaller<Request<DeleteDomainEntryRequest>, DeleteDomainEntryRequest> {
+@SdkInternalApi
+public class DeleteDomainEntryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
+    private static final MarshallingInfo<StructuredPojo> DOMAINENTRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainEntry").build();
 
-    public DeleteDomainEntryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteDomainEntryRequestMarshaller instance = new DeleteDomainEntryRequestMarshaller();
+
+    public static DeleteDomainEntryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteDomainEntryRequest> marshall(DeleteDomainEntryRequest deleteDomainEntryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteDomainEntryRequest deleteDomainEntryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteDomainEntryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDomainEntryRequest> request = new DefaultRequest<DeleteDomainEntryRequest>(deleteDomainEntryRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.DeleteDomainEntry");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteDomainEntryRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("domainName").writeValue(deleteDomainEntryRequest.getDomainName());
-            }
-            if (deleteDomainEntryRequest.getDomainEntry() != null) {
-                jsonGenerator.writeFieldName("domainEntry");
-                DomainEntryJsonMarshaller.getInstance().marshall(deleteDomainEntryRequest.getDomainEntry(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteDomainEntryRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(deleteDomainEntryRequest.getDomainEntry(), DOMAINENTRY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

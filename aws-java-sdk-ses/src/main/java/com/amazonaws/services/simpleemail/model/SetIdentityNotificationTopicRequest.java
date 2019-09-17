@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery
  * notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see
- * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
+ * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  * 
@@ -33,8 +33,16 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by
-     * using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * </p>
+     * <important>
+     * <p>
+     * You can only specify a verified identity for this parameter.
+     * </p>
+     * </important>
+     * <p>
+     * You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples
+     * are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      */
@@ -55,15 +63,29 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by
-     * using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * </p>
+     * <important>
+     * <p>
+     * You can only specify a verified identity for this parameter.
+     * </p>
+     * </important>
+     * <p>
+     * You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples
+     * are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
      * @param identity
-     *        The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or
-     *        by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>
-     *        , <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+     *        The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     *        <p>
+     *        You can only specify a verified identity for this parameter.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following
+     *        examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
+     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
 
     public void setIdentity(String identity) {
@@ -72,14 +94,28 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by
-     * using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * </p>
+     * <important>
+     * <p>
+     * You can only specify a verified identity for this parameter.
+     * </p>
+     * </important>
+     * <p>
+     * You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples
+     * are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
-     * @return The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or
-     *         by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-     *         <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+     * @return The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     *         <p>
+     *         You can only specify a verified identity for this parameter.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following
+     *         examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
+     *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      */
 
     public String getIdentity() {
@@ -88,15 +124,29 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or by
-     * using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * </p>
+     * <important>
+     * <p>
+     * You can only specify a verified identity for this parameter.
+     * </p>
+     * </important>
+     * <p>
+     * You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples
+     * are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
      * @param identity
-     *        The identity for which the Amazon SNS topic will be set. You can specify an identity by using its name or
-     *        by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>
-     *        , <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+     *        The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     *        <p>
+     *        You can only specify a verified identity for this parameter.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following
+     *        examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>,
+     *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,7 +209,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -174,7 +224,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      */
 
     public SetIdentityNotificationTopicRequest withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 
@@ -225,7 +275,8 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,29 @@ package com.amazonaws.services.opsworkscm.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The status of the association or disassociation request.
+ * </p>
+ * <p class="title">
+ * <b>Possible values:</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>SUCCESS</code>: The association or disassociation succeeded.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FAILED</code>: The association or disassociation failed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NodeAssociationStatus {
@@ -41,6 +63,9 @@ public enum NodeAssociationStatus {
      * @param value
      *        real value
      * @return NodeAssociationStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static NodeAssociationStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
+ * Encapsulates the statistical data that CloudWatch computes from metric data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Datapoint" target="_top">AWS API
@@ -369,7 +369,7 @@ public class Datapoint implements Serializable, Cloneable {
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -384,7 +384,7 @@ public class Datapoint implements Serializable, Cloneable {
      */
 
     public Datapoint withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 
@@ -450,7 +450,8 @@ public class Datapoint implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -549,4 +550,5 @@ public class Datapoint implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

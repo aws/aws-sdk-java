@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,63 +17,47 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ImportRestApiRequest Marshaller
+ * ImportRestApiRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportRestApiRequestMarshaller implements Marshaller<Request<ImportRestApiRequest>, ImportRestApiRequest> {
+@SdkInternalApi
+public class ImportRestApiRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Boolean> FAILONWARNINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("failonwarnings").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> BODY_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
-    public ImportRestApiRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ImportRestApiRequestMarshaller instance = new ImportRestApiRequestMarshaller();
+
+    public static ImportRestApiRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ImportRestApiRequest> marshall(ImportRestApiRequest importRestApiRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ImportRestApiRequest importRestApiRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (importRestApiRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportRestApiRequest> request = new DefaultRequest<ImportRestApiRequest>(importRestApiRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis?mode=import";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        request.setResourcePath(uriResourcePath);
-
-        if (importRestApiRequest.getFailOnWarnings() != null) {
-            request.addParameter("failonwarnings", StringUtils.fromBoolean(importRestApiRequest.getFailOnWarnings()));
+        try {
+            protocolMarshaller.marshall(importRestApiRequest.getFailOnWarnings(), FAILONWARNINGS_BINDING);
+            protocolMarshaller.marshall(importRestApiRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(importRestApiRequest.getBody(), BODY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        java.util.Map<String, String> parameters = importRestApiRequest.getParameters();
-        if (parameters != null) {
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                if (entry.getValue() != null) {
-                    request.addParameter(StringUtils.fromString(entry.getKey()), StringUtils.fromString(entry.getValue()));
-                }
-            }
-        }
-
-        request.setContent(BinaryUtils.toStream(importRestApiRequest.getBody()));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

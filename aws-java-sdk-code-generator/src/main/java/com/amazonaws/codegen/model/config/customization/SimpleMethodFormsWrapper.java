@@ -21,6 +21,8 @@ import java.util.List;
 
 public class SimpleMethodFormsWrapper {
 
+    private List<Boolean> deprecated;
+
     private List<List<String>> methodForms;
 
     public List<List<String>> getMethodForms() {
@@ -30,5 +32,13 @@ public class SimpleMethodFormsWrapper {
     @JsonProperty(value = "methodForms")
     public void setMethodForms(List<List<String>> methodForms) {
         this.methodForms = methodForms;
+    }
+
+    public List<Boolean> getDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(List<Boolean> deprecated) {
+        this.deprecated = deprecated;
     }
 }

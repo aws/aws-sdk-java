@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -18,21 +18,19 @@
  */
 package com.amazonaws.metrics;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
-
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.amazonaws.util.AWSRequestMetrics.Field;
 
 public class AwsSdkMetricsTest {
     /**
@@ -198,9 +196,9 @@ public class AwsSdkMetricsTest {
     }
 
     @Test
-    public void setRegions_RegionIsNull_When_NonExistingRegion() {
+    public void setRegions_WhenRegionDoesNotExist_DefaultsToAwsPartition() {
         AwsSdkMetrics.setRegion("non-existent-region");
-        assertNull(AwsSdkMetrics.getRegionName());
+        assertEquals("non-existent-region", AwsSdkMetrics.getRegionName());
     }
 
 }

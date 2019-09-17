@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    instance.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instance.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -71,6 +71,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     instance.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    instance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("blueprintId", targetDepth)) {
                     context.nextToken();

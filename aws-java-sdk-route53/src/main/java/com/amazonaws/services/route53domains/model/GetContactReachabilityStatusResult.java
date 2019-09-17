@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,17 +31,28 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
     private String domainName;
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String status;
 
@@ -87,28 +98,50 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation
-     *        email and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got
-     *        confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired
-     *        before the registrant contact responded. </p>
+     *        Whether the registrant contact has responded. Values include the following:</p>
+     *        <dl>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        Type: String
+     *        We sent the confirmation email and haven't received a response yet.
      *        </p>
+     *        </dd>
+     *        <dt>DONE</dt>
+     *        <dd>
      *        <p>
-     *        Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     *        We sent the email and got confirmation from the registrant contact.
+     *        </p>
+     *        </dd>
+     *        <dt>EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        The time limit expired before the registrant contact responded.
+     *        </p>
+     *        </dd>
      * @see ReachabilityStatus
      */
 
@@ -118,27 +151,49 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the
-     *         confirmation email and haven't received a response yet, <code>DONE</code> indicates that we sent the
-     *         email and got confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time
-     *         limit expired before the registrant contact responded. </p>
+     * @return Whether the registrant contact has responded. Values include the following:</p>
+     *         <dl>
+     *         <dt>PENDING</dt>
+     *         <dd>
      *         <p>
-     *         Type: String
+     *         We sent the confirmation email and haven't received a response yet.
      *         </p>
+     *         </dd>
+     *         <dt>DONE</dt>
+     *         <dd>
      *         <p>
-     *         Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     *         We sent the email and got confirmation from the registrant contact.
+     *         </p>
+     *         </dd>
+     *         <dt>EXPIRED</dt>
+     *         <dd>
+     *         <p>
+     *         The time limit expired before the registrant contact responded.
+     *         </p>
+     *         </dd>
      * @see ReachabilityStatus
      */
 
@@ -148,28 +203,50 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation
-     *        email and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got
-     *        confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired
-     *        before the registrant contact responded. </p>
+     *        Whether the registrant contact has responded. Values include the following:</p>
+     *        <dl>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        Type: String
+     *        We sent the confirmation email and haven't received a response yet.
      *        </p>
+     *        </dd>
+     *        <dt>DONE</dt>
+     *        <dd>
      *        <p>
-     *        Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     *        We sent the email and got confirmation from the registrant contact.
+     *        </p>
+     *        </dd>
+     *        <dt>EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        The time limit expired before the registrant contact responded.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReachabilityStatus
      */
@@ -181,70 +258,115 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation
-     *        email and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got
-     *        confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired
-     *        before the registrant contact responded. </p>
+     *        Whether the registrant contact has responded. Values include the following:</p>
+     *        <dl>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        Type: String
+     *        We sent the confirmation email and haven't received a response yet.
      *        </p>
+     *        </dd>
+     *        <dt>DONE</dt>
+     *        <dd>
      *        <p>
-     *        Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     *        We sent the email and got confirmation from the registrant contact.
+     *        </p>
+     *        </dd>
+     *        <dt>EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        The time limit expired before the registrant contact responded.
+     *        </p>
+     *        </dd>
      * @see ReachabilityStatus
      */
 
     public void setStatus(ReachabilityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email
-     * and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from
-     * the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-     * contact responded.
+     * Whether the registrant contact has responded. Values include the following:
      * </p>
+     * <dl>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * Type: String
+     * We sent the confirmation email and haven't received a response yet.
      * </p>
+     * </dd>
+     * <dt>DONE</dt>
+     * <dd>
      * <p>
-     * Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     * We sent the email and got confirmation from the registrant contact.
      * </p>
+     * </dd>
+     * <dt>EXPIRED</dt>
+     * <dd>
+     * <p>
+     * The time limit expired before the registrant contact responded.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation
-     *        email and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got
-     *        confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired
-     *        before the registrant contact responded. </p>
+     *        Whether the registrant contact has responded. Values include the following:</p>
+     *        <dl>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        Type: String
+     *        We sent the confirmation email and haven't received a response yet.
      *        </p>
+     *        </dd>
+     *        <dt>DONE</dt>
+     *        <dd>
      *        <p>
-     *        Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+     *        We sent the email and got confirmation from the registrant contact.
+     *        </p>
+     *        </dd>
+     *        <dt>EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        The time limit expired before the registrant contact responded.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReachabilityStatus
      */
 
     public GetContactReachabilityStatusResult withStatus(ReachabilityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -301,4 +423,5 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,46 +23,46 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NeighborConnectionDetail implements Serializable, Cloneable {
+public class NeighborConnectionDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      */
     private String sourceServerId;
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      */
     private String destinationServerId;
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      */
     private Integer destinationPort;
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      */
     private String transportProtocol;
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      */
     private Long connectionsCount;
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
      * @param sourceServerId
-     *        ID of server that opened the network connection.
+     *        The ID of the server that opened the network connection.
      */
 
     public void setSourceServerId(String sourceServerId) {
@@ -69,10 +71,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
-     * @return ID of server that opened the network connection.
+     * @return The ID of the server that opened the network connection.
      */
 
     public String getSourceServerId() {
@@ -81,11 +83,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of server that opened the network connection.
+     * The ID of the server that opened the network connection.
      * </p>
      * 
      * @param sourceServerId
-     *        ID of server that opened the network connection.
+     *        The ID of the server that opened the network connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +98,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
      * @param destinationServerId
-     *        ID of the server that accepted the networker connection.
+     *        The ID of the server that accepted the network connection.
      */
 
     public void setDestinationServerId(String destinationServerId) {
@@ -109,10 +111,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
-     * @return ID of the server that accepted the networker connection.
+     * @return The ID of the server that accepted the network connection.
      */
 
     public String getDestinationServerId() {
@@ -121,11 +123,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the server that accepted the networker connection.
+     * The ID of the server that accepted the network connection.
      * </p>
      * 
      * @param destinationServerId
-     *        ID of the server that accepted the networker connection.
+     *        The ID of the server that accepted the network connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +138,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
      * @param destinationPort
-     *        Destination network port for the connection.
+     *        The destination network port for the connection.
      */
 
     public void setDestinationPort(Integer destinationPort) {
@@ -149,10 +151,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
-     * @return Destination network port for the connection.
+     * @return The destination network port for the connection.
      */
 
     public Integer getDestinationPort() {
@@ -161,11 +163,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Destination network port for the connection.
+     * The destination network port for the connection.
      * </p>
      * 
      * @param destinationPort
-     *        Destination network port for the connection.
+     *        The destination network port for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +178,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
      * @param transportProtocol
-     *        Network protocol used for the connection.
+     *        The network protocol used for the connection.
      */
 
     public void setTransportProtocol(String transportProtocol) {
@@ -189,10 +191,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
-     * @return Network protocol used for the connection.
+     * @return The network protocol used for the connection.
      */
 
     public String getTransportProtocol() {
@@ -201,11 +203,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Network protocol used for the connection.
+     * The network protocol used for the connection.
      * </p>
      * 
      * @param transportProtocol
-     *        Network protocol used for the connection.
+     *        The network protocol used for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +218,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
      * @param connectionsCount
-     *        Number of open network connections with the neighboring server.
+     *        The number of open network connections with the neighboring server.
      */
 
     public void setConnectionsCount(Long connectionsCount) {
@@ -229,10 +231,10 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
-     * @return Number of open network connections with the neighboring server.
+     * @return The number of open network connections with the neighboring server.
      */
 
     public Long getConnectionsCount() {
@@ -241,11 +243,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of open network connections with the neighboring server.
+     * The number of open network connections with the neighboring server.
      * </p>
      * 
      * @param connectionsCount
-     *        Number of open network connections with the neighboring server.
+     *        The number of open network connections with the neighboring server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,7 +257,8 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -332,5 +335,11 @@ public class NeighborConnectionDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.NeighborConnectionDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

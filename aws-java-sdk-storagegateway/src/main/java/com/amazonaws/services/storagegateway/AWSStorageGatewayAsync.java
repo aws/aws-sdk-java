@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <fullname>AWS Storage Gateway Service</fullname>
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to
- * provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage
+ * provide seamless and secure integration between an organization's on-premises IT environment and the AWS storage
  * infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid
  * disaster recovery.
  * </p>
@@ -39,7 +39,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
@@ -47,29 +47,28 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
- * Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
+ * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
- * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
- * elements, possible errors, and examples of requests and responses.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS
+ * Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters,
+ * response elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS Storage Gateway Regions and
- * Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
+ * Endpoints:</a> Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -77,8 +76,9 @@ import com.amazonaws.services.storagegateway.model.*;
  * <p>
  * AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2
  * expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For
- * example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2
- * API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.
+ * example, in Storage Gateway the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this ID
+ * with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API might not behave
+ * as expected.
  * </p>
  * </note> <important>
  * <p>
@@ -88,13 +88,13 @@ import com.amazonaws.services.storagegateway.model.*;
  * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS Resource IDs</a>.
  * </p>
  * <p>
- * For example, a volume ARN with the longer volume ID format will look like this:
+ * For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
  * </p>
  * <p>
  * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
  * </p>
  * <p>
- * A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+ * A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
  * </p>
  * <p>
  * For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer
@@ -107,12 +107,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Activates the gateway you previously deployed on your host. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to
-     * use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
-     * activation key, and a name for your gateway. The activation process also associates your gateway with your
-     * account; for more information, see <a>UpdateGatewayInformation</a>.
+     * Activates the gateway you previously deployed on your host. In the activation process, you specify information
+     * such as the AWS Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots
+     * the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
+     * associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
      * <note>
      * <p>
@@ -167,12 +165,10 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Activates the gateway you previously deployed on your host. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to
-     * use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
-     * activation key, and a name for your gateway. The activation process also associates your gateway with your
-     * account; for more information, see <a>UpdateGatewayInformation</a>.
+     * Activates the gateway you previously deployed on your host. In the activation process, you specify information
+     * such as the AWS Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots
+     * the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
+     * associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
      * <note>
      * <p>
@@ -232,9 +228,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only
-     * for the gateway-cached volume architecture (see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
+     * Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached
+     * volume, tape and file gateway type (see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
      * <p>
@@ -252,9 +248,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only
-     * for the gateway-cached volume architecture (see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
+     * Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached
+     * volume, tape and file gateway type (see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
      * <p>
@@ -288,23 +284,24 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Storage gateways of all types
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
-     * Storage Volumes
+     * Storage volumes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Virtual tapes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NFS and SMB file shares
      * </p>
      * </li>
      * </ul>
-     * <ul>
-     * <li>
      * <p>
-     * Virtual Tapes
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes that are recovered to a
+     * You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes that are recovered to a
      * new gateway maintain their tags.
      * </p>
      * 
@@ -330,23 +327,24 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * Storage gateways of all types
      * </p>
      * </li>
-     * </ul>
-     * <ul>
      * <li>
      * <p>
-     * Storage Volumes
+     * Storage volumes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Virtual tapes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NFS and SMB file shares
      * </p>
      * </li>
      * </ul>
-     * <ul>
-     * <li>
      * <p>
-     * Virtual Tapes
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes that are recovered to a
+     * You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes that are recovered to a
      * new gateway maintain their tags.
      * </p>
      * 
@@ -367,7 +365,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for both the gateway-stored and gateway-cached volume architectures.
+     * for the stored volume, cached volume and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -385,7 +383,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for both the gateway-stored and gateway-cached volume architectures.
+     * for the stored volume, cached volume and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -407,14 +405,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as working storage for a gateway. This operation is supported only for
-     * the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version 20120630. Use
+     * Configures one or more gateway local disks as working storage for a gateway. This operation is only supported in
+     * the stored volume gateway type. This operation is deprecated in cached volume API version 20120630. Use
      * <a>AddUploadBuffer</a> instead.
      * </p>
      * <note>
      * <p>
      * Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to
-     * add upload buffer to a stored-volume gateway.
+     * add upload buffer to a stored volume gateway.
      * </p>
      * </note>
      * <p>
@@ -439,14 +437,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as working storage for a gateway. This operation is supported only for
-     * the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version 20120630. Use
+     * Configures one or more gateway local disks as working storage for a gateway. This operation is only supported in
+     * the stored volume gateway type. This operation is deprecated in cached volume API version 20120630. Use
      * <a>AddUploadBuffer</a> instead.
      * </p>
      * <note>
      * <p>
      * Working storage is also referred to as upload buffer. You can also use the <a>AddUploadBuffer</a> operation to
-     * add upload buffer to a stored-volume gateway.
+     * add upload buffer to a stored volume gateway.
      * </p>
      * </note>
      * <p>
@@ -476,7 +474,88 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that
+     * is associated with the pool. When you use your backup application to eject the tape, the tape is archived
+     * directly into the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param assignTapePoolRequest
+     * @return A Java Future containing the result of the AssignTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AssignTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssignTapePoolResult> assignTapePoolAsync(AssignTapePoolRequest assignTapePoolRequest);
+
+    /**
+     * <p>
+     * Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that
+     * is associated with the pool. When you use your backup application to eject the tape, the tape is archived
+     * directly into the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param assignTapePoolRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssignTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AssignTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssignTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssignTapePoolResult> assignTapePoolAsync(AssignTapePoolRequest assignTapePoolRequest,
+            com.amazonaws.handlers.AsyncHandler<AssignTapePoolRequest, AssignTapePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Connects a volume to an iSCSI connection and then attaches the volume to the specified gateway. Detaching and
+     * attaching a volume enables you to recover your data from one gateway to a different gateway without creating a
+     * snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param attachVolumeRequest
+     *        AttachVolumeInput
+     * @return A Java Future containing the result of the AttachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AttachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest attachVolumeRequest);
+
+    /**
+     * <p>
+     * Connects a volume to an iSCSI connection and then attaches the volume to the specified gateway. Detaching and
+     * attaching a volume enables you to recover your data from one gateway to a different gateway without creating a
+     * snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param attachVolumeRequest
+     *        AttachVolumeInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AttachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest attachVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachVolumeRequest, AttachVolumeResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param cancelArchivalRequest
@@ -491,6 +570,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param cancelArchivalRequest
@@ -510,7 +590,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is
-     * initiated. The virtual tape is returned to the VTS.
+     * initiated. The virtual tape is returned to the VTS. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param cancelRetrievalRequest
@@ -525,7 +605,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is
-     * initiated. The virtual tape is returned to the VTS.
+     * initiated. The virtual tape is returned to the VTS. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param cancelRetrievalRequest
@@ -544,8 +624,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached
-     * volume architecture.
+     * Creates a cached volume on a specified cached volume gateway. This operation is only supported in the cached
+     * volume gateway type.
      * </p>
      * <note>
      * <p>
@@ -555,9 +635,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </note>
      * <p>
      * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address
-     * on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and
-     * returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the
-     * iSCSI target ARN that initiators can use to connect to the volume target.
+     * on which to expose the target, and a unique client token. In response, the gateway creates the volume and returns
+     * information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the iSCSI
+     * target ARN that initiators can use to connect to the volume target.
      * </p>
      * <p>
      * Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached
@@ -575,8 +655,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached
-     * volume architecture.
+     * Creates a cached volume on a specified cached volume gateway. This operation is only supported in the cached
+     * volume gateway type.
      * </p>
      * <note>
      * <p>
@@ -586,9 +666,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </note>
      * <p>
      * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address
-     * on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and
-     * returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the
-     * iSCSI target ARN that initiators can use to connect to the volume target.
+     * on which to expose the target, and a unique client token. In response, the gateway creates the volume and returns
+     * information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the iSCSI
+     * target ARN that initiators can use to connect to the volume target.
      * </p>
      * <p>
      * Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached
@@ -611,10 +691,21 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
-     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
-     * interface.
+     * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
+     * interface. This operation is only supported for file gateways.
      * </p>
+     * <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
+     * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
      * 
      * @param createNFSFileShareRequest
      *        CreateNFSFileShareInput
@@ -627,10 +718,21 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
-     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
-     * interface.
+     * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
+     * interface. This operation is only supported for file gateways.
      * </p>
+     * <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
+     * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
      * 
      * @param createNFSFileShareRequest
      *        CreateNFSFileShareInput
@@ -648,33 +750,94 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * interface. This operation is only supported for file gateways.
+     * </p>
+     * <important>
+     * <p>
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * </p>
+     * <p>
+     * File gateways don't support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param createSMBFileShareRequest
+     *        CreateSMBFileShareInput
+     * @return A Java Future containing the result of the CreateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest createSMBFileShareRequest);
+
+    /**
+     * <p>
+     * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * interface. This operation is only supported for file gateways.
+     * </p>
+     * <important>
+     * <p>
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * </p>
+     * <p>
+     * File gateways don't support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param createSMBFileShareRequest
+     *        CreateSMBFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest createSMBFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSMBFileShareRequest, CreateSMBFileShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates a snapshot of a volume.
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
-     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
+     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working With
-     * Snapshots in the AWS Storage Gateway Console</a>.
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
+     * >Editing a Snapshot Schedule</a>.
      * </p>
      * <p>
      * In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also
      * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
      * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
      * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot.
+     * create a volume from a snapshot. This operation is only supported in stored and cached volume gateway type.
      * </p>
      * <note>
      * <p>
      * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or
-     * DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2 API
-     * reference</a>.
+     * DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+     * API reference</a>.
      * </p>
      * </note> <important>
      * <p>
      * Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note
-     * on the <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
+     * on the <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
      * </p>
      * </important>
      * 
@@ -705,28 +868,28 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
-     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
+     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working With
-     * Snapshots in the AWS Storage Gateway Console</a>.
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
+     * >Editing a Snapshot Schedule</a>.
      * </p>
      * <p>
      * In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also
      * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
      * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
      * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot.
+     * create a volume from a snapshot. This operation is only supported in stored and cached volume gateway type.
      * </p>
      * <note>
      * <p>
      * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or
-     * DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2 API
-     * reference</a>.
+     * DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+     * API reference</a>.
      * </p>
      * </note> <important>
      * <p>
      * Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note
-     * on the <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
+     * on the <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a> page.
      * </p>
      * </important>
      * 
@@ -757,20 +920,20 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Initiates a snapshot of a gateway from a volume recovery point. This operation is only supported in the cached
+     * volume gateway type.
      * </p>
      * <p>
      * A volume recovery point is a point in time at which all data of the volume is consistent and from which you can
-     * create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use
+     * create a snapshot. To get a list of volume recovery point for cached volume gateway, use
      * <a>ListVolumeRecoveryPoints</a>.
      * </p>
      * <p>
      * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the volume by providing its
-     * Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes
-     * a snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console.
-     * In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot
-     * progress or later use it when you want to create a volume from a snapshot.
+     * Amazon Resource Name (ARN). You must also provide a description for the snapshot. When the gateway takes a
+     * snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console. In
+     * response, the gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
+     * later use it when you want to create a volume from a snapshot.
      * </p>
      * <note>
      * <p>
@@ -792,20 +955,20 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Initiates a snapshot of a gateway from a volume recovery point. This operation is only supported in the cached
+     * volume gateway type.
      * </p>
      * <p>
      * A volume recovery point is a point in time at which all data of the volume is consistent and from which you can
-     * create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use
+     * create a snapshot. To get a list of volume recovery point for cached volume gateway, use
      * <a>ListVolumeRecoveryPoints</a>.
      * </p>
      * <p>
      * In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the volume by providing its
-     * Amazon Resource Name (ARN). You must also provide a description for the snapshot. When AWS Storage Gateway takes
-     * a snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console.
-     * In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot
-     * progress or later use it when you want to create a volume from a snapshot.
+     * Amazon Resource Name (ARN). You must also provide a description for the snapshot. When the gateway takes a
+     * snapshot of the specified volume, the snapshot and its description appear in the AWS Storage Gateway console. In
+     * response, the gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or
+     * later use it when you want to create a volume from a snapshot.
      * </p>
      * <note>
      * <p>
@@ -832,8 +995,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume
-     * architecture.
+     * Creates a volume on a specified gateway. This operation is only supported in the stored volume gateway type.
      * </p>
      * <p>
      * The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the
@@ -842,8 +1004,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <p>
      * In the request you must specify the gateway and the disk information on which you are creating the volume. In
-     * response, AWS Storage Gateway creates the volume and returns volume information such as the volume Amazon
-     * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
+     * response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name
+     * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
      * </p>
      * 
      * @param createStorediSCSIVolumeRequest
@@ -883,8 +1045,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume
-     * architecture.
+     * Creates a volume on a specified gateway. This operation is only supported in the stored volume gateway type.
      * </p>
      * <p>
      * The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the
@@ -893,8 +1054,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <p>
      * In the request you must specify the gateway and the disk information on which you are creating the volume. In
-     * response, AWS Storage Gateway creates the volume and returns volume information such as the volume Amazon
-     * Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
+     * response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name
+     * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
      * </p>
      * 
      * @param createStorediSCSIVolumeRequest
@@ -939,7 +1100,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
+     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
+     * barcode is unique and can not be reused if it has already been used on a tape . This applies to barcodes used on
+     * deleted tapes. This operation is only supported in the tape gateway type.
      * </p>
      * <note>
      * <p>
@@ -959,7 +1122,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
+     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
+     * barcode is unique and can not be reused if it has already been used on a tape . This applies to barcodes used on
+     * deleted tapes. This operation is only supported in the tape gateway type.
      * </p>
      * <note>
      * <p>
@@ -984,7 +1149,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation
+     * is only supported in the tape gateway type.
      * </p>
      * <note>
      * <p>
@@ -1004,7 +1170,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation
+     * is only supported in the tape gateway type.
      * </p>
      * <note>
      * <p>
@@ -1135,7 +1302,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes a file share from a file gateway.
+     * Deletes a file share from a file gateway. This operation is only supported for file gateways.
      * </p>
      * 
      * @param deleteFileShareRequest
@@ -1149,7 +1316,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes a file share from a file gateway.
+     * Deletes a file share from a file gateway. This operation is only supported for file gateways.
      * </p>
      * 
      * @param deleteFileShareRequest
@@ -1188,7 +1355,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </important>
      * 
      * @param deleteGatewayRequest
-     *        A JSON object containing the id of the gateway to delete.
+     *        A JSON object containing the ID of the gateway to delete.
      * @return A Java Future containing the result of the DeleteGateway operation returned by the service.
      * @sample AWSStorageGatewayAsync.DeleteGateway
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway" target="_top">AWS
@@ -1218,7 +1385,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </important>
      * 
      * @param deleteGatewayRequest
-     *        A JSON object containing the id of the gateway to delete.
+     *        A JSON object containing the ID of the gateway to delete.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1238,9 +1405,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
      * Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its
-     * Amazon Resource Name (ARN).
+     * Amazon Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
      * <note>
      * <p>
@@ -1264,9 +1431,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
      * Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its
-     * Amazon Resource Name (ARN).
+     * Amazon Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
      * <note>
      * <p>
@@ -1290,7 +1457,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape.
+     * Deletes the specified virtual tape. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param deleteTapeRequest
@@ -1304,7 +1471,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape.
+     * Deletes the specified virtual tape. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param deleteTapeRequest
@@ -1323,7 +1490,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in the
+     * tape gateway type.
      * </p>
      * 
      * @param deleteTapeArchiveRequest
@@ -1337,7 +1505,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in the
+     * tape gateway type.
      * </p>
      * 
      * @param deleteTapeArchiveRequest
@@ -1356,15 +1525,16 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
-     * <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage
-     * volume is not deleted. You can reuse the local disk to create another storage volume.
+     * Deletes the specified storage volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
+     * <a>CreateStorediSCSIVolume</a> API. This operation is only supported in the cached volume and stored volume
+     * types. For stored volume gateways, the local disk that was configured as the storage volume is not deleted. You
+     * can reuse the local disk to create another storage volume.
      * </p>
      * <p>
-     * Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You
-     * should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2)
-     * API to query snapshots on the volume you are deleting and check the snapshot status. For more information, go to
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
+     * Before you delete a volume, make sure there are no iSCSI connections to the volume you are deleting. You should
+     * also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to
+     * query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
      * DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * <p>
@@ -1382,15 +1552,16 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
-     * <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage
-     * volume is not deleted. You can reuse the local disk to create another storage volume.
+     * Deletes the specified storage volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
+     * <a>CreateStorediSCSIVolume</a> API. This operation is only supported in the cached volume and stored volume
+     * types. For stored volume gateways, the local disk that was configured as the storage volume is not deleted. You
+     * can reuse the local disk to create another storage volume.
      * </p>
      * <p>
-     * Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You
-     * should also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2)
-     * API to query snapshots on the volume you are deleting and check the snapshot status. For more information, go to
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
+     * Before you delete a volume, make sure there are no iSCSI connections to the volume you are deleting. You should
+     * also make sure there is no snapshot in progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to
+     * query snapshots on the volume you are deleting and check the snapshot status. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">
      * DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * <p>
@@ -1460,8 +1631,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
-     * architecture.
+     * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape and
+     * file gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and
@@ -1478,8 +1649,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
-     * architecture.
+     * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape and
+     * file gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and
@@ -1501,8 +1672,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of the gateway volumes specified in the request. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Returns a description of the gateway volumes specified in the request. This operation is only supported in the
+     * cached volume gateway types.
      * </p>
      * <p>
      * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
@@ -1520,8 +1691,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of the gateway volumes specified in the request. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Returns a description of the gateway volumes specified in the request. This operation is only supported in the
+     * cached volume gateway types.
      * </p>
      * <p>
      * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
@@ -1585,7 +1756,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param describeGatewayInformationRequest
-     *        A JSON object containing the id of the gateway.
+     *        A JSON object containing the ID of the gateway.
      * @return A Java Future containing the result of the DescribeGatewayInformation operation returned by the service.
      * @sample AWSStorageGatewayAsync.DescribeGatewayInformation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation"
@@ -1602,7 +1773,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param describeGatewayInformationRequest
-     *        A JSON object containing the id of the gateway.
+     *        A JSON object containing the ID of the gateway.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1657,7 +1828,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway.
+     * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
+     * only supported for file gateways.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -1671,7 +1843,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway.
+     * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
+     * only supported for file gateways.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -1690,8 +1863,77 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
+     * only supported for file gateways.
+     * </p>
+     * 
+     * @param describeSMBFileSharesRequest
+     *        DescribeSMBFileSharesInput
+     * @return A Java Future containing the result of the DescribeSMBFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeSMBFileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest describeSMBFileSharesRequest);
+
+    /**
+     * <p>
+     * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
+     * only supported for file gateways.
+     * </p>
+     * 
+     * @param describeSMBFileSharesRequest
+     *        DescribeSMBFileSharesInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSMBFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeSMBFileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest describeSMBFileSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBFileSharesRequest, DescribeSMBFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
+     * only supported for file gateways.
+     * </p>
+     * 
+     * @param describeSMBSettingsRequest
+     * @return A Java Future containing the result of the DescribeSMBSettings operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeSMBSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest describeSMBSettingsRequest);
+
+    /**
+     * <p>
+     * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
+     * only supported for file gateways.
+     * </p>
+     * 
+     * @param describeSMBSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSMBSettings operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeSMBSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest describeSMBSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBSettingsRequest, DescribeSMBSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes
-     * intervals at which snapshots are automatically initiated on the volume.
+     * intervals at which snapshots are automatically initiated on the volume. This operation is only supported in the
+     * cached volume and stored volume types.
      * </p>
      * 
      * @param describeSnapshotScheduleRequest
@@ -1706,7 +1948,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes
-     * intervals at which snapshots are automatically initiated on the volume.
+     * intervals at which snapshots are automatically initiated on the volume. This operation is only supported in the
+     * cached volume and stored volume types.
      * </p>
      * 
      * @param describeSnapshotScheduleRequest
@@ -1727,7 +1970,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
      * request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
-     * volume ARNs.
+     * volume ARNs. This operation is only supported in stored volume gateway type.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -1744,7 +1987,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
      * request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
-     * volume ARNs.
+     * volume ARNs. This operation is only supported in stored volume gateway type.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -1764,7 +2007,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+     * Returns a description of specified virtual tapes in the virtual tape shelf (VTS). This operation is only
+     * supported in the tape gateway type.
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual
@@ -1782,7 +2026,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+     * Returns a description of specified virtual tapes in the virtual tape shelf (VTS). This operation is only
+     * supported in the tape gateway type.
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual
@@ -1820,11 +2065,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+     * Returns a list of virtual tape recovery points that are available for the specified tape gateway.
      * </p>
      * <p>
      * A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is
      * consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeTapeRecoveryPointsRequest
@@ -1839,11 +2085,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+     * Returns a list of virtual tape recovery points that are available for the specified tape gateway.
      * </p>
      * <p>
      * A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is
      * consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeTapeRecoveryPointsRequest
@@ -1864,7 +2111,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is
-     * not specified, returns a description of all virtual tapes associated with the specified gateway.
+     * not specified, returns a description of all virtual tapes associated with the specified gateway. This operation
+     * is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeTapesRequest
@@ -1879,7 +2127,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is
-     * not specified, returns a description of all virtual tapes associated with the specified gateway.
+     * not specified, returns a description of all virtual tapes associated with the specified gateway. This operation
+     * is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeTapesRequest
@@ -1898,8 +2147,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored
-     * and gateway-cached volume architectures.
+     * Returns information about the upload buffer of a gateway. This operation is supported for the stored volume,
+     * cached volume and tape gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload
@@ -1916,8 +2165,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored
-     * and gateway-cached volume architectures.
+     * Returns information about the upload buffer of a gateway. This operation is supported for the stored volume,
+     * cached volume and tape gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload
@@ -1939,11 +2188,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS
+     * Returns a description of virtual tape library (VTL) devices for the specified tape gateway. In the response, AWS
      * Storage Gateway returns VTL device information.
      * </p>
      * <p>
-     * The list of VTL devices must be from one gateway.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeVTLDevicesRequest
@@ -1957,11 +2206,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS
+     * Returns a description of virtual tape library (VTL) devices for the specified tape gateway. In the response, AWS
      * Storage Gateway returns VTL device information.
      * </p>
      * <p>
-     * The list of VTL devices must be from one gateway.
+     * This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param describeVTLDevicesRequest
@@ -1980,14 +2229,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the working storage of a gateway. This operation is supported only for the
-     * gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use
+     * Returns information about the working storage of a gateway. This operation is only supported in the stored
+     * volumes gateway type. This operation is deprecated in cached volumes API version (20120630). Use
      * DescribeUploadBuffer instead.
      * </p>
      * <note>
      * <p>
      * Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add
-     * upload buffer to a stored-volume gateway.
+     * upload buffer to a stored volume gateway.
      * </p>
      * </note>
      * <p>
@@ -2006,14 +2255,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the working storage of a gateway. This operation is supported only for the
-     * gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use
+     * Returns information about the working storage of a gateway. This operation is only supported in the stored
+     * volumes gateway type. This operation is deprecated in cached volumes API version (20120630). Use
      * DescribeUploadBuffer instead.
      * </p>
      * <note>
      * <p>
      * Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add
-     * upload buffer to a stored-volume gateway.
+     * upload buffer to a stored volume gateway.
      * </p>
      * </note>
      * <p>
@@ -2037,11 +2286,51 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can
-     * disable the gateway so you can recover virtual tapes.
+     * Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching
+     * and attaching a volume enables you to recover your data from one gateway to a different gateway without creating
+     * a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param detachVolumeRequest
+     *        AttachVolumeInput
+     * @return A Java Future containing the result of the DetachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DetachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest detachVolumeRequest);
+
+    /**
+     * <p>
+     * Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching
+     * and attaching a volume enables you to recover your data from one gateway to a different gateway without creating
+     * a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param detachVolumeRequest
+     *        AttachVolumeInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DetachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest detachVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachVolumeRequest, DetachVolumeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables a tape gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged,
+     * you can disable the gateway so you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a gateway-VTL that is not reachable or not functioning.
+     * Use this operation for a tape gateway that is not reachable or not functioning. This operation is only supported
+     * in the tape gateway type.
      * </p>
      * <important>
      * <p>
@@ -2060,11 +2349,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can
-     * disable the gateway so you can recover virtual tapes.
+     * Disables a tape gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged,
+     * you can disable the gateway so you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a gateway-VTL that is not reachable or not functioning.
+     * Use this operation for a tape gateway that is not reachable or not functioning. This operation is only supported
+     * in the tape gateway type.
      * </p>
      * <important>
      * <p>
@@ -2088,8 +2378,43 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
+     * support the SMB file protocol.
+     * </p>
+     * 
+     * @param joinDomainRequest
+     *        JoinDomainInput
+     * @return A Java Future containing the result of the JoinDomain operation returned by the service.
+     * @sample AWSStorageGatewayAsync.JoinDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest joinDomainRequest);
+
+    /**
+     * <p>
+     * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
+     * support the SMB file protocol.
+     * </p>
+     * 
+     * @param joinDomainRequest
+     *        JoinDomainInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the JoinDomain operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.JoinDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest joinDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<JoinDomainRequest, JoinDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
-     * user account.
+     * user account. This operation is only supported for file gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -2104,7 +2429,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
-     * user account.
+     * user account. This operation is only supported for file gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -2123,7 +2448,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
+     * Lists gateways owned by an AWS account in an AWS Region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -2158,7 +2483,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
+     * Lists gateways owned by an AWS account in an AWS Region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -2259,7 +2584,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists the tags that have been added to the specified resource.
+     * Lists the tags that have been added to the specified resource. This operation is only supported in the cached
+     * volume, stored volume and tape gateway type.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2273,7 +2599,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists the tags that have been added to the specified resource.
+     * Lists the tags that have been added to the specified resource. This operation is only supported in the cached
+     * volume, stored volume and tape gateway type.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2315,7 +2642,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can
      * optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If
      * the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element
-     * that you can use in your subsequent request to retrieve the next set of tapes.
+     * that you can use in your subsequent request to retrieve the next set of tapes. This operation is only supported
+     * in the tape gateway type.
      * </p>
      * 
      * @param listTapesRequest
@@ -2353,7 +2681,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can
      * optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If
      * the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element
-     * that you can use in your subsequent request to retrieve the next set of tapes.
+     * that you can use in your subsequent request to retrieve the next set of tapes. This operation is only supported
+     * in the tape gateway type.
      * </p>
      * 
      * @param listTapesRequest
@@ -2389,7 +2718,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume
-     * is being used or not.
+     * is being used or not. This operation is only supported in the cached volume and stored volume gateway types.
      * </p>
      * 
      * @param listVolumeInitiatorsRequest
@@ -2404,7 +2733,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume
-     * is being used or not.
+     * is being used or not. This operation is only supported in the cached volume and stored volume gateway types.
      * </p>
      * 
      * @param listVolumeInitiatorsRequest
@@ -2423,13 +2752,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
-     * architecture.
+     * Lists the recovery points for a specified gateway. This operation is only supported in the cached volume gateway
+     * type.
      * </p>
      * <p>
-     * Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data
-     * of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery
-     * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
+     * Each cache volume has one recovery point. A volume recovery point is a point in time at which all data of the
+     * volume is consistent and from which you can create a snapshot or clone a new cached volume from a source volume.
+     * To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
      * </p>
      * 
      * @param listVolumeRecoveryPointsRequest
@@ -2442,13 +2771,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
-     * architecture.
+     * Lists the recovery points for a specified gateway. This operation is only supported in the cached volume gateway
+     * type.
      * </p>
      * <p>
-     * Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data
-     * of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery
-     * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
+     * Each cache volume has one recovery point. A volume recovery point is a point in time at which all data of the
+     * volume is consistent and from which you can create a snapshot or clone a new cached volume from a source volume.
+     * To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
      * </p>
      * 
      * @param listVolumeRecoveryPointsRequest
@@ -2474,7 +2803,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can
      * optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If
      * the number of volumes returned in the response is truncated, the response includes a Marker field. You can use
-     * this Marker value in your subsequent request to retrieve the next set of volumes.
+     * this Marker value in your subsequent request to retrieve the next set of volumes. This operation is only
+     * supported in the cached volume and stored volume gateway types.
      * </p>
      * 
      * @param listVolumesRequest
@@ -2507,7 +2837,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can
      * optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If
      * the number of volumes returned in the response is truncated, the response includes a Marker field. You can use
-     * this Marker value in your subsequent request to retrieve the next set of volumes.
+     * this Marker value in your subsequent request to retrieve the next set of volumes. This operation is only
+     * supported in the cached volume and stored volume gateway types.
      * </p>
      * 
      * @param listVolumesRequest
@@ -2537,7 +2868,124 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Removes one or more tags from the specified resource.
+     * Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to
+     * Amazon S3.
+     * </p>
+     * <p>
+     * AWS Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file
+     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the file
+     * share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you
+     * notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification
+     * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported for file
+     * gateways.
+     * </p>
+     * <p>
+     * For more information, see Getting File Upload Notification in the Storage Gateway User Guide
+     * (https://docs.aws.amazon
+     * .com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+     * </p>
+     * 
+     * @param notifyWhenUploadedRequest
+     * @return A Java Future containing the result of the NotifyWhenUploaded operation returned by the service.
+     * @sample AWSStorageGatewayAsync.NotifyWhenUploaded
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(NotifyWhenUploadedRequest notifyWhenUploadedRequest);
+
+    /**
+     * <p>
+     * Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to
+     * Amazon S3.
+     * </p>
+     * <p>
+     * AWS Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file
+     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the file
+     * share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you
+     * notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification
+     * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported for file
+     * gateways.
+     * </p>
+     * <p>
+     * For more information, see Getting File Upload Notification in the Storage Gateway User Guide
+     * (https://docs.aws.amazon
+     * .com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+     * </p>
+     * 
+     * @param notifyWhenUploadedRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyWhenUploaded operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.NotifyWhenUploaded
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NotifyWhenUploaded"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(NotifyWhenUploadedRequest notifyWhenUploadedRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyWhenUploadedRequest, NotifyWhenUploadedResult> asyncHandler);
+
+    /**
+     * <p>
+     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
+     * added, removed or replaced since the gateway last listed the bucket's contents and cached the results. This
+     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
+     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
+     * >Getting Notified About File Operations</a>.
+     * </p>
+     * <p>
+     * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
+     * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
+     * refresh-complete notification to determine that the operation has completed before you check for new files on the
+     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * <code>RefreshCache</code> operation completes.
+     * </p>
+     * 
+     * @param refreshCacheRequest
+     *        RefreshCacheInput
+     * @return A Java Future containing the result of the RefreshCache operation returned by the service.
+     * @sample AWSStorageGatewayAsync.RefreshCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest refreshCacheRequest);
+
+    /**
+     * <p>
+     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
+     * added, removed or replaced since the gateway last listed the bucket's contents and cached the results. This
+     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
+     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
+     * >Getting Notified About File Operations</a>.
+     * </p>
+     * <p>
+     * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
+     * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
+     * refresh-complete notification to determine that the operation has completed before you check for new files on the
+     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * <code>RefreshCache</code> operation completes.
+     * </p>
+     * 
+     * @param refreshCacheRequest
+     *        RefreshCacheInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RefreshCache operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.RefreshCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest refreshCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<RefreshCacheRequest, RefreshCacheResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource. This operation is only supported in the cached volume,
+     * stored volume and tape gateway types.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -2551,7 +2999,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Removes one or more tags from the specified resource.
+     * Removes one or more tags from the specified resource. This operation is only supported in the cached volume,
+     * stored volume and tape gateway types.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -2589,6 +3038,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes
      * in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a
      * cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks.
+     * This operation is only supported in the cached volume and tape types.
      * </p>
      * <important>
      * <p>
@@ -2612,6 +3062,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes
      * in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a
      * cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks.
+     * This operation is only supported in the cached volume and tape types.
      * </p>
      * <important>
      * <p>
@@ -2636,13 +3087,15 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway. Virtual tapes archived in
      * the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway,
-     * even though it is also listed in the VTS.
+     * even though it is also listed in the VTS, that is, archive. This operation is only supported in the tape gateway
+     * type.
      * </p>
      * <p>
      * Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must
-     * archive the tape again before you can retrieve it to another gateway.
+     * archive the tape again before you can retrieve it to another gateway. This operation is only supported in the
+     * tape gateway type.
      * </p>
      * 
      * @param retrieveTapeArchiveRequest
@@ -2656,13 +3109,15 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway. Virtual tapes archived in
      * the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway,
-     * even though it is also listed in the VTS.
+     * even though it is also listed in the VTS, that is, archive. This operation is only supported in the tape gateway
+     * type.
      * </p>
      * <p>
      * Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must
-     * archive the tape again before you can retrieve it to another gateway.
+     * archive the tape again before you can retrieve it to another gateway. This operation is only supported in the
+     * tape gateway type.
      * </p>
      * 
      * @param retrieveTapeArchiveRequest
@@ -2681,7 +3136,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves the recovery point for the specified virtual tape.
+     * Retrieves the recovery point for the specified virtual tape. This operation is only supported in the tape gateway
+     * type.
      * </p>
      * <p>
      * A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If
@@ -2690,7 +3146,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <note>
      * <p>
      * The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be
-     * retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.
+     * retrieved to only a tape gateway. There is no charge for retrieving recovery points.
      * </p>
      * </note>
      * 
@@ -2706,7 +3162,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves the recovery point for the specified virtual tape.
+     * Retrieves the recovery point for the specified virtual tape. This operation is only supported in the tape gateway
+     * type.
      * </p>
      * <p>
      * A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If
@@ -2715,7 +3172,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <note>
      * <p>
      * The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be
-     * retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.
+     * retrieved to only a tape gateway. There is no charge for retrieving recovery points.
      * </p>
      * </note>
      * 
@@ -2773,12 +3230,47 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code> user is the user when the
+     * authentication method for the file share is set to <code>GuestAccess</code>.
+     * </p>
+     * 
+     * @param setSMBGuestPasswordRequest
+     *        SetSMBGuestPasswordInput
+     * @return A Java Future containing the result of the SetSMBGuestPassword operation returned by the service.
+     * @sample AWSStorageGatewayAsync.SetSMBGuestPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest setSMBGuestPasswordRequest);
+
+    /**
+     * <p>
+     * Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code> user is the user when the
+     * authentication method for the file share is set to <code>GuestAccess</code>.
+     * </p>
+     * 
+     * @param setSMBGuestPasswordRequest
+     *        SetSMBGuestPasswordInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetSMBGuestPassword operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.SetSMBGuestPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest setSMBGuestPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<SetSMBGuestPasswordRequest, SetSMBGuestPasswordResult> asyncHandler);
+
+    /**
+     * <p>
      * Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in
      * the body of your request.
      * </p>
      * <p>
-     * The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and
-     * not the VM.
+     * The operation shuts down the gateway service component running in the gateway's virtual machine (VM) and not the
+     * host VM.
      * </p>
      * <note>
      * <p>
@@ -2818,8 +3310,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * the body of your request.
      * </p>
      * <p>
-     * The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and
-     * not the VM.
+     * The operation shuts down the gateway service component running in the gateway's virtual machine (VM) and not the
+     * host VM.
      * </p>
      * <note>
      * <p>
@@ -3135,9 +3627,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your
      * applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
      * timeouts for Windows and Linux, see <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
      * >Customizing Your Linux iSCSI Settings</a>, respectively.
      * </p>
      * </important>
@@ -3166,9 +3658,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your
      * applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
      * timeouts for Windows and Linux, see <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
-     * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
      * >Customizing Your Linux iSCSI Settings</a>, respectively.
      * </p>
      * </important>
@@ -3196,6 +3688,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param updateMaintenanceStartTimeRequest
      *        A JSON object containing the following fields:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
@@ -3230,6 +3727,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <ul>
      *        <li>
      *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
      *        </p>
      *        </li>
@@ -3258,11 +3760,47 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a file share.
+     * Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.
      * </p>
      * <note>
      * <p>
      * To leave a file share field unchanged, set the corresponding input field to null.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the following file share setting:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Default storage class for your S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Metadata defaults for your S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Allowed NFS clients for your file share
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Squash settings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Write status of your file share
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported in file gateways.
      * </p>
      * </note>
      * 
@@ -3277,11 +3815,47 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a file share.
+     * Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.
      * </p>
      * <note>
      * <p>
      * To leave a file share field unchanged, set the corresponding input field to null.
+     * </p>
+     * </note>
+     * <p>
+     * Updates the following file share setting:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Default storage class for your S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Metadata defaults for your S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Allowed NFS clients for your file share
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Squash settings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Write status of your file share
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported in file gateways.
      * </p>
      * </note>
      * 
@@ -3301,7 +3875,124 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a snapshot schedule configured for a gateway volume.
+     * Updates a Server Message Block (SMB) file share.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported for file gateways.
+     * </p>
+     * </note> <important>
+     * <p>
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * </p>
+     * <p>
+     * File gateways don't support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param updateSMBFileShareRequest
+     *        UpdateSMBFileShareInput
+     * @return A Java Future containing the result of the UpdateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest updateSMBFileShareRequest);
+
+    /**
+     * <p>
+     * Updates a Server Message Block (SMB) file share.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported for file gateways.
+     * </p>
+     * </note> <important>
+     * <p>
+     * File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
+     * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * </p>
+     * <p>
+     * File gateways don't support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param updateSMBFileShareRequest
+     *        UpdateSMBFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest updateSMBFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareRequest, UpdateSMBFileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
+     * </p>
+     * <note>
+     * <p>
+     * This API is called Security level in the User Guide.
+     * </p>
+     * <p>
+     * A higher security level can affect performance of the gateway.
+     * </p>
+     * </note>
+     * 
+     * @param updateSMBSecurityStrategyRequest
+     * @return A Java Future containing the result of the UpdateSMBSecurityStrategy operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateSMBSecurityStrategy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(
+            UpdateSMBSecurityStrategyRequest updateSMBSecurityStrategyRequest);
+
+    /**
+     * <p>
+     * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
+     * </p>
+     * <note>
+     * <p>
+     * This API is called Security level in the User Guide.
+     * </p>
+     * <p>
+     * A higher security level can affect performance of the gateway.
+     * </p>
+     * </note>
+     * 
+     * @param updateSMBSecurityStrategyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSMBSecurityStrategy operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSMBSecurityStrategy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBSecurityStrategy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBSecurityStrategyResult> updateSMBSecurityStrategyAsync(
+            UpdateSMBSecurityStrategyRequest updateSMBSecurityStrategyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBSecurityStrategyRequest, UpdateSMBSecurityStrategyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a snapshot schedule configured for a gateway volume. This operation is only supported in the cached
+     * volume and stored volume gateway types.
      * </p>
      * <p>
      * The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You
@@ -3344,7 +4035,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a snapshot schedule configured for a gateway volume.
+     * Updates a snapshot schedule configured for a gateway volume. This operation is only supported in the cached
+     * volume and stored volume gateway types.
      * </p>
      * <p>
      * The default snapshot schedule for volume is once every 24 hours, starting at the creation time of the volume. You
@@ -3392,9 +4084,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer
-     * type for the gateway-VTL. This operation enables you to select a different type of medium changer after a
-     * gateway-VTL is activated.
+     * Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium
+     * changer type for the tape gateway. This operation enables you to select a different type of medium changer after
+     * a tape gateway is activated. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param updateVTLDeviceTypeRequest
@@ -3407,9 +4099,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer
-     * type for the gateway-VTL. This operation enables you to select a different type of medium changer after a
-     * gateway-VTL is activated.
+     * Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium
+     * changer type for the tape gateway. This operation enables you to select a different type of medium changer after
+     * a tape gateway is activated. This operation is only supported in the tape gateway type.
      * </p>
      * 
      * @param updateVTLDeviceTypeRequest

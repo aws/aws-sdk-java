@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,9 +94,9 @@ public class BasicProfileConfigLoader {
 
             if (profileName.startsWith("profile ")) {
                 LOG.warn(
-                        "The legacy profile format requires the 'profile ' prefix before the profile name. " +
-                        "The latest code does not require such prefix, and will consider it as part of the profile name. " +
-                        "Please remove the prefix if you are seeing this warning.");
+                        "Your profile name includes a 'profile ' prefix. This is considered part of the profile name in the " +
+                        "Java SDK, so you will need to include this prefix in your profile name when you reference this " +
+                        "profile from your Java code.");
             }
 
             assertParameterNotEmpty(profileName,

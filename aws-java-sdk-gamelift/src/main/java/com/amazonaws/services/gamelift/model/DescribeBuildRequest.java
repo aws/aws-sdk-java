@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      */
     private String buildId;
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build that you want to retrieve properties for.
+     *        Unique identifier for a build to retrieve properties for.
      */
 
     public void setBuildId(String buildId) {
@@ -50,10 +50,10 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
-     * @return Unique identifier of the build that you want to retrieve properties for.
+     * @return Unique identifier for a build to retrieve properties for.
      */
 
     public String getBuildId() {
@@ -62,11 +62,11 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier of the build that you want to retrieve properties for.
+     * Unique identifier for a build to retrieve properties for.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build that you want to retrieve properties for.
+     *        Unique identifier for a build to retrieve properties for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +76,8 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

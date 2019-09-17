@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,16 @@ public enum PollyActions implements Action {
     DescribeVoices("polly:DescribeVoices"),
     /** Action for the GetLexicon operation. */
     GetLexicon("polly:GetLexicon"),
+    /** Action for the GetSpeechSynthesisTask operation. */
+    GetSpeechSynthesisTask("polly:GetSpeechSynthesisTask"),
     /** Action for the ListLexicons operation. */
     ListLexicons("polly:ListLexicons"),
+    /** Action for the ListSpeechSynthesisTasks operation. */
+    ListSpeechSynthesisTasks("polly:ListSpeechSynthesisTasks"),
     /** Action for the PutLexicon operation. */
     PutLexicon("polly:PutLexicon"),
+    /** Action for the StartSpeechSynthesisTask operation. */
+    StartSpeechSynthesisTask("polly:StartSpeechSynthesisTask"),
     /** Action for the SynthesizeSpeech operation. */
     SynthesizeSpeech("polly:SynthesizeSpeech"),
 

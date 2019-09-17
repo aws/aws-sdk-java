@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,15 +110,15 @@ public class GetDomainDetailResultJsonUnmarshaller implements Unmarshaller<GetDo
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setExpirationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getDomainDetailResult.setExpirationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Reseller", targetDepth)) {
                     context.nextToken();

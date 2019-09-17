@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CampaignHook", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setCampaignHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchMetricsEnabled", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
                     writeApplicationSettingsRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));

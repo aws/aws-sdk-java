@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String thingArn;
+    /**
+     * <p>
+     * The thing ID.
+     * </p>
+     */
+    private String thingId;
 
     /**
      * <p>
@@ -117,7 +123,48 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The thing ID.
+     * </p>
+     * 
+     * @param thingId
+     *        The thing ID.
+     */
+
+    public void setThingId(String thingId) {
+        this.thingId = thingId;
+    }
+
+    /**
+     * <p>
+     * The thing ID.
+     * </p>
+     * 
+     * @return The thing ID.
+     */
+
+    public String getThingId() {
+        return this.thingId;
+    }
+
+    /**
+     * <p>
+     * The thing ID.
+     * </p>
+     * 
+     * @param thingId
+     *        The thing ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingResult withThingId(String thingId) {
+        setThingId(thingId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,7 +177,9 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingArn() != null)
-            sb.append("ThingArn: ").append(getThingArn());
+            sb.append("ThingArn: ").append(getThingArn()).append(",");
+        if (getThingId() != null)
+            sb.append("ThingId: ").append(getThingId());
         sb.append("}");
         return sb.toString();
     }
@@ -153,6 +202,10 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getThingArn() != null && other.getThingArn().equals(this.getThingArn()) == false)
             return false;
+        if (other.getThingId() == null ^ this.getThingId() == null)
+            return false;
+        if (other.getThingId() != null && other.getThingId().equals(this.getThingId()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +216,7 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
+        hashCode = prime * hashCode + ((getThingId() == null) ? 0 : getThingId().hashCode());
         return hashCode;
     }
 
@@ -174,4 +228,5 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

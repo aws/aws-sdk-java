@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.databasemigrationservice.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p/>
@@ -22,12 +24,12 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SupportedEndpointType implements Serializable, Cloneable {
+public class SupportedEndpointType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -39,20 +41,27 @@ public class SupportedEndpointType implements Serializable, Cloneable {
     private Boolean supportsCDC;
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      */
     private String endpointType;
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     */
+    private String engineDisplayName;
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -61,12 +70,12 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     *         SYBASE, and SQLSERVER.
+     * @return The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -75,13 +84,13 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +153,11 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -158,10 +167,10 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
-     * @return The type of endpoint.
+     * @return The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
@@ -171,11 +180,11 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
@@ -187,36 +196,83 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @see ReplicationEndpointTypeValue
      */
 
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
-        this.endpointType = endpointType.toString();
+        withEndpointType(endpointType);
     }
 
     /**
      * <p>
-     * The type of endpoint.
+     * The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint.
+     *        The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationEndpointTypeValue
      */
 
     public SupportedEndpointType withEndpointType(ReplicationEndpointTypeValue endpointType) {
-        setEndpointType(endpointType);
+        this.endpointType = endpointType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     */
+
+    public void setEngineDisplayName(String engineDisplayName) {
+        this.engineDisplayName = engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *         this value would be "Amazon Aurora MySQL."
+     */
+
+    public String getEngineDisplayName() {
+        return this.engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SupportedEndpointType withEngineDisplayName(String engineDisplayName) {
+        setEngineDisplayName(engineDisplayName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -231,7 +287,9 @@ public class SupportedEndpointType implements Serializable, Cloneable {
         if (getSupportsCDC() != null)
             sb.append("SupportsCDC: ").append(getSupportsCDC()).append(",");
         if (getEndpointType() != null)
-            sb.append("EndpointType: ").append(getEndpointType());
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getEngineDisplayName() != null)
+            sb.append("EngineDisplayName: ").append(getEngineDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +316,10 @@ public class SupportedEndpointType implements Serializable, Cloneable {
             return false;
         if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
+        if (other.getEngineDisplayName() == null ^ this.getEngineDisplayName() == null)
+            return false;
+        if (other.getEngineDisplayName() != null && other.getEngineDisplayName().equals(this.getEngineDisplayName()) == false)
+            return false;
         return true;
     }
 
@@ -269,6 +331,7 @@ public class SupportedEndpointType implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
         hashCode = prime * hashCode + ((getSupportsCDC() == null) ? 0 : getSupportsCDC().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getEngineDisplayName() == null) ? 0 : getEngineDisplayName().hashCode());
         return hashCode;
     }
 
@@ -279,5 +342,11 @@ public class SupportedEndpointType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.databasemigrationservice.model.transform.SupportedEndpointTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      */
@@ -59,21 +59,29 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
     private String marker;
     /**
      * <p>
-     * An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the
-     * individual cache nodes.
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information
+     * about the individual cache nodes.
      * </p>
      */
     private Boolean showCacheNodeInfo;
+    /**
+     * <p>
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     * (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node
+     * Redis clusters.
+     * </p>
+     */
+    private Boolean showCacheClustersNotInReplicationGroups;
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @param cacheClusterId
      *        The user-supplied cluster identifier. If this parameter is specified, only information about that specific
-     *        cache cluster is returned. This parameter isn't case sensitive.
+     *        cluster is returned. This parameter isn't case sensitive.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -82,12 +90,12 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @return The user-supplied cluster identifier. If this parameter is specified, only information about that
-     *         specific cache cluster is returned. This parameter isn't case sensitive.
+     *         specific cluster is returned. This parameter isn't case sensitive.
      */
 
     public String getCacheClusterId() {
@@ -96,13 +104,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @param cacheClusterId
      *        The user-supplied cluster identifier. If this parameter is specified, only information about that specific
-     *        cache cluster is returned. This parameter isn't case sensitive.
+     *        cluster is returned. This parameter isn't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,13 +258,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the
-     * individual cache nodes.
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information
+     * about the individual cache nodes.
      * </p>
      * 
      * @param showCacheNodeInfo
-     *        An optional flag that can be included in the DescribeCacheCluster request to retrieve information about
-     *        the individual cache nodes.
+     *        An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve
+     *        information about the individual cache nodes.
      */
 
     public void setShowCacheNodeInfo(Boolean showCacheNodeInfo) {
@@ -265,12 +273,12 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the
-     * individual cache nodes.
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information
+     * about the individual cache nodes.
      * </p>
      * 
-     * @return An optional flag that can be included in the DescribeCacheCluster request to retrieve information about
-     *         the individual cache nodes.
+     * @return An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve
+     *         information about the individual cache nodes.
      */
 
     public Boolean getShowCacheNodeInfo() {
@@ -279,13 +287,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the
-     * individual cache nodes.
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information
+     * about the individual cache nodes.
      * </p>
      * 
      * @param showCacheNodeInfo
-     *        An optional flag that can be included in the DescribeCacheCluster request to retrieve information about
-     *        the individual cache nodes.
+     *        An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve
+     *        information about the individual cache nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,12 +304,12 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional flag that can be included in the DescribeCacheCluster request to retrieve information about the
-     * individual cache nodes.
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information
+     * about the individual cache nodes.
      * </p>
      * 
-     * @return An optional flag that can be included in the DescribeCacheCluster request to retrieve information about
-     *         the individual cache nodes.
+     * @return An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve
+     *         information about the individual cache nodes.
      */
 
     public Boolean isShowCacheNodeInfo() {
@@ -309,7 +317,76 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     * (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node
+     * Redis clusters.
+     * </p>
+     * 
+     * @param showCacheClustersNotInReplicationGroups
+     *        An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     *        (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and
+     *        single node Redis clusters.
+     */
+
+    public void setShowCacheClustersNotInReplicationGroups(Boolean showCacheClustersNotInReplicationGroups) {
+        this.showCacheClustersNotInReplicationGroups = showCacheClustersNotInReplicationGroups;
+    }
+
+    /**
+     * <p>
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     * (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node
+     * Redis clusters.
+     * </p>
+     * 
+     * @return An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     *         (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and
+     *         single node Redis clusters.
+     */
+
+    public Boolean getShowCacheClustersNotInReplicationGroups() {
+        return this.showCacheClustersNotInReplicationGroups;
+    }
+
+    /**
+     * <p>
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     * (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node
+     * Redis clusters.
+     * </p>
+     * 
+     * @param showCacheClustersNotInReplicationGroups
+     *        An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     *        (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and
+     *        single node Redis clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCacheClustersRequest withShowCacheClustersNotInReplicationGroups(Boolean showCacheClustersNotInReplicationGroups) {
+        setShowCacheClustersNotInReplicationGroups(showCacheClustersNotInReplicationGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     * (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node
+     * Redis clusters.
+     * </p>
+     * 
+     * @return An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes
+     *         (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and
+     *         single node Redis clusters.
+     */
+
+    public Boolean isShowCacheClustersNotInReplicationGroups() {
+        return this.showCacheClustersNotInReplicationGroups;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -326,7 +403,9 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getShowCacheNodeInfo() != null)
-            sb.append("ShowCacheNodeInfo: ").append(getShowCacheNodeInfo());
+            sb.append("ShowCacheNodeInfo: ").append(getShowCacheNodeInfo()).append(",");
+        if (getShowCacheClustersNotInReplicationGroups() != null)
+            sb.append("ShowCacheClustersNotInReplicationGroups: ").append(getShowCacheClustersNotInReplicationGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +436,11 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getShowCacheNodeInfo() != null && other.getShowCacheNodeInfo().equals(this.getShowCacheNodeInfo()) == false)
             return false;
+        if (other.getShowCacheClustersNotInReplicationGroups() == null ^ this.getShowCacheClustersNotInReplicationGroups() == null)
+            return false;
+        if (other.getShowCacheClustersNotInReplicationGroups() != null
+                && other.getShowCacheClustersNotInReplicationGroups().equals(this.getShowCacheClustersNotInReplicationGroups()) == false)
+            return false;
         return true;
     }
 
@@ -369,6 +453,7 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getShowCacheNodeInfo() == null) ? 0 : getShowCacheNodeInfo().hashCode());
+        hashCode = prime * hashCode + ((getShowCacheClustersNotInReplicationGroups() == null) ? 0 : getShowCacheClustersNotInReplicationGroups().hashCode());
         return hashCode;
     }
 

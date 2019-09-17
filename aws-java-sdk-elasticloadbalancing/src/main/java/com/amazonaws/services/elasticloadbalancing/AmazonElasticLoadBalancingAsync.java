@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,23 +27,21 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * <p>
  * <fullname>Elastic Load Balancing</fullname>
  * <p>
- * A load balancer distributes incoming traffic across your EC2 instances. This enables you to increase the availability
- * of your application. The load balancer also monitors the health of its registered instances and ensures that it
- * routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying
- * one or more listeners, which are configured with a protocol and port number for connections from clients to the load
- * balancer and a protocol and port number for connections from the load balancer to the instances.
+ * A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the
+ * availability of your application. The load balancer also monitors the health of its registered instances and ensures
+ * that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by
+ * specifying one or more listeners, which are configured with a protocol and port number for connections from clients
+ * to the load balancer and a protocol and port number for connections from the load balancer to the instances.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic load balancers and Application load balancers
- * (new). A Classic load balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
- * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer makes
- * routing and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can
- * route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).
- * For more information, see the .
+ * Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers,
+ * and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see
+ * the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User
+ * Guide</a>.
  * </p>
  * <p>
- * This reference covers the 2012-06-01 API, which supports Classic load balancers. The 2015-12-01 API supports
- * Application load balancers.
+ * This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports
+ * Application Load Balancers and Network Load Balancers.
  * </p>
  * <p>
  * To get started, create a load balancer with one or more listeners using <a>CreateLoadBalancer</a>. Register your
@@ -391,7 +389,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Creates a Classic load balancer.
+     * Creates a Classic Load Balancer.
      * </p>
      * <p>
      * You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them
@@ -420,7 +418,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Creates a Classic load balancer.
+     * Creates a Classic Load Balancer.
      * </p>
      * <p>
      * You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them
@@ -717,6 +715,47 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     java.util.concurrent.Future<DeregisterInstancesFromLoadBalancerResult> deregisterInstancesFromLoadBalancerAsync(
             DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterInstancesFromLoadBalancerRequest, DeregisterInstancesFromLoadBalancerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
+     * Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest);
+
+    /**
+     * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
+     * Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler);
 
     /**
      * <p>
@@ -1073,7 +1112,11 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.
+     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.
      * </p>
      * <p>
      * There must be at least one Availability Zone registered with a load balancer at all times. After an Availability
@@ -1101,7 +1144,11 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer.
+     * Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.
      * </p>
      * <p>
      * There must be at least one Availability Zone registered with a load balancer at all times. After an Availability
@@ -1134,14 +1181,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.
+     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.
      * </p>
      * <p>
      * The load balancer evenly distributes requests across all its registered Availability Zones that contain
-     * instances.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
      * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
@@ -1160,14 +1208,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer.
+     * Adds the specified Availability Zones to the set of Availability Zones for the specified load balancer in
+     * EC2-Classic or a default VPC.
+     * </p>
+     * <p>
+     * For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.
      * </p>
      * <p>
      * The load balancer evenly distributes requests across all its registered Availability Zones that contain
-     * instances.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
      * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>

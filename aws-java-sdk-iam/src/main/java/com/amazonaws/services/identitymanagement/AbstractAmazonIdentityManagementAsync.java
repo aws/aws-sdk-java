@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,6 +149,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #createAccessKeyAsync(CreateAccessKeyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateAccessKeyResult> createAccessKeyAsync(
             com.amazonaws.handlers.AsyncHandler<CreateAccessKeyRequest, CreateAccessKeyResult> asyncHandler) {
 
@@ -273,6 +274,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceLinkedRoleResult> createServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request) {
+
+        return createServiceLinkedRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceLinkedRoleResult> createServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateServiceLinkedRoleRequest, CreateServiceLinkedRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
             CreateServiceSpecificCredentialRequest request) {
 
@@ -381,6 +395,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler) {
 
@@ -492,6 +507,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request) {
+
+        return deleteRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(DeleteRolePolicyRequest request) {
 
         return deleteRolePolicyAsync(request, null);
@@ -544,6 +572,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request) {
+
+        return deleteServiceLinkedRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
             DeleteServiceSpecificCredentialRequest request) {
 
@@ -580,6 +621,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request) {
+
+        return deleteUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -691,10 +745,41 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #generateCredentialReportAsync(GenerateCredentialReportRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GenerateCredentialReportResult> generateCredentialReportAsync(
             com.amazonaws.handlers.AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler) {
 
         return generateCredentialReportAsync(new GenerateCredentialReportRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateOrganizationsAccessReportResult> generateOrganizationsAccessReportAsync(
+            GenerateOrganizationsAccessReportRequest request) {
+
+        return generateOrganizationsAccessReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateOrganizationsAccessReportResult> generateOrganizationsAccessReportAsync(
+            GenerateOrganizationsAccessReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateOrganizationsAccessReportRequest, GenerateOrganizationsAccessReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request) {
+
+        return generateServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GenerateServiceLastAccessedDetailsRequest, GenerateServiceLastAccessedDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -740,6 +825,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      * @see #getAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountAuthorizationDetailsResult> getAccountAuthorizationDetailsAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResult> asyncHandler) {
 
@@ -775,6 +861,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #getAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResult> asyncHandler) {
 
@@ -810,6 +897,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #getAccountSummaryAsync(GetAccountSummaryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetAccountSummaryResult> getAccountSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetAccountSummaryRequest, GetAccountSummaryResult> asyncHandler) {
 
@@ -873,6 +961,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #getCredentialReportAsync(GetCredentialReportRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetCredentialReportResult> getCredentialReportAsync(
             com.amazonaws.handlers.AsyncHandler<GetCredentialReportRequest, GetCredentialReportResult> asyncHandler) {
 
@@ -940,6 +1029,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<GetOpenIDConnectProviderResult> getOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationsAccessReportResult> getOrganizationsAccessReportAsync(GetOrganizationsAccessReportRequest request) {
+
+        return getOrganizationsAccessReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOrganizationsAccessReportResult> getOrganizationsAccessReportAsync(GetOrganizationsAccessReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOrganizationsAccessReportRequest, GetOrganizationsAccessReportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1036,6 +1138,49 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request) {
+
+        return getServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsRequest, GetServiceLastAccessedDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+
+        return getServiceLastAccessedDetailsWithEntitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsWithEntitiesRequest, GetServiceLastAccessedDetailsWithEntitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            GetServiceLinkedRoleDeletionStatusRequest request) {
+
+        return getServiceLinkedRoleDeletionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            GetServiceLinkedRoleDeletionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLinkedRoleDeletionStatusRequest, GetServiceLinkedRoleDeletionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
@@ -1064,6 +1209,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #getUserAsync(GetUserRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler) {
 
         return getUserAsync(new GetUserRequest(), asyncHandler);
@@ -1111,6 +1257,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listAccessKeysAsync(ListAccessKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAccessKeysResult> listAccessKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListAccessKeysRequest, ListAccessKeysResult> asyncHandler) {
 
@@ -1146,6 +1293,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listAccountAliasesAsync(ListAccountAliasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAccountAliasesResult> listAccountAliasesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAccountAliasesRequest, ListAccountAliasesResult> asyncHandler) {
 
@@ -1246,6 +1394,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listGroupsAsync(ListGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
 
         return listGroupsAsync(new ListGroupsRequest(), asyncHandler);
@@ -1293,6 +1442,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listInstanceProfilesAsync(ListInstanceProfilesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(
             com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler) {
 
@@ -1341,6 +1491,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listMFADevicesAsync(ListMFADevicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListMFADevicesResult> listMFADevicesAsync(
             com.amazonaws.handlers.AsyncHandler<ListMFADevicesRequest, ListMFADevicesResult> asyncHandler) {
 
@@ -1376,6 +1527,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListOpenIDConnectProvidersResult> listOpenIDConnectProvidersAsync(
             com.amazonaws.handlers.AsyncHandler<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResult> asyncHandler) {
 
@@ -1411,10 +1563,26 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listPoliciesAsync(ListPoliciesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
 
         return listPoliciesAsync(new ListPoliciesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request) {
+
+        return listPoliciesGrantingServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPoliciesGrantingServiceAccessRequest, ListPoliciesGrantingServiceAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1439,6 +1607,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<ListRolePoliciesResult> listRolePoliciesAsync(ListRolePoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRolePoliciesRequest, ListRolePoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request) {
+
+        return listRoleTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRoleTagsRequest, ListRoleTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1472,6 +1653,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listRolesAsync(ListRolesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListRolesResult> listRolesAsync(com.amazonaws.handlers.AsyncHandler<ListRolesRequest, ListRolesResult> asyncHandler) {
 
         return listRolesAsync(new ListRolesRequest(), asyncHandler);
@@ -1506,6 +1688,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listSAMLProvidersAsync(ListSAMLProvidersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSAMLProvidersResult> listSAMLProvidersAsync(
             com.amazonaws.handlers.AsyncHandler<ListSAMLProvidersRequest, ListSAMLProvidersResult> asyncHandler) {
 
@@ -1541,6 +1724,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listSSHPublicKeysAsync(ListSSHPublicKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSSHPublicKeysResult> listSSHPublicKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListSSHPublicKeysRequest, ListSSHPublicKeysResult> asyncHandler) {
 
@@ -1576,6 +1760,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listServerCertificatesAsync(ListServerCertificatesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListServerCertificatesResult> listServerCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<ListServerCertificatesRequest, ListServerCertificatesResult> asyncHandler) {
 
@@ -1624,6 +1809,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listSigningCertificatesAsync(ListSigningCertificatesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<ListSigningCertificatesRequest, ListSigningCertificatesResult> asyncHandler) {
 
@@ -1639,6 +1825,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<ListUserPoliciesResult> listUserPoliciesAsync(ListUserPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUserPoliciesRequest, ListUserPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request) {
+
+        return listUserTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUserTagsRequest, ListUserTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1672,6 +1871,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listUsersAsync(ListUsersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
 
         return listUsersAsync(new ListUsersRequest(), asyncHandler);
@@ -1706,6 +1906,7 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
      *
      * @see #listVirtualMFADevicesAsync(ListVirtualMFADevicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListVirtualMFADevicesResult> listVirtualMFADevicesAsync(
             com.amazonaws.handlers.AsyncHandler<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResult> asyncHandler) {
 
@@ -1726,6 +1927,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request) {
+
+        return putRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest request) {
 
         return putRolePolicyAsync(request, null);
@@ -1734,6 +1948,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request) {
+
+        return putUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1832,6 +2059,21 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request) {
+
+        return setSecurityTokenServicePreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetSecurityTokenServicePreferencesRequest, SetSecurityTokenServicePreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(SimulateCustomPolicyRequest request) {
 
         return simulateCustomPolicyAsync(request, null);
@@ -1853,6 +2095,58 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     @Override
     public java.util.concurrent.Future<SimulatePrincipalPolicyResult> simulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
+
+        return tagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagRoleRequest, TagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request) {
+
+        return tagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagUserRequest, TagUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
+
+        return untagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagRoleRequest, UntagRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request) {
+
+        return untagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagUserRequest, UntagUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1933,6 +2227,32 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     public java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(UpdateRoleRequest request) {
+
+        return updateRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(UpdateRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleRequest, UpdateRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(UpdateRoleDescriptionRequest request) {
+
+        return updateRoleDescriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(UpdateRoleDescriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleDescriptionRequest, UpdateRoleDescriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

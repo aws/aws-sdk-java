@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,9 +59,14 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
     private String nextRecordType;
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String nextRecordIdentifier;
@@ -334,7 +339,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      */
 
     public void setNextRecordType(RRType nextRecordType) {
-        this.nextRecordType = nextRecordType.toString();
+        withNextRecordType(nextRecordType);
     }
 
     /**
@@ -354,21 +359,30 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      */
 
     public ListResourceRecordSetsResult withNextRecordType(RRType nextRecordType) {
-        setNextRecordType(nextRecordType);
+        this.nextRecordType = nextRecordType.toString();
         return this;
     }
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *        that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has
+     *        the current DNS name and type.</p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public void setNextRecordIdentifier(String nextRecordIdentifier) {
@@ -377,14 +391,23 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
-     * @return <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *         for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *         that has the current DNS name and type.
+     * @return <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *         given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that
+     *         has the current DNS name and type.</p>
+     *         <p>
+     *         For information about routing policies, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *         Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public String getNextRecordIdentifier() {
@@ -393,15 +416,24 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated for a
-     * given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the
-     * current DNS name and type.
+     * <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+     * DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current
+     * DNS name and type.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param nextRecordIdentifier
-     *        <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If results were truncated
-     *        for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set
-     *        that has the current DNS name and type.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a
+     *        given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has
+     *        the current DNS name and type.</p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,7 +483,8 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -536,4 +569,5 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

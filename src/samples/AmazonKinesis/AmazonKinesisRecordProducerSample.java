@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.services.kinesis.AmazonKinesisClient;
+import com.amazonaws.services.kinesis.AmazonKinesis;
+import com.amazonaws.services.kinesis.AmazonKinesisClientBuilder;
 import com.amazonaws.services.kinesis.model.CreateStreamRequest;
 import com.amazonaws.services.kinesis.model.DescribeStreamRequest;
 import com.amazonaws.services.kinesis.model.DescribeStreamResult;
@@ -47,7 +48,7 @@ public class AmazonKinesisRecordProducerSample {
      *      the credentials file in your source directory.
      */
 
-    private static AmazonKinesisClient kinesis;
+    private static AmazonKinesis kinesis;
 
     private static void init() throws Exception {
         /*
@@ -55,9 +56,9 @@ public class AmazonKinesisRecordProducerSample {
          * credential profile by reading from the credentials file located at
          * (~/.aws/credentials).
          */
-        AWSCredentials credentials = null;
+        ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -66,7 +67,10 @@ public class AmazonKinesisRecordProducerSample {
                     e);
         }
 
-        kinesis = new AmazonKinesisClient(credentials);
+        kinesis = AmazonKinesisClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
     }
 
     public static void main(String[] args) throws Exception {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,28 +40,76 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyImageAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(modifyImageAttributeRequest.getAttribute()));
+        }
+
+        if (modifyImageAttributeRequest.getDescription() != null) {
+            request.addParameter("Description.Value", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
+        }
+
         if (modifyImageAttributeRequest.getImageId() != null) {
             request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));
         }
 
-        if (modifyImageAttributeRequest.getAttribute() != null) {
-            request.addParameter("Attribute", StringUtils.fromString(modifyImageAttributeRequest.getAttribute()));
+        LaunchPermissionModifications launchPermission = modifyImageAttributeRequest.getLaunchPermission();
+        if (launchPermission != null) {
+
+            com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissionModificationsAddList = (com.amazonaws.internal.SdkInternalList<LaunchPermission>) launchPermission
+                    .getAdd();
+            if (!launchPermissionModificationsAddList.isEmpty() || !launchPermissionModificationsAddList.isAutoConstruct()) {
+                int addListIndex = 1;
+
+                for (LaunchPermission launchPermissionModificationsAddListValue : launchPermissionModificationsAddList) {
+
+                    if (launchPermissionModificationsAddListValue.getGroup() != null) {
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".Group",
+                                StringUtils.fromString(launchPermissionModificationsAddListValue.getGroup()));
+                    }
+
+                    if (launchPermissionModificationsAddListValue.getUserId() != null) {
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId",
+                                StringUtils.fromString(launchPermissionModificationsAddListValue.getUserId()));
+                    }
+                    addListIndex++;
+                }
+            }
+
+            com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissionModificationsRemoveList = (com.amazonaws.internal.SdkInternalList<LaunchPermission>) launchPermission
+                    .getRemove();
+            if (!launchPermissionModificationsRemoveList.isEmpty() || !launchPermissionModificationsRemoveList.isAutoConstruct()) {
+                int removeListIndex = 1;
+
+                for (LaunchPermission launchPermissionModificationsRemoveListValue : launchPermissionModificationsRemoveList) {
+
+                    if (launchPermissionModificationsRemoveListValue.getGroup() != null) {
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group",
+                                StringUtils.fromString(launchPermissionModificationsRemoveListValue.getGroup()));
+                    }
+
+                    if (launchPermissionModificationsRemoveListValue.getUserId() != null) {
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId",
+                                StringUtils.fromString(launchPermissionModificationsRemoveListValue.getUserId()));
+                    }
+                    removeListIndex++;
+                }
+            }
         }
 
         if (modifyImageAttributeRequest.getOperationType() != null) {
             request.addParameter("OperationType", StringUtils.fromString(modifyImageAttributeRequest.getOperationType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> modifyImageAttributeRequestUserIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest
-                .getUserIds();
-        if (!modifyImageAttributeRequestUserIdsList.isEmpty() || !modifyImageAttributeRequestUserIdsList.isAutoConstruct()) {
-            int userIdsListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<String> modifyImageAttributeRequestProductCodesList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest
+                .getProductCodes();
+        if (!modifyImageAttributeRequestProductCodesList.isEmpty() || !modifyImageAttributeRequestProductCodesList.isAutoConstruct()) {
+            int productCodesListIndex = 1;
 
-            for (String modifyImageAttributeRequestUserIdsListValue : modifyImageAttributeRequestUserIdsList) {
-                if (modifyImageAttributeRequestUserIdsListValue != null) {
-                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(modifyImageAttributeRequestUserIdsListValue));
+            for (String modifyImageAttributeRequestProductCodesListValue : modifyImageAttributeRequestProductCodesList) {
+                if (modifyImageAttributeRequestProductCodesListValue != null) {
+                    request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(modifyImageAttributeRequestProductCodesListValue));
                 }
-                userIdsListIndex++;
+                productCodesListIndex++;
             }
         }
 
@@ -78,69 +126,21 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> modifyImageAttributeRequestProductCodesList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest
-                .getProductCodes();
-        if (!modifyImageAttributeRequestProductCodesList.isEmpty() || !modifyImageAttributeRequestProductCodesList.isAutoConstruct()) {
-            int productCodesListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<String> modifyImageAttributeRequestUserIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyImageAttributeRequest
+                .getUserIds();
+        if (!modifyImageAttributeRequestUserIdsList.isEmpty() || !modifyImageAttributeRequestUserIdsList.isAutoConstruct()) {
+            int userIdsListIndex = 1;
 
-            for (String modifyImageAttributeRequestProductCodesListValue : modifyImageAttributeRequestProductCodesList) {
-                if (modifyImageAttributeRequestProductCodesListValue != null) {
-                    request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(modifyImageAttributeRequestProductCodesListValue));
+            for (String modifyImageAttributeRequestUserIdsListValue : modifyImageAttributeRequestUserIdsList) {
+                if (modifyImageAttributeRequestUserIdsListValue != null) {
+                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(modifyImageAttributeRequestUserIdsListValue));
                 }
-                productCodesListIndex++;
+                userIdsListIndex++;
             }
         }
 
         if (modifyImageAttributeRequest.getValue() != null) {
             request.addParameter("Value", StringUtils.fromString(modifyImageAttributeRequest.getValue()));
-        }
-
-        LaunchPermissionModifications launchPermission = modifyImageAttributeRequest.getLaunchPermission();
-        if (launchPermission != null) {
-
-            com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissionModificationsAddList = (com.amazonaws.internal.SdkInternalList<LaunchPermission>) launchPermission
-                    .getAdd();
-            if (!launchPermissionModificationsAddList.isEmpty() || !launchPermissionModificationsAddList.isAutoConstruct()) {
-                int addListIndex = 1;
-
-                for (LaunchPermission launchPermissionModificationsAddListValue : launchPermissionModificationsAddList) {
-
-                    if (launchPermissionModificationsAddListValue.getUserId() != null) {
-                        request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId",
-                                StringUtils.fromString(launchPermissionModificationsAddListValue.getUserId()));
-                    }
-
-                    if (launchPermissionModificationsAddListValue.getGroup() != null) {
-                        request.addParameter("LaunchPermission.Add." + addListIndex + ".Group",
-                                StringUtils.fromString(launchPermissionModificationsAddListValue.getGroup()));
-                    }
-                    addListIndex++;
-                }
-            }
-
-            com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissionModificationsRemoveList = (com.amazonaws.internal.SdkInternalList<LaunchPermission>) launchPermission
-                    .getRemove();
-            if (!launchPermissionModificationsRemoveList.isEmpty() || !launchPermissionModificationsRemoveList.isAutoConstruct()) {
-                int removeListIndex = 1;
-
-                for (LaunchPermission launchPermissionModificationsRemoveListValue : launchPermissionModificationsRemoveList) {
-
-                    if (launchPermissionModificationsRemoveListValue.getUserId() != null) {
-                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId",
-                                StringUtils.fromString(launchPermissionModificationsRemoveListValue.getUserId()));
-                    }
-
-                    if (launchPermissionModificationsRemoveListValue.getGroup() != null) {
-                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group",
-                                StringUtils.fromString(launchPermissionModificationsRemoveListValue.getGroup()));
-                    }
-                    removeListIndex++;
-                }
-            }
-        }
-
-        if (modifyImageAttributeRequest.getDescription() != null) {
-            request.addParameter("Description.Value", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
         }
 
         return request;

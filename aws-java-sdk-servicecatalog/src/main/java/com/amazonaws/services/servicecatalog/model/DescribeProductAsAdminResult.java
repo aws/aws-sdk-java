@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,42 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Detailed product view information.
+     * Information about the product view.
      * </p>
      */
     private ProductViewDetail productViewDetail;
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the provisioning artifacts (also known as versions) for the specified product.
+     * </p>
+     */
+    private java.util.List<ProvisioningArtifactSummary> provisioningArtifactSummaries;
+    /**
+     * <p>
+     * Information about the tags associated with the product.
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Information about the TagOptions associated with the product.
+     * </p>
+     */
+    private java.util.List<TagOptionDetail> tagOptions;
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     */
+    private java.util.List<BudgetDetail> budgets;
 
     /**
      * <p>
-     * Detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        Detailed product view information.
+     *        Information about the product view.
      */
 
     public void setProductViewDetail(ProductViewDetail productViewDetail) {
@@ -51,10 +69,10 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Detailed product view information.
+     * Information about the product view.
      * </p>
      * 
-     * @return Detailed product view information.
+     * @return Information about the product view.
      */
 
     public ProductViewDetail getProductViewDetail() {
@@ -63,11 +81,11 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        Detailed product view information.
+     *        Information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +96,80 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the provisioning artifacts (also known as versions) for the specified product.
      * </p>
      * 
-     * @return Tags associated with the product.
+     * @return Information about the provisioning artifacts (also known as versions) for the specified product.
+     */
+
+    public java.util.List<ProvisioningArtifactSummary> getProvisioningArtifactSummaries() {
+        return provisioningArtifactSummaries;
+    }
+
+    /**
+     * <p>
+     * Information about the provisioning artifacts (also known as versions) for the specified product.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        Information about the provisioning artifacts (also known as versions) for the specified product.
+     */
+
+    public void setProvisioningArtifactSummaries(java.util.Collection<ProvisioningArtifactSummary> provisioningArtifactSummaries) {
+        if (provisioningArtifactSummaries == null) {
+            this.provisioningArtifactSummaries = null;
+            return;
+        }
+
+        this.provisioningArtifactSummaries = new java.util.ArrayList<ProvisioningArtifactSummary>(provisioningArtifactSummaries);
+    }
+
+    /**
+     * <p>
+     * Information about the provisioning artifacts (also known as versions) for the specified product.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvisioningArtifactSummaries(java.util.Collection)} or
+     * {@link #withProvisioningArtifactSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        Information about the provisioning artifacts (also known as versions) for the specified product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withProvisioningArtifactSummaries(ProvisioningArtifactSummary... provisioningArtifactSummaries) {
+        if (this.provisioningArtifactSummaries == null) {
+            setProvisioningArtifactSummaries(new java.util.ArrayList<ProvisioningArtifactSummary>(provisioningArtifactSummaries.length));
+        }
+        for (ProvisioningArtifactSummary ele : provisioningArtifactSummaries) {
+            this.provisioningArtifactSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the provisioning artifacts (also known as versions) for the specified product.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        Information about the provisioning artifacts (also known as versions) for the specified product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withProvisioningArtifactSummaries(java.util.Collection<ProvisioningArtifactSummary> provisioningArtifactSummaries) {
+        setProvisioningArtifactSummaries(provisioningArtifactSummaries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the tags associated with the product.
+     * </p>
+     * 
+     * @return Information about the tags associated with the product.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +178,11 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +196,7 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +205,7 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +221,11 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Tags associated with the product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +235,148 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the TagOptions associated with the product.
+     * </p>
+     * 
+     * @return Information about the TagOptions associated with the product.
+     */
+
+    public java.util.List<TagOptionDetail> getTagOptions() {
+        return tagOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the TagOptions associated with the product.
+     * </p>
+     * 
+     * @param tagOptions
+     *        Information about the TagOptions associated with the product.
+     */
+
+    public void setTagOptions(java.util.Collection<TagOptionDetail> tagOptions) {
+        if (tagOptions == null) {
+            this.tagOptions = null;
+            return;
+        }
+
+        this.tagOptions = new java.util.ArrayList<TagOptionDetail>(tagOptions);
+    }
+
+    /**
+     * <p>
+     * Information about the TagOptions associated with the product.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagOptions(java.util.Collection)} or {@link #withTagOptions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tagOptions
+     *        Information about the TagOptions associated with the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withTagOptions(TagOptionDetail... tagOptions) {
+        if (this.tagOptions == null) {
+            setTagOptions(new java.util.ArrayList<TagOptionDetail>(tagOptions.length));
+        }
+        for (TagOptionDetail ele : tagOptions) {
+            this.tagOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the TagOptions associated with the product.
+     * </p>
+     * 
+     * @param tagOptions
+     *        Information about the TagOptions associated with the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withTagOptions(java.util.Collection<TagOptionDetail> tagOptions) {
+        setTagOptions(tagOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @return Information about the associated budgets.
+     */
+
+    public java.util.List<BudgetDetail> getBudgets() {
+        return budgets;
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     */
+
+    public void setBudgets(java.util.Collection<BudgetDetail> budgets) {
+        if (budgets == null) {
+            this.budgets = null;
+            return;
+        }
+
+        this.budgets = new java.util.ArrayList<BudgetDetail>(budgets);
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBudgets(java.util.Collection)} or {@link #withBudgets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withBudgets(BudgetDetail... budgets) {
+        if (this.budgets == null) {
+            setBudgets(new java.util.ArrayList<BudgetDetail>(budgets.length));
+        }
+        for (BudgetDetail ele : budgets) {
+            this.budgets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withBudgets(java.util.Collection<BudgetDetail> budgets) {
+        setBudgets(budgets);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -159,8 +388,14 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getProductViewDetail() != null)
             sb.append("ProductViewDetail: ").append(getProductViewDetail()).append(",");
+        if (getProvisioningArtifactSummaries() != null)
+            sb.append("ProvisioningArtifactSummaries: ").append(getProvisioningArtifactSummaries()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTagOptions() != null)
+            sb.append("TagOptions: ").append(getTagOptions()).append(",");
+        if (getBudgets() != null)
+            sb.append("Budgets: ").append(getBudgets());
         sb.append("}");
         return sb.toString();
     }
@@ -179,9 +414,22 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getProductViewDetail() != null && other.getProductViewDetail().equals(this.getProductViewDetail()) == false)
             return false;
+        if (other.getProvisioningArtifactSummaries() == null ^ this.getProvisioningArtifactSummaries() == null)
+            return false;
+        if (other.getProvisioningArtifactSummaries() != null
+                && other.getProvisioningArtifactSummaries().equals(this.getProvisioningArtifactSummaries()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getTagOptions() == null ^ this.getTagOptions() == null)
+            return false;
+        if (other.getTagOptions() != null && other.getTagOptions().equals(this.getTagOptions()) == false)
+            return false;
+        if (other.getBudgets() == null ^ this.getBudgets() == null)
+            return false;
+        if (other.getBudgets() != null && other.getBudgets().equals(this.getBudgets()) == false)
             return false;
         return true;
     }
@@ -192,7 +440,10 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProductViewDetail() == null) ? 0 : getProductViewDetail().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactSummaries() == null) ? 0 : getProvisioningArtifactSummaries().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTagOptions() == null) ? 0 : getTagOptions().hashCode());
+        hashCode = prime * hashCode + ((getBudgets() == null) ? 0 : getBudgets().hashCode());
         return hashCode;
     }
 
@@ -204,4 +455,5 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

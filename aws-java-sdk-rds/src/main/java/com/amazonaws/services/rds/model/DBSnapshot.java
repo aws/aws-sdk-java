@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,22 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details of an Amazon RDS DB snapshot.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateDBSnapshot</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBSnapshot</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshot" target="_top">AWS API
@@ -67,7 +55,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String engine;
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      */
     private Integer allocatedStorage;
@@ -145,14 +133,14 @@ public class DBSnapshot implements Serializable, Cloneable {
     private Integer percentProgress;
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      */
     private String sourceRegion;
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      */
     private String sourceDBSnapshotIdentifier;
@@ -176,7 +164,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -194,6 +182,26 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String timezone;
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
+     * </p>
+     */
+    private Boolean iAMDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     */
+    private String dbiResourceId;
 
     /**
      * <p>
@@ -357,11 +365,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -370,10 +378,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
-     * @return Specifies the allocated storage size in gigabytes (GB).
+     * @return Specifies the allocated storage size in gibibytes (GiB).
      */
 
     public Integer getAllocatedStorage() {
@@ -382,11 +390,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size in gigabytes (GB).
+     * Specifies the allocated storage size in gibibytes (GiB).
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size in gigabytes (GB).
+     *        Specifies the allocated storage size in gibibytes (GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -881,11 +889,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that the DB snapshot was created in or copied from.
+     *        The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -894,10 +902,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
-     * @return The region that the DB snapshot was created in or copied from.
+     * @return The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public String getSourceRegion() {
@@ -906,11 +914,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that the DB snapshot was created in or copied from.
+     *        The AWS Region that the DB snapshot was created in or copied from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -921,13 +929,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *        cross region copy.
+     *        The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case
+     *        of cross-customer or cross-region copy.
      */
 
     public void setSourceDBSnapshotIdentifier(String sourceDBSnapshotIdentifier) {
@@ -936,12 +944,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
-     * @return The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *         cross region copy.
+     * @return The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in
+     *         case of cross-customer or cross-region copy.
      */
 
     public String getSourceDBSnapshotIdentifier() {
@@ -950,13 +958,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *        cross region copy.
+     *        The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case
+     *        of cross-customer or cross-region copy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1099,11 +1107,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1112,10 +1120,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
-     * @return If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      */
 
     public String getKmsKeyId() {
@@ -1124,11 +1132,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1230,7 +1238,189 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *        otherwise false.
+     */
+
+    public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        this.iAMDatabaseAuthenticationEnabled = iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *         otherwise false.
+     */
+
+    public Boolean getIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *        otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        setIAMDatabaseAuthenticationEnabled(iAMDatabaseAuthenticationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     *         otherwise false.
+     */
+
+    public Boolean isIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *         when the DB snapshot was created.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     */
+
+    public void setDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @return The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     */
+
+    public String getDbiResourceId() {
+        return this.dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withDbiResourceId(String dbiResourceId) {
+        setDbiResourceId(dbiResourceId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1289,7 +1479,13 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getDBSnapshotArn() != null)
             sb.append("DBSnapshotArn: ").append(getDBSnapshotArn()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: ").append(getTimezone());
+            sb.append("Timezone: ").append(getTimezone()).append(",");
+        if (getIAMDatabaseAuthenticationEnabled() != null)
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
+        if (getDbiResourceId() != null)
+            sb.append("DbiResourceId: ").append(getDbiResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1404,6 +1600,19 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() == null ^ this.getIAMDatabaseAuthenticationEnabled() == null)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() != null
+                && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
+            return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
+        if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null)
+            return false;
+        if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1437,6 +1646,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDBSnapshotArn() == null) ? 0 : getDBSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         return hashCode;
     }
 
@@ -1448,4 +1660,5 @@ public class DBSnapshot implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

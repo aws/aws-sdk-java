@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -24,8 +24,11 @@ import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.LogCaptor;
 import org.junit.After;
 import org.junit.Before;
@@ -52,6 +55,12 @@ public class InstanceProfileCredentialsProviderIntegrationTest extends LogCaptor
     public void tearDown() throws Exception {
         mockServer.stop();
         Thread.sleep(1000);
+    }
+
+    @Test
+    public void getInstance_ReturnsSameInstance() {
+        assertEquals(InstanceProfileCredentialsProvider.getInstance(),
+                     InstanceProfileCredentialsProvider.getInstance());
     }
 
     /** Tests that we correctly handle the metadata service returning credentials. */
@@ -102,6 +111,24 @@ public class InstanceProfileCredentialsProviderIntegrationTest extends LogCaptor
         } catch (AmazonClientException ace) {
             assertNotNull(ace.getMessage());
         }
+    }
+
+    @Test
+    public void getCredentialsDisabled_shouldGetCredentialsAfterEnabled() throws Exception {
+        InstanceProfileCredentialsProvider credentialsProvider = null;
+        try {
+            System.setProperty("com.amazonaws.sdk.disableEc2Metadata", "true");
+            credentialsProvider = new InstanceProfileCredentialsProvider();
+            credentialsProvider.getCredentials();
+            fail("exception not thrown when ec2Metadata disabled");
+        } catch (AmazonClientException ex) {
+            //expected
+        } finally {
+            System.clearProperty("com.amazonaws.sdk.disableEc2Metadata");
+        }
+        mockServer.setResponseFileName("sessionResponse");
+        mockServer.setAvailableSecurityCredentials("test-credentials");
+        assertNotNull(credentialsProvider.getCredentials());
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,86 +12,54 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.xray.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutTelemetryRecordsRequest Marshaller
+ * PutTelemetryRecordsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutTelemetryRecordsRequestMarshaller implements Marshaller<Request<PutTelemetryRecordsRequest>, PutTelemetryRecordsRequest> {
+@SdkInternalApi
+public class PutTelemetryRecordsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> TELEMETRYRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TelemetryRecords").build();
+    private static final MarshallingInfo<String> EC2INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceId").build();
+    private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Hostname").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceARN").build();
 
-    public PutTelemetryRecordsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutTelemetryRecordsRequestMarshaller instance = new PutTelemetryRecordsRequestMarshaller();
+
+    public static PutTelemetryRecordsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutTelemetryRecordsRequest> marshall(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutTelemetryRecordsRequest putTelemetryRecordsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putTelemetryRecordsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutTelemetryRecordsRequest> request = new DefaultRequest<PutTelemetryRecordsRequest>(putTelemetryRecordsRequest, "AWSXRay");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/TelemetryRecords";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<TelemetryRecord> telemetryRecordsList = putTelemetryRecordsRequest.getTelemetryRecords();
-            if (telemetryRecordsList != null) {
-                jsonGenerator.writeFieldName("TelemetryRecords");
-                jsonGenerator.writeStartArray();
-                for (TelemetryRecord telemetryRecordsListValue : telemetryRecordsList) {
-                    if (telemetryRecordsListValue != null) {
-
-                        TelemetryRecordJsonMarshaller.getInstance().marshall(telemetryRecordsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (putTelemetryRecordsRequest.getEC2InstanceId() != null) {
-                jsonGenerator.writeFieldName("EC2InstanceId").writeValue(putTelemetryRecordsRequest.getEC2InstanceId());
-            }
-            if (putTelemetryRecordsRequest.getHostname() != null) {
-                jsonGenerator.writeFieldName("Hostname").writeValue(putTelemetryRecordsRequest.getHostname());
-            }
-            if (putTelemetryRecordsRequest.getResourceARN() != null) {
-                jsonGenerator.writeFieldName("ResourceARN").writeValue(putTelemetryRecordsRequest.getResourceARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putTelemetryRecordsRequest.getTelemetryRecords(), TELEMETRYRECORDS_BINDING);
+            protocolMarshaller.marshall(putTelemetryRecordsRequest.getEC2InstanceId(), EC2INSTANCEID_BINDING);
+            protocolMarshaller.marshall(putTelemetryRecordsRequest.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(putTelemetryRecordsRequest.getResourceARN(), RESOURCEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

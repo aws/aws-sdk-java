@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
-
+    /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     */
     private String description;
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -38,7 +52,11 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
+     * @return The identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -46,7 +64,12 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication run.
      */
 
     public void setDescription(String description) {
@@ -64,7 +92,11 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
+     * @return The description of the replication run.
      */
 
     public String getDescription() {
@@ -72,7 +104,12 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +119,8 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

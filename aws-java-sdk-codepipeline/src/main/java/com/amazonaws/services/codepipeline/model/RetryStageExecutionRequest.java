@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a retry stage execution action.
+ * Represents the input of a <code>RetryStageExecution</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution" target="_top">AWS
@@ -234,7 +234,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setRetryMode(StageRetryMode retryMode) {
-        this.retryMode = retryMode.toString();
+        withRetryMode(retryMode);
     }
 
     /**
@@ -249,12 +249,13 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public RetryStageExecutionRequest withRetryMode(StageRetryMode retryMode) {
-        setRetryMode(retryMode);
+        this.retryMode = retryMode.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
     private String nextToken;
     /**
      * <p>
-     * A list of ACM Certificates.
+     * A list of ACM certificates.
      * </p>
      */
     private java.util.List<CertificateSummary> certificateSummaryList;
@@ -85,10 +85,10 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of ACM Certificates.
+     * A list of ACM certificates.
      * </p>
      * 
-     * @return A list of ACM Certificates.
+     * @return A list of ACM certificates.
      */
 
     public java.util.List<CertificateSummary> getCertificateSummaryList() {
@@ -97,11 +97,11 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of ACM Certificates.
+     * A list of ACM certificates.
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of ACM Certificates.
+     *        A list of ACM certificates.
      */
 
     public void setCertificateSummaryList(java.util.Collection<CertificateSummary> certificateSummaryList) {
@@ -115,7 +115,7 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of ACM Certificates.
+     * A list of ACM certificates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of ACM Certificates.
+     *        A list of ACM certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of ACM Certificates.
+     * A list of ACM certificates.
      * </p>
      * 
      * @param certificateSummaryList
-     *        A list of ACM Certificates.
+     *        A list of ACM certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +154,8 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -211,4 +212,5 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,22 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
+
+        return acceptDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            AcceptDirectConnectGatewayAssociationProposalRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptDirectConnectGatewayAssociationProposalRequest, AcceptDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest request) {
 
@@ -35,9 +51,23 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AllocateConnectionOnInterconnectResult> allocateConnectionOnInterconnectAsync(
             AllocateConnectionOnInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<AllocateConnectionOnInterconnectRequest, AllocateConnectionOnInterconnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest request) {
+
+        return allocateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateHostedConnectionResult> allocateHostedConnectionAsync(AllocateHostedConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AllocateHostedConnectionRequest, AllocateHostedConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -66,6 +96,60 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<AllocatePublicVirtualInterfaceResult> allocatePublicVirtualInterfaceAsync(AllocatePublicVirtualInterfaceRequest request,
             com.amazonaws.handlers.AsyncHandler<AllocatePublicVirtualInterfaceRequest, AllocatePublicVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest request) {
+
+        return allocateTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AllocateTransitVirtualInterfaceResult> allocateTransitVirtualInterfaceAsync(
+            AllocateTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AllocateTransitVirtualInterfaceRequest, AllocateTransitVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request) {
+
+        return associateConnectionWithLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConnectionWithLagResult> associateConnectionWithLagAsync(AssociateConnectionWithLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateConnectionWithLagRequest, AssociateConnectionWithLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(AssociateHostedConnectionRequest request) {
+
+        return associateHostedConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHostedConnectionResult> associateHostedConnectionAsync(AssociateHostedConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateHostedConnectionRequest, AssociateHostedConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request) {
+
+        return associateVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateVirtualInterfaceRequest, AssociateVirtualInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +194,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request) {
+
+        return confirmTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmTransitVirtualInterfaceResult> confirmTransitVirtualInterfaceAsync(ConfirmTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfirmTransitVirtualInterfaceRequest, ConfirmTransitVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBGPPeerResult> createBGPPeerAsync(CreateBGPPeerRequest request) {
 
         return createBGPPeerAsync(request, null);
@@ -136,6 +233,49 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayResult> createDirectConnectGatewayAsync(CreateDirectConnectGatewayRequest request) {
+
+        return createDirectConnectGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayResult> createDirectConnectGatewayAsync(CreateDirectConnectGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDirectConnectGatewayRequest, CreateDirectConnectGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationResult> createDirectConnectGatewayAssociationAsync(
+            CreateDirectConnectGatewayAssociationRequest request) {
+
+        return createDirectConnectGatewayAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationResult> createDirectConnectGatewayAssociationAsync(
+            CreateDirectConnectGatewayAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDirectConnectGatewayAssociationRequest, CreateDirectConnectGatewayAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+
+        return createDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            CreateDirectConnectGatewayAssociationProposalRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDirectConnectGatewayAssociationProposalRequest, CreateDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest request) {
 
         return createInterconnectAsync(request, null);
@@ -144,6 +284,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateInterconnectRequest, CreateInterconnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest request) {
+
+        return createLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLagResult> createLagAsync(CreateLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLagRequest, CreateLagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +328,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request) {
+
+        return createTransitVirtualInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitVirtualInterfaceResult> createTransitVirtualInterfaceAsync(CreateTransitVirtualInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitVirtualInterfaceRequest, CreateTransitVirtualInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBGPPeerResult> deleteBGPPeerAsync(DeleteBGPPeerRequest request) {
 
         return deleteBGPPeerAsync(request, null);
@@ -201,6 +367,49 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayResult> deleteDirectConnectGatewayAsync(DeleteDirectConnectGatewayRequest request) {
+
+        return deleteDirectConnectGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayResult> deleteDirectConnectGatewayAsync(DeleteDirectConnectGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDirectConnectGatewayRequest, DeleteDirectConnectGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationResult> deleteDirectConnectGatewayAssociationAsync(
+            DeleteDirectConnectGatewayAssociationRequest request) {
+
+        return deleteDirectConnectGatewayAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationResult> deleteDirectConnectGatewayAssociationAsync(
+            DeleteDirectConnectGatewayAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDirectConnectGatewayAssociationRequest, DeleteDirectConnectGatewayAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+
+        return deleteDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            DeleteDirectConnectGatewayAssociationProposalRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDirectConnectGatewayAssociationProposalRequest, DeleteDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request) {
 
         return deleteInterconnectAsync(request, null);
@@ -209,6 +418,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInterconnectRequest, DeleteInterconnectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest request) {
+
+        return deleteLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLagResult> deleteLagAsync(DeleteLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLagRequest, DeleteLagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -227,12 +449,14 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest request) {
 
         return describeConnectionLoaAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeConnectionLoaResult> describeConnectionLoaAsync(DescribeConnectionLoaRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionLoaRequest, DescribeConnectionLoaResult> asyncHandler) {
 
@@ -268,6 +492,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeConnectionsAsync(DescribeConnectionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConnectionsResult> describeConnectionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsRequest, DescribeConnectionsResult> asyncHandler) {
 
@@ -275,6 +500,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest request) {
 
@@ -282,6 +508,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeConnectionsOnInterconnectResult> describeConnectionsOnInterconnectAsync(
             DescribeConnectionsOnInterconnectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConnectionsOnInterconnectRequest, DescribeConnectionsOnInterconnectResult> asyncHandler) {
@@ -290,12 +517,85 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
+
+        return describeDirectConnectGatewayAssociationProposalsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewayAssociationProposalsRequest, DescribeDirectConnectGatewayAssociationProposalsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationsResult> describeDirectConnectGatewayAssociationsAsync(
+            DescribeDirectConnectGatewayAssociationsRequest request) {
+
+        return describeDirectConnectGatewayAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationsResult> describeDirectConnectGatewayAssociationsAsync(
+            DescribeDirectConnectGatewayAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewayAssociationsRequest, DescribeDirectConnectGatewayAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAttachmentsResult> describeDirectConnectGatewayAttachmentsAsync(
+            DescribeDirectConnectGatewayAttachmentsRequest request) {
+
+        return describeDirectConnectGatewayAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAttachmentsResult> describeDirectConnectGatewayAttachmentsAsync(
+            DescribeDirectConnectGatewayAttachmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewayAttachmentsRequest, DescribeDirectConnectGatewayAttachmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewaysResult> describeDirectConnectGatewaysAsync(DescribeDirectConnectGatewaysRequest request) {
+
+        return describeDirectConnectGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewaysResult> describeDirectConnectGatewaysAsync(DescribeDirectConnectGatewaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewaysRequest, DescribeDirectConnectGatewaysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(DescribeHostedConnectionsRequest request) {
+
+        return describeHostedConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHostedConnectionsResult> describeHostedConnectionsAsync(DescribeHostedConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHostedConnectionsRequest, DescribeHostedConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest request) {
 
         return describeInterconnectLoaAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeInterconnectLoaResult> describeInterconnectLoaAsync(DescribeInterconnectLoaRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectLoaRequest, DescribeInterconnectLoaResult> asyncHandler) {
 
@@ -331,10 +631,37 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeInterconnectsAsync(DescribeInterconnectsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeInterconnectsResult> describeInterconnectsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInterconnectsRequest, DescribeInterconnectsResult> asyncHandler) {
 
         return describeInterconnectsAsync(new DescribeInterconnectsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest request) {
+
+        return describeLagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLagsResult> describeLagsAsync(DescribeLagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLagsRequest, DescribeLagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest request) {
+
+        return describeLoaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLoaResult> describeLoaAsync(DescribeLoaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLoaRequest, DescribeLoaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -366,6 +693,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeLocationsAsync(DescribeLocationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLocationsResult> describeLocationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLocationsRequest, DescribeLocationsResult> asyncHandler) {
 
@@ -414,6 +742,7 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeVirtualGatewaysAsync(DescribeVirtualGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVirtualGatewaysResult> describeVirtualGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewaysRequest, DescribeVirtualGatewaysResult> asyncHandler) {
 
@@ -449,10 +778,24 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
      *
      * @see #describeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVirtualInterfacesResult> describeVirtualInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVirtualInterfacesRequest, DescribeVirtualInterfacesResult> asyncHandler) {
 
         return describeVirtualInterfacesAsync(new DescribeVirtualInterfacesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request) {
+
+        return disassociateConnectionFromLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConnectionFromLagResult> disassociateConnectionFromLagAsync(DisassociateConnectionFromLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConnectionFromLagRequest, DisassociateConnectionFromLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -477,6 +820,49 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            UpdateDirectConnectGatewayAssociationRequest request) {
+
+        return updateDirectConnectGatewayAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            UpdateDirectConnectGatewayAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDirectConnectGatewayAssociationRequest, UpdateDirectConnectGatewayAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request) {
+
+        return updateLagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLagRequest, UpdateLagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            UpdateVirtualInterfaceAttributesRequest request) {
+
+        return updateVirtualInterfaceAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            UpdateVirtualInterfaceAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVirtualInterfaceAttributesRequest, UpdateVirtualInterfaceAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,25 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
@@ -51,48 +56,58 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     private String productId;
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactProperties parameters;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -101,33 +116,43 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -136,34 +161,44 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +249,11 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
      * @param parameters
-     *        The parameters to use when creating the new provisioning artifact.
+     *        The configuration for the provisioning artifact.
      */
 
     public void setParameters(ProvisioningArtifactProperties parameters) {
@@ -227,10 +262,10 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
-     * @return The parameters to use when creating the new provisioning artifact.
+     * @return The configuration for the provisioning artifact.
      */
 
     public ProvisioningArtifactProperties getParameters() {
@@ -239,11 +274,11 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
      * @param parameters
-     *        The parameters to use when creating the new provisioning artifact.
+     *        The configuration for the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,13 +289,13 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *        multiple requests, provided that you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -269,12 +304,12 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *         multiple requests, provided that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -283,13 +318,13 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *        multiple requests, provided that you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,7 +334,8 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

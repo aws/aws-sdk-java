@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after
+     * you create the <code>Rule</code>.
      * </p>
      */
     private String metricName;
@@ -46,6 +47,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String changeToken;
+
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -96,14 +99,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *        the metric after you create the <code>Rule</code>.
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *        the name of the metric after you create the <code>Rule</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -113,13 +118,15 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *         the metric after you create the <code>Rule</code>.
+     *         alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *         whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *         the name of the metric after you create the <code>Rule</code>.
      */
 
     public String getMetricName() {
@@ -129,14 +136,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
-     * create the <code>Rule</code>.
+     * characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric
+     * names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after
+     * you create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
-     *        the metric after you create the <code>Rule</code>.
+     *        alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
+     *        whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change
+     *        the name of the metric after you create the <code>Rule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,7 +195,60 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -201,7 +263,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getMetricName() != null)
             sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: ").append(getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +292,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -239,6 +307,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getChangeToken() == null) ? 0 : getChangeToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

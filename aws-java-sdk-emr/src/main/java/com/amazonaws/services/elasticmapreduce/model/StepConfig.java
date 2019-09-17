@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,33 +14,37 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specification of a job flow step.
+ * Specification of a cluster (job flow) step.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StepConfig implements Serializable, Cloneable {
+public class StepConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      */
     private String actionOnFailure;
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      */
     private HadoopJarStepConfig hadoopJarStep;
@@ -57,9 +61,9 @@ public class StepConfig implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      */
     public StepConfig(String name, HadoopJarStepConfig hadoopJarStep) {
         setName(name);
@@ -68,11 +72,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      */
 
     public void setName(String name) {
@@ -81,10 +85,10 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
-     * @return The name of the job flow step.
+     * @return The name of the step.
      */
 
     public String getName() {
@@ -93,11 +97,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +112,15 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT,
+     *        and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using
+     *        TERMINATE_CLUSTER instead.
      * @see ActionOnFailure
      */
 
@@ -122,10 +130,14 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      * 
-     * @return The action to take if the job flow step fails.
+     * @return The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT,
+     *         and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using
+     *         TERMINATE_CLUSTER instead.
      * @see ActionOnFailure
      */
 
@@ -135,11 +147,15 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT,
+     *        and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using
+     *        TERMINATE_CLUSTER instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
@@ -151,41 +167,49 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT,
+     *        and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using
+     *        TERMINATE_CLUSTER instead.
      * @see ActionOnFailure
      */
 
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
-        this.actionOnFailure = actionOnFailure.toString();
+        withActionOnFailure(actionOnFailure);
     }
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and
+     * CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT,
+     *        and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using
+     *        TERMINATE_CLUSTER instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
 
     public StepConfig withActionOnFailure(ActionOnFailure actionOnFailure) {
-        setActionOnFailure(actionOnFailure);
+        this.actionOnFailure = actionOnFailure.toString();
         return this;
     }
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      */
 
     public void setHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
@@ -194,10 +218,10 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
-     * @return The JAR file used for the job flow step.
+     * @return The JAR file used for the step.
      */
 
     public HadoopJarStepConfig getHadoopJarStep() {
@@ -206,11 +230,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,7 +244,8 @@ public class StepConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -283,5 +308,11 @@ public class StepConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.StepConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

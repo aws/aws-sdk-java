@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,41 +14,29 @@ package com.amazonaws.services.xray.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ServiceId" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceId implements Serializable, Cloneable {
+public class ServiceId implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String name;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private java.util.List<String> names;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String accountId;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String type;
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param name
      */
@@ -58,8 +46,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -69,8 +56,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param name
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -82,8 +68,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -93,8 +78,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param names
      */
@@ -109,8 +93,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNames(java.util.Collection)} or {@link #withNames(java.util.Collection)} if you want to override the
@@ -132,8 +115,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param names
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -145,8 +127,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param accountId
      */
@@ -156,8 +137,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -167,8 +147,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param accountId
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -180,8 +159,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param type
      */
@@ -191,8 +169,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -202,8 +179,7 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param type
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -215,7 +191,8 @@ public class ServiceId implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -285,5 +262,11 @@ public class ServiceId implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.xray.model.transform.ServiceIdMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of ProvisionedProduct detail objects.
+     * Information about the provisioned products.
      * </p>
      */
     private java.util.List<ProvisionedProductDetail> provisionedProducts;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * A list of ProvisionedProduct detail objects.
+     * Information about the provisioned products.
      * </p>
      * 
-     * @return A list of ProvisionedProduct detail objects.
+     * @return Information about the provisioned products.
      */
 
     public java.util.List<ProvisionedProductDetail> getProvisionedProducts() {
@@ -51,11 +51,11 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of ProvisionedProduct detail objects.
+     * Information about the provisioned products.
      * </p>
      * 
      * @param provisionedProducts
-     *        A list of ProvisionedProduct detail objects.
+     *        Information about the provisioned products.
      */
 
     public void setProvisionedProducts(java.util.Collection<ProvisionedProductDetail> provisionedProducts) {
@@ -69,7 +69,7 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of ProvisionedProduct detail objects.
+     * Information about the provisioned products.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param provisionedProducts
-     *        A list of ProvisionedProduct detail objects.
+     *        Information about the provisioned products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of ProvisionedProduct detail objects.
+     * Information about the provisioned products.
      * </p>
      * 
      * @param provisionedProducts
-     *        A list of ProvisionedProduct detail objects.
+     *        Information about the provisioned products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +154,8 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -211,4 +212,5 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

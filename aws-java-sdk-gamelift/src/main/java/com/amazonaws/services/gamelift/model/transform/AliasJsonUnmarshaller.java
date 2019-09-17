@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class AliasJsonUnmarshaller implements Unmarshaller<Alias, JsonUnmarshall
                     context.nextToken();
                     alias.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AliasArn", targetDepth)) {
+                    context.nextToken();
+                    alias.setAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     alias.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -66,11 +70,11 @@ public class AliasJsonUnmarshaller implements Unmarshaller<Alias, JsonUnmarshall
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    alias.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    alias.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    alias.setLastUpdatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    alias.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

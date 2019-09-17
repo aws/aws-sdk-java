@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,11 +35,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     private String primaryClusterId;
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -49,16 +48,23 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      */
     private String automaticFailoverStatus;
+    /**
+     * <p>
+     * The status of an online resharding operation.
+     * </p>
+     */
+    private ReshardingStatus resharding;
 
     /**
      * <p>
@@ -108,11 +114,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -122,19 +127,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
+     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -144,13 +150,14 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
-     *        </ul>
      * @see PendingAutomaticFailoverStatus
      */
 
@@ -160,11 +167,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -174,18 +180,19 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
-     * @return Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
+     * @return Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
      *         <p>
-     *         ElastiCache Multi-AZ replication groups are not supported on:
+     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *         </p>
      *         <ul>
      *         <li>
@@ -195,13 +202,14 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled):T1 and T2 cache node types.
+     *         Redis (cluster mode disabled): T1 node types.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         Redis (cluster mode enabled): T1 node types.
      *         </p>
      *         </li>
-     *         </ul>
      * @see PendingAutomaticFailoverStatus
      */
 
@@ -211,11 +219,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -225,19 +232,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
+     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -247,13 +255,14 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PendingAutomaticFailoverStatus
      */
@@ -265,11 +274,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -279,19 +287,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
+     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -301,27 +310,27 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
-     *        </ul>
      * @see PendingAutomaticFailoverStatus
      */
 
     public void setAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
-        this.automaticFailoverStatus = automaticFailoverStatus.toString();
+        withAutomaticFailoverStatus(automaticFailoverStatus);
     }
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ for this Redis replication group.
+     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups are not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -331,19 +340,20 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled):T1 and T2 cache node types.
+     * Redis (cluster mode disabled): T1 node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ for this Redis replication group.</p> <note>
+     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups are not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -353,24 +363,66 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled):T1 and T2 cache node types.
+     *        Redis (cluster mode disabled): T1 node types.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        Redis (cluster mode enabled): T1 node types.
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PendingAutomaticFailoverStatus
      */
 
     public ReplicationGroupPendingModifiedValues withAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
-        setAutomaticFailoverStatus(automaticFailoverStatus);
+        this.automaticFailoverStatus = automaticFailoverStatus.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The status of an online resharding operation.
+     * </p>
+     * 
+     * @param resharding
+     *        The status of an online resharding operation.
+     */
+
+    public void setResharding(ReshardingStatus resharding) {
+        this.resharding = resharding;
+    }
+
+    /**
+     * <p>
+     * The status of an online resharding operation.
+     * </p>
+     * 
+     * @return The status of an online resharding operation.
+     */
+
+    public ReshardingStatus getResharding() {
+        return this.resharding;
+    }
+
+    /**
+     * <p>
+     * The status of an online resharding operation.
+     * </p>
+     * 
+     * @param resharding
+     *        The status of an online resharding operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroupPendingModifiedValues withResharding(ReshardingStatus resharding) {
+        setResharding(resharding);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -383,7 +435,9 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         if (getPrimaryClusterId() != null)
             sb.append("PrimaryClusterId: ").append(getPrimaryClusterId()).append(",");
         if (getAutomaticFailoverStatus() != null)
-            sb.append("AutomaticFailoverStatus: ").append(getAutomaticFailoverStatus());
+            sb.append("AutomaticFailoverStatus: ").append(getAutomaticFailoverStatus()).append(",");
+        if (getResharding() != null)
+            sb.append("Resharding: ").append(getResharding());
         sb.append("}");
         return sb.toString();
     }
@@ -406,6 +460,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             return false;
         if (other.getAutomaticFailoverStatus() != null && other.getAutomaticFailoverStatus().equals(this.getAutomaticFailoverStatus()) == false)
             return false;
+        if (other.getResharding() == null ^ this.getResharding() == null)
+            return false;
+        if (other.getResharding() != null && other.getResharding().equals(this.getResharding()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +474,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverStatus() == null) ? 0 : getAutomaticFailoverStatus().hashCode());
+        hashCode = prime * hashCode + ((getResharding() == null) ? 0 : getResharding().hashCode());
         return hashCode;
     }
 
@@ -427,4 +486,5 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

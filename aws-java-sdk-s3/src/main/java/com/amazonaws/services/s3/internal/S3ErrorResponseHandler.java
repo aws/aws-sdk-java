@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.util.IOUtils;
 
+import com.amazonaws.util.XmlUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -53,11 +54,7 @@ public class S3ErrorResponseHandler implements
     private static final Log log = LogFactory
             .getLog(S3ErrorResponseHandler.class);
 
-    /** Shared factory for creating XML event readers */
-    private static final XMLInputFactory xmlInputFactory = XMLInputFactory
-            .newInstance();
-
-    private static enum S3ErrorTags {
+    private enum S3ErrorTags {
         Error, Message, Code, RequestId, HostId
     };
 
@@ -92,17 +89,8 @@ public class S3ErrorResponseHandler implements
             return createExceptionFromHeaders(httpResponse, null);
         }
 
-        /*
-         * XMLInputFactory is not thread safe and hence it is synchronized.
-         * Reference :
-         * http://itdoc.hitachi.co.jp/manuals/3020/30203Y2210e/EY220140.HTM
-         */
-        XMLStreamReader reader;
-        synchronized (xmlInputFactory) {
-            reader = xmlInputFactory
-                    .createXMLStreamReader(new ByteArrayInputStream(content
-                            .getBytes(UTF8)));
-        }
+        XMLStreamReader reader
+            = XmlUtils.getXmlInputFactory().createXMLStreamReader(new ByteArrayInputStream(content.getBytes(UTF8)));
 
         try {
             /*
@@ -117,6 +105,10 @@ public class S3ErrorResponseHandler implements
             exceptionBuilder.setErrorResponseXml(content);
             exceptionBuilder.setStatusCode(httpResponse.getStatusCode());
             exceptionBuilder.setCloudFrontId(httpResponse.getHeaders().get(Headers.CLOUD_FRONT_ID));
+            String bucketRegion = httpResponse.getHeader(Headers.S3_BUCKET_REGION);
+            if (bucketRegion != null) {
+                exceptionBuilder.addAdditionalDetail(Headers.S3_BUCKET_REGION, bucketRegion);
+            }
 
             boolean hasErrorTagVisited = false;
             while (reader.hasNext()) {

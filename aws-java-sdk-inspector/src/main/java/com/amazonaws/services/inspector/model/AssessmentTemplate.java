@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.inspector.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssessmentTemplate implements Serializable, Cloneable {
+public class AssessmentTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,7 +49,7 @@ public class AssessmentTemplate implements Serializable, Cloneable {
     private String assessmentTargetArn;
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      */
@@ -65,6 +67,20 @@ public class AssessmentTemplate implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<Attribute> userAttributesForFindings;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
+     * </p>
+     */
+    private String lastAssessmentRunArn;
+    /**
+     * <p>
+     * The number of existing assessment runs associated with this assessment template. This value can be zero or a
+     * positive integer.
+     * </p>
+     */
+    private Integer assessmentRunCount;
     /**
      * <p>
      * The time at which the assessment template is created.
@@ -194,12 +210,12 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     *        The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *        hour). The maximum value is 86400 seconds (one day).
      */
 
@@ -209,11 +225,11 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
-     * @return The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     * @return The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *         hour). The maximum value is 86400 seconds (one day).
      */
 
@@ -223,12 +239,12 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     *        The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *        hour). The maximum value is 86400 seconds (one day).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -388,6 +404,98 @@ public class AssessmentTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
+     * </p>
+     * 
+     * @param lastAssessmentRunArn
+     *        The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template.
+     *        This value exists only when the value of assessmentRunCount is greaterpa than zero.
+     */
+
+    public void setLastAssessmentRunArn(String lastAssessmentRunArn) {
+        this.lastAssessmentRunArn = lastAssessmentRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment
+     *         template. This value exists only when the value of assessmentRunCount is greaterpa than zero.
+     */
+
+    public String getLastAssessmentRunArn() {
+        return this.lastAssessmentRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
+     * </p>
+     * 
+     * @param lastAssessmentRunArn
+     *        The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template.
+     *        This value exists only when the value of assessmentRunCount is greaterpa than zero.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentTemplate withLastAssessmentRunArn(String lastAssessmentRunArn) {
+        setLastAssessmentRunArn(lastAssessmentRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of existing assessment runs associated with this assessment template. This value can be zero or a
+     * positive integer.
+     * </p>
+     * 
+     * @param assessmentRunCount
+     *        The number of existing assessment runs associated with this assessment template. This value can be zero or
+     *        a positive integer.
+     */
+
+    public void setAssessmentRunCount(Integer assessmentRunCount) {
+        this.assessmentRunCount = assessmentRunCount;
+    }
+
+    /**
+     * <p>
+     * The number of existing assessment runs associated with this assessment template. This value can be zero or a
+     * positive integer.
+     * </p>
+     * 
+     * @return The number of existing assessment runs associated with this assessment template. This value can be zero
+     *         or a positive integer.
+     */
+
+    public Integer getAssessmentRunCount() {
+        return this.assessmentRunCount;
+    }
+
+    /**
+     * <p>
+     * The number of existing assessment runs associated with this assessment template. This value can be zero or a
+     * positive integer.
+     * </p>
+     * 
+     * @param assessmentRunCount
+     *        The number of existing assessment runs associated with this assessment template. This value can be zero or
+     *        a positive integer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentTemplate withAssessmentRunCount(Integer assessmentRunCount) {
+        setAssessmentRunCount(assessmentRunCount);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time at which the assessment template is created.
      * </p>
      * 
@@ -427,7 +535,8 @@ public class AssessmentTemplate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -449,6 +558,10 @@ public class AssessmentTemplate implements Serializable, Cloneable {
             sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getUserAttributesForFindings() != null)
             sb.append("UserAttributesForFindings: ").append(getUserAttributesForFindings()).append(",");
+        if (getLastAssessmentRunArn() != null)
+            sb.append("LastAssessmentRunArn: ").append(getLastAssessmentRunArn()).append(",");
+        if (getAssessmentRunCount() != null)
+            sb.append("AssessmentRunCount: ").append(getAssessmentRunCount()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
@@ -489,6 +602,14 @@ public class AssessmentTemplate implements Serializable, Cloneable {
             return false;
         if (other.getUserAttributesForFindings() != null && other.getUserAttributesForFindings().equals(this.getUserAttributesForFindings()) == false)
             return false;
+        if (other.getLastAssessmentRunArn() == null ^ this.getLastAssessmentRunArn() == null)
+            return false;
+        if (other.getLastAssessmentRunArn() != null && other.getLastAssessmentRunArn().equals(this.getLastAssessmentRunArn()) == false)
+            return false;
+        if (other.getAssessmentRunCount() == null ^ this.getAssessmentRunCount() == null)
+            return false;
+        if (other.getAssessmentRunCount() != null && other.getAssessmentRunCount().equals(this.getAssessmentRunCount()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -507,6 +628,8 @@ public class AssessmentTemplate implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDurationInSeconds() == null) ? 0 : getDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getRulesPackageArns() == null) ? 0 : getRulesPackageArns().hashCode());
         hashCode = prime * hashCode + ((getUserAttributesForFindings() == null) ? 0 : getUserAttributesForFindings().hashCode());
+        hashCode = prime * hashCode + ((getLastAssessmentRunArn() == null) ? 0 : getLastAssessmentRunArn().hashCode());
+        hashCode = prime * hashCode + ((getAssessmentRunCount() == null) ? 0 : getAssessmentRunCount().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         return hashCode;
     }
@@ -518,5 +641,11 @@ public class AssessmentTemplate implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.inspector.model.transform.AssessmentTemplateMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

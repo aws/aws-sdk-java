@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<java.util.List<String>> parsedInputRecords;
+    /**
+     * <p>
+     * Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     * parameter.
+     * </p>
+     */
+    private java.util.List<String> processedInputRecords;
     /**
      * <p>
      * Raw stream data that was sampled to infer the schema.
@@ -171,6 +178,84 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     * parameter.
+     * </p>
+     * 
+     * @return Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     *         parameter.
+     */
+
+    public java.util.List<String> getProcessedInputRecords() {
+        return processedInputRecords;
+    }
+
+    /**
+     * <p>
+     * Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     * parameter.
+     * </p>
+     * 
+     * @param processedInputRecords
+     *        Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     *        parameter.
+     */
+
+    public void setProcessedInputRecords(java.util.Collection<String> processedInputRecords) {
+        if (processedInputRecords == null) {
+            this.processedInputRecords = null;
+            return;
+        }
+
+        this.processedInputRecords = new java.util.ArrayList<String>(processedInputRecords);
+    }
+
+    /**
+     * <p>
+     * Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     * parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessedInputRecords(java.util.Collection)} or
+     * {@link #withProcessedInputRecords(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param processedInputRecords
+     *        Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInputSchemaResult withProcessedInputRecords(String... processedInputRecords) {
+        if (this.processedInputRecords == null) {
+            setProcessedInputRecords(new java.util.ArrayList<String>(processedInputRecords.length));
+        }
+        for (String ele : processedInputRecords) {
+            this.processedInputRecords.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     * parameter.
+     * </p>
+     * 
+     * @param processedInputRecords
+     *        Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInputSchemaResult withProcessedInputRecords(java.util.Collection<String> processedInputRecords) {
+        setProcessedInputRecords(processedInputRecords);
+        return this;
+    }
+
+    /**
+     * <p>
      * Raw stream data that was sampled to infer the schema.
      * </p>
      * 
@@ -240,7 +325,8 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -254,6 +340,8 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("InputSchema: ").append(getInputSchema()).append(",");
         if (getParsedInputRecords() != null)
             sb.append("ParsedInputRecords: ").append(getParsedInputRecords()).append(",");
+        if (getProcessedInputRecords() != null)
+            sb.append("ProcessedInputRecords: ").append(getProcessedInputRecords()).append(",");
         if (getRawInputRecords() != null)
             sb.append("RawInputRecords: ").append(getRawInputRecords());
         sb.append("}");
@@ -278,6 +366,10 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getParsedInputRecords() != null && other.getParsedInputRecords().equals(this.getParsedInputRecords()) == false)
             return false;
+        if (other.getProcessedInputRecords() == null ^ this.getProcessedInputRecords() == null)
+            return false;
+        if (other.getProcessedInputRecords() != null && other.getProcessedInputRecords().equals(this.getProcessedInputRecords()) == false)
+            return false;
         if (other.getRawInputRecords() == null ^ this.getRawInputRecords() == null)
             return false;
         if (other.getRawInputRecords() != null && other.getRawInputRecords().equals(this.getRawInputRecords()) == false)
@@ -292,6 +384,7 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getInputSchema() == null) ? 0 : getInputSchema().hashCode());
         hashCode = prime * hashCode + ((getParsedInputRecords() == null) ? 0 : getParsedInputRecords().hashCode());
+        hashCode = prime * hashCode + ((getProcessedInputRecords() == null) ? 0 : getProcessedInputRecords().hashCode());
         hashCode = prime * hashCode + ((getRawInputRecords() == null) ? 0 : getRawInputRecords().hashCode());
         return hashCode;
     }
@@ -304,4 +397,5 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

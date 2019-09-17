@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,18 +38,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -64,8 +64,8 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -80,18 +80,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -104,20 +104,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @see BuildStatus
@@ -137,18 +137,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -160,20 +160,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *         <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *         fleets for builds that are in this status. When a build is successfully created, the build status is set
      *         to this value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *         <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *         build.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *         <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *         </p>
      *         </li>
      * @see BuildStatus
@@ -193,18 +193,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -217,20 +217,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -252,18 +252,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -276,27 +276,27 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @see BuildStatus
      */
 
     public void setStatus(BuildStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -309,18 +309,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -333,20 +333,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -354,7 +354,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public ListBuildsRequest withStatus(BuildStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -406,13 +406,13 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -421,12 +421,12 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *         previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -435,13 +435,13 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,7 +451,8 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

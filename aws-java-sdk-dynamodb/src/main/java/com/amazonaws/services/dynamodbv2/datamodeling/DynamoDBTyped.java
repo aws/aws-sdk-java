@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,7 +106,7 @@ import java.lang.annotation.Target;
  * <p><b>{@link Enum} to {@code S}</b></p>
  * <p>The {@code enum} type is only supported by override or custom converter.
  * There are some risks in distributed systems when using enumerations as
- * attributes intead of simply using a String. When adding new values to the
+ * attributes instead of simply using a String. When adding new values to the
  * enumeration, the enum only changes must deployed before the enumeration
  * value can be persisted. This will ensure that all systems have the correct
  * code to map it from the item record in DynamoDB to your objects.</p>

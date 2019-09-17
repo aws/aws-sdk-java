@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,84 +12,54 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAssessmentRunsRequest Marshaller
+ * ListAssessmentRunsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAssessmentRunsRequestMarshaller implements Marshaller<Request<ListAssessmentRunsRequest>, ListAssessmentRunsRequest> {
+@SdkInternalApi
+public class ListAssessmentRunsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ASSESSMENTTEMPLATEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTemplateArns").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
 
-    public ListAssessmentRunsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAssessmentRunsRequestMarshaller instance = new ListAssessmentRunsRequestMarshaller();
+
+    public static ListAssessmentRunsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAssessmentRunsRequest> marshall(ListAssessmentRunsRequest listAssessmentRunsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAssessmentRunsRequest listAssessmentRunsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAssessmentRunsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAssessmentRunsRequest> request = new DefaultRequest<ListAssessmentRunsRequest>(listAssessmentRunsRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.ListAssessmentRuns");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> assessmentTemplateArnsList = listAssessmentRunsRequest.getAssessmentTemplateArns();
-            if (assessmentTemplateArnsList != null) {
-                jsonGenerator.writeFieldName("assessmentTemplateArns");
-                jsonGenerator.writeStartArray();
-                for (String assessmentTemplateArnsListValue : assessmentTemplateArnsList) {
-                    if (assessmentTemplateArnsListValue != null) {
-                        jsonGenerator.writeValue(assessmentTemplateArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listAssessmentRunsRequest.getFilter() != null) {
-                jsonGenerator.writeFieldName("filter");
-                AssessmentRunFilterJsonMarshaller.getInstance().marshall(listAssessmentRunsRequest.getFilter(), jsonGenerator);
-            }
-            if (listAssessmentRunsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listAssessmentRunsRequest.getNextToken());
-            }
-            if (listAssessmentRunsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listAssessmentRunsRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listAssessmentRunsRequest.getAssessmentTemplateArns(), ASSESSMENTTEMPLATEARNS_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunsRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAssessmentRunsRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,10 +14,12 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision.
+ * Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
  * </p>
  * <p>
  * <b>Access Control</b>
@@ -26,26 +28,52 @@ import javax.annotation.Generated;
  * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
  * </p>
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
+ * <li>
+ * <p>
+ * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use an <code>Action</code> element to allow or deny permission to call this action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
+ * </p>
  * <ul>
- * <li> <code>tag</code>: <i>Optional.</i>. A tag used to identify the workflow execution</li>
- * <li><code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.</li>
- * <li><code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.</li>
+ * <li>
+ * <p>
+ * <code>tag</code> – A tag used to identify the workflow execution
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the
- * specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
- * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
+ * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
+ * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
+ * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
+ * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ContinueAsNewWorkflowExecutionDecisionAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable, Cloneable {
+public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -59,27 +87,35 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>An execution start-to-close timeout for this workflow execution must be specified either as a default for
-     * the workflow type or through this field. If neither this field is set nor a default execution start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * An execution start-to-close timeout for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout
+     * was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      */
     private String executionStartToCloseTimeout;
-
+    /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     */
     private TaskList taskList;
     /**
      * <p>
-     * <i>Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this workflow
-     * execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This
+     * overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+     * Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String taskPriority;
@@ -90,12 +126,16 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <a>RegisterWorkflowType</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     * <note>
+     * <p>
+     * A task start-to-close timeout for the new workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * timeout was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      */
     private String taskStartToCloseTimeout;
     /**
@@ -109,15 +149,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      */
     private String childPolicy;
     /**
@@ -128,14 +184,16 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * </p>
      */
     private java.util.List<String> tagList;
-
+    /**
+     * <p>
+     * The version of the workflow to start.
+     * </p>
+     */
     private String workflowTypeVersion;
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.
+     * The IAM role to attach to the new (continued) execution.
      * </p>
-     * <note>In order for this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be
-     * specified either as a default for the workflow type or through this field.</note>
      */
     private String lambdaRole;
 
@@ -185,23 +243,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>An execution start-to-close timeout for this workflow execution must be specified either as a default for
-     * the workflow type or through this field. If neither this field is set nor a default execution start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * An execution start-to-close timeout for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout
+     * was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param executionStartToCloseTimeout
      *        If set, specifies the total duration for this workflow execution. This overrides the
      *        <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      *        </p>
-     *        <note>An execution start-to-close timeout for this workflow execution must be specified either as a
-     *        default for the workflow type or through this field. If neither this field is set nor a default execution
-     *        start-to-close timeout was specified at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        An execution start-to-close timeout for this workflow execution must be specified either as a default for
+     *        the workflow type or through this field. If neither this field is set nor a default execution
+     *        start-to-close timeout was specified at registration time then a fault is returned.
+     *        </p>
      */
 
     public void setExecutionStartToCloseTimeout(String executionStartToCloseTimeout) {
@@ -214,22 +279,29 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>An execution start-to-close timeout for this workflow execution must be specified either as a default for
-     * the workflow type or through this field. If neither this field is set nor a default execution start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * An execution start-to-close timeout for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout
+     * was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @return If set, specifies the total duration for this workflow execution. This overrides the
      *         <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      *         </p>
-     *         <note>An execution start-to-close timeout for this workflow execution must be specified either as a
-     *         default for the workflow type or through this field. If neither this field is set nor a default execution
-     *         start-to-close timeout was specified at registration time then a fault will be returned.
+     *         <note>
+     *         <p>
+     *         An execution start-to-close timeout for this workflow execution must be specified either as a default for
+     *         the workflow type or through this field. If neither this field is set nor a default execution
+     *         start-to-close timeout was specified at registration time then a fault is returned.
+     *         </p>
      */
 
     public String getExecutionStartToCloseTimeout() {
@@ -242,23 +314,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>An execution start-to-close timeout for this workflow execution must be specified either as a default for
-     * the workflow type or through this field. If neither this field is set nor a default execution start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * An execution start-to-close timeout for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout
+     * was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param executionStartToCloseTimeout
      *        If set, specifies the total duration for this workflow execution. This overrides the
      *        <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      *        </p>
-     *        <note>An execution start-to-close timeout for this workflow execution must be specified either as a
-     *        default for the workflow type or through this field. If neither this field is set nor a default execution
-     *        start-to-close timeout was specified at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        An execution start-to-close timeout for this workflow execution must be specified either as a default for
+     *        the workflow type or through this field. If neither this field is set nor a default execution
+     *        start-to-close timeout was specified at registration time then a fault is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,7 +347,12 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskList
+     *        The task list to use for the decisions of the new (continued) workflow execution.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -276,7 +360,11 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
-     * @return
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
+     * @return The task list to use for the decisions of the new (continued) workflow execution.
      */
 
     public TaskList getTaskList() {
@@ -284,7 +372,12 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
+     * <p>
+     * The task list to use for the decisions of the new (continued) workflow execution.
+     * </p>
+     * 
      * @param taskList
+     *        The task list to use for the decisions of the new (continued) workflow execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,26 +388,26 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * <i>Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this workflow
-     * execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This
+     * overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+     * Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this
-     *        workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type.
-     *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        The task priority that, if set, specifies the priority for the decision tasks for this workflow execution.
+     *        This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
+     *        integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public void setTaskPriority(String taskPriority) {
@@ -323,25 +416,25 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * <i>Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this workflow
-     * execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This
+     * overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+     * Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
-     * @return Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this
-     *         workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type.
-     *         Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * @return The task priority that, if set, specifies the priority for the decision tasks for this workflow
+     *         execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid
+     *         values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *         Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public String getTaskPriority() {
@@ -350,26 +443,26 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * <i>Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this workflow
-     * execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
-     * integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-     * (2147483647). Higher numbers indicate higher priority.
+     * The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This
+     * overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647).
+     * Higher numbers indicate higher priority.
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> The task priority that, if set, specifies the priority for the decision tasks for this
-     *        workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type.
-     *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     *        The task priority that, if set, specifies the priority for the decision tasks for this workflow execution.
+     *        This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are
+     *        integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,24 +478,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <a>RegisterWorkflowType</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     * <note>
+     * <p>
+     * A task start-to-close timeout for the new workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * timeout was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param taskStartToCloseTimeout
      *        Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides
      *        the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using
      *        <a>RegisterWorkflowType</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      *        </p>
-     *        <note>A task start-to-close timeout for the new workflow execution must be specified either as a default
-     *        for the workflow type or through this parameter. If neither this parameter is set nor a default task
-     *        start-to-close timeout was specified at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     *        workflow type or through this parameter. If neither this parameter is set nor a default task
+     *        start-to-close timeout was specified at registration time then a fault is returned.
+     *        </p>
      */
 
     public void setTaskStartToCloseTimeout(String taskStartToCloseTimeout) {
@@ -416,23 +516,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <a>RegisterWorkflowType</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     * <note>
+     * <p>
+     * A task start-to-close timeout for the new workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * timeout was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @return Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides
      *         the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using
      *         <a>RegisterWorkflowType</a>.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *         to specify unlimited duration.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      *         </p>
-     *         <note>A task start-to-close timeout for the new workflow execution must be specified either as a default
-     *         for the workflow type or through this parameter. If neither this parameter is set nor a default task
-     *         start-to-close timeout was specified at registration time then a fault will be returned.
+     *         <note>
+     *         <p>
+     *         A task start-to-close timeout for the new workflow execution must be specified either as a default for
+     *         the workflow type or through this parameter. If neither this parameter is set nor a default task
+     *         start-to-close timeout was specified at registration time then a fault is returned.
+     *         </p>
      */
 
     public String getTaskStartToCloseTimeout() {
@@ -446,24 +553,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * <a>RegisterWorkflowType</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
-     * <note>A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     * <note>
+     * <p>
+     * A task start-to-close timeout for the new workflow execution must be specified either as a default for the
      * workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close
-     * timeout was specified at registration time then a fault will be returned.</note>
+     * timeout was specified at registration time then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param taskStartToCloseTimeout
      *        Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides
      *        the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using
      *        <a>RegisterWorkflowType</a>.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used
-     *        to specify unlimited duration.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      *        </p>
-     *        <note>A task start-to-close timeout for the new workflow execution must be specified either as a default
-     *        for the workflow type or through this parameter. If neither this parameter is set nor a default task
-     *        start-to-close timeout was specified at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A task start-to-close timeout for the new workflow execution must be specified either as a default for the
+     *        workflow type or through this parameter. If neither this parameter is set nor a default task
+     *        start-to-close timeout was specified at registration time then a fault is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,15 +597,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param childPolicy
      *        If set, specifies the policy to use for the child workflow executions of the new execution if it is
@@ -502,15 +632,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>A child policy for this workflow execution must be specified either as a default for the workflow
-     *        type or through this parameter. If neither this parameter is set nor a default child policy was specified
-     *        at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A child policy for this workflow execution must be specified either as a default for the workflow type or
+     *        through this parameter. If neither this parameter is set nor a default child policy was specified at
+     *        registration time then a fault is returned.
+     *        </p>
      * @see ChildPolicy
      */
 
@@ -529,15 +674,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @return If set, specifies the policy to use for the child workflow executions of the new execution if it is
      *         terminated by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
@@ -547,15 +708,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *         The supported child policies are:
      *         </p>
      *         <ul>
-     *         <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *         <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *         <li>
+     *         <p>
+     *         <code>TERMINATE</code> – The child executions are terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *         <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *         appropriate actions when it receives an execution history with this event.</li>
-     *         <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *         appropriate actions when it receives an execution history with this event.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *         </p>
+     *         </li>
      *         </ul>
-     *         <note>A child policy for this workflow execution must be specified either as a default for the workflow
-     *         type or through this parameter. If neither this parameter is set nor a default child policy was specified
-     *         at registration time then a fault will be returned.
+     *         <note>
+     *         <p>
+     *         A child policy for this workflow execution must be specified either as a default for the workflow type or
+     *         through this parameter. If neither this parameter is set nor a default child policy was specified at
+     *         registration time then a fault is returned.
+     *         </p>
      * @see ChildPolicy
      */
 
@@ -574,15 +750,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param childPolicy
      *        If set, specifies the policy to use for the child workflow executions of the new execution if it is
@@ -593,15 +785,30 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>A child policy for this workflow execution must be specified either as a default for the workflow
-     *        type or through this parameter. If neither this parameter is set nor a default child policy was specified
-     *        at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A child policy for this workflow execution must be specified either as a default for the workflow type or
+     *        through this parameter. If neither this parameter is set nor a default child policy was specified at
+     *        registration time then a fault is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
@@ -622,15 +829,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param childPolicy
      *        If set, specifies the policy to use for the child workflow executions of the new execution if it is
@@ -641,20 +864,35 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>A child policy for this workflow execution must be specified either as a default for the workflow
-     *        type or through this parameter. If neither this parameter is set nor a default child policy was specified
-     *        at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A child policy for this workflow execution must be specified either as a default for the workflow type or
+     *        through this parameter. If neither this parameter is set nor a default child policy was specified at
+     *        registration time then a fault is returned.
+     *        </p>
      * @see ChildPolicy
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -668,15 +906,31 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      * The supported child policies are:
      * </p>
      * <ul>
-     * <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     * <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     * <li>
+     * <p>
+     * <code>TERMINATE</code> – The child executions are terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate
-     * actions when it receives an execution history with this event.</li>
-     * <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     * actions when it receives an execution history with this event.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     * </p>
+     * </li>
      * </ul>
-     * <note>A child policy for this workflow execution must be specified either as a default for the workflow type or
-     * through this parameter. If neither this parameter is set nor a default child policy was specified at registration
-     * time then a fault will be returned.</note>
+     * <note>
+     * <p>
+     * A child policy for this workflow execution must be specified either as a default for the workflow type or through
+     * this parameter. If neither this parameter is set nor a default child policy was specified at registration time
+     * then a fault is returned.
+     * </p>
+     * </note>
      * 
      * @param childPolicy
      *        If set, specifies the policy to use for the child workflow executions of the new execution if it is
@@ -687,21 +941,36 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      *        The supported child policies are:
      *        </p>
      *        <ul>
-     *        <li><b>TERMINATE:</b> the child executions will be terminated.</li>
-     *        <li><b>REQUEST_CANCEL:</b> a request to cancel will be attempted for each child execution by recording a
+     *        <li>
+     *        <p>
+     *        <code>TERMINATE</code> – The child executions are terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a
      *        <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take
-     *        appropriate actions when it receives an execution history with this event.</li>
-     *        <li><b>ABANDON:</b> no action will be taken. The child executions will continue to run.</li>
+     *        appropriate actions when it receives an execution history with this event.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ABANDON</code> – No action is taken. The child executions continue to run.
+     *        </p>
+     *        </li>
      *        </ul>
-     *        <note>A child policy for this workflow execution must be specified either as a default for the workflow
-     *        type or through this parameter. If neither this parameter is set nor a default child policy was specified
-     *        at registration time then a fault will be returned.
+     *        <note>
+     *        <p>
+     *        A child policy for this workflow execution must be specified either as a default for the workflow type or
+     *        through this parameter. If neither this parameter is set nor a default child policy was specified at
+     *        registration time then a fault is returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChildPolicy
      */
 
     public ContinueAsNewWorkflowExecutionDecisionAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 
@@ -792,7 +1061,12 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
+     * <p>
+     * The version of the workflow to start.
+     * </p>
+     * 
      * @param workflowTypeVersion
+     *        The version of the workflow to start.
      */
 
     public void setWorkflowTypeVersion(String workflowTypeVersion) {
@@ -800,7 +1074,11 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the workflow to start.
+     * </p>
+     * 
+     * @return The version of the workflow to start.
      */
 
     public String getWorkflowTypeVersion() {
@@ -808,7 +1086,12 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
+     * <p>
+     * The version of the workflow to start.
+     * </p>
+     * 
      * @param workflowTypeVersion
+     *        The version of the workflow to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -819,15 +1102,11 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.
+     * The IAM role to attach to the new (continued) execution.
      * </p>
-     * <note>In order for this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be
-     * specified either as a default for the workflow type or through this field.</note>
      * 
      * @param lambdaRole
-     *        The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.</p> <note>In order for
-     *        this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be specified either
-     *        as a default for the workflow type or through this field.
+     *        The IAM role to attach to the new (continued) execution.
      */
 
     public void setLambdaRole(String lambdaRole) {
@@ -836,14 +1115,10 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.
+     * The IAM role to attach to the new (continued) execution.
      * </p>
-     * <note>In order for this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be
-     * specified either as a default for the workflow type or through this field.</note>
      * 
-     * @return The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.</p> <note>In order for
-     *         this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be specified either
-     *         as a default for the workflow type or through this field.
+     * @return The IAM role to attach to the new (continued) execution.
      */
 
     public String getLambdaRole() {
@@ -852,15 +1127,11 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
 
     /**
      * <p>
-     * The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.
+     * The IAM role to attach to the new (continued) execution.
      * </p>
-     * <note>In order for this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be
-     * specified either as a default for the workflow type or through this field.</note>
      * 
      * @param lambdaRole
-     *        The ARN of an IAM role that authorizes Amazon SWF to invoke AWS Lambda functions.</p> <note>In order for
-     *        this workflow execution to invoke AWS Lambda functions, an appropriate IAM role must be specified either
-     *        as a default for the workflow type or through this field.
+     *        The IAM role to attach to the new (continued) execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -870,7 +1141,8 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -975,5 +1247,12 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ContinueAsNewWorkflowExecutionDecisionAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

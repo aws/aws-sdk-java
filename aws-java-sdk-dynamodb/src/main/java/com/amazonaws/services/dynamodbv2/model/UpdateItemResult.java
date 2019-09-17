@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,12 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      */
     private java.util.Map<String, AttributeValue> attributes;
@@ -40,7 +43,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -64,7 +67,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -79,14 +82,19 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
-     * @return A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *         appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *         request. Each element represents one attribute.
+     * @return A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *         determined by the <code>ReturnValues</code> parameter.</p>
+     *         <p>
+     *         The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *         other than <code>NONE</code> in the request. Each element represents one attribute.
      */
 
     public java.util.Map<String, AttributeValue> getAttributes() {
@@ -95,15 +103,20 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
-     *        A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *        appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *        request. Each element represents one attribute.
+     *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *        determined by the <code>ReturnValues</code> parameter.</p>
+     *        <p>
+     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *        other than <code>NONE</code> in the request. Each element represents one attribute.
      */
 
     public void setAttributes(java.util.Map<String, AttributeValue> attributes) {
@@ -112,15 +125,20 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
-     *        A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *        appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *        request. Each element represents one attribute.
+     *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *        determined by the <code>ReturnValues</code> parameter.</p>
+     *        <p>
+     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *        other than <code>NONE</code> in the request. Each element represents one attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,7 +174,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -165,7 +183,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -179,7 +197,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -187,7 +205,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *         total provisioned throughput consumed, along with statistics for the table and any indexes involved in
      *         the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *         parameter was specified. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -201,7 +219,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -210,7 +228,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -239,7 +257,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -267,7 +285,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -303,7 +321,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -330,7 +348,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *         <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *         two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes projected into all of the local
      *         secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -366,7 +384,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </li>
      * <li>
      * <p>
-     * <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a two-element
+     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element
      * array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the
      * items in the table, plus the size of all attributes projected into all of the local secondary indexes on that
      * table. Use this estimate to measure whether a local secondary index is approaching its size limit.
@@ -394,7 +412,7 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SizeEstimateRange</code> - An estimate of item collection size, in gigabytes. This value is a
+     *        <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a
      *        two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the
      *        size of all the items in the table, plus the size of all attributes projected into all of the local
      *        secondary indexes on that table. Use this estimate to measure whether a local secondary index is
@@ -414,7 +432,8 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -478,4 +497,5 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

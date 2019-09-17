@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,62 +28,22 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type size supported by the Dedicated Host.
-     * </p>
-     */
-    private String instanceType;
-    /**
-     * <p>
      * The number of instances that can still be launched onto the Dedicated Host.
      * </p>
      */
     private Integer availableCapacity;
     /**
      * <p>
+     * The instance type size supported by the Dedicated Host.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
      * The total number of instances that can be launched onto the Dedicated Host.
      * </p>
      */
     private Integer totalCapacity;
-
-    /**
-     * <p>
-     * The instance type size supported by the Dedicated Host.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type size supported by the Dedicated Host.
-     */
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type size supported by the Dedicated Host.
-     * </p>
-     * 
-     * @return The instance type size supported by the Dedicated Host.
-     */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type size supported by the Dedicated Host.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type size supported by the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceCapacity withInstanceType(String instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class InstanceCapacity implements Serializable, Cloneable {
 
     public InstanceCapacity withAvailableCapacity(Integer availableCapacity) {
         setAvailableCapacity(availableCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type size supported by the Dedicated Host.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type size supported by the Dedicated Host.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type size supported by the Dedicated Host.
+     * </p>
+     * 
+     * @return The instance type size supported by the Dedicated Host.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type size supported by the Dedicated Host.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type size supported by the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceCapacity withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -166,7 +166,8 @@ public class InstanceCapacity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,10 +177,10 @@ public class InstanceCapacity implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailableCapacity() != null)
             sb.append("AvailableCapacity: ").append(getAvailableCapacity()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getTotalCapacity() != null)
             sb.append("TotalCapacity: ").append(getTotalCapacity());
         sb.append("}");
@@ -196,13 +197,13 @@ public class InstanceCapacity implements Serializable, Cloneable {
         if (obj instanceof InstanceCapacity == false)
             return false;
         InstanceCapacity other = (InstanceCapacity) obj;
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
-            return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
-            return false;
         if (other.getAvailableCapacity() == null ^ this.getAvailableCapacity() == null)
             return false;
         if (other.getAvailableCapacity() != null && other.getAvailableCapacity().equals(this.getAvailableCapacity()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getTotalCapacity() == null ^ this.getTotalCapacity() == null)
             return false;
@@ -216,8 +217,8 @@ public class InstanceCapacity implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAvailableCapacity() == null) ? 0 : getAvailableCapacity().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getTotalCapacity() == null) ? 0 : getTotalCapacity().hashCode());
         return hashCode;
     }
@@ -230,4 +231,5 @@ public class InstanceCapacity implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,9 +70,9 @@ import java.nio.ByteBuffer;
  */
 public final class LambdaInvokerFactory {
 
-    private static final ObjectMapper MAPPER = new ObjectMapper()
-            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-            .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+    static final ObjectMapper DEFAULT_MAPPER = new ObjectMapper()
+        .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
     /**
      * Creates a new Lambda invoker implementing the given interface and wrapping the given {@code AWSLambda} client.
@@ -117,6 +117,7 @@ public final class LambdaInvokerFactory {
         private String functionAlias;
         private String functionVersion;
         private AWSLambda lambda;
+        private ObjectMapper objectMapper;
 
         /**
          * Sets a new Function name resolver to override the default behavior.
@@ -133,6 +134,28 @@ public final class LambdaInvokerFactory {
         private LambdaFunctionNameResolver resolveFunctionNameResolver() {
             return functionNameResolver == null ? new DefaultLambdaFunctionNameResolver() :
                     functionNameResolver;
+        }
+
+        /**
+         * Sets the ObjectMapper used to (de-)serialize payload if you do not wish to use the default mapper.
+         * (see {@link ObjectMapper} for configuration options)
+         *
+         * <p>The FAIL_ON_UNKNOWN_PROPERTIES property <b>MUST</b> be disabled for any custom object mapper so that
+         * the response unmarshalling is forward compatible with any new fields your Lambda function may return but might
+         * not be modeled.</p>
+         *
+         * @return This current object for method chaining.
+         */
+        public Builder objectMapper(ObjectMapper objectMapper) {
+            if (objectMapper.isEnabled(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)) {
+                throw new IllegalArgumentException("FAIL_ON_UNKNOWN_PROPERTIES must be disabled on any custom ObjectMapper used");
+            }
+            this.objectMapper = objectMapper;
+            return this;
+        }
+
+        private ObjectMapper resolveObjectMapper() {
+            return null != this.objectMapper ? this.objectMapper : DEFAULT_MAPPER;
         }
 
         /**
@@ -185,7 +208,8 @@ public final class LambdaInvokerFactory {
         }
 
         private LambdaInvokerFactoryConfig getConfiguration() {
-            return new LambdaInvokerFactoryConfig(resolveFunctionNameResolver(), functionAlias, functionVersion);
+            return new LambdaInvokerFactoryConfig(resolveFunctionNameResolver(), resolveObjectMapper(),
+                                                  functionAlias, functionVersion);
         }
     }
 
@@ -197,17 +221,21 @@ public final class LambdaInvokerFactory {
         private final AWSLambda awsLambda;
         private final Log log;
         private final LambdaInvokerFactoryConfig config;
+        private final ObjectMapper mapper;
 
         public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
             this.config = config;
+            this.mapper = config.getObjectMapper();
         }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             if (method.getName().equals("toString")) {
                 return this.toString();
+            } else if (method.getName().equals("hashCode")) {
+                return this.hashCode();
             }
 
             LambdaFunction annotation = validateInterfaceMethod(method, args);
@@ -258,7 +286,7 @@ public final class LambdaInvokerFactory {
             if (input != null) {
                 try {
 
-                    String payload = MAPPER.writer().writeValueAsString(input);
+                    String payload = mapper.writer().writeValueAsString(input);
                     if (log.isDebugEnabled()) {
                         log.debug("Serialized request object to '" + payload + "'");
                     }
@@ -424,9 +452,9 @@ public final class LambdaInvokerFactory {
                 return null;
             }
 
-            JavaType javaType = MAPPER.getTypeFactory().constructType(type);
+            JavaType javaType = mapper.getTypeFactory().constructType(type);
 
-            return MAPPER.reader(javaType).readValue(BinaryUtils.copyAllBytesFrom(payload));
+            return mapper.reader(javaType).readValue(BinaryUtils.copyAllBytesFrom(payload));
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,28 +14,30 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet
- * contains zero or more instances.
+ * Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet may
+ * contain zero or more instances.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Instance implements Serializable, Cloneable {
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      */
     private String instanceId;
@@ -45,6 +47,8 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private String ipAddress;
+
+    private String dnsName;
     /**
      * <p>
      * Operating system that is running on this instance.
@@ -64,21 +68,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -87,18 +91,18 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet that the instance belongs to.
+     *        Unique identifier for a fleet that the instance is in.
      */
 
     public void setFleetId(String fleetId) {
@@ -107,10 +111,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
-     * @return Unique identifier for the fleet that the instance belongs to.
+     * @return Unique identifier for a fleet that the instance is in.
      */
 
     public String getFleetId() {
@@ -119,11 +123,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet that the instance belongs to.
+     *        Unique identifier for a fleet that the instance is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +138,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for the instance.
+     *        Unique identifier for an instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -147,10 +151,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
-     * @return Unique identifier for the instance.
+     * @return Unique identifier for an instance.
      */
 
     public String getInstanceId() {
@@ -159,11 +163,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for the instance.
+     *        Unique identifier for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,6 +213,32 @@ public class Instance implements Serializable, Cloneable {
 
     public Instance withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * @param dnsName
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * @param dnsName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withDnsName(String dnsName) {
+        setDnsName(dnsName);
         return this;
     }
 
@@ -266,7 +296,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -281,7 +311,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 
@@ -339,7 +369,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setType(EC2InstanceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -354,7 +384,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withType(EC2InstanceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -365,21 +395,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -389,20 +419,20 @@ public class Instance implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        <b>PENDING</b> -- The instance is in the process of being created and launching server processes as
+     *        defined in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity
+     *        <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity
      *        during a scaling down event or to recycle resources in the event of a problem.
      *        </p>
      *        </li>
@@ -420,21 +450,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -443,20 +473,20 @@ public class Instance implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>PENDING</b> – The instance is in the process of being created and launching server processes as
-     *         defined in the fleet's runtime configuration.
+     *         <b>PENDING</b> -- The instance is in the process of being created and launching server processes as
+     *         defined in the fleet's run-time configuration.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *         successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *         is now considered ready to host game sessions.
+     *         <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
+     *         successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *         instance is now considered ready to host game sessions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity
+     *         <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity
      *         during a scaling down event or to recycle resources in the event of a problem.
      *         </p>
      *         </li>
@@ -474,21 +504,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -498,20 +528,20 @@ public class Instance implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        <b>PENDING</b> -- The instance is in the process of being created and launching server processes as
+     *        defined in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity
+     *        <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity
      *        during a scaling down event or to recycle resources in the event of a problem.
      *        </p>
      *        </li>
@@ -531,21 +561,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -555,20 +585,20 @@ public class Instance implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        <b>PENDING</b> -- The instance is in the process of being created and launching server processes as
+     *        defined in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity
+     *        <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity
      *        during a scaling down event or to recycle resources in the event of a problem.
      *        </p>
      *        </li>
@@ -576,7 +606,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setStatus(InstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -586,21 +616,21 @@ public class Instance implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in
+     * the fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity during a
-     * scaling down event or to recycle resources in the event of a problem.
+     * <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during
+     * a scaling down event or to recycle resources in the event of a problem.
      * </p>
      * </li>
      * </ul>
@@ -610,20 +640,20 @@ public class Instance implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        <b>PENDING</b> -- The instance is in the process of being created and launching server processes as
+     *        defined in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATING</b> – The instance is in the process of shutting down. This may happen to reduce capacity
+     *        <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity
      *        during a scaling down event or to recycle resources in the event of a problem.
      *        </p>
      *        </li>
@@ -632,19 +662,19 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withStatus(InstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -654,11 +684,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -668,12 +698,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,7 +713,8 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -699,6 +730,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getOperatingSystem() != null)
             sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getType() != null)
@@ -733,6 +766,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
             return false;
         if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
@@ -760,6 +797,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -774,5 +812,11 @@ public class Instance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

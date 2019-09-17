@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,46 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The ARN (Amazon Resource Name) of the resource to be protected.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceArn;
 
@@ -82,9 +122,88 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The ARN (Amazon Resource Name) of the resource to be protected.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource to be protected.
+     *        The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     *        <p>
+     *        The ARN should be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Elastic Load Balancer (Classic Load Balancer):
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AWS CloudFront distribution:
+     *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AWS Global Accelerator accelerator:
+     *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Elastic IP address:
+     *        <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceArn(String resourceArn) {
@@ -95,8 +214,87 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The ARN (Amazon Resource Name) of the resource to be protected.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ARN (Amazon Resource Name) of the resource to be protected.
+     * @return The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     *         <p>
+     *         The ARN should be in one of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For an Application Load Balancer:
+     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Elastic Load Balancer (Classic Load Balancer):
+     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an AWS CloudFront distribution:
+     *         <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an AWS Global Accelerator accelerator:
+     *         <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Elastic IP address:
+     *         <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceArn() {
@@ -107,9 +305,88 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The ARN (Amazon Resource Name) of the resource to be protected.
      * </p>
+     * <p>
+     * The ARN should be in one of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic Load Balancer (Classic Load Balancer):
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS CloudFront distribution:
+     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an Elastic IP address:
+     * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceArn
-     *        The ARN (Amazon Resource Name) of the resource to be protected.
+     *        The ARN (Amazon Resource Name) of the resource to be protected.</p>
+     *        <p>
+     *        The ARN should be in one of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an Application Load Balancer:
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Elastic Load Balancer (Classic Load Balancer):
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AWS CloudFront distribution:
+     *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AWS Global Accelerator accelerator:
+     *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Elastic IP address:
+     *        <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +396,8 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,22 @@ import com.amazonaws.services.kinesisanalytics.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.kinesisanalytics.AbstractAmazonKinesisAnalytics} instead.
  * </p>
+ * <p>
+ * <fullname>Amazon Kinesis Analytics</fullname>
+ * <p>
+ * <b>Overview</b>
+ * </p>
+ * <note>
+ * <p>
+ * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications.
+ * Version 2 of the API supports SQL and Java applications. For more information about version 2, see <a
+ * href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+ * </p>
+ * </note>
+ * <p>
+ * This is the <i>Amazon Kinesis Analytics v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
+ * additional information.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonKinesisAnalytics {
@@ -46,9 +62,10 @@ public interface AmazonKinesisAnalytics {
      * default protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -89,18 +106,65 @@ public interface AmazonKinesisAnalytics {
     void setRegion(Region region);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
+     * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * 
+     * @param addApplicationCloudWatchLoggingOptionRequest
+     * @return Result of the AddApplicationCloudWatchLoggingOption operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalytics.AddApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddApplicationCloudWatchLoggingOptionResult addApplicationCloudWatchLoggingOption(
+            AddApplicationCloudWatchLoggingOptionRequest addApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Adds a streaming source to your Amazon Kinesis application. For conceptual information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
      * </p>
      * <p>
      * You can add a streaming source either when you create an application or you can use this operation to add a
-     * streaming source after you create an application. For more information, see <a>CreateApplication</a>.
+     * streaming source after you create an application. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html">CreateApplication</a>.
      * </p>
      * <p>
      * Any configuration update, including adding a streaming source using this operation, results in a new version of
-     * the application. You can use the <a>DescribeApplication</a> operation to find the current application version.
+     * the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code> action.
@@ -117,6 +181,11 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws CodeValidationException
+     *         User-provided application code (query) is invalid. This can be a simple syntax error.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.AddApplicationInput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"
      *      target="_top">AWS API Documentation</a>
@@ -124,29 +193,75 @@ public interface AmazonKinesisAnalytics {
     AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
+     * Adds an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">
+     * InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the input stream
+     * before the application's SQL code executes. Currently, the only input processor available is <a
+     * href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
+     * </p>
+     * 
+     * @param addApplicationInputProcessingConfigurationRequest
+     * @return Result of the AddApplicationInputProcessingConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalytics.AddApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddApplicationInputProcessingConfigurationResult addApplicationInputProcessingConfiguration(
+            AddApplicationInputProcessingConfigurationRequest addApplicationInputProcessingConfigurationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Adds an external destination to your Amazon Kinesis Analytics application.
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream or a Firehose delivery stream), you add the relevant
-     * configuration to your application using this operation. You can configure one or more outputs for your
-     * application. Each output configuration maps an in-application stream and an external destination.
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS
+     * Lambda function), you add the relevant configuration to your application using this operation. You can configure
+     * one or more outputs for your application. Each output configuration maps an in-application stream and an external
+     * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
-     * destination so that you can analyze the errors. For conceptual information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
+     * destination so that you can analyze the errors. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
      * Output (Destination)</a>.
      * </p>
      * <p>
-     * Note that any configuration update, including adding a streaming source using this operation, results in a new
-     * version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Any configuration update, including adding a streaming source using this operation, results in a new version of
+     * the application. You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
      * For the limits on the number of application inputs and outputs you can configure, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.
@@ -163,6 +278,9 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.AddApplicationOutput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"
      *      target="_top">AWS API Documentation</a>
@@ -170,6 +288,13 @@ public interface AmazonKinesisAnalytics {
     AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Adds a reference data source to an existing application.
      * </p>
@@ -181,9 +306,9 @@ public interface AmazonKinesisAnalytics {
      * </p>
      * <p>
      * For conceptual information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>. For the limits on data sources you can add to your application, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code> action.
@@ -200,6 +325,9 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.AddApplicationReferenceDataSource
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"
@@ -208,17 +336,23 @@ public interface AmazonKinesisAnalytics {
     AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as
-     * input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis
+     * input, application code to process the input, and up to three destinations where you want Amazon Kinesis
      * Analytics to write the output data from your application. For an overview, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html">How it Works</a>.
      * </p>
      * <p>
      * In the input configuration, you map the streaming source to an in-application stream, which you can think of as a
      * constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each
-     * data column in the in-application stream to a data element in the streaming source, with the option of renaming,
-     * casting and dropping columns as desired.
+     * data column in the in-application stream to a data element in the streaming source.
      * </p>
      * <p>
      * Your application code is one or more SQL statements that read input data, transform it, and generate output. Your
@@ -226,7 +360,7 @@ public interface AmazonKinesisAnalytics {
      * </p>
      * <p>
      * In the output configuration, you can configure the application to write data from in-application streams created
-     * in your applications to up to five streaming destinations.
+     * in your applications to up to three destinations.
      * </p>
      * <p>
      * To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your
@@ -235,7 +369,7 @@ public interface AmazonKinesisAnalytics {
      * </p>
      * <p>
      * For introductory exercises to create an Amazon Kinesis Analytics application, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting Started</a>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html">Getting Started</a>.
      * </p>
      * 
      * @param createApplicationRequest
@@ -249,6 +383,13 @@ public interface AmazonKinesisAnalytics {
      *         Exceeded the number of applications allowed.
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
      * @sample AmazonKinesisAnalytics.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -256,6 +397,13 @@ public interface AmazonKinesisAnalytics {
     CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Deletes the specified application. Amazon Kinesis Analytics halts application execution and deletes the
      * application, including any application artifacts (such as in-application streams, reference table, and
@@ -274,6 +422,9 @@ public interface AmazonKinesisAnalytics {
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"
      *      target="_top">AWS API Documentation</a>
@@ -281,6 +432,86 @@ public interface AmazonKinesisAnalytics {
     DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
+     * Amazon Kinesis Analytics applications, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     * CloudWatch Logs</a>.
+     * </p>
+     * 
+     * @param deleteApplicationCloudWatchLoggingOptionRequest
+     * @return Result of the DeleteApplicationCloudWatchLoggingOption operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalytics.DeleteApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationCloudWatchLoggingOptionResult deleteApplicationCloudWatchLoggingOption(
+            DeleteApplicationCloudWatchLoggingOptionRequest deleteApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes an <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html"
+     * >InputProcessingConfiguration</a> from an input.
+     * </p>
+     * 
+     * @param deleteApplicationInputProcessingConfigurationRequest
+     * @return Result of the DeleteApplicationInputProcessingConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalytics.DeleteApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationInputProcessingConfigurationResult deleteApplicationInputProcessingConfiguration(
+            DeleteApplicationInputProcessingConfigurationRequest deleteApplicationInputProcessingConfigurationRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Deletes output destination configuration from your application configuration. Amazon Kinesis Analytics will no
      * longer write data from the corresponding in-application stream to the external output destination.
@@ -295,9 +526,14 @@ public interface AmazonKinesisAnalytics {
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.DeleteApplicationOutput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"
      *      target="_top">AWS API Documentation</a>
@@ -305,12 +541,21 @@ public interface AmazonKinesisAnalytics {
     DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Deletes a reference data source configuration from the specified application configuration.
      * </p>
      * <p>
      * If the application is running, Amazon Kinesis Analytics immediately removes the in-application table that you
-     * created using the <a>AddApplicationReferenceDataSource</a> operation.
+     * created using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html"
+     * >AddApplicationReferenceDataSource</a> operation.
      * </p>
      * <p>
      * This operation requires permissions to perform the
@@ -328,6 +573,9 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.DeleteApplicationReferenceDataSource
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"
@@ -337,11 +585,20 @@ public interface AmazonKinesisAnalytics {
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Returns information about a specific Amazon Kinesis Analytics application.
      * </p>
      * <p>
-     * If you want to retrieve a list of all applications in your account, use the <a>ListApplications</a> operation.
+     * If you want to retrieve a list of all applications in your account, use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html">ListApplications</a>
+     * operation.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code> action. You
@@ -353,6 +610,9 @@ public interface AmazonKinesisAnalytics {
      * @return Result of the DescribeApplication operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.DescribeApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"
      *      target="_top">AWS API Documentation</a>
@@ -360,15 +620,22 @@ public interface AmazonKinesisAnalytics {
     DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Infers a schema by evaluating sample records on the specified streaming source (Amazon Kinesis stream or Amazon
-     * Kinesis Firehose delivery stream). In the response, the operation returns the inferred schema and also the sample
-     * records that the operation used to infer the schema.
+     * Kinesis Firehose delivery stream) or S3 object. In the response, the operation returns the inferred schema and
+     * also the sample records that the operation used to infer the schema.
      * </p>
      * <p>
      * You can use the inferred schema when configuring a streaming source for your application. For conceptual
      * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>. Note that when you create an application using the Amazon Kinesis Analytics console, the console uses
      * this operation to infer a schema and show it in the console user interface.
      * </p>
@@ -381,10 +648,15 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws UnableToDetectSchemaException
-     *         Data format is not valid, Kinesis Analytics is not able to detect schema for the given streaming source.
+     *         Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming
+     *         source.
      * @throws ResourceProvisionedThroughputExceededException
-     *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
-     *         ProvisionedThroughputExceededException.
+     *         Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
+     *         ProvisionedThroughputExceededException. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
+     *         Amazon Kinesis Streams API Reference.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable. Back off and retry the operation.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
      *      target="_top">AWS API Documentation</a>
@@ -392,6 +664,13 @@ public interface AmazonKinesisAnalytics {
     DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Returns a list of Amazon Kinesis Analytics applications in your account. For each application, the response
      * includes the application name, Amazon Resource Name (ARN), and status. If the response returns the
@@ -400,7 +679,9 @@ public interface AmazonKinesisAnalytics {
      * name from the previous response.
      * </p>
      * <p>
-     * If you want detailed information about a specific application, use <a>DescribeApplication</a>.
+     * If you want detailed information about a specific application, use <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:ListApplications</code> action.
@@ -416,6 +697,34 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
+     * Retrieves the list of key-value tags assigned to the application. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @sample AmazonKinesisAnalytics.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
      * Starts the specified Amazon Kinesis Analytics application. After creating an application, you must exclusively
      * call this operation to start your application.
      * </p>
@@ -425,11 +734,14 @@ public interface AmazonKinesisAnalytics {
      * </p>
      * <p>
      * The application status must be <code>READY</code> for you to start an application. You can get the application
-     * status in the console or using the <a>DescribeApplication</a> operation.
+     * status in the console or using the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html"
+     * >DescribeApplication</a> operation.
      * </p>
      * <p>
-     * After you start the application, you can stop the application from processing the input by calling the
-     * <a>StopApplication</a> operation.
+     * After you start the application, you can stop the application from processing the input by calling the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html">StopApplication</a>
+     * operation.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:StartApplication</code> action.
@@ -445,6 +757,9 @@ public interface AmazonKinesisAnalytics {
      *         Specified input parameter value is invalid.
      * @throws InvalidApplicationConfigurationException
      *         User-provided application configuration is not valid.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.StartApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"
      *      target="_top">AWS API Documentation</a>
@@ -452,11 +767,20 @@ public interface AmazonKinesisAnalytics {
     StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
      * <p>
      * Stops the application from processing input data. You can stop an application only if it is in the running state.
-     * You can use the <a>DescribeApplication</a> operation to find the application state. After the application is
-     * stopped, Amazon Kinesis Analytics stops reading data from the input, the application stops processing data, and
-     * there is no output written to the destination.
+     * You can use the <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication
+     * </a> operation to find the application state. After the application is stopped, Amazon Kinesis Analytics stops
+     * reading data from the input, the application stops processing data, and there is no output written to the
+     * destination.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>kinesisanalytics:StopApplication</code> action.
@@ -468,6 +792,9 @@ public interface AmazonKinesisAnalytics {
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"
      *      target="_top">AWS API Documentation</a>
@@ -476,15 +803,77 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
-     * Updates an existing Kinesis Analytics application. Using this API, you can update application code, input
+     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
+     * tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see
+     * <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @sample AmazonKinesisAnalytics.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from a Kinesis Analytics application. For more information, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws TooManyTagsException
+     *         Application created with too many tags, or too many tags added to an application. Note that the maximum
+     *         number of application tags includes system tags. The maximum number of user-defined application tags is
+     *         50.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @sample AmazonKinesisAnalytics.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL
+     * applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see
+     * <a href="/kinesisanalytics/latest/apiv2/Welcome.html">Amazon Kinesis Data Analytics API V2 Documentation</a>.
+     * </p>
+     * </note>
+     * <p>
+     * Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input
      * configuration, and output configuration.
      * </p>
      * <p>
-     * Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
+     * Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
      * application.
      * </p>
      * <p>
-     * This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
+     * This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
      * </p>
      * 
      * @param updateApplicationRequest
@@ -500,6 +889,9 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @sample AmazonKinesisAnalytics.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

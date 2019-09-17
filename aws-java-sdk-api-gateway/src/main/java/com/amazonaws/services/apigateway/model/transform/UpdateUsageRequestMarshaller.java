@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,51 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateUsageRequest Marshaller
+ * UpdateUsageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateUsageRequestMarshaller implements Marshaller<Request<UpdateUsageRequest>, UpdateUsageRequest> {
+@SdkInternalApi
+public class UpdateUsageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USAGEPLANID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("usageplanId").build();
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("keyId").build();
+    private static final MarshallingInfo<List> PATCHOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patchOperations").build();
 
-    public UpdateUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateUsageRequestMarshaller instance = new UpdateUsageRequestMarshaller();
+
+    public static UpdateUsageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateUsageRequest> marshall(UpdateUsageRequest updateUsageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateUsageRequest updateUsageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateUsageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateUsageRequest> request = new DefaultRequest<UpdateUsageRequest>(updateUsageRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}/usage";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId", updateUsageRequest.getUsagePlanId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "keyId", updateUsageRequest.getKeyId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<PatchOperation> patchOperationsList = updateUsageRequest.getPatchOperations();
-            if (patchOperationsList != null) {
-                jsonGenerator.writeFieldName("patchOperations");
-                jsonGenerator.writeStartArray();
-                for (PatchOperation patchOperationsListValue : patchOperationsList) {
-                    if (patchOperationsListValue != null) {
-
-                        PatchOperationJsonMarshaller.getInstance().marshall(patchOperationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateUsageRequest.getUsagePlanId(), USAGEPLANID_BINDING);
+            protocolMarshaller.marshall(updateUsageRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(updateUsageRequest.getPatchOperations(), PATCHOPERATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

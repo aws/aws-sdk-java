@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a disable stage transition input action.
+ * Represents the input of a <code>DisableStageTransition</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition"
@@ -206,7 +206,7 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setTransitionType(StageTransitionType transitionType) {
-        this.transitionType = transitionType.toString();
+        withTransitionType(transitionType);
     }
 
     /**
@@ -225,7 +225,7 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DisableStageTransitionRequest withTransitionType(StageTransitionType transitionType) {
-        setTransitionType(transitionType);
+        this.transitionType = transitionType.toString();
         return this;
     }
 
@@ -276,7 +276,8 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

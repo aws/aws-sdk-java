@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,24 +15,29 @@
 package com.amazonaws.opensdk.protect.protocol;
 
 import com.amazonaws.SdkBaseException;
+import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.opensdk.BaseResult;
 import com.amazonaws.opensdk.internal.BaseException;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorResponseHandler;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorUnmarshaller;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayResponseHandler;
-import com.amazonaws.http.HttpResponseHandler;
-import com.amazonaws.http.JsonResponseHandler;
+import com.amazonaws.protocol.MarshallLocation;
+import com.amazonaws.protocol.MarshallingType;
+import com.amazonaws.protocol.OperationInfo;
+import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.protocol.json.JsonClientMetadata;
 import com.amazonaws.protocol.json.JsonErrorResponseMetadata;
 import com.amazonaws.protocol.json.JsonErrorShapeMetadata;
 import com.amazonaws.protocol.json.JsonOperationMetadata;
+import com.amazonaws.protocol.json.JsonProtocolMarshallerBuilder;
 import com.amazonaws.protocol.json.SdkJsonMarshallerFactory;
 import com.amazonaws.protocol.json.SdkStructuredJsonFactory;
 import com.amazonaws.protocol.json.SdkStructuredPlainJsonFactory;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
-
+import com.amazonaws.util.DateUtils;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -60,6 +65,18 @@ public final class ApiGatewayProtocolFactoryImpl implements SdkJsonMarshallerFac
     @Override
     public String getContentType() {
         return CONTENT_TYPE;
+    }
+
+    public <T> ProtocolRequestMarshaller<T> createProtocolMarshaller(OperationInfo operationInfo, T origRequest) {
+        return JsonProtocolMarshallerBuilder.<T>standard()
+                .jsonGenerator(operationInfo.hasPayloadMembers() ? createGenerator() : StructuredJsonGenerator.NO_OP)
+                .contentType(getContentType())
+                .operationInfo(operationInfo)
+                .originalRequest(origRequest)
+                .sendExplicitNullForPayload(true)
+                .marshallerOverride(MarshallLocation.PAYLOAD, MarshallingType.DATE,
+                                    (val, generator) -> generator.writeValue(DateUtils.formatISO8601Date(val)))
+                .build();
     }
 
     /**

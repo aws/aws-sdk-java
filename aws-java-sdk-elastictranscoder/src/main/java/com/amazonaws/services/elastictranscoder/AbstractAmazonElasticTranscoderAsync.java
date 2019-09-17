@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -160,6 +160,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
      *
      * @see #listPipelinesAsync(ListPipelinesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
 
@@ -195,6 +196,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
      *
      * @see #listPresetsAsync(ListPresetsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPresetsResult> listPresetsAsync(
             com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult> asyncHandler) {
 

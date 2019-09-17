@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,21 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * A filter that can use conditional operators.
  * </p>
  * <p>
- * for a complete list of filters and guidance for using them with the Application Discovery Service, see <a
- * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html"
- * >Querying Discovered Configuration Items</a>.
+ * For more information about filters, see <a
+ * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying
+ * Discovered Configuration Items</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Filter implements Serializable, Cloneable {
+public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,8 +38,8 @@ public class Filter implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      */
     private java.util.List<String> values;
@@ -93,11 +95,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
-     * @return A string value that you want to filter on. For example, if you choose the
+     * @return A string value on which to filter. For example, if you choose the
      *         <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the
      *         value.
      */
@@ -108,13 +110,13 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -128,8 +130,8 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,8 +140,8 @@ public class Filter implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,13 +157,13 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string value that you want to filter on. For example, if you choose the
-     * <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     * A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter
+     * name, you could specify <code>Ubuntu</code> for the value.
      * </p>
      * 
      * @param values
-     *        A string value that you want to filter on. For example, if you choose the
-     *        <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.
+     *        A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
+     *        filter name, you could specify <code>Ubuntu</code> for the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +234,8 @@ public class Filter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -295,5 +298,11 @@ public class Filter implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.FilterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

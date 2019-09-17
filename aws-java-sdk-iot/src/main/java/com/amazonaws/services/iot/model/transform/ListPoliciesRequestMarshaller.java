@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,65 +12,50 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPoliciesRequest Marshaller
+ * ListPoliciesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPoliciesRequestMarshaller implements Marshaller<Request<ListPoliciesRequest>, ListPoliciesRequest> {
+@SdkInternalApi
+public class ListPoliciesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("pageSize").build();
+    private static final MarshallingInfo<Boolean> ASCENDINGORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isAscendingOrder").build();
 
-    public ListPoliciesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPoliciesRequestMarshaller instance = new ListPoliciesRequestMarshaller();
+
+    public static ListPoliciesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPoliciesRequest> marshall(ListPoliciesRequest listPoliciesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPoliciesRequest listPoliciesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPoliciesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPoliciesRequest> request = new DefaultRequest<ListPoliciesRequest>(listPoliciesRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/policies";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listPoliciesRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils.fromString(listPoliciesRequest.getMarker()));
+        try {
+            protocolMarshaller.marshall(listPoliciesRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listPoliciesRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(listPoliciesRequest.getAscendingOrder(), ASCENDINGORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listPoliciesRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils.fromInteger(listPoliciesRequest.getPageSize()));
-        }
-
-        if (listPoliciesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listPoliciesRequest.getAscendingOrder()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

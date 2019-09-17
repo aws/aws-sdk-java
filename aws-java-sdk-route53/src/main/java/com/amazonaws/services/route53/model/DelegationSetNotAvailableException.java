@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * You can create a hosted zone that has the same name as an existing hosted zone (example.com is common), but there is
  * a limit to the number of hosted zones that have the same name. If you get this error, Amazon Route 53 has reached
- * that limit. If you own the domain name and Amazon Route 53 generates this error, contact Customer Support.
+ * that limit. If you own the domain name and Route 53 generates this error, contact Customer Support.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

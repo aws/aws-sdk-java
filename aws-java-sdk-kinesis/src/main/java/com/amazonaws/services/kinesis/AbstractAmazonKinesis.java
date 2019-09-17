@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public DeregisterStreamConsumerResult deregisterStreamConsumer(DeregisterStreamConsumerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -91,6 +96,16 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     @Override
     public DescribeStreamResult describeStream(String streamName, Integer limit, String exclusiveStartShardId) {
         return describeStream(new DescribeStreamRequest().withStreamName(streamName).withLimit(limit).withExclusiveStartShardId(exclusiveStartShardId));
+    }
+
+    @Override
+    public DescribeStreamConsumerResult describeStreamConsumer(DescribeStreamConsumerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStreamSummaryResult describeStreamSummary(DescribeStreamSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -126,6 +141,16 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
 
     @Override
     public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListShardsResult listShards(ListShardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStreamConsumersResult listStreamConsumers(ListStreamConsumersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -186,6 +211,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public RegisterStreamConsumerResult registerStreamConsumer(RegisterStreamConsumerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveTagsFromStreamResult removeTagsFromStream(RemoveTagsFromStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +228,16 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     @Override
     public SplitShardResult splitShard(String streamName, String shardToSplit, String newStartingHashKey) {
         return splitShard(new SplitShardRequest().withStreamName(streamName).withShardToSplit(shardToSplit).withNewStartingHashKey(newStartingHashKey));
+    }
+
+    @Override
+    public StartStreamEncryptionResult startStreamEncryption(StartStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopStreamEncryptionResult stopStreamEncryption(StopStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

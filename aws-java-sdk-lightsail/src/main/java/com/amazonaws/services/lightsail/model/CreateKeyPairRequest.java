@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,15 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String keyPairName;
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -73,7 +82,98 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @return The tag keys and optional values to add to the resource during create.</p>
+     *         <p>
+     *         To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyPairRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyPairRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +184,9 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: ").append(getKeyPairName());
+            sb.append("KeyPairName: ").append(getKeyPairName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +205,10 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getKeyPairName() != null && other.getKeyPairName().equals(this.getKeyPairName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +218,7 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKeyPairName() == null) ? 0 : getKeyPairName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<G
             request.addParameter("QueueUrl", StringUtils.fromString(getQueueAttributesRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest
-                .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!getQueueAttributesRequest.getAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest.getAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest
+                    .getAttributeNames();
             int attributeNamesListIndex = 1;
 
             for (String attributeNamesListValue : attributeNamesList) {

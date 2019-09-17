@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,14 +26,13 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InventoryItem implements Serializable, Cloneable {
+public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      */
     private String typeName;
@@ -50,8 +51,8 @@ public class InventoryItem implements Serializable, Cloneable {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash
-     * has not changed since last update.
+     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
+     * changed since last update.
      * </p>
      */
     private String contentHash;
@@ -61,20 +62,26 @@ public class InventoryItem implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> content;
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     */
+    private java.util.Map<String, String> context;
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public void setTypeName(String typeName) {
@@ -83,16 +90,14 @@ public class InventoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
-     * @return The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *         inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *         following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *         <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * @return The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *         names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *         AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public String getTypeName() {
@@ -101,17 +106,15 @@ public class InventoryItem implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,14 +206,14 @@ public class InventoryItem implements Serializable, Cloneable {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash
-     * has not changed since last update.
+     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
+     * changed since last update.
      * </p>
      * 
      * @param contentHash
      *        MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *        inventory information. The <code>PutInventory</code> API does not update the inventory item type contents
-     *        if the MD5 hash has not changed since last update.
+     *        inventory information. The PutInventory API does not update the inventory item type contents if the MD5
+     *        hash has not changed since last update.
      */
 
     public void setContentHash(String contentHash) {
@@ -220,13 +223,13 @@ public class InventoryItem implements Serializable, Cloneable {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash
-     * has not changed since last update.
+     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
+     * changed since last update.
      * </p>
      * 
      * @return MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *         inventory information. The <code>PutInventory</code> API does not update the inventory item type contents
-     *         if the MD5 hash has not changed since last update.
+     *         inventory information. The PutInventory API does not update the inventory item type contents if the MD5
+     *         hash has not changed since last update.
      */
 
     public String getContentHash() {
@@ -236,14 +239,14 @@ public class InventoryItem implements Serializable, Cloneable {
     /**
      * <p>
      * MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory
-     * information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash
-     * has not changed since last update.
+     * information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not
+     * changed since last update.
      * </p>
      * 
      * @param contentHash
      *        MD5 hash of the inventory item type contents. The content hash is used to determine whether to update
-     *        inventory information. The <code>PutInventory</code> API does not update the inventory item type contents
-     *        if the MD5 hash has not changed since last update.
+     *        inventory information. The PutInventory API does not update the inventory item type contents if the MD5
+     *        hash has not changed since last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +329,81 @@ public class InventoryItem implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @return A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *         specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *         of the <code>AWS:ComplianceItem</code> type.
+     */
+
+    public java.util.Map<String, String> getContext() {
+        return context;
+    }
+
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @param context
+     *        A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *        specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *        of the <code>AWS:ComplianceItem</code> type.
+     */
+
+    public void setContext(java.util.Map<String, String> context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @param context
+     *        A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *        specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *        of the <code>AWS:ComplianceItem</code> type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItem withContext(java.util.Map<String, String> context) {
+        setContext(context);
+        return this;
+    }
+
+    public InventoryItem addContextEntry(String key, String value) {
+        if (null == this.context) {
+            this.context = new java.util.HashMap<String, String>();
+        }
+        if (this.context.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.context.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Context.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItem clearContextEntries() {
+        this.context = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -345,7 +422,9 @@ public class InventoryItem implements Serializable, Cloneable {
         if (getContentHash() != null)
             sb.append("ContentHash: ").append(getContentHash()).append(",");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent());
+            sb.append("Content: ").append(getContent()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -380,6 +459,10 @@ public class InventoryItem implements Serializable, Cloneable {
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -393,6 +476,7 @@ public class InventoryItem implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCaptureTime() == null) ? 0 : getCaptureTime().hashCode());
         hashCode = prime * hashCode + ((getContentHash() == null) ? 0 : getContentHash().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 
@@ -403,5 +487,11 @@ public class InventoryItem implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.InventoryItemMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

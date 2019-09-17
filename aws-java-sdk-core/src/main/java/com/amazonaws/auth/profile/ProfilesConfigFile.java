@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,13 +23,13 @@ import com.amazonaws.auth.profile.internal.BasicProfile;
 import com.amazonaws.auth.profile.internal.BasicProfileConfigLoader;
 import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.ProfileAssumeRoleCredentialsProvider;
+import com.amazonaws.auth.profile.internal.ProfileProcessCredentialsProvider;
 import com.amazonaws.auth.profile.internal.ProfileStaticCredentialsProvider;
 import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
 import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsServiceLoader;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
 import com.amazonaws.util.ValidationUtils;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -53,7 +53,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * aws_session_token=testSessionToken
  * </pre>
  *
- * <p> These credential profiles allow you to share multiple sets of AWS security credentails
+ * <p> These credential profiles allow you to share multiple sets of AWS security credentials
  * between different tools such as the AWS SDK for Java and the AWS CLI.
  *
  * <p> For more information on setting up AWS credential profiles, see:
@@ -168,9 +168,14 @@ public class ProfilesConfigFile {
      */
     public void refresh() {
         if (profileFile.lastModified() > profileFileLastModified) {
-            profileFileLastModified = profileFile.lastModified();
-            allProfiles = loadProfiles(profileFile);
+            synchronized (this) {
+                if (profileFile.lastModified() > profileFileLastModified) {
+                    allProfiles = loadProfiles(profileFile);
+                    profileFileLastModified = profileFile.lastModified();
+                }
+            }
         }
+
         credentialProviderCache.clear();
     }
 
@@ -203,6 +208,8 @@ public class ProfilesConfigFile {
         if (profile.isRoleBasedProfile()) {
             return new ProfileAssumeRoleCredentialsProvider(profileCredentialsService, allProfiles,
                                                             profile);
+        } else if (profile.isProcessBasedProfile()) {
+            return new ProfileProcessCredentialsProvider(profile);
         } else {
             return new ProfileStaticCredentialsProvider(profile);
         }

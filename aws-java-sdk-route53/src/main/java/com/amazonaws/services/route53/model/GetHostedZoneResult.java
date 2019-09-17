@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type containing the response information for the hosted zone.
+ * A complex type that contain the response to a <code>GetHostedZone</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone" target="_top">AWS API
@@ -28,30 +28,30 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains general information about the hosted zone.
+     * A complex type that contains general information about the specified hosted zone.
      * </p>
      */
     private HostedZone hostedZone;
     /**
      * <p>
-     * A complex type that describes the name servers for this hosted zone.
+     * A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      * </p>
      */
     private DelegationSet delegationSet;
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the specified hosted zone.
+     * A complex type that contains information about the VPCs that are associated with the specified hosted zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VPC> vPCs;
 
     /**
      * <p>
-     * A complex type that contains general information about the hosted zone.
+     * A complex type that contains general information about the specified hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains general information about the hosted zone.
+     *        A complex type that contains general information about the specified hosted zone.
      */
 
     public void setHostedZone(HostedZone hostedZone) {
@@ -60,10 +60,10 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains general information about the hosted zone.
+     * A complex type that contains general information about the specified hosted zone.
      * </p>
      * 
-     * @return A complex type that contains general information about the hosted zone.
+     * @return A complex type that contains general information about the specified hosted zone.
      */
 
     public HostedZone getHostedZone() {
@@ -72,11 +72,11 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains general information about the hosted zone.
+     * A complex type that contains general information about the specified hosted zone.
      * </p>
      * 
      * @param hostedZone
-     *        A complex type that contains general information about the hosted zone.
+     *        A complex type that contains general information about the specified hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that describes the name servers for this hosted zone.
+     * A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that describes the name servers for this hosted zone.
+     *        A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      */
 
     public void setDelegationSet(DelegationSet delegationSet) {
@@ -100,10 +100,10 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that describes the name servers for this hosted zone.
+     * A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      * </p>
      * 
-     * @return A complex type that describes the name servers for this hosted zone.
+     * @return A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      */
 
     public DelegationSet getDelegationSet() {
@@ -112,11 +112,11 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that describes the name servers for this hosted zone.
+     * A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      * </p>
      * 
      * @param delegationSet
-     *        A complex type that describes the name servers for this hosted zone.
+     *        A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,10 +127,11 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the specified hosted zone.
+     * A complex type that contains information about the VPCs that are associated with the specified hosted zone.
      * </p>
      * 
-     * @return A complex type that contains information about VPCs associated with the specified hosted zone.
+     * @return A complex type that contains information about the VPCs that are associated with the specified hosted
+     *         zone.
      */
 
     public java.util.List<VPC> getVPCs() {
@@ -142,11 +143,12 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the specified hosted zone.
+     * A complex type that contains information about the VPCs that are associated with the specified hosted zone.
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated with the specified hosted zone.
+     *        A complex type that contains information about the VPCs that are associated with the specified hosted
+     *        zone.
      */
 
     public void setVPCs(java.util.Collection<VPC> vPCs) {
@@ -160,7 +162,7 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the specified hosted zone.
+     * A complex type that contains information about the VPCs that are associated with the specified hosted zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -169,7 +171,8 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated with the specified hosted zone.
+     *        A complex type that contains information about the VPCs that are associated with the specified hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +188,12 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A complex type that contains information about VPCs associated with the specified hosted zone.
+     * A complex type that contains information about the VPCs that are associated with the specified hosted zone.
      * </p>
      * 
      * @param vPCs
-     *        A complex type that contains information about VPCs associated with the specified hosted zone.
+     *        A complex type that contains information about the VPCs that are associated with the specified hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +203,8 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -263,4 +268,5 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

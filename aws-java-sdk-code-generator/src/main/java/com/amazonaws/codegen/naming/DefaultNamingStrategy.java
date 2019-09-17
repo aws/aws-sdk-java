@@ -14,19 +14,6 @@
  */
 package com.amazonaws.codegen.naming;
 
-import com.amazonaws.codegen.internal.Utils;
-import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.Protocol;
-import com.amazonaws.codegen.model.service.Output;
-import com.amazonaws.codegen.model.service.ServiceModel;
-import com.amazonaws.util.StringUtils;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import static com.amazonaws.codegen.internal.Constants.AUTHORIZER_NAME_PREFIX;
 import static com.amazonaws.codegen.internal.Constants.EXCEPTION_CLASS_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.FAULT_CLASS_SUFFIX;
@@ -36,50 +23,43 @@ import static com.amazonaws.codegen.internal.Constants.VARIABLE_NAME_SUFFIX;
 import static com.amazonaws.codegen.internal.Utils.capitialize;
 import static com.amazonaws.codegen.internal.Utils.unCapitialize;
 
+import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.service.Output;
+import com.amazonaws.codegen.model.service.ServiceModel;
+import com.amazonaws.util.StringUtils;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 /**
  * Default implementation of naming strategy respecting customizations supplied by {@link
  * CustomizationConfig}.
  */
 public class DefaultNamingStrategy implements NamingStrategy {
 
-    private final static Set<String> reservedKeywords = new HashSet<String>() {{
-        add("return");
-        add("public");
-        add("private");
-        add("class");
-        add("static");
-        add("protected");
-        add("string");
-        add("boolean");
-        add("integer");
-        add("int");
-        add("char");
-        add("null");
-        add("double");
-        add("object");
-        add("short");
-        add("long");
-        add("float");
-        add("byte");
-        add("bigDecimal");
-        add("bigInteger");
-        add("protected");
-        add("inputStream");
-        add("bytebuffer");
-        add("date");
-        add("list");
-        add("map");
-    }};
+    private final static Set<String> reservedKeywords;
+
+    static {
+        reservedKeywords = new HashSet<>();
+        Collections.addAll(reservedKeywords,
+                           "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class",
+                           "continue", "default", "do", "double", "else", "enum", "extends", "final", "finally", "float", "for",
+                           "if", "implements", "import", "instanceof", "int", "interface", "long", "native", "new", "package",
+                           "private", "protected", "public", "return", "short", "static", "strictfp", "super", "switch",
+                           "synchronized", "this", "throw", "throws", "transient", "try", "void", "volatile", "while", "true",
+                           "null", "false", "const", "goto");
+    }
 
     private final ServiceModel serviceModel;
-    private final BasicCodeGenConfig codeGenConfig;
     private final CustomizationConfig customizationConfig;
 
-    public DefaultNamingStrategy(ServiceModel serviceModel, BasicCodeGenConfig codeGenConfig,
-                                 CustomizationConfig customizationConfig) {
+    public DefaultNamingStrategy(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
         this.serviceModel = serviceModel;
         this.customizationConfig = customizationConfig;
-        this.codeGenConfig = codeGenConfig;
     }
 
     @Override
@@ -97,7 +77,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
 
     @Override
     public String getRequestClassName(String operationName) {
-        return capitialize(operationName + REQUEST_CLASS_SUFFIX);
+        return Utils.sanitize(operationName).map(Utils::capitialize).collect(Collectors.joining()) + REQUEST_CLASS_SUFFIX;
     }
 
     @Override
@@ -108,7 +88,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
                 return operationOutput.getShape();
             }
         }
-        return capitialize(operationName + RESPONSE_CLASS_SUFFIX);
+        return Utils.sanitize(operationName).map(Utils::capitialize).collect(Collectors.joining()) + RESPONSE_CLASS_SUFFIX;
     }
 
     @Override
@@ -141,7 +121,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
 
     @Override
     public String getJavaClassName(String shapeName) {
-        return Arrays.stream(shapeName.split("[._-]|\\W")).map(Utils::capitialize).collect(Collectors.joining());
+        return Arrays.stream(shapeName.split("[._-]|\\W")).filter(StringUtils::hasValue).map(Utils::capitialize).collect(Collectors.joining());
     }
 
     @Override
@@ -172,7 +152,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
         }
     }
 
-    private static boolean isJavaKeyword(String word) {
+    public static boolean isJavaKeyword(String word) {
         return reservedKeywords.contains(word) ||
                reservedKeywords.contains(StringUtils.lowerCase(word));
     }

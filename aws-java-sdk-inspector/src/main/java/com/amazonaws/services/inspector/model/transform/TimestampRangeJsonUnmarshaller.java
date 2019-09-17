@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,11 @@ public class TimestampRangeJsonUnmarshaller implements Unmarshaller<TimestampRan
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("beginDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setBeginDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timestampRange.setBeginDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endDate", targetDepth)) {
                     context.nextToken();
-                    timestampRange.setEndDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    timestampRange.setEndDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

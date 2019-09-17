@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2014-10-31");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!restoreDBClusterFromS3Request.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -73,9 +74,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromS3Request.getDBClusterParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!restoreDBClusterFromS3Request.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -123,8 +125,9 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(restoreDBClusterFromS3Request.getPreferredMaintenanceWindow()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterFromS3Request.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!restoreDBClusterFromS3Request.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterFromS3Request.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterFromS3Request.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -148,6 +151,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterFromS3Request.getKmsKeyId()));
         }
 
+        if (restoreDBClusterFromS3Request.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getEnableIAMDatabaseAuthentication()));
+        }
+
         if (restoreDBClusterFromS3Request.getSourceEngine() != null) {
             request.addParameter("SourceEngine", StringUtils.fromString(restoreDBClusterFromS3Request.getSourceEngine()));
         }
@@ -166,6 +173,33 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
 
         if (restoreDBClusterFromS3Request.getS3IngestionRoleArn() != null) {
             request.addParameter("S3IngestionRoleArn", StringUtils.fromString(restoreDBClusterFromS3Request.getS3IngestionRoleArn()));
+        }
+
+        if (restoreDBClusterFromS3Request.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterFromS3Request.getBacktrackWindow()));
+        }
+
+        if (!restoreDBClusterFromS3Request.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromS3Request
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (restoreDBClusterFromS3Request.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getDeletionProtection()));
+        }
+
+        if (restoreDBClusterFromS3Request.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getCopyTagsToSnapshot()));
         }
 
         return request;

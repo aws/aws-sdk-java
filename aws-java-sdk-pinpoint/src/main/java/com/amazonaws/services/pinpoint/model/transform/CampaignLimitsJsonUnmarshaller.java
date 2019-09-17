@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class CampaignLimitsJsonUnmarshaller implements Unmarshaller<CampaignLimi
                 if (context.testExpression("Daily", targetDepth)) {
                     context.nextToken();
                     campaignLimits.setDaily(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MaximumDuration", targetDepth)) {
+                    context.nextToken();
+                    campaignLimits.setMaximumDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    campaignLimits.setMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();

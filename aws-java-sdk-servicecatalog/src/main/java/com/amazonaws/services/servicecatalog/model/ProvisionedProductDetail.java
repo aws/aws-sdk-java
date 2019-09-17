@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,81 +14,129 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about a ProvisionedProduct object.
+ * Information about a provisioned product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductDetail"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisionedProductDetail implements Serializable, Cloneable {
+public class ProvisionedProductDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ARN associated with the ProvisionedProduct object.
+     * The ARN of the provisioned product.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
      * <p>
-     * The current status message of the ProvisionedProduct.
+     * The current status message of the provisioned product.
      * </p>
      */
     private String statusMessage;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
     /**
      * <p>
-     * The record identifier of the last request performed on this ProvisionedProduct object.
+     * The record identifier of the last request performed on this provisioned product.
      * </p>
      */
     private String lastRecordId;
+    /**
+     * <p>
+     * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     * </p>
+     */
+    private String productId;
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     * </p>
+     */
+    private String provisioningArtifactId;
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
      * @param name
-     *        The user-friendly name of the ProvisionedProduct object.
+     *        The user-friendly name of the provisioned product.
      */
 
     public void setName(String name) {
@@ -97,10 +145,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
-     * @return The user-friendly name of the ProvisionedProduct object.
+     * @return The user-friendly name of the provisioned product.
      */
 
     public String getName() {
@@ -109,11 +157,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-friendly name of the ProvisionedProduct object.
+     * The user-friendly name of the provisioned product.
      * </p>
      * 
      * @param name
-     *        The user-friendly name of the ProvisionedProduct object.
+     *        The user-friendly name of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +172,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN associated with the ProvisionedProduct object.
+     * The ARN of the provisioned product.
      * </p>
      * 
      * @param arn
-     *        The ARN associated with the ProvisionedProduct object.
+     *        The ARN of the provisioned product.
      */
 
     public void setArn(String arn) {
@@ -137,10 +185,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN associated with the ProvisionedProduct object.
+     * The ARN of the provisioned product.
      * </p>
      * 
-     * @return The ARN associated with the ProvisionedProduct object.
+     * @return The ARN of the provisioned product.
      */
 
     public String getArn() {
@@ -149,11 +197,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN associated with the ProvisionedProduct object.
+     * The ARN of the provisioned product.
      * </p>
      * 
      * @param arn
-     *        The ARN associated with the ProvisionedProduct object.
+     *        The ARN of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +212,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of the ProvisionedProduct object.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      */
 
     public void setType(String type) {
@@ -177,10 +226,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
-     * @return The type of the ProvisionedProduct object.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *         <code>CFN_STACKSET</code>.
      */
 
     public String getType() {
@@ -189,11 +239,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of the ProvisionedProduct object.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param type
-     *        The type of the ProvisionedProduct object.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +255,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param id
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      */
 
     public void setId(String id) {
@@ -217,10 +268,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object.
+     * @return The identifier of the provisioned product.
      */
 
     public String getId() {
@@ -229,11 +280,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param id
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,12 +295,80 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     *        The current status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded
+     *        and completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
+     *        an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
+     *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
+     *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     * @see ProvisionedProductStatus
      */
 
     public void setStatus(String status) {
@@ -258,11 +377,79 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     * @return The current status of the provisioned product.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation
+     *         succeeded and completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
+     *         an <code>AVAILABLE</code> status before performing operations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the
+     *         requested operation but is not exactly what was requested. For example, a request to update to a new
+     *         version failed and the stack rolled back to the current version.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
+     *         running. For example, CloudFormation received a parameter value that was not valid and could not launch
+     *         the stack.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *         product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *         execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
+     *         </p>
+     *         </li>
+     * @see ProvisionedProductStatus
      */
 
     public String getStatus() {
@@ -271,13 +458,81 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
+     *        The current status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded
+     *        and completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
+     *        an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
+     *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
+     *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RecordStatus
+     * @see ProvisionedProductStatus
      */
 
     public ProvisionedProductDetail withStatus(String status) {
@@ -287,41 +542,177 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     *        The current status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded
+     *        and completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
+     *        an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
+     *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
+     *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     * @see ProvisionedProductStatus
      */
 
-    public void setStatus(RecordStatus status) {
-        this.status = status.toString();
+    public void setStatus(ProvisionedProductStatus status) {
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The current status of the ProvisionedProduct.
+     * The current status of the provisioned product.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and
+     * completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
+     * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
+     *        The current status of the provisioned product.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded
+     *        and completed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
+     *        an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
+     *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
+     *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RecordStatus
+     * @see ProvisionedProductStatus
      */
 
-    public ProvisionedProductDetail withStatus(RecordStatus status) {
-        setStatus(status);
+    public ProvisionedProductDetail withStatus(ProvisionedProductStatus status) {
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * The current status message of the ProvisionedProduct.
+     * The current status message of the provisioned product.
      * </p>
      * 
      * @param statusMessage
-     *        The current status message of the ProvisionedProduct.
+     *        The current status message of the provisioned product.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -330,10 +721,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status message of the ProvisionedProduct.
+     * The current status message of the provisioned product.
      * </p>
      * 
-     * @return The current status message of the ProvisionedProduct.
+     * @return The current status message of the provisioned product.
      */
 
     public String getStatusMessage() {
@@ -342,11 +733,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status message of the ProvisionedProduct.
+     * The current status message of the provisioned product.
      * </p>
      * 
      * @param statusMessage
-     *        The current status message of the ProvisionedProduct.
+     *        The current status message of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,11 +748,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -370,10 +761,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -382,11 +773,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,13 +788,13 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *        multiple requests, provided that you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -412,12 +803,12 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *         multiple requests, provided that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -426,13 +817,13 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can create multiple resources using the same input in multiple
-     * requests, provided that you also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can create multiple resources using the same input in
-     *        multiple requests, provided that you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,11 +834,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this ProvisionedProduct object.
+     * The record identifier of the last request performed on this provisioned product.
      * </p>
      * 
      * @param lastRecordId
-     *        The record identifier of the last request performed on this ProvisionedProduct object.
+     *        The record identifier of the last request performed on this provisioned product.
      */
 
     public void setLastRecordId(String lastRecordId) {
@@ -456,10 +847,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this ProvisionedProduct object.
+     * The record identifier of the last request performed on this provisioned product.
      * </p>
      * 
-     * @return The record identifier of the last request performed on this ProvisionedProduct object.
+     * @return The record identifier of the last request performed on this provisioned product.
      */
 
     public String getLastRecordId() {
@@ -468,11 +859,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The record identifier of the last request performed on this ProvisionedProduct object.
+     * The record identifier of the last request performed on this provisioned product.
      * </p>
      * 
      * @param lastRecordId
-     *        The record identifier of the last request performed on this ProvisionedProduct object.
+     *        The record identifier of the last request performed on this provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,7 +873,88 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     * </p>
+     * 
+     * @param productId
+     *        The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     */
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    /**
+     * <p>
+     * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     * </p>
+     * 
+     * @return The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     */
+
+    public String getProductId() {
+        return this.productId;
+    }
+
+    /**
+     * <p>
+     * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     * </p>
+     * 
+     * @param productId
+     *        The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionedProductDetail withProductId(String productId) {
+        setProductId(productId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     * </p>
+     * 
+     * @param provisioningArtifactId
+     *        The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     */
+
+    public void setProvisioningArtifactId(String provisioningArtifactId) {
+        this.provisioningArtifactId = provisioningArtifactId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     * </p>
+     * 
+     * @return The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     */
+
+    public String getProvisioningArtifactId() {
+        return this.provisioningArtifactId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     * </p>
+     * 
+     * @param provisioningArtifactId
+     *        The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionedProductDetail withProvisioningArtifactId(String provisioningArtifactId) {
+        setProvisioningArtifactId(provisioningArtifactId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -509,7 +981,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getLastRecordId() != null)
-            sb.append("LastRecordId: ").append(getLastRecordId());
+            sb.append("LastRecordId: ").append(getLastRecordId()).append(",");
+        if (getProductId() != null)
+            sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getProvisioningArtifactId() != null)
+            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId());
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +1036,14 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
             return false;
         if (other.getLastRecordId() != null && other.getLastRecordId().equals(this.getLastRecordId()) == false)
             return false;
+        if (other.getProductId() == null ^ this.getProductId() == null)
+            return false;
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
+            return false;
+        if (other.getProvisioningArtifactId() == null ^ this.getProvisioningArtifactId() == null)
+            return false;
+        if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
+            return false;
         return true;
     }
 
@@ -577,6 +1061,8 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getLastRecordId() == null) ? 0 : getLastRecordId().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
         return hashCode;
     }
 
@@ -587,5 +1073,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ProvisionedProductDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -155,7 +155,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setSortBy(SortByEnum sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -170,7 +170,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public ListRepositoriesRequest withSortBy(SortByEnum sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -228,7 +228,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setOrder(OrderEnum order) {
-        this.order = order.toString();
+        withOrder(order);
     }
 
     /**
@@ -243,12 +243,13 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public ListRepositoriesRequest withOrder(OrderEnum order) {
-        setOrder(order);
+        this.order = order.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,34 +14,33 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parent object that contains your environment's configuration settings.
+ * A function's environment variable settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Environment implements Serializable, Cloneable {
+public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * Environment variable key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * Environment variable key-value pairs.
      * </p>
      * 
-     * @return The key-value pairs that represent your environment's configuration settings. The value you specify
-     *         cannot contain a ",".
+     * @return Environment variable key-value pairs.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -53,13 +52,11 @@ public class Environment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        Environment variable key-value pairs.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -68,13 +65,11 @@ public class Environment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * Environment variable key-value pairs.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        Environment variable key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +100,8 @@ public class Environment implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -116,7 +112,7 @@ public class Environment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVariables() != null)
-            sb.append("Variables: ").append(getVariables());
+            sb.append("Variables: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -154,5 +150,11 @@ public class Environment implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.EnvironmentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

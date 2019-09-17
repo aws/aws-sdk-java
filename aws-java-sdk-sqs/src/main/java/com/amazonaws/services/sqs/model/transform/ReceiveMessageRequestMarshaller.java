@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
             request.addParameter("QueueUrl", StringUtils.fromString(receiveMessageRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest
-                .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!receiveMessageRequest.getAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest.getAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest
+                    .getAttributeNames();
             int attributeNamesListIndex = 1;
 
             for (String attributeNamesListValue : attributeNamesList) {
@@ -57,9 +58,10 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> messageAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest
-                .getMessageAttributeNames();
-        if (!messageAttributeNamesList.isEmpty() || !messageAttributeNamesList.isAutoConstruct()) {
+        if (!receiveMessageRequest.getMessageAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest.getMessageAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> messageAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) receiveMessageRequest
+                    .getMessageAttributeNames();
             int messageAttributeNamesListIndex = 1;
 
             for (String messageAttributeNamesListValue : messageAttributeNamesList) {

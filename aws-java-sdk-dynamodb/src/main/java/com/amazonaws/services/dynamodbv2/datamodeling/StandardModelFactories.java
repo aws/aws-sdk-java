@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,12 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
 
 import java.nio.ByteBuffer;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -162,6 +165,7 @@ final class StandardModelFactories {
         factory.add(factory.new V2CompatibleBool(v2Compatible));
         factory.add(factory.new NativeBool(ver2));
         factory.add(factory.new StringScalar(true));
+        factory.add(factory.new DateToEpochRule(true));
         factory.add(factory.new NumberScalar(true));
         factory.add(factory.new BinaryScalar(true));
         factory.add(factory.new NativeBoolSet(ver2));
@@ -281,6 +285,32 @@ final class StandardModelFactories {
             @Override
             public void set(AttributeValue value, String o) {
                 value.setN(o);
+            }
+        }
+
+        /**
+         * {@code N} conversion
+         */
+        private class DateToEpochRule extends AbstractRule<Long,T> {
+            private DateToEpochRule(boolean supported) {
+                super(DynamoDBAttributeType.N, supported);
+            }
+            @Override
+            public boolean isAssignableFrom(ConvertibleType<?> type) {
+                return (type.is(Date.class) || type.is(Calendar.class) || type.is(DateTime.class))
+                       && super.isAssignableFrom(type) && (type.attributeType() != null || type.is(N));
+            }
+            @Override
+            public DynamoDBTypeConverter<AttributeValue,T> newConverter(ConvertibleType<T> type) {
+                return joinAll(getConverter(Long.class, type), type.<Long>typeConverter());
+            }
+            @Override
+            public Long get(AttributeValue value) {
+                return Long.valueOf(value.getN());
+            }
+            @Override
+            public void set(AttributeValue value, Long o) {
+                value.setN(String.valueOf(o));
             }
         }
 

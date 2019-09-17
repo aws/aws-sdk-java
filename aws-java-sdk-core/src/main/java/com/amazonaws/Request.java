@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,12 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws;
 
-import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
-
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +34,7 @@ import java.util.Map;
  *            The type of original, user facing request represented by this
  *            request.
  */
-public interface Request<T> extends SignableRequest<T> {
+public interface Request<T> extends SignableRequest<T>, HandlerContextAware {
     /**
      * Sets all headers, clearing any existing ones.
      */
@@ -148,23 +147,4 @@ public interface Request<T> extends SignableRequest<T> {
      * @throws IllegalStateException if the binding has already occurred
      */
     void setAWSRequestMetrics(AWSRequestMetrics metrics);
-
-    /**
-     * Adds a context to the request object that is visible
-     * to all {@link com.amazonaws.handlers.RequestHandler2} .
-     *
-     * Note that, context added here will available only for the scope of
-     * the request execution and will not be marshalled over the wire.
-     * @param key the key for the property being set in the request.
-     * @param value the value for the property being set in the request.
-     */
-    <X> void addHandlerContext(HandlerContextKey<X> key, X value);
-
-    /**
-     * Return the context for the given key if present; else return null.
-     *
-     * @param key the key for the context
-     * @return the context if present else null.
-     */
-    <X> X getHandlerContext(HandlerContextKey<X> key);
 }

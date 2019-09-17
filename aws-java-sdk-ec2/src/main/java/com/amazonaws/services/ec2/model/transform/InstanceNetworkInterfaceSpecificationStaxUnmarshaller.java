@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,18 +45,13 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("associatePublicIpAddress", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("deviceIndex", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setDeviceIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("subnetId", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,8 +60,8 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("deviceIndex", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setDeviceIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -80,8 +75,28 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipv6AddressCount", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressesSet", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Addresses(new ArrayList<InstanceIpv6Address>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressesSet/item", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Addresses(InstanceIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -101,23 +116,13 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
-                if (context.testExpression("associatePublicIpAddress", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("subnetId", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ipv6AddressesSet", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.withIpv6Addresses(new ArrayList<InstanceIpv6Address>());
-                    continue;
-                }
-
-                if (context.testExpression("ipv6AddressesSet/item", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.withIpv6Addresses(InstanceIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipv6AddressCount", targetDepth)) {
-                    instanceNetworkInterfaceSpecification.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("InterfaceType", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

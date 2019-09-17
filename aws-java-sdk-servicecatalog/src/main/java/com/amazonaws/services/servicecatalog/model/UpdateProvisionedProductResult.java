@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,18 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      */
     private RecordDetail recordDetail;
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
      * @param recordDetail
-     *        The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *        request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *        modifying, and a list of any errors that the request encountered.
+     *        Information about the result of the request.
      */
 
     public void setRecordDetail(RecordDetail recordDetail) {
@@ -51,14 +45,10 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
-     * @return The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *         request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *         modifying, and a list of any errors that the request encountered.
+     * @return Information about the result of the request.
      */
 
     public RecordDetail getRecordDetail() {
@@ -67,15 +57,11 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
      * @param recordDetail
-     *        The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *        request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *        modifying, and a list of any errors that the request encountered.
+     *        Information about the result of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,7 +71,8 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,4 +122,5 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

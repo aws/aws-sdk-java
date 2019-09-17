@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to enable or disable the Amazon SES custom MAIL FROM domain setup for a verified identity. For
  * information about using a custom MAIL FROM domain, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityMailFromDomain" target="_top">AWS
@@ -41,7 +41,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      * subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination
      * of email feedback forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
      * 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the
      * identity.
      * </p>
@@ -106,7 +106,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      * subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination
      * of email feedback forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
      * 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the
      * identity.
      * </p>
@@ -115,7 +115,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      *        The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      *        subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the
      *        destination of email feedback forwarding (for more information, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
      *        Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
      *        FROM setting for the identity.
      */
@@ -129,7 +129,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      * subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination
      * of email feedback forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
      * 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the
      * identity.
      * </p>
@@ -137,7 +137,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * @return The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      *         subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the
      *         destination of email feedback forwarding (for more information, see the <a
-     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
      *         Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
      *         FROM setting for the identity.
      */
@@ -151,7 +151,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      * subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination
      * of email feedback forwarding (for more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer Guide</a>), and
      * 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL FROM setting for the
      * identity.
      * </p>
@@ -160,7 +160,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      *        The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must 1) be a
      *        subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the
      *        destination of email feedback forwarding (for more information, see the <a
-     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon SES Developer
      *        Guide</a>), and 3) not be used to receive emails. A value of <code>null</code> disables the custom MAIL
      *        FROM setting for the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -277,7 +277,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      */
 
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
+        withBehaviorOnMXFailure(behaviorOnMXFailure);
     }
 
     /**
@@ -305,12 +305,13 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      */
 
     public SetIdentityMailFromDomainRequest withBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        setBehaviorOnMXFailure(behaviorOnMXFailure);
+        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

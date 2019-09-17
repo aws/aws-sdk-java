@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,44 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about the status and settings of all the import jobs that are associated with an application or
+ * segment. An import job is a job that imports endpoint definitions from one or more files.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ImportJobsResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportJobsResponse implements Serializable, Cloneable {
+public class ImportJobsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** A list of import jobs for the application. */
+    /**
+     * <p>
+     * An array of responses, one for each import job that's associated with the application (Import Jobs resource) or
+     * segment (Segment Import Jobs resource).
+     * </p>
+     */
     private java.util.List<ImportJobResponse> item;
-    /** The string that you use in a subsequent request to get the next page of results in a paginated response. */
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * A list of import jobs for the application.
+     * <p>
+     * An array of responses, one for each import job that's associated with the application (Import Jobs resource) or
+     * segment (Segment Import Jobs resource).
+     * </p>
      * 
-     * @return A list of import jobs for the application.
+     * @return An array of responses, one for each import job that's associated with the application (Import Jobs
+     *         resource) or segment (Segment Import Jobs resource).
      */
 
     public java.util.List<ImportJobResponse> getItem() {
@@ -34,10 +59,14 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * A list of import jobs for the application.
+     * <p>
+     * An array of responses, one for each import job that's associated with the application (Import Jobs resource) or
+     * segment (Segment Import Jobs resource).
+     * </p>
      * 
      * @param item
-     *        A list of import jobs for the application.
+     *        An array of responses, one for each import job that's associated with the application (Import Jobs
+     *        resource) or segment (Segment Import Jobs resource).
      */
 
     public void setItem(java.util.Collection<ImportJobResponse> item) {
@@ -50,7 +79,10 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * A list of import jobs for the application.
+     * <p>
+     * An array of responses, one for each import job that's associated with the application (Import Jobs resource) or
+     * segment (Segment Import Jobs resource).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -58,7 +90,8 @@ public class ImportJobsResponse implements Serializable, Cloneable {
      * </p>
      * 
      * @param item
-     *        A list of import jobs for the application.
+     *        An array of responses, one for each import job that's associated with the application (Import Jobs
+     *        resource) or segment (Segment Import Jobs resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,10 +106,14 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * A list of import jobs for the application.
+     * <p>
+     * An array of responses, one for each import job that's associated with the application (Import Jobs resource) or
+     * segment (Segment Import Jobs resource).
+     * </p>
      * 
      * @param item
-     *        A list of import jobs for the application.
+     *        An array of responses, one for each import job that's associated with the application (Import Jobs
+     *        resource) or segment (Segment Import Jobs resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,10 +123,14 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -97,9 +138,13 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
-     * @return The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
      */
 
     public String getNextToken() {
@@ -107,10 +152,14 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The string that you use in a subsequent request to get the next page of results in a paginated response.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        The string that you use in a subsequent request to get the next page of results in a paginated response.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +169,8 @@ public class ImportJobsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,5 +226,11 @@ public class ImportJobsResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.ImportJobsResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,27 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
 
         if (createUserRequest.getUserName() != null) {
             request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
+        }
+
+        if (createUserRequest.getPermissionsBoundary() != null) {
+            request.addParameter("PermissionsBoundary", StringUtils.fromString(createUserRequest.getPermissionsBoundary()));
+        }
+
+        if (!createUserRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
         }
 
         return request;

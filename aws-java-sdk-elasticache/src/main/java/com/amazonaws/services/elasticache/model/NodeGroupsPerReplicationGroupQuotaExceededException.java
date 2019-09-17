@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the maximum of 15 node groups (shards) in a single
- * replication group.
+ * The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a
+ * single replication group. The default maximum is 90
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

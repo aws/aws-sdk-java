@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,17 +48,33 @@ public class MessageConfigurationJsonUnmarshaller implements Unmarshaller<Messag
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ADMMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setADMMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("APNSMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setAPNSMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BaiduMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setBaiduMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setDefaultMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EmailMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setEmailMessage(CampaignEmailMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("GCMMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setGCMMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SMSMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setSMSMessage(CampaignSmsMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

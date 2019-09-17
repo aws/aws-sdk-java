@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,9 +71,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
                             StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
-                        .getStringListValues();
-                if (!stringListValuesList.isEmpty() || !stringListValuesList.isAutoConstruct()) {
+                if (!entry.getValue().getStringListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
+                            .getStringListValues();
                     int stringListValuesListIndex = 1;
 
                     for (String stringListValuesListValue : stringListValuesList) {
@@ -85,9 +86,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
-                        .getValue().getBinaryListValues();
-                if (!binaryListValuesList.isEmpty() || !binaryListValuesList.isAutoConstruct()) {
+                if (!entry.getValue().getBinaryListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
+                            .getValue().getBinaryListValues();
                     int binaryListValuesListIndex = 1;
 
                     for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {
@@ -105,6 +107,62 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
                 }
             }
             messageAttributesListIndex++;
+        }
+
+        java.util.Map<String, MessageSystemAttributeValue> messageSystemAttributes = sendMessageRequest.getMessageSystemAttributes();
+        int messageSystemAttributesListIndex = 1;
+        for (Map.Entry<String, MessageSystemAttributeValue> entry : messageSystemAttributes.entrySet()) {
+            if (entry.getKey() != null) {
+                request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
+            }
+            if (entry.getValue() != null) {
+
+                if (entry.getValue().getStringValue() != null) {
+                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.StringValue",
+                            StringUtils.fromString(entry.getValue().getStringValue()));
+                }
+
+                if (entry.getValue().getBinaryValue() != null) {
+                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.BinaryValue",
+                            StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
+                }
+
+                if (!entry.getValue().getStringListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
+                            .getStringListValues();
+                    int stringListValuesListIndex = 1;
+
+                    for (String stringListValuesListValue : stringListValuesList) {
+                        if (stringListValuesListValue != null) {
+                            request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.StringListValue."
+                                    + stringListValuesListIndex, StringUtils.fromString(stringListValuesListValue));
+                        }
+                        stringListValuesListIndex++;
+                    }
+                }
+
+                if (!entry.getValue().getBinaryListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
+                            .getValue().getBinaryListValues();
+                    int binaryListValuesListIndex = 1;
+
+                    for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {
+                        if (binaryListValuesListValue != null) {
+                            request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.BinaryListValue."
+                                    + binaryListValuesListIndex, StringUtils.fromByteBuffer(binaryListValuesListValue));
+                        }
+                        binaryListValuesListIndex++;
+                    }
+                }
+
+                if (entry.getValue().getDataType() != null) {
+                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.DataType",
+                            StringUtils.fromString(entry.getValue().getDataType()));
+                }
+            }
+            messageSystemAttributesListIndex++;
         }
 
         if (sendMessageRequest.getMessageDeduplicationId() != null) {

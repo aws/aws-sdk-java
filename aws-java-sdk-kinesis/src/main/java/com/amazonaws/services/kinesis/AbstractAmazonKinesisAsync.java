@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #createStreamAsync(CreateStreamRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(String streamName, Integer shardCount,
             com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler) {
 
@@ -117,10 +118,24 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #deleteStreamAsync(DeleteStreamRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(String streamName,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
 
         return deleteStreamAsync(new DeleteStreamRequest().withStreamName(streamName), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterStreamConsumerResult> deregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request) {
+
+        return deregisterStreamConsumerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterStreamConsumerResult> deregisterStreamConsumerAsync(DeregisterStreamConsumerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterStreamConsumerRequest, DeregisterStreamConsumerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -165,6 +180,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #describeStreamAsync(DescribeStreamRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(String streamName,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
@@ -187,6 +203,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #describeStreamAsync(DescribeStreamRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(String streamName, String exclusiveStartShardId,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
@@ -209,11 +226,38 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #describeStreamAsync(DescribeStreamRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(String streamName, Integer limit, String exclusiveStartShardId,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
         return describeStreamAsync(new DescribeStreamRequest().withStreamName(streamName).withLimit(limit).withExclusiveStartShardId(exclusiveStartShardId),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamConsumerResult> describeStreamConsumerAsync(DescribeStreamConsumerRequest request) {
+
+        return describeStreamConsumerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamConsumerResult> describeStreamConsumerAsync(DescribeStreamConsumerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStreamConsumerRequest, DescribeStreamConsumerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(DescribeStreamSummaryRequest request) {
+
+        return describeStreamSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(DescribeStreamSummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStreamSummaryRequest, DescribeStreamSummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -284,6 +328,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #getShardIteratorAsync(GetShardIteratorRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(String streamName, String shardId, String shardIteratorType,
             com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler) {
 
@@ -309,6 +354,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #getShardIteratorAsync(GetShardIteratorRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(String streamName, String shardId, String shardIteratorType,
             String startingSequenceNumber, com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler) {
 
@@ -325,6 +371,32 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
     @Override
     public java.util.concurrent.Future<IncreaseStreamRetentionPeriodResult> increaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request,
             com.amazonaws.handlers.AsyncHandler<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(ListShardsRequest request) {
+
+        return listShardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(ListShardsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListShardsRequest, ListShardsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamConsumersResult> listStreamConsumersAsync(ListStreamConsumersRequest request) {
+
+        return listStreamConsumersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamConsumersResult> listStreamConsumersAsync(ListStreamConsumersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStreamConsumersRequest, ListStreamConsumersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -358,6 +430,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #listStreamsAsync(ListStreamsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
@@ -380,6 +453,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #listStreamsAsync(ListStreamsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(String exclusiveStartStreamName,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
@@ -402,6 +476,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #listStreamsAsync(ListStreamsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(Integer limit, String exclusiveStartStreamName,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
@@ -451,6 +526,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #mergeShardsAsync(MergeShardsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<MergeShardsResult> mergeShardsAsync(String streamName, String shardToMerge, String adjacentShardToMerge,
             com.amazonaws.handlers.AsyncHandler<MergeShardsRequest, MergeShardsResult> asyncHandler) {
 
@@ -487,6 +563,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #putRecordAsync(PutRecordRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PutRecordResult> putRecordAsync(String streamName, java.nio.ByteBuffer data, String partitionKey,
             com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult> asyncHandler) {
 
@@ -511,6 +588,7 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #putRecordAsync(PutRecordRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PutRecordResult> putRecordAsync(String streamName, java.nio.ByteBuffer data, String partitionKey,
             String sequenceNumberForOrdering, com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult> asyncHandler) {
 
@@ -528,6 +606,19 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
     @Override
     public java.util.concurrent.Future<PutRecordsResult> putRecordsAsync(PutRecordsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRecordsRequest, PutRecordsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterStreamConsumerResult> registerStreamConsumerAsync(RegisterStreamConsumerRequest request) {
+
+        return registerStreamConsumerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterStreamConsumerResult> registerStreamConsumerAsync(RegisterStreamConsumerRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterStreamConsumerRequest, RegisterStreamConsumerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -574,11 +665,38 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
      *
      * @see #splitShardAsync(SplitShardRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SplitShardResult> splitShardAsync(String streamName, String shardToSplit, String newStartingHashKey,
             com.amazonaws.handlers.AsyncHandler<SplitShardRequest, SplitShardResult> asyncHandler) {
 
         return splitShardAsync(new SplitShardRequest().withStreamName(streamName).withShardToSplit(shardToSplit).withNewStartingHashKey(newStartingHashKey),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest request) {
+
+        return startStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartStreamEncryptionRequest, StartStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest request) {
+
+        return stopStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopStreamEncryptionRequest, StopStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user whose MFA devices you want to list.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -46,15 +46,15 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String marker;
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -73,9 +73,9 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param userName
      *        The name of the user whose MFA devices you want to list.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
     public ListMFADevicesRequest(String userName) {
         setUserName(userName);
@@ -86,17 +86,17 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user whose MFA devices you want to list.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user whose MFA devices you want to list.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -108,16 +108,16 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user whose MFA devices you want to list.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the user whose MFA devices you want to list.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -129,17 +129,17 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the user whose MFA devices you want to list.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user whose MFA devices you want to list.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,26 +202,26 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -230,25 +230,25 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
-     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.</p>
+     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
+     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     *         is <code>true</code>.</p>
      *         <p>
-     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
-     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
-     *         tells the service where to continue from.
+     *         If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *         response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *         subsequent call that tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -257,26 +257,26 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     * <code>true</code>.
      * </p>
      * <p>
-     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
-     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
-     * service where to continue from.
+     * If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer
+     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
+     * returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells
+     * the service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
-     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
-     *        element is <code>true</code>.</p>
+     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
+     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
+     *        <code>true</code>.</p>
      *        <p>
-     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
-     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
-     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     *        the service where to continue from.
+     *        If you do not include this parameter, the number of items defaults to 100. Note that IAM might return
+     *        fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+     *        response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the
+     *        subsequent call that tells the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,7 +286,8 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

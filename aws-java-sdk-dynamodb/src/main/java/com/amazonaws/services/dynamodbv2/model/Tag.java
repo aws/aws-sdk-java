@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,30 +14,32 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table.
  * </p>
  * <p>
- * AWS-assigned tag names and values are automatically assigned the aws: prefix, which the user cannot assign.
- * AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix user: in the
- * Cost Allocation Report. You cannot backdate the application of a tag.
+ * AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot
+ * assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix
+ * <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.
  * </p>
  * <p>
  * For an overview on tagging DynamoDB resources, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the
  * <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Tag" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Tag implements Serializable, Cloneable {
+public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      */
@@ -51,12 +53,12 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
      * @param key
-     *        The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     *        The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *        same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *        value.
      */
@@ -67,11 +69,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
-     * @return The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     * @return The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *         same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *         value.
      */
@@ -82,12 +84,12 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
+     * The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same
      * key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.
      * </p>
      * 
      * @param key
-     *        The key of the tag.Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
+     *        The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the
      *        same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new
      *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -139,7 +141,8 @@ public class Tag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -195,5 +198,11 @@ public class Tag implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.TagMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

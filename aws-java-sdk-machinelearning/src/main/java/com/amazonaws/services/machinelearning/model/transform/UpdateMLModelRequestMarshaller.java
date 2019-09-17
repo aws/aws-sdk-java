@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateMLModelRequest Marshaller
+ * UpdateMLModelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateMLModelRequestMarshaller implements Marshaller<Request<UpdateMLModelRequest>, UpdateMLModelRequest> {
+@SdkInternalApi
+public class UpdateMLModelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> MLMODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MLModelId").build();
+    private static final MarshallingInfo<String> MLMODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MLModelName").build();
+    private static final MarshallingInfo<Float> SCORETHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScoreThreshold").build();
 
-    public UpdateMLModelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateMLModelRequestMarshaller instance = new UpdateMLModelRequestMarshaller();
+
+    public static UpdateMLModelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateMLModelRequest> marshall(UpdateMLModelRequest updateMLModelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateMLModelRequest updateMLModelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateMLModelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateMLModelRequest> request = new DefaultRequest<UpdateMLModelRequest>(updateMLModelRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.UpdateMLModel");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateMLModelRequest.getMLModelId() != null) {
-                jsonGenerator.writeFieldName("MLModelId").writeValue(updateMLModelRequest.getMLModelId());
-            }
-            if (updateMLModelRequest.getMLModelName() != null) {
-                jsonGenerator.writeFieldName("MLModelName").writeValue(updateMLModelRequest.getMLModelName());
-            }
-            if (updateMLModelRequest.getScoreThreshold() != null) {
-                jsonGenerator.writeFieldName("ScoreThreshold").writeValue(updateMLModelRequest.getScoreThreshold());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateMLModelRequest.getMLModelId(), MLMODELID_BINDING);
+            protocolMarshaller.marshall(updateMLModelRequest.getMLModelName(), MLMODELNAME_BINDING);
+            protocolMarshaller.marshall(updateMLModelRequest.getScoreThreshold(), SCORETHRESHOLD_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

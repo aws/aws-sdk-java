@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain you want to perform the action on.
+     * For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or
+     * delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.
+     * </p>
+     * <p>
+     * <b>ChangeResourceRecordSets Only</b>
      * </p>
      * <p>
      * Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a
-     * trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify
-     * is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a trailing dot)
-     * and <code>www.example.com.</code> (with a trailing dot) as identical.
+     * trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is
+     * fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and
+     * <code>www.example.com.</code> (with a trailing dot) as identical.
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
@@ -43,7 +47,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      * <code>*.example.com</code>. Note the following:
      * </p>
      * <ul>
@@ -83,15 +87,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -108,6 +116,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -134,19 +147,36 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      */
     private String type;
     /**
      * <p>
-     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates among
-     * multiple resource record sets that have the same combination of DNS name and type. The value of
-     * <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of DNS name
-     * and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     * <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among
+     * multiple resource record sets that have the same combination of name and type, such as multiple weighted resource
+     * record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same
+     * name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String setIdentifier;
@@ -154,9 +184,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name
      * and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the
-     * current resource record set. Amazon Route 53 calculates the sum of the weights for the resource record sets that
-     * have the same combination of DNS name and type. Amazon Route 53 then responds to queries based on the ratio of a
-     * resource's weight to the total. Note the following:
+     * current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have
+     * the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's
+     * weight to the total. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -184,16 +214,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for
-     * a resource record set, Amazon Route 53 never responds to queries with the applicable value for that resource
-     * record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the
-     * same combination of DNS name and type, traffic is routed to all resources with equal probability.
+     * a resource record set, Route 53 never responds to queries with the applicable value for that resource record set.
+     * However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same
+     * combination of DNS name and type, traffic is routed to all resources with equal probability.
      * </p>
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.
+     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -201,9 +230,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private Long weight;
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -212,9 +241,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -232,8 +261,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -247,7 +276,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private String region;
     /**
      * <p>
-     * <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
+     * <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
      * to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
@@ -274,12 +303,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <important>
      * <p>
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
-     * locations, so even if you create geolocation resource record sets that cover all seven continents, Amazon Route
-     * 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource
-     * record set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that
-     * come from locations for which you haven't created geolocation resource record sets and queries from IP addresses
-     * that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Amazon Route 53
-     * returns a "no answer" response for queries from those locations.
+     * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
+     * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
+     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
+     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
+     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
+     * "no answer" response for queries from those locations.
      * </p>
      * </important>
      * <p>
@@ -303,27 +332,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -336,14 +365,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -353,11 +382,56 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      */
     private String failover;
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be
+     * healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records,
+     * Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     */
+    private Boolean multiValueAnswer;
     /**
      * <p>
      * The resource record cache time to live (TTL), in seconds. Note the following:
@@ -365,8 +439,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -378,8 +452,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record sets
-     * must have the same value for <code>TTL</code>.
+     * All of the resource record sets in a group of weighted resource record sets must have the same value for
+     * <code>TTL</code>.
      * </p>
      * </li>
      * <li>
@@ -399,16 +473,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceRecord> resourceRecords;
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -416,7 +489,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -437,12 +511,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private AliasTarget aliasTarget;
     /**
      * <p>
-     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a health
-     * check is passing, include the <code>HealthCheckId</code> element and specify the ID of the applicable health
-     * check.
+     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of
+     * a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable
+     * health check.
      * </p>
      * <p>
-     * Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     * Route 53 determines whether a resource record set is healthy based on one of the following:
      * </p>
      * <ul>
      * <li>
@@ -461,60 +535,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
-     * </p>
-     * <p>
-     * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on the
-     * status of a health check. Configuring health checks only makes sense in the following configurations:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
-     * Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for example, the
+     * Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the
      * endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code>
-     * element to a resource record set, Amazon Route 53 checks the health of the endpoint that you specified in the
-     * health check.
-     * </p>
-     * </important>
-     * <p>
-     * For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource record
-     * set for the larger, associated geographic region. For example, suppose you have resource record sets for a state
-     * in the United States, for the United States, for North America, and for all locations. If the endpoint for the
-     * state resource record set is unhealthy, Amazon Route 53 checks the resource record sets for the United States,
-     * for North America, and for all locations (a resource record set for which the value of <code>CountryCode</code>
-     * is <code>*</code>), in that order, until it finds a resource record set for which the endpoint is healthy.
-     * </p>
-     * <p>
-     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
-     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
-     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
-     * sets (example.com).
-     * </p>
-     * <important>
-     * <p>
-     * n this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code>
-     * matches the name of the resource record sets and then associate the health check with those resource record sets,
-     * health check results will be unpredictable.
+     * element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health
+     * check.
      * </p>
      * </important>
      * <p>
@@ -523,8 +549,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -534,21 +567,144 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>When to Specify HealthCheckId</b>
+     * </p>
+     * <p>
+     * Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more
+     * resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of
+     * a health check. Configuring health checks makes sense only in the following configurations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets
+     * that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a
+     * type of A) and you specify health check IDs for all the resource record sets.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is healthy, Route 53 includes the record among the records
+     * that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using
+     * the value for that resource record set.
+     * </p>
+     * <p>
+     * If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     * resource record sets in the group healthy and responds to DNS queries accordingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Alias resource record sets</b>: You specify the following settings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record
+     * sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com
+     * with a type of A).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You configure the alias resource record set to route traffic to a non-alias resource record set in the same
+     * hosted zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You specify a health check ID for the non-alias resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     * includes the alias record among the records that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record
+     * set.
+     * </p>
+     * <note>
+     * <p>
+     * The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that
+     * have the same routing policy, name, and type. In that configuration, associate health checks with all of the
+     * resource record sets in the group of non-alias resource record sets.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>Geolocation Routing</b>
+     * </p>
+     * <p>
+     * For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for
+     * the larger, associated geographic region. For example, suppose you have resource record sets for a state in the
+     * United States, for the entire United States, for North America, and a resource record set that has <code>*</code>
+     * for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state
+     * resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until
+     * it finds a resource record set for which the endpoint is healthy:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The United States
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default resource record set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Specifying the Health Check Endpoint by Domain Name</b>
+     * </p>
+     * <p>
+     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
+     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
+     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
+     * sets (<code>www.example.com</code>).
+     * </p>
+     * <important>
+     * <p>
+     * Health check results will be unpredictable if you do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource
+     * record set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that health check with the resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      */
     private String healthCheckId;
     /**
      * <p>
      * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
-     * resource record set for.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource
+     * record set for.
      * </p>
      * <important>
      * <p>
      * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
-     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
-     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
-     * longer in use.
+     * <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important>
      */
@@ -566,11 +722,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param name
-     *        The name of the domain you want to perform the action on.</p>
+     *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
+     *        update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
+     *        specified hosted zone.</p>
+     *        <p>
+     *        <b>ChangeResourceRecordSets Only</b>
+     *        </p>
      *        <p>
      *        Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include
-     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you
-     *        specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a
+     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you
+     *        specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a
      *        trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
      *        </p>
      *        <p>
@@ -580,7 +741,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      *        <code>*.example.com</code>. Note the following:
      *        </p>
      *        <ul>
@@ -617,16 +778,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -643,6 +809,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -669,10 +840,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      */
     public ResourceRecordSet(String name, String type) {
         setName(name);
@@ -684,11 +867,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param name
-     *        The name of the domain you want to perform the action on.</p>
+     *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
+     *        update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
+     *        specified hosted zone.</p>
+     *        <p>
+     *        <b>ChangeResourceRecordSets Only</b>
+     *        </p>
      *        <p>
      *        Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include
-     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you
-     *        specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a
+     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you
+     *        specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a
      *        trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
      *        </p>
      *        <p>
@@ -698,7 +886,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      *        <code>*.example.com</code>. Note the following:
      *        </p>
      *        <ul>
@@ -735,16 +923,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -761,6 +954,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -787,10 +985,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      */
     public ResourceRecordSet(String name, RRType type) {
         setName(name);
@@ -799,13 +1009,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain you want to perform the action on.
+     * For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or
+     * delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.
+     * </p>
+     * <p>
+     * <b>ChangeResourceRecordSets Only</b>
      * </p>
      * <p>
      * Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a
-     * trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify
-     * is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a trailing dot)
-     * and <code>www.example.com.</code> (with a trailing dot) as identical.
+     * trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is
+     * fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and
+     * <code>www.example.com.</code> (with a trailing dot) as identical.
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
@@ -814,7 +1028,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      * <code>*.example.com</code>. Note the following:
      * </p>
      * <ul>
@@ -847,11 +1061,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        The name of the domain you want to perform the action on.</p>
+     *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
+     *        update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
+     *        specified hosted zone.</p>
+     *        <p>
+     *        <b>ChangeResourceRecordSets Only</b>
+     *        </p>
      *        <p>
      *        Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include
-     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you
-     *        specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a
+     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you
+     *        specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a
      *        trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
      *        </p>
      *        <p>
@@ -861,7 +1080,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      *        <code>*.example.com</code>. Note the following:
      *        </p>
      *        <ul>
@@ -900,13 +1119,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain you want to perform the action on.
+     * For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or
+     * delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.
+     * </p>
+     * <p>
+     * <b>ChangeResourceRecordSets Only</b>
      * </p>
      * <p>
      * Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a
-     * trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify
-     * is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a trailing dot)
-     * and <code>www.example.com.</code> (with a trailing dot) as identical.
+     * trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is
+     * fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and
+     * <code>www.example.com.</code> (with a trailing dot) as identical.
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
@@ -915,7 +1138,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      * <code>*.example.com</code>. Note the following:
      * </p>
      * <ul>
@@ -947,12 +1170,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.
      * </p>
      * 
-     * @return The name of the domain you want to perform the action on.</p>
+     * @return For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
+     *         update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
+     *         specified hosted zone.</p>
+     *         <p>
+     *         <b>ChangeResourceRecordSets Only</b>
+     *         </p>
      *         <p>
      *         Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally
-     *         include a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name
-     *         that you specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code>
-     *         (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
+     *         include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that
+     *         you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a
+     *         trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
      *         </p>
      *         <p>
      *         For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
@@ -961,7 +1189,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
      *         <p>
-     *         You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     *         You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      *         <code>*.example.com</code>. Note the following:
      *         </p>
      *         <ul>
@@ -1000,13 +1228,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the domain you want to perform the action on.
+     * For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or
+     * delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.
+     * </p>
+     * <p>
+     * <b>ChangeResourceRecordSets Only</b>
      * </p>
      * <p>
      * Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a
-     * trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you specify
-     * is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a trailing dot)
-     * and <code>www.example.com.</code> (with a trailing dot) as identical.
+     * trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is
+     * fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and
+     * <code>www.example.com.</code> (with a trailing dot) as identical.
      * </p>
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
@@ -1015,7 +1247,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     * You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      * <code>*.example.com</code>. Note the following:
      * </p>
      * <ul>
@@ -1048,11 +1280,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param name
-     *        The name of the domain you want to perform the action on.</p>
+     *        For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create,
+     *        update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the
+     *        specified hosted zone.</p>
+     *        <p>
+     *        <b>ChangeResourceRecordSets Only</b>
+     *        </p>
      *        <p>
      *        Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include
-     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 still assumes that the domain name that you
-     *        specify is fully qualified. This means that Amazon Route 53 treats <code>www.example.com</code> (without a
+     *        a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you
+     *        specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a
      *        trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.
      *        </p>
      *        <p>
@@ -1062,7 +1299,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
-     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name. For example,
+     *        You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example,
      *        <code>*.example.com</code>. Note the following:
      *        </p>
      *        <ul>
@@ -1108,15 +1345,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1133,6 +1374,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -1159,10 +1405,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param type
@@ -1170,16 +1428,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1196,6 +1459,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -1222,10 +1490,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      * @see RRType
      */
 
@@ -1240,15 +1520,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1265,6 +1549,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -1291,26 +1580,43 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @return The DNS record type. For information about different record types and how data is encoded for them, see
      *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *         Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *         <p>
-     *         Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *         <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *         <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *         Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *         <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *         <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *         </p>
      *         <p>
      *         Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *         <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *         <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *         geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *         in the group.
+     *         <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *         <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *         weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *         resource record sets in the group.
+     *         </p>
+     *         <p>
+     *         Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *         <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *         <code>TXT</code>
      *         </p>
      *         <note>
      *         <p>
@@ -1327,6 +1633,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Values for alias resource record sets:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <b>CloudFront distributions:</b> <code>A</code>
@@ -1353,10 +1664,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *         which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *         <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *         you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you're creating an alias record that has the same name as the hosted zone (known as the zone apex),
+     *         you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This
+     *         is because the alias record must have the same type as the record you're routing traffic to, and creating
+     *         a CNAME record for the zone apex isn't supported even for an alias record.
+     *         </p>
+     *         </note></li>
      * @see RRType
      */
 
@@ -1371,15 +1694,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1396,6 +1723,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -1422,10 +1754,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param type
@@ -1433,16 +1777,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1459,6 +1808,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -1485,10 +1839,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
@@ -1505,15 +1871,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1530,6 +1900,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -1556,10 +1931,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param type
@@ -1567,16 +1954,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1593,6 +1985,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -1619,15 +2016,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      * @see RRType
      */
 
     public void setType(RRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1637,15 +2046,19 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
-     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     * <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>
+     * Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     * <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code>
+     * | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <p>
      * Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code>
-     * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
-     * resource record sets, specify the same value for all of the resource record sets in the group.
+     * | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
+     * <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation,
+     * or failover resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1662,6 +2075,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Values for alias resource record sets:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
@@ -1688,10 +2106,22 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't
+     * route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the
+     * alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the
+     * zone apex isn't supported even for an alias record.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param type
@@ -1699,16 +2129,21 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
-     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
-     *        <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
+     *        <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
+     *        <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      *        </p>
      *        <p>
      *        Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> |
-     *        <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> |
-     *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
-     *        in the group.
+     *        <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+     *        <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of
+     *        weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the
+     *        resource record sets in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1725,6 +2160,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Values for alias resource record sets:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
@@ -1751,32 +2191,54 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you
+     *        can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is
+     *        because the alias record must have the same type as the record you're routing traffic to, and creating a
+     *        CNAME record for the zone apex isn't supported even for an alias record.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RRType
      */
 
     public ResourceRecordSet withType(RRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
     /**
      * <p>
-     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates among
-     * multiple resource record sets that have the same combination of DNS name and type. The value of
-     * <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of DNS name
-     * and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     * <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among
+     * multiple resource record sets that have the same combination of name and type, such as multiple weighted resource
+     * record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same
+     * name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param setIdentifier
-     *        <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates
-     *        among multiple resource record sets that have the same combination of DNS name and type. The value of
-     *        <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of
-     *        DNS name and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> An identifier that
+     *        differentiates among multiple resource record sets that have the same combination of name and type, such
+     *        as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of
+     *        resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be
+     *        unique for each resource record set. </p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public void setSetIdentifier(String setIdentifier) {
@@ -1785,16 +2247,26 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates among
-     * multiple resource record sets that have the same combination of DNS name and type. The value of
-     * <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of DNS name
-     * and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     * <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among
+     * multiple resource record sets that have the same combination of name and type, such as multiple weighted resource
+     * record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same
+     * name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
-     * @return <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates
-     *         among multiple resource record sets that have the same combination of DNS name and type. The value of
-     *         <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of
-     *         DNS name and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     * @return <i>Resource record sets that have a routing policy other than simple:</i> An identifier that
+     *         differentiates among multiple resource record sets that have the same combination of name and type, such
+     *         as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of
+     *         resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be
+     *         unique for each resource record set. </p>
+     *         <p>
+     *         For information about routing policies, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *         Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
     public String getSetIdentifier() {
@@ -1803,17 +2275,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates among
-     * multiple resource record sets that have the same combination of DNS name and type. The value of
-     * <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of DNS name
-     * and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     * <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among
+     * multiple resource record sets that have the same combination of name and type, such as multiple weighted resource
+     * record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same
+     * name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set.
+     * </p>
+     * <p>
+     * For information about routing policies, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param setIdentifier
-     *        <i>Weighted, Latency, Geo, and Failover resource record sets only:</i> An identifier that differentiates
-     *        among multiple resource record sets that have the same combination of DNS name and type. The value of
-     *        <code>SetIdentifier</code> must be unique for each resource record set that has the same combination of
-     *        DNS name and type. Omit <code>SetIdentifier</code> for any other types of record sets.
+     *        <i>Resource record sets that have a routing policy other than simple:</i> An identifier that
+     *        differentiates among multiple resource record sets that have the same combination of name and type, such
+     *        as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of
+     *        resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be
+     *        unique for each resource record set. </p>
+     *        <p>
+     *        For information about routing policies, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1826,9 +2308,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name
      * and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the
-     * current resource record set. Amazon Route 53 calculates the sum of the weights for the resource record sets that
-     * have the same combination of DNS name and type. Amazon Route 53 then responds to queries based on the ratio of a
-     * resource's weight to the total. Note the following:
+     * current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have
+     * the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's
+     * weight to the total. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -1856,16 +2338,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for
-     * a resource record set, Amazon Route 53 never responds to queries with the applicable value for that resource
-     * record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the
-     * same combination of DNS name and type, traffic is routed to all resources with equal probability.
+     * a resource record set, Route 53 never responds to queries with the applicable value for that resource record set.
+     * However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same
+     * combination of DNS name and type, traffic is routed to all resources with equal probability.
      * </p>
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.
+     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1873,9 +2354,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param weight
      *        <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of
      *        DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to
-     *        using the current resource record set. Amazon Route 53 calculates the sum of the weights for the resource
-     *        record sets that have the same combination of DNS name and type. Amazon Route 53 then responds to queries
-     *        based on the ratio of a resource's weight to the total. Note the following:</p>
+     *        using the current resource record set. Route 53 calculates the sum of the weights for the resource record
+     *        sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the
+     *        ratio of a resource's weight to the total. Note the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1902,17 +2383,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to
-     *        <code>0</code> for a resource record set, Amazon Route 53 never responds to queries with the applicable
-     *        value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all
-     *        resource record sets that have the same combination of DNS name and type, traffic is routed to all
-     *        resources with equal probability.
+     *        <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for
+     *        that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource
+     *        record sets that have the same combination of DNS name and type, traffic is routed to all resources with
+     *        equal probability.
      *        </p>
      *        <p>
      *        The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *        with weighted resource record sets. For more information, see <a
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
-     *        >Options for Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon
-     *        Route 53 Developer Guide</i>.
+     *        >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
+     *        Developer Guide</i>.
      *        </p>
      *        </li>
      */
@@ -1925,9 +2406,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name
      * and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the
-     * current resource record set. Amazon Route 53 calculates the sum of the weights for the resource record sets that
-     * have the same combination of DNS name and type. Amazon Route 53 then responds to queries based on the ratio of a
-     * resource's weight to the total. Note the following:
+     * current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have
+     * the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's
+     * weight to the total. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -1955,25 +2436,24 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for
-     * a resource record set, Amazon Route 53 never responds to queries with the applicable value for that resource
-     * record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the
-     * same combination of DNS name and type, traffic is routed to all resources with equal probability.
+     * a resource record set, Route 53 never responds to queries with the applicable value for that resource record set.
+     * However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same
+     * combination of DNS name and type, traffic is routed to all resources with equal probability.
      * </p>
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.
+     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of
      *         DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to
-     *         using the current resource record set. Amazon Route 53 calculates the sum of the weights for the resource
-     *         record sets that have the same combination of DNS name and type. Amazon Route 53 then responds to queries
-     *         based on the ratio of a resource's weight to the total. Note the following:</p>
+     *         using the current resource record set. Route 53 calculates the sum of the weights for the resource record
+     *         sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the
+     *         ratio of a resource's weight to the total. Note the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2000,17 +2480,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to
-     *         <code>0</code> for a resource record set, Amazon Route 53 never responds to queries with the applicable
-     *         value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all
-     *         resource record sets that have the same combination of DNS name and type, traffic is routed to all
-     *         resources with equal probability.
+     *         <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value
+     *         for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource
+     *         record sets that have the same combination of DNS name and type, traffic is routed to all resources with
+     *         equal probability.
      *         </p>
      *         <p>
      *         The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *         with weighted resource record sets. For more information, see <a
      *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
-     *         >Options for Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon
-     *         Route 53 Developer Guide</i>.
+     *         >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
+     *         Developer Guide</i>.
      *         </p>
      *         </li>
      */
@@ -2023,9 +2503,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name
      * and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the
-     * current resource record set. Amazon Route 53 calculates the sum of the weights for the resource record sets that
-     * have the same combination of DNS name and type. Amazon Route 53 then responds to queries based on the ratio of a
-     * resource's weight to the total. Note the following:
+     * current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have
+     * the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's
+     * weight to the total. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -2053,16 +2533,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for
-     * a resource record set, Amazon Route 53 never responds to queries with the applicable value for that resource
-     * record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the
-     * same combination of DNS name and type, traffic is routed to all resources with equal probability.
+     * a resource record set, Route 53 never responds to queries with the applicable value for that resource record set.
+     * However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same
+     * combination of DNS name and type, traffic is routed to all resources with equal probability.
      * </p>
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.
+     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2070,9 +2549,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param weight
      *        <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of
      *        DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to
-     *        using the current resource record set. Amazon Route 53 calculates the sum of the weights for the resource
-     *        record sets that have the same combination of DNS name and type. Amazon Route 53 then responds to queries
-     *        based on the ratio of a resource's weight to the total. Note the following:</p>
+     *        using the current resource record set. Route 53 calculates the sum of the weights for the resource record
+     *        sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the
+     *        ratio of a resource's weight to the total. Note the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2099,17 +2578,17 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to
-     *        <code>0</code> for a resource record set, Amazon Route 53 never responds to queries with the applicable
-     *        value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all
-     *        resource record sets that have the same combination of DNS name and type, traffic is routed to all
-     *        resources with equal probability.
+     *        <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for
+     *        that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource
+     *        record sets that have the same combination of DNS name and type, traffic is routed to all resources with
+     *        equal probability.
      *        </p>
      *        <p>
      *        The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *        with weighted resource record sets. For more information, see <a
      *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
-     *        >Options for Configuring Amazon Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon
-     *        Route 53 Developer Guide</i>.
+     *        >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
+     *        Developer Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2122,9 +2601,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -2133,9 +2612,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -2153,8 +2632,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -2166,8 +2645,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param region
-     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified
-     *        in this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or
+     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
+     *        this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
@@ -2176,9 +2655,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
-     *        resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency
-     *        between the end user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is
-     *        associated with the selected resource record set.
+     *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
+     *        the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with
+     *        the selected resource record set.
      *        </p>
      *        <p>
      *        Note the following:
@@ -2196,9 +2675,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
-     *        will choose the region with the best latency from among the regions for which you create latency resource
-     *        record sets.
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will
+     *        choose the region with the best latency from among the regions that you create latency resource record
+     *        sets for.
      *        </p>
      *        </li>
      *        <li>
@@ -2216,9 +2695,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -2227,9 +2706,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -2247,8 +2726,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -2259,18 +2738,18 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is
-     *         specified in this resource record set resides. The resource typically is an AWS resource, such as an EC2
-     *         instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on
-     *         the record type.</p> <note>
+     * @return <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
+     *         this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or
+     *         an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
+     *         type.</p> <note>
      *         <p>
      *         Creating latency and latency alias resource record sets in private hosted zones is not supported.
      *         </p>
      *         </note>
      *         <p>
      *         When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
-     *         resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency
-     *         between the end user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is
+     *         resource record sets, Route 53 selects the latency resource record set that has the lowest latency
+     *         between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is
      *         associated with the selected resource record set.
      *         </p>
      *         <p>
@@ -2289,9 +2768,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
-     *         will choose the region with the best latency from among the regions for which you create latency resource
-     *         record sets.
+     *         You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will
+     *         choose the region with the best latency from among the regions that you create latency resource record
+     *         sets for.
      *         </p>
      *         </li>
      *         <li>
@@ -2309,9 +2788,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -2320,9 +2799,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -2340,8 +2819,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -2353,8 +2832,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param region
-     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified
-     *        in this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or
+     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
+     *        this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
@@ -2363,9 +2842,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
-     *        resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency
-     *        between the end user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is
-     *        associated with the selected resource record set.
+     *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
+     *        the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with
+     *        the selected resource record set.
      *        </p>
      *        <p>
      *        Note the following:
@@ -2383,9 +2862,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
-     *        will choose the region with the best latency from among the regions for which you create latency resource
-     *        record sets.
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will
+     *        choose the region with the best latency from among the regions that you create latency resource record
+     *        sets for.
      *        </p>
      *        </li>
      *        <li>
@@ -2405,9 +2884,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -2416,9 +2895,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -2436,8 +2915,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -2449,8 +2928,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param region
-     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified
-     *        in this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or
+     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
+     *        this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
@@ -2459,9 +2938,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
-     *        resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency
-     *        between the end user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is
-     *        associated with the selected resource record set.
+     *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
+     *        the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with
+     *        the selected resource record set.
      *        </p>
      *        <p>
      *        Note the following:
@@ -2479,9 +2958,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
-     *        will choose the region with the best latency from among the regions for which you create latency resource
-     *        record sets.
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will
+     *        choose the region with the best latency from among the regions that you create latency resource record
+     *        sets for.
      *        </p>
      *        </li>
      *        <li>
@@ -2494,14 +2973,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public void setRegion(ResourceRecordSetRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
      * <p>
-     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified in
-     * this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or an ELB
-     * load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
+     * <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this
+     * resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or an ELB load
+     * balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
      * <note>
      * <p>
@@ -2510,9 +2989,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
-     * record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency between the end
-     * user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is associated with the
-     * selected resource record set.
+     * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
+     * and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected
+     * resource record set.
      * </p>
      * <p>
      * Note the following:
@@ -2530,8 +3009,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53 will
-     * choose the region with the best latency from among the regions for which you create latency resource record sets.
+     * You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the
+     * region with the best latency from among the regions that you create latency resource record sets for.
      * </p>
      * </li>
      * <li>
@@ -2543,8 +3022,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param region
-     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where the resource that is specified
-     *        in this resource record set resides. The resource typically is an AWS resource, such as an EC2 instance or
+     *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
+     *        this resource record set refers to. The resource typically is an AWS resource, such as an EC2 instance or
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
@@ -2553,9 +3032,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </note>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
-     *        resource record sets, Amazon Route 53 selects the latency resource record set that has the lowest latency
-     *        between the end user and the associated Amazon EC2 Region. Amazon Route 53 then returns the value that is
-     *        associated with the selected resource record set.
+     *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
+     *        the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with
+     *        the selected resource record set.
      *        </p>
      *        <p>
      *        Note the following:
@@ -2573,9 +3052,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You are not required to create latency resource record sets for all Amazon EC2 Regions. Amazon Route 53
-     *        will choose the region with the best latency from among the regions for which you create latency resource
-     *        record sets.
+     *        You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will
+     *        choose the region with the best latency from among the regions that you create latency resource record
+     *        sets for.
      *        </p>
      *        </li>
      *        <li>
@@ -2589,13 +3068,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 
     /**
      * <p>
-     * <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
+     * <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
      * to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
@@ -2622,12 +3101,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <important>
      * <p>
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
-     * locations, so even if you create geolocation resource record sets that cover all seven continents, Amazon Route
-     * 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource
-     * record set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that
-     * come from locations for which you haven't created geolocation resource record sets and queries from IP addresses
-     * that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Amazon Route 53
-     * returns a "no answer" response for queries from those locations.
+     * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
+     * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
+     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
+     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
+     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
+     * "no answer" response for queries from those locations.
      * </p>
      * </important>
      * <p>
@@ -2636,7 +3115,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param geoLocation
-     *        <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53
+     *        <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53
      *        responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *        from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
@@ -2663,12 +3142,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *        geographic locations, so even if you create geolocation resource record sets that cover all seven
-     *        continents, Amazon Route 53 will receive some DNS queries from locations that it can't identify. We
-     *        recommend that you create a resource record set for which the value of <code>CountryCode</code> is
-     *        <code>*</code>, which handles both queries that come from locations for which you haven't created
-     *        geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you
-     *        don't create a <code>*</code> resource record set, Amazon Route 53 returns a "no answer" response for
-     *        queries from those locations.
+     *        continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
+     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
+     *        which handles both queries that come from locations for which you haven't created geolocation resource
+     *        record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
+     *        <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     *        locations.
      *        </p>
      *        </important>
      *        <p>
@@ -2682,7 +3161,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
+     * <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
      * to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
@@ -2709,12 +3188,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <important>
      * <p>
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
-     * locations, so even if you create geolocation resource record sets that cover all seven continents, Amazon Route
-     * 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource
-     * record set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that
-     * come from locations for which you haven't created geolocation resource record sets and queries from IP addresses
-     * that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Amazon Route 53
-     * returns a "no answer" response for queries from those locations.
+     * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
+     * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
+     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
+     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
+     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
+     * "no answer" response for queries from those locations.
      * </p>
      * </important>
      * <p>
@@ -2722,7 +3201,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <code>Type</code> elements as geolocation resource record sets.
      * </p>
      * 
-     * @return <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53
+     * @return <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53
      *         responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *         from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      *         resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of
@@ -2749,12 +3228,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <p>
      *         Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *         geographic locations, so even if you create geolocation resource record sets that cover all seven
-     *         continents, Amazon Route 53 will receive some DNS queries from locations that it can't identify. We
-     *         recommend that you create a resource record set for which the value of <code>CountryCode</code> is
-     *         <code>*</code>, which handles both queries that come from locations for which you haven't created
-     *         geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you
-     *         don't create a <code>*</code> resource record set, Amazon Route 53 returns a "no answer" response for
-     *         queries from those locations.
+     *         continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
+     *         that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
+     *         which handles both queries that come from locations for which you haven't created geolocation resource
+     *         record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
+     *         <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     *         locations.
      *         </p>
      *         </important>
      *         <p>
@@ -2768,7 +3247,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
+     * <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds
      * to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to
      * be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a
      * <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.
@@ -2795,12 +3274,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <important>
      * <p>
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
-     * locations, so even if you create geolocation resource record sets that cover all seven continents, Amazon Route
-     * 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource
-     * record set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that
-     * come from locations for which you haven't created geolocation resource record sets and queries from IP addresses
-     * that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Amazon Route 53
-     * returns a "no answer" response for queries from those locations.
+     * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
+     * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
+     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
+     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
+     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
+     * "no answer" response for queries from those locations.
      * </p>
      * </important>
      * <p>
@@ -2809,7 +3288,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param geoLocation
-     *        <i>Geo location resource record sets only:</i> A complex type that lets you control how Amazon Route 53
+     *        <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53
      *        responds to DNS queries based on the geographic origin of the query. For example, if you want all queries
      *        from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
@@ -2836,12 +3315,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *        geographic locations, so even if you create geolocation resource record sets that cover all seven
-     *        continents, Amazon Route 53 will receive some DNS queries from locations that it can't identify. We
-     *        recommend that you create a resource record set for which the value of <code>CountryCode</code> is
-     *        <code>*</code>, which handles both queries that come from locations for which you haven't created
-     *        geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you
-     *        don't create a <code>*</code> resource record set, Amazon Route 53 returns a "no answer" response for
-     *        queries from those locations.
+     *        continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
+     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
+     *        which handles both queries that come from locations for which you haven't created geolocation resource
+     *        record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
+     *        <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     *        locations.
      *        </p>
      *        </important>
      *        <p>
@@ -2870,27 +3349,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -2903,14 +3382,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -2920,9 +3399,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      * 
      * @param failover
      *        <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code>
@@ -2937,30 +3413,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the secondary resource
-     *        record set.
+     *        When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon
-     *        Route 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route
+     *        53 responds to DNS queries with the applicable value from the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the primary resource
-     *        record set.
+     *        When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the primary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the
-     *        primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the
-     *        applicable value from the secondary resource record set. This is true regardless of the health of the
-     *        associated endpoint.
+     *        primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable
+     *        value from the secondary resource record set. This is true regardless of the health of the associated
+     *        endpoint.
      *        </p>
      *        </li>
      *        </ul>
@@ -2973,14 +3447,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        element and set the value to true.
      *        </p>
      *        <p>
-     *        For more information about configuring failover for Amazon Route 53, see the following topics in the
-     *        <i>Amazon Route 53 Developer Guide</i>:
+     *        For more information about configuring failover for Route 53, see the following topics in the <i>Amazon
+     *        Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -2989,9 +3463,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
      * @see ResourceRecordSetFailover
      */
 
@@ -3014,27 +3485,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -3047,14 +3518,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -3064,9 +3535,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      * 
      * @return <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code>
      *         element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the
@@ -3080,30 +3548,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the
-     *         applicable value from the primary resource record set regardless of the health of the secondary resource
-     *         record set.
+     *         When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable
+     *         value from the primary resource record set regardless of the health of the secondary resource record set.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         When the primary resource record set is unhealthy and the secondary resource record set is healthy,
-     *         Amazon Route 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     *         When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route
+     *         53 responds to DNS queries with the applicable value from the secondary resource record set.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the
-     *         applicable value from the primary resource record set regardless of the health of the primary resource
-     *         record set.
+     *         When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable
+     *         value from the primary resource record set regardless of the health of the primary resource record set.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the
-     *         primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the
-     *         applicable value from the secondary resource record set. This is true regardless of the health of the
-     *         associated endpoint.
+     *         primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable
+     *         value from the secondary resource record set. This is true regardless of the health of the associated
+     *         endpoint.
      *         </p>
      *         </li>
      *         </ul>
@@ -3116,14 +3582,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         element and set the value to true.
      *         </p>
      *         <p>
-     *         For more information about configuring failover for Amazon Route 53, see the following topics in the
-     *         <i>Amazon Route 53 Developer Guide</i>:
+     *         For more information about configuring failover for Route 53, see the following topics in the <i>Amazon
+     *         Route 53 Developer Guide</i>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *         Health Checks and DNS Failover</a>
+     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *         Checks and DNS Failover</a>
      *         </p>
      *         </li>
      *         <li>
@@ -3133,9 +3599,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Configuring Failover in a Private Hosted Zone</a>
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
      * @see ResourceRecordSetFailover
      */
 
@@ -3158,27 +3621,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -3191,14 +3654,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -3208,9 +3671,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      * 
      * @param failover
      *        <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code>
@@ -3225,30 +3685,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the secondary resource
-     *        record set.
+     *        When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon
-     *        Route 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route
+     *        53 responds to DNS queries with the applicable value from the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the primary resource
-     *        record set.
+     *        When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the primary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the
-     *        primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the
-     *        applicable value from the secondary resource record set. This is true regardless of the health of the
-     *        associated endpoint.
+     *        primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable
+     *        value from the secondary resource record set. This is true regardless of the health of the associated
+     *        endpoint.
      *        </p>
      *        </li>
      *        </ul>
@@ -3261,14 +3719,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        element and set the value to true.
      *        </p>
      *        <p>
-     *        For more information about configuring failover for Amazon Route 53, see the following topics in the
-     *        <i>Amazon Route 53 Developer Guide</i>:
+     *        For more information about configuring failover for Route 53, see the following topics in the <i>Amazon
+     *        Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -3277,9 +3735,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceRecordSetFailover
      */
@@ -3304,27 +3759,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -3337,14 +3792,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -3354,9 +3809,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      * 
      * @param failover
      *        <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code>
@@ -3371,30 +3823,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the secondary resource
-     *        record set.
+     *        When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon
-     *        Route 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route
+     *        53 responds to DNS queries with the applicable value from the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the primary resource
-     *        record set.
+     *        When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the primary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the
-     *        primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the
-     *        applicable value from the secondary resource record set. This is true regardless of the health of the
-     *        associated endpoint.
+     *        primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable
+     *        value from the secondary resource record set. This is true regardless of the health of the associated
+     *        endpoint.
      *        </p>
      *        </li>
      *        </ul>
@@ -3407,14 +3857,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        element and set the value to true.
      *        </p>
      *        <p>
-     *        For more information about configuring failover for Amazon Route 53, see the following topics in the
-     *        <i>Amazon Route 53 Developer Guide</i>:
+     *        For more information about configuring failover for Route 53, see the following topics in the <i>Amazon
+     *        Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -3423,14 +3873,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
      * @see ResourceRecordSetFailover
      */
 
     public void setFailover(ResourceRecordSetFailover failover) {
-        this.failover = failover.toString();
+        withFailover(failover);
     }
 
     /**
@@ -3448,27 +3895,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the secondary resource record set.
+     * When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from
+     * the primary resource record set regardless of the health of the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon Route
-     * 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     * When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53
+     * responds to DNS queries with the applicable value from the secondary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
-     * When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the applicable
-     * value from the primary resource record set regardless of the health of the primary resource record set.
+     * When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value
+     * from the primary resource record set regardless of the health of the primary resource record set.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary
-     * resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the applicable value from
-     * the secondary resource record set. This is true regardless of the health of the associated endpoint.
+     * resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the
+     * secondary resource record set. This is true regardless of the health of the associated endpoint.
      * </p>
      * </li>
      * </ul>
@@ -3481,14 +3928,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * set the value to true.
      * </p>
      * <p>
-     * For more information about configuring failover for Amazon Route 53, see the following topics in the <i>Amazon
-     * Route 53 Developer Guide</i>:
+     * For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53
+     * Developer Guide</i>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -3498,9 +3945,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
-     * </p>
      * 
      * @param failover
      *        <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code>
@@ -3515,30 +3959,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        When the primary resource record set is healthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the secondary resource
-     *        record set.
+     *        When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Amazon
-     *        Route 53 responds to DNS queries with the applicable value from the secondary resource record set.
+     *        When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route
+     *        53 responds to DNS queries with the applicable value from the secondary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        When the secondary resource record set is unhealthy, Amazon Route 53 responds to DNS queries with the
-     *        applicable value from the primary resource record set regardless of the health of the primary resource
-     *        record set.
+     *        When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable
+     *        value from the primary resource record set regardless of the health of the primary resource record set.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the
-     *        primary resource record set is unhealthy, Amazon Route 53 always responds to DNS queries with the
-     *        applicable value from the secondary resource record set. This is true regardless of the health of the
-     *        associated endpoint.
+     *        primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable
+     *        value from the secondary resource record set. This is true regardless of the health of the associated
+     *        endpoint.
      *        </p>
      *        </li>
      *        </ul>
@@ -3551,14 +3993,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        element and set the value to true.
      *        </p>
      *        <p>
-     *        For more information about configuring failover for Amazon Route 53, see the following topics in the
-     *        <i>Amazon Route 53 Developer Guide</i>:
+     *        For more information about configuring failover for Route 53, see the following topics in the <i>Amazon
+     *        Route 53 Developer Guide</i>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -3567,16 +4009,397 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Valid values: <code>PRIMARY</code> | <code>SECONDARY</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceRecordSetFailover
      */
 
     public ResourceRecordSet withFailover(ResourceRecordSetFailover failover) {
-        setFailover(failover);
+        this.failover = failover.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be
+     * healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records,
+     * Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @param multiValueAnswer
+     *        <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *        resources, such as web servers, create one multivalue answer record for each resource and specify
+     *        <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *        DNS queries with the corresponding IP address only when the health check is healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't associate a health check with a multivalue answer record, Route 53 always considers the
+     *        record to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     *        records, Route 53 responds to all DNS queries with all the healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     *        combinations of healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *        another of the IP addresses in the response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't create multivalue answer alias records.
+     */
+
+    public void setMultiValueAnswer(Boolean multiValueAnswer) {
+        this.multiValueAnswer = multiValueAnswer;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be
+     * healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records,
+     * Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @return <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *         resources, such as web servers, create one multivalue answer record for each resource and specify
+     *         <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *         DNS queries with the corresponding IP address only when the health check is healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't associate a health check with a multivalue answer record, Route 53 always considers the
+     *         record to be healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     *         records, Route 53 responds to all DNS queries with all the healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     *         combinations of healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *         another of the IP addresses in the response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can't create multivalue answer alias records.
+     */
+
+    public Boolean getMultiValueAnswer() {
+        return this.multiValueAnswer;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be
+     * healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records,
+     * Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @param multiValueAnswer
+     *        <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *        resources, such as web servers, create one multivalue answer record for each resource and specify
+     *        <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *        DNS queries with the corresponding IP address only when the health check is healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't associate a health check with a multivalue answer record, Route 53 always considers the
+     *        record to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     *        records, Route 53 responds to all DNS queries with all the healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     *        combinations of healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *        another of the IP addresses in the response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't create multivalue answer alias records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceRecordSet withMultiValueAnswer(Boolean multiValueAnswer) {
+        setMultiValueAnswer(multiValueAnswer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be
+     * healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records,
+     * Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @return <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *         resources, such as web servers, create one multivalue answer record for each resource and specify
+     *         <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *         DNS queries with the corresponding IP address only when the health check is healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't associate a health check with a multivalue answer record, Route 53 always considers the
+     *         record to be healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     *         records, Route 53 responds to all DNS queries with all the healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different
+     *         combinations of healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *         another of the IP addresses in the response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can't create multivalue answer alias records.
+     */
+
+    public Boolean isMultiValueAnswer() {
+        return this.multiValueAnswer;
     }
 
     /**
@@ -3586,8 +4409,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3599,8 +4422,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record sets
-     * must have the same value for <code>TTL</code>.
+     * All of the resource record sets in a group of weighted resource record sets must have the same value for
+     * <code>TTL</code>.
      * </p>
      * </li>
      * <li>
@@ -3618,8 +4441,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *        <code>TTL</code> for the alias target.
+     *        If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *        the value of <code>TTL</code> for the alias target.
      *        </p>
      *        </li>
      *        <li>
@@ -3631,8 +4454,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record
-     *        sets must have the same value for <code>TTL</code>.
+     *        All of the resource record sets in a group of weighted resource record sets must have the same value for
+     *        <code>TTL</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3657,8 +4480,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3670,8 +4493,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record sets
-     * must have the same value for <code>TTL</code>.
+     * All of the resource record sets in a group of weighted resource record sets must have the same value for
+     * <code>TTL</code>.
      * </p>
      * </li>
      * <li>
@@ -3688,8 +4511,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *         <code>TTL</code> for the alias target.
+     *         If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *         the value of <code>TTL</code> for the alias target.
      *         </p>
      *         </li>
      *         <li>
@@ -3701,8 +4524,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record
-     *         sets must have the same value for <code>TTL</code>.
+     *         All of the resource record sets in a group of weighted resource record sets must have the same value for
+     *         <code>TTL</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -3727,8 +4550,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3740,8 +4563,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record sets
-     * must have the same value for <code>TTL</code>.
+     * All of the resource record sets in a group of weighted resource record sets must have the same value for
+     * <code>TTL</code>.
      * </p>
      * </li>
      * <li>
@@ -3759,8 +4582,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *        <code>TTL</code> for the alias target.
+     *        If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *        the value of <code>TTL</code> for the alias target.
      *        </p>
      *        </li>
      *        <li>
@@ -3772,8 +4595,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        All of the resource record sets in a group of weighted, latency, geolocation, or failover resource record
-     *        sets must have the same value for <code>TTL</code>.
+     *        All of the resource record sets in a group of weighted resource record sets must have the same value for
+     *        <code>TTL</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3799,13 +4622,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @return Information about the resource records to act upon.</p> <note>
      *         <p>
-     *         If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *         If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *         </p>
      */
 
@@ -3822,14 +4645,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      */
 
@@ -3848,7 +4671,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * <p>
@@ -3860,7 +4683,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3881,14 +4704,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     * If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      * </p>
      * </note>
      * 
      * @param resourceRecords
      *        Information about the resource records to act upon.</p> <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+     *        If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3900,9 +4723,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -3910,7 +4732,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -3929,17 +4752,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param aliasTarget
-     *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *        subdomain.</p>
+     *        <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *        distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -3963,9 +4785,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -3973,7 +4794,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -3991,17 +4813,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *         Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *         which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *         subdomain.</p>
+     * @return <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *         distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *         <p>
      *         If you're creating resource records sets for a private hosted zone, note the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *         You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *         distribution.
      *         </p>
      *         </li>
      *         <li>
@@ -4025,9 +4846,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you are
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -4035,7 +4855,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -4054,17 +4875,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param aliasTarget
-     *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you are redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *        subdomain.</p>
+     *        <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *        distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -4090,12 +4910,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a health
-     * check is passing, include the <code>HealthCheckId</code> element and specify the ID of the applicable health
-     * check.
+     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of
+     * a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable
+     * health check.
      * </p>
      * <p>
-     * Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     * Route 53 determines whether a resource record set is healthy based on one of the following:
      * </p>
      * <ul>
      * <li>
@@ -4114,60 +4934,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
-     * </p>
-     * <p>
-     * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on the
-     * status of a health check. Configuring health checks only makes sense in the following configurations:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
-     * Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for example, the
+     * Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the
      * endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code>
-     * element to a resource record set, Amazon Route 53 checks the health of the endpoint that you specified in the
-     * health check.
-     * </p>
-     * </important>
-     * <p>
-     * For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource record
-     * set for the larger, associated geographic region. For example, suppose you have resource record sets for a state
-     * in the United States, for the United States, for North America, and for all locations. If the endpoint for the
-     * state resource record set is unhealthy, Amazon Route 53 checks the resource record sets for the United States,
-     * for North America, and for all locations (a resource record set for which the value of <code>CountryCode</code>
-     * is <code>*</code>), in that order, until it finds a resource record set for which the endpoint is healthy.
-     * </p>
-     * <p>
-     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
-     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
-     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
-     * sets (example.com).
-     * </p>
-     * <important>
-     * <p>
-     * n this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code>
-     * matches the name of the resource record sets and then associate the health check with those resource record sets,
-     * health check results will be unpredictable.
+     * element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health
+     * check.
      * </p>
      * </important>
      * <p>
@@ -4176,8 +4948,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -4187,13 +4966,137 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>When to Specify HealthCheckId</b>
+     * </p>
+     * <p>
+     * Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more
+     * resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of
+     * a health check. Configuring health checks makes sense only in the following configurations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets
+     * that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a
+     * type of A) and you specify health check IDs for all the resource record sets.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is healthy, Route 53 includes the record among the records
+     * that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using
+     * the value for that resource record set.
+     * </p>
+     * <p>
+     * If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     * resource record sets in the group healthy and responds to DNS queries accordingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Alias resource record sets</b>: You specify the following settings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record
+     * sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com
+     * with a type of A).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You configure the alias resource record set to route traffic to a non-alias resource record set in the same
+     * hosted zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You specify a health check ID for the non-alias resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     * includes the alias record among the records that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record
+     * set.
+     * </p>
+     * <note>
+     * <p>
+     * The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that
+     * have the same routing policy, name, and type. In that configuration, associate health checks with all of the
+     * resource record sets in the group of non-alias resource record sets.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>Geolocation Routing</b>
+     * </p>
+     * <p>
+     * For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for
+     * the larger, associated geographic region. For example, suppose you have resource record sets for a state in the
+     * United States, for the entire United States, for North America, and a resource record set that has <code>*</code>
+     * for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state
+     * resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until
+     * it finds a resource record set for which the endpoint is healthy:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The United States
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default resource record set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Specifying the Health Check Endpoint by Domain Name</b>
+     * </p>
+     * <p>
+     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
+     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
+     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
+     * sets (<code>www.example.com</code>).
+     * </p>
+     * <important>
+     * <p>
+     * Health check results will be unpredictable if you do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource
+     * record set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that health check with the resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param healthCheckId
-     *        If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a
-     *        health check is passing, include the <code>HealthCheckId</code> element and specify the ID of the
-     *        applicable health check.</p>
+     *        If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the
+     *        status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of
+     *        the applicable health check.</p>
      *        <p>
-     *        Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     *        Route 53 determines whether a resource record set is healthy based on one of the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -4212,61 +5115,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *        <a>CreateHealthCheck</a>.
-     *        </p>
-     *        <p>
-     *        The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     *        resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on
-     *        the status of a health check. Configuring health checks only makes sense in the following configurations:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *        resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *        check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *        responding to queries using the value for that resource record set.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *        alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *        check IDs for all of the resource record sets that are referenced by the alias resource record sets.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <important>
      *        <p>
-     *        Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for
+     *        Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for
      *        example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a
-     *        <code>HealthCheckId</code> element to a resource record set, Amazon Route 53 checks the health of the
-     *        endpoint that you specified in the health check.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource
-     *        record set for the larger, associated geographic region. For example, suppose you have resource record
-     *        sets for a state in the United States, for the United States, for North America, and for all locations. If
-     *        the endpoint for the state resource record set is unhealthy, Amazon Route 53 checks the resource record
-     *        sets for the United States, for North America, and for all locations (a resource record set for which the
-     *        value of <code>CountryCode</code> is <code>*</code>), in that order, until it finds a resource record set
-     *        for which the endpoint is healthy.
-     *        </p>
-     *        <p>
-     *        If your health checks specify the endpoint only by domain name, we recommend that you create a separate
-     *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
-     *        is serving content for <code>www.example.com</code>. For the value of
-     *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *        <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
-     *        </p>
-     *        <important>
-     *        <p>
-     *        n this configuration, if you create a health check for which the value of
-     *        <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and then associate the
-     *        health check with those resource record sets, health check results will be unpredictable.
+     *        <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint
+     *        that you specified in the health check.
      *        </p>
      *        </important>
      *        <p>
@@ -4275,8 +5129,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -4285,6 +5146,131 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>When to Specify HealthCheckId</b>
+     *        </p>
+     *        <p>
+     *        Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or
+     *        more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on
+     *        the status of a health check. Configuring health checks makes sense only in the following configurations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record
+     *        sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *        www.example.com with a type of A) and you specify health check IDs for all the resource record sets.
+     *        </p>
+     *        <p>
+     *        If the health check status for a resource record set is healthy, Route 53 includes the record among the
+     *        records that it responds to DNS queries with.
+     *        </p>
+     *        <p>
+     *        If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS
+     *        queries using the value for that resource record set.
+     *        </p>
+     *        <p>
+     *        If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     *        resource record sets in the group healthy and responds to DNS queries accordingly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Alias resource record sets</b>: You specify the following settings:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource
+     *        record sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *        www.example.com with a type of A).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You configure the alias resource record set to route traffic to a non-alias resource record set in the
+     *        same hosted zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You specify a health check ID for the non-alias resource record set.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     *        includes the alias record among the records that it responds to DNS queries with.
+     *        </p>
+     *        <p>
+     *        If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource
+     *        record set.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets
+     *        that have the same routing policy, name, and type. In that configuration, associate health checks with all
+     *        of the resource record sets in the group of non-alias resource record sets.
+     *        </p>
+     *        </note></li>
+     *        </ul>
+     *        <p>
+     *        <b>Geolocation Routing</b>
+     *        </p>
+     *        <p>
+     *        For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record
+     *        set for the larger, associated geographic region. For example, suppose you have resource record sets for a
+     *        state in the United States, for the entire United States, for North America, and a resource record set
+     *        that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If
+     *        the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record
+     *        sets in the following order until it finds a resource record set for which the endpoint is healthy:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The United States
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        North America
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The default resource record set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Specifying the Health Check Endpoint by Domain Name</b>
+     *        </p>
+     *        <p>
+     *        If your health checks specify the endpoint only by domain name, we recommend that you create a separate
+     *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
+     *        is serving content for <code>www.example.com</code>. For the value of
+     *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
+     *        <code>us-east-2-www.example.com</code>), not the name of the resource record sets (
+     *        <code>www.example.com</code>).
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Health check results will be unpredictable if you do the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a
+     *        resource record set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Associate that health check with the resource record set.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setHealthCheckId(String healthCheckId) {
@@ -4293,12 +5279,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a health
-     * check is passing, include the <code>HealthCheckId</code> element and specify the ID of the applicable health
-     * check.
+     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of
+     * a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable
+     * health check.
      * </p>
      * <p>
-     * Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     * Route 53 determines whether a resource record set is healthy based on one of the following:
      * </p>
      * <ul>
      * <li>
@@ -4317,60 +5303,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
-     * </p>
-     * <p>
-     * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on the
-     * status of a health check. Configuring health checks only makes sense in the following configurations:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
-     * Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for example, the
+     * Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the
      * endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code>
-     * element to a resource record set, Amazon Route 53 checks the health of the endpoint that you specified in the
-     * health check.
-     * </p>
-     * </important>
-     * <p>
-     * For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource record
-     * set for the larger, associated geographic region. For example, suppose you have resource record sets for a state
-     * in the United States, for the United States, for North America, and for all locations. If the endpoint for the
-     * state resource record set is unhealthy, Amazon Route 53 checks the resource record sets for the United States,
-     * for North America, and for all locations (a resource record set for which the value of <code>CountryCode</code>
-     * is <code>*</code>), in that order, until it finds a resource record set for which the endpoint is healthy.
-     * </p>
-     * <p>
-     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
-     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
-     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
-     * sets (example.com).
-     * </p>
-     * <important>
-     * <p>
-     * n this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code>
-     * matches the name of the resource record sets and then associate the health check with those resource record sets,
-     * health check results will be unpredictable.
+     * element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health
+     * check.
      * </p>
      * </important>
      * <p>
@@ -4379,8 +5317,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -4390,12 +5335,136 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>When to Specify HealthCheckId</b>
+     * </p>
+     * <p>
+     * Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more
+     * resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of
+     * a health check. Configuring health checks makes sense only in the following configurations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets
+     * that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a
+     * type of A) and you specify health check IDs for all the resource record sets.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is healthy, Route 53 includes the record among the records
+     * that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using
+     * the value for that resource record set.
+     * </p>
+     * <p>
+     * If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     * resource record sets in the group healthy and responds to DNS queries accordingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Alias resource record sets</b>: You specify the following settings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record
+     * sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com
+     * with a type of A).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You configure the alias resource record set to route traffic to a non-alias resource record set in the same
+     * hosted zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You specify a health check ID for the non-alias resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     * includes the alias record among the records that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record
+     * set.
+     * </p>
+     * <note>
+     * <p>
+     * The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that
+     * have the same routing policy, name, and type. In that configuration, associate health checks with all of the
+     * resource record sets in the group of non-alias resource record sets.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>Geolocation Routing</b>
+     * </p>
+     * <p>
+     * For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for
+     * the larger, associated geographic region. For example, suppose you have resource record sets for a state in the
+     * United States, for the entire United States, for North America, and a resource record set that has <code>*</code>
+     * for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state
+     * resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until
+     * it finds a resource record set for which the endpoint is healthy:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The United States
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default resource record set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Specifying the Health Check Endpoint by Domain Name</b>
+     * </p>
+     * <p>
+     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
+     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
+     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
+     * sets (<code>www.example.com</code>).
+     * </p>
+     * <important>
+     * <p>
+     * Health check results will be unpredictable if you do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource
+     * record set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that health check with the resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
-     * @return If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a
-     *         health check is passing, include the <code>HealthCheckId</code> element and specify the ID of the
-     *         applicable health check.</p>
+     * @return If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the
+     *         status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of
+     *         the applicable health check.</p>
      *         <p>
-     *         Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     *         Route 53 determines whether a resource record set is healthy based on one of the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -4414,62 +5483,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </p>
      *         </li>
      *         </ul>
-     *         <p>
-     *         For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *         <a>CreateHealthCheck</a>.
-     *         </p>
-     *         <p>
-     *         The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or
-     *         more resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in
-     *         part on the status of a health check. Configuring health checks only makes sense in the following
-     *         configurations:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *         resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *         check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *         responding to queries using the value for that resource record set.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *         alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *         check IDs for all of the resource record sets that are referenced by the alias resource record sets.
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <important>
      *         <p>
-     *         Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for
+     *         Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for
      *         example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a
-     *         <code>HealthCheckId</code> element to a resource record set, Amazon Route 53 checks the health of the
-     *         endpoint that you specified in the health check.
-     *         </p>
-     *         </important>
-     *         <p>
-     *         For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource
-     *         record set for the larger, associated geographic region. For example, suppose you have resource record
-     *         sets for a state in the United States, for the United States, for North America, and for all locations.
-     *         If the endpoint for the state resource record set is unhealthy, Amazon Route 53 checks the resource
-     *         record sets for the United States, for North America, and for all locations (a resource record set for
-     *         which the value of <code>CountryCode</code> is <code>*</code>), in that order, until it finds a resource
-     *         record set for which the endpoint is healthy.
-     *         </p>
-     *         <p>
-     *         If your health checks specify the endpoint only by domain name, we recommend that you create a separate
-     *         health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
-     *         is serving content for <code>www.example.com</code>. For the value of
-     *         <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *         <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
-     *         </p>
-     *         <important>
-     *         <p>
-     *         n this configuration, if you create a health check for which the value of
-     *         <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and then associate the
-     *         health check with those resource record sets, health check results will be unpredictable.
+     *         <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint
+     *         that you specified in the health check.
      *         </p>
      *         </important>
      *         <p>
@@ -4478,8 +5497,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *         Health Checks and DNS Failover</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *         Checks and DNS Failover</a>
      *         </p>
      *         </li>
      *         <li>
@@ -4489,6 +5515,132 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Configuring Failover in a Private Hosted Zone</a>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>When to Specify HealthCheckId</b>
+     *         </p>
+     *         <p>
+     *         Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or
+     *         more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on
+     *         the status of a health check. Configuring health checks makes sense only in the following configurations:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record
+     *         sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *         www.example.com with a type of A) and you specify health check IDs for all the resource record sets.
+     *         </p>
+     *         <p>
+     *         If the health check status for a resource record set is healthy, Route 53 includes the record among the
+     *         records that it responds to DNS queries with.
+     *         </p>
+     *         <p>
+     *         If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS
+     *         queries using the value for that resource record set.
+     *         </p>
+     *         <p>
+     *         If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     *         resource record sets in the group healthy and responds to DNS queries accordingly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Alias resource record sets</b>: You specify the following settings:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource
+     *         record sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *         www.example.com with a type of A).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You configure the alias resource record set to route traffic to a non-alias resource record set in the
+     *         same hosted zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specify a health check ID for the non-alias resource record set.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     *         includes the alias record among the records that it responds to DNS queries with.
+     *         </p>
+     *         <p>
+     *         If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias
+     *         resource record set.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets
+     *         that have the same routing policy, name, and type. In that configuration, associate health checks with
+     *         all of the resource record sets in the group of non-alias resource record sets.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         <p>
+     *         <b>Geolocation Routing</b>
+     *         </p>
+     *         <p>
+     *         For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record
+     *         set for the larger, associated geographic region. For example, suppose you have resource record sets for
+     *         a state in the United States, for the entire United States, for North America, and a resource record set
+     *         that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations.
+     *         If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource
+     *         record sets in the following order until it finds a resource record set for which the endpoint is
+     *         healthy:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The United States
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         North America
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The default resource record set
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Specifying the Health Check Endpoint by Domain Name</b>
+     *         </p>
+     *         <p>
+     *         If your health checks specify the endpoint only by domain name, we recommend that you create a separate
+     *         health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
+     *         is serving content for <code>www.example.com</code>. For the value of
+     *         <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
+     *         <code>us-east-2-www.example.com</code>), not the name of the resource record sets (
+     *         <code>www.example.com</code>).
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Health check results will be unpredictable if you do the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a
+     *         resource record set.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Associate that health check with the resource record set.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getHealthCheckId() {
@@ -4497,12 +5649,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a health
-     * check is passing, include the <code>HealthCheckId</code> element and specify the ID of the applicable health
-     * check.
+     * If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of
+     * a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable
+     * health check.
      * </p>
      * <p>
-     * Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     * Route 53 determines whether a resource record set is healthy based on one of the following:
      * </p>
      * <ul>
      * <li>
@@ -4521,60 +5673,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For information about how Amazon Route 53 determines whether a health check is healthy, see
-     * <a>CreateHealthCheck</a>.
-     * </p>
-     * <p>
-     * The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     * resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on the
-     * status of a health check. Configuring health checks only makes sense in the following configurations:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover resource
-     * record set, and you specify health check IDs for all of the resource record sets. If the health check for one
-     * resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-     * the value for that resource record set.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted alias,
-     * latency alias, geolocation alias, or failover alias resource record set, and you specify health check IDs for all
-     * of the resource record sets that are referenced by the alias resource record sets.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
-     * Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for example, the
+     * Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the
      * endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code>
-     * element to a resource record set, Amazon Route 53 checks the health of the endpoint that you specified in the
-     * health check.
-     * </p>
-     * </important>
-     * <p>
-     * For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource record
-     * set for the larger, associated geographic region. For example, suppose you have resource record sets for a state
-     * in the United States, for the United States, for North America, and for all locations. If the endpoint for the
-     * state resource record set is unhealthy, Amazon Route 53 checks the resource record sets for the United States,
-     * for North America, and for all locations (a resource record set for which the value of <code>CountryCode</code>
-     * is <code>*</code>), in that order, until it finds a resource record set for which the endpoint is healthy.
-     * </p>
-     * <p>
-     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
-     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
-     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
-     * domain name of the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource record
-     * sets (example.com).
-     * </p>
-     * <important>
-     * <p>
-     * n this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code>
-     * matches the name of the resource record sets and then associate the health check with those resource record sets,
-     * health check results will be unpredictable.
+     * element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health
+     * check.
      * </p>
      * </important>
      * <p>
@@ -4583,8 +5687,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     * Checks and DNS Failover</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * DNS Failover</a>
      * </p>
      * </li>
      * <li>
@@ -4594,13 +5705,137 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>When to Specify HealthCheckId</b>
+     * </p>
+     * <p>
+     * Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more
+     * resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of
+     * a health check. Configuring health checks makes sense only in the following configurations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets
+     * that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a
+     * type of A) and you specify health check IDs for all the resource record sets.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is healthy, Route 53 includes the record among the records
+     * that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using
+     * the value for that resource record set.
+     * </p>
+     * <p>
+     * If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     * resource record sets in the group healthy and responds to DNS queries accordingly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Alias resource record sets</b>: You specify the following settings:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record
+     * sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com
+     * with a type of A).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You configure the alias resource record set to route traffic to a non-alias resource record set in the same
+     * hosted zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You specify a health check ID for the non-alias resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     * includes the alias record among the records that it responds to DNS queries with.
+     * </p>
+     * <p>
+     * If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record
+     * set.
+     * </p>
+     * <note>
+     * <p>
+     * The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that
+     * have the same routing policy, name, and type. In that configuration, associate health checks with all of the
+     * resource record sets in the group of non-alias resource record sets.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * <b>Geolocation Routing</b>
+     * </p>
+     * <p>
+     * For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for
+     * the larger, associated geographic region. For example, suppose you have resource record sets for a state in the
+     * United States, for the entire United States, for North America, and a resource record set that has <code>*</code>
+     * for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state
+     * resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until
+     * it finds a resource record set for which the endpoint is healthy:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The United States
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * North America
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default resource record set
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Specifying the Health Check Endpoint by Domain Name</b>
+     * </p>
+     * <p>
+     * If your health checks specify the endpoint only by domain name, we recommend that you create a separate health
+     * check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving
+     * content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the
+     * domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record
+     * sets (<code>www.example.com</code>).
+     * </p>
+     * <important>
+     * <p>
+     * Health check results will be unpredictable if you do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource
+     * record set.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that health check with the resource record set.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param healthCheckId
-     *        If you want Amazon Route 53 to return this resource record set in response to a DNS query only when a
-     *        health check is passing, include the <code>HealthCheckId</code> element and specify the ID of the
-     *        applicable health check.</p>
+     *        If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the
+     *        status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of
+     *        the applicable health check.</p>
      *        <p>
-     *        Amazon Route 53 determines whether a resource record set is healthy based on one of the following:
+     *        Route 53 determines whether a resource record set is healthy based on one of the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -4619,61 +5854,12 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        For information about how Amazon Route 53 determines whether a health check is healthy, see
-     *        <a>CreateHealthCheck</a>.
-     *        </p>
-     *        <p>
-     *        The <code>HealthCheckId</code> element is only useful when Amazon Route 53 is choosing between two or more
-     *        resource record sets to respond to a DNS query, and you want Amazon Route 53 to base the choice in part on
-     *        the status of a health check. Configuring health checks only makes sense in the following configurations:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        You're checking the health of the resource record sets in a weighted, latency, geolocation, or failover
-     *        resource record set, and you specify health check IDs for all of the resource record sets. If the health
-     *        check for one resource record set specifies an endpoint that is not healthy, Amazon Route 53 stops
-     *        responding to queries using the value for that resource record set.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        You set <code>EvaluateTargetHealth</code> to true for the resource record sets in an alias, weighted
-     *        alias, latency alias, geolocation alias, or failover alias resource record set, and you specify health
-     *        check IDs for all of the resource record sets that are referenced by the alias resource record sets.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <important>
      *        <p>
-     *        Amazon Route 53 doesn't check the health of the endpoint specified in the resource record set, for
+     *        Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for
      *        example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a
-     *        <code>HealthCheckId</code> element to a resource record set, Amazon Route 53 checks the health of the
-     *        endpoint that you specified in the health check.
-     *        </p>
-     *        </important>
-     *        <p>
-     *        For geolocation resource record sets, if an endpoint is unhealthy, Amazon Route 53 looks for a resource
-     *        record set for the larger, associated geographic region. For example, suppose you have resource record
-     *        sets for a state in the United States, for the United States, for North America, and for all locations. If
-     *        the endpoint for the state resource record set is unhealthy, Amazon Route 53 checks the resource record
-     *        sets for the United States, for North America, and for all locations (a resource record set for which the
-     *        value of <code>CountryCode</code> is <code>*</code>), in that order, until it finds a resource record set
-     *        for which the endpoint is healthy.
-     *        </p>
-     *        <p>
-     *        If your health checks specify the endpoint only by domain name, we recommend that you create a separate
-     *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
-     *        is serving content for <code>www.example.com</code>. For the value of
-     *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
-     *        <code>us-east-1-www.example.com</code>), not the name of the resource record sets (example.com).
-     *        </p>
-     *        <important>
-     *        <p>
-     *        n this configuration, if you create a health check for which the value of
-     *        <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and then associate the
-     *        health check with those resource record sets, health check results will be unpredictable.
+     *        <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint
+     *        that you specified in the health check.
      *        </p>
      *        </important>
      *        <p>
@@ -4682,8 +5868,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53
-     *        Health Checks and DNS Failover</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
@@ -4692,6 +5885,131 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>When to Specify HealthCheckId</b>
+     *        </p>
+     *        <p>
+     *        Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or
+     *        more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on
+     *        the status of a health check. Configuring health checks makes sense only in the following configurations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record
+     *        sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *        www.example.com with a type of A) and you specify health check IDs for all the resource record sets.
+     *        </p>
+     *        <p>
+     *        If the health check status for a resource record set is healthy, Route 53 includes the record among the
+     *        records that it responds to DNS queries with.
+     *        </p>
+     *        <p>
+     *        If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS
+     *        queries using the value for that resource record set.
+     *        </p>
+     *        <p>
+     *        If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all
+     *        resource record sets in the group healthy and responds to DNS queries accordingly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Alias resource record sets</b>: You specify the following settings:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource
+     *        record sets that have the same routing policy, name, and type (such as multiple weighted records named
+     *        www.example.com with a type of A).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You configure the alias resource record set to route traffic to a non-alias resource record set in the
+     *        same hosted zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You specify a health check ID for the non-alias resource record set.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and
+     *        includes the alias record among the records that it responds to DNS queries with.
+     *        </p>
+     *        <p>
+     *        If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource
+     *        record set.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets
+     *        that have the same routing policy, name, and type. In that configuration, associate health checks with all
+     *        of the resource record sets in the group of non-alias resource record sets.
+     *        </p>
+     *        </note></li>
+     *        </ul>
+     *        <p>
+     *        <b>Geolocation Routing</b>
+     *        </p>
+     *        <p>
+     *        For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record
+     *        set for the larger, associated geographic region. For example, suppose you have resource record sets for a
+     *        state in the United States, for the entire United States, for North America, and a resource record set
+     *        that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If
+     *        the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record
+     *        sets in the following order until it finds a resource record set for which the endpoint is healthy:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The United States
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        North America
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The default resource record set
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Specifying the Health Check Endpoint by Domain Name</b>
+     *        </p>
+     *        <p>
+     *        If your health checks specify the endpoint only by domain name, we recommend that you create a separate
+     *        health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that
+     *        is serving content for <code>www.example.com</code>. For the value of
+     *        <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as
+     *        <code>us-east-2-www.example.com</code>), not the name of the resource record sets (
+     *        <code>www.example.com</code>).
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Health check results will be unpredictable if you do the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a
+     *        resource record set.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Associate that health check with the resource record set.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4703,29 +6021,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
-     * resource record set for.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource
+     * record set for.
      * </p>
      * <important>
      * <p>
      * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
-     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
-     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
-     * longer in use.
+     * <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important>
      * 
      * @param trafficPolicyInstanceId
      *        When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created
-     *        this resource record set for.</p> <important>
+     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this
+     *        resource record set for.</p> <important>
      *        <p>
      *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      */
 
@@ -4736,28 +6053,27 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
-     * resource record set for.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource
+     * record set for.
      * </p>
      * <important>
      * <p>
      * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
-     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
-     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
-     * longer in use.
+     * <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important>
      * 
      * @return When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     *         <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53
-     *         created this resource record set for.</p> <important>
+     *         <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this
+     *         resource record set for.</p> <important>
      *         <p>
      *         To delete the resource record set that is associated with a traffic policy instance, use
-     *         <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
-     *         automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *         Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *         charged for it even though it's no longer in use.
+     *         <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If
+     *         you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *         automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *         it's no longer in use.
      *         </p>
      */
 
@@ -4768,29 +6084,28 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created this
-     * resource record set for.
+     * <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource
+     * record set for.
      * </p>
      * <important>
      * <p>
      * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set automatically. If
-     * you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Amazon Route 53 doesn't
-     * automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no
-     * longer in use.
+     * <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important>
      * 
      * @param trafficPolicyInstanceId
      *        When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set.
-     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Amazon Route 53 created
-     *        this resource record set for.</p> <important>
+     *        <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this
+     *        resource record set for.</p> <important>
      *        <p>
      *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *        Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be
-     *        charged for it even though it's no longer in use.
+     *        <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4801,7 +6116,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -4825,6 +6141,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             sb.append("GeoLocation: ").append(getGeoLocation()).append(",");
         if (getFailover() != null)
             sb.append("Failover: ").append(getFailover()).append(",");
+        if (getMultiValueAnswer() != null)
+            sb.append("MultiValueAnswer: ").append(getMultiValueAnswer()).append(",");
         if (getTTL() != null)
             sb.append("TTL: ").append(getTTL()).append(",");
         if (getResourceRecords() != null)
@@ -4877,6 +6195,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             return false;
         if (other.getFailover() != null && other.getFailover().equals(this.getFailover()) == false)
             return false;
+        if (other.getMultiValueAnswer() == null ^ this.getMultiValueAnswer() == null)
+            return false;
+        if (other.getMultiValueAnswer() != null && other.getMultiValueAnswer().equals(this.getMultiValueAnswer()) == false)
+            return false;
         if (other.getTTL() == null ^ this.getTTL() == null)
             return false;
         if (other.getTTL() != null && other.getTTL().equals(this.getTTL()) == false)
@@ -4912,6 +6234,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getGeoLocation() == null) ? 0 : getGeoLocation().hashCode());
         hashCode = prime * hashCode + ((getFailover() == null) ? 0 : getFailover().hashCode());
+        hashCode = prime * hashCode + ((getMultiValueAnswer() == null) ? 0 : getMultiValueAnswer().hashCode());
         hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode());
         hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode());
         hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode());
@@ -4928,4 +6251,5 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

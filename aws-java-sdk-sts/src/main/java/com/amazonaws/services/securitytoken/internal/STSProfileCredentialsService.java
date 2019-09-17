@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.services.securitytoken.internal;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.STSAssumeRoleSessionCredentialsProvider;
+import com.amazonaws.auth.STSAssumeRoleWithWebIdentitySessionCredentialsProvider;
 import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
 import com.amazonaws.auth.profile.internal.securitytoken.RoleInfo;
 
@@ -26,9 +27,17 @@ import com.amazonaws.auth.profile.internal.securitytoken.RoleInfo;
 public class STSProfileCredentialsService implements ProfileCredentialsService {
     @Override
     public AWSCredentialsProvider getAssumeRoleCredentialsProvider(RoleInfo targetRoleInfo) {
-        return new STSAssumeRoleSessionCredentialsProvider.Builder(targetRoleInfo.getRoleArn(), targetRoleInfo.getRoleSessionName())
-                .withLongLivedCredentialsProvider(targetRoleInfo.getLongLivedCredentialsProvider())
-                .withExternalId(targetRoleInfo.getExternalId())
-                .build();
+        if (targetRoleInfo.getWebIdentityTokenFilePath() == null) {
+            return new STSAssumeRoleSessionCredentialsProvider.Builder(targetRoleInfo.getRoleArn(), targetRoleInfo.getRoleSessionName())
+                    .withLongLivedCredentialsProvider(targetRoleInfo.getLongLivedCredentialsProvider())
+                    .withExternalId(targetRoleInfo.getExternalId())
+                    .build();
+        } else {
+            return new STSAssumeRoleWithWebIdentitySessionCredentialsProvider.Builder(
+                    targetRoleInfo.getRoleArn(),
+                    targetRoleInfo.getRoleSessionName(),
+                    targetRoleInfo.getWebIdentityTokenFilePath())
+                    .build();
+        }
     }
 }

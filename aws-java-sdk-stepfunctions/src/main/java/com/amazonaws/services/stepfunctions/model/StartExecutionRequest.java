@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,56 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String stateMachineArn;
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region.
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
      * <p>
-     * The JSON input data for the execution.
+     * The string that contains the JSON input data for the execution, for example:
      * </p>
+     * <p>
+     * <code>"input": "{\"first_name\" : \"test\"}"</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't include any JSON input data, you still must include the two braces, for example:
+     * <code>"input": "{}"</code>
+     * </p>
+     * </note>
      */
     private String input;
 
@@ -86,11 +128,76 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region.
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account and region.
+     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
+     *        days. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -99,10 +206,75 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region.
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the execution. This name must be unique for your AWS account and region.
+     * @return The name of the execution. This name must be unique for your AWS account, region, and state machine for
+     *         90 days. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *         <p>
+     *         A name must <i>not</i> contain:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         white space
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         brackets <code>&lt; &gt; { } [ ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         wildcard characters <code>? *</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -111,11 +283,76 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region.
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * white space
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account and region.
+     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
+     *        days. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        white space
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +363,28 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON input data for the execution.
+     * The string that contains the JSON input data for the execution, for example:
      * </p>
+     * <p>
+     * <code>"input": "{\"first_name\" : \"test\"}"</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't include any JSON input data, you still must include the two braces, for example:
+     * <code>"input": "{}"</code>
+     * </p>
+     * </note>
      * 
      * @param input
-     *        The JSON input data for the execution.
+     *        The string that contains the JSON input data for the execution, for example:</p>
+     *        <p>
+     *        <code>"input": "{\"first_name\" : \"test\"}"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't include any JSON input data, you still must include the two braces, for example:
+     *        <code>"input": "{}"</code>
+     *        </p>
      */
 
     public void setInput(String input) {
@@ -139,10 +393,27 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON input data for the execution.
+     * The string that contains the JSON input data for the execution, for example:
      * </p>
+     * <p>
+     * <code>"input": "{\"first_name\" : \"test\"}"</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't include any JSON input data, you still must include the two braces, for example:
+     * <code>"input": "{}"</code>
+     * </p>
+     * </note>
      * 
-     * @return The JSON input data for the execution.
+     * @return The string that contains the JSON input data for the execution, for example:</p>
+     *         <p>
+     *         <code>"input": "{\"first_name\" : \"test\"}"</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you don't include any JSON input data, you still must include the two braces, for example:
+     *         <code>"input": "{}"</code>
+     *         </p>
      */
 
     public String getInput() {
@@ -151,11 +422,28 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON input data for the execution.
+     * The string that contains the JSON input data for the execution, for example:
      * </p>
+     * <p>
+     * <code>"input": "{\"first_name\" : \"test\"}"</code>
+     * </p>
+     * <note>
+     * <p>
+     * If you don't include any JSON input data, you still must include the two braces, for example:
+     * <code>"input": "{}"</code>
+     * </p>
+     * </note>
      * 
      * @param input
-     *        The JSON input data for the execution.
+     *        The string that contains the JSON input data for the execution, for example:</p>
+     *        <p>
+     *        <code>"input": "{\"first_name\" : \"test\"}"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you don't include any JSON input data, you still must include the two braces, for example:
+     *        <code>"input": "{}"</code>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +453,8 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,7 +469,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append(getInput());
+            sb.append("Input: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

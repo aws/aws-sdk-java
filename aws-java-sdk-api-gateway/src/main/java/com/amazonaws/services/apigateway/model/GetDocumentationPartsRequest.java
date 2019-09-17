@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -52,24 +52,32 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     private String path;
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     */
+    private String locationStatus;
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -78,10 +86,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -90,11 +98,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +165,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setType(DocumentationPartType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -172,7 +180,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      */
 
     public GetDocumentationPartsRequest withType(DocumentationPartType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -258,11 +266,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -271,10 +279,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -283,11 +291,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the to-be-retrieved documentation part in the <a>DocumentationParts</a> collection.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +306,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The size of the paged results.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -311,10 +319,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The size of the paged results.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -323,11 +331,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The size of the paged results.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The size of the paged results.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,7 +345,101 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public void setLocationStatus(String locationStatus) {
+        this.locationStatus = locationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @return The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *         retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *         <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public String getLocationStatus() {
+        return this.locationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationStatusType
+     */
+
+    public GetDocumentationPartsRequest withLocationStatus(String locationStatus) {
+        setLocationStatus(locationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public void setLocationStatus(LocationStatusType locationStatus) {
+        withLocationStatus(locationStatus);
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationStatusType
+     */
+
+    public GetDocumentationPartsRequest withLocationStatus(LocationStatusType locationStatus) {
+        this.locationStatus = locationStatus.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -358,7 +460,9 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit());
+            sb.append("Limit: ").append(getLimit()).append(",");
+        if (getLocationStatus() != null)
+            sb.append("LocationStatus: ").append(getLocationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +501,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getLocationStatus() == null ^ this.getLocationStatus() == null)
+            return false;
+        if (other.getLocationStatus() != null && other.getLocationStatus().equals(this.getLocationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +519,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getLocationStatus() == null) ? 0 : getLocationStatus().hashCode());
         return hashCode;
     }
 

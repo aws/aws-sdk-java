@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,28 +14,30 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes the information about a task invocation for a particular target as part of a task execution performed as
- * part of a Maintenance Window execution.
+ * part of a maintenance window execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskInvocationIdentity"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaintenanceWindowExecutionTaskInvocationIdentity implements Serializable, Cloneable {
+public class MaintenanceWindowExecutionTaskInvocationIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      */
     private String windowExecutionId;
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      */
     private String taskExecutionId;
@@ -54,7 +56,13 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     private String executionId;
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The task type.
+     * </p>
+     */
+    private String taskType;
+    /**
+     * <p>
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      */
     private String parameters;
@@ -84,25 +92,25 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     private java.util.Date endTime;
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      */
     private String ownerInformation;
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      */
     private String windowTargetId;
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -111,10 +119,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution that ran the task.
+     * @return The ID of the maintenance window execution that ran the task.
      */
 
     public String getWindowExecutionId() {
@@ -123,11 +131,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution that ran the task.
+     * The ID of the maintenance window execution that ran the task.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution that ran the task.
+     *        The ID of the maintenance window execution that ran the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +146,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      */
 
     public void setTaskExecutionId(String taskExecutionId) {
@@ -151,10 +159,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the specific task execution in the Maintenance Window execution.
+     * @return The ID of the specific task execution in the maintenance window execution.
      */
 
     public String getTaskExecutionId() {
@@ -163,11 +171,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the specific task execution in the Maintenance Window execution.
+     * The ID of the specific task execution in the maintenance window execution.
      * </p>
      * 
      * @param taskExecutionId
-     *        The ID of the specific task execution in the Maintenance Window execution.
+     *        The ID of the specific task execution in the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +272,84 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The task type.
+     * </p>
+     * 
+     * @param taskType
+     *        The task type.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public void setTaskType(String taskType) {
+        this.taskType = taskType;
+    }
+
+    /**
+     * <p>
+     * The task type.
+     * </p>
+     * 
+     * @return The task type.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public String getTaskType() {
+        return this.taskType;
+    }
+
+    /**
+     * <p>
+     * The task type.
+     * </p>
+     * 
+     * @param taskType
+     *        The task type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public MaintenanceWindowExecutionTaskInvocationIdentity withTaskType(String taskType) {
+        setTaskType(taskType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task type.
+     * </p>
+     * 
+     * @param taskType
+     *        The task type.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public void setTaskType(MaintenanceWindowTaskType taskType) {
+        withTaskType(taskType);
+    }
+
+    /**
+     * <p>
+     * The task type.
+     * </p>
+     * 
+     * @param taskType
+     *        The task type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MaintenanceWindowTaskType
+     */
+
+    public MaintenanceWindowExecutionTaskInvocationIdentity withTaskType(MaintenanceWindowTaskType taskType) {
+        this.taskType = taskType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
      * @param parameters
-     *        The parameters that were provided for the invocation when it was executed.
+     *        The parameters that were provided for the invocation when it was run.
      */
 
     public void setParameters(String parameters) {
@@ -277,10 +358,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
-     * @return The parameters that were provided for the invocation when it was executed.
+     * @return The parameters that were provided for the invocation when it was run.
      */
 
     public String getParameters() {
@@ -289,11 +370,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The parameters that were provided for the invocation when it was executed.
+     * The parameters that were provided for the invocation when it was run.
      * </p>
      * 
      * @param parameters
-     *        The parameters that were provided for the invocation when it was executed.
+     *        The parameters that were provided for the invocation when it was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,7 +437,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -371,7 +452,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
      */
 
     public MaintenanceWindowExecutionTaskInvocationIdentity withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -497,12 +578,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that was specified when the target was registered with the Maintenance Window. This
+     *        User-provided value that was specified when the target was registered with the maintenance window. This
      *        was also included in any CloudWatch events raised during the task invocation.
      */
 
@@ -512,11 +593,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
-     * @return User-provided value that was specified when the target was registered with the Maintenance Window. This
+     * @return User-provided value that was specified when the target was registered with the maintenance window. This
      *         was also included in any CloudWatch events raised during the task invocation.
      */
 
@@ -526,12 +607,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * User-provided value that was specified when the target was registered with the Maintenance Window. This was also
+     * User-provided value that was specified when the target was registered with the maintenance window. This was also
      * included in any CloudWatch events raised during the task invocation.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that was specified when the target was registered with the Maintenance Window. This
+     *        User-provided value that was specified when the target was registered with the maintenance window. This
      *        was also included in any CloudWatch events raised during the task invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -543,11 +624,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window the invocation was performed for.
+     *        The ID of the target definition in this maintenance window the invocation was performed for.
      */
 
     public void setWindowTargetId(String windowTargetId) {
@@ -556,10 +637,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
-     * @return The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * @return The ID of the target definition in this maintenance window the invocation was performed for.
      */
 
     public String getWindowTargetId() {
@@ -568,11 +649,11 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
 
     /**
      * <p>
-     * The ID of the target definition in this Maintenance Window the invocation was performed for.
+     * The ID of the target definition in this maintenance window the invocation was performed for.
      * </p>
      * 
      * @param windowTargetId
-     *        The ID of the target definition in this Maintenance Window the invocation was performed for.
+     *        The ID of the target definition in this maintenance window the invocation was performed for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,7 +663,8 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -600,8 +682,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
             sb.append("InvocationId: ").append(getInvocationId()).append(",");
         if (getExecutionId() != null)
             sb.append("ExecutionId: ").append(getExecutionId()).append(",");
+        if (getTaskType() != null)
+            sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
@@ -611,7 +695,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getWindowTargetId() != null)
             sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");
@@ -643,6 +727,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         if (other.getExecutionId() == null ^ this.getExecutionId() == null)
             return false;
         if (other.getExecutionId() != null && other.getExecutionId().equals(this.getExecutionId()) == false)
+            return false;
+        if (other.getTaskType() == null ^ this.getTaskType() == null)
+            return false;
+        if (other.getTaskType() != null && other.getTaskType().equals(this.getTaskType()) == false)
             return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
@@ -684,6 +772,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         hashCode = prime * hashCode + ((getTaskExecutionId() == null) ? 0 : getTaskExecutionId().hashCode());
         hashCode = prime * hashCode + ((getInvocationId() == null) ? 0 : getInvocationId().hashCode());
         hashCode = prime * hashCode + ((getExecutionId() == null) ? 0 : getExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getTaskType() == null) ? 0 : getTaskType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
@@ -701,5 +790,12 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.MaintenanceWindowExecutionTaskInvocationIdentityMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

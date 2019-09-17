@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,14 +52,14 @@ public class Listener implements Serializable, Cloneable {
     private String protocol;
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * [HTTPS or TLS listener] The default certificate for the listener.
      * </p>
      */
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The default
+     * is the current predefined security policy.
      * </p>
      */
     private String sslPolicy;
@@ -244,7 +244,7 @@ public class Listener implements Serializable, Cloneable {
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -259,16 +259,16 @@ public class Listener implements Serializable, Cloneable {
      */
 
     public Listener withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * [HTTPS or TLS listener] The default certificate for the listener.
      * </p>
      * 
-     * @return The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * @return [HTTPS or TLS listener] The default certificate for the listener.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -277,11 +277,11 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * [HTTPS or TLS listener] The default certificate for the listener.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        [HTTPS or TLS listener] The default certificate for the listener.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -295,7 +295,7 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * [HTTPS or TLS listener] The default certificate for the listener.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -304,7 +304,7 @@ public class Listener implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        [HTTPS or TLS listener] The default certificate for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +320,11 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * [HTTPS or TLS listener] The default certificate for the listener.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        [HTTPS or TLS listener] The default certificate for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +335,13 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The default
+     * is the current predefined security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported. The default is the current
-     *        predefined security policy.
+     *        [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The
+     *        default is the current predefined security policy.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -350,12 +350,12 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The default
+     * is the current predefined security policy.
      * </p>
      * 
-     * @return The security policy that defines which ciphers and protocols are supported. The default is the current
-     *         predefined security policy.
+     * @return [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The
+     *         default is the current predefined security policy.
      */
 
     public String getSslPolicy() {
@@ -364,13 +364,13 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The default
+     * is the current predefined security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported. The default is the current
-     *        predefined security policy.
+     *        [HTTPS or TLS listener] The security policy that defines which ciphers and protocols are supported. The
+     *        default is the current predefined security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,7 +450,8 @@ public class Listener implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -542,4 +543,5 @@ public class Listener implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

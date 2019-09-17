@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTagsForVaultRequest Marshaller
+ * ListTagsForVaultRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTagsForVaultRequestMarshaller implements Marshaller<Request<ListTagsForVaultRequest>, ListTagsForVaultRequest> {
+@SdkInternalApi
+public class ListTagsForVaultRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
 
-    public ListTagsForVaultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTagsForVaultRequestMarshaller instance = new ListTagsForVaultRequestMarshaller();
+
+    public static ListTagsForVaultRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTagsForVaultRequest> marshall(ListTagsForVaultRequest listTagsForVaultRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTagsForVaultRequest listTagsForVaultRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTagsForVaultRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTagsForVaultRequest> request = new DefaultRequest<ListTagsForVaultRequest>(listTagsForVaultRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/tags";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                listTagsForVaultRequest.getAccountId() == null ? "-" : listTagsForVaultRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", listTagsForVaultRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(listTagsForVaultRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listTagsForVaultRequest.getVaultName(), VAULTNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

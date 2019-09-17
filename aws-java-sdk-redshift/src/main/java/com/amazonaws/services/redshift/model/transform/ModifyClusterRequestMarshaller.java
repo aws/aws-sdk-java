@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("NumberOfNodes", StringUtils.fromInteger(modifyClusterRequest.getNumberOfNodes()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
-                .getClusterSecurityGroups();
-        if (!clusterSecurityGroupsList.isEmpty() || !clusterSecurityGroupsList.isAutoConstruct()) {
+        if (!modifyClusterRequest.getClusterSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest.getClusterSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
+                    .getClusterSecurityGroups();
             int clusterSecurityGroupsListIndex = 1;
 
             for (String clusterSecurityGroupsListValue : clusterSecurityGroupsList) {
@@ -70,9 +71,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!modifyClusterRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -94,6 +96,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
 
         if (modifyClusterRequest.getAutomatedSnapshotRetentionPeriod() != null) {
             request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getAutomatedSnapshotRetentionPeriod()));
+        }
+
+        if (modifyClusterRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getManualSnapshotRetentionPeriod()));
         }
 
         if (modifyClusterRequest.getPreferredMaintenanceWindow() != null) {
@@ -130,6 +136,18 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
 
         if (modifyClusterRequest.getEnhancedVpcRouting() != null) {
             request.addParameter("EnhancedVpcRouting", StringUtils.fromBoolean(modifyClusterRequest.getEnhancedVpcRouting()));
+        }
+
+        if (modifyClusterRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(modifyClusterRequest.getMaintenanceTrackName()));
+        }
+
+        if (modifyClusterRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(modifyClusterRequest.getEncrypted()));
+        }
+
+        if (modifyClusterRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(modifyClusterRequest.getKmsKeyId()));
         }
 
         return request;

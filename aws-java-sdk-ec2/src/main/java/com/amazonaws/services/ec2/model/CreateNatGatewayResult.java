@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,19 +18,11 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of CreateNatGateway.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * Information about the NAT gateway.
-     * </p>
-     */
-    private NatGateway natGateway;
     /**
      * <p>
      * Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was
@@ -38,46 +30,12 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String clientToken;
-
     /**
      * <p>
      * Information about the NAT gateway.
      * </p>
-     * 
-     * @param natGateway
-     *        Information about the NAT gateway.
      */
-
-    public void setNatGateway(NatGateway natGateway) {
-        this.natGateway = natGateway;
-    }
-
-    /**
-     * <p>
-     * Information about the NAT gateway.
-     * </p>
-     * 
-     * @return Information about the NAT gateway.
-     */
-
-    public NatGateway getNatGateway() {
-        return this.natGateway;
-    }
-
-    /**
-     * <p>
-     * Information about the NAT gateway.
-     * </p>
-     * 
-     * @param natGateway
-     *        Information about the NAT gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNatGatewayResult withNatGateway(NatGateway natGateway) {
-        setNatGateway(natGateway);
-        return this;
-    }
+    private NatGateway natGateway;
 
     /**
      * <p>
@@ -126,7 +84,48 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the NAT gateway.
+     * </p>
+     * 
+     * @param natGateway
+     *        Information about the NAT gateway.
+     */
+
+    public void setNatGateway(NatGateway natGateway) {
+        this.natGateway = natGateway;
+    }
+
+    /**
+     * <p>
+     * Information about the NAT gateway.
+     * </p>
+     * 
+     * @return Information about the NAT gateway.
+     */
+
+    public NatGateway getNatGateway() {
+        return this.natGateway;
+    }
+
+    /**
+     * <p>
+     * Information about the NAT gateway.
+     * </p>
+     * 
+     * @param natGateway
+     *        Information about the NAT gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNatGatewayResult withNatGateway(NatGateway natGateway) {
+        setNatGateway(natGateway);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -136,10 +135,10 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNatGateway() != null)
-            sb.append("NatGateway: ").append(getNatGateway()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getNatGateway() != null)
+            sb.append("NatGateway: ").append(getNatGateway());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +153,13 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
         if (obj instanceof CreateNatGatewayResult == false)
             return false;
         CreateNatGatewayResult other = (CreateNatGatewayResult) obj;
-        if (other.getNatGateway() == null ^ this.getNatGateway() == null)
-            return false;
-        if (other.getNatGateway() != null && other.getNatGateway().equals(this.getNatGateway()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getNatGateway() == null ^ this.getNatGateway() == null)
+            return false;
+        if (other.getNatGateway() != null && other.getNatGateway().equals(this.getNatGateway()) == false)
             return false;
         return true;
     }
@@ -170,8 +169,8 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNatGateway() == null) ? 0 : getNatGateway().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getNatGateway() == null) ? 0 : getNatGateway().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,55 +27,91 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to update.
+     * The ID of the maintenance window to update.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The schedule of the Maintenance Window in the form of a cron or rate expression.
+     * An optional description for the update request.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     */
+    private String startDate;
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
+     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * </p>
+     */
+    private String endDate;
+    /**
+     * <p>
+     * The schedule of the maintenance window in the form of a cron or rate expression.
      * </p>
      */
     private String schedule;
     /**
      * <p>
-     * The duration of the Maintenance Window in hours.
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     */
+    private String scheduleTimezone;
+    /**
+     * <p>
+     * The duration of the maintenance window in hours.
      * </p>
      */
     private Integer duration;
     /**
      * <p>
-     * The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for
+     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
      * execution.
      * </p>
      */
     private Integer cutoff;
     /**
      * <p>
-     * Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+     * Whether targets must be registered with the maintenance window before tasks can be defined for those targets.
      * </p>
      */
     private Boolean allowUnassociatedTargets;
     /**
      * <p>
-     * Whether the Maintenance Window is enabled.
+     * Whether the maintenance window is enabled.
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     */
+    private Boolean replace;
 
     /**
      * <p>
-     * The ID of the Maintenance Window to update.
+     * The ID of the maintenance window to update.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to update.
+     *        The ID of the maintenance window to update.
      */
 
     public void setWindowId(String windowId) {
@@ -84,10 +120,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to update.
+     * The ID of the maintenance window to update.
      * </p>
      * 
-     * @return The ID of the Maintenance Window to update.
+     * @return The ID of the maintenance window to update.
      */
 
     public String getWindowId() {
@@ -96,11 +132,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the Maintenance Window to update.
+     * The ID of the maintenance window to update.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window to update.
+     *        The ID of the maintenance window to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +147,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window.
+     *        The name of the maintenance window.
      */
 
     public void setName(String name) {
@@ -124,10 +160,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
-     * @return The name of the Maintenance Window.
+     * @return The name of the maintenance window.
      */
 
     public String getName() {
@@ -136,11 +172,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Maintenance Window.
+     * The name of the maintenance window.
      * </p>
      * 
      * @param name
-     *        The name of the Maintenance Window.
+     *        The name of the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +187,153 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The schedule of the Maintenance Window in the form of a cron or rate expression.
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the update request.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @return An optional description for the update request.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the update request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param startDate
+     *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     */
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @return The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *         Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *         information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     *         website.
+     */
+
+    public String getStartDate() {
+        return this.startDate;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param startDate
+     *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withStartDate(String startDate) {
+        setStartDate(startDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
+     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * </p>
+     * 
+     * @param endDate
+     *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
+     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
+     *        longer run.
+     */
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
+     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * </p>
+     * 
+     * @return The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
+     *         inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
+     *         longer run.
+     */
+
+    public String getEndDate() {
+        return this.endDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive.
+     * EndDate allows you to set a date and time in the future when the maintenance window will no longer run.
+     * </p>
+     * 
+     * @param endDate
+     *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
+     *        inactive. EndDate allows you to set a date and time in the future when the maintenance window will no
+     *        longer run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withEndDate(String endDate) {
+        setEndDate(endDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The schedule of the maintenance window in the form of a cron or rate expression.
      * </p>
      * 
      * @param schedule
-     *        The schedule of the Maintenance Window in the form of a cron or rate expression.
+     *        The schedule of the maintenance window in the form of a cron or rate expression.
      */
 
     public void setSchedule(String schedule) {
@@ -164,10 +342,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The schedule of the Maintenance Window in the form of a cron or rate expression.
+     * The schedule of the maintenance window in the form of a cron or rate expression.
      * </p>
      * 
-     * @return The schedule of the Maintenance Window in the form of a cron or rate expression.
+     * @return The schedule of the maintenance window in the form of a cron or rate expression.
      */
 
     public String getSchedule() {
@@ -176,11 +354,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The schedule of the Maintenance Window in the form of a cron or rate expression.
+     * The schedule of the maintenance window in the form of a cron or rate expression.
      * </p>
      * 
      * @param schedule
-     *        The schedule of the Maintenance Window in the form of a cron or rate expression.
+     *        The schedule of the maintenance window in the form of a cron or rate expression.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +369,64 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The duration of the Maintenance Window in hours.
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param scheduleTimezone
+     *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     */
+
+    public void setScheduleTimezone(String scheduleTimezone) {
+        this.scheduleTimezone = scheduleTimezone;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @return The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *         Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *         information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     *         website.
+     */
+
+    public String getScheduleTimezone() {
+        return this.scheduleTimezone;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param scheduleTimezone
+     *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withScheduleTimezone(String scheduleTimezone) {
+        setScheduleTimezone(scheduleTimezone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The duration of the maintenance window in hours.
      * </p>
      * 
      * @param duration
-     *        The duration of the Maintenance Window in hours.
+     *        The duration of the maintenance window in hours.
      */
 
     public void setDuration(Integer duration) {
@@ -204,10 +435,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The duration of the Maintenance Window in hours.
+     * The duration of the maintenance window in hours.
      * </p>
      * 
-     * @return The duration of the Maintenance Window in hours.
+     * @return The duration of the maintenance window in hours.
      */
 
     public Integer getDuration() {
@@ -216,11 +447,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The duration of the Maintenance Window in hours.
+     * The duration of the maintenance window in hours.
      * </p>
      * 
      * @param duration
-     *        The duration of the Maintenance Window in hours.
+     *        The duration of the maintenance window in hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,12 +462,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for
+     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
      * execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new
+     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
      *        tasks for execution.
      */
 
@@ -246,11 +477,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for
+     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
      * execution.
      * </p>
      * 
-     * @return The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new
+     * @return The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
      *         tasks for execution.
      */
 
@@ -260,12 +491,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for
+     * The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for
      * execution.
      * </p>
      * 
      * @param cutoff
-     *        The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new
+     *        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
      *        tasks for execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -277,11 +508,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+     * Whether targets must be registered with the maintenance window before tasks can be defined for those targets.
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Whether targets must be registered with the Maintenance Window before tasks can be defined for those
+     *        Whether targets must be registered with the maintenance window before tasks can be defined for those
      *        targets.
      */
 
@@ -291,10 +522,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+     * Whether targets must be registered with the maintenance window before tasks can be defined for those targets.
      * </p>
      * 
-     * @return Whether targets must be registered with the Maintenance Window before tasks can be defined for those
+     * @return Whether targets must be registered with the maintenance window before tasks can be defined for those
      *         targets.
      */
 
@@ -304,11 +535,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+     * Whether targets must be registered with the maintenance window before tasks can be defined for those targets.
      * </p>
      * 
      * @param allowUnassociatedTargets
-     *        Whether targets must be registered with the Maintenance Window before tasks can be defined for those
+     *        Whether targets must be registered with the maintenance window before tasks can be defined for those
      *        targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -320,10 +551,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+     * Whether targets must be registered with the maintenance window before tasks can be defined for those targets.
      * </p>
      * 
-     * @return Whether targets must be registered with the Maintenance Window before tasks can be defined for those
+     * @return Whether targets must be registered with the maintenance window before tasks can be defined for those
      *         targets.
      */
 
@@ -333,11 +564,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether the Maintenance Window is enabled.
+     * Whether the maintenance window is enabled.
      * </p>
      * 
      * @param enabled
-     *        Whether the Maintenance Window is enabled.
+     *        Whether the maintenance window is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -346,10 +577,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether the Maintenance Window is enabled.
+     * Whether the maintenance window is enabled.
      * </p>
      * 
-     * @return Whether the Maintenance Window is enabled.
+     * @return Whether the maintenance window is enabled.
      */
 
     public Boolean getEnabled() {
@@ -358,11 +589,11 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether the Maintenance Window is enabled.
+     * Whether the maintenance window is enabled.
      * </p>
      * 
      * @param enabled
-     *        Whether the Maintenance Window is enabled.
+     *        Whether the maintenance window is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,10 +604,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Whether the Maintenance Window is enabled.
+     * Whether the maintenance window is enabled.
      * </p>
      * 
-     * @return Whether the Maintenance Window is enabled.
+     * @return Whether the maintenance window is enabled.
      */
 
     public Boolean isEnabled() {
@@ -384,7 +615,68 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *        this API request. Optional fields that are not specified are set to null.
+     */
+
+    public void setReplace(Boolean replace) {
+        this.replace = replace;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *         this API request. Optional fields that are not specified are set to null.
+     */
+
+    public Boolean getReplace() {
+        return this.replace;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *        this API request. Optional fields that are not specified are set to null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withReplace(Boolean replace) {
+        setReplace(replace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *         this API request. Optional fields that are not specified are set to null.
+     */
+
+    public Boolean isReplace() {
+        return this.replace;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -398,8 +690,16 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
+        if (getStartDate() != null)
+            sb.append("StartDate: ").append(getStartDate()).append(",");
+        if (getEndDate() != null)
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getScheduleTimezone() != null)
+            sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
         if (getCutoff() != null)
@@ -407,7 +707,9 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
         if (getAllowUnassociatedTargets() != null)
             sb.append("AllowUnassociatedTargets: ").append(getAllowUnassociatedTargets()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getReplace() != null)
+            sb.append("Replace: ").append(getReplace());
         sb.append("}");
         return sb.toString();
     }
@@ -430,9 +732,25 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getStartDate() == null ^ this.getStartDate() == null)
+            return false;
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
+            return false;
+        if (other.getEndDate() == null ^ this.getEndDate() == null)
+            return false;
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
+            return false;
         if (other.getSchedule() == null ^ this.getSchedule() == null)
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
+            return false;
+        if (other.getScheduleTimezone() == null ^ this.getScheduleTimezone() == null)
+            return false;
+        if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
@@ -450,6 +768,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getReplace() == null ^ this.getReplace() == null)
+            return false;
+        if (other.getReplace() != null && other.getReplace().equals(this.getReplace()) == false)
+            return false;
         return true;
     }
 
@@ -460,11 +782,16 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getAllowUnassociatedTargets() == null) ? 0 : getAllowUnassociatedTargets().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getReplace() == null) ? 0 : getReplace().hashCode());
         return hashCode;
     }
 

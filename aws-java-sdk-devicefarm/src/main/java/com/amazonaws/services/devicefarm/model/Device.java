@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Device implements Serializable, Cloneable {
+public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -50,6 +52,12 @@ public class Device implements Serializable, Cloneable {
      * </p>
      */
     private String model;
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     */
+    private String modelId;
     /**
      * <p>
      * The device's form factor.
@@ -104,7 +112,11 @@ public class Device implements Serializable, Cloneable {
      * </p>
      */
     private CPU cpu;
-
+    /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     */
     private Resolution resolution;
     /**
      * <p>
@@ -144,6 +156,12 @@ public class Device implements Serializable, Cloneable {
     private Boolean remoteAccessEnabled;
     /**
      * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     */
+    private Boolean remoteDebugEnabled;
+    /**
+     * <p>
      * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
      * </p>
      */
@@ -154,6 +172,19 @@ public class Device implements Serializable, Cloneable {
      * </p>
      */
     private String fleetName;
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     */
+    private java.util.List<DeviceInstance> instances;
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     */
+    private String availability;
 
     /**
      * <p>
@@ -312,6 +343,46 @@ public class Device implements Serializable, Cloneable {
 
     public Device withModel(String model) {
         setModel(model);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The device's model ID.
+     */
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @return The device's model ID.
+     */
+
+    public String getModelId() {
+        return this.modelId;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The device's model ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withModelId(String modelId) {
+        setModelId(modelId);
         return this;
     }
 
@@ -485,7 +556,7 @@ public class Device implements Serializable, Cloneable {
      */
 
     public void setFormFactor(DeviceFormFactor formFactor) {
-        this.formFactor = formFactor.toString();
+        withFormFactor(formFactor);
     }
 
     /**
@@ -529,7 +600,7 @@ public class Device implements Serializable, Cloneable {
      */
 
     public Device withFormFactor(DeviceFormFactor formFactor) {
-        setFormFactor(formFactor);
+        this.formFactor = formFactor.toString();
         return this;
     }
 
@@ -703,7 +774,7 @@ public class Device implements Serializable, Cloneable {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -747,7 +818,7 @@ public class Device implements Serializable, Cloneable {
      */
 
     public Device withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -832,7 +903,12 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      */
 
     public void setResolution(Resolution resolution) {
@@ -840,7 +916,11 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
+     * @return The resolution of the device.
      */
 
     public Resolution getResolution() {
@@ -848,7 +928,12 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1111,6 +1196,58 @@ public class Device implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        this.remoteDebugEnabled = remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public Boolean getRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        setRemoteDebugEnabled(remoteDebugEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public Boolean isRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
      * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
      * </p>
      * 
@@ -1190,7 +1327,161 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @return The instances belonging to this device.
+     */
+
+    public java.util.List<DeviceInstance> getInstances() {
+        return instances;
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     */
+
+    public void setInstances(java.util.Collection<DeviceInstance> instances) {
+        if (instances == null) {
+            this.instances = null;
+            return;
+        }
+
+        this.instances = new java.util.ArrayList<DeviceInstance>(instances);
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withInstances(DeviceInstance... instances) {
+        if (this.instances == null) {
+            setInstances(new java.util.ArrayList<DeviceInstance>(instances.length));
+        }
+        for (DeviceInstance ele : instances) {
+            this.instances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withInstances(java.util.Collection<DeviceInstance> instances) {
+        setInstances(instances);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @return Reflects how likely a device will be available for a test run. It is currently available in the
+     *         ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public String getAvailability() {
+        return this.availability;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAvailability
+     */
+
+    public Device withAvailability(String availability) {
+        setAvailability(availability);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public void setAvailability(DeviceAvailability availability) {
+        withAvailability(availability);
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAvailability
+     */
+
+    public Device withAvailability(DeviceAvailability availability) {
+        this.availability = availability.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1208,6 +1499,8 @@ public class Device implements Serializable, Cloneable {
             sb.append("Manufacturer: ").append(getManufacturer()).append(",");
         if (getModel() != null)
             sb.append("Model: ").append(getModel()).append(",");
+        if (getModelId() != null)
+            sb.append("ModelId: ").append(getModelId()).append(",");
         if (getFormFactor() != null)
             sb.append("FormFactor: ").append(getFormFactor()).append(",");
         if (getPlatform() != null)
@@ -1230,10 +1523,16 @@ public class Device implements Serializable, Cloneable {
             sb.append("Radio: ").append(getRadio()).append(",");
         if (getRemoteAccessEnabled() != null)
             sb.append("RemoteAccessEnabled: ").append(getRemoteAccessEnabled()).append(",");
+        if (getRemoteDebugEnabled() != null)
+            sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
         if (getFleetType() != null)
             sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getFleetName() != null)
-            sb.append("FleetName: ").append(getFleetName());
+            sb.append("FleetName: ").append(getFleetName()).append(",");
+        if (getInstances() != null)
+            sb.append("Instances: ").append(getInstances()).append(",");
+        if (getAvailability() != null)
+            sb.append("Availability: ").append(getAvailability());
         sb.append("}");
         return sb.toString();
     }
@@ -1263,6 +1562,10 @@ public class Device implements Serializable, Cloneable {
         if (other.getModel() == null ^ this.getModel() == null)
             return false;
         if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
+            return false;
+        if (other.getModelId() == null ^ this.getModelId() == null)
+            return false;
+        if (other.getModelId() != null && other.getModelId().equals(this.getModelId()) == false)
             return false;
         if (other.getFormFactor() == null ^ this.getFormFactor() == null)
             return false;
@@ -1308,6 +1611,10 @@ public class Device implements Serializable, Cloneable {
             return false;
         if (other.getRemoteAccessEnabled() != null && other.getRemoteAccessEnabled().equals(this.getRemoteAccessEnabled()) == false)
             return false;
+        if (other.getRemoteDebugEnabled() == null ^ this.getRemoteDebugEnabled() == null)
+            return false;
+        if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
+            return false;
         if (other.getFleetType() == null ^ this.getFleetType() == null)
             return false;
         if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
@@ -1315,6 +1622,14 @@ public class Device implements Serializable, Cloneable {
         if (other.getFleetName() == null ^ this.getFleetName() == null)
             return false;
         if (other.getFleetName() != null && other.getFleetName().equals(this.getFleetName()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+            return false;
+        if (other.getAvailability() == null ^ this.getAvailability() == null)
+            return false;
+        if (other.getAvailability() != null && other.getAvailability().equals(this.getAvailability()) == false)
             return false;
         return true;
     }
@@ -1328,6 +1643,7 @@ public class Device implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getManufacturer() == null) ? 0 : getManufacturer().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
+        hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getFormFactor() == null) ? 0 : getFormFactor().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode());
@@ -1339,8 +1655,11 @@ public class Device implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCarrier() == null) ? 0 : getCarrier().hashCode());
         hashCode = prime * hashCode + ((getRadio() == null) ? 0 : getRadio().hashCode());
         hashCode = prime * hashCode + ((getRemoteAccessEnabled() == null) ? 0 : getRemoteAccessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getAvailability() == null) ? 0 : getAvailability().hashCode());
         return hashCode;
     }
 
@@ -1351,5 +1670,11 @@ public class Device implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.DeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      */
     private String alarmNamePrefix;
@@ -137,11 +137,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public void setAlarmNamePrefix(String alarmNamePrefix) {
@@ -150,10 +150,10 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
-     * @return The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * @return The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public String getAlarmNamePrefix() {
@@ -162,11 +162,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,7 +229,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        withStateValue(stateValue);
     }
 
     /**
@@ -244,7 +244,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
-        setStateValue(stateValue);
+        this.stateValue = stateValue.toString();
         return this;
     }
 
@@ -369,7 +369,8 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

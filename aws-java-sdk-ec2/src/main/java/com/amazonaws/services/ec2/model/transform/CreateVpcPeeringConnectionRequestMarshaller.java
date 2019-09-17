@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,16 +41,20 @@ public class CreateVpcPeeringConnectionRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpcPeeringConnectionRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));
+        if (createVpcPeeringConnectionRequest.getPeerOwnerId() != null) {
+            request.addParameter("PeerOwnerId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerOwnerId()));
         }
 
         if (createVpcPeeringConnectionRequest.getPeerVpcId() != null) {
             request.addParameter("PeerVpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerVpcId()));
         }
 
-        if (createVpcPeeringConnectionRequest.getPeerOwnerId() != null) {
-            request.addParameter("PeerOwnerId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerOwnerId()));
+        if (createVpcPeeringConnectionRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));
+        }
+
+        if (createVpcPeeringConnectionRequest.getPeerRegion() != null) {
+            request.addParameter("PeerRegion", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerRegion()));
         }
 
         return request;

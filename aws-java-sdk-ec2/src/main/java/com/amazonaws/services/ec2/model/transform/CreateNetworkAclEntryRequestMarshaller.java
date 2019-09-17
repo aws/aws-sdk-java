@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,44 +40,32 @@ public class CreateNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createNetworkAclEntryRequest.getNetworkAclId() != null) {
-            request.addParameter("NetworkAclId", StringUtils.fromString(createNetworkAclEntryRequest.getNetworkAclId()));
-        }
-
-        if (createNetworkAclEntryRequest.getRuleNumber() != null) {
-            request.addParameter("RuleNumber", StringUtils.fromInteger(createNetworkAclEntryRequest.getRuleNumber()));
-        }
-
-        if (createNetworkAclEntryRequest.getProtocol() != null) {
-            request.addParameter("Protocol", StringUtils.fromString(createNetworkAclEntryRequest.getProtocol()));
-        }
-
-        if (createNetworkAclEntryRequest.getRuleAction() != null) {
-            request.addParameter("RuleAction", StringUtils.fromString(createNetworkAclEntryRequest.getRuleAction()));
+        if (createNetworkAclEntryRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(createNetworkAclEntryRequest.getCidrBlock()));
         }
 
         if (createNetworkAclEntryRequest.getEgress() != null) {
             request.addParameter("Egress", StringUtils.fromBoolean(createNetworkAclEntryRequest.getEgress()));
         }
 
-        if (createNetworkAclEntryRequest.getCidrBlock() != null) {
-            request.addParameter("CidrBlock", StringUtils.fromString(createNetworkAclEntryRequest.getCidrBlock()));
+        IcmpTypeCode icmpTypeCode = createNetworkAclEntryRequest.getIcmpTypeCode();
+        if (icmpTypeCode != null) {
+
+            if (icmpTypeCode.getCode() != null) {
+                request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCode.getCode()));
+            }
+
+            if (icmpTypeCode.getType() != null) {
+                request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCode.getType()));
+            }
         }
 
         if (createNetworkAclEntryRequest.getIpv6CidrBlock() != null) {
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(createNetworkAclEntryRequest.getIpv6CidrBlock()));
         }
 
-        IcmpTypeCode icmpTypeCode = createNetworkAclEntryRequest.getIcmpTypeCode();
-        if (icmpTypeCode != null) {
-
-            if (icmpTypeCode.getType() != null) {
-                request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCode.getType()));
-            }
-
-            if (icmpTypeCode.getCode() != null) {
-                request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCode.getCode()));
-            }
+        if (createNetworkAclEntryRequest.getNetworkAclId() != null) {
+            request.addParameter("NetworkAclId", StringUtils.fromString(createNetworkAclEntryRequest.getNetworkAclId()));
         }
 
         PortRange portRange = createNetworkAclEntryRequest.getPortRange();
@@ -90,6 +78,18 @@ public class CreateNetworkAclEntryRequestMarshaller implements Marshaller<Reques
             if (portRange.getTo() != null) {
                 request.addParameter("PortRange.To", StringUtils.fromInteger(portRange.getTo()));
             }
+        }
+
+        if (createNetworkAclEntryRequest.getProtocol() != null) {
+            request.addParameter("Protocol", StringUtils.fromString(createNetworkAclEntryRequest.getProtocol()));
+        }
+
+        if (createNetworkAclEntryRequest.getRuleAction() != null) {
+            request.addParameter("RuleAction", StringUtils.fromString(createNetworkAclEntryRequest.getRuleAction()));
+        }
+
+        if (createNetworkAclEntryRequest.getRuleNumber() != null) {
+            request.addParameter("RuleNumber", StringUtils.fromInteger(createNetworkAclEntryRequest.getRuleNumber()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    build.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    build.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
-                    build.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    build.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("currentPhase", targetDepth)) {
                     context.nextToken();
@@ -76,6 +76,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setSourceVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resolvedSourceVersion", targetDepth)) {
+                    context.nextToken();
+                    build.setResolvedSourceVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("projectName", targetDepth)) {
                     context.nextToken();
                     build.setProjectName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -88,13 +92,34 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setSource(ProjectSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secondarySources", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("secondarySourceVersions", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondarySourceVersions(new ListUnmarshaller<ProjectSourceVersion>(ProjectSourceVersionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
                     build.setArtifacts(BuildArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secondaryArtifacts", targetDepth)) {
+                    context.nextToken();
+                    build.setSecondaryArtifacts(new ListUnmarshaller<BuildArtifacts>(BuildArtifactsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("cache", targetDepth)) {
+                    context.nextToken();
+                    build.setCache(ProjectCacheJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
                     build.setEnvironment(ProjectEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("serviceRole", targetDepth)) {
+                    context.nextToken();
+                    build.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
@@ -104,6 +129,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("queuedTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    build.setQueuedTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("buildComplete", targetDepth)) {
                     context.nextToken();
                     build.setBuildComplete(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -111,6 +140,18 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                 if (context.testExpression("initiator", targetDepth)) {
                     context.nextToken();
                     build.setInitiator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    build.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("networkInterface", targetDepth)) {
+                    context.nextToken();
+                    build.setNetworkInterface(NetworkInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("encryptionKey", targetDepth)) {
+                    context.nextToken();
+                    build.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

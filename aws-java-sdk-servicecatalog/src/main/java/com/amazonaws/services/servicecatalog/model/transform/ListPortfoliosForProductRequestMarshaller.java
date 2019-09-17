@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPortfoliosForProductRequest Marshaller
+ * ListPortfoliosForProductRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPortfoliosForProductRequestMarshaller implements Marshaller<Request<ListPortfoliosForProductRequest>, ListPortfoliosForProductRequest> {
+@SdkInternalApi
+public class ListPortfoliosForProductRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PageToken").build();
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
 
-    public ListPortfoliosForProductRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPortfoliosForProductRequestMarshaller instance = new ListPortfoliosForProductRequestMarshaller();
+
+    public static ListPortfoliosForProductRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPortfoliosForProductRequest> marshall(ListPortfoliosForProductRequest listPortfoliosForProductRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPortfoliosForProductRequest listPortfoliosForProductRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPortfoliosForProductRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPortfoliosForProductRequest> request = new DefaultRequest<ListPortfoliosForProductRequest>(listPortfoliosForProductRequest,
-                "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.ListPortfoliosForProduct");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listPortfoliosForProductRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(listPortfoliosForProductRequest.getAcceptLanguage());
-            }
-            if (listPortfoliosForProductRequest.getProductId() != null) {
-                jsonGenerator.writeFieldName("ProductId").writeValue(listPortfoliosForProductRequest.getProductId());
-            }
-            if (listPortfoliosForProductRequest.getPageToken() != null) {
-                jsonGenerator.writeFieldName("PageToken").writeValue(listPortfoliosForProductRequest.getPageToken());
-            }
-            if (listPortfoliosForProductRequest.getPageSize() != null) {
-                jsonGenerator.writeFieldName("PageSize").writeValue(listPortfoliosForProductRequest.getPageSize());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listPortfoliosForProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(listPortfoliosForProductRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(listPortfoliosForProductRequest.getPageToken(), PAGETOKEN_BINDING);
+            protocolMarshaller.marshall(listPortfoliosForProductRequest.getPageSize(), PAGESIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

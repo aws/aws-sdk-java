@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@ package com.amazonaws.opensdk.protect.client;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
+import com.amazonaws.monitoring.MonitoringListener;
+import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.CsmConfigurationProviderChain;
 import com.amazonaws.opensdk.config.ConnectionConfiguration;
 import com.amazonaws.opensdk.config.ProxyConfiguration;
 import com.amazonaws.opensdk.config.TimeoutConfiguration;
@@ -56,7 +59,7 @@ import java.util.List;
  */
 public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder, TypeToBuild> {
 
-    private static final String USER_AGENT_PREFIX = "apig-java";
+    private static final String USER_AGENT_PREFIX = "aws-apig-java";
     private static final String UA_NAME_VERSION_SEPERATOR = "/";
 
     private AWSCredentialsProvider iamCredentials;
@@ -242,6 +245,17 @@ public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder
         @Override
         public List<RequestHandler2> getRequestHandlers() {
             return Collections.emptyList();
+        }
+
+        @Override
+        public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+            // Empty chain
+            return new CsmConfigurationProviderChain();
+        }
+
+        @Override
+        public MonitoringListener getMonitoringListener() {
+            return null;
         }
 
         @Override

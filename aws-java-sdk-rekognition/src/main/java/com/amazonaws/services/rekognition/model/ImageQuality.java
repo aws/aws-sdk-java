@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,35 +14,41 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies image brightness and sharpness.
+ * Identifies face image brightness and sharpness.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageQuality implements Serializable, Cloneable {
+public class ImageQuality implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      */
     private Float brightness;
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      */
     private Float sharpness;
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
      * @param brightness
-     *        Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     *        Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a brighter face image.
      */
 
     public void setBrightness(Float brightness) {
@@ -51,10 +57,12 @@ public class ImageQuality implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
-     * @return Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * @return Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *         higher value indicates a brighter face image.
      */
 
     public Float getBrightness() {
@@ -63,11 +71,13 @@ public class ImageQuality implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     * Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a brighter face image.
      * </p>
      * 
      * @param brightness
-     *        Value representing brightness of the face. The service returns a value between 0 and 1 (inclusive).
+     *        Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a brighter face image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +88,13 @@ public class ImageQuality implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
      * @param sharpness
-     *        Value representing sharpness of the face.
+     *        Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a sharper face image.
      */
 
     public void setSharpness(Float sharpness) {
@@ -91,10 +103,12 @@ public class ImageQuality implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
-     * @return Value representing sharpness of the face.
+     * @return Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *         higher value indicates a sharper face image.
      */
 
     public Float getSharpness() {
@@ -103,11 +117,13 @@ public class ImageQuality implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value representing sharpness of the face.
+     * Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher
+     * value indicates a sharper face image.
      * </p>
      * 
      * @param sharpness
-     *        Value representing sharpness of the face.
+     *        Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A
+     *        higher value indicates a sharper face image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +133,8 @@ public class ImageQuality implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -173,5 +190,11 @@ public class ImageQuality implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.ImageQualityMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,6 +108,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeCasesAsync(DescribeCasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult> asyncHandler) {
 
@@ -156,6 +157,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeServicesAsync(DescribeServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
 
@@ -191,6 +193,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeSeverityLevelsAsync(DescribeSeverityLevelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
 
@@ -297,6 +300,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #resolveCaseAsync(ResolveCaseRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(
             com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler) {
 

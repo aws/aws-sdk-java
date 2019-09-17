@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateRequestValidatorResult createRequestValidator(CreateRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResourceResult createResource(CreateResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public CreateUsagePlanKeyResult createUsagePlanKey(CreateUsagePlanKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +153,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public DeleteGatewayResponseResult deleteGatewayResponse(DeleteGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +183,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public DeleteRequestValidatorResult deleteRequestValidator(DeleteRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResourceResult deleteResource(DeleteResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +209,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public DeleteUsagePlanKeyResult deleteUsagePlanKey(DeleteUsagePlanKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -298,6 +323,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetGatewayResponseResult getGatewayResponse(GetGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGatewayResponsesResult getGatewayResponses(GetGatewayResponsesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIntegrationResult getIntegration(GetIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -329,6 +364,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public GetModelsResult getModels(GetModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRequestValidatorResult getRequestValidator(GetRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRequestValidatorsResult getRequestValidators(GetRequestValidatorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -378,6 +423,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUsageResult getUsage(GetUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -403,6 +453,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetVpcLinkResult getVpcLink(GetVpcLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVpcLinksResult getVpcLinks(GetVpcLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportApiKeysResult importApiKeys(ImportApiKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -414,6 +474,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public ImportRestApiResult importRestApi(ImportRestApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutGatewayResponseResult putGatewayResponse(PutGatewayResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -443,12 +508,22 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TestInvokeMethodResult testInvokeMethod(TestInvokeMethodRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -498,6 +573,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public UpdateGatewayResponseResult updateGatewayResponse(UpdateGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateIntegrationResult updateIntegration(UpdateIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -523,6 +603,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public UpdateRequestValidatorResult updateRequestValidator(UpdateRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateResourceResult updateResource(UpdateResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -544,6 +629,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateUsagePlanResult updateUsagePlan(UpdateUsagePlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

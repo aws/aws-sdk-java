@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,23 +14,47 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specification of the status of a CancelSteps request. Available only in Amazon EMR version 4.8.0 and later, excluding
+ * version 5.0.0.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelStepsInfo" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CancelStepsInfo implements Serializable, Cloneable {
+public class CancelStepsInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The encrypted StepId of a step.
+     * </p>
+     */
     private String stepId;
-
+    /**
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The reason for the failure if the CancelSteps request fails.
+     * </p>
+     */
     private String reason;
 
     /**
+     * <p>
+     * The encrypted StepId of a step.
+     * </p>
+     * 
      * @param stepId
+     *        The encrypted StepId of a step.
      */
 
     public void setStepId(String stepId) {
@@ -38,7 +62,11 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The encrypted StepId of a step.
+     * </p>
+     * 
+     * @return The encrypted StepId of a step.
      */
 
     public String getStepId() {
@@ -46,7 +74,12 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The encrypted StepId of a step.
+     * </p>
+     * 
      * @param stepId
+     *        The encrypted StepId of a step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +89,12 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     * 
      * @param status
+     *        The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
      * @see CancelStepsRequestStatus
      */
 
@@ -65,7 +103,11 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     * 
+     * @return The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
      * @see CancelStepsRequestStatus
      */
 
@@ -74,7 +116,12 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     * 
      * @param status
+     *        The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CancelStepsRequestStatus
      */
@@ -85,27 +132,42 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     * 
      * @param status
+     *        The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
      * @see CancelStepsRequestStatus
      */
 
     public void setStatus(CancelStepsRequestStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
+     * <p>
+     * The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+     * </p>
+     * 
      * @param status
+     *        The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CancelStepsRequestStatus
      */
 
     public CancelStepsInfo withStatus(CancelStepsRequestStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
+     * <p>
+     * The reason for the failure if the CancelSteps request fails.
+     * </p>
+     * 
      * @param reason
+     *        The reason for the failure if the CancelSteps request fails.
      */
 
     public void setReason(String reason) {
@@ -113,7 +175,11 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The reason for the failure if the CancelSteps request fails.
+     * </p>
+     * 
+     * @return The reason for the failure if the CancelSteps request fails.
      */
 
     public String getReason() {
@@ -121,7 +187,12 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The reason for the failure if the CancelSteps request fails.
+     * </p>
+     * 
      * @param reason
+     *        The reason for the failure if the CancelSteps request fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +202,8 @@ public class CancelStepsInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -194,5 +266,11 @@ public class CancelStepsInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.CancelStepsInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

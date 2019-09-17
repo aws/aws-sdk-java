@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,8 @@ public class DescribeTargetHealthRequestMarshaller implements Marshaller<Request
             request.addParameter("TargetGroupArn", StringUtils.fromString(describeTargetHealthRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
-
-        if (targetsList != null) {
+        if (describeTargetHealthRequest.getTargets() != null) {
+            java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
             if (targetsList.isEmpty()) {
                 request.addParameter("Targets", "");
             } else {
@@ -63,6 +62,11 @@ public class DescribeTargetHealthRequestMarshaller implements Marshaller<Request
 
                     if (targetsListValue.getPort() != null) {
                         request.addParameter("Targets.member." + targetsListIndex + ".Port", StringUtils.fromInteger(targetsListValue.getPort()));
+                    }
+
+                    if (targetsListValue.getAvailabilityZone() != null) {
+                        request.addParameter("Targets.member." + targetsListIndex + ".AvailabilityZone",
+                                StringUtils.fromString(targetsListValue.getAvailabilityZone()));
                     }
                     targetsListIndex++;
                 }

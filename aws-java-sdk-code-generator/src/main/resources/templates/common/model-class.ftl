@@ -3,6 +3,10 @@ package ${metadata.packageName}.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+<#if shouldEmitStructuredPojoInterface>
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+</#if>
 
 <#if shape.documentation?has_content || awsDocsUrl?has_content>
 /**
@@ -15,7 +19,7 @@ import javax.annotation.Generated;
 </#if>
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ${shape.shapeName} <#if baseClassFqcn??>extends ${baseClassFqcn}</#if>
-    implements Serializable, Cloneable {
+    implements Serializable, Cloneable<#if shouldEmitStructuredPojoInterface>, StructuredPojo</#if> {
 
     <@VariableDeclarationMacro.content shape/>
 
@@ -43,4 +47,12 @@ public class ${shape.shapeName} <#if baseClassFqcn??>extends ${baseClassFqcn}</#
                     e);
         }
     }
+
+    <#if shouldEmitStructuredPojoInterface>
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+       ${transformPackage}.${shape.shapeName}Marshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+    </#if>
 }

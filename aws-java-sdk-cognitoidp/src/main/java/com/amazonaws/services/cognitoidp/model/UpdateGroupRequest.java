@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,7 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String roleArn;
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      */
     private Integer precedence;
@@ -226,13 +225,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see <a
-     *        href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     *        The new precedence value for the group. For more information about this parameter, see .
      */
 
     public void setPrecedence(Integer precedence) {
@@ -241,12 +238,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
-     * @return The new precedence value for the group. For more information about this parameter, see <a
-     *         href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     * @return The new precedence value for the group. For more information about this parameter, see .
      */
 
     public Integer getPrecedence() {
@@ -255,13 +250,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see <a
-     *        href="API_CreateGroupRequeste.html">CreateGroupRequest</a>.
+     *        The new precedence value for the group. For more information about this parameter, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,7 +264,8 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the build you want to update.
+     * Unique identifier for a build to update.
      * </p>
      */
     private String buildId;
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique.
+     * Descriptive label that is associated with a build. Build names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * Unique identifier of the build you want to update.
+     * Unique identifier for a build to update.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build you want to update.
+     *        Unique identifier for a build to update.
      */
 
     public void setBuildId(String buildId) {
@@ -62,10 +62,10 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the build you want to update.
+     * Unique identifier for a build to update.
      * </p>
      * 
-     * @return Unique identifier of the build you want to update.
+     * @return Unique identifier for a build to update.
      */
 
     public String getBuildId() {
@@ -74,11 +74,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the build you want to update.
+     * Unique identifier for a build to update.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build you want to update.
+     *        Unique identifier for a build to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique.
+     * Descriptive label that is associated with a build. Build names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique.
+     * Descriptive label that is associated with a build. Build names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a build. Build names do not need to be unique.
+     * @return Descriptive label that is associated with a build. Build names do not need to be unique.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with a build. Build names do not need to be unique.
+     * Descriptive label that is associated with a build. Build names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a build. Build names do not need to be unique.
+     *        Descriptive label that is associated with a build. Build names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build.
+     *        Version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public void setVersion(String version) {
@@ -142,10 +142,10 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
-     * @return Version associated with this build. Version strings do not need to be unique to a build.
+     * @return Version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public String getVersion() {
@@ -154,11 +154,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version associated with this build. Version strings do not need to be unique to a build.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version associated with this build. Version strings do not need to be unique to a build.
+     *        Version that is associated with a build or script. Version strings do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +168,8 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

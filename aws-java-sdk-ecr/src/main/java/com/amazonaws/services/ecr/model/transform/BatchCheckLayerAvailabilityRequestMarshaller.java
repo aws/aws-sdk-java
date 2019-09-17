@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,83 +12,51 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * BatchCheckLayerAvailabilityRequest Marshaller
+ * BatchCheckLayerAvailabilityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchCheckLayerAvailabilityRequestMarshaller implements
-        Marshaller<Request<BatchCheckLayerAvailabilityRequest>, BatchCheckLayerAvailabilityRequest> {
+@SdkInternalApi
+public class BatchCheckLayerAvailabilityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<List> LAYERDIGESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("layerDigests").build();
 
-    public BatchCheckLayerAvailabilityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final BatchCheckLayerAvailabilityRequestMarshaller instance = new BatchCheckLayerAvailabilityRequestMarshaller();
+
+    public static BatchCheckLayerAvailabilityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<BatchCheckLayerAvailabilityRequest> marshall(BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(BatchCheckLayerAvailabilityRequest batchCheckLayerAvailabilityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (batchCheckLayerAvailabilityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<BatchCheckLayerAvailabilityRequest> request = new DefaultRequest<BatchCheckLayerAvailabilityRequest>(batchCheckLayerAvailabilityRequest,
-                "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.BatchCheckLayerAvailability");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (batchCheckLayerAvailabilityRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(batchCheckLayerAvailabilityRequest.getRegistryId());
-            }
-            if (batchCheckLayerAvailabilityRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(batchCheckLayerAvailabilityRequest.getRepositoryName());
-            }
-
-            java.util.List<String> layerDigestsList = batchCheckLayerAvailabilityRequest.getLayerDigests();
-            if (layerDigestsList != null) {
-                jsonGenerator.writeFieldName("layerDigests");
-                jsonGenerator.writeStartArray();
-                for (String layerDigestsListValue : layerDigestsList) {
-                    if (layerDigestsListValue != null) {
-                        jsonGenerator.writeValue(layerDigestsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(batchCheckLayerAvailabilityRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(batchCheckLayerAvailabilityRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(batchCheckLayerAvailabilityRequest.getLayerDigests(), LAYERDIGESTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

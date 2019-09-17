@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,68 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<CreateDevicePoolResult> createDevicePoolAsync(CreateDevicePoolRequest createDevicePoolRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDevicePoolRequest, CreateDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a profile that can be applied to one or more private fleet device instances.
+     * </p>
+     * 
+     * @param createInstanceProfileRequest
+     * @return A Java Future containing the result of the CreateInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Creates a profile that can be applied to one or more private fleet device instances.
+     * </p>
+     * 
+     * @param createInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceProfileRequest, CreateInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -169,6 +231,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @return A Java Future containing the result of the CreateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCEConfigurationResult> createVPCEConfigurationAsync(CreateVPCEConfigurationRequest createVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCEConfigurationResult> createVPCEConfigurationAsync(CreateVPCEConfigurationRequest createVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVPCEConfigurationRequest, CreateVPCEConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.
      * </p>
      * 
@@ -199,6 +292,68 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(DeleteDevicePoolRequest deleteDevicePoolRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a profile that can be applied to one or more private device instances.
+     * </p>
+     * 
+     * @param deleteInstanceProfileRequest
+     * @return A Java Future containing the result of the DeleteInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a profile that can be applied to one or more private device instances.
+     * </p>
+     * 
+     * @param deleteInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -348,6 +503,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @return A Java Future containing the result of the DeleteVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCEConfigurationResult> deleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCEConfigurationResult> deleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVPCEConfigurationRequest, DeleteVPCEConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
@@ -411,6 +597,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a device instance belonging to a private device fleet.
+     * </p>
+     * 
+     * @param getDeviceInstanceRequest
+     * @return A Java Future containing the result of the GetDeviceInstance operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeviceInstanceResult> getDeviceInstanceAsync(GetDeviceInstanceRequest getDeviceInstanceRequest);
+
+    /**
+     * <p>
+     * Returns information about a device instance belonging to a private device fleet.
+     * </p>
+     * 
+     * @param getDeviceInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeviceInstance operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeviceInstanceResult> getDeviceInstanceAsync(GetDeviceInstanceRequest getDeviceInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeviceInstanceRequest, GetDeviceInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -482,6 +699,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about the specified instance profile.
+     * </p>
+     * 
+     * @param getInstanceProfileRequest
+     * @return A Java Future containing the result of the GetInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified instance profile.
+     * </p>
+     * 
+     * @param getInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetInstanceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInstanceProfileRequest, GetInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a job.
      * </p>
      * 
@@ -512,6 +760,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest getJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -754,6 +1033,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @return A Java Future containing the result of the GetVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVPCEConfigurationResult> getVPCEConfigurationAsync(GetVPCEConfigurationRequest getVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVPCEConfigurationResult> getVPCEConfigurationAsync(GetVPCEConfigurationRequest getVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVPCEConfigurationRequest, GetVPCEConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Installs an application to the device in a remote access session. For Android applications, the file must be in
      * .apk format. For iOS applications, the file must be in .ipa format.
      * </p>
@@ -828,6 +1138,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about the private device instances associated with one or more AWS accounts.
+     * </p>
+     * 
+     * @param listDeviceInstancesRequest
+     * @return A Java Future containing the result of the ListDeviceInstances operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListDeviceInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceInstancesResult> listDeviceInstancesAsync(ListDeviceInstancesRequest listDeviceInstancesRequest);
+
+    /**
+     * <p>
+     * Returns information about the private device instances associated with one or more AWS accounts.
+     * </p>
+     * 
+     * @param listDeviceInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeviceInstances operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListDeviceInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListDeviceInstances" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceInstancesResult> listDeviceInstancesAsync(ListDeviceInstancesRequest listDeviceInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeviceInstancesRequest, ListDeviceInstancesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about device pools.
      * </p>
      * 
@@ -894,7 +1235,38 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about jobs.
+     * Returns information about all the instance profiles in an AWS account.
+     * </p>
+     * 
+     * @param listInstanceProfilesRequest
+     * @return A Java Future containing the result of the ListInstanceProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest);
+
+    /**
+     * <p>
+     * Returns information about all the instance profiles in an AWS account.
+     * </p>
+     * 
+     * @param listInstanceProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInstanceProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListInstanceProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about jobs for a given test run.
      * </p>
      * 
      * @param listJobsRequest
@@ -908,7 +1280,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about jobs.
+     * Gets information about jobs for a given test run.
      * </p>
      * 
      * @param listJobsRequest
@@ -924,6 +1296,74 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest listJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @return A Java Future containing the result of the ListNetworkProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest listNetworkProfilesRequest);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNetworkProfiles operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest listNetworkProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNetworkProfilesRequest, ListNetworkProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @return A Java Future containing the result of the ListOfferingPromotions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest listOfferingPromotionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOfferingPromotions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest listOfferingPromotionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingPromotionsRequest, ListOfferingPromotionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1108,7 +1548,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples, given an AWS Device Farm project ARN
+     * Gets information about samples, given an AWS Device Farm job ARN.
      * </p>
      * 
      * @param listSamplesRequest
@@ -1122,7 +1562,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples, given an AWS Device Farm project ARN
+     * Gets information about samples, given an AWS Device Farm job ARN.
      * </p>
      * 
      * @param listSamplesRequest
@@ -1141,7 +1581,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about suites.
+     * Gets information about test suites for a given job.
      * </p>
      * 
      * @param listSuitesRequest
@@ -1155,7 +1595,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about suites.
+     * Gets information about test suites for a given job.
      * </p>
      * 
      * @param listSuitesRequest
@@ -1174,7 +1614,38 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about tests.
+     * List the tags for an AWS Device Farm resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List the tags for an AWS Device Farm resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about tests in a given test suite.
      * </p>
      * 
      * @param listTestsRequest
@@ -1188,7 +1659,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about tests.
+     * Gets information about tests in a given test suite.
      * </p>
      * 
      * @param listTestsRequest
@@ -1270,6 +1741,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<ListUploadsResult> listUploadsAsync(ListUploadsRequest listUploadsRequest,
             com.amazonaws.handlers.AsyncHandler<ListUploadsRequest, ListUploadsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @return A Java Future containing the result of the ListVPCEConfigurations operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCEConfigurationsResult> listVPCEConfigurationsAsync(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVPCEConfigurations operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCEConfigurationsResult> listVPCEConfigurationsAsync(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVPCEConfigurationsRequest, ListVPCEConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1388,6 +1890,43 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @return A Java Future containing the result of the StopJob operation returned by the service.
+     * @sample AWSDeviceFarmAsync.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest stopJobRequest);
+
+    /**
+     * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopJob operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest stopJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Ends a specified remote access session.
      * </p>
      * 
@@ -1460,6 +1999,103 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSDeviceFarmAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information about an existing private device instance.
+     * </p>
+     * 
+     * @param updateDeviceInstanceRequest
+     * @return A Java Future containing the result of the UpdateDeviceInstance operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDeviceInstanceResult> updateDeviceInstanceAsync(UpdateDeviceInstanceRequest updateDeviceInstanceRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing private device instance.
+     * </p>
+     * 
+     * @param updateDeviceInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDeviceInstance operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateDeviceInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDeviceInstanceResult> updateDeviceInstanceAsync(UpdateDeviceInstanceRequest updateDeviceInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDeviceInstanceRequest, UpdateDeviceInstanceResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates
      * are all-or-nothing, meaning they can only be updated as a whole (or not at all).
      * </p>
@@ -1495,6 +2131,68 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Updates information about an existing private device instance profile.
+     * </p>
+     * 
+     * @param updateInstanceProfileRequest
+     * @return A Java Future containing the result of the UpdateInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceProfileResult> updateInstanceProfileAsync(UpdateInstanceProfileRequest updateInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing private device instance profile.
+     * </p>
+     * 
+     * @param updateInstanceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateInstanceProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceProfileResult> updateInstanceProfileAsync(UpdateInstanceProfileRequest updateInstanceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceProfileRequest, UpdateInstanceProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNetworkProfile operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the specified project name, given the project ARN and a new name.
      * </p>
      * 
@@ -1525,5 +2223,67 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @return A Java Future containing the result of the UpdateUpload operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest updateUploadRequest);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUpload operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest updateUploadRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUploadRequest, UpdateUploadResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @return A Java Future containing the result of the UpdateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCEConfigurationResult> updateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCEConfigurationResult> updateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVPCEConfigurationRequest, UpdateVPCEConfigurationResult> asyncHandler);
 
 }

@@ -1,0 +1,166 @@
+/*
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.glue.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The details of a Job node present in the workflow.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobNodeDetails" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class JobNodeDetails implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The information for the job runs represented by the job node.
+     * </p>
+     */
+    private java.util.List<JobRun> jobRuns;
+
+    /**
+     * <p>
+     * The information for the job runs represented by the job node.
+     * </p>
+     * 
+     * @return The information for the job runs represented by the job node.
+     */
+
+    public java.util.List<JobRun> getJobRuns() {
+        return jobRuns;
+    }
+
+    /**
+     * <p>
+     * The information for the job runs represented by the job node.
+     * </p>
+     * 
+     * @param jobRuns
+     *        The information for the job runs represented by the job node.
+     */
+
+    public void setJobRuns(java.util.Collection<JobRun> jobRuns) {
+        if (jobRuns == null) {
+            this.jobRuns = null;
+            return;
+        }
+
+        this.jobRuns = new java.util.ArrayList<JobRun>(jobRuns);
+    }
+
+    /**
+     * <p>
+     * The information for the job runs represented by the job node.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJobRuns(java.util.Collection)} or {@link #withJobRuns(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param jobRuns
+     *        The information for the job runs represented by the job node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobNodeDetails withJobRuns(JobRun... jobRuns) {
+        if (this.jobRuns == null) {
+            setJobRuns(new java.util.ArrayList<JobRun>(jobRuns.length));
+        }
+        for (JobRun ele : jobRuns) {
+            this.jobRuns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The information for the job runs represented by the job node.
+     * </p>
+     * 
+     * @param jobRuns
+     *        The information for the job runs represented by the job node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobNodeDetails withJobRuns(java.util.Collection<JobRun> jobRuns) {
+        setJobRuns(jobRuns);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getJobRuns() != null)
+            sb.append("JobRuns: ").append(getJobRuns());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof JobNodeDetails == false)
+            return false;
+        JobNodeDetails other = (JobNodeDetails) obj;
+        if (other.getJobRuns() == null ^ this.getJobRuns() == null)
+            return false;
+        if (other.getJobRuns() != null && other.getJobRuns().equals(this.getJobRuns()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getJobRuns() == null) ? 0 : getJobRuns().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public JobNodeDetails clone() {
+        try {
+            return (JobNodeDetails) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.glue.model.transform.JobNodeDetailsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

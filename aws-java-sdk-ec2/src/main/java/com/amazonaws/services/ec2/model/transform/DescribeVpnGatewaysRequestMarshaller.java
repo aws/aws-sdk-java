@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpnGatewaysRequestVpnGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequest
-                .getVpnGatewayIds();
-        if (!describeVpnGatewaysRequestVpnGatewayIdsList.isEmpty() || !describeVpnGatewaysRequestVpnGatewayIdsList.isAutoConstruct()) {
-            int vpnGatewayIdsListIndex = 1;
-
-            for (String describeVpnGatewaysRequestVpnGatewayIdsListValue : describeVpnGatewaysRequestVpnGatewayIdsList) {
-                if (describeVpnGatewaysRequestVpnGatewayIdsListValue != null) {
-                    request.addParameter("VpnGatewayId." + vpnGatewayIdsListIndex, StringUtils.fromString(describeVpnGatewaysRequestVpnGatewayIdsListValue));
-                }
-                vpnGatewayIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpnGatewaysRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnGatewaysRequest
                 .getFilters();
         if (!describeVpnGatewaysRequestFiltersList.isEmpty() || !describeVpnGatewaysRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpnGatewaysRequestVpnGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnGatewaysRequest
+                .getVpnGatewayIds();
+        if (!describeVpnGatewaysRequestVpnGatewayIdsList.isEmpty() || !describeVpnGatewaysRequestVpnGatewayIdsList.isAutoConstruct()) {
+            int vpnGatewayIdsListIndex = 1;
+
+            for (String describeVpnGatewaysRequestVpnGatewayIdsListValue : describeVpnGatewaysRequestVpnGatewayIdsList) {
+                if (describeVpnGatewaysRequestVpnGatewayIdsListValue != null) {
+                    request.addParameter("VpnGatewayId." + vpnGatewayIdsListIndex, StringUtils.fromString(describeVpnGatewaysRequestVpnGatewayIdsListValue));
+                }
+                vpnGatewayIdsListIndex++;
             }
         }
 

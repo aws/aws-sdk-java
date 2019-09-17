@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make
  * requests to that stage.
  * </p>
- * <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+ * <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
  * API Keys</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -65,14 +65,13 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private Boolean enabled;
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -82,6 +81,12 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private java.util.List<String> stageKeys;
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -337,13 +342,11 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -352,12 +355,10 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the API Key was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -366,13 +367,11 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +382,11 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -396,10 +395,10 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
-     * @return When the API Key was last updated, in ISO 8601 format.
+     * @return The timestamp when the API Key was last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -408,11 +407,11 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,7 +491,69 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @return The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApiKeyResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetApiKeyResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApiKeyResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -519,7 +580,9 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getLastUpdatedDate() != null)
             sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
         if (getStageKeys() != null)
-            sb.append("StageKeys: ").append(getStageKeys());
+            sb.append("StageKeys: ").append(getStageKeys()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -570,6 +633,10 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getStageKeys() != null && other.getStageKeys().equals(this.getStageKeys()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -587,6 +654,7 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -598,4 +666,5 @@ public class GetApiKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

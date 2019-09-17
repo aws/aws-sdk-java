@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
-                .getNetworkAclIds();
-        if (!describeNetworkAclsRequestNetworkAclIdsList.isEmpty() || !describeNetworkAclsRequestNetworkAclIdsList.isAutoConstruct()) {
-            int networkAclIdsListIndex = 1;
-
-            for (String describeNetworkAclsRequestNetworkAclIdsListValue : describeNetworkAclsRequestNetworkAclIdsList) {
-                if (describeNetworkAclsRequestNetworkAclIdsListValue != null) {
-                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(describeNetworkAclsRequestNetworkAclIdsListValue));
-                }
-                networkAclIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeNetworkAclsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkAclsRequest
                 .getFilters();
         if (!describeNetworkAclsRequestFiltersList.isEmpty() || !describeNetworkAclsRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,27 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
+                .getNetworkAclIds();
+        if (!describeNetworkAclsRequestNetworkAclIdsList.isEmpty() || !describeNetworkAclsRequestNetworkAclIdsList.isAutoConstruct()) {
+            int networkAclIdsListIndex = 1;
+
+            for (String describeNetworkAclsRequestNetworkAclIdsListValue : describeNetworkAclsRequestNetworkAclIdsList) {
+                if (describeNetworkAclsRequestNetworkAclIdsListValue != null) {
+                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(describeNetworkAclsRequestNetworkAclIdsListValue));
+                }
+                networkAclIdsListIndex++;
+            }
+        }
+
+        if (describeNetworkAclsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeNetworkAclsRequest.getNextToken()));
+        }
+
+        if (describeNetworkAclsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeNetworkAclsRequest.getMaxResults()));
         }
 
         return request;

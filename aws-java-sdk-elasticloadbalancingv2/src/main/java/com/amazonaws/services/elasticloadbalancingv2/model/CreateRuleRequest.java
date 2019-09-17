@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,48 +33,43 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<RuleCondition> conditions;
     /**
      * <p>
-     * The priority for the rule. A listener can't have multiple rules with the same priority.
+     * The rule priority. A listener can't have multiple rules with the same priority.
      * </p>
      */
     private Integer priority;
     /**
      * <p>
-     * An action. Each action has the type <code>forward</code> and specifies a target group.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
+     * </p>
+     * <p>
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      */
     private java.util.List<Action> actions;
@@ -121,67 +116,15 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A
-     *         path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the
-     *         following characters. Note that you can include up to three wildcard characters in a path pattern.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         A-Z, a-z, 0-9
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         _ - . $ / ~ " ' @ : +
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         &amp; (using &amp;amp;)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         (matches 0 or more characters)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ? (matches exactly 1 character)
-     *         </p>
-     *         </li>
+     * @return The conditions. Each rule can include zero or one of the following conditions:
+     *         <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *         <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *         <code>query-string</code>.
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -190,68 +133,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param conditions
-     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -265,37 +156,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConditions(java.util.Collection)} or {@link #withConditions(java.util.Collection)} if you want to
@@ -303,35 +167,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,68 +186,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     * pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters in a path pattern.
+     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
+     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
+     * following conditions: <code>http-header</code> and <code>query-string</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A-Z, a-z, 0-9
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * _ - . $ / ~ " ' @ : +
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * &amp; (using &amp;amp;)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * * (matches 0 or more characters)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ? (matches exactly 1 character)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param conditions
-     *        A condition. Each condition has the field <code>path-pattern</code> and specifies one path pattern. A path
-     *        pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     *        characters. Note that you can include up to three wildcard characters in a path pattern.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        A-Z, a-z, 0-9
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        _ - . $ / ~ " ' @ : +
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        &amp; (using &amp;amp;)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        (matches 0 or more characters)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ? (matches exactly 1 character)
-     *        </p>
-     *        </li>
+     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
+     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
+     *        <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +206,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The priority for the rule. A listener can't have multiple rules with the same priority.
+     * The rule priority. A listener can't have multiple rules with the same priority.
      * </p>
      * 
      * @param priority
-     *        The priority for the rule. A listener can't have multiple rules with the same priority.
+     *        The rule priority. A listener can't have multiple rules with the same priority.
      */
 
     public void setPriority(Integer priority) {
@@ -432,10 +219,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The priority for the rule. A listener can't have multiple rules with the same priority.
+     * The rule priority. A listener can't have multiple rules with the same priority.
      * </p>
      * 
-     * @return The priority for the rule. A listener can't have multiple rules with the same priority.
+     * @return The rule priority. A listener can't have multiple rules with the same priority.
      */
 
     public Integer getPriority() {
@@ -444,11 +231,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The priority for the rule. A listener can't have multiple rules with the same priority.
+     * The rule priority. A listener can't have multiple rules with the same priority.
      * </p>
      * 
      * @param priority
-     *        The priority for the rule. A listener can't have multiple rules with the same priority.
+     *        The rule priority. A listener can't have multiple rules with the same priority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,10 +246,53 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An action. Each action has the type <code>forward</code> and specifies a target group.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
+     * </p>
+     * <p>
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
-     * @return An action. Each action has the type <code>forward</code> and specifies a target group.
+     * @return The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *         <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *         <p>
+     *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP,
+     *         TLS, UDP, or TCP_UDP for a Network Load Balancer.
+     *         </p>
+     *         <p>
+     *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *         identity provider that is OpenID Connect (OIDC) compliant.
+     *         </p>
+     *         <p>
+     *         [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *         the user pools supported by Amazon Cognito.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *         requests from one URL to another.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *         requests and return a custom HTTP response.
      */
 
     public java.util.List<Action> getActions() {
@@ -471,11 +301,54 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An action. Each action has the type <code>forward</code> and specifies a target group.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
+     * </p>
+     * <p>
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
      * @param actions
-     *        An action. Each action has the type <code>forward</code> and specifies a target group.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <p>
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -489,7 +362,29 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An action. Each action has the type <code>forward</code> and specifies a target group.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
+     * </p>
+     * <p>
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -498,7 +393,28 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param actions
-     *        An action. Each action has the type <code>forward</code> and specifies a target group.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <p>
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,11 +430,54 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An action. Each action has the type <code>forward</code> and specifies a target group.
+     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     * <code>fixed-response</code>, or <code>redirect</code>.
+     * </p>
+     * <p>
+     * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS, UDP, or
+     * TCP_UDP for a Network Load Balancer.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
+     * </p>
+     * <p>
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
+     * from one URL to another.
+     * </p>
+     * <p>
+     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
+     * and return a custom HTTP response.
      * </p>
      * 
      * @param actions
-     *        An action. Each action has the type <code>forward</code> and specifies a target group.
+     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
+     *        <code>fixed-response</code>, or <code>redirect</code>.</p>
+     *        <p>
+     *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
+     *        UDP, or TCP_UDP for a Network Load Balancer.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        identity provider that is OpenID Connect (OIDC) compliant.
+     *        </p>
+     *        <p>
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        the user pools supported by Amazon Cognito.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
+     *        requests from one URL to another.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
+     *        requests and return a custom HTTP response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,7 +487,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

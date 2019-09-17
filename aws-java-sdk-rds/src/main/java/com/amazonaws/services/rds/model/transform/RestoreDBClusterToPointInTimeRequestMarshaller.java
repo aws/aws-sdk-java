@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("DBClusterIdentifier", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterIdentifier()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getRestoreType() != null) {
+            request.addParameter("RestoreType", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getRestoreType()));
+        }
+
         if (restoreDBClusterToPointInTimeRequest.getSourceDBClusterIdentifier() != null) {
             request.addParameter("SourceDBClusterIdentifier", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getSourceDBClusterIdentifier()));
         }
@@ -70,9 +74,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("OptionGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getOptionGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!restoreDBClusterToPointInTimeRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -84,8 +89,9 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterToPointInTimeRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!restoreDBClusterToPointInTimeRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterToPointInTimeRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBClusterToPointInTimeRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -103,6 +109,42 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
 
         if (restoreDBClusterToPointInTimeRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getKmsKeyId()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterToPointInTimeRequest.getBacktrackWindow()));
+        }
+
+        if (!restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getDeletionProtection()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,51 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEndpointRequest Marshaller
+ * DescribeEndpointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEndpointRequestMarshaller implements Marshaller<Request<DescribeEndpointRequest>, DescribeEndpointRequest> {
+@SdkInternalApi
+public class DescribeEndpointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("endpointType").build();
 
-    public DescribeEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEndpointRequestMarshaller instance = new DescribeEndpointRequestMarshaller();
+
+    public static DescribeEndpointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEndpointRequest> marshall(DescribeEndpointRequest describeEndpointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEndpointRequest describeEndpointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEndpointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEndpointRequest> request = new DefaultRequest<DescribeEndpointRequest>(describeEndpointRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/endpoint";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(describeEndpointRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

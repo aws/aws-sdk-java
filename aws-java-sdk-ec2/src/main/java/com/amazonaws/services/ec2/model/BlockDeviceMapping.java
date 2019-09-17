@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,20 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -40,12 +50,6 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * </p>
      */
     private String virtualName;
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     */
-    private String deviceName;
     /**
      * <p>
      * Parameters used to automatically set up EBS volumes when the instance is launched.
@@ -61,10 +65,54 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BlockDeviceMapping withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -75,8 +123,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     *        <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After
-     *        you connect to the instance, you must mount the volume.</p>
+     *        <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
+     *        After you connect to the instance, you must mount the volume.</p>
+     *        <p>
+     *        NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *        your block device mapping has no effect.
+     *        </p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
      *        instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -91,8 +143,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -102,8 +158,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * 
      * @return The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0.
      *         An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *         and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *         and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *         After you connect to the instance, you must mount the volume.</p>
+     *         <p>
+     *         NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *         your block device mapping has no effect.
+     *         </p>
      *         <p>
      *         Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for
      *         the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -118,8 +178,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -130,8 +194,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     *        <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After
-     *        you connect to the instance, you must mount the volume.</p>
+     *        <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
+     *        After you connect to the instance, you must mount the volume.</p>
+     *        <p>
+     *        NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *        your block device mapping has no effect.
+     *        </p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
      *        instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -141,46 +209,6 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     public BlockDeviceMapping withVirtualName(String virtualName) {
         setVirtualName(virtualName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     */
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     */
-
-    public String getDeviceName() {
-        return this.deviceName;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BlockDeviceMapping withDeviceName(String deviceName) {
-        setDeviceName(deviceName);
         return this;
     }
 
@@ -265,7 +293,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,10 +304,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVirtualName() != null)
-            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getVirtualName() != null)
+            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getEbs() != null)
             sb.append("Ebs: ").append(getEbs()).append(",");
         if (getNoDevice() != null)
@@ -297,13 +326,13 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
         if (obj instanceof BlockDeviceMapping == false)
             return false;
         BlockDeviceMapping other = (BlockDeviceMapping) obj;
-        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
-            return false;
-        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
-            return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
+        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
+            return false;
+        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
             return false;
         if (other.getEbs() == null ^ this.getEbs() == null)
             return false;
@@ -321,8 +350,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         return hashCode;
@@ -336,4 +365,5 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

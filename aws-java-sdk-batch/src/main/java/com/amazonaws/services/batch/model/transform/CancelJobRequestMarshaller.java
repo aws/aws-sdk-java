@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CancelJobRequest Marshaller
+ * CancelJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
+@SdkInternalApi
+public class CancelJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
 
-    public CancelJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CancelJobRequestMarshaller instance = new CancelJobRequestMarshaller();
+
+    public static CancelJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CancelJobRequest> marshall(CancelJobRequest cancelJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CancelJobRequest cancelJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (cancelJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CancelJobRequest> request = new DefaultRequest<CancelJobRequest>(cancelJobRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/canceljob";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (cancelJobRequest.getJobId() != null) {
-                jsonGenerator.writeFieldName("jobId").writeValue(cancelJobRequest.getJobId());
-            }
-            if (cancelJobRequest.getReason() != null) {
-                jsonGenerator.writeFieldName("reason").writeValue(cancelJobRequest.getReason());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(cancelJobRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(cancelJobRequest.getReason(), REASON_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

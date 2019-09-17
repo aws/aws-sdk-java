@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableDescription.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ProvisionedThroughput", targetDepth)) {
                     context.nextToken();
@@ -84,6 +84,14 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 if (context.testExpression("TableArn", targetDepth)) {
                     context.nextToken();
                     tableDescription.setTableArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TableId", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setTableId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BillingModeSummary", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LocalSecondaryIndexes", targetDepth)) {
                     context.nextToken();
@@ -106,6 +114,14 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                 if (context.testExpression("LatestStreamArn", targetDepth)) {
                     context.nextToken();
                     tableDescription.setLatestStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RestoreSummary", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setRestoreSummary(RestoreSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SSEDescription", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setSSEDescription(SSEDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

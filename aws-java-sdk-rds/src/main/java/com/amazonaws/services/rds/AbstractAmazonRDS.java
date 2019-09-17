@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public AddRoleToDBInstanceResult addRoleToDBInstance(AddRoleToDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,6 +65,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BacktrackDBClusterResult backtrackDBCluster(BacktrackDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,6 +100,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBCluster createDBCluster(CreateDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDBClusterEndpointResult createDBClusterEndpoint(CreateDBClusterEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,12 +154,22 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public GlobalCluster createGlobalCluster(CreateGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public OptionGroup createOptionGroup(CreateOptionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,6 +185,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBInstance deleteDBInstance(DeleteDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBInstanceAutomatedBackup deleteDBInstanceAutomatedBackup(DeleteDBInstanceAutomatedBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,6 +219,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +246,16 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeCertificatesResult describeCertificates() {
         return describeCertificates(new DescribeCertificatesRequest());
+    }
+
+    @Override
+    public DescribeDBClusterBacktracksResult describeDBClusterBacktracks(DescribeDBClusterBacktracksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDBClusterEndpointsResult describeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -261,6 +306,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeDBEngineVersionsResult describeDBEngineVersions() {
         return describeDBEngineVersions(new DescribeDBEngineVersionsRequest());
+    }
+
+    @Override
+    public DescribeDBInstanceAutomatedBackupsResult describeDBInstanceAutomatedBackups(DescribeDBInstanceAutomatedBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -374,6 +424,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOptionGroupOptionsResult describeOptionGroupOptions(DescribeOptionGroupOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -429,6 +484,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public ValidDBInstanceModificationsMessage describeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DownloadDBLogFilePortionResult downloadDBLogFilePortion(DownloadDBLogFilePortionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -449,7 +509,17 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public ModifyCurrentDBClusterCapacityResult modifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster modifyDBCluster(ModifyDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDBClusterEndpointResult modifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -474,6 +544,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBSnapshot modifyDBSnapshot(ModifyDBSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBSnapshotAttributesResult modifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -485,6 +560,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -514,7 +594,17 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveRoleFromDBInstanceResult removeRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -559,12 +649,47 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBInstance restoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartActivityStreamResult startActivityStream(StartActivityStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBCluster startDBCluster(StartDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBInstance startDBInstance(StartDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopActivityStreamResult stopActivityStream(StopActivityStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBCluster stopDBCluster(StopDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBInstance stopDBInstance(StopDBInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

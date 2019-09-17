@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,107 +12,73 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SubmitJobRequest Marshaller
+ * SubmitJobRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubmitJobRequestMarshaller implements Marshaller<Request<SubmitJobRequest>, SubmitJobRequest> {
+@SdkInternalApi
+public class SubmitJobRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobName").build();
+    private static final MarshallingInfo<String> JOBQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobQueue").build();
+    private static final MarshallingInfo<StructuredPojo> ARRAYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayProperties").build();
+    private static final MarshallingInfo<List> DEPENDSON_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dependsOn").build();
+    private static final MarshallingInfo<String> JOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobDefinition").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINEROVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
+    private static final MarshallingInfo<StructuredPojo> NODEOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nodeOverrides").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
 
-    public SubmitJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SubmitJobRequestMarshaller instance = new SubmitJobRequestMarshaller();
+
+    public static SubmitJobRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SubmitJobRequest> marshall(SubmitJobRequest submitJobRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SubmitJobRequest submitJobRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (submitJobRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SubmitJobRequest> request = new DefaultRequest<SubmitJobRequest>(submitJobRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/submitjob";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (submitJobRequest.getJobName() != null) {
-                jsonGenerator.writeFieldName("jobName").writeValue(submitJobRequest.getJobName());
-            }
-            if (submitJobRequest.getJobQueue() != null) {
-                jsonGenerator.writeFieldName("jobQueue").writeValue(submitJobRequest.getJobQueue());
-            }
-
-            java.util.List<JobDependency> dependsOnList = submitJobRequest.getDependsOn();
-            if (dependsOnList != null) {
-                jsonGenerator.writeFieldName("dependsOn");
-                jsonGenerator.writeStartArray();
-                for (JobDependency dependsOnListValue : dependsOnList) {
-                    if (dependsOnListValue != null) {
-
-                        JobDependencyJsonMarshaller.getInstance().marshall(dependsOnListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (submitJobRequest.getJobDefinition() != null) {
-                jsonGenerator.writeFieldName("jobDefinition").writeValue(submitJobRequest.getJobDefinition());
-            }
-
-            java.util.Map<String, String> parametersMap = submitJobRequest.getParameters();
-            if (parametersMap != null) {
-                jsonGenerator.writeFieldName("parameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> parametersMapValue : parametersMap.entrySet()) {
-                    if (parametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(parametersMapValue.getKey());
-
-                        jsonGenerator.writeValue(parametersMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (submitJobRequest.getContainerOverrides() != null) {
-                jsonGenerator.writeFieldName("containerOverrides");
-                ContainerOverridesJsonMarshaller.getInstance().marshall(submitJobRequest.getContainerOverrides(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(submitJobRequest.getJobName(), JOBNAME_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getJobQueue(), JOBQUEUE_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getArrayProperties(), ARRAYPROPERTIES_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getDependsOn(), DEPENDSON_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getJobDefinition(), JOBDEFINITION_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getNodeOverrides(), NODEOVERRIDES_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getTimeout(), TIMEOUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

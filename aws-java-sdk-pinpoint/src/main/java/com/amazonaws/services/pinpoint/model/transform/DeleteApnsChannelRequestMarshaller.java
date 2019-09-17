@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteApnsChannelRequest Marshaller
+ * DeleteApnsChannelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteApnsChannelRequestMarshaller implements Marshaller<Request<DeleteApnsChannelRequest>, DeleteApnsChannelRequest> {
+@SdkInternalApi
+public class DeleteApnsChannelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
 
-    public DeleteApnsChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteApnsChannelRequestMarshaller instance = new DeleteApnsChannelRequestMarshaller();
+
+    public static DeleteApnsChannelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteApnsChannelRequest> marshall(DeleteApnsChannelRequest deleteApnsChannelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteApnsChannelRequest deleteApnsChannelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteApnsChannelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteApnsChannelRequest> request = new DefaultRequest<DeleteApnsChannelRequest>(deleteApnsChannelRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/v1/apps/{application-id}/channels/apns";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                deleteApnsChannelRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteApnsChannelRequest.getApplicationId(), APPLICATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

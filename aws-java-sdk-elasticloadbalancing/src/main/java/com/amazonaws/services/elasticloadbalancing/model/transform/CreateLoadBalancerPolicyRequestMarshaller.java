@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,10 @@ public class CreateLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
             request.addParameter("PolicyTypeName", StringUtils.fromString(createLoadBalancerPolicyRequest.getPolicyTypeName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<PolicyAttribute> policyAttributesList = (com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest
-                .getPolicyAttributes();
-        if (!policyAttributesList.isEmpty() || !policyAttributesList.isAutoConstruct()) {
+        if (!createLoadBalancerPolicyRequest.getPolicyAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest.getPolicyAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<PolicyAttribute> policyAttributesList = (com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest
+                    .getPolicyAttributes();
             int policyAttributesListIndex = 1;
 
             for (PolicyAttribute policyAttributesListValue : policyAttributesList) {

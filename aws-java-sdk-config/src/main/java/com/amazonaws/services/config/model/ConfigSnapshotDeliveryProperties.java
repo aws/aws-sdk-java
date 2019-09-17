@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,14 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery
  * channel.
  * </p>
- * <note>
- * <p>
- * If you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration
- * snapshot, see the following:
- * </p>
- * </note>
  * <p>
  * The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration
  * snapshot is set by one of two values, depending on which is less frequent:
@@ -35,7 +31,7 @@ import javax.annotation.Generated;
  * <p>
  * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how
  * often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for
- * Config rules.
+ * AWS Config rules.
  * </p>
  * </li>
  * <li>
@@ -86,7 +82,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable {
+public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -149,7 +145,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      */
 
     public void setDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
-        this.deliveryFrequency = deliveryFrequency.toString();
+        withDeliveryFrequency(deliveryFrequency);
     }
 
     /**
@@ -164,12 +160,13 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      */
 
     public ConfigSnapshotDeliveryProperties withDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
-        setDeliveryFrequency(deliveryFrequency);
+        this.deliveryFrequency = deliveryFrequency.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -218,5 +215,11 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.ConfigSnapshotDeliveryPropertiesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

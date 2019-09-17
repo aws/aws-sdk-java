@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.polly.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetLexiconRequest Marshaller
+ * GetLexiconRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetLexiconRequestMarshaller implements Marshaller<Request<GetLexiconRequest>, GetLexiconRequest> {
+@SdkInternalApi
+public class GetLexiconRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("LexiconName").build();
 
-    public GetLexiconRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetLexiconRequestMarshaller instance = new GetLexiconRequestMarshaller();
+
+    public static GetLexiconRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetLexiconRequest> marshall(GetLexiconRequest getLexiconRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetLexiconRequest getLexiconRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getLexiconRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetLexiconRequest> request = new DefaultRequest<GetLexiconRequest>(getLexiconRequest, "AmazonPolly");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/lexicons/{LexiconName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "LexiconName", getLexiconRequest.getName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getLexiconRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

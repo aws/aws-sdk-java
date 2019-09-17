@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,37 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each
+ * endpoint.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointBatchRequest" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointBatchRequest implements Serializable, Cloneable {
+public class EndpointBatchRequest implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of items to update. Maximum 100 items */
+    /**
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
+     */
     private java.util.List<EndpointBatchItem> item;
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
-     * @return List of items to update. Maximum 100 items
+     * @return An array that defines the endpoints to create or update and, for each endpoint, the property values to
+     *         set or change. An array can contain a maximum of 100 items.
      */
 
     public java.util.List<EndpointBatchItem> getItem() {
@@ -32,10 +52,14 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      */
 
     public void setItem(java.util.Collection<EndpointBatchItem> item) {
@@ -48,7 +72,10 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -56,7 +83,8 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,10 +99,14 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
     }
 
     /**
-     * List of items to update. Maximum 100 items
+     * <p>
+     * An array that defines the endpoints to create or update and, for each endpoint, the property values to set or
+     * change. An array can contain a maximum of 100 items.
+     * </p>
      * 
      * @param item
-     *        List of items to update. Maximum 100 items
+     *        An array that defines the endpoints to create or update and, for each endpoint, the property values to set
+     *        or change. An array can contain a maximum of 100 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +116,8 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,5 +166,11 @@ public class EndpointBatchRequest implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointBatchRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

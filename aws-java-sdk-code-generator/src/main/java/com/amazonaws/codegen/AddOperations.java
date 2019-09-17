@@ -64,6 +64,9 @@ final class AddOperations {
             operationModel.setDeprecated(op.isDeprecated());
             operationModel.setDocumentation(op.getDocumentation());
             operationModel.setIsAuthenticated(isAuthenticated(op));
+            operationModel.setEndpointDiscovery(op.getEndpointdiscovery());
+            operationModel.setEndpointOperation(op.isEndpointoperation());
+            operationModel.setEndpointTrait(op.getEndpoint());
 
             final Input input = op.getInput();
             if (input != null) {
@@ -218,6 +221,6 @@ final class AddOperations {
         if (outputShape.getMembers().keySet().size() != 1) return output.getShape();
         Member wrappedMember = outputShape.getMembers().values().toArray(new Member[0])[0];
         Shape wrappedResult = shapes.get(wrappedMember.getShape());
-        return wrappedResult.isWrapper() ? wrappedMember.getShape() : output.getShape();
+        return wrappedResult != null && wrappedResult.isWrapper() ? wrappedMember.getShape() : output.getShape();
     }
 }

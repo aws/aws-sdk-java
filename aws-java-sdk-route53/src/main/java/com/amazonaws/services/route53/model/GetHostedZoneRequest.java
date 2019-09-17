@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a GetHostedZone request.
+ * A request to get information about a specified hosted zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone" target="_top">AWS API
@@ -30,7 +30,7 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     * The ID of the hosted zone that you want to get information about.
      * </p>
      */
     private String id;
@@ -47,7 +47,7 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
      * initialize any additional object members.
      * 
      * @param id
-     *        The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     *        The ID of the hosted zone that you want to get information about.
      */
     public GetHostedZoneRequest(String id) {
         setId(id);
@@ -55,11 +55,11 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     * The ID of the hosted zone that you want to get information about.
      * </p>
      * 
      * @param id
-     *        The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     *        The ID of the hosted zone that you want to get information about.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     * The ID of the hosted zone that you want to get information about.
      * </p>
      * 
-     * @return The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     * @return The ID of the hosted zone that you want to get information about.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     * The ID of the hosted zone that you want to get information about.
      * </p>
      * 
      * @param id
-     *        The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.
+     *        The ID of the hosted zone that you want to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +94,8 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,24 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotInstanceRequest> spotInstanceRequests;
+    /**
+     * <p>
+     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
-     * @return One or more Spot instance requests.
+     * @return One or more Spot Instance requests.
      */
 
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
@@ -49,11 +56,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      */
 
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
@@ -67,7 +74,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +83,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +99,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +113,54 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotInstanceRequestsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -117,7 +171,9 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotInstanceRequests() != null)
-            sb.append("SpotInstanceRequests: ").append(getSpotInstanceRequests());
+            sb.append("SpotInstanceRequests: ").append(getSpotInstanceRequests()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +192,10 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getSpotInstanceRequests() != null && other.getSpotInstanceRequests().equals(this.getSpotInstanceRequests()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +205,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSpotInstanceRequests() == null) ? 0 : getSpotInstanceRequests().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

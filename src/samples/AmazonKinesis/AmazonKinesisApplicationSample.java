@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ import java.util.UUID;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.kinesis.AmazonKinesis;
-import com.amazonaws.services.kinesis.AmazonKinesisClient;
+import com.amazonaws.services.kinesis.AmazonKinesisClientBuilder;
 import com.amazonaws.services.kinesis.clientlibrary.interfaces.IRecordProcessorFactory;
 import com.amazonaws.services.kinesis.clientlibrary.lib.worker.InitialPositionInStream;
 import com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration;
@@ -56,7 +56,7 @@ public final class AmazonKinesisApplicationSample {
     private static final InitialPositionInStream SAMPLE_APPLICATION_INITIAL_POSITION_IN_STREAM =
             InitialPositionInStream.LATEST;
 
-    private static AWSCredentialsProvider credentialsProvider;
+    private static ProfileCredentialsProvider credentialsProvider;
 
     private static void init() {
         // Ensure the JVM will refresh the cached IP values of AWS resources (e.g. service endpoints).
@@ -113,10 +113,12 @@ public final class AmazonKinesisApplicationSample {
     }
 
     public static void deleteResources() {
-        AWSCredentials credentials = credentialsProvider.getCredentials();
-
         // Delete the stream
-        AmazonKinesis kinesis = new AmazonKinesisClient(credentials);
+        AmazonKinesis kinesis = AmazonKinesisClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
+
         System.out.printf("Deleting the Amazon Kinesis stream used by the sample. Stream Name = %s.\n",
                 SAMPLE_APPLICATION_STREAM_NAME);
         try {
@@ -126,7 +128,10 @@ public final class AmazonKinesisApplicationSample {
         }
 
         // Delete the table
-        AmazonDynamoDBClient dynamoDB = new AmazonDynamoDBClient(credentialsProvider.getCredentials());
+        AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard()
+            .withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
         System.out.printf("Deleting the Amazon DynamoDB table used by the Amazon Kinesis Client Library. Table Name = %s.\n",
                 SAMPLE_APPLICATION_NAME);
         try {

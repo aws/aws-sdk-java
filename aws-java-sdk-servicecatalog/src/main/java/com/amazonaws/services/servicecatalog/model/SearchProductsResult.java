@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,30 +25,30 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view summary objects.
+     * Information about the product views.
      * </p>
      */
     private java.util.List<ProductViewSummary> productViewSummaries;
     /**
      * <p>
-     * A list of the product view aggregation value objects.
+     * The product view aggregations.
      * </p>
      */
     private java.util.Map<String, java.util.List<ProductViewAggregationValue>> productViewAggregations;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * A list of the product view summary objects.
+     * Information about the product views.
      * </p>
      * 
-     * @return A list of the product view summary objects.
+     * @return Information about the product views.
      */
 
     public java.util.List<ProductViewSummary> getProductViewSummaries() {
@@ -57,11 +57,11 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view summary objects.
+     * Information about the product views.
      * </p>
      * 
      * @param productViewSummaries
-     *        A list of the product view summary objects.
+     *        Information about the product views.
      */
 
     public void setProductViewSummaries(java.util.Collection<ProductViewSummary> productViewSummaries) {
@@ -75,7 +75,7 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view summary objects.
+     * Information about the product views.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param productViewSummaries
-     *        A list of the product view summary objects.
+     *        Information about the product views.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view summary objects.
+     * Information about the product views.
      * </p>
      * 
      * @param productViewSummaries
-     *        A list of the product view summary objects.
+     *        Information about the product views.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,10 +115,10 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view aggregation value objects.
+     * The product view aggregations.
      * </p>
      * 
-     * @return A list of the product view aggregation value objects.
+     * @return The product view aggregations.
      */
 
     public java.util.Map<String, java.util.List<ProductViewAggregationValue>> getProductViewAggregations() {
@@ -127,11 +127,11 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view aggregation value objects.
+     * The product view aggregations.
      * </p>
      * 
      * @param productViewAggregations
-     *        A list of the product view aggregation value objects.
+     *        The product view aggregations.
      */
 
     public void setProductViewAggregations(java.util.Map<String, java.util.List<ProductViewAggregationValue>> productViewAggregations) {
@@ -140,11 +140,11 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of the product view aggregation value objects.
+     * The product view aggregations.
      * </p>
      * 
      * @param productViewAggregations
-     *        A list of the product view aggregation value objects.
+     *        The product view aggregations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,13 +176,13 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -191,12 +191,12 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -205,13 +205,13 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,7 +221,8 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -285,4 +286,5 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

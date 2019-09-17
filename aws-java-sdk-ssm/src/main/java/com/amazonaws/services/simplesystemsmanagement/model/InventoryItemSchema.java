@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,14 +26,13 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InventoryItemSchema implements Serializable, Cloneable {
+public class InventoryItemSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      */
     private String typeName;
@@ -47,20 +48,24 @@ public class InventoryItemSchema implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InventoryItemAttribute> attributes;
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     */
+    private String displayName;
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public void setTypeName(String typeName) {
@@ -69,16 +74,14 @@ public class InventoryItemSchema implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
-     * @return The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *         inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *         following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *         <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * @return The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *         names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *         AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public String getTypeName() {
@@ -87,17 +90,15 @@ public class InventoryItemSchema implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,7 +221,48 @@ public class InventoryItemSchema implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @param displayName
+     *        The alias name of the inventory type. The alias name is used for display purposes.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @return The alias name of the inventory type. The alias name is used for display purposes.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @param displayName
+     *        The alias name of the inventory type. The alias name is used for display purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItemSchema withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -235,7 +277,9 @@ public class InventoryItemSchema implements Serializable, Cloneable {
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +306,10 @@ public class InventoryItemSchema implements Serializable, Cloneable {
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +321,7 @@ public class InventoryItemSchema implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         return hashCode;
     }
 
@@ -283,5 +332,11 @@ public class InventoryItemSchema implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.InventoryItemSchemaMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

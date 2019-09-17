@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import org.apache.http.protocol.HttpContext;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Represents an HTTP response returned by an AWS service in response to a
@@ -37,7 +37,7 @@ public class HttpResponse {
     private String statusText;
     private int statusCode;
     private InputStream content;
-    private Map<String, String> headers = new HashMap<String, String>();
+    private Map<String, String> headers = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
     private HttpContext context;
 
     /**
@@ -87,18 +87,13 @@ public class HttpResponse {
     }
 
     /**
-     * Looks up a header by name and returns it's value. Does case insensitive comparison.
+     * Looks up a header by name and returns its value. Does case insensitive comparison.
      *
      * @param headerName Name of header to get value for.
      * @return The header value of the given header. Null if header is not present.
      */
     public String getHeader(String headerName) {
-        for (Map.Entry<String, String> header : headers.entrySet()) {
-            if (header.getKey().equalsIgnoreCase(headerName)) {
-                return header.getValue();
-            }
-        }
-        return null;
+        return headers.get(headerName);
     }
 
     /**

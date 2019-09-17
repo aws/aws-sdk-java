@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.directory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RadiusSettings implements Serializable, Cloneable {
+public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -54,7 +56,7 @@ public class RadiusSettings implements Serializable, Cloneable {
     private Integer radiusRetries;
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      */
     private String sharedSecret;
@@ -286,11 +288,11 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
      * @param sharedSecret
-     *        Not currently used.
+     *        Required for enabling RADIUS on the directory.
      */
 
     public void setSharedSecret(String sharedSecret) {
@@ -299,10 +301,10 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
-     * @return Not currently used.
+     * @return Required for enabling RADIUS on the directory.
      */
 
     public String getSharedSecret() {
@@ -311,11 +313,11 @@ public class RadiusSettings implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Not currently used.
+     * Required for enabling RADIUS on the directory.
      * </p>
      * 
      * @param sharedSecret
-     *        Not currently used.
+     *        Required for enabling RADIUS on the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,7 +380,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      */
 
     public void setAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
-        this.authenticationProtocol = authenticationProtocol.toString();
+        withAuthenticationProtocol(authenticationProtocol);
     }
 
     /**
@@ -393,7 +395,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      */
 
     public RadiusSettings withAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
-        setAuthenticationProtocol(authenticationProtocol);
+        this.authenticationProtocol = authenticationProtocol.toString();
         return this;
     }
 
@@ -490,7 +492,8 @@ public class RadiusSettings implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -509,7 +512,7 @@ public class RadiusSettings implements Serializable, Cloneable {
         if (getRadiusRetries() != null)
             sb.append("RadiusRetries: ").append(getRadiusRetries()).append(",");
         if (getSharedSecret() != null)
-            sb.append("SharedSecret: ").append(getSharedSecret()).append(",");
+            sb.append("SharedSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getAuthenticationProtocol() != null)
             sb.append("AuthenticationProtocol: ").append(getAuthenticationProtocol()).append(",");
         if (getDisplayLabel() != null)
@@ -588,5 +591,11 @@ public class RadiusSettings implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directory.model.transform.RadiusSettingsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

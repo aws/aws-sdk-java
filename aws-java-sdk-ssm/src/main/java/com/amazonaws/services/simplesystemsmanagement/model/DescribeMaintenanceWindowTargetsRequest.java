@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      */
     private String windowId;
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     * keys are Type, WindowTargetId and OwnerInformation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowFilter> filters;
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose targets should be retrieved.
+     *        The ID of the maintenance window whose targets should be retrieved.
      */
 
     public void setWindowId(String windowId) {
@@ -67,10 +67,10 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
-     * @return The ID of the Maintenance Window whose targets should be retrieved.
+     * @return The ID of the maintenance window whose targets should be retrieved.
      */
 
     public String getWindowId() {
@@ -79,11 +79,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose targets should be retrieved.
+     * The ID of the maintenance window whose targets should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose targets should be retrieved.
+     *        The ID of the maintenance window whose targets should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     * keys are Type, WindowTargetId and OwnerInformation.
      * </p>
      * 
      * @return Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *         filter keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     *         filter keys are Type, WindowTargetId and OwnerInformation.
      */
 
     public java.util.List<MaintenanceWindowFilter> getFilters() {
@@ -112,12 +112,12 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     * keys are Type, WindowTargetId and OwnerInformation.
      * </p>
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     *        filter keys are Type, WindowTargetId and OwnerInformation.
      */
 
     public void setFilters(java.util.Collection<MaintenanceWindowFilter> filters) {
@@ -132,7 +132,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     * keys are Type, WindowTargetId and OwnerInformation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -142,7 +142,7 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     *        filter keys are Type, WindowTargetId and OwnerInformation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +159,12 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter
-     * keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     * keys are Type, WindowTargetId and OwnerInformation.
      * </p>
      * 
      * @param filters
      *        Optional filters that can be used to narrow down the scope of the returned window targets. The supported
-     *        filter keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.
+     *        filter keys are Type, WindowTargetId and OwnerInformation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,7 +260,8 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

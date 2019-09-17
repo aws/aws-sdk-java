@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,32 @@ import com.amazonaws.services.servermigration.model.*;
  * {@link com.amazonaws.services.servermigration.AbstractAWSServerMigration} instead.
  * </p>
  * <p>
- * Amazon Server Migration Service automates the process of migrating servers to EC2.
+ * <fullname>AAWS Sever Migration Service</fullname>
+ * <p>
+ * This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions, syntax, and usage examples
+ * for each of the actions and data types for the AWS Sever Migration Service (AWS SMS). The topic for each action shows
+ * the Query API request parameters and the XML response. You can also view the XML request elements in the WSDL.
+ * </p>
+ * <p>
+ * Alternatively, you can use one of the AWS SDKs to access an API that's tailored to the programming language or
+ * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+ * </p>
+ * <p>
+ * To learn more about the Server Migration Service, see the following resources:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service product page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS Sever
+ * Migration Service User Guide</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServerMigration {
@@ -48,9 +73,10 @@ public interface AWSServerMigration {
      * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -90,31 +116,57 @@ public interface AWSServerMigration {
     void setRegion(Region region);
 
     /**
-     * The CreateReplicationJob API is used to create a ReplicationJob to replicate a server on AWS. Call this API to
-     * first create a ReplicationJob, which will then schedule periodic ReplicationRuns to replicate your server to AWS.
-     * Each ReplicationRun will result in the creation of an AWS AMI.
+     * <p>
+     * Creates an application. An application consists of one or more server groups. Each server group contain one or
+     * more servers.
+     * </p>
+     * 
+     * @param createAppRequest
+     * @return Result of the CreateApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.CreateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAppResult createApp(CreateAppRequest createAppRequest);
+
+    /**
+     * <p>
+     * Creates a replication job. The replication job schedules periodic replication runs to replicate your server to
+     * AWS. Each replication run creates an Amazon Machine Image (AMI).
+     * </p>
      * 
      * @param createReplicationJobRequest
      * @return Result of the CreateReplicationJob operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws ServerCannotBeReplicatedException
-     *         The provided server cannot be replicated.
+     *         The specified server cannot be replicated.
      * @throws ReplicationJobAlreadyExistsException
-     *         An active Replication Job already exists for the specified server.
+     *         The specified replication job already exists.
      * @throws NoConnectorsAvailableException
-     *         No connectors are available to handle this request. Please associate connector(s) and verify any existing
-     *         connectors are healthy and can respond to requests.
+     *         There are no connectors available.
      * @throws InternalErrorException
-     *         An internal error has occured.
+     *         An internal error occurred.
+     * @throws TemporarilyUnavailableException
+     *         The service is temporarily unavailable.
      * @sample AWSServerMigration.CreateReplicationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateReplicationJob" target="_top">AWS API
      *      Documentation</a>
@@ -122,24 +174,100 @@ public interface AWSServerMigration {
     CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest createReplicationJobRequest);
 
     /**
-     * The DeleteReplicationJob API is used to delete a ReplicationJob, resulting in no further ReplicationRuns. This
-     * will delete the contents of the S3 bucket used to store SMS artifacts, but will not delete any AMIs created by
-     * the SMS service.
+     * <p>
+     * Deletes an existing application. Optionally deletes the launched stack associated with the application and all
+     * AWS SMS replication jobs for servers in the application.
+     * </p>
+     * 
+     * @param deleteAppRequest
+     * @return Result of the DeleteApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.DeleteApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
+
+    /**
+     * <p>
+     * Deletes existing launch configuration for an application.
+     * </p>
+     * 
+     * @param deleteAppLaunchConfigurationRequest
+     * @return Result of the DeleteAppLaunchConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.DeleteAppLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppLaunchConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAppLaunchConfigurationResult deleteAppLaunchConfiguration(DeleteAppLaunchConfigurationRequest deleteAppLaunchConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes existing replication configuration for an application.
+     * </p>
+     * 
+     * @param deleteAppReplicationConfigurationRequest
+     * @return Result of the DeleteAppReplicationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.DeleteAppReplicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAppReplicationConfigurationResult deleteAppReplicationConfiguration(DeleteAppReplicationConfigurationRequest deleteAppReplicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified replication job.
+     * </p>
+     * <p>
+     * After you delete a replication job, there are no further replication runs. AWS deletes the contents of the Amazon
+     * S3 bucket used to store AWS SMS artifacts. The AMIs created by the replication runs are not deleted.
+     * </p>
      * 
      * @param deleteReplicationJobRequest
      * @return Result of the DeleteReplicationJob operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws ReplicationJobNotFoundException
-     *         The specified Replication Job cannot be found.
+     *         The specified replication job does not exist.
      * @sample AWSServerMigration.DeleteReplicationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteReplicationJob" target="_top">AWS API
      *      Documentation</a>
@@ -147,21 +275,21 @@ public interface AWSServerMigration {
     DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest);
 
     /**
-     * The DeleteServerCatalog API clears all servers from your server catalog. This means that these servers will no
-     * longer be accessible to the Server Migration Service.
+     * <p>
+     * Deletes all servers from your server catalog.
+     * </p>
      * 
      * @param deleteServerCatalogRequest
      * @return Result of the DeleteServerCatalog operation returned by the service.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @sample AWSServerMigration.DeleteServerCatalog
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteServerCatalog" target="_top">AWS API
      *      Documentation</a>
@@ -169,21 +297,24 @@ public interface AWSServerMigration {
     DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest);
 
     /**
-     * The DisassociateConnector API will disassociate a connector from the Server Migration Service, rendering it
-     * unavailable to support replication jobs.
+     * <p>
+     * Disassociates the specified connector from AWS SMS.
+     * </p>
+     * <p>
+     * After you disassociate a connector, it is no longer available to support replication jobs.
+     * </p>
      * 
      * @param disassociateConnectorRequest
      * @return Result of the DisassociateConnector operation returned by the service.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @sample AWSServerMigration.DisassociateConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DisassociateConnector" target="_top">AWS API
      *      Documentation</a>
@@ -191,12 +322,137 @@ public interface AWSServerMigration {
     DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest);
 
     /**
-     * The GetConnectors API returns a list of connectors that are registered with the Server Migration Service.
+     * <p>
+     * Generates a target change set for a currently launched stack and writes it to an Amazon S3 object in the
+     * customer’s Amazon S3 bucket.
+     * </p>
+     * 
+     * @param generateChangeSetRequest
+     * @return Result of the GenerateChangeSet operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GenerateChangeSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateChangeSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GenerateChangeSetResult generateChangeSet(GenerateChangeSetRequest generateChangeSetRequest);
+
+    /**
+     * <p>
+     * Generates an Amazon CloudFormation template based on the current launch configuration and writes it to an Amazon
+     * S3 object in the customer’s Amazon S3 bucket.
+     * </p>
+     * 
+     * @param generateTemplateRequest
+     * @return Result of the GenerateTemplate operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GenerateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GenerateTemplateResult generateTemplate(GenerateTemplateRequest generateTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieve information about an application.
+     * </p>
+     * 
+     * @param getAppRequest
+     * @return Result of the GetApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GetApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAppResult getApp(GetAppRequest getAppRequest);
+
+    /**
+     * <p>
+     * Retrieves the application launch configuration associated with an application.
+     * </p>
+     * 
+     * @param getAppLaunchConfigurationRequest
+     * @return Result of the GetAppLaunchConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GetAppLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppLaunchConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAppLaunchConfigurationResult getAppLaunchConfiguration(GetAppLaunchConfigurationRequest getAppLaunchConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves an application replication configuration associatd with an application.
+     * </p>
+     * 
+     * @param getAppReplicationConfigurationRequest
+     * @return Result of the GetAppReplicationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GetAppReplicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAppReplicationConfigurationResult getAppReplicationConfiguration(GetAppReplicationConfigurationRequest getAppReplicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Describes the connectors registered with the AWS SMS.
+     * </p>
      * 
      * @param getConnectorsRequest
      * @return Result of the GetConnectors operation returned by the service.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @sample AWSServerMigration.GetConnectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetConnectors" target="_top">AWS API
      *      Documentation</a>
@@ -204,18 +460,19 @@ public interface AWSServerMigration {
     GetConnectorsResult getConnectors(GetConnectorsRequest getConnectorsRequest);
 
     /**
-     * The GetReplicationJobs API will return all of your ReplicationJobs and their details. This API returns a
-     * paginated list, that may be consecutively called with nextToken to retrieve all ReplicationJobs.
+     * <p>
+     * Describes the specified replication job or all of your replication jobs.
+     * </p>
      * 
      * @param getReplicationJobsRequest
      * @return Result of the GetReplicationJobs operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @sample AWSServerMigration.GetReplicationJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationJobs" target="_top">AWS API
      *      Documentation</a>
@@ -223,19 +480,19 @@ public interface AWSServerMigration {
     GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest);
 
     /**
-     * The GetReplicationRuns API will return all ReplicationRuns for a given ReplicationJob. This API returns a
-     * paginated list, that may be consecutively called with nextToken to retrieve all ReplicationRuns for a
-     * ReplicationJob.
+     * <p>
+     * Describes the replication runs for the specified replication job.
+     * </p>
      * 
      * @param getReplicationRunsRequest
      * @return Result of the GetReplicationRuns operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @sample AWSServerMigration.GetReplicationRuns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetReplicationRuns" target="_top">AWS API
      *      Documentation</a>
@@ -243,13 +500,18 @@ public interface AWSServerMigration {
     GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest);
 
     /**
-     * The GetServers API returns a list of all servers in your server catalog. For this call to succeed, you must
-     * previously have called ImportServerCatalog.
+     * <p>
+     * Describes the servers in your server catalog.
+     * </p>
+     * <p>
+     * Before you can describe your servers, you must import them using <a>ImportServerCatalog</a>.
+     * </p>
      * 
      * @param getServersRequest
      * @return Result of the GetServers operation returned by the service.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @sample AWSServerMigration.GetServers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers" target="_top">AWS API
      *      Documentation</a>
@@ -257,25 +519,27 @@ public interface AWSServerMigration {
     GetServersResult getServers(GetServersRequest getServersRequest);
 
     /**
-     * The ImportServerCatalog API is used to gather the complete list of on-premises servers on your premises. This API
-     * call requires connectors to be installed and monitoring all servers you would like imported. This API call
-     * returns immediately, but may take some time to retrieve all of the servers.
+     * <p>
+     * Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers that you
+     * want to import.
+     * </p>
+     * <p>
+     * This call returns immediately, but might take additional time to retrieve all the servers.
+     * </p>
      * 
      * @param importServerCatalogRequest
      * @return Result of the ImportServerCatalog operation returned by the service.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws NoConnectorsAvailableException
-     *         No connectors are available to handle this request. Please associate connector(s) and verify any existing
-     *         connectors are healthy and can respond to requests.
+     *         There are no connectors available.
      * @sample AWSServerMigration.ImportServerCatalog
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportServerCatalog" target="_top">AWS API
      *      Documentation</a>
@@ -283,24 +547,147 @@ public interface AWSServerMigration {
     ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest importServerCatalogRequest);
 
     /**
-     * The StartOnDemandReplicationRun API is used to start a ReplicationRun on demand (in addition to those that are
-     * scheduled based on your frequency). This ReplicationRun will start immediately. StartOnDemandReplicationRun is
-     * subject to limits on how many on demand ReplicationRuns you may call per 24-hour period.
+     * <p>
+     * Launches an application stack.
+     * </p>
+     * 
+     * @param launchAppRequest
+     * @return Result of the LaunchApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.LaunchApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    LaunchAppResult launchApp(LaunchAppRequest launchAppRequest);
+
+    /**
+     * <p>
+     * Returns a list of summaries for all applications.
+     * </p>
+     * 
+     * @param listAppsRequest
+     * @return Result of the ListApps operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.ListApps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ListApps" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAppsResult listApps(ListAppsRequest listAppsRequest);
+
+    /**
+     * <p>
+     * Creates a launch configuration for an application.
+     * </p>
+     * 
+     * @param putAppLaunchConfigurationRequest
+     * @return Result of the PutAppLaunchConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.PutAppLaunchConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppLaunchConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAppLaunchConfigurationResult putAppLaunchConfiguration(PutAppLaunchConfigurationRequest putAppLaunchConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates or updates a replication configuration for an application.
+     * </p>
+     * 
+     * @param putAppReplicationConfigurationRequest
+     * @return Result of the PutAppReplicationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.PutAppReplicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppReplicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAppReplicationConfigurationResult putAppReplicationConfiguration(PutAppReplicationConfigurationRequest putAppReplicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Starts replicating an application.
+     * </p>
+     * 
+     * @param startAppReplicationRequest
+     * @return Result of the StartAppReplication operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.StartAppReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartAppReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartAppReplicationResult startAppReplication(StartAppReplicationRequest startAppReplicationRequest);
+
+    /**
+     * <p>
+     * Starts an on-demand replication run for the specified replication job. This replication run starts immediately.
+     * This replication run is in addition to the ones already scheduled.
+     * </p>
+     * <p>
+     * There is a limit on the number of on-demand replications runs you can request in a 24-hour period.
+     * </p>
      * 
      * @param startOnDemandReplicationRunRequest
      * @return Result of the StartOnDemandReplicationRun operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws ReplicationRunLimitExceededException
-     *         This user has exceeded the maximum allowed Replication Run limit.
+     *         You have exceeded the number of on-demand replication runs you can request in a 24-hour period.
      * @sample AWSServerMigration.StartOnDemandReplicationRun
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun"
      *      target="_top">AWS API Documentation</a>
@@ -308,27 +695,101 @@ public interface AWSServerMigration {
     StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest);
 
     /**
-     * The UpdateReplicationJob API is used to change the settings of your existing ReplicationJob created using
-     * CreateReplicationJob. Calling this API will affect the next scheduled ReplicationRun.
+     * <p>
+     * Stops replicating an application.
+     * </p>
+     * 
+     * @param stopAppReplicationRequest
+     * @return Result of the StopAppReplication operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.StopAppReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StopAppReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopAppReplicationResult stopAppReplication(StopAppReplicationRequest stopAppReplicationRequest);
+
+    /**
+     * <p>
+     * Terminates the stack for an application.
+     * </p>
+     * 
+     * @param terminateAppRequest
+     * @return Result of the TerminateApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.TerminateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/TerminateApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TerminateAppResult terminateApp(TerminateAppRequest terminateAppRequest);
+
+    /**
+     * <p>
+     * Updates an application.
+     * </p>
+     * 
+     * @param updateAppRequest
+     * @return Result of the UpdateApp operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.UpdateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateApp" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAppResult updateApp(UpdateAppRequest updateAppRequest);
+
+    /**
+     * <p>
+     * Updates the specified settings for the specified replication job.
+     * </p>
      * 
      * @param updateReplicationJobRequest
      * @return Result of the UpdateReplicationJob operation returned by the service.
      * @throws InvalidParameterException
-     *         A parameter specified in the request is not valid, is unsupported, or cannot be used.
+     *         A specified parameter is not valid.
      * @throws MissingRequiredParameterException
-     *         The request is missing a required parameter. Ensure that you have supplied all the required parameters
-     *         for the request.
+     *         A required parameter is missing.
      * @throws OperationNotPermittedException
-     *         The specified operation is not allowed. This error can occur for a number of reasons; for example, you
-     *         might be trying to start a Replication Run before seed Replication Run.
+     *         This operation is not allowed.
      * @throws UnauthorizedOperationException
-     *         This user does not have permissions to perform this operation.
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
      * @throws ServerCannotBeReplicatedException
-     *         The provided server cannot be replicated.
+     *         The specified server cannot be replicated.
      * @throws ReplicationJobNotFoundException
-     *         The specified Replication Job cannot be found.
+     *         The specified replication job does not exist.
      * @throws InternalErrorException
-     *         An internal error has occured.
+     *         An internal error occurred.
+     * @throws TemporarilyUnavailableException
+     *         The service is temporarily unavailable.
      * @sample AWSServerMigration.UpdateReplicationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateReplicationJob" target="_top">AWS API
      *      Documentation</a>

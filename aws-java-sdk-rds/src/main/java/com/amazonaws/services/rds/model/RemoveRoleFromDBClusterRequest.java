@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      */
     private String dBClusterIdentifier;
@@ -38,14 +38,21 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     */
+    private String featureName;
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to disassociate the IAM role rom.
+     *        The name of the DB cluster to disassociate the IAM role from.
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -54,10 +61,10 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
-     * @return The name of the DB cluster to disassociate the IAM role rom.
+     * @return The name of the DB cluster to disassociate the IAM role from.
      */
 
     public String getDBClusterIdentifier() {
@@ -66,11 +73,11 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB cluster to disassociate the IAM role rom.
+     * The name of the DB cluster to disassociate the IAM role from.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to disassociate the IAM role rom.
+     *        The name of the DB cluster to disassociate the IAM role from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +133,54 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @param featureName
+     *        The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     *        supported feature names, see <a>DBEngineVersion</a>.
+     */
+
+    public void setFeatureName(String featureName) {
+        this.featureName = featureName;
+    }
+
+    /**
+     * <p>
+     * The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @return The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     *         supported feature names, see <a>DBEngineVersion</a>.
+     */
+
+    public String getFeatureName() {
+        return this.featureName;
+    }
+
+    /**
+     * <p>
+     * The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     * supported feature names, see <a>DBEngineVersion</a>.
+     * </p>
+     * 
+     * @param featureName
+     *        The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of
+     *        supported feature names, see <a>DBEngineVersion</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoveRoleFromDBClusterRequest withFeatureName(String featureName) {
+        setFeatureName(featureName);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -139,7 +193,9 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
         if (getDBClusterIdentifier() != null)
             sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getFeatureName() != null)
+            sb.append("FeatureName: ").append(getFeatureName());
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +218,10 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getFeatureName() == null ^ this.getFeatureName() == null)
+            return false;
+        if (other.getFeatureName() != null && other.getFeatureName().equals(this.getFeatureName()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +232,7 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFeatureName() == null) ? 0 : getFeatureName().hashCode());
         return hashCode;
     }
 

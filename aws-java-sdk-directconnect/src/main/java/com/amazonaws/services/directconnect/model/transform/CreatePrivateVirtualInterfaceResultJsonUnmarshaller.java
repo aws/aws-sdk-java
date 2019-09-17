@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,10 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -104,9 +108,21 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setCustomerRouterConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();
@@ -116,6 +132,18 @@ public class CreatePrivateVirtualInterfaceResultJsonUnmarshaller implements Unma
                 if (context.testExpression("bgpPeers", targetDepth)) {
                     context.nextToken();
                     createPrivateVirtualInterfaceResult.setBgpPeers(new ListUnmarshaller<BGPPeer>(BGPPeerJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    createPrivateVirtualInterfaceResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

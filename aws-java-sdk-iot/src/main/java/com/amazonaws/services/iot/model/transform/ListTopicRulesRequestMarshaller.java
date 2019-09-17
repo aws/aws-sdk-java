@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,69 +12,53 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTopicRulesRequest Marshaller
+ * ListTopicRulesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTopicRulesRequestMarshaller implements Marshaller<Request<ListTopicRulesRequest>, ListTopicRulesRequest> {
+@SdkInternalApi
+public class ListTopicRulesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("topic").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Boolean> RULEDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ruleDisabled").build();
 
-    public ListTopicRulesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTopicRulesRequestMarshaller instance = new ListTopicRulesRequestMarshaller();
+
+    public static ListTopicRulesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTopicRulesRequest> marshall(ListTopicRulesRequest listTopicRulesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTopicRulesRequest listTopicRulesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTopicRulesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTopicRulesRequest> request = new DefaultRequest<ListTopicRulesRequest>(listTopicRulesRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/rules";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listTopicRulesRequest.getTopic() != null) {
-            request.addParameter("topic", StringUtils.fromString(listTopicRulesRequest.getTopic()));
+        try {
+            protocolMarshaller.marshall(listTopicRulesRequest.getTopic(), TOPIC_BINDING);
+            protocolMarshaller.marshall(listTopicRulesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listTopicRulesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listTopicRulesRequest.getRuleDisabled(), RULEDISABLED_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listTopicRulesRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listTopicRulesRequest.getMaxResults()));
-        }
-
-        if (listTopicRulesRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listTopicRulesRequest.getNextToken()));
-        }
-
-        if (listTopicRulesRequest.getRuleDisabled() != null) {
-            request.addParameter("ruleDisabled", StringUtils.fromBoolean(listTopicRulesRequest.getRuleDisabled()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

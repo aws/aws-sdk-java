@@ -1,0 +1,16 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Resource": "resource-arn",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "Parameters": {
+        "foo": 42
+      },
+      "End": true
+    }
+  }
+}

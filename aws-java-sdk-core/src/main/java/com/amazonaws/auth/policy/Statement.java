@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.auth.policy;
+
+import com.amazonaws.util.PolicyUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -253,9 +255,13 @@ public class Statement {
      *
      * @param resources
      *            The resources associated with this policy statement.
+     * @throws IllegalArgumentException
+     *             If the list of resources contains both a Resource and a NotResource
      */
     public void setResources(Collection<Resource> resources) {
-        this.resources = new ArrayList<Resource>(resources);
+        List<Resource> resourceList = new ArrayList<Resource>(resources);
+        PolicyUtils.validateResourceList(resourceList);
+        this.resources = resourceList;
     }
 
     /**

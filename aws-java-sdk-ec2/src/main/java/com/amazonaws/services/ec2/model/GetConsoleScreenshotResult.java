@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,65 +18,23 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of the request.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the instance.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
      * The data that comprises the image.
      * </p>
      */
     private String imageData;
-
     /**
      * <p>
      * The ID of the instance.
      * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
      */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @return The ID of the instance.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetConsoleScreenshotResult withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
-    }
+    private String instanceId;
 
     /**
      * <p>
@@ -119,7 +77,48 @@ public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConsoleScreenshotResult withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -129,10 +128,10 @@ public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getImageData() != null)
-            sb.append("ImageData: ").append(getImageData());
+            sb.append("ImageData: ").append(getImageData()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -147,13 +146,13 @@ public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof GetConsoleScreenshotResult == false)
             return false;
         GetConsoleScreenshotResult other = (GetConsoleScreenshotResult) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
         if (other.getImageData() == null ^ this.getImageData() == null)
             return false;
         if (other.getImageData() != null && other.getImageData().equals(this.getImageData()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         return true;
     }
@@ -163,8 +162,8 @@ public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getImageData() == null) ? 0 : getImageData().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

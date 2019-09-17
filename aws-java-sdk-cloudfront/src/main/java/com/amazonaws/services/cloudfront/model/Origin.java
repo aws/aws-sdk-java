@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,16 +17,17 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the Amazon S3 bucket or the HTTP server (for example, a web server) from which
- * CloudFront gets your files. You must create at least one origin.
+ * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or
+ * other server from which CloudFront gets your files. This can also be an origin group, if you've created an origin
+ * group. You must specify at least one origin or origin group.
  * </p>
  * <p>
- * For the current limit on the number of origins that you can create for a distribution, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
+ * For the current limit on the number of origins or origin groups that you can specify for a distribution, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon CloudFront
  * Limits</a> in the <i>AWS General Reference</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/Origin" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origin" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,14 +35,15 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin. The value of <code>Id</code> must be unique within the distribution.
+     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
+     * distribution.
      * </p>
      * <p>
      * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -49,7 +51,13 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * </p>
+     * <p>
+     * For more information about specifying this value for different types of origins, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -57,7 +65,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -159,19 +167,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin. The value of <code>Id</code> must be unique within the distribution.
+     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
+     * distribution.
      * </p>
      * <p>
      * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the origin. The value of <code>Id</code> must be unique within the
+     *        A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
      *        distribution.</p>
      *        <p>
      *        When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
@@ -179,7 +188,7 @@ public class Origin implements Serializable, Cloneable {
      *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -189,26 +198,27 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin. The value of <code>Id</code> must be unique within the distribution.
+     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
+     * distribution.
      * </p>
      * <p>
      * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A unique identifier for the origin. The value of <code>Id</code> must be unique within the
-     *         distribution.</p>
+     * @return A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within
+     *         the distribution.</p>
      *         <p>
      *         When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
      *         cache behavior, you indicate the origin to which you want the cache behavior to route requests by
      *         specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *         pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *         >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -218,19 +228,20 @@ public class Origin implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique identifier for the origin. The value of <code>Id</code> must be unique within the distribution.
+     * A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
+     * distribution.
      * </p>
      * <p>
      * When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another cache
      * behavior, you indicate the origin to which you want the cache behavior to route requests by specifying the value
      * of the <code>Id</code> element for that origin. When a request matches the path pattern for that cache behavior,
      * CloudFront routes the request to the specified origin. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the origin. The value of <code>Id</code> must be unique within the
+     *        A unique identifier for the origin or origin group. The value of <code>Id</code> must be unique within the
      *        distribution.</p>
      *        <p>
      *        When you specify the value of <code>TargetOriginId</code> for the default cache behavior or for another
@@ -238,7 +249,7 @@ public class Origin implements Serializable, Cloneable {
      *        specifying the value of the <code>Id</code> element for that origin. When a request matches the path
      *        pattern for that cache behavior, CloudFront routes the request to the specified origin. For more
      *        information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior"
      *        >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -251,7 +262,13 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * </p>
+     * <p>
+     * For more information about specifying this value for different types of origins, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -259,7 +276,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -302,14 +319,21 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param domainName
      *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
+     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
+     *        bucket.</p>
+     *        <p>
+     *        For more information about specifying this value for different types of origins, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Constraints for Amazon S3 origins:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *        </p>
      *        </li>
@@ -357,7 +381,13 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * </p>
+     * <p>
+     * For more information about specifying this value for different types of origins, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -365,7 +395,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -407,14 +437,21 @@ public class Origin implements Serializable, Cloneable {
      * </ul>
      * 
      * @return <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *         objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *         objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your
+     *         bucket to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for
+     *         the bucket.</p>
+     *         <p>
+     *         For more information about specifying this value for different types of origins, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *         >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
      *         <p>
      *         Constraints for Amazon S3 origins:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *         If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *         <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *         </p>
      *         </li>
@@ -462,7 +499,13 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for
-     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.
+     * this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be configured
+     * as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+     * </p>
+     * <p>
+     * For more information about specifying this value for different types of origins, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     * >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * Constraints for Amazon S3 origins:
@@ -470,7 +513,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -513,14 +556,21 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param domainName
      *        <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which you want CloudFront to get
-     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>.</p>
+     *        objects for this origin, for example, <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket
+     *        to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the
+     *        bucket.</p>
+     *        <p>
+     *        For more information about specifying this value for different types of origins, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName"
+     *        >Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Constraints for Amazon S3 origins:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *        </p>
      *        </li>
@@ -926,7 +976,8 @@ public class Origin implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1011,4 +1062,5 @@ public class Origin implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

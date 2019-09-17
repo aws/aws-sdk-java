@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,7 +14,8 @@
 /**
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This reference provides detailed information about the Amazon WorkSpaces operations.
+ * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops for your
+ * users.
  * </p>
  */
 package com.amazonaws.services.workspaces;

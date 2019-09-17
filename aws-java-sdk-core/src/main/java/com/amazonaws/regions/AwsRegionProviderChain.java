@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,6 +53,9 @@ public class AwsRegionProviderChain extends AwsRegionProvider {
                           ": " + e.getMessage());
             }
         }
+        // Note: This is a bug in the provider chain. The chain should return null when no region is found according to
+        // the interface, but an exception is thrown  here instead. This class is used in too many places to change now.
+        // TODO: In 2.0, be sure this bug does not carry through.
         throw new SdkClientException("Unable to load region information from any provider in the chain");
     }
 }

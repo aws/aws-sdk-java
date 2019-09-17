@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,21 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String loadBalancerArn;
     /**
      * <p>
-     * The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per Availability Zone.
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      */
     private java.util.List<String> subnets;
+    /**
+     * <p>
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+     * </p>
+     * <p>
+     * You cannot specify Elastic IP addresses for your subnets.
+     * </p>
+     */
+    private java.util.List<SubnetMapping> subnetMappings;
 
     /**
      * <p>
@@ -80,11 +91,12 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per Availability Zone.
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * 
-     * @return The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per
-     *         Availability Zone.
+     * @return The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *         specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      */
 
     public java.util.List<String> getSubnets() {
@@ -93,12 +105,13 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per Availability Zone.
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per
-     *        Availability Zone.
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -112,7 +125,8 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per Availability Zone.
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,8 +135,8 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per
-     *        Availability Zone.
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,12 +152,13 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per Availability Zone.
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * 
      * @param subnets
-     *        The IDs of the subnets. You must specify at least two subnets. You can add only one subnet per
-     *        Availability Zone.
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +168,106 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+     * </p>
+     * <p>
+     * You cannot specify Elastic IP addresses for your subnets.
+     * </p>
+     * 
+     * @return The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *         specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+     *         <p>
+     *         You cannot specify Elastic IP addresses for your subnets.
+     */
+
+    public java.util.List<SubnetMapping> getSubnetMappings() {
+        return subnetMappings;
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+     * </p>
+     * <p>
+     * You cannot specify Elastic IP addresses for your subnets.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+     *        <p>
+     *        You cannot specify Elastic IP addresses for your subnets.
+     */
+
+    public void setSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
+        if (subnetMappings == null) {
+            this.subnetMappings = null;
+            return;
+        }
+
+        this.subnetMappings = new java.util.ArrayList<SubnetMapping>(subnetMappings);
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+     * </p>
+     * <p>
+     * You cannot specify Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetMappings(java.util.Collection)} or {@link #withSubnetMappings(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+     *        <p>
+     *        You cannot specify Elastic IP addresses for your subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSubnetsRequest withSubnetMappings(SubnetMapping... subnetMappings) {
+        if (this.subnetMappings == null) {
+            setSubnetMappings(new java.util.ArrayList<SubnetMapping>(subnetMappings.length));
+        }
+        for (SubnetMapping ele : subnetMappings) {
+            this.subnetMappings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can specify
+     * only one subnet per Availability Zone. You must specify either subnets or subnet mappings.
+     * </p>
+     * <p>
+     * You cannot specify Elastic IP addresses for your subnets.
+     * </p>
+     * 
+     * @param subnetMappings
+     *        The IDs of the public subnets. You must specify subnets from at least two Availability Zones. You can
+     *        specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+     *        <p>
+     *        You cannot specify Elastic IP addresses for your subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSubnetsRequest withSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
+        setSubnetMappings(subnetMappings);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -166,7 +280,9 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getLoadBalancerArn() != null)
             sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: ").append(getSubnets());
+            sb.append("Subnets: ").append(getSubnets()).append(",");
+        if (getSubnetMappings() != null)
+            sb.append("SubnetMappings: ").append(getSubnetMappings());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +305,10 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
+        if (other.getSubnetMappings() == null ^ this.getSubnetMappings() == null)
+            return false;
+        if (other.getSubnetMappings() != null && other.getSubnetMappings().equals(this.getSubnetMappings()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +319,7 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSubnetMappings() == null) ? 0 : getSubnetMappings().hashCode());
         return hashCode;
     }
 

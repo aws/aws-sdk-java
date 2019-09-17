@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,22 +14,41 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object containing both the face metadata (stored in the back-end database) and facial attributes that are detected
+ * Object containing both the face metadata (stored in the backend database), and facial attributes that are detected
  * but aren't stored in the database.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FaceRecord implements Serializable, Cloneable {
+public class FaceRecord implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image
+     * ID that you assigned.
+     * </p>
+     */
     private Face face;
-
+    /**
+     * <p>
+     * Structure containing attributes of the face that the algorithm detected.
+     * </p>
+     */
     private FaceDetail faceDetail;
 
     /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
      * @param face
+     *        Describes the face properties such as the bounding box, face ID, image ID of the input image, and external
+     *        image ID that you assigned.
      */
 
     public void setFace(Face face) {
@@ -37,7 +56,13 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
+     * @return Describes the face properties such as the bounding box, face ID, image ID of the input image, and
+     *         external image ID that you assigned.
      */
 
     public Face getFace() {
@@ -45,7 +70,14 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
      * @param face
+     *        Describes the face properties such as the bounding box, face ID, image ID of the input image, and external
+     *        image ID that you assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +87,12 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Structure containing attributes of the face that the algorithm detected.
+     * </p>
+     * 
      * @param faceDetail
+     *        Structure containing attributes of the face that the algorithm detected.
      */
 
     public void setFaceDetail(FaceDetail faceDetail) {
@@ -63,7 +100,11 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Structure containing attributes of the face that the algorithm detected.
+     * </p>
+     * 
+     * @return Structure containing attributes of the face that the algorithm detected.
      */
 
     public FaceDetail getFaceDetail() {
@@ -71,7 +112,12 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Structure containing attributes of the face that the algorithm detected.
+     * </p>
+     * 
      * @param faceDetail
+     *        Structure containing attributes of the face that the algorithm detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +127,8 @@ public class FaceRecord implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -137,5 +184,11 @@ public class FaceRecord implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.FaceRecordMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

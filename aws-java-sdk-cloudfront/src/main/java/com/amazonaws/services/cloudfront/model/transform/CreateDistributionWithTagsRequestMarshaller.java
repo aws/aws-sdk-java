@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2016-11-25/distribution?WithTags";
+        String uriResourcePath = "/2019-03-26/distribution?WithTags";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -55,7 +55,7 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2016-11-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
 
             DistributionConfigWithTags distributionConfigWithTags = createDistributionWithTagsRequest.getDistributionConfigWithTags();
             if (distributionConfigWithTags != null) {
@@ -195,6 +195,95 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                                 xmlWriter.startElement("SslProtocol");
                                                 xmlWriter.value(originSslProtocolsItemsListValue);
                                                 xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+
+                                    if (customOriginConfig.getOriginReadTimeout() != null) {
+                                        xmlWriter.startElement("OriginReadTimeout").value(customOriginConfig.getOriginReadTimeout()).endElement();
+                                    }
+
+                                    if (customOriginConfig.getOriginKeepaliveTimeout() != null) {
+                                        xmlWriter.startElement("OriginKeepaliveTimeout").value(customOriginConfig.getOriginKeepaliveTimeout()).endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    OriginGroups originGroups = distributionConfig.getOriginGroups();
+                    if (originGroups != null) {
+                        xmlWriter.startElement("OriginGroups");
+
+                        if (originGroups.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(originGroups.getQuantity()).endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<OriginGroup> originGroupsItemsList = (com.amazonaws.internal.SdkInternalList<OriginGroup>) originGroups
+                                .getItems();
+                        if (!originGroupsItemsList.isEmpty() || !originGroupsItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (OriginGroup originGroupsItemsListValue : originGroupsItemsList) {
+                                xmlWriter.startElement("OriginGroup");
+
+                                if (originGroupsItemsListValue.getId() != null) {
+                                    xmlWriter.startElement("Id").value(originGroupsItemsListValue.getId()).endElement();
+                                }
+
+                                OriginGroupFailoverCriteria failoverCriteria = originGroupsItemsListValue.getFailoverCriteria();
+                                if (failoverCriteria != null) {
+                                    xmlWriter.startElement("FailoverCriteria");
+
+                                    StatusCodes statusCodes = failoverCriteria.getStatusCodes();
+                                    if (statusCodes != null) {
+                                        xmlWriter.startElement("StatusCodes");
+
+                                        if (statusCodes.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(statusCodes.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<Integer> statusCodesItemsList = (com.amazonaws.internal.SdkInternalList<Integer>) statusCodes
+                                                .getItems();
+                                        if (!statusCodesItemsList.isEmpty() || !statusCodesItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (Integer statusCodesItemsListValue : statusCodesItemsList) {
+                                                xmlWriter.startElement("StatusCode");
+                                                xmlWriter.value(statusCodesItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+
+                                OriginGroupMembers members = originGroupsItemsListValue.getMembers();
+                                if (members != null) {
+                                    xmlWriter.startElement("Members");
+
+                                    if (members.getQuantity() != null) {
+                                        xmlWriter.startElement("Quantity").value(members.getQuantity()).endElement();
+                                    }
+
+                                    com.amazonaws.internal.SdkInternalList<OriginGroupMember> originGroupMembersItemsList = (com.amazonaws.internal.SdkInternalList<OriginGroupMember>) members
+                                            .getItems();
+                                    if (!originGroupMembersItemsList.isEmpty() || !originGroupMembersItemsList.isAutoConstruct()) {
+                                        xmlWriter.startElement("Items");
+
+                                        for (OriginGroupMember originGroupMembersItemsListValue : originGroupMembersItemsList) {
+                                            xmlWriter.startElement("OriginGroupMember");
+
+                                            if (originGroupMembersItemsListValue.getOriginId() != null) {
+                                                xmlWriter.startElement("OriginId").value(originGroupMembersItemsListValue.getOriginId()).endElement();
                                             }
                                             xmlWriter.endElement();
                                         }
@@ -427,11 +516,19 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                     if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
                                         xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
                                     }
+
+                                    if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                        xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody()).endElement();
+                                    }
                                     xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();
+                        }
+
+                        if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
+                            xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
                         }
                         xmlWriter.endElement();
                     }
@@ -670,11 +767,21 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                             if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
                                                 xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
                                             }
+
+                                            if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                                xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody())
+                                                        .endElement();
+                                            }
                                             xmlWriter.endElement();
                                         }
                                         xmlWriter.endElement();
                                     }
                                     xmlWriter.endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
+                                    xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId())
+                                            .endElement();
                                 }
                                 xmlWriter.endElement();
                             }

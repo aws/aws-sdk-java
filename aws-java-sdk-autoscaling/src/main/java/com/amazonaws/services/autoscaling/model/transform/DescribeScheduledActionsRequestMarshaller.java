@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,10 @@ public class DescribeScheduledActionsRequestMarshaller implements Marshaller<Req
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScheduledActionsRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> scheduledActionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledActionsRequest
-                .getScheduledActionNames();
-        if (!scheduledActionNamesList.isEmpty() || !scheduledActionNamesList.isAutoConstruct()) {
+        if (!describeScheduledActionsRequest.getScheduledActionNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeScheduledActionsRequest.getScheduledActionNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> scheduledActionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledActionsRequest
+                    .getScheduledActionNames();
             int scheduledActionNamesListIndex = 1;
 
             for (String scheduledActionNamesListValue : scheduledActionNamesList) {

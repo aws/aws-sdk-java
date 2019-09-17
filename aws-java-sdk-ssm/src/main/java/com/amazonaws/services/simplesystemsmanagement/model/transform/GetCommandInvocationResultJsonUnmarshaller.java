@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class GetCommandInvocationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getCommandInvocationResult.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    getCommandInvocationResult.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PluginName", targetDepth)) {
                     context.nextToken();
                     getCommandInvocationResult.setPluginName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class GetCommandInvocationResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("StandardErrorUrl", targetDepth)) {
                     context.nextToken();
                     getCommandInvocationResult.setStandardErrorUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    context.nextToken();
+                    getCommandInvocationResult.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

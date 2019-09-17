@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,39 +44,45 @@ public class DefineAnalysisSchemeRequestMarshaller implements Marshaller<Request
             request.addParameter("DomainName", StringUtils.fromString(defineAnalysisSchemeRequest.getDomainName()));
         }
 
-        AnalysisScheme analysisScheme = defineAnalysisSchemeRequest.getAnalysisScheme();
-        if (analysisScheme != null) {
+        {
+            AnalysisScheme analysisScheme = defineAnalysisSchemeRequest.getAnalysisScheme();
+            if (analysisScheme != null) {
 
-            if (analysisScheme.getAnalysisSchemeName() != null) {
-                request.addParameter("AnalysisScheme.AnalysisSchemeName", StringUtils.fromString(analysisScheme.getAnalysisSchemeName()));
-            }
-
-            if (analysisScheme.getAnalysisSchemeLanguage() != null) {
-                request.addParameter("AnalysisScheme.AnalysisSchemeLanguage", StringUtils.fromString(analysisScheme.getAnalysisSchemeLanguage()));
-            }
-
-            AnalysisOptions analysisOptions = analysisScheme.getAnalysisOptions();
-            if (analysisOptions != null) {
-
-                if (analysisOptions.getSynonyms() != null) {
-                    request.addParameter("AnalysisScheme.AnalysisOptions.Synonyms", StringUtils.fromString(analysisOptions.getSynonyms()));
+                if (analysisScheme.getAnalysisSchemeName() != null) {
+                    request.addParameter("AnalysisScheme.AnalysisSchemeName", StringUtils.fromString(analysisScheme.getAnalysisSchemeName()));
                 }
 
-                if (analysisOptions.getStopwords() != null) {
-                    request.addParameter("AnalysisScheme.AnalysisOptions.Stopwords", StringUtils.fromString(analysisOptions.getStopwords()));
+                if (analysisScheme.getAnalysisSchemeLanguage() != null) {
+                    request.addParameter("AnalysisScheme.AnalysisSchemeLanguage", StringUtils.fromString(analysisScheme.getAnalysisSchemeLanguage()));
                 }
 
-                if (analysisOptions.getStemmingDictionary() != null) {
-                    request.addParameter("AnalysisScheme.AnalysisOptions.StemmingDictionary", StringUtils.fromString(analysisOptions.getStemmingDictionary()));
-                }
+                {
+                    AnalysisOptions analysisOptions = analysisScheme.getAnalysisOptions();
+                    if (analysisOptions != null) {
 
-                if (analysisOptions.getJapaneseTokenizationDictionary() != null) {
-                    request.addParameter("AnalysisScheme.AnalysisOptions.JapaneseTokenizationDictionary",
-                            StringUtils.fromString(analysisOptions.getJapaneseTokenizationDictionary()));
-                }
+                        if (analysisOptions.getSynonyms() != null) {
+                            request.addParameter("AnalysisScheme.AnalysisOptions.Synonyms", StringUtils.fromString(analysisOptions.getSynonyms()));
+                        }
 
-                if (analysisOptions.getAlgorithmicStemming() != null) {
-                    request.addParameter("AnalysisScheme.AnalysisOptions.AlgorithmicStemming", StringUtils.fromString(analysisOptions.getAlgorithmicStemming()));
+                        if (analysisOptions.getStopwords() != null) {
+                            request.addParameter("AnalysisScheme.AnalysisOptions.Stopwords", StringUtils.fromString(analysisOptions.getStopwords()));
+                        }
+
+                        if (analysisOptions.getStemmingDictionary() != null) {
+                            request.addParameter("AnalysisScheme.AnalysisOptions.StemmingDictionary",
+                                    StringUtils.fromString(analysisOptions.getStemmingDictionary()));
+                        }
+
+                        if (analysisOptions.getJapaneseTokenizationDictionary() != null) {
+                            request.addParameter("AnalysisScheme.AnalysisOptions.JapaneseTokenizationDictionary",
+                                    StringUtils.fromString(analysisOptions.getJapaneseTokenizationDictionary()));
+                        }
+
+                        if (analysisOptions.getAlgorithmicStemming() != null) {
+                            request.addParameter("AnalysisScheme.AnalysisOptions.AlgorithmicStemming",
+                                    StringUtils.fromString(analysisOptions.getAlgorithmicStemming()));
+                        }
+                    }
                 }
             }
         }

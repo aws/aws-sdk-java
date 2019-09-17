@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ShippingDetails implements Serializable, Cloneable {
+public class ShippingDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -61,15 +63,15 @@ public class ShippingDetails implements Serializable, Cloneable {
     private String shippingOption;
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
+     * particular job.
      * </p>
      */
     private Shipment inboundShipment;
     /**
      * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
-     * particular job.
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
+     * you specified for a particular job.
      * </p>
      */
     private Shipment outboundShipment;
@@ -340,7 +342,7 @@ public class ShippingDetails implements Serializable, Cloneable {
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -408,53 +410,7 @@ public class ShippingDetails implements Serializable, Cloneable {
      */
 
     public ShippingDetails withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
-     * </p>
-     * 
-     * @param inboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
-     *        address that you specified for a particular job.
-     */
-
-    public void setInboundShipment(Shipment inboundShipment) {
-        this.inboundShipment = inboundShipment;
-    }
-
-    /**
-     * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
-     * </p>
-     * 
-     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
-     *         address that you specified for a particular job.
-     */
-
-    public Shipment getInboundShipment() {
-        return this.inboundShipment;
-    }
-
-    /**
-     * <p>
-     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
-     * you specified for a particular job.
-     * </p>
-     * 
-     * @param inboundShipment
-     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
-     *        address that you specified for a particular job.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ShippingDetails withInboundShipment(Shipment inboundShipment) {
-        setInboundShipment(inboundShipment);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -464,13 +420,13 @@ public class ShippingDetails implements Serializable, Cloneable {
      * particular job.
      * </p>
      * 
-     * @param outboundShipment
+     * @param inboundShipment
      *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
      *        particular job.
      */
 
-    public void setOutboundShipment(Shipment outboundShipment) {
-        this.outboundShipment = outboundShipment;
+    public void setInboundShipment(Shipment inboundShipment) {
+        this.inboundShipment = inboundShipment;
     }
 
     /**
@@ -483,8 +439,8 @@ public class ShippingDetails implements Serializable, Cloneable {
      *         particular job.
      */
 
-    public Shipment getOutboundShipment() {
-        return this.outboundShipment;
+    public Shipment getInboundShipment() {
+        return this.inboundShipment;
     }
 
     /**
@@ -493,9 +449,55 @@ public class ShippingDetails implements Serializable, Cloneable {
      * particular job.
      * </p>
      * 
-     * @param outboundShipment
+     * @param inboundShipment
      *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being returned to AWS for a
      *        particular job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShippingDetails withInboundShipment(Shipment inboundShipment) {
+        setInboundShipment(inboundShipment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
+     * you specified for a particular job.
+     * </p>
+     * 
+     * @param outboundShipment
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     *        address that you specified for a particular job.
+     */
+
+    public void setOutboundShipment(Shipment outboundShipment) {
+        this.outboundShipment = outboundShipment;
+    }
+
+    /**
+     * <p>
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
+     * you specified for a particular job.
+     * </p>
+     * 
+     * @return The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     *         address that you specified for a particular job.
+     */
+
+    public Shipment getOutboundShipment() {
+        return this.outboundShipment;
+    }
+
+    /**
+     * <p>
+     * The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the address that
+     * you specified for a particular job.
+     * </p>
+     * 
+     * @param outboundShipment
+     *        The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball being delivered to the
+     *        address that you specified for a particular job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,7 +507,8 @@ public class ShippingDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -568,5 +571,11 @@ public class ShippingDetails implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.ShippingDetailsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

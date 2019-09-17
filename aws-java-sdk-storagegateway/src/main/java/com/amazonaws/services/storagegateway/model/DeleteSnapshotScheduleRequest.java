@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     */
     private String volumeARN;
 
     /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule to delete.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -36,7 +46,11 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
+     * @return The volume which snapshot schedule to delete.
      */
 
     public String getVolumeARN() {
@@ -44,7 +58,12 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The volume which snapshot schedule to delete.
+     * </p>
+     * 
      * @param volumeARN
+     *        The volume which snapshot schedule to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +73,8 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

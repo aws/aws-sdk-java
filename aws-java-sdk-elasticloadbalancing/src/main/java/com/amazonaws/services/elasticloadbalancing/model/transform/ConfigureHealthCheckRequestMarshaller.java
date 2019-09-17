@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,27 +45,29 @@ public class ConfigureHealthCheckRequestMarshaller implements Marshaller<Request
             request.addParameter("LoadBalancerName", StringUtils.fromString(configureHealthCheckRequest.getLoadBalancerName()));
         }
 
-        HealthCheck healthCheck = configureHealthCheckRequest.getHealthCheck();
-        if (healthCheck != null) {
+        {
+            HealthCheck healthCheck = configureHealthCheckRequest.getHealthCheck();
+            if (healthCheck != null) {
 
-            if (healthCheck.getTarget() != null) {
-                request.addParameter("HealthCheck.Target", StringUtils.fromString(healthCheck.getTarget()));
-            }
+                if (healthCheck.getTarget() != null) {
+                    request.addParameter("HealthCheck.Target", StringUtils.fromString(healthCheck.getTarget()));
+                }
 
-            if (healthCheck.getInterval() != null) {
-                request.addParameter("HealthCheck.Interval", StringUtils.fromInteger(healthCheck.getInterval()));
-            }
+                if (healthCheck.getInterval() != null) {
+                    request.addParameter("HealthCheck.Interval", StringUtils.fromInteger(healthCheck.getInterval()));
+                }
 
-            if (healthCheck.getTimeout() != null) {
-                request.addParameter("HealthCheck.Timeout", StringUtils.fromInteger(healthCheck.getTimeout()));
-            }
+                if (healthCheck.getTimeout() != null) {
+                    request.addParameter("HealthCheck.Timeout", StringUtils.fromInteger(healthCheck.getTimeout()));
+                }
 
-            if (healthCheck.getUnhealthyThreshold() != null) {
-                request.addParameter("HealthCheck.UnhealthyThreshold", StringUtils.fromInteger(healthCheck.getUnhealthyThreshold()));
-            }
+                if (healthCheck.getUnhealthyThreshold() != null) {
+                    request.addParameter("HealthCheck.UnhealthyThreshold", StringUtils.fromInteger(healthCheck.getUnhealthyThreshold()));
+                }
 
-            if (healthCheck.getHealthyThreshold() != null) {
-                request.addParameter("HealthCheck.HealthyThreshold", StringUtils.fromInteger(healthCheck.getHealthyThreshold()));
+                if (healthCheck.getHealthyThreshold() != null) {
+                    request.addParameter("HealthCheck.HealthyThreshold", StringUtils.fromInteger(healthCheck.getHealthyThreshold()));
+                }
             }
         }
 

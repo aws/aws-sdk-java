@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,6 @@
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
-
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -99,11 +98,11 @@ public class GetMaintenanceWindowExecutionTaskResultJsonUnmarshaller implements 
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowExecutionTaskResult.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowExecutionTaskResult.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("EndTime", targetDepth)) {
                     context.nextToken();
-                    getMaintenanceWindowExecutionTaskResult.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMaintenanceWindowExecutionTaskResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <li>
      * <p>
      * Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     * <code>my--namespace</code> are invalid.
+     * <code>my--namespace</code> are not valid.
      * </p>
      * </li>
      * <li>
@@ -62,7 +62,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String trailName;
@@ -91,7 +91,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <li>
      * <p>
      * Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     * <code>my--namespace</code> are invalid.
+     * <code>my--namespace</code> are not valid.
      * </p>
      * </li>
      * <li>
@@ -104,7 +104,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailName
@@ -129,7 +129,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     *        <code>my--namespace</code> are invalid.
+     *        <code>my--namespace</code> are not valid.
      *        </p>
      *        </li>
      *        <li>
@@ -142,7 +142,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setTrailName(String trailName) {
@@ -173,7 +173,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <li>
      * <p>
      * Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     * <code>my--namespace</code> are invalid.
+     * <code>my--namespace</code> are not valid.
      * </p>
      * </li>
      * <li>
@@ -186,7 +186,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the
@@ -210,7 +210,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <li>
      *         <p>
      *         Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     *         <code>my--namespace</code> are invalid.
+     *         <code>my--namespace</code> are not valid.
      *         </p>
      *         </li>
      *         <li>
@@ -223,7 +223,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         If you specify a trail ARN, it must be in the format:
      *         </p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getTrailName() {
@@ -254,7 +254,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <li>
      * <p>
      * Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     * <code>my--namespace</code> are invalid.
+     * <code>my--namespace</code> are not valid.
      * </p>
      * </li>
      * <li>
@@ -267,7 +267,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you specify a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailName
@@ -292,7 +292,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and
-     *        <code>my--namespace</code> are invalid.
+     *        <code>my--namespace</code> are not valid.
      *        </p>
      *        </li>
      *        <li>
@@ -305,7 +305,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you specify a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +315,8 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

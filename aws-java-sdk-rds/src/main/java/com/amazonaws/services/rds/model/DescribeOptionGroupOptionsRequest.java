@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A required parameter. Options available for the given engine name will be described.
+     * A required parameter. Options available for the given engine name are described.
      * </p>
      */
     private String engineName;
@@ -68,11 +68,11 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A required parameter. Options available for the given engine name will be described.
+     * A required parameter. Options available for the given engine name are described.
      * </p>
      * 
      * @param engineName
-     *        A required parameter. Options available for the given engine name will be described.
+     *        A required parameter. Options available for the given engine name are described.
      */
 
     public void setEngineName(String engineName) {
@@ -81,10 +81,10 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A required parameter. Options available for the given engine name will be described.
+     * A required parameter. Options available for the given engine name are described.
      * </p>
      * 
-     * @return A required parameter. Options available for the given engine name will be described.
+     * @return A required parameter. Options available for the given engine name are described.
      */
 
     public String getEngineName() {
@@ -93,11 +93,11 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A required parameter. Options available for the given engine name will be described.
+     * A required parameter. Options available for the given engine name are described.
      * </p>
      * 
      * @param engineName
-     *        A required parameter. Options available for the given engine name will be described.
+     *        A required parameter. Options available for the given engine name are described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,7 +351,8 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,34 @@ public class NFSFileShareInfoJsonUnmarshaller implements Unmarshaller<NFSFileSha
                 if (context.testExpression("DefaultStorageClass", targetDepth)) {
                     context.nextToken();
                     nFSFileShareInfo.setDefaultStorageClass(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ObjectACL", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setObjectACL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ClientList", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setClientList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("Squash", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setSquash(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReadOnly", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setReadOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("GuessMIMETypeEnabled", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setGuessMIMETypeEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("RequesterPays", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setRequesterPays(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    nFSFileShareInfo.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

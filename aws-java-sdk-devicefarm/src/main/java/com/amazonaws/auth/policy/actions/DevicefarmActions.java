@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,24 @@ public enum DevicefarmActions implements Action {
 
     /** Action for the CreateDevicePool operation. */
     CreateDevicePool("devicefarm:CreateDevicePool"),
+    /** Action for the CreateInstanceProfile operation. */
+    CreateInstanceProfile("devicefarm:CreateInstanceProfile"),
+    /** Action for the CreateNetworkProfile operation. */
+    CreateNetworkProfile("devicefarm:CreateNetworkProfile"),
     /** Action for the CreateProject operation. */
     CreateProject("devicefarm:CreateProject"),
     /** Action for the CreateRemoteAccessSession operation. */
     CreateRemoteAccessSession("devicefarm:CreateRemoteAccessSession"),
     /** Action for the CreateUpload operation. */
     CreateUpload("devicefarm:CreateUpload"),
+    /** Action for the CreateVPCEConfiguration operation. */
+    CreateVPCEConfiguration("devicefarm:CreateVPCEConfiguration"),
     /** Action for the DeleteDevicePool operation. */
     DeleteDevicePool("devicefarm:DeleteDevicePool"),
+    /** Action for the DeleteInstanceProfile operation. */
+    DeleteInstanceProfile("devicefarm:DeleteInstanceProfile"),
+    /** Action for the DeleteNetworkProfile operation. */
+    DeleteNetworkProfile("devicefarm:DeleteNetworkProfile"),
     /** Action for the DeleteProject operation. */
     DeleteProject("devicefarm:DeleteProject"),
     /** Action for the DeleteRemoteAccessSession operation. */
@@ -43,16 +53,24 @@ public enum DevicefarmActions implements Action {
     DeleteRun("devicefarm:DeleteRun"),
     /** Action for the DeleteUpload operation. */
     DeleteUpload("devicefarm:DeleteUpload"),
+    /** Action for the DeleteVPCEConfiguration operation. */
+    DeleteVPCEConfiguration("devicefarm:DeleteVPCEConfiguration"),
     /** Action for the GetAccountSettings operation. */
     GetAccountSettings("devicefarm:GetAccountSettings"),
     /** Action for the GetDevice operation. */
     GetDevice("devicefarm:GetDevice"),
+    /** Action for the GetDeviceInstance operation. */
+    GetDeviceInstance("devicefarm:GetDeviceInstance"),
     /** Action for the GetDevicePool operation. */
     GetDevicePool("devicefarm:GetDevicePool"),
     /** Action for the GetDevicePoolCompatibility operation. */
     GetDevicePoolCompatibility("devicefarm:GetDevicePoolCompatibility"),
+    /** Action for the GetInstanceProfile operation. */
+    GetInstanceProfile("devicefarm:GetInstanceProfile"),
     /** Action for the GetJob operation. */
     GetJob("devicefarm:GetJob"),
+    /** Action for the GetNetworkProfile operation. */
+    GetNetworkProfile("devicefarm:GetNetworkProfile"),
     /** Action for the GetOfferingStatus operation. */
     GetOfferingStatus("devicefarm:GetOfferingStatus"),
     /** Action for the GetProject operation. */
@@ -67,16 +85,26 @@ public enum DevicefarmActions implements Action {
     GetTest("devicefarm:GetTest"),
     /** Action for the GetUpload operation. */
     GetUpload("devicefarm:GetUpload"),
+    /** Action for the GetVPCEConfiguration operation. */
+    GetVPCEConfiguration("devicefarm:GetVPCEConfiguration"),
     /** Action for the InstallToRemoteAccessSession operation. */
     InstallToRemoteAccessSession("devicefarm:InstallToRemoteAccessSession"),
     /** Action for the ListArtifacts operation. */
     ListArtifacts("devicefarm:ListArtifacts"),
+    /** Action for the ListDeviceInstances operation. */
+    ListDeviceInstances("devicefarm:ListDeviceInstances"),
     /** Action for the ListDevicePools operation. */
     ListDevicePools("devicefarm:ListDevicePools"),
     /** Action for the ListDevices operation. */
     ListDevices("devicefarm:ListDevices"),
+    /** Action for the ListInstanceProfiles operation. */
+    ListInstanceProfiles("devicefarm:ListInstanceProfiles"),
     /** Action for the ListJobs operation. */
     ListJobs("devicefarm:ListJobs"),
+    /** Action for the ListNetworkProfiles operation. */
+    ListNetworkProfiles("devicefarm:ListNetworkProfiles"),
+    /** Action for the ListOfferingPromotions operation. */
+    ListOfferingPromotions("devicefarm:ListOfferingPromotions"),
     /** Action for the ListOfferingTransactions operation. */
     ListOfferingTransactions("devicefarm:ListOfferingTransactions"),
     /** Action for the ListOfferings operation. */
@@ -91,26 +119,46 @@ public enum DevicefarmActions implements Action {
     ListSamples("devicefarm:ListSamples"),
     /** Action for the ListSuites operation. */
     ListSuites("devicefarm:ListSuites"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("devicefarm:ListTagsForResource"),
     /** Action for the ListTests operation. */
     ListTests("devicefarm:ListTests"),
     /** Action for the ListUniqueProblems operation. */
     ListUniqueProblems("devicefarm:ListUniqueProblems"),
     /** Action for the ListUploads operation. */
     ListUploads("devicefarm:ListUploads"),
+    /** Action for the ListVPCEConfigurations operation. */
+    ListVPCEConfigurations("devicefarm:ListVPCEConfigurations"),
     /** Action for the PurchaseOffering operation. */
     PurchaseOffering("devicefarm:PurchaseOffering"),
     /** Action for the RenewOffering operation. */
     RenewOffering("devicefarm:RenewOffering"),
     /** Action for the ScheduleRun operation. */
     ScheduleRun("devicefarm:ScheduleRun"),
+    /** Action for the StopJob operation. */
+    StopJob("devicefarm:StopJob"),
     /** Action for the StopRemoteAccessSession operation. */
     StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
     StopRun("devicefarm:StopRun"),
+    /** Action for the TagResource operation. */
+    TagResource("devicefarm:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("devicefarm:UntagResource"),
+    /** Action for the UpdateDeviceInstance operation. */
+    UpdateDeviceInstance("devicefarm:UpdateDeviceInstance"),
     /** Action for the UpdateDevicePool operation. */
     UpdateDevicePool("devicefarm:UpdateDevicePool"),
+    /** Action for the UpdateInstanceProfile operation. */
+    UpdateInstanceProfile("devicefarm:UpdateInstanceProfile"),
+    /** Action for the UpdateNetworkProfile operation. */
+    UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */
     UpdateProject("devicefarm:UpdateProject"),
+    /** Action for the UpdateUpload operation. */
+    UpdateUpload("devicefarm:UpdateUpload"),
+    /** Action for the UpdateVPCEConfiguration operation. */
+    UpdateVPCEConfiguration("devicefarm:UpdateVPCEConfiguration"),
 
     ;
 

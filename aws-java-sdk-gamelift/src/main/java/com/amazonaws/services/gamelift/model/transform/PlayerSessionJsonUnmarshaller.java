@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,11 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    playerSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TerminationTime", targetDepth)) {
                     context.nextToken();
-                    playerSession.setTerminationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    playerSession.setTerminationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -80,9 +80,17 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
                     context.nextToken();
                     playerSession.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsName", targetDepth)) {
+                    context.nextToken();
+                    playerSession.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
                     playerSession.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("PlayerData", targetDepth)) {
+                    context.nextToken();
+                    playerSession.setPlayerData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

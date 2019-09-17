@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,61 +12,53 @@
  */
 package com.amazonaws.services.polly.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeVoicesRequest Marshaller
+ * DescribeVoicesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeVoicesRequestMarshaller implements Marshaller<Request<DescribeVoicesRequest>, DescribeVoicesRequest> {
+@SdkInternalApi
+public class DescribeVoicesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Engine").build();
+    private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<Boolean> INCLUDEADDITIONALLANGUAGECODES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("IncludeAdditionalLanguageCodes").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
-    public DescribeVoicesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeVoicesRequestMarshaller instance = new DescribeVoicesRequestMarshaller();
+
+    public static DescribeVoicesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeVoicesRequest> marshall(DescribeVoicesRequest describeVoicesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeVoicesRequest describeVoicesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeVoicesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeVoicesRequest> request = new DefaultRequest<DescribeVoicesRequest>(describeVoicesRequest, "AmazonPolly");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/voices";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (describeVoicesRequest.getLanguageCode() != null) {
-            request.addParameter("LanguageCode", StringUtils.fromString(describeVoicesRequest.getLanguageCode()));
+        try {
+            protocolMarshaller.marshall(describeVoicesRequest.getEngine(), ENGINE_BINDING);
+            protocolMarshaller.marshall(describeVoicesRequest.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(describeVoicesRequest.getIncludeAdditionalLanguageCodes(), INCLUDEADDITIONALLANGUAGECODES_BINDING);
+            protocolMarshaller.marshall(describeVoicesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (describeVoicesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeVoicesRequest.getNextToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

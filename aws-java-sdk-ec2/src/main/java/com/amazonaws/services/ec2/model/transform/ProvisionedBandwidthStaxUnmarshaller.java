@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,23 +43,23 @@ public class ProvisionedBandwidthStaxUnmarshaller implements Unmarshaller<Provis
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("provisionTime", targetDepth)) {
+                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("provisioned", targetDepth)) {
                     provisionedBandwidth.setProvisioned(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("requestTime", targetDepth)) {
+                    provisionedBandwidth.setRequestTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("requested", targetDepth)) {
                     provisionedBandwidth.setRequested(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("requestTime", targetDepth)) {
-                    provisionedBandwidth.setRequestTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("provisionTime", targetDepth)) {
-                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

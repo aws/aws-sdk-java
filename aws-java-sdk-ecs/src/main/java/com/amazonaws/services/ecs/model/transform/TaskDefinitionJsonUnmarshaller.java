@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,10 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     context.nextToken();
                     taskDefinition.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("executionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("networkMode", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setNetworkMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -89,6 +93,34 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                     context.nextToken();
                     taskDefinition.setPlacementConstraints(new ListUnmarshaller<TaskDefinitionPlacementConstraint>(
                             TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("compatibilities", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("requiresCompatibilities", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pidMode", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setPidMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ipcMode", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setIpcMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("proxyConfiguration", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

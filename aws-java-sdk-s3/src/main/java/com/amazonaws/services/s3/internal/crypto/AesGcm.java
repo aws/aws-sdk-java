@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ class AesGcm extends ContentCryptoScheme {
      * Currently only Bouncy Castle can support the AES/GCM cipher in
      * Java 6 without having to use the AEAD API in Java 7+.
      */
-    @Override String getSpecificCipherProvider() { return "BC"; }
+    @Override String getPreferredCipherProvider() { return "BC"; }
 
     @Override
     CipherLite createAuxillaryCipher(SecretKey cek, byte[] ivOrig,
@@ -49,7 +49,7 @@ class AesGcm extends ContentCryptoScheme {
             NoSuchProviderException, NoSuchPaddingException,
             InvalidAlgorithmParameterException {
         byte[] iv = AES_CTR.adjustIV(ivOrig, startingBytePos);
-        return AES_CTR.createCipherLite(cek, iv, cipherMode, securityProvider);
+        return AES_CTR.createCipherLite(cek, iv, cipherMode, securityProvider, false);
     }
 
     @Override

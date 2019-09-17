@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,56 +30,16 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the route table.
-     * </p>
-     */
-    private String routeTableId;
-    /**
-     * <p>
      * The ID of the virtual private gateway.
      * </p>
      */
     private String gatewayId;
-
     /**
      * <p>
      * The ID of the route table.
      * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
      */
-
-    public void setRouteTableId(String routeTableId) {
-        this.routeTableId = routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @return The ID of the route table.
-     */
-
-    public String getRouteTableId() {
-        return this.routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DisableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
-        setRouteTableId(routeTableId);
-        return this;
-    }
+    private String routeTableId;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table.
+     */
+
+    public void setRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @return The ID of the route table.
+     */
+
+    public String getRouteTableId() {
+        return this.routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
+        setRouteTableId(routeTableId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -133,7 +133,8 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,10 +144,10 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRouteTableId() != null)
-            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: ").append(getGatewayId());
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
+        if (getRouteTableId() != null)
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +162,13 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         if (obj instanceof DisableVgwRoutePropagationRequest == false)
             return false;
         DisableVgwRoutePropagationRequest other = (DisableVgwRoutePropagationRequest) obj;
-        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
-            return false;
-        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
-            return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
+            return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         return true;
     }
@@ -177,8 +178,8 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,59 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateCertificateRequest Marshaller
+ * UpdateCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateCertificateRequestMarshaller implements Marshaller<Request<UpdateCertificateRequest>, UpdateCertificateRequest> {
+@SdkInternalApi
+public class UpdateCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
+    private static final MarshallingInfo<String> NEWSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("newStatus").build();
 
-    public UpdateCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateCertificateRequestMarshaller instance = new UpdateCertificateRequestMarshaller();
+
+    public static UpdateCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateCertificateRequest> marshall(UpdateCertificateRequest updateCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateCertificateRequest updateCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateCertificateRequest> request = new DefaultRequest<UpdateCertificateRequest>(updateCertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/certificates/{certificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
-                updateCertificateRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        if (updateCertificateRequest.getNewStatus() != null) {
-            request.addParameter("newStatus", StringUtils.fromString(updateCertificateRequest.getNewStatus()));
+        try {
+            protocolMarshaller.marshall(updateCertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(updateCertificateRequest.getNewStatus(), NEWSTATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

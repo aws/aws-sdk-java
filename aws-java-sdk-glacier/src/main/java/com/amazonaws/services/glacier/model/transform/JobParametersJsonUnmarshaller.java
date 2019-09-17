@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,14 @@ public class JobParametersJsonUnmarshaller implements Unmarshaller<JobParameters
                 if (context.testExpression("InventoryRetrievalParameters", targetDepth)) {
                     context.nextToken();
                     jobParameters.setInventoryRetrievalParameters(InventoryRetrievalJobInputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SelectParameters", targetDepth)) {
+                    context.nextToken();
+                    jobParameters.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    jobParameters.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

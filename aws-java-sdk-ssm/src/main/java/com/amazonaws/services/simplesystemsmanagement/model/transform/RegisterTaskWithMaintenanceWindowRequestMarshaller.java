@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,123 +12,88 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterTaskWithMaintenanceWindowRequest Marshaller
+ * RegisterTaskWithMaintenanceWindowRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterTaskWithMaintenanceWindowRequestMarshaller implements
-        Marshaller<Request<RegisterTaskWithMaintenanceWindowRequest>, RegisterTaskWithMaintenanceWindowRequest> {
+@SdkInternalApi
+public class RegisterTaskWithMaintenanceWindowRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> WINDOWID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WindowId").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<String> TASKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TaskArn").build();
+    private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
+    private static final MarshallingInfo<String> TASKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TaskType").build();
+    private static final MarshallingInfo<Map> TASKPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TaskParameters").build();
+    private static final MarshallingInfo<StructuredPojo> TASKINVOCATIONPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskInvocationParameters").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Priority").build();
+    private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
+    private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingInfo").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
-    public RegisterTaskWithMaintenanceWindowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterTaskWithMaintenanceWindowRequestMarshaller instance = new RegisterTaskWithMaintenanceWindowRequestMarshaller();
+
+    public static RegisterTaskWithMaintenanceWindowRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterTaskWithMaintenanceWindowRequest> marshall(RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerTaskWithMaintenanceWindowRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterTaskWithMaintenanceWindowRequest> request = new DefaultRequest<RegisterTaskWithMaintenanceWindowRequest>(
-                registerTaskWithMaintenanceWindowRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.RegisterTaskWithMaintenanceWindow");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerTaskWithMaintenanceWindowRequest.getWindowId() != null) {
-                jsonGenerator.writeFieldName("WindowId").writeValue(registerTaskWithMaintenanceWindowRequest.getWindowId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Target> targetsList = (com.amazonaws.internal.SdkInternalList<Target>) registerTaskWithMaintenanceWindowRequest
-                    .getTargets();
-            if (!targetsList.isEmpty() || !targetsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Targets");
-                jsonGenerator.writeStartArray();
-                for (Target targetsListValue : targetsList) {
-                    if (targetsListValue != null) {
-
-                        TargetJsonMarshaller.getInstance().marshall(targetsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getTaskArn() != null) {
-                jsonGenerator.writeFieldName("TaskArn").writeValue(registerTaskWithMaintenanceWindowRequest.getTaskArn());
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getServiceRoleArn() != null) {
-                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(registerTaskWithMaintenanceWindowRequest.getServiceRoleArn());
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getTaskType() != null) {
-                jsonGenerator.writeFieldName("TaskType").writeValue(registerTaskWithMaintenanceWindowRequest.getTaskType());
-            }
-
-            java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParametersMap = registerTaskWithMaintenanceWindowRequest
-                    .getTaskParameters();
-            if (taskParametersMap != null) {
-                jsonGenerator.writeFieldName("TaskParameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, MaintenanceWindowTaskParameterValueExpression> taskParametersMapValue : taskParametersMap.entrySet()) {
-                    if (taskParametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(taskParametersMapValue.getKey());
-
-                        MaintenanceWindowTaskParameterValueExpressionJsonMarshaller.getInstance().marshall(taskParametersMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getPriority() != null) {
-                jsonGenerator.writeFieldName("Priority").writeValue(registerTaskWithMaintenanceWindowRequest.getPriority());
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getMaxConcurrency() != null) {
-                jsonGenerator.writeFieldName("MaxConcurrency").writeValue(registerTaskWithMaintenanceWindowRequest.getMaxConcurrency());
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getMaxErrors() != null) {
-                jsonGenerator.writeFieldName("MaxErrors").writeValue(registerTaskWithMaintenanceWindowRequest.getMaxErrors());
-            }
-            if (registerTaskWithMaintenanceWindowRequest.getLoggingInfo() != null) {
-                jsonGenerator.writeFieldName("LoggingInfo");
-                LoggingInfoJsonMarshaller.getInstance().marshall(registerTaskWithMaintenanceWindowRequest.getLoggingInfo(), jsonGenerator);
-            }
-            jsonGenerator.writeFieldName("ClientToken").writeValue(IdempotentUtils.resolveString(registerTaskWithMaintenanceWindowRequest.getClientToken()));
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getWindowId(), WINDOWID_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskArn(), TASKARN_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskType(), TASKTYPE_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskParameters(), TASKPARAMETERS_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskInvocationParameters(), TASKINVOCATIONPARAMETERS_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getPriority(), PRIORITY_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getLoggingInfo(), LOGGINGINFO_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getClientToken(), CLIENTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

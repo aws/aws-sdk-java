@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon Technologies, Inc.
+ * Copyright 2015-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ public class SetBucketReplicationConfigurationRequest extends
      * Replication configuration for an Amazon S3 bucket.
      */
     private BucketReplicationConfiguration replicationConfiguration;
+
+    private String token;
 
     /**
      * Creates a new SetReplicationConfigurationRequest.
@@ -120,6 +122,19 @@ public class SetBucketReplicationConfigurationRequest extends
             BucketReplicationConfiguration replicationConfiguration) {
         setReplicationConfiguration(replicationConfiguration);
         return this;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public SetBucketReplicationConfigurationRequest withToken(String token) {
+        setToken(token);
+        return this;
+    }
+
+    public String getToken() {
+        return token;
     }
 
     @Override

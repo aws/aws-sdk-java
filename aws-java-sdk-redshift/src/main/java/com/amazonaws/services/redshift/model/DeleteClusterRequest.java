@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,19 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      */
     private String finalClusterSnapshotIdentifier;
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     */
+    private Integer finalClusterSnapshotRetentionPeriod;
 
     /**
      * <p>
@@ -585,7 +598,87 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param finalClusterSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     */
+
+    public void setFinalClusterSnapshotRetentionPeriod(Integer finalClusterSnapshotRetentionPeriod) {
+        this.finalClusterSnapshotRetentionPeriod = finalClusterSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @return The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is
+     *         retained indefinitely.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     *         </p>
+     *         <p>
+     *         The default value is -1.
+     */
+
+    public Integer getFinalClusterSnapshotRetentionPeriod() {
+        return this.finalClusterSnapshotRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     * indefinitely.
+     * </p>
+     * <p>
+     * The value must be either -1 or an integer between 1 and 3,653.
+     * </p>
+     * <p>
+     * The default value is -1.
+     * </p>
+     * 
+     * @param finalClusterSnapshotRetentionPeriod
+     *        The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained
+     *        indefinitely.</p>
+     *        <p>
+     *        The value must be either -1 or an integer between 1 and 3,653.
+     *        </p>
+     *        <p>
+     *        The default value is -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteClusterRequest withFinalClusterSnapshotRetentionPeriod(Integer finalClusterSnapshotRetentionPeriod) {
+        setFinalClusterSnapshotRetentionPeriod(finalClusterSnapshotRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -600,7 +693,9 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getSkipFinalClusterSnapshot() != null)
             sb.append("SkipFinalClusterSnapshot: ").append(getSkipFinalClusterSnapshot()).append(",");
         if (getFinalClusterSnapshotIdentifier() != null)
-            sb.append("FinalClusterSnapshotIdentifier: ").append(getFinalClusterSnapshotIdentifier());
+            sb.append("FinalClusterSnapshotIdentifier: ").append(getFinalClusterSnapshotIdentifier()).append(",");
+        if (getFinalClusterSnapshotRetentionPeriod() != null)
+            sb.append("FinalClusterSnapshotRetentionPeriod: ").append(getFinalClusterSnapshotRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +723,11 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getFinalClusterSnapshotIdentifier() != null
                 && other.getFinalClusterSnapshotIdentifier().equals(this.getFinalClusterSnapshotIdentifier()) == false)
             return false;
+        if (other.getFinalClusterSnapshotRetentionPeriod() == null ^ this.getFinalClusterSnapshotRetentionPeriod() == null)
+            return false;
+        if (other.getFinalClusterSnapshotRetentionPeriod() != null
+                && other.getFinalClusterSnapshotRetentionPeriod().equals(this.getFinalClusterSnapshotRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -639,6 +739,7 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSkipFinalClusterSnapshot() == null) ? 0 : getSkipFinalClusterSnapshot().hashCode());
         hashCode = prime * hashCode + ((getFinalClusterSnapshotIdentifier() == null) ? 0 : getFinalClusterSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getFinalClusterSnapshotRetentionPeriod() == null) ? 0 : getFinalClusterSnapshotRetentionPeriod().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,11 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolClientType.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    userPoolClientType.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    userPoolClientType.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("RefreshTokenValidity", targetDepth)) {
                     context.nextToken();
@@ -87,6 +87,38 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                 if (context.testExpression("ExplicitAuthFlows", targetDepth)) {
                     context.nextToken();
                     userPoolClientType.setExplicitAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("SupportedIdentityProviders", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setSupportedIdentityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("CallbackURLs", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setCallbackURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("LogoutURLs", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setLogoutURLs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("DefaultRedirectURI", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setDefaultRedirectURI(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AllowedOAuthFlows", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAllowedOAuthFlows(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("AllowedOAuthScopes", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAllowedOAuthScopes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("AllowedOAuthFlowsUserPoolClient", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAllowedOAuthFlowsUserPoolClient(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("AnalyticsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAnalyticsConfiguration(AnalyticsConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

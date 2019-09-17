@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String patchGroup;
+    /**
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
 
     /**
      * <p>
@@ -73,7 +79,81 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns he operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @return Returns he operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns he operating system rule specified for patch groups using the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineForPatchGroupRequest withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns he operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        withOperatingSystem(operatingSystem);
+    }
+
+    /**
+     * <p>
+     * Returns he operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns he operating system rule specified for patch groups using the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineForPatchGroupRequest withOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +164,9 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: ").append(getPatchGroup());
+            sb.append("PatchGroup: ").append(getPatchGroup()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +185,10 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getPatchGroup() != null && other.getPatchGroup().equals(this.getPatchGroup()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +198,7 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPatchGroup() == null) ? 0 : getPatchGroup().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         return hashCode;
     }
 

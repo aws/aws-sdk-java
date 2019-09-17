@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,13 @@ public enum AssessmentRunState {
     COLLECTING_DATA("COLLECTING_DATA"),
     STOP_DATA_COLLECTION_PENDING("STOP_DATA_COLLECTION_PENDING"),
     DATA_COLLECTED("DATA_COLLECTED"),
+    START_EVALUATING_RULES_PENDING("START_EVALUATING_RULES_PENDING"),
     EVALUATING_RULES("EVALUATING_RULES"),
     FAILED("FAILED"),
+    ERROR("ERROR"),
     COMPLETED("COMPLETED"),
-    COMPLETED_WITH_ERRORS("COMPLETED_WITH_ERRORS");
+    COMPLETED_WITH_ERRORS("COMPLETED_WITH_ERRORS"),
+    CANCELED("CANCELED");
 
     private String value;
 
@@ -48,6 +51,9 @@ public enum AssessmentRunState {
      * @param value
      *        real value
      * @return AssessmentRunState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AssessmentRunState fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,23 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionOpenCounts" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
+public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openActivityTasks;
@@ -43,24 +48,24 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
     private Integer openTimers;
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openChildWorkflowExecutions;
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openLambdaFunctions;
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openActivityTasks
-     *        The count of activity tasks whose status is OPEN.
+     *        The count of activity tasks whose status is <code>OPEN</code>.
      */
 
     public void setOpenActivityTasks(Integer openActivityTasks) {
@@ -69,10 +74,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of activity tasks whose status is OPEN.
+     * @return The count of activity tasks whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenActivityTasks() {
@@ -81,11 +86,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openActivityTasks
-     *        The count of activity tasks whose status is OPEN.
+     *        The count of activity tasks whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +184,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openChildWorkflowExecutions
-     *        The count of child workflow executions whose status is OPEN.
+     *        The count of child workflow executions whose status is <code>OPEN</code>.
      */
 
     public void setOpenChildWorkflowExecutions(Integer openChildWorkflowExecutions) {
@@ -192,10 +197,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of child workflow executions whose status is OPEN.
+     * @return The count of child workflow executions whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenChildWorkflowExecutions() {
@@ -204,11 +209,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openChildWorkflowExecutions
-     *        The count of child workflow executions whose status is OPEN.
+     *        The count of child workflow executions whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +224,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openLambdaFunctions
-     *        The count of AWS Lambda functions that are currently executing.
+     *        The count of Lambda tasks whose status is <code>OPEN</code>.
      */
 
     public void setOpenLambdaFunctions(Integer openLambdaFunctions) {
@@ -232,10 +237,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of AWS Lambda functions that are currently executing.
+     * @return The count of Lambda tasks whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenLambdaFunctions() {
@@ -244,11 +249,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openLambdaFunctions
-     *        The count of AWS Lambda functions that are currently executing.
+     *        The count of Lambda tasks whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +263,8 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -335,5 +341,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.WorkflowExecutionOpenCountsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

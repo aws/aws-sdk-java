@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a device object associated with a gateway-VTL.
+ * Represents a device object associated with a tape gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VTLDevice implements Serializable, Cloneable {
+public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -32,11 +34,23 @@ public class VTLDevice implements Serializable, Cloneable {
      * </p>
      */
     private String vTLDeviceARN;
-
+    /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     */
     private String vTLDeviceType;
-
+    /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     */
     private String vTLDeviceVendor;
-
+    /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     */
     private String vTLDeviceProductIdentifier;
     /**
      * <p>
@@ -86,7 +100,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceType
+     *        Specifies the type of device that the VTL device emulates.
      */
 
     public void setVTLDeviceType(String vTLDeviceType) {
@@ -94,7 +113,11 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
+     * @return Specifies the type of device that the VTL device emulates.
      */
 
     public String getVTLDeviceType() {
@@ -102,7 +125,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceType
+     *        Specifies the type of device that the VTL device emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +140,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
      * @param vTLDeviceVendor
+     *        Specifies the vendor of the device that the VTL device object emulates.
      */
 
     public void setVTLDeviceVendor(String vTLDeviceVendor) {
@@ -120,7 +153,11 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
+     * @return Specifies the vendor of the device that the VTL device object emulates.
      */
 
     public String getVTLDeviceVendor() {
@@ -128,7 +165,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
      * @param vTLDeviceVendor
+     *        Specifies the vendor of the device that the VTL device object emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +180,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceProductIdentifier
+     *        Specifies the model number of device that the VTL device emulates.
      */
 
     public void setVTLDeviceProductIdentifier(String vTLDeviceProductIdentifier) {
@@ -146,7 +193,11 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
+     * @return Specifies the model number of device that the VTL device emulates.
      */
 
     public String getVTLDeviceProductIdentifier() {
@@ -154,7 +205,12 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceProductIdentifier
+     *        Specifies the model number of device that the VTL device emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,7 +260,8 @@ public class VTLDevice implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -281,5 +338,11 @@ public class VTLDevice implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VTLDeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

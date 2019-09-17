@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TopicRule implements Serializable, Cloneable {
+public class TopicRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -66,6 +68,12 @@ public class TopicRule implements Serializable, Cloneable {
      * </p>
      */
     private String awsIotSqlVersion;
+    /**
+     * <p>
+     * The action to perform when an error occurs.
+     * </p>
+     */
+    private Action errorAction;
 
     /**
      * <p>
@@ -396,7 +404,48 @@ public class TopicRule implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The action to perform when an error occurs.
+     * </p>
+     * 
+     * @param errorAction
+     *        The action to perform when an error occurs.
+     */
+
+    public void setErrorAction(Action errorAction) {
+        this.errorAction = errorAction;
+    }
+
+    /**
+     * <p>
+     * The action to perform when an error occurs.
+     * </p>
+     * 
+     * @return The action to perform when an error occurs.
+     */
+
+    public Action getErrorAction() {
+        return this.errorAction;
+    }
+
+    /**
+     * <p>
+     * The action to perform when an error occurs.
+     * </p>
+     * 
+     * @param errorAction
+     *        The action to perform when an error occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRule withErrorAction(Action errorAction) {
+        setErrorAction(errorAction);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -419,7 +468,9 @@ public class TopicRule implements Serializable, Cloneable {
         if (getRuleDisabled() != null)
             sb.append("RuleDisabled: ").append(getRuleDisabled()).append(",");
         if (getAwsIotSqlVersion() != null)
-            sb.append("AwsIotSqlVersion: ").append(getAwsIotSqlVersion());
+            sb.append("AwsIotSqlVersion: ").append(getAwsIotSqlVersion()).append(",");
+        if (getErrorAction() != null)
+            sb.append("ErrorAction: ").append(getErrorAction());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +513,10 @@ public class TopicRule implements Serializable, Cloneable {
             return false;
         if (other.getAwsIotSqlVersion() != null && other.getAwsIotSqlVersion().equals(this.getAwsIotSqlVersion()) == false)
             return false;
+        if (other.getErrorAction() == null ^ this.getErrorAction() == null)
+            return false;
+        if (other.getErrorAction() != null && other.getErrorAction().equals(this.getErrorAction()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +532,7 @@ public class TopicRule implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getRuleDisabled() == null) ? 0 : getRuleDisabled().hashCode());
         hashCode = prime * hashCode + ((getAwsIotSqlVersion() == null) ? 0 : getAwsIotSqlVersion().hashCode());
+        hashCode = prime * hashCode + ((getErrorAction() == null) ? 0 : getErrorAction().hashCode());
         return hashCode;
     }
 
@@ -487,5 +543,11 @@ public class TopicRule implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.TopicRuleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

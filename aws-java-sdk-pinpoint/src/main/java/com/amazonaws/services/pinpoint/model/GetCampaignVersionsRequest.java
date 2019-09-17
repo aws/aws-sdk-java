@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,19 +17,50 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String applicationId;
-
+    /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     */
     private String campaignId;
-
+    /**
+     * <p>
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
+     * </p>
+     */
     private String pageSize;
-
+    /**
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
+     */
     private String token;
 
     /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setApplicationId(String applicationId) {
@@ -37,7 +68,13 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getApplicationId() {
@@ -45,7 +82,14 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +99,12 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
      * @param campaignId
+     *        The unique identifier for the campaign.
      */
 
     public void setCampaignId(String campaignId) {
@@ -63,7 +112,11 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
+     * @return The unique identifier for the campaign.
      */
 
     public String getCampaignId() {
@@ -71,7 +124,12 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
      * @param campaignId
+     *        The unique identifier for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +139,14 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
+     * </p>
+     * 
      * @param pageSize
+     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *        not supported by the App Metrics and Campaign Metrics resources.
      */
 
     public void setPageSize(String pageSize) {
@@ -89,7 +154,13 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
+     * </p>
+     * 
+     * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *         not supported by the App Metrics and Campaign Metrics resources.
      */
 
     public String getPageSize() {
@@ -97,7 +168,14 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
+     * supported by the App Metrics and Campaign Metrics resources.
+     * </p>
+     * 
      * @param pageSize
+     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
+     *        not supported by the App Metrics and Campaign Metrics resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +185,12 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
+     * 
      * @param token
+     *        The NextToken string that specifies which page of results to return in a paginated response.
      */
 
     public void setToken(String token) {
@@ -115,7 +198,11 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
+     * 
+     * @return The NextToken string that specifies which page of results to return in a paginated response.
      */
 
     public String getToken() {
@@ -123,7 +210,12 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The NextToken string that specifies which page of results to return in a paginated response.
+     * </p>
+     * 
      * @param token
+     *        The NextToken string that specifies which page of results to return in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,7 +225,8 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

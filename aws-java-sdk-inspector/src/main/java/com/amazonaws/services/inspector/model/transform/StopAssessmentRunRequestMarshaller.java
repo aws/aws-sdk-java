@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,47 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.inspector.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StopAssessmentRunRequest Marshaller
+ * StopAssessmentRunRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopAssessmentRunRequestMarshaller implements Marshaller<Request<StopAssessmentRunRequest>, StopAssessmentRunRequest> {
+@SdkInternalApi
+public class StopAssessmentRunRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ASSESSMENTRUNARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunArn").build();
+    private static final MarshallingInfo<String> STOPACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopAction").build();
 
-    public StopAssessmentRunRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StopAssessmentRunRequestMarshaller instance = new StopAssessmentRunRequestMarshaller();
+
+    public static StopAssessmentRunRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StopAssessmentRunRequest> marshall(StopAssessmentRunRequest stopAssessmentRunRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StopAssessmentRunRequest stopAssessmentRunRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (stopAssessmentRunRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopAssessmentRunRequest> request = new DefaultRequest<StopAssessmentRunRequest>(stopAssessmentRunRequest, "AmazonInspector");
-        request.addHeader("X-Amz-Target", "InspectorService.StopAssessmentRun");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (stopAssessmentRunRequest.getAssessmentRunArn() != null) {
-                jsonGenerator.writeFieldName("assessmentRunArn").writeValue(stopAssessmentRunRequest.getAssessmentRunArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(stopAssessmentRunRequest.getAssessmentRunArn(), ASSESSMENTRUNARN_BINDING);
+            protocolMarshaller.marshall(stopAssessmentRunRequest.getStopAction(), STOPACTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

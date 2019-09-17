@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,19 +20,11 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribePrefixListsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribePrefixLists.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribePrefixListsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribePrefixListsRequest> {
 
-    /**
-     * <p>
-     * One or more prefix list IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> prefixListIds;
     /**
      * <p>
      * One or more filters.
@@ -53,93 +45,23 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * One or more prefix list IDs.
      * </p>
-     * 
-     * @return One or more prefix list IDs.
      */
-
-    public java.util.List<String> getPrefixListIds() {
-        if (prefixListIds == null) {
-            prefixListIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return prefixListIds;
-    }
-
-    /**
-     * <p>
-     * One or more prefix list IDs.
-     * </p>
-     * 
-     * @param prefixListIds
-     *        One or more prefix list IDs.
-     */
-
-    public void setPrefixListIds(java.util.Collection<String> prefixListIds) {
-        if (prefixListIds == null) {
-            this.prefixListIds = null;
-            return;
-        }
-
-        this.prefixListIds = new com.amazonaws.internal.SdkInternalList<String>(prefixListIds);
-    }
-
-    /**
-     * <p>
-     * One or more prefix list IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setPrefixListIds(java.util.Collection)} or {@link #withPrefixListIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param prefixListIds
-     *        One or more prefix list IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePrefixListsRequest withPrefixListIds(String... prefixListIds) {
-        if (this.prefixListIds == null) {
-            setPrefixListIds(new com.amazonaws.internal.SdkInternalList<String>(prefixListIds.length));
-        }
-        for (String ele : prefixListIds) {
-            this.prefixListIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more prefix list IDs.
-     * </p>
-     * 
-     * @param prefixListIds
-     *        One or more prefix list IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePrefixListsRequest withPrefixListIds(java.util.Collection<String> prefixListIds) {
-        setPrefixListIds(prefixListIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> prefixListIds;
 
     /**
      * <p>
@@ -308,18 +230,13 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.</p>
-     *        <p>
-     *        Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -328,17 +245,12 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of items to return for this request. The request returns a token that you can specify
-     *         in a subsequent call to get the next set of results.</p>
-     *         <p>
-     *         Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -347,18 +259,13 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.</p>
-     *        <p>
-     *        Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,11 +276,11 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a prior call.)
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -382,10 +289,10 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this token from a prior call.)
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -394,16 +301,89 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a prior call.)
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribePrefixListsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more prefix list IDs.
+     * </p>
+     * 
+     * @return One or more prefix list IDs.
+     */
+
+    public java.util.List<String> getPrefixListIds() {
+        if (prefixListIds == null) {
+            prefixListIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return prefixListIds;
+    }
+
+    /**
+     * <p>
+     * One or more prefix list IDs.
+     * </p>
+     * 
+     * @param prefixListIds
+     *        One or more prefix list IDs.
+     */
+
+    public void setPrefixListIds(java.util.Collection<String> prefixListIds) {
+        if (prefixListIds == null) {
+            this.prefixListIds = null;
+            return;
+        }
+
+        this.prefixListIds = new com.amazonaws.internal.SdkInternalList<String>(prefixListIds);
+    }
+
+    /**
+     * <p>
+     * One or more prefix list IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrefixListIds(java.util.Collection)} or {@link #withPrefixListIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param prefixListIds
+     *        One or more prefix list IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePrefixListsRequest withPrefixListIds(String... prefixListIds) {
+        if (this.prefixListIds == null) {
+            setPrefixListIds(new com.amazonaws.internal.SdkInternalList<String>(prefixListIds.length));
+        }
+        for (String ele : prefixListIds) {
+            this.prefixListIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more prefix list IDs.
+     * </p>
+     * 
+     * @param prefixListIds
+     *        One or more prefix list IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePrefixListsRequest withPrefixListIds(java.util.Collection<String> prefixListIds) {
+        setPrefixListIds(prefixListIds);
         return this;
     }
 
@@ -419,7 +399,8 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -429,14 +410,14 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrefixListIds() != null)
-            sb.append("PrefixListIds: ").append(getPrefixListIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPrefixListIds() != null)
+            sb.append("PrefixListIds: ").append(getPrefixListIds());
         sb.append("}");
         return sb.toString();
     }
@@ -451,10 +432,6 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DescribePrefixListsRequest == false)
             return false;
         DescribePrefixListsRequest other = (DescribePrefixListsRequest) obj;
-        if (other.getPrefixListIds() == null ^ this.getPrefixListIds() == null)
-            return false;
-        if (other.getPrefixListIds() != null && other.getPrefixListIds().equals(this.getPrefixListIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -467,6 +444,10 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getPrefixListIds() == null ^ this.getPrefixListIds() == null)
+            return false;
+        if (other.getPrefixListIds() != null && other.getPrefixListIds().equals(this.getPrefixListIds()) == false)
+            return false;
         return true;
     }
 
@@ -475,10 +456,10 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrefixListIds() == null) ? 0 : getPrefixListIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPrefixListIds() == null) ? 0 : getPrefixListIds().hashCode());
         return hashCode;
     }
 

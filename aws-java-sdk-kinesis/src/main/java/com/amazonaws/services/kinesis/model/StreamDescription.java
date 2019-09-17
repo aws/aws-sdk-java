@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesis.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StreamDescription implements Serializable, Cloneable {
+public class StreamDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -45,14 +47,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -100,6 +102,59 @@ public class StreamDescription implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoring;
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String encryptionType;
+    /**
+     * <p>
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String keyId;
 
     /**
      * <p>
@@ -188,14 +243,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -217,14 +272,14 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Amazon Kinesis completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -253,14 +308,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -281,14 +336,14 @@ public class StreamDescription implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     *         <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *         <code>StreamStatus</code> to <code>CREATING</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *         state until Amazon Kinesis completes the deletion.
+     *         state until Kinesis Data Streams completes the deletion.
      *         </p>
      *         </li>
      *         <li>
@@ -317,14 +372,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -346,14 +401,14 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Amazon Kinesis completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -384,14 +439,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -413,14 +468,14 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Amazon Kinesis completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -439,7 +494,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public void setStreamStatus(StreamStatus streamStatus) {
-        this.streamStatus = streamStatus.toString();
+        withStreamStatus(streamStatus);
     }
 
     /**
@@ -449,14 +504,14 @@ public class StreamDescription implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Amazon Kinesis completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -478,14 +533,14 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Amazon Kinesis completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -505,7 +560,7 @@ public class StreamDescription implements Serializable, Cloneable {
      */
 
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
-        setStreamStatus(streamStatus);
+        this.streamStatus = streamStatus.toString();
         return this;
     }
 
@@ -788,7 +843,416 @@ public class StreamDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(String encryptionType) {
+        this.encryptionType = encryptionType;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The server-side encryption type used on the stream. This parameter can be one of the following
+     *         values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Do not encrypt the records in the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS
+     *         KMS key.
+     *         </p>
+     *         </li>
+     * @see EncryptionType
+     */
+
+    public String getEncryptionType() {
+        return this.encryptionType;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public StreamDescription withEncryptionType(String encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(EncryptionType encryptionType) {
+        withEncryptionType(encryptionType);
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public StreamDescription withEncryptionType(EncryptionType encryptionType) {
+        this.encryptionType = encryptionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param keyId
+     *        The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *        can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *        .</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name example: <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     *         identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *         can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *         .</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name example: <code>alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getKeyId() {
+        return this.keyId;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param keyId
+     *        The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *        can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *        .</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name example: <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamDescription withKeyId(String keyId) {
+        setKeyId(keyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -813,7 +1277,11 @@ public class StreamDescription implements Serializable, Cloneable {
         if (getStreamCreationTimestamp() != null)
             sb.append("StreamCreationTimestamp: ").append(getStreamCreationTimestamp()).append(",");
         if (getEnhancedMonitoring() != null)
-            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring());
+            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
+        if (getEncryptionType() != null)
+            sb.append("EncryptionType: ").append(getEncryptionType()).append(",");
+        if (getKeyId() != null)
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -860,6 +1328,14 @@ public class StreamDescription implements Serializable, Cloneable {
             return false;
         if (other.getEnhancedMonitoring() != null && other.getEnhancedMonitoring().equals(this.getEnhancedMonitoring()) == false)
             return false;
+        if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
+            return false;
+        if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
+            return false;
+        if (other.getKeyId() == null ^ this.getKeyId() == null)
+            return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -876,6 +1352,8 @@ public class StreamDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRetentionPeriodHours() == null) ? 0 : getRetentionPeriodHours().hashCode());
         hashCode = prime * hashCode + ((getStreamCreationTimestamp() == null) ? 0 : getStreamCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         return hashCode;
     }
 
@@ -886,5 +1364,11 @@ public class StreamDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesis.model.transform.StreamDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

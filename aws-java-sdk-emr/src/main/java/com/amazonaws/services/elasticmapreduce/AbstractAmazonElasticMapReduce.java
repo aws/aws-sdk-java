@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AddInstanceFleetResult addInstanceFleet(AddInstanceFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,6 +101,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public GetBlockPublicAccessConfigurationResult getBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListBootstrapActionsResult listBootstrapActions(ListBootstrapActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,6 +118,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     @Override
     public ListClustersResult listClusters() {
         return listClusters(new ListClustersRequest());
+    }
+
+    @Override
+    public ListInstanceFleetsResult listInstanceFleets(ListInstanceFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -131,6 +146,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public ModifyInstanceFleetResult modifyInstanceFleet(ModifyInstanceFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyInstanceGroupsResult modifyInstanceGroups(ModifyInstanceGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -142,6 +162,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
 
     @Override
     public PutAutoScalingPolicyResult putAutoScalingPolicy(PutAutoScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBlockPublicAccessConfigurationResult putBlockPublicAccessConfiguration(PutBlockPublicAccessConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

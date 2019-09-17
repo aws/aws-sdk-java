@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    dBClusterSnapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterSnapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -96,7 +96,7 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    dBClusterSnapshot.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterSnapshot.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -137,6 +137,16 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
 
                 if (context.testExpression("DBClusterSnapshotArn", targetDepth)) {
                     dBClusterSnapshot.setDBClusterSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceDBClusterSnapshotArn", targetDepth)) {
+                    dBClusterSnapshot.setSourceDBClusterSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
+                    dBClusterSnapshot.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

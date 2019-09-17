@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
  */
 package com.amazonaws.services.s3.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.internal.Constants;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -1007,5 +1007,65 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     public GetObjectRequest withS3ObjectId(S3ObjectId s3ObjectId) {
         setS3ObjectId(s3ObjectId);
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final GetObjectRequest that = (GetObjectRequest) o;
+
+        if (isRequesterPays != that.isRequesterPays) {
+            return false;
+        }
+        if (s3ObjectIdBuilder != null ? !s3ObjectIdBuilder.equals(that.s3ObjectIdBuilder) : that.s3ObjectIdBuilder != null) {
+            return false;
+        }
+        if (!Arrays.equals(range, that.range)) {
+            return false;
+        }
+        if (matchingETagConstraints != null ? !matchingETagConstraints.equals(that.matchingETagConstraints)
+                                            : that.matchingETagConstraints != null) {
+            return false;
+        }
+        if (nonmatchingEtagConstraints != null ? !nonmatchingEtagConstraints.equals(that.nonmatchingEtagConstraints)
+                                               : that.nonmatchingEtagConstraints != null) {
+            return false;
+        }
+        if (unmodifiedSinceConstraint != null ? !unmodifiedSinceConstraint.equals(that.unmodifiedSinceConstraint)
+                                              : that.unmodifiedSinceConstraint != null) {
+            return false;
+        }
+        if (modifiedSinceConstraint != null ? !modifiedSinceConstraint.equals(that.modifiedSinceConstraint)
+                                            : that.modifiedSinceConstraint != null) {
+            return false;
+        }
+        if (responseHeaders != null ? !responseHeaders.equals(that.responseHeaders) : that.responseHeaders != null) {
+            return false;
+        }
+        if (sseCustomerKey != null ? !sseCustomerKey.equals(that.sseCustomerKey) : that.sseCustomerKey != null) {
+            return false;
+        }
+        return partNumber != null ? partNumber.equals(that.partNumber) : that.partNumber == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = s3ObjectIdBuilder != null ? s3ObjectIdBuilder.hashCode() : 0;
+        result = 31 * result + Arrays.hashCode(range);
+        result = 31 * result + (matchingETagConstraints != null ? matchingETagConstraints.hashCode() : 0);
+        result = 31 * result + (nonmatchingEtagConstraints != null ? nonmatchingEtagConstraints.hashCode() : 0);
+        result = 31 * result + (unmodifiedSinceConstraint != null ? unmodifiedSinceConstraint.hashCode() : 0);
+        result = 31 * result + (modifiedSinceConstraint != null ? modifiedSinceConstraint.hashCode() : 0);
+        result = 31 * result + (responseHeaders != null ? responseHeaders.hashCode() : 0);
+        result = 31 * result + (isRequesterPays ? 1 : 0);
+        result = 31 * result + (sseCustomerKey != null ? sseCustomerKey.hashCode() : 0);
+        result = 31 * result + (partNumber != null ? partNumber.hashCode() : 0);
+        return result;
     }
 }

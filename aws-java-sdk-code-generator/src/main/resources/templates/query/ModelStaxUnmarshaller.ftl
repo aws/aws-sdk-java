@@ -58,8 +58,8 @@ public class ${shape.shapeName}StaxUnmarshaller implements Unmarshaller<${shape.
         <#if memberModel.http.isHeader() >
             context.setCurrentHeader("${memberModel.http.unmarshallLocationName}");
             ${shape.variable.variableName}.${memberModel.setterMethodName}(
-            <#if memberModel.variable.simpleType == "Date">
-                com.amazonaws.util.DateUtils.parseRFC822Date(context.readText()));
+            <#if memberModel.variable.variableType == "java.util.Date">
+                DateStaxUnmarshallerFactory.getInstance("${memberModel.variable.timestampFormat}").unmarshall(context));
             <#else>
                 ${memberModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
             </#if>

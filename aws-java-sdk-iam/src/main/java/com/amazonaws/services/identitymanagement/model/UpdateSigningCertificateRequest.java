@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -41,15 +41,15 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      */
     private String certificateId;
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      */
     private String status;
@@ -68,11 +68,11 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      */
     public UpdateSigningCertificateRequest(String certificateId, String status) {
         setCertificateId(certificateId);
@@ -86,11 +86,11 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      */
     public UpdateSigningCertificateRequest(String certificateId, StatusType status) {
         setCertificateId(certificateId);
@@ -102,17 +102,17 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user the signing certificate belongs to.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -124,16 +124,16 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the IAM user the signing certificate belongs to.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -145,17 +145,17 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user the signing certificate belongs to.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,15 +169,15 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      */
 
     public void setCertificateId(String certificateId) {
@@ -189,14 +189,14 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @return The ID of the signing certificate you want to update.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters that can consist of any upper or lowercased letter or digit.
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters that can consist of any upper or lowercased letter or digit.
      */
 
     public String getCertificateId() {
@@ -208,15 +208,15 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,13 +227,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * @see StatusType
      */
 
@@ -243,12 +243,12 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
-     * @return The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *         for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * @return The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *         used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * @see StatusType
      */
 
@@ -258,13 +258,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -276,40 +276,41 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * @see StatusType
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API
-     * calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     * The status you want to assign to the certificate. <code>Active</code> means that the certificate can be used for
+     * API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
-     *        for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.
+     *        The status you want to assign to the certificate. <code>Active</code> means that the certificate can be
+     *        used for API calls to AWS <code>Inactive</code> means that the certificate cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
 
     public UpdateSigningCertificateRequest withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

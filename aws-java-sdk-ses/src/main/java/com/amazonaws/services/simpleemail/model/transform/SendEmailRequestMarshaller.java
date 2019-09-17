@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,93 +44,112 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             request.addParameter("Source", StringUtils.fromString(sendEmailRequest.getSource()));
         }
 
-        Destination destination = sendEmailRequest.getDestination();
-        if (destination != null) {
+        {
+            Destination destination = sendEmailRequest.getDestination();
+            if (destination != null) {
 
-            com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses();
-            if (!toAddressesList.isEmpty() || !toAddressesList.isAutoConstruct()) {
-                int toAddressesListIndex = 1;
+                if (!destination.getToAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getToAddresses();
+                    int toAddressesListIndex = 1;
 
-                for (String toAddressesListValue : toAddressesList) {
-                    if (toAddressesListValue != null) {
-                        request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
-                    }
-                    toAddressesListIndex++;
-                }
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses();
-            if (!ccAddressesList.isEmpty() || !ccAddressesList.isAutoConstruct()) {
-                int ccAddressesListIndex = 1;
-
-                for (String ccAddressesListValue : ccAddressesList) {
-                    if (ccAddressesListValue != null) {
-                        request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
-                    }
-                    ccAddressesListIndex++;
-                }
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses();
-            if (!bccAddressesList.isEmpty() || !bccAddressesList.isAutoConstruct()) {
-                int bccAddressesListIndex = 1;
-
-                for (String bccAddressesListValue : bccAddressesList) {
-                    if (bccAddressesListValue != null) {
-                        request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
-                    }
-                    bccAddressesListIndex++;
-                }
-            }
-        }
-
-        Message message = sendEmailRequest.getMessage();
-        if (message != null) {
-
-            Content subject = message.getSubject();
-            if (subject != null) {
-
-                if (subject.getData() != null) {
-                    request.addParameter("Message.Subject.Data", StringUtils.fromString(subject.getData()));
-                }
-
-                if (subject.getCharset() != null) {
-                    request.addParameter("Message.Subject.Charset", StringUtils.fromString(subject.getCharset()));
-                }
-            }
-
-            Body body = message.getBody();
-            if (body != null) {
-
-                Content text = body.getText();
-                if (text != null) {
-
-                    if (text.getData() != null) {
-                        request.addParameter("Message.Body.Text.Data", StringUtils.fromString(text.getData()));
-                    }
-
-                    if (text.getCharset() != null) {
-                        request.addParameter("Message.Body.Text.Charset", StringUtils.fromString(text.getCharset()));
+                    for (String toAddressesListValue : toAddressesList) {
+                        if (toAddressesListValue != null) {
+                            request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                        }
+                        toAddressesListIndex++;
                     }
                 }
 
-                Content html = body.getHtml();
-                if (html != null) {
+                if (!destination.getCcAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getCcAddresses();
+                    int ccAddressesListIndex = 1;
 
-                    if (html.getData() != null) {
-                        request.addParameter("Message.Body.Html.Data", StringUtils.fromString(html.getData()));
+                    for (String ccAddressesListValue : ccAddressesList) {
+                        if (ccAddressesListValue != null) {
+                            request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                        }
+                        ccAddressesListIndex++;
                     }
+                }
 
-                    if (html.getCharset() != null) {
-                        request.addParameter("Message.Body.Html.Charset", StringUtils.fromString(html.getCharset()));
+                if (!destination.getBccAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getBccAddresses();
+                    int bccAddressesListIndex = 1;
+
+                    for (String bccAddressesListValue : bccAddressesList) {
+                        if (bccAddressesListValue != null) {
+                            request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                        }
+                        bccAddressesListIndex++;
                     }
                 }
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> replyToAddressesList = (com.amazonaws.internal.SdkInternalList<String>) sendEmailRequest
-                .getReplyToAddresses();
-        if (!replyToAddressesList.isEmpty() || !replyToAddressesList.isAutoConstruct()) {
+        {
+            Message message = sendEmailRequest.getMessage();
+            if (message != null) {
+
+                {
+                    Content subject = message.getSubject();
+                    if (subject != null) {
+
+                        if (subject.getData() != null) {
+                            request.addParameter("Message.Subject.Data", StringUtils.fromString(subject.getData()));
+                        }
+
+                        if (subject.getCharset() != null) {
+                            request.addParameter("Message.Subject.Charset", StringUtils.fromString(subject.getCharset()));
+                        }
+                    }
+                }
+
+                {
+                    Body body = message.getBody();
+                    if (body != null) {
+
+                        {
+                            Content text = body.getText();
+                            if (text != null) {
+
+                                if (text.getData() != null) {
+                                    request.addParameter("Message.Body.Text.Data", StringUtils.fromString(text.getData()));
+                                }
+
+                                if (text.getCharset() != null) {
+                                    request.addParameter("Message.Body.Text.Charset", StringUtils.fromString(text.getCharset()));
+                                }
+                            }
+                        }
+
+                        {
+                            Content html = body.getHtml();
+                            if (html != null) {
+
+                                if (html.getData() != null) {
+                                    request.addParameter("Message.Body.Html.Data", StringUtils.fromString(html.getData()));
+                                }
+
+                                if (html.getCharset() != null) {
+                                    request.addParameter("Message.Body.Html.Charset", StringUtils.fromString(html.getCharset()));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!sendEmailRequest.getReplyToAddresses().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) sendEmailRequest.getReplyToAddresses()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> replyToAddressesList = (com.amazonaws.internal.SdkInternalList<String>) sendEmailRequest
+                    .getReplyToAddresses();
             int replyToAddressesListIndex = 1;
 
             for (String replyToAddressesListValue : replyToAddressesList) {
@@ -153,8 +172,8 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             request.addParameter("ReturnPathArn", StringUtils.fromString(sendEmailRequest.getReturnPathArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendEmailRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!sendEmailRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<MessageTag>) sendEmailRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendEmailRequest.getTags();
             int tagsListIndex = 1;
 
             for (MessageTag tagsListValue : tagsList) {

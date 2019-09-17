@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,31 +14,35 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Used to filter the closed workflow executions in visibility APIs by their close status.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CloseStatusFilter" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloseStatusFilter implements Serializable, Cloneable {
+public class CloseStatusFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      * 
      * @param status
-     *        Required.
+     *        The close status that must match the close status of an execution for it to meet the criteria of this
+     *        filter.
      * @see CloseStatus
      */
 
@@ -48,11 +52,11 @@ public class CloseStatusFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      * 
-     * @return Required.
+     * @return The close status that must match the close status of an execution for it to meet the criteria of this
+     *         filter.
      * @see CloseStatus
      */
 
@@ -62,12 +66,12 @@ public class CloseStatusFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      * 
      * @param status
-     *        Required.
+     *        The close status that must match the close status of an execution for it to meet the criteria of this
+     *        filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloseStatus
      */
@@ -79,38 +83,39 @@ public class CloseStatusFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      * 
      * @param status
-     *        Required.
+     *        The close status that must match the close status of an execution for it to meet the criteria of this
+     *        filter.
      * @see CloseStatus
      */
 
     public void setStatus(CloseStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * <b>Required.</b> The close status that must match the close status of an execution for it to meet the criteria of
-     * this filter.
+     * The close status that must match the close status of an execution for it to meet the criteria of this filter.
      * </p>
      * 
      * @param status
-     *        Required.
+     *        The close status that must match the close status of an execution for it to meet the criteria of this
+     *        filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CloseStatus
      */
 
     public CloseStatusFilter withStatus(CloseStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -159,5 +164,11 @@ public class CloseStatusFilter implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.CloseStatusFilterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

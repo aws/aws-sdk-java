@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,6 +155,26 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
 
     @Override
     public <T> void delete(T object, DynamoDBDeleteExpression deleteExpression, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest) {
+        transactionWrite(transactionWriteRequest, (DynamoDBMapperConfig) null);
+    }
+
+    @Override
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
+    }
+
+    @Override
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest) {
+        return transactionLoad(transactionLoadRequest, (DynamoDBMapperConfig) null);
+    }
+
+    @Override
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest, DynamoDBMapperConfig config) {
         throw new UnsupportedOperationException("operation not supported in " + getClass());
     }
 

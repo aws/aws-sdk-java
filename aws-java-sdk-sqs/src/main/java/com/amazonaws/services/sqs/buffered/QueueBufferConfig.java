@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,7 +15,14 @@
 
 package com.amazonaws.services.sqs.buffered;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.handlers.AsyncHandler;
+import com.amazonaws.services.sqs.model.DeleteMessageRequest;
+import com.amazonaws.services.sqs.model.DeleteMessageResult;
 
 public class QueueBufferConfig {
 
@@ -25,7 +32,7 @@ public class QueueBufferConfig {
     private int maxBatchSize;
 
     /** Updated as the service now supports messages of size max 256 KiB. */
-    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024 - 1;
+    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024;
 
     /**
      * The maximum time (milliseconds) a send batch is held open for additional outbound requests.
@@ -37,6 +44,15 @@ public class QueueBufferConfig {
 
     /** 200 milliseconds */
     public static final long MAX_BATCH_OPEN_MS_DEFAULT = 200;
+
+    /**
+     * If true, even synchronous calls to delete messages will be made using background
+     * asynchronous batches. The client will return results indicating that the messages were deleted successfully
+     * even if the background calls eventually fail; the actual errors will be logged instead.
+     * This can be beneficial for decreasing message acknowledgement latency at the cost of potential
+     * duplicate messages (which can be produced by SQS itself anyway).
+     */
+    private boolean deleteInBackground = false;
 
     /**
      * Should we use long polling or not?
@@ -110,6 +126,53 @@ public class QueueBufferConfig {
     public static final int LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT = 20;
 
     /**
+     * Configures the minimum wait time for incoming receive message requests. Without a non-zero
+     * minimum wait time, threads can easily waste CPU time busy-waiting against empty local buffers.
+     * Avoid setting this to 0 unless you are confident threads will do useful work in-between
+     * each call to receive messages!
+     * <p></p>
+     * This will be applied to both requests that explicitly set WaitTimeSeconds and
+     * those that inherit the ReceiveMessageWaitTimeSeconds queue attribute.
+     */
+    private int minReceiveWaitTimeMs = MIN_RECEIVE_WAIT_TIME_MS_DEFAULT;
+
+    /** 50 ms, which is in the ballpark for typical latency contacting a remote service like SQS */
+    public static final int MIN_RECEIVE_WAIT_TIME_MS_DEFAULT = 50;
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    private List<String> receiveMessageAttributeNames = RECEIVE_MESSAGE_ATTRIBUTE_NAMES_DEFAULT;
+
+    public static final List<String> RECEIVE_MESSAGE_ATTRIBUTE_NAMES_DEFAULT = Collections.emptyList();
+
+    /**
+     * Specifies the attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require attributes
+     * will not be fulfilled from buffers.
+     */
+    private List<String> receiveAttributeNames = RECEIVE_ATTRIBUTE_NAMES_DEFAULT;
+
+    public static final List<String> RECEIVE_ATTRIBUTE_NAMES_DEFAULT = Collections.emptyList();
+
+    /**
+     * If set, prefetching will be scaled with the number of in-flight incoming receive requests
+     * made to the client. The advantage of this is reducing the number of outgoing requests
+     * made to SQS when incoming requests are reduced: in particular, if all incoming requests
+     * stop no future requests to SQS will be made. The disadvantage is increased latency when
+     * incoming requests first start occurring.
+     */
+    private boolean adaptivePrefetching = ADAPTIVE_PREFETCHING_DEFAULT;
+
+    public static final boolean ADAPTIVE_PREFETCHING_DEFAULT = false;
+
+    /**
      * Option to configure flushOnShutdown. Enabling this option will flush the pending requests in the
      * {@link SendQueueBuffer} during shutdown.
      * <p>
@@ -143,6 +206,7 @@ public class QueueBufferConfig {
     public QueueBufferConfig(QueueBufferConfig other) {
         longPoll = other.longPoll;
         longPollWaitTimeoutSeconds = other.longPollWaitTimeoutSeconds;
+        minReceiveWaitTimeMs = other.minReceiveWaitTimeMs;
         maxBatchOpenMs = other.maxBatchOpenMs;
         maxBatchSize = other.maxBatchSize;
         maxBatchSizeBytes = other.maxBatchSizeBytes;
@@ -151,6 +215,10 @@ public class QueueBufferConfig {
         maxInflightReceiveBatches = other.maxInflightReceiveBatches;
         visibilityTimeoutSeconds = other.visibilityTimeoutSeconds;
         flushOnShutdown = other.flushOnShutdown;
+        receiveAttributeNames = other.receiveAttributeNames;
+        receiveMessageAttributeNames = other.receiveMessageAttributeNames;
+        adaptivePrefetching = other.adaptivePrefetching;
+        deleteInBackground = other.deleteInBackground;
     }
 
     @Override
@@ -190,6 +258,40 @@ public class QueueBufferConfig {
      */
     public QueueBufferConfig withMaxBatchOpenMs(long maxBatchOpenMs) {
         setMaxBatchOpenMs(maxBatchOpenMs);
+        return this;
+    }
+
+    /**
+     * If set, even synchronous calls to delete messages will be made using background
+     * asynchronous batches. The client will return results indicating that the messages were deleted successfully
+     * even if the background calls eventually fail; the actual result of the deletions will be reported
+     * through the given handler instead (often just logging errors). This can be beneficial for decreasing message
+     * acknowledgement latency at the cost of potential duplicate messages (which can be produced by SQS itself anyway).
+     */
+    public boolean isDeleteInBackground() {
+        return deleteInBackground;
+    }
+
+    /**
+     * If set, even synchronous calls to delete messages will be made using background
+     * asynchronous batches. The client will return results indicating that the messages were deleted successfully
+     * even if the background calls eventually fail; any errors result of the deletions will be reported
+     * through the given handler instead (often just logging errors). This can be beneficial for decreasing message
+     * acknowledgement latency at the cost of potential duplicate messages (which can be produced by SQS itself anyway).
+     */
+    public void setDeleteInBackground(boolean deleteInBackground) {
+        this.deleteInBackground = deleteInBackground;
+    }
+
+    /**
+     * If set, even synchronous calls to delete messages will be made using background
+     * asynchronous batches. The client will return results indicating that the messages were deleted successfully
+     * even if the background calls eventually fail; the actual result of the deletions will be reported
+     * through the given handler instead (often just logging errors). This can be beneficial for decreasing message
+     * acknowledgement latency at the cost of potential duplicate messages (which can be produced by SQS itself anyway).
+     */
+    public QueueBufferConfig withDeleteInBackground(boolean deleteInBackground) {
+        setDeleteInBackground(deleteInBackground);
         return this;
     }
 
@@ -415,6 +517,46 @@ public class QueueBufferConfig {
     }
 
     /**
+     * Configures the minimum wait time for incoming receive message requests. Without a non-zero
+     * minimum wait time, threads can easily waste CPU time busy-waiting against empty local buffers.
+     * Avoid setting this to 0 unless you are confident threads will do useful work in-between
+     * each call to receive messages!
+     * <p></p>
+     * This will be applied to both requests that explicitly set WaitTimeSeconds and
+     * those that inherit the ReceiveMessageWaitTimeSeconds queue attribute.
+     */
+    public int getMinReceiveWaitTimeMs() {
+        return minReceiveWaitTimeMs;
+    }
+
+    /**
+     * Configures the minimum wait time for incoming receive message requests. Without a non-zero
+     * minimum wait time, threads can easily waste CPU time busy-waiting against empty local buffers.
+     * Avoid setting this to 0 unless you are confident threads will do useful work in-between
+     * each call to receive messages!
+     * <p></p>
+     * This will be applied to both requests that explicitly set WaitTimeSeconds and
+     * those that inherit the ReceiveMessageWaitTimeSeconds queue attribute.
+     */
+    public void setMinReceiveWaitTimeMs(int minReceiveWaitTimeMs) {
+        this.minReceiveWaitTimeMs = minReceiveWaitTimeMs;
+    }
+
+    /**
+     * Configures the minimum wait time for incoming receive message requests. Without a non-zero
+     * minimum wait time, threads can easily waste CPU time busy-waiting against empty local buffers.
+     * Avoid setting this to 0 unless you are confident threads will do useful work in-between
+     * each call to receive messages!
+     * <p></p>
+     * This will be applied to both requests that explicitly set WaitTimeSeconds and
+     * those that inherit the ReceiveMessageWaitTimeSeconds queue attribute.
+     */
+    public QueueBufferConfig withMinReceiveWaitTimeMs(int minReceiveWaitTimeMs) {
+        setMinReceiveWaitTimeMs(minReceiveWaitTimeMs);
+        return this;
+    }
+
+    /**
      * Specifies the maximum number of entries the buffered client will put in a single batch
      * request.
      */
@@ -436,6 +578,116 @@ public class QueueBufferConfig {
      */
     public QueueBufferConfig withMaxBatchSize(int maxBatchSize) {
         setMaxBatchSize(maxBatchSize);
+        return this;
+    }
+
+    /**
+     * Specifies the attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require attributes
+     * will not be fulfilled from buffers.
+     */
+    public List<String> getReceiveAttributeNames() {
+        return receiveAttributeNames;
+    }
+
+    /**
+     * Specifies the attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require attributes
+     * will not be fulfilled from buffers.
+     */
+    public void setReceiveAttributeNames(List<String> receiveAttributeNames) {
+        if (receiveAttributeNames == null) {
+            this.receiveAttributeNames = Collections.emptyList();
+        } else {
+            this.receiveAttributeNames = Collections.unmodifiableList(new ArrayList<String>(receiveAttributeNames));
+        }
+    }
+
+    /**
+     * Specifies the attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require attributes
+     * will not be fulfilled from buffers.
+     */
+    public QueueBufferConfig withReceiveAttributeNames(List<String> receiveAttributes) {
+        setReceiveAttributeNames(receiveAttributes);
+        return this;
+    }
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public List<String> getReceiveMessageAttributeNames() {
+        return receiveMessageAttributeNames;
+    }
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public void setReceiveMessageAttributeNames(List<String> receiveMessageAttributeNames) {
+        if (receiveMessageAttributeNames == null) {
+            this.receiveMessageAttributeNames = Collections.emptyList();
+        } else {
+            this.receiveMessageAttributeNames = Collections.unmodifiableList(new ArrayList<String>(receiveMessageAttributeNames));
+        }
+    }
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive message requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public QueueBufferConfig withReceiveMessageAttributeNames(List<String> receiveMessageAttributes) {
+        setReceiveMessageAttributeNames(receiveMessageAttributes);
+        return this;
+    }
+
+    /**
+     * If set, prefetching will be scaled with the number of in-flight incoming receive requests
+     * made to the client. The advantage of this is reducing the number of outgoing requests
+     * made to SQS when incoming requests are reduced: in particular, if all incoming requests
+     * stop no future requests to SQS will be made. The disadvantage is increased latency when
+     * incoming requests first start occurring.
+     */
+    public void setAdaptivePrefetching(boolean adaptivePrefetching) {
+        this.adaptivePrefetching = adaptivePrefetching;
+    }
+
+    /**
+     * If set, prefetching will be scaled with the number of in-flight incoming receive requests
+     * made to the client. The advantage of this is reducing the number of outgoing requests
+     * made to SQS when incoming requests are reduced: in particular, if all incoming requests
+     * stop no future requests to SQS will be made. The disadvantage is increased latency when
+     * incoming requests first start occurring.
+     */
+    public boolean isAdapativePrefetching() {
+        return adaptivePrefetching;
+    }
+
+    /**
+     * If set, prefetching will be scaled with the number of in-flight incoming receive requests
+     * made to the client. The advantage of this is reducing the number of outgoing requests
+     * made to SQS when incoming requests are reduced: in particular, if all incoming requests
+     * stop no future requests to SQS will be made. The disadvantage is increased latency when
+     * incoming requests first start occurring.
+     */
+    public QueueBufferConfig withAdapativePrefetching(boolean adaptivePrefetching) {
+        setAdaptivePrefetching(adaptivePrefetching);
         return this;
     }
 

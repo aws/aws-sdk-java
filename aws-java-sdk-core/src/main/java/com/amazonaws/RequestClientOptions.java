@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@ package com.amazonaws;
 
 import com.amazonaws.annotation.NotThreadSafe;
 
+import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
+import com.amazonaws.http.settings.HttpClientSettings;
 import java.io.InputStream;
 import java.util.EnumMap;
 
@@ -51,6 +53,14 @@ public final class RequestClientOptions {
      * Used for mark-and-reset purposes during retry.
      */
     private int readLimit = DEFAULT_STREAM_BUFFER_SIZE;
+
+    /**
+     * Used to skip the appendUri call in {@link ApacheHttpRequestFactory#create(Request, HttpClientSettings)} method.
+     *
+     * This options is used in APIs that directly execute given presigned urls. For these requests, the extra slash
+     * should not be included.
+     */
+    private boolean skipAppendUriPath = false;
 
     /**
      * Returns the value of the specified marker; or null if there is no such
@@ -108,12 +118,37 @@ public final class RequestClientOptions {
         this.readLimit = readLimit;
     }
 
+
+    /**
+     * Gets the boolean value to skip the appendUri call in {@link ApacheHttpRequestFactory#create(Request, HttpClientSettings)}
+     * method. The default value is false, which means the appendUri call is not skipped.
+     *
+     * This options is used in APIs that directly execute given presigned urls. For these requests, the extra slash
+     * should not be included.
+     */
+    public boolean isSkipAppendUriPath() {
+        return skipAppendUriPath;
+    }
+
+    /**
+     * Sets the boolean value to skip the appendUri call in {@link ApacheHttpRequestFactory#create(Request, HttpClientSettings)}
+     * method. The default value is false, which means the appendUri call is not skipped.
+     *
+     * This options is used in APIs that directly execute given presigned urls. For these requests, the extra slash
+     * should not be included.
+     */
+    public void setSkipAppendUriPath(boolean skipAppendUriPath) {
+        this.skipAppendUriPath = skipAppendUriPath;
+    }
+
+
     /**
      * Copy the internal states of this <code>RequestClientOptions</code> to the
      * target <code>RequestClientOptions</code>.
      */
     void copyTo(RequestClientOptions target) {
         target.setReadLimit(getReadLimit());
+        target.setSkipAppendUriPath(isSkipAppendUriPath());
         for (Marker marker: Marker.values())
             target.putClientMarker(marker, getClientMarker(marker));
     }

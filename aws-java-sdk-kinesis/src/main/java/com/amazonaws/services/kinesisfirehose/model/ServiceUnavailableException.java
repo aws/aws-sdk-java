@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The service is unavailable, back off and retry the operation. If you continue to see the exception, throughput limits
+ * The service is unavailable. Back off and retry the operation. If you continue to see the exception, throughput limits
  * for the delivery stream may have been exceeded. For more information about limits and how to request an increase, see
- * <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Firehose Limits</a>.
+ * <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

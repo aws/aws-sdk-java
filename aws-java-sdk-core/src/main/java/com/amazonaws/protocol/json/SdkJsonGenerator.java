@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.TimestampFormat;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 
@@ -210,9 +211,22 @@ public class SdkJsonGenerator implements StructuredJsonGenerator {
     }
 
     @Override
-    public StructuredJsonGenerator writeValue(Date date) {
+    public StructuredJsonGenerator writeValue(Date date, TimestampFormat timestampFormat) {
         try {
-            generator.writeNumber(DateUtils.formatServiceSpecificDate(date));
+            switch (timestampFormat) {
+                case UNIX_TIMESTAMP_IN_MILLIS:
+                    generator.writeNumber(DateUtils.formatUnixTimestampInMills(date));
+                    break;
+                case ISO_8601:
+                    generator.writeString(DateUtils.formatISO8601Date(date));
+                    break;
+                case RFC_822:
+                    generator.writeString(DateUtils.formatRFC822Date(date));
+                    break;
+                case UNIX_TIMESTAMP:
+                default:
+                    generator.writeNumber(DateUtils.formatServiceSpecificDate(date));
+            }
         } catch (IOException e) {
             throw new JsonGenerationException(e);
         }

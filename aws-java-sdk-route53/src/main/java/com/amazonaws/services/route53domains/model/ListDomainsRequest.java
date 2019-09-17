@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,16 +37,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value specified in the previous request.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private String marker;
@@ -55,16 +46,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A numeral between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Integer maxItems;
@@ -78,16 +60,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value specified in the previous request.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param marker
@@ -97,16 +70,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>NextPageMarker</code> from the previous response, and submit another request that includes the value
      *        of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: The marker must match the value specified in the previous request.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMarker(String marker) {
@@ -122,16 +86,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value specified in the previous request.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return For an initial request for a list of domains, omit this element. If the number of domains that are
@@ -140,16 +95,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>NextPageMarker</code> from the previous response, and submit another request that includes the
      *         value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
      *         Constraints: The marker must match the value specified in the previous request.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public String getMarker() {
@@ -165,16 +111,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value specified in the previous request.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param marker
@@ -184,16 +121,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>NextPageMarker</code> from the previous response, and submit another request that includes the value
      *        of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: The marker must match the value specified in the previous request.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,31 +135,13 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A numeral between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A numeral between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -243,30 +153,12 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A numeral between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return Number of domains to be returned.</p>
      *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
      *         Default: 20
-     *         </p>
-     *         <p>
-     *         Constraints: A numeral between 1 and 100.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Integer getMaxItems() {
@@ -278,31 +170,13 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Number of domains to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A numeral between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        Number of domains to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A numeral between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,7 +186,8 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

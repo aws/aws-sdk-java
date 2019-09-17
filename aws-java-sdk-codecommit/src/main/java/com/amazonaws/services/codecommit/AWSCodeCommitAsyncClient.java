@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,32 +45,32 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS
- * account
+ * account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateRepository</a>, which creates an AWS CodeCommit repository
+ * <a>CreateRepository</a>, which creates an AWS CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository
+ * <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetRepository</a>, which returns information about a specified repository
+ * <a>GetRepository</a>, which returns information about a specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account
+ * <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository
+ * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository.
  * </p>
  * </li>
  * <li>
@@ -86,44 +86,265 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBranch</a>, which creates a new branch in a specified repository
+ * <a>CreateBranch</a>, which creates a new branch in a specified repository.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetBranch</a>, which returns information about a specified branch
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListBranches</a>, which lists all branches for a specified repository
+ * <a>GetBranch</a>, which returns information about a specified branch.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateDefaultBranch</a>, which changes the default branch for a repository
+ * <a>ListBranches</a>, which lists all branches for a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateDefaultBranch</a>, which changes the default branch for a repository.
  * </p>
  * </li>
  * </ul>
  * <p>
- * Information about committed code in a repository, by calling the following:
+ * Files, by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository
+ * <a>DeleteFile</a>, which deletes the content of a specified file from a specified branch.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutFile</a>, which adds or modifies a single file in a specified repository and branch.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Commits, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>GetCommit</a>, which returns information about a commit, including commit messages and author and committer
- * information
+ * information.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>GetDifferences</a>, which returns information about the differences in a valid commit specifier (such as a branch,
- * tag, HEAD, commit ID or other fully qualified reference)
+ * tag, HEAD, commit ID or other fully qualified reference).
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Merges, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>BatchDescribeMergeConflicts</a>, which returns information about conflicts in a merge between commits in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateUnreferencedMergeCommit</a>, which creates an unreferenced commit between two branches or commits for the
+ * purpose of comparing them and identifying any potential conflicts.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMergeConflicts</a>, which returns information about merge conflicts between the base, source, and
+ * destination versions of a file in a potential merge.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeCommit</a>, which returns information about the merge between a source and destination commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeConflicts</a>, which returns information about merge conflicts between the source and destination branch
+ * in a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetMergeOptions</a>, which returns information about the available merge options between two branches or commit
+ * specifiers.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByFastForward</a>, which merges two branches using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesBySquash</a>, which merges two branches using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergeBranchesByThreeWay</a>, which merges two branches using the three-way merge option.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Pull requests, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreatePullRequest</a>, which creates a pull request in a specified repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePullRequestEvents</a>, which returns information about one or more pull request events.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetCommentsForPullRequest</a>, which returns information about comments on a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPullRequest</a>, which returns information about a specified pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPullRequests</a>, which lists all pull requests for a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByFastForward</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the fast-forward merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestBySquash</a>, which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the squash merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>MergePullRequestByThreeWay</a>. which merges the source destination branch of a pull request into the specified
+ * destination branch for that pull request using the three-way merge option.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentForPullRequest</a>, which posts a comment to a pull request at the specified line, file, or request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestDescription</a>, which updates the description of a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestStatus</a>, which updates the status of a pull request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdatePullRequestTitle</a>, which updates the title of a pull request.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Comments in a repository, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DeleteCommentContent</a>, which deletes the content of a comment on a commit in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetComment</a>, which returns information about a comment on a commit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
+ * specifiers in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentForComparedCommit</a>, which creates a comment on the comparison between two commit specifiers in a
+ * repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateComment</a>, which updates the content of a comment on a commit in a repository.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeCommit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeCommit.
  * </p>
  * </li>
  * </ul>
@@ -133,25 +354,25 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository
+ * <a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete
- * triggers
+ * triggers.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger
- * target
+ * target.
  * </p>
  * </li>
  * </ul>
  * <p>
  * For information about how to use AWS CodeCommit, see the <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -339,6 +560,10 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSCodeCommitAsyncClientBuilder asyncBuilder() {
+        return AWSCodeCommitAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CodeCommit using the specified parameters.
      *
@@ -360,22 +585,23 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
-    public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(BatchGetRepositoriesRequest request) {
+    public java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request) {
 
-        return batchGetRepositoriesAsync(request, null);
+        return batchDescribeMergeConflictsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(final BatchGetRepositoriesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult> asyncHandler) {
+    public java.util.concurrent.Future<BatchDescribeMergeConflictsResult> batchDescribeMergeConflictsAsync(final BatchDescribeMergeConflictsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDescribeMergeConflictsRequest, BatchDescribeMergeConflictsResult> asyncHandler) {
+        final BatchDescribeMergeConflictsRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<BatchGetRepositoriesResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<BatchDescribeMergeConflictsResult>() {
             @Override
-            public BatchGetRepositoriesResult call() throws Exception {
-                BatchGetRepositoriesResult result;
+            public BatchDescribeMergeConflictsResult call() throws Exception {
+                BatchDescribeMergeConflictsResult result = null;
 
                 try {
-                    result = batchGetRepositories(request);
+                    result = executeBatchDescribeMergeConflicts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -384,7 +610,73 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest request) {
+
+        return batchGetCommitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(final BatchGetCommitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetCommitsRequest, BatchGetCommitsResult> asyncHandler) {
+        final BatchGetCommitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetCommitsResult>() {
+            @Override
+            public BatchGetCommitsResult call() throws Exception {
+                BatchGetCommitsResult result = null;
+
+                try {
+                    result = executeBatchGetCommits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(BatchGetRepositoriesRequest request) {
+
+        return batchGetRepositoriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(final BatchGetRepositoriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetRepositoriesRequest, BatchGetRepositoriesResult> asyncHandler) {
+        final BatchGetRepositoriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetRepositoriesResult>() {
+            @Override
+            public BatchGetRepositoriesResult call() throws Exception {
+                BatchGetRepositoriesResult result = null;
+
+                try {
+                    result = executeBatchGetRepositories(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -400,14 +692,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(final CreateBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult> asyncHandler) {
+        final CreateBranchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateBranchResult>() {
             @Override
             public CreateBranchResult call() throws Exception {
-                CreateBranchResult result;
+                CreateBranchResult result = null;
 
                 try {
-                    result = createBranch(request);
+                    result = executeCreateBranch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -416,7 +709,73 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest request) {
+
+        return createCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(final CreateCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCommitRequest, CreateCommitResult> asyncHandler) {
+        final CreateCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCommitResult>() {
+            @Override
+            public CreateCommitResult call() throws Exception {
+                CreateCommitResult result = null;
+
+                try {
+                    result = executeCreateCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(CreatePullRequestRequest request) {
+
+        return createPullRequestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(final CreatePullRequestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePullRequestRequest, CreatePullRequestResult> asyncHandler) {
+        final CreatePullRequestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePullRequestResult>() {
+            @Override
+            public CreatePullRequestResult call() throws Exception {
+                CreatePullRequestResult result = null;
+
+                try {
+                    result = executeCreatePullRequest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -432,14 +791,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(final CreateRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult> asyncHandler) {
+        final CreateRepositoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateRepositoryResult>() {
             @Override
             public CreateRepositoryResult call() throws Exception {
-                CreateRepositoryResult result;
+                CreateRepositoryResult result = null;
 
                 try {
-                    result = createRepository(request);
+                    result = executeCreateRepository(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -448,7 +808,140 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request) {
+
+        return createUnreferencedMergeCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUnreferencedMergeCommitResult> createUnreferencedMergeCommitAsync(
+            final CreateUnreferencedMergeCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUnreferencedMergeCommitRequest, CreateUnreferencedMergeCommitResult> asyncHandler) {
+        final CreateUnreferencedMergeCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUnreferencedMergeCommitResult>() {
+            @Override
+            public CreateUnreferencedMergeCommitResult call() throws Exception {
+                CreateUnreferencedMergeCommitResult result = null;
+
+                try {
+                    result = executeCreateUnreferencedMergeCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest request) {
+
+        return deleteBranchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(final DeleteBranchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBranchRequest, DeleteBranchResult> asyncHandler) {
+        final DeleteBranchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBranchResult>() {
+            @Override
+            public DeleteBranchResult call() throws Exception {
+                DeleteBranchResult result = null;
+
+                try {
+                    result = executeDeleteBranch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCommentContentResult> deleteCommentContentAsync(DeleteCommentContentRequest request) {
+
+        return deleteCommentContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCommentContentResult> deleteCommentContentAsync(final DeleteCommentContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCommentContentRequest, DeleteCommentContentResult> asyncHandler) {
+        final DeleteCommentContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCommentContentResult>() {
+            @Override
+            public DeleteCommentContentResult call() throws Exception {
+                DeleteCommentContentResult result = null;
+
+                try {
+                    result = executeDeleteCommentContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest request) {
+
+        return deleteFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(final DeleteFileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFileRequest, DeleteFileResult> asyncHandler) {
+        final DeleteFileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFileResult>() {
+            @Override
+            public DeleteFileResult call() throws Exception {
+                DeleteFileResult result = null;
+
+                try {
+                    result = executeDeleteFile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -464,14 +957,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(final DeleteRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResult> asyncHandler) {
+        final DeleteRepositoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRepositoryResult>() {
             @Override
             public DeleteRepositoryResult call() throws Exception {
-                DeleteRepositoryResult result;
+                DeleteRepositoryResult result = null;
 
                 try {
-                    result = deleteRepository(request);
+                    result = executeDeleteRepository(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -480,7 +974,73 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(DescribeMergeConflictsRequest request) {
+
+        return describeMergeConflictsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMergeConflictsResult> describeMergeConflictsAsync(final DescribeMergeConflictsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMergeConflictsRequest, DescribeMergeConflictsResult> asyncHandler) {
+        final DescribeMergeConflictsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMergeConflictsResult>() {
+            @Override
+            public DescribeMergeConflictsResult call() throws Exception {
+                DescribeMergeConflictsResult result = null;
+
+                try {
+                    result = executeDescribeMergeConflicts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePullRequestEventsResult> describePullRequestEventsAsync(DescribePullRequestEventsRequest request) {
+
+        return describePullRequestEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePullRequestEventsResult> describePullRequestEventsAsync(final DescribePullRequestEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePullRequestEventsRequest, DescribePullRequestEventsResult> asyncHandler) {
+        final DescribePullRequestEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePullRequestEventsResult>() {
+            @Override
+            public DescribePullRequestEventsResult call() throws Exception {
+                DescribePullRequestEventsResult result = null;
+
+                try {
+                    result = executeDescribePullRequestEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -496,14 +1056,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetBlobResult> getBlobAsync(final GetBlobRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBlobRequest, GetBlobResult> asyncHandler) {
+        final GetBlobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBlobResult>() {
             @Override
             public GetBlobResult call() throws Exception {
-                GetBlobResult result;
+                GetBlobResult result = null;
 
                 try {
-                    result = getBlob(request);
+                    result = executeGetBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -512,7 +1073,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -528,14 +1089,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetBranchResult> getBranchAsync(final GetBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBranchRequest, GetBranchResult> asyncHandler) {
+        final GetBranchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBranchResult>() {
             @Override
             public GetBranchResult call() throws Exception {
-                GetBranchResult result;
+                GetBranchResult result = null;
 
                 try {
-                    result = getBranch(request);
+                    result = executeGetBranch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -544,7 +1106,106 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentResult> getCommentAsync(GetCommentRequest request) {
+
+        return getCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentResult> getCommentAsync(final GetCommentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCommentRequest, GetCommentResult> asyncHandler) {
+        final GetCommentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCommentResult>() {
+            @Override
+            public GetCommentResult call() throws Exception {
+                GetCommentResult result = null;
+
+                try {
+                    result = executeGetComment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentsForComparedCommitResult> getCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request) {
+
+        return getCommentsForComparedCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentsForComparedCommitResult> getCommentsForComparedCommitAsync(final GetCommentsForComparedCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCommentsForComparedCommitRequest, GetCommentsForComparedCommitResult> asyncHandler) {
+        final GetCommentsForComparedCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCommentsForComparedCommitResult>() {
+            @Override
+            public GetCommentsForComparedCommitResult call() throws Exception {
+                GetCommentsForComparedCommitResult result = null;
+
+                try {
+                    result = executeGetCommentsForComparedCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentsForPullRequestResult> getCommentsForPullRequestAsync(GetCommentsForPullRequestRequest request) {
+
+        return getCommentsForPullRequestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentsForPullRequestResult> getCommentsForPullRequestAsync(final GetCommentsForPullRequestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCommentsForPullRequestRequest, GetCommentsForPullRequestResult> asyncHandler) {
+        final GetCommentsForPullRequestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCommentsForPullRequestResult>() {
+            @Override
+            public GetCommentsForPullRequestResult call() throws Exception {
+                GetCommentsForPullRequestResult result = null;
+
+                try {
+                    result = executeGetCommentsForPullRequest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -560,14 +1221,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetCommitResult> getCommitAsync(final GetCommitRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult> asyncHandler) {
+        final GetCommitRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCommitResult>() {
             @Override
             public GetCommitResult call() throws Exception {
-                GetCommitResult result;
+                GetCommitResult result = null;
 
                 try {
-                    result = getCommit(request);
+                    result = executeGetCommit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -576,7 +1238,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -592,14 +1254,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetDifferencesResult> getDifferencesAsync(final GetDifferencesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDifferencesRequest, GetDifferencesResult> asyncHandler) {
+        final GetDifferencesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDifferencesResult>() {
             @Override
             public GetDifferencesResult call() throws Exception {
-                GetDifferencesResult result;
+                GetDifferencesResult result = null;
 
                 try {
-                    result = getDifferences(request);
+                    result = executeGetDifferences(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -608,7 +1271,205 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest request) {
+
+        return getFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(final GetFileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFileRequest, GetFileResult> asyncHandler) {
+        final GetFileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFileResult>() {
+            @Override
+            public GetFileResult call() throws Exception {
+                GetFileResult result = null;
+
+                try {
+                    result = executeGetFile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest request) {
+
+        return getFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(final GetFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFolderRequest, GetFolderResult> asyncHandler) {
+        final GetFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFolderResult>() {
+            @Override
+            public GetFolderResult call() throws Exception {
+                GetFolderResult result = null;
+
+                try {
+                    result = executeGetFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(GetMergeCommitRequest request) {
+
+        return getMergeCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeCommitResult> getMergeCommitAsync(final GetMergeCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMergeCommitRequest, GetMergeCommitResult> asyncHandler) {
+        final GetMergeCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMergeCommitResult>() {
+            @Override
+            public GetMergeCommitResult call() throws Exception {
+                GetMergeCommitResult result = null;
+
+                try {
+                    result = executeGetMergeCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeConflictsResult> getMergeConflictsAsync(GetMergeConflictsRequest request) {
+
+        return getMergeConflictsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeConflictsResult> getMergeConflictsAsync(final GetMergeConflictsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMergeConflictsRequest, GetMergeConflictsResult> asyncHandler) {
+        final GetMergeConflictsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMergeConflictsResult>() {
+            @Override
+            public GetMergeConflictsResult call() throws Exception {
+                GetMergeConflictsResult result = null;
+
+                try {
+                    result = executeGetMergeConflicts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(GetMergeOptionsRequest request) {
+
+        return getMergeOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMergeOptionsResult> getMergeOptionsAsync(final GetMergeOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMergeOptionsRequest, GetMergeOptionsResult> asyncHandler) {
+        final GetMergeOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMergeOptionsResult>() {
+            @Override
+            public GetMergeOptionsResult call() throws Exception {
+                GetMergeOptionsResult result = null;
+
+                try {
+                    result = executeGetMergeOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPullRequestResult> getPullRequestAsync(GetPullRequestRequest request) {
+
+        return getPullRequestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPullRequestResult> getPullRequestAsync(final GetPullRequestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPullRequestRequest, GetPullRequestResult> asyncHandler) {
+        final GetPullRequestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPullRequestResult>() {
+            @Override
+            public GetPullRequestResult call() throws Exception {
+                GetPullRequestResult result = null;
+
+                try {
+                    result = executeGetPullRequest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -624,14 +1485,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(final GetRepositoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult> asyncHandler) {
+        final GetRepositoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRepositoryResult>() {
             @Override
             public GetRepositoryResult call() throws Exception {
-                GetRepositoryResult result;
+                GetRepositoryResult result = null;
 
                 try {
-                    result = getRepository(request);
+                    result = executeGetRepository(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -640,7 +1502,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -656,14 +1518,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(final GetRepositoryTriggersRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult> asyncHandler) {
+        final GetRepositoryTriggersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRepositoryTriggersResult>() {
             @Override
             public GetRepositoryTriggersResult call() throws Exception {
-                GetRepositoryTriggersResult result;
+                GetRepositoryTriggersResult result = null;
 
                 try {
-                    result = getRepositoryTriggers(request);
+                    result = executeGetRepositoryTriggers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -672,7 +1535,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -688,14 +1551,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<ListBranchesResult> listBranchesAsync(final ListBranchesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListBranchesRequest, ListBranchesResult> asyncHandler) {
+        final ListBranchesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListBranchesResult>() {
             @Override
             public ListBranchesResult call() throws Exception {
-                ListBranchesResult result;
+                ListBranchesResult result = null;
 
                 try {
-                    result = listBranches(request);
+                    result = executeListBranches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -704,7 +1568,40 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(ListPullRequestsRequest request) {
+
+        return listPullRequestsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(final ListPullRequestsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPullRequestsRequest, ListPullRequestsResult> asyncHandler) {
+        final ListPullRequestsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPullRequestsResult>() {
+            @Override
+            public ListPullRequestsResult call() throws Exception {
+                ListPullRequestsResult result = null;
+
+                try {
+                    result = executeListPullRequests(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -720,14 +1617,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<ListRepositoriesResult> listRepositoriesAsync(final ListRepositoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResult> asyncHandler) {
+        final ListRepositoriesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRepositoriesResult>() {
             @Override
             public ListRepositoriesResult call() throws Exception {
-                ListRepositoriesResult result;
+                ListRepositoriesResult result = null;
 
                 try {
-                    result = listRepositories(request);
+                    result = executeListRepositories(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -736,7 +1634,371 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(MergeBranchesByFastForwardRequest request) {
+
+        return mergeBranchesByFastForwardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByFastForwardResult> mergeBranchesByFastForwardAsync(final MergeBranchesByFastForwardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesByFastForwardRequest, MergeBranchesByFastForwardResult> asyncHandler) {
+        final MergeBranchesByFastForwardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesByFastForwardResult>() {
+            @Override
+            public MergeBranchesByFastForwardResult call() throws Exception {
+                MergeBranchesByFastForwardResult result = null;
+
+                try {
+                    result = executeMergeBranchesByFastForward(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(MergeBranchesBySquashRequest request) {
+
+        return mergeBranchesBySquashAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesBySquashResult> mergeBranchesBySquashAsync(final MergeBranchesBySquashRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesBySquashRequest, MergeBranchesBySquashResult> asyncHandler) {
+        final MergeBranchesBySquashRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesBySquashResult>() {
+            @Override
+            public MergeBranchesBySquashResult call() throws Exception {
+                MergeBranchesBySquashResult result = null;
+
+                try {
+                    result = executeMergeBranchesBySquash(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest request) {
+
+        return mergeBranchesByThreeWayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeBranchesByThreeWayResult> mergeBranchesByThreeWayAsync(final MergeBranchesByThreeWayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeBranchesByThreeWayRequest, MergeBranchesByThreeWayResult> asyncHandler) {
+        final MergeBranchesByThreeWayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeBranchesByThreeWayResult>() {
+            @Override
+            public MergeBranchesByThreeWayResult call() throws Exception {
+                MergeBranchesByThreeWayResult result = null;
+
+                try {
+                    result = executeMergeBranchesByThreeWay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByFastForwardResult> mergePullRequestByFastForwardAsync(MergePullRequestByFastForwardRequest request) {
+
+        return mergePullRequestByFastForwardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByFastForwardResult> mergePullRequestByFastForwardAsync(
+            final MergePullRequestByFastForwardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergePullRequestByFastForwardRequest, MergePullRequestByFastForwardResult> asyncHandler) {
+        final MergePullRequestByFastForwardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergePullRequestByFastForwardResult>() {
+            @Override
+            public MergePullRequestByFastForwardResult call() throws Exception {
+                MergePullRequestByFastForwardResult result = null;
+
+                try {
+                    result = executeMergePullRequestByFastForward(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(MergePullRequestBySquashRequest request) {
+
+        return mergePullRequestBySquashAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestBySquashResult> mergePullRequestBySquashAsync(final MergePullRequestBySquashRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergePullRequestBySquashRequest, MergePullRequestBySquashResult> asyncHandler) {
+        final MergePullRequestBySquashRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergePullRequestBySquashResult>() {
+            @Override
+            public MergePullRequestBySquashResult call() throws Exception {
+                MergePullRequestBySquashResult result = null;
+
+                try {
+                    result = executeMergePullRequestBySquash(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(MergePullRequestByThreeWayRequest request) {
+
+        return mergePullRequestByThreeWayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergePullRequestByThreeWayResult> mergePullRequestByThreeWayAsync(final MergePullRequestByThreeWayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergePullRequestByThreeWayRequest, MergePullRequestByThreeWayResult> asyncHandler) {
+        final MergePullRequestByThreeWayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergePullRequestByThreeWayResult>() {
+            @Override
+            public MergePullRequestByThreeWayResult call() throws Exception {
+                MergePullRequestByThreeWayResult result = null;
+
+                try {
+                    result = executeMergePullRequestByThreeWay(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentForComparedCommitResult> postCommentForComparedCommitAsync(PostCommentForComparedCommitRequest request) {
+
+        return postCommentForComparedCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentForComparedCommitResult> postCommentForComparedCommitAsync(final PostCommentForComparedCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PostCommentForComparedCommitRequest, PostCommentForComparedCommitResult> asyncHandler) {
+        final PostCommentForComparedCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PostCommentForComparedCommitResult>() {
+            @Override
+            public PostCommentForComparedCommitResult call() throws Exception {
+                PostCommentForComparedCommitResult result = null;
+
+                try {
+                    result = executePostCommentForComparedCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentForPullRequestResult> postCommentForPullRequestAsync(PostCommentForPullRequestRequest request) {
+
+        return postCommentForPullRequestAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentForPullRequestResult> postCommentForPullRequestAsync(final PostCommentForPullRequestRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PostCommentForPullRequestRequest, PostCommentForPullRequestResult> asyncHandler) {
+        final PostCommentForPullRequestRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PostCommentForPullRequestResult>() {
+            @Override
+            public PostCommentForPullRequestResult call() throws Exception {
+                PostCommentForPullRequestResult result = null;
+
+                try {
+                    result = executePostCommentForPullRequest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentReplyResult> postCommentReplyAsync(PostCommentReplyRequest request) {
+
+        return postCommentReplyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PostCommentReplyResult> postCommentReplyAsync(final PostCommentReplyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PostCommentReplyRequest, PostCommentReplyResult> asyncHandler) {
+        final PostCommentReplyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PostCommentReplyResult>() {
+            @Override
+            public PostCommentReplyResult call() throws Exception {
+                PostCommentReplyResult result = null;
+
+                try {
+                    result = executePostCommentReply(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFileResult> putFileAsync(PutFileRequest request) {
+
+        return putFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFileResult> putFileAsync(final PutFileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutFileRequest, PutFileResult> asyncHandler) {
+        final PutFileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutFileResult>() {
+            @Override
+            public PutFileResult call() throws Exception {
+                PutFileResult result = null;
+
+                try {
+                    result = executePutFile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -752,14 +2014,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(final PutRepositoryTriggersRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult> asyncHandler) {
+        final PutRepositoryTriggersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRepositoryTriggersResult>() {
             @Override
             public PutRepositoryTriggersResult call() throws Exception {
-                PutRepositoryTriggersResult result;
+                PutRepositoryTriggersResult result = null;
 
                 try {
-                    result = putRepositoryTriggers(request);
+                    result = executePutRepositoryTriggers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -768,7 +2031,40 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -784,14 +2080,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(final TestRepositoryTriggersRequest request,
             final com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult> asyncHandler) {
+        final TestRepositoryTriggersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TestRepositoryTriggersResult>() {
             @Override
             public TestRepositoryTriggersResult call() throws Exception {
-                TestRepositoryTriggersResult result;
+                TestRepositoryTriggersResult result = null;
 
                 try {
-                    result = testRepositoryTriggers(request);
+                    result = executeTestRepositoryTriggers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -800,7 +2097,73 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCommentResult> updateCommentAsync(UpdateCommentRequest request) {
+
+        return updateCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCommentResult> updateCommentAsync(final UpdateCommentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCommentRequest, UpdateCommentResult> asyncHandler) {
+        final UpdateCommentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCommentResult>() {
+            @Override
+            public UpdateCommentResult call() throws Exception {
+                UpdateCommentResult result = null;
+
+                try {
+                    result = executeUpdateComment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -816,14 +2179,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(final UpdateDefaultBranchRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler) {
+        final UpdateDefaultBranchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDefaultBranchResult>() {
             @Override
             public UpdateDefaultBranchResult call() throws Exception {
-                UpdateDefaultBranchResult result;
+                UpdateDefaultBranchResult result = null;
 
                 try {
-                    result = updateDefaultBranch(request);
+                    result = executeUpdateDefaultBranch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -832,7 +2196,106 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestDescriptionResult> updatePullRequestDescriptionAsync(UpdatePullRequestDescriptionRequest request) {
+
+        return updatePullRequestDescriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestDescriptionResult> updatePullRequestDescriptionAsync(final UpdatePullRequestDescriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePullRequestDescriptionRequest, UpdatePullRequestDescriptionResult> asyncHandler) {
+        final UpdatePullRequestDescriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePullRequestDescriptionResult>() {
+            @Override
+            public UpdatePullRequestDescriptionResult call() throws Exception {
+                UpdatePullRequestDescriptionResult result = null;
+
+                try {
+                    result = executeUpdatePullRequestDescription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestStatusResult> updatePullRequestStatusAsync(UpdatePullRequestStatusRequest request) {
+
+        return updatePullRequestStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestStatusResult> updatePullRequestStatusAsync(final UpdatePullRequestStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePullRequestStatusRequest, UpdatePullRequestStatusResult> asyncHandler) {
+        final UpdatePullRequestStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePullRequestStatusResult>() {
+            @Override
+            public UpdatePullRequestStatusResult call() throws Exception {
+                UpdatePullRequestStatusResult result = null;
+
+                try {
+                    result = executeUpdatePullRequestStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestTitleResult> updatePullRequestTitleAsync(UpdatePullRequestTitleRequest request) {
+
+        return updatePullRequestTitleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullRequestTitleResult> updatePullRequestTitleAsync(final UpdatePullRequestTitleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePullRequestTitleRequest, UpdatePullRequestTitleResult> asyncHandler) {
+        final UpdatePullRequestTitleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePullRequestTitleResult>() {
+            @Override
+            public UpdatePullRequestTitleResult call() throws Exception {
+                UpdatePullRequestTitleResult result = null;
+
+                try {
+                    result = executeUpdatePullRequestTitle(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -848,14 +2311,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(final UpdateRepositoryDescriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler) {
+        final UpdateRepositoryDescriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateRepositoryDescriptionResult>() {
             @Override
             public UpdateRepositoryDescriptionResult call() throws Exception {
-                UpdateRepositoryDescriptionResult result;
+                UpdateRepositoryDescriptionResult result = null;
 
                 try {
-                    result = updateRepositoryDescription(request);
+                    result = executeUpdateRepositoryDescription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -864,7 +2328,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -880,14 +2344,15 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(final UpdateRepositoryNameRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult> asyncHandler) {
+        final UpdateRepositoryNameRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateRepositoryNameResult>() {
             @Override
             public UpdateRepositoryNameResult call() throws Exception {
-                UpdateRepositoryNameResult result;
+                UpdateRepositoryNameResult result = null;
 
                 try {
-                    result = updateRepositoryName(request);
+                    result = executeUpdateRepositoryName(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -896,7 +2361,7 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,18 +44,18 @@ import javax.annotation.Generated;
  * </p>
  * 
  * <pre>
- * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html", "name": "method", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true } ], "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title": "GET" }, "integration:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "method:integration": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "method:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "methodresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}", "templated": true } }, "apiKeyRequired": true, "authorizationType": "NONE", "httpMethod": "GET", "_embedded": { "method:integration": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "3kzxbg5sa2", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestParameters": { "integration.request.header.Content-Type": "'application/x-amz-json-1.1'" }, "requestTemplates": { "application/json": "{\n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E\")" }, "statusCode": "200" } } }, "method:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type": false }, "statusCode": "200" } } }</code>
+ * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html", "name": "method", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true } ], "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title": "GET" }, "integration:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "method:integration": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "method:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "methodresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}", "templated": true } }, "apiKeyRequired": true, "authorizationType": "NONE", "httpMethod": "GET", "_embedded": { "method:integration": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "3kzxbg5sa2", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestParameters": { "integration.request.header.Content-Type": "'application/x-amz-json-1.1'" }, "requestTemplates": { "application/json": "{\n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E\")" }, "statusCode": "200" } } }, "method:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type": false }, "statusCode": "200" } } }</code>
  * </pre>
  * <p>
  * In the example above, the response template for the <code>200 OK</code> response maps the JSON output from the
  * <code>ListStreams</code> action in the back end to an XML output. The mapping template is URL-encoded as
  * <code>%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E</code>
  * and the output is decoded using the <a href=
- * "http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference"
+ * "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference"
  * >$util.urlDecode()</a> helper function.
  * </p>
  * </div> <div class="seeAlso"> <a>MethodResponse</a>, <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>,
- * <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's
+ * <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's
  * method</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -69,7 +69,9 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     private String httpMethod;
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      */
     private String authorizationType;
@@ -88,21 +90,26 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     private Boolean apiKeyRequired;
     /**
      * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     */
+    private String requestValidatorId;
+    /**
+     * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
-     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.
      * </p>
      */
     private String operationName;
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      */
     private java.util.Map<String, Boolean> requestParameters;
@@ -136,11 +143,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
      */
     private java.util.Map<String, MethodResponse> methodResponses;
     /**
@@ -164,13 +171,24 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      */
     private Integration methodIntegration;
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     * matching the method scopes against the scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized. When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorization purposes.
+     * </p>
+     */
+    private java.util.List<String> authorizationScopes;
 
     /**
      * <p>
@@ -214,11 +232,15 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        The method's authorization type.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public void setAuthorizationType(String authorizationType) {
@@ -227,10 +249,14 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
-     * @return The method's authorization type.
+     * @return The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *         for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *         <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      */
 
     public String getAuthorizationType() {
@@ -239,11 +265,15 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The method's authorization type.
+     * The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for
+     * using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code>
+     * for using a Cognito user pool.
      * </p>
      * 
      * @param authorizationType
-     *        The method's authorization type.
+     *        The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code>
+     *        for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or
+     *        <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,15 +382,54 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for request validation.
+     */
+
+    public void setRequestValidatorId(String requestValidatorId) {
+        this.requestValidatorId = requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @return The identifier of a <a>RequestValidator</a> for request validation.
+     */
+
+    public String getRequestValidatorId() {
+        return this.requestValidatorId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a <a>RequestValidator</a> for request validation.
+     * </p>
+     * 
+     * @param requestValidatorId
+     *        The identifier of a <a>RequestValidator</a> for request validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMethodResult withRequestValidatorId(String requestValidatorId) {
+        setRequestValidatorId(requestValidatorId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
-     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.
      * </p>
      * 
      * @param operationName
      *        A human-friendly operation identifier for the method. For example, you can assign the
-     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the
+     *        <code>PetStore</code> example.
      */
 
     public void setOperationName(String operationName) {
@@ -370,13 +439,12 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
-     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.
      * </p>
      * 
      * @return A human-friendly operation identifier for the method. For example, you can assign the
-     *         <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *         href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *         <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the
+     *         <code>PetStore</code> example.
      */
 
     public String getOperationName() {
@@ -386,14 +454,13 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
-     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.
      * </p>
      * 
      * @param operationName
      *        A human-friendly operation identifier for the method. For example, you can assign the
-     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
-     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the
+     *        <code>PetStore</code> example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,17 +471,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
-     * @return A key-value map defining required or optional method request parameters that can be accepted by Amazon
-     *         API Gateway. A key is a method request parameter name matching the pattern of
+     * @return A key-value map defining required or optional method request parameters that can be accepted by API
+     *         Gateway. A key is a method request parameter name matching the pattern of
      *         <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *         <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
      *         value associated with the key is a Boolean flag indicating whether the parameter is required (
@@ -428,17 +495,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
@@ -453,17 +520,17 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
@@ -589,11 +656,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
      * 
      * @return Gets a method response associated with a given HTTP status code.
      *         </p>
@@ -616,11 +683,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *         </p>
      * 
      *         <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      *         <p/>
      *         </div> <div class="seeAlso"> <a
-     *         href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
      */
 
     public java.util.Map<String, MethodResponse> getMethodResponses() {
@@ -650,11 +717,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
      * 
      * @param methodResponses
      *        Gets a method response associated with a given HTTP status code.
@@ -678,11 +745,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
      */
 
     public void setMethodResponses(java.util.Map<String, MethodResponse> methodResponses) {
@@ -712,11 +779,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a> </div>
      * 
      * @param methodResponses
      *        Gets a method response associated with a given HTTP status code.
@@ -740,11 +807,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
+     * <code>{ "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.operator": false, "method.response.header.operand_2": false, "method.response.header.operand_1": false }, "statusCode": "200" }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -795,11 +862,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      * 
      * @param methodIntegration
      *        Gets the method's integration responsible for passing the client-submitted request to the back end and
@@ -821,11 +888,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
      */
 
     public void setMethodIntegration(Integration methodIntegration) {
@@ -853,11 +920,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      * 
      * @return Gets the method's integration responsible for passing the client-submitted request to the back end and
      *         performing necessary transformations to make the request compliant with the back end.
@@ -878,11 +945,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *         </p>
      * 
      *         <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      *         <p/>
      *         </div> <div class="seeAlso"> <a
-     *         href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
      */
 
     public Integration getMethodIntegration() {
@@ -910,11 +977,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      * <p/>
      * </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      * 
      * @param methodIntegration
      *        Gets the method's integration responsible for passing the client-submitted request to the back end and
@@ -936,11 +1003,11 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </p>
      * 
      *        <pre>
-     * <code>{ "_links": { "curies": [ { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
+     * <code>{ "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true } ], "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integration:responses": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "0cjtch", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestTemplates": { "application/json": "{\n \"a\": \"$input.params('operand1')\",\n \"b\": \"$input.params('operand2')\", \n \"op\": \"$input.params('operator')\" \n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.operator": "integration.response.body.op", "method.response.header.operand_2": "integration.response.body.b", "method.response.header.operand_1": "integration.response.body.a" }, "responseTemplates": { "application/json": "#set($res = $input.path('$'))\n{\n \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n \"a\" : \"$res.a\",\n \"b\" : \"$res.b\",\n \"op\" : \"$res.op\",\n \"c\" : \"$res.c\"\n}" }, "selectionPattern": "", "statusCode": "200" } } }</code>
      * </pre>
      *        <p/>
      *        </div> <div class="seeAlso"> <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -950,7 +1017,118 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     * matching the method scopes against the scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized. When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorization purposes.
+     * </p>
+     * 
+     * @return A list of authorization scopes configured on the method. The scopes are used with a
+     *         <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     *         matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *         method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *         Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *         an access token instead of an identity token for authorization purposes.
+     */
+
+    public java.util.List<String> getAuthorizationScopes() {
+        return authorizationScopes;
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     * matching the method scopes against the scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized. When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorization purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     */
+
+    public void setAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        if (authorizationScopes == null) {
+            this.authorizationScopes = null;
+            return;
+        }
+
+        this.authorizationScopes = new java.util.ArrayList<String>(authorizationScopes);
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     * matching the method scopes against the scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized. When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorization purposes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAuthorizationScopes(java.util.Collection)} or {@link #withAuthorizationScopes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMethodResult withAuthorizationScopes(String... authorizationScopes) {
+        if (this.authorizationScopes == null) {
+            setAuthorizationScopes(new java.util.ArrayList<String>(authorizationScopes.length));
+        }
+        for (String ele : authorizationScopes) {
+            this.authorizationScopes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     * matching the method scopes against the scopes parsed from the access token in the incoming request. The method
+     * invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized. When the method scope is configured, the client must provide an access token
+     * instead of an identity token for authorization purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMethodResult withAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        setAuthorizationScopes(authorizationScopes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -968,6 +1146,8 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getApiKeyRequired() != null)
             sb.append("ApiKeyRequired: ").append(getApiKeyRequired()).append(",");
+        if (getRequestValidatorId() != null)
+            sb.append("RequestValidatorId: ").append(getRequestValidatorId()).append(",");
         if (getOperationName() != null)
             sb.append("OperationName: ").append(getOperationName()).append(",");
         if (getRequestParameters() != null)
@@ -977,7 +1157,9 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getMethodResponses() != null)
             sb.append("MethodResponses: ").append(getMethodResponses()).append(",");
         if (getMethodIntegration() != null)
-            sb.append("MethodIntegration: ").append(getMethodIntegration());
+            sb.append("MethodIntegration: ").append(getMethodIntegration()).append(",");
+        if (getAuthorizationScopes() != null)
+            sb.append("AuthorizationScopes: ").append(getAuthorizationScopes());
         sb.append("}");
         return sb.toString();
     }
@@ -1008,6 +1190,10 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getApiKeyRequired() != null && other.getApiKeyRequired().equals(this.getApiKeyRequired()) == false)
             return false;
+        if (other.getRequestValidatorId() == null ^ this.getRequestValidatorId() == null)
+            return false;
+        if (other.getRequestValidatorId() != null && other.getRequestValidatorId().equals(this.getRequestValidatorId()) == false)
+            return false;
         if (other.getOperationName() == null ^ this.getOperationName() == null)
             return false;
         if (other.getOperationName() != null && other.getOperationName().equals(this.getOperationName()) == false)
@@ -1028,6 +1214,10 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getMethodIntegration() != null && other.getMethodIntegration().equals(this.getMethodIntegration()) == false)
             return false;
+        if (other.getAuthorizationScopes() == null ^ this.getAuthorizationScopes() == null)
+            return false;
+        if (other.getAuthorizationScopes() != null && other.getAuthorizationScopes().equals(this.getAuthorizationScopes()) == false)
+            return false;
         return true;
     }
 
@@ -1040,11 +1230,13 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getAuthorizationType() == null) ? 0 : getAuthorizationType().hashCode());
         hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
         hashCode = prime * hashCode + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired().hashCode());
+        hashCode = prime * hashCode + ((getRequestValidatorId() == null) ? 0 : getRequestValidatorId().hashCode());
         hashCode = prime * hashCode + ((getOperationName() == null) ? 0 : getOperationName().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
         hashCode = prime * hashCode + ((getMethodResponses() == null) ? 0 : getMethodResponses().hashCode());
         hashCode = prime * hashCode + ((getMethodIntegration() == null) ? 0 : getMethodIntegration().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationScopes() == null) ? 0 : getAuthorizationScopes().hashCode());
         return hashCode;
     }
 
@@ -1056,4 +1248,5 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

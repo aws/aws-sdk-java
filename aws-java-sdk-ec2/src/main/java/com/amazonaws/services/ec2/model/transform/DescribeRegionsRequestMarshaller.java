@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeRegionsRequestRegionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
-                .getRegionNames();
-        if (!describeRegionsRequestRegionNamesList.isEmpty() || !describeRegionsRequestRegionNamesList.isAutoConstruct()) {
-            int regionNamesListIndex = 1;
-
-            for (String describeRegionsRequestRegionNamesListValue : describeRegionsRequestRegionNamesList) {
-                if (describeRegionsRequestRegionNamesListValue != null) {
-                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(describeRegionsRequestRegionNamesListValue));
-                }
-                regionNamesListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeRegionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRegionsRequest
                 .getFilters();
         if (!describeRegionsRequestFiltersList.isEmpty() || !describeRegionsRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,23 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeRegionsRequestRegionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
+                .getRegionNames();
+        if (!describeRegionsRequestRegionNamesList.isEmpty() || !describeRegionsRequestRegionNamesList.isAutoConstruct()) {
+            int regionNamesListIndex = 1;
+
+            for (String describeRegionsRequestRegionNamesListValue : describeRegionsRequestRegionNamesList) {
+                if (describeRegionsRequestRegionNamesListValue != null) {
+                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(describeRegionsRequestRegionNamesListValue));
+                }
+                regionNamesListIndex++;
+            }
+        }
+
+        if (describeRegionsRequest.getAllRegions() != null) {
+            request.addParameter("AllRegions", StringUtils.fromBoolean(describeRegionsRequest.getAllRegions()));
         }
 
         return request;

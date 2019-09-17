@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,57 +31,84 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience similar to that of <a
- * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish the
- * following tasks:
+ * With Application Auto Scaling, you can configure automatic scaling for the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Define scaling policies to automatically scale your AWS resources
+ * Amazon ECS services
  * </p>
  * </li>
  * <li>
  * <p>
- * Scale your resources in response to CloudWatch alarms
+ * Amazon EC2 Spot Fleet requests
  * </p>
  * </li>
  * <li>
  * <p>
- * View the history of your scaling events
+ * Amazon EMR clusters
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon AppStream 2.0 fleets
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon DynamoDB tables and global secondary indexes throughput capacity
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Aurora Replicas
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker endpoint variants
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Custom resources provided by your own applications or services
  * </p>
  * </li>
  * </ul>
  * <p>
- * Application Auto Scaling can scale the following AWS resources:
+ * <b>API Summary</b>
+ * </p>
+ * <p>
+ * The Application Auto Scaling service API includes three key sets of actions:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Amazon ECS services. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
- * in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * Register and manage scalable targets - Register AWS or custom resources as scalable targets (a resource that
+ * Application Auto Scaling can scale), set minimum and maximum capacity limits, and retrieve information on existing
+ * scalable targets.
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EC2 Spot fleets. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic Scaling for Spot
- * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
+ * Configure and manage automatic scaling - Define scaling policies to dynamically scale your resources in response to
+ * CloudWatch alarms, schedule one-time or recurring scaling actions, and retrieve your recent scaling activity history.
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EMR clusters. For more information, see <a
- * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using Automatic
- * Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+ * Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the
+ * <a>RegisterScalableTarget</a> action for any Application Auto Scaling scalable target. You can suspend and resume,
+ * individually or in combination, scale-out activities triggered by a scaling policy, scale-in activities triggered by
+ * a scaling policy, and scheduled scaling.
  * </p>
  * </li>
  * </ul>
  * <p>
- * For a list of supported regions, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS Regions and Endpoints: Application
- * Auto Scaling</a> in the <i>AWS General Reference</i>.
+ * To learn more about Application Auto Scaling, including information about granting IAM users required permissions for
+ * Application Auto Scaling actions, see the <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+ * >Application Auto Scaling User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -270,6 +297,10 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
         this.executorService = executorService;
     }
 
+    public static AWSApplicationAutoScalingAsyncClientBuilder asyncBuilder() {
+        return AWSApplicationAutoScalingAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Application Auto Scaling using the specified
      * parameters.
@@ -300,14 +331,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(final DeleteScalingPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler) {
+        final DeleteScalingPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteScalingPolicyResult>() {
             @Override
             public DeleteScalingPolicyResult call() throws Exception {
-                DeleteScalingPolicyResult result;
+                DeleteScalingPolicyResult result = null;
 
                 try {
-                    result = deleteScalingPolicy(request);
+                    result = executeDeleteScalingPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -316,7 +348,40 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request) {
+
+        return deleteScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(final DeleteScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
+        final DeleteScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteScheduledActionResult>() {
+            @Override
+            public DeleteScheduledActionResult call() throws Exception {
+                DeleteScheduledActionResult result = null;
+
+                try {
+                    result = executeDeleteScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -332,14 +397,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<DeregisterScalableTargetResult> deregisterScalableTargetAsync(final DeregisterScalableTargetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterScalableTargetRequest, DeregisterScalableTargetResult> asyncHandler) {
+        final DeregisterScalableTargetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterScalableTargetResult>() {
             @Override
             public DeregisterScalableTargetResult call() throws Exception {
-                DeregisterScalableTargetResult result;
+                DeregisterScalableTargetResult result = null;
 
                 try {
-                    result = deregisterScalableTarget(request);
+                    result = executeDeregisterScalableTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -348,7 +414,7 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -364,14 +430,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<DescribeScalableTargetsResult> describeScalableTargetsAsync(final DescribeScalableTargetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeScalableTargetsRequest, DescribeScalableTargetsResult> asyncHandler) {
+        final DescribeScalableTargetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeScalableTargetsResult>() {
             @Override
             public DescribeScalableTargetsResult call() throws Exception {
-                DescribeScalableTargetsResult result;
+                DescribeScalableTargetsResult result = null;
 
                 try {
-                    result = describeScalableTargets(request);
+                    result = executeDescribeScalableTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -380,7 +447,7 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -396,14 +463,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<DescribeScalingActivitiesResult> describeScalingActivitiesAsync(final DescribeScalingActivitiesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeScalingActivitiesRequest, DescribeScalingActivitiesResult> asyncHandler) {
+        final DescribeScalingActivitiesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeScalingActivitiesResult>() {
             @Override
             public DescribeScalingActivitiesResult call() throws Exception {
-                DescribeScalingActivitiesResult result;
+                DescribeScalingActivitiesResult result = null;
 
                 try {
-                    result = describeScalingActivities(request);
+                    result = executeDescribeScalingActivities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -412,7 +480,7 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -428,14 +496,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(final DescribeScalingPoliciesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler) {
+        final DescribeScalingPoliciesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeScalingPoliciesResult>() {
             @Override
             public DescribeScalingPoliciesResult call() throws Exception {
-                DescribeScalingPoliciesResult result;
+                DescribeScalingPoliciesResult result = null;
 
                 try {
-                    result = describeScalingPolicies(request);
+                    result = executeDescribeScalingPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -444,7 +513,40 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest request) {
+
+        return describeScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(final DescribeScheduledActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler) {
+        final DescribeScheduledActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeScheduledActionsResult>() {
+            @Override
+            public DescribeScheduledActionsResult call() throws Exception {
+                DescribeScheduledActionsResult result = null;
+
+                try {
+                    result = executeDescribeScheduledActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -460,14 +562,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(final PutScalingPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler) {
+        final PutScalingPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutScalingPolicyResult>() {
             @Override
             public PutScalingPolicyResult call() throws Exception {
-                PutScalingPolicyResult result;
+                PutScalingPolicyResult result = null;
 
                 try {
-                    result = putScalingPolicy(request);
+                    result = executePutScalingPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -476,7 +579,40 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutScheduledActionResult> putScheduledActionAsync(PutScheduledActionRequest request) {
+
+        return putScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutScheduledActionResult> putScheduledActionAsync(final PutScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutScheduledActionRequest, PutScheduledActionResult> asyncHandler) {
+        final PutScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutScheduledActionResult>() {
+            @Override
+            public PutScheduledActionResult call() throws Exception {
+                PutScheduledActionResult result = null;
+
+                try {
+                    result = executePutScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -492,14 +628,15 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
     @Override
     public java.util.concurrent.Future<RegisterScalableTargetResult> registerScalableTargetAsync(final RegisterScalableTargetRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterScalableTargetRequest, RegisterScalableTargetResult> asyncHandler) {
+        final RegisterScalableTargetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterScalableTargetResult>() {
             @Override
             public RegisterScalableTargetResult call() throws Exception {
-                RegisterScalableTargetResult result;
+                RegisterScalableTargetResult result = null;
 
                 try {
-                    result = registerScalableTarget(request);
+                    result = executeRegisterScalableTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -508,7 +645,7 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

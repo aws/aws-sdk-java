@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,18 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private String privateIpAddress;
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     */
+    private String publicIpv4Pool;
 
     /**
      * <p>
@@ -297,7 +309,7 @@ public class Address implements Serializable, Cloneable {
      */
 
     public void setDomain(DomainType domain) {
-        this.domain = domain.toString();
+        withDomain(domain);
     }
 
     /**
@@ -314,7 +326,7 @@ public class Address implements Serializable, Cloneable {
      */
 
     public Address withDomain(DomainType domain) {
-        setDomain(domain);
+        this.domain = domain.toString();
         return this;
     }
 
@@ -439,7 +451,121 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @return Any tags assigned to the Elastic IP address.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     */
+
+    public void setPublicIpv4Pool(String publicIpv4Pool) {
+        this.publicIpv4Pool = publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @return The ID of an address pool.
+     */
+
+    public String getPublicIpv4Pool() {
+        return this.publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withPublicIpv4Pool(String publicIpv4Pool) {
+        setPublicIpv4Pool(publicIpv4Pool);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -464,7 +590,11 @@ public class Address implements Serializable, Cloneable {
         if (getNetworkInterfaceOwnerId() != null)
             sb.append("NetworkInterfaceOwnerId: ").append(getNetworkInterfaceOwnerId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPublicIpv4Pool() != null)
+            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +641,14 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getPublicIpv4Pool() == null ^ this.getPublicIpv4Pool() == null)
+            return false;
+        if (other.getPublicIpv4Pool() != null && other.getPublicIpv4Pool().equals(this.getPublicIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +665,8 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceOwnerId() == null) ? 0 : getNetworkInterfaceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
         return hashCode;
     }
 
@@ -538,4 +678,5 @@ public class Address implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

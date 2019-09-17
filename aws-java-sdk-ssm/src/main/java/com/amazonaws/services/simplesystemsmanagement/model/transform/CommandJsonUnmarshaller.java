@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,17 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                     context.nextToken();
                     command.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    command.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
                     command.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExpiresAfter", targetDepth)) {
                     context.nextToken();
-                    command.setExpiresAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    command.setExpiresAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -79,7 +83,7 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
-                    command.setRequestedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    command.setRequestedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -121,6 +125,10 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                     context.nextToken();
                     command.setErrorCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DeliveryTimedOutCount", targetDepth)) {
+                    context.nextToken();
+                    command.setDeliveryTimedOutCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
                     command.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
@@ -128,6 +136,10 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 if (context.testExpression("NotificationConfig", targetDepth)) {
                     context.nextToken();
                     command.setNotificationConfig(NotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    context.nextToken();
+                    command.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Action implements Serializable, Cloneable {
+public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -96,6 +98,30 @@ public class Action implements Serializable, Cloneable {
      * </p>
      */
     private ElasticsearchAction elasticsearch;
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     */
+    private SalesforceAction salesforce;
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     */
+    private IotAnalyticsAction iotAnalytics;
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     */
+    private IotEventsAction iotEvents;
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     */
+    private StepFunctionsAction stepFunctions;
 
     /**
      * <p>
@@ -584,7 +610,168 @@ public class Action implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @param salesforce
+     *        Send a message to a Salesforce IoT Cloud Input Stream.
+     */
+
+    public void setSalesforce(SalesforceAction salesforce) {
+        this.salesforce = salesforce;
+    }
+
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @return Send a message to a Salesforce IoT Cloud Input Stream.
+     */
+
+    public SalesforceAction getSalesforce() {
+        return this.salesforce;
+    }
+
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @param salesforce
+     *        Send a message to a Salesforce IoT Cloud Input Stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withSalesforce(SalesforceAction salesforce) {
+        setSalesforce(salesforce);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @param iotAnalytics
+     *        Sends message data to an AWS IoT Analytics channel.
+     */
+
+    public void setIotAnalytics(IotAnalyticsAction iotAnalytics) {
+        this.iotAnalytics = iotAnalytics;
+    }
+
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @return Sends message data to an AWS IoT Analytics channel.
+     */
+
+    public IotAnalyticsAction getIotAnalytics() {
+        return this.iotAnalytics;
+    }
+
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @param iotAnalytics
+     *        Sends message data to an AWS IoT Analytics channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotAnalytics(IotAnalyticsAction iotAnalytics) {
+        setIotAnalytics(iotAnalytics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an input to an AWS IoT Events detector.
+     */
+
+    public void setIotEvents(IotEventsAction iotEvents) {
+        this.iotEvents = iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @return Sends an input to an AWS IoT Events detector.
+     */
+
+    public IotEventsAction getIotEvents() {
+        return this.iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an input to an AWS IoT Events detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotEvents(IotEventsAction iotEvents) {
+        setIotEvents(iotEvents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     */
+
+    public void setStepFunctions(StepFunctionsAction stepFunctions) {
+        this.stepFunctions = stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @return Starts execution of a Step Functions state machine.
+     */
+
+    public StepFunctionsAction getStepFunctions() {
+        return this.stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withStepFunctions(StepFunctionsAction stepFunctions) {
+        setStepFunctions(stepFunctions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -617,7 +804,15 @@ public class Action implements Serializable, Cloneable {
         if (getCloudwatchAlarm() != null)
             sb.append("CloudwatchAlarm: ").append(getCloudwatchAlarm()).append(",");
         if (getElasticsearch() != null)
-            sb.append("Elasticsearch: ").append(getElasticsearch());
+            sb.append("Elasticsearch: ").append(getElasticsearch()).append(",");
+        if (getSalesforce() != null)
+            sb.append("Salesforce: ").append(getSalesforce()).append(",");
+        if (getIotAnalytics() != null)
+            sb.append("IotAnalytics: ").append(getIotAnalytics()).append(",");
+        if (getIotEvents() != null)
+            sb.append("IotEvents: ").append(getIotEvents()).append(",");
+        if (getStepFunctions() != null)
+            sb.append("StepFunctions: ").append(getStepFunctions());
         sb.append("}");
         return sb.toString();
     }
@@ -680,6 +875,22 @@ public class Action implements Serializable, Cloneable {
             return false;
         if (other.getElasticsearch() != null && other.getElasticsearch().equals(this.getElasticsearch()) == false)
             return false;
+        if (other.getSalesforce() == null ^ this.getSalesforce() == null)
+            return false;
+        if (other.getSalesforce() != null && other.getSalesforce().equals(this.getSalesforce()) == false)
+            return false;
+        if (other.getIotAnalytics() == null ^ this.getIotAnalytics() == null)
+            return false;
+        if (other.getIotAnalytics() != null && other.getIotAnalytics().equals(this.getIotAnalytics()) == false)
+            return false;
+        if (other.getIotEvents() == null ^ this.getIotEvents() == null)
+            return false;
+        if (other.getIotEvents() != null && other.getIotEvents().equals(this.getIotEvents()) == false)
+            return false;
+        if (other.getStepFunctions() == null ^ this.getStepFunctions() == null)
+            return false;
+        if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
+            return false;
         return true;
     }
 
@@ -700,6 +911,10 @@ public class Action implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm().hashCode());
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
+        hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
+        hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
+        hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
+        hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
         return hashCode;
     }
 
@@ -710,5 +925,11 @@ public class Action implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.ActionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

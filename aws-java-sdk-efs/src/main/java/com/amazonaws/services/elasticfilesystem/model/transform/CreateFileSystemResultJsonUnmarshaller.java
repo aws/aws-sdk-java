@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    createFileSystemResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createFileSystemResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LifeCycleState", targetDepth)) {
                     context.nextToken();
@@ -83,6 +83,26 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
                 if (context.testExpression("PerformanceMode", targetDepth)) {
                     context.nextToken();
                     createFileSystemResult.setPerformanceMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Encrypted", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ThroughputMode", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setThroughputMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisionedThroughputInMibps", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

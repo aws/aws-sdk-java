@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.iot.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,14 +23,14 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttributePayload implements Serializable, Cloneable {
+public class AttributePayload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -42,7 +44,8 @@ public class AttributePayload implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     * <code>UpdateThingGroup</code>.
      * </p>
      * </note>
      */
@@ -53,12 +56,12 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @return A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *         <p>
-     *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *         <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -70,13 +73,13 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -88,13 +91,13 @@ public class AttributePayload implements Serializable, Cloneable {
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,7 +137,8 @@ public class AttributePayload implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     * <code>UpdateThingGroup</code>.
      * </p>
      * </note>
      * 
@@ -146,7 +150,8 @@ public class AttributePayload implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     *        <code>UpdateThingGroup</code>.
      *        </p>
      */
 
@@ -164,7 +169,8 @@ public class AttributePayload implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     * <code>UpdateThingGroup</code>.
      * </p>
      * </note>
      * 
@@ -175,7 +181,8 @@ public class AttributePayload implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     *         <code>UpdateThingGroup</code>.
      *         </p>
      */
 
@@ -193,7 +200,8 @@ public class AttributePayload implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     * <code>UpdateThingGroup</code>.
      * </p>
      * </note>
      * 
@@ -205,7 +213,8 @@ public class AttributePayload implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     *        The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     *        <code>UpdateThingGroup</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -225,7 +234,8 @@ public class AttributePayload implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     * The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     * <code>UpdateThingGroup</code>.
      * </p>
      * </note>
      * 
@@ -236,7 +246,8 @@ public class AttributePayload implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+     *         The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code> or
+     *         <code>UpdateThingGroup</code>.
      *         </p>
      */
 
@@ -245,7 +256,8 @@ public class AttributePayload implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -301,5 +313,11 @@ public class AttributePayload implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.iot.model.transform.AttributePayloadMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

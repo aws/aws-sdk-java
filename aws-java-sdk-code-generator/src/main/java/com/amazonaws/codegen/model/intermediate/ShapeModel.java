@@ -42,8 +42,12 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasHeaderMember;
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
+    private boolean hasRequiresLengthMember;
     private boolean wrapper;
+    // For APIG generated requests
     private String requestSignerClassFqcn;
+    // For AWS service requests
+    private String signerType;
 
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
@@ -171,6 +175,13 @@ public class ShapeModel extends DocumentationModel {
         return unboundMembers;
     }
 
+    /**
+     * @return True if the shape has an explicit payload member or implicit payload member(s).
+     */
+    public boolean hasPayloadMembers() {
+        return hasPayloadMember || getUnboundMembers().size() > 0;
+    }
+
     public boolean isHasStreamingMember() {
         return hasStreamingMember;
     }
@@ -181,6 +192,19 @@ public class ShapeModel extends DocumentationModel {
 
     public ShapeModel withHasStreamingMember(boolean hasStreamingMember) {
         setHasStreamingMember(hasStreamingMember);
+        return this;
+    }
+
+    public boolean isHasRequiresLengthMember() {
+        return hasRequiresLengthMember;
+    }
+
+    public void setHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        this.hasRequiresLengthMember = hasRequiresLengthMember;
+    }
+
+    public ShapeModel withHasRequiresLengthMember(boolean hasRequiresLengthMember) {
+        setHasRequiresLengthMember(hasRequiresLengthMember);
         return this;
     }
 
@@ -257,6 +281,13 @@ public class ShapeModel extends DocumentationModel {
             this.members = new ArrayList<MemberModel>();
         }
         members.add(member);
+    }
+
+    /**
+     * Returns true if the shape is empty (ie, there are no members in the shape)
+     */
+    public boolean hasNoMembers() {
+        return members == null || members.isEmpty();
     }
 
     @JsonIgnore
@@ -433,8 +464,21 @@ public class ShapeModel extends DocumentationModel {
         return requestSignerClassFqcn;
     }
 
+    public boolean isSignerAware() {
+        return getSignerType() != null;
+    }
+
+    public String getSignerType() {
+        return signerType;
+    }
+
+    public void setSignerType(String signerType) {
+        this.signerType = signerType;
+    }
+
     public void setRequestSignerClassFqcn(String authorizerClass) {
         this.requestSignerClassFqcn = authorizerClass;
     }
+
 
 }

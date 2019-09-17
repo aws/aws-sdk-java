@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,8 +26,14 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Layer implements Serializable, Cloneable {
+public class Layer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * The layer stack ID.
@@ -62,17 +70,24 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
      * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     */
+    private CloudWatchLogsConfiguration cloudWatchLogsConfiguration;
+    /**
+     * <p>
      * The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String customInstanceProfileArn;
@@ -115,9 +130,9 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      */
@@ -126,12 +141,26 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      */
     private Boolean autoAssignPublicIps;
-
+    /**
+     * <p>
+     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
+     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
+     * particular layer to be run in response to each of the five events.
+     * </p>
+     * <p>
+     * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
+     * name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     * <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     * <code>phpapp2</code> folder.
+     * </p>
+     */
     private Recipes defaultRecipes;
     /**
      * <p>
@@ -172,6 +201,46 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      */
     private LifecycleEventConfiguration lifecycleEventConfiguration;
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Number (ARN) of a layer.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of a layer.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Number (ARN) of a layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Layer withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -307,7 +376,7 @@ public class Layer implements Serializable, Cloneable {
      */
 
     public void setType(LayerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -322,7 +391,7 @@ public class Layer implements Serializable, Cloneable {
      */
 
     public Layer withType(LayerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -412,21 +481,22 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @return The layer attributes.</p>
      *         <p>
      *         For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *         <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *         the actual value
+     *         <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value
      *         </p>
      *         <p>
-     *         For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *         ARN.
+     *         For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *         cluster's ARN.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -442,22 +512,23 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *        the actual value
+     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *        instead of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *        ARN.
+     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *        cluster's ARN.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -470,22 +541,23 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *        the actual value
+     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *        instead of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *        ARN.
+     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *        cluster's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,13 +589,53 @@ public class Layer implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        The Amazon CloudWatch Logs configuration settings for the layer.
+     */
+
+    public void setCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        this.cloudWatchLogsConfiguration = cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @return The Amazon CloudWatch Logs configuration settings for the layer.
+     */
+
+    public CloudWatchLogsConfiguration getCloudWatchLogsConfiguration() {
+        return this.cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        The Amazon CloudWatch Logs configuration settings for the layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Layer withCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        setCloudWatchLogsConfiguration(cloudWatchLogsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
      *        The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about
-     *        IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *        Identifiers</a>.
      */
 
@@ -534,11 +646,11 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @return The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about
-     *         IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
 
@@ -549,12 +661,12 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param customInstanceProfileArn
      *        The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about
-     *        IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *        IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *        Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -951,17 +1063,17 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
      *        Whether to automatically assign an <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *        address</a> to the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      */
 
@@ -972,16 +1084,16 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return Whether to automatically assign an <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *         address</a> to the layer's instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -992,17 +1104,17 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignElasticIps
      *        Whether to automatically assign an <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *        address</a> to the layer's instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1015,16 +1127,16 @@ public class Layer implements Serializable, Cloneable {
     /**
      * <p>
      * Whether to automatically assign an <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to
-     * the layer's instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a>
+     * to the layer's instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return Whether to automatically assign an <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *         address</a> to the layer's instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -1036,14 +1148,14 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
      *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *        instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      */
 
@@ -1055,13 +1167,13 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *         instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -1073,14 +1185,14 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @param autoAssignPublicIps
      *        For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *        instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *        Layer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1094,13 +1206,13 @@ public class Layer implements Serializable, Cloneable {
      * <p>
      * For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      * instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      * Layer</a>.
      * </p>
      * 
      * @return For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's
      *         instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a
      *         Layer</a>.
      */
 
@@ -1109,7 +1221,31 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
+     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
+     * particular layer to be run in response to each of the five events.
+     * </p>
+     * <p>
+     * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
+     * name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     * <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     * <code>phpapp2</code> folder.
+     * </p>
+     * 
      * @param defaultRecipes
+     *        AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
+     *        for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
+     *        runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
+     *        recipes for a particular layer to be run in response to each of the five events.</p>
+     *        <p>
+     *        To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the
+     *        recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     *        <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     *        <code>phpapp2</code> folder.
      */
 
     public void setDefaultRecipes(Recipes defaultRecipes) {
@@ -1117,7 +1253,30 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
+     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
+     * particular layer to be run in response to each of the five events.
+     * </p>
+     * <p>
+     * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
+     * name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     * <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     * <code>phpapp2</code> folder.
+     * </p>
+     * 
+     * @return AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *         <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
+     *         for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
+     *         runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the
+     *         custom recipes for a particular layer to be run in response to each of the five events.</p>
+     *         <p>
+     *         To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the
+     *         recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     *         <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     *         <code>phpapp2</code> folder.
      */
 
     public Recipes getDefaultRecipes() {
@@ -1125,7 +1284,31 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
+     * event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
+     * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
+     * particular layer to be run in response to each of the five events.
+     * </p>
+     * <p>
+     * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe
+     * name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     * <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     * <code>phpapp2</code> folder.
+     * </p>
+     * 
      * @param defaultRecipes
+     *        AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+     *        <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes
+     *        for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks
+     *        runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom
+     *        recipes for a particular layer to be run in response to each of the five events.</p>
+     *        <p>
+     *        To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the
+     *        recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example:
+     *        <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's
+     *        <code>phpapp2</code> folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1427,7 +1610,8 @@ public class Layer implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1437,6 +1621,8 @@ public class Layer implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStackId() != null)
             sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerId() != null)
@@ -1449,6 +1635,8 @@ public class Layer implements Serializable, Cloneable {
             sb.append("Shortname: ").append(getShortname()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCloudWatchLogsConfiguration() != null)
+            sb.append("CloudWatchLogsConfiguration: ").append(getCloudWatchLogsConfiguration()).append(",");
         if (getCustomInstanceProfileArn() != null)
             sb.append("CustomInstanceProfileArn: ").append(getCustomInstanceProfileArn()).append(",");
         if (getCustomJson() != null)
@@ -1493,6 +1681,10 @@ public class Layer implements Serializable, Cloneable {
         if (obj instanceof Layer == false)
             return false;
         Layer other = (Layer) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
@@ -1516,6 +1708,10 @@ public class Layer implements Serializable, Cloneable {
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() == null ^ this.getCloudWatchLogsConfiguration() == null)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() != null && other.getCloudWatchLogsConfiguration().equals(this.getCloudWatchLogsConfiguration()) == false)
             return false;
         if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null)
             return false;
@@ -1585,12 +1781,14 @@ public class Layer implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogsConfiguration() == null) ? 0 : getCloudWatchLogsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode());
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
         hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode());
@@ -1616,5 +1814,11 @@ public class Layer implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.LayerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

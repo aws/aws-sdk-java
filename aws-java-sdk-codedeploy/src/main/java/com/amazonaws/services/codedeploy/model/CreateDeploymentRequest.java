@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a create deployment operation.
+ * Represents the input of a CreateDeployment operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS API
@@ -30,7 +30,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -48,12 +48,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private RevisionLocation revision;
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be used as the default. If the deployment
-     * group does not have a deployment configuration associated with it, then CodeDeployDefault.OneAtATime will be used
-     * by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      */
     private String deploymentConfigName;
@@ -65,17 +64,35 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private String description;
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
-     * fail, the deployment to that instance will not be considered to have failed at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.
+     * If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event to an
+     * instance fails, then the deployment continues to the next deployment lifecycle event. For example, if
+     * ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the deployment
+     * continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with ApplicationStop.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be
-     * considered to have failed.
+     * If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment
+     * fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not
+     * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
+     * </p>
+     * <p>
+     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic,
+     * and AfterBlockTraffic in the AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run
+     * successfully, the deployment can fail.
+     * </p>
+     * <p>
+     * If the cause of the failure is a script from the last successful deployment that will never run successfully,
+     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the ApplicationStop,
+     * BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     */
+    private TargetInstances targetInstances;
     /**
      * <p>
      * Configuration information for an automatic rollback that is added when a deployment is created.
@@ -89,14 +106,42 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean updateOutdatedInstancesOnly;
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String fileExistsBehavior;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -105,10 +150,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -117,11 +162,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,20 +257,19 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be used as the default. If the deployment
-     * group does not have a deployment configuration associated with it, then CodeDeployDefault.OneAtATime will be used
-     * by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *        <p>
-     *        If not specified, the value configured in the deployment group will be used as the default. If the
-     *        deployment group does not have a deployment configuration associated with it, then
-     *        CodeDeployDefault.OneAtATime will be used by default.
+     *        If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *        group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by
+     *        default.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -234,19 +278,18 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be used as the default. If the deployment
-     * group does not have a deployment configuration associated with it, then CodeDeployDefault.OneAtATime will be used
-     * by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>
+     * @return The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *         <p>
-     *         If not specified, the value configured in the deployment group will be used as the default. If the
-     *         deployment group does not have a deployment configuration associated with it, then
-     *         CodeDeployDefault.OneAtATime will be used by default.
+     *         If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *         group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used
+     *         by default.
      */
 
     public String getDeploymentConfigName() {
@@ -255,20 +298,19 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the IAM user or AWS account.
      * </p>
      * <p>
-     * If not specified, the value configured in the deployment group will be used as the default. If the deployment
-     * group does not have a deployment configuration associated with it, then CodeDeployDefault.OneAtATime will be used
-     * by default.
+     * If not specified, the value configured in the deployment group is used as the default. If the deployment group
+     * does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by default.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the IAM user or AWS account.</p>
      *        <p>
-     *        If not specified, the value configured in the deployment group will be used as the default. If the
-     *        deployment group does not have a deployment configuration associated with it, then
-     *        CodeDeployDefault.OneAtATime will be used by default.
+     *        If not specified, the value configured in the deployment group is used as the default. If the deployment
+     *        group does not have a deployment configuration associated with it, CodeDeployDefault.OneAtATime is used by
+     *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,24 +361,50 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
-     * fail, the deployment to that instance will not be considered to have failed at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.
+     * If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event to an
+     * instance fails, then the deployment continues to the next deployment lifecycle event. For example, if
+     * ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the deployment
+     * continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with ApplicationStop.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be
-     * considered to have failed.
+     * If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment
+     * fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not
+     * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
+     * </p>
+     * <p>
+     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic,
+     * and AfterBlockTraffic in the AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run
+     * successfully, the deployment can fail.
+     * </p>
+     * <p>
+     * If the cause of the failure is a script from the last successful deployment that will never run successfully,
+     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the ApplicationStop,
+     * BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
-     *        instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *        will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *        If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event
+     *        to an instance fails, then the deployment continues to the next deployment lifecycle event. For example,
+     *        if ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the
+     *        deployment continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with
+     *        ApplicationStop. </p>
      *        <p>
-     *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
-     *        event to fail to an instance, the deployment to that instance will stop, and the deployment to that
-     *        instance will be considered to have failed.
+     *        If false or not specified, then if a lifecycle event fails during a deployment to an instance, that
+     *        deployment fails. If deployment to that instance is part of an overall deployment and the number of
+     *        healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance
+     *        is attempted.
+     *        </p>
+     *        <p>
+     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
+     *        BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful deployment.
+     *        (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts
+     *        contains an error and does not run successfully, the deployment can fail.
+     *        </p>
+     *        <p>
+     *        If the cause of the failure is a script from the last successful deployment that will never run
+     *        successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that
+     *        the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      */
 
     public void setIgnoreApplicationStopFailures(Boolean ignoreApplicationStopFailures) {
@@ -345,23 +413,49 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
-     * fail, the deployment to that instance will not be considered to have failed at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.
+     * If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event to an
+     * instance fails, then the deployment continues to the next deployment lifecycle event. For example, if
+     * ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the deployment
+     * continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with ApplicationStop.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be
-     * considered to have failed.
+     * If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment
+     * fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not
+     * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
+     * </p>
+     * <p>
+     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic,
+     * and AfterBlockTraffic in the AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run
+     * successfully, the deployment can fail.
+     * </p>
+     * <p>
+     * If the cause of the failure is a script from the last successful deployment that will never run successfully,
+     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the ApplicationStop,
+     * BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * </p>
      * 
-     * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
-     *         instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *         will continue on to the BeforeInstall deployment lifecycle event.</p>
+     * @return If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event
+     *         to an instance fails, then the deployment continues to the next deployment lifecycle event. For example,
+     *         if ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the
+     *         deployment continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with
+     *         ApplicationStop. </p>
      *         <p>
-     *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
-     *         event to fail to an instance, the deployment to that instance will stop, and the deployment to that
-     *         instance will be considered to have failed.
+     *         If false or not specified, then if a lifecycle event fails during a deployment to an instance, that
+     *         deployment fails. If deployment to that instance is part of an overall deployment and the number of
+     *         healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next
+     *         instance is attempted.
+     *         </p>
+     *         <p>
+     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
+     *         BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful deployment.
+     *         (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts
+     *         contains an error and does not run successfully, the deployment can fail.
+     *         </p>
+     *         <p>
+     *         If the cause of the failure is a script from the last successful deployment that will never run
+     *         successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that
+     *         the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      */
 
     public Boolean getIgnoreApplicationStopFailures() {
@@ -370,24 +464,50 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
-     * fail, the deployment to that instance will not be considered to have failed at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.
+     * If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event to an
+     * instance fails, then the deployment continues to the next deployment lifecycle event. For example, if
+     * ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the deployment
+     * continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with ApplicationStop.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be
-     * considered to have failed.
+     * If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment
+     * fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not
+     * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
+     * </p>
+     * <p>
+     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic,
+     * and AfterBlockTraffic in the AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run
+     * successfully, the deployment can fail.
+     * </p>
+     * <p>
+     * If the cause of the failure is a script from the last successful deployment that will never run successfully,
+     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the ApplicationStop,
+     * BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
-     *        If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
-     *        instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *        will continue on to the BeforeInstall deployment lifecycle event.</p>
+     *        If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event
+     *        to an instance fails, then the deployment continues to the next deployment lifecycle event. For example,
+     *        if ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the
+     *        deployment continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with
+     *        ApplicationStop. </p>
      *        <p>
-     *        If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
-     *        event to fail to an instance, the deployment to that instance will stop, and the deployment to that
-     *        instance will be considered to have failed.
+     *        If false or not specified, then if a lifecycle event fails during a deployment to an instance, that
+     *        deployment fails. If deployment to that instance is part of an overall deployment and the number of
+     *        healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance
+     *        is attempted.
+     *        </p>
+     *        <p>
+     *        During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
+     *        BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful deployment.
+     *        (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts
+     *        contains an error and does not run successfully, the deployment can fail.
+     *        </p>
+     *        <p>
+     *        If the cause of the failure is a script from the last successful deployment that will never run
+     *        successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that
+     *        the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,27 +518,93 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to
-     * fail, the deployment to that instance will not be considered to have failed at that point and will continue on to
-     * the BeforeInstall deployment lifecycle event.
+     * If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event to an
+     * instance fails, then the deployment continues to the next deployment lifecycle event. For example, if
+     * ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the deployment
+     * continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with ApplicationStop.
      * </p>
      * <p>
-     * If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to
-     * fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be
-     * considered to have failed.
+     * If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment
+     * fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not
+     * less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
+     * </p>
+     * <p>
+     * During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic,
+     * and AfterBlockTraffic in the AppSpec file from the previous successful deployment. (All other scripts are run
+     * from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run
+     * successfully, the deployment can fail.
+     * </p>
+     * <p>
+     * If the cause of the failure is a script from the last successful deployment that will never run successfully,
+     * create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the ApplicationStop,
+     * BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      * </p>
      * 
-     * @return If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an
-     *         instance to fail, the deployment to that instance will not be considered to have failed at that point and
-     *         will continue on to the BeforeInstall deployment lifecycle event.</p>
+     * @return If true, then if an ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event
+     *         to an instance fails, then the deployment continues to the next deployment lifecycle event. For example,
+     *         if ApplicationStop fails, the deployment continues with DownloadBundle. If BeforeBlockTraffic fails, the
+     *         deployment continues with BlockTraffic. If AfterBlockTraffic fails, the deployment continues with
+     *         ApplicationStop. </p>
      *         <p>
-     *         If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle
-     *         event to fail to an instance, the deployment to that instance will stop, and the deployment to that
-     *         instance will be considered to have failed.
+     *         If false or not specified, then if a lifecycle event fails during a deployment to an instance, that
+     *         deployment fails. If deployment to that instance is part of an overall deployment and the number of
+     *         healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next
+     *         instance is attempted.
+     *         </p>
+     *         <p>
+     *         During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop,
+     *         BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the previous successful deployment.
+     *         (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts
+     *         contains an error and does not run successfully, the deployment can fail.
+     *         </p>
+     *         <p>
+     *         If the cause of the failure is a script from the last successful deployment that will never run
+     *         successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that
+     *         the ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic failures should be ignored.
      */
 
     public Boolean isIgnoreApplicationStopFailures() {
         return this.ignoreApplicationStopFailures;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that belong to the replacement environment in a blue/green deployment.
+     */
+
+    public void setTargetInstances(TargetInstances targetInstances) {
+        this.targetInstances = targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @return Information about the instances that belong to the replacement environment in a blue/green deployment.
+     */
+
+    public TargetInstances getTargetInstances() {
+        return this.targetInstances;
+    }
+
+    /**
+     * <p>
+     * Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * </p>
+     * 
+     * @param targetInstances
+     *        Information about the instances that belong to the replacement environment in a blue/green deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withTargetInstances(TargetInstances targetInstances) {
+        setTargetInstances(targetInstances);
+        return this;
     }
 
     /**
@@ -522,7 +708,296 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(String fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *         weren't part of the previous successful deployment.</p>
+     *         <p>
+     *         The fileExistsBehavior parameter takes any of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *         version already on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *         </p>
+     *         </li>
+     * @see FileExistsBehavior
+     */
+
+    public String getFileExistsBehavior() {
+        return this.fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(String fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        withFileExistsBehavior(fileExistsBehavior);
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -544,10 +1019,14 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Description: ").append(getDescription()).append(",");
         if (getIgnoreApplicationStopFailures() != null)
             sb.append("IgnoreApplicationStopFailures: ").append(getIgnoreApplicationStopFailures()).append(",");
+        if (getTargetInstances() != null)
+            sb.append("TargetInstances: ").append(getTargetInstances()).append(",");
         if (getAutoRollbackConfiguration() != null)
             sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
         if (getUpdateOutdatedInstancesOnly() != null)
-            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly());
+            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly()).append(",");
+        if (getFileExistsBehavior() != null)
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -587,6 +1066,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getIgnoreApplicationStopFailures() != null
                 && other.getIgnoreApplicationStopFailures().equals(this.getIgnoreApplicationStopFailures()) == false)
             return false;
+        if (other.getTargetInstances() == null ^ this.getTargetInstances() == null)
+            return false;
+        if (other.getTargetInstances() != null && other.getTargetInstances().equals(this.getTargetInstances()) == false)
+            return false;
         if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
             return false;
         if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
@@ -594,6 +1077,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getUpdateOutdatedInstancesOnly() == null ^ this.getUpdateOutdatedInstancesOnly() == null)
             return false;
         if (other.getUpdateOutdatedInstancesOnly() != null && other.getUpdateOutdatedInstancesOnly().equals(this.getUpdateOutdatedInstancesOnly()) == false)
+            return false;
+        if (other.getFileExistsBehavior() == null ^ this.getFileExistsBehavior() == null)
+            return false;
+        if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
             return false;
         return true;
     }
@@ -609,8 +1096,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIgnoreApplicationStopFailures() == null) ? 0 : getIgnoreApplicationStopFailures().hashCode());
+        hashCode = prime * hashCode + ((getTargetInstances() == null) ? 0 : getTargetInstances().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
+        hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
         return hashCode;
     }
 

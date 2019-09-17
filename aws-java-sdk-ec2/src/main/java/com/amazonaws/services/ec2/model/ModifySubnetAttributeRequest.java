@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,28 +20,12 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifySubnetAttributeRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifySubnetAttribute.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
         DryRunSupportedRequest<ModifySubnetAttributeRequest> {
 
-    /**
-     * <p>
-     * The ID of the subnet.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
-     * </p>
-     */
-    private Boolean mapPublicIpOnLaunch;
     /**
      * <p>
      * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
@@ -54,114 +38,19 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private Boolean assignIpv6AddressOnCreation;
-
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
+     * </p>
+     */
+    private Boolean mapPublicIpOnLaunch;
     /**
      * <p>
      * The ID of the subnet.
      * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet.
      */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet.
-     * </p>
-     * 
-     * @return The ID of the subnet.
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifySubnetAttributeRequest withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
-     * </p>
-     * 
-     * @param mapPublicIpOnLaunch
-     *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *        assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *        instance into the subnet (the instance therefore receives a public IPv4 address).
-     */
-
-    public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
-        this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
-     * </p>
-     * 
-     * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *         assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *         instance into the subnet (the instance therefore receives a public IPv4 address).
-     */
-
-    public Boolean getMapPublicIpOnLaunch() {
-        return this.mapPublicIpOnLaunch;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
-     * </p>
-     * 
-     * @param mapPublicIpOnLaunch
-     *        Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *        assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *        instance into the subnet (the instance therefore receives a public IPv4 address).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifySubnetAttributeRequest withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
-        setMapPublicIpOnLaunch(mapPublicIpOnLaunch);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned
-     * a public IPv4 address. This includes a network interface that's created when launching an instance into the
-     * subnet (the instance therefore receives a public IPv4 address).
-     * </p>
-     * 
-     * @return Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be
-     *         assigned a public IPv4 address. This includes a network interface that's created when launching an
-     *         instance into the subnet (the instance therefore receives a public IPv4 address).
-     */
-
-    public Boolean isMapPublicIpOnLaunch() {
-        return this.mapPublicIpOnLaunch;
-    }
+    private String subnetId;
 
     /**
      * <p>
@@ -264,6 +153,106 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
+     * </p>
+     * 
+     * @param mapPublicIpOnLaunch
+     *        Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *        should be assigned a public IPv4 address.
+     */
+
+    public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
+        this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *         should be assigned a public IPv4 address.
+     */
+
+    public Boolean getMapPublicIpOnLaunch() {
+        return this.mapPublicIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
+     * </p>
+     * 
+     * @param mapPublicIpOnLaunch
+     *        Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *        should be assigned a public IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySubnetAttributeRequest withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
+        setMapPublicIpOnLaunch(mapPublicIpOnLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet should be
+     * assigned a public IPv4 address.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to indicate that ENIs attached to instances created in the specified subnet
+     *         should be assigned a public IPv4 address.
+     */
+
+    public Boolean isMapPublicIpOnLaunch() {
+        return this.mapPublicIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @return The ID of the subnet.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySubnetAttributeRequest withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -275,7 +264,8 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -285,12 +275,12 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getAssignIpv6AddressOnCreation() != null)
+            sb.append("AssignIpv6AddressOnCreation: ").append(getAssignIpv6AddressOnCreation()).append(",");
         if (getMapPublicIpOnLaunch() != null)
             sb.append("MapPublicIpOnLaunch: ").append(getMapPublicIpOnLaunch()).append(",");
-        if (getAssignIpv6AddressOnCreation() != null)
-            sb.append("AssignIpv6AddressOnCreation: ").append(getAssignIpv6AddressOnCreation());
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }
@@ -305,17 +295,17 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         if (obj instanceof ModifySubnetAttributeRequest == false)
             return false;
         ModifySubnetAttributeRequest other = (ModifySubnetAttributeRequest) obj;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+        if (other.getAssignIpv6AddressOnCreation() == null ^ this.getAssignIpv6AddressOnCreation() == null)
             return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+        if (other.getAssignIpv6AddressOnCreation() != null && other.getAssignIpv6AddressOnCreation().equals(this.getAssignIpv6AddressOnCreation()) == false)
             return false;
         if (other.getMapPublicIpOnLaunch() == null ^ this.getMapPublicIpOnLaunch() == null)
             return false;
         if (other.getMapPublicIpOnLaunch() != null && other.getMapPublicIpOnLaunch().equals(this.getMapPublicIpOnLaunch()) == false)
             return false;
-        if (other.getAssignIpv6AddressOnCreation() == null ^ this.getAssignIpv6AddressOnCreation() == null)
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getAssignIpv6AddressOnCreation() != null && other.getAssignIpv6AddressOnCreation().equals(this.getAssignIpv6AddressOnCreation()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         return true;
     }
@@ -325,9 +315,9 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode + ((getMapPublicIpOnLaunch() == null) ? 0 : getMapPublicIpOnLaunch().hashCode());
         hashCode = prime * hashCode + ((getAssignIpv6AddressOnCreation() == null) ? 0 : getAssignIpv6AddressOnCreation().hashCode());
+        hashCode = prime * hashCode + ((getMapPublicIpOnLaunch() == null) ? 0 : getMapPublicIpOnLaunch().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         return hashCode;
     }
 

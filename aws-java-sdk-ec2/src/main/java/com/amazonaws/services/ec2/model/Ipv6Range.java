@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,20 +29,30 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      */
     private String cidrIpv6;
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
      *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix.
+     *        a single IPv6 address, use the /128 prefix length.
      */
 
     public void setCidrIpv6(String cidrIpv6) {
@@ -52,11 +62,11 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @return The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *         a single IPv6 address, use the /128 prefix.
+     *         a single IPv6 address, use the /128 prefix length.
      */
 
     public String getCidrIpv6() {
@@ -66,12 +76,12 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
      *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix.
+     *        a single IPv6 address, use the /128 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +91,69 @@ public class Ipv6Range implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv6 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$
+     **/
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @return A description for the security group rule that references this IPv6 address range.</p>
+     *         <p>
+     *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=;{}!$
+     **/
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv6 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ipv6Range withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -92,7 +164,9 @@ public class Ipv6Range implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIpv6() != null)
-            sb.append("CidrIpv6: ").append(getCidrIpv6());
+            sb.append("CidrIpv6: ").append(getCidrIpv6()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +185,10 @@ public class Ipv6Range implements Serializable, Cloneable {
             return false;
         if (other.getCidrIpv6() != null && other.getCidrIpv6().equals(this.getCidrIpv6()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +198,7 @@ public class Ipv6Range implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCidrIpv6() == null) ? 0 : getCidrIpv6().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 
@@ -131,4 +210,5 @@ public class Ipv6Range implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

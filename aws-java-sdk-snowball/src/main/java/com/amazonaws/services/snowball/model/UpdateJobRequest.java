@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      */
@@ -47,8 +47,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Notification notification;
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      */
     private JobResource resources;
@@ -77,6 +76,12 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String snowballCapacityPreference;
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -124,14 +129,14 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @param roleARN
      *        The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN,
-     *        use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     *        AWS Identity and Access Management (IAM) API action.
+     *        use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     *        Identity and Access Management (IAM) API action.
      */
 
     public void setRoleARN(String roleARN) {
@@ -141,13 +146,14 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @return The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN,
-     *         use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     *         AWS Identity and Access Management (IAM) API action.
+     *         use the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity
+     *         and Access Management (IAM) API action.
      */
 
     public String getRoleARN() {
@@ -157,14 +163,14 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the
-     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> AWS Identity and
+     * <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS Identity and
      * Access Management (IAM) API action.
      * </p>
      * 
      * @param roleARN
      *        The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN,
-     *        use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     *        AWS Identity and Access Management (IAM) API action.
+     *        use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+     *        Identity and Access Management (IAM) API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,13 +221,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
      * @param resources
-     *        The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *        <a>JobResource</a> object (for multiple buckets or key ranges).
+     *        The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      */
 
     public void setResources(JobResource resources) {
@@ -230,12 +234,10 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
-     * @return The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *         <a>JobResource</a> object (for multiple buckets or key ranges).
+     * @return The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      */
 
     public JobResource getResources() {
@@ -244,13 +246,11 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     * <a>JobResource</a> object (for multiple buckets or key ranges).
+     * The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * </p>
      * 
      * @param resources
-     *        The updated <a>S3Resource</a> object (for a single Amazon S3 bucket or key range), or the updated
-     *        <a>JobResource</a> object (for multiple buckets or key ranges).
+     *        The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,7 +353,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -368,7 +368,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateJobRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -474,7 +474,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -491,12 +491,53 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateJobRequest withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @return The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The updated ID for the forwarding address for a job. This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobRequest withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -521,7 +562,9 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSnowballCapacityPreference() != null)
-            sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference());
+            sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +611,10 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSnowballCapacityPreference() != null && other.getSnowballCapacityPreference().equals(this.getSnowballCapacityPreference()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +631,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getShippingOption() == null) ? 0 : getShippingOption().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSnowballCapacityPreference() == null) ? 0 : getSnowballCapacityPreference().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 

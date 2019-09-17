@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,25 +14,63 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies the dimension settings for a segment.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDimensions" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentDimensions implements Serializable, Cloneable {
+public class SegmentDimensions implements Serializable, Cloneable, StructuredPojo {
 
-    /** Custom segment attributes. */
+    /**
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
+     */
     private java.util.Map<String, AttributeDimension> attributes;
-    /** The segment behaviors attributes. */
+    /**
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
+     */
     private SegmentBehaviors behavior;
-    /** The segment demographics attributes. */
+    /**
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
+     */
     private SegmentDemographics demographic;
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      */
     private SegmentLocation location;
+    /**
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
+     */
+    private java.util.Map<String, MetricDimension> metrics;
+    /**
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
+     */
+    private java.util.Map<String, AttributeDimension> userAttributes;
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
-     * @return Custom segment attributes.
+     * @return One or more custom attributes to use as criteria for the segment.
      */
 
     public java.util.Map<String, AttributeDimension> getAttributes() {
@@ -40,10 +78,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param attributes
-     *        Custom segment attributes.
+     *        One or more custom attributes to use as criteria for the segment.
      */
 
     public void setAttributes(java.util.Map<String, AttributeDimension> attributes) {
@@ -51,10 +91,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * Custom segment attributes.
+     * <p>
+     * One or more custom attributes to use as criteria for the segment.
+     * </p>
      * 
      * @param attributes
-     *        Custom segment attributes.
+     *        One or more custom attributes to use as criteria for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,10 +127,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
      * @param behavior
-     *        The segment behaviors attributes.
+     *        The behavior-based criteria, such as how recently users have used your app, for the segment.
      */
 
     public void setBehavior(SegmentBehaviors behavior) {
@@ -96,9 +140,11 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
-     * @return The segment behaviors attributes.
+     * @return The behavior-based criteria, such as how recently users have used your app, for the segment.
      */
 
     public SegmentBehaviors getBehavior() {
@@ -106,10 +152,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment behaviors attributes.
+     * <p>
+     * The behavior-based criteria, such as how recently users have used your app, for the segment.
+     * </p>
      * 
      * @param behavior
-     *        The segment behaviors attributes.
+     *        The behavior-based criteria, such as how recently users have used your app, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,10 +167,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
      * @param demographic
-     *        The segment demographics attributes.
+     *        The demographic-based criteria, such as device platform, for the segment.
      */
 
     public void setDemographic(SegmentDemographics demographic) {
@@ -130,9 +180,11 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
-     * @return The segment demographics attributes.
+     * @return The demographic-based criteria, such as device platform, for the segment.
      */
 
     public SegmentDemographics getDemographic() {
@@ -140,10 +192,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment demographics attributes.
+     * <p>
+     * The demographic-based criteria, such as device platform, for the segment.
+     * </p>
      * 
      * @param demographic
-     *        The segment demographics attributes.
+     *        The demographic-based criteria, such as device platform, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,10 +207,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
      * @param location
-     *        The segment location attributes.
+     *        The location-based criteria, such as region or GPS coordinates, for the segment.
      */
 
     public void setLocation(SegmentLocation location) {
@@ -164,9 +220,11 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
-     * @return The segment location attributes.
+     * @return The location-based criteria, such as region or GPS coordinates, for the segment.
      */
 
     public SegmentLocation getLocation() {
@@ -174,10 +232,12 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * The segment location attributes.
+     * <p>
+     * The location-based criteria, such as region or GPS coordinates, for the segment.
+     * </p>
      * 
      * @param location
-     *        The segment location attributes.
+     *        The location-based criteria, such as region or GPS coordinates, for the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +247,130 @@ public class SegmentDimensions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
+     * 
+     * @return One or more custom metrics to use as criteria for the segment.
+     */
+
+    public java.util.Map<String, MetricDimension> getMetrics() {
+        return metrics;
+    }
+
+    /**
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
+     * 
+     * @param metrics
+     *        One or more custom metrics to use as criteria for the segment.
+     */
+
+    public void setMetrics(java.util.Map<String, MetricDimension> metrics) {
+        this.metrics = metrics;
+    }
+
+    /**
+     * <p>
+     * One or more custom metrics to use as criteria for the segment.
+     * </p>
+     * 
+     * @param metrics
+     *        One or more custom metrics to use as criteria for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions withMetrics(java.util.Map<String, MetricDimension> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    public SegmentDimensions addMetricsEntry(String key, MetricDimension value) {
+        if (null == this.metrics) {
+            this.metrics = new java.util.HashMap<String, MetricDimension>();
+        }
+        if (this.metrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metrics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Metrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions clearMetricsEntries() {
+        this.metrics = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
+     * 
+     * @return One or more custom user attributes to use as criteria for the segment.
+     */
+
+    public java.util.Map<String, AttributeDimension> getUserAttributes() {
+        return userAttributes;
+    }
+
+    /**
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
+     * 
+     * @param userAttributes
+     *        One or more custom user attributes to use as criteria for the segment.
+     */
+
+    public void setUserAttributes(java.util.Map<String, AttributeDimension> userAttributes) {
+        this.userAttributes = userAttributes;
+    }
+
+    /**
+     * <p>
+     * One or more custom user attributes to use as criteria for the segment.
+     * </p>
+     * 
+     * @param userAttributes
+     *        One or more custom user attributes to use as criteria for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions withUserAttributes(java.util.Map<String, AttributeDimension> userAttributes) {
+        setUserAttributes(userAttributes);
+        return this;
+    }
+
+    public SegmentDimensions addUserAttributesEntry(String key, AttributeDimension value) {
+        if (null == this.userAttributes) {
+            this.userAttributes = new java.util.HashMap<String, AttributeDimension>();
+        }
+        if (this.userAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions clearUserAttributesEntries() {
+        this.userAttributes = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -204,7 +387,11 @@ public class SegmentDimensions implements Serializable, Cloneable {
         if (getDemographic() != null)
             sb.append("Demographic: ").append(getDemographic()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getUserAttributes() != null)
+            sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +422,14 @@ public class SegmentDimensions implements Serializable, Cloneable {
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
+        if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
+            return false;
+        if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +442,8 @@ public class SegmentDimensions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBehavior() == null) ? 0 : getBehavior().hashCode());
         hashCode = prime * hashCode + ((getDemographic() == null) ? 0 : getDemographic().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         return hashCode;
     }
 
@@ -257,5 +454,11 @@ public class SegmentDimensions implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentDimensionsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

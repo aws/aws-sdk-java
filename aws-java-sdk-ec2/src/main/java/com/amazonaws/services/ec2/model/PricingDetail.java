@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,56 +28,16 @@ public class PricingDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price per instance.
-     * </p>
-     */
-    private Double price;
-    /**
-     * <p>
      * The number of reservations available for the price.
      * </p>
      */
     private Integer count;
-
     /**
      * <p>
      * The price per instance.
      * </p>
-     * 
-     * @param price
-     *        The price per instance.
      */
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    /**
-     * <p>
-     * The price per instance.
-     * </p>
-     * 
-     * @return The price per instance.
-     */
-
-    public Double getPrice() {
-        return this.price;
-    }
-
-    /**
-     * <p>
-     * The price per instance.
-     * </p>
-     * 
-     * @param price
-     *        The price per instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PricingDetail withPrice(Double price) {
-        setPrice(price);
-        return this;
-    }
+    private Double price;
 
     /**
      * <p>
@@ -120,7 +80,48 @@ public class PricingDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The price per instance.
+     * </p>
+     * 
+     * @param price
+     *        The price per instance.
+     */
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    /**
+     * <p>
+     * The price per instance.
+     * </p>
+     * 
+     * @return The price per instance.
+     */
+
+    public Double getPrice() {
+        return this.price;
+    }
+
+    /**
+     * <p>
+     * The price per instance.
+     * </p>
+     * 
+     * @param price
+     *        The price per instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PricingDetail withPrice(Double price) {
+        setPrice(price);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,10 +131,10 @@ public class PricingDetail implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrice() != null)
-            sb.append("Price: ").append(getPrice()).append(",");
         if (getCount() != null)
-            sb.append("Count: ").append(getCount());
+            sb.append("Count: ").append(getCount()).append(",");
+        if (getPrice() != null)
+            sb.append("Price: ").append(getPrice());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +149,13 @@ public class PricingDetail implements Serializable, Cloneable {
         if (obj instanceof PricingDetail == false)
             return false;
         PricingDetail other = (PricingDetail) obj;
-        if (other.getPrice() == null ^ this.getPrice() == null)
-            return false;
-        if (other.getPrice() != null && other.getPrice().equals(this.getPrice()) == false)
-            return false;
         if (other.getCount() == null ^ this.getCount() == null)
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
+            return false;
+        if (other.getPrice() == null ^ this.getPrice() == null)
+            return false;
+        if (other.getPrice() != null && other.getPrice().equals(this.getPrice()) == false)
             return false;
         return true;
     }
@@ -164,8 +165,8 @@ public class PricingDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrice() == null) ? 0 : getPrice().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getPrice() == null) ? 0 : getPrice().hashCode());
         return hashCode;
     }
 
@@ -177,4 +178,5 @@ public class PricingDetail implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

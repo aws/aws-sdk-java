@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.securitytoken.model.transform;
+
+import java.util.List;
 
 import javax.annotation.Generated;
 
@@ -46,6 +48,23 @@ public class GetFederationTokenRequestMarshaller implements Marshaller<Request<G
 
         if (getFederationTokenRequest.getPolicy() != null) {
             request.addParameter("Policy", StringUtils.fromString(getFederationTokenRequest.getPolicy()));
+        }
+
+        if (getFederationTokenRequest.getPolicyArns() != null) {
+            java.util.List<PolicyDescriptorType> policyArnsList = getFederationTokenRequest.getPolicyArns();
+            if (policyArnsList.isEmpty()) {
+                request.addParameter("PolicyArns", "");
+            } else {
+                int policyArnsListIndex = 1;
+
+                for (PolicyDescriptorType policyArnsListValue : policyArnsList) {
+
+                    if (policyArnsListValue.getArn() != null) {
+                        request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                    }
+                    policyArnsListIndex++;
+                }
+            }
         }
 
         if (getFederationTokenRequest.getDurationSeconds() != null) {

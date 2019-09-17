@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,61 +12,47 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListIdentityPoolUsageRequest Marshaller
+ * ListIdentityPoolUsageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListIdentityPoolUsageRequestMarshaller implements Marshaller<Request<ListIdentityPoolUsageRequest>, ListIdentityPoolUsageRequest> {
+@SdkInternalApi
+public class ListIdentityPoolUsageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
-    public ListIdentityPoolUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListIdentityPoolUsageRequestMarshaller instance = new ListIdentityPoolUsageRequestMarshaller();
+
+    public static ListIdentityPoolUsageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListIdentityPoolUsageRequest> marshall(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listIdentityPoolUsageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListIdentityPoolUsageRequest> request = new DefaultRequest<ListIdentityPoolUsageRequest>(listIdentityPoolUsageRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/identitypools";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listIdentityPoolUsageRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listIdentityPoolUsageRequest.getNextToken()));
+        try {
+            protocolMarshaller.marshall(listIdentityPoolUsageRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listIdentityPoolUsageRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listIdentityPoolUsageRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listIdentityPoolUsageRequest.getMaxResults()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

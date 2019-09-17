@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,26 +18,24 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeAvailabiltyZones.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AvailabilityZone> availabilityZones;
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
-     * @return Information about one or more Availability Zones.
+     * @return Information about the Availability Zones.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -49,11 +47,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -67,7 +65,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +74,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +90,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more Availability Zones.
+     * Information about the Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about one or more Availability Zones.
+     *        Information about the Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +104,8 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

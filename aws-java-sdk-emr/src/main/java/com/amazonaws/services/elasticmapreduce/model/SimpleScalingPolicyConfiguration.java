@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable {
+public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -47,7 +49,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * value adds to the instance group's EC2 instance count while a negative number removes instances. If
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer.
      * If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the
-     * percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster capacity.
+     * percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.
      * </p>
      */
     private Integer scalingAdjustment;
@@ -66,7 +68,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -79,7 +81,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be
      *        expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      *        or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as
-     *        a decimal, for example, 0.20 indicates an increase in 20% increments of cluster capacity.
+     *        an integer. For example, 20 indicates an increase in 20% increments of cluster capacity.
      *        <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of
      *        EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive
      *        integer.
@@ -97,7 +99,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -109,7 +111,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *         the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be
      *         expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      *         or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as
-     *         a decimal, for example, 0.20 indicates an increase in 20% increments of cluster capacity.
+     *         an integer. For example, 20 indicates an increase in 20% increments of cluster capacity.
      *         <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number
      *         of EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive
      *         integer.
@@ -127,7 +129,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -140,7 +142,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be
      *        expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      *        or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as
-     *        a decimal, for example, 0.20 indicates an increase in 20% increments of cluster capacity.
+     *        an integer. For example, 20 indicates an increase in 20% increments of cluster capacity.
      *        <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of
      *        EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive
      *        integer.
@@ -160,7 +162,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -173,7 +175,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be
      *        expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      *        or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as
-     *        a decimal, for example, 0.20 indicates an increase in 20% increments of cluster capacity.
+     *        an integer. For example, 20 indicates an increase in 20% increments of cluster capacity.
      *        <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of
      *        EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive
      *        integer.
@@ -181,7 +183,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      */
 
     public void setAdjustmentType(AdjustmentType adjustmentType) {
-        this.adjustmentType = adjustmentType.toString();
+        withAdjustmentType(adjustmentType);
     }
 
     /**
@@ -191,7 +193,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * <code>CHANGE_IN_CAPACITY</code> is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the EC2 instance
      * count increments or decrements by <code>ScalingAdjustment</code>, which should be expressed as an integer.
      * <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments or decrements by the percentage
-     * specified by <code>ScalingAdjustment</code>, which should be expressed as a decimal, for example, 0.20 indicates
+     * specified by <code>ScalingAdjustment</code>, which should be expressed as an integer. For example, 20 indicates
      * an increase in 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling activity
      * results in an instance group with the number of EC2 instances specified by <code>ScalingAdjustment</code>, which
      * should be expressed as a positive integer.
@@ -204,7 +206,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        the EC2 instance count increments or decrements by <code>ScalingAdjustment</code>, which should be
      *        expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance count increments
      *        or decrements by the percentage specified by <code>ScalingAdjustment</code>, which should be expressed as
-     *        a decimal, for example, 0.20 indicates an increase in 20% increments of cluster capacity.
+     *        an integer. For example, 20 indicates an increase in 20% increments of cluster capacity.
      *        <code>EXACT_CAPACITY</code> indicates the scaling activity results in an instance group with the number of
      *        EC2 instances specified by <code>ScalingAdjustment</code>, which should be expressed as a positive
      *        integer.
@@ -213,7 +215,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      */
 
     public SimpleScalingPolicyConfiguration withAdjustmentType(AdjustmentType adjustmentType) {
-        setAdjustmentType(adjustmentType);
+        this.adjustmentType = adjustmentType.toString();
         return this;
     }
 
@@ -223,7 +225,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * value adds to the instance group's EC2 instance count while a negative number removes instances. If
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer.
      * If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the
-     * percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster capacity.
+     * percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.
      * </p>
      * 
      * @param scalingAdjustment
@@ -231,7 +233,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        positive value adds to the instance group's EC2 instance count while a negative number removes instances.
      *        If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive
      *        integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value
-     *        should express the percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of
+     *        should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of
      *        cluster capacity.
      */
 
@@ -245,14 +247,14 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * value adds to the instance group's EC2 instance count while a negative number removes instances. If
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer.
      * If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the
-     * percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster capacity.
+     * percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.
      * </p>
      * 
      * @return The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>. A
      *         positive value adds to the instance group's EC2 instance count while a negative number removes instances.
      *         If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a
      *         positive integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the
-     *         value should express the percentage as a decimal. For example, -0.20 indicates a decrease in 20%
+     *         value should express the percentage as an integer. For example, -20 indicates a decrease in 20%
      *         increments of cluster capacity.
      */
 
@@ -266,7 +268,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * value adds to the instance group's EC2 instance count while a negative number removes instances. If
      * <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive integer.
      * If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the
-     * percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of cluster capacity.
+     * percentage as an integer. For example, -20 indicates a decrease in 20% increments of cluster capacity.
      * </p>
      * 
      * @param scalingAdjustment
@@ -274,7 +276,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      *        positive value adds to the instance group's EC2 instance count while a negative number removes instances.
      *        If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>, the number should only be a positive
      *        integer. If <code>AdjustmentType</code> is set to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value
-     *        should express the percentage as a decimal. For example, -0.20 indicates a decrease in 20% increments of
+     *        should express the percentage as an integer. For example, -20 indicates a decrease in 20% increments of
      *        cluster capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -331,7 +333,8 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -394,5 +397,11 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.SimpleScalingPolicyConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

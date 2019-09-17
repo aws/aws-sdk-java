@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class ModifySpotFleetRequestRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifySpotFleetRequestRequest.getExcessCapacityTerminationPolicy() != null) {
+            request.addParameter("ExcessCapacityTerminationPolicy", StringUtils.fromString(modifySpotFleetRequestRequest.getExcessCapacityTerminationPolicy()));
+        }
+
         if (modifySpotFleetRequestRequest.getSpotFleetRequestId() != null) {
             request.addParameter("SpotFleetRequestId", StringUtils.fromString(modifySpotFleetRequestRequest.getSpotFleetRequestId()));
         }
@@ -48,8 +52,8 @@ public class ModifySpotFleetRequestRequestMarshaller implements Marshaller<Reque
             request.addParameter("TargetCapacity", StringUtils.fromInteger(modifySpotFleetRequestRequest.getTargetCapacity()));
         }
 
-        if (modifySpotFleetRequestRequest.getExcessCapacityTerminationPolicy() != null) {
-            request.addParameter("ExcessCapacityTerminationPolicy", StringUtils.fromString(modifySpotFleetRequestRequest.getExcessCapacityTerminationPolicy()));
+        if (modifySpotFleetRequestRequest.getOnDemandTargetCapacity() != null) {
+            request.addParameter("OnDemandTargetCapacity", StringUtils.fromInteger(modifySpotFleetRequestRequest.getOnDemandTargetCapacity()));
         }
 
         return request;

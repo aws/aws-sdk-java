@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,6 +73,9 @@ public enum EC2Actions implements Action {
 
   /** Action for the ConfirmProductInstance operation. */
   ConfirmProductInstance("ec2:ConfirmProductInstance"),
+
+  /** Action for the CopyImage operation. */
+  CopyImage("ec2:CopyImage"),
 
   /** Action for the CopySnapshot operation. */
   CopySnapshot("ec2:CopySnapshot"),

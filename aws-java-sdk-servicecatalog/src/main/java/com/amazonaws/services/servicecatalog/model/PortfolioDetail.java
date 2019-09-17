@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,21 +14,23 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed portfolio information.
+ * Information about a portfolio.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/PortfolioDetail" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PortfolioDetail implements Serializable, Cloneable {
+public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      */
     private String id;
@@ -46,13 +48,13 @@ public class PortfolioDetail implements Serializable, Cloneable {
     private String displayName;
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
@@ -65,11 +67,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier for the portfolio.
+     *        The portfolio identifier.
      */
 
     public void setId(String id) {
@@ -78,10 +80,10 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
-     * @return The identifier for the portfolio.
+     * @return The portfolio identifier.
      */
 
     public String getId() {
@@ -90,11 +92,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier for the portfolio.
+     *        The portfolio identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +187,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The text description of the portfolio.
+     *        The description of the portfolio.
      */
 
     public void setDescription(String description) {
@@ -198,10 +200,10 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
-     * @return The text description of the portfolio.
+     * @return The description of the portfolio.
      */
 
     public String getDescription() {
@@ -210,11 +212,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The text description of the portfolio.
+     *        The description of the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +227,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -238,10 +240,10 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -250,11 +252,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,7 +306,8 @@ public class PortfolioDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -388,5 +391,11 @@ public class PortfolioDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.PortfolioDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

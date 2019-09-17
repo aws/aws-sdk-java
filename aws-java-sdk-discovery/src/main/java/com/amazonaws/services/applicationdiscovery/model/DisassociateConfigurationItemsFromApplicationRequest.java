@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,24 +22,24 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of an application from which each item will be disassociated.
+     * Configuration ID of an application from which each item is disassociated.
      * </p>
      */
     private String applicationConfigurationId;
     /**
      * <p>
-     * Configuration ID of each item be be disassociated from an application.
+     * Configuration ID of each item to be disassociated from an application.
      * </p>
      */
     private java.util.List<String> configurationIds;
 
     /**
      * <p>
-     * Configuration ID of an application from which each item will be disassociated.
+     * Configuration ID of an application from which each item is disassociated.
      * </p>
      * 
      * @param applicationConfigurationId
-     *        Configuration ID of an application from which each item will be disassociated.
+     *        Configuration ID of an application from which each item is disassociated.
      */
 
     public void setApplicationConfigurationId(String applicationConfigurationId) {
@@ -48,10 +48,10 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of an application from which each item will be disassociated.
+     * Configuration ID of an application from which each item is disassociated.
      * </p>
      * 
-     * @return Configuration ID of an application from which each item will be disassociated.
+     * @return Configuration ID of an application from which each item is disassociated.
      */
 
     public String getApplicationConfigurationId() {
@@ -60,11 +60,11 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of an application from which each item will be disassociated.
+     * Configuration ID of an application from which each item is disassociated.
      * </p>
      * 
      * @param applicationConfigurationId
-     *        Configuration ID of an application from which each item will be disassociated.
+     *        Configuration ID of an application from which each item is disassociated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +75,10 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of each item be be disassociated from an application.
+     * Configuration ID of each item to be disassociated from an application.
      * </p>
      * 
-     * @return Configuration ID of each item be be disassociated from an application.
+     * @return Configuration ID of each item to be disassociated from an application.
      */
 
     public java.util.List<String> getConfigurationIds() {
@@ -87,11 +87,11 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of each item be be disassociated from an application.
+     * Configuration ID of each item to be disassociated from an application.
      * </p>
      * 
      * @param configurationIds
-     *        Configuration ID of each item be be disassociated from an application.
+     *        Configuration ID of each item to be disassociated from an application.
      */
 
     public void setConfigurationIds(java.util.Collection<String> configurationIds) {
@@ -105,7 +105,7 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of each item be be disassociated from an application.
+     * Configuration ID of each item to be disassociated from an application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -114,7 +114,7 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
      * </p>
      * 
      * @param configurationIds
-     *        Configuration ID of each item be be disassociated from an application.
+     *        Configuration ID of each item to be disassociated from an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
 
     /**
      * <p>
-     * Configuration ID of each item be be disassociated from an application.
+     * Configuration ID of each item to be disassociated from an application.
      * </p>
      * 
      * @param configurationIds
-     *        Configuration ID of each item be be disassociated from an application.
+     *        Configuration ID of each item to be disassociated from an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +144,8 @@ public class DisassociateConfigurationItemsFromApplicationRequest extends com.am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

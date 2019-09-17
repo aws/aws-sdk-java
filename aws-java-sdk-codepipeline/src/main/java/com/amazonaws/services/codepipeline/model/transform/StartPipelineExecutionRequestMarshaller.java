@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,50 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.util.IdempotentUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartPipelineExecutionRequest Marshaller
+ * StartPipelineExecutionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartPipelineExecutionRequestMarshaller implements Marshaller<Request<StartPipelineExecutionRequest>, StartPipelineExecutionRequest> {
+@SdkInternalApi
+public class StartPipelineExecutionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
-    public StartPipelineExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartPipelineExecutionRequestMarshaller instance = new StartPipelineExecutionRequestMarshaller();
+
+    public static StartPipelineExecutionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartPipelineExecutionRequest> marshall(StartPipelineExecutionRequest startPipelineExecutionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartPipelineExecutionRequest startPipelineExecutionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startPipelineExecutionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartPipelineExecutionRequest> request = new DefaultRequest<StartPipelineExecutionRequest>(startPipelineExecutionRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.StartPipelineExecution");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startPipelineExecutionRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(startPipelineExecutionRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startPipelineExecutionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startPipelineExecutionRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

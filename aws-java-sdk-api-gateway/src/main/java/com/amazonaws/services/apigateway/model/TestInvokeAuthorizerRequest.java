@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      */
     private String authorizerId;
@@ -44,6 +44,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Map<String, String> headers;
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> multiValueHeaders;
     /**
      * <p>
      * [Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path
@@ -72,11 +79,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -85,10 +92,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -97,11 +104,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a test invoke authorizer request's <a>RestApi</a> identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +119,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -125,10 +132,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
-     * @return Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * @return [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      */
 
     public String getAuthorizerId() {
@@ -137,11 +144,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,6 +221,73 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     public TestInvokeAuthorizerRequest clearHeadersEntries() {
         this.headers = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @return [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *         This is where the incoming authorization token, or identity source, may be specified.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getMultiValueHeaders() {
+        return multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *        This is where the incoming authorization token, or identity source, may be specified.
+     */
+
+    public void setMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        this.multiValueHeaders = multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * [Optional] The headers as a map from string to list of values to simulate an incoming invocation request. This is
+     * where the incoming authorization token, or identity source, may be specified.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        [Optional] The headers as a map from string to list of values to simulate an incoming invocation request.
+     *        This is where the incoming authorization token, or identity source, may be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeAuthorizerRequest withMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        setMultiValueHeaders(multiValueHeaders);
+        return this;
+    }
+
+    public TestInvokeAuthorizerRequest addMultiValueHeadersEntry(String key, java.util.List<String> value) {
+        if (null == this.multiValueHeaders) {
+            this.multiValueHeaders = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.multiValueHeaders.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.multiValueHeaders.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MultiValueHeaders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeAuthorizerRequest clearMultiValueHeadersEntries() {
+        this.multiValueHeaders = null;
         return this;
     }
 
@@ -426,7 +500,8 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -442,6 +517,8 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getHeaders() != null)
             sb.append("Headers: ").append(getHeaders()).append(",");
+        if (getMultiValueHeaders() != null)
+            sb.append("MultiValueHeaders: ").append(getMultiValueHeaders()).append(",");
         if (getPathWithQueryString() != null)
             sb.append("PathWithQueryString: ").append(getPathWithQueryString()).append(",");
         if (getBody() != null)
@@ -476,6 +553,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
             return false;
+        if (other.getMultiValueHeaders() == null ^ this.getMultiValueHeaders() == null)
+            return false;
+        if (other.getMultiValueHeaders() != null && other.getMultiValueHeaders().equals(this.getMultiValueHeaders()) == false)
+            return false;
         if (other.getPathWithQueryString() == null ^ this.getPathWithQueryString() == null)
             return false;
         if (other.getPathWithQueryString() != null && other.getPathWithQueryString().equals(this.getPathWithQueryString()) == false)
@@ -503,6 +584,7 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
         hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
+        hashCode = prime * hashCode + ((getMultiValueHeaders() == null) ? 0 : getMultiValueHeaders().hashCode());
         hashCode = prime * hashCode + ((getPathWithQueryString() == null) ? 0 : getPathWithQueryString().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getStageVariables() == null) ? 0 : getStageVariables().hashCode());

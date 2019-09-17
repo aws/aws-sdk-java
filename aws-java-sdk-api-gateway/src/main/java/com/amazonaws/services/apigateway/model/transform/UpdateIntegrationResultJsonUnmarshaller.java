@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,14 @@ public class UpdateIntegrationResultJsonUnmarshaller implements Unmarshaller<Upd
                     context.nextToken();
                     updateIntegrationResult.setUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectionType", targetDepth)) {
+                    context.nextToken();
+                    updateIntegrationResult.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectionId", targetDepth)) {
+                    context.nextToken();
+                    updateIntegrationResult.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("credentials", targetDepth)) {
                     context.nextToken();
                     updateIntegrationResult.setCredentials(context.getUnmarshaller(String.class).unmarshall(context));
@@ -81,6 +89,10 @@ public class UpdateIntegrationResultJsonUnmarshaller implements Unmarshaller<Upd
                 if (context.testExpression("contentHandling", targetDepth)) {
                     context.nextToken();
                     updateIntegrationResult.setContentHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timeoutInMillis", targetDepth)) {
+                    context.nextToken();
+                    updateIntegrationResult.setTimeoutInMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();

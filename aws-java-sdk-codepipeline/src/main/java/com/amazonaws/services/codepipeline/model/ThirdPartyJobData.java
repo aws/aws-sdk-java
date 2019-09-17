@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,12 +26,30 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThirdPartyJobData implements Serializable, Cloneable {
+public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId actionTypeId;
-
+    /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     */
     private ActionConfiguration actionConfiguration;
-
+    /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
+     */
     private PipelineContext pipelineContext;
     /**
      * <p>
@@ -46,7 +66,13 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<Artifact> outputArtifacts;
-
+    /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     */
     private AWSSessionCredentials artifactCredentials;
     /**
      * <p>
@@ -64,7 +90,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     private EncryptionKey encryptionKey;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      */
 
     public void setActionTypeId(ActionTypeId actionTypeId) {
@@ -72,7 +103,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getActionTypeId() {
@@ -80,7 +115,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +130,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      */
 
     public void setActionConfiguration(ActionConfiguration actionConfiguration) {
@@ -98,7 +143,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
+     * @return Represents information about an action configuration.
      */
 
     public ActionConfiguration getActionConfiguration() {
@@ -106,7 +155,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +170,20 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *        </p>
      */
 
     public void setPipelineContext(PipelineContext pipelineContext) {
@@ -124,7 +191,19 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
+     * 
+     * @return Represents information about a pipeline to a job worker.</p> <note>
+     *         <p>
+     *         Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *         </p>
      */
 
     public PipelineContext getPipelineContext() {
@@ -132,7 +211,20 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * <note>
+     * <p>
+     * Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     * </p>
+     * </note>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.</p> <note>
+     *        <p>
+     *        Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,7 +402,16 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -318,7 +419,15 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
+     * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *         bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -326,7 +435,16 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +546,8 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -449,7 +568,7 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
         if (getOutputArtifacts() != null)
             sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
         if (getArtifactCredentials() != null)
-            sb.append("ArtifactCredentials: ").append(getArtifactCredentials()).append(",");
+            sb.append("ArtifactCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getContinuationToken() != null)
             sb.append("ContinuationToken: ").append(getContinuationToken()).append(",");
         if (getEncryptionKey() != null)
@@ -526,5 +645,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.ThirdPartyJobDataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

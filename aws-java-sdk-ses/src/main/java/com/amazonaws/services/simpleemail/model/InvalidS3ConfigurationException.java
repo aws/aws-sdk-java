@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not
  * publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
  * Guide</a>.
  * </p>
  */
@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 public class InvalidS3ConfigurationException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     */
     private String bucket;
 
     /**
@@ -39,7 +44,12 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
      * @param bucket
+     *        Indicated that the S3 Bucket was not found.
      */
 
     public void setBucket(String bucket) {
@@ -47,7 +57,11 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
-     * @return
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
+     * @return Indicated that the S3 Bucket was not found.
      */
 
     public String getBucket() {
@@ -55,7 +69,12 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
      * @param bucket
+     *        Indicated that the S3 Bucket was not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

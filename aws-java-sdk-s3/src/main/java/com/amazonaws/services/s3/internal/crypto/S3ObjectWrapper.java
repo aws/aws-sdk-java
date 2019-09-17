@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,16 +93,6 @@ class S3ObjectWrapper implements Closeable {
 
     @Override public String toString() {
         return s3obj.toString();
-    }
-
-    /**
-     * Returns true if this S3 object is an instruction file; false otherwise.
-     */
-    final boolean isInstructionFile() {
-        ObjectMetadata metadata = s3obj.getObjectMetadata();
-        Map<String, String> userMeta = metadata.getUserMetadata();
-        return userMeta != null
-            && userMeta.containsKey(Headers.CRYPTO_INSTRUCTION_FILE);
     }
 
     /**

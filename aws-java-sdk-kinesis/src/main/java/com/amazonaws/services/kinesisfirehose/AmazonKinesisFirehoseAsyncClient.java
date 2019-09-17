@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Kinesis Firehose API Reference</fullname>
+ * <fullname>Amazon Kinesis Data Firehose API Reference</fullname>
  * <p>
- * Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming data to destinations such as
- * Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.
+ * Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such
+ * as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), Amazon Redshift, and Splunk.
  * </p>
  */
 @ThreadSafe
@@ -222,6 +222,10 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
         this.executorService = executorService;
     }
 
+    public static AmazonKinesisFirehoseAsyncClientBuilder asyncBuilder() {
+        return AmazonKinesisFirehoseAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Firehose using the specified parameters.
      *
@@ -251,14 +255,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<CreateDeliveryStreamResult> createDeliveryStreamAsync(final CreateDeliveryStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDeliveryStreamRequest, CreateDeliveryStreamResult> asyncHandler) {
+        final CreateDeliveryStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDeliveryStreamResult>() {
             @Override
             public CreateDeliveryStreamResult call() throws Exception {
-                CreateDeliveryStreamResult result;
+                CreateDeliveryStreamResult result = null;
 
                 try {
-                    result = createDeliveryStream(request);
+                    result = executeCreateDeliveryStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -267,7 +272,7 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -283,14 +288,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<DeleteDeliveryStreamResult> deleteDeliveryStreamAsync(final DeleteDeliveryStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResult> asyncHandler) {
+        final DeleteDeliveryStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDeliveryStreamResult>() {
             @Override
             public DeleteDeliveryStreamResult call() throws Exception {
-                DeleteDeliveryStreamResult result;
+                DeleteDeliveryStreamResult result = null;
 
                 try {
-                    result = deleteDeliveryStream(request);
+                    result = executeDeleteDeliveryStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -299,7 +305,7 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -315,14 +321,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<DescribeDeliveryStreamResult> describeDeliveryStreamAsync(final DescribeDeliveryStreamRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResult> asyncHandler) {
+        final DescribeDeliveryStreamRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDeliveryStreamResult>() {
             @Override
             public DescribeDeliveryStreamResult call() throws Exception {
-                DescribeDeliveryStreamResult result;
+                DescribeDeliveryStreamResult result = null;
 
                 try {
-                    result = describeDeliveryStream(request);
+                    result = executeDescribeDeliveryStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -331,7 +338,7 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -347,14 +354,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(final ListDeliveryStreamsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeliveryStreamsRequest, ListDeliveryStreamsResult> asyncHandler) {
+        final ListDeliveryStreamsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDeliveryStreamsResult>() {
             @Override
             public ListDeliveryStreamsResult call() throws Exception {
-                ListDeliveryStreamsResult result;
+                ListDeliveryStreamsResult result = null;
 
                 try {
-                    result = listDeliveryStreams(request);
+                    result = executeListDeliveryStreams(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +371,40 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request) {
+
+        return listTagsForDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(final ListTagsForDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForDeliveryStreamRequest, ListTagsForDeliveryStreamResult> asyncHandler) {
+        final ListTagsForDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForDeliveryStreamResult>() {
+            @Override
+            public ListTagsForDeliveryStreamResult call() throws Exception {
+                ListTagsForDeliveryStreamResult result = null;
+
+                try {
+                    result = executeListTagsForDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -379,14 +420,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<PutRecordResult> putRecordAsync(final PutRecordRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRecordRequest, PutRecordResult> asyncHandler) {
+        final PutRecordRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRecordResult>() {
             @Override
             public PutRecordResult call() throws Exception {
-                PutRecordResult result;
+                PutRecordResult result = null;
 
                 try {
-                    result = putRecord(request);
+                    result = executePutRecord(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,7 +437,7 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -411,14 +453,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(final PutRecordBatchRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRecordBatchRequest, PutRecordBatchResult> asyncHandler) {
+        final PutRecordBatchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRecordBatchResult>() {
             @Override
             public PutRecordBatchResult call() throws Exception {
-                PutRecordBatchResult result;
+                PutRecordBatchResult result = null;
 
                 try {
-                    result = putRecordBatch(request);
+                    result = executePutRecordBatch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -427,7 +470,140 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(StartDeliveryStreamEncryptionRequest request) {
+
+        return startDeliveryStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(
+            final StartDeliveryStreamEncryptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDeliveryStreamEncryptionRequest, StartDeliveryStreamEncryptionResult> asyncHandler) {
+        final StartDeliveryStreamEncryptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDeliveryStreamEncryptionResult>() {
+            @Override
+            public StartDeliveryStreamEncryptionResult call() throws Exception {
+                StartDeliveryStreamEncryptionResult result = null;
+
+                try {
+                    result = executeStartDeliveryStreamEncryption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(StopDeliveryStreamEncryptionRequest request) {
+
+        return stopDeliveryStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(final StopDeliveryStreamEncryptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopDeliveryStreamEncryptionRequest, StopDeliveryStreamEncryptionResult> asyncHandler) {
+        final StopDeliveryStreamEncryptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopDeliveryStreamEncryptionResult>() {
+            @Override
+            public StopDeliveryStreamEncryptionResult call() throws Exception {
+                StopDeliveryStreamEncryptionResult result = null;
+
+                try {
+                    result = executeStopDeliveryStreamEncryption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(TagDeliveryStreamRequest request) {
+
+        return tagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(final TagDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagDeliveryStreamRequest, TagDeliveryStreamResult> asyncHandler) {
+        final TagDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagDeliveryStreamResult>() {
+            @Override
+            public TagDeliveryStreamResult call() throws Exception {
+                TagDeliveryStreamResult result = null;
+
+                try {
+                    result = executeTagDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(UntagDeliveryStreamRequest request) {
+
+        return untagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(final UntagDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagDeliveryStreamRequest, UntagDeliveryStreamResult> asyncHandler) {
+        final UntagDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagDeliveryStreamResult>() {
+            @Override
+            public UntagDeliveryStreamResult call() throws Exception {
+                UntagDeliveryStreamResult result = null;
+
+                try {
+                    result = executeUntagDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -443,14 +619,15 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     @Override
     public java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(final UpdateDestinationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult> asyncHandler) {
+        final UpdateDestinationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDestinationResult>() {
             @Override
             public UpdateDestinationResult call() throws Exception {
-                UpdateDestinationResult result;
+                UpdateDestinationResult result = null;
 
                 try {
-                    result = updateDestination(request);
+                    result = executeUpdateDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -459,7 +636,7 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

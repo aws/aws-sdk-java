@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     private HostedZone hostedZone;
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      */
     private ChangeInfo changeInfo;
@@ -99,11 +99,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that contains information about the <code>CreateHostedZone</code> request.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -112,10 +112,10 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
-     * @return A complex type that describes the changes made to your hosted zone.
+     * @return A complex type that contains information about the <code>CreateHostedZone</code> request.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -124,11 +124,11 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that describes the changes made to your hosted zone.
+     * A complex type that contains information about the <code>CreateHostedZone</code> request.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that describes the changes made to your hosted zone.
+     *        A complex type that contains information about the <code>CreateHostedZone</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +258,8 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -336,4 +337,5 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

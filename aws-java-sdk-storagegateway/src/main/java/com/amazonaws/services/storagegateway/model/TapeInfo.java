@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TapeInfo implements Serializable, Cloneable {
+public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -53,10 +55,21 @@ public class TapeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      */
     private String gatewayARN;
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     */
+    private String poolId;
 
     /**
      * <p>
@@ -221,12 +234,12 @@ public class TapeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and region.
+     *        gateways for your account and AWS Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -236,11 +249,11 @@ public class TapeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *         gateways for your account and region.
+     *         gateways for your account and AWS Region.
      */
 
     public String getGatewayARN() {
@@ -250,12 +263,12 @@ public class TapeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and region.
+     *        gateways for your account and AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,7 +278,78 @@ public class TapeInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
+     *        tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
+     *        the pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *         the S3 storage class that is associated with the pool. When you use your backup application to eject the
+     *         tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
+     *         the pool.</p>
+     *         <p>
+     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     */
+
+    public String getPoolId() {
+        return this.poolId;
+    }
+
+    /**
+     * <p>
+     * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
+     * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
+     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * </p>
+     * <p>
+     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * </p>
+     * 
+     * @param poolId
+     *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
+     *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
+     *        tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
+     *        the pool.</p>
+     *        <p>
+     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeInfo withPoolId(String poolId) {
+        setPoolId(poolId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -284,7 +368,9 @@ public class TapeInfo implements Serializable, Cloneable {
         if (getTapeStatus() != null)
             sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: ").append(getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
+        if (getPoolId() != null)
+            sb.append("PoolId: ").append(getPoolId());
         sb.append("}");
         return sb.toString();
     }
@@ -319,6 +405,10 @@ public class TapeInfo implements Serializable, Cloneable {
             return false;
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false)
             return false;
+        if (other.getPoolId() == null ^ this.getPoolId() == null)
+            return false;
+        if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
         return true;
     }
 
@@ -332,6 +422,7 @@ public class TapeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
+        hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         return hashCode;
     }
 
@@ -342,5 +433,11 @@ public class TapeInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

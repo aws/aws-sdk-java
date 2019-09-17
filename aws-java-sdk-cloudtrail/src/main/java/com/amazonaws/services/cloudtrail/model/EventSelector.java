@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,13 +14,16 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use event selectors to specify the types of events that you want your trail to log. When an event occurs in your
- * account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event
- * selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't
- * log the event.
+ * Use event selectors to further specify the management and data event settings for your trail. By default, trails
+ * created without specific event selectors will be configured to log all read and write management events, and no data
+ * events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail,
+ * if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event
+ * selector, the trail doesn't log the event.
  * </p>
  * <p>
  * You can configure up to five event selectors for a trail.
@@ -30,7 +33,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EventSelector implements Serializable, Cloneable {
+public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -49,7 +52,7 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -59,13 +62,16 @@ public class EventSelector implements Serializable, Cloneable {
     private Boolean includeManagementEvents;
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
+     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
+     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     * >Data Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DataResource> dataResources;
@@ -160,7 +166,7 @@ public class EventSelector implements Serializable, Cloneable {
      */
 
     public void setReadWriteType(ReadWriteType readWriteType) {
-        this.readWriteType = readWriteType.toString();
+        withReadWriteType(readWriteType);
     }
 
     /**
@@ -184,7 +190,7 @@ public class EventSelector implements Serializable, Cloneable {
      */
 
     public EventSelector withReadWriteType(ReadWriteType readWriteType) {
-        setReadWriteType(readWriteType);
+        this.readWriteType = readWriteType.toString();
         return this;
     }
 
@@ -194,7 +200,7 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -205,7 +211,7 @@ public class EventSelector implements Serializable, Cloneable {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *        >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -222,7 +228,7 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -232,7 +238,7 @@ public class EventSelector implements Serializable, Cloneable {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *         >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -249,7 +255,7 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -260,7 +266,7 @@ public class EventSelector implements Serializable, Cloneable {
      *        Specify if you want your event selector to include management events for your trail.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *        >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *        </p>
      *        <p>
@@ -279,7 +285,7 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      * >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
@@ -289,7 +295,7 @@ public class EventSelector implements Serializable, Cloneable {
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events"
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events"
      *         >Management Events</a> in the <i>AWS CloudTrail User Guide</i>.
      *         </p>
      *         <p>
@@ -302,21 +308,28 @@ public class EventSelector implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
+     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
+     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     * >Data Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
-     * @return CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *         object prefixes for an event selector.</p>
+     * @return CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
+     *         to 250 resources for an individual event selector, but the total number of data resources cannot exceed
+     *         250 across all event selectors in a trail. This limit does not apply if you configure resource logging
+     *         for all data events. </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     *         >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     *         >Data Events</a> and <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
+     *         AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      */
 
     public java.util.List<DataResource> getDataResources() {
@@ -328,22 +341,29 @@ public class EventSelector implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
+     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
+     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     * >Data Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
+     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
+     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
+     *        all data events. </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     *        >Data Events</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
+     *        AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      */
 
     public void setDataResources(java.util.Collection<DataResource> dataResources) {
@@ -357,13 +377,16 @@ public class EventSelector implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
+     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
+     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     * >Data Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,12 +395,16 @@ public class EventSelector implements Serializable, Cloneable {
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
+     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
+     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
+     *        all data events. </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     *        >Data Events</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
+     *        AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,22 +420,29 @@ public class EventSelector implements Serializable, Cloneable {
 
     /**
      * <p>
-     * CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and object
-     * prefixes for an event selector.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
+     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
+     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     * >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     * >Data Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports logging only data events for S3 objects. You can specify up to 50 S3 buckets and
-     *        object prefixes for an event selector.</p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
+     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
+     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
+     *        all data events. </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources"
-     *        >Data Events</a> in the <i>AWS CloudTrail User Guide</i>.
+     *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
+     *        >Data Events</a> and <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in
+     *        AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,7 +452,8 @@ public class EventSelector implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -481,5 +516,11 @@ public class EventSelector implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudtrail.model.transform.EventSelectorMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

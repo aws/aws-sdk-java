@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -111,6 +111,22 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                 if (context.testExpression("KMSKeyArn", targetDepth)) {
                     context.nextToken();
                     publishVersionResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TracingConfig", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setTracingConfig(TracingConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MasterArn", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setMasterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RevisionId", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Layers", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setLayers(new ListUnmarshaller<Layer>(LayerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

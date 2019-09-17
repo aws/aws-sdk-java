@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,9 +23,14 @@ public enum MetricName {
     ActivatingGameSessions("ActivatingGameSessions"),
     ActiveGameSessions("ActiveGameSessions"),
     ActiveInstances("ActiveInstances"),
+    AvailableGameSessions("AvailableGameSessions"),
     AvailablePlayerSessions("AvailablePlayerSessions"),
     CurrentPlayerSessions("CurrentPlayerSessions"),
-    IdleInstances("IdleInstances");
+    IdleInstances("IdleInstances"),
+    PercentAvailableGameSessions("PercentAvailableGameSessions"),
+    PercentIdleInstances("PercentIdleInstances"),
+    QueueDepth("QueueDepth"),
+    WaitTime("WaitTime");
 
     private String value;
 
@@ -44,6 +49,9 @@ public enum MetricName {
      * @param value
      *        real value
      * @return MetricName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MetricName fromValue(String value) {
         if (value == null || "".equals(value)) {

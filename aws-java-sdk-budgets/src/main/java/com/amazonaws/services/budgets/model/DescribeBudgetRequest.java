@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,17 +18,33 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of DescribeBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want a description of.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget that you want a description of.
+     * </p>
+     */
     private String budgetName;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want a description of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want a description of.
      */
 
     public void setAccountId(String accountId) {
@@ -36,7 +52,11 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want a description of.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget that you want a description of.
      */
 
     public String getAccountId() {
@@ -44,7 +64,12 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want a description of.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want a description of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +79,12 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the budget that you want a description of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want a description of.
      */
 
     public void setBudgetName(String budgetName) {
@@ -62,7 +92,11 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget that you want a description of.
+     * </p>
+     * 
+     * @return The name of the budget that you want a description of.
      */
 
     public String getBudgetName() {
@@ -70,7 +104,12 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the budget that you want a description of.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want a description of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +119,8 @@ public class DescribeBudgetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

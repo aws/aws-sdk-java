@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,10 @@ public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Requ
             request.addParameter("ExtendedStatistic", StringUtils.fromString(describeAlarmsForMetricRequest.getExtendedStatistic()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) describeAlarmsForMetricRequest
-                .getDimensions();
-        if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+        if (!describeAlarmsForMetricRequest.getDimensions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Dimension>) describeAlarmsForMetricRequest.getDimensions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Dimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<Dimension>) describeAlarmsForMetricRequest
+                    .getDimensions();
             int dimensionsListIndex = 1;
 
             for (Dimension dimensionsListValue : dimensionsList) {

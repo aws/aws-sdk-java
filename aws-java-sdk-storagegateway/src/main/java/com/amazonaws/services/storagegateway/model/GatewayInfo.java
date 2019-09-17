@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GatewayInfo implements Serializable, Cloneable {
+public class GatewayInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,7 +38,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      */
     private String gatewayARN;
@@ -61,6 +63,18 @@ public class GatewayInfo implements Serializable, Cloneable {
      * </p>
      */
     private String gatewayName;
+    /**
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     */
+    private String ec2InstanceId;
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     */
+    private String ec2InstanceRegion;
 
     /**
      * <p>
@@ -111,12 +125,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and region.
+     *        gateways for your account and AWS Region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -126,11 +140,11 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *         gateways for your account and region.
+     *         gateways for your account and AWS Region.
      */
 
     public String getGatewayARN() {
@@ -140,12 +154,12 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways
-     * for your account and region.
+     * for your account and AWS Region.
      * </p>
      * 
      * @param gatewayARN
      *        The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of
-     *        gateways for your account and region.
+     *        gateways for your account and AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,7 +304,88 @@ public class GatewayInfo implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     * 
+     * @param ec2InstanceId
+     *        The ID of the Amazon EC2 instance that was used to launch the gateway.
+     */
+
+    public void setEc2InstanceId(String ec2InstanceId) {
+        this.ec2InstanceId = ec2InstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     * 
+     * @return The ID of the Amazon EC2 instance that was used to launch the gateway.
+     */
+
+    public String getEc2InstanceId() {
+        return this.ec2InstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * </p>
+     * 
+     * @param ec2InstanceId
+     *        The ID of the Amazon EC2 instance that was used to launch the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewayInfo withEc2InstanceId(String ec2InstanceId) {
+        setEc2InstanceId(ec2InstanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @param ec2InstanceRegion
+     *        The AWS Region where the Amazon EC2 instance is located.
+     */
+
+    public void setEc2InstanceRegion(String ec2InstanceRegion) {
+        this.ec2InstanceRegion = ec2InstanceRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @return The AWS Region where the Amazon EC2 instance is located.
+     */
+
+    public String getEc2InstanceRegion() {
+        return this.ec2InstanceRegion;
+    }
+
+    /**
+     * <p>
+     * The AWS Region where the Amazon EC2 instance is located.
+     * </p>
+     * 
+     * @param ec2InstanceRegion
+     *        The AWS Region where the Amazon EC2 instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewayInfo withEc2InstanceRegion(String ec2InstanceRegion) {
+        setEc2InstanceRegion(ec2InstanceRegion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -309,7 +404,11 @@ public class GatewayInfo implements Serializable, Cloneable {
         if (getGatewayOperationalState() != null)
             sb.append("GatewayOperationalState: ").append(getGatewayOperationalState()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: ").append(getGatewayName());
+            sb.append("GatewayName: ").append(getGatewayName()).append(",");
+        if (getEc2InstanceId() != null)
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
+        if (getEc2InstanceRegion() != null)
+            sb.append("Ec2InstanceRegion: ").append(getEc2InstanceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +443,14 @@ public class GatewayInfo implements Serializable, Cloneable {
             return false;
         if (other.getGatewayName() != null && other.getGatewayName().equals(this.getGatewayName()) == false)
             return false;
+        if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
+            return false;
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+            return false;
+        if (other.getEc2InstanceRegion() == null ^ this.getEc2InstanceRegion() == null)
+            return false;
+        if (other.getEc2InstanceRegion() != null && other.getEc2InstanceRegion().equals(this.getEc2InstanceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +464,8 @@ public class GatewayInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
         hashCode = prime * hashCode + ((getGatewayOperationalState() == null) ? 0 : getGatewayOperationalState().hashCode());
         hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getEc2InstanceRegion() == null) ? 0 : getEc2InstanceRegion().hashCode());
         return hashCode;
     }
 
@@ -367,5 +476,11 @@ public class GatewayInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.GatewayInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

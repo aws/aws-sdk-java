@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public CreateBackupResult createBackup(CreateBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGlobalTableResult createGlobalTable(CreateGlobalTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTableResult createTable(CreateTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +83,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
             java.util.List<KeySchemaElement> keySchema, ProvisionedThroughput provisionedThroughput) {
         return createTable(new CreateTableRequest().withAttributeDefinitions(attributeDefinitions).withTableName(tableName).withKeySchema(keySchema)
                 .withProvisionedThroughput(provisionedThroughput));
+    }
+
+    @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -101,6 +116,31 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeBackupResult describeBackup(DescribeBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeContinuousBackupsResult describeContinuousBackups(DescribeContinuousBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGlobalTableSettingsResult describeGlobalTableSettings(DescribeGlobalTableSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -116,6 +156,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetItemResult getItem(GetItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,6 +173,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public GetItemResult getItem(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead) {
         return getItem(new GetItemRequest().withTableName(tableName).withKey(key).withConsistentRead(consistentRead));
+    }
+
+    @Override
+    public ListBackupsResult listBackups(ListBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGlobalTablesResult listGlobalTables(ListGlobalTablesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -181,6 +236,16 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public RestoreTableFromBackupResult restoreTableFromBackup(RestoreTableFromBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreTableToPointInTimeResult restoreTableToPointInTime(RestoreTableToPointInTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ScanResult scan(ScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -206,7 +271,32 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public TransactGetItemsResult transactGetItems(TransactGetItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransactWriteItemsResult transactWriteItems(TransactWriteItemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContinuousBackupsResult updateContinuousBackups(UpdateContinuousBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGlobalTableResult updateGlobalTable(UpdateGlobalTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGlobalTableSettingsResult updateGlobalTableSettings(UpdateGlobalTableSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,6 +324,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput));
+    }
+
+    @Override
+    public UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

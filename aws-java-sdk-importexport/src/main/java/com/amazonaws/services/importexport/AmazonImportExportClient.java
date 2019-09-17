@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.importexport.AmazonImportExportClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -56,6 +59,7 @@ import com.amazonaws.services.importexport.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonImportExportClient extends AmazonWebServiceClient implements AmazonImportExport {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -66,6 +70,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -156,6 +162,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     public AmazonImportExportClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -221,7 +228,12 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AmazonImportExportClientBuilder builder() {
+        return AmazonImportExportClientBuilder.standard();
     }
 
     /**
@@ -235,8 +247,23 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      *        Object providing client parameters.
      */
     AmazonImportExportClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Import/Export using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonImportExportClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -296,7 +323,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.CancelJob
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -310,6 +343,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new CancelJobRequestMarshaller().marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -374,7 +412,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.CreateJob
      */
     @Override
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -388,6 +432,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new CreateJobRequestMarshaller().marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -427,7 +476,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.GetShippingLabel
      */
     @Override
-    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
+    public GetShippingLabelResult getShippingLabel(GetShippingLabelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetShippingLabel(request);
+    }
+
+    @SdkInternalApi
+    final GetShippingLabelResult executeGetShippingLabel(GetShippingLabelRequest getShippingLabelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getShippingLabelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -441,6 +496,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new GetShippingLabelRequestMarshaller().marshall(super.beforeMarshalling(getShippingLabelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShippingLabel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -479,7 +539,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.GetStatus
      */
     @Override
-    public GetStatusResult getStatus(GetStatusRequest getStatusRequest) {
+    public GetStatusResult getStatus(GetStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetStatusResult executeGetStatus(GetStatusRequest getStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -493,6 +559,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new GetStatusRequestMarshaller().marshall(super.beforeMarshalling(getStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -526,7 +597,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.ListJobs
      */
     @Override
-    public ListJobsResult listJobs(ListJobsRequest listJobsRequest) {
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -540,6 +617,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new ListJobsRequestMarshaller().marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -612,7 +694,13 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * @sample AmazonImportExport.UpdateJob
      */
     @Override
-    public UpdateJobResult updateJob(UpdateJobRequest updateJobRequest) {
+    public UpdateJobResult updateJob(UpdateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateJobResult executeUpdateJob(UpdateJobRequest updateJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -626,6 +714,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new UpdateJobRequestMarshaller().marshall(super.beforeMarshalling(updateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -665,9 +758,18 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -677,7 +779,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -685,8 +787,17 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

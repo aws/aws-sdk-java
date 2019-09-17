@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ArchitectureValues {
 
     I386("i386"),
-    X86_64("x86_64");
+    X86_64("x86_64"),
+    Arm64("arm64");
 
     private String value;
 
@@ -40,6 +41,9 @@ public enum ArchitectureValues {
      * @param value
      *        real value
      * @return ArchitectureValues corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ArchitectureValues fromValue(String value) {
         if (value == null || "".equals(value)) {

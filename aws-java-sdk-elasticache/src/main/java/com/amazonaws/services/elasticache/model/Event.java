@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Represents a single occurrence of something interesting within the system. Some examples of events are creating a
- * cache cluster, adding or removing a cache node, or rebooting a node.
+ * cluster, adding or removing a cache node, or rebooting a node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Event" target="_top">AWS API
@@ -29,14 +29,14 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the
-     * identifier would be the name of the cache cluster.
+     * The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     * identifier would be the name of the cluster.
      * </p>
      */
     private String sourceIdentifier;
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      */
     private String sourceType;
@@ -51,17 +51,17 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
 
     /**
      * <p>
-     * The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the
-     * identifier would be the name of the cache cluster.
+     * The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     * identifier would be the name of the cluster.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier for the source of the event. For example, if the event occurred at the cache cluster level,
-     *        the identifier would be the name of the cache cluster.
+     *        The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     *        identifier would be the name of the cluster.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -70,12 +70,12 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the
-     * identifier would be the name of the cache cluster.
+     * The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     * identifier would be the name of the cluster.
      * </p>
      * 
-     * @return The identifier for the source of the event. For example, if the event occurred at the cache cluster
-     *         level, the identifier would be the name of the cache cluster.
+     * @return The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     *         identifier would be the name of the cluster.
      */
 
     public String getSourceIdentifier() {
@@ -84,13 +84,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source of the event. For example, if the event occurred at the cache cluster level, the
-     * identifier would be the name of the cache cluster.
+     * The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     * identifier would be the name of the cluster.
      * </p>
      * 
      * @param sourceIdentifier
-     *        The identifier for the source of the event. For example, if the event occurred at the cache cluster level,
-     *        the identifier would be the name of the cache cluster.
+     *        The identifier for the source of the event. For example, if the event occurred at the cluster level, the
+     *        identifier would be the name of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      * 
      * @param sourceType
-     *        Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     *        Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * @see SourceType
      */
 
@@ -115,10 +115,10 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      * 
-     * @return Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * @return Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * @see SourceType
      */
 
@@ -128,11 +128,11 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      * 
      * @param sourceType
-     *        Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     *        Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
@@ -144,31 +144,31 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      * 
      * @param sourceType
-     *        Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     *        Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * @see SourceType
      */
 
     public void setSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        withSourceType(sourceType);
     }
 
     /**
      * <p>
-     * Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     * Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * </p>
      * 
      * @param sourceType
-     *        Specifies the origin of this event - a cache cluster, a parameter group, a security group, etc.
+     *        Specifies the origin of this event - a cluster, a parameter group, a security group, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceType
      */
 
     public Event withSourceType(SourceType sourceType) {
-        setSourceType(sourceType);
+        this.sourceType = sourceType.toString();
         return this;
     }
 
@@ -217,12 +217,12 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date and time when the event occurred.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -234,7 +234,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -242,18 +242,19 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date and time when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Event withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public Event withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -324,4 +325,5 @@ public class Event implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,77 +12,56 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateThingRequest Marshaller
+ * UpdateThingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateThingRequestMarshaller implements Marshaller<Request<UpdateThingRequest>, UpdateThingRequest> {
+@SdkInternalApi
+public class UpdateThingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeName").build();
+    private static final MarshallingInfo<StructuredPojo> ATTRIBUTEPAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributePayload").build();
+    private static final MarshallingInfo<Long> EXPECTEDVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expectedVersion").build();
+    private static final MarshallingInfo<Boolean> REMOVETHINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeThingType").build();
 
-    public UpdateThingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateThingRequestMarshaller instance = new UpdateThingRequestMarshaller();
+
+    public static UpdateThingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateThingRequest> marshall(UpdateThingRequest updateThingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateThingRequest updateThingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateThingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateThingRequest> request = new DefaultRequest<UpdateThingRequest>(updateThingRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/things/{thingName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", updateThingRequest.getThingName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateThingRequest.getThingTypeName() != null) {
-                jsonGenerator.writeFieldName("thingTypeName").writeValue(updateThingRequest.getThingTypeName());
-            }
-            if (updateThingRequest.getAttributePayload() != null) {
-                jsonGenerator.writeFieldName("attributePayload");
-                AttributePayloadJsonMarshaller.getInstance().marshall(updateThingRequest.getAttributePayload(), jsonGenerator);
-            }
-            if (updateThingRequest.getExpectedVersion() != null) {
-                jsonGenerator.writeFieldName("expectedVersion").writeValue(updateThingRequest.getExpectedVersion());
-            }
-            if (updateThingRequest.getRemoveThingType() != null) {
-                jsonGenerator.writeFieldName("removeThingType").writeValue(updateThingRequest.getRemoveThingType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateThingRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(updateThingRequest.getThingTypeName(), THINGTYPENAME_BINDING);
+            protocolMarshaller.marshall(updateThingRequest.getAttributePayload(), ATTRIBUTEPAYLOAD_BINDING);
+            protocolMarshaller.marshall(updateThingRequest.getExpectedVersion(), EXPECTEDVERSION_BINDING);
+            protocolMarshaller.marshall(updateThingRequest.getRemoveThingType(), REMOVETHINGTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

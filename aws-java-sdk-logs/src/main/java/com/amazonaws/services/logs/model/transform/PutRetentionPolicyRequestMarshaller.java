@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutRetentionPolicyRequest Marshaller
+ * PutRetentionPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutRetentionPolicyRequestMarshaller implements Marshaller<Request<PutRetentionPolicyRequest>, PutRetentionPolicyRequest> {
+@SdkInternalApi
+public class PutRetentionPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<Integer> RETENTIONINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionInDays").build();
 
-    public PutRetentionPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutRetentionPolicyRequestMarshaller instance = new PutRetentionPolicyRequestMarshaller();
+
+    public static PutRetentionPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutRetentionPolicyRequest> marshall(PutRetentionPolicyRequest putRetentionPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutRetentionPolicyRequest putRetentionPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putRetentionPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRetentionPolicyRequest> request = new DefaultRequest<PutRetentionPolicyRequest>(putRetentionPolicyRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.PutRetentionPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putRetentionPolicyRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(putRetentionPolicyRequest.getLogGroupName());
-            }
-            if (putRetentionPolicyRequest.getRetentionInDays() != null) {
-                jsonGenerator.writeFieldName("retentionInDays").writeValue(putRetentionPolicyRequest.getRetentionInDays());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putRetentionPolicyRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(putRetentionPolicyRequest.getRetentionInDays(), RETENTIONINDAYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
  *   <li>Credentials delivered through the Amazon EC2 container service if AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" environment variable is set
  *   and security manager has permission to access the variable,</li>
  *   <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>
+ *   <li>Web Identity Token credentials from the environment or container.</li>
  * </ul>
  *
  * @see EnvironmentVariableCredentialsProvider
@@ -45,6 +46,7 @@ public class DefaultAWSCredentialsProviderChain extends AWSCredentialsProviderCh
         super(new EnvironmentVariableCredentialsProvider(),
               new SystemPropertiesCredentialsProvider(),
               new ProfileCredentialsProvider(),
+              WebIdentityTokenCredentialsProvider.create(),
               new EC2ContainerCredentialsProviderWrapper());
     }
 

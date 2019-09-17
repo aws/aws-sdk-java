@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,125 +12,72 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateTableRequest Marshaller
+ * CreateTableRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTableRequest>, CreateTableRequest> {
+@SdkInternalApi
+public class CreateTableRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ATTRIBUTEDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeDefinitions").build();
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<List> KEYSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeySchema").build();
+    private static final MarshallingInfo<List> LOCALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexes").build();
+    private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalSecondaryIndexes").build();
+    private static final MarshallingInfo<String> BILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingMode").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
+    private static final MarshallingInfo<StructuredPojo> STREAMSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamSpecification").build();
+    private static final MarshallingInfo<StructuredPojo> SSESPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSESpecification").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public CreateTableRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateTableRequestMarshaller instance = new CreateTableRequestMarshaller();
+
+    public static CreateTableRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateTableRequest> marshall(CreateTableRequest createTableRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateTableRequest createTableRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createTableRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateTableRequest> request = new DefaultRequest<CreateTableRequest>(createTableRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.CreateTable");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<AttributeDefinition> attributeDefinitionsList = createTableRequest.getAttributeDefinitions();
-            if (attributeDefinitionsList != null) {
-                jsonGenerator.writeFieldName("AttributeDefinitions");
-                jsonGenerator.writeStartArray();
-                for (AttributeDefinition attributeDefinitionsListValue : attributeDefinitionsList) {
-                    if (attributeDefinitionsListValue != null) {
-
-                        AttributeDefinitionJsonMarshaller.getInstance().marshall(attributeDefinitionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createTableRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(createTableRequest.getTableName());
-            }
-
-            java.util.List<KeySchemaElement> keySchemaList = createTableRequest.getKeySchema();
-            if (keySchemaList != null) {
-                jsonGenerator.writeFieldName("KeySchema");
-                jsonGenerator.writeStartArray();
-                for (KeySchemaElement keySchemaListValue : keySchemaList) {
-                    if (keySchemaListValue != null) {
-
-                        KeySchemaElementJsonMarshaller.getInstance().marshall(keySchemaListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<LocalSecondaryIndex> localSecondaryIndexesList = createTableRequest.getLocalSecondaryIndexes();
-            if (localSecondaryIndexesList != null) {
-                jsonGenerator.writeFieldName("LocalSecondaryIndexes");
-                jsonGenerator.writeStartArray();
-                for (LocalSecondaryIndex localSecondaryIndexesListValue : localSecondaryIndexesList) {
-                    if (localSecondaryIndexesListValue != null) {
-
-                        LocalSecondaryIndexJsonMarshaller.getInstance().marshall(localSecondaryIndexesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<GlobalSecondaryIndex> globalSecondaryIndexesList = createTableRequest.getGlobalSecondaryIndexes();
-            if (globalSecondaryIndexesList != null) {
-                jsonGenerator.writeFieldName("GlobalSecondaryIndexes");
-                jsonGenerator.writeStartArray();
-                for (GlobalSecondaryIndex globalSecondaryIndexesListValue : globalSecondaryIndexesList) {
-                    if (globalSecondaryIndexesListValue != null) {
-
-                        GlobalSecondaryIndexJsonMarshaller.getInstance().marshall(globalSecondaryIndexesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createTableRequest.getProvisionedThroughput() != null) {
-                jsonGenerator.writeFieldName("ProvisionedThroughput");
-                ProvisionedThroughputJsonMarshaller.getInstance().marshall(createTableRequest.getProvisionedThroughput(), jsonGenerator);
-            }
-            if (createTableRequest.getStreamSpecification() != null) {
-                jsonGenerator.writeFieldName("StreamSpecification");
-                StreamSpecificationJsonMarshaller.getInstance().marshall(createTableRequest.getStreamSpecification(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createTableRequest.getAttributeDefinitions(), ATTRIBUTEDEFINITIONS_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getKeySchema(), KEYSCHEMA_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getLocalSecondaryIndexes(), LOCALSECONDARYINDEXES_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getBillingMode(), BILLINGMODE_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getStreamSpecification(), STREAMSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getSSESpecification(), SSESPECIFICATION_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

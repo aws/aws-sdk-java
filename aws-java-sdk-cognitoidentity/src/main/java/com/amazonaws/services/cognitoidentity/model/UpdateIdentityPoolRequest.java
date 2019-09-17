@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.List<String> openIdConnectProviderARNs;
     /**
      * <p>
-     * A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * A list representing an Amazon Cognito user pool and its client ID.
      * </p>
      */
     private java.util.List<CognitoIdentityProvider> cognitoIdentityProviders;
@@ -76,6 +76,13 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<String> samlProviderARNs;
+    /**
+     * <p>
+     * The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     * categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     */
+    private java.util.Map<String, String> identityPoolTags;
 
     /**
      * <p>
@@ -382,10 +389,10 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * A list representing an Amazon Cognito user pool and its client ID.
      * </p>
      * 
-     * @return A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * @return A list representing an Amazon Cognito user pool and its client ID.
      */
 
     public java.util.List<CognitoIdentityProvider> getCognitoIdentityProviders() {
@@ -394,11 +401,11 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * A list representing an Amazon Cognito user pool and its client ID.
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing an Amazon Cognito Identity User Pool and its client ID.
+     *        A list representing an Amazon Cognito user pool and its client ID.
      */
 
     public void setCognitoIdentityProviders(java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
@@ -412,7 +419,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * A list representing an Amazon Cognito user pool and its client ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -421,7 +428,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing an Amazon Cognito Identity User Pool and its client ID.
+     *        A list representing an Amazon Cognito user pool and its client ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +444,11 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list representing an Amazon Cognito Identity User Pool and its client ID.
+     * A list representing an Amazon Cognito user pool and its client ID.
      * </p>
      * 
      * @param cognitoIdentityProviders
-     *        A list representing an Amazon Cognito Identity User Pool and its client ID.
+     *        A list representing an Amazon Cognito user pool and its client ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,7 +528,75 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     * categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * 
+     * @return The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     *         categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     */
+
+    public java.util.Map<String, String> getIdentityPoolTags() {
+        return identityPoolTags;
+    }
+
+    /**
+     * <p>
+     * The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     * categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * 
+     * @param identityPoolTags
+     *        The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     */
+
+    public void setIdentityPoolTags(java.util.Map<String, String> identityPoolTags) {
+        this.identityPoolTags = identityPoolTags;
+    }
+
+    /**
+     * <p>
+     * The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     * categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * 
+     * @param identityPoolTags
+     *        The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIdentityPoolRequest withIdentityPoolTags(java.util.Map<String, String> identityPoolTags) {
+        setIdentityPoolTags(identityPoolTags);
+        return this;
+    }
+
+    public UpdateIdentityPoolRequest addIdentityPoolTagsEntry(String key, String value) {
+        if (null == this.identityPoolTags) {
+            this.identityPoolTags = new java.util.HashMap<String, String>();
+        }
+        if (this.identityPoolTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.identityPoolTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IdentityPoolTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIdentityPoolRequest clearIdentityPoolTagsEntries() {
+        this.identityPoolTags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -546,7 +621,9 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCognitoIdentityProviders() != null)
             sb.append("CognitoIdentityProviders: ").append(getCognitoIdentityProviders()).append(",");
         if (getSamlProviderARNs() != null)
-            sb.append("SamlProviderARNs: ").append(getSamlProviderARNs());
+            sb.append("SamlProviderARNs: ").append(getSamlProviderARNs()).append(",");
+        if (getIdentityPoolTags() != null)
+            sb.append("IdentityPoolTags: ").append(getIdentityPoolTags());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +671,10 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSamlProviderARNs() != null && other.getSamlProviderARNs().equals(this.getSamlProviderARNs()) == false)
             return false;
+        if (other.getIdentityPoolTags() == null ^ this.getIdentityPoolTags() == null)
+            return false;
+        if (other.getIdentityPoolTags() != null && other.getIdentityPoolTags().equals(this.getIdentityPoolTags()) == false)
+            return false;
         return true;
     }
 
@@ -610,6 +691,7 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getOpenIdConnectProviderARNs() == null) ? 0 : getOpenIdConnectProviderARNs().hashCode());
         hashCode = prime * hashCode + ((getCognitoIdentityProviders() == null) ? 0 : getCognitoIdentityProviders().hashCode());
         hashCode = prime * hashCode + ((getSamlProviderARNs() == null) ? 0 : getSamlProviderARNs().hashCode());
+        hashCode = prime * hashCode + ((getIdentityPoolTags() == null) ? 0 : getIdentityPoolTags().hashCode());
         return hashCode;
     }
 

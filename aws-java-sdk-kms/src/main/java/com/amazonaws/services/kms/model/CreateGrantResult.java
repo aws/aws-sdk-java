@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -50,7 +50,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -58,7 +58,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        The grant token.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -72,15 +72,15 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The grant token.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
-     *         the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>
+     *         in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public String getGrantToken() {
@@ -93,7 +93,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -101,7 +101,7 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        The grant token.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -167,7 +167,8 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -224,4 +225,5 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

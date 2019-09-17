@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,19 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionSignaled</code> event.
+ * Provides the details of the <code>WorkflowExecutionSignaled</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionSignaledEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionSignaledEventAttributes implements Serializable, Cloneable {
+public class WorkflowExecutionSignaledEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -32,8 +37,8 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     private String signalName;
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      */
     private String input;
@@ -103,13 +108,13 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
      * @param input
-     *        Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *        to process the signal.
+     *        The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *        process the signal.
      */
 
     public void setInput(String input) {
@@ -118,12 +123,12 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
-     * @return Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *         to process the signal.
+     * @return The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *         process the signal.
      */
 
     public String getInput() {
@@ -132,13 +137,13 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
      * @param input
-     *        Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *        to process the signal.
+     *        The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *        process the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +263,8 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -328,5 +334,12 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.WorkflowExecutionSignaledEventAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,17 +76,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -111,17 +131,29 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
      */
     private String testType;
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     */
+    private ScheduleRunTest test;
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     */
+    private ScheduleRunConfiguration configuration;
 
     /**
      * <p>
@@ -239,17 +271,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -274,12 +326,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -318,17 +370,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -353,12 +425,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
@@ -404,17 +476,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -439,12 +531,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -482,17 +574,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         APPIUM_NODE: The Appium Node.js type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         APPIUM_RUBY: The Appium Ruby type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *         </p>
      *         </li>
      *         <li>
@@ -517,12 +629,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The XCode test type.
+     *         XCTEST: The Xcode test type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI: The XCode UI test type.
+     *         XCTEST_UI: The Xcode UI test type.
      *         </p>
      *         </li>
      * @see TestType
@@ -568,17 +680,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -603,12 +735,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -647,17 +779,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -682,12 +834,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -735,17 +887,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -770,12 +942,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -814,17 +986,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -849,19 +1041,19 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @see TestType
      */
 
     public void setTestType(TestType testType) {
-        this.testType = testType.toString();
+        withTestType(testType);
     }
 
     /**
@@ -900,17 +1092,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -935,12 +1147,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * XCTEST: The XCode test type.
+     * XCTEST: The Xcode test type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The XCode UI test type.
+     * XCTEST_UI: The Xcode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -979,17 +1191,37 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -1014,12 +1246,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The XCode test type.
+     *        XCTEST: The Xcode test type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The XCode UI test type.
+     *        XCTEST_UI: The Xcode UI test type.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1027,12 +1259,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      */
 
     public GetDevicePoolCompatibilityRequest withTestType(TestType testType) {
-        setTestType(testType);
+        this.testType = testType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @param test
+     *        Information about the uploaded test to be run against the device pool.
+     */
+
+    public void setTest(ScheduleRunTest test) {
+        this.test = test;
+    }
+
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @return Information about the uploaded test to be run against the device pool.
+     */
+
+    public ScheduleRunTest getTest() {
+        return this.test;
+    }
+
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @param test
+     *        Information about the uploaded test to be run against the device pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDevicePoolCompatibilityRequest withTest(ScheduleRunTest test) {
+        setTest(test);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @param configuration
+     *        An object containing information about the settings for a run.
+     */
+
+    public void setConfiguration(ScheduleRunConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @return An object containing information about the settings for a run.
+     */
+
+    public ScheduleRunConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @param configuration
+     *        An object containing information about the settings for a run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDevicePoolCompatibilityRequest withConfiguration(ScheduleRunConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1047,7 +1360,11 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         if (getAppArn() != null)
             sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getTestType() != null)
-            sb.append("TestType: ").append(getTestType());
+            sb.append("TestType: ").append(getTestType()).append(",");
+        if (getTest() != null)
+            sb.append("Test: ").append(getTest()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1074,6 +1391,14 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTestType() != null && other.getTestType().equals(this.getTestType()) == false)
             return false;
+        if (other.getTest() == null ^ this.getTest() == null)
+            return false;
+        if (other.getTest() != null && other.getTest().equals(this.getTest()) == false)
+            return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1085,6 +1410,8 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getTestType() == null) ? 0 : getTestType().hashCode());
+        hashCode = prime * hashCode + ((getTest() == null) ? 0 : getTest().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

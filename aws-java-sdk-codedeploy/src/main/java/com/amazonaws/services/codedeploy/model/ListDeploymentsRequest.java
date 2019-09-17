@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a list deployments operation.
+ * Represents the input of a ListDeployments operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
@@ -30,14 +30,26 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
+     * <note>
+     * <p>
+     * If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is
+     * not specified, then <code>deploymentGroupName</code> must not be specified.
+     * </p>
+     * </note>
      */
     private String applicationName;
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a deployment group for the specified application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is
+     * not specified, then <code>applicationName</code> must not be specified.
+     * </p>
+     * </note>
      */
     private String deploymentGroupName;
     /**
@@ -94,11 +106,21 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
+     * <note>
+     * <p>
+     * If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is
+     * not specified, then <code>deploymentGroupName</code> must not be specified.
+     * </p>
+     * </note>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+     *        <p>
+     *        If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
+     *        it is not specified, then <code>deploymentGroupName</code> must not be specified.
+     *        </p>
      */
 
     public void setApplicationName(String applicationName) {
@@ -107,10 +129,20 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
+     * <note>
+     * <p>
+     * If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is
+     * not specified, then <code>deploymentGroupName</code> must not be specified.
+     * </p>
+     * </note>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+     *         <p>
+     *         If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
+     *         it is not specified, then <code>deploymentGroupName</code> must not be specified.
+     *         </p>
      */
 
     public String getApplicationName() {
@@ -119,11 +151,21 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
+     * <note>
+     * <p>
+     * If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is
+     * not specified, then <code>deploymentGroupName</code> must not be specified.
+     * </p>
+     * </note>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+     *        <p>
+     *        If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If
+     *        it is not specified, then <code>deploymentGroupName</code> must not be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +176,21 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a deployment group for the specified application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is
+     * not specified, then <code>applicationName</code> must not be specified.
+     * </p>
+     * </note>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified application.
+     *        The name of a deployment group for the specified application.</p> <note>
+     *        <p>
+     *        If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If
+     *        it is not specified, then <code>applicationName</code> must not be specified.
+     *        </p>
      */
 
     public void setDeploymentGroupName(String deploymentGroupName) {
@@ -147,10 +199,20 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a deployment group for the specified application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is
+     * not specified, then <code>applicationName</code> must not be specified.
+     * </p>
+     * </note>
      * 
-     * @return The name of an existing deployment group for the specified application.
+     * @return The name of a deployment group for the specified application.</p> <note>
+     *         <p>
+     *         If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If
+     *         it is not specified, then <code>applicationName</code> must not be specified.
+     *         </p>
      */
 
     public String getDeploymentGroupName() {
@@ -159,11 +221,21 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a deployment group for the specified application.
      * </p>
+     * <note>
+     * <p>
+     * If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is
+     * not specified, then <code>applicationName</code> must not be specified.
+     * </p>
+     * </note>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified application.
+     *        The name of a deployment group for the specified application.</p> <note>
+     *        <p>
+     *        If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If
+     *        it is not specified, then <code>applicationName</code> must not be specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,7 +747,8 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

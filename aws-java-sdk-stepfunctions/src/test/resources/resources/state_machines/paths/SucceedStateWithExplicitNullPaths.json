@@ -1,0 +1,10 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Succeed",
+      "InputPath": null,
+      "OutputPath": null
+    }
+  }
+}

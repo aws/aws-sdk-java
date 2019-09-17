@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,20 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      */
     private String usagePlanId;
     /**
      * <p>
-     * A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
@@ -53,13 +53,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -68,12 +68,12 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
-     * @return The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *         <a>UsagePlanKey</a> resource representing a plan customer.
+     * @return [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *         to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public String getUsagePlanId() {
@@ -82,13 +82,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -112,10 +112,10 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -124,11 +124,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        A query parameter specifying the zero-based index specifying the position of a usage plan key.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -152,10 +152,10 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -164,11 +164,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        A query parameter specifying the maximum number usage plan keys returned by the GET request.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,7 +218,8 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

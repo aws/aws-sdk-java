@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,47 +30,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The schedule recurrence.
-     * </p>
-     */
-    private ScheduledInstanceRecurrenceRequest recurrence;
-    /**
-     * <p>
-     * The time period for the first schedule to start.
-     * </p>
-     */
-    private SlotDateTimeRangeRequest firstSlotStartTimeRange;
-    /**
-     * <p>
-     * The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the
-     * minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is
-     * 100 hours.
-     * </p>
-     */
-    private Integer minSlotDurationInHours;
-    /**
-     * <p>
-     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
-     * less than 1,720.
-     * </p>
-     */
-    private Integer maxSlotDurationInHours;
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
-     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -96,44 +56,289 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
+    /**
+     * <p>
+     * The time period for the first schedule to start.
+     * </p>
+     */
+    private SlotDateTimeRangeRequest firstSlotStartTimeRange;
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
+     * less than 1,720.
+     * </p>
+     */
+    private Integer maxSlotDurationInHours;
+    /**
+     * <p>
+     * The minimum available duration, in hours. The minimum required duration is 1,200 hours per year. For example, the
+     * minimum daily schedule is 4 hours, the minimum weekly schedule is 24 hours, and the minimum monthly schedule is
+     * 100 hours.
+     * </p>
+     */
+    private Integer minSlotDurationInHours;
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     */
+    private String nextToken;
     /**
      * <p>
      * The schedule recurrence.
      * </p>
+     */
+    private ScheduledInstanceRecurrenceRequest recurrence;
+
+    /**
+     * <p>
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param recurrence
-     *        The schedule recurrence.
+     * @return The filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *         </p>
+     *         </li>
      */
 
-    public void setRecurrence(ScheduledInstanceRecurrenceRequest recurrence) {
-        this.recurrence = recurrence;
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
+        }
+        return filters;
     }
 
     /**
      * <p>
-     * The schedule recurrence.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The schedule recurrence.
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
      */
 
-    public ScheduledInstanceRecurrenceRequest getRecurrence() {
-        return this.recurrence;
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
     }
 
     /**
      * <p>
-     * The schedule recurrence.
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param recurrence
-     *        The schedule recurrence.
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstanceAvailabilityRequest withRecurrence(ScheduledInstanceRecurrenceRequest recurrence) {
-        setRecurrence(recurrence);
+    public DescribeScheduledInstanceAvailabilityRequest withFilters(Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScheduledInstanceAvailabilityRequest withFilters(java.util.Collection<Filter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -174,6 +379,101 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     public DescribeScheduledInstanceAvailabilityRequest withFirstSlotStartTimeRange(SlotDateTimeRangeRequest firstSlotStartTimeRange) {
         setFirstSlotStartTimeRange(firstSlotStartTimeRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
+     *        value is 300. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call. This value can be between 5 and 300. The
+     *         default value is 300. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
+     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
+     *        value is 300. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScheduledInstanceAvailabilityRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
+     * less than 1,720.
+     * </p>
+     * 
+     * @param maxSlotDurationInHours
+     *        The maximum available duration, in hours. This value must be greater than
+     *        <code>MinSlotDurationInHours</code> and less than 1,720.
+     */
+
+    public void setMaxSlotDurationInHours(Integer maxSlotDurationInHours) {
+        this.maxSlotDurationInHours = maxSlotDurationInHours;
+    }
+
+    /**
+     * <p>
+     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
+     * less than 1,720.
+     * </p>
+     * 
+     * @return The maximum available duration, in hours. This value must be greater than
+     *         <code>MinSlotDurationInHours</code> and less than 1,720.
+     */
+
+    public Integer getMaxSlotDurationInHours() {
+        return this.maxSlotDurationInHours;
+    }
+
+    /**
+     * <p>
+     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
+     * less than 1,720.
+     * </p>
+     * 
+     * @param maxSlotDurationInHours
+     *        The maximum available duration, in hours. This value must be greater than
+     *        <code>MinSlotDurationInHours</code> and less than 1,720.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScheduledInstanceAvailabilityRequest withMaxSlotDurationInHours(Integer maxSlotDurationInHours) {
+        setMaxSlotDurationInHours(maxSlotDurationInHours);
         return this;
     }
 
@@ -231,52 +531,6 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
-     * less than 1,720.
-     * </p>
-     * 
-     * @param maxSlotDurationInHours
-     *        The maximum available duration, in hours. This value must be greater than
-     *        <code>MinSlotDurationInHours</code> and less than 1,720.
-     */
-
-    public void setMaxSlotDurationInHours(Integer maxSlotDurationInHours) {
-        this.maxSlotDurationInHours = maxSlotDurationInHours;
-    }
-
-    /**
-     * <p>
-     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
-     * less than 1,720.
-     * </p>
-     * 
-     * @return The maximum available duration, in hours. This value must be greater than
-     *         <code>MinSlotDurationInHours</code> and less than 1,720.
-     */
-
-    public Integer getMaxSlotDurationInHours() {
-        return this.maxSlotDurationInHours;
-    }
-
-    /**
-     * <p>
-     * The maximum available duration, in hours. This value must be greater than <code>MinSlotDurationInHours</code> and
-     * less than 1,720.
-     * </p>
-     * 
-     * @param maxSlotDurationInHours
-     *        The maximum available duration, in hours. This value must be greater than
-     *        <code>MinSlotDurationInHours</code> and less than 1,720.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeScheduledInstanceAvailabilityRequest withMaxSlotDurationInHours(Integer maxSlotDurationInHours) {
-        setMaxSlotDurationInHours(maxSlotDurationInHours);
-        return this;
-    }
-
-    /**
-     * <p>
      * The token for the next set of results.
      * </p>
      * 
@@ -317,295 +571,41 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
-     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The schedule recurrence.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
-     *        value is 300. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     * @param recurrence
+     *        The schedule recurrence.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setRecurrence(ScheduledInstanceRecurrenceRequest recurrence) {
+        this.recurrence = recurrence;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
-     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The schedule recurrence.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. This value can be between 5 and 300. The
-     *         default value is 300. To retrieve the remaining results, make another call with the returned
-     *         <code>NextToken</code> value.
+     * @return The schedule recurrence.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public ScheduledInstanceRecurrenceRequest getRecurrence() {
+        return this.recurrence;
     }
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 300. The default value
-     * is 300. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * The schedule recurrence.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. This value can be between 5 and 300. The default
-     *        value is 300. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
+     * @param recurrence
+     *        The schedule recurrence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeScheduledInstanceAvailabilityRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return One or more filters.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *         </p>
-     *         </li>
-     */
-
-    public java.util.List<Filter> getFilters() {
-        if (filters == null) {
-            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
-        }
-        return filters;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
-     */
-
-    public void setFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-            return;
-        }
-
-        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(filters);
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeScheduledInstanceAvailabilityRequest withFilters(Filter... filters) {
-        if (this.filters == null) {
-            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(filters.length));
-        }
-        for (Filter ele : filters) {
-            this.filters.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param filters
-     *        One or more filters.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeScheduledInstanceAvailabilityRequest withFilters(java.util.Collection<Filter> filters) {
-        setFilters(filters);
+    public DescribeScheduledInstanceAvailabilityRequest withRecurrence(ScheduledInstanceRecurrenceRequest recurrence) {
+        setRecurrence(recurrence);
         return this;
     }
 
@@ -621,7 +621,8 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -631,20 +632,20 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRecurrence() != null)
-            sb.append("Recurrence: ").append(getRecurrence()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getFirstSlotStartTimeRange() != null)
             sb.append("FirstSlotStartTimeRange: ").append(getFirstSlotStartTimeRange()).append(",");
-        if (getMinSlotDurationInHours() != null)
-            sb.append("MinSlotDurationInHours: ").append(getMinSlotDurationInHours()).append(",");
-        if (getMaxSlotDurationInHours() != null)
-            sb.append("MaxSlotDurationInHours: ").append(getMaxSlotDurationInHours()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+        if (getMaxSlotDurationInHours() != null)
+            sb.append("MaxSlotDurationInHours: ").append(getMaxSlotDurationInHours()).append(",");
+        if (getMinSlotDurationInHours() != null)
+            sb.append("MinSlotDurationInHours: ").append(getMinSlotDurationInHours()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getRecurrence() != null)
+            sb.append("Recurrence: ").append(getRecurrence());
         sb.append("}");
         return sb.toString();
     }
@@ -659,33 +660,33 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
         if (obj instanceof DescribeScheduledInstanceAvailabilityRequest == false)
             return false;
         DescribeScheduledInstanceAvailabilityRequest other = (DescribeScheduledInstanceAvailabilityRequest) obj;
-        if (other.getRecurrence() == null ^ this.getRecurrence() == null)
+        if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getRecurrence() != null && other.getRecurrence().equals(this.getRecurrence()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getFirstSlotStartTimeRange() == null ^ this.getFirstSlotStartTimeRange() == null)
             return false;
         if (other.getFirstSlotStartTimeRange() != null && other.getFirstSlotStartTimeRange().equals(this.getFirstSlotStartTimeRange()) == false)
             return false;
-        if (other.getMinSlotDurationInHours() == null ^ this.getMinSlotDurationInHours() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getMinSlotDurationInHours() != null && other.getMinSlotDurationInHours().equals(this.getMinSlotDurationInHours()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getMaxSlotDurationInHours() == null ^ this.getMaxSlotDurationInHours() == null)
             return false;
         if (other.getMaxSlotDurationInHours() != null && other.getMaxSlotDurationInHours().equals(this.getMaxSlotDurationInHours()) == false)
             return false;
+        if (other.getMinSlotDurationInHours() == null ^ this.getMinSlotDurationInHours() == null)
+            return false;
+        if (other.getMinSlotDurationInHours() != null && other.getMinSlotDurationInHours().equals(this.getMinSlotDurationInHours()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getRecurrence() == null ^ this.getRecurrence() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getRecurrence() != null && other.getRecurrence().equals(this.getRecurrence()) == false)
             return false;
         return true;
     }
@@ -695,13 +696,13 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRecurrence() == null) ? 0 : getRecurrence().hashCode());
-        hashCode = prime * hashCode + ((getFirstSlotStartTimeRange() == null) ? 0 : getFirstSlotStartTimeRange().hashCode());
-        hashCode = prime * hashCode + ((getMinSlotDurationInHours() == null) ? 0 : getMinSlotDurationInHours().hashCode());
-        hashCode = prime * hashCode + ((getMaxSlotDurationInHours() == null) ? 0 : getMaxSlotDurationInHours().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getFirstSlotStartTimeRange() == null) ? 0 : getFirstSlotStartTimeRange().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getMaxSlotDurationInHours() == null) ? 0 : getMaxSlotDurationInHours().hashCode());
+        hashCode = prime * hashCode + ((getMinSlotDurationInHours() == null) ? 0 : getMinSlotDurationInHours().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getRecurrence() == null) ? 0 : getRecurrence().hashCode());
         return hashCode;
     }
 

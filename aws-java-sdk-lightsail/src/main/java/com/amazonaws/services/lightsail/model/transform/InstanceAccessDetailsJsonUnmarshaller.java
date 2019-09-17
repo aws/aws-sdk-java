@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                 }
                 if (context.testExpression("expiresAt", targetDepth)) {
                     context.nextToken();
-                    instanceAccessDetails.setExpiresAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceAccessDetails.setExpiresAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ipAddress", targetDepth)) {
                     context.nextToken();
@@ -63,6 +63,10 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                 if (context.testExpression("password", targetDepth)) {
                     context.nextToken();
                     instanceAccessDetails.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("passwordData", targetDepth)) {
+                    context.nextToken();
+                    instanceAccessDetails.setPasswordData(PasswordDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("privateKey", targetDepth)) {
                     context.nextToken();
@@ -79,6 +83,11 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                 if (context.testExpression("username", targetDepth)) {
                     context.nextToken();
                     instanceAccessDetails.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("hostKeys", targetDepth)) {
+                    context.nextToken();
+                    instanceAccessDetails.setHostKeys(new ListUnmarshaller<HostKeyAttributes>(HostKeyAttributesJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

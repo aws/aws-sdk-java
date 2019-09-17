@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,22 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.Date startTime;
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * The name of a group to generate a graph based on.
+     * </p>
+     */
+    private String groupName;
+    /**
+     * <p>
+     * The ARN of a group to generate a graph based on.
+     * </p>
+     */
+    private String groupARN;
     /**
      * <p>
      * Pagination token. Not used.
@@ -86,11 +98,11 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
      * @param endTime
-     *        The end of the time frame for which to generate a graph.
+     *        The end of the timeframe for which to generate a graph.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -99,10 +111,10 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
-     * @return The end of the time frame for which to generate a graph.
+     * @return The end of the timeframe for which to generate a graph.
      */
 
     public java.util.Date getEndTime() {
@@ -111,16 +123,96 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time frame for which to generate a graph.
+     * The end of the timeframe for which to generate a graph.
      * </p>
      * 
      * @param endTime
-     *        The end of the time frame for which to generate a graph.
+     *        The end of the timeframe for which to generate a graph.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetServiceGraphRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a group to generate a graph based on.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of a group to generate a graph based on.
+     */
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * <p>
+     * The name of a group to generate a graph based on.
+     * </p>
+     * 
+     * @return The name of a group to generate a graph based on.
+     */
+
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of a group to generate a graph based on.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of a group to generate a graph based on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetServiceGraphRequest withGroupName(String groupName) {
+        setGroupName(groupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of a group to generate a graph based on.
+     * </p>
+     * 
+     * @param groupARN
+     *        The ARN of a group to generate a graph based on.
+     */
+
+    public void setGroupARN(String groupARN) {
+        this.groupARN = groupARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of a group to generate a graph based on.
+     * </p>
+     * 
+     * @return The ARN of a group to generate a graph based on.
+     */
+
+    public String getGroupARN() {
+        return this.groupARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of a group to generate a graph based on.
+     * </p>
+     * 
+     * @param groupARN
+     *        The ARN of a group to generate a graph based on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetServiceGraphRequest withGroupARN(String groupARN) {
+        setGroupARN(groupARN);
         return this;
     }
 
@@ -165,7 +257,8 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,6 +272,10 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getGroupARN() != null)
+            sb.append("GroupARN: ").append(getGroupARN()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -203,6 +300,14 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
+            return false;
+        if (other.getGroupARN() == null ^ this.getGroupARN() == null)
+            return false;
+        if (other.getGroupARN() != null && other.getGroupARN().equals(this.getGroupARN()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -217,6 +322,8 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getGroupARN() == null) ? 0 : getGroupARN().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

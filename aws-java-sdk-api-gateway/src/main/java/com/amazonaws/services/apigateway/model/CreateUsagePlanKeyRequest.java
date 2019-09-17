@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,33 +27,33 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      */
     private String usagePlanId;
     /**
      * <p>
-     * The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      */
     private String keyId;
     /**
      * <p>
-     * The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      */
     private String keyType;
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-created <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -62,12 +62,12 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
-     * @return The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
-     *         <a>UsagePlanKey</a> resource representing a plan customer.
+     * @return [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *         to-be-created <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public String getUsagePlanId() {
@@ -76,13 +76,13 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-created <a>UsagePlanKey</a> resource representing a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
      * @param keyId
-     *        The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     *        [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      */
 
     public void setKeyId(String keyId) {
@@ -106,10 +106,10 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
-     * @return The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     * @return [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      */
 
     public String getKeyId() {
@@ -118,11 +118,11 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
      * @param keyId
-     *        The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
+     *        [Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
      * @param keyType
-     *        The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     *        [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      */
 
     public void setKeyType(String keyType) {
@@ -146,10 +146,10 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
-     * @return The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     * @return [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      */
 
     public String getKeyType() {
@@ -158,11 +158,11 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     * [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      * </p>
      * 
      * @param keyType
-     *        The type of a <a>UsagePlanKey</a> resource for a plan customer.
+     *        [Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,7 +172,8 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

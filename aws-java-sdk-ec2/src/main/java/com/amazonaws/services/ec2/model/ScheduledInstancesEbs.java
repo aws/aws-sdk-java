@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,37 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the volume is deleted on instance termination.
+     * </p>
+     */
+    private Boolean deleteOnTermination;
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
+     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
+     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
+     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
+     * </p>
+     * <p>
+     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
+     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * </p>
+     */
+    private Integer iops;
+    /**
+     * <p>
      * The ID of the snapshot.
      * </p>
      */
@@ -44,27 +75,134 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     */
-    private Boolean deleteOnTermination;
-    /**
-     * <p>
      * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      */
     private String volumeType;
+
+    /**
+     * <p>
+     * Indicates whether the volume is deleted on instance termination.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the volume is deleted on instance termination.
+     */
+
+    public void setDeleteOnTermination(Boolean deleteOnTermination) {
+        this.deleteOnTermination = deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is deleted on instance termination.
+     * </p>
+     * 
+     * @return Indicates whether the volume is deleted on instance termination.
+     */
+
+    public Boolean getDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is deleted on instance termination.
+     * </p>
+     * 
+     * @param deleteOnTermination
+     *        Indicates whether the volume is deleted on instance termination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesEbs withDeleteOnTermination(Boolean deleteOnTermination) {
+        setDeleteOnTermination(deleteOnTermination);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is deleted on instance termination.
+     * </p>
+     * 
+     * @return Indicates whether the volume is deleted on instance termination.
+     */
+
+    public Boolean isDeleteOnTermination() {
+        return this.deleteOnTermination;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *        support them.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     * 
+     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *         support them.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *        support them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesEbs withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     * 
+     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *         support them.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
      * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
      * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
      * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -74,15 +212,102 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
      * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      * </p>
+     * 
+     * @param iops
+     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
+     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
+     *        volumes.
+     *        </p>
+     *        <p>
+     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
+     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
      */
-    private Integer iops;
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
+     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
+     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
+     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
+     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
+     * </p>
+     * <p>
+     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
+     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * </p>
+     * 
+     * @return The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
+     *         the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     *         baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+     *         For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
+     *         volumes.
+     *         </p>
+     *         <p>
+     *         Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
+     *         requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
+     *         volumes.
      */
-    private Boolean encrypted;
+
+    public Integer getIops() {
+        return this.iops;
+    }
+
+    /**
+     * <p>
+     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
+     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
+     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
+     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
+     * </p>
+     * <p>
+     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
+     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * </p>
+     * 
+     * @param iops
+     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
+     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
+     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
+     *        volumes.
+     *        </p>
+     *        <p>
+     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
+     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesEbs withIops(Integer iops) {
+        setIops(iops);
+        return this;
+    }
 
     /**
      * <p>
@@ -187,63 +412,11 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * 
-     * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination.
-     */
-
-    public void setDeleteOnTermination(Boolean deleteOnTermination) {
-        this.deleteOnTermination = deleteOnTermination;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * 
-     * @return Indicates whether the volume is deleted on instance termination.
-     */
-
-    public Boolean getDeleteOnTermination() {
-        return this.deleteOnTermination;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * 
-     * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesEbs withDeleteOnTermination(Boolean deleteOnTermination) {
-        setDeleteOnTermination(deleteOnTermination);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * 
-     * @return Indicates whether the volume is deleted on instance termination.
-     */
-
-    public Boolean isDeleteOnTermination() {
-        return this.deleteOnTermination;
-    }
-
-    /**
-     * <p>
      * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -251,7 +424,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
      *        Magnetic.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      */
 
     public void setVolumeType(String volumeType) {
@@ -264,14 +437,14 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
      *         Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
      *         for Magnetic.</p>
      *         <p>
-     *         Default: <code>standard</code>
+     *         Default: <code>gp2</code>
      */
 
     public String getVolumeType() {
@@ -284,7 +457,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
@@ -292,7 +465,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
      *        Magnetic.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,180 +475,8 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
-     * </p>
-     * 
-     * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
-     */
-
-    public void setIops(Integer iops) {
-        this.iops = iops;
-    }
-
-    /**
-     * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
-     * </p>
-     * 
-     * @return The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *         the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *         baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *         For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *         <p>
-     *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *         volumes.
-     *         </p>
-     *         <p>
-     *         Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *         requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     *         volumes.
-     */
-
-    public Integer getIops() {
-        return this.iops;
-    }
-
-    /**
-     * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
-     * </p>
-     * 
-     * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesEbs withIops(Integer iops) {
-        setIops(iops);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
-     * </p>
-     * 
-     * @param encrypted
-     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *        support them.
-     */
-
-    public void setEncrypted(Boolean encrypted) {
-        this.encrypted = encrypted;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
-     * </p>
-     * 
-     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *         support them.
-     */
-
-    public Boolean getEncrypted() {
-        return this.encrypted;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
-     * </p>
-     * 
-     * @param encrypted
-     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *        support them.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesEbs withEncrypted(Boolean encrypted) {
-        setEncrypted(encrypted);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
-     * </p>
-     * 
-     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *         support them.
-     */
-
-    public Boolean isEncrypted() {
-        return this.encrypted;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -485,18 +486,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeleteOnTermination() != null)
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getIops() != null)
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
-        if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: ").append(getVolumeType()).append(",");
-        if (getIops() != null)
-            sb.append("Iops: ").append(getIops()).append(",");
-        if (getEncrypted() != null)
-            sb.append("Encrypted: ").append(getEncrypted());
+            sb.append("VolumeType: ").append(getVolumeType());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +512,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
         if (obj instanceof ScheduledInstancesEbs == false)
             return false;
         ScheduledInstancesEbs other = (ScheduledInstancesEbs) obj;
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
+            return false;
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getIops() == null ^ this.getIops() == null)
+            return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
@@ -519,21 +532,9 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
             return false;
         if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false)
             return false;
-        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
-            return false;
-        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
-            return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
-            return false;
-        if (other.getIops() == null ^ this.getIops() == null)
-            return false;
-        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
-            return false;
-        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
-            return false;
-        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
         return true;
     }
@@ -543,12 +544,12 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
-        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
-        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }
 
@@ -560,4 +561,5 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class EventDescription implements Serializable, Cloneable {
      * </p>
      */
     private String environmentName;
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     */
+    private String platformArn;
     /**
      * <p>
      * The web service request ID for the activity of this event.
@@ -317,6 +323,46 @@ public class EventDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @return The ARN of the platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventDescription withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The web service request ID for the activity of this event.
      * </p>
      * 
@@ -409,7 +455,7 @@ public class EventDescription implements Serializable, Cloneable {
      */
 
     public void setSeverity(EventSeverity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
@@ -424,12 +470,13 @@ public class EventDescription implements Serializable, Cloneable {
      */
 
     public EventDescription withSeverity(EventSeverity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -451,6 +498,8 @@ public class EventDescription implements Serializable, Cloneable {
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getSeverity() != null)
@@ -493,6 +542,10 @@ public class EventDescription implements Serializable, Cloneable {
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
+            return false;
         if (other.getRequestId() == null ^ this.getRequestId() == null)
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
@@ -515,6 +568,7 @@ public class EventDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
         return hashCode;
@@ -528,4 +582,5 @@ public class EventDescription implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

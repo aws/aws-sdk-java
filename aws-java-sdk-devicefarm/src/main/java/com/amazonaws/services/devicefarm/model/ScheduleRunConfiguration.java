@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScheduleRunConfiguration implements Serializable, Cloneable {
+public class ScheduleRunConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,6 +53,18 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private Location location;
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     */
+    private java.util.List<String> vpceConfigurationArns;
+    /**
+     * <p>
+     * Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     * </p>
+     */
+    private CustomerArtifactPaths customerArtifactPaths;
     /**
      * <p>
      * Information about the radio states for the run.
@@ -239,6 +253,116 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @return An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     */
+
+    public java.util.List<String> getVpceConfigurationArns() {
+        return vpceConfigurationArns;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     */
+
+    public void setVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        if (vpceConfigurationArns == null) {
+            this.vpceConfigurationArns = null;
+            return;
+        }
+
+        this.vpceConfigurationArns = new java.util.ArrayList<String>(vpceConfigurationArns);
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpceConfigurationArns(java.util.Collection)} or
+     * {@link #withVpceConfigurationArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunConfiguration withVpceConfigurationArns(String... vpceConfigurationArns) {
+        if (this.vpceConfigurationArns == null) {
+            setVpceConfigurationArns(new java.util.ArrayList<String>(vpceConfigurationArns.length));
+        }
+        for (String ele : vpceConfigurationArns) {
+            this.vpceConfigurationArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunConfiguration withVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        setVpceConfigurationArns(vpceConfigurationArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     */
+
+    public void setCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        this.customerArtifactPaths = customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     * </p>
+     * 
+     * @return Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     */
+
+    public CustomerArtifactPaths getCustomerArtifactPaths() {
+        return this.customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunConfiguration withCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        setCustomerArtifactPaths(customerArtifactPaths);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the radio states for the run.
      * </p>
      * 
@@ -409,7 +533,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -426,12 +550,13 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      */
 
     public ScheduleRunConfiguration withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -449,6 +574,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
+        if (getVpceConfigurationArns() != null)
+            sb.append("VpceConfigurationArns: ").append(getVpceConfigurationArns()).append(",");
+        if (getCustomerArtifactPaths() != null)
+            sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths()).append(",");
         if (getRadios() != null)
             sb.append("Radios: ").append(getRadios()).append(",");
         if (getAuxiliaryApps() != null)
@@ -485,6 +614,14 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getVpceConfigurationArns() == null ^ this.getVpceConfigurationArns() == null)
+            return false;
+        if (other.getVpceConfigurationArns() != null && other.getVpceConfigurationArns().equals(this.getVpceConfigurationArns()) == false)
+            return false;
+        if (other.getCustomerArtifactPaths() == null ^ this.getCustomerArtifactPaths() == null)
+            return false;
+        if (other.getCustomerArtifactPaths() != null && other.getCustomerArtifactPaths().equals(this.getCustomerArtifactPaths()) == false)
+            return false;
         if (other.getRadios() == null ^ this.getRadios() == null)
             return false;
         if (other.getRadios() != null && other.getRadios().equals(this.getRadios()) == false)
@@ -509,6 +646,8 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkProfileArn() == null) ? 0 : getNetworkProfileArn().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getVpceConfigurationArns() == null) ? 0 : getVpceConfigurationArns().hashCode());
+        hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
         hashCode = prime * hashCode + ((getRadios() == null) ? 0 : getRadios().hashCode());
         hashCode = prime * hashCode + ((getAuxiliaryApps() == null) ? 0 : getAuxiliaryApps().hashCode());
         hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
@@ -522,5 +661,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.ScheduleRunConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

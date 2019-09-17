@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,9 +46,10 @@ public class DetachLoadBalancerTargetGroupsRequestMarshaller implements
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(detachLoadBalancerTargetGroupsRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) detachLoadBalancerTargetGroupsRequest
-                .getTargetGroupARNs();
-        if (!targetGroupARNsList.isEmpty() || !targetGroupARNsList.isAutoConstruct()) {
+        if (!detachLoadBalancerTargetGroupsRequest.getTargetGroupARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) detachLoadBalancerTargetGroupsRequest.getTargetGroupARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) detachLoadBalancerTargetGroupsRequest
+                    .getTargetGroupARNs();
             int targetGroupARNsListIndex = 1;
 
             for (String targetGroupARNsListValue : targetGroupARNsList) {

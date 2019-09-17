@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,6 +114,21 @@ public class AbstractAWSBudgetsAsync extends AbstractAWSBudgets implements AWSBu
     @Override
     public java.util.concurrent.Future<DescribeBudgetResult> describeBudgetAsync(DescribeBudgetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBudgetRequest, DescribeBudgetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest request) {
+
+        return describeBudgetPerformanceHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBudgetPerformanceHistoryResult> describeBudgetPerformanceHistoryAsync(
+            DescribeBudgetPerformanceHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBudgetPerformanceHistoryRequest, DescribeBudgetPerformanceHistoryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

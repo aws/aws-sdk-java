@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output for CancelImportTask.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -36,13 +34,13 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
      * The current state of the task being canceled.
      * </p>
      */
-    private String state;
+    private String previousState;
     /**
      * <p>
      * The current state of the task being canceled.
      * </p>
      */
-    private String previousState;
+    private String state;
 
     /**
      * <p>
@@ -89,46 +87,6 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
      * The current state of the task being canceled.
      * </p>
      * 
-     * @param state
-     *        The current state of the task being canceled.
-     */
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    /**
-     * <p>
-     * The current state of the task being canceled.
-     * </p>
-     * 
-     * @return The current state of the task being canceled.
-     */
-
-    public String getState() {
-        return this.state;
-    }
-
-    /**
-     * <p>
-     * The current state of the task being canceled.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the task being canceled.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CancelImportTaskResult withState(String state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current state of the task being canceled.
-     * </p>
-     * 
      * @param previousState
      *        The current state of the task being canceled.
      */
@@ -165,7 +123,48 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The current state of the task being canceled.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the task being canceled.
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The current state of the task being canceled.
+     * </p>
+     * 
+     * @return The current state of the task being canceled.
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The current state of the task being canceled.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the task being canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelImportTaskResult withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -177,10 +176,10 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
         sb.append("{");
         if (getImportTaskId() != null)
             sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getPreviousState() != null)
-            sb.append("PreviousState: ").append(getPreviousState());
+            sb.append("PreviousState: ").append(getPreviousState()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -199,13 +198,13 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
             return false;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
-            return false;
         if (other.getPreviousState() == null ^ this.getPreviousState() == null)
             return false;
         if (other.getPreviousState() != null && other.getPreviousState().equals(this.getPreviousState()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         return true;
     }
@@ -216,8 +215,8 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getPreviousState() == null) ? 0 : getPreviousState().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

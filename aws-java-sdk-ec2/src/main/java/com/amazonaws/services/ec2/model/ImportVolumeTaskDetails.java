@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of bytes converted so far.
-     * </p>
-     */
-    private Long bytesConverted;
-    /**
-     * <p>
      * The Availability Zone where the resulting volume will reside.
      * </p>
      */
     private String availabilityZone;
+    /**
+     * <p>
+     * The number of bytes converted so far.
+     * </p>
+     */
+    private Long bytesConverted;
     /**
      * <p>
      * The description you provided when starting the import volume task.
@@ -56,46 +56,6 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * </p>
      */
     private DiskImageVolumeDescription volume;
-
-    /**
-     * <p>
-     * The number of bytes converted so far.
-     * </p>
-     * 
-     * @param bytesConverted
-     *        The number of bytes converted so far.
-     */
-
-    public void setBytesConverted(Long bytesConverted) {
-        this.bytesConverted = bytesConverted;
-    }
-
-    /**
-     * <p>
-     * The number of bytes converted so far.
-     * </p>
-     * 
-     * @return The number of bytes converted so far.
-     */
-
-    public Long getBytesConverted() {
-        return this.bytesConverted;
-    }
-
-    /**
-     * <p>
-     * The number of bytes converted so far.
-     * </p>
-     * 
-     * @param bytesConverted
-     *        The number of bytes converted so far.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportVolumeTaskDetails withBytesConverted(Long bytesConverted) {
-        setBytesConverted(bytesConverted);
-        return this;
-    }
 
     /**
      * <p>
@@ -134,6 +94,46 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
 
     public ImportVolumeTaskDetails withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of bytes converted so far.
+     * </p>
+     * 
+     * @param bytesConverted
+     *        The number of bytes converted so far.
+     */
+
+    public void setBytesConverted(Long bytesConverted) {
+        this.bytesConverted = bytesConverted;
+    }
+
+    /**
+     * <p>
+     * The number of bytes converted so far.
+     * </p>
+     * 
+     * @return The number of bytes converted so far.
+     */
+
+    public Long getBytesConverted() {
+        return this.bytesConverted;
+    }
+
+    /**
+     * <p>
+     * The number of bytes converted so far.
+     * </p>
+     * 
+     * @param bytesConverted
+     *        The number of bytes converted so far.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportVolumeTaskDetails withBytesConverted(Long bytesConverted) {
+        setBytesConverted(bytesConverted);
         return this;
     }
 
@@ -258,7 +258,8 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -268,10 +269,10 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBytesConverted() != null)
-            sb.append("BytesConverted: ").append(getBytesConverted()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getBytesConverted() != null)
+            sb.append("BytesConverted: ").append(getBytesConverted()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getImage() != null)
@@ -292,13 +293,13 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
         if (obj instanceof ImportVolumeTaskDetails == false)
             return false;
         ImportVolumeTaskDetails other = (ImportVolumeTaskDetails) obj;
-        if (other.getBytesConverted() == null ^ this.getBytesConverted() == null)
-            return false;
-        if (other.getBytesConverted() != null && other.getBytesConverted().equals(this.getBytesConverted()) == false)
-            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getBytesConverted() == null ^ this.getBytesConverted() == null)
+            return false;
+        if (other.getBytesConverted() != null && other.getBytesConverted().equals(this.getBytesConverted()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -320,8 +321,8 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getBytesConverted() == null) ? 0 : getBytesConverted().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getBytesConverted() == null) ? 0 : getBytesConverted().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getVolume() == null) ? 0 : getVolume().hashCode());
@@ -336,4 +337,5 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

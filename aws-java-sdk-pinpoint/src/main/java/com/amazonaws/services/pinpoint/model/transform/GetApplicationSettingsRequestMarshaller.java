@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetApplicationSettingsRequest Marshaller
+ * GetApplicationSettingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetApplicationSettingsRequestMarshaller implements Marshaller<Request<GetApplicationSettingsRequest>, GetApplicationSettingsRequest> {
+@SdkInternalApi
+public class GetApplicationSettingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
 
-    public GetApplicationSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetApplicationSettingsRequestMarshaller instance = new GetApplicationSettingsRequestMarshaller();
+
+    public static GetApplicationSettingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetApplicationSettingsRequest> marshall(GetApplicationSettingsRequest getApplicationSettingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetApplicationSettingsRequest getApplicationSettingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getApplicationSettingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetApplicationSettingsRequest> request = new DefaultRequest<GetApplicationSettingsRequest>(getApplicationSettingsRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/settings";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getApplicationSettingsRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getApplicationSettingsRequest.getApplicationId(), APPLICATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

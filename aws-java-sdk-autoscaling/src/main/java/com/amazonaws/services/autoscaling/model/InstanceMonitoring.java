@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes whether instance monitoring is enabled.
+ * Describes whether detailed monitoring is enabled for the Auto Scaling instances.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceMonitoring" target="_top">AWS API
@@ -28,18 +28,18 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>True</code>, instance monitoring is enabled.
+     * If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * If <code>True</code>, instance monitoring is enabled.
+     * If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param enabled
-     *        If <code>True</code>, instance monitoring is enabled.
+     *        If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -48,10 +48,10 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>True</code>, instance monitoring is enabled.
+     * If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
-     * @return If <code>True</code>, instance monitoring is enabled.
+     * @return If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      */
 
     public Boolean getEnabled() {
@@ -60,11 +60,11 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>True</code>, instance monitoring is enabled.
+     * If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
      * @param enabled
-     *        If <code>True</code>, instance monitoring is enabled.
+     *        If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +75,10 @@ public class InstanceMonitoring implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>True</code>, instance monitoring is enabled.
+     * If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      * </p>
      * 
-     * @return If <code>True</code>, instance monitoring is enabled.
+     * @return If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
      */
 
     public Boolean isEnabled() {
@@ -86,7 +86,8 @@ public class InstanceMonitoring implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -136,4 +137,5 @@ public class InstanceMonitoring implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

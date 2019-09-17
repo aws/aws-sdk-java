@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,24 +37,21 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
-     * that you specified for the marker parameter in the request that produced the current response.
+     * that you specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * A flag that indicates whether there are more reusable delegation sets to be listed. If the response is truncated,
-     * you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * A flag that indicates whether there are more reusable delegation sets to be listed.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     * reusable delegation set that Amazon Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      * <code>marker</code> parameter.
      * </p>
      */
@@ -151,12 +148,13 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
-     * that you specified for the marker parameter in the request that produced the current response.
+     * that you specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the
-     *        value that you specified for the marker parameter in the request that produced the current response.
+     *        value that you specified for the <code>marker</code> parameter in the request that produced the current
+     *        response.
      */
 
     public void setMarker(String marker) {
@@ -166,11 +164,12 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
-     * that you specified for the marker parameter in the request that produced the current response.
+     * that you specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @return For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is
-     *         the value that you specified for the marker parameter in the request that produced the current response.
+     *         the value that you specified for the <code>marker</code> parameter in the request that produced the
+     *         current response.
      */
 
     public String getMarker() {
@@ -180,12 +179,13 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value
-     * that you specified for the marker parameter in the request that produced the current response.
+     * that you specified for the <code>marker</code> parameter in the request that produced the current response.
      * </p>
      * 
      * @param marker
      *        For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the
-     *        value that you specified for the marker parameter in the request that produced the current response.
+     *        value that you specified for the <code>marker</code> parameter in the request that produced the current
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,17 +196,11 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A flag that indicates whether there are more reusable delegation sets to be listed. If the response is truncated,
-     * you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * A flag that indicates whether there are more reusable delegation sets to be listed.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more reusable delegation sets to be listed. If the response is
-     *        truncated, you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     *        <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code>
-     *        element in the <code>marker</code> parameter.
+     *        A flag that indicates whether there are more reusable delegation sets to be listed.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -215,16 +209,10 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A flag that indicates whether there are more reusable delegation sets to be listed. If the response is truncated,
-     * you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * A flag that indicates whether there are more reusable delegation sets to be listed.
      * </p>
      * 
-     * @return A flag that indicates whether there are more reusable delegation sets to be listed. If the response is
-     *         truncated, you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     *         <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code>
-     *         element in the <code>marker</code> parameter.
+     * @return A flag that indicates whether there are more reusable delegation sets to be listed.
      */
 
     public Boolean getIsTruncated() {
@@ -233,17 +221,11 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A flag that indicates whether there are more reusable delegation sets to be listed. If the response is truncated,
-     * you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * A flag that indicates whether there are more reusable delegation sets to be listed.
      * </p>
      * 
      * @param isTruncated
-     *        A flag that indicates whether there are more reusable delegation sets to be listed. If the response is
-     *        truncated, you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     *        <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code>
-     *        element in the <code>marker</code> parameter.
+     *        A flag that indicates whether there are more reusable delegation sets to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,16 +236,10 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A flag that indicates whether there are more reusable delegation sets to be listed. If the response is truncated,
-     * you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     * <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * A flag that indicates whether there are more reusable delegation sets to be listed.
      * </p>
      * 
-     * @return A flag that indicates whether there are more reusable delegation sets to be listed. If the response is
-     *         truncated, you can get the next group of <code>maxitems</code> reusable delegation sets by calling
-     *         <code>ListReusableDelegationSets</code> again and specifying the value of the <code>NextMarker</code>
-     *         element in the <code>marker</code> parameter.
+     * @return A flag that indicates whether there are more reusable delegation sets to be listed.
      */
 
     public Boolean isTruncated() {
@@ -272,16 +248,16 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     * reusable delegation set that Amazon Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      * <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
-     *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     *        <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     *        reusable delegation set that Amazon Route 53 will return if you submit another
+     *        <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      *        <code>marker</code> parameter.
      */
 
@@ -291,15 +267,15 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     * reusable delegation set that Amazon Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      * <code>marker</code> parameter.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *         first reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     *         <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     *         next reusable delegation set that Amazon Route 53 will return if you submit another
+     *         <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      *         <code>marker</code> parameter.
      */
 
@@ -309,16 +285,16 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first
-     * reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     * <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     * If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     * reusable delegation set that Amazon Route 53 will return if you submit another
+     * <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      * <code>marker</code> parameter.
      * </p>
      * 
      * @param nextMarker
-     *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the
-     *        first reusable delegation set in the next group of <code>maxitems</code> reusable delegation sets. Call
-     *        <code>ListReusableDelegationSets</code> again and specify the value of <code>NextMarker</code> in the
+     *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next
+     *        reusable delegation set that Amazon Route 53 will return if you submit another
+     *        <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the
      *        <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -375,7 +351,8 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -453,4 +430,5 @@ public class ListReusableDelegationSetsResult extends com.amazonaws.AmazonWebSer
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

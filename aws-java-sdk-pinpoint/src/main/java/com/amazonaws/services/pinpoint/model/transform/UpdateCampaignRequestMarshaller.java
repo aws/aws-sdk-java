@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,119 +12,50 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
-import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateCampaignRequest Marshaller
+ * UpdateCampaignRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateCampaignRequestMarshaller implements Marshaller<Request<UpdateCampaignRequest>, UpdateCampaignRequest> {
+@SdkInternalApi
+public class UpdateCampaignRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> CAMPAIGNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("campaign-id").build();
+    private static final MarshallingInfo<StructuredPojo> WRITECAMPAIGNREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public UpdateCampaignRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateCampaignRequestMarshaller instance = new UpdateCampaignRequestMarshaller();
+
+    public static UpdateCampaignRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateCampaignRequest> marshall(UpdateCampaignRequest updateCampaignRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateCampaignRequest updateCampaignRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateCampaignRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateCampaignRequest> request = new DefaultRequest<UpdateCampaignRequest>(updateCampaignRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                updateCampaignRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id", updateCampaignRequest.getCampaignId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            WriteCampaignRequest writeCampaignRequest = updateCampaignRequest.getWriteCampaignRequest();
-            if (writeCampaignRequest != null) {
-                jsonGenerator.writeStartObject();
-
-                java.util.List<WriteTreatmentResource> additionalTreatmentsList = writeCampaignRequest.getAdditionalTreatments();
-                if (additionalTreatmentsList != null) {
-                    jsonGenerator.writeFieldName("AdditionalTreatments");
-                    jsonGenerator.writeStartArray();
-                    for (WriteTreatmentResource additionalTreatmentsListValue : additionalTreatmentsList) {
-                        if (additionalTreatmentsListValue != null) {
-
-                            WriteTreatmentResourceJsonMarshaller.getInstance().marshall(additionalTreatmentsListValue, jsonGenerator);
-                        }
-                    }
-                    jsonGenerator.writeEndArray();
-                }
-                if (writeCampaignRequest.getDescription() != null) {
-                    jsonGenerator.writeFieldName("Description").writeValue(writeCampaignRequest.getDescription());
-                }
-                if (writeCampaignRequest.getHoldoutPercent() != null) {
-                    jsonGenerator.writeFieldName("HoldoutPercent").writeValue(writeCampaignRequest.getHoldoutPercent());
-                }
-                if (writeCampaignRequest.getIsPaused() != null) {
-                    jsonGenerator.writeFieldName("IsPaused").writeValue(writeCampaignRequest.getIsPaused());
-                }
-                if (writeCampaignRequest.getLimits() != null) {
-                    jsonGenerator.writeFieldName("Limits");
-                    CampaignLimitsJsonMarshaller.getInstance().marshall(writeCampaignRequest.getLimits(), jsonGenerator);
-                }
-                if (writeCampaignRequest.getMessageConfiguration() != null) {
-                    jsonGenerator.writeFieldName("MessageConfiguration");
-                    MessageConfigurationJsonMarshaller.getInstance().marshall(writeCampaignRequest.getMessageConfiguration(), jsonGenerator);
-                }
-                if (writeCampaignRequest.getName() != null) {
-                    jsonGenerator.writeFieldName("Name").writeValue(writeCampaignRequest.getName());
-                }
-                if (writeCampaignRequest.getSchedule() != null) {
-                    jsonGenerator.writeFieldName("Schedule");
-                    ScheduleJsonMarshaller.getInstance().marshall(writeCampaignRequest.getSchedule(), jsonGenerator);
-                }
-                if (writeCampaignRequest.getSegmentId() != null) {
-                    jsonGenerator.writeFieldName("SegmentId").writeValue(writeCampaignRequest.getSegmentId());
-                }
-                if (writeCampaignRequest.getSegmentVersion() != null) {
-                    jsonGenerator.writeFieldName("SegmentVersion").writeValue(writeCampaignRequest.getSegmentVersion());
-                }
-                if (writeCampaignRequest.getTreatmentDescription() != null) {
-                    jsonGenerator.writeFieldName("TreatmentDescription").writeValue(writeCampaignRequest.getTreatmentDescription());
-                }
-                if (writeCampaignRequest.getTreatmentName() != null) {
-                    jsonGenerator.writeFieldName("TreatmentName").writeValue(writeCampaignRequest.getTreatmentName());
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateCampaignRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(updateCampaignRequest.getCampaignId(), CAMPAIGNID_BINDING);
+            protocolMarshaller.marshall(updateCampaignRequest.getWriteCampaignRequest(), WRITECAMPAIGNREQUEST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

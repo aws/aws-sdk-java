@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@ package com.amazonaws.internal;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
@@ -51,5 +53,12 @@ public abstract class CredentialsEndpointProvider {
      */
     public CredentialsEndpointRetryPolicy getRetryPolicy() {
         return CredentialsEndpointRetryPolicy.NO_RETRY;
+    }
+
+    /**
+     * Allows passing additional headers to the request
+     */
+    public Map<String, String> getHeaders() {
+        return new HashMap<String, String>();
     }
 }

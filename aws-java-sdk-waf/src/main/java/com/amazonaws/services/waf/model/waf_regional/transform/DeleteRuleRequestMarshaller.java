@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteRuleRequest Marshaller
+ * DeleteRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteRuleRequestMarshaller implements Marshaller<Request<DeleteRuleRequest>, DeleteRuleRequest> {
+@SdkInternalApi
+public class DeleteRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RULEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RuleId").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
 
-    public DeleteRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteRuleRequestMarshaller instance = new DeleteRuleRequestMarshaller();
+
+    public static DeleteRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteRuleRequest> marshall(DeleteRuleRequest deleteRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteRuleRequest deleteRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteRuleRequest> request = new DefaultRequest<DeleteRuleRequest>(deleteRuleRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.DeleteRule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteRuleRequest.getRuleId() != null) {
-                jsonGenerator.writeFieldName("RuleId").writeValue(deleteRuleRequest.getRuleId());
-            }
-            if (deleteRuleRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(deleteRuleRequest.getChangeToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteRuleRequest.getRuleId(), RULEID_BINDING);
+            protocolMarshaller.marshall(deleteRuleRequest.getChangeToken(), CHANGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

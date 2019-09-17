@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,20 +28,27 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      */
     private Boolean includeAvailabilityZones;
+    /**
+     * <p>
+     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * </p>
+     */
+    private Boolean includeRelationalDatabaseAvailabilityZones;
 
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @param includeAvailabilityZones
      *        A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *        Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *        Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public void setIncludeAvailabilityZones(Boolean includeAvailabilityZones) {
@@ -51,11 +58,11 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @return A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *         Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *         Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public Boolean getIncludeAvailabilityZones() {
@@ -65,12 +72,12 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @param includeAvailabilityZones
      *        A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *        Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *        Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +89,11 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @return A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *         Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *         Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public Boolean isIncludeAvailabilityZones() {
@@ -94,7 +101,68 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * </p>
+     * 
+     * @param includeRelationalDatabaseAvailabilityZones
+     *        &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
+     *        regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     */
+
+    public void setIncludeRelationalDatabaseAvailabilityZones(Boolean includeRelationalDatabaseAvailabilityZones) {
+        this.includeRelationalDatabaseAvailabilityZones = includeRelationalDatabaseAvailabilityZones;
+    }
+
+    /**
+     * <p>
+     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * </p>
+     * 
+     * @return &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
+     *         regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     */
+
+    public Boolean getIncludeRelationalDatabaseAvailabilityZones() {
+        return this.includeRelationalDatabaseAvailabilityZones;
+    }
+
+    /**
+     * <p>
+     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * </p>
+     * 
+     * @param includeRelationalDatabaseAvailabilityZones
+     *        &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
+     *        regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRegionsRequest withIncludeRelationalDatabaseAvailabilityZones(Boolean includeRelationalDatabaseAvailabilityZones) {
+        setIncludeRelationalDatabaseAvailabilityZones(includeRelationalDatabaseAvailabilityZones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get regions
+     * request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     * </p>
+     * 
+     * @return &gt;A Boolean value indicating whether to also include Availability Zones for databases in your get
+     *         regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).
+     */
+
+    public Boolean isIncludeRelationalDatabaseAvailabilityZones() {
+        return this.includeRelationalDatabaseAvailabilityZones;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -105,7 +173,9 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIncludeAvailabilityZones() != null)
-            sb.append("IncludeAvailabilityZones: ").append(getIncludeAvailabilityZones());
+            sb.append("IncludeAvailabilityZones: ").append(getIncludeAvailabilityZones()).append(",");
+        if (getIncludeRelationalDatabaseAvailabilityZones() != null)
+            sb.append("IncludeRelationalDatabaseAvailabilityZones: ").append(getIncludeRelationalDatabaseAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
@@ -124,6 +194,11 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getIncludeAvailabilityZones() != null && other.getIncludeAvailabilityZones().equals(this.getIncludeAvailabilityZones()) == false)
             return false;
+        if (other.getIncludeRelationalDatabaseAvailabilityZones() == null ^ this.getIncludeRelationalDatabaseAvailabilityZones() == null)
+            return false;
+        if (other.getIncludeRelationalDatabaseAvailabilityZones() != null
+                && other.getIncludeRelationalDatabaseAvailabilityZones().equals(this.getIncludeRelationalDatabaseAvailabilityZones()) == false)
+            return false;
         return true;
     }
 
@@ -133,6 +208,8 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIncludeAvailabilityZones() == null) ? 0 : getIncludeAvailabilityZones().hashCode());
+        hashCode = prime * hashCode
+                + ((getIncludeRelationalDatabaseAvailabilityZones() == null) ? 0 : getIncludeRelationalDatabaseAvailabilityZones().hashCode());
         return hashCode;
     }
 

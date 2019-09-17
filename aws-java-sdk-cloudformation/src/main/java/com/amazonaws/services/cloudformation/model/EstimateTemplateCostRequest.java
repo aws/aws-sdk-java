@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
@@ -45,7 +45,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
      * bucket. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -65,7 +65,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
@@ -76,7 +76,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * @param templateBody
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only
@@ -91,7 +91,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
@@ -101,7 +101,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *         bytes. (For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *         <p>
      *         Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed,
@@ -116,7 +116,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. (For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.)
      * </p>
      * <p>
@@ -127,7 +127,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * @param templateBody
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.)</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed, only
@@ -144,7 +144,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
      * bucket. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -155,7 +155,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template that is located in an
      *        Amazon S3 bucket. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -170,7 +170,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
      * bucket. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -180,7 +180,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return Location of file containing the template body. The URL must point to a template that is located in an
      *         Amazon S3 bucket. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
      *         Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
@@ -195,7 +195,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * Location of file containing the template body. The URL must point to a template that is located in an Amazon S3
      * bucket. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -206,7 +206,7 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template that is located in an
      *        Amazon S3 bucket. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only
@@ -293,7 +293,8 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

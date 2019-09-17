@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,26 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a put integration response request's resource identifier.
+     * [Required] Specifies a put integration response request's resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Specifies a put integration response request's HTTP method.
+     * [Required] Specifies a put integration response request's HTTP method.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * [Required] Specifies the status code that is used to map the integration response to an existing
+     * <a>MethodResponse</a>.
      * </p>
      */
     private String statusCode;
@@ -101,11 +102,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a put integration response request's API identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -114,10 +115,10 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Specifies a put integration response request's API identifier.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -126,11 +127,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's API identifier.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a put integration response request's API identifier.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +142,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's resource identifier.
+     * [Required] Specifies a put integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a put integration response request's resource identifier.
+     *        [Required] Specifies a put integration response request's resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -154,10 +155,10 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's resource identifier.
+     * [Required] Specifies a put integration response request's resource identifier.
      * </p>
      * 
-     * @return Specifies a put integration response request's resource identifier.
+     * @return [Required] Specifies a put integration response request's resource identifier.
      */
 
     public String getResourceId() {
@@ -166,11 +167,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's resource identifier.
+     * [Required] Specifies a put integration response request's resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a put integration response request's resource identifier.
+     *        [Required] Specifies a put integration response request's resource identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +182,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's HTTP method.
+     * [Required] Specifies a put integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration response request's HTTP method.
+     *        [Required] Specifies a put integration response request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -194,10 +195,10 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's HTTP method.
+     * [Required] Specifies a put integration response request's HTTP method.
      * </p>
      * 
-     * @return Specifies a put integration response request's HTTP method.
+     * @return [Required] Specifies a put integration response request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -206,11 +207,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies a put integration response request's HTTP method.
+     * [Required] Specifies a put integration response request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration response request's HTTP method.
+     *        [Required] Specifies a put integration response request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +222,12 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * [Required] Specifies the status code that is used to map the integration response to an existing
+     * <a>MethodResponse</a>.
      * </p>
      * 
      * @param statusCode
-     *        Specifies the status code that is used to map the integration response to an existing
+     *        [Required] Specifies the status code that is used to map the integration response to an existing
      *        <a>MethodResponse</a>.
      */
 
@@ -235,10 +237,11 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * [Required] Specifies the status code that is used to map the integration response to an existing
+     * <a>MethodResponse</a>.
      * </p>
      * 
-     * @return Specifies the status code that is used to map the integration response to an existing
+     * @return [Required] Specifies the status code that is used to map the integration response to an existing
      *         <a>MethodResponse</a>.
      */
 
@@ -248,11 +251,12 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.
+     * [Required] Specifies the status code that is used to map the integration response to an existing
+     * <a>MethodResponse</a>.
      * </p>
      * 
      * @param statusCode
-     *        Specifies the status code that is used to map the integration response to an existing
+     *        [Required] Specifies the status code that is used to map the integration response to an existing
      *        <a>MethodResponse</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -663,7 +667,7 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -713,12 +717,13 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      */
 
     public PutIntegrationResponseRequest withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,26 +18,31 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeInternetGateways.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InternetGateway> internetGateways;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
-     * @return Information about one or more Internet gateways.
+     * @return Information about one or more internet gateways.
      */
 
     public java.util.List<InternetGateway> getInternetGateways() {
@@ -49,11 +54,11 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      */
 
     public void setInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
@@ -67,7 +72,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +81,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +97,11 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about one or more Internet gateways.
+     * Information about one or more internet gateways.
      * </p>
      * 
      * @param internetGateways
-     *        Information about one or more Internet gateways.
+     *        Information about one or more internet gateways.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +111,54 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInternetGatewaysResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -117,7 +169,9 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGateways() != null)
-            sb.append("InternetGateways: ").append(getInternetGateways());
+            sb.append("InternetGateways: ").append(getInternetGateways()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +190,10 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getInternetGateways() != null && other.getInternetGateways().equals(this.getInternetGateways()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +203,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInternetGateways() == null) ? 0 : getInternetGateways().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

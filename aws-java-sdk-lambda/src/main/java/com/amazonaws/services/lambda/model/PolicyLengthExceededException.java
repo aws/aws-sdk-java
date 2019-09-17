@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Lambda function access policy is limited to 20 KB.
+ * The permissions policy for the resource is too large. <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

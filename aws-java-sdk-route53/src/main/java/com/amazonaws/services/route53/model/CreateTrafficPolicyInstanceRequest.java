@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     * The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      * configuration in a traffic policy.
      * </p>
      */
@@ -39,8 +39,7 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53
-     * responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic policy
-     * instance.
+     * responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.
      * </p>
      */
     private String name;
@@ -67,12 +66,12 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     * The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      * configuration in a traffic policy.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     *        The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      *        configuration in a traffic policy.
      */
 
@@ -82,11 +81,11 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     * The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      * configuration in a traffic policy.
      * </p>
      * 
-     * @return The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     * @return The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      *         configuration in a traffic policy.
      */
 
@@ -96,12 +95,12 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     * The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      * configuration in a traffic policy.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID of the hosted zone in which you want Amazon Route 53 to create resource record sets by using the
+     *        The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the
      *        configuration in a traffic policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -114,14 +113,13 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53
-     * responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic policy
-     * instance.
+     * responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.
      * </p>
      * 
      * @param name
      *        The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route
-     *        53 responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic
-     *        policy instance.
+     *        53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy
+     *        instance.
      */
 
     public void setName(String name) {
@@ -131,13 +129,12 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53
-     * responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic policy
-     * instance.
+     * responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.
      * </p>
      * 
      * @return The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route
-     *         53 responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this
-     *         traffic policy instance.
+     *         53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic
+     *         policy instance.
      */
 
     public String getName() {
@@ -147,14 +144,13 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53
-     * responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic policy
-     * instance.
+     * responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.
      * </p>
      * 
      * @param name
      *        The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route
-     *        53 responds to DNS queries by using the resource record sets that Amazon Route 53 creates for this traffic
-     *        policy instance.
+     *        53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,7 +295,8 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

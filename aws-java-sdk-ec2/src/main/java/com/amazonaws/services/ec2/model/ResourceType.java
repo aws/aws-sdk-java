@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,21 +20,36 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
+    ClientVpnEndpoint("client-vpn-endpoint"),
     CustomerGateway("customer-gateway"),
+    DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
+    ElasticIp("elastic-ip"),
+    Fleet("fleet"),
+    FpgaImage("fpga-image"),
+    HostReservation("host-reservation"),
     Image("image"),
     Instance("instance"),
     InternetGateway("internet-gateway"),
+    LaunchTemplate("launch-template"),
+    Natgateway("natgateway"),
     NetworkAcl("network-acl"),
     NetworkInterface("network-interface"),
     ReservedInstances("reserved-instances"),
     RouteTable("route-table"),
+    SecurityGroup("security-group"),
     Snapshot("snapshot"),
     SpotInstancesRequest("spot-instances-request"),
     Subnet("subnet"),
-    SecurityGroup("security-group"),
+    TrafficMirrorFilter("traffic-mirror-filter"),
+    TrafficMirrorSession("traffic-mirror-session"),
+    TrafficMirrorTarget("traffic-mirror-target"),
+    TransitGateway("transit-gateway"),
+    TransitGatewayAttachment("transit-gateway-attachment"),
+    TransitGatewayRouteTable("transit-gateway-route-table"),
     Volume("volume"),
     Vpc("vpc"),
+    VpcPeeringConnection("vpc-peering-connection"),
     VpnConnection("vpn-connection"),
     VpnGateway("vpn-gateway");
 
@@ -55,6 +70,9 @@ public enum ResourceType {
      * @param value
      *        real value
      * @return ResourceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ResourceType fromValue(String value) {
         if (value == null || "".equals(value)) {

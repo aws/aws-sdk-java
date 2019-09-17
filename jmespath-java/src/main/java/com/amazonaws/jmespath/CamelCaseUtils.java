@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,19 +15,33 @@
 
 package com.amazonaws.jmespath;
 
+
 final class CamelCaseUtils {
 
     private CamelCaseUtils() {
     }
 
+    /**
+     * This matches the algorithm that Jackson uses to convert getter names to JSON field names. Any names starting with a
+     * lowercase character are left as is, any names starting with one or more uppercase characters have all consecutive
+     * uppercase characters converted to lowercase. See tests for examples.
+     *
+     * @see <a href="https://github.com/FasterXML/jackson-databind/blob/4debd67e053a254b5f42294426340fc91a312f64/src/main/java/com/fasterxml/jackson/databind/util/BeanUtil.java#L233">BeanUtil.java</a>
+     */
     public static String toCamelCase(String str) {
-        if (str != null && !str.isEmpty() && Character.isUpperCase(str.charAt(0))) {
-            if (str.length() > 1) {
-                return Character.toLowerCase(str.charAt(0)) + str.substring(1, str.length());
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        boolean foundFirstLowercase = false;
+        for (char cur : str.toCharArray()) {
+            if (Character.isUpperCase(cur) && !foundFirstLowercase) {
+                stringBuilder.append(Character.toLowerCase(cur));
             } else {
-                return str.toLowerCase();
+                foundFirstLowercase = true;
+                stringBuilder.append(cur);
             }
         }
-        return str;
+        return stringBuilder.toString();
     }
 }

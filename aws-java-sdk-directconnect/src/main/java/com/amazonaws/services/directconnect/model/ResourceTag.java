@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,21 +14,23 @@ package com.amazonaws.services.directconnect.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The tags associated with a Direct Connect resource.
+ * Information about a tag associated with an AWS Direct Connect resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceTag implements Serializable, Cloneable {
+public class ResourceTag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceArn;
@@ -41,11 +43,11 @@ public class ResourceTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,10 +56,10 @@ public class ResourceTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceArn() {
@@ -66,11 +68,11 @@ public class ResourceTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Direct Connect resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the Direct Connect resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +155,8 @@ public class ResourceTag implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,5 +212,11 @@ public class ResourceTag implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.directconnect.model.transform.ResourceTagMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

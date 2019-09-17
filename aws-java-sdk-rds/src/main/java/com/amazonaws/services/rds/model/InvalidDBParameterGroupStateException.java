@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB parameter group cannot be deleted because it is in use.
+ * The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter group, you
+ * can't delete it when the parameter group is in this state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceAccessDetails implements Serializable, Cloneable {
+public class InstanceAccessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -47,10 +49,31 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
     private String ipAddress;
     /**
      * <p>
-     * For RDP access, the temporary password of the Amazon EC2 instance.
+     * For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password
+     * for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the
+     * instance to be ready.
      * </p>
+     * <note>
+     * <p>
+     * If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
+     * <code>password</code> will always be an empty string.
+     * </p>
+     * <p>
+     * If you change the Administrator password on the instance, Lightsail will continue to return the original password
+     * value. When accessing the instance using RDP, you need to manually enter the Administrator password after
+     * changing it from the default.
+     * </p>
+     * </note>
      */
     private String password;
+    /**
+     * <p>
+     * For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only
+     * needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready
+     * yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     * </p>
+     */
+    private PasswordData passwordData;
     /**
      * <p>
      * For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this
@@ -76,6 +99,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     */
+    private java.util.List<HostKeyAttributes> hostKeys;
 
     /**
      * <p>
@@ -205,11 +234,35 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For RDP access, the temporary password of the Amazon EC2 instance.
+     * For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password
+     * for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the
+     * instance to be ready.
      * </p>
+     * <note>
+     * <p>
+     * If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
+     * <code>password</code> will always be an empty string.
+     * </p>
+     * <p>
+     * If you change the Administrator password on the instance, Lightsail will continue to return the original password
+     * value. When accessing the instance using RDP, you need to manually enter the Administrator password after
+     * changing it from the default.
+     * </p>
+     * </note>
      * 
      * @param password
-     *        For RDP access, the temporary password of the Amazon EC2 instance.
+     *        For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the
+     *        password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes
+     *        for the instance to be ready.</p> <note>
+     *        <p>
+     *        If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>
+     *        ), <code>password</code> will always be an empty string.
+     *        </p>
+     *        <p>
+     *        If you change the Administrator password on the instance, Lightsail will continue to return the original
+     *        password value. When accessing the instance using RDP, you need to manually enter the Administrator
+     *        password after changing it from the default.
+     *        </p>
      */
 
     public void setPassword(String password) {
@@ -218,10 +271,34 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For RDP access, the temporary password of the Amazon EC2 instance.
+     * For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password
+     * for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the
+     * instance to be ready.
      * </p>
+     * <note>
+     * <p>
+     * If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
+     * <code>password</code> will always be an empty string.
+     * </p>
+     * <p>
+     * If you change the Administrator password on the instance, Lightsail will continue to return the original password
+     * value. When accessing the instance using RDP, you need to manually enter the Administrator password after
+     * changing it from the default.
+     * </p>
+     * </note>
      * 
-     * @return For RDP access, the temporary password of the Amazon EC2 instance.
+     * @return For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the
+     *         password for your new instance is not ready yet. When you create an instance, it can take up to 15
+     *         minutes for the instance to be ready.</p> <note>
+     *         <p>
+     *         If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>
+     *         ), <code>password</code> will always be an empty string.
+     *         </p>
+     *         <p>
+     *         If you change the Administrator password on the instance, Lightsail will continue to return the original
+     *         password value. When accessing the instance using RDP, you need to manually enter the Administrator
+     *         password after changing it from the default.
+     *         </p>
      */
 
     public String getPassword() {
@@ -230,16 +307,93 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For RDP access, the temporary password of the Amazon EC2 instance.
+     * For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password
+     * for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the
+     * instance to be ready.
      * </p>
+     * <note>
+     * <p>
+     * If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
+     * <code>password</code> will always be an empty string.
+     * </p>
+     * <p>
+     * If you change the Administrator password on the instance, Lightsail will continue to return the original password
+     * value. When accessing the instance using RDP, you need to manually enter the Administrator password after
+     * changing it from the default.
+     * </p>
+     * </note>
      * 
      * @param password
-     *        For RDP access, the temporary password of the Amazon EC2 instance.
+     *        For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the
+     *        password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes
+     *        for the instance to be ready.</p> <note>
+     *        <p>
+     *        If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>
+     *        ), <code>password</code> will always be an empty string.
+     *        </p>
+     *        <p>
+     *        If you change the Administrator password on the instance, Lightsail will continue to return the original
+     *        password value. When accessing the instance using RDP, you need to manually enter the Administrator
+     *        password after changing it from the default.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceAccessDetails withPassword(String password) {
         setPassword(password);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only
+     * needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready
+     * yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     * </p>
+     * 
+     * @param passwordData
+     *        For a Windows Server-based instance, an object with the data you can use to retrieve your password. This
+     *        is only needed if <code>password</code> is empty and the instance is not new (and therefore the password
+     *        is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     */
+
+    public void setPasswordData(PasswordData passwordData) {
+        this.passwordData = passwordData;
+    }
+
+    /**
+     * <p>
+     * For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only
+     * needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready
+     * yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     * </p>
+     * 
+     * @return For a Windows Server-based instance, an object with the data you can use to retrieve your password. This
+     *         is only needed if <code>password</code> is empty and the instance is not new (and therefore the password
+     *         is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be
+     *         ready.
+     */
+
+    public PasswordData getPasswordData() {
+        return this.passwordData;
+    }
+
+    /**
+     * <p>
+     * For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only
+     * needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready
+     * yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     * </p>
+     * 
+     * @param passwordData
+     *        For a Windows Server-based instance, an object with the data you can use to retrieve your password. This
+     *        is only needed if <code>password</code> is empty and the instance is not new (and therefore the password
+     *        is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withPasswordData(PasswordData passwordData) {
+        setPasswordData(passwordData);
         return this;
     }
 
@@ -343,7 +497,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
      */
 
     public void setProtocol(InstanceAccessProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -358,7 +512,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
      */
 
     public InstanceAccessDetails withProtocol(InstanceAccessProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -443,7 +597,78 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @return Describes the public SSH host keys or the RDP certificate.
+     */
+
+    public java.util.List<HostKeyAttributes> getHostKeys() {
+        return hostKeys;
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     */
+
+    public void setHostKeys(java.util.Collection<HostKeyAttributes> hostKeys) {
+        if (hostKeys == null) {
+            this.hostKeys = null;
+            return;
+        }
+
+        this.hostKeys = new java.util.ArrayList<HostKeyAttributes>(hostKeys);
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostKeys(java.util.Collection)} or {@link #withHostKeys(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withHostKeys(HostKeyAttributes... hostKeys) {
+        if (this.hostKeys == null) {
+            setHostKeys(new java.util.ArrayList<HostKeyAttributes>(hostKeys.length));
+        }
+        for (HostKeyAttributes ele : hostKeys) {
+            this.hostKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withHostKeys(java.util.Collection<HostKeyAttributes> hostKeys) {
+        setHostKeys(hostKeys);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -461,6 +686,8 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append(getPassword()).append(",");
+        if (getPasswordData() != null)
+            sb.append("PasswordData: ").append(getPasswordData()).append(",");
         if (getPrivateKey() != null)
             sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
         if (getProtocol() != null)
@@ -468,7 +695,9 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
         if (getInstanceName() != null)
             sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getHostKeys() != null)
+            sb.append("HostKeys: ").append(getHostKeys());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +728,10 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getPasswordData() == null ^ this.getPasswordData() == null)
+            return false;
+        if (other.getPasswordData() != null && other.getPasswordData().equals(this.getPasswordData()) == false)
+            return false;
         if (other.getPrivateKey() == null ^ this.getPrivateKey() == null)
             return false;
         if (other.getPrivateKey() != null && other.getPrivateKey().equals(this.getPrivateKey()) == false)
@@ -515,6 +748,10 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getHostKeys() == null ^ this.getHostKeys() == null)
+            return false;
+        if (other.getHostKeys() != null && other.getHostKeys().equals(this.getHostKeys()) == false)
+            return false;
         return true;
     }
 
@@ -527,10 +764,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getPasswordData() == null) ? 0 : getPasswordData().hashCode());
         hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getHostKeys() == null) ? 0 : getHostKeys().hashCode());
         return hashCode;
     }
 
@@ -541,5 +780,11 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.InstanceAccessDetailsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

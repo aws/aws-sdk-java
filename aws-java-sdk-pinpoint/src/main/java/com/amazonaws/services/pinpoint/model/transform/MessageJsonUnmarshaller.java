@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageSmallIconUrl", targetDepth)) {
+                    context.nextToken();
+                    message.setImageSmallIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ImageUrl", targetDepth)) {
                     context.nextToken();
                     message.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,9 +76,17 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RawContent", targetDepth)) {
+                    context.nextToken();
+                    message.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SilentPush", targetDepth)) {
                     context.nextToken();
                     message.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("TimeToLive", targetDepth)) {
+                    context.nextToken();
+                    message.setTimeToLive(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();

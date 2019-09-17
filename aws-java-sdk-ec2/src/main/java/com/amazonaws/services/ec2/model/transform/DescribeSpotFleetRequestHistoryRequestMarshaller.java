@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,24 +42,24 @@ public class DescribeSpotFleetRequestHistoryRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId() != null) {
-            request.addParameter("SpotFleetRequestId", StringUtils.fromString(describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId()));
-        }
-
         if (describeSpotFleetRequestHistoryRequest.getEventType() != null) {
             request.addParameter("EventType", StringUtils.fromString(describeSpotFleetRequestHistoryRequest.getEventType()));
         }
 
-        if (describeSpotFleetRequestHistoryRequest.getStartTime() != null) {
-            request.addParameter("StartTime", StringUtils.fromDate(describeSpotFleetRequestHistoryRequest.getStartTime()));
+        if (describeSpotFleetRequestHistoryRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestHistoryRequest.getMaxResults()));
         }
 
         if (describeSpotFleetRequestHistoryRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetRequestHistoryRequest.getNextToken()));
         }
 
-        if (describeSpotFleetRequestHistoryRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestHistoryRequest.getMaxResults()));
+        if (describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId() != null) {
+            request.addParameter("SpotFleetRequestId", StringUtils.fromString(describeSpotFleetRequestHistoryRequest.getSpotFleetRequestId()));
+        }
+
+        if (describeSpotFleetRequestHistoryRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeSpotFleetRequestHistoryRequest.getStartTime()));
         }
 
         return request;

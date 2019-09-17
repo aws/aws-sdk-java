@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteFlowLogsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DeleteFlowLogs.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DeleteFlowLogsRequest> {
@@ -31,6 +29,9 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
 
@@ -38,8 +39,13 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
-     * @return One or more flow log IDs.
+     * @return One or more flow log IDs.</p>
+     *         <p>
+     *         Constraint: Maximum of 1000 flow log IDs.
      */
 
     public java.util.List<String> getFlowLogIds() {
@@ -53,9 +59,14 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      */
 
     public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
@@ -72,13 +83,18 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * One or more flow log IDs.
      * </p>
      * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,9 +112,14 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * One or more flow log IDs.
      * </p>
+     * <p>
+     * Constraint: Maximum of 1000 flow log IDs.
+     * </p>
      * 
      * @param flowLogIds
-     *        One or more flow log IDs.
+     *        One or more flow log IDs.</p>
+     *        <p>
+     *        Constraint: Maximum of 1000 flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +140,8 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

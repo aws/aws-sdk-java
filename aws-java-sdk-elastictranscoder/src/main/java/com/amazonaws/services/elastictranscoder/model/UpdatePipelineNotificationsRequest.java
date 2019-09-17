@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -131,7 +131,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -166,7 +166,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>
@@ -208,7 +208,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -242,7 +242,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *         <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *         has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *         </p>
      *         </li>
@@ -284,7 +284,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      * </p>
      * </li>
@@ -319,7 +319,7 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+     *        <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
      *        has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.
      *        </p>
      *        </li>
@@ -344,7 +344,8 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

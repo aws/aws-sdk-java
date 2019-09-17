@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of an API of the to-be-retrieved documentation versions.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +86,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *        collection.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -100,11 +99,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *         collection.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -113,12 +111,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-     *        collection.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +126,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The page size of the returned documentation versions.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -142,10 +139,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The page size of the returned documentation versions.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -154,11 +151,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page size of the returned documentation versions.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The page size of the returned documentation versions.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +165,8 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

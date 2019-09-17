@@ -35,6 +35,9 @@ public enum ${shape.shapeName} {
      * @param value
      *            real value
      * @return ${shape.shapeName} corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *             If the specified value does not map to one of the known values in this enum.
      */
     public static ${shape.shapeName} fromValue(String value) {
         if (value == null || "".equals(value)) {

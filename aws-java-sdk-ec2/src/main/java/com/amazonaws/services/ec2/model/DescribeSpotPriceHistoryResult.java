@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,63 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The token required to retrieve the next set of results. This value is null or an empty string when there are no
+     * more results to return.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
      * The historical Spot prices.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotPrice> spotPriceHistory;
+
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token required to retrieve the next set of results. This value is null or an empty string when there are no
+     * more results to return.
      * </p>
+     * 
+     * @param nextToken
+     *        The token required to retrieve the next set of results. This value is null or an empty string when there
+     *        are no more results to return.
      */
-    private String nextToken;
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token required to retrieve the next set of results. This value is null or an empty string when there are no
+     * more results to return.
+     * </p>
+     * 
+     * @return The token required to retrieve the next set of results. This value is null or an empty string when there
+     *         are no more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token required to retrieve the next set of results. This value is null or an empty string when there are no
+     * more results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token required to retrieve the next set of results. This value is null or an empty string when there
+     *        are no more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotPriceHistoryResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,53 +159,8 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *         more results to return.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotPriceHistoryResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,10 +170,10 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotPriceHistory() != null)
-            sb.append("SpotPriceHistory: ").append(getSpotPriceHistory()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getSpotPriceHistory() != null)
+            sb.append("SpotPriceHistory: ").append(getSpotPriceHistory());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +188,13 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
         if (obj instanceof DescribeSpotPriceHistoryResult == false)
             return false;
         DescribeSpotPriceHistoryResult other = (DescribeSpotPriceHistoryResult) obj;
-        if (other.getSpotPriceHistory() == null ^ this.getSpotPriceHistory() == null)
-            return false;
-        if (other.getSpotPriceHistory() != null && other.getSpotPriceHistory().equals(this.getSpotPriceHistory()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getSpotPriceHistory() == null ^ this.getSpotPriceHistory() == null)
+            return false;
+        if (other.getSpotPriceHistory() != null && other.getSpotPriceHistory().equals(this.getSpotPriceHistory()) == false)
             return false;
         return true;
     }
@@ -203,8 +204,8 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotPriceHistory() == null) ? 0 : getSpotPriceHistory().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotPriceHistory() == null) ? 0 : getSpotPriceHistory().hashCode());
         return hashCode;
     }
 

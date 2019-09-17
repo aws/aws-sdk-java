@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,50 @@
  */
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudsearchdomain.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SuggestRequest Marshaller
+ * SuggestRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SuggestRequestMarshaller implements Marshaller<Request<SuggestRequest>, SuggestRequest> {
+@SdkInternalApi
+public class SuggestRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> QUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("q").build();
+    private static final MarshallingInfo<String> SUGGESTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("suggester").build();
+    private static final MarshallingInfo<Long> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("size").build();
 
-    public SuggestRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SuggestRequestMarshaller instance = new SuggestRequestMarshaller();
+
+    public static SuggestRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SuggestRequest> marshall(SuggestRequest suggestRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SuggestRequest suggestRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (suggestRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SuggestRequest> request = new DefaultRequest<SuggestRequest>(suggestRequest, "AmazonCloudSearchDomain");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2013-01-01/suggest?format=sdk&pretty=true";
-
-        uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
-
-        request.setResourcePath(uriResourcePath);
-
-        if (suggestRequest.getQuery() != null) {
-            request.addParameter("q", StringUtils.fromString(suggestRequest.getQuery()));
+        try {
+            protocolMarshaller.marshall(suggestRequest.getQuery(), QUERY_BINDING);
+            protocolMarshaller.marshall(suggestRequest.getSuggester(), SUGGESTER_BINDING);
+            protocolMarshaller.marshall(suggestRequest.getSize(), SIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (suggestRequest.getSuggester() != null) {
-            request.addParameter("suggester", StringUtils.fromString(suggestRequest.getSuggester()));
-        }
-
-        if (suggestRequest.getSize() != null) {
-            request.addParameter("size", StringUtils.fromLong(suggestRequest.getSize()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

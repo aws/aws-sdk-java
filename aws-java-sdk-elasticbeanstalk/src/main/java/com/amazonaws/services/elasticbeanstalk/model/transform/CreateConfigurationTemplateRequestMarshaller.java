@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,15 +54,21 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             request.addParameter("SolutionStackName", StringUtils.fromString(createConfigurationTemplateRequest.getSolutionStackName()));
         }
 
-        SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
-        if (sourceConfiguration != null) {
+        if (createConfigurationTemplateRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(createConfigurationTemplateRequest.getPlatformArn()));
+        }
 
-            if (sourceConfiguration.getApplicationName() != null) {
-                request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfiguration.getApplicationName()));
-            }
+        {
+            SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
+            if (sourceConfiguration != null) {
 
-            if (sourceConfiguration.getTemplateName() != null) {
-                request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfiguration.getTemplateName()));
+                if (sourceConfiguration.getApplicationName() != null) {
+                    request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfiguration.getApplicationName()));
+                }
+
+                if (sourceConfiguration.getTemplateName() != null) {
+                    request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfiguration.getTemplateName()));
+                }
             }
         }
 
@@ -74,9 +80,11 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             request.addParameter("Description", StringUtils.fromString(createConfigurationTemplateRequest.getDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!createConfigurationTemplateRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest.getOptionSettings())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
@@ -101,6 +109,24 @@ public class CreateConfigurationTemplateRequestMarshaller implements
                             StringUtils.fromString(optionSettingsListValue.getValue()));
                 }
                 optionSettingsListIndex++;
+            }
+        }
+
+        if (!createConfigurationTemplateRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createConfigurationTemplateRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createConfigurationTemplateRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
             }
         }
 

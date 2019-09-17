@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,16 +29,16 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
-     * </p>
-     */
-    private String vpnGatewayId;
-    /**
-     * <p>
      * The ID of the VPC.
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     */
+    private String vpnGatewayId;
 
     /**
      * Default constructor for DetachVpnGatewayRequest object. Callers should use the setter or fluent setter (with...)
@@ -59,46 +59,6 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     public DetachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
         setVpnGatewayId(vpnGatewayId);
         setVpcId(vpcId);
-    }
-
-    /**
-     * <p>
-     * The ID of the virtual private gateway.
-     * </p>
-     * 
-     * @param vpnGatewayId
-     *        The ID of the virtual private gateway.
-     */
-
-    public void setVpnGatewayId(String vpnGatewayId) {
-        this.vpnGatewayId = vpnGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the virtual private gateway.
-     * </p>
-     * 
-     * @return The ID of the virtual private gateway.
-     */
-
-    public String getVpnGatewayId() {
-        return this.vpnGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the virtual private gateway.
-     * </p>
-     * 
-     * @param vpnGatewayId
-     *        The ID of the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DetachVpnGatewayRequest withVpnGatewayId(String vpnGatewayId) {
-        setVpnGatewayId(vpnGatewayId);
-        return this;
     }
 
     /**
@@ -142,6 +102,46 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @param vpnGatewayId
+     *        The ID of the virtual private gateway.
+     */
+
+    public void setVpnGatewayId(String vpnGatewayId) {
+        this.vpnGatewayId = vpnGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the virtual private gateway.
+     */
+
+    public String getVpnGatewayId() {
+        return this.vpnGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @param vpnGatewayId
+     *        The ID of the virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetachVpnGatewayRequest withVpnGatewayId(String vpnGatewayId) {
+        setVpnGatewayId(vpnGatewayId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -153,7 +153,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,10 +164,10 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpnGatewayId() != null)
-            sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getVpnGatewayId() != null)
+            sb.append("VpnGatewayId: ").append(getVpnGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +182,13 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof DetachVpnGatewayRequest == false)
             return false;
         DetachVpnGatewayRequest other = (DetachVpnGatewayRequest) obj;
-        if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
-            return false;
-        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
-            return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
+        if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
+            return false;
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
             return false;
         return true;
     }
@@ -197,8 +198,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
         return hashCode;
     }
 

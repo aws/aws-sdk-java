@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,24 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      */
     private String certificateId;
+    /**
+     * <p>
+     * Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * </p>
+     */
+    private Boolean forceDelete;
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public void setCertificateId(String certificateId) {
@@ -47,10 +53,10 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
-     * @return The ID of the certificate.
+     * @return The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public String getCertificateId() {
@@ -59,11 +65,11 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the certificate.
+     * The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate.
+     *        The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,7 +79,60 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     */
+
+    public void setForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+    }
+
+    /**
+     * <p>
+     * Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * </p>
+     * 
+     * @return Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     */
+
+    public Boolean getForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
+     * <p>
+     * Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteCertificateRequest withForceDelete(Boolean forceDelete) {
+        setForceDelete(forceDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     * </p>
+     * 
+     * @return Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
+     */
+
+    public Boolean isForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +143,9 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: ").append(getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
+        if (getForceDelete() != null)
+            sb.append("ForceDelete: ").append(getForceDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +164,10 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
+        if (other.getForceDelete() == null ^ this.getForceDelete() == null)
+            return false;
+        if (other.getForceDelete() != null && other.getForceDelete().equals(this.getForceDelete()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +177,7 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
         return hashCode;
     }
 

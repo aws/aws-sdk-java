@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,6 +13,7 @@
 
 package com.amazonaws.services.ec2.waiters;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;
@@ -36,6 +37,46 @@ class SpotInstanceRequestFulfilled {
         static {
             try {
                 expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"fulfilled\"");
+            } catch (IOException ioe) {
+                throw new RuntimeException(ioe);
+            }
+        }
+
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("SpotInstanceRequests")),
+                new JmesPathSubExpression(new JmesPathField("Status"), new JmesPathField("Code")));
+
+        /**
+         * Takes the result and determines whether the state of the resource matches the expected state. To determine
+         * the current state of the resource, JmesPath expression is evaluated and compared against the expected result.
+         * 
+         * @param result
+         *        Corresponding result of the operation
+         * @return True if current state of the resource matches the expected state, False otherwise
+         */
+        @Override
+        public boolean matches(DescribeSpotInstanceRequestsResult result) {
+            JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
+            JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
+            return AcceptorPathMatcher.pathAll(expectedResult, finalResult);
+        }
+
+        /**
+         * Represents the current waiter state in the case where resource state matches the expected state
+         * 
+         * @return Corresponding state of the waiter
+         */
+        @Override
+        public WaiterState getState() {
+            return WaiterState.SUCCESS;
+        }
+    }
+
+    static class IsRequestcanceledandinstancerunningMatcher extends WaiterAcceptor<DescribeSpotInstanceRequestsResult> {
+        private static final JsonNode expectedResult;
+
+        static {
+            try {
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"request-canceled-and-instance-running\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }
@@ -227,6 +268,31 @@ class SpotInstanceRequestFulfilled {
         @Override
         public WaiterState getState() {
             return WaiterState.FAILURE;
+        }
+    }
+
+    static class IsInvalidSpotInstanceRequestIDNotFoundMatcher extends WaiterAcceptor<DescribeSpotInstanceRequestsResult> {
+        /**
+         * Takes the response exception and determines whether this exception matches the expected exception, by
+         * comparing the respective error codes.
+         * 
+         * @param e
+         *        Response Exception
+         * @return True if it matches, False otherwise
+         */
+        @Override
+        public boolean matches(AmazonServiceException e) {
+            return "InvalidSpotInstanceRequestID.NotFound".equals(e.getErrorCode());
+        }
+
+        /**
+         * Represents the current waiter state in the case where resource state matches the expected state
+         * 
+         * @return Corresponding state of the waiter
+         */
+        @Override
+        public WaiterState getState() {
+            return WaiterState.RETRY;
         }
     }
 }

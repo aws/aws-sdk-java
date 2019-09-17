@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target should be removed from.
+     * The ID of the maintenance window the target should be removed from.
      * </p>
      */
     private String windowId;
@@ -37,14 +37,21 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
      * </p>
      */
     private String windowTargetId;
+    /**
+     * <p>
+     * The system checks if the target is being referenced by a task. If the target is being referenced, the system
+     * returns an error and does not deregister the target from the maintenance window.
+     * </p>
+     */
+    private Boolean safe;
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target should be removed from.
+     * The ID of the maintenance window the target should be removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the target should be removed from.
+     *        The ID of the maintenance window the target should be removed from.
      */
 
     public void setWindowId(String windowId) {
@@ -53,10 +60,10 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target should be removed from.
+     * The ID of the maintenance window the target should be removed from.
      * </p>
      * 
-     * @return The ID of the Maintenance Window the target should be removed from.
+     * @return The ID of the maintenance window the target should be removed from.
      */
 
     public String getWindowId() {
@@ -65,11 +72,11 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the Maintenance Window the target should be removed from.
+     * The ID of the maintenance window the target should be removed from.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window the target should be removed from.
+     *        The ID of the maintenance window the target should be removed from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +126,68 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The system checks if the target is being referenced by a task. If the target is being referenced, the system
+     * returns an error and does not deregister the target from the maintenance window.
+     * </p>
+     * 
+     * @param safe
+     *        The system checks if the target is being referenced by a task. If the target is being referenced, the
+     *        system returns an error and does not deregister the target from the maintenance window.
+     */
+
+    public void setSafe(Boolean safe) {
+        this.safe = safe;
+    }
+
+    /**
+     * <p>
+     * The system checks if the target is being referenced by a task. If the target is being referenced, the system
+     * returns an error and does not deregister the target from the maintenance window.
+     * </p>
+     * 
+     * @return The system checks if the target is being referenced by a task. If the target is being referenced, the
+     *         system returns an error and does not deregister the target from the maintenance window.
+     */
+
+    public Boolean getSafe() {
+        return this.safe;
+    }
+
+    /**
+     * <p>
+     * The system checks if the target is being referenced by a task. If the target is being referenced, the system
+     * returns an error and does not deregister the target from the maintenance window.
+     * </p>
+     * 
+     * @param safe
+     *        The system checks if the target is being referenced by a task. If the target is being referenced, the
+     *        system returns an error and does not deregister the target from the maintenance window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeregisterTargetFromMaintenanceWindowRequest withSafe(Boolean safe) {
+        setSafe(safe);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The system checks if the target is being referenced by a task. If the target is being referenced, the system
+     * returns an error and does not deregister the target from the maintenance window.
+     * </p>
+     * 
+     * @return The system checks if the target is being referenced by a task. If the target is being referenced, the
+     *         system returns an error and does not deregister the target from the maintenance window.
+     */
+
+    public Boolean isSafe() {
+        return this.safe;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -132,7 +200,9 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
         if (getWindowId() != null)
             sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getWindowTargetId() != null)
-            sb.append("WindowTargetId: ").append(getWindowTargetId());
+            sb.append("WindowTargetId: ").append(getWindowTargetId()).append(",");
+        if (getSafe() != null)
+            sb.append("Safe: ").append(getSafe());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +225,10 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
             return false;
         if (other.getWindowTargetId() != null && other.getWindowTargetId().equals(this.getWindowTargetId()) == false)
             return false;
+        if (other.getSafe() == null ^ this.getSafe() == null)
+            return false;
+        if (other.getSafe() != null && other.getSafe().equals(this.getSafe()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +239,7 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
 
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getWindowTargetId() == null) ? 0 : getWindowTargetId().hashCode());
+        hashCode = prime * hashCode + ((getSafe() == null) ? 0 : getSafe().hashCode());
         return hashCode;
     }
 

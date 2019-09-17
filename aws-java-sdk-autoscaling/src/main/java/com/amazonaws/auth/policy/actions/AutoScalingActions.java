@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public enum AutoScalingActions implements Action {
     AttachLoadBalancerTargetGroups("autoscaling:AttachLoadBalancerTargetGroups"),
     /** Action for the AttachLoadBalancers operation. */
     AttachLoadBalancers("autoscaling:AttachLoadBalancers"),
+    /** Action for the BatchDeleteScheduledAction operation. */
+    BatchDeleteScheduledAction("autoscaling:BatchDeleteScheduledAction"),
+    /** Action for the BatchPutScheduledUpdateGroupAction operation. */
+    BatchPutScheduledUpdateGroupAction("autoscaling:BatchPutScheduledUpdateGroupAction"),
     /** Action for the CompleteLifecycleAction operation. */
     CompleteLifecycleAction("autoscaling:CompleteLifecycleAction"),
     /** Action for the CreateAutoScalingGroup operation. */

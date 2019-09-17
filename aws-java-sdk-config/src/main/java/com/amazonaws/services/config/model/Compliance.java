@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,23 +27,23 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Compliance implements Serializable, Cloneable {
+public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -63,16 +65,16 @@ public class Compliance implements Serializable, Cloneable {
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -83,16 +85,16 @@ public class Compliance implements Serializable, Cloneable {
      * @param complianceType
      *        Indicates whether an AWS resource or AWS Config rule is compliant.</p>
      *        <p>
-     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is
+     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
      *        noncompliant if it does not comply with one or more of these rules.
      *        </p>
      *        <p>
-     *        A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant
+     *        A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant
      *        if any of these resources do not comply.
      *        </p>
      *        <p>
      *        AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for
-     *        the AWS resource or Config rule.
+     *        the AWS resource or AWS Config rule.
      *        </p>
      *        <p>
      *        For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -110,16 +112,16 @@ public class Compliance implements Serializable, Cloneable {
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -129,16 +131,16 @@ public class Compliance implements Serializable, Cloneable {
      * 
      * @return Indicates whether an AWS resource or AWS Config rule is compliant.</p>
      *         <p>
-     *         A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is
+     *         A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
      *         noncompliant if it does not comply with one or more of these rules.
      *         </p>
      *         <p>
-     *         A rule is compliant if all of the resources that the rule evaluates comply with it, and it is
+     *         A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is
      *         noncompliant if any of these resources do not comply.
      *         </p>
      *         <p>
      *         AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for
-     *         the AWS resource or Config rule.
+     *         the AWS resource or AWS Config rule.
      *         </p>
      *         <p>
      *         For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -156,16 +158,16 @@ public class Compliance implements Serializable, Cloneable {
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -176,16 +178,16 @@ public class Compliance implements Serializable, Cloneable {
      * @param complianceType
      *        Indicates whether an AWS resource or AWS Config rule is compliant.</p>
      *        <p>
-     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is
+     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
      *        noncompliant if it does not comply with one or more of these rules.
      *        </p>
      *        <p>
-     *        A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant
+     *        A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant
      *        if any of these resources do not comply.
      *        </p>
      *        <p>
      *        AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for
-     *        the AWS resource or Config rule.
+     *        the AWS resource or AWS Config rule.
      *        </p>
      *        <p>
      *        For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -205,16 +207,16 @@ public class Compliance implements Serializable, Cloneable {
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -225,16 +227,16 @@ public class Compliance implements Serializable, Cloneable {
      * @param complianceType
      *        Indicates whether an AWS resource or AWS Config rule is compliant.</p>
      *        <p>
-     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is
+     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
      *        noncompliant if it does not comply with one or more of these rules.
      *        </p>
      *        <p>
-     *        A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant
+     *        A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant
      *        if any of these resources do not comply.
      *        </p>
      *        <p>
      *        AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for
-     *        the AWS resource or Config rule.
+     *        the AWS resource or AWS Config rule.
      *        </p>
      *        <p>
      *        For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -244,7 +246,7 @@ public class Compliance implements Serializable, Cloneable {
      */
 
     public void setComplianceType(ComplianceType complianceType) {
-        this.complianceType = complianceType.toString();
+        withComplianceType(complianceType);
     }
 
     /**
@@ -252,16 +254,16 @@ public class Compliance implements Serializable, Cloneable {
      * Indicates whether an AWS resource or AWS Config rule is compliant.
      * </p>
      * <p>
-     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is noncompliant
-     * if it does not comply with one or more of these rules.
+     * A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
+     * noncompliant if it does not comply with one or more of these rules.
      * </p>
      * <p>
-     * A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant if any
+     * A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant if any
      * of these resources do not comply.
      * </p>
      * <p>
      * AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for the AWS
-     * resource or Config rule.
+     * resource or AWS Config rule.
      * </p>
      * <p>
      * For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -272,16 +274,16 @@ public class Compliance implements Serializable, Cloneable {
      * @param complianceType
      *        Indicates whether an AWS resource or AWS Config rule is compliant.</p>
      *        <p>
-     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it, and it is
+     *        A resource is compliant if it complies with all of the AWS Config rules that evaluate it. A resource is
      *        noncompliant if it does not comply with one or more of these rules.
      *        </p>
      *        <p>
-     *        A rule is compliant if all of the resources that the rule evaluates comply with it, and it is noncompliant
+     *        A rule is compliant if all of the resources that the rule evaluates comply with it. A rule is noncompliant
      *        if any of these resources do not comply.
      *        </p>
      *        <p>
      *        AWS Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results are available for
-     *        the AWS resource or Config rule.
+     *        the AWS resource or AWS Config rule.
      *        </p>
      *        <p>
      *        For the <code>Compliance</code> data type, AWS Config supports only <code>COMPLIANT</code>,
@@ -292,7 +294,7 @@ public class Compliance implements Serializable, Cloneable {
      */
 
     public Compliance withComplianceType(ComplianceType complianceType) {
-        setComplianceType(complianceType);
+        this.complianceType = complianceType.toString();
         return this;
     }
 
@@ -343,7 +345,8 @@ public class Compliance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -399,5 +402,11 @@ public class Compliance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.ComplianceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

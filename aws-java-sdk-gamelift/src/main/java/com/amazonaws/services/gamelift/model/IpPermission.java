@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,23 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on GameLift. Each
- * game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into
- * the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
+ * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon
+ * GameLift. New game sessions that are started on the fleet are assigned an IP address/port number combination, which
+ * must fall into the fleet's allowed ranges. For fleets created with a custom game server, the ranges reflect the
+ * server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges,
+ * one for TCP messaging and one for UDP for use by the Realtime servers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IpPermission implements Serializable, Cloneable {
+public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,8 +47,8 @@ public class IpPermission implements Serializable, Cloneable {
     private Integer toPort;
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      */
@@ -144,14 +148,13 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -162,13 +165,12 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
-     * @return Range of allowed IP addresses. This value must be expressed in <a
-     *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * @return Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *         <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *         <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -179,14 +181,13 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-     * notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
+     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in <a
-     *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -251,7 +252,7 @@ public class IpPermission implements Serializable, Cloneable {
      */
 
     public void setProtocol(IpProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -266,12 +267,13 @@ public class IpPermission implements Serializable, Cloneable {
      */
 
     public IpPermission withProtocol(IpProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -341,5 +343,11 @@ public class IpPermission implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.IpPermissionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

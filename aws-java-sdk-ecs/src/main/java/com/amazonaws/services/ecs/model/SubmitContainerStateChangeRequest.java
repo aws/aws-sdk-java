@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      */
     private String cluster;
@@ -43,6 +43,12 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String containerName;
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     */
+    private String runtimeId;
     /**
      * <p>
      * The status of the state change request.
@@ -70,11 +76,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     *        The short name or full ARN of the cluster that hosts the container.
      */
 
     public void setCluster(String cluster) {
@@ -83,10 +89,10 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * @return The short name or full ARN of the cluster that hosts the container.
      */
 
     public String getCluster() {
@@ -95,11 +101,11 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     * The short name or full ARN of the cluster that hosts the container.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container.
+     *        The short name or full ARN of the cluster that hosts the container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,6 +191,46 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     public SubmitContainerStateChangeRequest withContainerName(String containerName) {
         setContainerName(containerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     */
+
+    public void setRuntimeId(String runtimeId) {
+        this.runtimeId = runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @return The ID of the Docker container.
+     */
+
+    public String getRuntimeId() {
+        return this.runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitContainerStateChangeRequest withRuntimeId(String runtimeId) {
+        setRuntimeId(runtimeId);
         return this;
     }
 
@@ -382,7 +428,8 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -398,6 +445,8 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
             sb.append("Task: ").append(getTask()).append(",");
         if (getContainerName() != null)
             sb.append("ContainerName: ").append(getContainerName()).append(",");
+        if (getRuntimeId() != null)
+            sb.append("RuntimeId: ").append(getRuntimeId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getExitCode() != null)
@@ -432,6 +481,10 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getContainerName() != null && other.getContainerName().equals(this.getContainerName()) == false)
             return false;
+        if (other.getRuntimeId() == null ^ this.getRuntimeId() == null)
+            return false;
+        if (other.getRuntimeId() != null && other.getRuntimeId().equals(this.getRuntimeId()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -459,6 +512,7 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getContainerName() == null) ? 0 : getContainerName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeId() == null) ? 0 : getRuntimeId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());

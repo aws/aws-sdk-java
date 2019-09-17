@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,40 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about the activities that were performed by a campaign.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ActivitiesResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivitiesResponse implements Serializable, Cloneable {
-
-    /** List of campaign activities */
-    private java.util.List<ActivityResponse> item;
+public class ActivitiesResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
+     */
+    private java.util.List<ActivityResponse> item;
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
+    private String nextToken;
+
+    /**
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
-     * @return List of campaign activities
+     * @return An array of responses, one for each activity that was performed by the campaign.
      */
 
     public java.util.List<ActivityResponse> getItem() {
@@ -32,10 +55,12 @@ public class ActivitiesResponse implements Serializable, Cloneable {
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      */
 
     public void setItem(java.util.Collection<ActivityResponse> item) {
@@ -48,7 +73,9 @@ public class ActivitiesResponse implements Serializable, Cloneable {
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -56,7 +83,7 @@ public class ActivitiesResponse implements Serializable, Cloneable {
      * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,10 +98,12 @@ public class ActivitiesResponse implements Serializable, Cloneable {
     }
 
     /**
-     * List of campaign activities
+     * <p>
+     * An array of responses, one for each activity that was performed by the campaign.
+     * </p>
      * 
      * @param item
-     *        List of campaign activities
+     *        An array of responses, one for each activity that was performed by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +113,54 @@ public class ActivitiesResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     * 
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivitiesResponse withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -95,7 +171,9 @@ public class ActivitiesResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: ").append(getItem());
+            sb.append("Item: ").append(getItem()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +192,10 @@ public class ActivitiesResponse implements Serializable, Cloneable {
             return false;
         if (other.getItem() != null && other.getItem().equals(this.getItem()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +205,7 @@ public class ActivitiesResponse implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getItem() == null) ? 0 : getItem().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
@@ -133,5 +216,11 @@ public class ActivitiesResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.ActivitiesResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

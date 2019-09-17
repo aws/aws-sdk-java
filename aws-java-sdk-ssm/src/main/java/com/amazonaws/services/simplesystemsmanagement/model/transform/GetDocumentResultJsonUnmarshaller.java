@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,9 +52,21 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                     context.nextToken();
                     getDocumentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VersionName", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusInformation", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setStatusInformation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Content", targetDepth)) {
                     context.nextToken();
@@ -63,6 +75,15 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                 if (context.testExpression("DocumentType", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AttachmentsContent", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setAttachmentsContent(new ListUnmarshaller<AttachmentContent>(AttachmentContentJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose tasks should be retrieved.
+     * The ID of the maintenance window whose tasks should be retrieved.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     * <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId,
+     * TaskArn, Priority, and TaskType.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowFilter> filters;
@@ -54,11 +54,11 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose tasks should be retrieved.
+     * The ID of the maintenance window whose tasks should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose tasks should be retrieved.
+     *        The ID of the maintenance window whose tasks should be retrieved.
      */
 
     public void setWindowId(String windowId) {
@@ -67,10 +67,10 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose tasks should be retrieved.
+     * The ID of the maintenance window whose tasks should be retrieved.
      * </p>
      * 
-     * @return The ID of the Maintenance Window whose tasks should be retrieved.
+     * @return The ID of the maintenance window whose tasks should be retrieved.
      */
 
     public String getWindowId() {
@@ -79,11 +79,11 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Maintenance Window whose tasks should be retrieved.
+     * The ID of the maintenance window whose tasks should be retrieved.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window whose tasks should be retrieved.
+     *        The ID of the maintenance window whose tasks should be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,12 +94,12 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     * <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId,
+     * TaskArn, Priority, and TaskType.
      * </p>
      * 
      * @return Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     *         <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     *         WindowTaskId, TaskArn, Priority, and TaskType.
      */
 
     public java.util.List<MaintenanceWindowFilter> getFilters() {
@@ -111,13 +111,13 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     * <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId,
+     * TaskArn, Priority, and TaskType.
      * </p>
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     *        <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     *        WindowTaskId, TaskArn, Priority, and TaskType.
      */
 
     public void setFilters(java.util.Collection<MaintenanceWindowFilter> filters) {
@@ -131,8 +131,8 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     * <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId,
+     * TaskArn, Priority, and TaskType.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -142,7 +142,7 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     *        <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     *        WindowTaskId, TaskArn, Priority, and TaskType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,13 +158,13 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     * <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     * Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId,
+     * TaskArn, Priority, and TaskType.
      * </p>
      * 
      * @param filters
      *        Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are
-     *        <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.
+     *        WindowTaskId, TaskArn, Priority, and TaskType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,7 +260,8 @@ public class DescribeMaintenanceWindowTasksRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

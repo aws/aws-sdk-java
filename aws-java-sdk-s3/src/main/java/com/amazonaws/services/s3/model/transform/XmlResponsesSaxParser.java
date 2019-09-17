@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -21,6 +21,8 @@ import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -28,7 +30,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -61,11 +63,18 @@ import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
 import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
 import com.amazonaws.services.s3.model.inventory.InventorySchedule;
 
+import com.amazonaws.services.s3.model.replication.ReplicationAndOperator;
+import com.amazonaws.services.s3.model.replication.ReplicationFilter;
+import com.amazonaws.services.s3.model.replication.ReplicationFilterPredicate;
+import com.amazonaws.services.s3.model.replication.ReplicationPrefixPredicate;
+import com.amazonaws.services.s3.model.replication.ReplicationTagPredicate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotRecognizedException;
+import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
@@ -109,6 +118,7 @@ public class XmlResponsesSaxParser {
         // Ensure we can load the XML Reader.
         try {
             xr = XMLReaderFactory.createXMLReader();
+            disableExternalResourceFetching(xr);
         } catch (SAXException e) {
             throw new SdkClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
         }
@@ -215,6 +225,20 @@ public class XmlResponsesSaxParser {
             }
             return sanitizedInputStream;
         }
+    }
+
+    /**
+     * Disables certain dangerous features that attempt to automatically fetch DTDs
+     *
+     * See <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet#XMLReader">OWASP XXE Cheat Sheet</a>
+     * @param reader the reader to disable the features on
+     * @throws SAXNotRecognizedException
+     * @throws SAXNotSupportedException
+     */
+    private void disableExternalResourceFetching(XMLReader reader) throws SAXNotRecognizedException, SAXNotSupportedException {
+        reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);
     }
 
     /**
@@ -543,6 +567,24 @@ public class XmlResponsesSaxParser {
     public RequestPaymentConfigurationHandler parseRequestPaymentConfigurationResponse(InputStream inputStream)
             throws IOException {
         RequestPaymentConfigurationHandler handler = new RequestPaymentConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLegalHoldResponseHandler parseGetObjectLegalHoldResponse(InputStream inputStream) throws IOException {
+        GetObjectLegalHoldResponseHandler handler = new GetObjectLegalHoldResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectLockConfigurationResponseHandler parseGetObjectLockConfigurationResponse(InputStream inputStream) throws IOException {
+        GetObjectLockConfigurationResponseHandler handler = new GetObjectLockConfigurationResponseHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public GetObjectRetentionResponseHandler parseGetObjectRetentionResponse(InputStream inputStream) throws IOException {
+        GetObjectRetentionResponseHandler handler = new GetObjectRetentionResponseHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -2139,16 +2181,39 @@ public class XmlResponsesSaxParser {
         private final BucketReplicationConfiguration bucketReplicationConfiguration = new BucketReplicationConfiguration();
         private String currentRuleId;
         private ReplicationRule currentRule;
+        private ReplicationFilter currentFilter;
+        private List<ReplicationFilterPredicate> andOperandsList;
+        private String currentTagKey;
+        private String currentTagValue;
+        private DeleteMarkerReplication deleteMarkerReplication;
         private ReplicationDestinationConfig destinationConfig;
+        private AccessControlTranslation accessControlTranslation;
+        private EncryptionConfiguration encryptionConfiguration;
+        private SourceSelectionCriteria sourceSelectionCriteria;
+        private SseKmsEncryptedObjects sseKmsEncryptedObjects;
         private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
         private static final String ROLE = "Role";
         private static final String RULE = "Rule";
         private static final String DESTINATION = "Destination";
         private static final String ID = "ID";
         private static final String PREFIX = "Prefix";
+        private static final String FILTER = "Filter";
+        private static final String AND = "And";
+        private static final String TAG = "Tag";
+        private static final String TAG_KEY = "Key";
+        private static final String TAG_VALUE = "Value";
+        private static final String DELETE_MARKER_REPLICATION = "DeleteMarkerReplication";
+        private static final String PRIORITY = "Priority";
         private static final String STATUS = "Status";
         private static final String BUCKET = "Bucket";
         private static final String STORAGECLASS = "StorageClass";
+        private static final String ACCOUNT = "Account";
+        private static final String ACCESS_CONTROL_TRANSLATION = "AccessControlTranslation";
+        private static final String OWNER = "Owner";
+        private static final String ENCRYPTION_CONFIGURATION = "EncryptionConfiguration";
+        private static final String REPLICA_KMS_KEY_ID = "ReplicaKmsKeyID";
+        private static final String SOURCE_SELECTION_CRITERIA = "SourceSelectionCriteria";
+        private static final String SSE_KMS_ENCRYPTED_OBJECTS = "SseKmsEncryptedObjects";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -2165,6 +2230,26 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE)) {
                 if (name.equals(DESTINATION)) {
                     destinationConfig = new ReplicationDestinationConfig();
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    sourceSelectionCriteria = new SourceSelectionCriteria();
+                } else if (name.equals(DELETE_MARKER_REPLICATION)) {
+                    deleteMarkerReplication = new DeleteMarkerReplication();
+                } else if (name.equals(FILTER)) {
+                    currentFilter = new ReplicationFilter();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
+                if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    accessControlTranslation = new AccessControlTranslation();
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    encryptionConfiguration = new EncryptionConfiguration();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sseKmsEncryptedObjects = new SseKmsEncryptedObjects();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
+                if (name.equals(AND)) {
+                    andOperandsList = new ArrayList<ReplicationFilterPredicate>();
                 }
             }
         }
@@ -2177,7 +2262,11 @@ public class XmlResponsesSaxParser {
                             currentRule);
                     currentRule = null;
                     currentRuleId = null;
+                    deleteMarkerReplication = null;
                     destinationConfig = null;
+                    sseKmsEncryptedObjects = null;
+                    accessControlTranslation = null;
+                    encryptionConfiguration = null;
                 } else if (name.equals(ROLE)) {
                     bucketReplicationConfiguration.setRoleARN(getText());
                 }
@@ -2186,6 +2275,15 @@ public class XmlResponsesSaxParser {
                     currentRuleId = getText();
                 } else if (name.equals(PREFIX)) {
                     currentRule.setPrefix(getText());
+                } else if (name.equals(PRIORITY)) {
+                    currentRule.setPriority(Integer.valueOf(getText()));
+                } else if (name.equals(DELETE_MARKER_REPLICATION)) {
+                    currentRule.setDeleteMarkerReplication(deleteMarkerReplication);
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    currentRule.setSourceSelectionCriteria(sourceSelectionCriteria);
+                } else if (name.equals(FILTER)) {
+                    currentRule.setFilter(currentFilter);
+                    currentFilter = null;
                 } else {
                     if (name.equals(STATUS)) {
                         currentRule.setStatus(getText());
@@ -2194,11 +2292,68 @@ public class XmlResponsesSaxParser {
                         currentRule.setDestinationConfig(destinationConfig);
                     }
                 }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
+                if (name.equals(PREFIX)) {
+                    currentFilter.setPredicate(new ReplicationPrefixPredicate(getText()));
+                } else if (name.equals(TAG)) {
+                    currentFilter.setPredicate(new ReplicationTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals(AND)) {
+                    currentFilter.setPredicate(new ReplicationAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, TAG)) {
+                if (name.equals(TAG_KEY)) {
+                    currentTagKey = getText();
+                } else if (name.equals(TAG_VALUE)) {
+                    currentTagValue = getText();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, AND)) {
+                if (name.equals(PREFIX)) {
+                    andOperandsList.add(new ReplicationPrefixPredicate(getText()));
+                } else if (name.equals(TAG)) {
+                    andOperandsList.add(new ReplicationTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, FILTER, AND, TAG)) {
+                if (name.equals(TAG_KEY)) {
+                    currentTagKey = getText();
+                } else if (name.equals(TAG_VALUE)) {
+                    currentTagValue = getText();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sourceSelectionCriteria.setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
+                if (name.equals(STATUS)) {
+                    sseKmsEncryptedObjects.setStatus(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DELETE_MARKER_REPLICATION)) {
+                if (name.equals(STATUS)) {
+                    deleteMarkerReplication.setStatus(getText());
+                }
             } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
                 if (name.equals(BUCKET)) {
                     destinationConfig.setBucketARN(getText());
                 } else if (name.equals(STORAGECLASS)) {
                     destinationConfig.setStorageClass(getText());
+                } else if (name.equals(ACCOUNT)) {
+                    destinationConfig.setAccount(getText());
+                } else if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    destinationConfig.setAccessControlTranslation(accessControlTranslation);
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    destinationConfig.setEncryptionConfiguration(encryptionConfiguration);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ACCESS_CONTROL_TRANSLATION)) {
+                if (name.equals(OWNER)) {
+                    accessControlTranslation.setOwner(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ENCRYPTION_CONFIGURATION)) {
+                if (name.equals(REPLICA_KMS_KEY_ID)) {
+                    encryptionConfiguration.setReplicaKmsKeyID(getText());
                 }
             }
         }
@@ -2226,7 +2381,7 @@ public class XmlResponsesSaxParser {
 
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
-                    currentTagSet = new HashMap<String, String>();
+                    currentTagSet = new LinkedHashMap<String, String>();
                 }
             }
         }
@@ -3407,6 +3562,8 @@ public class XmlResponsesSaxParser {
   */
     public static class GetBucketInventoryConfigurationHandler extends AbstractHandler {
 
+        public static final String SSE_S3 = "SSE-S3";
+        public static final String SSE_KMS = "SSE-KMS";
         private final GetBucketInventoryConfigurationResult result = new GetBucketInventoryConfigurationResult();
         private final InventoryConfiguration configuration = new InventoryConfiguration();
 
@@ -3491,7 +3648,13 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("Prefix")) {
                     s3BucketDestination.setPrefix(getText());
                 }
-
+            } else if (in("InventoryConfiguration", "Destination", "S3BucketDestination", "Encryption")) {
+                if (name.equals(SSE_S3)) {
+                    s3BucketDestination.setEncryption(new ServerSideEncryptionS3());
+                } else if (name.equals(SSE_KMS)) {
+                    ServerSideEncryptionKMS kmsEncryption = new ServerSideEncryptionKMS().withKeyId(getText());
+                    s3BucketDestination.setEncryption(kmsEncryption);
+                }
             } else if (in("InventoryConfiguration", "Filter")) {
                 if (name.equals("Prefix")) {
                     filter.setPredicate(new InventoryPrefixPredicate(getText()));
@@ -3656,6 +3819,101 @@ public class XmlResponsesSaxParser {
             }
         }
 
+    }
+
+    public static class GetObjectLegalHoldResponseHandler extends AbstractHandler {
+        private GetObjectLegalHoldResult getObjectLegalHoldResult = new GetObjectLegalHoldResult();
+
+        private ObjectLockLegalHold legalHold = new ObjectLockLegalHold();
+
+        public GetObjectLegalHoldResult getResult() {
+            return getObjectLegalHoldResult.withLegalHold(legalHold);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("LegalHold")) {
+                if ("Status".equals(name)) {
+                    legalHold.setStatus(getText());
+                }
+            }
+        }
+    }
+
+    public static class GetObjectLockConfigurationResponseHandler extends AbstractHandler {
+        private GetObjectLockConfigurationResult result = new GetObjectLockConfigurationResult();
+        private ObjectLockConfiguration objectLockConfiguration = new ObjectLockConfiguration();
+        private ObjectLockRule rule;
+        private DefaultRetention defaultRetention;
+
+        public GetObjectLockConfigurationResult getResult() {
+            return result.withObjectLockConfiguration(objectLockConfiguration);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            if (in("ObjectLockConfiguration")) {
+                if ("Rule".equals(name)) {
+                    rule = new ObjectLockRule();
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    defaultRetention = new DefaultRetention();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("ObjectLockConfiguration")) {
+                if ("ObjectLockEnabled".equals(name)) {
+                    objectLockConfiguration.setObjectLockEnabled(getText());
+                } else if ("Rule".equals(name)) {
+                    objectLockConfiguration.setRule(rule);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule")) {
+                if ("DefaultRetention".equals(name)) {
+                    rule.setDefaultRetention(defaultRetention);
+                }
+            } else if (in("ObjectLockConfiguration", "Rule", "DefaultRetention")) {
+                if ("Mode".equals(name)) {
+                    defaultRetention.setMode(getText());
+                } else if ("Days".equals(name)) {
+                    defaultRetention.setDays(Integer.parseInt(getText()));
+                } else if ("Years".equals(name)) {
+                    defaultRetention.setYears(Integer.parseInt(getText()));
+                }
+            }
+        }
+    }
+
+    public static class GetObjectRetentionResponseHandler extends AbstractHandler {
+        private GetObjectRetentionResult result = new GetObjectRetentionResult();
+
+        private ObjectLockRetention retention = new ObjectLockRetention();
+
+        public GetObjectRetentionResult getResult() {
+            return result.withRetention(retention);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("Retention")) {
+                if ("Mode".equals(name)) {
+                    retention.setMode(getText());
+                } else if ("RetainUntilDate".equals(name)) {
+                    retention.setRetainUntilDate(ServiceUtils.parseIso8601Date(getText()));
+                }
+            }
+        }
     }
 
     private static String findAttributeValue(

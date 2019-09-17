@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,54 +12,44 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteElasticsearchDomainRequest Marshaller
+ * DeleteElasticsearchDomainRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteElasticsearchDomainRequestMarshaller implements Marshaller<Request<DeleteElasticsearchDomainRequest>, DeleteElasticsearchDomainRequest> {
+@SdkInternalApi
+public class DeleteElasticsearchDomainRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("DomainName").build();
 
-    public DeleteElasticsearchDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteElasticsearchDomainRequestMarshaller instance = new DeleteElasticsearchDomainRequestMarshaller();
+
+    public static DeleteElasticsearchDomainRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteElasticsearchDomainRequest> marshall(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteElasticsearchDomainRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteElasticsearchDomainRequest> request = new DefaultRequest<DeleteElasticsearchDomainRequest>(deleteElasticsearchDomainRequest,
-                "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DomainName",
-                deleteElasticsearchDomainRequest.getDomainName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteElasticsearchDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

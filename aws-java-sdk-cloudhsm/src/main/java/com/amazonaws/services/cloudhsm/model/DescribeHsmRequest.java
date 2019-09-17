@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,26 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     * The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.
      * </p>
      */
     private String hsmArn;
     /**
      * <p>
-     * The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.
+     * The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must
+     * be specified.
      * </p>
      */
     private String hsmSerialNumber;
 
     /**
      * <p>
-     * The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     * The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.
      * </p>
      * 
      * @param hsmArn
-     *        The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     *        The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be
+     *        specified.
      */
 
     public void setHsmArn(String hsmArn) {
@@ -56,10 +58,11 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     * The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.
      * </p>
      * 
-     * @return The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     * @return The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be
+     *         specified.
      */
 
     public String getHsmArn() {
@@ -68,11 +71,12 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     * The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.
      * </p>
      * 
      * @param hsmArn
-     *        The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.
+     *        The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,12 +87,13 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.
+     * The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must
+     * be specified.
      * </p>
      * 
      * @param hsmSerialNumber
-     *        The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be
-     *        specified.
+     *        The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter
+     *        must be specified.
      */
 
     public void setHsmSerialNumber(String hsmSerialNumber) {
@@ -97,11 +102,12 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.
+     * The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must
+     * be specified.
      * </p>
      * 
-     * @return The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be
-     *         specified.
+     * @return The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code>
+     *         parameter must be specified.
      */
 
     public String getHsmSerialNumber() {
@@ -110,12 +116,13 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.
+     * The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must
+     * be specified.
      * </p>
      * 
      * @param hsmSerialNumber
-     *        The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be
-     *        specified.
+     *        The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter
+     *        must be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,7 +132,8 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

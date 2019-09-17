@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,15 +14,15 @@
 /**
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in
- * conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer
- * Guide</a>.
+ * This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon Simple Email
+ * Service</a> (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * <note>
  * <p>
  * For a list of Amazon SES endpoints to use in service requests, see <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the Amazon SES
- * Developer Guide.
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * </note>
  */

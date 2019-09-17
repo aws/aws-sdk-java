@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,24 +44,24 @@ public class ImportVolumeRequestMarshaller implements Marshaller<Request<ImportV
             request.addParameter("AvailabilityZone", StringUtils.fromString(importVolumeRequest.getAvailabilityZone()));
         }
 
+        if (importVolumeRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(importVolumeRequest.getDescription()));
+        }
+
         DiskImageDetail image = importVolumeRequest.getImage();
         if (image != null) {
-
-            if (image.getFormat() != null) {
-                request.addParameter("Image.Format", StringUtils.fromString(image.getFormat()));
-            }
 
             if (image.getBytes() != null) {
                 request.addParameter("Image.Bytes", StringUtils.fromLong(image.getBytes()));
             }
 
+            if (image.getFormat() != null) {
+                request.addParameter("Image.Format", StringUtils.fromString(image.getFormat()));
+            }
+
             if (image.getImportManifestUrl() != null) {
                 request.addParameter("Image.ImportManifestUrl", StringUtils.fromString(image.getImportManifestUrl()));
             }
-        }
-
-        if (importVolumeRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(importVolumeRequest.getDescription()));
         }
 
         VolumeDetail volume = importVolumeRequest.getVolume();

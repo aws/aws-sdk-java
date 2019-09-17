@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,16 +31,26 @@ public enum SimpleEmailServiceActions implements Action {
     CreateConfigurationSet("ses:CreateConfigurationSet"),
     /** Action for the CreateConfigurationSetEventDestination operation. */
     CreateConfigurationSetEventDestination("ses:CreateConfigurationSetEventDestination"),
+    /** Action for the CreateConfigurationSetTrackingOptions operation. */
+    CreateConfigurationSetTrackingOptions("ses:CreateConfigurationSetTrackingOptions"),
+    /** Action for the CreateCustomVerificationEmailTemplate operation. */
+    CreateCustomVerificationEmailTemplate("ses:CreateCustomVerificationEmailTemplate"),
     /** Action for the CreateReceiptFilter operation. */
     CreateReceiptFilter("ses:CreateReceiptFilter"),
     /** Action for the CreateReceiptRule operation. */
     CreateReceiptRule("ses:CreateReceiptRule"),
     /** Action for the CreateReceiptRuleSet operation. */
     CreateReceiptRuleSet("ses:CreateReceiptRuleSet"),
+    /** Action for the CreateTemplate operation. */
+    CreateTemplate("ses:CreateTemplate"),
     /** Action for the DeleteConfigurationSet operation. */
     DeleteConfigurationSet("ses:DeleteConfigurationSet"),
     /** Action for the DeleteConfigurationSetEventDestination operation. */
     DeleteConfigurationSetEventDestination("ses:DeleteConfigurationSetEventDestination"),
+    /** Action for the DeleteConfigurationSetTrackingOptions operation. */
+    DeleteConfigurationSetTrackingOptions("ses:DeleteConfigurationSetTrackingOptions"),
+    /** Action for the DeleteCustomVerificationEmailTemplate operation. */
+    DeleteCustomVerificationEmailTemplate("ses:DeleteCustomVerificationEmailTemplate"),
     /** Action for the DeleteIdentity operation. */
     DeleteIdentity("ses:DeleteIdentity"),
     /** Action for the DeleteIdentityPolicy operation. */
@@ -51,6 +61,8 @@ public enum SimpleEmailServiceActions implements Action {
     DeleteReceiptRule("ses:DeleteReceiptRule"),
     /** Action for the DeleteReceiptRuleSet operation. */
     DeleteReceiptRuleSet("ses:DeleteReceiptRuleSet"),
+    /** Action for the DeleteTemplate operation. */
+    DeleteTemplate("ses:DeleteTemplate"),
     /** Action for the DeleteVerifiedEmailAddress operation. */
     DeleteVerifiedEmailAddress("ses:DeleteVerifiedEmailAddress"),
     /** Action for the DescribeActiveReceiptRuleSet operation. */
@@ -61,6 +73,10 @@ public enum SimpleEmailServiceActions implements Action {
     DescribeReceiptRule("ses:DescribeReceiptRule"),
     /** Action for the DescribeReceiptRuleSet operation. */
     DescribeReceiptRuleSet("ses:DescribeReceiptRuleSet"),
+    /** Action for the GetAccountSendingEnabled operation. */
+    GetAccountSendingEnabled("ses:GetAccountSendingEnabled"),
+    /** Action for the GetCustomVerificationEmailTemplate operation. */
+    GetCustomVerificationEmailTemplate("ses:GetCustomVerificationEmailTemplate"),
     /** Action for the GetIdentityDkimAttributes operation. */
     GetIdentityDkimAttributes("ses:GetIdentityDkimAttributes"),
     /** Action for the GetIdentityMailFromDomainAttributes operation. */
@@ -75,8 +91,12 @@ public enum SimpleEmailServiceActions implements Action {
     GetSendQuota("ses:GetSendQuota"),
     /** Action for the GetSendStatistics operation. */
     GetSendStatistics("ses:GetSendStatistics"),
+    /** Action for the GetTemplate operation. */
+    GetTemplate("ses:GetTemplate"),
     /** Action for the ListConfigurationSets operation. */
     ListConfigurationSets("ses:ListConfigurationSets"),
+    /** Action for the ListCustomVerificationEmailTemplates operation. */
+    ListCustomVerificationEmailTemplates("ses:ListCustomVerificationEmailTemplates"),
     /** Action for the ListIdentities operation. */
     ListIdentities("ses:ListIdentities"),
     /** Action for the ListIdentityPolicies operation. */
@@ -85,18 +105,28 @@ public enum SimpleEmailServiceActions implements Action {
     ListReceiptFilters("ses:ListReceiptFilters"),
     /** Action for the ListReceiptRuleSets operation. */
     ListReceiptRuleSets("ses:ListReceiptRuleSets"),
+    /** Action for the ListTemplates operation. */
+    ListTemplates("ses:ListTemplates"),
     /** Action for the ListVerifiedEmailAddresses operation. */
     ListVerifiedEmailAddresses("ses:ListVerifiedEmailAddresses"),
+    /** Action for the PutConfigurationSetDeliveryOptions operation. */
+    PutConfigurationSetDeliveryOptions("ses:PutConfigurationSetDeliveryOptions"),
     /** Action for the PutIdentityPolicy operation. */
     PutIdentityPolicy("ses:PutIdentityPolicy"),
     /** Action for the ReorderReceiptRuleSet operation. */
     ReorderReceiptRuleSet("ses:ReorderReceiptRuleSet"),
     /** Action for the SendBounce operation. */
     SendBounce("ses:SendBounce"),
+    /** Action for the SendBulkTemplatedEmail operation. */
+    SendBulkTemplatedEmail("ses:SendBulkTemplatedEmail"),
+    /** Action for the SendCustomVerificationEmail operation. */
+    SendCustomVerificationEmail("ses:SendCustomVerificationEmail"),
     /** Action for the SendEmail operation. */
     SendEmail("ses:SendEmail"),
     /** Action for the SendRawEmail operation. */
     SendRawEmail("ses:SendRawEmail"),
+    /** Action for the SendTemplatedEmail operation. */
+    SendTemplatedEmail("ses:SendTemplatedEmail"),
     /** Action for the SetActiveReceiptRuleSet operation. */
     SetActiveReceiptRuleSet("ses:SetActiveReceiptRuleSet"),
     /** Action for the SetIdentityDkimEnabled operation. */
@@ -111,10 +141,24 @@ public enum SimpleEmailServiceActions implements Action {
     SetIdentityNotificationTopic("ses:SetIdentityNotificationTopic"),
     /** Action for the SetReceiptRulePosition operation. */
     SetReceiptRulePosition("ses:SetReceiptRulePosition"),
+    /** Action for the TestRenderTemplate operation. */
+    TestRenderTemplate("ses:TestRenderTemplate"),
+    /** Action for the UpdateAccountSendingEnabled operation. */
+    UpdateAccountSendingEnabled("ses:UpdateAccountSendingEnabled"),
     /** Action for the UpdateConfigurationSetEventDestination operation. */
     UpdateConfigurationSetEventDestination("ses:UpdateConfigurationSetEventDestination"),
+    /** Action for the UpdateConfigurationSetReputationMetricsEnabled operation. */
+    UpdateConfigurationSetReputationMetricsEnabled("ses:UpdateConfigurationSetReputationMetricsEnabled"),
+    /** Action for the UpdateConfigurationSetSendingEnabled operation. */
+    UpdateConfigurationSetSendingEnabled("ses:UpdateConfigurationSetSendingEnabled"),
+    /** Action for the UpdateConfigurationSetTrackingOptions operation. */
+    UpdateConfigurationSetTrackingOptions("ses:UpdateConfigurationSetTrackingOptions"),
+    /** Action for the UpdateCustomVerificationEmailTemplate operation. */
+    UpdateCustomVerificationEmailTemplate("ses:UpdateCustomVerificationEmailTemplate"),
     /** Action for the UpdateReceiptRule operation. */
     UpdateReceiptRule("ses:UpdateReceiptRule"),
+    /** Action for the UpdateTemplate operation. */
+    UpdateTemplate("ses:UpdateTemplate"),
     /** Action for the VerifyDomainDkim operation. */
     VerifyDomainDkim("ses:VerifyDomainDkim"),
     /** Action for the VerifyDomainIdentity operation. */

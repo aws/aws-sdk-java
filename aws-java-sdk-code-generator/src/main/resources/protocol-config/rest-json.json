@@ -111,46 +111,31 @@
     ]
   },
   "modelMarshaller": {
-     "mainTemplate" : "/templates/json/ShapeJsonMarshaller.ftl",
-     "childTemplates" : [
-        {
-          "location" : "/macros/marshaller/rest/MarshalHeaderMembersMacro.ftl",
-          "importAsNamespace" : "MarshalHeaderMembersMacro"
-        }, {
-          "location" : "/macros/marshaller/json/ModelMarshallerMacro.ftl",
-          "importAsNamespace" : "ModelMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/rest-json/RequestMarshallerMacro.ftl",
-          "importAsNamespace" : "RequestMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/json/MemberMarshallerMacro.ftl",
-          "importAsNamespace" : "MemberMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/rest/UriMemberMarshallerMacro.ftl",
-          "importAsNamespace" : "UriMemberMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/rest/UriGetMemberMarshallerMacro.ftl",
-          "importAsNamespace" : "UriGetMemberMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/rest/QueryStringMemberMarshallerMacro.ftl",
-          "importAsNamespace" : "QueryStringMemberMarshallerMacro"
-        }, {
-          "location" : "/macros/marshaller/json/ListMemberMacro.ftl",
-          "importAsNamespace" : "ListMemberMacro"
-        }, {
-          "location" : "/macros/marshaller/json/MapMemberMacro.ftl",
-          "importAsNamespace" : "MapMemberMacro"
-        }, {
-          "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
-          "importAsNamespace" : "IdempotencyTokenMacro"
-        }, {
-         "location": "/macros/marshaller/common/DefaultRequestCreation.ftl",
-         "importAsNamespace": "DefaultRequestCreation"
-       }, {
-         "location" : "/macros/marshaller/rest-json/NoOpElseWriteExplicitJsonNull.ftl",
-         "importAsNamespace" : "ElseWriteExplicitJsonNull"
-       }
+    "mainTemplate" : "/templates/json/ModelMarshaller.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/marshaller/json/DefaultValueSupplierMacro.ftl",
+        "importAsNamespace" : "DefaultValueSupplierMacro"
+      }
     ]
+  },
+  "exceptionUnmarshaller": {
+    "mainTemplate" : "/templates/json/ExceptionUnmarshaller.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/unmarshaller/json/MemberUnmarshallerDeclaration.ftl",
+        "importAsNamespace" : "MemberUnmarshallerDeclarationMacro"
+      }, {
+        "location" : "/macros/unmarshaller/json/MemberUnmarshallerInvocation.ftl",
+        "importAsNamespace" : "MemberUnmarshallerInvocationMacro"
+      }, {
+        "location" : "/macros/unmarshaller/json/PayloadUnmarshaller.ftl",
+        "importAsNamespace" : "PayloadUnmarshallerMacro"
+      }
+    ]
+  },
+  "requestMarshaller": {
+    "mainTemplate" : "/templates/json/RequestMarshaller.ftl"
   },
   "baseExceptionClass": {
     "mainTemplate" : "/templates/common/base-exception-class.ftl"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for DescribeNotificationConfigurations.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeNotificationConfigurations"
  *      target="_top">AWS API Documentation</a>
@@ -30,7 +27,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNames;
@@ -42,17 +39,18 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      */
     private Integer maxRecords;
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public java.util.List<String> getAutoScalingGroupNames() {
@@ -64,11 +62,11 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
@@ -82,7 +80,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +89,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +105,11 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +160,13 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -175,10 +175,12 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
-     * @return The maximum number of items to return with this call.
+     * @return The maximum number of items to return with this call. The default value is <code>50</code> and the
+     *         maximum value is <code>100</code>.
      */
 
     public Integer getMaxRecords() {
@@ -187,11 +189,13 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value
+     * is <code>100</code>.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is <code>50</code> and the maximum
+     *        value is <code>100</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +205,8 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

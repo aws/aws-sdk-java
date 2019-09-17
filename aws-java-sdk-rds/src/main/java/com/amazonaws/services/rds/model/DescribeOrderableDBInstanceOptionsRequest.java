@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     private String licenseModel;
     /**
      * <p>
-     * The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      */
     private Boolean vpc;
@@ -268,11 +268,11 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      * 
      * @param vpc
-     *        The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     *        A value that indicates whether to show only VPC or non-VPC offerings.
      */
 
     public void setVpc(Boolean vpc) {
@@ -281,10 +281,10 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      * 
-     * @return The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * @return A value that indicates whether to show only VPC or non-VPC offerings.
      */
 
     public Boolean getVpc() {
@@ -293,11 +293,11 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      * 
      * @param vpc
-     *        The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     *        A value that indicates whether to show only VPC or non-VPC offerings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,10 +308,10 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      * 
-     * @return The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
+     * @return A value that indicates whether to show only VPC or non-VPC offerings.
      */
 
     public Boolean isVpc() {
@@ -529,7 +529,8 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

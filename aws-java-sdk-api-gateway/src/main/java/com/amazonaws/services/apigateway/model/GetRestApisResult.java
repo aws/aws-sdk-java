@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * offers a paginated view of your APIs.
  * </p>
  * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -29,7 +29,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String position;
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<RestApi> items;
@@ -62,10 +62,10 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return An array of links to the current page of <a>RestApi</a> resources.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<RestApi> getItems() {
@@ -74,11 +74,11 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<RestApi> items) {
@@ -92,7 +92,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +131,8 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -188,4 +189,5 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

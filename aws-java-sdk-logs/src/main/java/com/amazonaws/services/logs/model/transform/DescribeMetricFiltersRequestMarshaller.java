@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeMetricFiltersRequest Marshaller
+ * DescribeMetricFiltersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeMetricFiltersRequestMarshaller implements Marshaller<Request<DescribeMetricFiltersRequest>, DescribeMetricFiltersRequest> {
+@SdkInternalApi
+public class DescribeMetricFiltersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> FILTERNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterNamePrefix").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricName").build();
+    private static final MarshallingInfo<String> METRICNAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricNamespace").build();
 
-    public DescribeMetricFiltersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeMetricFiltersRequestMarshaller instance = new DescribeMetricFiltersRequestMarshaller();
+
+    public static DescribeMetricFiltersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeMetricFiltersRequest> marshall(DescribeMetricFiltersRequest describeMetricFiltersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeMetricFiltersRequest describeMetricFiltersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeMetricFiltersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeMetricFiltersRequest> request = new DefaultRequest<DescribeMetricFiltersRequest>(describeMetricFiltersRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DescribeMetricFilters");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeMetricFiltersRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(describeMetricFiltersRequest.getLogGroupName());
-            }
-            if (describeMetricFiltersRequest.getFilterNamePrefix() != null) {
-                jsonGenerator.writeFieldName("filterNamePrefix").writeValue(describeMetricFiltersRequest.getFilterNamePrefix());
-            }
-            if (describeMetricFiltersRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(describeMetricFiltersRequest.getNextToken());
-            }
-            if (describeMetricFiltersRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(describeMetricFiltersRequest.getLimit());
-            }
-            if (describeMetricFiltersRequest.getMetricName() != null) {
-                jsonGenerator.writeFieldName("metricName").writeValue(describeMetricFiltersRequest.getMetricName());
-            }
-            if (describeMetricFiltersRequest.getMetricNamespace() != null) {
-                jsonGenerator.writeFieldName("metricNamespace").writeValue(describeMetricFiltersRequest.getMetricNamespace());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getFilterNamePrefix(), FILTERNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getMetricName(), METRICNAME_BINDING);
+            protocolMarshaller.marshall(describeMetricFiltersRequest.getMetricNamespace(), METRICNAMESPACE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

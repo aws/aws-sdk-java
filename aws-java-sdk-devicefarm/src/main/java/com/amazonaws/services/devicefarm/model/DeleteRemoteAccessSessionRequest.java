@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     *        The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * @return The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     * The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the sesssion for which you want to delete remote access.
+     *        The Amazon Resource Name (ARN) of the session for which you want to delete remote access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +76,8 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

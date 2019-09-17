@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,6 +35,12 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String jobId;
+    /**
+     * <p>
+     * The path to the location of where the select results are stored.
+     * </p>
+     */
+    private String jobOutputPath;
 
     /**
      * <p>
@@ -117,7 +123,48 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The path to the location of where the select results are stored.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        The path to the location of where the select results are stored.
+     */
+
+    public void setJobOutputPath(String jobOutputPath) {
+        this.jobOutputPath = jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * The path to the location of where the select results are stored.
+     * </p>
+     * 
+     * @return The path to the location of where the select results are stored.
+     */
+
+    public String getJobOutputPath() {
+        return this.jobOutputPath;
+    }
+
+    /**
+     * <p>
+     * The path to the location of where the select results are stored.
+     * </p>
+     * 
+     * @param jobOutputPath
+     *        The path to the location of where the select results are stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateJobResult withJobOutputPath(String jobOutputPath) {
+        setJobOutputPath(jobOutputPath);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,7 +177,9 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId());
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getJobOutputPath() != null)
+            sb.append("JobOutputPath: ").append(getJobOutputPath());
         sb.append("}");
         return sb.toString();
     }
@@ -153,6 +202,10 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getJobOutputPath() == null ^ this.getJobOutputPath() == null)
+            return false;
+        if (other.getJobOutputPath() != null && other.getJobOutputPath().equals(this.getJobOutputPath()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +216,7 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobOutputPath() == null) ? 0 : getJobOutputPath().hashCode());
         return hashCode;
     }
 
@@ -174,4 +228,5 @@ public class InitiateJobResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,75 +12,50 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetIdentityPoolConfigurationRequest Marshaller
+ * SetIdentityPoolConfigurationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetIdentityPoolConfigurationRequestMarshaller implements
-        Marshaller<Request<SetIdentityPoolConfigurationRequest>, SetIdentityPoolConfigurationRequest> {
+@SdkInternalApi
+public class SetIdentityPoolConfigurationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<StructuredPojo> PUSHSYNC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PushSync").build();
+    private static final MarshallingInfo<StructuredPojo> COGNITOSTREAMS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoStreams").build();
 
-    public SetIdentityPoolConfigurationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetIdentityPoolConfigurationRequestMarshaller instance = new SetIdentityPoolConfigurationRequestMarshaller();
+
+    public static SetIdentityPoolConfigurationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetIdentityPoolConfigurationRequest> marshall(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setIdentityPoolConfigurationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetIdentityPoolConfigurationRequest> request = new DefaultRequest<SetIdentityPoolConfigurationRequest>(setIdentityPoolConfigurationRequest,
-                "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/configuration";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
-                setIdentityPoolConfigurationRequest.getIdentityPoolId());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (setIdentityPoolConfigurationRequest.getPushSync() != null) {
-                jsonGenerator.writeFieldName("PushSync");
-                PushSyncJsonMarshaller.getInstance().marshall(setIdentityPoolConfigurationRequest.getPushSync(), jsonGenerator);
-            }
-            if (setIdentityPoolConfigurationRequest.getCognitoStreams() != null) {
-                jsonGenerator.writeFieldName("CognitoStreams");
-                CognitoStreamsJsonMarshaller.getInstance().marshall(setIdentityPoolConfigurationRequest.getCognitoStreams(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setIdentityPoolConfigurationRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(setIdentityPoolConfigurationRequest.getPushSync(), PUSHSYNC_BINDING);
+            protocolMarshaller.marshall(setIdentityPoolConfigurationRequest.getCognitoStreams(), COGNITOSTREAMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

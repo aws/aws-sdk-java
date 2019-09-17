@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,44 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDataRetrievalPolicyRequest Marshaller
+ * GetDataRetrievalPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDataRetrievalPolicyRequestMarshaller implements Marshaller<Request<GetDataRetrievalPolicyRequest>, GetDataRetrievalPolicyRequest> {
+@SdkInternalApi
+public class GetDataRetrievalPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
 
-    public GetDataRetrievalPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDataRetrievalPolicyRequestMarshaller instance = new GetDataRetrievalPolicyRequestMarshaller();
+
+    public static GetDataRetrievalPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDataRetrievalPolicyRequest> marshall(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDataRetrievalPolicyRequest getDataRetrievalPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDataRetrievalPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDataRetrievalPolicyRequest> request = new DefaultRequest<GetDataRetrievalPolicyRequest>(getDataRetrievalPolicyRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/policies/data-retrieval";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                getDataRetrievalPolicyRequest.getAccountId() == null ? "-" : getDataRetrievalPolicyRequest.getAccountId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getDataRetrievalPolicyRequest.getAccountId(), ACCOUNTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

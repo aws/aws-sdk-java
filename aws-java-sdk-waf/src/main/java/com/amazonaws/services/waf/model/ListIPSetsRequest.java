@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list
      * another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the
      * value of <code>NextMarker</code> from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.
+     * <code>IPSets</code>.
      * </p>
      */
     private String nextMarker;
@@ -50,7 +50,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list
      * another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the
      * value of <code>NextMarker</code> from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.
+     * <code>IPSets</code>.
      * </p>
      * 
      * @param nextMarker
@@ -58,7 +58,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
      *        list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests,
      *        specify the value of <code>NextMarker</code> from the previous response to get information about another
-     *        batch of <code>ByteMatchSets</code>.
+     *        batch of <code>IPSets</code>.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -71,14 +71,14 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list
      * another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the
      * value of <code>NextMarker</code> from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.
+     * <code>IPSets</code>.
      * </p>
      * 
      * @return If you specify a value for <code>Limit</code> and you have more <code>IPSets</code> than the value of
      *         <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
      *         list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code>
      *         requests, specify the value of <code>NextMarker</code> from the previous response to get information
-     *         about another batch of <code>ByteMatchSets</code>.
+     *         about another batch of <code>IPSets</code>.
      */
 
     public String getNextMarker() {
@@ -91,7 +91,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list
      * another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the
      * value of <code>NextMarker</code> from the previous response to get information about another batch of
-     * <code>ByteMatchSets</code>.
+     * <code>IPSets</code>.
      * </p>
      * 
      * @param nextMarker
@@ -99,7 +99,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
      *        list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests,
      *        specify the value of <code>NextMarker</code> from the previous response to get information about another
-     *        batch of <code>ByteMatchSets</code>.
+     *        batch of <code>IPSets</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +164,8 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

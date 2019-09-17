@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,12 @@ import javax.annotation.Generated;
  * <p>
  * Lightsail throws this exception when user input does not conform to the validation rules of an input field.
  * </p>
+ * <note>
+ * <p>
+ * Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+ * configuration to us-east-1 to create, view, or edit these resources.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInputException extends com.amazonaws.services.lightsail.model.AmazonLightsailException {

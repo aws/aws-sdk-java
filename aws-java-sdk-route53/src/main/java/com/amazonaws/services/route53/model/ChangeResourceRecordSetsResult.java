@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,9 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
      * A complex type that contains information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      */
     private ChangeInfo changeInfo;
@@ -42,15 +43,17 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
      * A complex type that contains information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -62,14 +65,16 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
      * A complex type that contains information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @return A complex type that contains information about changes made to your hosted zone.</p>
      *         <p>
-     *         This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *         information about the change.
+     *         This element contains an ID that you use when performing a <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *         get detailed information about the change.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -81,15 +86,17 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
      * A complex type that contains information about changes made to your hosted zone.
      * </p>
      * <p>
-     * This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed information
-     * about the change.
+     * This element contains an ID that you use when performing a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get
+     * detailed information about the change.
      * </p>
      * 
      * @param changeInfo
      *        A complex type that contains information about changes made to your hosted zone.</p>
      *        <p>
-     *        This element contains an ID that you use when performing a <a>GetChange</a> action to get detailed
-     *        information about the change.
+     *        This element contains an ID that you use when performing a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to
+     *        get detailed information about the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +106,8 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -149,4 +157,5 @@ public class ChangeResourceRecordSetsResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

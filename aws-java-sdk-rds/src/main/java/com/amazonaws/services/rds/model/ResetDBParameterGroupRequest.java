@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -54,19 +44,17 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
     private String dBParameterGroupName;
     /**
      * <p>
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter
-     * group to default values.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * A value that indicates whether to reset all parameters in the DB parameter group to default values. By default,
+     * all parameters in the DB parameter group are reset to default values.
      * </p>
      */
     private Boolean resetAllParameters;
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -116,17 +104,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -144,17 +122,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -167,17 +135,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -196,17 +154,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -218,17 +166,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the name of an existing <code>DBParameterGroup</code>.
      *         </p>
      *         </li>
      */
@@ -247,17 +185,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -270,17 +198,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -293,18 +211,13 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter
-     * group to default values.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * A value that indicates whether to reset all parameters in the DB parameter group to default values. By default,
+     * all parameters in the DB parameter group are reset to default values.
      * </p>
      * 
      * @param resetAllParameters
-     *        Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *        parameter group to default values. </p>
-     *        <p>
-     *        Default: <code>true</code>
+     *        A value that indicates whether to reset all parameters in the DB parameter group to default values. By
+     *        default, all parameters in the DB parameter group are reset to default values.
      */
 
     public void setResetAllParameters(Boolean resetAllParameters) {
@@ -313,17 +226,12 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter
-     * group to default values.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * A value that indicates whether to reset all parameters in the DB parameter group to default values. By default,
+     * all parameters in the DB parameter group are reset to default values.
      * </p>
      * 
-     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *         parameter group to default values. </p>
-     *         <p>
-     *         Default: <code>true</code>
+     * @return A value that indicates whether to reset all parameters in the DB parameter group to default values. By
+     *         default, all parameters in the DB parameter group are reset to default values.
      */
 
     public Boolean getResetAllParameters() {
@@ -332,18 +240,13 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter
-     * group to default values.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * A value that indicates whether to reset all parameters in the DB parameter group to default values. By default,
+     * all parameters in the DB parameter group are reset to default values.
      * </p>
      * 
      * @param resetAllParameters
-     *        Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *        parameter group to default values. </p>
-     *        <p>
-     *        Default: <code>true</code>
+     *        A value that indicates whether to reset all parameters in the DB parameter group to default values. By
+     *        default, all parameters in the DB parameter group are reset to default values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,17 +257,12 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter
-     * group to default values.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * A value that indicates whether to reset all parameters in the DB parameter group to default values. By default,
+     * all parameters in the DB parameter group are reset to default values.
      * </p>
      * 
-     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB
-     *         parameter group to default values. </p>
-     *         <p>
-     *         Default: <code>true</code>
+     * @return A value that indicates whether to reset all parameters in the DB parameter group to default values. By
+     *         default, all parameters in the DB parameter group are reset to default values.
      */
 
     public Boolean isResetAllParameters() {
@@ -373,9 +271,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -404,9 +303,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * Valid Values (for Apply method): <code>pending-reboot</code>
      * </p>
      * 
-     * @return An array of parameter names, values, and the apply method for the parameter update. At least one
-     *         parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of
-     *         20 parameters can be modified in a single request.</p>
+     * @return To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *         <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the
+     *         following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be
+     *         modified in a single request.</p>
      *         <p>
      *         <b>MySQL</b>
      *         </p>
@@ -443,9 +343,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -475,9 +376,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -516,9 +418,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -553,9 +456,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -596,9 +500,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     * <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     * <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
+     * request.
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -628,9 +533,10 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and
+     *        <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following:
+     *        <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a
+     *        single request.</p>
      *        <p>
      *        <b>MySQL</b>
      *        </p>
@@ -665,7 +571,8 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

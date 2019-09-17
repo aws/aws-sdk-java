@@ -1,0 +1,25 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Choice",
+      "Comment": "My choice state",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "Choices": [
+        {
+          "Variable": "$.var",
+          "StringEquals": "value",
+          "Next": "NextState"
+        }
+      ],
+      "Default": "DefaultState"
+    },
+    "NextState": {
+      "Type": "Succeed"
+    },
+    "DefaultState": {
+      "Type": "Succeed"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,49 +27,52 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      */
     private String fleetName;
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The identifier of the user.
      * </p>
      */
     private String userId;
     /**
      * <p>
-     * The ID of the application that must be launched after the session starts.
+     * The name of the application to launch after the session starts. This is the name that you specified as
+     * <b>Name</b> in the Image Assistant.
      * </p>
      */
     private String applicationId;
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 60 seconds.
      * </p>
      */
     private Long validity;
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      */
     private String sessionContext;
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The stack for which the URL is generated.
+     *        The name of the stack.
      */
 
     public void setStackName(String stackName) {
@@ -78,10 +81,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
-     * @return The stack for which the URL is generated.
+     * @return The name of the stack.
      */
 
     public String getStackName() {
@@ -90,11 +93,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The stack for which the URL is generated.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +108,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The fleet for which the URL is generated.
+     *        The name of the fleet.
      */
 
     public void setFleetName(String fleetName) {
@@ -118,10 +121,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
-     * @return The fleet for which the URL is generated.
+     * @return The name of the fleet.
      */
 
     public String getFleetName() {
@@ -130,11 +133,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The fleet for which the URL is generated.
+     *        The name of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +148,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The identifier of the user.
      * </p>
      * 
      * @param userId
-     *        A unique user ID for whom the URL is generated.
+     *        The identifier of the user.
      */
 
     public void setUserId(String userId) {
@@ -158,10 +161,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The identifier of the user.
      * </p>
      * 
-     * @return A unique user ID for whom the URL is generated.
+     * @return The identifier of the user.
      */
 
     public String getUserId() {
@@ -170,11 +173,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The identifier of the user.
      * </p>
      * 
      * @param userId
-     *        A unique user ID for whom the URL is generated.
+     *        The identifier of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +188,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the application that must be launched after the session starts.
+     * The name of the application to launch after the session starts. This is the name that you specified as
+     * <b>Name</b> in the Image Assistant.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application that must be launched after the session starts.
+     *        The name of the application to launch after the session starts. This is the name that you specified as
+     *        <b>Name</b> in the Image Assistant.
      */
 
     public void setApplicationId(String applicationId) {
@@ -198,10 +203,12 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the application that must be launched after the session starts.
+     * The name of the application to launch after the session starts. This is the name that you specified as
+     * <b>Name</b> in the Image Assistant.
      * </p>
      * 
-     * @return The ID of the application that must be launched after the session starts.
+     * @return The name of the application to launch after the session starts. This is the name that you specified as
+     *         <b>Name</b> in the Image Assistant.
      */
 
     public String getApplicationId() {
@@ -210,11 +217,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the application that must be launched after the session starts.
+     * The name of the application to launch after the session starts. This is the name that you specified as
+     * <b>Name</b> in the Image Assistant.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application that must be launched after the session starts.
+     *        The name of the application to launch after the session starts. This is the name that you specified as
+     *        <b>Name</b> in the Image Assistant.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +234,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 60 seconds.
      * </p>
      * 
      * @param validity
-     *        The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *        becomes invalid.
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *        The default is 60 seconds.
      */
 
     public void setValidity(Long validity) {
@@ -240,12 +249,12 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 60 seconds.
      * </p>
      * 
-     * @return The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *         becomes invalid.
+     * @return The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *         The default is 60 seconds.
      */
 
     public Long getValidity() {
@@ -254,13 +263,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The
+     * default is 60 seconds.
      * </p>
      * 
      * @param validity
-     *        The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *        becomes invalid.
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
+     *        The default is 60 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,11 +280,15 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param sessionContext
-     *        The sessionContext of the streaming URL.
+     *        The session context. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public void setSessionContext(String sessionContext) {
@@ -284,10 +297,14 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
-     * @return The sessionContext of the streaming URL.
+     * @return The session context. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     *         >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public String getSessionContext() {
@@ -296,11 +313,15 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context. For more information, see <a href=
+     * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param sessionContext
-     *        The sessionContext of the streaming URL.
+     *        The session context. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
+     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,7 +331,8 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

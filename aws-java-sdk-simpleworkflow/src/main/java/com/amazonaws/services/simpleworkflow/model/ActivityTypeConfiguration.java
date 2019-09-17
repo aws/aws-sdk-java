@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,59 +14,62 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Configuration settings registered with the activity type.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeConfiguration" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityTypeConfiguration implements Serializable, Cloneable {
+public class ActivityTypeConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration for tasks of an activity type specified when registering the activity type. You can
+     * override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskStartToCloseTimeout;
     /**
      * <p>
-     * <i>Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     * progress by calling <a>RecordActivityTaskHeartbeat</a>.
+     * The default maximum time, in seconds, before which a worker processing a task must report progress by calling
+     * <a>RecordActivityTaskHeartbeat</a>.
      * </p>
      * <p>
      * You can specify this value only when <i>registering</i> an activity type. The registered default value can be
-     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
+     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If the
+     * activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
      * <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid;
      * the activity worker should clean up the activity task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskHeartbeatTimeout;
     /**
      * <p>
-     * <i>Optional.</i> The default task list specified for this activity type at registration. This default is used if
-     * a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code> decision. You
-     * can override the default registered task list when scheduling a task through the
-     * <code>ScheduleActivityTask</code> decision.
+     * The default task list specified for this activity type at registration. This default is used if a task list isn't
+     * provided when a task is scheduled through the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override
+     * the default registered task list when scheduling a task through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      */
     private TaskList defaultTaskList;
     /**
      * <p>
-     * <i>Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     * set, then "0" will be used as the default priority. This default can be overridden when scheduling an activity
-     * task.
+     * The default task priority for tasks of this activity type, specified at registration. If not set, then
+     * <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity task.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -74,51 +77,52 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String defaultTaskPriority;
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, that a task of an
-     * activity type can wait before being assigned to a worker. You can override this default when scheduling a task
-     * through the <code>ScheduleActivityTask</code> decision.
+     * The default maximum duration, specified when registering the activity type, that a task of an activity type can
+     * wait before being assigned to a worker. You can override this default when scheduling a task through the
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskScheduleToStartTimeout;
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of this
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration, specified when registering the activity type, for tasks of this activity type. You
+     * can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      */
     private String defaultTaskScheduleToCloseTimeout;
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration for tasks of an activity type specified when registering the activity type. You can
+     * override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskStartToCloseTimeout
-     *        Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     *        activity type. You can override this default when scheduling a task through the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration for tasks of an activity type specified when registering the activity type.
+     *        You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskStartToCloseTimeout(String defaultTaskStartToCloseTimeout) {
@@ -127,18 +131,20 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration for tasks of an activity type specified when registering the activity type. You can
+     * override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
-     * @return Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     *         activity type. You can override this default when scheduling a task through the
-     *         <code>ScheduleActivityTask</code> decision.</p>
+     * @return The default maximum duration for tasks of an activity type specified when registering the activity type.
+     *         You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *         <a>Decision</a>.</p>
+     *         <p>
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskStartToCloseTimeout() {
@@ -147,19 +153,21 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration for tasks of an activity type specified when registering the activity type. You can
+     * override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskStartToCloseTimeout
-     *        Optional.</i> The default maximum duration for tasks of an activity type specified when registering the
-     *        activity type. You can override this default when scheduling a task through the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration for tasks of an activity type specified when registering the activity type.
+     *        You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,31 +178,34 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     * progress by calling <a>RecordActivityTaskHeartbeat</a>.
+     * The default maximum time, in seconds, before which a worker processing a task must report progress by calling
+     * <a>RecordActivityTaskHeartbeat</a>.
      * </p>
      * <p>
      * You can specify this value only when <i>registering</i> an activity type. The registered default value can be
-     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
+     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If the
+     * activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
      * <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid;
      * the activity worker should clean up the activity task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskHeartbeatTimeout
-     *        Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     *        progress by calling <a>RecordActivityTaskHeartbeat</a>.</p>
+     *        The default maximum time, in seconds, before which a worker processing a task must report progress by
+     *        calling <a>RecordActivityTaskHeartbeat</a>.</p>
      *        <p>
      *        You can specify this value only when <i>registering</i> an activity type. The registered default value can
-     *        be overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the
-     *        activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker
+     *        be overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     *        the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker
      *        receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity
      *        task to be valid; the activity worker should clean up the activity task.
      *        </p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskHeartbeatTimeout(String defaultTaskHeartbeatTimeout) {
@@ -203,30 +214,33 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     * progress by calling <a>RecordActivityTaskHeartbeat</a>.
+     * The default maximum time, in seconds, before which a worker processing a task must report progress by calling
+     * <a>RecordActivityTaskHeartbeat</a>.
      * </p>
      * <p>
      * You can specify this value only when <i>registering</i> an activity type. The registered default value can be
-     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
+     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If the
+     * activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
      * <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid;
      * the activity worker should clean up the activity task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
-     * @return Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     *         progress by calling <a>RecordActivityTaskHeartbeat</a>.</p>
+     * @return The default maximum time, in seconds, before which a worker processing a task must report progress by
+     *         calling <a>RecordActivityTaskHeartbeat</a>.</p>
      *         <p>
      *         You can specify this value only when <i>registering</i> an activity type. The registered default value
-     *         can be overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the
-     *         activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker
-     *         receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity
-     *         task to be valid; the activity worker should clean up the activity task.
+     *         can be overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
+     *         If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity
+     *         worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the
+     *         activity task to be valid; the activity worker should clean up the activity task.
      *         </p>
+     *         <p>
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskHeartbeatTimeout() {
@@ -235,31 +249,34 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     * progress by calling <a>RecordActivityTaskHeartbeat</a>.
+     * The default maximum time, in seconds, before which a worker processing a task must report progress by calling
+     * <a>RecordActivityTaskHeartbeat</a>.
      * </p>
      * <p>
      * You can specify this value only when <i>registering</i> an activity type. The registered default value can be
-     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the activity
-     * worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
+     * overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If the
+     * activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
      * <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid;
      * the activity worker should clean up the activity task.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskHeartbeatTimeout
-     *        Optional.</i> The default maximum time, in seconds, before which a worker processing a task must report
-     *        progress by calling <a>RecordActivityTaskHeartbeat</a>.</p>
+     *        The default maximum time, in seconds, before which a worker processing a task must report progress by
+     *        calling <a>RecordActivityTaskHeartbeat</a>.</p>
      *        <p>
      *        You can specify this value only when <i>registering</i> an activity type. The registered default value can
-     *        be overridden when you schedule a task through the <code>ScheduleActivityTask</code> decision. If the
-     *        activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker
+     *        be overridden when you schedule a task through the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     *        the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker
      *        receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity
      *        task to be valid; the activity worker should clean up the activity task.
      *        </p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,17 +287,17 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task list specified for this activity type at registration. This default is used if
-     * a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code> decision. You
-     * can override the default registered task list when scheduling a task through the
-     * <code>ScheduleActivityTask</code> decision.
+     * The default task list specified for this activity type at registration. This default is used if a task list isn't
+     * provided when a task is scheduled through the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override
+     * the default registered task list when scheduling a task through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
      * @param defaultTaskList
-     *        Optional.</i> The default task list specified for this activity type at registration. This default is used
-     *        if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     *        decision. You can override the default registered task list when scheduling a task through the
-     *        <code>ScheduleActivityTask
+     *        The default task list specified for this activity type at registration. This default is used if a task
+     *        list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>. You can override the default registered task list when scheduling a task through the
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.
      */
 
     public void setDefaultTaskList(TaskList defaultTaskList) {
@@ -289,16 +306,16 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task list specified for this activity type at registration. This default is used if
-     * a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code> decision. You
-     * can override the default registered task list when scheduling a task through the
-     * <code>ScheduleActivityTask</code> decision.
+     * The default task list specified for this activity type at registration. This default is used if a task list isn't
+     * provided when a task is scheduled through the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override
+     * the default registered task list when scheduling a task through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
-     * @return Optional.</i> The default task list specified for this activity type at registration. This default is
-     *         used if a task list is not provided when a task is scheduled through the
-     *         <code>ScheduleActivityTask</code> decision. You can override the default registered task list when
-     *         scheduling a task through the <code>ScheduleActivityTask
+     * @return The default task list specified for this activity type at registration. This default is used if a task
+     *         list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     *         <a>Decision</a>. You can override the default registered task list when scheduling a task through the
+     *         <code>ScheduleActivityTask</code> <a>Decision</a>.
      */
 
     public TaskList getDefaultTaskList() {
@@ -307,17 +324,17 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task list specified for this activity type at registration. This default is used if
-     * a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code> decision. You
-     * can override the default registered task list when scheduling a task through the
-     * <code>ScheduleActivityTask</code> decision.
+     * The default task list specified for this activity type at registration. This default is used if a task list isn't
+     * provided when a task is scheduled through the <code>ScheduleActivityTask</code> <a>Decision</a>. You can override
+     * the default registered task list when scheduling a task through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.
      * </p>
      * 
      * @param defaultTaskList
-     *        Optional.</i> The default task list specified for this activity type at registration. This default is used
-     *        if a task list is not provided when a task is scheduled through the <code>ScheduleActivityTask</code>
-     *        decision. You can override the default registered task list when scheduling a task through the
-     *        <code>ScheduleActivityTask
+     *        The default task list specified for this activity type at registration. This default is used if a task
+     *        list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>. You can override the default registered task list when scheduling a task through the
+     *        <code>ScheduleActivityTask</code> <a>Decision</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,9 +345,8 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     * set, then "0" will be used as the default priority. This default can be overridden when scheduling an activity
-     * task.
+     * The default task priority for tasks of this activity type, specified at registration. If not set, then
+     * <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity task.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -338,22 +354,22 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param defaultTaskPriority
-     *        Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     *        set, then "0" will be used as the default priority. This default can be overridden when scheduling an
-     *        activity task.</p>
+     *        The default task priority for tasks of this activity type, specified at registration. If not set, then
+     *        <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity
+     *        task.</p>
      *        <p>
      *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      *        </p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public void setDefaultTaskPriority(String defaultTaskPriority) {
@@ -362,9 +378,8 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     * set, then "0" will be used as the default priority. This default can be overridden when scheduling an activity
-     * task.
+     * The default task priority for tasks of this activity type, specified at registration. If not set, then
+     * <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity task.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -372,12 +387,12 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
-     * @return Optional.</i> The default task priority for tasks of this activity type, specified at registration. If
-     *         not set, then "0" will be used as the default priority. This default can be overridden when scheduling an
+     * @return The default task priority for tasks of this activity type, specified at registration. If not set, then
+     *         <code>0</code> is used as the default priority. This default can be overridden when scheduling an
      *         activity task.</p>
      *         <p>
      *         Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -385,8 +400,8 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information about setting task priority, see <a
-     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *         Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *         href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public String getDefaultTaskPriority() {
@@ -395,9 +410,8 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     * set, then "0" will be used as the default priority. This default can be overridden when scheduling an activity
-     * task.
+     * The default task priority for tasks of this activity type, specified at registration. If not set, then
+     * <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity task.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -405,22 +419,22 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about setting task priority, see <a
-     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param defaultTaskPriority
-     *        Optional.</i> The default task priority for tasks of this activity type, specified at registration. If not
-     *        set, then "0" will be used as the default priority. This default can be overridden when scheduling an
-     *        activity task.</p>
+     *        The default task priority for tasks of this activity type, specified at registration. If not set, then
+     *        <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity
+     *        task.</p>
      *        <p>
      *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
      *        </p>
      *        <p>
      *        For more information about setting task priority, see <a
-     *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,19 +445,22 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, that a task of an
-     * activity type can wait before being assigned to a worker. You can override this default when scheduling a task
-     * through the <code>ScheduleActivityTask</code> decision.
+     * The default maximum duration, specified when registering the activity type, that a task of an activity type can
+     * wait before being assigned to a worker. You can override this default when scheduling a task through the
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToStartTimeout
-     *        Optional.</i> The default maximum duration, specified when registering the activity type, that a task of
-     *        an activity type can wait before being assigned to a worker. You can override this default when scheduling
-     *        a task through the <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration, specified when registering the activity type, that a task of an activity
+     *        type can wait before being assigned to a worker. You can override this default when scheduling a task
+     *        through the <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskScheduleToStartTimeout(String defaultTaskScheduleToStartTimeout) {
@@ -452,18 +469,21 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, that a task of an
-     * activity type can wait before being assigned to a worker. You can override this default when scheduling a task
-     * through the <code>ScheduleActivityTask</code> decision.
+     * The default maximum duration, specified when registering the activity type, that a task of an activity type can
+     * wait before being assigned to a worker. You can override this default when scheduling a task through the
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
-     * @return Optional.</i> The default maximum duration, specified when registering the activity type, that a task of
-     *         an activity type can wait before being assigned to a worker. You can override this default when
-     *         scheduling a task through the <code>ScheduleActivityTask</code> decision.</p>
+     * @return The default maximum duration, specified when registering the activity type, that a task of an activity
+     *         type can wait before being assigned to a worker. You can override this default when scheduling a task
+     *         through the <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
+     *         <p>
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskScheduleToStartTimeout() {
@@ -472,19 +492,22 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, that a task of an
-     * activity type can wait before being assigned to a worker. You can override this default when scheduling a task
-     * through the <code>ScheduleActivityTask</code> decision.
+     * The default maximum duration, specified when registering the activity type, that a task of an activity type can
+     * wait before being assigned to a worker. You can override this default when scheduling a task through the
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToStartTimeout
-     *        Optional.</i> The default maximum duration, specified when registering the activity type, that a task of
-     *        an activity type can wait before being assigned to a worker. You can override this default when scheduling
-     *        a task through the <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration, specified when registering the activity type, that a task of an activity
+     *        type can wait before being assigned to a worker. You can override this default when scheduling a task
+     *        through the <code>ScheduleActivityTask</code> <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,19 +518,21 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of this
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration, specified when registering the activity type, for tasks of this activity type. You
+     * can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToCloseTimeout
-     *        Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of
-     *        this activity type. You can override this default when scheduling a task through the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration, specified when registering the activity type, for tasks of this activity
+     *        type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      */
 
     public void setDefaultTaskScheduleToCloseTimeout(String defaultTaskScheduleToCloseTimeout) {
@@ -516,18 +541,20 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of this
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration, specified when registering the activity type, for tasks of this activity type. You
+     * can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
-     * @return Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of
-     *         this activity type. You can override this default when scheduling a task through the
-     *         <code>ScheduleActivityTask</code> decision.</p>
+     * @return The default maximum duration, specified when registering the activity type, for tasks of this activity
+     *         type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *         <a>Decision</a>.</p>
+     *         <p>
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *         <code>NONE</code> to specify unlimited duration.
      */
 
     public String getDefaultTaskScheduleToCloseTimeout() {
@@ -536,19 +563,21 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of this
-     * activity type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
-     * decision.
+     * The default maximum duration, specified when registering the activity type, for tasks of this activity type. You
+     * can override this default when scheduling a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0. The value "NONE" can be used to
-     * specify unlimited duration.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.
      * </p>
      * 
      * @param defaultTaskScheduleToCloseTimeout
-     *        Optional.</i> The default maximum duration, specified when registering the activity type, for tasks of
-     *        this activity type. You can override this default when scheduling a task through the
-     *        <code>ScheduleActivityTask</code> decision.</p>
+     *        The default maximum duration, specified when registering the activity type, for tasks of this activity
+     *        type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+     *        <a>Decision</a>.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use
+     *        <code>NONE</code> to specify unlimited duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,7 +587,8 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -645,5 +675,11 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ActivityTypeConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

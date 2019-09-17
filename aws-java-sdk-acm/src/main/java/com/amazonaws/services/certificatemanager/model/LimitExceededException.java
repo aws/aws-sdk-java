@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've requested too
- * many certificates for your account. See the exception message returned by ACM to determine which limit you have
- * violated. For more information about ACM limits, see the <a
- * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
+ * An ACM limit has been exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

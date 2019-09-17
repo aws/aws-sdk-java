@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public enum ElasticBeanstalkActions implements Action {
     CreateConfigurationTemplate("elasticbeanstalk:CreateConfigurationTemplate"),
     /** Action for the CreateEnvironment operation. */
     CreateEnvironment("elasticbeanstalk:CreateEnvironment"),
+    /** Action for the CreatePlatformVersion operation. */
+    CreatePlatformVersion("elasticbeanstalk:CreatePlatformVersion"),
     /** Action for the CreateStorageLocation operation. */
     CreateStorageLocation("elasticbeanstalk:CreateStorageLocation"),
     /** Action for the DeleteApplication operation. */
@@ -51,6 +53,10 @@ public enum ElasticBeanstalkActions implements Action {
     DeleteConfigurationTemplate("elasticbeanstalk:DeleteConfigurationTemplate"),
     /** Action for the DeleteEnvironmentConfiguration operation. */
     DeleteEnvironmentConfiguration("elasticbeanstalk:DeleteEnvironmentConfiguration"),
+    /** Action for the DeletePlatformVersion operation. */
+    DeletePlatformVersion("elasticbeanstalk:DeletePlatformVersion"),
+    /** Action for the DescribeAccountAttributes operation. */
+    DescribeAccountAttributes("elasticbeanstalk:DescribeAccountAttributes"),
     /** Action for the DescribeApplicationVersions operation. */
     DescribeApplicationVersions("elasticbeanstalk:DescribeApplicationVersions"),
     /** Action for the DescribeApplications operation. */
@@ -73,8 +79,14 @@ public enum ElasticBeanstalkActions implements Action {
     DescribeEvents("elasticbeanstalk:DescribeEvents"),
     /** Action for the DescribeInstancesHealth operation. */
     DescribeInstancesHealth("elasticbeanstalk:DescribeInstancesHealth"),
+    /** Action for the DescribePlatformVersion operation. */
+    DescribePlatformVersion("elasticbeanstalk:DescribePlatformVersion"),
     /** Action for the ListAvailableSolutionStacks operation. */
     ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
+    /** Action for the ListPlatformVersions operation. */
+    ListPlatformVersions("elasticbeanstalk:ListPlatformVersions"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("elasticbeanstalk:ListTagsForResource"),
     /** Action for the RebuildEnvironment operation. */
     RebuildEnvironment("elasticbeanstalk:RebuildEnvironment"),
     /** Action for the RequestEnvironmentInfo operation. */
@@ -97,6 +109,8 @@ public enum ElasticBeanstalkActions implements Action {
     UpdateConfigurationTemplate("elasticbeanstalk:UpdateConfigurationTemplate"),
     /** Action for the UpdateEnvironment operation. */
     UpdateEnvironment("elasticbeanstalk:UpdateEnvironment"),
+    /** Action for the UpdateTagsForResource operation. */
+    UpdateTagsForResource("elasticbeanstalk:UpdateTagsForResource"),
     /** Action for the ValidateConfigurationSettings operation. */
     ValidateConfigurationSettings("elasticbeanstalk:ValidateConfigurationSettings"),
 

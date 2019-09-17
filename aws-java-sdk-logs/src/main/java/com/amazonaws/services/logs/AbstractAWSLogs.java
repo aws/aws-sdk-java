@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateKmsKeyResult associateKmsKey(AssociateKmsKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +79,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public DeleteMetricFilterResult deleteMetricFilter(DeleteMetricFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,7 +133,22 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public DescribeQueriesResult describeQueries(DescribeQueriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourcePoliciesResult describeResourcePolicies(DescribeResourcePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSubscriptionFiltersResult describeSubscriptionFilters(DescribeSubscriptionFiltersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateKmsKeyResult disassociateKmsKey(DisassociateKmsKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,6 +159,21 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLogGroupFieldsResult getLogGroupFields(GetLogGroupFieldsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLogRecordResult getLogRecord(GetLogRecordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQueryResultsResult getQueryResults(GetQueryResultsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,12 +203,27 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRetentionPolicyResult putRetentionPolicy(PutRetentionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutSubscriptionFilterResult putSubscriptionFilter(PutSubscriptionFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartQueryResult startQuery(StartQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopQueryResult stopQuery(StopQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

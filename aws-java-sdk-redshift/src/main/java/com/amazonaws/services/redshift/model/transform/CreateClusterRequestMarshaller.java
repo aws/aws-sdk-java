@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("MasterUserPassword", StringUtils.fromString(createClusterRequest.getMasterUserPassword()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest
-                .getClusterSecurityGroups();
-        if (!clusterSecurityGroupsList.isEmpty() || !clusterSecurityGroupsList.isAutoConstruct()) {
+        if (!createClusterRequest.getClusterSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createClusterRequest.getClusterSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest
+                    .getClusterSecurityGroups();
             int clusterSecurityGroupsListIndex = 1;
 
             for (String clusterSecurityGroupsListValue : clusterSecurityGroupsList) {
@@ -78,9 +79,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!createClusterRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createClusterRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -110,6 +112,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
 
         if (createClusterRequest.getAutomatedSnapshotRetentionPeriod() != null) {
             request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(createClusterRequest.getAutomatedSnapshotRetentionPeriod()));
+        }
+
+        if (createClusterRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(createClusterRequest.getManualSnapshotRetentionPeriod()));
         }
 
         if (createClusterRequest.getPort() != null) {
@@ -148,8 +154,8 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("ElasticIp", StringUtils.fromString(createClusterRequest.getElasticIp()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createClusterRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createClusterRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createClusterRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createClusterRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -177,8 +183,9 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("AdditionalInfo", StringUtils.fromString(createClusterRequest.getAdditionalInfo()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> iamRolesList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest.getIamRoles();
-        if (!iamRolesList.isEmpty() || !iamRolesList.isAutoConstruct()) {
+        if (!createClusterRequest.getIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createClusterRequest.getIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> iamRolesList = (com.amazonaws.internal.SdkInternalList<String>) createClusterRequest.getIamRoles();
             int iamRolesListIndex = 1;
 
             for (String iamRolesListValue : iamRolesList) {
@@ -187,6 +194,14 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
                 }
                 iamRolesListIndex++;
             }
+        }
+
+        if (createClusterRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(createClusterRequest.getMaintenanceTrackName()));
+        }
+
+        if (createClusterRequest.getSnapshotScheduleIdentifier() != null) {
+            request.addParameter("SnapshotScheduleIdentifier", StringUtils.fromString(createClusterRequest.getSnapshotScheduleIdentifier()));
         }
 
         return request;

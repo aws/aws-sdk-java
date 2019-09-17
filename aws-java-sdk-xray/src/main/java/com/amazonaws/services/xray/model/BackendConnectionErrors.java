@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,51 +14,33 @@ package com.amazonaws.services.xray.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BackendConnectionErrors" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackendConnectionErrors implements Serializable, Cloneable {
+public class BackendConnectionErrors implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer timeoutCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer connectionRefusedCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer hTTPCode4XXCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer hTTPCode5XXCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer unknownHostCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer otherCount;
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param timeoutCount
      */
@@ -68,8 +50,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -79,8 +60,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param timeoutCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -92,8 +72,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param connectionRefusedCount
      */
@@ -103,8 +82,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -114,8 +92,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param connectionRefusedCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -127,8 +104,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode4XXCount
      */
@@ -138,8 +114,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -149,8 +124,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode4XXCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -162,8 +136,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode5XXCount
      */
@@ -173,8 +146,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -184,8 +156,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode5XXCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -197,8 +168,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param unknownHostCount
      */
@@ -208,8 +178,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -219,8 +188,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param unknownHostCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,8 +200,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param otherCount
      */
@@ -243,8 +210,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -254,8 +220,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param otherCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -267,7 +232,8 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -351,5 +317,11 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.xray.model.transform.BackendConnectionErrorsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

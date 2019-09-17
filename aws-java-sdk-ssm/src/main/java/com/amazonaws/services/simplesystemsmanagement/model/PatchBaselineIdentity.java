@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PatchBaselineIdentity implements Serializable, Cloneable {
+public class PatchBaselineIdentity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,13 +42,20 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
     private String baselineName;
     /**
      * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * The description of the patch baseline.
      * </p>
      */
     private String baselineDescription;
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      */
     private Boolean defaultBaseline;
@@ -133,6 +142,79 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @return Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public PatchBaselineIdentity withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        withOperatingSystem(operatingSystem);
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public PatchBaselineIdentity withOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The description of the patch baseline.
      * </p>
      * 
@@ -173,11 +255,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline.
+     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *        baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public void setDefaultBaseline(Boolean defaultBaseline) {
@@ -186,10 +270,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline.
+     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *         baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean getDefaultBaseline() {
@@ -198,11 +284,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline.
+     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *        baselines. For example, you can create a default patch baseline for each operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +301,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline.
+     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *         baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean isDefaultBaseline() {
@@ -224,7 +314,8 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -238,6 +329,8 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getBaselineName() != null)
             sb.append("BaselineName: ").append(getBaselineName()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getBaselineDescription() != null)
             sb.append("BaselineDescription: ").append(getBaselineDescription()).append(",");
         if (getDefaultBaseline() != null)
@@ -264,6 +357,10 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
             return false;
         if (other.getBaselineName() != null && other.getBaselineName().equals(this.getBaselineName()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getBaselineDescription() == null ^ this.getBaselineDescription() == null)
             return false;
         if (other.getBaselineDescription() != null && other.getBaselineDescription().equals(this.getBaselineDescription()) == false)
@@ -282,6 +379,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getBaselineName() == null) ? 0 : getBaselineName().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getBaselineDescription() == null) ? 0 : getBaselineDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultBaseline() == null) ? 0 : getDefaultBaseline().hashCode());
         return hashCode;
@@ -294,5 +392,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.PatchBaselineIdentityMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

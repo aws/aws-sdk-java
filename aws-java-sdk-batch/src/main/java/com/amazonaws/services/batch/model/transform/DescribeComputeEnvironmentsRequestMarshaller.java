@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,84 +12,51 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeComputeEnvironmentsRequest Marshaller
+ * DescribeComputeEnvironmentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeComputeEnvironmentsRequestMarshaller implements
-        Marshaller<Request<DescribeComputeEnvironmentsRequest>, DescribeComputeEnvironmentsRequest> {
+@SdkInternalApi
+public class DescribeComputeEnvironmentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> COMPUTEENVIRONMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironments").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public DescribeComputeEnvironmentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeComputeEnvironmentsRequestMarshaller instance = new DescribeComputeEnvironmentsRequestMarshaller();
+
+    public static DescribeComputeEnvironmentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeComputeEnvironmentsRequest> marshall(DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeComputeEnvironmentsRequest describeComputeEnvironmentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeComputeEnvironmentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeComputeEnvironmentsRequest> request = new DefaultRequest<DescribeComputeEnvironmentsRequest>(describeComputeEnvironmentsRequest,
-                "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/describecomputeenvironments";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> computeEnvironmentsList = describeComputeEnvironmentsRequest.getComputeEnvironments();
-            if (computeEnvironmentsList != null) {
-                jsonGenerator.writeFieldName("computeEnvironments");
-                jsonGenerator.writeStartArray();
-                for (String computeEnvironmentsListValue : computeEnvironmentsList) {
-                    if (computeEnvironmentsListValue != null) {
-                        jsonGenerator.writeValue(computeEnvironmentsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeComputeEnvironmentsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(describeComputeEnvironmentsRequest.getMaxResults());
-            }
-            if (describeComputeEnvironmentsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(describeComputeEnvironmentsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeComputeEnvironmentsRequest.getComputeEnvironments(), COMPUTEENVIRONMENTS_BINDING);
+            protocolMarshaller.marshall(describeComputeEnvironmentsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeComputeEnvironmentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

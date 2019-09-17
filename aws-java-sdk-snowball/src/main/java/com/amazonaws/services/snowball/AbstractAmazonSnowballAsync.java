@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -205,6 +205,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompatibleImagesResult> listCompatibleImagesAsync(ListCompatibleImagesRequest request) {
+
+        return listCompatibleImagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompatibleImagesResult> listCompatibleImagesAsync(ListCompatibleImagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCompatibleImagesRequest, ListCompatibleImagesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

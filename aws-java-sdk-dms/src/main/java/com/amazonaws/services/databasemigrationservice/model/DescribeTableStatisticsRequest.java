@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 500.
      * </p>
      */
     private Integer maxRecords;
@@ -53,6 +53,18 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * Filters applied to the describe table statistics action.
+     * </p>
+     * <p>
+     * Valid filter names: schema-name | table-name | table-state
+     * </p>
+     * <p>
+     * A combination of filters creates an AND condition where each record matches all specified filters.
+     * </p>
+     */
+    private java.util.List<Filter> filters;
 
     /**
      * <p>
@@ -104,7 +116,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 500.
      * </p>
      * 
      * @param maxRecords
@@ -115,7 +127,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints: Minimum 20, maximum 500.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -132,7 +144,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 500.
      * </p>
      * 
      * @return The maximum number of records to include in the response. If more records exist than the specified
@@ -142,7 +154,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      *         Default: 100
      *         </p>
      *         <p>
-     *         Constraints: Minimum 20, maximum 100.
+     *         Constraints: Minimum 20, maximum 500.
      */
 
     public Integer getMaxRecords() {
@@ -159,7 +171,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * Default: 100
      * </p>
      * <p>
-     * Constraints: Minimum 20, maximum 100.
+     * Constraints: Minimum 20, maximum 500.
      * </p>
      * 
      * @param maxRecords
@@ -170,7 +182,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      *        Default: 100
      *        </p>
      *        <p>
-     *        Constraints: Minimum 20, maximum 100.
+     *        Constraints: Minimum 20, maximum 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,7 +238,122 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Filters applied to the describe table statistics action.
+     * </p>
+     * <p>
+     * Valid filter names: schema-name | table-name | table-state
+     * </p>
+     * <p>
+     * A combination of filters creates an AND condition where each record matches all specified filters.
+     * </p>
+     * 
+     * @return Filters applied to the describe table statistics action.</p>
+     *         <p>
+     *         Valid filter names: schema-name | table-name | table-state
+     *         </p>
+     *         <p>
+     *         A combination of filters creates an AND condition where each record matches all specified filters.
+     */
+
+    public java.util.List<Filter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * Filters applied to the describe table statistics action.
+     * </p>
+     * <p>
+     * Valid filter names: schema-name | table-name | table-state
+     * </p>
+     * <p>
+     * A combination of filters creates an AND condition where each record matches all specified filters.
+     * </p>
+     * 
+     * @param filters
+     *        Filters applied to the describe table statistics action.</p>
+     *        <p>
+     *        Valid filter names: schema-name | table-name | table-state
+     *        </p>
+     *        <p>
+     *        A combination of filters creates an AND condition where each record matches all specified filters.
+     */
+
+    public void setFilters(java.util.Collection<Filter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<Filter>(filters);
+    }
+
+    /**
+     * <p>
+     * Filters applied to the describe table statistics action.
+     * </p>
+     * <p>
+     * Valid filter names: schema-name | table-name | table-state
+     * </p>
+     * <p>
+     * A combination of filters creates an AND condition where each record matches all specified filters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        Filters applied to the describe table statistics action.</p>
+     *        <p>
+     *        Valid filter names: schema-name | table-name | table-state
+     *        </p>
+     *        <p>
+     *        A combination of filters creates an AND condition where each record matches all specified filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTableStatisticsRequest withFilters(Filter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<Filter>(filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters applied to the describe table statistics action.
+     * </p>
+     * <p>
+     * Valid filter names: schema-name | table-name | table-state
+     * </p>
+     * <p>
+     * A combination of filters creates an AND condition where each record matches all specified filters.
+     * </p>
+     * 
+     * @param filters
+     *        Filters applied to the describe table statistics action.</p>
+     *        <p>
+     *        Valid filter names: schema-name | table-name | table-state
+     *        </p>
+     *        <p>
+     *        A combination of filters creates an AND condition where each record matches all specified filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTableStatisticsRequest withFilters(java.util.Collection<Filter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -241,7 +368,9 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +397,10 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +412,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

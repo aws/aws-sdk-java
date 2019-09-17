@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,18 +26,18 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StaticIp implements Serializable, Cloneable {
+public class StaticIp implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      */
     private String name;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      */
     private String arn;
@@ -72,7 +74,7 @@ public class StaticIp implements Serializable, Cloneable {
     private String ipAddress;
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      */
     private String attachedTo;
@@ -85,11 +87,11 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
      * @param name
-     *        The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     *        The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      */
 
     public void setName(String name) {
@@ -98,10 +100,10 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
-     * @return The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     * @return The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      */
 
     public String getName() {
@@ -110,11 +112,11 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     * The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      * </p>
      * 
      * @param name
-     *        The name of the static IP (e.g., <code>StaticIP-Virginia-EXAMPLE</code>).
+     *        The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,12 +128,12 @@ public class StaticIp implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the static IP (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      */
 
     public void setArn(String arn) {
@@ -141,11 +143,11 @@ public class StaticIp implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the static IP (e.g.,
-     *         <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     *         <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      */
 
     public String getArn() {
@@ -155,12 +157,12 @@ public class StaticIp implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the static IP (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,7 +354,7 @@ public class StaticIp implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -367,7 +369,7 @@ public class StaticIp implements Serializable, Cloneable {
      */
 
     public StaticIp withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -413,11 +415,11 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param attachedTo
-     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public void setAttachedTo(String attachedTo) {
@@ -426,10 +428,10 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * @return The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public String getAttachedTo() {
@@ -438,11 +440,11 @@ public class StaticIp implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param attachedTo
-     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,7 +506,8 @@ public class StaticIp implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -609,5 +612,11 @@ public class StaticIp implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.StaticIpMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

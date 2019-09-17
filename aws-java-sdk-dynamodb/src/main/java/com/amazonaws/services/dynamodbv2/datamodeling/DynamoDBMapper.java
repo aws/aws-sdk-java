@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,27 +33,39 @@ import com.amazonaws.services.dynamodbv2.model.BatchGetItemResult;
 import com.amazonaws.services.dynamodbv2.model.BatchWriteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.BatchWriteItemResult;
 import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.amazonaws.services.dynamodbv2.model.ConditionCheck;
 import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
 import com.amazonaws.services.dynamodbv2.model.ConditionalOperator;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.Delete;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
+import com.amazonaws.services.dynamodbv2.model.Get;
 import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
 import com.amazonaws.services.dynamodbv2.model.GetItemResult;
+import com.amazonaws.services.dynamodbv2.model.ItemResponse;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
+import com.amazonaws.services.dynamodbv2.model.Put;
 import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
 import com.amazonaws.services.dynamodbv2.model.PutItemResult;
 import com.amazonaws.services.dynamodbv2.model.PutRequest;
 import com.amazonaws.services.dynamodbv2.model.QueryRequest;
 import com.amazonaws.services.dynamodbv2.model.QueryResult;
 import com.amazonaws.services.dynamodbv2.model.ReturnValue;
+import com.amazonaws.services.dynamodbv2.model.ReturnValuesOnConditionCheckFailure;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.Select;
+import com.amazonaws.services.dynamodbv2.model.TransactGetItem;
+import com.amazonaws.services.dynamodbv2.model.TransactGetItemsRequest;
+import com.amazonaws.services.dynamodbv2.model.TransactGetItemsResult;
+import com.amazonaws.services.dynamodbv2.model.TransactWriteItem;
+import com.amazonaws.services.dynamodbv2.model.TransactWriteItemsRequest;
+import com.amazonaws.services.dynamodbv2.model.Update;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
@@ -75,10 +87,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
+import java.util.UUID;
 
 import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
 import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
+import static com.amazonaws.services.dynamodbv2.datamodeling.TransactionWriteRequest.TransactionWriteOperation;
+import static com.amazonaws.services.dynamodbv2.datamodeling.TransactionWriteRequest.TransactionWriteOperationType;
 
 /**
  * Object mapper for domain-object interaction with DynamoDB.
@@ -173,8 +189,7 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
  * DynamoDB-specific subclasses such as {@link ConditionalCheckFailedException}
  * will be used when possible.
  * <p>
- * This class is thread-safe and can be shared between threads. It's also very
- * lightweight, so it doesn't need to be.
+ * This class is thread-safe and can be shared between threads.
  *
  * @see DynamoDBTable
  * @see DynamoDBHashKey
@@ -216,6 +231,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
     private static final String USER_AGENT_BATCH_OPERATION  =
             DynamoDBMapper.class.getName() + "_batch_operation/" + VersionInfoUtils.getVersion();
+    private static final String USER_AGENT_TRANSACTION_OPERATION  =
+            DynamoDBMapper.class.getName() + "_transaction_operation/" + VersionInfoUtils.getVersion();
 
     private static final Log log = LogFactory.getLog(DynamoDBMapper.class);
 
@@ -500,16 +517,17 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         final DynamoDBMapperTableModel<T> model = getTableModel(clazz, finalConfig);
 
         /*
-         * We force a putItem request instead of updateItem request either when
-         * CLOBBER is configured, or part of the primary key of the object needs
+         * We use a putItem request instead of updateItem request either when
+         * CLOBBER or PUT is configured, or part of the primary key of the object needs
          * to be auto-generated.
          */
-        boolean forcePut = (finalConfig.getSaveBehavior() == SaveBehavior.CLOBBER)
-                || anyKeyGeneratable(model, object, finalConfig.getSaveBehavior());
+        boolean usePut = (finalConfig.getSaveBehavior() == SaveBehavior.CLOBBER
+                         || finalConfig.getSaveBehavior() == SaveBehavior.PUT)
+                         || anyKeyGeneratable(model, object, finalConfig.getSaveBehavior());
 
         SaveObjectHandler saveObjectHandler;
 
-        if (forcePut) {
+        if (usePut) {
             saveObjectHandler = this.new SaveObjectHandler(clazz, object,
                     tableName, finalConfig, saveExpression) {
 
@@ -1080,6 +1098,98 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
+    public void transactionWrite(TransactionWriteRequest transactionWriteRequest, DynamoDBMapperConfig config) {
+        if (transactionWriteRequest == null || isNullOrEmpty(transactionWriteRequest.getTransactionWriteOperations())) {
+            throw new SdkClientException("Input request is null or empty");
+        }
+
+        final DynamoDBMapperConfig finalConfig = mergeConfig(config);
+
+        List<TransactionWriteOperation> writeOperations = transactionWriteRequest.getTransactionWriteOperations();
+        List<ValueUpdate> inMemoryUpdates = new LinkedList<ValueUpdate>();
+        TransactWriteItemsRequest transactWriteItemsRequest = new TransactWriteItemsRequest();
+        List<TransactWriteItem> transactWriteItems = new ArrayList<TransactWriteItem>();
+
+        transactWriteItemsRequest.setClientRequestToken(transactionWriteRequest.getIdempotencyToken());
+
+        for (TransactionWriteOperation writeOperation : writeOperations) {
+            transactWriteItems.add(generateTransactWriteItem(writeOperation,
+                                                             inMemoryUpdates,
+                                                             finalConfig));
+
+        }
+
+        transactWriteItemsRequest.setTransactItems(transactWriteItems);
+
+        db.transactWriteItems(applyTransactionOperationUserAgent(transactWriteItemsRequest));
+
+        // Update the inMemory values for autogenerated attributeValues after successful completion of transaction
+        for (ValueUpdate update : inMemoryUpdates) {
+            update.apply();
+        }
+    }
+
+    @Override
+    public List<Object> transactionLoad(TransactionLoadRequest transactionLoadRequest, DynamoDBMapperConfig config) {
+
+        if (transactionLoadRequest == null || isNullOrEmpty(transactionLoadRequest.getObjectsToLoad())) {
+            return new ArrayList<Object>();
+        }
+
+        final DynamoDBMapperConfig finalConfig = mergeConfig(config);
+
+        List<Object> objectsToLoad = transactionLoadRequest.getObjectsToLoad();
+        List<DynamoDBTransactionLoadExpression> transactionLoadExpressions = transactionLoadRequest.getObjectLoadExpressions();
+        List<TransactGetItem> transactGetItems = new ArrayList<TransactGetItem>();
+        List<Class<?>> classList = new ArrayList<Class<?>>();
+        List<String> tableNameList = new ArrayList<String>();
+        for (int i = 0 ; i < objectsToLoad.size() ; i++) {
+            Object objectToLoad = objectsToLoad.get(i);
+            DynamoDBTransactionLoadExpression expressionForLoad = transactionLoadExpressions.get(i);
+            Class<Object> clazz = (Class<Object>)objectToLoad.getClass();
+
+            String tableName = getTableName(clazz, objectToLoad, finalConfig);
+            tableNameList.add(tableName);
+            classList.add(clazz);
+            final DynamoDBMapperTableModel<Object> model = getTableModel(clazz, finalConfig);
+
+            Map<String, AttributeValue> key = model.convertKey(objectToLoad);
+            TransactGetItem transactGetItem = new TransactGetItem();
+            Get getItem = new Get();
+            getItem.setTableName(tableName);
+            getItem.setKey(key);
+            if (expressionForLoad != null) {
+                getItem.setExpressionAttributeNames(expressionForLoad.getExpressionAttributeNames());
+                getItem.setProjectionExpression(expressionForLoad.getProjectionExpression());
+            }
+            transactGetItem.setGet(getItem);
+            transactGetItems.add(transactGetItem);
+        }
+
+        TransactGetItemsRequest transactGetItemsRequest = new TransactGetItemsRequest();
+        transactGetItemsRequest.withTransactItems(transactGetItems);
+        TransactGetItemsResult transactGetItemsResult = db.transactGetItems(applyTransactionOperationUserAgent(transactGetItemsRequest));
+        List<ItemResponse> responseItems = transactGetItemsResult.getResponses();
+
+        List<Object> resultObjects = new ArrayList<Object>();
+
+        for (int i = 0 ; i < responseItems.size(); i++) {
+            if (responseItems.get(i).getItem() == null) {
+                resultObjects.add(null);
+            } else {
+                resultObjects.add(
+                        privateMarshallIntoObject(
+                                toParameters(responseItems.get(i).getItem(),
+                                             classList.get(i),
+                                             tableNameList.get(i),
+                                             finalConfig)));
+            }
+        }
+
+        return resultObjects;
+    }
+
+    @Override
     public List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite,
                                         Iterable<? extends Object> objectsToDelete,
                                         DynamoDBMapperConfig config) {
@@ -1383,6 +1493,10 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return map == null || map.isEmpty();
     }
 
+    private static <T> boolean isNullOrEmpty(List<T> list) {
+        return list == null || list.isEmpty();
+    }
+
     /**
      * Determnes if any of the primary keys require auto-generation.
      */
@@ -1416,9 +1530,9 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             return false;
         } else if (field.keyType() != null || field.indexed()) {
             return true;
-        } else if (saveBehavior == SaveBehavior.CLOBBER) {
-            return true;
-        } else if (saveBehavior == SaveBehavior.UPDATE) {
+        } else if (saveBehavior == SaveBehavior.CLOBBER
+                   || saveBehavior == SaveBehavior.UPDATE
+                   || saveBehavior == SaveBehavior.PUT) {
             return true;
         } else if (anyKeyGeneratable(model, object, saveBehavior)) {
             return true;
@@ -1516,6 +1630,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         QueryResultPage<T> result = new QueryResultPage<T>();
+
         List<AttributeTransformer.Parameters<T>> parameters =
             toParameters(queryResult.getItems(), clazz, queryRequest.getTableName(), config);
 
@@ -1619,7 +1734,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return parallelScanRequests;
     }
 
-    private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz,
+    protected <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz,
             DynamoDBQueryExpression<T> xpress, DynamoDBMapperConfig config) {
 
         final DynamoDBMapperTableModel<T> model = getTableModel(clazz, config);
@@ -1971,9 +2086,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             final String tableName,
             final DynamoDBMapperConfig mapperConfig
     ) {
-        List<AttributeTransformer.Parameters<T>> rval =
-            new ArrayList<AttributeTransformer.Parameters<T>>(
-                attributeValues.size());
+        if(attributeValues == null) {
+            return Collections.emptyList();
+        }
+
+        List<AttributeTransformer.Parameters<T>> rval = new ArrayList<AttributeTransformer.Parameters<T>>(attributeValues.size());
 
         for (Map<String, AttributeValue> item : attributeValues) {
             rval.add(toParameters(item, modelClass, tableName, mapperConfig));
@@ -2127,6 +2244,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return request;
     }
 
+    static <X extends AmazonWebServiceRequest> X applyTransactionOperationUserAgent(X request) {
+        request.getRequestClientOptions().appendUserAgent(USER_AGENT_TRANSACTION_OPERATION);
+        return request;
+    }
+
     @Override
     public S3ClientCache getS3ClientCache() {
         return s3Links.getS3ClientCache();
@@ -2205,8 +2327,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             return unprocessedItems;
         }
 
-        public void setException(Exception excetpion) {
-            this.exception = excetpion;
+        public void setException(Exception exception) {
+            this.exception = exception;
         }
 
         public Exception getException() {
@@ -2307,6 +2429,194 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         public Map<String, List<Object>> getResponses() {
             return responses;
         }
+    }
+
+    private TransactWriteItem generateTransactWriteItem(TransactionWriteOperation transactionWriteOperation,
+                                                        List<ValueUpdate> inMemoryUpdates,
+                                                        DynamoDBMapperConfig config) {
+        Object objectToWrite = transactionWriteOperation.getObject();
+        DynamoDBTransactionWriteExpression writeExpression = transactionWriteOperation.getDynamoDBTransactionWriteExpression();
+        ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure = transactionWriteOperation.getReturnValuesOnConditionCheckFailure();
+        TransactionWriteOperationType operationType = transactionWriteOperation.getTransactionWriteOperationType();
+        Class<Object> clazz = (Class<Object>)objectToWrite.getClass();
+        String tableName = getTableName(clazz, objectToWrite, config);
+        Map<String, AttributeValue> attributeValues = new HashMap<String, AttributeValue>();
+
+        final DynamoDBMapperTableModel<Object> model = getTableModel(clazz, config);
+        for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
+            AttributeValue currentValue = null;
+            if (field.versioned()) {
+                throw new SdkClientException("Versioned attributes are not supported on TransactionWrite API");
+            } else if (canGenerate(model, objectToWrite, SaveBehavior.CLOBBER, field)) {
+                currentValue = field.convert(field.generate(field.get(objectToWrite)));
+                inMemoryUpdates.add(new ValueUpdate(field, currentValue, objectToWrite));
+            } else {
+                currentValue = field.convert(field.get(objectToWrite));
+            }
+            if (currentValue == null && field.keyType() != null) {
+                throw new DynamoDBMappingException(clazz.getSimpleName() + "[" + field.name() + "]; null or empty value for primary key");
+            } else if (currentValue != null) {
+                attributeValues.put(field.name(), currentValue);
+            }
+        }
+        AttributeTransformer.Parameters<?> parameters =
+                toParameters(attributeValues, clazz, tableName, config);
+        Map<String, AttributeValue> attributeValueMap = transformAttributes(parameters);
+
+        TransactWriteItem transactWriteItem = new TransactWriteItem();
+
+        switch (operationType) {
+            case Put:
+                transactWriteItem.setPut(generatePut(tableName, attributeValueMap, returnValuesOnConditionCheckFailure, writeExpression));
+                break;
+            case Update:
+                transactWriteItem.setUpdate(
+                        generateUpdate(model, tableName, attributeValueMap, returnValuesOnConditionCheckFailure, writeExpression));
+                break;
+            case ConditionCheck:
+                transactWriteItem.setConditionCheck(
+                        generateConditionCheck(model, tableName, objectToWrite, returnValuesOnConditionCheckFailure, writeExpression));
+                break;
+            case Delete:
+                transactWriteItem.setDelete(
+                        generateDelete(model, tableName, objectToWrite, returnValuesOnConditionCheckFailure, writeExpression));
+                break;
+            default:
+                throw new UnsupportedOperationException("Unsupported operationType: " + operationType + " for object: " +  model.convertKey(objectToWrite) + " of type: " + clazz);
+        }
+        return transactWriteItem;
+    }
+
+    private Put generatePut(String tableName,
+                            Map<String, AttributeValue> attributeValueMap,
+                            ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure,
+                            DynamoDBTransactionWriteExpression writeExpression) {
+        Put put = new Put();
+        put.setItem(attributeValueMap);
+        put.setTableName(tableName);
+        if (returnValuesOnConditionCheckFailure != null) {
+            put.setReturnValuesOnConditionCheckFailure(
+                    returnValuesOnConditionCheckFailure.toString());
+        }
+        if (writeExpression != null) {
+            if (writeExpression.getConditionExpression() != null) {
+                put.setConditionExpression(writeExpression.getConditionExpression());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeNames())) {
+                put.setExpressionAttributeNames(writeExpression.getExpressionAttributeNames());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeValues())) {
+                put.setExpressionAttributeValues(writeExpression.getExpressionAttributeValues());
+            }
+        }
+        return put;
+    }
+
+    private Update generateUpdate(DynamoDBMapperTableModel<Object> model,
+                                  String tableName,
+                                  Map<String, AttributeValue> attributeValueMap,
+                                  ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure,
+                                  DynamoDBTransactionWriteExpression writeExpression) {
+        Update update = new Update();
+        Map<String, String> expressionAttributeNamesMap = new HashMap<String, String>();
+        Map<String, AttributeValue> expressionsAttributeValuesMap = new HashMap<String, AttributeValue>();
+        if (returnValuesOnConditionCheckFailure != null) {
+            update.setReturnValuesOnConditionCheckFailure(
+                    returnValuesOnConditionCheckFailure.toString());
+        }
+        if (writeExpression != null) {
+            if (writeExpression.getConditionExpression() != null) {
+                update.setConditionExpression(writeExpression.getConditionExpression());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeNames())) {
+                expressionAttributeNamesMap.putAll(writeExpression.getExpressionAttributeNames());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeValues())) {
+                expressionsAttributeValuesMap.putAll(writeExpression.getExpressionAttributeValues());
+            }
+        }
+        Map<String, AttributeValue> keyAttributeValueMap = new HashMap<String, AttributeValue>();
+        Map<String, AttributeValue> nonKeyNonNullAttributeValueMap = new HashMap<String, AttributeValue>();
+        // These are the non-key attributes that are present in the model and not in the customer object,
+        // meaning they're to be removed in this update
+        List<String> nullValuedNonKeyAttributeNames = new ArrayList<String>();
+
+        for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
+            if (field.keyType() != null) {
+                keyAttributeValueMap.put(field.name(), attributeValueMap.get(field.name()));
+            } else if (attributeValueMap.get(field.name()) != null) {
+                nonKeyNonNullAttributeValueMap.put(field.name(), attributeValueMap.get(field.name()));
+            } else {
+                nullValuedNonKeyAttributeNames.add(field.name());
+            }
+        }
+
+        update.setTableName(tableName);
+        update.setUpdateExpression(new UpdateExpressionGenerator()
+                                           .generateUpdateExpressionAndUpdateAttributeMaps(expressionAttributeNamesMap,
+                                                                                           expressionsAttributeValuesMap,
+                                                                                           nonKeyNonNullAttributeValueMap,
+                                                                                           nullValuedNonKeyAttributeNames));
+        update.setKey(keyAttributeValueMap);
+        if (expressionAttributeNamesMap.size() > 0) {
+            update.setExpressionAttributeNames(expressionAttributeNamesMap);
+        }
+        if (expressionsAttributeValuesMap.size() > 0) {
+            update.setExpressionAttributeValues(expressionsAttributeValuesMap);
+        }
+        return update;
+    }
+
+    private ConditionCheck generateConditionCheck(DynamoDBMapperTableModel<Object> model,
+                                                  String tableName,
+                                                  Object objectToConditionCheck,
+                                                  ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure,
+                                                  DynamoDBTransactionWriteExpression writeExpression) {
+        ConditionCheck conditionCheck = new ConditionCheck();
+        conditionCheck.setKey(model.convertKey(objectToConditionCheck));
+        conditionCheck.setTableName(tableName);
+        if (returnValuesOnConditionCheckFailure != null) {
+            conditionCheck.setReturnValuesOnConditionCheckFailure(
+                    returnValuesOnConditionCheckFailure.toString());
+        }
+        if (writeExpression != null) {
+            conditionCheck.setConditionExpression(writeExpression.getConditionExpression());
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeNames())) {
+                conditionCheck.setExpressionAttributeNames(writeExpression.getExpressionAttributeNames());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeValues())) {
+                conditionCheck.setExpressionAttributeValues(writeExpression.getExpressionAttributeValues());
+            }
+        }
+        return conditionCheck;
+    }
+
+    private Delete generateDelete(DynamoDBMapperTableModel<Object> model,
+                                  String tableName,
+                                  Object objectToDelete,
+                                  ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure,
+                                  DynamoDBTransactionWriteExpression writeExpression) {
+
+
+        Delete delete = new Delete();
+        delete.setKey(model.convertKey(objectToDelete));
+        delete.setTableName(tableName);
+        if (returnValuesOnConditionCheckFailure != null) {
+            delete.setReturnValuesOnConditionCheckFailure(
+                    returnValuesOnConditionCheckFailure.toString());
+        }
+        if (writeExpression != null) {
+            if (writeExpression.getConditionExpression() != null) {
+                delete.setConditionExpression(writeExpression.getConditionExpression());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeNames())) {
+                delete.setExpressionAttributeNames(writeExpression.getExpressionAttributeNames());
+            }
+            if (!isNullOrEmpty(writeExpression.getExpressionAttributeValues())) {
+                delete.setExpressionAttributeValues(writeExpression.getExpressionAttributeValues());
+            }
+        }
+        return delete;
     }
 
 }

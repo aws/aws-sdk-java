@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.support.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.support.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeSeverityLevelsRequest Marshaller
+ * DescribeSeverityLevelsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeSeverityLevelsRequestMarshaller implements Marshaller<Request<DescribeSeverityLevelsRequest>, DescribeSeverityLevelsRequest> {
+@SdkInternalApi
+public class DescribeSeverityLevelsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("language").build();
 
-    public DescribeSeverityLevelsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeSeverityLevelsRequestMarshaller instance = new DescribeSeverityLevelsRequestMarshaller();
+
+    public static DescribeSeverityLevelsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeSeverityLevelsRequest> marshall(DescribeSeverityLevelsRequest describeSeverityLevelsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeSeverityLevelsRequest describeSeverityLevelsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeSeverityLevelsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeSeverityLevelsRequest> request = new DefaultRequest<DescribeSeverityLevelsRequest>(describeSeverityLevelsRequest, "AWSSupport");
-        request.addHeader("X-Amz-Target", "AWSSupport_20130415.DescribeSeverityLevels");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeSeverityLevelsRequest.getLanguage() != null) {
-                jsonGenerator.writeFieldName("language").writeValue(describeSeverityLevelsRequest.getLanguage());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeSeverityLevelsRequest.getLanguage(), LANGUAGE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -49,7 +51,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpectedAttributeValue implements Serializable, Cloneable {
+public class ExpectedAttributeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -61,7 +63,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -75,7 +77,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -83,7 +85,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -309,7 +311,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -334,7 +336,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ExpectedAttributeValue(AttributeValue value) {
@@ -352,7 +354,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -360,7 +362,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -400,7 +402,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -412,7 +414,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -430,7 +432,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -441,7 +443,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *         >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -459,7 +461,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -471,7 +473,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -490,7 +492,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -498,7 +500,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -532,7 +534,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -540,7 +542,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -580,7 +582,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -588,7 +590,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -621,7 +623,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *         with a <code>ConditionalCheckFailedException</code>.
+     *         with a <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -629,7 +631,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *         If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <code>ConditionalCheckFailedException</code>.
+     *         <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -669,7 +671,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -677,7 +679,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -711,7 +713,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -719,7 +721,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -761,7 +763,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -769,7 +771,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -802,7 +804,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *         with a <code>ConditionalCheckFailedException</code>.
+     *         with a <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -810,7 +812,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *         If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <code>ConditionalCheckFailedException</code>.
+     *         <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -2292,7 +2294,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -2656,7 +2658,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      */
 
     public ExpectedAttributeValue withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
@@ -2680,7 +2682,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2701,7 +2703,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         For information on specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *         Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2729,7 +2731,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2751,7 +2753,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2784,7 +2786,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -2811,7 +2813,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2846,7 +2848,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2868,7 +2870,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2879,7 +2881,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2949,5 +2952,11 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.ExpectedAttributeValueMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

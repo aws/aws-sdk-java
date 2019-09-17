@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteThingRequest Marshaller
+ * DeleteThingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteThingRequestMarshaller implements Marshaller<Request<DeleteThingRequest>, DeleteThingRequest> {
+@SdkInternalApi
+public class DeleteThingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<Long> EXPECTEDVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("expectedVersion").build();
 
-    public DeleteThingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteThingRequestMarshaller instance = new DeleteThingRequestMarshaller();
+
+    public static DeleteThingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteThingRequest> marshall(DeleteThingRequest deleteThingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteThingRequest deleteThingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteThingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteThingRequest> request = new DefaultRequest<DeleteThingRequest>(deleteThingRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/things/{thingName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", deleteThingRequest.getThingName());
-        request.setResourcePath(uriResourcePath);
-
-        if (deleteThingRequest.getExpectedVersion() != null) {
-            request.addParameter("expectedVersion", StringUtils.fromLong(deleteThingRequest.getExpectedVersion()));
+        try {
+            protocolMarshaller.marshall(deleteThingRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(deleteThingRequest.getExpectedVersion(), EXPECTEDVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

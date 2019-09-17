@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Evaluation implements Serializable, Cloneable {
+public class Evaluation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -49,8 +51,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      */
     private String complianceType;
@@ -161,8 +163,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -175,7 +177,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
@@ -194,8 +196,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @return Indicates whether the AWS resource complies with the AWS Config rule that it was evaluated against.</p>
@@ -207,7 +209,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         <p>
      *         Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *         <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *         function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *         function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
@@ -226,8 +228,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -240,7 +242,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -261,8 +263,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -275,12 +277,12 @@ public class Evaluation implements Serializable, Cloneable {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
     public void setComplianceType(ComplianceType complianceType) {
-        this.complianceType = complianceType.toString();
+        withComplianceType(complianceType);
     }
 
     /**
@@ -294,8 +296,8 @@ public class Evaluation implements Serializable, Cloneable {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -308,13 +310,13 @@ public class Evaluation implements Serializable, Cloneable {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
 
     public Evaluation withComplianceType(ComplianceType complianceType) {
-        setComplianceType(complianceType);
+        this.complianceType = complianceType.toString();
         return this;
     }
 
@@ -417,7 +419,8 @@ public class Evaluation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -494,5 +497,11 @@ public class Evaluation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.EvaluationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

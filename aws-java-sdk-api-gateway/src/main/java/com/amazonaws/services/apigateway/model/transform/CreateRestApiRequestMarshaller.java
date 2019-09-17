@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,89 +12,73 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.Map;
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateRestApiRequest Marshaller
+ * CreateRestApiRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateRestApiRequestMarshaller implements Marshaller<Request<CreateRestApiRequest>, CreateRestApiRequest> {
+@SdkInternalApi
+public class CreateRestApiRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> CLONEFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cloneFrom").build();
+    private static final MarshallingInfo<List> BINARYMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("binaryMediaTypes").build();
+    private static final MarshallingInfo<Integer> MINIMUMCOMPRESSIONSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumCompressionSize").build();
+    private static final MarshallingInfo<String> APIKEYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySource").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
+    private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("policy").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
-    public CreateRestApiRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateRestApiRequestMarshaller instance = new CreateRestApiRequestMarshaller();
+
+    public static CreateRestApiRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateRestApiRequest> marshall(CreateRestApiRequest createRestApiRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateRestApiRequest createRestApiRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createRestApiRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateRestApiRequest> request = new DefaultRequest<CreateRestApiRequest>(createRestApiRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/restapis";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (createRestApiRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createRestApiRequest.getName());
-            }
-            if (createRestApiRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createRestApiRequest.getDescription());
-            }
-            if (createRestApiRequest.getVersion() != null) {
-                jsonGenerator.writeFieldName("version").writeValue(createRestApiRequest.getVersion());
-            }
-            if (createRestApiRequest.getCloneFrom() != null) {
-                jsonGenerator.writeFieldName("cloneFrom").writeValue(createRestApiRequest.getCloneFrom());
-            }
-
-            java.util.List<String> binaryMediaTypesList = createRestApiRequest.getBinaryMediaTypes();
-            if (binaryMediaTypesList != null) {
-                jsonGenerator.writeFieldName("binaryMediaTypes");
-                jsonGenerator.writeStartArray();
-                for (String binaryMediaTypesListValue : binaryMediaTypesList) {
-                    if (binaryMediaTypesListValue != null) {
-                        jsonGenerator.writeValue(binaryMediaTypesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createRestApiRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getCloneFrom(), CLONEFROM_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getBinaryMediaTypes(), BINARYMEDIATYPES_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getMinimumCompressionSize(), MINIMUMCOMPRESSIONSIZE_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getApiKeySource(), APIKEYSOURCE_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getPolicy(), POLICY_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

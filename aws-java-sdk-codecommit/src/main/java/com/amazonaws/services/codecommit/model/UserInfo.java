@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.codecommit.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserInfo implements Serializable, Cloneable {
+public class UserInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,10 +42,10 @@ public class UserInfo implements Serializable, Cloneable {
     private String email;
     /**
      * <p>
-     * The date when the specified commit was pushed to the repository.
+     * The date when the specified commit was commited, in timestamp format with GMT offset.
      * </p>
      */
-    private String dateValue;
+    private String date;
 
     /**
      * <p>
@@ -127,46 +129,47 @@ public class UserInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the specified commit was pushed to the repository.
+     * The date when the specified commit was commited, in timestamp format with GMT offset.
      * </p>
      * 
-     * @param dateValue
-     *        The date when the specified commit was pushed to the repository.
+     * @param date
+     *        The date when the specified commit was commited, in timestamp format with GMT offset.
      */
 
-    public void setDate(String dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     /**
      * <p>
-     * The date when the specified commit was pushed to the repository.
+     * The date when the specified commit was commited, in timestamp format with GMT offset.
      * </p>
      * 
-     * @return The date when the specified commit was pushed to the repository.
+     * @return The date when the specified commit was commited, in timestamp format with GMT offset.
      */
 
     public String getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
      * <p>
-     * The date when the specified commit was pushed to the repository.
+     * The date when the specified commit was commited, in timestamp format with GMT offset.
      * </p>
      * 
-     * @param dateValue
-     *        The date when the specified commit was pushed to the repository.
+     * @param date
+     *        The date when the specified commit was commited, in timestamp format with GMT offset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserInfo withDate(String dateValue) {
-        setDate(dateValue);
+    public UserInfo withDate(String date) {
+        setDate(date);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,5 +232,11 @@ public class UserInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codecommit.model.transform.UserInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

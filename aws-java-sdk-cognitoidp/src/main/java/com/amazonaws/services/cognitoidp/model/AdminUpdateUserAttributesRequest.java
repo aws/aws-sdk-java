@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,9 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * An array of name-value pairs representing user attributes.
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      */
     private java.util.List<AttributeType> userAttributes;
@@ -131,8 +134,13 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of name-value pairs representing user attributes.
+     * @return An array of name-value pairs representing user attributes.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -143,9 +151,14 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
@@ -162,13 +175,18 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,9 +204,14 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,7 +221,8 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -211,7 +235,7 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
         if (getUserPoolId() != null)
             sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserAttributes() != null)
             sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");

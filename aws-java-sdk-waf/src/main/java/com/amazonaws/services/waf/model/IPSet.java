@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,26 +14,27 @@ package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
- * notation. AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for
- * IPv6.
+ * notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6
+ * address ranges: /24, /32, /48, /56, /64, and /128.
  * </p>
  * <p>
  * To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for
- * example, 192.0.2.0/31. To block a range of IP addresses, you can specify a <code>/128</code>, <code>/64</code>,
- * <code>/56</code>, <code>/48</code>, <code>/32</code>, <code>/24</code>, <code>/16</code>, or <code>/8</code> CIDR.
- * For more information about CIDR notation, see the Wikipedia entry <a
- * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+ * example, 192.0.2.0/31. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for
+ * IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia
+ * entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSet" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IPSet implements Serializable, Cloneable {
+public class IPSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -57,21 +58,10 @@ public class IPSet implements Serializable, Cloneable {
     /**
      * <p>
      * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
-     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:
+     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+     * CloudFront access logs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<IPSetDescriptor> iPSetDescriptors;
 
@@ -197,36 +187,15 @@ public class IPSet implements Serializable, Cloneable {
     /**
      * <p>
      * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
-     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:
+     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+     * CloudFront access logs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
-     *         that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront
-     *         distribution, this is the value of one of the following fields in CloudFront access logs:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     *         </p>
-     *         </li>
+     *         that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution
+     *         and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the
+     *         c-ip field in the CloudFront access logs.
      */
 
     public java.util.List<IPSetDescriptor> getIPSetDescriptors() {
@@ -236,37 +205,16 @@ public class IPSet implements Serializable, Cloneable {
     /**
      * <p>
      * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
-     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:
+     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+     * CloudFront access logs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param iPSetDescriptors
      *        The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
-     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution,
-     *        this is the value of one of the following fields in CloudFront access logs:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
+     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution
+     *        and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the
+     *        c-ip field in the CloudFront access logs.
      */
 
     public void setIPSetDescriptors(java.util.Collection<IPSetDescriptor> iPSetDescriptors) {
@@ -281,21 +229,10 @@ public class IPSet implements Serializable, Cloneable {
     /**
      * <p>
      * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
-     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:
+     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+     * CloudFront access logs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIPSetDescriptors(java.util.Collection)} or {@link #withIPSetDescriptors(java.util.Collection)} if you
@@ -304,19 +241,9 @@ public class IPSet implements Serializable, Cloneable {
      * 
      * @param iPSetDescriptors
      *        The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
-     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution,
-     *        this is the value of one of the following fields in CloudFront access logs:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
+     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution
+     *        and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the
+     *        c-ip field in the CloudFront access logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,37 +260,16 @@ public class IPSet implements Serializable, Cloneable {
     /**
      * <p>
      * The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web
-     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the
-     * value of one of the following fields in CloudFront access logs:
+     * requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the
+     * CloudFront access logs.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param iPSetDescriptors
      *        The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation)
-     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution,
-     *        this is the value of one of the following fields in CloudFront access logs:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request
-     *        </p>
-     *        </li>
+     *        that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution
+     *        and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the
+     *        c-ip field in the CloudFront access logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,7 +279,8 @@ public class IPSet implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -436,5 +343,11 @@ public class IPSet implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.waf.model.waf_regional.transform.IPSetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private ThingTypeProperties thingTypeProperties;
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing type.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -126,7 +132,78 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Metadata which can be used to manage the thing type.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the thing type.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing type.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing type.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingTypeRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing type.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingTypeRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -139,7 +216,9 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getThingTypeProperties() != null)
-            sb.append("ThingTypeProperties: ").append(getThingTypeProperties());
+            sb.append("ThingTypeProperties: ").append(getThingTypeProperties()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +241,10 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getThingTypeProperties() != null && other.getThingTypeProperties().equals(this.getThingTypeProperties()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +255,7 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getThingTypeProperties() == null) ? 0 : getThingTypeProperties().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

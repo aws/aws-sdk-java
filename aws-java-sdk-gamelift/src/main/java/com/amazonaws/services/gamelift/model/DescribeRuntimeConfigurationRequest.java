@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier of the fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier of the fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier of the fleet to get the runtime configuration for.
+     *        Unique identifier for a fleet to get the run-time configuration for.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +50,10 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier of the fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
-     * @return Unique identifier of the fleet to get the runtime configuration for.
+     * @return Unique identifier for a fleet to get the run-time configuration for.
      */
 
     public String getFleetId() {
@@ -62,11 +62,11 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier of the fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier of the fleet to get the runtime configuration for.
+     *        Unique identifier for a fleet to get the run-time configuration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +76,8 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

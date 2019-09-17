@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribePlacementGroupsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribePlacementGroups.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,16 +28,42 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
+     * The filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>group-name</code> - The name of the placement group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     * <code>partition</code>).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<Filter> filters;
+    /**
+     * <p>
+     * The names of the placement groups.
      * </p>
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
+
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -55,130 +79,13 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
-     * </p>
-     * </li>
-     * </ul>
-     */
-    private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * 
-     * @return One or more placement group names.</p>
-     *         <p>
-     *         Default: Describes all your placement groups, or only those otherwise specified.
-     */
-
-    public java.util.List<String> getGroupNames() {
-        if (groupNames == null) {
-            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return groupNames;
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     */
-
-    public void setGroupNames(java.util.Collection<String> groupNames) {
-        if (groupNames == null) {
-            this.groupNames = null;
-            return;
-        }
-
-        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
-        if (this.groupNames == null) {
-            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
-        }
-        for (String ele : groupNames) {
-            this.groupNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
-        setGroupNames(groupNames);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>group-name</code> - The name of the placement group.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     * <code>partition</code>).
      * </p>
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -193,7 +100,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *         <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     *         <code>partition</code>).
      *         </p>
      *         </li>
      */
@@ -207,7 +115,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -223,13 +131,14 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     * <code>partition</code>).
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -244,7 +153,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     *        <code>partition</code>).
      *        </p>
      *        </li>
      */
@@ -260,7 +170,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -276,7 +186,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     * <code>partition</code>).
      * </p>
      * </li>
      * </ul>
@@ -287,7 +198,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -302,7 +213,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     *        <code>partition</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -320,7 +232,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -336,13 +248,14 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     * <code>partition</code>).
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -357,7 +270,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> |
+     *        <code>partition</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -365,6 +279,99 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     public DescribePlacementGroupsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the placement groups.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @return The names of the placement groups.</p>
+     *         <p>
+     *         Default: Describes all your placement groups, or only those otherwise specified.
+     */
+
+    public java.util.List<String> getGroupNames() {
+        if (groupNames == null) {
+            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return groupNames;
+    }
+
+    /**
+     * <p>
+     * The names of the placement groups.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @param groupNames
+     *        The names of the placement groups.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     */
+
+    public void setGroupNames(java.util.Collection<String> groupNames) {
+        if (groupNames == null) {
+            this.groupNames = null;
+            return;
+        }
+
+        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
+    }
+
+    /**
+     * <p>
+     * The names of the placement groups.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param groupNames
+     *        The names of the placement groups.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
+        if (this.groupNames == null) {
+            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
+        }
+        for (String ele : groupNames) {
+            this.groupNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the placement groups.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @param groupNames
+     *        The names of the placement groups.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
+        setGroupNames(groupNames);
         return this;
     }
 
@@ -380,7 +387,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -390,10 +398,10 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupNames() != null)
-            sb.append("GroupNames: ").append(getGroupNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getGroupNames() != null)
+            sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
         return sb.toString();
     }
@@ -408,13 +416,13 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         if (obj instanceof DescribePlacementGroupsRequest == false)
             return false;
         DescribePlacementGroupsRequest other = (DescribePlacementGroupsRequest) obj;
-        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
-            return false;
-        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
+            return false;
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
         return true;
     }
@@ -424,8 +432,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         return hashCode;
     }
 

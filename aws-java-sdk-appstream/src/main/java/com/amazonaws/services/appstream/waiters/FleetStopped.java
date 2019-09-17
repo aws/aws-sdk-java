@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -80,7 +80,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -119,7 +119,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeAgentVersionsRequest Marshaller
+ * DescribeAgentVersionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeAgentVersionsRequestMarshaller implements Marshaller<Request<DescribeAgentVersionsRequest>, DescribeAgentVersionsRequest> {
+@SdkInternalApi
+public class DescribeAgentVersionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATIONMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationManager").build();
 
-    public DescribeAgentVersionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeAgentVersionsRequestMarshaller instance = new DescribeAgentVersionsRequestMarshaller();
+
+    public static DescribeAgentVersionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeAgentVersionsRequest> marshall(DescribeAgentVersionsRequest describeAgentVersionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeAgentVersionsRequest describeAgentVersionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeAgentVersionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAgentVersionsRequest> request = new DefaultRequest<DescribeAgentVersionsRequest>(describeAgentVersionsRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeAgentVersions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeAgentVersionsRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(describeAgentVersionsRequest.getStackId());
-            }
-            if (describeAgentVersionsRequest.getConfigurationManager() != null) {
-                jsonGenerator.writeFieldName("ConfigurationManager");
-                StackConfigurationManagerJsonMarshaller.getInstance().marshall(describeAgentVersionsRequest.getConfigurationManager(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeAgentVersionsRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(describeAgentVersionsRequest.getConfigurationManager(), CONFIGURATIONMANAGER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

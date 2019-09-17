@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"
  *      target="_top">AWS API Documentation</a>
@@ -30,47 +27,33 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined
-     * with any other filter parameter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> bundleIds;
     /**
      * <p>
-     * The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * This contains one of the following values:
+     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
+     * to your account.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * null- Retrieves the bundles that belong to the account making the call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String owner;
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined
-     * with any other filter parameter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
-     * @return An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be
-     *         combined with any other filter parameter.
+     * @return The identifiers of the bundles. You cannot combine this parameter with any other filter.
      */
 
     public java.util.List<String> getBundleIds() {
@@ -82,13 +65,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined
-     * with any other filter parameter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
      * @param bundleIds
-     *        An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be
-     *        combined with any other filter parameter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      */
 
     public void setBundleIds(java.util.Collection<String> bundleIds) {
@@ -102,8 +83,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined
-     * with any other filter parameter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -112,8 +92,7 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param bundleIds
-     *        An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be
-     *        combined with any other filter parameter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,13 +108,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined
-     * with any other filter parameter.
+     * The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * 
      * @param bundleIds
-     *        An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be
-     *        combined with any other filter parameter.
+     *        The identifiers of the bundles. You cannot combine this parameter with any other filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,41 +123,18 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * This contains one of the following values:
+     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
+     * to your account.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * null- Retrieves the bundles that belong to the account making the call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param owner
-     *        The owner of the bundles to retrieve. This parameter cannot be combined with any other filter
-     *        parameter.</p>
+     *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
-     *        This contains one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        null- Retrieves the bundles that belong to the account making the call.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     *        </p>
-     *        </li>
+     *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
+     *        belong to your account.
      */
 
     public void setOwner(String owner) {
@@ -189,40 +143,17 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * This contains one of the following values:
+     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
+     * to your account.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * null- Retrieves the bundles that belong to the account making the call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The owner of the bundles to retrieve. This parameter cannot be combined with any other filter
-     *         parameter.</p>
+     * @return The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *         <p>
-     *         This contains one of the following values:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         null- Retrieves the bundles that belong to the account making the call.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     *         </p>
-     *         </li>
+     *         Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
+     *         belong to your account.
      */
 
     public String getOwner() {
@@ -231,41 +162,18 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.
+     * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * This contains one of the following values:
+     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
+     * to your account.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * null- Retrieves the bundles that belong to the account making the call.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param owner
-     *        The owner of the bundles to retrieve. This parameter cannot be combined with any other filter
-     *        parameter.</p>
+     *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
-     *        This contains one of the following values:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        null- Retrieves the bundles that belong to the account making the call.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.
-     *        </p>
-     *        </li>
+     *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
+     *        belong to your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +184,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *        call.
+     *        The token for the next set of results. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -290,11 +197,10 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
-     * @return The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *         call.
+     * @return The token for the next set of results. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -303,12 +209,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *        call.
+     *        The token for the next set of results. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,7 +223,8 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

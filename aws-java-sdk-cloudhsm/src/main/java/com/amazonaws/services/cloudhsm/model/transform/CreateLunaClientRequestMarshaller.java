@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateLunaClientRequest Marshaller
+ * CreateLunaClientRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateLunaClientRequestMarshaller implements Marshaller<Request<CreateLunaClientRequest>, CreateLunaClientRequest> {
+@SdkInternalApi
+public class CreateLunaClientRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Label").build();
+    private static final MarshallingInfo<String> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Certificate").build();
 
-    public CreateLunaClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateLunaClientRequestMarshaller instance = new CreateLunaClientRequestMarshaller();
+
+    public static CreateLunaClientRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateLunaClientRequest> marshall(CreateLunaClientRequest createLunaClientRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateLunaClientRequest createLunaClientRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createLunaClientRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateLunaClientRequest> request = new DefaultRequest<CreateLunaClientRequest>(createLunaClientRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.CreateLunaClient");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createLunaClientRequest.getLabel() != null) {
-                jsonGenerator.writeFieldName("Label").writeValue(createLunaClientRequest.getLabel());
-            }
-            if (createLunaClientRequest.getCertificate() != null) {
-                jsonGenerator.writeFieldName("Certificate").writeValue(createLunaClientRequest.getCertificate());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createLunaClientRequest.getLabel(), LABEL_BINDING);
+            protocolMarshaller.marshall(createLunaClientRequest.getCertificate(), CERTIFICATE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

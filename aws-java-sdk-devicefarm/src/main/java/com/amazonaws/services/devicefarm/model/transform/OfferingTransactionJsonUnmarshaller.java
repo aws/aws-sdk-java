@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,13 @@ public class OfferingTransactionJsonUnmarshaller implements Unmarshaller<Offerin
                     context.nextToken();
                     offeringTransaction.setTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("offeringPromotionId", targetDepth)) {
+                    context.nextToken();
+                    offeringTransaction.setOfferingPromotionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdOn", targetDepth)) {
                     context.nextToken();
-                    offeringTransaction.setCreatedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    offeringTransaction.setCreatedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("cost", targetDepth)) {
                     context.nextToken();

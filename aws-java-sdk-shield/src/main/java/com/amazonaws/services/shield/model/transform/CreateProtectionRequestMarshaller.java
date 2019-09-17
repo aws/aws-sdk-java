@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.shield.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.shield.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateProtectionRequest Marshaller
+ * CreateProtectionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateProtectionRequestMarshaller implements Marshaller<Request<CreateProtectionRequest>, CreateProtectionRequest> {
+@SdkInternalApi
+public class CreateProtectionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
 
-    public CreateProtectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateProtectionRequestMarshaller instance = new CreateProtectionRequestMarshaller();
+
+    public static CreateProtectionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateProtectionRequest> marshall(CreateProtectionRequest createProtectionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateProtectionRequest createProtectionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createProtectionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateProtectionRequest> request = new DefaultRequest<CreateProtectionRequest>(createProtectionRequest, "AWSShield");
-        request.addHeader("X-Amz-Target", "AWSShield_20160616.CreateProtection");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createProtectionRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createProtectionRequest.getName());
-            }
-            if (createProtectionRequest.getResourceArn() != null) {
-                jsonGenerator.writeFieldName("ResourceArn").writeValue(createProtectionRequest.getResourceArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createProtectionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createProtectionRequest.getResourceArn(), RESOURCEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

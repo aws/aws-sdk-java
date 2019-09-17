@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String resourceName;
@@ -50,8 +50,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param resourceName
@@ -60,7 +60,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      */
 
@@ -76,8 +76,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resource for which you want the list of tags, for example
@@ -85,7 +85,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      */
 
@@ -101,8 +101,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param resourceName
@@ -111,7 +111,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -122,7 +122,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

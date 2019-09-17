@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,9 +60,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AutomaticFailoverEnabled", StringUtils.fromBoolean(modifyReplicationGroupRequest.getAutomaticFailoverEnabled()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
-                .getCacheSecurityGroupNames();
-        if (!cacheSecurityGroupNamesList.isEmpty() || !cacheSecurityGroupNamesList.isAutoConstruct()) {
+        if (!modifyReplicationGroupRequest.getCacheSecurityGroupNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest.getCacheSecurityGroupNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
+                    .getCacheSecurityGroupNames();
             int cacheSecurityGroupNamesListIndex = 1;
 
             for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
@@ -74,9 +75,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
-                .getSecurityGroupIds();
-        if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+        if (!modifyReplicationGroupRequest.getSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest.getSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyReplicationGroupRequest
+                    .getSecurityGroupIds();
             int securityGroupIdsListIndex = 1;
 
             for (String securityGroupIdsListValue : securityGroupIdsList) {
@@ -125,6 +127,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         if (modifyReplicationGroupRequest.getCacheNodeType() != null) {
             request.addParameter("CacheNodeType", StringUtils.fromString(modifyReplicationGroupRequest.getCacheNodeType()));
+        }
+
+        if (modifyReplicationGroupRequest.getNodeGroupId() != null) {
+            request.addParameter("NodeGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getNodeGroupId()));
         }
 
         return request;

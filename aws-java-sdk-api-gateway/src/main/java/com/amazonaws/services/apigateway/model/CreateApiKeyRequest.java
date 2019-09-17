@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,13 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String customerId;
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -412,7 +419,75 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *         characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApiKeyRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateApiKeyRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApiKeyRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -435,7 +510,9 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getStageKeys() != null)
             sb.append("StageKeys: ").append(getStageKeys()).append(",");
         if (getCustomerId() != null)
-            sb.append("CustomerId: ").append(getCustomerId());
+            sb.append("CustomerId: ").append(getCustomerId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -478,6 +555,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getCustomerId() != null && other.getCustomerId().equals(this.getCustomerId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -493,6 +574,7 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getStageKeys() == null) ? 0 : getStageKeys().hashCode());
         hashCode = prime * hashCode + ((getCustomerId() == null) ? 0 : getCustomerId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

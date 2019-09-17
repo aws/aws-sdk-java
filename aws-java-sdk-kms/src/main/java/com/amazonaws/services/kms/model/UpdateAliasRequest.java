@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,43 +27,52 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      */
     private String aliasName;
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      */
     private String targetKeyId;
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *        followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *        alias name, such as <code>alias/ExampleAlias</code>.
      */
 
     public void setAliasName(String aliasName) {
@@ -72,12 +81,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
-     * @return String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *         followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * @return Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *         alias name, such as <code>alias/ExampleAlias</code>.
      */
 
     public String getAliasName() {
@@ -86,13 +95,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * String that contains the name of the alias to be modified. The name must start with the word "alias" followed by
-     * a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     * Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the alias
+     * name, such as <code>alias/ExampleAlias</code>.
      * </p>
      * 
      * @param aliasName
-     *        String that contains the name of the alias to be modified. The name must start with the word "alias"
-     *        followed by a forward slash (alias/). Aliases that begin with "alias/aws" are reserved.
+     *        Specifies the name of the alias to change. This value must begin with <code>alias/</code> followed by the
+     *        alias name, such as <code>alias/ExampleAlias</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,42 +112,60 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *        unique identifier or the fully specified ARN of a key.</p>
+     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *        completes, the alias will point to this CMK.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *        </p>
+     *        <p>
+     *        To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      */
 
     public void setTargetKeyId(String targetKeyId) {
@@ -147,42 +174,59 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *         unique identifier or the fully specified ARN of a key.</p>
+     * @return Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *         completes, the alias will point to this CMK.</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         You can call <a>ListAliases</a> to verify that the alias is mapped to the correct
-     *         <code>TargetKeyId</code>.
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *         </p>
+     *         <p>
+     *         To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      */
 
     public String getTargetKeyId() {
@@ -191,42 +235,60 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     * completes, the alias will point to this CMK.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *        unique identifier or the fully specified ARN of a key.</p>
+     *        Unique identifier of the customer master key (CMK) to be mapped to the alias. When the update operation
+     *        completes, the alias will point to this CMK.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *        </p>
+     *        <p>
+     *        To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +298,8 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

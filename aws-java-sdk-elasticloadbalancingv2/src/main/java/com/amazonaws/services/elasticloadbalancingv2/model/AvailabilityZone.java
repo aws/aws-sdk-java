@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,17 @@ public class AvailabilityZone implements Serializable, Cloneable {
     private String zoneName;
     /**
      * <p>
-     * The ID of the subnet.
+     * The ID of the subnet. You can specify one subnet per Availability Zone.
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
+     * address per Availability Zone when you create the load balancer.
+     * </p>
+     */
+    private java.util.List<LoadBalancerAddress> loadBalancerAddresses;
 
     /**
      * <p>
@@ -81,11 +88,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet.
+     * The ID of the subnet. You can specify one subnet per Availability Zone.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet.
+     *        The ID of the subnet. You can specify one subnet per Availability Zone.
      */
 
     public void setSubnetId(String subnetId) {
@@ -94,10 +101,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet.
+     * The ID of the subnet. You can specify one subnet per Availability Zone.
      * </p>
      * 
-     * @return The ID of the subnet.
+     * @return The ID of the subnet. You can specify one subnet per Availability Zone.
      */
 
     public String getSubnetId() {
@@ -106,11 +113,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet.
+     * The ID of the subnet. You can specify one subnet per Availability Zone.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet.
+     *        The ID of the subnet. You can specify one subnet per Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +127,86 @@ public class AvailabilityZone implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
+     * address per Availability Zone when you create the load balancer.
+     * </p>
+     * 
+     * @return [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
+     *         Elastic IP address per Availability Zone when you create the load balancer.
+     */
+
+    public java.util.List<LoadBalancerAddress> getLoadBalancerAddresses() {
+        return loadBalancerAddresses;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
+     * address per Availability Zone when you create the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerAddresses
+     *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
+     *        Elastic IP address per Availability Zone when you create the load balancer.
+     */
+
+    public void setLoadBalancerAddresses(java.util.Collection<LoadBalancerAddress> loadBalancerAddresses) {
+        if (loadBalancerAddresses == null) {
+            this.loadBalancerAddresses = null;
+            return;
+        }
+
+        this.loadBalancerAddresses = new java.util.ArrayList<LoadBalancerAddress>(loadBalancerAddresses);
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
+     * address per Availability Zone when you create the load balancer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoadBalancerAddresses(java.util.Collection)} or
+     * {@link #withLoadBalancerAddresses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param loadBalancerAddresses
+     *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
+     *        Elastic IP address per Availability Zone when you create the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withLoadBalancerAddresses(LoadBalancerAddress... loadBalancerAddresses) {
+        if (this.loadBalancerAddresses == null) {
+            setLoadBalancerAddresses(new java.util.ArrayList<LoadBalancerAddress>(loadBalancerAddresses.length));
+        }
+        for (LoadBalancerAddress ele : loadBalancerAddresses) {
+            this.loadBalancerAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
+     * address per Availability Zone when you create the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerAddresses
+     *        [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one
+     *        Elastic IP address per Availability Zone when you create the load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withLoadBalancerAddresses(java.util.Collection<LoadBalancerAddress> loadBalancerAddresses) {
+        setLoadBalancerAddresses(loadBalancerAddresses);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,7 +219,9 @@ public class AvailabilityZone implements Serializable, Cloneable {
         if (getZoneName() != null)
             sb.append("ZoneName: ").append(getZoneName()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getLoadBalancerAddresses() != null)
+            sb.append("LoadBalancerAddresses: ").append(getLoadBalancerAddresses());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +244,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getLoadBalancerAddresses() == null ^ this.getLoadBalancerAddresses() == null)
+            return false;
+        if (other.getLoadBalancerAddresses() != null && other.getLoadBalancerAddresses().equals(this.getLoadBalancerAddresses()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +258,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getZoneName() == null) ? 0 : getZoneName().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancerAddresses() == null) ? 0 : getLoadBalancerAddresses().hashCode());
         return hashCode;
     }
 
@@ -177,4 +270,5 @@ public class AvailabilityZone implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

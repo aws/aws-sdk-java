@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.opsworkscm.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
 
 /**
  * Abstract implementation of {@code AWSOpsWorksCM}. Convenient method forms pass through to the corresponding overload
@@ -93,6 +94,11 @@ public class AbstractAWSOpsWorksCM implements AWSOpsWorksCM {
     }
 
     @Override
+    public ExportServerEngineAttributeResult exportServerEngineAttribute(ExportServerEngineAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreServerResult restoreServer(RestoreServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +125,11 @@ public class AbstractAWSOpsWorksCM implements AWSOpsWorksCM {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSOpsWorksCMWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

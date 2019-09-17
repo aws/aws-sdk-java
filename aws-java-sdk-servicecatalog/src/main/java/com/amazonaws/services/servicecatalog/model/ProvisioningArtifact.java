@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,50 +14,58 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information indicating the ways in which a product can be provisioned.
+ * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifact"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisioningArtifact implements Serializable, Cloneable {
+public class ProvisioningArtifact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     */
+    private String guidance;
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setId(String id) {
@@ -66,10 +74,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The identifier for the artifact.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getId() {
@@ -78,11 +86,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +101,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name of the artifact.
+     *        The name of the provisioning artifact.
      */
 
     public void setName(String name) {
@@ -106,10 +114,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
-     * @return The name of the artifact.
+     * @return The name of the provisioning artifact.
      */
 
     public String getName() {
@@ -118,11 +126,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name of the artifact.
+     *        The name of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +141,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the artifact.
+     *        The description of the provisioning artifact.
      */
 
     public void setDescription(String description) {
@@ -146,10 +154,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
-     * @return The text description of the artifact.
+     * @return The description of the provisioning artifact.
      */
 
     public String getDescription() {
@@ -158,11 +166,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the artifact.
+     *        The description of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +181,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -186,10 +194,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -198,11 +206,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,7 +220,71 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public void setGuidance(String guidance) {
+        this.guidance = guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @return Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *         to use.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public String getGuidance() {
+        return this.guidance;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifact withGuidance(String guidance) {
+        setGuidance(guidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.
+     * </p>
+     * 
+     * @param guidance
+     *        Information set by the administrator to provide guidance to end users about which provisioning artifacts
+     *        to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningArtifactGuidance
+     */
+
+    public ProvisioningArtifact withGuidance(ProvisioningArtifactGuidance guidance) {
+        this.guidance = guidance.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -229,7 +301,9 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getGuidance() != null)
+            sb.append("Guidance: ").append(getGuidance());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +334,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getGuidance() == null ^ this.getGuidance() == null)
+            return false;
+        if (other.getGuidance() != null && other.getGuidance().equals(this.getGuidance()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +350,7 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getGuidance() == null) ? 0 : getGuidance().hashCode());
         return hashCode;
     }
 
@@ -282,5 +361,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.ProvisioningArtifactMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

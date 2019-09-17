@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a> to retrieve
- * a new import token and public key, use the new public key to encrypt the key material, and then try the request
- * again.
+ * The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a> to get a new
+ * import token and public key, use the new public key to encrypt the key material, and then try the request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

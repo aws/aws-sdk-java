@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,14 +60,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback
      * operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback
      * failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for
-     * example, because an update was canceled. To check why a resource update failed, use the
+     * example, because an update was cancelled. To check why a resource update failed, use the
      * <a>DescribeStackResources</a> action, and view the resource status reason.
      * </p>
      * <important>
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -81,13 +81,31 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * dependent resources.
      * </p>
      * <p>
-     * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>.
+     * To skip resources that are part of nested stacks, use the following format:
+     * <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (
+     * <code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding
+     * embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     * <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * </p>
+     * <note>
+     * <p>
+     * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
+     * of a continue update rollback operation with nested stacks, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourcesToSkip;
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -258,14 +276,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback
      * operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback
      * failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for
-     * example, because an update was canceled. To check why a resource update failed, use the
+     * example, because an update was cancelled. To check why a resource update failed, use the
      * <a>DescribeStackResources</a> action, and view the resource status reason.
      * </p>
      * <important>
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -279,21 +297,30 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * dependent resources.
      * </p>
      * <p>
-     * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>.
+     * To skip resources that are part of nested stacks, use the following format:
+     * <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (
+     * <code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding
+     * embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     * <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * </p>
+     * <note>
+     * <p>
+     * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
+     * of a continue update rollback operation with nested stacks, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     * </p>
+     * </note>
      * 
      * @return A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update
      *         rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state
      *         because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state
-     *         for other reasons, for example, because an update was canceled. To check why a resource update failed,
+     *         for other reasons, for example, because an update was cancelled. To check why a resource update failed,
      *         use the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
      *         <p>
      *         Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll
      *         back. We recommend that you <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *         > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *         resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *         complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -308,10 +335,19 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *         to skip the dependent resources.
      *         </p>
      *         <p>
-     *         To specify resources in a nested stack, use the following format:
-     *         <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID
-     *         of an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
-     *         <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *         To skip resources that are part of nested stacks, use the following format:
+     *         <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource
+     *         (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its
+     *         corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     *         <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
+     *         example of a continue update rollback operation with nested stacks, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *         >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     *         </p>
      */
 
     public java.util.List<String> getResourcesToSkip() {
@@ -326,14 +362,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback
      * operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback
      * failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for
-     * example, because an update was canceled. To check why a resource update failed, use the
+     * example, because an update was cancelled. To check why a resource update failed, use the
      * <a>DescribeStackResources</a> action, and view the resource status reason.
      * </p>
      * <important>
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -347,22 +383,31 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * dependent resources.
      * </p>
      * <p>
-     * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>.
+     * To skip resources that are part of nested stacks, use the following format:
+     * <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (
+     * <code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding
+     * embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     * <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * </p>
+     * <note>
+     * <p>
+     * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
+     * of a continue update rollback operation with nested stacks, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     * </p>
+     * </note>
      * 
      * @param resourcesToSkip
      *        A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update
      *        rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state
      *        because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state
-     *        for other reasons, for example, because an update was canceled. To check why a resource update failed, use
-     *        the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
+     *        for other reasons, for example, because an update was cancelled. To check why a resource update failed,
+     *        use the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -377,10 +422,19 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        skip the dependent resources.
      *        </p>
      *        <p>
-     *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
-     *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        To skip resources that are part of nested stacks, use the following format:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its
+     *        corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     *        <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
+     *        example of a continue update rollback operation with nested stacks, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     *        </p>
      */
 
     public void setResourcesToSkip(java.util.Collection<String> resourcesToSkip) {
@@ -397,14 +451,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback
      * operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback
      * failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for
-     * example, because an update was canceled. To check why a resource update failed, use the
+     * example, because an update was cancelled. To check why a resource update failed, use the
      * <a>DescribeStackResources</a> action, and view the resource status reason.
      * </p>
      * <important>
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -418,11 +472,20 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * dependent resources.
      * </p>
      * <p>
-     * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>.
+     * To skip resources that are part of nested stacks, use the following format:
+     * <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (
+     * <code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding
+     * embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     * <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * </p>
+     * <note>
+     * <p>
+     * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
+     * of a continue update rollback operation with nested stacks, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourcesToSkip(java.util.Collection)} or {@link #withResourcesToSkip(java.util.Collection)} if you
@@ -433,12 +496,12 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update
      *        rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state
      *        because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state
-     *        for other reasons, for example, because an update was canceled. To check why a resource update failed, use
-     *        the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
+     *        for other reasons, for example, because an update was cancelled. To check why a resource update failed,
+     *        use the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -453,10 +516,19 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        skip the dependent resources.
      *        </p>
      *        <p>
-     *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
-     *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        To skip resources that are part of nested stacks, use the following format:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its
+     *        corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     *        <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
+     *        example of a continue update rollback operation with nested stacks, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,14 +547,14 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update rollback
      * operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state because a rollback
      * failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state for other reasons, for
-     * example, because an update was canceled. To check why a resource update failed, use the
+     * example, because an update was cancelled. To check why a resource update failed, use the
      * <a>DescribeStackResources</a> action, and view the resource status reason.
      * </p>
      * <important>
      * <p>
      * Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back. We
      * recommend that you <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified resources
      * to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is complete, the state
      * of the skipped resources will be inconsistent with the state of the resources in the stack template. Before
@@ -496,22 +568,31 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * dependent resources.
      * </p>
      * <p>
-     * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
-     * <code>DELETE_FAILED</code>.
+     * To skip resources that are part of nested stacks, use the following format:
+     * <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource (
+     * <code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its corresponding
+     * embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     * <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * </p>
+     * <note>
+     * <p>
+     * Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an example
+     * of a continue update rollback operation with nested stacks, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     * >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     * </p>
+     * </note>
      * 
      * @param resourcesToSkip
      *        A list of the logical IDs of the resources that AWS CloudFormation skips during the continue update
      *        rollback operation. You can specify only resources that are in the <code>UPDATE_FAILED</code> state
      *        because a rollback failed. You can't specify resources that are in the <code>UPDATE_FAILED</code> state
-     *        for other reasons, for example, because an update was canceled. To check why a resource update failed, use
-     *        the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
+     *        for other reasons, for example, because an update was cancelled. To check why a resource update failed,
+     *        use the <a>DescribeStackResources</a> action, and view the resource status reason. </p> <important>
      *        <p>
      *        Specify this property to skip rolling back resources that AWS CloudFormation can't successfully roll back.
      *        We recommend that you <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      *        > troubleshoot</a> resources before skipping them. AWS CloudFormation sets the status of the specified
      *        resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack. After the rollback is
      *        complete, the state of the skipped resources will be inconsistent with the state of the resources in the
@@ -526,10 +607,19 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        skip the dependent resources.
      *        </p>
      *        <p>
-     *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
-     *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        To skip resources that are part of nested stacks, use the following format:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>) in the <code>ResourcesToSkip</code> list, then its
+     *        corresponding embedded stack must be in one of the following states: <code>DELETE_IN_PROGRESS</code>,
+     *        <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't confuse a child stack's name with its corresponding logical ID defined in the parent stack. For an
+     *        example of a continue update rollback operation with nested stacks, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks"
+     *        >Using ResourcesToSkip to recover a nested stacks hierarchy</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -539,7 +629,66 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *        to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *        a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *         to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *         a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *         AWS CloudFormation successfully received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *        to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *        a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContinueUpdateRollbackRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -554,7 +703,9 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         if (getRoleARN() != null)
             sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getResourcesToSkip() != null)
-            sb.append("ResourcesToSkip: ").append(getResourcesToSkip());
+            sb.append("ResourcesToSkip: ").append(getResourcesToSkip()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -581,6 +732,10 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getResourcesToSkip() != null && other.getResourcesToSkip().equals(this.getResourcesToSkip()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -592,6 +747,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getResourcesToSkip() == null) ? 0 : getResourcesToSkip().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

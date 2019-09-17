@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,16 +45,6 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("imageId", targetDepth)) {
-                    spotFleetLaunchSpecification.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("keyName", targetDepth)) {
-                    spotFleetLaunchSpecification.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("groupSet", targetDepth)) {
                     spotFleetLaunchSpecification.withSecurityGroups(new ArrayList<GroupIdentifier>());
                     continue;
@@ -65,33 +55,8 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
-                if (context.testExpression("userData", targetDepth)) {
-                    spotFleetLaunchSpecification.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("addressingType", targetDepth)) {
                     spotFleetLaunchSpecification.setAddressingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceType", targetDepth)) {
-                    spotFleetLaunchSpecification.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("placement", targetDepth)) {
-                    spotFleetLaunchSpecification.setPlacement(SpotPlacementStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("kernelId", targetDepth)) {
-                    spotFleetLaunchSpecification.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ramdiskId", targetDepth)) {
-                    spotFleetLaunchSpecification.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,13 +70,38 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
-                if (context.testExpression("monitoring", targetDepth)) {
-                    spotFleetLaunchSpecification.setMonitoring(SpotFleetMonitoringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ebsOptimized", targetDepth)) {
+                    spotFleetLaunchSpecification.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("subnetId", targetDepth)) {
-                    spotFleetLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("iamInstanceProfile", targetDepth)) {
+                    spotFleetLaunchSpecification.setIamInstanceProfile(IamInstanceProfileSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("imageId", targetDepth)) {
+                    spotFleetLaunchSpecification.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceType", targetDepth)) {
+                    spotFleetLaunchSpecification.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kernelId", targetDepth)) {
+                    spotFleetLaunchSpecification.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("keyName", targetDepth)) {
+                    spotFleetLaunchSpecification.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("monitoring", targetDepth)) {
+                    spotFleetLaunchSpecification.setMonitoring(SpotFleetMonitoringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -125,13 +115,28 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
-                if (context.testExpression("iamInstanceProfile", targetDepth)) {
-                    spotFleetLaunchSpecification.setIamInstanceProfile(IamInstanceProfileSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("placement", targetDepth)) {
+                    spotFleetLaunchSpecification.setPlacement(SpotPlacementStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ebsOptimized", targetDepth)) {
-                    spotFleetLaunchSpecification.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ramdiskId", targetDepth)) {
+                    spotFleetLaunchSpecification.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotPrice", targetDepth)) {
+                    spotFleetLaunchSpecification.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    spotFleetLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("userData", targetDepth)) {
+                    spotFleetLaunchSpecification.setUserData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -140,10 +145,16 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
-                if (context.testExpression("spotPrice", targetDepth)) {
-                    spotFleetLaunchSpecification.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("tagSpecificationSet", targetDepth)) {
+                    spotFleetLaunchSpecification.withTagSpecifications(new ArrayList<SpotFleetTagSpecification>());
                     continue;
                 }
+
+                if (context.testExpression("tagSpecificationSet/item", targetDepth)) {
+                    spotFleetLaunchSpecification.withTagSpecifications(SpotFleetTagSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotFleetLaunchSpecification;

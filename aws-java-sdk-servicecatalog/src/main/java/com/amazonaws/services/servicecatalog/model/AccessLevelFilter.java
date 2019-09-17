@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,64 +14,90 @@ package com.amazonaws.services.servicecatalog.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The access level to limit results.
+ * The access level to use to filter results.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AccessLevelFilter" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccessLevelFilter implements Serializable, Cloneable {
+public class AccessLevelFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      */
     private String key;
     /**
      * <p>
-     * Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     * The user to which the access level applies. The only supported value is <code>Self</code>.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        Specifies the access level.</p>
+     *        The access level.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>Account</code> allows results at the account level.
+     *        <code>Account</code> - Filter results based on the account.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>Role</code> allows results based on the federated role of the specified user.
+     *        <code>Role</code> - Filter results based on the federated role of the specified user.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>User</code> allows results limited to the specified user.
+     *        <code>User</code> - Filter results based on the specified user.
+     *        </p>
+     *        </li>
      * @see AccessLevelFilterKey
      */
 
@@ -81,27 +107,43 @@ public class AccessLevelFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specifies the access level.</p>
+     * @return The access level.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         <code>Account</code> allows results at the account level.
+     *         <code>Account</code> - Filter results based on the account.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>Role</code> allows results based on the federated role of the specified user.
+     *         <code>Role</code> - Filter results based on the federated role of the specified user.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>User</code> allows results limited to the specified user.
+     *         <code>User</code> - Filter results based on the specified user.
+     *         </p>
+     *         </li>
      * @see AccessLevelFilterKey
      */
 
@@ -111,28 +153,44 @@ public class AccessLevelFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        Specifies the access level.</p>
+     *        The access level.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>Account</code> allows results at the account level.
+     *        <code>Account</code> - Filter results based on the account.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>Role</code> allows results based on the federated role of the specified user.
+     *        <code>Role</code> - Filter results based on the federated role of the specified user.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>User</code> allows results limited to the specified user.
+     *        <code>User</code> - Filter results based on the specified user.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessLevelFilterKey
      */
@@ -144,75 +202,107 @@ public class AccessLevelFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        Specifies the access level.</p>
+     *        The access level.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>Account</code> allows results at the account level.
+     *        <code>Account</code> - Filter results based on the account.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>Role</code> allows results based on the federated role of the specified user.
+     *        <code>Role</code> - Filter results based on the federated role of the specified user.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>User</code> allows results limited to the specified user.
+     *        <code>User</code> - Filter results based on the specified user.
+     *        </p>
+     *        </li>
      * @see AccessLevelFilterKey
      */
 
     public void setKey(AccessLevelFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
      * <p>
-     * Specifies the access level.
+     * The access level.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>Account</code> allows results at the account level.
+     * <code>Account</code> - Filter results based on the account.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>Role</code> allows results based on the federated role of the specified user.
+     * <code>Role</code> - Filter results based on the federated role of the specified user.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>User</code> allows results limited to the specified user.
+     * <code>User</code> - Filter results based on the specified user.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        Specifies the access level.</p>
+     *        The access level.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>Account</code> allows results at the account level.
+     *        <code>Account</code> - Filter results based on the account.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>Role</code> allows results based on the federated role of the specified user.
+     *        <code>Role</code> - Filter results based on the federated role of the specified user.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>User</code> allows results limited to the specified user.
+     *        <code>User</code> - Filter results based on the specified user.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessLevelFilterKey
      */
 
     public AccessLevelFilter withKey(AccessLevelFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 
     /**
      * <p>
-     * Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     * The user to which the access level applies. The only supported value is <code>Self</code>.
      * </p>
      * 
      * @param value
-     *        Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     *        The user to which the access level applies. The only supported value is <code>Self</code>.
      */
 
     public void setValue(String value) {
@@ -221,11 +311,10 @@ public class AccessLevelFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     * The user to which the access level applies. The only supported value is <code>Self</code>.
      * </p>
      * 
-     * @return Specifies the user to which the access level applies. A value of <code>Self</code> is currently
-     *         supported.
+     * @return The user to which the access level applies. The only supported value is <code>Self</code>.
      */
 
     public String getValue() {
@@ -234,11 +323,11 @@ public class AccessLevelFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     * The user to which the access level applies. The only supported value is <code>Self</code>.
      * </p>
      * 
      * @param value
-     *        Specifies the user to which the access level applies. A value of <code>Self</code> is currently supported.
+     *        The user to which the access level applies. The only supported value is <code>Self</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,7 +337,8 @@ public class AccessLevelFilter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -304,5 +394,11 @@ public class AccessLevelFilter implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servicecatalog.model.transform.AccessLevelFilterMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,20 +14,21 @@
  */
 package com.amazonaws.regions;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
+
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.util.EC2MetadataUtilsServer;
-
+import java.io.IOException;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
-
-import java.io.IOException;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 /**
  * Tests broken up by fixture.
@@ -71,6 +72,20 @@ public class InstanceMetadataRegionProviderTest {
             assertEquals("us-east-1", regionProvider.getRegion());
         }
 
+        @Test
+        public void ec2MetadataDisabled_shouldReturnRegionAfterEnabled() {
+            try {
+                System.setProperty("com.amazonaws.sdk.disableEc2Metadata", "true");
+                regionProvider.getRegion();
+                fail("exception not thrown when EC2Metadata disabled");
+            } catch (AmazonClientException ex) {
+                //expected
+            } finally {
+                System.clearProperty("com.amazonaws.sdk.disableEc2Metadata");
+            }
+
+            assertNotNull("region should not be null", regionProvider.getRegion());
+        }
     }
 
     /**

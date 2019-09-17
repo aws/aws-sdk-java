@@ -1,0 +1,13 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Pass",
+      "InputPath": null,
+      "OutputPath": null,
+      "ResultPath": null,
+      "Parameters": null,
+      "End": true
+    }
+  }
+}

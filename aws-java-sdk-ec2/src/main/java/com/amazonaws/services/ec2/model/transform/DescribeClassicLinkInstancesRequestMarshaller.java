@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,19 +42,6 @@ public class DescribeClassicLinkInstancesRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeClassicLinkInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeClassicLinkInstancesRequest
-                .getInstanceIds();
-        if (!describeClassicLinkInstancesRequestInstanceIdsList.isEmpty() || !describeClassicLinkInstancesRequestInstanceIdsList.isAutoConstruct()) {
-            int instanceIdsListIndex = 1;
-
-            for (String describeClassicLinkInstancesRequestInstanceIdsListValue : describeClassicLinkInstancesRequestInstanceIdsList) {
-                if (describeClassicLinkInstancesRequestInstanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeClassicLinkInstancesRequestInstanceIdsListValue));
-                }
-                instanceIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeClassicLinkInstancesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeClassicLinkInstancesRequest
                 .getFilters();
         if (!describeClassicLinkInstancesRequestFiltersList.isEmpty() || !describeClassicLinkInstancesRequestFiltersList.isAutoConstruct()) {
@@ -83,12 +70,25 @@ public class DescribeClassicLinkInstancesRequestMarshaller implements
             }
         }
 
-        if (describeClassicLinkInstancesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeClassicLinkInstancesRequest.getNextToken()));
+        com.amazonaws.internal.SdkInternalList<String> describeClassicLinkInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeClassicLinkInstancesRequest
+                .getInstanceIds();
+        if (!describeClassicLinkInstancesRequestInstanceIdsList.isEmpty() || !describeClassicLinkInstancesRequestInstanceIdsList.isAutoConstruct()) {
+            int instanceIdsListIndex = 1;
+
+            for (String describeClassicLinkInstancesRequestInstanceIdsListValue : describeClassicLinkInstancesRequestInstanceIdsList) {
+                if (describeClassicLinkInstancesRequestInstanceIdsListValue != null) {
+                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeClassicLinkInstancesRequestInstanceIdsListValue));
+                }
+                instanceIdsListIndex++;
+            }
         }
 
         if (describeClassicLinkInstancesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeClassicLinkInstancesRequest.getMaxResults()));
+        }
+
+        if (describeClassicLinkInstancesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeClassicLinkInstancesRequest.getNextToken()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class AlreadyExistsException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that a resource could not be created because the resource name already exists.
+     * </p>
+     */
     private String name;
 
     /**
@@ -36,7 +41,12 @@ public class AlreadyExistsException extends com.amazonaws.services.simpleemail.m
     }
 
     /**
+     * <p>
+     * Indicates that a resource could not be created because the resource name already exists.
+     * </p>
+     * 
      * @param name
+     *        Indicates that a resource could not be created because the resource name already exists.
      */
 
     public void setName(String name) {
@@ -44,7 +54,11 @@ public class AlreadyExistsException extends com.amazonaws.services.simpleemail.m
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that a resource could not be created because the resource name already exists.
+     * </p>
+     * 
+     * @return Indicates that a resource could not be created because the resource name already exists.
      */
 
     public String getName() {
@@ -52,7 +66,12 @@ public class AlreadyExistsException extends com.amazonaws.services.simpleemail.m
     }
 
     /**
+     * <p>
+     * Indicates that a resource could not be created because the resource name already exists.
+     * </p>
+     * 
      * @param name
+     *        Indicates that a resource could not be created because the resource name already exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

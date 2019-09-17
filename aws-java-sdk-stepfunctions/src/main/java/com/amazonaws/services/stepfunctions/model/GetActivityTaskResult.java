@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
     private String taskToken;
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      */
     private String input;
@@ -92,11 +92,11 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
      * @param input
-     *        The JSON input data for the task.
+     *        The string that contains the JSON input data for the task.
      */
 
     public void setInput(String input) {
@@ -105,10 +105,10 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
-     * @return The JSON input data for the task.
+     * @return The string that contains the JSON input data for the task.
      */
 
     public String getInput() {
@@ -117,11 +117,11 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
      * @param input
-     *        The JSON input data for the task.
+     *        The string that contains the JSON input data for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +131,8 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -144,7 +145,7 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
         if (getTaskToken() != null)
             sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append(getInput());
+            sb.append("Input: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -188,4 +189,5 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

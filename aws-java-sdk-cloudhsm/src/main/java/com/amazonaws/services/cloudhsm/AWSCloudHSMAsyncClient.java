@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * an asynchronous operation completes.
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
+ * <p>
+ * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
+ * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+ * </p>
+ * <p>
+ * <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
+ * CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and
+ * the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -217,6 +228,10 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
         this.executorService = executorService;
     }
 
+    public static AWSCloudHSMAsyncClientBuilder asyncBuilder() {
+        return AWSCloudHSMAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudHSM using the specified parameters.
      *
@@ -246,14 +261,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(final AddTagsToResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+        final AddTagsToResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsToResourceResult>() {
             @Override
             public AddTagsToResourceResult call() throws Exception {
-                AddTagsToResourceResult result;
+                AddTagsToResourceResult result = null;
 
                 try {
-                    result = addTagsToResource(request);
+                    result = executeAddTagsToResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -262,7 +278,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -278,14 +294,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(final CreateHapgRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler) {
+        final CreateHapgRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateHapgResult>() {
             @Override
             public CreateHapgResult call() throws Exception {
-                CreateHapgResult result;
+                CreateHapgResult result = null;
 
                 try {
-                    result = createHapg(request);
+                    result = executeCreateHapg(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -294,7 +311,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -310,14 +327,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<CreateHsmResult> createHsmAsync(final CreateHsmRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler) {
+        final CreateHsmRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateHsmResult>() {
             @Override
             public CreateHsmResult call() throws Exception {
-                CreateHsmResult result;
+                CreateHsmResult result = null;
 
                 try {
-                    result = createHsm(request);
+                    result = executeCreateHsm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -326,7 +344,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -342,14 +360,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(final CreateLunaClientRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler) {
+        final CreateLunaClientRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateLunaClientResult>() {
             @Override
             public CreateLunaClientResult call() throws Exception {
-                CreateLunaClientResult result;
+                CreateLunaClientResult result = null;
 
                 try {
-                    result = createLunaClient(request);
+                    result = executeCreateLunaClient(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -358,7 +377,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -374,14 +393,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(final DeleteHapgRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler) {
+        final DeleteHapgRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteHapgResult>() {
             @Override
             public DeleteHapgResult call() throws Exception {
-                DeleteHapgResult result;
+                DeleteHapgResult result = null;
 
                 try {
-                    result = deleteHapg(request);
+                    result = executeDeleteHapg(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -390,7 +410,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -406,14 +426,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(final DeleteHsmRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler) {
+        final DeleteHsmRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteHsmResult>() {
             @Override
             public DeleteHsmResult call() throws Exception {
-                DeleteHsmResult result;
+                DeleteHsmResult result = null;
 
                 try {
-                    result = deleteHsm(request);
+                    result = executeDeleteHsm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -422,7 +443,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -438,14 +459,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(final DeleteLunaClientRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler) {
+        final DeleteLunaClientRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteLunaClientResult>() {
             @Override
             public DeleteLunaClientResult call() throws Exception {
-                DeleteLunaClientResult result;
+                DeleteLunaClientResult result = null;
 
                 try {
-                    result = deleteLunaClient(request);
+                    result = executeDeleteLunaClient(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -454,7 +476,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -470,14 +492,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(final DescribeHapgRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler) {
+        final DescribeHapgRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeHapgResult>() {
             @Override
             public DescribeHapgResult call() throws Exception {
-                DescribeHapgResult result;
+                DescribeHapgResult result = null;
 
                 try {
-                    result = describeHapg(request);
+                    result = executeDescribeHapg(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -486,7 +509,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -502,14 +525,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(final DescribeHsmRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler) {
+        final DescribeHsmRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeHsmResult>() {
             @Override
             public DescribeHsmResult call() throws Exception {
-                DescribeHsmResult result;
+                DescribeHsmResult result = null;
 
                 try {
-                    result = describeHsm(request);
+                    result = executeDescribeHsm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -518,7 +542,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -541,6 +565,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #describeHsmAsync(DescribeHsmRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler) {
 
@@ -556,14 +581,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(final DescribeLunaClientRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler) {
+        final DescribeLunaClientRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeLunaClientResult>() {
             @Override
             public DescribeLunaClientResult call() throws Exception {
-                DescribeLunaClientResult result;
+                DescribeLunaClientResult result = null;
 
                 try {
-                    result = describeLunaClient(request);
+                    result = executeDescribeLunaClient(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -572,7 +598,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -595,6 +621,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #describeLunaClientAsync(DescribeLunaClientRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler) {
 
@@ -610,14 +637,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<GetConfigResult> getConfigAsync(final GetConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler) {
+        final GetConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetConfigResult>() {
             @Override
             public GetConfigResult call() throws Exception {
-                GetConfigResult result;
+                GetConfigResult result = null;
 
                 try {
-                    result = getConfig(request);
+                    result = executeGetConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -626,7 +654,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -642,14 +670,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(final ListAvailableZonesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler) {
+        final ListAvailableZonesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAvailableZonesResult>() {
             @Override
             public ListAvailableZonesResult call() throws Exception {
-                ListAvailableZonesResult result;
+                ListAvailableZonesResult result = null;
 
                 try {
-                    result = listAvailableZones(request);
+                    result = executeListAvailableZones(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -658,7 +687,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -681,6 +710,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #listAvailableZonesAsync(ListAvailableZonesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler) {
 
@@ -696,14 +726,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(final ListHapgsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler) {
+        final ListHapgsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListHapgsResult>() {
             @Override
             public ListHapgsResult call() throws Exception {
-                ListHapgsResult result;
+                ListHapgsResult result = null;
 
                 try {
-                    result = listHapgs(request);
+                    result = executeListHapgs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -712,7 +743,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -735,6 +766,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #listHapgsAsync(ListHapgsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler) {
 
         return listHapgsAsync(new ListHapgsRequest(), asyncHandler);
@@ -749,14 +781,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(final ListHsmsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler) {
+        final ListHsmsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListHsmsResult>() {
             @Override
             public ListHsmsResult call() throws Exception {
-                ListHsmsResult result;
+                ListHsmsResult result = null;
 
                 try {
-                    result = listHsms(request);
+                    result = executeListHsms(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -765,7 +798,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -788,6 +821,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #listHsmsAsync(ListHsmsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler) {
 
         return listHsmsAsync(new ListHsmsRequest(), asyncHandler);
@@ -802,14 +836,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(final ListLunaClientsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler) {
+        final ListLunaClientsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListLunaClientsResult>() {
             @Override
             public ListLunaClientsResult call() throws Exception {
-                ListLunaClientsResult result;
+                ListLunaClientsResult result = null;
 
                 try {
-                    result = listLunaClients(request);
+                    result = executeListLunaClients(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -818,7 +853,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -841,6 +876,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
      *
      * @see #listLunaClientsAsync(ListLunaClientsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(
             com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler) {
 
@@ -856,14 +892,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -872,7 +909,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -888,14 +925,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(final ModifyHapgRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler) {
+        final ModifyHapgRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyHapgResult>() {
             @Override
             public ModifyHapgResult call() throws Exception {
-                ModifyHapgResult result;
+                ModifyHapgResult result = null;
 
                 try {
-                    result = modifyHapg(request);
+                    result = executeModifyHapg(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -904,7 +942,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -920,14 +958,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(final ModifyHsmRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler) {
+        final ModifyHsmRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyHsmResult>() {
             @Override
             public ModifyHsmResult call() throws Exception {
-                ModifyHsmResult result;
+                ModifyHsmResult result = null;
 
                 try {
-                    result = modifyHsm(request);
+                    result = executeModifyHsm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -936,7 +975,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -952,14 +991,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(final ModifyLunaClientRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler) {
+        final ModifyLunaClientRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyLunaClientResult>() {
             @Override
             public ModifyLunaClientResult call() throws Exception {
-                ModifyLunaClientResult result;
+                ModifyLunaClientResult result = null;
 
                 try {
-                    result = modifyLunaClient(request);
+                    result = executeModifyLunaClient(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -968,7 +1008,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -984,14 +1024,15 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
     @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
+        final RemoveTagsFromResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsFromResourceResult>() {
             @Override
             public RemoveTagsFromResourceResult call() throws Exception {
-                RemoveTagsFromResourceResult result;
+                RemoveTagsFromResourceResult result = null;
 
                 try {
-                    result = removeTagsFromResource(request);
+                    result = executeRemoveTagsFromResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1000,7 +1041,7 @@ public class AWSCloudHSMAsyncClient extends AWSCloudHSMClient implements AWSClou
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

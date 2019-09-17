@@ -10,6 +10,7 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
+* [Getting Help](#getting-help)
 
 ## Release Notes ##
 Beginning with 1.11.82 changes to the SDK are tracked in the [CHANGELOG.md][changes-file] file.
@@ -44,7 +45,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.85</version>
+      <version>1.11.632</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -105,6 +106,16 @@ in the build, use:
 mvn clean install -Dgpg.skip=true
 ```
 
+## Getting Help
+Please use these community resources for getting help. We use GitHub [issues][sdk-issues] for tracking bugs and feature requests and have limited bandwidth to address them.
+
+* Ask a question on [StackOverflow][stack-overflow] and tag it with `aws-java-sdk`
+* Come join the AWS Java community chat on [Gitter][gitter]
+* Articulate your feature request or upvote existing ones on our [Issues][features] page
+* Take a look at the [blog] for plenty of helpful walkthroughs and tips
+* Open a case via the [AWS Support Center][support-center] in the [AWS console][console]
+* If it turns out that you may have found a bug, please open an [issue][sdk-issues]
+
 ## Supported Versions
 
 * **1.11.x** - Recommended.
@@ -112,9 +123,19 @@ mvn clean install -Dgpg.skip=true
 * **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
     1.11.x version of the SDK.
 
+## Security
+
+### Jackson Vulnerabilities
+
+#### CVE 2017-15095 & CVE-2018-7489
+
+The AWS SDK for Java is not directly affected by these findings. The SDKs own use of ObjectMapper does not use polymorphic deserialization so deserialization gadgets cannot be exploited. The SDK continues to depend on Jackson 2.6.x due to its compatbility with Java 6. Consumers of the SDK can override the version of Jackson in their own application to a newer version.
+
+A good explanation of this type of exploit can be found [here][jackson-deserialization-gadget].
+
 [aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
-[blog]: https://java.awsblog.com
+[blog]: https://aws.amazon.com/blogs/developer/category/java/
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
 [docs-guide]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/welcome.html
 [docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
@@ -129,3 +150,9 @@ mvn clean install -Dgpg.skip=true
 [aws-java-sdk-bom]: https://github.com/aws/aws-sdk-java/tree/master/aws-java-sdk-bom
 [release-notes-catalog]: https://aws.amazon.com/releasenotes/Java?browse=1
 [changes-file]: ./CHANGELOG.md
+[stack-overflow]: http://stackoverflow.com/questions/tagged/aws-java-sdk
+[gitter]: https://gitter.im/aws/aws-sdk-java
+[features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
+[support-center]: https://console.aws.amazon.com/support/
+[console]: https://console.aws.amazon.com
+[jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for SetDesiredCapacity.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity" target="_top">AWS API
  *      Documentation</a>
@@ -42,9 +39,9 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer desiredCapacity;
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
-     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
-     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      */
     private Boolean honorCooldown;
@@ -131,16 +128,15 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
-     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
-     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
      * @param honorCooldown
-     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling
-     *        group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the
-     *        Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its
-     *        new capacity.
+     *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *        scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *        does not honor the cooldown period during manual scaling activities.
      */
 
     public void setHonorCooldown(Boolean honorCooldown) {
@@ -149,15 +145,14 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
-     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
-     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
-     * @return By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto
-     *         Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated
-     *         with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling
-     *         group to its new capacity.
+     * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *         scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *         does not honor the cooldown period during manual scaling activities.
      */
 
     public Boolean getHonorCooldown() {
@@ -166,16 +161,15 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
-     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
-     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
      * @param honorCooldown
-     *        By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling
-     *        group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the
-     *        Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling group to its
-     *        new capacity.
+     *        Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *        scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *        does not honor the cooldown period during manual scaling activities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,15 +180,14 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto Scaling group.
-     * Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated with the Auto Scaling
-     * group to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity.
+     * Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling
+     * activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor
+     * the cooldown period during manual scaling activities.
      * </p>
      * 
-     * @return By default, <code>SetDesiredCapacity</code> overrides any cooldown period associated with the Auto
-     *         Scaling group. Specify <code>True</code> to make Auto Scaling to wait for the cool-down period associated
-     *         with the Auto Scaling group to complete before initiating a scaling activity to set your Auto Scaling
-     *         group to its new capacity.
+     * @return Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a
+     *         scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling
+     *         does not honor the cooldown period during manual scaling activities.
      */
 
     public Boolean isHonorCooldown() {
@@ -202,7 +195,8 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

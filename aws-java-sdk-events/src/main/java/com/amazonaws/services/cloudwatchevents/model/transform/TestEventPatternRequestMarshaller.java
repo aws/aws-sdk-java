@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TestEventPatternRequest Marshaller
+ * TestEventPatternRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TestEventPatternRequestMarshaller implements Marshaller<Request<TestEventPatternRequest>, TestEventPatternRequest> {
+@SdkInternalApi
+public class TestEventPatternRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> EVENTPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventPattern").build();
+    private static final MarshallingInfo<String> EVENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Event").build();
 
-    public TestEventPatternRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TestEventPatternRequestMarshaller instance = new TestEventPatternRequestMarshaller();
+
+    public static TestEventPatternRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TestEventPatternRequest> marshall(TestEventPatternRequest testEventPatternRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TestEventPatternRequest testEventPatternRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (testEventPatternRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TestEventPatternRequest> request = new DefaultRequest<TestEventPatternRequest>(testEventPatternRequest, "AmazonCloudWatchEvents");
-        request.addHeader("X-Amz-Target", "AWSEvents.TestEventPattern");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (testEventPatternRequest.getEventPattern() != null) {
-                jsonGenerator.writeFieldName("EventPattern").writeValue(testEventPatternRequest.getEventPattern());
-            }
-            if (testEventPatternRequest.getEvent() != null) {
-                jsonGenerator.writeFieldName("Event").writeValue(testEventPatternRequest.getEvent());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(testEventPatternRequest.getEventPattern(), EVENTPATTERN_BINDING);
+            protocolMarshaller.marshall(testEventPatternRequest.getEvent(), EVENT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

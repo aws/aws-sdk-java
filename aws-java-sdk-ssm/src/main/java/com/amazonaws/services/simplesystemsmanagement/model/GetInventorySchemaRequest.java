@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,19 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Returns inventory schemas that support aggregation. For example, this call returns the
+     * <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * </p>
+     */
+    private Boolean aggregator;
+    /**
+     * <p>
+     * Returns the sub-type schema for a specified inventory type.
+     * </p>
+     */
+    private Boolean subType;
 
     /**
      * <p>
@@ -172,7 +185,124 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Returns inventory schemas that support aggregation. For example, this call returns the
+     * <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * </p>
+     * 
+     * @param aggregator
+     *        Returns inventory schemas that support aggregation. For example, this call returns the
+     *        <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
+     *        <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     */
+
+    public void setAggregator(Boolean aggregator) {
+        this.aggregator = aggregator;
+    }
+
+    /**
+     * <p>
+     * Returns inventory schemas that support aggregation. For example, this call returns the
+     * <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * </p>
+     * 
+     * @return Returns inventory schemas that support aggregation. For example, this call returns the
+     *         <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
+     *         <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     */
+
+    public Boolean getAggregator() {
+        return this.aggregator;
+    }
+
+    /**
+     * <p>
+     * Returns inventory schemas that support aggregation. For example, this call returns the
+     * <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * </p>
+     * 
+     * @param aggregator
+     *        Returns inventory schemas that support aggregation. For example, this call returns the
+     *        <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
+     *        <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInventorySchemaRequest withAggregator(Boolean aggregator) {
+        setAggregator(aggregator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns inventory schemas that support aggregation. For example, this call returns the
+     * <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     * </p>
+     * 
+     * @return Returns inventory schemas that support aggregation. For example, this call returns the
+     *         <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
+     *         <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.
+     */
+
+    public Boolean isAggregator() {
+        return this.aggregator;
+    }
+
+    /**
+     * <p>
+     * Returns the sub-type schema for a specified inventory type.
+     * </p>
+     * 
+     * @param subType
+     *        Returns the sub-type schema for a specified inventory type.
+     */
+
+    public void setSubType(Boolean subType) {
+        this.subType = subType;
+    }
+
+    /**
+     * <p>
+     * Returns the sub-type schema for a specified inventory type.
+     * </p>
+     * 
+     * @return Returns the sub-type schema for a specified inventory type.
+     */
+
+    public Boolean getSubType() {
+        return this.subType;
+    }
+
+    /**
+     * <p>
+     * Returns the sub-type schema for a specified inventory type.
+     * </p>
+     * 
+     * @param subType
+     *        Returns the sub-type schema for a specified inventory type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInventorySchemaRequest withSubType(Boolean subType) {
+        setSubType(subType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the sub-type schema for a specified inventory type.
+     * </p>
+     * 
+     * @return Returns the sub-type schema for a specified inventory type.
+     */
+
+    public Boolean isSubType() {
+        return this.subType;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -187,7 +317,11 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getAggregator() != null)
+            sb.append("Aggregator: ").append(getAggregator()).append(",");
+        if (getSubType() != null)
+            sb.append("SubType: ").append(getSubType());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +348,14 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getAggregator() == null ^ this.getAggregator() == null)
+            return false;
+        if (other.getAggregator() != null && other.getAggregator().equals(this.getAggregator()) == false)
+            return false;
+        if (other.getSubType() == null ^ this.getSubType() == null)
+            return false;
+        if (other.getSubType() != null && other.getSubType().equals(this.getSubType()) == false)
+            return false;
         return true;
     }
 
@@ -225,6 +367,8 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getAggregator() == null) ? 0 : getAggregator().hashCode());
+        hashCode = prime * hashCode + ((getSubType() == null) ? 0 : getSubType().hashCode());
         return hashCode;
     }
 

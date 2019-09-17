@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,12 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String solutionStackName;
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     */
+    private String platformArn;
     /**
      * <p>
      * The name of the configuration template used to originally launch this environment.
@@ -167,7 +173,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -179,7 +185,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      */
@@ -202,6 +208,12 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnvironmentLink> environmentLinks;
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     * </p>
+     */
+    private String environmentArn;
 
     /**
      * <p>
@@ -400,6 +412,46 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
 
     public TerminateEnvironmentResult withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @return The ARN of the platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TerminateEnvironmentResult withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
         return this;
     }
 
@@ -927,7 +979,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatus(EnvironmentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -998,7 +1050,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public TerminateEnvironmentResult withStatus(EnvironmentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1133,7 +1185,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1166,7 +1218,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1206,7 +1258,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1238,7 +1290,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *         checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *         <code>RestartEnvironement</code> request.
+     *         <code>RestartEnvironment</code> request.
      *         </p>
      *         </li>
      *         </ul>
@@ -1278,7 +1330,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1311,7 +1363,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1353,7 +1405,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1386,7 +1438,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1396,7 +1448,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setHealth(EnvironmentHealth health) {
-        this.health = health.toString();
+        withHealth(health);
     }
 
     /**
@@ -1426,7 +1478,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1459,7 +1511,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1470,21 +1522,21 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public TerminateEnvironmentResult withHealth(EnvironmentHealth health) {
-        setHealth(health);
+        this.health = health.toString();
         return this;
     }
 
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
@@ -1495,12 +1547,12 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @return Returns the health status of the application running in your environment. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
      *         and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
@@ -1512,14 +1564,14 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */
@@ -1532,38 +1584,38 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
     public void setHealthStatus(EnvironmentHealthStatus healthStatus) {
-        this.healthStatus = healthStatus.toString();
+        withHealthStatus(healthStatus);
     }
 
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */
 
     public TerminateEnvironmentResult withHealthStatus(EnvironmentHealthStatus healthStatus) {
-        setHealthStatus(healthStatus);
+        this.healthStatus = healthStatus.toString();
         return this;
     }
 
@@ -1721,7 +1773,49 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     * </p>
+     * 
+     * @param environmentArn
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     */
+
+    public void setEnvironmentArn(String environmentArn) {
+        this.environmentArn = environmentArn;
+    }
+
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     * </p>
+     * 
+     * @return The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an
+     *         ARN.
+     */
+
+    public String getEnvironmentArn() {
+        return this.environmentArn;
+    }
+
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     * </p>
+     * 
+     * @param environmentArn
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TerminateEnvironmentResult withEnvironmentArn(String environmentArn) {
+        setEnvironmentArn(environmentArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1741,6 +1835,8 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getDescription() != null)
@@ -1766,7 +1862,9 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getEnvironmentLinks() != null)
-            sb.append("EnvironmentLinks: ").append(getEnvironmentLinks());
+            sb.append("EnvironmentLinks: ").append(getEnvironmentLinks()).append(",");
+        if (getEnvironmentArn() != null)
+            sb.append("EnvironmentArn: ").append(getEnvironmentArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1800,6 +1898,10 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
+            return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
             return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
@@ -1853,6 +1955,10 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getEnvironmentLinks() != null && other.getEnvironmentLinks().equals(this.getEnvironmentLinks()) == false)
             return false;
+        if (other.getEnvironmentArn() == null ^ this.getEnvironmentArn() == null)
+            return false;
+        if (other.getEnvironmentArn() != null && other.getEnvironmentArn().equals(this.getEnvironmentArn()) == false)
+            return false;
         return true;
     }
 
@@ -1866,6 +1972,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEndpointURL() == null) ? 0 : getEndpointURL().hashCode());
@@ -1879,6 +1986,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentLinks() == null) ? 0 : getEnvironmentLinks().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentArn() == null) ? 0 : getEnvironmentArn().hashCode());
         return hashCode;
     }
 
@@ -1890,4 +1998,5 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

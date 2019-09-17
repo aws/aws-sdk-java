@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,71 +12,58 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetExportRequest Marshaller
+ * GetExportRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetExportRequestMarshaller implements Marshaller<Request<GetExportRequest>, GetExportRequest> {
+@SdkInternalApi
+public class GetExportRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("stage_name").build();
+    private static final MarshallingInfo<String> EXPORTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("export_type").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<String> ACCEPTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("Accept").build();
 
-    public GetExportRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetExportRequestMarshaller instance = new GetExportRequestMarshaller();
+
+    public static GetExportRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetExportRequest> marshall(GetExportRequest getExportRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetExportRequest getExportRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getExportRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetExportRequest> request = new DefaultRequest<GetExportRequest>(getExportRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        if (getExportRequest.getAccepts() != null) {
-            request.addHeader("Accept", StringUtils.fromString(getExportRequest.getAccepts()));
+        try {
+            protocolMarshaller.marshall(getExportRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getExportRequest.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(getExportRequest.getExportType(), EXPORTTYPE_BINDING);
+            protocolMarshaller.marshall(getExportRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(getExportRequest.getAccepts(), ACCEPTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getExportRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name", getExportRequest.getStageName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "export_type", getExportRequest.getExportType());
-        request.setResourcePath(uriResourcePath);
-
-        java.util.Map<String, String> parameters = getExportRequest.getParameters();
-        if (parameters != null) {
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                if (entry.getValue() != null) {
-                    request.addParameter(StringUtils.fromString(entry.getKey()), StringUtils.fromString(entry.getValue()));
-                }
-            }
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

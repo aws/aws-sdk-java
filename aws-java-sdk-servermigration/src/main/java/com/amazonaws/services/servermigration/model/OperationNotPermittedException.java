@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,9 @@ package com.amazonaws.services.servermigration.model;
 import javax.annotation.Generated;
 
 /**
- * The specified operation is not allowed. This error can occur for a number of reasons; for example, you might be
- * trying to start a Replication Run before seed Replication Run.
+ * <p>
+ * This operation is not allowed.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationNotPermittedException extends com.amazonaws.services.servermigration.model.AWSServerMigrationException {

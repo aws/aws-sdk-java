@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,23 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskCompleted</code> event.
+ * Provides the details of the <code>ActivityTaskCompleted</code> event.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskCompletedEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityTaskCompletedEventAttributes implements Serializable, Cloneable {
+public class ActivityTaskCompletedEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      */
     private String result;
@@ -47,11 +52,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
      * @param result
-     *        The results of the activity task (if any).
+     *        The results of the activity task.
      */
 
     public void setResult(String result) {
@@ -60,10 +65,10 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
-     * @return The results of the activity task (if any).
+     * @return The results of the activity task.
      */
 
     public String getResult() {
@@ -72,11 +77,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
      * @param result
-     *        The results of the activity task (if any).
+     *        The results of the activity task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +192,8 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -250,5 +256,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ActivityTaskCompletedEventAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

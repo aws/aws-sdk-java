@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,9 +94,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("ClusterParameterGroupName", StringUtils.fromString(restoreFromClusterSnapshotRequest.getClusterParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
-                .getClusterSecurityGroups();
-        if (!clusterSecurityGroupsList.isEmpty() || !clusterSecurityGroupsList.isAutoConstruct()) {
+        if (!restoreFromClusterSnapshotRequest.getClusterSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest.getClusterSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
+                    .getClusterSecurityGroups();
             int clusterSecurityGroupsListIndex = 1;
 
             for (String clusterSecurityGroupsListValue : clusterSecurityGroupsList) {
@@ -108,9 +109,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!restoreFromClusterSnapshotRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -131,6 +133,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
                     StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getAutomatedSnapshotRetentionPeriod()));
         }
 
+        if (restoreFromClusterSnapshotRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         if (restoreFromClusterSnapshotRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreFromClusterSnapshotRequest.getKmsKeyId()));
         }
@@ -147,9 +153,10 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("AdditionalInfo", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAdditionalInfo()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> iamRolesList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
-                .getIamRoles();
-        if (!iamRolesList.isEmpty() || !iamRolesList.isAutoConstruct()) {
+        if (!restoreFromClusterSnapshotRequest.getIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest.getIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> iamRolesList = (com.amazonaws.internal.SdkInternalList<String>) restoreFromClusterSnapshotRequest
+                    .getIamRoles();
             int iamRolesListIndex = 1;
 
             for (String iamRolesListValue : iamRolesList) {
@@ -158,6 +165,14 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
                 }
                 iamRolesListIndex++;
             }
+        }
+
+        if (restoreFromClusterSnapshotRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(restoreFromClusterSnapshotRequest.getMaintenanceTrackName()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getSnapshotScheduleIdentifier() != null) {
+            request.addParameter("SnapshotScheduleIdentifier", StringUtils.fromString(restoreFromClusterSnapshotRequest.getSnapshotScheduleIdentifier()));
         }
 
         return request;

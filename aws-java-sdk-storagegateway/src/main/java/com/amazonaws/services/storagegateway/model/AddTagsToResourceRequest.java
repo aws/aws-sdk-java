@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
      * </p>
      * </note>
      */
@@ -94,7 +95,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
      * </p>
      * </note>
      * 
@@ -102,7 +104,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *         string.</p> <note>
      *         <p>
      *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
-     *         the following special characters: + - = . _ : / @.
+     *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
+     *         and the maximum length for a tag's value is 256.
      *         </p>
      */
 
@@ -120,7 +123,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
      * </p>
      * </note>
      * 
@@ -129,7 +133,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *        string.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
      *        </p>
      */
 
@@ -149,7 +154,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
      * </p>
      * </note>
      * <p>
@@ -163,7 +169,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *        string.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -185,7 +192,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <note>
      * <p>
      * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
      * </p>
      * </note>
      * 
@@ -194,7 +202,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      *        string.</p> <note>
      *        <p>
      *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @.
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -205,7 +214,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

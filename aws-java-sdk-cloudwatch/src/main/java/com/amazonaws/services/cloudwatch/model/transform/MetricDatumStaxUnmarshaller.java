@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                 }
 
                 if (context.testExpression("Timestamp", targetDepth)) {
-                    metricDatum.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    metricDatum.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -75,8 +75,33 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                     continue;
                 }
 
+                if (context.testExpression("Values", targetDepth)) {
+                    metricDatum.withValues(new ArrayList<Double>());
+                    continue;
+                }
+
+                if (context.testExpression("Values/member", targetDepth)) {
+                    metricDatum.withValues(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Counts", targetDepth)) {
+                    metricDatum.withCounts(new ArrayList<Double>());
+                    continue;
+                }
+
+                if (context.testExpression("Counts/member", targetDepth)) {
+                    metricDatum.withCounts(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Unit", targetDepth)) {
                     metricDatum.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StorageResolution", targetDepth)) {
+                    metricDatum.setStorageResolution(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

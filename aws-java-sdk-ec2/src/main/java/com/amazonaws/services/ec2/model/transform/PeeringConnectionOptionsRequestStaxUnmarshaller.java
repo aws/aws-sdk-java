@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class PeeringConnectionOptionsRequestStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AllowDnsResolutionFromRemoteVpc", targetDepth)) {
+                    peeringConnectionOptionsRequest.setAllowDnsResolutionFromRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("AllowEgressFromLocalClassicLinkToRemoteVpc", targetDepth)) {
                     peeringConnectionOptionsRequest.setAllowEgressFromLocalClassicLinkToRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class PeeringConnectionOptionsRequestStaxUnmarshaller implements Unmarsha
 
                 if (context.testExpression("AllowEgressFromLocalVpcToRemoteClassicLink", targetDepth)) {
                     peeringConnectionOptionsRequest.setAllowEgressFromLocalVpcToRemoteClassicLink(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("AllowDnsResolutionFromRemoteVpc", targetDepth)) {
-                    peeringConnectionOptionsRequest.setAllowDnsResolutionFromRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

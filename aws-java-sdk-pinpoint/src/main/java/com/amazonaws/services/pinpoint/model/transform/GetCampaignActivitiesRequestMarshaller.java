@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,65 +12,53 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetCampaignActivitiesRequest Marshaller
+ * GetCampaignActivitiesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetCampaignActivitiesRequestMarshaller implements Marshaller<Request<GetCampaignActivitiesRequest>, GetCampaignActivitiesRequest> {
+@SdkInternalApi
+public class GetCampaignActivitiesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> CAMPAIGNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("campaign-id").build();
+    private static final MarshallingInfo<String> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("page-size").build();
+    private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("token").build();
 
-    public GetCampaignActivitiesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetCampaignActivitiesRequestMarshaller instance = new GetCampaignActivitiesRequestMarshaller();
+
+    public static GetCampaignActivitiesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetCampaignActivitiesRequest> marshall(GetCampaignActivitiesRequest getCampaignActivitiesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetCampaignActivitiesRequest getCampaignActivitiesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getCampaignActivitiesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetCampaignActivitiesRequest> request = new DefaultRequest<GetCampaignActivitiesRequest>(getCampaignActivitiesRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/activities";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
-                getCampaignActivitiesRequest.getApplicationId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id",
-                getCampaignActivitiesRequest.getCampaignId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getCampaignActivitiesRequest.getPageSize() != null) {
-            request.addParameter("page-size", StringUtils.fromString(getCampaignActivitiesRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(getCampaignActivitiesRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getCampaignActivitiesRequest.getCampaignId(), CAMPAIGNID_BINDING);
+            protocolMarshaller.marshall(getCampaignActivitiesRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(getCampaignActivitiesRequest.getToken(), TOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getCampaignActivitiesRequest.getToken() != null) {
-            request.addParameter("token", StringUtils.fromString(getCampaignActivitiesRequest.getToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

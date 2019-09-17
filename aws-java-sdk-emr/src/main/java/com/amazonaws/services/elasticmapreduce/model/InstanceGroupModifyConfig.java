@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Modify an instance group size.
+ * Modify the size or configurations of an instance group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupModifyConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceGroupModifyConfig implements Serializable, Cloneable {
+public class InstanceGroupModifyConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,6 +53,12 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * </p>
      */
     private ShrinkPolicy shrinkPolicy;
+    /**
+     * <p>
+     * A list of new or modified configurations to apply for an instance group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
 
     /**
      * Default constructor for InstanceGroupModifyConfig object. Callers should use the setter or fluent setter
@@ -275,7 +283,81 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of new or modified configurations to apply for an instance group.
+     * </p>
+     * 
+     * @return A list of new or modified configurations to apply for an instance group.
+     */
+
+    public java.util.List<Configuration> getConfigurations() {
+        if (configurations == null) {
+            configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
+        }
+        return configurations;
+    }
+
+    /**
+     * <p>
+     * A list of new or modified configurations to apply for an instance group.
+     * </p>
+     * 
+     * @param configurations
+     *        A list of new or modified configurations to apply for an instance group.
+     */
+
+    public void setConfigurations(java.util.Collection<Configuration> configurations) {
+        if (configurations == null) {
+            this.configurations = null;
+            return;
+        }
+
+        this.configurations = new com.amazonaws.internal.SdkInternalList<Configuration>(configurations);
+    }
+
+    /**
+     * <p>
+     * A list of new or modified configurations to apply for an instance group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfigurations(java.util.Collection)} or {@link #withConfigurations(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param configurations
+     *        A list of new or modified configurations to apply for an instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroupModifyConfig withConfigurations(Configuration... configurations) {
+        if (this.configurations == null) {
+            setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(configurations.length));
+        }
+        for (Configuration ele : configurations) {
+            this.configurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of new or modified configurations to apply for an instance group.
+     * </p>
+     * 
+     * @param configurations
+     *        A list of new or modified configurations to apply for an instance group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceGroupModifyConfig withConfigurations(java.util.Collection<Configuration> configurations) {
+        setConfigurations(configurations);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -292,7 +374,9 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
         if (getEC2InstanceIdsToTerminate() != null)
             sb.append("EC2InstanceIdsToTerminate: ").append(getEC2InstanceIdsToTerminate()).append(",");
         if (getShrinkPolicy() != null)
-            sb.append("ShrinkPolicy: ").append(getShrinkPolicy());
+            sb.append("ShrinkPolicy: ").append(getShrinkPolicy()).append(",");
+        if (getConfigurations() != null)
+            sb.append("Configurations: ").append(getConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +407,10 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
             return false;
         if (other.getShrinkPolicy() != null && other.getShrinkPolicy().equals(this.getShrinkPolicy()) == false)
             return false;
+        if (other.getConfigurations() == null ^ this.getConfigurations() == null)
+            return false;
+        if (other.getConfigurations() != null && other.getConfigurations().equals(this.getConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +423,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getEC2InstanceIdsToTerminate() == null) ? 0 : getEC2InstanceIdsToTerminate().hashCode());
         hashCode = prime * hashCode + ((getShrinkPolicy() == null) ? 0 : getShrinkPolicy().hashCode());
+        hashCode = prime * hashCode + ((getConfigurations() == null) ? 0 : getConfigurations().hashCode());
         return hashCode;
     }
 
@@ -345,5 +434,11 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.InstanceGroupModifyConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,8 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest implements Ser
      * more information on MFA Delete.
      */
     private MultiFactorAuthentication mfa;
+
+    private boolean bypassGovernanceRetention;
 
     
     /**
@@ -343,6 +345,31 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest implements Ser
     public DeleteVersionRequest withMfa(MultiFactorAuthentication mfa) {
         setMfa(mfa);
         return this;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public boolean getBypassGovernanceRetention() {
+        return bypassGovernanceRetention;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public DeleteVersionRequest withBypassGovernanceRetention(boolean bypassGovernanceRetention) {
+        this.bypassGovernanceRetention = bypassGovernanceRetention;
+        return this;
+    }
+
+    /**
+     * Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. You must
+     * have sufficient permissions to perform this operation.
+     */
+    public void setBypassGovernanceRetention(boolean bypassGovernanceRetention) {
+        withBypassGovernanceRetention(bypassGovernanceRetention);
     }
 
 }

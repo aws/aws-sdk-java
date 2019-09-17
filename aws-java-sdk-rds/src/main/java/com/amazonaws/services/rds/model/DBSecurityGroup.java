@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,32 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details for an Amazon RDS DB security group.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>DescribeDBSecurityGroups</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>AuthorizeDBSecurityGroupIngress</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CreateDBSecurityGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RevokeDBSecurityGroupIngress</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
+ * This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup" target="_top">AWS API
@@ -77,13 +55,13 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2SecurityGroup> eC2SecurityGroups;
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IPRange> iPRanges;
@@ -256,10 +234,10 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
-     * @return Contains a list of <a>EC2SecurityGroup</a> elements.
+     * @return Contains a list of <code>EC2SecurityGroup</code> elements.
      */
 
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
@@ -271,11 +249,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      */
 
     public void setEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
@@ -289,7 +267,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -298,7 +276,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,11 +292,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>EC2SecurityGroup</a> elements.
+     * Contains a list of <code>EC2SecurityGroup</code> elements.
      * </p>
      * 
      * @param eC2SecurityGroups
-     *        Contains a list of <a>EC2SecurityGroup</a> elements.
+     *        Contains a list of <code>EC2SecurityGroup</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,10 +307,10 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
-     * @return Contains a list of <a>IPRange</a> elements.
+     * @return Contains a list of <code>IPRange</code> elements.
      */
 
     public java.util.List<IPRange> getIPRanges() {
@@ -344,11 +322,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      */
 
     public void setIPRanges(java.util.Collection<IPRange> iPRanges) {
@@ -362,7 +340,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -371,7 +349,7 @@ public class DBSecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +365,11 @@ public class DBSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains a list of <a>IPRange</a> elements.
+     * Contains a list of <code>IPRange</code> elements.
      * </p>
      * 
      * @param iPRanges
-     *        Contains a list of <a>IPRange</a> elements.
+     *        Contains a list of <code>IPRange</code> elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,7 +419,8 @@ public class DBSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -533,4 +512,5 @@ public class DBSecurityGroup implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

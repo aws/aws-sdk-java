@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,20 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createCustomerGatewayRequest.getType() != null) {
-            request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
+        if (createCustomerGatewayRequest.getBgpAsn() != null) {
+            request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
         }
 
         if (createCustomerGatewayRequest.getPublicIp() != null) {
             request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
         }
 
-        if (createCustomerGatewayRequest.getBgpAsn() != null) {
-            request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
+        if (createCustomerGatewayRequest.getCertificateArn() != null) {
+            request.addParameter("CertificateArn", StringUtils.fromString(createCustomerGatewayRequest.getCertificateArn()));
+        }
+
+        if (createCustomerGatewayRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }
 
         return request;

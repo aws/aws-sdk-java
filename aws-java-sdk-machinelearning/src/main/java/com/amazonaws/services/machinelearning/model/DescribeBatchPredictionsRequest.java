@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -304,7 +304,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setFilterVariable(BatchPredictionFilterVariable filterVariable) {
-        this.filterVariable = filterVariable.toString();
+        withFilterVariable(filterVariable);
     }
 
     /**
@@ -347,7 +347,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DescribeBatchPredictionsRequest withFilterVariable(BatchPredictionFilterVariable filterVariable) {
-        setFilterVariable(filterVariable);
+        this.filterVariable = filterVariable.toString();
         return this;
     }
 
@@ -914,7 +914,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -942,7 +942,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DescribeBatchPredictionsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 
@@ -1033,7 +1033,8 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

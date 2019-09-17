@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      */
     private String agentInstallerUrl;
@@ -42,11 +42,11 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
      * @param agentInstallerUrl
-     *        The AWS OpsWorks agent installer's URL.
+     *        The AWS OpsWorks Stacks agent installer's URL.
      */
 
     public void setAgentInstallerUrl(String agentInstallerUrl) {
@@ -55,10 +55,10 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
-     * @return The AWS OpsWorks agent installer's URL.
+     * @return The AWS OpsWorks Stacks agent installer's URL.
      */
 
     public String getAgentInstallerUrl() {
@@ -67,11 +67,11 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS OpsWorks agent installer's URL.
+     * The AWS OpsWorks Stacks agent installer's URL.
      * </p>
      * 
      * @param agentInstallerUrl
-     *        The AWS OpsWorks agent installer's URL.
+     *        The AWS OpsWorks Stacks agent installer's URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +145,8 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -202,4 +203,5 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

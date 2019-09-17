@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MethodSetting implements Serializable, Cloneable {
+public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -32,7 +34,7 @@ public class MethodSetting implements Serializable, Cloneable {
     private Boolean metricsEnabled;
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
@@ -40,7 +42,7 @@ public class MethodSetting implements Serializable, Cloneable {
     private String loggingLevel;
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
@@ -162,13 +164,13 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      */
@@ -179,12 +181,12 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
-     * @return Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     * @return Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *         Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *         available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      */
@@ -195,13 +197,13 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch Logs. The
+     * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
      * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this method, which effects the log entries pushed to Amazon CloudWatch
+     *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
      *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -214,13 +216,13 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *        Amazon CloudWatch Logs. The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */
@@ -231,12 +233,12 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
-     * @return Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *         Amazon CloudWatch Logs. The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */
@@ -247,13 +249,13 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
      * @param dataTraceEnabled
-     *        Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     *        Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *        Amazon CloudWatch Logs. The PATCH path for this setting is
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -266,12 +268,12 @@ public class MethodSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to Amazon
+     * Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon
      * CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.
      * </p>
      * 
-     * @return Specifies whether data trace logging is enabled for this method, which effects the log entries pushed to
+     * @return Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to
      *         Amazon CloudWatch Logs. The PATCH path for this setting is
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
      */
@@ -694,7 +696,7 @@ public class MethodSetting implements Serializable, Cloneable {
      */
 
     public void setUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
-        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy.toString();
+        withUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
     }
 
     /**
@@ -715,12 +717,13 @@ public class MethodSetting implements Serializable, Cloneable {
      */
 
     public MethodSetting withUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
-        setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
+        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -834,5 +837,11 @@ public class MethodSetting implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.MethodSettingMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

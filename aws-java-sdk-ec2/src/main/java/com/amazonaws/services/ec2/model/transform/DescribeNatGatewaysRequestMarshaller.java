@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
-                .getNatGatewayIds();
-        if (!describeNatGatewaysRequestNatGatewayIdsList.isEmpty() || !describeNatGatewaysRequestNatGatewayIdsList.isAutoConstruct()) {
-            int natGatewayIdsListIndex = 1;
-
-            for (String describeNatGatewaysRequestNatGatewayIdsListValue : describeNatGatewaysRequestNatGatewayIdsList) {
-                if (describeNatGatewaysRequestNatGatewayIdsListValue != null) {
-                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(describeNatGatewaysRequestNatGatewayIdsListValue));
-                }
-                natGatewayIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeNatGatewaysRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNatGatewaysRequest
                 .getFilter();
         if (!describeNatGatewaysRequestFilterList.isEmpty() || !describeNatGatewaysRequestFilterList.isAutoConstruct()) {
@@ -82,6 +69,19 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
 
         if (describeNatGatewaysRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeNatGatewaysRequest.getMaxResults()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
+                .getNatGatewayIds();
+        if (!describeNatGatewaysRequestNatGatewayIdsList.isEmpty() || !describeNatGatewaysRequestNatGatewayIdsList.isAutoConstruct()) {
+            int natGatewayIdsListIndex = 1;
+
+            for (String describeNatGatewaysRequestNatGatewayIdsListValue : describeNatGatewaysRequestNatGatewayIdsList) {
+                if (describeNatGatewaysRequestNatGatewayIdsListValue != null) {
+                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(describeNatGatewaysRequestNatGatewayIdsListValue));
+                }
+                natGatewayIdsListIndex++;
+            }
         }
 
         if (describeNatGatewaysRequest.getNextToken() != null) {

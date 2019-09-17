@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,56 +12,47 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * FlushStageAuthorizersCacheRequest Marshaller
+ * FlushStageAuthorizersCacheRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FlushStageAuthorizersCacheRequestMarshaller implements Marshaller<Request<FlushStageAuthorizersCacheRequest>, FlushStageAuthorizersCacheRequest> {
+@SdkInternalApi
+public class FlushStageAuthorizersCacheRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("stage_name").build();
 
-    public FlushStageAuthorizersCacheRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final FlushStageAuthorizersCacheRequestMarshaller instance = new FlushStageAuthorizersCacheRequestMarshaller();
+
+    public static FlushStageAuthorizersCacheRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<FlushStageAuthorizersCacheRequest> marshall(FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (flushStageAuthorizersCacheRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<FlushStageAuthorizersCacheRequest> request = new DefaultRequest<FlushStageAuthorizersCacheRequest>(flushStageAuthorizersCacheRequest,
-                "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/authorizers";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                flushStageAuthorizersCacheRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name",
-                flushStageAuthorizersCacheRequest.getStageName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(flushStageAuthorizersCacheRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(flushStageAuthorizersCacheRequest.getStageName(), STAGENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum Protocol {
     EC2("ec2", new Ec2ProtocolMetdataProvider()),
-    JSON("json", new AwsJsonProtocolMetadataProvider()),
+    AWS_JSON("json", new AwsJsonProtocolMetadataProvider()),
     REST_JSON("rest-json", new RestJsonProtocolMetdataProvider()),
     CBOR("cbor", new AwsCborProtocolMetadataProvider()),
     QUERY("query", new QueryProtocolMetadataProvider()),

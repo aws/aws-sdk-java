@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a put job success result action.
+ * Represents the input of a <code>PutJobSuccessResult</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult" target="_top">AWS
@@ -30,7 +30,8 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     * <code>PollForJobs</code>.
      * </p>
      */
     private String jobId;
@@ -58,11 +59,13 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     * <code>PollForJobs</code>.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     *        The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     *        <code>PollForJobs</code>.
      */
 
     public void setJobId(String jobId) {
@@ -71,10 +74,12 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     * <code>PollForJobs</code>.
      * </p>
      * 
-     * @return The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     * @return The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     *         <code>PollForJobs</code>.
      */
 
     public String getJobId() {
@@ -83,11 +88,13 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     * The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     * <code>PollForJobs</code>.
      * </p>
      * 
      * @param jobId
-     *        The unique system-generated ID of the job that succeeded. This is the same ID returned from PollForJobs.
+     *        The unique system-generated ID of the job that succeeded. This is the same ID returned from
+     *        <code>PollForJobs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,7 +242,8 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,58 +14,52 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code for the Lambda function.
+ * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package
+ * directly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FunctionCode implements Serializable, Cloneable {
+public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      */
     private String s3Key;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      */
     private String s3ObjectVersion;
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -76,11 +70,8 @@ public class FunctionCode implements Serializable, Cloneable {
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -89,11 +80,7 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -103,11 +90,8 @@ public class FunctionCode implements Serializable, Cloneable {
      * {@code position}.
      * </p>
      * 
-     * @return The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *         the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *         >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * @return The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding
+     *         for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -116,19 +100,22 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,13 +126,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -154,12 +139,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
-     * @return Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *         reside in the same AWS region where you are creating the Lambda function.
+     * @return An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
+     *         account.
      */
 
     public String getS3Bucket() {
@@ -168,13 +152,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +167,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      */
 
     public void setS3Key(String s3Key) {
@@ -198,10 +180,10 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) key name you want to upload.
+     * @return The Amazon S3 key of the deployment package.
      */
 
     public String getS3Key() {
@@ -210,11 +192,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +207,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      */
 
     public void setS3ObjectVersion(String s3ObjectVersion) {
@@ -238,10 +220,10 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) version you want to upload.
+     * @return For versioned objects, the version of the deployment package object to use.
      */
 
     public String getS3ObjectVersion() {
@@ -250,11 +232,11 @@ public class FunctionCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +246,8 @@ public class FunctionCode implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -275,7 +258,7 @@ public class FunctionCode implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getZipFile() != null)
-            sb.append("ZipFile: ").append(getZipFile()).append(",");
+            sb.append("ZipFile: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)
@@ -334,5 +317,11 @@ public class FunctionCode implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.FunctionCodeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

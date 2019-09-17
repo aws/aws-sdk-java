@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,9 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to
-     * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name.
+     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
+     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
+     * the IAM user name.
      * </p>
      */
     private String sshUsername;
@@ -48,7 +49,7 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      */
@@ -97,15 +98,16 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to
-     * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name.
+     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
+     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
+     * the IAM user name.
      * </p>
      * 
      * @param sshUsername
      *        The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified
-     *        name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will
-     *        be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from
-     *        the IAM user name.
+     *        name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code>
+     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks
+     *        generates one from the IAM user name.
      */
 
     public void setSshUsername(String sshUsername) {
@@ -115,14 +117,15 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to
-     * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name.
+     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
+     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
+     * the IAM user name.
      * </p>
      * 
      * @return The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the
-     *         specified name includes other punctuation marks, AWS OpsWorks removes them. For example,
+     *         specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
      *         <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS
-     *         OpsWorks generates one from the IAM user name.
+     *         OpsWorks Stacks generates one from the IAM user name.
      */
 
     public String getSshUsername() {
@@ -132,15 +135,16 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name
-     * includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will be changed to
-     * <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from the IAM user name.
+     * includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be
+     * changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from
+     * the IAM user name.
      * </p>
      * 
      * @param sshUsername
      *        The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified
-     *        name includes other punctuation marks, AWS OpsWorks removes them. For example, <code>my.name</code> will
-     *        be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks generates one from
-     *        the IAM user name.
+     *        name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code>
+     *        will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks
+     *        generates one from the IAM user name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,13 +196,13 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @param allowSelfManagement
      *        Whether users can specify their own SSH public key through the My Settings page. For more information, see
-     *        <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     *        <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      *        Permissions</a>.
      */
 
@@ -209,12 +213,12 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @return Whether users can specify their own SSH public key through the My Settings page. For more information,
-     *         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      */
 
@@ -225,13 +229,13 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @param allowSelfManagement
      *        Whether users can specify their own SSH public key through the My Settings page. For more information, see
-     *        <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     *        <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      *        Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -244,12 +248,12 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
      * Permissions</a>.
      * </p>
      * 
      * @return Whether users can specify their own SSH public key through the My Settings page. For more information,
-     *         see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     *         see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
      *         User Permissions</a>.
      */
 
@@ -258,7 +262,8 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

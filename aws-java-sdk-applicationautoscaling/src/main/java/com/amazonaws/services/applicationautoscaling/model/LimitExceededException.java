@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded. For more
- * information, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application Auto Scaling
- * Limits</a>.
+ * A per-account resource limit is exceeded. For more information, see <a
+ * href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+ * >Application Auto Scaling Limits</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

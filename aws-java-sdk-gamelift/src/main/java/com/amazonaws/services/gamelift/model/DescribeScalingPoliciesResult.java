@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
     private java.util.List<ScalingPolicy> scalingPolicies;
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      */
@@ -112,12 +112,12 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,11 +127,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
-     * @return Token indicating where to resume retrieving results on the next call to this action. If no token is
+     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -141,12 +141,12 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -157,7 +157,8 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -214,4 +215,5 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object containing the requested alias.
+     * Object that contains the requested alias.
      * </p>
      */
     private Alias alias;
 
     /**
      * <p>
-     * Object containing the requested alias.
+     * Object that contains the requested alias.
      * </p>
      * 
      * @param alias
-     *        Object containing the requested alias.
+     *        Object that contains the requested alias.
      */
 
     public void setAlias(Alias alias) {
@@ -48,10 +48,10 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object containing the requested alias.
+     * Object that contains the requested alias.
      * </p>
      * 
-     * @return Object containing the requested alias.
+     * @return Object that contains the requested alias.
      */
 
     public Alias getAlias() {
@@ -60,11 +60,11 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object containing the requested alias.
+     * Object that contains the requested alias.
      * </p>
      * 
      * @param alias
-     *        Object containing the requested alias.
+     *        Object that contains the requested alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +74,8 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -124,4 +125,5 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

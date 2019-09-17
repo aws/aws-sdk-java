@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetKeyPolicyRequest Marshaller
+ * GetKeyPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetKeyPolicyRequestMarshaller implements Marshaller<Request<GetKeyPolicyRequest>, GetKeyPolicyRequest> {
+@SdkInternalApi
+public class GetKeyPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyName").build();
 
-    public GetKeyPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetKeyPolicyRequestMarshaller instance = new GetKeyPolicyRequestMarshaller();
+
+    public static GetKeyPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetKeyPolicyRequest> marshall(GetKeyPolicyRequest getKeyPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetKeyPolicyRequest getKeyPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getKeyPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetKeyPolicyRequest> request = new DefaultRequest<GetKeyPolicyRequest>(getKeyPolicyRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.GetKeyPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getKeyPolicyRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(getKeyPolicyRequest.getKeyId());
-            }
-            if (getKeyPolicyRequest.getPolicyName() != null) {
-                jsonGenerator.writeFieldName("PolicyName").writeValue(getKeyPolicyRequest.getPolicyName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getKeyPolicyRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(getKeyPolicyRequest.getPolicyName(), POLICYNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,48 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemoveTagsRequest Marshaller
+ * RemoveTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
+@SdkInternalApi
+public class RemoveTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagKeys").build();
 
-    public RemoveTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RemoveTagsRequestMarshaller instance = new RemoveTagsRequestMarshaller();
+
+    public static RemoveTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemoveTagsRequest> marshall(RemoveTagsRequest removeTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemoveTagsRequest removeTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removeTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemoveTagsRequest> request = new DefaultRequest<RemoveTagsRequest>(removeTagsRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.RemoveTags");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (removeTagsRequest.getResourceId() != null) {
-                jsonGenerator.writeFieldName("ResourceId").writeValue(removeTagsRequest.getResourceId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsRequest.getTagKeys();
-            if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("TagKeys");
-                jsonGenerator.writeStartArray();
-                for (String tagKeysListValue : tagKeysList) {
-                    if (tagKeysListValue != null) {
-                        jsonGenerator.writeValue(tagKeysListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(removeTagsRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(removeTagsRequest.getTagKeys(), TAGKEYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

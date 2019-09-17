@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableSsoRequest Marshaller
+ * EnableSsoRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableSsoRequestMarshaller implements Marshaller<Request<EnableSsoRequest>, EnableSsoRequest> {
+@SdkInternalApi
+public class EnableSsoRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserName").build();
+    private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Password").build();
 
-    public EnableSsoRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final EnableSsoRequestMarshaller instance = new EnableSsoRequestMarshaller();
+
+    public static EnableSsoRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<EnableSsoRequest> marshall(EnableSsoRequest enableSsoRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EnableSsoRequest enableSsoRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (enableSsoRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableSsoRequest> request = new DefaultRequest<EnableSsoRequest>(enableSsoRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.EnableSso");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (enableSsoRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(enableSsoRequest.getDirectoryId());
-            }
-            if (enableSsoRequest.getUserName() != null) {
-                jsonGenerator.writeFieldName("UserName").writeValue(enableSsoRequest.getUserName());
-            }
-            if (enableSsoRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(enableSsoRequest.getPassword());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(enableSsoRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(enableSsoRequest.getUserName(), USERNAME_BINDING);
+            protocolMarshaller.marshall(enableSsoRequest.getPassword(), PASSWORD_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -108,8 +108,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -128,12 +128,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -141,7 +141,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -212,7 +212,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -240,8 +240,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -260,12 +260,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -273,7 +273,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -336,7 +336,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -364,8 +364,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -384,12 +384,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -397,7 +397,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -462,7 +462,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -490,8 +490,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -510,12 +510,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -523,7 +523,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -586,7 +586,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -614,8 +614,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -634,12 +634,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -647,7 +647,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -702,7 +702,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -730,8 +730,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         </note>
      *         <p>
-     *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         For more information about expression attribute names, see <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         </li>
@@ -750,12 +750,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         expression must be separated by commas.
      *         </p>
      *         <p>
-     *         If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *         attributes are not found, they will not appear in the result.
+     *         If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *         are not found, they do not appear in the result.
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         </li>
@@ -763,7 +763,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *         >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *         </p>
      *         </li>
@@ -825,7 +825,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -853,8 +853,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -873,12 +873,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -886,7 +886,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -942,7 +942,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -970,8 +970,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -990,12 +990,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1003,7 +1003,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1065,7 +1065,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -1093,8 +1093,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information about expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -1113,12 +1113,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * be separated by commas.
      * </p>
      * <p>
-     * If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are
-     * not found, they will not appear in the result.
+     * If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not
+     * found, they do not appear in the result.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -1126,7 +1126,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      * >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * </li>
@@ -1182,7 +1182,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -1210,8 +1210,8 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </note>
      *        <p>
-     *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        For more information about expression attribute names, see <a href=
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1230,12 +1230,12 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        expression must be separated by commas.
      *        </p>
      *        <p>
-     *        If no attribute names are specified, then all attributes will be returned. If any of the requested
-     *        attributes are not found, they will not appear in the result.
+     *        If no attribute names are specified, then all attributes are returned. If any of the requested attributes
+     *        are not found, they do not appear in the result.
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1243,7 +1243,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html"
      *        >AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1311,7 +1311,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1321,12 +1321,13 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public BatchGetItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

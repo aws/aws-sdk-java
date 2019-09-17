@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,82 +12,65 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateConstraintRequest Marshaller
+ * CreateConstraintRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateConstraintRequestMarshaller implements Marshaller<Request<CreateConstraintRequest>, CreateConstraintRequest> {
+@SdkInternalApi
+public class CreateConstraintRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
-    public CreateConstraintRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateConstraintRequestMarshaller instance = new CreateConstraintRequestMarshaller();
+
+    public static CreateConstraintRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateConstraintRequest> marshall(CreateConstraintRequest createConstraintRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateConstraintRequest createConstraintRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createConstraintRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateConstraintRequest> request = new DefaultRequest<CreateConstraintRequest>(createConstraintRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.CreateConstraint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createConstraintRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(createConstraintRequest.getAcceptLanguage());
-            }
-            if (createConstraintRequest.getPortfolioId() != null) {
-                jsonGenerator.writeFieldName("PortfolioId").writeValue(createConstraintRequest.getPortfolioId());
-            }
-            if (createConstraintRequest.getProductId() != null) {
-                jsonGenerator.writeFieldName("ProductId").writeValue(createConstraintRequest.getProductId());
-            }
-            if (createConstraintRequest.getParameters() != null) {
-                jsonGenerator.writeFieldName("Parameters").writeValue(createConstraintRequest.getParameters());
-            }
-            if (createConstraintRequest.getType() != null) {
-                jsonGenerator.writeFieldName("Type").writeValue(createConstraintRequest.getType());
-            }
-            if (createConstraintRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createConstraintRequest.getDescription());
-            }
-            jsonGenerator.writeFieldName("IdempotencyToken").writeValue(IdempotentUtils.resolveString(createConstraintRequest.getIdempotencyToken()));
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createConstraintRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getPortfolioId(), PORTFOLIOID_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createConstraintRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

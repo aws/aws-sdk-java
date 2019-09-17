@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,60 +12,53 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemovePermissionRequest Marshaller
+ * RemovePermissionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemovePermissionRequestMarshaller implements Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
+@SdkInternalApi
+public class RemovePermissionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("StatementId").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("RevisionId").build();
 
-    public RemovePermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RemovePermissionRequestMarshaller instance = new RemovePermissionRequestMarshaller();
+
+    public static RemovePermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemovePermissionRequest> marshall(RemovePermissionRequest removePermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemovePermissionRequest removePermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removePermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(removePermissionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
-                removePermissionRequest.getFunctionName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "StatementId", removePermissionRequest.getStatementId());
-        request.setResourcePath(uriResourcePath);
-
-        if (removePermissionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils.fromString(removePermissionRequest.getQualifier()));
+        try {
+            protocolMarshaller.marshall(removePermissionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getStatementId(), STATEMENTID_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getQualifier(), QUALIFIER_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getRevisionId(), REVISIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

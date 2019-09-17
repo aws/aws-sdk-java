@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,45 +27,87 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      */
     private String certificateName;
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name
+     * provided by your certificate authority.
      * </p>
      */
     private String certificateBody;
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      * </p>
      */
     private String certificatePrivateKey;
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your
+     * certificate chain must start with intermediate certificates and end with the root certificate. Use the
+     * intermediate certificates that were provided by your certificate authority. Do not include any intermediaries
+     * that are not in the chain of trust path.
      * </p>
      */
     private String certificateChain;
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
+     * </p>
+     */
+    private String certificateArn;
+    /**
+     * <p>
+     * The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     * </p>
+     */
+    private String regionalCertificateName;
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     */
+    private String regionalCertificateArn;
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     */
+    private EndpointConfiguration endpointConfiguration;
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     */
+    private String securityPolicy;
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        [Required] The name of the <a>DomainName</a> resource.
      */
 
     public void setDomainName(String domainName) {
@@ -74,10 +116,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
-     * @return The name of the <a>DomainName</a> resource.
+     * @return [Required] The name of the <a>DomainName</a> resource.
      */
 
     public String getDomainName() {
@@ -86,11 +128,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        [Required] The name of the <a>DomainName</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +143,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain
+     *        name.
      */
 
     public void setCertificateName(String certificateName) {
@@ -114,10 +157,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
-     * @return The name of the certificate.
+     * @return The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain
+     *         name.
      */
 
     public String getCertificateName() {
@@ -126,11 +170,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain
+     *        name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +186,13 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name
+     * provided by your certificate authority.
      * </p>
      * 
      * @param certificateBody
-     *        The body of the server certificate provided by your certificate authority.
+     *        [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this
+     *        domain name provided by your certificate authority.
      */
 
     public void setCertificateBody(String certificateBody) {
@@ -154,10 +201,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name
+     * provided by your certificate authority.
      * </p>
      * 
-     * @return The body of the server certificate provided by your certificate authority.
+     * @return [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this
+     *         domain name provided by your certificate authority.
      */
 
     public String getCertificateBody() {
@@ -166,11 +215,13 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name
+     * provided by your certificate authority.
      * </p>
      * 
      * @param certificateBody
-     *        The body of the server certificate provided by your certificate authority.
+     *        [Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this
+     *        domain name provided by your certificate authority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +232,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      * </p>
      * 
      * @param certificatePrivateKey
-     *        Your certificate's private key.
+     *        [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      */
 
     public void setCertificatePrivateKey(String certificatePrivateKey) {
@@ -194,10 +245,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      * </p>
      * 
-     * @return Your certificate's private key.
+     * @return [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      */
 
     public String getCertificatePrivateKey() {
@@ -206,11 +257,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      * </p>
      * 
      * @param certificatePrivateKey
-     *        Your certificate's private key.
+     *        [Deprecated] Your edge-optimized endpoint's domain name certificate's private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,17 +272,19 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your
+     * certificate chain must start with intermediate certificates and end with the root certificate. Use the
+     * intermediate certificates that were provided by your certificate authority. Do not include any intermediaries
+     * that are not in the chain of trust path.
      * </p>
      * 
      * @param certificateChain
-     *        The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *        lines. If you include the root certificate, your certificate chain must start with intermediate
-     *        certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *        your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     *        [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *        without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root
+     *        certificate, your certificate chain must start with intermediate certificates and end with the root
+     *        certificate. Use the intermediate certificates that were provided by your certificate authority. Do not
+     *        include any intermediaries that are not in the chain of trust path.
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -240,16 +293,18 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your
+     * certificate chain must start with intermediate certificates and end with the root certificate. Use the
+     * intermediate certificates that were provided by your certificate authority. Do not include any intermediaries
+     * that are not in the chain of trust path.
      * </p>
      * 
-     * @return The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *         lines. If you include the root certificate, your certificate chain must start with intermediate
-     *         certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *         your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     * @return [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *         without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root
+     *         certificate, your certificate chain must start with intermediate certificates and end with the root
+     *         certificate. Use the intermediate certificates that were provided by your certificate authority. Do not
+     *         include any intermediaries that are not in the chain of trust path.
      */
 
     public String getCertificateChain() {
@@ -258,17 +313,19 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your
+     * certificate chain must start with intermediate certificates and end with the root certificate. Use the
+     * intermediate certificates that were provided by your certificate authority. Do not include any intermediaries
+     * that are not in the chain of trust path.
      * </p>
      * 
      * @param certificateChain
-     *        The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *        lines. If you include the root certificate, your certificate chain must start with intermediate
-     *        certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *        your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     *        [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *        without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root
+     *        certificate, your certificate chain must start with intermediate certificates and end with the root
+     *        certificate. Use the intermediate certificates that were provided by your certificate authority. Do not
+     *        include any intermediaries that are not in the chain of trust path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,7 +335,314 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *        name. AWS Certificate Manager is the only supported source.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @return The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *         name. AWS Certificate Manager is the only supported source.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *        name. AWS Certificate Manager is the only supported source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     * </p>
+     * 
+     * @param regionalCertificateName
+     *        The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     */
+
+    public void setRegionalCertificateName(String regionalCertificateName) {
+        this.regionalCertificateName = regionalCertificateName;
+    }
+
+    /**
+     * <p>
+     * The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     * </p>
+     * 
+     * @return The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     */
+
+    public String getRegionalCertificateName() {
+        return this.regionalCertificateName;
+    }
+
+    /**
+     * <p>
+     * The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     * </p>
+     * 
+     * @param regionalCertificateName
+     *        The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withRegionalCertificateName(String regionalCertificateName) {
+        setRegionalCertificateName(regionalCertificateName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param regionalCertificateArn
+     *        The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name.
+     *        AWS Certificate Manager is the only supported source.
+     */
+
+    public void setRegionalCertificateArn(String regionalCertificateArn) {
+        this.regionalCertificateArn = regionalCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @return The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name.
+     *         AWS Certificate Manager is the only supported source.
+     */
+
+    public String getRegionalCertificateArn() {
+        return this.regionalCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param regionalCertificateArn
+     *        The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name.
+     *        AWS Certificate Manager is the only supported source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withRegionalCertificateArn(String regionalCertificateArn) {
+        setRegionalCertificateArn(regionalCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     */
+
+    public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        this.endpointConfiguration = endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @return The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     */
+
+    public EndpointConfiguration getEndpointConfiguration() {
+        return this.endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        setEndpointConfiguration(endpointConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *         characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
+     * and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     *        characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateDomainNameRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public void setSecurityPolicy(String securityPolicy) {
+        this.securityPolicy = securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @return The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values
+     *         are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @see SecurityPolicy
+     */
+
+    public String getSecurityPolicy() {
+        return this.securityPolicy;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public CreateDomainNameRequest withSecurityPolicy(String securityPolicy) {
+        setSecurityPolicy(securityPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     * <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * </p>
+     * 
+     * @param securityPolicy
+     *        The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are
+     *        <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SecurityPolicy
+     */
+
+    public CreateDomainNameRequest withSecurityPolicy(SecurityPolicy securityPolicy) {
+        this.securityPolicy = securityPolicy.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -297,7 +661,19 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         if (getCertificatePrivateKey() != null)
             sb.append("CertificatePrivateKey: ").append(getCertificatePrivateKey()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: ").append(getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain()).append(",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
+        if (getRegionalCertificateName() != null)
+            sb.append("RegionalCertificateName: ").append(getRegionalCertificateName()).append(",");
+        if (getRegionalCertificateArn() != null)
+            sb.append("RegionalCertificateArn: ").append(getRegionalCertificateArn()).append(",");
+        if (getEndpointConfiguration() != null)
+            sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSecurityPolicy() != null)
+            sb.append("SecurityPolicy: ").append(getSecurityPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +708,30 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCertificateChain() != null && other.getCertificateChain().equals(this.getCertificateChain()) == false)
             return false;
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
+        if (other.getRegionalCertificateName() == null ^ this.getRegionalCertificateName() == null)
+            return false;
+        if (other.getRegionalCertificateName() != null && other.getRegionalCertificateName().equals(this.getRegionalCertificateName()) == false)
+            return false;
+        if (other.getRegionalCertificateArn() == null ^ this.getRegionalCertificateArn() == null)
+            return false;
+        if (other.getRegionalCertificateArn() != null && other.getRegionalCertificateArn().equals(this.getRegionalCertificateArn()) == false)
+            return false;
+        if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
+            return false;
+        if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getSecurityPolicy() == null ^ this.getSecurityPolicy() == null)
+            return false;
+        if (other.getSecurityPolicy() != null && other.getSecurityPolicy().equals(this.getSecurityPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +745,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCertificateBody() == null) ? 0 : getCertificateBody().hashCode());
         hashCode = prime * hashCode + ((getCertificatePrivateKey() == null) ? 0 : getCertificatePrivateKey().hashCode());
         hashCode = prime * hashCode + ((getCertificateChain() == null) ? 0 : getCertificateChain().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getRegionalCertificateName() == null) ? 0 : getRegionalCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getRegionalCertificateArn() == null) ? 0 : getRegionalCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
         return hashCode;
     }
 

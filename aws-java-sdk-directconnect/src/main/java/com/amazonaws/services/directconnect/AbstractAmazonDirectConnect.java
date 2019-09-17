@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,19 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public AcceptDirectConnectGatewayAssociationProposalResult acceptDirectConnectGatewayAssociationProposal(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public AllocateConnectionOnInterconnectResult allocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AllocateHostedConnectionResult allocateHostedConnection(AllocateHostedConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +61,26 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public AllocatePublicVirtualInterfaceResult allocatePublicVirtualInterface(AllocatePublicVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AllocateTransitVirtualInterfaceResult allocateTransitVirtualInterface(AllocateTransitVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateConnectionWithLagResult associateConnectionWithLag(AssociateConnectionWithLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateHostedConnectionResult associateHostedConnection(AssociateHostedConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateVirtualInterfaceResult associateVirtualInterface(AssociateVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +100,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public ConfirmTransitVirtualInterfaceResult confirmTransitVirtualInterface(ConfirmTransitVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBGPPeerResult createBGPPeer(CreateBGPPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,7 +115,28 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateDirectConnectGatewayResult createDirectConnectGateway(CreateDirectConnectGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDirectConnectGatewayAssociationResult createDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDirectConnectGatewayAssociationProposalResult createDirectConnectGatewayAssociationProposal(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInterconnectResult createInterconnect(CreateInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLagResult createLag(CreateLagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +151,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateTransitVirtualInterfaceResult createTransitVirtualInterface(CreateTransitVirtualInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteBGPPeerResult deleteBGPPeer(DeleteBGPPeerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,7 +166,28 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DeleteDirectConnectGatewayResult deleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDirectConnectGatewayAssociationResult deleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDirectConnectGatewayAssociationProposalResult deleteDirectConnectGatewayAssociationProposal(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLagResult deleteLag(DeleteLagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,6 +197,7 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public DescribeConnectionLoaResult describeConnectionLoa(DescribeConnectionLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,11 +213,39 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    @Deprecated
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DescribeDirectConnectGatewayAssociationProposalsResult describeDirectConnectGatewayAssociationProposals(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewayAssociationsResult describeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewayAttachmentsResult describeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewaysResult describeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeHostedConnectionsResult describeHostedConnections(DescribeHostedConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public DescribeInterconnectLoaResult describeInterconnectLoa(DescribeInterconnectLoaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +258,16 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     public DescribeInterconnectsResult describeInterconnects() {
         return describeInterconnects(new DescribeInterconnectsRequest());
+    }
+
+    @Override
+    public DescribeLagsResult describeLags(DescribeLagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLoaResult describeLoa(DescribeLoaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -183,12 +306,32 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DisassociateConnectionFromLagResult disassociateConnectionFromLag(DisassociateConnectionFromLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDirectConnectGatewayAssociationResult updateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLagResult updateLag(UpdateLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVirtualInterfaceAttributesResult updateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

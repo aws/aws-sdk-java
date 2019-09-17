@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalkClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -65,13 +68,14 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * </p>
  * <p>
  * For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in
  * the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements AWSElasticBeanstalk {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -82,6 +86,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -172,6 +178,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     public AWSElasticBeanstalkClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -237,7 +244,12 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AWSElasticBeanstalkClientBuilder builder() {
+        return AWSElasticBeanstalkClientBuilder.standard();
     }
 
     /**
@@ -251,8 +263,23 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Object providing client parameters.
      */
     AWSElasticBeanstalkClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Elastic Beanstalk using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSElasticBeanstalkClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -261,16 +288,21 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ManagedActionInvalidStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientPrivilegesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyPlatformsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationVersionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CodeBuildNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceBundleDeletionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyConfigurationTemplatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceTypeNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyEnvironmentsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyBucketsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ElasticBeanstalkServiceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PlatformVersionStillReferencedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -291,13 +323,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param abortEnvironmentUpdateRequest
      * @return Result of the AbortEnvironmentUpdate operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(AbortEnvironmentUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortEnvironmentUpdate(request);
+    }
+
+    @SdkInternalApi
+    final AbortEnvironmentUpdateResult executeAbortEnvironmentUpdate(AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(abortEnvironmentUpdateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -311,6 +349,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new AbortEnvironmentUpdateRequestMarshaller().marshall(super.beforeMarshalling(abortEnvironmentUpdateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortEnvironmentUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -351,7 +394,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplyEnvironmentManagedAction(request);
+    }
+
+    @SdkInternalApi
+    final ApplyEnvironmentManagedActionResult executeApplyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(applyEnvironmentManagedActionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -365,6 +414,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ApplyEnvironmentManagedActionRequestMarshaller().marshall(super.beforeMarshalling(applyEnvironmentManagedActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyEnvironmentManagedAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,7 +448,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
+    public CheckDNSAvailabilityResult checkDNSAvailability(CheckDNSAvailabilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckDNSAvailability(request);
+    }
+
+    @SdkInternalApi
+    final CheckDNSAvailabilityResult executeCheckDNSAvailability(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(checkDNSAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -408,6 +468,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CheckDNSAvailabilityRequestMarshaller().marshall(super.beforeMarshalling(checkDNSAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckDNSAvailability");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -430,7 +495,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * of version labels that specify application source bundles for each of the environments to create or update. The
      * name of each environment and other required information must be included in the source bundles in an environment
      * manifest named <code>env.yaml</code>. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
      * Environments</a> for details.
      * </p>
      * 
@@ -440,13 +505,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyEnvironmentsException
      *         The specified account has reached its limit of environments.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.ComposeEnvironments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ComposeEnvironments"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
+    public ComposeEnvironmentsResult composeEnvironments(ComposeEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeComposeEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final ComposeEnvironmentsResult executeComposeEnvironments(ComposeEnvironmentsRequest composeEnvironmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(composeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -460,6 +531,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ComposeEnvironmentsRequestMarshaller().marshall(super.beforeMarshalling(composeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ComposeEnvironments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -492,7 +568,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -506,6 +588,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateApplicationRequestMarshaller().marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -555,7 +642,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyApplicationVersionsException
      *         The specified account has reached its limit of application versions.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws S3LocationNotInServiceRegionException
      *         The specified S3 bucket does not belong to the S3 region in which the service is running. The following
      *         regions are supported:</p>
@@ -582,7 +669,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
+    public CreateApplicationVersionResult createApplicationVersion(CreateApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationVersionResult executeCreateApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -596,6 +689,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(createApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +714,10 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a configuration template. Templates are associated with a specific application and are used to deploy
      * different versions of the application with the same configuration settings.
+     * </p>
+     * <p>
+     * Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always
+     * <code>null</code>.
      * </p>
      * <p>
      * Related Topics
@@ -642,7 +744,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to create a configuration template.
      * @return Result of the CreateConfigurationTemplate operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @throws TooManyConfigurationTemplatesException
@@ -652,7 +754,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
+    public CreateConfigurationTemplateResult createConfigurationTemplate(CreateConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfigurationTemplateResult executeCreateConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -666,6 +774,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(createConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -692,13 +805,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws TooManyEnvironmentsException
      *         The specified account has reached its limit of environments.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.CreateEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
+    public CreateEnvironmentResult createEnvironment(CreateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final CreateEnvironmentResult executeCreateEnvironment(CreateEnvironmentRequest createEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -712,6 +831,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(createEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -730,10 +854,70 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates the Amazon S3 storage location for the account.
+     * Create a new version of your custom platform.
      * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @return Result of the CreatePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws TooManyPlatformsException
+     *         You have exceeded the maximum number of allowed platforms associated with the account.
+     * @sample AWSElasticBeanstalk.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePlatformVersionResult createPlatformVersion(CreatePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlatformVersionResult executeCreatePlatformVersion(CreatePlatformVersionRequest createPlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePlatformVersionRequest> request = null;
+        Response<CreatePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(createPlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreatePlatformVersionResult> responseHandler = new StaxResponseHandler<CreatePlatformVersionResult>(
+                    new CreatePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * This location is used to store user log files.
+     * Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic Beanstalk
+     * environments. The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in
+     * a region. If the storage location already exists, <code>CreateStorageLocation</code> still returns the bucket
+     * name but does not create a new bucket.
      * </p>
      * 
      * @param createStorageLocationRequest
@@ -743,13 +927,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws S3SubscriptionRequiredException
      *         The specified account does not have a subscription to Amazon S3.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.CreateStorageLocation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateStorageLocation"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
+    public CreateStorageLocationResult createStorageLocation(CreateStorageLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStorageLocation(request);
+    }
+
+    @SdkInternalApi
+    final CreateStorageLocationResult executeCreateStorageLocation(CreateStorageLocationRequest createStorageLocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStorageLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -763,6 +953,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateStorageLocationRequestMarshaller().marshall(super.beforeMarshalling(createStorageLocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStorageLocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -806,7 +1001,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -820,6 +1021,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteApplicationRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -853,7 +1059,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         Unable to delete the Amazon S3 source bundle associated with the application version. The application
      *         version was deleted successfully.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
@@ -881,7 +1087,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
+    public DeleteApplicationVersionResult deleteApplicationVersion(DeleteApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationVersionResult executeDeleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -895,6 +1107,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -933,7 +1150,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
+    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(DeleteConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationTemplateResult executeDeleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -947,6 +1170,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -982,7 +1210,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
+    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEnvironmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEnvironmentConfigurationResult executeDeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEnvironmentConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -996,12 +1230,137 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteEnvironmentConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteEnvironmentConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteEnvironmentConfigurationResult> responseHandler = new StaxResponseHandler<DeleteEnvironmentConfigurationResult>(
                     new DeleteEnvironmentConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @return Result of the DeletePlatformVersion operation returned by the service.
+     * @throws OperationInProgressException
+     *         Unable to perform the specified operation because another operation that effects an element in this
+     *         activity is already in progress.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws PlatformVersionStillReferencedException
+     *         You cannot delete the platform version because there are still environments running on it.
+     * @sample AWSElasticBeanstalk.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeletePlatformVersionResult executeDeletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePlatformVersionRequest> request = null;
+        Response<DeletePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(deletePlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlatformVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeletePlatformVersionResult> responseHandler = new StaxResponseHandler<DeletePlatformVersionResult>(
+                    new DeletePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.
+     * </p>
+     * <p>
+     * The result currently has one set of attributes—resource quotas.
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @return Result of the DescribeAccountAttributes operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @sample AWSElasticBeanstalk.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountAttributesRequest> request = null;
+        Response<DescribeAccountAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
+                    new DescribeAccountAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1025,7 +1384,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
+    public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicationVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationVersionsResult executeDescribeApplicationVersions(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1039,6 +1404,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeApplicationVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeApplicationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1073,7 +1443,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
+    public DescribeApplicationsResult describeApplications(DescribeApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationsResult executeDescribeApplications(DescribeApplicationsRequest describeApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1087,6 +1463,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeApplicationsRequestMarshaller().marshall(super.beforeMarshalling(describeApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1116,7 +1497,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by the service.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
@@ -1125,7 +1506,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
+    public DescribeConfigurationOptionsResult describeConfigurationOptions(DescribeConfigurationOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationOptionsResult executeDescribeConfigurationOptions(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationOptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1139,6 +1526,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeConfigurationOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1187,7 +1579,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
+    public DescribeConfigurationSettingsResult describeConfigurationSettings(DescribeConfigurationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationSettingsResult executeDescribeConfigurationSettings(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1201,6 +1599,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeConfigurationSettingsRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1236,7 +1639,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
+    public DescribeEnvironmentHealthResult describeEnvironmentHealth(DescribeEnvironmentHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentHealth(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentHealthResult executeDescribeEnvironmentHealth(DescribeEnvironmentHealthRequest describeEnvironmentHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1250,6 +1659,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentHealthRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentHealth");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1282,7 +1696,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(DescribeEnvironmentManagedActionHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentManagedActionHistory(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentManagedActionHistoryResult executeDescribeEnvironmentManagedActionHistory(
             DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionHistoryRequest);
@@ -1298,6 +1718,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeEnvironmentManagedActionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentManagedActionHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1330,7 +1755,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(DescribeEnvironmentManagedActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentManagedActions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentManagedActionsResult executeDescribeEnvironmentManagedActions(
             DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionsRequest);
@@ -1345,6 +1776,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentManagedActionsRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentManagedActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentManagedActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1370,13 +1806,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to describe the resources in an environment.
      * @return Result of the DescribeEnvironmentResources operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.DescribeEnvironmentResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
+    public DescribeEnvironmentResourcesResult describeEnvironmentResources(DescribeEnvironmentResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironmentResources(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentResourcesResult executeDescribeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1390,6 +1832,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentResourcesRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1419,7 +1866,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
+    public DescribeEnvironmentsResult describeEnvironments(DescribeEnvironmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEnvironments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEnvironmentsResult executeDescribeEnvironments(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEnvironmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1433,6 +1886,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentsRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1472,7 +1930,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1486,6 +1950,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEventsRequestMarshaller().marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1509,8 +1978,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
-     * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
+     * Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
      * reporting</a>.
      * </p>
      * 
@@ -1527,7 +1996,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
+    public DescribeInstancesHealthResult describeInstancesHealth(DescribeInstancesHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancesHealth(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancesHealthResult executeDescribeInstancesHealth(DescribeInstancesHealthRequest describeInstancesHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancesHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1541,6 +2016,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeInstancesHealthRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstancesHealth");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1559,7 +2039,65 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @return Result of the DescribePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePlatformVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribePlatformVersionResult executeDescribePlatformVersion(DescribePlatformVersionRequest describePlatformVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePlatformVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePlatformVersionRequest> request = null;
+        Response<DescribePlatformVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(describePlatformVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlatformVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribePlatformVersionResult> responseHandler = new StaxResponseHandler<DescribePlatformVersionResult>(
+                    new DescribePlatformVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1569,7 +2107,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
+    public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAvailableSolutionStacks(request);
+    }
+
+    @SdkInternalApi
+    final ListAvailableSolutionStacksResult executeListAvailableSolutionStacks(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAvailableSolutionStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1583,6 +2127,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ListAvailableSolutionStacksRequestMarshaller().marshall(super.beforeMarshalling(listAvailableSolutionStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableSolutionStacks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1606,6 +2155,129 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @return Result of the ListPlatformVersions operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPlatformVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListPlatformVersionsResult executeListPlatformVersions(ListPlatformVersionsRequest listPlatformVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPlatformVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPlatformVersionsRequest> request = null;
+        Response<ListPlatformVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPlatformVersionsRequestMarshaller().marshall(super.beforeMarshalling(listPlatformVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlatformVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListPlatformVersionsResult> responseHandler = new StaxResponseHandler<ListPlatformVersionsResult>(
+                    new ListPlatformVersionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN).
+     * @throws ResourceTypeNotSupportedException
+     *         The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+     * @sample AWSElasticBeanstalk.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
+                    new ListTagsForResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a
      * specified environment and forces a restart.
      * </p>
@@ -1613,13 +2285,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param rebuildEnvironmentRequest
      * @return Result of the RebuildEnvironment operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
+    public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebuildEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final RebuildEnvironmentResult executeRebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebuildEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1633,6 +2311,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RebuildEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(rebuildEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebuildEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1683,7 +2366,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
+    public RequestEnvironmentInfoResult requestEnvironmentInfo(RequestEnvironmentInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestEnvironmentInfo(request);
+    }
+
+    @SdkInternalApi
+    final RequestEnvironmentInfoResult executeRequestEnvironmentInfo(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(requestEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1697,6 +2386,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RequestEnvironmentInfoRequestMarshaller().marshall(super.beforeMarshalling(requestEnvironmentInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestEnvironmentInfo");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1725,7 +2419,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RestartAppServerResult restartAppServer(RestartAppServerRequest restartAppServerRequest) {
+    public RestartAppServerResult restartAppServer(RestartAppServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestartAppServer(request);
+    }
+
+    @SdkInternalApi
+    final RestartAppServerResult executeRestartAppServer(RestartAppServerRequest restartAppServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restartAppServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1739,6 +2439,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RestartAppServerRequestMarshaller().marshall(super.beforeMarshalling(restartAppServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestartAppServer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1778,7 +2483,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
+    public RetrieveEnvironmentInfoResult retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveEnvironmentInfo(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveEnvironmentInfoResult executeRetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1792,6 +2503,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RetrieveEnvironmentInfoRequestMarshaller().marshall(super.beforeMarshalling(retrieveEnvironmentInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetrieveEnvironmentInfo");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1821,7 +2537,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSwapEnvironmentCNAMEs(request);
+    }
+
+    @SdkInternalApi
+    final SwapEnvironmentCNAMEsResult executeSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1835,6 +2557,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new SwapEnvironmentCNAMEsRequestMarshaller().marshall(super.beforeMarshalling(swapEnvironmentCNAMEsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SwapEnvironmentCNAMEs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1865,13 +2592,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to terminate an environment.
      * @return Result of the TerminateEnvironment operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.TerminateEnvironment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
+    public TerminateEnvironmentResult terminateEnvironment(TerminateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final TerminateEnvironmentResult executeTerminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1885,6 +2618,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new TerminateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(terminateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1920,7 +2658,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1934,6 +2678,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateApplicationRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1958,14 +2707,20 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @param updateApplicationResourceLifecycleRequest
      * @return Result of the UpdateApplicationResourceLifecycle operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @sample AWSElasticBeanstalk.UpdateApplicationResourceLifecycle
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
+    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationResourceLifecycle(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResourceLifecycleResult executeUpdateApplicationResourceLifecycle(
             UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationResourceLifecycleRequest);
@@ -1981,6 +2736,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                         .marshall(super.beforeMarshalling(updateApplicationResourceLifecycleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplicationResourceLifecycle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2015,7 +2775,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
+    public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationVersionResult executeUpdateApplicationVersion(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2029,6 +2795,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplicationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2070,7 +2841,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        The result message containing the options for the specified solution stack.
      * @return Result of the UpdateConfigurationTemplate operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
@@ -2078,7 +2849,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
+    public UpdateConfigurationTemplateResult updateConfigurationTemplate(UpdateConfigurationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationTemplateResult executeUpdateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2092,6 +2869,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2127,7 +2909,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        Request to update an environment.
      * @return Result of the UpdateEnvironment operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
@@ -2135,7 +2917,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
+    public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEnvironment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEnvironmentResult executeUpdateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2149,12 +2937,116 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(updateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<UpdateEnvironmentResult> responseHandler = new StaxResponseHandler<UpdateEnvironmentResult>(
                     new UpdateEnvironmentResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * <p>
+     * If you create a custom IAM user policy to control permission to this operation, specify one of the following two
+     * virtual actions (or both) instead of the API operation name:
+     * </p>
+     * <dl>
+     * <dt>elasticbeanstalk:AddTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+     * <code>TagsToAdd</code> parameter.
+     * </p>
+     * </dd>
+     * <dt>elasticbeanstalk:RemoveTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the
+     * <code>TagsToRemove</code> parameter.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For details about creating a custom user policy, see <a href=
+     * "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies"
+     * >Creating a Custom User Policy</a>.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @return Result of the UpdateTagsForResource operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @throws OperationInProgressException
+     *         Unable to perform the specified operation because another operation that effects an element in this
+     *         activity is already in progress.
+     * @throws TooManyTagsException
+     *         The number of tags in the resource would exceed the number of tags that each resource can have.</p>
+     *         <p>
+     *         To calculate this, the operation considers both the number of tags the resource already has and the tags
+     *         this operation would add if it succeeded.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN).
+     * @throws ResourceTypeNotSupportedException
+     *         The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+     * @sample AWSElasticBeanstalk.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTagsForResourceResult updateTagsForResource(UpdateTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTagsForResourceResult executeUpdateTagsForResource(UpdateTagsForResourceRequest updateTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTagsForResourceRequest> request = null;
+        Response<UpdateTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(updateTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateTagsForResourceResult> responseHandler = new StaxResponseHandler<UpdateTagsForResourceResult>(
+                    new UpdateTagsForResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2179,7 +3071,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        A list of validation messages for a specified configuration template.
      * @return Result of the ValidateConfigurationSettings operation returned by the service.
      * @throws InsufficientPrivilegesException
-     *         The specified account does not have sufficient privileges for one of more AWS services.
+     *         The specified account does not have sufficient privileges for one or more AWS services.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
@@ -2187,7 +3079,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
+    public ValidateConfigurationSettingsResult validateConfigurationSettings(ValidateConfigurationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidateConfigurationSettings(request);
+    }
+
+    @SdkInternalApi
+    final ValidateConfigurationSettingsResult executeValidateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(validateConfigurationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2201,6 +3099,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ValidateConfigurationSettingsRequestMarshaller().marshall(super.beforeMarshalling(validateConfigurationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateConfigurationSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2241,9 +3144,18 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2253,7 +3165,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2261,8 +3173,17 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

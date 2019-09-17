@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,20 +40,6 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpnConnectionsRequestVpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
-                .getVpnConnectionIds();
-        if (!describeVpnConnectionsRequestVpnConnectionIdsList.isEmpty() || !describeVpnConnectionsRequestVpnConnectionIdsList.isAutoConstruct()) {
-            int vpnConnectionIdsListIndex = 1;
-
-            for (String describeVpnConnectionsRequestVpnConnectionIdsListValue : describeVpnConnectionsRequestVpnConnectionIdsList) {
-                if (describeVpnConnectionsRequestVpnConnectionIdsListValue != null) {
-                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex,
-                            StringUtils.fromString(describeVpnConnectionsRequestVpnConnectionIdsListValue));
-                }
-                vpnConnectionIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpnConnectionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnConnectionsRequest
                 .getFilters();
         if (!describeVpnConnectionsRequestFiltersList.isEmpty() || !describeVpnConnectionsRequestFiltersList.isAutoConstruct()) {
@@ -79,6 +65,20 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpnConnectionsRequestVpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
+                .getVpnConnectionIds();
+        if (!describeVpnConnectionsRequestVpnConnectionIdsList.isEmpty() || !describeVpnConnectionsRequestVpnConnectionIdsList.isAutoConstruct()) {
+            int vpnConnectionIdsListIndex = 1;
+
+            for (String describeVpnConnectionsRequestVpnConnectionIdsListValue : describeVpnConnectionsRequestVpnConnectionIdsList) {
+                if (describeVpnConnectionsRequestVpnConnectionIdsListValue != null) {
+                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex,
+                            StringUtils.fromString(describeVpnConnectionsRequestVpnConnectionIdsListValue));
+                }
+                vpnConnectionIdsListIndex++;
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,17 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The format for the exported image.
-     * </p>
-     */
-    private String diskImageFormat;
-    /**
-     * <p>
      * The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is
      * exported.
      * </p>
      */
     private String containerFormat;
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     */
+    private String diskImageFormat;
     /**
      * <p>
      * The S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACP
@@ -53,79 +53,6 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      * </p>
      */
     private String s3Prefix;
-
-    /**
-     * <p>
-     * The format for the exported image.
-     * </p>
-     * 
-     * @param diskImageFormat
-     *        The format for the exported image.
-     * @see DiskImageFormat
-     */
-
-    public void setDiskImageFormat(String diskImageFormat) {
-        this.diskImageFormat = diskImageFormat;
-    }
-
-    /**
-     * <p>
-     * The format for the exported image.
-     * </p>
-     * 
-     * @return The format for the exported image.
-     * @see DiskImageFormat
-     */
-
-    public String getDiskImageFormat() {
-        return this.diskImageFormat;
-    }
-
-    /**
-     * <p>
-     * The format for the exported image.
-     * </p>
-     * 
-     * @param diskImageFormat
-     *        The format for the exported image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DiskImageFormat
-     */
-
-    public ExportToS3TaskSpecification withDiskImageFormat(String diskImageFormat) {
-        setDiskImageFormat(diskImageFormat);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The format for the exported image.
-     * </p>
-     * 
-     * @param diskImageFormat
-     *        The format for the exported image.
-     * @see DiskImageFormat
-     */
-
-    public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
-        this.diskImageFormat = diskImageFormat.toString();
-    }
-
-    /**
-     * <p>
-     * The format for the exported image.
-     * </p>
-     * 
-     * @param diskImageFormat
-     *        The format for the exported image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DiskImageFormat
-     */
-
-    public ExportToS3TaskSpecification withDiskImageFormat(DiskImageFormat diskImageFormat) {
-        setDiskImageFormat(diskImageFormat);
-        return this;
-    }
 
     /**
      * <p>
@@ -189,7 +116,7 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public void setContainerFormat(ContainerFormat containerFormat) {
-        this.containerFormat = containerFormat.toString();
+        withContainerFormat(containerFormat);
     }
 
     /**
@@ -206,7 +133,80 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public ExportToS3TaskSpecification withContainerFormat(ContainerFormat containerFormat) {
-        setContainerFormat(containerFormat);
+        this.containerFormat = containerFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     * 
+     * @param diskImageFormat
+     *        The format for the exported image.
+     * @see DiskImageFormat
+     */
+
+    public void setDiskImageFormat(String diskImageFormat) {
+        this.diskImageFormat = diskImageFormat;
+    }
+
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     * 
+     * @return The format for the exported image.
+     * @see DiskImageFormat
+     */
+
+    public String getDiskImageFormat() {
+        return this.diskImageFormat;
+    }
+
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     * 
+     * @param diskImageFormat
+     *        The format for the exported image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DiskImageFormat
+     */
+
+    public ExportToS3TaskSpecification withDiskImageFormat(String diskImageFormat) {
+        setDiskImageFormat(diskImageFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     * 
+     * @param diskImageFormat
+     *        The format for the exported image.
+     * @see DiskImageFormat
+     */
+
+    public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
+        withDiskImageFormat(diskImageFormat);
+    }
+
+    /**
+     * <p>
+     * The format for the exported image.
+     * </p>
+     * 
+     * @param diskImageFormat
+     *        The format for the exported image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DiskImageFormat
+     */
+
+    public ExportToS3TaskSpecification withDiskImageFormat(DiskImageFormat diskImageFormat) {
+        this.diskImageFormat = diskImageFormat.toString();
         return this;
     }
 
@@ -303,7 +303,8 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -313,10 +314,10 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDiskImageFormat() != null)
-            sb.append("DiskImageFormat: ").append(getDiskImageFormat()).append(",");
         if (getContainerFormat() != null)
             sb.append("ContainerFormat: ").append(getContainerFormat()).append(",");
+        if (getDiskImageFormat() != null)
+            sb.append("DiskImageFormat: ").append(getDiskImageFormat()).append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Prefix() != null)
@@ -335,13 +336,13 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
         if (obj instanceof ExportToS3TaskSpecification == false)
             return false;
         ExportToS3TaskSpecification other = (ExportToS3TaskSpecification) obj;
-        if (other.getDiskImageFormat() == null ^ this.getDiskImageFormat() == null)
-            return false;
-        if (other.getDiskImageFormat() != null && other.getDiskImageFormat().equals(this.getDiskImageFormat()) == false)
-            return false;
         if (other.getContainerFormat() == null ^ this.getContainerFormat() == null)
             return false;
         if (other.getContainerFormat() != null && other.getContainerFormat().equals(this.getContainerFormat()) == false)
+            return false;
+        if (other.getDiskImageFormat() == null ^ this.getDiskImageFormat() == null)
+            return false;
+        if (other.getDiskImageFormat() != null && other.getDiskImageFormat().equals(this.getDiskImageFormat()) == false)
             return false;
         if (other.getS3Bucket() == null ^ this.getS3Bucket() == null)
             return false;
@@ -359,8 +360,8 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDiskImageFormat() == null) ? 0 : getDiskImageFormat().hashCode());
         hashCode = prime * hashCode + ((getContainerFormat() == null) ? 0 : getContainerFormat().hashCode());
+        hashCode = prime * hashCode + ((getDiskImageFormat() == null) ? 0 : getDiskImageFormat().hashCode());
         hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getS3Prefix() == null) ? 0 : getS3Prefix().hashCode());
         return hashCode;
@@ -374,4 +375,5 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

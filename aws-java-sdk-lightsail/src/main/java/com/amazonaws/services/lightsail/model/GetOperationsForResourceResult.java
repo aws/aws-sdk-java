@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,24 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
     private java.util.List<Operation> operations;
     /**
      * <p>
-     * Returns the number of pages of results that remain.
+     * (Deprecated) Returns the number of pages of results that remain.
+     * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * and the API returns the <code>next page token</code> parameter instead.
+     * </p>
+     * </note>
+     */
+    @Deprecated
+    private String nextPageCount;
+    /**
+     * <p>
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
      * </p>
      */
-    private String nextPageCount;
+    private String nextPageToken;
 
     /**
      * <p>
@@ -112,46 +126,123 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Returns the number of pages of results that remain.
+     * (Deprecated) Returns the number of pages of results that remain.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * and the API returns the <code>next page token</code> parameter instead.
+     * </p>
+     * </note>
      * 
      * @param nextPageCount
-     *        Returns the number of pages of results that remain.
+     *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     *        <p>
+     *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
+     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *        </p>
      */
-
+    @Deprecated
     public void setNextPageCount(String nextPageCount) {
         this.nextPageCount = nextPageCount;
     }
 
     /**
      * <p>
-     * Returns the number of pages of results that remain.
+     * (Deprecated) Returns the number of pages of results that remain.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * and the API returns the <code>next page token</code> parameter instead.
+     * </p>
+     * </note>
      * 
-     * @return Returns the number of pages of results that remain.
+     * @return (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     *         <p>
+     *         In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
+     *         deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *         </p>
      */
-
+    @Deprecated
     public String getNextPageCount() {
         return this.nextPageCount;
     }
 
     /**
      * <p>
-     * Returns the number of pages of results that remain.
+     * (Deprecated) Returns the number of pages of results that remain.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * and the API returns the <code>next page token</code> parameter instead.
+     * </p>
+     * </note>
      * 
      * @param nextPageCount
-     *        Returns the number of pages of results that remain.
+     *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     *        <p>
+     *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
+     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public GetOperationsForResourceResult withNextPageCount(String nextPageCount) {
         setNextPageCount(nextPageCount);
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
+     * </p>
+     * 
+     * @param nextPageToken
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
+     */
+
+    public void setNextPageToken(String nextPageToken) {
+        this.nextPageToken = nextPageToken;
+    }
+
+    /**
+     * <p>
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
+     * </p>
+     * 
+     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
+     *         next set of items in the list.
+     */
+
+    public String getNextPageToken() {
+        return this.nextPageToken;
+    }
+
+    /**
+     * <p>
+     * An identifier that was returned from the previous call to this operation, which can be used to return the next
+     * set of items in the list.
+     * </p>
+     * 
+     * @param nextPageToken
+     *        An identifier that was returned from the previous call to this operation, which can be used to return the
+     *        next set of items in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOperationsForResourceResult withNextPageToken(String nextPageToken) {
+        setNextPageToken(nextPageToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -164,7 +255,9 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
         if (getOperations() != null)
             sb.append("Operations: ").append(getOperations()).append(",");
         if (getNextPageCount() != null)
-            sb.append("NextPageCount: ").append(getNextPageCount());
+            sb.append("NextPageCount: ").append(getNextPageCount()).append(",");
+        if (getNextPageToken() != null)
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +280,10 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNextPageCount() != null && other.getNextPageCount().equals(this.getNextPageCount()) == false)
             return false;
+        if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
+            return false;
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+            return false;
         return true;
     }
 
@@ -197,6 +294,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getOperations() == null) ? 0 : getOperations().hashCode());
         hashCode = prime * hashCode + ((getNextPageCount() == null) ? 0 : getNextPageCount().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }
 
@@ -208,4 +306,5 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

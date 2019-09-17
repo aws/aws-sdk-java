@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,27 @@ public class AccountSettingsJsonUnmarshaller implements Unmarshaller<AccountSett
                     context.nextToken();
                     accountSettings.setUnmeteredRemoteAccessDevices(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (context.testExpression("maxJobTimeoutMinutes", targetDepth)) {
+                    context.nextToken();
+                    accountSettings.setMaxJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("trialMinutes", targetDepth)) {
+                    context.nextToken();
+                    accountSettings.setTrialMinutes(TrialMinutesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("maxSlots", targetDepth)) {
+                    context.nextToken();
+                    accountSettings.setMaxSlots(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
+                if (context.testExpression("defaultJobTimeoutMinutes", targetDepth)) {
+                    context.nextToken();
+                    accountSettings.setDefaultJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("skipAppResign", targetDepth)) {
+                    context.nextToken();
+                    accountSettings.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

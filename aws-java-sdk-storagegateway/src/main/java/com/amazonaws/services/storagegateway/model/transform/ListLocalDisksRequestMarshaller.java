@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListLocalDisksRequest Marshaller
+ * ListLocalDisksRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListLocalDisksRequestMarshaller implements Marshaller<Request<ListLocalDisksRequest>, ListLocalDisksRequest> {
+@SdkInternalApi
+public class ListLocalDisksRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
 
-    public ListLocalDisksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListLocalDisksRequestMarshaller instance = new ListLocalDisksRequestMarshaller();
+
+    public static ListLocalDisksRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListLocalDisksRequest> marshall(ListLocalDisksRequest listLocalDisksRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListLocalDisksRequest listLocalDisksRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listLocalDisksRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListLocalDisksRequest> request = new DefaultRequest<ListLocalDisksRequest>(listLocalDisksRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.ListLocalDisks");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listLocalDisksRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(listLocalDisksRequest.getGatewayARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listLocalDisksRequest.getGatewayARN(), GATEWAYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

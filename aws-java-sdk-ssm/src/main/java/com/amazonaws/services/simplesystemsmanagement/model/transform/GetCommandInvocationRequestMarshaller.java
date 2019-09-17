@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetCommandInvocationRequest Marshaller
+ * GetCommandInvocationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetCommandInvocationRequestMarshaller implements Marshaller<Request<GetCommandInvocationRequest>, GetCommandInvocationRequest> {
+@SdkInternalApi
+public class GetCommandInvocationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COMMANDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CommandId").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> PLUGINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PluginName").build();
 
-    public GetCommandInvocationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetCommandInvocationRequestMarshaller instance = new GetCommandInvocationRequestMarshaller();
+
+    public static GetCommandInvocationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetCommandInvocationRequest> marshall(GetCommandInvocationRequest getCommandInvocationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetCommandInvocationRequest getCommandInvocationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getCommandInvocationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetCommandInvocationRequest> request = new DefaultRequest<GetCommandInvocationRequest>(getCommandInvocationRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.GetCommandInvocation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getCommandInvocationRequest.getCommandId() != null) {
-                jsonGenerator.writeFieldName("CommandId").writeValue(getCommandInvocationRequest.getCommandId());
-            }
-            if (getCommandInvocationRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(getCommandInvocationRequest.getInstanceId());
-            }
-            if (getCommandInvocationRequest.getPluginName() != null) {
-                jsonGenerator.writeFieldName("PluginName").writeValue(getCommandInvocationRequest.getPluginName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getCommandInvocationRequest.getCommandId(), COMMANDID_BINDING);
+            protocolMarshaller.marshall(getCommandInvocationRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(getCommandInvocationRequest.getPluginName(), PLUGINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

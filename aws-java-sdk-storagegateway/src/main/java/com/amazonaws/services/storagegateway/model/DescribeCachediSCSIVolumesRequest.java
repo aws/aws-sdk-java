@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the
+     * specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> volumeARNs;
 
     /**
-     * @return
+     * <p>
+     * An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the
+     * specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.
+     * </p>
+     * 
+     * @return An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All
+     *         of the specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for
+     *         a gateway.
      */
 
     public java.util.List<String> getVolumeARNs() {
@@ -39,7 +52,15 @@ public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the
+     * specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.
+     * </p>
+     * 
      * @param volumeARNs
+     *        An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of
+     *        the specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a
+     *        gateway.
      */
 
     public void setVolumeARNs(java.util.Collection<String> volumeARNs) {
@@ -53,12 +74,19 @@ public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the
+     * specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setVolumeARNs(java.util.Collection)} or {@link #withVolumeARNs(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param volumeARNs
+     *        An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of
+     *        the specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a
+     *        gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,7 +101,15 @@ public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the
+     * specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.
+     * </p>
+     * 
      * @param volumeARNs
+     *        An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of
+     *        the specified cached volumes must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs for a
+     *        gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,7 +119,8 @@ public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

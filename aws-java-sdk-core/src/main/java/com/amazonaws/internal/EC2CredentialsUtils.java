@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -29,6 +31,7 @@ import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.json.Jackson;
+import com.amazonaws.util.VersionInfoUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @SdkInternalApi
@@ -39,6 +42,8 @@ public final class EC2CredentialsUtils {
     private static EC2CredentialsUtils instance;
 
     private final ConnectionUtils connectionUtils;
+
+    private static final String USER_AGENT = VersionInfoUtils.getUserAgent();
 
     private EC2CredentialsUtils() {
         this(ConnectionUtils.getInstance());
@@ -74,7 +79,7 @@ public final class EC2CredentialsUtils {
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
-        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY);
+        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, null);
     }
 
     /**
@@ -97,13 +102,15 @@ public final class EC2CredentialsUtils {
      * @throws SdkClientException
      *             If the requested service is not found.
      */
-    public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy) throws IOException {
+    public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) throws IOException {
         int retriesAttempted = 0;
         InputStream inputStream = null;
 
+        headers = addDefaultHeaders(headers);
+
         while (true) {
             try {
-                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint);
+                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, headers);
 
                 int statusCode = connection.getResponseCode();
 
@@ -129,6 +136,24 @@ public final class EC2CredentialsUtils {
             }
         }
 
+    }
+
+    private Map<String,String> addDefaultHeaders(Map<String,String> headers) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        if (headers != null) {
+            map.putAll(headers);
+        }
+
+        putIfAbsent(map,"User-Agent", USER_AGENT);
+        putIfAbsent(map,"Accept", "*/*");
+        putIfAbsent(map,"Connection", "keep-alive");
+        return map;
+    }
+
+    private <K,V> void putIfAbsent(Map<K,V> map, K key, V value) {
+        if (map.get(key) == null) {
+            map.put(key, value);
+        }
     }
 
     private void handleErrorResponse(InputStream errorStream, int statusCode, String responseMessage) throws IOException {

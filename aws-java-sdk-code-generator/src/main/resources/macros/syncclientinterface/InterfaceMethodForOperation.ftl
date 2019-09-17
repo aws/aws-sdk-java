@@ -12,7 +12,7 @@ ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.i
      *
      * @see #${operationModel.methodName}(${operationModel.input.variableType})
      */
-    <#if operationModel.deprecated>
+    <#if operationModel.deprecated || form.deprecated>
       @Deprecated
     </#if>
     ${operationModel.syncReturnType} ${operationModel.methodName}(${form.argumentsDeclaration});

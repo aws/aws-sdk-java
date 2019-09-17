@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,27 +14,29 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the information about an execution of a Maintenance Window.
+ * Describes the information about an execution of a maintenance window.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecution" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaintenanceWindowExecution implements Serializable, Cloneable {
+public class MaintenanceWindowExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      */
     private String windowExecutionId;
@@ -65,11 +67,11 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window.
+     *        The ID of the maintenance window.
      */
 
     public void setWindowId(String windowId) {
@@ -78,10 +80,10 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
-     * @return The ID of the Maintenance Window.
+     * @return The ID of the maintenance window.
      */
 
     public String getWindowId() {
@@ -90,11 +92,11 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window.
+     * The ID of the maintenance window.
      * </p>
      * 
      * @param windowId
-     *        The ID of the Maintenance Window.
+     *        The ID of the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +107,11 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution.
+     *        The ID of the maintenance window execution.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -118,10 +120,10 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution.
+     * @return The ID of the maintenance window execution.
      */
 
     public String getWindowExecutionId() {
@@ -130,11 +132,11 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution.
+     * The ID of the maintenance window execution.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution.
+     *        The ID of the maintenance window execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +199,7 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -212,7 +214,7 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
      */
 
     public MaintenanceWindowExecution withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -337,7 +339,8 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -421,5 +424,11 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.MaintenanceWindowExecutionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

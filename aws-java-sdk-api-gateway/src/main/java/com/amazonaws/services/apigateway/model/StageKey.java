@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,28 +23,28 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StageKey implements Serializable, Cloneable {
+public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      */
     private String stageName;
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -51,10 +53,10 @@ public class StageKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -63,11 +65,11 @@ public class StageKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +80,11 @@ public class StageKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
      * @param stageName
-     *        The stage name in the <a>RestApi</a> that the stage key references.
+     *        The stage name associated with the stage key.
      */
 
     public void setStageName(String stageName) {
@@ -91,10 +93,10 @@ public class StageKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
-     * @return The stage name in the <a>RestApi</a> that the stage key references.
+     * @return The stage name associated with the stage key.
      */
 
     public String getStageName() {
@@ -103,11 +105,11 @@ public class StageKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
      * @param stageName
-     *        The stage name in the <a>RestApi</a> that the stage key references.
+     *        The stage name associated with the stage key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +119,8 @@ public class StageKey implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -173,5 +176,11 @@ public class StageKey implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.StageKeyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

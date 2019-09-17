@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     private String metricName;
     /**
      * <p>
-     * The time period for which you are requesting data.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      */
     private Integer period;
@@ -162,7 +162,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setMetricName(InstanceMetricName metricName) {
-        this.metricName = metricName.toString();
+        withMetricName(metricName);
     }
 
     /**
@@ -177,17 +177,17 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public GetInstanceMetricDataRequest withMetricName(InstanceMetricName metricName) {
-        setMetricName(metricName);
+        this.metricName = metricName.toString();
         return this;
     }
 
     /**
      * <p>
-     * The time period for which you are requesting data.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
      * @param period
-     *        The time period for which you are requesting data.
+     *        The granularity, in seconds, of the returned data points.
      */
 
     public void setPeriod(Integer period) {
@@ -196,10 +196,10 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The time period for which you are requesting data.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
-     * @return The time period for which you are requesting data.
+     * @return The granularity, in seconds, of the returned data points.
      */
 
     public Integer getPeriod() {
@@ -208,11 +208,11 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The time period for which you are requesting data.
+     * The granularity, in seconds, of the returned data points.
      * </p>
      * 
      * @param period
-     *        The time period for which you are requesting data.
+     *        The granularity, in seconds, of the returned data points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,7 +355,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setUnit(MetricUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -370,7 +370,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public GetInstanceMetricDataRequest withUnit(MetricUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 
@@ -473,7 +473,8 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

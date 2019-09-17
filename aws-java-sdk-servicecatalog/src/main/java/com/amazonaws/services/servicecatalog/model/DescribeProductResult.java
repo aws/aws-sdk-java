@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,25 +25,30 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      */
     private ProductViewSummary productViewSummary;
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      */
     private java.util.List<ProvisioningArtifact> provisioningArtifacts;
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     */
+    private java.util.List<BudgetDetail> budgets;
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product.
+     *        Summary information about the product view.
      */
 
     public void setProductViewSummary(ProductViewSummary productViewSummary) {
@@ -52,10 +57,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
-     * @return The summary metadata about the specified product.
+     * @return Summary information about the product view.
      */
 
     public ProductViewSummary getProductViewSummary() {
@@ -64,11 +69,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The summary metadata about the specified product.
+     * Summary information about the product view.
      * </p>
      * 
      * @param productViewSummary
-     *        The summary metadata about the specified product.
+     *        Summary information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,12 +84,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
-     * @return A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *         parameter represent the ways the specified product can be provisioned.
+     * @return Information about the provisioning artifacts for the specified product.
      */
 
     public java.util.List<ProvisioningArtifact> getProvisioningArtifacts() {
@@ -93,13 +96,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      */
 
     public void setProvisioningArtifacts(java.util.Collection<ProvisioningArtifact> provisioningArtifacts) {
@@ -113,8 +114,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,8 +123,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,13 +139,11 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     * parameter represent the ways the specified product can be provisioned.
+     * Information about the provisioning artifacts for the specified product.
      * </p>
      * 
      * @param provisioningArtifacts
-     *        A list of provisioning artifact objects for the specified product. The <code>ProvisioningArtifacts</code>
-     *        parameter represent the ways the specified product can be provisioned.
+     *        Information about the provisioning artifacts for the specified product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,7 +153,78 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @return Information about the associated budgets.
+     */
+
+    public java.util.List<BudgetDetail> getBudgets() {
+        return budgets;
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     */
+
+    public void setBudgets(java.util.Collection<BudgetDetail> budgets) {
+        if (budgets == null) {
+            this.budgets = null;
+            return;
+        }
+
+        this.budgets = new java.util.ArrayList<BudgetDetail>(budgets);
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBudgets(java.util.Collection)} or {@link #withBudgets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductResult withBudgets(BudgetDetail... budgets) {
+        if (this.budgets == null) {
+            setBudgets(new java.util.ArrayList<BudgetDetail>(budgets.length));
+        }
+        for (BudgetDetail ele : budgets) {
+            this.budgets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the associated budgets.
+     * </p>
+     * 
+     * @param budgets
+     *        Information about the associated budgets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductResult withBudgets(java.util.Collection<BudgetDetail> budgets) {
+        setBudgets(budgets);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -169,7 +237,9 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
         if (getProductViewSummary() != null)
             sb.append("ProductViewSummary: ").append(getProductViewSummary()).append(",");
         if (getProvisioningArtifacts() != null)
-            sb.append("ProvisioningArtifacts: ").append(getProvisioningArtifacts());
+            sb.append("ProvisioningArtifacts: ").append(getProvisioningArtifacts()).append(",");
+        if (getBudgets() != null)
+            sb.append("Budgets: ").append(getBudgets());
         sb.append("}");
         return sb.toString();
     }
@@ -192,6 +262,10 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getProvisioningArtifacts() != null && other.getProvisioningArtifacts().equals(this.getProvisioningArtifacts()) == false)
             return false;
+        if (other.getBudgets() == null ^ this.getBudgets() == null)
+            return false;
+        if (other.getBudgets() != null && other.getBudgets().equals(this.getBudgets()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +276,7 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getProductViewSummary() == null) ? 0 : getProductViewSummary().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifacts() == null) ? 0 : getProvisioningArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getBudgets() == null) ? 0 : getBudgets().hashCode());
         return hashCode;
     }
 
@@ -213,4 +288,5 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

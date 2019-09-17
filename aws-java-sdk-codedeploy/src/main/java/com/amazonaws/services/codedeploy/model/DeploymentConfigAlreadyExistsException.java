@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A deployment configuration with the specified name already exists with the applicable IAM user or AWS account.
+ * A deployment configuration with the specified name with the IAM user or AWS account already exists .
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the output of DescribeScheduledActions.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"
  *      target="_top">AWS API Documentation</a>
@@ -34,8 +31,9 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction> scheduledUpdateGroupActions;
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -115,13 +113,15 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        A string that indicates that the response contains more items than can be returned in a single response.
+     *        To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,12 +130,14 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
+     * @return A string that indicates that the response contains more items than can be returned in a single response.
+     *         To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *         next set of items. This value is null when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -144,13 +146,15 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
+     * A string that indicates that the response contains more items than can be returned in a single response. To
+     * receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set
+     * of items. This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
+     *        A string that indicates that the response contains more items than can be returned in a single response.
+     *        To receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,7 +164,8 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -217,4 +222,5 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

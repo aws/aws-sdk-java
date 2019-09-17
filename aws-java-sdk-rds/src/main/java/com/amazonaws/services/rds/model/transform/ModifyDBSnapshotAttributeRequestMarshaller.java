@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class ModifyDBSnapshotAttributeRequestMarshaller implements Marshaller<Re
             request.addParameter("AttributeName", StringUtils.fromString(modifyDBSnapshotAttributeRequest.getAttributeName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
-                .getValuesToAdd();
-        if (!valuesToAddList.isEmpty() || !valuesToAddList.isAutoConstruct()) {
+        if (!modifyDBSnapshotAttributeRequest.getValuesToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest.getValuesToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
+                    .getValuesToAdd();
             int valuesToAddListIndex = 1;
 
             for (String valuesToAddListValue : valuesToAddList) {
@@ -61,9 +62,10 @@ public class ModifyDBSnapshotAttributeRequestMarshaller implements Marshaller<Re
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
-                .getValuesToRemove();
-        if (!valuesToRemoveList.isEmpty() || !valuesToRemoveList.isAutoConstruct()) {
+        if (!modifyDBSnapshotAttributeRequest.getValuesToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest.getValuesToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
+                    .getValuesToRemove();
             int valuesToRemoveListIndex = 1;
 
             for (String valuesToRemoveListValue : valuesToRemoveList) {

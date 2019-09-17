@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -239,6 +239,10 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
         this.executorService = executorService;
     }
 
+    public static AWSCloudTrailAsyncClientBuilder asyncBuilder() {
+        return AWSCloudTrailAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudTrail using the specified parameters.
      *
@@ -268,14 +272,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(final AddTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+        final AddTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsResult>() {
             @Override
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+                AddTagsResult result = null;
 
                 try {
-                    result = addTags(request);
+                    result = executeAddTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -284,7 +289,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -300,14 +305,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<CreateTrailResult> createTrailAsync(final CreateTrailRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult> asyncHandler) {
+        final CreateTrailRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateTrailResult>() {
             @Override
             public CreateTrailResult call() throws Exception {
-                CreateTrailResult result;
+                CreateTrailResult result = null;
 
                 try {
-                    result = createTrail(request);
+                    result = executeCreateTrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -316,7 +322,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -332,14 +338,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(final DeleteTrailRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult> asyncHandler) {
+        final DeleteTrailRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTrailResult>() {
             @Override
             public DeleteTrailResult call() throws Exception {
-                DeleteTrailResult result;
+                DeleteTrailResult result = null;
 
                 try {
-                    result = deleteTrail(request);
+                    result = executeDeleteTrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -348,7 +355,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -364,14 +371,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(final DescribeTrailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler) {
+        final DescribeTrailsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTrailsResult>() {
             @Override
             public DescribeTrailsResult call() throws Exception {
-                DescribeTrailsResult result;
+                DescribeTrailsResult result = null;
 
                 try {
-                    result = describeTrails(request);
+                    result = executeDescribeTrails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -380,7 +388,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -403,6 +411,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
      *
      * @see #describeTrailsAsync(DescribeTrailsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler) {
 
@@ -418,14 +427,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(final GetEventSelectorsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler) {
+        final GetEventSelectorsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetEventSelectorsResult>() {
             @Override
             public GetEventSelectorsResult call() throws Exception {
-                GetEventSelectorsResult result;
+                GetEventSelectorsResult result = null;
 
                 try {
-                    result = getEventSelectors(request);
+                    result = executeGetEventSelectors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -434,7 +444,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -450,14 +460,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(final GetTrailStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult> asyncHandler) {
+        final GetTrailStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTrailStatusResult>() {
             @Override
             public GetTrailStatusResult call() throws Exception {
-                GetTrailStatusResult result;
+                GetTrailStatusResult result = null;
 
                 try {
-                    result = getTrailStatus(request);
+                    result = executeGetTrailStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -466,7 +477,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -482,14 +493,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(final ListPublicKeysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler) {
+        final ListPublicKeysRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPublicKeysResult>() {
             @Override
             public ListPublicKeysResult call() throws Exception {
-                ListPublicKeysResult result;
+                ListPublicKeysResult result = null;
 
                 try {
-                    result = listPublicKeys(request);
+                    result = executeListPublicKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -498,7 +510,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -521,6 +533,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
      *
      * @see #listPublicKeysAsync(ListPublicKeysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(
             com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler) {
 
@@ -536,14 +549,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(final ListTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+        final ListTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsResult>() {
             @Override
             public ListTagsResult call() throws Exception {
-                ListTagsResult result;
+                ListTagsResult result = null;
 
                 try {
-                    result = listTags(request);
+                    result = executeListTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -552,7 +566,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -568,14 +582,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(final LookupEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler) {
+        final LookupEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<LookupEventsResult>() {
             @Override
             public LookupEventsResult call() throws Exception {
-                LookupEventsResult result;
+                LookupEventsResult result = null;
 
                 try {
-                    result = lookupEvents(request);
+                    result = executeLookupEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -584,7 +599,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -607,6 +622,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
      *
      * @see #lookupEventsAsync(LookupEventsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(
             com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler) {
 
@@ -622,14 +638,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(final PutEventSelectorsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutEventSelectorsRequest, PutEventSelectorsResult> asyncHandler) {
+        final PutEventSelectorsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutEventSelectorsResult>() {
             @Override
             public PutEventSelectorsResult call() throws Exception {
-                PutEventSelectorsResult result;
+                PutEventSelectorsResult result = null;
 
                 try {
-                    result = putEventSelectors(request);
+                    result = executePutEventSelectors(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -638,7 +655,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -654,14 +671,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(final RemoveTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
+        final RemoveTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsResult>() {
             @Override
             public RemoveTagsResult call() throws Exception {
-                RemoveTagsResult result;
+                RemoveTagsResult result = null;
 
                 try {
-                    result = removeTags(request);
+                    result = executeRemoveTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -670,7 +688,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -686,14 +704,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(final StartLoggingRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult> asyncHandler) {
+        final StartLoggingRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartLoggingResult>() {
             @Override
             public StartLoggingResult call() throws Exception {
-                StartLoggingResult result;
+                StartLoggingResult result = null;
 
                 try {
-                    result = startLogging(request);
+                    result = executeStartLogging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -702,7 +721,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -718,14 +737,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(final StopLoggingRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler) {
+        final StopLoggingRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopLoggingResult>() {
             @Override
             public StopLoggingResult call() throws Exception {
-                StopLoggingResult result;
+                StopLoggingResult result = null;
 
                 try {
-                    result = stopLogging(request);
+                    result = executeStopLogging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -734,7 +754,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -750,14 +770,15 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
     @Override
     public java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(final UpdateTrailRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult> asyncHandler) {
+        final UpdateTrailRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateTrailResult>() {
             @Override
             public UpdateTrailResult call() throws Exception {
-                UpdateTrailResult result;
+                UpdateTrailResult result = null;
 
                 try {
-                    result = updateTrail(request);
+                    result = executeUpdateTrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -766,7 +787,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

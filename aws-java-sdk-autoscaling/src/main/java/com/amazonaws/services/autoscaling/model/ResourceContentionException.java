@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load balancer).
+ * You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
+ * instance, or load balancer).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

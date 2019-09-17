@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,8 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -37,16 +37,16 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer limit;
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -54,9 +54,8 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *        include a value, it defaults to 100.
@@ -68,17 +67,16 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.
      * </p>
      * 
-     * @return When paginating results, specify the maximum number of items to return in the response. If additional
-     *         items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *         true.</p>
+     * @return Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *         does not return more than the specified number of items, but it might return fewer.</p>
      *         <p>
      *         This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *         include a value, it defaults to 100.
@@ -90,8 +88,8 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * When paginating results, specify the maximum number of items to return in the response. If additional items exist
-     * beyond the number you specify, the <code>Truncated</code> element in the response is set to true.
+     * Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS does not
+     * return more than the specified number of items, but it might return fewer.
      * </p>
      * <p>
      * This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a
@@ -99,9 +97,8 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param limit
-     *        When paginating results, specify the maximum number of items to return in the response. If additional
-     *        items exist beyond the number you specify, the <code>Truncated</code> element in the response is set to
-     *        true.</p>
+     *        Use this parameter to specify the maximum number of items to return. When this value is present, AWS KMS
+     *        does not return more than the specified number of items, but it might return fewer.</p>
      *        <p>
      *        This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not
      *        include a value, it defaults to 100.
@@ -115,14 +112,13 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public void setMarker(String marker) {
@@ -131,13 +127,12 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
-     * @return Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *         response with truncated results. Set it to the value of <code>NextMarker</code> from the response you
-     *         just received.
+     * @return Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *         the value of <code>NextMarker</code> from the truncated response you just received.
      */
 
     public String getMarker() {
@@ -146,14 +141,13 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Use this parameter only when paginating results and only in a subsequent request after you receive a response
-     * with truncated results. Set it to the value of <code>NextMarker</code> from the response you just received.
+     * Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the
+     * value of <code>NextMarker</code> from the truncated response you just received.
      * </p>
      * 
      * @param marker
-     *        Use this parameter only when paginating results and only in a subsequent request after you receive a
-     *        response with truncated results. Set it to the value of <code>NextMarker</code> from the response you just
-     *        received.
+     *        Use this parameter in a subsequent request after you receive a response with truncated results. Set it to
+     *        the value of <code>NextMarker</code> from the truncated response you just received.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +157,8 @@ public class ListKeysRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

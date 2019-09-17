@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,53 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteBGPPeerRequest Marshaller
+ * DeleteBGPPeerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteBGPPeerRequestMarshaller implements Marshaller<Request<DeleteBGPPeerRequest>, DeleteBGPPeerRequest> {
+@SdkInternalApi
+public class DeleteBGPPeerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VIRTUALINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualInterfaceId").build();
+    private static final MarshallingInfo<Integer> ASN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("asn").build();
+    private static final MarshallingInfo<String> CUSTOMERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerAddress").build();
+    private static final MarshallingInfo<String> BGPPEERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bgpPeerId").build();
 
-    public DeleteBGPPeerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteBGPPeerRequestMarshaller instance = new DeleteBGPPeerRequestMarshaller();
+
+    public static DeleteBGPPeerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteBGPPeerRequest> marshall(DeleteBGPPeerRequest deleteBGPPeerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteBGPPeerRequest deleteBGPPeerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteBGPPeerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteBGPPeerRequest> request = new DefaultRequest<DeleteBGPPeerRequest>(deleteBGPPeerRequest, "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.DeleteBGPPeer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteBGPPeerRequest.getVirtualInterfaceId() != null) {
-                jsonGenerator.writeFieldName("virtualInterfaceId").writeValue(deleteBGPPeerRequest.getVirtualInterfaceId());
-            }
-            if (deleteBGPPeerRequest.getAsn() != null) {
-                jsonGenerator.writeFieldName("asn").writeValue(deleteBGPPeerRequest.getAsn());
-            }
-            if (deleteBGPPeerRequest.getCustomerAddress() != null) {
-                jsonGenerator.writeFieldName("customerAddress").writeValue(deleteBGPPeerRequest.getCustomerAddress());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteBGPPeerRequest.getVirtualInterfaceId(), VIRTUALINTERFACEID_BINDING);
+            protocolMarshaller.marshall(deleteBGPPeerRequest.getAsn(), ASN_BINDING);
+            protocolMarshaller.marshall(deleteBGPPeerRequest.getCustomerAddress(), CUSTOMERADDRESS_BINDING);
+            protocolMarshaller.marshall(deleteBGPPeerRequest.getBgpPeerId(), BGPPEERID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

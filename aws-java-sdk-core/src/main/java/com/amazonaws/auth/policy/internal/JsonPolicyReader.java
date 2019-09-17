@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,16 +14,11 @@
  */
 package com.amazonaws.auth.policy.internal;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.policy.Action;
 import com.amazonaws.auth.policy.Condition;
 import com.amazonaws.auth.policy.Policy;
+import com.amazonaws.auth.policy.PolicyReaderOptions;
 import com.amazonaws.auth.policy.Principal;
 import com.amazonaws.auth.policy.Principal.WebIdentityProviders;
 import com.amazonaws.auth.policy.Resource;
@@ -31,6 +26,11 @@ import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.auth.policy.Statement.Effect;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Generate an AWS policy object by parsing the given JSON string.
@@ -41,7 +41,18 @@ public class JsonPolicyReader {
 
     private static final String PRINCIPAL_SCHEMA_SERVICE = "Service";
 
-    private static final String PRINICIPAL_SCHEMA_FEDERATED = "Federated";
+    private static final String PRINCIPAL_SCHEMA_FEDERATED = "Federated";
+
+    private final PolicyReaderOptions options;
+
+    public JsonPolicyReader() {
+        this(new PolicyReaderOptions());
+    }
+
+    public JsonPolicyReader(PolicyReaderOptions options) {
+        this.options = options;
+    }
+
     /**
      * Converts the specified JSON string to an AWS policy object.
      *
@@ -60,14 +71,13 @@ public class JsonPolicyReader {
      *             converted to an AWS policy object.
      */
     public Policy createPolicyFromJsonString(String jsonString) {
-
         if (jsonString == null) {
             throw new IllegalArgumentException("JSON string cannot be null");
         }
 
         JsonNode policyNode;
         JsonNode idNode;
-        JsonNode statementNodes;
+        JsonNode statementsNode;
         Policy policy = new Policy();
         List<Statement> statements = new LinkedList<Statement>();
 
@@ -79,10 +89,14 @@ public class JsonPolicyReader {
                 policy.setId(idNode.asText());
             }
 
-            statementNodes = policyNode.get(JsonDocumentFields.STATEMENT);
-            if (isNotNull(statementNodes)) {
-                for (JsonNode node : statementNodes) {
-                    statements.add(statementOf(node));
+            statementsNode = policyNode.get(JsonDocumentFields.STATEMENT);
+            if (isNotNull(statementsNode)) {
+                if (statementsNode.isObject()) {
+                    statements.add(statementOf(statementsNode));
+                } else if (statementsNode.isArray()) {
+                    for (JsonNode statementNode : statementsNode) {
+                        statements.add(statementOf(statementNode));
+                    }
                 }
             }
 
@@ -132,17 +146,30 @@ public class JsonPolicyReader {
         if (isNotNull(actionNodes))
             statement.setActions(actionsOf(actionNodes));
 
+        List<Resource> resources = new LinkedList<Resource>();
         JsonNode resourceNodes = jStatement.get(JsonDocumentFields.RESOURCE);
-        if (isNotNull(resourceNodes))
-            statement.setResources(resourcesOf(resourceNodes));
+        if (isNotNull(resourceNodes)) {
+            resources.addAll(resourcesOf(resourceNodes, false));
+        }
+
+        JsonNode notResourceNodes = jStatement.get(JsonDocumentFields.NOT_RESOURCE);
+        if (isNotNull(notResourceNodes)) {
+            resources.addAll(resourcesOf(notResourceNodes, true));
+        }
+
+        if (!resources.isEmpty()) {
+            statement.setResources(resources);
+        }
 
         JsonNode conditionNodes = jStatement.get(JsonDocumentFields.CONDITION);
-        if (isNotNull(conditionNodes))
+        if (isNotNull(conditionNodes)) {
             statement.setConditions(conditionsOf(conditionNodes));
+        }
 
         JsonNode principalNodes = jStatement.get(JsonDocumentFields.PRINCIPAL);
-        if (isNotNull(principalNodes))
+        if (isNotNull(principalNodes)) {
             statement.setPrincipals(principalOf(principalNodes));
+        }
 
         return statement;
     }
@@ -168,21 +195,24 @@ public class JsonPolicyReader {
     }
 
     /**
-     * Generates a list of resources from the Resource Json Node.
+     * Generates a list of resources from the Resource Json Node
+     * using the is not type specified.
      *
      * @param resourceNodes
      *            the resource Json node to be parsed.
+     * @param isNotType
+     *            whether the nodes being parsed are isNotType.
      * @return the list of resources.
      */
-    private List<Resource> resourcesOf(JsonNode resourceNodes) {
+    private List<Resource> resourcesOf(JsonNode resourceNodes, boolean isNotType) {
         List<Resource> resources = new LinkedList<Resource>();
 
         if (resourceNodes.isArray()) {
             for (JsonNode resource : resourceNodes) {
-                resources.add(new Resource(resource.asText()));
+                resources.add(new Resource(resource.asText()).withIsNotType(isNotType));
             }
         } else {
-            resources.add(new Resource(resourceNodes.asText()));
+            resources.add(new Resource(resourceNodes.asText()).withIsNotType(isNotType));
         }
 
         return resources;
@@ -239,15 +269,14 @@ public class JsonPolicyReader {
      */
     private Principal createPrincipal(String schema, JsonNode principalNode) {
         if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_USER)) {
-            return new Principal(principalNode.asText());
+            return new Principal(PRINCIPAL_SCHEMA_USER, principalNode.asText(), options.isStripAwsPrincipalIdHyphensEnabled());
         } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_SERVICE)) {
-            return new Principal(schema,principalNode.asText());
-        } else if (schema.equalsIgnoreCase(PRINICIPAL_SCHEMA_FEDERATED)) {
+            return new Principal(schema, principalNode.asText());
+        } else if (schema.equalsIgnoreCase(PRINCIPAL_SCHEMA_FEDERATED)) {
             if (WebIdentityProviders.fromString(principalNode.asText()) != null) {
-                return new Principal(
-                        WebIdentityProviders.fromString(principalNode.asText()));
+                return new Principal(WebIdentityProviders.fromString(principalNode.asText()));
             } else {
-                return new Principal(PRINICIPAL_SCHEMA_FEDERATED, principalNode.asText());
+                return new Principal(PRINCIPAL_SCHEMA_FEDERATED, principalNode.asText());
             }
         }
         throw new SdkClientException("Schema " + schema + " is not a valid value for the principal.");
@@ -326,6 +355,7 @@ public class JsonPolicyReader {
             this.actionName = actionName;
         }
 
+        @Override
         public String getActionName() {
             return actionName;
         }
@@ -342,5 +372,4 @@ public class JsonPolicyReader {
     private boolean isNotNull(Object object) {
         return null != object;
     }
-
 }

@@ -15,6 +15,7 @@
 
 package com.amazonaws.protocol.json;
 
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;

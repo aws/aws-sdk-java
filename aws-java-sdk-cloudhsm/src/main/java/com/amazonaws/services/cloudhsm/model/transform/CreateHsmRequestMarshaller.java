@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,85 +12,65 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateHsmRequest Marshaller
+ * CreateHsmRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateHsmRequestMarshaller implements Marshaller<Request<CreateHsmRequest>, CreateHsmRequest> {
+@SdkInternalApi
+public class CreateHsmRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetId").build();
+    private static final MarshallingInfo<String> SSHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SshKey").build();
+    private static final MarshallingInfo<String> ENIIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EniIp").build();
+    private static final MarshallingInfo<String> IAMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
+    private static final MarshallingInfo<String> SUBSCRIPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionType").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken").build();
+    private static final MarshallingInfo<String> SYSLOGIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SyslogIp").build();
 
-    public CreateHsmRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateHsmRequestMarshaller instance = new CreateHsmRequestMarshaller();
+
+    public static CreateHsmRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateHsmRequest> marshall(CreateHsmRequest createHsmRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateHsmRequest createHsmRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createHsmRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateHsmRequest> request = new DefaultRequest<CreateHsmRequest>(createHsmRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.CreateHsm");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createHsmRequest.getSubnetId() != null) {
-                jsonGenerator.writeFieldName("SubnetId").writeValue(createHsmRequest.getSubnetId());
-            }
-            if (createHsmRequest.getSshKey() != null) {
-                jsonGenerator.writeFieldName("SshKey").writeValue(createHsmRequest.getSshKey());
-            }
-            if (createHsmRequest.getEniIp() != null) {
-                jsonGenerator.writeFieldName("EniIp").writeValue(createHsmRequest.getEniIp());
-            }
-            if (createHsmRequest.getIamRoleArn() != null) {
-                jsonGenerator.writeFieldName("IamRoleArn").writeValue(createHsmRequest.getIamRoleArn());
-            }
-            if (createHsmRequest.getExternalId() != null) {
-                jsonGenerator.writeFieldName("ExternalId").writeValue(createHsmRequest.getExternalId());
-            }
-            if (createHsmRequest.getSubscriptionType() != null) {
-                jsonGenerator.writeFieldName("SubscriptionType").writeValue(createHsmRequest.getSubscriptionType());
-            }
-            if (createHsmRequest.getClientToken() != null) {
-                jsonGenerator.writeFieldName("ClientToken").writeValue(createHsmRequest.getClientToken());
-            }
-            if (createHsmRequest.getSyslogIp() != null) {
-                jsonGenerator.writeFieldName("SyslogIp").writeValue(createHsmRequest.getSyslogIp());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createHsmRequest.getSubnetId(), SUBNETID_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getSshKey(), SSHKEY_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getEniIp(), ENIIP_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getIamRoleArn(), IAMROLEARN_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getExternalId(), EXTERNALID_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getSubscriptionType(), SUBSCRIPTIONTYPE_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createHsmRequest.getSyslogIp(), SYSLOGIP_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

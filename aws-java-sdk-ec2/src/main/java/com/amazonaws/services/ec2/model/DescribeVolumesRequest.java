@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,22 +20,14 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVolumes.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumesRequest> {
 
     /**
      * <p>
-     * One or more volume IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> volumeIds;
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -50,7 +42,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     * <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).
      * </p>
      * </li>
@@ -62,7 +54,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -77,7 +69,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -98,24 +90,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -135,6 +119,24 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
+     * The volume IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> volumeIds;
+    /**
+     * <p>
+     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
+     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
+     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
+     * can be between 5 and 500; if <code>MaxResults</code> is given a value larger than 500, only 500 results are
+     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
+     * specify this parameter and the volume IDs parameter in the same request.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
      * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
      * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
      * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
@@ -142,18 +144,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </p>
      */
     private String nextToken;
-    /**
-     * <p>
-     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
-     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
-     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
-     * specify this parameter and the volume IDs parameter in the same request.
-     * </p>
-     */
-    private Integer maxResults;
 
     /**
      * Default constructor for DescribeVolumesRequest object. Callers should use the setter or fluent setter (with...)
@@ -167,7 +157,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * to initialize any additional object members.
      * 
      * @param volumeIds
-     *        One or more volume IDs.
+     *        The volume IDs.
      */
     public DescribeVolumesRequest(java.util.List<String> volumeIds) {
         setVolumeIds(volumeIds);
@@ -175,80 +165,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @return One or more volume IDs.
-     */
-
-    public java.util.List<String> getVolumeIds() {
-        if (volumeIds == null) {
-            volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return volumeIds;
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     */
-
-    public void setVolumeIds(java.util.Collection<String> volumeIds) {
-        if (volumeIds == null) {
-            this.volumeIds = null;
-            return;
-        }
-
-        this.volumeIds = new com.amazonaws.internal.SdkInternalList<String>(volumeIds);
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVolumeIds(java.util.Collection)} or {@link #withVolumeIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
-        if (this.volumeIds == null) {
-            setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(volumeIds.length));
-        }
-        for (String ele : volumeIds) {
-            this.volumeIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
-        setVolumeIds(volumeIds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -263,7 +180,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     * <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).
      * </p>
      * </li>
@@ -275,7 +192,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -290,7 +207,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -311,24 +228,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -345,7 +254,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -359,7 +268,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     *         <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      *         <code>/dev/sda1</code>).
      *         </p>
      *         </li>
@@ -371,7 +280,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <li>
      *         <p>
      *         <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *         <code>detaching</code> | <code>detached</code>).
+     *         <code>detaching</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -386,7 +295,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>encrypted</code> - The encryption status of the volume.
+     *         <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> |
+     *         <code>false</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -407,25 +317,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *         Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *         for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *         filter value.
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *         "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's
-     *         value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources
-     *         where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-key</code> filter.
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      *         <li>
@@ -451,7 +352,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -466,7 +367,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     * <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).
      * </p>
      * </li>
@@ -478,7 +379,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -493,7 +394,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -514,24 +415,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -549,7 +442,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -563,7 +456,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     *        <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
@@ -575,7 +468,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -590,7 +483,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>
@@ -611,25 +505,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -657,7 +542,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -672,7 +557,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     * <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).
      * </p>
      * </li>
@@ -684,7 +569,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -699,7 +584,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -720,24 +605,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -760,7 +637,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -774,7 +651,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     *        <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
@@ -786,7 +663,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -801,7 +678,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>
@@ -822,25 +700,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -870,7 +739,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -885,7 +754,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     * <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      * <code>/dev/sda1</code>).
      * </p>
      * </li>
@@ -897,7 +766,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -912,7 +781,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>encrypted</code> - The encryption status of the volume.
+     * <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>)
      * </p>
      * </li>
      * <li>
@@ -933,24 +802,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -968,7 +829,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -982,7 +843,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.device</code> - The device name that is exposed to the instance (for example,
+     *        <code>attachment.device</code> - The device name specified in the block device mapping (for example,
      *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
@@ -994,7 +855,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1009,7 +870,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>encrypted</code> - The encryption status of the volume.
+     *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
+     *        )
      *        </p>
      *        </li>
      *        <li>
@@ -1030,25 +892,16 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -1068,6 +921,158 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     public DescribeVolumesRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume IDs.
+     * </p>
+     * 
+     * @return The volume IDs.
+     */
+
+    public java.util.List<String> getVolumeIds() {
+        if (volumeIds == null) {
+            volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return volumeIds;
+    }
+
+    /**
+     * <p>
+     * The volume IDs.
+     * </p>
+     * 
+     * @param volumeIds
+     *        The volume IDs.
+     */
+
+    public void setVolumeIds(java.util.Collection<String> volumeIds) {
+        if (volumeIds == null) {
+            this.volumeIds = null;
+            return;
+        }
+
+        this.volumeIds = new com.amazonaws.internal.SdkInternalList<String>(volumeIds);
+    }
+
+    /**
+     * <p>
+     * The volume IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeIds(java.util.Collection)} or {@link #withVolumeIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param volumeIds
+     *        The volume IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
+        if (this.volumeIds == null) {
+            setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(volumeIds.length));
+        }
+        for (String ele : volumeIds) {
+            this.volumeIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume IDs.
+     * </p>
+     * 
+     * @param volumeIds
+     *        The volume IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
+        setVolumeIds(volumeIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
+     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
+     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
+     * can be between 5 and 500; if <code>MaxResults</code> is given a value larger than 500, only 500 results are
+     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
+     * specify this parameter and the volume IDs parameter in the same request.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
+     *        this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
+     *        single page along with a <code>NextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>DescribeVolumes</code> request with the returned
+     *        <code>NextToken</code> value. This value can be between 5 and 500; if <code>MaxResults</code> is given a
+     *        value larger than 500, only 500 results are returned. If this parameter is not used, then
+     *        <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
+     *        parameter in the same request.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
+     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
+     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
+     * can be between 5 and 500; if <code>MaxResults</code> is given a value larger than 500, only 500 results are
+     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
+     * specify this parameter and the volume IDs parameter in the same request.
+     * </p>
+     * 
+     * @return The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
+     *         this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
+     *         single page along with a <code>NextToken</code> response element. The remaining results of the initial
+     *         request can be seen by sending another <code>DescribeVolumes</code> request with the returned
+     *         <code>NextToken</code> value. This value can be between 5 and 500; if <code>MaxResults</code> is given a
+     *         value larger than 500, only 500 results are returned. If this parameter is not used, then
+     *         <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
+     *         parameter in the same request.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
+     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
+     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
+     * can be between 5 and 500; if <code>MaxResults</code> is given a value larger than 500, only 500 results are
+     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
+     * specify this parameter and the volume IDs parameter in the same request.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
+     *        this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
+     *        single page along with a <code>NextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>DescribeVolumes</code> request with the returned
+     *        <code>NextToken</code> value. This value can be between 5 and 500; if <code>MaxResults</code> is given a
+     *        value larger than 500, only 500 results are returned. If this parameter is not used, then
+     *        <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
+     *        parameter in the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -1130,85 +1135,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * <p>
-     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
-     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
-     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
-     * specify this parameter and the volume IDs parameter in the same request.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
-     *        this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
-     *        single page along with a <code>NextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>DescribeVolumes</code> request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *        value larger than 1000, only 1000 results are returned. If this parameter is not used, then
-     *        <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
-     *        parameter in the same request.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
-     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
-     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
-     * specify this parameter and the volume IDs parameter in the same request.
-     * </p>
-     * 
-     * @return The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
-     *         this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
-     *         single page along with a <code>NextToken</code> response element. The remaining results of the initial
-     *         request can be seen by sending another <code>DescribeVolumes</code> request with the returned
-     *         <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *         value larger than 1000, only 1000 results are returned. If this parameter is not used, then
-     *         <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
-     *         parameter in the same request.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
-     * parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a single page
-     * along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>DescribeVolumes</code> request with the returned <code>NextToken</code> value. This value
-     * can be between 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned. If this parameter is not used, then <code>DescribeVolumes</code> returns all results. You cannot
-     * specify this parameter and the volume IDs parameter in the same request.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When
-     *        this parameter is used, <code>DescribeVolumes</code> only returns <code>MaxResults</code> results in a
-     *        single page along with a <code>NextToken</code> response element. The remaining results of the initial
-     *        request can be seen by sending another <code>DescribeVolumes</code> request with the returned
-     *        <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-     *        value larger than 1000, only 1000 results are returned. If this parameter is not used, then
-     *        <code>DescribeVolumes</code> returns all results. You cannot specify this parameter and the volume IDs
-     *        parameter in the same request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumesRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1220,7 +1146,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1230,14 +1157,14 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeIds() != null)
-            sb.append("VolumeIds: ").append(getVolumeIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVolumeIds() != null)
+            sb.append("VolumeIds: ").append(getVolumeIds()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,21 +1179,21 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         if (obj instanceof DescribeVolumesRequest == false)
             return false;
         DescribeVolumesRequest other = (DescribeVolumesRequest) obj;
-        if (other.getVolumeIds() == null ^ this.getVolumeIds() == null)
-            return false;
-        if (other.getVolumeIds() != null && other.getVolumeIds().equals(this.getVolumeIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getVolumeIds() == null ^ this.getVolumeIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getVolumeIds() != null && other.getVolumeIds().equals(this.getVolumeIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -1276,10 +1203,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeIds() == null) ? 0 : getVolumeIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVolumeIds() == null) ? 0 : getVolumeIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

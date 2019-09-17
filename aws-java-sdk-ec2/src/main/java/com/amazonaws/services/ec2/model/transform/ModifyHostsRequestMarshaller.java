@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyHostsRequest.getAutoPlacement() != null) {
+            request.addParameter("AutoPlacement", StringUtils.fromString(modifyHostsRequest.getAutoPlacement()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> modifyHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyHostsRequest
                 .getHostIds();
         if (!modifyHostsRequestHostIdsList.isEmpty() || !modifyHostsRequestHostIdsList.isAutoConstruct()) {
@@ -53,8 +57,8 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
             }
         }
 
-        if (modifyHostsRequest.getAutoPlacement() != null) {
-            request.addParameter("AutoPlacement", StringUtils.fromString(modifyHostsRequest.getAutoPlacement()));
+        if (modifyHostsRequest.getHostRecovery() != null) {
+            request.addParameter("HostRecovery", StringUtils.fromString(modifyHostsRequest.getHostRecovery()));
         }
 
         return request;

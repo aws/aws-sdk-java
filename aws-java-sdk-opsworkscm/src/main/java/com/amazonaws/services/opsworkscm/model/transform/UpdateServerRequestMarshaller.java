@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateServerRequest Marshaller
+ * UpdateServerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateServerRequestMarshaller implements Marshaller<Request<UpdateServerRequest>, UpdateServerRequest> {
+@SdkInternalApi
+public class UpdateServerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Boolean> DISABLEAUTOMATEDBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableAutomatedBackup").build();
+    private static final MarshallingInfo<Integer> BACKUPRETENTIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupRetentionCount").build();
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<String> PREFERREDMAINTENANCEWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredMaintenanceWindow").build();
+    private static final MarshallingInfo<String> PREFERREDBACKUPWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredBackupWindow").build();
 
-    public UpdateServerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateServerRequestMarshaller instance = new UpdateServerRequestMarshaller();
+
+    public static UpdateServerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateServerRequest> marshall(UpdateServerRequest updateServerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateServerRequest updateServerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateServerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateServerRequest> request = new DefaultRequest<UpdateServerRequest>(updateServerRequest, "AWSOpsWorksCM");
-        request.addHeader("X-Amz-Target", "OpsWorksCM_V2016_11_01.UpdateServer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateServerRequest.getDisableAutomatedBackup() != null) {
-                jsonGenerator.writeFieldName("DisableAutomatedBackup").writeValue(updateServerRequest.getDisableAutomatedBackup());
-            }
-            if (updateServerRequest.getBackupRetentionCount() != null) {
-                jsonGenerator.writeFieldName("BackupRetentionCount").writeValue(updateServerRequest.getBackupRetentionCount());
-            }
-            if (updateServerRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(updateServerRequest.getServerName());
-            }
-            if (updateServerRequest.getPreferredMaintenanceWindow() != null) {
-                jsonGenerator.writeFieldName("PreferredMaintenanceWindow").writeValue(updateServerRequest.getPreferredMaintenanceWindow());
-            }
-            if (updateServerRequest.getPreferredBackupWindow() != null) {
-                jsonGenerator.writeFieldName("PreferredBackupWindow").writeValue(updateServerRequest.getPreferredBackupWindow());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateServerRequest.getDisableAutomatedBackup(), DISABLEAUTOMATEDBACKUP_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getBackupRetentionCount(), BACKUPRETENTIONCOUNT_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getPreferredBackupWindow(), PREFERREDBACKUPWINDOW_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

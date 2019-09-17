@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,25 @@ package com.amazonaws.services.codepipeline.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Represents information about a pipeline to a job worker.
  * </p>
+ * <note>
+ * <p>
+ * PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The
+ * <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineContext implements Serializable, Cloneable {
+public class PipelineContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -39,8 +47,24 @@ public class PipelineContext implements Serializable, Cloneable {
      * </p>
      */
     private StageContext stage;
-
+    /**
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
+     */
     private ActionContext action;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the pipeline.
+     * </p>
+     */
+    private String pipelineArn;
+    /**
+     * <p>
+     * The execution ID of the pipeline.
+     * </p>
+     */
+    private String pipelineExecutionId;
 
     /**
      * <p>
@@ -129,7 +153,12 @@ public class PipelineContext implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
+     * 
      * @param action
+     *        The context of an action to a job worker within the stage of a pipeline.
      */
 
     public void setAction(ActionContext action) {
@@ -137,7 +166,11 @@ public class PipelineContext implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
+     * 
+     * @return The context of an action to a job worker within the stage of a pipeline.
      */
 
     public ActionContext getAction() {
@@ -145,7 +178,12 @@ public class PipelineContext implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
+     * 
      * @param action
+     *        The context of an action to a job worker within the stage of a pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,7 +193,88 @@ public class PipelineContext implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Resource Name (ARN) of the pipeline.
+     * </p>
+     * 
+     * @param pipelineArn
+     *        The Amazon Resource Name (ARN) of the pipeline.
+     */
+
+    public void setPipelineArn(String pipelineArn) {
+        this.pipelineArn = pipelineArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the pipeline.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the pipeline.
+     */
+
+    public String getPipelineArn() {
+        return this.pipelineArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the pipeline.
+     * </p>
+     * 
+     * @param pipelineArn
+     *        The Amazon Resource Name (ARN) of the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineContext withPipelineArn(String pipelineArn) {
+        setPipelineArn(pipelineArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The execution ID of the pipeline.
+     * </p>
+     * 
+     * @param pipelineExecutionId
+     *        The execution ID of the pipeline.
+     */
+
+    public void setPipelineExecutionId(String pipelineExecutionId) {
+        this.pipelineExecutionId = pipelineExecutionId;
+    }
+
+    /**
+     * <p>
+     * The execution ID of the pipeline.
+     * </p>
+     * 
+     * @return The execution ID of the pipeline.
+     */
+
+    public String getPipelineExecutionId() {
+        return this.pipelineExecutionId;
+    }
+
+    /**
+     * <p>
+     * The execution ID of the pipeline.
+     * </p>
+     * 
+     * @param pipelineExecutionId
+     *        The execution ID of the pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineContext withPipelineExecutionId(String pipelineExecutionId) {
+        setPipelineExecutionId(pipelineExecutionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -170,7 +289,11 @@ public class PipelineContext implements Serializable, Cloneable {
         if (getStage() != null)
             sb.append("Stage: ").append(getStage()).append(",");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getPipelineArn() != null)
+            sb.append("PipelineArn: ").append(getPipelineArn()).append(",");
+        if (getPipelineExecutionId() != null)
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +320,14 @@ public class PipelineContext implements Serializable, Cloneable {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getPipelineArn() == null ^ this.getPipelineArn() == null)
+            return false;
+        if (other.getPipelineArn() != null && other.getPipelineArn().equals(this.getPipelineArn()) == false)
+            return false;
+        if (other.getPipelineExecutionId() == null ^ this.getPipelineExecutionId() == null)
+            return false;
+        if (other.getPipelineExecutionId() != null && other.getPipelineExecutionId().equals(this.getPipelineExecutionId()) == false)
+            return false;
         return true;
     }
 
@@ -208,6 +339,8 @@ public class PipelineContext implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPipelineName() == null) ? 0 : getPipelineName().hashCode());
         hashCode = prime * hashCode + ((getStage() == null) ? 0 : getStage().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getPipelineArn() == null) ? 0 : getPipelineArn().hashCode());
+        hashCode = prime * hashCode + ((getPipelineExecutionId() == null) ? 0 : getPipelineExecutionId().hashCode());
         return hashCode;
     }
 
@@ -218,5 +351,11 @@ public class PipelineContext implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codepipeline.model.transform.PipelineContextMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

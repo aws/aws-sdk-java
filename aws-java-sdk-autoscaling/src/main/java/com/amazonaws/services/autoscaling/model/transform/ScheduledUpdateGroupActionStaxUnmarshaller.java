@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,17 +59,17 @@ public class ScheduledUpdateGroupActionStaxUnmarshaller implements Unmarshaller<
                 }
 
                 if (context.testExpression("Time", targetDepth)) {
-                    scheduledUpdateGroupAction.setTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledUpdateGroupAction.setTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("StartTime", targetDepth)) {
-                    scheduledUpdateGroupAction.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledUpdateGroupAction.setStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EndTime", targetDepth)) {
-                    scheduledUpdateGroupAction.setEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    scheduledUpdateGroupAction.setEndTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

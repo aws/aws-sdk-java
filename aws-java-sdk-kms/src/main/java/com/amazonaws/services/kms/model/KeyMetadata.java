@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -27,7 +29,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KeyMetadata implements Serializable, Cloneable {
+public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -44,7 +46,7 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      */
@@ -70,9 +72,8 @@ public class KeyMetadata implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      */
     private String keyUsage;
@@ -82,7 +83,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -90,7 +91,7 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      */
     private java.util.Date deletionDate;
@@ -107,10 +108,28 @@ public class KeyMetadata implements Serializable, Cloneable {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      */
     private String origin;
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     */
+    private String customKeyStoreId;
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
+     * </p>
+     */
+    private String cloudHsmClusterId;
     /**
      * <p>
      * Specifies whether the CMK's key material expires. This value is present only when <code>Origin</code> is
@@ -118,6 +137,15 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      */
     private String expirationModel;
+    /**
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private String keyManager;
 
     /**
      * <p>
@@ -202,13 +230,13 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *        Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
 
@@ -219,12 +247,12 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *         Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
 
@@ -235,13 +263,13 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      * Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the CMK. For examples, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key
      *        Management Service (AWS KMS)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -393,15 +421,13 @@ public class KeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
@@ -411,14 +437,12 @@ public class KeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
-     * @return The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *         <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *         operations.
+     * @return The cryptographic operations for which you can use the CMK. The only valid value is
+     *         <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
@@ -428,15 +452,13 @@ public class KeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -448,39 +470,35 @@ public class KeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @see KeyUsageType
      */
 
     public void setKeyUsage(KeyUsageType keyUsage) {
-        this.keyUsage = keyUsage.toString();
+        withKeyUsage(keyUsage);
     }
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     * <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     * operations.
+     * The cryptographic operations for which you can use the CMK. The only valid value is <code>ENCRYPT_DECRYPT</code>,
+     * which means you can use the CMK to encrypt and decrypt data.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK. Currently the only allowed value is
-     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK for the <a>Encrypt</a> and <a>Decrypt</a>
-     *        operations.
+     *        The cryptographic operations for which you can use the CMK. The only valid value is
+     *        <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to encrypt and decrypt data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
 
     public KeyMetadata withKeyUsage(KeyUsageType keyUsage) {
-        setKeyUsage(keyUsage);
+        this.keyUsage = keyUsage.toString();
         return this;
     }
 
@@ -490,7 +508,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -498,7 +516,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
@@ -513,14 +531,14 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The state of the CMK.</p>
      *         <p>
      *         For more information about how key state affects the use of a CMK, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *         of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
@@ -535,7 +553,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -543,7 +561,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
@@ -560,7 +578,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -568,13 +586,13 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
 
     public void setKeyState(KeyState keyState) {
-        this.keyState = keyState.toString();
+        withKeyState(keyState);
     }
 
     /**
@@ -583,7 +601,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
@@ -591,26 +609,26 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        The state of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
      *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
      */
 
     public KeyMetadata withKeyState(KeyState keyState) {
-        setKeyState(keyState);
+        this.keyState = keyState.toString();
         return this;
     }
 
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @param deletionDate
      *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *        <code>KeyState</code> is <code>PendingDeletion</code>.
      */
 
     public void setDeletionDate(java.util.Date deletionDate) {
@@ -620,11 +638,11 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @return The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *         <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *         <code>KeyState</code> is <code>PendingDeletion</code>.
      */
 
     public java.util.Date getDeletionDate() {
@@ -634,12 +652,12 @@ public class KeyMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @param deletionDate
      *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *        <code>KeyState</code> is <code>PendingDeletion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -710,13 +728,15 @@ public class KeyMetadata implements Serializable, Cloneable {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
@@ -728,12 +748,14 @@ public class KeyMetadata implements Serializable, Cloneable {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @return The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *         material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *         management infrastructure or the CMK lacks key material.
+     *         management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>,
+     *         the key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
@@ -745,13 +767,15 @@ public class KeyMetadata implements Serializable, Cloneable {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -765,37 +789,155 @@ public class KeyMetadata implements Serializable, Cloneable {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
     public void setOrigin(OriginType origin) {
-        this.origin = origin.toString();
+        withOrigin(origin);
     }
 
     /**
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
 
     public KeyMetadata withOrigin(OriginType origin) {
-        setOrigin(origin);
+        this.origin = origin.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        A unique identifier for the <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a> that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     */
+
+    public void setCustomKeyStoreId(String customKeyStoreId) {
+        this.customKeyStoreId = customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @return A unique identifier for the <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *         store</a> that contains the CMK. This value is present only when the CMK is created in a custom key
+     *         store.
+     */
+
+    public String getCustomKeyStoreId() {
+        return this.customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
+     * that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        A unique identifier for the <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a> that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withCustomKeyStoreId(String customKeyStoreId) {
+        setCustomKeyStoreId(customKeyStoreId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param cloudHsmClusterId
+     *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *        CMK in a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
+     *        is present only when the CMK is created in a custom key store.
+     */
+
+    public void setCloudHsmClusterId(String cloudHsmClusterId) {
+        this.cloudHsmClusterId = cloudHsmClusterId;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @return The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *         CMK in a <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *         store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This
+     *         value is present only when the CMK is created in a custom key store.
+     */
+
+    public String getCloudHsmClusterId() {
+        return this.cloudHsmClusterId;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is
+     * present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param cloudHsmClusterId
+     *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *        CMK in a <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
+     *        is present only when the CMK is created in a custom key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withCloudHsmClusterId(String cloudHsmClusterId) {
+        setCloudHsmClusterId(cloudHsmClusterId);
         return this;
     }
 
@@ -861,7 +1003,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      */
 
     public void setExpirationModel(ExpirationModelType expirationModel) {
-        this.expirationModel = expirationModel.toString();
+        withExpirationModel(expirationModel);
     }
 
     /**
@@ -878,12 +1020,116 @@ public class KeyMetadata implements Serializable, Cloneable {
      */
 
     public KeyMetadata withExpirationModel(ExpirationModelType expirationModel) {
-        setExpirationModel(expirationModel);
+        this.expirationModel = expirationModel.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param keyManager
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @see KeyManagerType
+     */
+
+    public void setKeyManager(String keyManager) {
+        this.keyManager = keyManager;
+    }
+
+    /**
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *         information about the difference, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *         Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @see KeyManagerType
+     */
+
+    public String getKeyManager() {
+        return this.keyManager;
+    }
+
+    /**
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param keyManager
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyManagerType
+     */
+
+    public KeyMetadata withKeyManager(String keyManager) {
+        setKeyManager(keyManager);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param keyManager
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @see KeyManagerType
+     */
+
+    public void setKeyManager(KeyManagerType keyManager) {
+        withKeyManager(keyManager);
+    }
+
+    /**
+     * <p>
+     * The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more information
+     * about the difference, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param keyManager
+     *        The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed. For more
+     *        information about the difference, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
+     *        Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyManagerType
+     */
+
+    public KeyMetadata withKeyManager(KeyManagerType keyManager) {
+        this.keyManager = keyManager.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -915,8 +1161,14 @@ public class KeyMetadata implements Serializable, Cloneable {
             sb.append("ValidTo: ").append(getValidTo()).append(",");
         if (getOrigin() != null)
             sb.append("Origin: ").append(getOrigin()).append(",");
+        if (getCustomKeyStoreId() != null)
+            sb.append("CustomKeyStoreId: ").append(getCustomKeyStoreId()).append(",");
+        if (getCloudHsmClusterId() != null)
+            sb.append("CloudHsmClusterId: ").append(getCloudHsmClusterId()).append(",");
         if (getExpirationModel() != null)
-            sb.append("ExpirationModel: ").append(getExpirationModel());
+            sb.append("ExpirationModel: ").append(getExpirationModel()).append(",");
+        if (getKeyManager() != null)
+            sb.append("KeyManager: ").append(getKeyManager());
         sb.append("}");
         return sb.toString();
     }
@@ -975,9 +1227,21 @@ public class KeyMetadata implements Serializable, Cloneable {
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
+        if (other.getCustomKeyStoreId() == null ^ this.getCustomKeyStoreId() == null)
+            return false;
+        if (other.getCustomKeyStoreId() != null && other.getCustomKeyStoreId().equals(this.getCustomKeyStoreId()) == false)
+            return false;
+        if (other.getCloudHsmClusterId() == null ^ this.getCloudHsmClusterId() == null)
+            return false;
+        if (other.getCloudHsmClusterId() != null && other.getCloudHsmClusterId().equals(this.getCloudHsmClusterId()) == false)
+            return false;
         if (other.getExpirationModel() == null ^ this.getExpirationModel() == null)
             return false;
         if (other.getExpirationModel() != null && other.getExpirationModel().equals(this.getExpirationModel()) == false)
+            return false;
+        if (other.getKeyManager() == null ^ this.getKeyManager() == null)
+            return false;
+        if (other.getKeyManager() != null && other.getKeyManager().equals(this.getKeyManager()) == false)
             return false;
         return true;
     }
@@ -998,7 +1262,10 @@ public class KeyMetadata implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeletionDate() == null) ? 0 : getDeletionDate().hashCode());
         hashCode = prime * hashCode + ((getValidTo() == null) ? 0 : getValidTo().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getCustomKeyStoreId() == null) ? 0 : getCustomKeyStoreId().hashCode());
+        hashCode = prime * hashCode + ((getCloudHsmClusterId() == null) ? 0 : getCloudHsmClusterId().hashCode());
         hashCode = prime * hashCode + ((getExpirationModel() == null) ? 0 : getExpirationModel().hashCode());
+        hashCode = prime * hashCode + ((getKeyManager() == null) ? 0 : getKeyManager().hashCode());
         return hashCode;
     }
 
@@ -1009,5 +1276,11 @@ public class KeyMetadata implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kms.model.transform.KeyMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

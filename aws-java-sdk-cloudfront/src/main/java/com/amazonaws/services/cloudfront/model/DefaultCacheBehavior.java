@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,12 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code> element
- * or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
- * must create exactly one default cache behavior.
+ * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or
+ * if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+ * create exactly one default cache behavior.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DefaultCacheBehavior" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DefaultCacheBehavior" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,7 +31,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      */
     private String targetOriginId;
@@ -50,8 +50,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * If you want to require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
@@ -92,7 +92,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -102,9 +102,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      */
@@ -113,9 +112,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
      * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
@@ -141,19 +139,27 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * request to your origin to determine whether the object has been updated. The value that you specify applies only
      * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private Long defaultTTL;
-
+    /**
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
     private Long maxTTL;
     /**
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify
      * <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
@@ -164,16 +170,24 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private LambdaFunctionAssociations lambdaFunctionAssociations;
+    /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     */
+    private String fieldLevelEncryptionId;
 
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @param targetOriginId
      *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior.
+     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *        distribution.
      */
 
     public void setTargetOriginId(String targetOriginId) {
@@ -183,11 +197,12 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @return The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *         matches the path pattern either for a cache behavior or for the default cache behavior.
+     *         matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *         distribution.
      */
 
     public String getTargetOriginId() {
@@ -197,12 +212,13 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @param targetOriginId
      *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior.
+     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,8 +276,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * If you want to require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
@@ -281,8 +297,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        If you want to require signed URLs in requests for objects in the target origin that match the
      *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
      *        If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
@@ -308,8 +324,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * If you want to require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
@@ -328,8 +344,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         If you want to require signed URLs in requests for objects in the target origin that match the
      *         <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *         specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *         <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *         Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     *         <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *         Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
      *         If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
@@ -355,8 +371,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * If you want to require signed URLs in requests for objects in the target origin that match the
      * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
      * the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
-     * Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+     * Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
@@ -376,8 +392,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        If you want to require signed URLs in requests for objects in the target origin that match the
      *        <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and
      *        specify the applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-     *        Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+     *        Private Content through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
      *        If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
@@ -423,7 +439,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -433,9 +449,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -465,7 +480,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about requiring the HTTPS protocol, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
      *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
@@ -475,9 +490,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @see ViewerProtocolPolicy
      */
@@ -513,7 +527,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -523,9 +537,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -554,7 +567,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information about requiring the HTTPS protocol, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
      *         HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <note>
@@ -564,9 +577,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         recommend that you clear your objects' cache because cached objects are protocol agnostic. That means
      *         that an edge location will return an object from the cache regardless of whether the current request
      *         protocol matches the protocol used previously. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *         Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *         Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      * @see ViewerProtocolPolicy
      */
@@ -602,7 +614,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -612,9 +624,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -644,7 +655,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about requiring the HTTPS protocol, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
      *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
@@ -654,9 +665,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ViewerProtocolPolicy
@@ -694,7 +704,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -704,9 +714,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -736,7 +745,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about requiring the HTTPS protocol, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
      *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
@@ -746,15 +755,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @see ViewerProtocolPolicy
      */
 
     public void setViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
+        withViewerProtocolPolicy(viewerProtocolPolicy);
     }
 
     /**
@@ -784,7 +792,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information about requiring the HTTPS protocol, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an HTTPS
      * Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <note>
@@ -794,9 +802,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -826,7 +833,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information about requiring the HTTPS protocol, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using an
      *        HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <note>
@@ -836,16 +843,15 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ViewerProtocolPolicy
      */
 
     public DefaultCacheBehavior withViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        setViewerProtocolPolicy(viewerProtocolPolicy);
+        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
         return this;
     }
 
@@ -853,9 +859,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
      * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
@@ -866,9 +871,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * @param minTTL
      *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon
-     *        CloudFront Developer Guide</i>.</p>
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
      *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
@@ -883,9 +887,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
      * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
@@ -895,10 +898,9 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * 
      * @return The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *         another request to your origin to determine whether the object has been updated. For more information,
-     *         see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *         Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon
-     *         CloudFront Developer Guide</i>.</p>
+     *         see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing
+     *         How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
+     *         Guide</i>.</p>
      *         <p>
      *         You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all
      *         headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for
@@ -913,9 +915,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
      * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
@@ -926,9 +927,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * @param minTTL
      *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon Amazon
-     *        CloudFront Developer Guide</i>.</p>
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
      *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
@@ -1053,9 +1053,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * request to your origin to determine whether the object has been updated. The value that you specify applies only
      * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param defaultTTL
@@ -1063,9 +1062,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        another request to your origin to determine whether the object has been updated. The value that you
      *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>
      *        , <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setDefaultTTL(Long defaultTTL) {
@@ -1078,9 +1076,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * request to your origin to determine whether the object has been updated. The value that you specify applies only
      * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
@@ -1088,9 +1085,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *         specify applies only when your origin does not add HTTP headers such as
      *         <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to
      *         objects. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *         Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *         Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public Long getDefaultTTL() {
@@ -1103,9 +1099,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * request to your origin to determine whether the object has been updated. The value that you specify applies only
      * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How Long
-     * Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param defaultTTL
@@ -1113,9 +1108,8 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      *        another request to your origin to determine whether the object has been updated. The value that you
      *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>
      *        , <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying How
-     *        Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the <i>Amazon CloudFront
-     *        Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1125,7 +1119,22 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
      * @param maxTTL
+     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setMaxTTL(Long maxTTL) {
@@ -1133,7 +1142,21 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *         another request to your origin to determine whether the object has been updated. The value that you
+     *         specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *         <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public Long getMaxTTL() {
@@ -1141,7 +1164,22 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
      * @param maxTTL
+     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1154,14 +1192,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify
      * <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param compress
      *        Whether you want CloudFront to automatically compress certain files for this cache behavior. If so,
      *        specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
      *        >Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -1173,13 +1211,13 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify
      * <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return Whether you want CloudFront to automatically compress certain files for this cache behavior. If so,
      *         specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
      *         >Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -1191,14 +1229,14 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify
      * <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param compress
      *        Whether you want CloudFront to automatically compress certain files for this cache behavior. If so,
      *        specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
      *        >Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1212,13 +1250,13 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify
      * <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return Whether you want CloudFront to automatically compress certain files for this cache behavior. If so,
      *         specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html"
      *         >Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
@@ -1267,7 +1305,57 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
+     * @param fieldLevelEncryptionId
+     *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *        distribution.
+     */
+
+    public void setFieldLevelEncryptionId(String fieldLevelEncryptionId) {
+        this.fieldLevelEncryptionId = fieldLevelEncryptionId;
+    }
+
+    /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
+     * @return The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *         for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *         distribution.
+     */
+
+    public String getFieldLevelEncryptionId() {
+        return this.fieldLevelEncryptionId;
+    }
+
+    /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
+     * @param fieldLevelEncryptionId
+     *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *        distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DefaultCacheBehavior withFieldLevelEncryptionId(String fieldLevelEncryptionId) {
+        setFieldLevelEncryptionId(fieldLevelEncryptionId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1298,7 +1386,9 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         if (getCompress() != null)
             sb.append("Compress: ").append(getCompress()).append(",");
         if (getLambdaFunctionAssociations() != null)
-            sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations());
+            sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations()).append(",");
+        if (getFieldLevelEncryptionId() != null)
+            sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1357,6 +1447,10 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getLambdaFunctionAssociations() != null && other.getLambdaFunctionAssociations().equals(this.getLambdaFunctionAssociations()) == false)
             return false;
+        if (other.getFieldLevelEncryptionId() == null ^ this.getFieldLevelEncryptionId() == null)
+            return false;
+        if (other.getFieldLevelEncryptionId() != null && other.getFieldLevelEncryptionId().equals(this.getFieldLevelEncryptionId()) == false)
+            return false;
         return true;
     }
 
@@ -1376,6 +1470,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode());
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
+        hashCode = prime * hashCode + ((getFieldLevelEncryptionId() == null) ? 0 : getFieldLevelEncryptionId().hashCode());
         return hashCode;
     }
 
@@ -1387,4 +1482,5 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

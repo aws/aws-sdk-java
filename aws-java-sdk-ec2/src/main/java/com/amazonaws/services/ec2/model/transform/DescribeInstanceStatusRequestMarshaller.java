@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,19 +40,6 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeInstanceStatusRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstanceStatusRequest
-                .getInstanceIds();
-        if (!describeInstanceStatusRequestInstanceIdsList.isEmpty() || !describeInstanceStatusRequestInstanceIdsList.isAutoConstruct()) {
-            int instanceIdsListIndex = 1;
-
-            for (String describeInstanceStatusRequestInstanceIdsListValue : describeInstanceStatusRequestInstanceIdsList) {
-                if (describeInstanceStatusRequestInstanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeInstanceStatusRequestInstanceIdsListValue));
-                }
-                instanceIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeInstanceStatusRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeInstanceStatusRequest
                 .getFilters();
         if (!describeInstanceStatusRequestFiltersList.isEmpty() || !describeInstanceStatusRequestFiltersList.isAutoConstruct()) {
@@ -81,12 +68,25 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        if (describeInstanceStatusRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeInstanceStatusRequest.getNextToken()));
+        com.amazonaws.internal.SdkInternalList<String> describeInstanceStatusRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstanceStatusRequest
+                .getInstanceIds();
+        if (!describeInstanceStatusRequestInstanceIdsList.isEmpty() || !describeInstanceStatusRequestInstanceIdsList.isAutoConstruct()) {
+            int instanceIdsListIndex = 1;
+
+            for (String describeInstanceStatusRequestInstanceIdsListValue : describeInstanceStatusRequestInstanceIdsList) {
+                if (describeInstanceStatusRequestInstanceIdsListValue != null) {
+                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeInstanceStatusRequestInstanceIdsListValue));
+                }
+                instanceIdsListIndex++;
+            }
         }
 
         if (describeInstanceStatusRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeInstanceStatusRequest.getMaxResults()));
+        }
+
+        if (describeInstanceStatusRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeInstanceStatusRequest.getNextToken()));
         }
 
         if (describeInstanceStatusRequest.getIncludeAllInstances() != null) {

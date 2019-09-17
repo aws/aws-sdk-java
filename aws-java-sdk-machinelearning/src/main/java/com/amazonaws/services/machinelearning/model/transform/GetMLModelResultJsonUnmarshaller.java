@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,11 @@ public class GetMLModelResultJsonUnmarshaller implements Unmarshaller<GetMLModel
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    getMLModelResult.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMLModelResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    getMLModelResult.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMLModelResult.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
@@ -103,7 +103,7 @@ public class GetMLModelResultJsonUnmarshaller implements Unmarshaller<GetMLModel
                 }
                 if (context.testExpression("ScoreThresholdLastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    getMLModelResult.setScoreThresholdLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMLModelResult.setScoreThresholdLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
@@ -119,11 +119,11 @@ public class GetMLModelResultJsonUnmarshaller implements Unmarshaller<GetMLModel
                 }
                 if (context.testExpression("FinishedAt", targetDepth)) {
                     context.nextToken();
-                    getMLModelResult.setFinishedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMLModelResult.setFinishedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StartedAt", targetDepth)) {
                     context.nextToken();
-                    getMLModelResult.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    getMLModelResult.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Recipe", targetDepth)) {
                     context.nextToken();

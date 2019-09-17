@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,13 +76,41 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                     context.nextToken();
                     tableStatistics.setFullLoadRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("FullLoadCondtnlChkFailedRows", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadCondtnlChkFailedRows(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FullLoadErrorRows", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadErrorRows(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    tableStatistics.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableStatistics.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("TableState", targetDepth)) {
                     context.nextToken();
                     tableStatistics.setTableState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationPendingRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationPendingRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationFailedRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationFailedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationSuspendedRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationSuspendedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationState", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationStateDetails", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationStateDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

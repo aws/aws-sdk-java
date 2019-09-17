@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    dataset.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    dataset.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
                     context.nextToken();

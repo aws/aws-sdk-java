@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,19 @@ package com.amazonaws.services.codebuild.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Additional information about a build phase that has an error. You can use this information to help troubleshoot a
- * failed build.
+ * Additional information about a build phase that has an error. You can use this information for troubleshooting.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PhaseContext" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PhaseContext implements Serializable, Cloneable {
+public class PhaseContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,7 +36,7 @@ public class PhaseContext implements Serializable, Cloneable {
     private String statusCode;
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     * An explanation of the build phase's context. This might include a command ID and an exit code.
      * </p>
      */
     private String message;
@@ -82,11 +83,11 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     * An explanation of the build phase's context. This might include a command ID and an exit code.
      * </p>
      * 
      * @param message
-     *        An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     *        An explanation of the build phase's context. This might include a command ID and an exit code.
      */
 
     public void setMessage(String message) {
@@ -95,11 +96,10 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     * An explanation of the build phase's context. This might include a command ID and an exit code.
      * </p>
      * 
-     * @return An explanation of the build phase's context. This explanation might include a command ID and an exit
-     *         code.
+     * @return An explanation of the build phase's context. This might include a command ID and an exit code.
      */
 
     public String getMessage() {
@@ -108,11 +108,11 @@ public class PhaseContext implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     * An explanation of the build phase's context. This might include a command ID and an exit code.
      * </p>
      * 
      * @param message
-     *        An explanation of the build phase's context. This explanation might include a command ID and an exit code.
+     *        An explanation of the build phase's context. This might include a command ID and an exit code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +122,8 @@ public class PhaseContext implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,5 +179,11 @@ public class PhaseContext implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.codebuild.model.transform.PhaseContextMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Metada includes information like the ARN of the last user and the date/time the parameter was last used.
+ * Metadata includes information like the ARN of the last user and the date/time the parameter was last used.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterMetadata" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterMetadata implements Serializable, Cloneable {
+public class ParameterMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -62,6 +64,33 @@ public class ParameterMetadata implements Serializable, Cloneable {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     */
+    private String allowedPattern;
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     */
+    private Long version;
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     */
+    private String tier;
+    /**
+     * <p>
+     * A list of policies associated with a parameter.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy> policies;
 
     /**
      * <p>
@@ -157,7 +186,7 @@ public class ParameterMetadata implements Serializable, Cloneable {
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -172,7 +201,7 @@ public class ParameterMetadata implements Serializable, Cloneable {
      */
 
     public ParameterMetadata withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -337,7 +366,249 @@ public class ParameterMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A parameter name can include only the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     */
+
+    public void setAllowedPattern(String allowedPattern) {
+        this.allowedPattern = allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @return A parameter name can include only the following letters and symbols.</p>
+     *         <p>
+     *         a-zA-Z0-9_.-
+     */
+
+    public String getAllowedPattern() {
+        return this.allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A parameter name can include only the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withAllowedPattern(String allowedPattern) {
+        setAllowedPattern(allowedPattern);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @return The parameter version.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @see ParameterTier
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @return The parameter tier.
+     * @see ParameterTier
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public ParameterMetadata withTier(String tier) {
+        setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @see ParameterTier
+     */
+
+    public void setTier(ParameterTier tier) {
+        withTier(tier);
+    }
+
+    /**
+     * <p>
+     * The parameter tier.
+     * </p>
+     * 
+     * @param tier
+     *        The parameter tier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public ParameterMetadata withTier(ParameterTier tier) {
+        this.tier = tier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of policies associated with a parameter.
+     * </p>
+     * 
+     * @return A list of policies associated with a parameter.
+     */
+
+    public java.util.List<ParameterInlinePolicy> getPolicies() {
+        if (policies == null) {
+            policies = new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>();
+        }
+        return policies;
+    }
+
+    /**
+     * <p>
+     * A list of policies associated with a parameter.
+     * </p>
+     * 
+     * @param policies
+     *        A list of policies associated with a parameter.
+     */
+
+    public void setPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
+        if (policies == null) {
+            this.policies = null;
+            return;
+        }
+
+        this.policies = new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>(policies);
+    }
+
+    /**
+     * <p>
+     * A list of policies associated with a parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPolicies(java.util.Collection)} or {@link #withPolicies(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param policies
+     *        A list of policies associated with a parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withPolicies(ParameterInlinePolicy... policies) {
+        if (this.policies == null) {
+            setPolicies(new com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy>(policies.length));
+        }
+        for (ParameterInlinePolicy ele : policies) {
+            this.policies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of policies associated with a parameter.
+     * </p>
+     * 
+     * @param policies
+     *        A list of policies associated with a parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withPolicies(java.util.Collection<ParameterInlinePolicy> policies) {
+        setPolicies(policies);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -358,7 +629,15 @@ public class ParameterMetadata implements Serializable, Cloneable {
         if (getLastModifiedUser() != null)
             sb.append("LastModifiedUser: ").append(getLastModifiedUser()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getAllowedPattern() != null)
+            sb.append("AllowedPattern: ").append(getAllowedPattern()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getTier() != null)
+            sb.append("Tier: ").append(getTier()).append(",");
+        if (getPolicies() != null)
+            sb.append("Policies: ").append(getPolicies());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +676,22 @@ public class ParameterMetadata implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getAllowedPattern() == null ^ this.getAllowedPattern() == null)
+            return false;
+        if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
+        if (other.getPolicies() == null ^ this.getPolicies() == null)
+            return false;
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +706,10 @@ public class ParameterMetadata implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedUser() == null) ? 0 : getLastModifiedUser().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         return hashCode;
     }
 
@@ -421,5 +720,11 @@ public class ParameterMetadata implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.ParameterMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

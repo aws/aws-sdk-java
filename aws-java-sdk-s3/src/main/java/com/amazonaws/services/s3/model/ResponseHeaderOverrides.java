@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container object for overriding headers on a {@link GetObjectRequest} or

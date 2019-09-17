@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,11 +14,24 @@
  */
 package com.amazonaws.client.builder;
 
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.sameInstance;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.PredefinedClientConfigurations;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -29,10 +42,10 @@ import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.AwsRegionProvider;
+import com.amazonaws.regions.RegionMetadata;
+import com.amazonaws.regions.RegionMetadataProvider;
+import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.regions.Regions;
-
-import org.junit.Test;
-
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,18 +53,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
-
+import org.junit.Test;
+import org.mockito.Mockito;
 import utils.builder.StaticExecutorFactory;
-
-import static org.hamcrest.Matchers.empty;
-import static org.hamcrest.Matchers.instanceOf;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.Matchers.sameInstance;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class AwsClientBuilderTest {
 
@@ -177,6 +181,41 @@ public class AwsClientBuilderTest {
         AwsAsyncClientParams params = builderWithRegion().build().getAsyncParams();
         assertThat(params.getCredentialsProvider(),
                    instanceOf(DefaultAWSCredentialsProviderChain.class));
+    }
+
+    @Test
+    public void regionProvidedExplicitly_WhenRegionNotFoundInMetadata_ThrowsIllegalArgumentException() throws Exception {
+        try {
+            RegionUtils.initializeWithMetadata(new RegionMetadata(Mockito.mock(RegionMetadataProvider.class)));
+            new ConcreteAsyncBuilder().withRegion(Regions.AP_NORTHEAST_1);
+            fail("Expected SdkClientException");
+        } catch (SdkClientException e) {
+            assertThat(e.getMessage(), containsString("Could not find region information"));
+        } finally {
+            // Reset region metadata
+            RegionUtils.initialize();
+        }
+    }
+
+    /**
+     * Customers may not need to explicitly configure a builder with a region if one can be found
+     * from the {@link AwsRegionProvider} implementation. We mock the provider to yield consistent
+     * results for the tests.
+     */
+    @Test
+    public void regionProvidedByChain_WhenRegionNotFoundInMetadata_ThrowsIllegalArgumentException() {
+        try {
+            RegionUtils.initializeWithMetadata(new RegionMetadata(Mockito.mock(RegionMetadataProvider.class)));
+            AwsRegionProvider mockRegionProvider = mock(AwsRegionProvider.class);
+            when(mockRegionProvider.getRegion()).thenReturn("ap-southeast-2");
+            new ConcreteAsyncBuilder(mockRegionProvider).build();
+            fail("Expected SdkClientException");
+        } catch (SdkClientException e) {
+            assertThat(e.getMessage(), containsString("Could not find region information"));
+        } finally {
+            // Reset region metadata
+            RegionUtils.initialize();
+        }
     }
 
     @Test

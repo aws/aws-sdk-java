@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 if (context.testExpression("NamePrefix", targetDepth)) {
                     context.nextToken();
                     input.setNamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InputProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    input.setInputProcessingConfiguration(InputProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("KinesisStreamsInput", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,10 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     private String state;
     /**
      * <p>
-     * The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in ascending order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of <code>10</code>.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      */
     private Integer priority;
@@ -50,7 +50,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      */
@@ -150,7 +150,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setState(JQState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -165,23 +165,23 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateJobQueueRequest withState(JQState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
     /**
      * <p>
-     * The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in ascending order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of <code>10</code>.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     *        <code>priority</code> parameter) are evaluated first when associated with same compute environment.
-     *        Priority is determined in ascending order, for example, a job queue with a priority value of
-     *        <code>1</code> is given scheduling preference over a job queue with a priority value of <code>10</code>.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
 
     public void setPriority(Integer priority) {
@@ -190,16 +190,16 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in ascending order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of <code>10</code>.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
-     * @return The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     *         <code>priority</code> parameter) are evaluated first when associated with same compute environment.
-     *         Priority is determined in ascending order, for example, a job queue with a priority value of
-     *         <code>1</code> is given scheduling preference over a job queue with a priority value of <code>10</code>.
+     * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *         Priority is determined in descending order, for example, a job queue with a priority value of
+     *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      */
 
     public Integer getPriority() {
@@ -208,17 +208,17 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     * <code>priority</code> parameter) are evaluated first when associated with same compute environment. Priority is
-     * determined in ascending order, for example, a job queue with a priority value of <code>1</code> is given
-     * scheduling preference over a job queue with a priority value of <code>10</code>.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue. Job queues with a higher priority (or a lower integer value for the
-     *        <code>priority</code> parameter) are evaluated first when associated with same compute environment.
-     *        Priority is determined in ascending order, for example, a job queue with a priority value of
-     *        <code>1</code> is given scheduling preference over a job queue with a priority value of <code>10</code>.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,14 +231,14 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
      * @return The set of compute environments mapped to a job queue and their order relative to each other. The job
      *         scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *         environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *         can associate up to 3 compute environments with a job queue.
+     *         can associate up to three compute environments with a job queue.
      */
 
     public java.util.List<ComputeEnvironmentOrder> getComputeEnvironmentOrder() {
@@ -249,7 +249,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
@@ -257,7 +257,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -273,7 +273,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * <p>
@@ -286,7 +286,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,7 +304,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
@@ -312,7 +312,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +322,8 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

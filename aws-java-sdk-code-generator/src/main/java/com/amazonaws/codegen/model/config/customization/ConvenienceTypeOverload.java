@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -118,6 +118,6 @@ public class ConvenienceTypeOverload {
      * @return True if the {@link ConvenienceTypeOverload} applies. False otherwise
      */
     public boolean accepts(ShapeModel shape, MemberModel member) {
-        return shape.getC2jName().equals(shapeName) && member.getName().equals(memberName);
+        return shape.getC2jName().equals(shapeName) && member.getC2jName().equals(memberName);
     }
 }

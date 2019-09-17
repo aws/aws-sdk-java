@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobDefinition implements Serializable, Cloneable {
+public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -60,16 +62,37 @@ public class JobDefinition implements Serializable, Cloneable {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> parameters;
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
     /**
      * <p>
      * An object with various properties specific to container-based jobs.
      * </p>
      */
     private ContainerProperties containerProperties;
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     */
+    private JobTimeout timeout;
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
 
     /**
      * <p>
@@ -275,12 +298,17 @@ public class JobDefinition implements Serializable, Cloneable {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *         are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *         corresponding parameter defaults from the job definition.
+     *         corresponding parameter defaults from the job definition. For more information about specifying
+     *         parameters, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *         Parameters</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -291,13 +319,18 @@ public class JobDefinition implements Serializable, Cloneable {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
      *        Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *        are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *        corresponding parameter defaults from the job definition.
+     *        corresponding parameter defaults from the job definition. For more information about specifying
+     *        parameters, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -308,13 +341,18 @@ public class JobDefinition implements Serializable, Cloneable {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
      *        Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *        are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *        corresponding parameter defaults from the job definition.
+     *        corresponding parameter defaults from the job definition. For more information about specifying
+     *        parameters, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,6 +379,46 @@ public class JobDefinition implements Serializable, Cloneable {
 
     public JobDefinition clearParametersEntries() {
         this.parameters = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @return The retry strategy to use for failed jobs that are submitted with this job definition.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for failed jobs that are submitted with this job definition.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for failed jobs that are submitted with this job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
         return this;
     }
 
@@ -385,7 +463,94 @@ public class JobDefinition implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @return The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *         duration after which AWS Batch terminates your jobs if they have not finished.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @return An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -407,8 +572,14 @@ public class JobDefinition implements Serializable, Cloneable {
             sb.append("Type: ").append(getType()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: ").append(getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -447,9 +618,21 @@ public class JobDefinition implements Serializable, Cloneable {
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         if (other.getContainerProperties() == null ^ this.getContainerProperties() == null)
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
+            return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
             return false;
         return true;
     }
@@ -465,7 +648,10 @@ public class JobDefinition implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         return hashCode;
     }
 
@@ -476,5 +662,11 @@ public class JobDefinition implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.JobDefinitionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

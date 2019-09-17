@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -221,6 +221,10 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
         this.executorService = executorService;
     }
 
+    public static AmazonImportExportAsyncClientBuilder asyncBuilder() {
+        return AmazonImportExportAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Import/Export using the specified
      * parameters.
@@ -251,14 +255,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(final CancelJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
+        final CancelJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelJobResult>() {
             @Override
             public CancelJobResult call() throws Exception {
-                CancelJobResult result;
+                CancelJobResult result = null;
 
                 try {
-                    result = cancelJob(request);
+                    result = executeCancelJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -267,7 +272,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -283,14 +288,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(final CreateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
+        final CreateJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateJobResult>() {
             @Override
             public CreateJobResult call() throws Exception {
-                CreateJobResult result;
+                CreateJobResult result = null;
 
                 try {
-                    result = createJob(request);
+                    result = executeCreateJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -299,7 +305,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -315,14 +321,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<GetShippingLabelResult> getShippingLabelAsync(final GetShippingLabelRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetShippingLabelRequest, GetShippingLabelResult> asyncHandler) {
+        final GetShippingLabelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetShippingLabelResult>() {
             @Override
             public GetShippingLabelResult call() throws Exception {
-                GetShippingLabelResult result;
+                GetShippingLabelResult result = null;
 
                 try {
-                    result = getShippingLabel(request);
+                    result = executeGetShippingLabel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -331,7 +338,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -347,14 +354,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<GetStatusResult> getStatusAsync(final GetStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStatusRequest, GetStatusResult> asyncHandler) {
+        final GetStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStatusResult>() {
             @Override
             public GetStatusResult call() throws Exception {
-                GetStatusResult result;
+                GetStatusResult result = null;
 
                 try {
-                    result = getStatus(request);
+                    result = executeGetStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +371,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -379,14 +387,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(final ListJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+        final ListJobsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListJobsResult>() {
             @Override
             public ListJobsResult call() throws Exception {
-                ListJobsResult result;
+                ListJobsResult result = null;
 
                 try {
-                    result = listJobs(request);
+                    result = executeListJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,7 +404,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -418,6 +427,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
      *
      * @see #listJobsAsync(ListJobsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
 
         return listJobsAsync(new ListJobsRequest(), asyncHandler);
@@ -432,14 +442,15 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
     @Override
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(final UpdateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler) {
+        final UpdateJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateJobResult>() {
             @Override
             public UpdateJobResult call() throws Exception {
-                UpdateJobResult result;
+                UpdateJobResult result = null;
 
                 try {
-                    result = updateJob(request);
+                    result = executeUpdateJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -448,7 +459,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient impl
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

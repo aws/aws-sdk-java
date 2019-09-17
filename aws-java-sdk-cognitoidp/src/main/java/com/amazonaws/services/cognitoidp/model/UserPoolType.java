@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,17 +14,19 @@ package com.amazonaws.services.cognitoidp.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container with information about the user pool type.
+ * A container for information about the user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserPoolType implements Serializable, Cloneable {
+public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,13 +42,13 @@ public class UserPoolType implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      */
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
@@ -58,13 +60,13 @@ public class UserPoolType implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -88,6 +90,12 @@ public class UserPoolType implements Serializable, Cloneable {
     private java.util.List<String> aliasAttributes;
     /**
      * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     */
+    private java.util.List<String> usernameAttributes;
+    /**
+     * <p>
      * The contents of the SMS verification message.
      * </p>
      */
@@ -104,6 +112,12 @@ public class UserPoolType implements Serializable, Cloneable {
      * </p>
      */
     private String emailVerificationSubject;
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     */
+    private VerificationMessageTemplateType verificationMessageTemplate;
     /**
      * <p>
      * The contents of the SMS authentication message.
@@ -160,15 +174,14 @@ public class UserPoolType implements Serializable, Cloneable {
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      */
     private java.util.Map<String, String> userPoolTags;
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      */
     private String smsConfigurationFailure;
@@ -180,10 +193,40 @@ public class UserPoolType implements Serializable, Cloneable {
     private String emailConfigurationFailure;
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     */
+    private String customDomain;
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     */
+    private UserPoolAddOnsType userPoolAddOns;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -267,11 +310,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
      * @param policies
-     *        A container describing the policies associated with a user pool.
+     *        The policies associated with the user pool.
      */
 
     public void setPolicies(UserPoolPolicyType policies) {
@@ -280,10 +323,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
-     * @return A container describing the policies associated with a user pool.
+     * @return The policies associated with the user pool.
      */
 
     public UserPoolPolicyType getPolicies() {
@@ -292,11 +335,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * The policies associated with the user pool.
      * </p>
      * 
      * @param policies
-     *        A container describing the policies associated with a user pool.
+     *        The policies associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,11 +350,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a user pool.
+     *        The AWS Lambda triggers associated with the user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -320,10 +363,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
-     * @return A container describing the AWS Lambda triggers associated with a user pool.
+     * @return The AWS Lambda triggers associated with the user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -332,11 +375,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a user pool.
+     *        The AWS Lambda triggers associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,7 +442,7 @@ public class UserPoolType implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -414,17 +457,17 @@ public class UserPoolType implements Serializable, Cloneable {
      */
 
     public UserPoolType withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date of a user pool.
+     *        The date the user pool was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -433,10 +476,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
-     * @return The last modified date of a user pool.
+     * @return The date the user pool was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -445,11 +488,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date of a user pool.
+     *        The date the user pool was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,11 +503,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date of a user pool.
+     *        The date the user pool was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -473,10 +516,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
-     * @return The creation date of a user pool.
+     * @return The date the user pool was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -485,11 +528,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date of a user pool.
+     *        The date the user pool was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -766,6 +809,104 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @return Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @see UsernameAttributeType
+     */
+
+    public java.util.List<String> getUsernameAttributes() {
+        return usernameAttributes;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @see UsernameAttributeType
+     */
+
+    public void setUsernameAttributes(java.util.Collection<String> usernameAttributes) {
+        if (usernameAttributes == null) {
+            this.usernameAttributes = null;
+            return;
+        }
+
+        this.usernameAttributes = new java.util.ArrayList<String>(usernameAttributes);
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsernameAttributes(java.util.Collection)} or {@link #withUsernameAttributes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(String... usernameAttributes) {
+        if (this.usernameAttributes == null) {
+            setUsernameAttributes(new java.util.ArrayList<String>(usernameAttributes.length));
+        }
+        for (String ele : usernameAttributes) {
+            this.usernameAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(java.util.Collection<String> usernameAttributes) {
+        setUsernameAttributes(usernameAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(UsernameAttributeType... usernameAttributes) {
+        java.util.ArrayList<String> usernameAttributesCopy = new java.util.ArrayList<String>(usernameAttributes.length);
+        for (UsernameAttributeType value : usernameAttributes) {
+            usernameAttributesCopy.add(value.toString());
+        }
+        if (getUsernameAttributes() == null) {
+            setUsernameAttributes(usernameAttributesCopy);
+        } else {
+            getUsernameAttributes().addAll(usernameAttributesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The contents of the SMS verification message.
      * </p>
      * 
@@ -881,6 +1022,46 @@ public class UserPoolType implements Serializable, Cloneable {
 
     public UserPoolType withEmailVerificationSubject(String emailVerificationSubject) {
         setEmailVerificationSubject(emailVerificationSubject);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     */
+
+    public void setVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        this.verificationMessageTemplate = verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @return The template for verification messages.
+     */
+
+    public VerificationMessageTemplateType getVerificationMessageTemplate() {
+        return this.verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        setVerificationMessageTemplate(verificationMessageTemplate);
         return this;
     }
 
@@ -1118,7 +1299,7 @@ public class UserPoolType implements Serializable, Cloneable {
      */
 
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        this.mfaConfiguration = mfaConfiguration.toString();
+        withMfaConfiguration(mfaConfiguration);
     }
 
     /**
@@ -1168,7 +1349,7 @@ public class UserPoolType implements Serializable, Cloneable {
      */
 
     public UserPoolType withMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        setMfaConfiguration(mfaConfiguration);
+        this.mfaConfiguration = mfaConfiguration.toString();
         return this;
     }
 
@@ -1334,14 +1515,12 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
-     * @return The cost allocation tags for the user pool. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *         categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public java.util.Map<String, String> getUserPoolTags() {
@@ -1350,15 +1529,13 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
@@ -1367,15 +1544,13 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1407,11 +1582,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.
      */
 
     public void setSmsConfigurationFailure(String smsConfigurationFailure) {
@@ -1420,10 +1595,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
-     * @return The reason why the SMS configuration cannot send the message(s) to your users.
+     * @return The reason why the SMS configuration cannot send the messages to your users.
      */
 
     public String getSmsConfigurationFailure() {
@@ -1432,11 +1607,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1487,11 +1662,127 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @return Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
+     */
+
+    public void setCustomDomain(String customDomain) {
+        this.customDomain = customDomain;
+    }
+
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @return A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *         domain to host the sign-up and sign-in pages for your application. For example:
+     *         <code>auth.example.com</code>.</p>
+     *         <p>
+     *         For more information about adding a custom domain to your user pool, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *         >Using Your Own Domain for the Hosted UI</a>.
+     */
+
+    public String getCustomDomain() {
+        return this.customDomain;
+    }
+
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withCustomDomain(String customDomain) {
+        setCustomDomain(customDomain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
@@ -1500,10 +1791,10 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
-     * @return The configuration for AdminCreateUser requests.
+     * @return The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public AdminCreateUserConfigType getAdminCreateUserConfig() {
@@ -1512,11 +1803,11 @@ public class UserPoolType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1526,7 +1817,88 @@ public class UserPoolType implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        The user pool add-ons.
+     */
+
+    public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        this.userPoolAddOns = userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @return The user pool add-ons.
+     */
+
+    public UserPoolAddOnsType getUserPoolAddOns() {
+        return this.userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * The user pool add-ons.
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        The user pool add-ons.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        setUserPoolAddOns(userPoolAddOns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the user pool.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the user pool.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the user pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1556,12 +1928,16 @@ public class UserPoolType implements Serializable, Cloneable {
             sb.append("AutoVerifiedAttributes: ").append(getAutoVerifiedAttributes()).append(",");
         if (getAliasAttributes() != null)
             sb.append("AliasAttributes: ").append(getAliasAttributes()).append(",");
+        if (getUsernameAttributes() != null)
+            sb.append("UsernameAttributes: ").append(getUsernameAttributes()).append(",");
         if (getSmsVerificationMessage() != null)
             sb.append("SmsVerificationMessage: ").append(getSmsVerificationMessage()).append(",");
         if (getEmailVerificationMessage() != null)
             sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
             sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
+        if (getVerificationMessageTemplate() != null)
+            sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
@@ -1580,8 +1956,16 @@ public class UserPoolType implements Serializable, Cloneable {
             sb.append("SmsConfigurationFailure: ").append(getSmsConfigurationFailure()).append(",");
         if (getEmailConfigurationFailure() != null)
             sb.append("EmailConfigurationFailure: ").append(getEmailConfigurationFailure()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getCustomDomain() != null)
+            sb.append("CustomDomain: ").append(getCustomDomain()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
+        if (getUserPoolAddOns() != null)
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1636,6 +2020,10 @@ public class UserPoolType implements Serializable, Cloneable {
             return false;
         if (other.getAliasAttributes() != null && other.getAliasAttributes().equals(this.getAliasAttributes()) == false)
             return false;
+        if (other.getUsernameAttributes() == null ^ this.getUsernameAttributes() == null)
+            return false;
+        if (other.getUsernameAttributes() != null && other.getUsernameAttributes().equals(this.getUsernameAttributes()) == false)
+            return false;
         if (other.getSmsVerificationMessage() == null ^ this.getSmsVerificationMessage() == null)
             return false;
         if (other.getSmsVerificationMessage() != null && other.getSmsVerificationMessage().equals(this.getSmsVerificationMessage()) == false)
@@ -1647,6 +2035,10 @@ public class UserPoolType implements Serializable, Cloneable {
         if (other.getEmailVerificationSubject() == null ^ this.getEmailVerificationSubject() == null)
             return false;
         if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
+            return false;
+        if (other.getVerificationMessageTemplate() == null ^ this.getVerificationMessageTemplate() == null)
+            return false;
+        if (other.getVerificationMessageTemplate() != null && other.getVerificationMessageTemplate().equals(this.getVerificationMessageTemplate()) == false)
             return false;
         if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
@@ -1684,9 +2076,25 @@ public class UserPoolType implements Serializable, Cloneable {
             return false;
         if (other.getEmailConfigurationFailure() != null && other.getEmailConfigurationFailure().equals(this.getEmailConfigurationFailure()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getCustomDomain() == null ^ this.getCustomDomain() == null)
+            return false;
+        if (other.getCustomDomain() != null && other.getCustomDomain().equals(this.getCustomDomain()) == false)
+            return false;
         if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
+            return false;
+        if (other.getUserPoolAddOns() == null ^ this.getUserPoolAddOns() == null)
+            return false;
+        if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -1706,9 +2114,11 @@ public class UserPoolType implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSchemaAttributes() == null) ? 0 : getSchemaAttributes().hashCode());
         hashCode = prime * hashCode + ((getAutoVerifiedAttributes() == null) ? 0 : getAutoVerifiedAttributes().hashCode());
         hashCode = prime * hashCode + ((getAliasAttributes() == null) ? 0 : getAliasAttributes().hashCode());
+        hashCode = prime * hashCode + ((getUsernameAttributes() == null) ? 0 : getUsernameAttributes().hashCode());
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
@@ -1718,7 +2128,11 @@ public class UserPoolType implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomain() == null) ? 0 : getCustomDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 
@@ -1729,5 +2143,11 @@ public class UserPoolType implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitoidp.model.transform.UserPoolTypeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

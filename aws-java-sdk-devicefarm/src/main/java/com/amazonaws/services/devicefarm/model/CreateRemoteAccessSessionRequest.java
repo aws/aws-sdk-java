@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,16 +42,92 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     private String deviceArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     */
+    private String instanceArn;
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String sshPublicKey;
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     */
+    private Boolean remoteDebugEnabled;
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     */
+    private Boolean remoteRecordEnabled;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     */
+    private String remoteRecordAppArn;
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      */
     private String name;
     /**
      * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String clientId;
+    /**
+     * <p>
      * The configuration information for the remote access session request.
      * </p>
      */
     private CreateRemoteAccessSessionConfiguration configuration;
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String interactionMode;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
 
     /**
      * <p>
@@ -135,6 +211,246 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *        session.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *         session.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *        session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *        <code>true</code>.
+     */
+
+    public void setSshPublicKey(String sshPublicKey) {
+        this.sshPublicKey = sshPublicKey;
+    }
+
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *         remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *         <code>true</code>.
+     */
+
+    public String getSshPublicKey() {
+        return this.sshPublicKey;
+    }
+
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withSshPublicKey(String sshPublicKey) {
+        setSshPublicKey(sshPublicKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *        session.
+     */
+
+    public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        this.remoteDebugEnabled = remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *         session.
+     */
+
+    public Boolean getRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *        session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        setRemoteDebugEnabled(remoteDebugEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *         session.
+     */
+
+    public Boolean isRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordEnabled
+     *        Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public void setRemoteRecordEnabled(Boolean remoteRecordEnabled) {
+        this.remoteRecordEnabled = remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public Boolean getRemoteRecordEnabled() {
+        return this.remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordEnabled
+     *        Set to <code>true</code> to enable remote recording for the remote access session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteRecordEnabled(Boolean remoteRecordEnabled) {
+        setRemoteRecordEnabled(remoteRecordEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public Boolean isRemoteRecordEnabled() {
+        return this.remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordAppArn
+     *        The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     */
+
+    public void setRemoteRecordAppArn(String remoteRecordAppArn) {
+        this.remoteRecordAppArn = remoteRecordAppArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     */
+
+    public String getRemoteRecordAppArn() {
+        return this.remoteRecordAppArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordAppArn
+     *        The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteRecordAppArn(String remoteRecordAppArn) {
+        setRemoteRecordAppArn(remoteRecordAppArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      * 
@@ -170,6 +486,58 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     public CreateRemoteAccessSessionRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param clientId
+     *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     */
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *         pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *         required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     */
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param clientId
+     *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withClientId(String clientId) {
+        setClientId(clientId);
         return this;
     }
 
@@ -214,7 +582,315 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @see InteractionMode
+     */
+
+    public void setInteractionMode(String interactionMode) {
+        this.interactionMode = interactionMode;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The interaction mode of the remote access session. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *         <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *         the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *         framework-based tests and watch the screen in this mode.
+     *         </p>
+     *         </li>
+     * @see InteractionMode
+     */
+
+    public String getInteractionMode() {
+        return this.interactionMode;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InteractionMode
+     */
+
+    public CreateRemoteAccessSessionRequest withInteractionMode(String interactionMode) {
+        setInteractionMode(interactionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InteractionMode
+     */
+
+    public CreateRemoteAccessSessionRequest withInteractionMode(InteractionMode interactionMode) {
+        this.interactionMode = interactionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -228,10 +904,26 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getDeviceArn() != null)
             sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
+        if (getSshPublicKey() != null)
+            sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
+        if (getRemoteDebugEnabled() != null)
+            sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
+        if (getRemoteRecordEnabled() != null)
+            sb.append("RemoteRecordEnabled: ").append(getRemoteRecordEnabled()).append(",");
+        if (getRemoteRecordAppArn() != null)
+            sb.append("RemoteRecordAppArn: ").append(getRemoteRecordAppArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getClientId() != null)
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getInteractionMode() != null)
+            sb.append("InteractionMode: ").append(getInteractionMode()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
         return sb.toString();
     }
@@ -254,13 +946,45 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDeviceArn() != null && other.getDeviceArn().equals(this.getDeviceArn()) == false)
             return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
+            return false;
+        if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null)
+            return false;
+        if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false)
+            return false;
+        if (other.getRemoteDebugEnabled() == null ^ this.getRemoteDebugEnabled() == null)
+            return false;
+        if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
+            return false;
+        if (other.getRemoteRecordEnabled() == null ^ this.getRemoteRecordEnabled() == null)
+            return false;
+        if (other.getRemoteRecordEnabled() != null && other.getRemoteRecordEnabled().equals(this.getRemoteRecordEnabled()) == false)
+            return false;
+        if (other.getRemoteRecordAppArn() == null ^ this.getRemoteRecordAppArn() == null)
+            return false;
+        if (other.getRemoteRecordAppArn() != null && other.getRemoteRecordAppArn().equals(this.getRemoteRecordAppArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getClientId() == null ^ this.getClientId() == null)
+            return false;
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
+            return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getInteractionMode() == null ^ this.getInteractionMode() == null)
+            return false;
+        if (other.getInteractionMode() != null && other.getInteractionMode().equals(this.getInteractionMode()) == false)
+            return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
             return false;
         return true;
     }
@@ -272,8 +996,16 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteRecordEnabled() == null) ? 0 : getRemoteRecordEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteRecordAppArn() == null) ? 0 : getRemoteRecordAppArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInteractionMode() == null) ? 0 : getInteractionMode().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }
 

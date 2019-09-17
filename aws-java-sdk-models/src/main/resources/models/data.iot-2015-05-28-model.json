@@ -1,1102 +1,336 @@
 {
-  "authorizers" : { },
-  "metadata" : {
-    "apiVersion" : "2015-05-28",
-    "endpointPrefix" : "data.iot",
-    "jsonVersion" : null,
-    "protocol" : "rest-json",
-    "resultWrapped" : false,
-    "serviceAbbreviation" : null,
-    "serviceFullName" : "AWS IoT Data Plane",
-    "signatureVersion" : "v4",
-    "signingName" : "iotdata",
-    "targetPrefix" : null,
-    "uid" : "iot-data-2015-05-28",
-    "xmlNamespace" : null
+  "version":"2.0",
+  "metadata":{
+    "uid":"iot-data-2015-05-28",
+    "apiVersion":"2015-05-28",
+    "endpointPrefix":"data.iot",
+    "protocol":"rest-json",
+    "serviceFullName":"AWS IoT Data Plane",
+    "signatureVersion":"v4",
+    "signingName":"iotdata"
   },
-  "operations" : {
-    "DeleteThingShadow" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidRequestException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ThrottlingException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnauthorizedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ServiceUnavailableException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalFailureException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "MethodNotAllowedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnsupportedDocumentEncodingException"
-      } ],
-      "http" : {
-        "method" : "DELETE",
-        "requestUri" : "/things/{thingName}/shadow",
-        "responseCode" : null
+  "operations":{
+    "DeleteThingShadow":{
+      "name":"DeleteThingShadow",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/things/{thingName}/shadow"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteThingShadowRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteThingShadow",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DeleteThingShadowResponse"
-      }
+      "input":{"shape":"DeleteThingShadowRequest"},
+      "output":{"shape":"DeleteThingShadowResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"MethodNotAllowedException"},
+        {"shape":"UnsupportedDocumentEncodingException"}
+      ],
+      "documentation":"<p>Deletes the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html\">DeleteThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>"
     },
-    "GetThingShadow" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidRequestException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ThrottlingException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnauthorizedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ServiceUnavailableException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalFailureException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "MethodNotAllowedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnsupportedDocumentEncodingException"
-      } ],
-      "http" : {
-        "method" : "GET",
-        "requestUri" : "/things/{thingName}/shadow",
-        "responseCode" : null
+    "GetThingShadow":{
+      "name":"GetThingShadow",
+      "http":{
+        "method":"GET",
+        "requestUri":"/things/{thingName}/shadow"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "GetThingShadowRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "GetThingShadow",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "GetThingShadowResponse"
-      }
+      "input":{"shape":"GetThingShadowRequest"},
+      "output":{"shape":"GetThingShadowResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"MethodNotAllowedException"},
+        {"shape":"UnsupportedDocumentEncodingException"}
+      ],
+      "documentation":"<p>Gets the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html\">GetThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>"
     },
-    "Publish" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalFailureException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidRequestException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnauthorizedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "MethodNotAllowedException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/topics/{topic}",
-        "responseCode" : null
+    "Publish":{
+      "name":"Publish",
+      "http":{
+        "method":"POST",
+        "requestUri":"/topics/{topic}"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PublishRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "Publish",
-      "output" : null
+      "input":{"shape":"PublishRequest"},
+      "errors":[
+        {"shape":"InternalFailureException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"MethodNotAllowedException"}
+      ],
+      "documentation":"<p>Publishes state information.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http\">HTTP Protocol</a> in the <i>AWS IoT Developer Guide</i>.</p>"
     },
-    "UpdateThingShadow" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConflictException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "RequestEntityTooLargeException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidRequestException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ThrottlingException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnauthorizedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ServiceUnavailableException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalFailureException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "MethodNotAllowedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "UnsupportedDocumentEncodingException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/things/{thingName}/shadow",
-        "responseCode" : null
+    "UpdateThingShadow":{
+      "name":"UpdateThingShadow",
+      "http":{
+        "method":"POST",
+        "requestUri":"/things/{thingName}/shadow"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "UpdateThingShadowRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "UpdateThingShadow",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "UpdateThingShadowResponse"
-      }
+      "input":{"shape":"UpdateThingShadowRequest"},
+      "output":{"shape":"UpdateThingShadowResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"RequestEntityTooLargeException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"InternalFailureException"},
+        {"shape":"MethodNotAllowedException"},
+        {"shape":"UnsupportedDocumentEncodingException"}
+      ],
+      "documentation":"<p>Updates the thing shadow for the specified thing.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html\">UpdateThingShadow</a> in the <i>AWS IoT Developer Guide</i>.</p>"
     }
   },
-  "shapes" : {
-    "ConflictException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The specified version does not match the version of the document.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 409
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+  "shapes":{
+    "ConflictException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The specified version does not match the version of the document.</p>",
+      "error":{"httpStatusCode":409},
+      "exception":true
     },
-    "DeleteThingShadowRequest" : {
-      "deprecated" : false,
-      "documentation" : "<p>The input for the DeleteThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "thingName" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the thing.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : "uri",
-          "locationName" : "thingName",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ThingName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "DeleteThingShadowRequest":{
+      "type":"structure",
+      "required":["thingName"],
+      "members":{
+        "thingName":{
+          "shape":"ThingName",
+          "documentation":"<p>The name of the thing.</p>",
+          "location":"uri",
+          "locationName":"thingName"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "thingName" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The input for the DeleteThingShadow operation.</p>"
     },
-    "DeleteThingShadowResponse" : {
-      "deprecated" : false,
-      "documentation" : "<p>The output from the DeleteThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "payload" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "JsonDocument",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "DeleteThingShadowResponse":{
+      "type":"structure",
+      "required":["payload"],
+      "members":{
+        "payload":{
+          "shape":"JsonDocument",
+          "documentation":"<p>The state information, in JSON format.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : "payload",
-      "required" : [ "payload" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The output from the DeleteThingShadow operation.</p>",
+      "payload":"payload"
     },
-    "ErrorMessage" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "GetThingShadowRequest" : {
-      "deprecated" : false,
-      "documentation" : "<p>The input for the GetThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "thingName" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the thing.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : "uri",
-          "locationName" : "thingName",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ThingName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "ErrorMessage":{"type":"string"},
+    "GetThingShadowRequest":{
+      "type":"structure",
+      "required":["thingName"],
+      "members":{
+        "thingName":{
+          "shape":"ThingName",
+          "documentation":"<p>The name of the thing.</p>",
+          "location":"uri",
+          "locationName":"thingName"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "thingName" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The input for the GetThingShadow operation.</p>"
     },
-    "GetThingShadowResponse" : {
-      "deprecated" : false,
-      "documentation" : "<p>The output from the GetThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "payload" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "JsonDocument",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "GetThingShadowResponse":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"JsonDocument",
+          "documentation":"<p>The state information, in JSON format.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : "payload",
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The output from the GetThingShadow operation.</p>",
+      "payload":"payload"
     },
-    "InternalFailureException" : {
-      "deprecated" : false,
-      "documentation" : "<p>An unexpected error has occurred.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 500
-      },
-      "exception" : true,
-      "fault" : true,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "InternalFailureException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>An unexpected error has occurred.</p>",
+      "error":{"httpStatusCode":500},
+      "exception":true,
+      "fault":true
     },
-    "InvalidRequestException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The request is not valid.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 400
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "InvalidRequestException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The request is not valid.</p>",
+      "error":{"httpStatusCode":400},
+      "exception":true
     },
-    "JsonDocument" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "blob",
-      "value" : null,
-      "wrapper" : false
-    },
-    "MethodNotAllowedException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 405
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "JsonDocument":{"type":"blob"},
+    "MethodNotAllowedException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The specified combination of HTTP verb and URI is not supported.</p>",
+      "error":{"httpStatusCode":405},
+      "exception":true
     },
-    "Payload" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "blob",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PublishRequest" : {
-      "deprecated" : false,
-      "documentation" : "<p>The input for the Publish operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "payload" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Payload",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "Payload":{"type":"blob"},
+    "PublishRequest":{
+      "type":"structure",
+      "required":["topic"],
+      "members":{
+        "topic":{
+          "shape":"Topic",
+          "documentation":"<p>The name of the MQTT topic.</p>",
+          "location":"uri",
+          "locationName":"topic"
         },
-        "qos" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Quality of Service (QoS) level.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : "querystring",
-          "locationName" : "qos",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Qos",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "qos":{
+          "shape":"Qos",
+          "documentation":"<p>The Quality of Service (QoS) level.</p>",
+          "location":"querystring",
+          "locationName":"qos"
         },
-        "topic" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the MQTT topic.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : "uri",
-          "locationName" : "topic",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Topic",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "payload":{
+          "shape":"Payload",
+          "documentation":"<p>The state information, in JSON format.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : "payload",
-      "required" : [ "topic" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The input for the Publish operation.</p>",
+      "payload":"payload"
     },
-    "Qos" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 1,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
+    "Qos":{
+      "type":"integer",
+      "max":1,
+      "min":0
     },
-    "RequestEntityTooLargeException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The payload exceeds the maximum size allowed.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 413
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "RequestEntityTooLargeException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The payload exceeds the maximum size allowed.</p>",
+      "error":{"httpStatusCode":413},
+      "exception":true
     },
-    "ResourceNotFoundException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The specified resource does not exist.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 404
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "ResourceNotFoundException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The specified resource does not exist.</p>",
+      "error":{"httpStatusCode":404},
+      "exception":true
     },
-    "ServiceUnavailableException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The service is temporarily unavailable.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 503
-      },
-      "exception" : true,
-      "fault" : true,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "ServiceUnavailableException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The service is temporarily unavailable.</p>",
+      "error":{"httpStatusCode":503},
+      "exception":true,
+      "fault":true
     },
-    "ThingName" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 128,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "[a-zA-Z0-9_-]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "ThingName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
     },
-    "ThrottlingException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The rate exceeds the limit.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 429
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The rate exceeds the limit.</p>",
+      "error":{"httpStatusCode":429},
+      "exception":true
     },
-    "Topic" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "UnauthorizedException" : {
-      "deprecated" : false,
-      "documentation" : "<p>You are not authorized to perform this operation.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 401
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "Topic":{"type":"string"},
+    "UnauthorizedException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>You are not authorized to perform this operation.</p>",
+      "error":{"httpStatusCode":401},
+      "exception":true
     },
-    "UnsupportedDocumentEncodingException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The document encoding is not supported.</p>",
-      "enum" : null,
-      "error" : {
-        "code" : null,
-        "httpStatusCode" : 415
-      },
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : "<p>The message for the exception.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "UnsupportedDocumentEncodingException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"errorMessage",
+          "documentation":"<p>The message for the exception.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The document encoding is not supported.</p>",
+      "error":{"httpStatusCode":415},
+      "exception":true
     },
-    "UpdateThingShadowRequest" : {
-      "deprecated" : false,
-      "documentation" : "<p>The input for the UpdateThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "payload" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "JsonDocument",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "UpdateThingShadowRequest":{
+      "type":"structure",
+      "required":[
+        "thingName",
+        "payload"
+      ],
+      "members":{
+        "thingName":{
+          "shape":"ThingName",
+          "documentation":"<p>The name of the thing.</p>",
+          "location":"uri",
+          "locationName":"thingName"
         },
-        "thingName" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the thing.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : "uri",
-          "locationName" : "thingName",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ThingName",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "payload":{
+          "shape":"JsonDocument",
+          "documentation":"<p>The state information, in JSON format.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : "payload",
-      "required" : [ "thingName", "payload" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The input for the UpdateThingShadow operation.</p>",
+      "payload":"payload"
     },
-    "UpdateThingShadowResponse" : {
-      "deprecated" : false,
-      "documentation" : "<p>The output from the UpdateThingShadow operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "payload" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state information, in JSON format.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "JsonDocument",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "UpdateThingShadowResponse":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"JsonDocument",
+          "documentation":"<p>The state information, in JSON format.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : "payload",
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The output from the UpdateThingShadow operation.</p>",
+      "payload":"payload"
     },
-    "errorMessage" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    }
+    "errorMessage":{"type":"string"}
   },
-  "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>"
+  "documentation":"<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>"
 }

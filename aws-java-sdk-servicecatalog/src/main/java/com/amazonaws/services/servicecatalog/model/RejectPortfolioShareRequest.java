@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,25 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
@@ -49,37 +54,74 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String portfolioId;
+    /**
+     * <p>
+     * The type of shared portfolios to reject. The default is to reject imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example,
+     * <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * </p>
+     */
+    private String portfolioShareType;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -88,33 +130,43 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -123,34 +175,44 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,7 +262,231 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The type of shared portfolios to reject. The default is to reject imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example,
+     * <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * </p>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - Reject imported portfolios.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example,
+     *        <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * @see PortfolioShareType
+     */
+
+    public void setPortfolioShareType(String portfolioShareType) {
+        this.portfolioShareType = portfolioShareType;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to reject. The default is to reject imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example,
+     * <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * </p>
+     * 
+     * @return The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IMPORTED</code> - Reject imported portfolios.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example,
+     *         <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * @see PortfolioShareType
+     */
+
+    public String getPortfolioShareType() {
+        return this.portfolioShareType;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to reject. The default is to reject imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example,
+     * <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * </p>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - Reject imported portfolios.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example,
+     *        <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PortfolioShareType
+     */
+
+    public RejectPortfolioShareRequest withPortfolioShareType(String portfolioShareType) {
+        setPortfolioShareType(portfolioShareType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to reject. The default is to reject imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example,
+     * <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * </p>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to reject. The default is to reject imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the master account of your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - Reject imported portfolios.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example,
+     *        <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PortfolioShareType
+     */
+
+    public RejectPortfolioShareRequest withPortfolioShareType(PortfolioShareType portfolioShareType) {
+        this.portfolioShareType = portfolioShareType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -213,7 +499,9 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: ").append(getPortfolioId());
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
+        if (getPortfolioShareType() != null)
+            sb.append("PortfolioShareType: ").append(getPortfolioShareType());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +524,10 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getPortfolioId() != null && other.getPortfolioId().equals(this.getPortfolioId()) == false)
             return false;
+        if (other.getPortfolioShareType() == null ^ this.getPortfolioShareType() == null)
+            return false;
+        if (other.getPortfolioShareType() != null && other.getPortfolioShareType().equals(this.getPortfolioShareType()) == false)
+            return false;
         return true;
     }
 
@@ -246,6 +538,7 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
+        hashCode = prime * hashCode + ((getPortfolioShareType() == null) ? 0 : getPortfolioShareType().hashCode());
         return hashCode;
     }
 

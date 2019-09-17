@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,112 +12,87 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterTaskDefinitionRequest Marshaller
+ * RegisterTaskDefinitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterTaskDefinitionRequestMarshaller implements Marshaller<Request<RegisterTaskDefinitionRequest>, RegisterTaskDefinitionRequest> {
+@SdkInternalApi
+public class RegisterTaskDefinitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FAMILY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("family").build();
+    private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
+    private static final MarshallingInfo<String> NETWORKMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkMode").build();
+    private static final MarshallingInfo<List> CONTAINERDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerDefinitions").build();
+    private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("volumes").build();
+    private static final MarshallingInfo<List> PLACEMENTCONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementConstraints").build();
+    private static final MarshallingInfo<List> REQUIRESCOMPATIBILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiresCompatibilities").build();
+    private static final MarshallingInfo<String> CPU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cpu").build();
+    private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memory").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PIDMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("pidMode").build();
+    private static final MarshallingInfo<String> IPCMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ipcMode").build();
+    private static final MarshallingInfo<StructuredPojo> PROXYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proxyConfiguration").build();
+    private static final MarshallingInfo<List> INFERENCEACCELERATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inferenceAccelerators").build();
 
-    public RegisterTaskDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterTaskDefinitionRequestMarshaller instance = new RegisterTaskDefinitionRequestMarshaller();
+
+    public static RegisterTaskDefinitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterTaskDefinitionRequest> marshall(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterTaskDefinitionRequest registerTaskDefinitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerTaskDefinitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterTaskDefinitionRequest> request = new DefaultRequest<RegisterTaskDefinitionRequest>(registerTaskDefinitionRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.RegisterTaskDefinition");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerTaskDefinitionRequest.getFamily() != null) {
-                jsonGenerator.writeFieldName("family").writeValue(registerTaskDefinitionRequest.getFamily());
-            }
-            if (registerTaskDefinitionRequest.getTaskRoleArn() != null) {
-                jsonGenerator.writeFieldName("taskRoleArn").writeValue(registerTaskDefinitionRequest.getTaskRoleArn());
-            }
-            if (registerTaskDefinitionRequest.getNetworkMode() != null) {
-                jsonGenerator.writeFieldName("networkMode").writeValue(registerTaskDefinitionRequest.getNetworkMode());
-            }
-
-            com.amazonaws.internal.SdkInternalList<ContainerDefinition> containerDefinitionsList = (com.amazonaws.internal.SdkInternalList<ContainerDefinition>) registerTaskDefinitionRequest
-                    .getContainerDefinitions();
-            if (!containerDefinitionsList.isEmpty() || !containerDefinitionsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("containerDefinitions");
-                jsonGenerator.writeStartArray();
-                for (ContainerDefinition containerDefinitionsListValue : containerDefinitionsList) {
-                    if (containerDefinitionsListValue != null) {
-
-                        ContainerDefinitionJsonMarshaller.getInstance().marshall(containerDefinitionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<Volume> volumesList = (com.amazonaws.internal.SdkInternalList<Volume>) registerTaskDefinitionRequest
-                    .getVolumes();
-            if (!volumesList.isEmpty() || !volumesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("volumes");
-                jsonGenerator.writeStartArray();
-                for (Volume volumesListValue : volumesList) {
-                    if (volumesListValue != null) {
-
-                        VolumeJsonMarshaller.getInstance().marshall(volumesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraintsList = (com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint>) registerTaskDefinitionRequest
-                    .getPlacementConstraints();
-            if (!placementConstraintsList.isEmpty() || !placementConstraintsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("placementConstraints");
-                jsonGenerator.writeStartArray();
-                for (TaskDefinitionPlacementConstraint placementConstraintsListValue : placementConstraintsList) {
-                    if (placementConstraintsListValue != null) {
-
-                        TaskDefinitionPlacementConstraintJsonMarshaller.getInstance().marshall(placementConstraintsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getFamily(), FAMILY_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getTaskRoleArn(), TASKROLEARN_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getNetworkMode(), NETWORKMODE_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getContainerDefinitions(), CONTAINERDEFINITIONS_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getVolumes(), VOLUMES_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getCpu(), CPU_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getMemory(), MEMORY_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getPidMode(), PIDMODE_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getIpcMode(), IPCMODE_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getInferenceAccelerators(), INFERENCEACCELERATORS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

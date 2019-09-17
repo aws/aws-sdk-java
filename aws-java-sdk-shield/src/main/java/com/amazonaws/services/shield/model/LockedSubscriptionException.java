@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception that indicates that the subscription has been modified by another client. You can retry the request.
+ * You are trying to update a subscription that has not yet completed the 1-year commitment. You can change the
+ * <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception indicates that you are
+ * attempting to change <code>AutoRenew</code> prior to that period.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

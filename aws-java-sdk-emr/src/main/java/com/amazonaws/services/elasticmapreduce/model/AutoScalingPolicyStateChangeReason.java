@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,13 +26,13 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneable {
+public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      */
     private String code;
@@ -45,14 +47,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
@@ -64,13 +65,12 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @return The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *         scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *         change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *         unclean happened.--&gt;
+     *         change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
@@ -82,14 +82,13 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
@@ -103,39 +102,37 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
     public void setCode(AutoScalingPolicyStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
      * <p>
      * The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling
      * policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because
-     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something unclean happened.--&gt;
+     * the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * </p>
      * 
      * @param code
      *        The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the
      *        scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status
-     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates something
-     *        unclean happened.--&gt;
+     *        change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
     public AutoScalingPolicyStateChangeReason withCode(AutoScalingPolicyStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 
@@ -180,7 +177,8 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -236,5 +234,11 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.AutoScalingPolicyStateChangeReasonMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

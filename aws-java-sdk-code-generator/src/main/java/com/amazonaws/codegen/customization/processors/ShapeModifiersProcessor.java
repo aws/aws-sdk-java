@@ -27,9 +27,12 @@ import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * This processor handles all the modification on the shape members in the
@@ -89,7 +92,7 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
 
             if (ALL.equals(key)) continue;
 
-            ShapeModel shapeModel = null;
+            ShapeModel shapeModel;
             try {
                 shapeModel = Utils.findShapeModelByC2jName(
                         intermediateModel, key);
@@ -186,10 +189,19 @@ final class ShapeModifiersProcessor implements CodegenCustomizationProcessor {
         if (modifier.getInject() != null) {
             for (Map<String, Member> injects : modifier.getInject()) {
                 if (shape.getMembers() == null) {
-                    shape.setMembers(new HashMap<String, Member>());
+                    shape.setMembers(new HashMap<>());
                 }
                 shape.getMembers().putAll(injects);
             }
+        }
+
+        if (modifier.getInjectEnumValues() != null) {
+            if (shape.getEnumValues() == null) {
+                throw new IllegalStateException("Attempted to add enum members to a non-enum shape!");
+            }
+            Set<String> extendValues = new HashSet<>(shape.getEnumValues());
+            extendValues.addAll(modifier.getInjectEnumValues());
+            shape.setEnumValues(new ArrayList<>(extendValues));
         }
     }
 

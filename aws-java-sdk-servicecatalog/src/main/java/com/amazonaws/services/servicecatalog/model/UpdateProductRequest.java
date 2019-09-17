@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,30 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      */
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the product for the update request.
+     * The product identifier.
      * </p>
      */
     private String id;
@@ -63,7 +68,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String owner;
     /**
      * <p>
-     * The updated text description of the product.
+     * The updated description of the product.
      * </p>
      */
     private String description;
@@ -93,47 +98,57 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String supportUrl;
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the product.
+     * The tags to add to the product.
      * </p>
      */
     private java.util.List<Tag> addTags;
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the product.
+     * The tags to remove from the product.
      * </p>
      */
     private java.util.List<String> removeTags;
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -142,33 +157,43 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The language code to use for this operation. Supported language codes are as follows:</p>
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         "en" (English)
+     *         <code>en</code> - English (default)
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "jp" (Japanese)
+     *         <code>jp</code> - Japanese
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         "zh" (Chinese)
+     *         <code>zh</code> - Chinese
      *         </p>
-     *         <p>
-     *         If no code is specified, "en" is used as the default.
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -177,34 +202,44 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code to use for this operation. Supported language codes are as follows:
+     * The language code.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * "en" (English)
+     * <code>en</code> - English (default)
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "jp" (Japanese)
+     * <code>jp</code> - Japanese
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * "zh" (Chinese)
+     * <code>zh</code> - Chinese
      * </p>
-     * <p>
-     * If no code is specified, "en" is used as the default.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param acceptLanguage
-     *        The language code to use for this operation. Supported language codes are as follows:</p>
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        "en" (English)
+     *        <code>en</code> - English (default)
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "jp" (Japanese)
+     *        <code>jp</code> - Japanese
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        "zh" (Chinese)
+     *        <code>zh</code> - Chinese
      *        </p>
-     *        <p>
-     *        If no code is specified, "en" is used as the default.
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +250,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the product for the update request.
+     * The product identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the product for the update request.
+     *        The product identifier.
      */
 
     public void setId(String id) {
@@ -228,10 +263,10 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the product for the update request.
+     * The product identifier.
      * </p>
      * 
-     * @return The identifier of the product for the update request.
+     * @return The product identifier.
      */
 
     public String getId() {
@@ -240,11 +275,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the product for the update request.
+     * The product identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the product for the update request.
+     *        The product identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +370,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated text description of the product.
+     * The updated description of the product.
      * </p>
      * 
      * @param description
-     *        The updated text description of the product.
+     *        The updated description of the product.
      */
 
     public void setDescription(String description) {
@@ -348,10 +383,10 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated text description of the product.
+     * The updated description of the product.
      * </p>
      * 
-     * @return The updated text description of the product.
+     * @return The updated description of the product.
      */
 
     public String getDescription() {
@@ -360,11 +395,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The updated text description of the product.
+     * The updated description of the product.
      * </p>
      * 
      * @param description
-     *        The updated text description of the product.
+     *        The updated description of the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,10 +570,10 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the product.
+     * The tags to add to the product.
      * </p>
      * 
-     * @return Tags to add to the existing list of tags associated with the product.
+     * @return The tags to add to the product.
      */
 
     public java.util.List<Tag> getAddTags() {
@@ -547,11 +582,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the product.
+     * The tags to add to the product.
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the product.
+     *        The tags to add to the product.
      */
 
     public void setAddTags(java.util.Collection<Tag> addTags) {
@@ -565,7 +600,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the product.
+     * The tags to add to the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -574,7 +609,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the product.
+     *        The tags to add to the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,11 +625,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to add to the existing list of tags associated with the product.
+     * The tags to add to the product.
      * </p>
      * 
      * @param addTags
-     *        Tags to add to the existing list of tags associated with the product.
+     *        The tags to add to the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,10 +640,10 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the product.
+     * The tags to remove from the product.
      * </p>
      * 
-     * @return Tags to remove from the existing list of tags associated with the product.
+     * @return The tags to remove from the product.
      */
 
     public java.util.List<String> getRemoveTags() {
@@ -617,11 +652,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the product.
+     * The tags to remove from the product.
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the product.
+     *        The tags to remove from the product.
      */
 
     public void setRemoveTags(java.util.Collection<String> removeTags) {
@@ -635,7 +670,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the product.
+     * The tags to remove from the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -644,7 +679,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the product.
+     *        The tags to remove from the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -660,11 +695,11 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to remove from the existing list of tags associated with the product.
+     * The tags to remove from the product.
      * </p>
      * 
      * @param removeTags
-     *        Tags to remove from the existing list of tags associated with the product.
+     *        The tags to remove from the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,7 +709,8 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

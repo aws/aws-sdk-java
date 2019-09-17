@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,10 +44,16 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String comment;
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      */
     private String documentName;
+    /**
+     * <p>
+     * The SSM document version used in the request.
+     * </p>
+     */
+    private String documentVersion;
     /**
      * <p>
      * The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
@@ -56,110 +62,119 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String pluginName;
     /**
      * <p>
-     * The error level response code for the plugin script. If the response code is <code>-1</code>, then the command
-     * has not started executing on the instance, or it was not received by the instance.
+     * The error level response code for the plugin script. If the response code is -1, then the command has not started
+     * running on the instance, or it was not received by the instance.
      * </p>
      */
     private Integer responseCode;
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      */
     private String executionStartDateTime;
     /**
      * <p>
-     * Duration since <code>ExecutionStartDateTime</code>.
+     * Duration since ExecutionStartDateTime.
      * </p>
      */
     private String executionElapsedTime;
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      */
     private String executionEndDateTime;
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     * information than <code>Status</code> because it includes states resulting from error and concurrency control
-     * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delayed – The system attempted to send the command to the target, but the target was not available. The instance
+     * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
      * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
      * the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command.
-     * This is a terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a
-     * terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and
-     * don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is
-     * a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
@@ -167,9 +182,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String statusDetails;
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     * <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string is
-     * empty.
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      */
     private String standardOutputContent;
@@ -182,18 +196,24 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String standardOutputUrl;
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      */
     private String standardErrorContent;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      */
     private String standardErrorUrl;
+    /**
+     * <p>
+     * CloudWatch Logs information where Systems Manager sent the command output.
+     * </p>
+     */
+    private CloudWatchOutputConfig cloudWatchOutputConfig;
 
     /**
      * <p>
@@ -323,11 +343,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     *        The name of the document that was run. For example, AWS-RunShellScript.
      */
 
     public void setDocumentName(String documentName) {
@@ -336,10 +356,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
-     * @return The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * @return The name of the document that was run. For example, AWS-RunShellScript.
      */
 
     public String getDocumentName() {
@@ -348,16 +368,56 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was run. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     *        The name of the document that was run. For example, AWS-RunShellScript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetCommandInvocationResult withDocumentName(String documentName) {
         setDocumentName(documentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSM document version used in the request.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version used in the request.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version used in the request.
+     * </p>
+     * 
+     * @return The SSM document version used in the request.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version used in the request.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version used in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCommandInvocationResult withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
         return this;
     }
 
@@ -403,13 +463,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The error level response code for the plugin script. If the response code is <code>-1</code>, then the command
-     * has not started executing on the instance, or it was not received by the instance.
+     * The error level response code for the plugin script. If the response code is -1, then the command has not started
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
      * @param responseCode
-     *        The error level response code for the plugin script. If the response code is <code>-1</code>, then the
-     *        command has not started executing on the instance, or it was not received by the instance.
+     *        The error level response code for the plugin script. If the response code is -1, then the command has not
+     *        started running on the instance, or it was not received by the instance.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -418,12 +478,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The error level response code for the plugin script. If the response code is <code>-1</code>, then the command
-     * has not started executing on the instance, or it was not received by the instance.
+     * The error level response code for the plugin script. If the response code is -1, then the command has not started
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
-     * @return The error level response code for the plugin script. If the response code is <code>-1</code>, then the
-     *         command has not started executing on the instance, or it was not received by the instance.
+     * @return The error level response code for the plugin script. If the response code is -1, then the command has not
+     *         started running on the instance, or it was not received by the instance.
      */
 
     public Integer getResponseCode() {
@@ -432,13 +492,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The error level response code for the plugin script. If the response code is <code>-1</code>, then the command
-     * has not started executing on the instance, or it was not received by the instance.
+     * The error level response code for the plugin script. If the response code is -1, then the command has not started
+     * running on the instance, or it was not received by the instance.
      * </p>
      * 
      * @param responseCode
-     *        The error level response code for the plugin script. If the response code is <code>-1</code>, then the
-     *        command has not started executing on the instance, or it was not received by the instance.
+     *        The error level response code for the plugin script. If the response code is -1, then the command has not
+     *        started running on the instance, or it was not received by the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,14 +509,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
-     *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
-     *        August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is
-     *        empty.
+     *        The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
+     *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedBefore</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to run, the string is empty.
      */
 
     public void setExecutionStartDateTime(String executionStartDateTime) {
@@ -465,13 +537,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
-     * @return The date and time the plugin started executing. Date and time are written in ISO 8601 format. For
-     *         example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *         string is empty.
+     * @return The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
+     *         June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *         <code>InvokedBefore</code> filter.</p>
+     *         <p>
+     *         <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *         </p>
+     *         <p>
+     *         If the plugin has not started to run, the string is empty.
      */
 
     public String getExecutionStartDateTime() {
@@ -480,14 +564,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7,
+     * 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
-     *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
-     *        August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is
-     *        empty.
+     *        The date and time the plugin started running. Date and time are written in ISO 8601 format. For example,
+     *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedBefore</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to run, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,11 +594,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Duration since <code>ExecutionStartDateTime</code>.
+     * Duration since ExecutionStartDateTime.
      * </p>
      * 
      * @param executionElapsedTime
-     *        Duration since <code>ExecutionStartDateTime</code>.
+     *        Duration since ExecutionStartDateTime.
      */
 
     public void setExecutionElapsedTime(String executionElapsedTime) {
@@ -511,10 +607,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Duration since <code>ExecutionStartDateTime</code>.
+     * Duration since ExecutionStartDateTime.
      * </p>
      * 
-     * @return Duration since <code>ExecutionStartDateTime</code>.
+     * @return Duration since ExecutionStartDateTime.
      */
 
     public String getExecutionElapsedTime() {
@@ -523,11 +619,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Duration since <code>ExecutionStartDateTime</code>.
+     * Duration since ExecutionStartDateTime.
      * </p>
      * 
      * @param executionElapsedTime
-     *        Duration since <code>ExecutionStartDateTime</code>.
+     *        Duration since ExecutionStartDateTime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -538,14 +634,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
-     *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *        example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *        string is empty.
+     *        The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
+     *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedAfter</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to run, the string is empty.
      */
 
     public void setExecutionEndDateTime(String executionEndDateTime) {
@@ -554,13 +662,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
-     * @return The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *         example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *         string is empty.
+     * @return The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
+     *         example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *         <code>InvokedAfter</code> filter.</p>
+     *         <p>
+     *         <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *         </p>
+     *         <p>
+     *         If the plugin has not started to run, the string is empty.
      */
 
     public String getExecutionEndDateTime() {
@@ -569,14 +689,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For example,
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to run, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
-     *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *        example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *        string is empty.
+     *        The date and time the plugin was finished running. Date and time are written in ISO 8601 format. For
+     *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedAfter</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to run, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,13 +719,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of the parent command for this invocation. This status can be different than
-     *        <code>StatusDetails</code>.
+     *        The status of this invocation plugin. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
@@ -603,12 +733,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      * 
-     * @return The status of the parent command for this invocation. This status can be different than
-     *         <code>StatusDetails</code>.
+     * @return The status of this invocation plugin. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
@@ -618,13 +746,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of the parent command for this invocation. This status can be different than
-     *        <code>StatusDetails</code>.
+     *        The status of this invocation plugin. This status can be different than StatusDetails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandInvocationStatus
      */
@@ -636,185 +762,174 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of the parent command for this invocation. This status can be different than
-     *        <code>StatusDetails</code>.
+     *        The status of this invocation plugin. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
     public void setStatus(CommandInvocationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
      * <p>
-     * The status of the parent command for this invocation. This status can be different than
-     * <code>StatusDetails</code>.
+     * The status of this invocation plugin. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of the parent command for this invocation. This status can be different than
-     *        <code>StatusDetails</code>.
+     *        The status of this invocation plugin. This status can be different than StatusDetails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandInvocationStatus
      */
 
     public GetCommandInvocationResult withStatus(CommandInvocationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
     /**
      * <p>
-     * A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     * information than <code>Status</code> because it includes states resulting from error and concurrency control
-     * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delayed – The system attempted to send the command to the target, but the target was not available. The instance
+     * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
      * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
      * the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command.
-     * This is a terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a
-     * terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and
-     * don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is
-     * a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     *        information than <code>Status</code> because it includes states resulting from error and concurrency
-     *        control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
-     *        more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     *        A detailed status of the command execution for an invocation. StatusDetails includes more information than
+     *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
+     *        can show different results than Status. For more information about these statuses, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to the instance.
+     *        Pending: The command has not been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delayed – The system attempted to send the command to the target, but the target was not available. The
+     *        Delayed: The system attempted to send the command to the target, but the target was not available. The
      *        instance might not be available because of network issues, the instance was stopped, etc. The system will
      *        try to deliver the command again.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The command or plugin was executed successfully. This is a terminal state.
+     *        Success: The command or plugin was run successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *        contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *        is a terminal state.
+     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *        whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – The command started to execute on the instance, but the execution was not complete
-     *        before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
-     *        parent command. This is a terminal state.
+     *        Execution Timed Out: The command started to run on the instance, but the execution was not complete before
+     *        the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *        result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *        plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent
-     *        command. This is a terminal state.
+     *        Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *        code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *        was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not
-     *        be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code>
-     *        limit and don't contribute to whether the parent command status is <code>Success</code> or
-     *        <code>Incomplete</code>. This is a terminal state.
+     *        Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not
+     *        be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and
+     *        don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *        invocations were canceled by the system. This is a terminal state.
+     *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *        canceled by the system. This is a terminal state.
      *        </p>
      *        </li>
      */
@@ -825,150 +940,143 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     * information than <code>Status</code> because it includes states resulting from error and concurrency control
-     * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delayed – The system attempted to send the command to the target, but the target was not available. The instance
+     * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
      * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
      * the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command.
-     * This is a terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a
-     * terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and
-     * don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is
-     * a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     *         information than <code>Status</code> because it includes states resulting from error and concurrency
-     *         control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
-     *         more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     * @return A detailed status of the command execution for an invocation. StatusDetails includes more information
+     *         than Status because it includes states resulting from error and concurrency control parameters.
+     *         StatusDetails can show different results than Status. For more information about these statuses, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending – The command has not been sent to the instance.
+     *         Pending: The command has not been sent to the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *         In Progress: The command has been sent to the instance but has not reached a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Delayed – The system attempted to send the command to the target, but the target was not available. The
+     *         Delayed: The system attempted to send the command to the target, but the target was not available. The
      *         instance might not be available because of network issues, the instance was stopped, etc. The system will
      *         try to deliver the command again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Success – The command or plugin was executed successfully. This is a terminal state.
+     *         Success: The command or plugin was run successfully. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *         Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *         contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *         is a terminal state.
+     *         Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *         Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *         whether the parent command status is Success or Incomplete. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Execution Timed Out – The command started to execute on the instance, but the execution was not complete
-     *         before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
-     *         parent command. This is a terminal state.
+     *         Execution Timed Out: The command started to run on the instance, but the execution was not complete
+     *         before the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command.
+     *         This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *         result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *         plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent
-     *         command. This is a terminal state.
+     *         Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *         code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *         was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *         terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Canceled – The command was terminated before it was completed. This is a terminal state.
+     *         Canceled: The command was terminated before it was completed. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not
-     *         be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code>
-     *         limit and don't contribute to whether the parent command status is <code>Success</code> or
-     *         <code>Incomplete</code>. This is a terminal state.
+     *         Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not
+     *         be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and
+     *         don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *         invocations were canceled by the system. This is a terminal state.
+     *         Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *         canceled by the system. This is a terminal state.
      *         </p>
      *         </li>
      */
@@ -979,151 +1087,144 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     * information than <code>Status</code> because it includes states resulting from error and concurrency control
-     * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
+     * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     * different results than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to the instance.
+     * Pending: The command has not been sent to the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to the instance but has not reached a terminal state.
+     * In Progress: The command has been sent to the instance but has not reached a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delayed – The system attempted to send the command to the target, but the target was not available. The instance
+     * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
      * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
      * the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command or plugin was executed successfully. This is a terminal state.
+     * Success: The command or plugin was run successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery
-     * timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to
-     * whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.
+     * Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The command started to execute on the instance, but the execution was not complete before
-     * the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command.
-     * This is a terminal state.
+     * Execution Timed Out: The command started to run on the instance, but the execution was not complete before the
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal
+     * state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the result
-     * code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not
-     * zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a
-     * terminal state.
+     * Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result code
+     * was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero.
+     * Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and
-     * don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is
-     * a terminal state.
+     * Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be
+     * responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't
+     * contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were
-     * canceled by the system. This is a terminal state.
+     * Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by
+     * the system. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more
-     *        information than <code>Status</code> because it includes states resulting from error and concurrency
-     *        control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
-     *        more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     *        A detailed status of the command execution for an invocation. StatusDetails includes more information than
+     *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
+     *        can show different results than Status. For more information about these statuses, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to the instance.
+     *        Pending: The command has not been sent to the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to the instance but has not reached a terminal state.
+     *        In Progress: The command has been sent to the instance but has not reached a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delayed – The system attempted to send the command to the target, but the target was not available. The
+     *        Delayed: The system attempted to send the command to the target, but the target was not available. The
      *        instance might not be available because of network issues, the instance was stopped, etc. The system will
      *        try to deliver the command again.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The command or plugin was executed successfully. This is a terminal state.
+     *        Success: The command or plugin was run successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired.
-     *        Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do
-     *        contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This
-     *        is a terminal state.
+     *        Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired.
+     *        Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to
+     *        whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – The command started to execute on the instance, but the execution was not complete
-     *        before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the
-     *        parent command. This is a terminal state.
+     *        Execution Timed Out: The command started to run on the instance, but the execution was not complete before
+     *        the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the
-     *        result code was not zero. For a command invocation, this indicates that the result code for one or more
-     *        plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent
-     *        command. This is a terminal state.
+     *        Failed: The command wasn't run successfully on the instance. For a plugin, this indicates that the result
+     *        code was not zero. For a command invocation, this indicates that the result code for one or more plugins
+     *        was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a
+     *        terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not
-     *        be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code>
-     *        limit and don't contribute to whether the parent command status is <code>Success</code> or
-     *        <code>Incomplete</code>. This is a terminal state.
+     *        Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not
+     *        be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and
+     *        don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command
-     *        invocations were canceled by the system. This is a terminal state.
+     *        Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were
+     *        canceled by the system. This is a terminal state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1136,15 +1237,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     * <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string is
-     * empty.
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
      * @param standardOutputContent
-     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     *        <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string
-     *        is empty.
+     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     *        ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      */
 
     public void setStandardOutputContent(String standardOutputContent) {
@@ -1153,14 +1252,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     * <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string is
-     * empty.
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
-     * @return The first 24,000 characters written by the plugin to stdout. If the command has not finished executing,
-     *         if <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this
-     *         string is empty.
+     * @return The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     *         ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      */
 
     public String getStandardOutputContent() {
@@ -1169,15 +1266,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     * <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string is
-     * empty.
+     * The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     * ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * </p>
      * 
      * @param standardOutputContent
-     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if
-     *        <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string
-     *        is empty.
+     *        The first 24,000 characters written by the plugin to stdout. If the command has not finished running, if
+     *        ExecutionStatus is neither Succeeded nor Failed, then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1234,13 +1329,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
      * @param standardErrorContent
-     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *        then this string is empty.
+     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *        this string is empty.
      */
 
     public void setStandardErrorContent(String standardErrorContent) {
@@ -1249,12 +1344,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
-     * @return The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *         then this string is empty.
+     * @return The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *         this string is empty.
      */
 
     public String getStandardErrorContent() {
@@ -1263,13 +1358,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The first 8,000 characters written by the plugin to stderr. If the command has not finished executing, then this
+     * The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then this
      * string is empty.
      * </p>
      * 
      * @param standardErrorContent
-     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished executing,
-     *        then this string is empty.
+     *        The first 8,000 characters written by the plugin to stderr. If the command has not finished running, then
+     *        this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1280,12 +1375,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     *        The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *        then this string is empty.
      */
 
@@ -1295,11 +1390,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
-     * @return The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     * @return The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *         then this string is empty.
      */
 
@@ -1309,12 +1404,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stderr. If the command has not finished executing, then
-     * this string is empty.
+     * The URL for the complete text written by the plugin to stderr. If the command has not finished running, then this
+     * string is empty.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL for the complete text written by the plugin to stderr. If the command has not finished executing,
+     *        The URL for the complete text written by the plugin to stderr. If the command has not finished running,
      *        then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1325,7 +1420,48 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * CloudWatch Logs information where Systems Manager sent the command output.
+     * </p>
+     * 
+     * @param cloudWatchOutputConfig
+     *        CloudWatch Logs information where Systems Manager sent the command output.
+     */
+
+    public void setCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        this.cloudWatchOutputConfig = cloudWatchOutputConfig;
+    }
+
+    /**
+     * <p>
+     * CloudWatch Logs information where Systems Manager sent the command output.
+     * </p>
+     * 
+     * @return CloudWatch Logs information where Systems Manager sent the command output.
+     */
+
+    public CloudWatchOutputConfig getCloudWatchOutputConfig() {
+        return this.cloudWatchOutputConfig;
+    }
+
+    /**
+     * <p>
+     * CloudWatch Logs information where Systems Manager sent the command output.
+     * </p>
+     * 
+     * @param cloudWatchOutputConfig
+     *        CloudWatch Logs information where Systems Manager sent the command output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCommandInvocationResult withCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        setCloudWatchOutputConfig(cloudWatchOutputConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1343,6 +1479,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("Comment: ").append(getComment()).append(",");
         if (getDocumentName() != null)
             sb.append("DocumentName: ").append(getDocumentName()).append(",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getPluginName() != null)
             sb.append("PluginName: ").append(getPluginName()).append(",");
         if (getResponseCode() != null)
@@ -1364,7 +1502,9 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
         if (getStandardErrorContent() != null)
             sb.append("StandardErrorContent: ").append(getStandardErrorContent()).append(",");
         if (getStandardErrorUrl() != null)
-            sb.append("StandardErrorUrl: ").append(getStandardErrorUrl());
+            sb.append("StandardErrorUrl: ").append(getStandardErrorUrl()).append(",");
+        if (getCloudWatchOutputConfig() != null)
+            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1394,6 +1534,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getDocumentName() == null ^ this.getDocumentName() == null)
             return false;
         if (other.getDocumentName() != null && other.getDocumentName().equals(this.getDocumentName()) == false)
+            return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
         if (other.getPluginName() == null ^ this.getPluginName() == null)
             return false;
@@ -1439,6 +1583,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getStandardErrorUrl() != null && other.getStandardErrorUrl().equals(this.getStandardErrorUrl()) == false)
             return false;
+        if (other.getCloudWatchOutputConfig() == null ^ this.getCloudWatchOutputConfig() == null)
+            return false;
+        if (other.getCloudWatchOutputConfig() != null && other.getCloudWatchOutputConfig().equals(this.getCloudWatchOutputConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1451,6 +1599,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getPluginName() == null) ? 0 : getPluginName().hashCode());
         hashCode = prime * hashCode + ((getResponseCode() == null) ? 0 : getResponseCode().hashCode());
         hashCode = prime * hashCode + ((getExecutionStartDateTime() == null) ? 0 : getExecutionStartDateTime().hashCode());
@@ -1462,6 +1611,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getStandardOutputUrl() == null) ? 0 : getStandardOutputUrl().hashCode());
         hashCode = prime * hashCode + ((getStandardErrorContent() == null) ? 0 : getStandardErrorContent().hashCode());
         hashCode = prime * hashCode + ((getStandardErrorUrl() == null) ? 0 : getStandardErrorUrl().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
         return hashCode;
     }
 
@@ -1473,4 +1623,5 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public BatchDeleteBuildsResult batchDeleteBuilds(BatchDeleteBuildsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,7 +58,32 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public CreateWebhookResult createWebhook(CreateWebhookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSourceCredentialsResult deleteSourceCredentials(DeleteSourceCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWebhookResult deleteWebhook(DeleteWebhookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportSourceCredentialsResult importSourceCredentials(ImportSourceCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,6 +108,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartBuildResult startBuild(StartBuildRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +124,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWebhookResult updateWebhook(UpdateWebhookRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

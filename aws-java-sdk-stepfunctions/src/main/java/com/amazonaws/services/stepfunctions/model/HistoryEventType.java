@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,34 +21,58 @@ import javax.annotation.Generated;
 public enum HistoryEventType {
 
     ActivityFailed("ActivityFailed"),
-    ActivityScheduleFailed("ActivityScheduleFailed"),
     ActivityScheduled("ActivityScheduled"),
+    ActivityScheduleFailed("ActivityScheduleFailed"),
     ActivityStarted("ActivityStarted"),
     ActivitySucceeded("ActivitySucceeded"),
     ActivityTimedOut("ActivityTimedOut"),
     ChoiceStateEntered("ChoiceStateEntered"),
     ChoiceStateExited("ChoiceStateExited"),
+    ExecutionAborted("ExecutionAborted"),
     ExecutionFailed("ExecutionFailed"),
     ExecutionStarted("ExecutionStarted"),
     ExecutionSucceeded("ExecutionSucceeded"),
-    ExecutionAborted("ExecutionAborted"),
     ExecutionTimedOut("ExecutionTimedOut"),
     FailStateEntered("FailStateEntered"),
     LambdaFunctionFailed("LambdaFunctionFailed"),
-    LambdaFunctionScheduleFailed("LambdaFunctionScheduleFailed"),
     LambdaFunctionScheduled("LambdaFunctionScheduled"),
-    LambdaFunctionStartFailed("LambdaFunctionStartFailed"),
+    LambdaFunctionScheduleFailed("LambdaFunctionScheduleFailed"),
     LambdaFunctionStarted("LambdaFunctionStarted"),
+    LambdaFunctionStartFailed("LambdaFunctionStartFailed"),
     LambdaFunctionSucceeded("LambdaFunctionSucceeded"),
     LambdaFunctionTimedOut("LambdaFunctionTimedOut"),
-    SucceedStateEntered("SucceedStateEntered"),
-    SucceedStateExited("SucceedStateExited"),
-    TaskStateEntered("TaskStateEntered"),
-    TaskStateExited("TaskStateExited"),
-    PassStateEntered("PassStateEntered"),
-    PassStateExited("PassStateExited"),
+    MapIterationAborted("MapIterationAborted"),
+    MapIterationFailed("MapIterationFailed"),
+    MapIterationStarted("MapIterationStarted"),
+    MapIterationSucceeded("MapIterationSucceeded"),
+    MapStateAborted("MapStateAborted"),
+    MapStateEntered("MapStateEntered"),
+    MapStateExited("MapStateExited"),
+    MapStateFailed("MapStateFailed"),
+    MapStateStarted("MapStateStarted"),
+    MapStateSucceeded("MapStateSucceeded"),
+    ParallelStateAborted("ParallelStateAborted"),
     ParallelStateEntered("ParallelStateEntered"),
     ParallelStateExited("ParallelStateExited"),
+    ParallelStateFailed("ParallelStateFailed"),
+    ParallelStateStarted("ParallelStateStarted"),
+    ParallelStateSucceeded("ParallelStateSucceeded"),
+    PassStateEntered("PassStateEntered"),
+    PassStateExited("PassStateExited"),
+    SucceedStateEntered("SucceedStateEntered"),
+    SucceedStateExited("SucceedStateExited"),
+    TaskFailed("TaskFailed"),
+    TaskScheduled("TaskScheduled"),
+    TaskStarted("TaskStarted"),
+    TaskStartFailed("TaskStartFailed"),
+    TaskStateAborted("TaskStateAborted"),
+    TaskStateEntered("TaskStateEntered"),
+    TaskStateExited("TaskStateExited"),
+    TaskSubmitFailed("TaskSubmitFailed"),
+    TaskSubmitted("TaskSubmitted"),
+    TaskSucceeded("TaskSucceeded"),
+    TaskTimedOut("TaskTimedOut"),
+    WaitStateAborted("WaitStateAborted"),
     WaitStateEntered("WaitStateEntered"),
     WaitStateExited("WaitStateExited");
 
@@ -69,6 +93,9 @@ public enum HistoryEventType {
      * @param value
      *        real value
      * @return HistoryEventType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static HistoryEventType fromValue(String value) {
         if (value == null || "".equals(value)) {

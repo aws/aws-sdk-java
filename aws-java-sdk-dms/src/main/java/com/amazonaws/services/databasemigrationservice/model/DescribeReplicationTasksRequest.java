@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,14 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String marker;
+    /**
+     * <p>
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
+     * </p>
+     */
+    private Boolean withoutSettings;
 
     /**
      * <p>
@@ -288,7 +296,76 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
+     * </p>
+     * 
+     * @param withoutSettings
+     *        An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *        information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *        <code>false</code> (the default).
+     */
+
+    public void setWithoutSettings(Boolean withoutSettings) {
+        this.withoutSettings = withoutSettings;
+    }
+
+    /**
+     * <p>
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
+     * </p>
+     * 
+     * @return An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *         information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *         <code>false</code> (the default).
+     */
+
+    public Boolean getWithoutSettings() {
+        return this.withoutSettings;
+    }
+
+    /**
+     * <p>
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
+     * </p>
+     * 
+     * @param withoutSettings
+     *        An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *        information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *        <code>false</code> (the default).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReplicationTasksRequest withWithoutSettings(Boolean withoutSettings) {
+        setWithoutSettings(withoutSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     * information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the
+     * default).
+     * </p>
+     * 
+     * @return An option to set to avoid returning information about settings. Use this to reduce overhead when setting
+     *         information is too large. To use this option, choose <code>true</code>; otherwise, choose
+     *         <code>false</code> (the default).
+     */
+
+    public Boolean isWithoutSettings() {
+        return this.withoutSettings;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -303,7 +380,9 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: ").append(getMarker());
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getWithoutSettings() != null)
+            sb.append("WithoutSettings: ").append(getWithoutSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -330,6 +409,10 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
             return false;
+        if (other.getWithoutSettings() == null ^ this.getWithoutSettings() == null)
+            return false;
+        if (other.getWithoutSettings() != null && other.getWithoutSettings().equals(this.getWithoutSettings()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +424,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getWithoutSettings() == null) ? 0 : getWithoutSettings().hashCode());
         return hashCode;
     }
 

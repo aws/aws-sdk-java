@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -36,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.cognitosync.AmazonCognitoSyncClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -73,6 +76,7 @@ import com.amazonaws.services.cognitosync.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements AmazonCognitoSync {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -84,51 +88,53 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModification").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModification").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfiguration").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfiguration").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameter").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameter").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.DuplicateRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.DuplicateRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflict").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ResourceConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflict").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LambdaThrottled").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.LambdaThrottledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LambdaThrottled").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.LambdaThrottledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedError").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.NotAuthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequests").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequests").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaFunctionOutput").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaFunctionOutput").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidLambdaFunctionOutputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceeded").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyStreamed").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.AlreadyStreamedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyStreamed").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.AlreadyStreamedExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException.class));
 
     /**
@@ -215,6 +221,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     public AmazonCognitoSyncClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -280,7 +287,12 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
+    }
+
+    public static AmazonCognitoSyncClientBuilder builder() {
+        return AmazonCognitoSyncClientBuilder.standard();
     }
 
     /**
@@ -294,8 +306,23 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *        Object providing client parameters.
      */
     AmazonCognitoSyncClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Cognito Sync using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonCognitoSyncClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -342,7 +369,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public BulkPublishResult bulkPublish(BulkPublishRequest bulkPublishRequest) {
+    public BulkPublishResult bulkPublish(BulkPublishRequest request) {
+        request = beforeClientExecution(request);
+        return executeBulkPublish(request);
+    }
+
+    @SdkInternalApi
+    final BulkPublishResult executeBulkPublish(BulkPublishRequest bulkPublishRequest) {
 
         ExecutionContext executionContext = createExecutionContext(bulkPublishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -353,9 +386,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BulkPublishRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(bulkPublishRequest));
+                request = new BulkPublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(bulkPublishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BulkPublish");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -404,7 +442,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeleteDatasetResult deleteDataset(DeleteDatasetRequest deleteDatasetRequest) {
+    public DeleteDatasetResult deleteDataset(DeleteDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataset(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDatasetResult executeDeleteDataset(DeleteDatasetRequest deleteDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -415,9 +459,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
+                request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -463,7 +512,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest) {
+    public DescribeDatasetResult describeDataset(DescribeDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDataset(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDatasetResult executeDescribeDataset(DescribeDatasetRequest describeDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -474,9 +529,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
+                request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -520,7 +580,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
+    public DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentityPoolUsage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityPoolUsageResult executeDescribeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityPoolUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -531,9 +597,15 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityPoolUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityPoolUsageRequest));
+                request = new DescribeIdentityPoolUsageRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityPoolUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -578,7 +650,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
+    public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIdentityUsage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIdentityUsageResult executeDescribeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -589,9 +667,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeIdentityUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityUsageRequest));
+                request = new DescribeIdentityUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -634,7 +717,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
+    public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBulkPublishDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetBulkPublishDetailsResult executeGetBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getBulkPublishDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -645,9 +734,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBulkPublishDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBulkPublishDetailsRequest));
+                request = new GetBulkPublishDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBulkPublishDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBulkPublishDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -692,7 +786,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest) {
+    public GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCognitoEvents(request);
+    }
+
+    @SdkInternalApi
+    final GetCognitoEventsResult executeGetCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -703,9 +803,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCognitoEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCognitoEventsRequest));
+                request = new GetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCognitoEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -749,7 +854,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
+    public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityPoolConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityPoolConfigurationResult executeGetIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -760,10 +871,15 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIdentityPoolConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new GetIdentityPoolConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPoolConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -807,7 +923,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest) {
+    public ListDatasetsResult listDatasets(ListDatasetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasets(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasetsResult executeListDatasets(ListDatasetsRequest listDatasetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDatasetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -818,9 +940,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDatasetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
+                request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -862,7 +989,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListIdentityPoolUsageResult listIdentityPoolUsage(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
+    public ListIdentityPoolUsageResult listIdentityPoolUsage(ListIdentityPoolUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentityPoolUsage(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentityPoolUsageResult executeListIdentityPoolUsage(ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentityPoolUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -873,9 +1006,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIdentityPoolUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolUsageRequest));
+                request = new ListIdentityPoolUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPoolUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -920,7 +1058,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListRecordsResult listRecords(ListRecordsRequest listRecordsRequest) {
+    public ListRecordsResult listRecords(ListRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecords(request);
+    }
+
+    @SdkInternalApi
+    final ListRecordsResult executeListRecords(ListRecordsRequest listRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -931,9 +1075,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordsRequest));
+                request = new ListRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecords");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -978,7 +1127,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest) {
+    public RegisterDeviceResult registerDevice(RegisterDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDevice(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDeviceResult executeRegisterDevice(RegisterDeviceRequest registerDeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -989,9 +1144,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDeviceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDeviceRequest));
+                request = new RegisterDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1037,7 +1197,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
+    public SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetCognitoEvents(request);
+    }
+
+    @SdkInternalApi
+    final SetCognitoEventsResult executeSetCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1048,9 +1214,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetCognitoEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setCognitoEventsRequest));
+                request = new SetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetCognitoEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1096,7 +1267,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
+    public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityPoolConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityPoolConfigurationResult executeSetIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1107,10 +1284,15 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetIdentityPoolConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new SetIdentityPoolConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(setIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityPoolConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1156,7 +1338,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
+    public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubscribeToDataset(request);
+    }
+
+    @SdkInternalApi
+    final SubscribeToDatasetResult executeSubscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(subscribeToDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1167,9 +1355,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToDatasetRequest));
+                request = new SubscribeToDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubscribeToDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1214,7 +1407,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
+    public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnsubscribeFromDataset(request);
+    }
+
+    @SdkInternalApi
+    final UnsubscribeFromDatasetResult executeUnsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1225,9 +1424,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromDatasetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromDatasetRequest));
+                request = new UnsubscribeFromDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnsubscribeFromDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1293,7 +1497,13 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public UpdateRecordsResult updateRecords(UpdateRecordsRequest updateRecordsRequest) {
+    public UpdateRecordsResult updateRecords(UpdateRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRecords(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRecordsResult executeUpdateRecords(UpdateRecordsRequest updateRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1304,9 +1514,14 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRecordsRequest));
+                request = new UpdateRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Sync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRecords");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1347,9 +1562,18 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1359,7 +1583,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1367,13 +1591,27 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

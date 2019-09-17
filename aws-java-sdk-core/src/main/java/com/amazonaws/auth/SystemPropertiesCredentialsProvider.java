@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.auth;
 
 import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.SESSION_TOKEN_SYSTEM_PROPERTY;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.StringUtils;
@@ -29,26 +30,26 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
 
     @Override
     public AWSCredentials getCredentials() {
-        String accessKey =
-            StringUtils.trim(System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY));
+        String accessKey = StringUtils.trim(System.getProperty(ACCESS_KEY_SYSTEM_PROPERTY));
+        String secretKey = StringUtils.trim(System.getProperty(SECRET_KEY_SYSTEM_PROPERTY));
+        String sessionToken = StringUtils.trim(System.getProperty(SESSION_TOKEN_SYSTEM_PROPERTY));
 
-        String secretKey =
-            StringUtils.trim(System.getProperty(SECRET_KEY_SYSTEM_PROPERTY));
-
-        if (StringUtils.isNullOrEmpty(accessKey)
-                || StringUtils.isNullOrEmpty(secretKey)) {
-
+        if (StringUtils.isNullOrEmpty(accessKey) || StringUtils.isNullOrEmpty(secretKey)) {
             throw new SdkClientException(
                     "Unable to load AWS credentials from Java system "
                     + "properties (" + ACCESS_KEY_SYSTEM_PROPERTY + " and "
                     + SECRET_KEY_SYSTEM_PROPERTY + ")");
         }
-
-        return new BasicAWSCredentials(accessKey, secretKey);
+        if (StringUtils.isNullOrEmpty(sessionToken)) {
+            return new BasicAWSCredentials(accessKey, secretKey);
+        } else {
+            return new BasicSessionCredentials(accessKey, secretKey, sessionToken);
+        }
     }
 
     @Override
-    public void refresh() {}
+    public void refresh() {
+    }
 
     @Override
     public String toString() {

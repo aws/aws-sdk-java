@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,8 @@ public enum SwfActions implements Action {
     ListDomains("swf:ListDomains"),
     /** Action for the ListOpenWorkflowExecutions operation. */
     ListOpenWorkflowExecutions("swf:ListOpenWorkflowExecutions"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("swf:ListTagsForResource"),
     /** Action for the ListWorkflowTypes operation. */
     ListWorkflowTypes("swf:ListWorkflowTypes"),
     /** Action for the PollForActivityTask operation. */
@@ -85,8 +87,18 @@ public enum SwfActions implements Action {
     SignalWorkflowExecution("swf:SignalWorkflowExecution"),
     /** Action for the StartWorkflowExecution operation. */
     StartWorkflowExecution("swf:StartWorkflowExecution"),
+    /** Action for the TagResource operation. */
+    TagResource("swf:TagResource"),
     /** Action for the TerminateWorkflowExecution operation. */
     TerminateWorkflowExecution("swf:TerminateWorkflowExecution"),
+    /** Action for the UndeprecateActivityType operation. */
+    UndeprecateActivityType("swf:UndeprecateActivityType"),
+    /** Action for the UndeprecateDomain operation. */
+    UndeprecateDomain("swf:UndeprecateDomain"),
+    /** Action for the UndeprecateWorkflowType operation. */
+    UndeprecateWorkflowType("swf:UndeprecateWorkflowType"),
+    /** Action for the UntagResource operation. */
+    UntagResource("swf:UntagResource"),
 
     ;
 

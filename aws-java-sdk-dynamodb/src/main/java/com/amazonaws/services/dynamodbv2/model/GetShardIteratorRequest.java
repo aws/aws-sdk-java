@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a <i>GetShardIterator</i> operation.
+ * Represents the input of a <code>GetShardIterator</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator" target="_top">AWS
@@ -421,7 +421,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
-        this.shardIteratorType = shardIteratorType.toString();
+        withShardIteratorType(shardIteratorType);
     }
 
     /**
@@ -488,7 +488,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public GetShardIteratorRequest withShardIteratorType(ShardIteratorType shardIteratorType) {
-        setShardIteratorType(shardIteratorType);
+        this.shardIteratorType = shardIteratorType.toString();
         return this;
     }
 
@@ -533,7 +533,8 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

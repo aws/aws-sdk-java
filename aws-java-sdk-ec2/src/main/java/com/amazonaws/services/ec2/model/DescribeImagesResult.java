@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,26 +18,24 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeImages.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about one or more images.
+     * Information about the images.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Image> images;
 
     /**
      * <p>
-     * Information about one or more images.
+     * Information about the images.
      * </p>
      * 
-     * @return Information about one or more images.
+     * @return Information about the images.
      */
 
     public java.util.List<Image> getImages() {
@@ -49,11 +47,11 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more images.
+     * Information about the images.
      * </p>
      * 
      * @param images
-     *        Information about one or more images.
+     *        Information about the images.
      */
 
     public void setImages(java.util.Collection<Image> images) {
@@ -67,7 +65,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more images.
+     * Information about the images.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +74,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param images
-     *        Information about one or more images.
+     *        Information about the images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +90,11 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about one or more images.
+     * Information about the images.
      * </p>
      * 
      * @param images
-     *        Information about one or more images.
+     *        Information about the images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +104,8 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

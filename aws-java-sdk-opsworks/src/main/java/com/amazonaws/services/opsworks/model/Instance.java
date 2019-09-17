@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Instance implements Serializable, Cloneable {
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,7 +38,7 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * A custom AMI ID to be used to create the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      */
     private String amiId;
@@ -48,6 +50,12 @@ public class Instance implements Serializable, Cloneable {
     private String architecture;
     /**
      * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * For load-based or time-based instances, the type.
      * </p>
      */
@@ -55,7 +63,7 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      */
     private String availabilityZone;
@@ -97,7 +105,7 @@ public class Instance implements Serializable, Cloneable {
     private String ecsContainerInstanceArn;
     /**
      * <p>
-     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.
      * </p>
      */
@@ -138,7 +146,7 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      */
     private String instanceProfileArn;
@@ -174,7 +182,7 @@ public class Instance implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      */
     private String privateDns;
@@ -204,7 +212,7 @@ public class Instance implements Serializable, Cloneable {
     private String registeredBy;
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      */
     private String reportedAgentVersion;
@@ -217,8 +225,8 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      */
     private String rootDeviceType;
@@ -409,12 +417,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * A custom AMI ID to be used to create the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
      * @param amiId
      *        A custom AMI ID to be used to create the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *        >Instances</a>
      */
 
     public void setAmiId(String amiId) {
@@ -424,11 +433,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * A custom AMI ID to be used to create the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
      * @return A custom AMI ID to be used to create the instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *         >Instances</a>
      */
 
@@ -439,12 +448,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * A custom AMI ID to be used to create the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
      * </p>
      * 
      * @param amiId
      *        A custom AMI ID to be used to create the instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
+     *        >Instances</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,7 +517,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -522,7 +532,47 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @param arn
+     *        The instance's Amazon Resource Number (ARN).
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @return The instance's Amazon Resource Number (ARN).
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @param arn
+     *        The instance's Amazon Resource Number (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -580,7 +630,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -595,19 +645,19 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -617,11 +667,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @return The instance Availability Zone. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
     public String getAvailabilityZone() {
@@ -631,12 +681,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance Availability Zone. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
      * 
      * @param availabilityZone
      *        The instance Availability Zone. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,14 +982,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.
      * </p>
      * 
      * @param elasticIp
      *        The instance <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address
-     *        </a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        address </a>.
      */
 
     public void setElasticIp(String elasticIp) {
@@ -948,12 +998,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.
      * </p>
      * 
      * @return The instance <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
      *         address </a>.
      */
 
@@ -963,14 +1013,14 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address </a>.
      * </p>
      * 
      * @param elasticIp
      *        The instance <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address
-     *        </a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
+     *        address </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1222,12 +1272,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param instanceProfileArn
      *        The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public void setInstanceProfileArn(String instanceProfileArn) {
@@ -1237,11 +1287,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @return The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
 
     public String getInstanceProfileArn() {
@@ -1251,12 +1301,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * </p>
      * 
      * @param instanceProfileArn
      *        The ARN of the instance's IAM profile. For more information about IAM ARNs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1500,11 +1550,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
+     *        The instance's private DNS name.
      */
 
     public void setPrivateDns(String privateDns) {
@@ -1513,10 +1563,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
-     * @return The The instance's private DNS name.
+     * @return The instance's private DNS name.
      */
 
     public String getPrivateDns() {
@@ -1525,11 +1575,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
+     *        The instance's private DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1700,11 +1750,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public void setReportedAgentVersion(String reportedAgentVersion) {
@@ -1713,10 +1763,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
-     * @return The instance's reported AWS OpsWorks agent version.
+     * @return The instance's reported AWS OpsWorks Stacks agent version.
      */
 
     public String getReportedAgentVersion() {
@@ -1725,11 +1775,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks agent version.
+     * The instance's reported AWS OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks agent version.
+     *        The instance's reported AWS OpsWorks Stacks agent version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1781,13 +1831,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance's root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1799,12 +1849,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @return The instance's root device type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
@@ -1816,13 +1866,13 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance's root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
@@ -1836,38 +1886,38 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance's root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
 
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
      * <p>
      * The instance's root device type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
-     * for the Root Device</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     * >Storage for the Root Device</a>.
      * </p>
      * 
      * @param rootDeviceType
      *        The instance's root device type. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
     public Instance withRootDeviceType(RootDeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -2777,7 +2827,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        withVirtualizationType(virtualizationType);
     }
 
     /**
@@ -2792,12 +2842,13 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
-        setVirtualizationType(virtualizationType);
+        this.virtualizationType = virtualizationType.toString();
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2813,6 +2864,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getAutoScalingType() != null)
             sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getAvailabilityZone() != null)
@@ -2912,6 +2965,10 @@ public class Instance implements Serializable, Cloneable {
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getAutoScalingType() == null ^ this.getAutoScalingType() == null)
             return false;
@@ -3072,6 +3129,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingType() == null) ? 0 : getAutoScalingType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
@@ -3119,5 +3177,11 @@ public class Instance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.lightsail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,18 +26,18 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Instance implements Serializable, Cloneable {
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      */
     private String name;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      */
     private String arn;
@@ -54,7 +56,7 @@ public class Instance implements Serializable, Cloneable {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      */
     private ResourceLocation location;
@@ -64,6 +66,13 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
     /**
      * <p>
      * The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).
@@ -139,11 +148,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param name
-     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public void setName(String name) {
@@ -152,10 +161,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * @return The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public String getName() {
@@ -164,11 +173,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param name
-     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,12 +189,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the instance (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      */
 
     public void setArn(String arn) {
@@ -195,11 +204,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the instance (e.g.,
-     *         <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *         <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      */
 
     public String getArn() {
@@ -209,12 +218,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the instance (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,11 +323,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where the instance is located.
+     *        The region name and Availability Zone where the instance is located.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -327,10 +336,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
-     * @return The region name and availability zone where the instance is located.
+     * @return The region name and Availability Zone where the instance is located.
      */
 
     public ResourceLocation getLocation() {
@@ -339,11 +348,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region name and availability zone where the instance is located.
+     * The region name and Availability Zone where the instance is located.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where the instance is located.
+     *        The region name and Availability Zone where the instance is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -406,7 +415,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -421,7 +430,89 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *         Guide</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -921,7 +1012,8 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -943,6 +1035,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getBlueprintId() != null)
             sb.append("BlueprintId: ").append(getBlueprintId()).append(",");
         if (getBlueprintName() != null)
@@ -1004,6 +1098,10 @@ public class Instance implements Serializable, Cloneable {
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getBlueprintId() == null ^ this.getBlueprintId() == null)
             return false;
@@ -1067,6 +1165,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getBlueprintId() == null) ? 0 : getBlueprintId().hashCode());
         hashCode = prime * hashCode + ((getBlueprintName() == null) ? 0 : getBlueprintName().hashCode());
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
@@ -1089,5 +1188,11 @@ public class Instance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lightsail.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

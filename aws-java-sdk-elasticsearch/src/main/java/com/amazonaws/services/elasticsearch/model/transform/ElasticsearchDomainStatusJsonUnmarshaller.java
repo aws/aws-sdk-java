@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,9 +72,18 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Endpoints", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UpgradeProcessing", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setUpgradeProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
                     context.nextToken();
@@ -96,10 +105,35 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setSnapshotOptions(SnapshotOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VPCOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setVPCOptions(VPCDerivedInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CognitoOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setCognitoOptions(CognitoOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setEncryptionAtRestOptions(EncryptionAtRestOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("LogPublishingOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setLogPublishingOptions(new MapUnmarshaller<String, LogPublishingOption>(context.getUnmarshaller(String.class),
+                            LogPublishingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setServiceSoftwareOptions(ServiceSoftwareOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

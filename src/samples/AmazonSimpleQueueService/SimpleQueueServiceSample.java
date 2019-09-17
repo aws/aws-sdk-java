@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,10 +19,9 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
-import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.sqs.AmazonSQS;
-import com.amazonaws.services.sqs.AmazonSQSClient;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
 import com.amazonaws.services.sqs.model.DeleteQueueRequest;
@@ -54,9 +53,9 @@ public class SimpleQueueServiceSample {
          * credential profile by reading from the credentials file located at
          * (~/.aws/credentials).
          */
-        AWSCredentials credentials = null;
+        ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
-            credentials = new ProfileCredentialsProvider().getCredentials();
+            credentialsProvider.getCredentials();
         } catch (Exception e) {
             throw new AmazonClientException(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -65,9 +64,10 @@ public class SimpleQueueServiceSample {
                     e);
         }
 
-        AmazonSQS sqs = new AmazonSQSClient(credentials);
-        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
-        sqs.setRegion(usWest2);
+        AmazonSQS sqs = AmazonSQSClientBuilder.standard()
+                               .withCredentials(credentialsProvider)
+                               .withRegion(Regions.US_WEST_2)
+                               .build();
 
         System.out.println("===========================================");
         System.out.println("Getting Started with Amazon SQS");

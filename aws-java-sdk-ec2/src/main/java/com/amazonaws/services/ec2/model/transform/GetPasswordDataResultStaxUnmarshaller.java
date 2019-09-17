@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,13 @@ public class GetPasswordDataResultStaxUnmarshaller implements Unmarshaller<GetPa
                     continue;
                 }
 
-                if (context.testExpression("timestamp", targetDepth)) {
-                    getPasswordDataResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("passwordData", targetDepth)) {
+                    getPasswordDataResult.setPasswordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("passwordData", targetDepth)) {
-                    getPasswordDataResult.setPasswordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("timestamp", targetDepth)) {
+                    getPasswordDataResult.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

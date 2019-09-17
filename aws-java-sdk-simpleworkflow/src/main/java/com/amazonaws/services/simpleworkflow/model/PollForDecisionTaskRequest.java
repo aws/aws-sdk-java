@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -32,8 +37,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -46,24 +51,29 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     private String identity;
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with
-     * a <code>nextPageToken</code> will not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      */
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -125,16 +135,17 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -147,15 +158,16 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for decision tasks.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *         <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -168,16 +180,17 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,29 +250,40 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with
-     * a <code>nextPageToken</code> will not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
-     *        <note>The <code>nextPageToken</code> returned by this action cannot be used with
+     *        <note>
+     *        <p>
+     *        The <code>nextPageToken</code> returned by this action cannot be used with
      *        <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
      *        (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
-     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will not return a new decision task.
+     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *        </p>
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -268,28 +292,39 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with
-     * a <code>nextPageToken</code> will not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
-     * @return If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *         retrieve the next page of results, make the call again using the returned token in
-     *         <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *         </p>
-     *         <note>The <code>nextPageToken</code> returned by this action cannot be used with
+     *         <note>
+     *         <p>
+     *         The <code>nextPageToken</code> returned by this action cannot be used with
      *         <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
      *         (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
-     *         <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will not return a new decision task.
+     *         <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *         </p>
      */
 
     public String getNextPageToken() {
@@ -298,29 +333,40 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve
-     * the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all
-     * other arguments unchanged.
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
+     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
      * The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      * </p>
-     * <note>The <code>nextPageToken</code> returned by this action cannot be used with
-     * <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again (with the
-     * <code>nextPageToken</code>) to retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with
-     * a <code>nextPageToken</code> will not return a new decision task.</note>.
+     * <note>
+     * <p>
+     * The <code>nextPageToken</code> returned by this action cannot be used with <a>GetWorkflowExecutionHistory</a> to
+     * get the next page. You must call <a>PollForDecisionTask</a> again (with the <code>nextPageToken</code>) to
+     * retrieve the next page of history records. Calling <a>PollForDecisionTask</a> with a <code>nextPageToken</code>
+     * doesn't return a new decision task.
+     * </p>
+     * </note>
      * 
      * @param nextPageToken
-     *        If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To
-     *        retrieve the next page of results, make the call again using the returned token in
-     *        <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
      *        </p>
-     *        <note>The <code>nextPageToken</code> returned by this action cannot be used with
+     *        <note>
+     *        <p>
+     *        The <code>nextPageToken</code> returned by this action cannot be used with
      *        <a>GetWorkflowExecutionHistory</a> to get the next page. You must call <a>PollForDecisionTask</a> again
      *        (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling
-     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> will not return a new decision task.
+     *        <a>PollForDecisionTask</a> with a <code>nextPageToken</code> doesn't return a new decision task.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,9 +377,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -341,9 +386,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results. </p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -355,18 +399,16 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
      * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *         however, specify a page size <i>smaller</i> than the maximum.</p>
+     * @return The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain
+     *         further pages of results. </p>
      *         <p>
      *         This is an upper limit only; the actual number of results returned per call may be fewer than the
      *         specified maximum.
@@ -378,9 +420,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages
+     * of results.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -388,9 +429,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further
+     *        pages of results. </p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -463,7 +503,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

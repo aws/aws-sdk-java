@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,19 +14,43 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Provides information about all the segments that are associated with an application.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentsResponse" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentsResponse implements Serializable, Cloneable {
+public class SegmentsResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** The list of segments. */
+    /**
+     * <p>
+     * An array of responses, one for each segment that's associated with the application (Segments resource) or each
+     * version of a segment that's associated with the application (Segment Versions resource).
+     * </p>
+     */
     private java.util.List<SegmentResponse> item;
-    /** An identifier used to retrieve the next page of results. The token is null if no additional pages exist. */
+    /**
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * The list of segments.
+     * <p>
+     * An array of responses, one for each segment that's associated with the application (Segments resource) or each
+     * version of a segment that's associated with the application (Segment Versions resource).
+     * </p>
      * 
-     * @return The list of segments.
+     * @return An array of responses, one for each segment that's associated with the application (Segments resource) or
+     *         each version of a segment that's associated with the application (Segment Versions resource).
      */
 
     public java.util.List<SegmentResponse> getItem() {
@@ -34,10 +58,14 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The list of segments.
+     * <p>
+     * An array of responses, one for each segment that's associated with the application (Segments resource) or each
+     * version of a segment that's associated with the application (Segment Versions resource).
+     * </p>
      * 
      * @param item
-     *        The list of segments.
+     *        An array of responses, one for each segment that's associated with the application (Segments resource) or
+     *        each version of a segment that's associated with the application (Segment Versions resource).
      */
 
     public void setItem(java.util.Collection<SegmentResponse> item) {
@@ -50,7 +78,10 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The list of segments.
+     * <p>
+     * An array of responses, one for each segment that's associated with the application (Segments resource) or each
+     * version of a segment that's associated with the application (Segment Versions resource).
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setItem(java.util.Collection)} or {@link #withItem(java.util.Collection)} if you want to override the
@@ -58,7 +89,8 @@ public class SegmentsResponse implements Serializable, Cloneable {
      * </p>
      * 
      * @param item
-     *        The list of segments.
+     *        An array of responses, one for each segment that's associated with the application (Segments resource) or
+     *        each version of a segment that's associated with the application (Segment Versions resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,10 +105,14 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * The list of segments.
+     * <p>
+     * An array of responses, one for each segment that's associated with the application (Segments resource) or each
+     * version of a segment that's associated with the application (Segment Versions resource).
+     * </p>
      * 
      * @param item
-     *        The list of segments.
+     *        An array of responses, one for each segment that's associated with the application (Segments resource) or
+     *        each version of a segment that's associated with the application (Segment Versions resource).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,10 +122,14 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      */
 
     public void setNextToken(String nextToken) {
@@ -97,9 +137,13 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
-     * @return An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     * @return The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *         value is null if there are no additional pages.
      */
 
     public String getNextToken() {
@@ -107,10 +151,14 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     * <p>
+     * The string to use in a subsequent request to get the next page of results in a paginated response. This value is
+     * null if there are no additional pages.
+     * </p>
      * 
      * @param nextToken
-     *        An identifier used to retrieve the next page of results. The token is null if no additional pages exist.
+     *        The string to use in a subsequent request to get the next page of results in a paginated response. This
+     *        value is null if there are no additional pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +168,8 @@ public class SegmentsResponse implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -176,5 +225,11 @@ public class SegmentsResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentsResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

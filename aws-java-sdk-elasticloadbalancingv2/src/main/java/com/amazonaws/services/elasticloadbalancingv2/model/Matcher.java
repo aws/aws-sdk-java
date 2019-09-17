@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,21 +28,38 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes.
+     * </p>
+     * <p>
+     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
+     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Network Load Balancers, this is 200–399.
      * </p>
      */
     private String httpCode;
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes.
+     * </p>
+     * <p>
+     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
+     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *        range of values (for example, "200-299").
+     *        The HTTP codes.</p>
+     *        <p>
+     *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
+     *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     *        </p>
+     *        <p>
+     *        For Network Load Balancers, this is 200–399.
      */
 
     public void setHttpCode(String httpCode) {
@@ -51,12 +68,23 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes.
+     * </p>
+     * <p>
+     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
+     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
-     * @return The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *         range of values (for example, "200-299").
+     * @return The HTTP codes.</p>
+     *         <p>
+     *         For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
+     *         You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     *         </p>
+     *         <p>
+     *         For Network Load Balancers, this is 200–399.
      */
 
     public String getHttpCode() {
@@ -65,13 +93,24 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a range of
-     * values (for example, "200-299").
+     * The HTTP codes.
+     * </p>
+     * <p>
+     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
+     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Network Load Balancers, this is 200–399.
      * </p>
      * 
      * @param httpCode
-     *        The HTTP codes. The default value is 200. You can specify multiple values (for example, "200,202") or a
-     *        range of values (for example, "200-299").
+     *        The HTTP codes.</p>
+     *        <p>
+     *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
+     *        You can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     *        </p>
+     *        <p>
+     *        For Network Load Balancers, this is 200–399.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,7 +120,8 @@ public class Matcher implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -131,4 +171,5 @@ public class Matcher implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

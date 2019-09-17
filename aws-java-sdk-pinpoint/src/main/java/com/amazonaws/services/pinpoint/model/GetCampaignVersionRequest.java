@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,17 +17,43 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     */
     private String applicationId;
-
+    /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     */
     private String campaignId;
-
+    /**
+     * <p>
+     * The unique version number (Version property) for the campaign version.
+     * </p>
+     */
     private String version;
 
     /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      */
 
     public void setApplicationId(String applicationId) {
@@ -35,7 +61,13 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
+     * @return The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *         Amazon Pinpoint console.
      */
 
     public String getApplicationId() {
@@ -43,7 +75,14 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon
+     * Pinpoint console.
+     * </p>
+     * 
      * @param applicationId
+     *        The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the
+     *        Amazon Pinpoint console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -53,7 +92,12 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
      * @param campaignId
+     *        The unique identifier for the campaign.
      */
 
     public void setCampaignId(String campaignId) {
@@ -61,7 +105,11 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
+     * @return The unique identifier for the campaign.
      */
 
     public String getCampaignId() {
@@ -69,7 +117,12 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The unique identifier for the campaign.
+     * </p>
+     * 
      * @param campaignId
+     *        The unique identifier for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +132,12 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The unique version number (Version property) for the campaign version.
+     * </p>
+     * 
      * @param version
+     *        The unique version number (Version property) for the campaign version.
      */
 
     public void setVersion(String version) {
@@ -87,7 +145,11 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The unique version number (Version property) for the campaign version.
+     * </p>
+     * 
+     * @return The unique version number (Version property) for the campaign version.
      */
 
     public String getVersion() {
@@ -95,7 +157,12 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The unique version number (Version property) for the campaign version.
+     * </p>
+     * 
      * @param version
+     *        The unique version number (Version property) for the campaign version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +172,8 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

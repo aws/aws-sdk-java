@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,9 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     private String virtualName;
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String deviceName;
@@ -49,8 +51,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * Suppresses a device mapping.
      * </p>
      * <p>
-     * If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health check.
+     * If this parameter is true for the root device, the instance might fail the EC2 health check. In that case, Amazon
+     * EC2 Auto Scaling launches a replacement instance.
      * </p>
      */
     private Boolean noDevice;
@@ -97,11 +99,16 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setDeviceName(String deviceName) {
@@ -110,10 +117,15 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *         Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getDeviceName() {
@@ -122,11 +134,16 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming
+     * on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device Naming on Linux
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,15 +197,15 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * Suppresses a device mapping.
      * </p>
      * <p>
-     * If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health check.
+     * If this parameter is true for the root device, the instance might fail the EC2 health check. In that case, Amazon
+     * EC2 Auto Scaling launches a replacement instance.
      * </p>
      * 
      * @param noDevice
      *        Suppresses a device mapping.</p>
      *        <p>
-     *        If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     *        launches a replacement instance if the instance fails the health check.
+     *        If this parameter is true for the root device, the instance might fail the EC2 health check. In that case,
+     *        Amazon EC2 Auto Scaling launches a replacement instance.
      */
 
     public void setNoDevice(Boolean noDevice) {
@@ -200,14 +217,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * Suppresses a device mapping.
      * </p>
      * <p>
-     * If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health check.
+     * If this parameter is true for the root device, the instance might fail the EC2 health check. In that case, Amazon
+     * EC2 Auto Scaling launches a replacement instance.
      * </p>
      * 
      * @return Suppresses a device mapping.</p>
      *         <p>
-     *         If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health check.
+     *         If this parameter is true for the root device, the instance might fail the EC2 health check. In that
+     *         case, Amazon EC2 Auto Scaling launches a replacement instance.
      */
 
     public Boolean getNoDevice() {
@@ -219,15 +236,15 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * Suppresses a device mapping.
      * </p>
      * <p>
-     * If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health check.
+     * If this parameter is true for the root device, the instance might fail the EC2 health check. In that case, Amazon
+     * EC2 Auto Scaling launches a replacement instance.
      * </p>
      * 
      * @param noDevice
      *        Suppresses a device mapping.</p>
      *        <p>
-     *        If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     *        launches a replacement instance if the instance fails the health check.
+     *        If this parameter is true for the root device, the instance might fail the EC2 health check. In that case,
+     *        Amazon EC2 Auto Scaling launches a replacement instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,14 +258,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * Suppresses a device mapping.
      * </p>
      * <p>
-     * If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     * launches a replacement instance if the instance fails the health check.
+     * If this parameter is true for the root device, the instance might fail the EC2 health check. In that case, Amazon
+     * EC2 Auto Scaling launches a replacement instance.
      * </p>
      * 
      * @return Suppresses a device mapping.</p>
      *         <p>
-     *         If this parameter is true for the root device, the instance might fail the EC2 health check. Auto Scaling
-     *         launches a replacement instance if the instance fails the health check.
+     *         If this parameter is true for the root device, the instance might fail the EC2 health check. In that
+     *         case, Amazon EC2 Auto Scaling launches a replacement instance.
      */
 
     public Boolean isNoDevice() {
@@ -256,7 +273,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -327,4 +345,5 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

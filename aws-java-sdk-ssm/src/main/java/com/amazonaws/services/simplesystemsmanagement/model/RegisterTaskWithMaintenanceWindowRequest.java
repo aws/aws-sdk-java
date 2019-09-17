@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,28 +27,60 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the maintenance window the task should be added to.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or maintenance window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify maintenance window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
+     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
+     * role for Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
+     * <p>
+     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String serviceRoleArn;
     /**
@@ -59,14 +91,29 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String taskType;
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
+     * </p>
+     */
+    private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
+    /**
+     * <p>
+     * The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a
+     * maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
      */
     private Integer priority;
@@ -86,8 +133,28 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
      * </p>
+     * <note>
+     * <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      */
     private LoggingInfo loggingInfo;
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     */
+    private String description;
     /**
      * <p>
      * User-provided idempotency token.
@@ -97,11 +164,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the maintenance window the task should be added to.
      * </p>
      * 
      * @param windowId
-     *        The id of the Maintenance Window the task should be added to.
+     *        The ID of the maintenance window the task should be added to.
      */
 
     public void setWindowId(String windowId) {
@@ -110,10 +177,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the maintenance window the task should be added to.
      * </p>
      * 
-     * @return The id of the Maintenance Window the task should be added to.
+     * @return The ID of the maintenance window the task should be added to.
      */
 
     public String getWindowId() {
@@ -122,11 +189,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the maintenance window the task should be added to.
      * </p>
      * 
      * @param windowId
-     *        The id of the Maintenance Window the task should be added to.
+     *        The ID of the maintenance window the task should be added to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,14 +204,33 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or maintenance window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify maintenance window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
-     * @return The targets (either instances or tags). Instances are specified using
-     *         Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *         name&gt;,Values=&lt;tag value&gt;.
+     * @return The targets (either instances or maintenance window targets).</p>
+     *         <p>
+     *         Specify instances using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *         </p>
+     *         <p>
+     *         Specify maintenance window targets using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public java.util.List<Target> getTargets() {
@@ -156,15 +242,34 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or maintenance window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify maintenance window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or maintenance window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify maintenance window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -178,9 +283,19 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or maintenance window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify maintenance window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -189,9 +304,18 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or maintenance window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify maintenance window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,15 +331,34 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or maintenance window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify maintenance window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or maintenance window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify maintenance window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +369,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      */
 
     public void setTaskArn(String taskArn) {
@@ -239,10 +382,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
-     * @return The ARN of the task to execute
+     * @return The ARN of the task to run.
      */
 
     public String getTaskArn() {
@@ -251,11 +394,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +409,54 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
+     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
+     * role for Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
+     * <p>
+     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task.
+     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
+     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
+     *        service-linked role for Systems Manager exists in your account, it is created when you run
+     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        <p>
+     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Service-Linked Role Permissions for Systems Manager</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *        </p>
+     *        </li>
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -279,10 +465,53 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
+     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
+     * role for Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
+     * <p>
+     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The role that should be assumed when executing the task.
+     * @return The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
+     *         you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
+     *         service-linked role for Systems Manager exists in your account, it is created when you run
+     *         <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *         <p>
+     *         For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *         >Service-Linked Role Permissions for Systems Manager</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *         >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *         </p>
+     *         </li>
      */
 
     public String getServiceRoleArn() {
@@ -291,11 +520,54 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If you do
+     * not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked
+     * role for Systems Manager exists in your account, it is created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code>.
      * </p>
+     * <p>
+     * For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task.
+     *        The ARN of the IAM service role for Systems Manager to assume when running a maintenance window task. If
+     *        you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no
+     *        service-linked role for Systems Manager exists in your account, it is created when you run
+     *        <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+     *        <p>
+     *        For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Service-Linked Role Permissions for Systems Manager</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,7 +630,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      */
 
     public void setTaskType(MaintenanceWindowTaskType taskType) {
-        this.taskType = taskType.toString();
+        withTaskType(taskType);
     }
 
     /**
@@ -373,16 +645,30 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      */
 
     public RegisterTaskWithMaintenanceWindowRequest withTaskType(MaintenanceWindowTaskType taskType) {
-        setTaskType(taskType);
+        this.taskType = taskType.toString();
         return this;
     }
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
-     * @return The parameters that should be passed to the task when it is executed.
+     * @return The parameters that should be passed to the task when it is run.</p> <note>
+     *         <p>
+     *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
+     *         For information about how Systems Manager handles these options for the supported maintenance window task
+     *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         </p>
      */
 
     public java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> getTaskParameters() {
@@ -391,11 +677,25 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.
+     *        The parameters that should be passed to the task when it is run.</p> <note>
+     *        <p>
+     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
+     *        information about how Systems Manager handles these options for the supported maintenance window task
+     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
      */
 
     public void setTaskParameters(java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters) {
@@ -404,11 +704,25 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
+     * <note>
+     * <p>
+     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
+     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
+     * about how Systems Manager handles these options for the supported maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.
+     *        The parameters that should be passed to the task when it is run.</p> <note>
+     *        <p>
+     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
+     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
+     *        information about how Systems Manager handles these options for the supported maintenance window task
+     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,13 +754,59 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
+     * </p>
+     * 
+     * @param taskInvocationParameters
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
+     */
+
+    public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
+        this.taskInvocationParameters = taskInvocationParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
+     * </p>
+     * 
+     * @return The parameters that the task should use during execution. Populate only the fields that match the task
+     *         type. All other fields should be empty.
+     */
+
+    public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
+        return this.taskInvocationParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
+     * </p>
+     * 
+     * @param taskInvocationParameters
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
+        setTaskInvocationParameters(taskInvocationParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a
+     * maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in
-     *        a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in
+     *        The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in
+     *        a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in
      *        parallel.
      */
 
@@ -456,12 +816,12 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a
+     * maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
      * 
-     * @return The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks
-     *         in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled
+     * @return The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks
+     *         in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled
      *         in parallel.
      */
 
@@ -471,13 +831,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a
+     * maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in
-     *        a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in
+     *        The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in
+     *        a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in
      *        parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -571,9 +931,24 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
      * </p>
+     * <note>
+     * <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     *        <p>
+     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
+     *        options for the supported maintenance window task types, see
+     *        <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
      */
 
     public void setLoggingInfo(LoggingInfo loggingInfo) {
@@ -584,8 +959,23 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
      * </p>
+     * <note>
+     * <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
-     * @return A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     * @return A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     *         <p>
+     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
+     *         options for the supported maintenance window task types, see
+     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *         </p>
      */
 
     public LoggingInfo getLoggingInfo() {
@@ -596,14 +986,109 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <p>
      * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
      * </p>
+     * <note>
+     * <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
+     * for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+     * </p>
+     * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     *        <p>
+     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
+     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
+     *        options for the supported maintenance window task types, see
+     *        <a>MaintenanceWindowTaskInvocationParameters</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterTaskWithMaintenanceWindowRequest withLoggingInfo(LoggingInfo loggingInfo) {
         setLoggingInfo(loggingInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the task.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @return An optional name for the task.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the task.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @return An optional description for the task.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -648,7 +1133,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -669,7 +1155,9 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (getTaskType() != null)
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+            sb.append("TaskParameters: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTaskInvocationParameters() != null)
+            sb.append("TaskInvocationParameters: ").append(getTaskInvocationParameters()).append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getMaxConcurrency() != null)
@@ -678,6 +1166,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getLoggingInfo() != null)
             sb.append("LoggingInfo: ").append(getLoggingInfo()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -718,6 +1210,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
             return false;
         if (other.getTaskParameters() != null && other.getTaskParameters().equals(this.getTaskParameters()) == false)
             return false;
+        if (other.getTaskInvocationParameters() == null ^ this.getTaskInvocationParameters() == null)
+            return false;
+        if (other.getTaskInvocationParameters() != null && other.getTaskInvocationParameters().equals(this.getTaskInvocationParameters()) == false)
+            return false;
         if (other.getPriority() == null ^ this.getPriority() == null)
             return false;
         if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
@@ -733,6 +1229,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (other.getLoggingInfo() == null ^ this.getLoggingInfo() == null)
             return false;
         if (other.getLoggingInfo() != null && other.getLoggingInfo().equals(this.getLoggingInfo()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
@@ -752,10 +1256,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTaskType() == null) ? 0 : getTaskType().hashCode());
         hashCode = prime * hashCode + ((getTaskParameters() == null) ? 0 : getTaskParameters().hashCode());
+        hashCode = prime * hashCode + ((getTaskInvocationParameters() == null) ? 0 : getTaskInvocationParameters().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import java.util.Map;
  */
 public class ResponseMetadata {
     public static final String AWS_REQUEST_ID = "AWS_REQUEST_ID";
+
+    public static final String AWS_EXTENDED_REQUEST_ID = "AWS_EXTENDED_REQUEST_ID";
 
     protected final Map<String, String> metadata;
 

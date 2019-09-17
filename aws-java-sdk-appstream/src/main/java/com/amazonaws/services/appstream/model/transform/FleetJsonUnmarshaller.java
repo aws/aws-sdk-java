@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,9 +68,17 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setImageName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageArn", targetDepth)) {
+                    context.nextToken();
+                    fleet.setImageArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
                     fleet.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FleetType", targetDepth)) {
+                    context.nextToken();
+                    fleet.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeCapacityStatus", targetDepth)) {
                     context.nextToken();
@@ -94,11 +102,27 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
-                    fleet.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    fleet.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FleetErrors", targetDepth)) {
                     context.nextToken();
                     fleet.setFleetErrors(new ListUnmarshaller<FleetError>(FleetErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("EnableDefaultInternetAccess", targetDepth)) {
+                    context.nextToken();
+                    fleet.setEnableDefaultInternetAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DomainJoinInfo", targetDepth)) {
+                    context.nextToken();
+                    fleet.setDomainJoinInfo(DomainJoinInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IdleDisconnectTimeoutInSeconds", targetDepth)) {
+                    context.nextToken();
+                    fleet.setIdleDisconnectTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IamRoleArn", targetDepth)) {
+                    context.nextToken();
+                    fleet.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

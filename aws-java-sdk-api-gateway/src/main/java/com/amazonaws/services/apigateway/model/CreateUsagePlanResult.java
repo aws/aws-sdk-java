@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import javax.annotation.Generated;
  * customers by adding API keys to the plan.
  * </p>
  * </div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use
  * Usage Plans</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -74,6 +74,12 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String productCode;
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -389,7 +395,69 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @return The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The collection of tags. Each tag element is associated with a given resource.
+     * </p>
+     * 
+     * @param tags
+     *        The collection of tags. Each tag element is associated with a given resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUsagePlanResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateUsagePlanResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUsagePlanResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -412,7 +480,9 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
         if (getQuota() != null)
             sb.append("Quota: ").append(getQuota()).append(",");
         if (getProductCode() != null)
-            sb.append("ProductCode: ").append(getProductCode());
+            sb.append("ProductCode: ").append(getProductCode()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +525,10 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getProductCode() != null && other.getProductCode().equals(this.getProductCode()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +544,7 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
         hashCode = prime * hashCode + ((getQuota() == null) ? 0 : getQuota().hashCode());
         hashCode = prime * hashCode + ((getProductCode() == null) ? 0 : getProductCode().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
@@ -481,4 +556,5 @@ public class CreateUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

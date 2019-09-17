@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,22 +28,34 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The block device mapping entries.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
+    /**
+     * <p>
      * The ID of the AMI.
      * </p>
      */
     private String imageId;
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchPermission> launchPermissions;
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
+    /**
+     * <p>
+     * A description for the AMI.
+     * </p>
+     */
+    private String description;
     /**
      * <p>
      * The kernel ID.
@@ -58,22 +70,83 @@ public class ImageAttribute implements Serializable, Cloneable {
     private String ramdiskId;
     /**
      * <p>
-     * A description for the AMI.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      */
     private String sriovNetSupport;
+
     /**
      * <p>
-     * One or more block device mapping entries.
+     * The block device mapping entries.
      * </p>
+     * 
+     * @return The block device mapping entries.
      */
-    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
+
+    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        if (blockDeviceMappings == null) {
+            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
+        }
+        return blockDeviceMappings;
+    }
+
+    /**
+     * <p>
+     * The block device mapping entries.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        The block device mapping entries.
+     */
+
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
+        }
+
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
+    }
+
+    /**
+     * <p>
+     * The block device mapping entries.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        The block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (this.blockDeviceMappings == null) {
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
+        }
+        for (BlockDeviceMapping ele : blockDeviceMappings) {
+            this.blockDeviceMappings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The block device mapping entries.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        The block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageAttribute withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        setBlockDeviceMappings(blockDeviceMappings);
+        return this;
+    }
 
     /**
      * <p>
@@ -117,10 +190,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
-     * @return One or more launch permissions.
+     * @return The launch permissions.
      */
 
     public java.util.List<LaunchPermission> getLaunchPermissions() {
@@ -132,11 +205,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      */
 
     public void setLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
@@ -150,7 +223,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +232,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +248,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more launch permissions.
+     * The launch permissions.
      * </p>
      * 
      * @param launchPermissions
-     *        One or more launch permissions.
+     *        The launch permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +263,10 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
-     * @return One or more product codes.
+     * @return The product codes.
      */
 
     public java.util.List<ProductCode> getProductCodes() {
@@ -205,11 +278,11 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      */
 
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -223,7 +296,7 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -232,7 +305,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,16 +321,56 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the AMI.
+     * </p>
+     * 
+     * @param description
+     *        A description for the AMI.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the AMI.
+     * </p>
+     * 
+     * @return A description for the AMI.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the AMI.
+     * </p>
+     * 
+     * @param description
+     *        A description for the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageAttribute withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -343,46 +456,6 @@ public class ImageAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description for the AMI.
-     * </p>
-     * 
-     * @param description
-     *        A description for the AMI.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the AMI.
-     * </p>
-     * 
-     * @return A description for the AMI.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the AMI.
-     * </p>
-     * 
-     * @param description
-     *        A description for the AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImageAttribute withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
      * Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
      * </p>
      * 
@@ -422,80 +495,8 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * 
-     * @return One or more block device mapping entries.
-     */
-
-    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        if (blockDeviceMappings == null) {
-            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
-        }
-        return blockDeviceMappings;
-    }
-
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        One or more block device mapping entries.
-     */
-
-    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-            return;
-        }
-
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
-    }
-
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
-        }
-        for (BlockDeviceMapping ele : blockDeviceMappings) {
-            this.blockDeviceMappings.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more block device mapping entries.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        One or more block device mapping entries.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImageAttribute withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        setBlockDeviceMappings(blockDeviceMappings);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -505,22 +506,22 @@ public class ImageAttribute implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBlockDeviceMappings() != null)
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getImageId() != null)
             sb.append("ImageId: ").append(getImageId()).append(",");
         if (getLaunchPermissions() != null)
             sb.append("LaunchPermissions: ").append(getLaunchPermissions()).append(",");
         if (getProductCodes() != null)
             sb.append("ProductCodes: ").append(getProductCodes()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getKernelId() != null)
             sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
             sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
-        if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings());
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +536,10 @@ public class ImageAttribute implements Serializable, Cloneable {
         if (obj instanceof ImageAttribute == false)
             return false;
         ImageAttribute other = (ImageAttribute) obj;
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
+            return false;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
         if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
@@ -547,6 +552,10 @@ public class ImageAttribute implements Serializable, Cloneable {
             return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getKernelId() == null ^ this.getKernelId() == null)
             return false;
         if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
@@ -555,17 +564,9 @@ public class ImageAttribute implements Serializable, Cloneable {
             return false;
         if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getSriovNetSupport() == null ^ this.getSriovNetSupport() == null)
             return false;
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
-            return false;
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
-            return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         return true;
     }
@@ -575,14 +576,14 @@ public class ImageAttribute implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getLaunchPermissions() == null) ? 0 : getLaunchPermissions().hashCode());
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         return hashCode;
     }
 
@@ -594,4 +595,5 @@ public class ImageAttribute implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

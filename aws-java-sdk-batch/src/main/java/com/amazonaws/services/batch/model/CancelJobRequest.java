@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * A message to attach to the job that explains the reason for cancelling it. This message is returned by future
+     * A message to attach to the job that explains the reason for canceling it. This message is returned by future
      * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
      * </p>
      */
@@ -41,11 +41,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
      * @param jobId
-     *        A list of up to 100 job IDs to cancel.
+     *        The AWS Batch job ID of the job to cancel.
      */
 
     public void setJobId(String jobId) {
@@ -54,10 +54,10 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
-     * @return A list of up to 100 job IDs to cancel.
+     * @return The AWS Batch job ID of the job to cancel.
      */
 
     public String getJobId() {
@@ -66,11 +66,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
      * @param jobId
-     *        A list of up to 100 job IDs to cancel.
+     *        The AWS Batch job ID of the job to cancel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +81,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A message to attach to the job that explains the reason for cancelling it. This message is returned by future
+     * A message to attach to the job that explains the reason for canceling it. This message is returned by future
      * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
      * </p>
      * 
      * @param reason
-     *        A message to attach to the job that explains the reason for cancelling it. This message is returned by
+     *        A message to attach to the job that explains the reason for canceling it. This message is returned by
      *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
      *        logs.
      */
@@ -97,11 +97,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A message to attach to the job that explains the reason for cancelling it. This message is returned by future
+     * A message to attach to the job that explains the reason for canceling it. This message is returned by future
      * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
      * </p>
      * 
-     * @return A message to attach to the job that explains the reason for cancelling it. This message is returned by
+     * @return A message to attach to the job that explains the reason for canceling it. This message is returned by
      *         future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
      *         logs.
      */
@@ -112,12 +112,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A message to attach to the job that explains the reason for cancelling it. This message is returned by future
+     * A message to attach to the job that explains the reason for canceling it. This message is returned by future
      * <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity logs.
      * </p>
      * 
      * @param reason
-     *        A message to attach to the job that explains the reason for cancelling it. This message is returned by
+     *        A message to attach to the job that explains the reason for canceling it. This message is returned by
      *        future <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
      *        logs.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,7 +129,8 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,55 +14,60 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides limits of code size and concurrency associated with the current account and region.
+ * Limits that are related to concurrency and code storage. All file and storage sizes are in bytes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountLimit implements Serializable, Cloneable {
+public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * The amount of storage space that you can use for all deployment packages and layer archives.
      * </p>
      */
     private Long totalCodeSize;
     /**
      * <p>
-     * Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for
-     * uploading. The default limit is 250 MB.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      */
     private Long codeSizeUnzipped;
     /**
      * <p>
-     * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      */
     private Long codeSizeZipped;
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * The maximum number of simultaneous function executions.
      * </p>
      */
     private Integer concurrentExecutions;
+    /**
+     * <p>
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
+     * </p>
+     */
+    private Integer unreservedConcurrentExecutions;
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * The amount of storage space that you can use for all deployment packages and layer archives.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        The amount of storage space that you can use for all deployment packages and layer archives.
      */
 
     public void setTotalCodeSize(Long totalCodeSize) {
@@ -71,10 +76,10 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * The amount of storage space that you can use for all deployment packages and layer archives.
      * </p>
      * 
-     * @return Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * @return The amount of storage space that you can use for all deployment packages and layer archives.
      */
 
     public Long getTotalCodeSize() {
@@ -83,11 +88,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * The amount of storage space that you can use for all deployment packages and layer archives.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        The amount of storage space that you can use for all deployment packages and layer archives.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +103,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for
-     * uploading. The default limit is 250 MB.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar
-     *        size) for uploading. The default limit is 250 MB.
+     *        The maximum size of your function's code and layers when they're extracted.
      */
 
     public void setCodeSizeUnzipped(Long codeSizeUnzipped) {
@@ -113,12 +116,10 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for
-     * uploading. The default limit is 250 MB.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
-     * @return Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar
-     *         size) for uploading. The default limit is 250 MB.
+     * @return The maximum size of your function's code and layers when they're extracted.
      */
 
     public Long getCodeSizeUnzipped() {
@@ -127,13 +128,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar size) for
-     * uploading. The default limit is 250 MB.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        Size, in bytes, of code/dependencies that you can zip into a deployment package (uncompressed zip/jar
-     *        size) for uploading. The default limit is 250 MB.
+     *        The maximum size of your function's code and layers when they're extracted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,13 +143,13 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *        function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *        larger files.
      */
 
     public void setCodeSizeZipped(Long codeSizeZipped) {
@@ -159,12 +158,12 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
-     * @return Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *         function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     * @return The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *         larger files.
      */
 
     public Long getCodeSizeZipped() {
@@ -173,13 +172,13 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda function(.zip/.jar
-     * file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        Size, in bytes, of a single zipped code/dependencies package you can upload for your Lambda
-     *        function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default limit is 50 MB.
+     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *        larger files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,17 +189,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * The maximum number of simultaneous function executions.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of simultaneous executions of your function per region. For more information or to request a limit
-     *        increase for concurrent executions, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 100.
+     *        The maximum number of simultaneous function executions.
      */
 
     public void setConcurrentExecutions(Integer concurrentExecutions) {
@@ -209,16 +202,10 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * The maximum number of simultaneous function executions.
      * </p>
      * 
-     * @return Number of simultaneous executions of your function per region. For more information or to request a limit
-     *         increase for concurrent executions, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *         Executions</a>. The default limit is 100.
+     * @return The maximum number of simultaneous function executions.
      */
 
     public Integer getConcurrentExecutions() {
@@ -227,17 +214,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Number of simultaneous executions of your function per region. For more information or to request a limit
-     * increase for concurrent executions, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     * Executions</a>. The default limit is 100.
+     * The maximum number of simultaneous function executions.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of simultaneous executions of your function per region. For more information or to request a limit
-     *        increase for concurrent executions, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Lambda Function Concurrent
-     *        Executions</a>. The default limit is 100.
+     *        The maximum number of simultaneous function executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +228,54 @@ public class AccountLimit implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     *        functions with <a>PutFunctionConcurrency</a>.
+     */
+
+    public void setUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        this.unreservedConcurrentExecutions = unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @return The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     *         functions with <a>PutFunctionConcurrency</a>.
+     */
+
+    public Integer getUnreservedConcurrentExecutions() {
+        return this.unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     *        functions with <a>PutFunctionConcurrency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountLimit withUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        setUnreservedConcurrentExecutions(unreservedConcurrentExecutions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -264,7 +292,9 @@ public class AccountLimit implements Serializable, Cloneable {
         if (getCodeSizeZipped() != null)
             sb.append("CodeSizeZipped: ").append(getCodeSizeZipped()).append(",");
         if (getConcurrentExecutions() != null)
-            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions());
+            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions()).append(",");
+        if (getUnreservedConcurrentExecutions() != null)
+            sb.append("UnreservedConcurrentExecutions: ").append(getUnreservedConcurrentExecutions());
         sb.append("}");
         return sb.toString();
     }
@@ -295,6 +325,11 @@ public class AccountLimit implements Serializable, Cloneable {
             return false;
         if (other.getConcurrentExecutions() != null && other.getConcurrentExecutions().equals(this.getConcurrentExecutions()) == false)
             return false;
+        if (other.getUnreservedConcurrentExecutions() == null ^ this.getUnreservedConcurrentExecutions() == null)
+            return false;
+        if (other.getUnreservedConcurrentExecutions() != null
+                && other.getUnreservedConcurrentExecutions().equals(this.getUnreservedConcurrentExecutions()) == false)
+            return false;
         return true;
     }
 
@@ -307,6 +342,7 @@ public class AccountLimit implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCodeSizeUnzipped() == null) ? 0 : getCodeSizeUnzipped().hashCode());
         hashCode = prime * hashCode + ((getCodeSizeZipped() == null) ? 0 : getCodeSizeZipped().hashCode());
         hashCode = prime * hashCode + ((getConcurrentExecutions() == null) ? 0 : getConcurrentExecutions().hashCode());
+        hashCode = prime * hashCode + ((getUnreservedConcurrentExecutions() == null) ? 0 : getUnreservedConcurrentExecutions().hashCode());
         return hashCode;
     }
 
@@ -317,5 +353,11 @@ public class AccountLimit implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.AccountLimitMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

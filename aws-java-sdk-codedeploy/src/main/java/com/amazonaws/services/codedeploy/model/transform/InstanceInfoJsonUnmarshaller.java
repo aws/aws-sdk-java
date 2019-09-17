@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,11 @@ public class InstanceInfoJsonUnmarshaller implements Unmarshaller<InstanceInfo, 
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setRegisterTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInfo.setRegisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deregisterTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setDeregisterTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    instanceInfo.setDeregisterTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

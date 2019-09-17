@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Listener> listenersList = (com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerRequest
-                .getListeners();
-        if (!listenersList.isEmpty() || !listenersList.isAutoConstruct()) {
+        if (!createLoadBalancerRequest.getListeners().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerRequest.getListeners()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Listener> listenersList = (com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerRequest
+                    .getListeners();
             int listenersListIndex = 1;
 
             for (Listener listenersListValue : listenersList) {
@@ -78,9 +79,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!createLoadBalancerRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -91,8 +93,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> subnetsList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest.getSubnets();
-        if (!subnetsList.isEmpty() || !subnetsList.isAutoConstruct()) {
+        if (!createLoadBalancerRequest.getSubnets().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest.getSubnets()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> subnetsList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest
+                    .getSubnets();
             int subnetsListIndex = 1;
 
             for (String subnetsListValue : subnetsList) {
@@ -103,9 +107,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest
-                .getSecurityGroups();
-        if (!securityGroupsList.isEmpty() || !securityGroupsList.isAutoConstruct()) {
+        if (!createLoadBalancerRequest.getSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest.getSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createLoadBalancerRequest
+                    .getSecurityGroups();
             int securityGroupsListIndex = 1;
 
             for (String securityGroupsListValue : securityGroupsList) {
@@ -120,8 +125,9 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("Scheme", StringUtils.fromString(createLoadBalancerRequest.getScheme()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createLoadBalancerRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createLoadBalancerRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createLoadBalancerRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createLoadBalancerRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

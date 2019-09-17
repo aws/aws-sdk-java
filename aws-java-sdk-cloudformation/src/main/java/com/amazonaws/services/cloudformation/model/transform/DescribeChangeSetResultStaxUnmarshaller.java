@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,7 +81,7 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    describeChangeSetResult.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeChangeSetResult.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -107,6 +107,11 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
 
                 if (context.testExpression("NotificationARNs/member", targetDepth)) {
                     describeChangeSetResult.withNotificationARNs(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RollbackConfiguration", targetDepth)) {
+                    describeChangeSetResult.setRollbackConfiguration(RollbackConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

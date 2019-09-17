@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,18 +14,23 @@ package com.amazonaws.services.stepfunctions.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about the start of an activity during an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityStartedEventDetails" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityStartedEventDetails implements Serializable, Cloneable {
+public class ActivityStartedEventDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      */
@@ -33,12 +38,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
      * @param workerName
-     *        The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     *        The name of the worker that the task is assigned to. These names are provided by the workers when calling
      *        <a>GetActivityTask</a>.
      */
 
@@ -48,12 +53,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
-     * @return The name of the worker that the task was assigned to. These names are provided by the workers when
-     *         calling <a>GetActivityTask</a>.
+     * @return The name of the worker that the task is assigned to. These names are provided by the workers when calling
+     *         <a>GetActivityTask</a>.
      */
 
     public String getWorkerName() {
@@ -62,12 +67,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
      * @param workerName
-     *        The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     *        The name of the worker that the task is assigned to. These names are provided by the workers when calling
      *        <a>GetActivityTask</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -78,7 +83,8 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -127,5 +133,11 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.stepfunctions.model.transform.ActivityStartedEventDetailsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

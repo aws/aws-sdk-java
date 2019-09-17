@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,59 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AcceptCertificateTransferRequest Marshaller
+ * AcceptCertificateTransferRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AcceptCertificateTransferRequestMarshaller implements Marshaller<Request<AcceptCertificateTransferRequest>, AcceptCertificateTransferRequest> {
+@SdkInternalApi
+public class AcceptCertificateTransferRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
+    private static final MarshallingInfo<Boolean> SETASACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("setAsActive").build();
 
-    public AcceptCertificateTransferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AcceptCertificateTransferRequestMarshaller instance = new AcceptCertificateTransferRequestMarshaller();
+
+    public static AcceptCertificateTransferRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AcceptCertificateTransferRequest> marshall(AcceptCertificateTransferRequest acceptCertificateTransferRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AcceptCertificateTransferRequest acceptCertificateTransferRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (acceptCertificateTransferRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AcceptCertificateTransferRequest> request = new DefaultRequest<AcceptCertificateTransferRequest>(acceptCertificateTransferRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/accept-certificate-transfer/{certificateId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
-                acceptCertificateTransferRequest.getCertificateId());
-        request.setResourcePath(uriResourcePath);
-
-        if (acceptCertificateTransferRequest.getSetAsActive() != null) {
-            request.addParameter("setAsActive", StringUtils.fromBoolean(acceptCertificateTransferRequest.getSetAsActive()));
+        try {
+            protocolMarshaller.marshall(acceptCertificateTransferRequest.getCertificateId(), CERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(acceptCertificateTransferRequest.getSetAsActive(), SETASACTIVE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

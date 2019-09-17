@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,30 +14,72 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing
+ * of a campaign.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TreatmentResource" target="_top">AWS API
+ *      Documentation</a>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TreatmentResource implements Serializable, Cloneable {
+public class TreatmentResource implements Serializable, Cloneable, StructuredPojo {
 
-    /** The unique treatment ID. */
+    /**
+     * <p>
+     * The unique identifier for the treatment.
+     * </p>
+     */
     private String id;
-    /** The message configuration settings. */
+    /**
+     * <p>
+     * The message configuration settings for the treatment.
+     * </p>
+     */
     private MessageConfiguration messageConfiguration;
-    /** The campaign schedule. */
+    /**
+     * <p>
+     * The schedule settings for the treatment.
+     * </p>
+     */
     private Schedule schedule;
-    /** The allocated percentage of users for this treatment. */
+    /**
+     * <p>
+     * The allocated percentage of users (segment members) that the treatment is sent to.
+     * </p>
+     */
     private Integer sizePercent;
-    /** The treatment status. */
+    /**
+     * <p>
+     * The status of the treatment.
+     * </p>
+     */
     private CampaignState state;
-    /** A custom description for the treatment. */
+    /**
+     * <p>
+     * The custom description of the treatment.
+     * </p>
+     */
     private String treatmentDescription;
-    /** The custom name of a variation of the campaign used for A/B testing. */
+    /**
+     * <p>
+     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.
+     * </p>
+     */
     private String treatmentName;
 
     /**
-     * The unique treatment ID.
+     * <p>
+     * The unique identifier for the treatment.
+     * </p>
      * 
      * @param id
-     *        The unique treatment ID.
+     *        The unique identifier for the treatment.
      */
 
     public void setId(String id) {
@@ -45,9 +87,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The unique treatment ID.
+     * <p>
+     * The unique identifier for the treatment.
+     * </p>
      * 
-     * @return The unique treatment ID.
+     * @return The unique identifier for the treatment.
      */
 
     public String getId() {
@@ -55,10 +99,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The unique treatment ID.
+     * <p>
+     * The unique identifier for the treatment.
+     * </p>
      * 
      * @param id
-     *        The unique treatment ID.
+     *        The unique identifier for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +114,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the treatment.
+     * </p>
      * 
      * @param messageConfiguration
-     *        The message configuration settings.
+     *        The message configuration settings for the treatment.
      */
 
     public void setMessageConfiguration(MessageConfiguration messageConfiguration) {
@@ -79,9 +127,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the treatment.
+     * </p>
      * 
-     * @return The message configuration settings.
+     * @return The message configuration settings for the treatment.
      */
 
     public MessageConfiguration getMessageConfiguration() {
@@ -89,10 +139,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The message configuration settings.
+     * <p>
+     * The message configuration settings for the treatment.
+     * </p>
      * 
      * @param messageConfiguration
-     *        The message configuration settings.
+     *        The message configuration settings for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +154,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the treatment.
+     * </p>
      * 
      * @param schedule
-     *        The campaign schedule.
+     *        The schedule settings for the treatment.
      */
 
     public void setSchedule(Schedule schedule) {
@@ -113,9 +167,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the treatment.
+     * </p>
      * 
-     * @return The campaign schedule.
+     * @return The schedule settings for the treatment.
      */
 
     public Schedule getSchedule() {
@@ -123,10 +179,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The campaign schedule.
+     * <p>
+     * The schedule settings for the treatment.
+     * </p>
      * 
      * @param schedule
-     *        The campaign schedule.
+     *        The schedule settings for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +194,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>
+     * The allocated percentage of users (segment members) that the treatment is sent to.
+     * </p>
      * 
      * @param sizePercent
-     *        The allocated percentage of users for this treatment.
+     *        The allocated percentage of users (segment members) that the treatment is sent to.
      */
 
     public void setSizePercent(Integer sizePercent) {
@@ -147,9 +207,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>
+     * The allocated percentage of users (segment members) that the treatment is sent to.
+     * </p>
      * 
-     * @return The allocated percentage of users for this treatment.
+     * @return The allocated percentage of users (segment members) that the treatment is sent to.
      */
 
     public Integer getSizePercent() {
@@ -157,10 +219,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The allocated percentage of users for this treatment.
+     * <p>
+     * The allocated percentage of users (segment members) that the treatment is sent to.
+     * </p>
      * 
      * @param sizePercent
-     *        The allocated percentage of users for this treatment.
+     *        The allocated percentage of users (segment members) that the treatment is sent to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,10 +234,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The treatment status.
+     * <p>
+     * The status of the treatment.
+     * </p>
      * 
      * @param state
-     *        The treatment status.
+     *        The status of the treatment.
      */
 
     public void setState(CampaignState state) {
@@ -181,9 +247,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The treatment status.
+     * <p>
+     * The status of the treatment.
+     * </p>
      * 
-     * @return The treatment status.
+     * @return The status of the treatment.
      */
 
     public CampaignState getState() {
@@ -191,10 +259,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The treatment status.
+     * <p>
+     * The status of the treatment.
+     * </p>
      * 
      * @param state
-     *        The treatment status.
+     *        The status of the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,10 +274,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of the treatment.
+     * </p>
      * 
      * @param treatmentDescription
-     *        A custom description for the treatment.
+     *        The custom description of the treatment.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -215,9 +287,11 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of the treatment.
+     * </p>
      * 
-     * @return A custom description for the treatment.
+     * @return The custom description of the treatment.
      */
 
     public String getTreatmentDescription() {
@@ -225,10 +299,12 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * A custom description for the treatment.
+     * <p>
+     * The custom description of the treatment.
+     * </p>
      * 
      * @param treatmentDescription
-     *        A custom description for the treatment.
+     *        The custom description of the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,10 +314,14 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.
+     * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign used for A/B testing.
+     *        The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
+     *        a campaign.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -249,9 +329,13 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.
+     * </p>
      * 
-     * @return The custom name of a variation of the campaign used for A/B testing.
+     * @return The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
+     *         a campaign.
      */
 
     public String getTreatmentName() {
@@ -259,10 +343,14 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * The custom name of a variation of the campaign used for A/B testing.
+     * <p>
+     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * campaign.
+     * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign used for A/B testing.
+     *        The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
+     *        a campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,7 +360,8 @@ public class TreatmentResource implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -363,5 +452,11 @@ public class TreatmentResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.TreatmentResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

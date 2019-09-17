@@ -23,10 +23,12 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.protocol.OperationInfo;
+import com.amazonaws.protocol.Protocol;
+import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +59,24 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
         return getContentTypeResolver().resolveContentType(metadata);
     }
 
+    public <T> ProtocolRequestMarshaller<T> createProtocolMarshaller(OperationInfo operationInfo, T origRequest) {
+        return JsonProtocolMarshallerBuilder.<T>standard()
+                .jsonGenerator(createGenerator(operationInfo))
+                .contentType(getContentType())
+                .operationInfo(operationInfo)
+                .originalRequest(origRequest)
+                .sendExplicitNullForPayload(false)
+                .build();
+    }
+
+    private StructuredJsonGenerator createGenerator(OperationInfo operationInfo) {
+        if (operationInfo.hasPayloadMembers() || operationInfo.protocol() == Protocol.AWS_JSON) {
+            return createGenerator();
+        } else {
+            return StructuredJsonGenerator.NO_OP;
+        }
+    }
+
     /**
      * Returns the response handler to be used for handling a successful response.
      *
@@ -80,14 +100,19 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
     @SuppressWarnings("unchecked")
     private void createErrorUnmarshallers() {
         for (JsonErrorShapeMetadata errorMetadata : metadata.getErrorShapeMetadata()) {
-            errorUnmarshallers.add(new JsonErrorUnmarshaller(
-                    (Class<? extends AmazonServiceException>) errorMetadata.getModeledClass(),
-                    errorMetadata.getErrorCode()));
-
+            if (errorMetadata.getExceptionUnmarshaller() != null) {
+                errorUnmarshallers.add(errorMetadata.getExceptionUnmarshaller());
+            } else if (errorMetadata.getModeledClass() != null) {
+                errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                        (Class<? extends AmazonServiceException>) errorMetadata.getModeledClass(),
+                        errorMetadata.getErrorCode()));
+            }
         }
-        errorUnmarshallers.add(new JsonErrorUnmarshaller(
-                (Class<? extends AmazonServiceException>) metadata.getBaseServiceExceptionClass(),
-                null));
+
+        if (metadata.getBaseServiceExceptionClass() != null) {
+            errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                    (Class<? extends AmazonServiceException>) metadata.getBaseServiceExceptionClass(), null));
+        }
     }
 
     /**

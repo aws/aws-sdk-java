@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,9 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      */
     private java.util.List<AttributeType> userAttributes;
     /**
@@ -65,6 +68,19 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private java.util.List<AttributeType> validationData;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -236,8 +252,13 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of name-value pairs representing user attributes.
+     * @return An array of name-value pairs representing user attributes.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -248,9 +269,14 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
@@ -267,13 +293,18 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,9 +322,14 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,7 +409,94 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SignUpRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SignUpRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -384,17 +507,21 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: ").append(getClientId()).append(",");
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: ").append(getSecretHash()).append(",");
+            sb.append("SecretHash: ").append("***Sensitive Data Redacted***").append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserAttributes() != null)
             sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getValidationData() != null)
-            sb.append("ValidationData: ").append(getValidationData());
+            sb.append("ValidationData: ").append(getValidationData()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -433,6 +560,14 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getValidationData() != null && other.getValidationData().equals(this.getValidationData()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -447,6 +582,8 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         hashCode = prime * hashCode + ((getValidationData() == null) ? 0 : getValidationData().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

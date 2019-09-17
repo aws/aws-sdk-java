@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,14 +14,20 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
+ * Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
  * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalExternalWorkflowExecutionInitiatedEventAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements Serializable, Cloneable {
+public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -43,7 +49,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     private String signalName;
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      */
     private String input;
@@ -57,7 +63,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     private Long decisionTaskCompletedEventId;
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      */
     private String control;
@@ -184,11 +190,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
      * @param input
-     *        Input provided to the signal (if any).
+     *        The input provided to the signal.
      */
 
     public void setInput(String input) {
@@ -197,10 +203,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
-     * @return Input provided to the signal (if any).
+     * @return The input provided to the signal.
      */
 
     public String getInput() {
@@ -209,11 +215,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
      * @param input
-     *        Input provided to the signal (if any).
+     *        The input provided to the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,11 +282,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public void setControl(String control) {
@@ -289,10 +295,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return Data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public String getControl() {
@@ -301,11 +307,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent decision tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +321,8 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -399,5 +406,12 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.SignalExternalWorkflowExecutionInitiatedEventAttributesMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
     }
 }

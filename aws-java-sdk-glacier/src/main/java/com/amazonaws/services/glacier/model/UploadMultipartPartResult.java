@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the Amazon Glacier response to your request.
+ * Contains the Amazon S3 Glacier response to your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,18 +25,18 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      */
     private String checksum;
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     *        The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      */
 
     public void setChecksum(String checksum) {
@@ -45,10 +45,10 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
-     * @return The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * @return The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      */
 
     public String getChecksum() {
@@ -57,11 +57,11 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     * The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * </p>
      * 
      * @param checksum
-     *        The SHA256 tree hash that Amazon Glacier computed for the uploaded part.
+     *        The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +71,8 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -121,4 +122,5 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

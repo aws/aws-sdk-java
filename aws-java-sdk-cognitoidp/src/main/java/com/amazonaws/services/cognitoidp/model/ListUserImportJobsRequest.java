@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      */
     private String paginationToken;
@@ -130,13 +130,13 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *        the next set of import jobs in the list.
+     *        An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *        used to return the next set of import jobs in the list.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -145,12 +145,12 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *         the next set of import jobs in the list.
+     * @return An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *         used to return the next set of import jobs in the list.
      */
 
     public String getPaginationToken() {
@@ -159,13 +159,13 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *        the next set of import jobs in the list.
+     *        An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *        used to return the next set of import jobs in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,7 +175,8 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

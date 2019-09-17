@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Represents a collection of <a>Model</a> resources.
  * </p>
  * <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
  * </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,7 +29,7 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String position;
     /**
      * <p>
-     * Gets the current <a>Model</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<Model> items;
@@ -62,10 +62,10 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Gets the current <a>Model</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return Gets the current <a>Model</a> resource in the collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<Model> getItems() {
@@ -74,11 +74,11 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Gets the current <a>Model</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Model</a> resource in the collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<Model> items) {
@@ -92,7 +92,7 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Gets the current <a>Model</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Model</a> resource in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Gets the current <a>Model</a> resource in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current <a>Model</a> resource in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +131,8 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -188,4 +189,5 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

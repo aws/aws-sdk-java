@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeLogStreamsRequest Marshaller
+ * DescribeLogStreamsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeLogStreamsRequestMarshaller implements Marshaller<Request<DescribeLogStreamsRequest>, DescribeLogStreamsRequest> {
+@SdkInternalApi
+public class DescribeLogStreamsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> LOGSTREAMNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamNamePrefix").build();
+    private static final MarshallingInfo<String> ORDERBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("orderBy").build();
+    private static final MarshallingInfo<Boolean> DESCENDING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("descending").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("limit").build();
 
-    public DescribeLogStreamsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeLogStreamsRequestMarshaller instance = new DescribeLogStreamsRequestMarshaller();
+
+    public static DescribeLogStreamsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeLogStreamsRequest> marshall(DescribeLogStreamsRequest describeLogStreamsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeLogStreamsRequest describeLogStreamsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeLogStreamsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeLogStreamsRequest> request = new DefaultRequest<DescribeLogStreamsRequest>(describeLogStreamsRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DescribeLogStreams");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeLogStreamsRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(describeLogStreamsRequest.getLogGroupName());
-            }
-            if (describeLogStreamsRequest.getLogStreamNamePrefix() != null) {
-                jsonGenerator.writeFieldName("logStreamNamePrefix").writeValue(describeLogStreamsRequest.getLogStreamNamePrefix());
-            }
-            if (describeLogStreamsRequest.getOrderBy() != null) {
-                jsonGenerator.writeFieldName("orderBy").writeValue(describeLogStreamsRequest.getOrderBy());
-            }
-            if (describeLogStreamsRequest.getDescending() != null) {
-                jsonGenerator.writeFieldName("descending").writeValue(describeLogStreamsRequest.getDescending());
-            }
-            if (describeLogStreamsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(describeLogStreamsRequest.getNextToken());
-            }
-            if (describeLogStreamsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("limit").writeValue(describeLogStreamsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getLogStreamNamePrefix(), LOGSTREAMNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getOrderBy(), ORDERBY_BINDING);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getDescending(), DESCENDING_BINDING);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeLogStreamsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

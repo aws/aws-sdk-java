@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for AttachInstances.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances" target="_top">AWS API
  *      Documentation</a>
@@ -30,23 +27,23 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
-     * @return One or more instance IDs.
+     * @return The IDs of the instances. You can specify up to 20 instances.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -58,11 +55,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -76,7 +73,7 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +82,7 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +98,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +113,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -129,10 +126,10 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -141,11 +138,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,7 +152,8 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

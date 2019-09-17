@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.kinesisfirehose.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,13 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RedshiftDestinationDescription implements Serializable, Cloneable {
+public class RedshiftDestinationDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
@@ -52,8 +56,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     private String username;
     /**
      * <p>
-     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -83,18 +87,22 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     private S3DestinationDescription s3BackupDescription;
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -103,10 +111,14 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The ARN of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -115,11 +127,15 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,13 +266,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     *        value is 3600 (60 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -265,12 +281,12 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
-     * @return The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     *         value is 3600 (60 minutes).
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *         Default value is 3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -279,13 +295,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     *        value is 3600 (60 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +444,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      */
 
     public void setS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
-        this.s3BackupMode = s3BackupMode.toString();
+        withS3BackupMode(s3BackupMode);
     }
 
     /**
@@ -443,7 +459,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      */
 
     public RedshiftDestinationDescription withS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
-        setS3BackupMode(s3BackupMode);
+        this.s3BackupMode = s3BackupMode.toString();
         return this;
     }
 
@@ -489,11 +505,11 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -502,10 +518,10 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return The CloudWatch logging options for your delivery stream.
+     * @return The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -514,11 +530,11 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,7 +544,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -545,7 +562,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         if (getCopyCommand() != null)
             sb.append("CopyCommand: ").append(getCopyCommand()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername()).append(",");
+            sb.append("Username: ").append("***Sensitive Data Redacted***").append(",");
         if (getRetryOptions() != null)
             sb.append("RetryOptions: ").append(getRetryOptions()).append(",");
         if (getS3DestinationDescription() != null)
@@ -640,5 +657,11 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisfirehose.model.transform.RedshiftDestinationDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

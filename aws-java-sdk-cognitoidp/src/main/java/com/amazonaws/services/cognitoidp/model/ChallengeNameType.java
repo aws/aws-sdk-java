@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,9 @@ import javax.annotation.Generated;
 public enum ChallengeNameType {
 
     SMS_MFA("SMS_MFA"),
+    SOFTWARE_TOKEN_MFA("SOFTWARE_TOKEN_MFA"),
+    SELECT_MFA_TYPE("SELECT_MFA_TYPE"),
+    MFA_SETUP("MFA_SETUP"),
     PASSWORD_VERIFIER("PASSWORD_VERIFIER"),
     CUSTOM_CHALLENGE("CUSTOM_CHALLENGE"),
     DEVICE_SRP_AUTH("DEVICE_SRP_AUTH"),
@@ -45,6 +48,9 @@ public enum ChallengeNameType {
      * @param value
      *        real value
      * @return ChallengeNameType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ChallengeNameType fromValue(String value) {
         if (value == null || "".equals(value)) {

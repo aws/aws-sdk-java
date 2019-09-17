@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutRecordRequest Marshaller
+ * PutRecordRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutRecordRequestMarshaller implements Marshaller<Request<PutRecordRequest>, PutRecordRequest> {
+@SdkInternalApi
+public class PutRecordRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Data").build();
+    private static final MarshallingInfo<String> PARTITIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartitionKey").build();
+    private static final MarshallingInfo<String> EXPLICITHASHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExplicitHashKey").build();
+    private static final MarshallingInfo<String> SEQUENCENUMBERFORORDERING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SequenceNumberForOrdering").build();
 
-    public PutRecordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutRecordRequestMarshaller instance = new PutRecordRequestMarshaller();
+
+    public static PutRecordRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutRecordRequest> marshall(PutRecordRequest putRecordRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutRecordRequest putRecordRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putRecordRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRecordRequest> request = new DefaultRequest<PutRecordRequest>(putRecordRequest, "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.PutRecord");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putRecordRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(putRecordRequest.getStreamName());
-            }
-            if (putRecordRequest.getData() != null) {
-                jsonGenerator.writeFieldName("Data").writeValue(putRecordRequest.getData());
-            }
-            if (putRecordRequest.getPartitionKey() != null) {
-                jsonGenerator.writeFieldName("PartitionKey").writeValue(putRecordRequest.getPartitionKey());
-            }
-            if (putRecordRequest.getExplicitHashKey() != null) {
-                jsonGenerator.writeFieldName("ExplicitHashKey").writeValue(putRecordRequest.getExplicitHashKey());
-            }
-            if (putRecordRequest.getSequenceNumberForOrdering() != null) {
-                jsonGenerator.writeFieldName("SequenceNumberForOrdering").writeValue(putRecordRequest.getSequenceNumberForOrdering());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putRecordRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(putRecordRequest.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(putRecordRequest.getPartitionKey(), PARTITIONKEY_BINDING);
+            protocolMarshaller.marshall(putRecordRequest.getExplicitHashKey(), EXPLICITHASHKEY_BINDING);
+            protocolMarshaller.marshall(putRecordRequest.getSequenceNumberForOrdering(), SEQUENCENUMBERFORORDERING_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

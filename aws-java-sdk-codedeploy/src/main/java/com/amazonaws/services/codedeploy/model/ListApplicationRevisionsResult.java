@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a list application revisions operation.
+ * Represents the output of a ListApplicationRevisions operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions"
@@ -34,8 +34,8 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<RevisionLocation> revisions;
     /**
      * <p>
-     * If a large amount of information is returned, an identifier will also be returned. It can be used in a subsequent
-     * list application revisions call to return the next set of application revisions in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * application revisions call to return the next set of application revisions in the list.
      * </p>
      */
     private String nextToken;
@@ -115,12 +115,12 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier will also be returned. It can be used in a subsequent
-     * list application revisions call to return the next set of application revisions in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * application revisions call to return the next set of application revisions in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier will also be returned. It can be used in a
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
      *        subsequent list application revisions call to return the next set of application revisions in the list.
      */
 
@@ -130,11 +130,11 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier will also be returned. It can be used in a subsequent
-     * list application revisions call to return the next set of application revisions in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * application revisions call to return the next set of application revisions in the list.
      * </p>
      * 
-     * @return If a large amount of information is returned, an identifier will also be returned. It can be used in a
+     * @return If a large amount of information is returned, an identifier is also returned. It can be used in a
      *         subsequent list application revisions call to return the next set of application revisions in the list.
      */
 
@@ -144,12 +144,12 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If a large amount of information is returned, an identifier will also be returned. It can be used in a subsequent
-     * list application revisions call to return the next set of application revisions in the list.
+     * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
+     * application revisions call to return the next set of application revisions in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, an identifier will also be returned. It can be used in a
+     *        If a large amount of information is returned, an identifier is also returned. It can be used in a
      *        subsequent list application revisions call to return the next set of application revisions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -160,7 +160,8 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -217,4 +218,5 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }
